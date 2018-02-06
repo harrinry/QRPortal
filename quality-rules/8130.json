@@ -1,0 +1,39 @@
+{
+    "id": 8130,
+    "type": "quality-rule",
+    "name": "Avoid using database hints",
+    "href": "quality-rules/8130.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for artifacts using database hints in Open SQL queries.\nNote: The rule is applicable in SAP HANA context.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to database hints\n- Bookmarks for violation patterns found in source code",
+    "rationale": "Database hints provide a means to bypass the DBMS optimizer by passing additional information directly to the database interface, DBSL or the underlying database system in order to allow these components to optimize certain data access. See SAP Note 1622681 for the supported DBSL hints for SAP HANA. \nHints are specific for one system configuration and its quantity structure. For this reason only use hints in the standard SAP system with caution. \nIt is not recommended to use hard-coded hints for specific databases in your reports, function modules etc.",
+    "reference": "SAP - Considerations for Custom ABAP Code When Migrating to SAP HANA - Best Practices and Recommendations",
+    "remediation": "Do not use hints for databases that are not listed in SAP note 129385 \"Database hints in Open SQL\".",
+    "remediationSample": "SELECT guid partner_no partner_fct\nFROM crmd_partner\nINTO TABLE lt_crmd_partner\nFOR ALL ENTRIES IN lt_links\nWHERE guid EQ lt_links-guid_set AND partner_fct IN lt_proc_ranges.",
+    "sample": "SELECT guid partner_no partner_fct\nFROM crmd_partner\nINTO TABLE lt_crmd_partner\nFOR ALL ENTRIES IN lt_links\nWHERE guid EQ lt_links-guid_set AND partner_fct IN lt_proc_ranges\n%_HINTS DB6 '<IXSCAN TABLE=''CRMD_PARTNER'' INDEX=''\"CRMD_PARTNER~SET\"'' />'.",
+    "total": "Number of ABAP Artifacts containing OpenSQL",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

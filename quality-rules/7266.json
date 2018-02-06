@@ -1,0 +1,51 @@
+{
+    "id": 7266,
+    "type": "quality-rule",
+    "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
+    "href": "quality-rules/7266.json",
+    "associatedValueName": "Associated Value",
+    "description": "This quality rule checks that when implementing the MS recommended dispose pattern (defined here: http://msdn.microsoft.com/en-us/library/b1yfkh5e(VS.71).aspx ), that within the 'Dispose(bool)' methods you have a try/finally block and that from within the finally block you have a all to 'base.Dispose(bool)' (C#) or to 'MyBase.Finalize()' (VB.NET)\nSo it lists all Dispose methods with no try/finally block or with no call to 'base.Dispose(bool)' or 'MyBase.Finalize()' within the finally block.\nThis applies only for Dispose(bool) method defined in classes which implement the IDisposable interface.",
+    "rationale": "If a type inherits from a disposable type, it must call the Dispose method of the base type from within its own Dispose method in order to make sure all allocated resources are released properly and timely.\nFailing to do so can provoke a resource leak that will  lead to serious application availability and stability issues.",
+    "reference": "Resource Management in .NET\nby Krzysztof Cwalina\nProgram Manager - Microsoft .NET Framework \nhttp://www.gotdotnet.com/team/libraries/whitepapers/resourcemanagement/resourcemanagement.aspx\n\nImplementing IDisposable and the Dispose Pattern Properly\nBy Scott Dorman\nhttp://www.codeproject.com/useritems/idisposable.asp\n\nChris Lyon's WebLog\nhttp://blogs.msdn.com/clyon/archive/2004/09/23/233464.aspx\n\nUnderstanding Garbage Collection in the .NET Framework\nBy  Dipal Choksi\nhttp://www.c-sharpcorner.com/UploadFile/DipalChoksi/UnderstandingGarbageCollectioninNETFramework11292005051110AM/UnderstandingGarbageCollectioninNETFramework.aspx",
+    "remediationSample": "protected override void Dispose(bool disposing)\n   {\n      if(!this.disposed)\n      {\n         try\n         {\n            if(disposing)\n            {\n               // Release the managed resources you added in\n               // this derived class here.\n               addedManaged.Dispose();         \n            }\n            // Release the native unmanaged resources you added\n            // in this derived class here.\n            CloseHandle(addedNative);\n            this.disposed = true;\n         }\n         finally\n         {\n            // Call Dispose on your base class.\n            base.Dispose(disposing);\n         }\n      }\n   }",
+    "total": "The Total procedure must count only Dispose(bool) methods defined in classes which implement the IDisposable interface.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        }
+    ]
+}

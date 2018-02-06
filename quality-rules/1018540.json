@@ -1,0 +1,41 @@
+{
+    "id": 1018540,
+    "type": "quality-rule",
+    "name": "Avoid JMS Synchronous Activities (TIBCO BW)",
+    "href": "quality-rules/1018540.json",
+    "description": "This rule searches for ProcessActivities of type JMSQueueSignalInActivity, JMSQueueRequestReplyActivity or JMSTopicRequestReplyActivity.\nProcessActivity is a property captured in the metamodel.",
+    "output": "This report lists all  Processe Activities of type JMS JMSQueueSignalInActivity, JMSQueueRequestReplyActivity and JMSTopicRequestReplyActivity.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the activityType.",
+    "rationale": "Blocking calls can result in system failure if the called process fails. JMS Synchronous activities are inefficient for scalability.",
+    "reference": "EFF-006 - JMS Synchronous activities",
+    "remediation": "Review the Process design.",
+    "total": "Number of  Process Activity",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1018000,
+            "name": "TIBCO",
+            "href": "technologies/1018000.json"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "id": 1003074,
+    "type": "quality-rule",
+    "name": "Avoid modelLocator that is Bindable at a class level (Flex)",
+    "href": "quality-rules/1003074.json",
+    "description": "adobe.ac.pmd.rules.cairngorm.BindableModelLocatorRule",
+    "rationale": "A bindable ModelLocator could leads to performance issues due to bindings",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "[Bindable]\npublic class BindableModelLocator // VIOLATION \n{      \n}",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "id": 8160,
+    "type": "quality-rule",
+    "name": "Check PCB status code after DLI queries",
+    "href": "quality-rules/8160.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for COBOL Programs which do not test the status code after accessing an IMS database.",
+    "output": "The report lists all Cobol Programs accessing IMS database without checking the status code returned by PCB. \n\nIt provides the following information: \n- COBOL Program full name \n- Number of violations \n\nIt also provides bookmarks for violation patterns found in source code: \n- CBLTDLI call \n- Data structure associated to the PCB",
+    "rationale": "When accessing IMS databases it is recommended to check the return code based on the call type in order to manage all situations that can occur.",
+    "remediation": "Check the PCB status code after queries in order to manage all situations. ",
+    "remediationSample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GE' \n    MOVE 'Y' TO WS-EOJ \nEND-IF \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GB' \n    MOVE 'Y' TO WS-EOJ \nEND-IF\n",
+    "sample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n",
+    "total": "Number of Cobol Programs accessing IMS database",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

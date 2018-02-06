@@ -1,0 +1,32 @@
+{
+    "id": 8118,
+    "type": "quality-rule",
+    "name": "Avoid using the RFC_ABAP_INSTALL_AND_RUN function",
+    "href": "quality-rules/8118.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for ABAP artifacts that contain calls to the RFC_ABAP_INSTALL_AND_RUN function module.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation patterns found in source code: \n  - CALL FUNCTION \"RFC_ABAP_INSTALL_AND_RUN\"",
+    "rationale": "This function module allows to register a program with its code in an SAP system, execute it, and remove it after the execution. As a consequence, using this function module can be very dangerous and SAP recommends to not use it.",
+    "reference": "SAP",
+    "sample": "FORM MY-FORM. \n  call function 'RFC_ABAP_INSTALL_AND_RUN' \n    destination 'NSP' \n    tables \n      program = source \n      writes = output. \nENDFORM.",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

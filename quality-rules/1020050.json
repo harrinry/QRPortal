@@ -1,0 +1,31 @@
+{
+    "id": 1020050,
+    "type": "quality-rule",
+    "name": "Avoid white-listing the \"dirname\" attribute in user generated content",
+    "href": "quality-rules/1020050.json",
+    "description": "Opera and Chrome support the HTML5 attribute \"dirname\", that can be used to have the browser communicate the text-flow direction of another input element by adding it to the server-sent request body. By injecting a \"dirname\" attribute in an existing form, an attacker can overwrite user input and thereby make it guessable for malicious purposes. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you do not import content from an untrusted source.",
+    "reference": "https://html5sec.org/#136",
+    "sample": "<form action=\"\" method=\"post\"> \n   <input name=\"username\" value=\"admin\" /> \n   <input name=\"password\" type=\"password\" value=\"secret\" /> \n   <input name=\"injected\" value=\"injected\" dirname=\"password\" /> \n   <input type=\"submit\">\n</form>",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

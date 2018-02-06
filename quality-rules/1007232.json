@@ -1,0 +1,46 @@
+{
+    "id": 1007232,
+    "type": "quality-rule",
+    "name": "Avoid having variables passed by reference when calling a function (PHP)",
+    "href": "quality-rules/1007232.json",
+    "description": "Passing a variable by reference to a function will cause the original value to be changed if that variable is modified inside the called function\n\nSo we need to ensures that variables are not passed by reference when calling a function.",
+    "output": "PHP Sections having variables passed by reference when calling a function",
+    "reference": "Code Sniffer - https://github.com/squizlabs/PHP_CodeSniffer/blob/master/CodeSniffer/Standards/Generic/Sniffs/Functions/CallTimePassByReferenceSniff.php",
+    "remediationSample": "<?php\nclass myclass extends yourclass implements someint {\n    function myfunc($var) {\n        echo $var;\n    }\n}\n$myvar = true;\nmyfunc($myvar);",
+    "sample": "<?php\nclass myclass extends yourclass implements someint {\n    function myfunc($var) {\n        echo $var;\n    }\n}\n$myvar = true;\nmyfunc(&$myvar);",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

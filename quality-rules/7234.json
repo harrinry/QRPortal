@@ -1,0 +1,44 @@
+{
+    "id": 7234,
+    "type": "quality-rule",
+    "name": "EVALUATE statements must be closed by END-EVALUATE",
+    "href": "quality-rules/7234.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs using EVALUATE statements without associated terminator END-EVALUATE.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - EVALUATE statement that is not ended by the END-EVALUATE terminator",
+    "rationale": "Cobol 85 allows using dedicated statement terminators. For maintainability aspect, it is better to use the END-EVALUATE terminator than a simple period. If there is not an END-EVALUATE terminator in the EVALUATE sentence then the first period ends it (and not only the statement) and it is difficult to understand where is the trouble.",
+    "reference": "IBM Enterprise Cobol for z/OS - Language Reference",
+    "remediation": "Add END-EVALUATE terminator to all EVALUATE statements.",
+    "remediationSample": "EVALUATE MARITAL-CODE\n  WHEN \"M\"\n    PERFORM FIND-PARENT\n    ADD 2 TO PEOPLE-COUNT\n  WHEN \"S\"\n  WHEN \"D\"\n  WHEN \"W\"\n    ADD 1 TO PEOPLE-COUNT\nEND-EVALUATE",
+    "sample": "EVALUATE MARITAL-CODE\n  WHEN \"M\"\n    PERFORM FIND-PARENT\n    ADD 2 TO PEOPLE-COUNT\n  WHEN \"S\"\n  WHEN \"D\"\n  WHEN \"W\"\n    ADD 1 TO PEOPLE-COUNT.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

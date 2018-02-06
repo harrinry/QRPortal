@@ -1,0 +1,36 @@
+{
+    "id": 1005066,
+    "type": "quality-rule",
+    "name": "Avoid Artifacts with Subqueries (EGL)",
+    "href": "quality-rules/1005066.json",
+    "description": "This rule searches for all artifacts having queries with subqueries considered  as complex.",
+    "output": "This report lists  the following information: Function full name, Number of SubQueries",
+    "rationale": "Having complex queries in artifacts can cause performance problems. Queries with Subqueries is considered complex.",
+    "reference": "Standard suggestions based on CAST Quality Model",
+    "remediation": "review the source code in order to reduce the number of subqueries.",
+    "total": "Number of Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

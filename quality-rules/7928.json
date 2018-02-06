@@ -1,0 +1,24 @@
+{
+    "id": 7928,
+    "type": "quality-rule",
+    "name": "Avoid using static_cast on class/struct pointers",
+    "href": "quality-rules/7928.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C++ artifacts using 'static_cast' constructs on class pointers or struct pointers.  Note: Pointers of template classes are also taken into account.",
+    "output": "Associated to each C++ artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "Avoid using static_cast on pointers because static_cast does not do any run time checking of the types involved, which means that unless you know what you are doing, they could be very unsafe. Consider replacing use of static_cast with its more powerful relative dynamic_cast. There is an overhead in doing so, but it is not worth taking the risk of using static_cast.",
+    "reference": "http://msdn.microsoft.com/en-us/library/c36yw7x9(VS.80).aspx\nhttp://my.safaribooksonline.com/0321113586/ch93\nhttp://stackoverflow.com/questions/28002/regular-cast-vs-staticcast-vs-dynamiccast\nhttp://codeidol.com/cpp/cpp-coding-standards/Avoid-using-static_cast-on-pointers/",
+    "remediation": "Use dynamic_cast.",
+    "sample": "class B {};\nclass D : B {};\nB* b = new B();\nD* d1 = static_cast<D*>b; // Invalid! => VIOLATION\nD* d2 = dynamic_cast<D*>b; // Valid, but d2 is now a null pointer\n\nNow d1 will point to a data segment of type D*, but the actual data is B*, and will lead to memory issues and corruption. d2 on the other hand will be a null pointer and can be checked for and handled correctly.",
+    "total": "Number of C++ artifacts",
+    "businessCriteria": [
+        
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ]
+}

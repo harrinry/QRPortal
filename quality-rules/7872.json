@@ -1,0 +1,37 @@
+{
+    "id": 7872,
+    "type": "quality-rule",
+    "name": "Avoid using IS [NOT] NULL in WHERE condition",
+    "href": "quality-rules/7872.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule checks Abap artifacts that use queries with the IS NULL addition.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "Some addition automatically bypass buffer. Bypassing buffer means that SELECT will not go to buffered results but always directly to the database. This can impact the performance significantly.",
+    "reference": "NetWeaver Performance Notes\nhttp://help.sap.com/saphelp_nw70/helpdata/en/aa/4734a00f1c11d295380000e8353423/frameset.htm",
+    "remediation": "Check if the IS NULL addition is really necessary and use this addition carefully.",
+    "total": "Number of ABAP Artifacts containing OpenSQL queries.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

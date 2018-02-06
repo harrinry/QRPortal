@@ -1,0 +1,37 @@
+{
+    "id": 1007032,
+    "type": "quality-rule",
+    "name": "Avoid empty class definition (PHP)",
+    "href": "quality-rules/1007032.json",
+    "description": "This rule searches for all the classes containing an empty definition.",
+    "output": "This report lists all Classes containing an empty definition.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "For maintainability reasons, empty class definitions should be avoided. Empty definitions will make the modification and testing of the source code more difficult.",
+    "reference": "Code Sniffer -  http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_CSS_EmptyClassDefinitionSniff.html",
+    "remediation": "Modify the source code to reduce the number of classes containing an empty class definition.",
+    "sample": "<?php\n\nclass emptyClass\n{ //Violation\n}\n?>",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

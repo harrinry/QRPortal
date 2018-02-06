@@ -1,0 +1,35 @@
+{
+    "id": 1007118,
+    "type": "quality-rule",
+    "name": "Avoid Sections With Queries on more than 4 Tables (PHP)",
+    "href": "quality-rules/1007118.json",
+    "description": "This rule searches for all Sections containing queries on more than 4 tables.",
+    "output": "\"This report lists all Sections with queries on more than 4 tables.\n\nThis QR provides the following information:\nSection full name.\"",
+    "rationale": "Using complex queries in Artifacts can cause performance issues.",
+    "remediation": "Modify the source code to reduce the number of Sections with queries on more than 4 tables.",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

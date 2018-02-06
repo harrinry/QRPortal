@@ -1,0 +1,40 @@
+{
+    "id": 1005024,
+    "type": "quality-rule",
+    "name": "Avoid programs not having the property allowUnqualifiedItemReferences set to YES (EGL)",
+    "href": "quality-rules/1005024.json",
+    "description": "This rule searches for all the programs having allowUnqualifiedItemReferences property set NO.",
+    "output": "This report provides the following information: Program full name",
+    "rationale": "allowUnqualifiedItemReferences = yes specifies whether to allow your code to reference structure items but to exclude the name of the container, which is the data table, record, or form that holds the structure item.\nConsider the following record part, for example:\n\n Record aRecordPart type basicRecord\n         10 myItem01 CHAR(5);\n         10 myItem02 CHAR(5);\nend\n\nIf you set the property allowUnqualifiedItemReferences to yes, however, you can avoid specifying the record name: myValue = myItem01;",
+    "remediation": "Try to always have the property allowUnqualifiedItemsReferences set to YES.",
+    "total": "Number of Programs",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

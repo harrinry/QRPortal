@@ -1,0 +1,37 @@
+{
+    "id": 1007164,
+    "type": "quality-rule",
+    "name": "Avoid functions having the optional parameters before the others (PHP)",
+    "href": "quality-rules/1007164.json",
+    "description": "This rule searches for all the methods containing optional parameters listed before other parameters.",
+    "output": "\"This report lists all the methods containing optional parameters listed before other parameters.\n\nThis QR provides the following information:\nMethod  full name.\"",
+    "rationale": "Using optional parameters is a common practice in PHP. When using optional parameters, it is very important to assign a value to the optional parameters and to ensure that the optional parameters always follow the other (non-optional) parameters. This practice will prevent application from crashing in case it is calling functions using one or more optional parameters without values",
+    "remediation": "Review the source code and try to alter the order of the parameters.",
+    "remediationSample": "\"  <?php\n\n    function foo($bar,$param=\"\"\"\"){\n       echo $bar;\n    }\n\n  ?>\n  \"",
+    "sample": "\"  <?php\n\n    function foo($param=\"\"\"\", $bar){\n       echo $bar;\n    }\n\n  ?>\n  \"",
+    "total": "Number of Methods",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

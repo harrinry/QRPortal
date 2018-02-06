@@ -1,0 +1,30 @@
+{
+    "id": 1001190,
+    "type": "quality-rule",
+    "name": "Avoid PLC Procedures & Functions with more than 100 lines of code (PL1)",
+    "href": "quality-rules/1001190.json",
+    "description": "This rule searches for PLC Functions and PLC Procedures with more than X Lines of Code.",
+    "output": "The report lists all the PL1 Functions and PL1 Procedures having more than 100 lines of code.\n\nIt provides following information: \n-  PL1 Functions and PL1 Procedures full name",
+    "rationale": "Artifacts with more than 100 lines of code are generally difficult to maintain.",
+    "remediation": "Split the procedures and functions in order to not have more than 100 lines of code.",
+    "total": "Number of PLC Functions and PLC Procedures",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1005000,
+            "name": "PLC",
+            "href": "technologies/1005000.json"
+        }
+    ]
+}

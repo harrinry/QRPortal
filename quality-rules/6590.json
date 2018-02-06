@@ -1,0 +1,36 @@
+{
+    "id": 6590,
+    "type": "quality-rule",
+    "name": "Table naming convention - character set control",
+    "href": "quality-rules/6590.json",
+    "associatedValueName": "Associated Value",
+    "description": "List of tables that contain characters other than [a-Z,0-9,_]",
+    "output": "This report lists all tables names containing characters other than [a-Z,0-9,_]\n\nIt provides the following information:\n\n- Table name, \n- Table full name",
+    "rationale": "For readability and changeability aspects, naming conventions must be respected.\n\n=> Table name should not contain characters other than [a-Z,0-9,_]",
+    "remediation": "Change name according to the naming convention",
+    "total": "total is number of SQL tables ddl code used on dataserver layer",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        }
+    ]
+}

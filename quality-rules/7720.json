@@ -1,0 +1,42 @@
+{
+    "id": 7720,
+    "type": "quality-rule",
+    "name": "Avoid too many EJB bean",
+    "href": "quality-rules/7720.json",
+    "associatedValueName": "Number of EJB",
+    "description": "Reports a violation when the number of EJB beans (Session, Message Driven and Entity beans) defined in the application (ejb-jar.xml or annotation) is greater than 500. This number can be changed as will through the threashold parameter.",
+    "output": "This report a violation when the number of EJB is greater than 500 Or the threshold.\nIt provides the following information:\n - Application\n - Number of EJB",
+    "rationale": "When too many EJB beans are created, the application performance can be poor because most of the functionalities will be run through a session (which means that the EJB container intercepts and processes many more method calls). Also, the application server itself may not perform as well because of the additional resources required to deploy and pool instances for many sessions.\nIn addition, there is more development effort due to all the session-related artifacts.",
+    "reference": "Wiley - J2EE AntiPatterns (ISBN: 0-471-14615-3) P 366",
+    "remediation": "Review the design of your application to decrease this number.",
+    "total": "1",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

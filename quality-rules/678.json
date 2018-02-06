@@ -1,0 +1,53 @@
+{
+    "id": 678,
+    "type": "quality-rule",
+    "name": "Never throw an exception from a Destructor",
+    "href": "quality-rules/678.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C++ destructors that throw exceptions.",
+    "output": "Associated to each C++ destructor with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - 'throw' statement",
+    "rationale": "Destructors should be exception-safe. This is because a destructor will be automatically called when an exception is thrown to de-allocate all objects which are on the stack between the exception throw and catch. If a destructor ends up throwing an exception, either directly or indirectly, the program will terminate. The bottom line here: never allow an exception of any sort to be thrown from a destructor; the alternative opens up the possibility that a buggy program simply crashes without presenting any easily identifiable source for the bug.",
+    "reference": "\"How can I handle a destructor that fails?\":http://www.parashift.com/c++-faq-lite/dtors-shouldnt-throw.html",
+    "remediation": "Remove the throw statements from destructors, prefer calling non throwing function only from destructors. If you call a potentially throwing function from a destructor, swallow all exception it may throw by wrapping it in a 'try/catch' clause.\n\nIf the object destruction can fail and you want to report it to the user, create a dedicated function that will be called separately before the destructor.",
+    "sample": "Closing a file is an operation that may fail. Therefore, the standard library provides:\n- A 'close' function, which the user can call explicitly and check the stream state afterwards,\n- The destructor, which call the 'close' function if necessary but does not allow the user to check if it succeeded or failed. If the stream is configured to throw exceptions on error, those exceptions are swallowed by the destructor.",
+    "total": "Number of C++ destructors",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

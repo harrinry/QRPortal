@@ -1,0 +1,37 @@
+{
+    "id": 1007134,
+    "type": "quality-rule",
+    "name": "Avoid classes with too many methods (PHP)",
+    "href": "quality-rules/1007134.json",
+    "description": "This rule searches for all the classes that have too many methods.",
+    "output": "\"This report lists all the classes with too many methods.\n\nThis QR provides the following information:\nClass full name.\"",
+    "rationale": "A Class with too many Methods is probably a good target for refactoring to reduce its complexity and find a way to have more fine grained objects.",
+    "reference": "PHPMD - http://phpmd.org/rules/codesize.html#toomanymethods",
+    "remediation": "Modify the source code of the class to reduce the number of methods.",
+    "sample": "\"class CastExample\n{\n\n  public function test1() {}\n\n public function test2() {}\n public function test3() {}\n public function test4() {}\n\n [... many more methods...]\n\n public function test9() {}\n public function test10() {}\n public function test11() {}\n}\n\"",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

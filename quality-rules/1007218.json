@@ -1,0 +1,40 @@
+{
+    "id": 1007218,
+    "type": "quality-rule",
+    "name": "Avoid using $row[xxx] (PHP)",
+    "href": "quality-rules/1007218.json",
+    "description": "This rules searches all the Methods, Functions and PHP Sections using  $row[xxx].",
+    "output": "This report lists all the Methods, Functions and PHP Sections using  $row[xxx].\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "Using $row[xxx] when exploiting data from a database it can decrease the performance of your application. Using $row[\u2018xxx\u2019] is much faster and can improve the performance of the application.",
+    "remediation": "Try to reduce the use of $row[xxx] and use insead $row['xxx']",
+    "total": "Number of Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

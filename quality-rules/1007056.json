@@ -1,0 +1,42 @@
+{
+    "id": 1007056,
+    "type": "quality-rule",
+    "name": "Avoid unnecessary final modifiers inside final Classes (PHP)",
+    "href": "quality-rules/1007056.json",
+    "description": "This rule searches for all the Methods containing unnecessary final modifiers.",
+    "output": "This report lists all  Methods of final Classes containing unnecessary final modifiers.\n\nThis QR provides the following information:\nMethod full name.",
+    "rationale": "Final modifiers prevent child classes from overriding a method by prefixing the definition with final. If the class itself is being defined final then it cannot be extended and the modifier is useless.",
+    "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UnnecessaryFinalModifierSniff.html",
+    "remediation": "Review the source code in order to reduce the number Methods of final classes containing unnecessary final modifiers.",
+    "sample": "<?php\n\nfinal class CastTest\n {\n     public final function test() // Violation - Unnecessary final modifiers inside a final class\n     {\n     }\n }\n\n?>",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

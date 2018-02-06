@@ -1,0 +1,35 @@
+{
+    "id": 1001138,
+    "type": "quality-rule",
+    "name": "Avoid Functions and Procedures having cursors  declared with \"FOR FETCH ONLY\" clause not having \"WITH ROWSET POSITIONING\" also specified (PL1)",
+    "href": "quality-rules/1001138.json",
+    "description": "This rule searches all PL1 Main Procedures, PL1 Functions and PL1 Procedures having  \"FOR FETCH ONLY\" or \"FOR READ ONLY\" clause  and not having \"WITH ROWSET POSITIONING\" specified.",
+    "output": "The report lists all PL1 Main Procedures, PL1 Functions and PL1 Procedures having  \"FOR FETCH ONLY\" or \"FOR READ ONLY\" clause  and not having \"WITH ROWSET POSITIONING\" specified.\n\nIt provides following information: \n-  PL1 Main Procedure, PL1 Function and PL1 Procedure full Name.",
+    "rationale": "Multi-row fetch, allowing you to FETCH zero or more rows of the\nresult table. By fetching more than one row, your applications reduce the number of SQL calls\nby fetching a rowset using one single FETCH statement. This means less crossing of the SQL Application Programming Interface (API) and\nlower or reduced CPU usage for this function.",
+    "remediation": "Try to use \"WITH ROWSET POSITIONNING\" when \"FOR FETCH ONLY\" or \"FOR READ ONLY\" is used",
+    "total": "Number of PL1 Main Procedures, PL1 Functions and PL1 Procedures.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

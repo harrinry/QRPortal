@@ -1,0 +1,41 @@
+{
+    "id": 1092,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Implementation files",
+    "href": "quality-rules/1092.json",
+    "associatedValueName": "Filename",
+    "description": "This rule searches for C/C++ implementation files that do not contain any comment.",
+    "output": "Associated to each C/C++ implementation file with violations, the Quality Rule provides:\n- File name",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code.",
+    "remediation": "Insert documentation into C/C++ source files to describes the function expectation and the technical aspect of the code.",
+    "total": "Number of C/C++ implementation files",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        }
+    ]
+}

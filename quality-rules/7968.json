@@ -1,0 +1,42 @@
+{
+    "id": 7968,
+    "type": "quality-rule",
+    "name": "Never use strcat() function",
+    "href": "quality-rules/7968.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C and C++ functions, methods, constructors, and destructors that call the 'strcat()' function.",
+    "output": "Associated to each C/C++ function/method/constructor/destructor with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - function call",
+    "rationale": "The 'strcat()' function is a source of buffer overflow vulnerabilities. More secure variants of the function are available and should be used.",
+    "reference": "Secure Programming for Linux and Unix HOWTO - \nCreating Secure Software\nhttp://www.dwheeler.com/secure-programs/\n\nISO/IEC. ISO/IEC 9899 Second edition 1999-12-01 Programming languages - C. International Organization for Standardization, 1999.",
+    "remediation": "Prefer using the 'strncat()' function instead.",
+    "total": "Number of C/C++ functions, constructors, destructors, and methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

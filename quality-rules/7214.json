@@ -1,0 +1,24 @@
+{
+    "id": 7214,
+    "type": "quality-rule",
+    "name": "Avoid using exception handling inside loops",
+    "href": "quality-rules/7214.json",
+    "associatedValueName": "Associated Value",
+    "description": "Reports all methods with loops (for, while, do while)  that contains a try/catch block.",
+    "output": "This report lists all methods that contains try/catch blocks in a loop.\nIt provides the following information:\n Method full name",
+    "rationale": "Exception handling tends to be relatively costly, given the work in unwinding the stack, trying various exception handlers, and so on. You should avoid placing try/catch blocks within a loop as it can add up when performed many times inside a loop.",
+    "reference": "http://www.precisejava.com/javaperf/j2se/Exceptions.htm",
+    "remediation": "If possible, put the loop inside the try/catch block.",
+    "remediationSample": "public class ExceptionTest {\n static final int N = 18000000;\n\n  public void MyLoop(void) {\n  Throwable exc = new Throwable();\n  try {                                                 // FIXED\n     for (int i = 1; i <= N; i++) {\n        throw exc;\n     }\n  } catch (Throwable e) { }\n}",
+    "sample": "public class ExceptionTest {\n static final int N = 18000000;\n\n  public void MyLoop(void) {\n  Throwable exc = new Throwable();\n  for (int i = 1; i <= N; i++) {\n   try {                                               // VIOLATION\n    throw exc;\n   } catch (Throwable e) { }\n  }\n}",
+    "businessCriteria": [
+        
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

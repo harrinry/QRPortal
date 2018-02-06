@@ -1,0 +1,42 @@
+{
+    "id": 1020018,
+    "type": "quality-rule",
+    "name": "Avoid using Web SQL databases",
+    "href": "quality-rules/1020018.json",
+    "description": "The Web SQL Database standard will never be officially supported. It was first formulated, then deprecated by the W3C and was only implemented in some browsers. (It is not supported in Firefox or IE.) \n\nFurther, the use of a Web SQL Database poses security concerns, since you only need its name to access such a database.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "OWASP Top Ten 2013 Category A6 - Sensitive Data Exposure \nOWASP Top Ten 2013 Category A9 - Using Components with Known Vulnerabilities",
+    "reference": "http://www.w3.org/TR/webdatabase/",
+    "remediation": "Do not use window.openDatabase syntax.",
+    "sample": "if (!window.openDatabase) { \nalert('Databases are not supported in this browser.'); \n}",
+    "total": "Number of Javascript Functions",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

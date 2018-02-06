@@ -1,0 +1,38 @@
+{
+    "id": 8034,
+    "type": "quality-rule",
+    "name": "Variables defined in Working-Storage section must be initialized before to be read",
+    "href": "quality-rules/8034.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol Programs containing variables that are used without having been initialized. Only variables defined in the WORKING-STORAGE section are taken into account. A variable is considered as initialized in the following conditions:\n- Its definition has a VALUE clause\n- It is valued by a statement (for instance, MOVE, ADD, COMPUTE, INITIALIZE, ...)",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Statement using the variable",
+    "rationale": "Data defined in the WORKING-STORAGE section is used to perform specific operations in programs. It must be initialized before being read (in assignment and comparison statements). If data is moved or compared to other data without having been initialized, then the logic of the code could be unpredictable and problems can occur in production.",
+    "remediation": "Data defined in the WORKING-STORAGE section can be initialized by using the VALUE clause in the DATA division. They can also be initialized in the PROCEDURE division at the beginning of the section or paragraph using them.",
+    "remediationSample": "01 VARIN PIC X(10) VALUE SPACES.\n...\nMOVE VARIN TO VARSTATE.\nIF VARSTATE EQUALS SPACES\n    PERFORM P100-BEG\nELSE\n    PERFORM P200-GO\nEND-IF",
+    "sample": "01 VARIN PIC X(10).\n...\nMOVE VARIN TO VARSTATE.\nIF VARSTATE EQUALS SPACES\n    PERFORM P100-BEG\nELSE\n    PERFORM P200-GO\nEND-IF",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

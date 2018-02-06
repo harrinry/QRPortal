@@ -1,0 +1,37 @@
+{
+    "id": 1007138,
+    "type": "quality-rule",
+    "name": "Avoid having unused variables (PHP)",
+    "href": "quality-rules/1007138.json",
+    "description": "This rule searches for all the Sections with too many unused variables.\nA violation is detected when a local variable is declared and/or assigned, but not used",
+    "output": "\"This report lists all the Sections with too many unused variables.\n\nThis QR provides the following information:\nSections  full name.\"",
+    "rationale": "Unused variables make the code more complex to read and are redundant.\nThe violation is reported even only one unused variable is found",
+    "reference": "PHPMD - http://phpmd.org/rules/unusedcode.html#unusedlocalvariable",
+    "remediation": "Modify the source code to reduce the number of unused variables.",
+    "sample": "\"class CastTest {\n public function doSomething() {\n $UnusedVariable = 5; // violation\n }\n}\"",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

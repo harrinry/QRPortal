@@ -1,0 +1,30 @@
+{
+    "id": 1007230,
+    "type": "quality-rule",
+    "name": "Avoid Having control structures without proper switch case declarations (PSR2) (PHP)",
+    "href": "quality-rules/1007230.json",
+    "description": "Detects for-loops that use a function call in the test expression",
+    "output": "This rule reports all PHP Sections having control structures without proper switch case declarations.\nIt provides the following information:\nPHP Section full name.",
+    "rationale": "Using the proper declaration in switch statements helps to read , understand , modify , maintain and enhance the code easily.",
+    "reference": "Source Reference:\nhttps://pear.php.net/reference/PHP_CodeSniffer-latest/PHP_CodeSniffer/PSR2_Sniffs_ControlStructures_SwitchDeclarationSniff.html",
+    "remediation": "Sample:\nswitch ($expr)\n{ case 0: echo 'First case, with a break'; break; case 1: echo 'Second case, which falls through'; // no break case 2: case 3: // case is followed more than 1 space , which is against coding standard Case 4: // CASE keyword must be lowercase , which is against coding standard echo 'Third case, return instead of break'; return; case 5: //There must be a comment when fall-through is intentional. case 6: echo '6th case,'; Default: // DEFAULT keyword must be lowercase echo 'Default case'; break; }\n\nRemediation:\nswitch ($expr)\n{ case 0: echo 'First case, with a break'; break; case 1: echo 'Second case, which falls through'; // no break case 2: case 3: // case is followed single space , correct coding standard case 4: // CASE keyword is in lowercase , correct coding standard echo 'Third case, return instead of break'; return; case 5: echo 'Fifth case, which falls through'; // Fall through comments are added. case 6: echo '6th case,'; default: // DEFAULT keyword in lowercase, correct coding standard echo 'Default case'; break; }",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

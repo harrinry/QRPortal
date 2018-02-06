@@ -1,0 +1,43 @@
+{
+    "id": 1007146,
+    "type": "quality-rule",
+    "name": "Avoid unconditional IF and ELSEIF statements (PHP)",
+    "href": "quality-rules/1007146.json",
+    "description": "This rule searches for all the Methods and Functions containing unconditional IF and ELSEIF statements.",
+    "output": "\"This report lists all Methods or Functions containing unconditional IF and ELSEIF statements.\n\nThis QR provides the following information:\nMethod or Function full name.\"",
+    "rationale": "Using unconditional IF and ELSEIF statements often increases memory use and reduces performance.",
+    "reference": "Code Sniffer http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UnconditionalIfStatementSniff.html",
+    "remediation": "Modify the source code to reduce the number of unconditional IF and ELSEIF statements.",
+    "remediationSample": "\"class CAST{\n    public function close() {\n        echo 'test';\n    }\n}\"",
+    "sample": "\"class CAST{\n    public function close() {\n        if (true) {\n            echo 'test';\n        }\n    }\n}\"",
+    "total": "Number of Methods or Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": 1001150,
+    "type": "quality-rule",
+    "name": "Avoid Functions and Procedures having a SELECT without the default OTHERWISE clause (PL1)",
+    "href": "quality-rules/1001150.json",
+    "description": "This rule searches for all PL1 Procedures and PL1 Functions having SELECT clauses without the default OTHERWISE clause.",
+    "output": "The report lists all the PL1 Procedures and PL1 Functions having a SELECT without the default OTHERWISE clause. \n\nIt provides following information: \n-  PL1 Procedures and PL1 Functions full name",
+    "rationale": "The default case is executed when none of the conditions being tested for in the switch statement are met or executed. Having no default, means that there is no backup.\nThe cases that are \"impossible\" today are the ones most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.",
+    "remediation": "Add the OTHERWISE clause for the SELECT statement not having one.",
+    "remediationSample": "SELECT(COND);\nWHEN(A)\nDO;\n...\nEND;\nWHEN(B)\nDO;\n...\nEND;\nWHEN(C)\nDO;\n...\nEND;\nOTHERWISE\nDO;\n...\nEND;",
+    "sample": "SELECT(COND);\nWHEN(A)\nDO;\n...\nEND;\nWHEN(B)\nDO;\n...\nEND;\nWHEN(C)\nDO;\n...\nEND;",
+    "total": "Number of the PL1 Procedures and PL1 Functions.",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

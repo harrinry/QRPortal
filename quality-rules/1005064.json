@@ -1,0 +1,36 @@
+{
+    "id": 1005064,
+    "type": "quality-rule",
+    "name": "Avoid Artifacts With Queries on too many Tables (EGL)",
+    "href": "quality-rules/1005064.json",
+    "description": "This rule searches for Queries with more than X Tables is considered complex",
+    "output": "This report lists the following information: Function full name, (number of Tables)",
+    "rationale": "Having complex queries in EGL Programs can cause performance problems.",
+    "reference": "Standard suggestions based on CAST Quality Model",
+    "remediation": "Review the query to reduce the number of involved Tables.",
+    "total": "Number of Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

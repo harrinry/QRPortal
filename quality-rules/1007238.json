@@ -1,0 +1,33 @@
+{
+    "id": 1007238,
+    "type": "quality-rule",
+    "name": "Avoid having multiple classes defined in a single file - Symfony STD (PHP)",
+    "href": "quality-rules/1007238.json",
+    "description": "This QR will have violation if multiple classes are defined in a single file.\u00a0\nDefine one class per file - this does not apply to private helper classes that are not intended to be instantiated from the outside and thus are not concerned by the PSR-0 and PSR-4 autoload standards;",
+    "output": "PHP Section having multiple classes defined.",
+    "rationale": "Each class should be in its own file for maintainablity.",
+    "reference": "Symfony2-coding-standard - Author : <Symfony2-coding-standard@escapestudios.github.com> \n\nhttps://github.com/djoos/Symfony2-coding-standard/blob/master/Symfony2/Sniffs/Classes/MultipleClassesOneFileSniff.php",
+    "remediation": "Each class should be in its own file.",
+    "remediationSample": "<?php \n\n                          Class test \n                         { \n                              Public function test(); \n                          } \n                            \n                          ?>",
+    "sample": "<?php \n\n                        Class test \n                         { \n                              Public function test(); \n                          } \n                            \n                        Class foo \n                         { \n                              Public function foo(); \n                         } \n                          ?>",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id": 3626,
+    "type": "quality-rule",
+    "name": "Avoid Interfaces with a very low comment/code ratio",
+    "href": "quality-rules/3626.json",
+    "associatedValueName": "Associated Value",
+    "description": "Interfaces should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Interfaces with comment/code ratio lower than X %\nIt provides the following information:\n Interface full name, comment/code ratio",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
+    "remediation": "Enrich Artifact code with comments",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        }
+    ]
+}

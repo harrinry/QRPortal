@@ -1,0 +1,29 @@
+{
+    "id": 8400,
+    "type": "quality-rule",
+    "name": "Avoid having lock on this object",
+    "href": "quality-rules/8400.json",
+    "associatedValueName": "Single Value",
+    "description": "This rule detects all objects having lock on this object.",
+    "output": "The rule lists all the artifacts having Lock on this object.",
+    "rationale": "\nSoftware featuring inconsistent locking discipline incurs the risk of deadlock. \nLocking on this or public members is a bad practice because it means the class loses control over the lock. Any other class could use the instance or the public member for synchronization, and impair scalability (best case) or create deadlocks (worst case).",
+    "reference": "https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/lock-statement\nCISQ - ASCSMCWE667",
+    "remediation": "Review and refactor the source code.",
+    "sample": "class Account\n{\n    decimal balance;\n\n\n    public void Withdraw(decimal amount)\n    {\n        lock (this)\n        {\n            if (amount > balance)\n            {\n                throw new Exception(\"Insufficient funds\");\n            }\n            balance -= amount;\n        }\n    }\n}",
+    "total": "Number of artifacts",
+    "businessCriteria": [
+        
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        }
+    ]
+}

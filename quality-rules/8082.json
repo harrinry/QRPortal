@@ -1,0 +1,48 @@
+{
+    "id": 8082,
+    "type": "quality-rule",
+    "name": "Avoid Tables without Primary Key",
+    "href": "quality-rules/8082.json",
+    "associatedValueName": "Associated Value",
+    "description": "This metric displays the list of tables without Primary key constraints",
+    "output": "This report lists all tables without a primary key defined. it provides the following information:\n- full name",
+    "rationale": "In relational database design, a candidate key is just a unique identifier.  Next a primary key is a candidate key that's been singled out  to uniquely identify each row in a table. \nA unique key or primary key comprises a single column or set of columns. No two distinct rows in a table can have the same value (or combination of values) in those columns. \n\nDepending on its design, a table may have arbitrarily many unique keys but at most one primary key.\n\n=> Primary keys are defined in the ANSI SQL Standard, through the PRIMARY KEY constraint.",
+    "remediation": "Appy referential integrity through constraint::",
+    "remediationSample": "ALTER TABLE <table identifier> \n      ADD [ CONSTRAINT <constraint identifier> ] \n      PRIMARY KEY ( <column expression> {, <column expression>}... )",
+    "sample": "CREATE TABLE table_name (\n     id_col  INT  PRIMARY KEY,\n     col2    CHARACTER VARYING(20),\n     ...\n  )",
+    "total": "Tables of the scoped container (schema or database depending of the DBMS)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

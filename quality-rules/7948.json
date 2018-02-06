@@ -1,0 +1,44 @@
+{
+    "id": 7948,
+    "type": "quality-rule",
+    "name": "Do not mix Ansi joins syntax  with Oracle proprietary joins syntax in the same query",
+    "href": "quality-rules/7948.json",
+    "associatedValueName": "Associated Value",
+    "description": "List all statements that include join clause(s) defined with both Oracle proprietary notation & ANSI join notation",
+    "output": "This report lists all queries using  mix of both ANSI & proprietary syntax notation.",
+    "rationale": "ANSI syntax allow a clear separation between joins clause and the where clause restrictions.  The ANSI notation makes the relations between the tables explicit, and saves you from coding equality tests for join conditions in the WHERE clause. \nThus the mix of both join notations makes the readability & maintainability of the code more complex. Moreover ANSI joins allows having optimization hints. And last, this historic syntax notation will probably be deprecated in a future release",
+    "reference": "Oracle  SQL Student Guide Volume 1",
+    "remediation": "Transform the queries including the two different notations  with  only the use of the ANSI syntax\n\n As a consequence Reconsider tthe statement. For that  check the business rule(s) to fully understand the objective of the statement in term of result set. Use ANSI Join syntax notation to rewrite the part of the code.",
+    "remediationSample": "Select * \nFrom T1 JOIN  T2 \nON T1.c1=T2.c1\nWhere  T1.c2 in \n (select T3.c1 from T4 left outer JOIN T3 on T3.c4=T4.c4)",
+    "sample": "Select *\nFrom T1, T2\nWhere\nT1.c1=T2.c1 AND\n T1.c2 in \n (select T3.c1 from T4 left outer JOIN T3 on T3.c4=T4.c4)",
+    "total": "LINBERGH_PLUS",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        }
+    ]
+}

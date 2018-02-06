@@ -1,0 +1,37 @@
+{
+    "id": 1009070,
+    "type": "quality-rule",
+    "name": "Avoid using NOT IN  (RPG300)",
+    "href": "quality-rules/1009070.json",
+    "description": "This rule searches all the artifacts using NOT IN.",
+    "output": "This report lists RPG300 programs using NOT IN.\nIt provides the following information:\nRPG300 Program full name",
+    "rationale": "Use of 'NOT IN' keyword slows down the query",
+    "remediation": "Queries should not use 'NOT IN' keywords in WHERE clause",
+    "remediationSample": "Use outer join and check for null:\nSELECT c.CustomerID \nFROM Sales.Customer AS c\nLEFT OUTER JOIN Sales.SalesOrderHeaderEnlarged AS h\nON c.CustomerID = h.CustomerID\nWHERE h.CustomerID IS NULL;",
+    "sample": "SELECT CustomerID \nFROM Sales.Customer \nWHERE CustomerID NOT IN \n(\n  SELECT CustomerID \n  FROM Sales.SalesOrderHeaderEnlarged\n);",
+    "total": "Total number of RPG300 Programs",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1009000,
+            "name": "RPG300",
+            "href": "technologies/1009000.json"
+        }
+    ]
+}

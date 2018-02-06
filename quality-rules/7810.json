@@ -1,0 +1,111 @@
+{
+    "id": 7810,
+    "type": "quality-rule",
+    "name": "Avoid Artifacts with a Complex SELECT Clause",
+    "href": "quality-rules/7810.json",
+    "associatedValueName": "Associated Value",
+    "description": "Avoid Artifacts with a SELECT clause returning more than 9 columns, with a 'SELECT *' query or with a 'SELECT ALL' query for Artifacts. Such queries are considered complex. Changing threshold value requires the update of an internal configuration file, please contact CAST support to get guidance.",
+    "output": "This report lists all Artifacts, except Views, with SELECT statements returning too many or all columns.\nIt provides the following information:\n- Artifact full name",
+    "rationale": "Complex select clauses, i.e select clauses with many column can be difficult to read and does not help the reader who needs to identify the relevant columns to be retrieved.\nAlso a query that retrieves many columns can potentially cause performance problems:\nSuch performance problems may arise when the execution of the query returns a large result sets (many row with many colums may then become a huge amount of data to transport over the network).",
+    "remediation": "Review the SELECT statement to reduce the number of selected columns.",
+    "total": "Number of Artifacts using SQL objects (except tables & views)",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "technologies/-9.json"
+        },
+        {
+            "id": -8,
+            "name": "PowerBuilder",
+            "href": "technologies/-8.json"
+        },
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

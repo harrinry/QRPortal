@@ -1,0 +1,31 @@
+{
+    "id": 580,
+    "type": "quality-rule",
+    "name": "Avoid using Structures",
+    "href": "quality-rules/580.json",
+    "associatedValueName": "C++ Structure",
+    "description": "This rule searches for C++ code using structures.",
+    "output": "Associated to each C++ Method/Constructor/Destructor with violations, the Quality Rule provides:\n- The Structure used",
+    "rationale": "Structures should not be used. Using Structures is against Object Oriented encapsulation principles because it exposes its Members to anyone, without any possible control.",
+    "remediation": "Consider creating a Class encapsulating the Structure",
+    "total": "Number of C++ methods, constructors, and destructors",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ]
+}

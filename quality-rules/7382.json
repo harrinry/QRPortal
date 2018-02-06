@@ -1,0 +1,34 @@
+{
+    "id": 7382,
+    "type": "quality-rule",
+    "name": "Avoid Validator field without Form Field",
+    "href": "quality-rules/7382.json",
+    "associatedValueName": "Form Field Name",
+    "description": "This metric reports form validator with all their unused form field validator. Note that it can be related to a form name or an action name (in the case of a form shared among different actions)",
+    "output": "This report lists all validator form with fields that are not related to a form bean field. It provides the following information:\n  - Validation Form\n  - Form Field",
+    "rationale": "When a validation form field is not associated to a form field, this indicate that the validation logic is not properly maintained and can result in a weakness.\nInput validation is required to secure an application. Moreover, the web interface is exposed to anyone. Non validating input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like erasing the content of a database.",
+    "reference": "http://cwe.mitre.org/data/definitions/110.html",
+    "remediation": "Update the validation.xml's entries according to the form used in your application and review the validation logic of the form.",
+    "remediationSample": "----> validation.xml:\n\n<form-validation>\n  <formset>\n    <form name=\"logonForm\">\n      <field property=\"username\" \n            depends=\"required\">\n        <arg0 key=\"prompt.username\"/>\n      </field>\n      <field property=\"password\" \n            depends=\"required\">\n        <arg0 key=\"prompt.password\"/>\n      </field>\n     // FIXED: passphrase has been removed\n    </form>\n  </formset>\n</form-validation>",
+    "sample": "====>  For concrete Form Bean\n\n--> logonForm.java (for concrete Form Bean) :\npublic class LogonForm extends ValidatorForm {\n  private String username;\n  private String password;\n  \n  public String getUsername() {\n    return username;\n  }\n  \n  public void setUsername(String username) {\n    this.username = username;\n  }\n\n  public String getPassword() {\n    return password;\n  }\n\npublic void setPassword(String password) {\n    this.password = password;\n  }\n}\n\n--> struts-config.xml (for concrete Form Bean)\n<form-beans>\n  <form-bean name=\"logonForm\"\n            type=\"com.cast.struts.sample.LogonForm\"/>\n</form-beans>\n\n====>  for dynamic Form Bean\n\n--> struts-config.xml (for dynamic Form Bean)\n<form-beans>\n  <form-bean name=\"logonForm\"\n            type=\"org.apache\n.struts.validator.DynaValidatorForm\">\n    <form-property name=\"username\"\n            type=\"java.lang.String\"/>\n    <form-property name=\"password\"\n            type=\"java.lang.String\"/>\n  </form-bean>\n</form-beans>\n\n====>  for both dynamic and concrete Form Bean\n\n----> validation.xml:\n\n<form-validation>\n  <formset>\n    <form name=\"logonForm\"> \n      <field property=\"username\" \n            depends=\"required\">\n        <arg0 key=\"prompt.username\"/>\n      </field>\n      <field property=\"password\"\n            depends=\"required\">\n        <arg0 key=\"prompt.password\"/>\n      </field>\n      <field property=\"passphrase\" // VIOLATION\n            depends=\"required\">\n        <arg0 key=\"prompt.passphrase\"/>\n      </field>\n    </form>\n  </formset>\n</form-validation>",
+    "total": "total of form validated  or 0 if no object of type \"Validation Configuration File\" is present",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

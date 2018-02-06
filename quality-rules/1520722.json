@@ -1,0 +1,39 @@
+{
+    "id": 1520722,
+    "type": "quality-rule",
+    "name": "Siebel: Defining Ancestry of Custom Business Components",
+    "href": "quality-rules/1520722.json",
+    "description": "Reports the Buscomp that do not have this property or have it switch to off",
+    "output": "This rule reports Business Components not defining the Ancestry",
+    "rationale": "The Upgrade Ancestor property allows copied objects (of types Applet, Business Component, Report, and Integration Object) to inherit properties of the original objects from which they were copied. During an upgrade, changes applied to the original objects are also applied to copied objects.",
+    "total": "Number of added Business Components",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1520000,
+            "name": "Siebel",
+            "href": "technologies/1520000.json"
+        }
+    ]
+}

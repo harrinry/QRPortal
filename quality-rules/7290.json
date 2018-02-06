@@ -1,0 +1,42 @@
+{
+    "id": 7290,
+    "type": "quality-rule",
+    "name": "Avoid unreferenced Sections and Paragraphs",
+    "href": "quality-rules/7290.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs containing sections or paragraphs that are not called. A section or a paragraph is not called when:\n- there is no GO TO statement that refers to it\n- there is no PERFORM statement that refers to it\n- there is no fall through logic in which it is involved\n\nHowever, sections for which all statements are attached to a paragraph are excluded from the list of objects violating this rule.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Section or paragraph that is not executed",
+    "rationale": "Unreferenced Sections and Paragraph may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis).",
+    "remediation": "Check if the Artifact is truly unnecessary. Then remove Artifacts that are not used.",
+    "sample": "PROCEDURE DIVISION.\n      * Called by PROCEDURE DIVISION\n       MAIN SECTION.\n       PROCESS.\n           PERFORM PROC-01.\n           PERFORM PROC-02 THRU PROC-04.\n           IF A > 2 THEN \n               GO TO PROC-7.\n           END-IF\n\n      * Called by fall thru and PROC-8 (GOTO)\n       END-PROCESS.\n           GOBACK.\n\n      * Called by PROCESS (PERFORM)\n       PROC-01.\n           IF A = 10 THEN\n               PERFORM PROC-06\n           END-IF\n\n      * Called by PROCESS (PERFORM THRU)\n       PROC-02.\n           MOVE 1 TO A.\n\n      * Called by PROCESS (FALL THRU)\n       PROC-03.\n           ADD 5 TO A.\n\n      * Called by PROCESS (FALL THRU)\n       PROC-04.\n           EXIT.\n\n      **** This paragraph is never called\n       PROC-05.\n           MOVE \"PGM02\" TO PGM-NAME.\n\n      * Called by PROC-01 (PERFORM)\n       PROC-06.\n           MOVE \"PGM\" TO PGM-NAME.\n\n      * Called by PROCESS (GOTO)\n       PROC-7.\n           IF A > 2 THEN\n               MOVE 0 TO A.\n           END-IF\n\n      * Called by fall thru\n       PROC-8.\n           GO TO END-PROCESS.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

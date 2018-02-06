@@ -1,0 +1,40 @@
+{
+    "id": 2238,
+    "type": "quality-rule",
+    "name": "Avoid unreferenced JSPs and web client files",
+    "href": "quality-rules/2238.json",
+    "associatedValueName": "Associated Value",
+    "description": "All Pages and web client files (java script, html, css ...) should be referenced. An unreferenced Artifact is an Artifact that is not explicitly called from within the analyzed code.",
+    "output": "This report lists all unreferenced JSP pages and web client files\nIt provides the following information: \n - Page name or client file name (html, js, css...)",
+    "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
+    "remediation": "Check if the Artifact is truly unnecessary. Remove Artifacts that are not used.",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

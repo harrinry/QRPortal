@@ -1,0 +1,35 @@
+{
+    "id": 1007012,
+    "type": "quality-rule",
+    "name": "Avoid using embedded CSS in Web Pages (PHP)",
+    "href": "quality-rules/1007012.json",
+    "description": "This rule searches for all the PHP Files that are not linked to a css style sheet and instead contain hardcoded style definitions. Style sheets (*.css) should be used instead of hardcoded style definitions.",
+    "output": "This report lists all PHP Files with hardcoded style definitions and no links to a style sheet.\n\nThis QR provides the following information:\nPHP File  full name.",
+    "rationale": "Using style sheets (*.css) instead of hardcoded style definitions improves redeability and is less costly to maintain.",
+    "remediation": "Modify the source code to reduce the number of  web pages with hardcoded style definitions and no link to a css style sheet.",
+    "total": "Number of PHP Files",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

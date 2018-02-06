@@ -1,0 +1,35 @@
+{
+    "id": 1012024,
+    "type": "quality-rule",
+    "name": "Avoid use of OPNQRYF  (CL400)",
+    "href": "quality-rules/1012024.json",
+    "description": "This rule searches for CL400 programs which use the OPNQRYF command.",
+    "output": "This report lists all CL400 programs using OPNQRYF.\nIt provides the following information:\n- CL400 program full name",
+    "rationale": "As the OPNQRYF command has to process the query every time it is called, this can impact the performance of the calling program.",
+    "remediation": "If the selection criterion does not change often, then it is better to use Logical Files.",
+    "total": "Number of CL400 Programs",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1012000,
+            "name": "CL400",
+            "href": "technologies/1012000.json"
+        }
+    ]
+}

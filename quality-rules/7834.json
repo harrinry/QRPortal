@@ -1,0 +1,56 @@
+{
+    "id": 7834,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Interfaces",
+    "href": "quality-rules/7834.json",
+    "associatedValueName": "Associated Value",
+    "description": "Interfaces must be documented. Documenting interfaces is extremely important as the interfaces define a contract that will be implemented and used by others.\nThis rule reports all the interfaces with no comments.",
+    "output": "This report lists all interfaces that are not documented.\nIt provides the following information:\nInterface full name",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact.",
+    "remediation": "Add comments into interface defintion to explain what is their goal and how they work.",
+    "total": "Number of Interfaces",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        }
+    ]
+}

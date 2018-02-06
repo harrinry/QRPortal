@@ -1,0 +1,106 @@
+{
+    "id": 7860,
+    "type": "quality-rule",
+    "name": "Avoid unreferenced Functions",
+    "href": "quality-rules/7860.json",
+    "associatedValueName": "Associated Value",
+    "description": "Reports all Functions that are not referenced except main.\n\nNotes: \n- JavaScript eventHandler are not taken in account.\n- PL/SQL stored procedures are taken in account.",
+    "output": "This report lists all unreferenced Functions\nIt provides the following information:\n  Function full name.",
+    "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis).",
+    "remediation": "Check if the Function is truly unnecessary.\nRemove Functions that are not used.",
+    "total": "Number of functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -19,
+            "name": "ASP",
+            "href": "technologies/-19.json"
+        },
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "technologies/-9.json"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "technologies/138663.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        },
+        {
+            "id": 1101000,
+            "name": "SQLAnalyzer",
+            "href": "technologies/1101000.json"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "id": 7896,
+    "type": "quality-rule",
+    "name": "Avoid using Cursors",
+    "href": "quality-rules/7896.json",
+    "associatedValueName": "Associated Value",
+    "description": "Avoid using Cursors",
+    "output": "This report lists all uses of Cursors",
+    "rationale": "Cursors are not efficient.",
+    "remediation": "Prefer using ensemblist queries",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

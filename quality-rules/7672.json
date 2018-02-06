@@ -1,0 +1,41 @@
+{
+    "id": 7672,
+    "type": "quality-rule",
+    "name": "Avoid using EXIT statement in Include",
+    "href": "quality-rules/7672.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This metric retrieves all include files containing EXIT statements. The metric does not take into account EXIT used inside a loop.",
+    "output": "Associated to each ABAP Include with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "For maintenability reasons, it is better to avoid using the EXIT statement in includes. If a program references such an include and if developers did not see the EXIT statements, then blocks could be terminated unexpectedly or the program could stop prematurely.",
+    "remediation": "Use EXIT statements in programs that call the include and remove these statements from include. It could be better to use return codes and to let the calling code managing the exit.",
+    "total": "Number of ABAP Includes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

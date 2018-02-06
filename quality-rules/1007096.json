@@ -1,0 +1,33 @@
+{
+    "id": 1007096,
+    "type": "quality-rule",
+    "name": "Avoid ELSEIF statements. ELSE and IF should be separate (PHP)",
+    "href": "quality-rules/1007096.json",
+    "description": "This rule searches for all the Functions and Methods containing ELSEIF statements.",
+    "output": "\"This report lists all Methods and Functions containing ELSE IF statements.\n\nThis QR provides the following information:\nMethods and Function full name.\"",
+    "rationale": "For readability reasons, ELSE and IF should be used instead of ELSEIF.",
+    "reference": "Code Sniffer  - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_ControlStructures_ElseIfDeclarationSniff.html",
+    "remediation": "Modify the source code to replace ELSEIF statements in Functions and Methods with ELSE IF.",
+    "remediationSample": "\"<?php\nif ($a > $b)\n{\n    echo \"\"a is bigger than b\"\";\n}\nelse {\nif ($a == $b) {\n    echo \"\"a is equal to b\"\";\n}\nelse {\n    echo \"\"a is smaller than b\"\";\n}\n}\n?>\n\"",
+    "sample": "\"//\u2026.\nif ($a > $b) {\n    echo \"\"a is bigger than b\"\";\n} elseif ($a == $b) {\n    echo \"\"a is equal to b\"\";\n} else {\n    echo \"\"a is smaller than b\"\";\n}\n\n\"",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

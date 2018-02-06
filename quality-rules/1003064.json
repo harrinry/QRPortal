@@ -1,0 +1,29 @@
+{
+    "id": 1003064,
+    "type": "quality-rule",
+    "name": "Avoid imports from the same package (Flex)",
+    "href": "quality-rules/1003064.json",
+    "description": "adobe.ac.pmd.rules.style.ImportFromSamePackageRule",
+    "rationale": "Imports from the same package are not necessary",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "package adobe.ac\n{\n   import adobe.ac.MyModel; // VIOLATION HERE\n   public class BigModel   \n   {\n      public var model : MyModel = null;\n   }\n}",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": 1007182,
+    "type": "quality-rule",
+    "name": "Avoid using double quote for long strings without variables (PHP)",
+    "href": "quality-rules/1007182.json",
+    "description": "This rule searches all the Methods, Functions and PHP sections having string with double quotes and without an variable.",
+    "output": "This report lists all the Methods, Functions and PHP Sections containing strings with double quotes and without any variable.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "For the strings using double quotes PHP do some extra processing in order to detect if the string contains any variables.So in this case, echo \u2018This is long string\u2019 . $name is faster then echo \u201cThis is long string $name\u201d. Concatenation with single quotes is faster and   for example for echo \u2018This is long string\u2019 , $name, is faster because it does not require any string manipulation.So always prefer single quotes for the strings if you do not use variable in your string.",
+    "remediation": "Try to reduce the number of string having double quotes and replace them by strings with simple quotes.",
+    "remediationSample": "<?php\n$variable='This variable contains a  long string. that is way it is better to use simple quote'; //Violation removed\n\n?>",
+    "sample": "<?php\n$variable=\"This variable contains a  long string. that is way it is better to use simple quote\"; // VIOLATION\n\n?>",
+    "total": "Number of Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

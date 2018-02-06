@@ -1,0 +1,44 @@
+{
+    "id": 2576,
+    "type": "quality-rule",
+    "name": "Avoid Variables declared as Variants",
+    "href": "quality-rules/2576.json",
+    "associatedValueName": "Associated Value",
+    "description": "Declaration of a variable should not be like : Dim var as Variant",
+    "output": "This report lists all declarations of a variable like : Dim var as Variant",
+    "rationale": "Avoid variants when possible. They are slow, and they consume memory. If you use variant instead of, say, integer you waste 14 bytes of memory. This can be significant in a large project. Integers are much faster than variants. This is true particularly in For..Next loops\n\nAlso if you plan to upgrade to VB.NET, variant are not supported.",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "technologies/-9.json"
+        }
+    ]
+}

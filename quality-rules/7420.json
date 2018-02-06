@@ -1,0 +1,65 @@
+{
+    "id": 7420,
+    "type": "quality-rule",
+    "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
+    "href": "quality-rules/7420.json",
+    "associatedValueName": "Associated Value",
+    "description": "This metric retrieves all SQL artifacts with a query using implicit type conversion.",
+    "output": "Associated to each artifact with violations, the Quality Rule provides: \nName of the column (first column involved in a type conversion).",
+    "rationale": "A query using implicit type conversion usually introduces performance issues into an application as well as classical data conversion issues such as date to string conversion.",
+    "total": "The total procedure counts the number of SQL Artifacts using Tables.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

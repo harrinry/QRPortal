@@ -1,0 +1,37 @@
+{
+    "id": 1007130,
+    "type": "quality-rule",
+    "name": "Avoid Methods exceeding maximum length (PHP)",
+    "href": "quality-rules/1007130.json",
+    "description": "This rule searches for all the Methods exceeding the maximum length.\nA method is violating the rule when having more than 100 lines of code",
+    "output": "\"This report lists all the Methods exceeding the maximum length.\n\nThis QR provides the following information:\nMethod  full name.\"",
+    "rationale": "If a Method exceeds the maximum length this usually indicates that the class is doing too much and will therefore be difficult to understand and maintain.",
+    "reference": "PHPMD http://phpmd.org/rules/codesize.html#excessivemethodlength",
+    "remediation": "Modify the source code of the method to reduce the length.",
+    "sample": "\"class ClassTest\n{\npublic function doSomething()\n {\n  print(\"\"function doSomething() \"\" . PHP_EOL);\n  print(\"\"function doSomething() \"\" . PHP_EOL);\n  // 99 copies omitted for brevity.\n }\n}\"",
+    "total": "Number of Methods",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

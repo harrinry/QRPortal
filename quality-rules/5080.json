@@ -1,0 +1,36 @@
+{
+    "id": 5080,
+    "type": "quality-rule",
+    "name": "Avoid Procedure Paragraphs that contains no statements",
+    "href": "quality-rules/5080.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs containing empty paragraphs.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Empty paragraph",
+    "rationale": "For maintainability aspect, avoid procedure paragraphs that contains no statements",
+    "remediation": "Check if the paragraph is referenced. If yes, then see why this empty paragraph is called. Otherwise remove it.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

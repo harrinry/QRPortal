@@ -1,0 +1,31 @@
+{
+    "id": 1600724,
+    "type": "quality-rule",
+    "name": "PeopleSoft: All new message channel must be into a permission list",
+    "href": "quality-rules/1600724.json",
+    "description": "Objects (Message Channel) created by the project should be at least in one permission list (AuthChnlMon)",
+    "output": "This report lists all the Message Chanels not in a permission list",
+    "rationale": "To give access to the object, it must be referenced by a permission list",
+    "reference": "3.0",
+    "remediation": "Check the design of the permission lists and add the object to the corresponding one",
+    "total": "Number of PeopleSoft Message channels (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

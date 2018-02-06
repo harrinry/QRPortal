@@ -1,0 +1,35 @@
+{
+    "id": 1007106,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Sections (PHP)",
+    "href": "quality-rules/1007106.json",
+    "description": "This rule searches for all the undocumented Sections.",
+    "output": "\"This report lists all undocumented Sections.\n\nThis QR provides the following information:\nSection full name.\"",
+    "rationale": "Code maintainability can be improved if there is documentation in the code. This rule will ensure that comments exist in the Section.",
+    "remediation": "Modify the source code to reduce the number of undocumented Sections.",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

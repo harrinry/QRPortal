@@ -1,0 +1,36 @@
+{
+    "id": 5116,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Paragraphs",
+    "href": "quality-rules/5116.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs containing paragraphs without any comment.\n\nNote: Empty paragraphs and paragraphs that contain EXIT verb only are excluded from violation. The EXIT statement does nothing and then cannot be considered as a real statement",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Undocumented paragraph",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact.",
+    "remediation": "Add comments into paragraphs to explain what is their goal and how they work.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

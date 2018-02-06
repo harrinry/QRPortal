@@ -1,0 +1,36 @@
+{
+    "id": 7050,
+    "type": "quality-rule",
+    "name": "Function naming convention",
+    "href": "quality-rules/7050.json",
+    "associatedValueName": "Associated Value",
+    "description": "ABAP Functions should begin with Z. This reports shows all the ABAP Functions not starting with Z. The prefix is a parameter and can be changed at will.",
+    "output": "This report lists all ABAP Functions that does not respect the naming conventions.\nIt provides the following information:\nABAP Function full name",
+    "rationale": "For readability aspects and to respect SAP standard, naming conventions must be respected.",
+    "remediation": "Change name according to the naming convention.",
+    "total": "Number of ABAP Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

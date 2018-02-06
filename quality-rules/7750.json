@@ -1,0 +1,41 @@
+{
+    "id": 7750,
+    "type": "quality-rule",
+    "name": "CWE-91: Avoid XPath injection vulnerabilities",
+    "href": "quality-rules/7750.json",
+    "associatedValueName": "Call stack from user input source down to the target XPath execution method",
+    "description": "Using CAST dataflow engine, this metric detects execution paths from user input methods down to file creation methods, paths which are open vulnerabilities to Operating System injection flaws. \n\nThe list of user input methods can be customized as well as the target methods and the sanitization methods (methods encoding the user input to avoid hacks).",
+    "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target XPath execution method.",
+    "rationale": "In web based applications, the validation of all user input is critical to avoid major security problems that would come from the Injection flaws.\n\nTo avoid the creation of Injection flaws, the Open Web Application Security Project (OWASP) recommends the validation of all user input :\n\"Use a standard input validation mechanism to validate all input data for length, type, syntax, and business rules before accepting the data to be displayed or stored. Use an \"accept known good\" validation strategy. Reject invalid input rather than attempting to sanitize potentially hostile data. Do not forget that error messages might also include invalid data\"\n\nThe Common Weakness Enumeration defines Improper Input Validation ( CWE-20 ) as follows :\n\n\"When software does not validate input properly, an attacker is able to craft the input in a form that is not expected by the rest of the application. This will lead to parts of the system receiving unintended input, which may result in altered control flow, arbitrary control of a resource, or arbitrary code execution.\"\n\nThis rule ensures that the appropriate input validation is coded within the same method that called the user input call, making security checking easier for all team members.",
+    "reference": "CWE-91: XML Injection (aka Blind XPath Injection)http://cwe.mitre.org/data/definitions/91.html\n\nOpen Web Application Security Project (OWASP) \nhttp://www.owasp.org/index.php/Top_10_2007",
+    "total": "The number of methods calling user input methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": 5104,
+    "type": "quality-rule",
+    "name": "Avoid large Programs - too many Sections",
+    "href": "quality-rules/5104.json",
+    "associatedValueName": "Number of Sections",
+    "description": "Avoid Programs with more than X Sections.\nThe threshold is a parameter and can be changed at will.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of Sections",
+    "rationale": "For maintainability aspect, COBOL programs with more than 10 Sections",
+    "remediation": "If two sections do the same actions then try to merge them. This can improve the readability, the reusability and maintainability of the code. If it is not possible then try to split the program by extracting its functionalities into subprograms.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

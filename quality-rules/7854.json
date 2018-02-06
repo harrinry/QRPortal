@@ -1,0 +1,64 @@
+{
+    "id": 7854,
+    "type": "quality-rule",
+    "name": "Database table naming convention - prefix control",
+    "href": "quality-rules/7854.json",
+    "associatedValueName": "Associated Value",
+    "description": "For maintainability and readability reasons, names of tables should start with a prefix.\nThis reports shows all the database Tables not starting with the prefix.\n\nThe prefix value is a parameter and can be changed at will.",
+    "output": "This report lists all database tables that does not respect the naming conventions.\nIt provides the following information:\nTable full name",
+    "rationale": "For readability aspects, naming conventions must be respected.",
+    "reference": "Enhancing the Quality of ABAP Development, \nMeijs-Krouwels-Heulmans-Sommen, SAP Press\nISBN 1-59229-030-2",
+    "remediation": "Change name according to the naming convention.",
+    "remediationSample": "Remediation valid for SAP applications :\nThe name should be: ZTORDER or ZT_ORDER.",
+    "sample": "Sample valid for SAP applications :\nThe following name does not respect naming conventions for SAP database tables: ZORDER",
+    "total": "Number of Tables",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -20,
+            "name": "SAP SQL",
+            "href": "technologies/-20.json"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

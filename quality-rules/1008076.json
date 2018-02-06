@@ -1,0 +1,43 @@
+{
+    "id": 1008076,
+    "type": "quality-rule",
+    "name": "Specify Program Status Data Area  (RPG400)",
+    "href": "quality-rules/1008076.json",
+    "description": "This rule searches all the programs not having Specified status Data Area",
+    "output": "This report lists RPG400 programs having Status data Area.\nIt provides the following information:\nRPG400 Program full name",
+    "rationale": "One needs to specify the program status data area to ensure that the error and exceptions raised by the RPG program are made available and can be properly utilized by the application.",
+    "reference": "http://publib.boulder.ibm.com/infocenter/iseries/v5r4/index.jsp?topic=%2Fbooks_web%2Fc092508690.htm",
+    "remediation": "Try to specify Program Status Data Area for every program.",
+    "remediationSample": "D                SDS\n     D PROC_NAME         *PROC\n     D PGM_STATUS        *STATUS\n     D PRV_STATUS             16     20S 0",
+    "sample": "A program status data structure (SDS) can be defined to make program exception/error information available to an RPG program.\nThe SDS must be defined in the main source section; therefore, there is only one SDS per module.\n\n     D PROC_NAME         *PROC\n     D PGM_STATUS        *STATUS\n     D PRV_STATUS             16     20S 0",
+    "total": "Total number of RPG400 Programs",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1008000,
+            "name": "RPG400",
+            "href": "technologies/1008000.json"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "id": 3082,
+    "type": "quality-rule",
+    "name": "Avoid ASP pages having a very low Comment/Code ratio",
+    "href": "quality-rules/3082.json",
+    "associatedValueName": "Associated Value",
+    "description": "Pages should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all pages with comment/code ratio lower than X %\nIt provides the following information:\n Page name, Page full name, comment/code ratio",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
+    "remediation": "Enrich Artifact code with comments",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -19,
+            "name": "ASP",
+            "href": "technologies/-19.json"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "id": 1020016,
+    "type": "quality-rule",
+    "name": "Avoid using too much dot notation in loop",
+    "href": "quality-rules/1020016.json",
+    "description": "List all JavaScript file, HTML file or function that reference more than 2 times the same variable name with more than one dot.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Every time the interpreter encounters a dot character, it will look up the child variable against the parent. For example, var hourHand=myGrandFather.clock.hands.hour make three lookup. When used too much in a loop, dot notation can affect performance of a javascript function. Reducing the dotation usage can win 50% of the time consumed by this function.",
+    "reference": "AJAX in Action - Manning - ISBN 1-932394-61-3 page 296",
+    "remediation": "Use intermediate variable to minimize the number of dot within the loop.",
+    "remediationSample": "for (var i=0;i<data;i+=1){ \n  var hands = myGrandFather.clock.hands; \n  var hourHand=hands.hour; \n  var minuteHand=hands.minute; \n  var secondHand=hands.second; \n  ... \n}",
+    "sample": "for (var i=0;i<data;i+=1){ \n  var hourHand=myGrandFather.clock.hands.hour; \n  var minuteHand=myGrandFather.clock.hands.minute; \n  var secondHand=myGrandFather.clock.hands.second; \n  ... \n} // VIOLATION \"myGrandFather.clock.hands\" has been referenced more than 2 times",
+    "total": "Number of Javascript Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

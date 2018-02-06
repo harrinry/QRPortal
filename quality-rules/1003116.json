@@ -1,0 +1,28 @@
+{
+    "id": 1003116,
+    "type": "quality-rule",
+    "name": "Avoid class (in script) with too many fields (Flex)",
+    "href": "quality-rules/1003116.json",
+    "description": "Rule detects scripts defining more than 5 fields.",
+    "rationale": "Classes that have too many fields could be redesigned to have fewer fields, possibly  through some nested object grouping of some of the information.  For example, a class with  city/state/zipcode fields could instead have one Address field.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

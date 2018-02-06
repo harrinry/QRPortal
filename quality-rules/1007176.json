@@ -1,0 +1,36 @@
+{
+    "id": 1007176,
+    "type": "quality-rule",
+    "name": "Avoid using break statement in FOR loops (PHP)",
+    "href": "quality-rules/1007176.json",
+    "description": "This rule searches for all Methods and Functions containing a break statement in a FOR loop.",
+    "output": "\"This report lists all the Methods and Functions containing a break statement in a FOR loop.\n\nThis QR provides the following information:\nMethod and Function  full name.\"",
+    "rationale": "In the source code a FOR loop must be easy to read. Using break statements in FOR loops makes them much more difficult to read.",
+    "remediation": "Try to remove the 'break' statements from the loop and to manage the end-of-loop within the loop condition part.",
+    "sample": "\"   for (int $i = 0; $i < 10; $i++) {\n         if (true) {\n             break; // Violation\n         }\n\"",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

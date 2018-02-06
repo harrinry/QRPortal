@@ -1,0 +1,39 @@
+{
+    "id": 8128,
+    "type": "quality-rule",
+    "name": "Avoid using UPDATE and DELETE without WHERE condition",
+    "href": "quality-rules/8128.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for artifacts accessing database tables in modification without any WHERE condition.\nNote: The rule is applicable in SAP HANA context.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation patterns found in source code",
+    "rationale": "For systems running on HANA, SAP recommends to keep the result sets small. Executing Open SQL queries without any condition leads to database table full scan and will decrease the performance of application programs.",
+    "reference": "SAP - Considerations for Custom ABAP Code When Migrating to SAP HANA - Best Practices and Recommendations",
+    "remediation": "Add conditions in WHERE clause to make the result set as lower as possible.",
+    "remediationSample": "data: ld_ebeln type ekko-ebeln.\nupdate EKKO set ERNAM = sy-uname\n where ebeln = ld_ebeln.",
+    "sample": "data: ld_ebeln type ekko-ebeln.\nupdate EKKO set ERNAM = sy-uname.",
+    "total": "Number of ABAP Artifacts containing OpenSQL",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

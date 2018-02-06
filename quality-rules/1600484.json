@@ -1,0 +1,41 @@
+{
+    "id": 1600484,
+    "type": "quality-rule",
+    "name": "PeopleSoft : Create all new Record Table in a specific tablespace",
+    "href": "quality-rules/1600484.json",
+    "associatedValueName": "Tablespace",
+    "description": "Create new record in tablespaces : TAB_<KEY>DATA_XL for specific data tables \nAll projects on OneCRM ersion must use tablespaces with <KEY> = KL",
+    "rationale": "In order to better identify the amount of datas in specific table, all new record should be created in specific tablespaces",
+    "reference": "2.3",
+    "remediation": "In application designer, before building the table, goto the menu Tools/Data Administration/Set TableSpace and choose the right one. This rule needed that the right tablespace exist in the database, if not contact the DBA",
+    "total": "Number of PeopleSoft Record Table (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

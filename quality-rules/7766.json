@@ -1,0 +1,142 @@
+{
+    "id": 7766,
+    "type": "quality-rule",
+    "name": "Avoid Artifacts with High Cyclomatic Complexity",
+    "href": "quality-rules/7766.json",
+    "associatedValueName": "Associated Value",
+    "description": "Retrieves all Artifacts having a Cyclomatic Complexity greater than the specified threshold . Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Artifacts with a Cyclomatic Complexity greater than X.It provides the following information:  Artifact full name, CC",
+    "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. \nAnalyzability declines with increasing Cyclomatic Complexity. \nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nChangeability declines with increasing Cyclomatic Complexity. \nComplete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nTestability declines with increasing Cyclomatic Complexity.",
+    "reference": "Carnegie Mellon's Software Engineering Institute on Cyclomatic Complexity\nhttp://www.sei.cmu.edu/reports/95cm028.pdf\n\nNIST (National Institute of Standards and Technology)\nStructured Testing: A Testing Methodology Using the Cyclomatic Complexity Metric\nhttp://hissa.nist.gov/HHRFdata/Artifacts/ITLdoc/235/sttoc.htm",
+    "remediation": "Review the design of the Artifact to reduce number of independent paths. E.g.: Reduce the number of conditional statements.",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -19,
+            "name": "ASP",
+            "href": "technologies/-19.json"
+        },
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "technologies/-9.json"
+        },
+        {
+            "id": -8,
+            "name": "PowerBuilder",
+            "href": "technologies/-8.json"
+        },
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "technologies/138663.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        },
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        },
+        {
+            "id": 1101000,
+            "name": "SQLAnalyzer",
+            "href": "technologies/1101000.json"
+        }
+    ]
+}

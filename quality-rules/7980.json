@@ -1,0 +1,49 @@
+{
+    "id": 7980,
+    "type": "quality-rule",
+    "name": "Avoid using strtrns() function",
+    "href": "quality-rules/7980.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C/C++ functions, methods, constructors, and destructors that call the 'strtrns()' function.",
+    "output": "Associated to each C/C++ function/method/constructor/destructor with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - 'strtrns()' function call",
+    "rationale": "The 'strtrns()' function is considered as risky in terms of security because it is possible to overflow the target buffer. If the source buffer is larger than the target buffer, then an overflow will occur.",
+    "reference": "Build Security In (https://buildsecurityin.us-cert.gov/bsi/articles/knowledge/coding)",
+    "remediation": "In case of static buffer, insert buffer overflow detection code before calling the function. Otherwise you can use 'malloc()' to create a dynamic buffer adjusted to the input buffer size.",
+    "remediationSample": "void foo(char *curString)\n{\n  char *newString;\n  newString = (char *)malloc(strlen(curString));\n  strtrns(curString, oldpattern, newpattern, newString);\n}",
+    "sample": "void foo(char *curString)\n{\n  char newString[20];\n  strtrns(curString, oldpattern, newpattern, newString);\n}",
+    "total": "Number of C/C++ functions, constructors, destructors, and methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

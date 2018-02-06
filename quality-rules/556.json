@@ -1,0 +1,36 @@
+{
+    "id": 556,
+    "type": "quality-rule",
+    "name": "Macros naming convention - case control",
+    "href": "quality-rules/556.json",
+    "associatedValueName": "Macro name",
+    "description": "This rule searches for C/C++ macros that do not respect the naming conventions. \n\nNote: Macro names should be in uppercase characters.",
+    "output": "Associated to each C/C++ macro with violations, the Quality Rule provides:\n- macro name",
+    "rationale": "For readability aspects, naming conventions must be respected",
+    "remediation": "Change name according to the naming convention",
+    "total": "Number of C/C++ macros",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ]
+}

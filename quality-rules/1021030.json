@@ -1,0 +1,43 @@
+{
+    "id": 1021030,
+    "type": "quality-rule",
+    "name": "Avoid hardcoded network resource names",
+    "href": "quality-rules/1021030.json",
+    "associatedValueName": "Single Value",
+    "description": "Reports all Python artifacts harcoding network resources that do not partain to configuration, installation, or test files. This rule is compliant with OMG CISQ ASCRM-RLB-18 recommendation.",
+    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "rationale": "Built-in remote addresses cause problems when the target is moved. Avoid hardcoded network resources (e.g., IP addresses, URLs, absolute file paths, etc.) to assure robustness and portability.",
+    "remediation": "Utilize indirect access to network resources using underlaying operating system calls and relative paths. In case hardcoding is necessary, isolating hardcoded data to installation scripts or configuration files can limit its potential negative impact.",
+    "remediationSample": ">>> # \"server_address\" is uploaded from somewhere else\n>>> url = \"http://%s:%d/\" % server_address\n        ",
+    "sample": ">>> url = \"http://0.0.0.0:8080/'",
+    "total": "Python artifacts opening file resources",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1021000,
+            "name": "Python",
+            "href": "technologies/1021000.json"
+        }
+    ]
+}

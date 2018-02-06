@@ -1,0 +1,42 @@
+{
+    "id": 1001108,
+    "type": "quality-rule",
+    "name": "Avoid PLC Copybooks using variables with ALLOCATE and without FREE  (PL1)",
+    "href": "quality-rules/1001108.json",
+    "description": "This rule searches for all the PLC Copybooks having variables being allocated, but not de-allocated using the FREE statement. The diagnostic will report only the mis-behavior on the artifact level in terms of number of variables not de-allocated.",
+    "output": "The report lists all the PLC Copybooks using variables with ALLOCATE and without FREE.\n\nIt provides following information: \n-  PLC Copybooks full name",
+    "rationale": "Not freeing up the memory can lead to performance issues",
+    "remediation": "Free all your allocated variables.",
+    "remediationSample": ".....\nDECLARE X(N) FIXED BIN CTL; \nN=20;\nALLOCATE X;\n.....\nFREE X;",
+    "sample": ".....\nDECLARE X(N) FIXED BIN CTL; \nN=20;\nALLOCATE X;\n....",
+    "total": "Number of PLC Copybooks",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1005000,
+            "name": "PLC",
+            "href": "technologies/1005000.json"
+        }
+    ]
+}

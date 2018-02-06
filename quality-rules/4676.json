@@ -1,0 +1,30 @@
+{
+    "id": 4676,
+    "type": "quality-rule",
+    "name": "Methods must have appropriate JavaDoc @throws tags",
+    "href": "quality-rules/4676.json",
+    "associatedValueName": "Associated Value",
+    "description": "When enforcing the utilization of JavaDoc Comments to document an application, the @throws tags should be used to document the exceptions being thrown by a given Method. The number of exception thrown should match the number of @throws.",
+    "output": "This report lists all Methods not having the appropriate @throws JavaDoc comments.\nThis report provides the following information:\n Method full name",
+    "rationale": "There is no dispute that these comments contribute to a developer's understanding and help a developer write reliable applications more quickly. Without documenting exception thrown it is dififcult for anyone else than the author to guess its purpose and consequences except by looking at the code that is throwing it.",
+    "total": "methods that throw exceptions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

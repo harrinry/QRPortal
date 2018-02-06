@@ -1,0 +1,37 @@
+{
+    "id": 7952,
+    "type": "quality-rule",
+    "name": "Avoid synonym with both private & PUBLIC Definition in PL/SQL context",
+    "href": "quality-rules/7952.json",
+    "associatedValueName": "Associated Value",
+    "description": "This metric retrieves synonyms  that have two definitions: one private and one public",
+    "output": "This report lists all the synonyms with two definitions\nIt provides the following information:\nThe ordered list of all synonyms that have both private & PUBLIC definition. The name of each synonym that is part of  the  full name.",
+    "rationale": "Presence of a synonym with several definitions induces code complexity.",
+    "reference": "Oracle documentation",
+    "remediation": "Reconsider the use of synonym with multiple definitions: One idea could be to rename one of them",
+    "total": "The total procedure counts the number of synonyms that are part of the analyzed source code",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        }
+    ]
+}

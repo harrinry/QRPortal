@@ -1,0 +1,49 @@
+{
+    "id": 7978,
+    "type": "quality-rule",
+    "name": "Avoid using the scanf() function family",
+    "href": "quality-rules/7978.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C/C++ functions, methods, constructors, and destructors that call one of the functions of the 'scanf()' family.\n\nThese functions are:\nscanf(), fscanf(), sscanf(), vscanf(), vsscanf(), and vfscanf().",
+    "output": "Associated to each C/C++ function/method/constructor/destructor with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - 'scanf()' function call",
+    "rationale": "The 'scanf()' functions can lead to buffer overflow if used improperly. They do not have bound checking capability and if the input string is longer than the buffer size, then the characters will overflow into the adjoining memory.",
+    "reference": "Build Security In (https://buildsecurityin.us-cert.gov/bsi/articles/knowledge/coding)",
+    "remediation": "It is possible to avoid buffer overflow by specifying a field width. In this case, you must provide a 'char *' buffer with dynamic allocation and you need to check the field width you specify does not exceed the size of the buffer.",
+    "remediationSample": "#include <stdio.h>\n\nint main()\n{\n  int buf_size = 25;\n  char *my_buf;\n\n  my_buf = (char *) malloc (buf_size);\n\n  printf (\"Enter name\");\n  scanf (\"%20s\", my_buf);\n}",
+    "sample": "int main()\n{\n  char buffer[15]={0};\n  printf(\"Enter name:\");\n  scanf(buffer,\"%s\");\n}",
+    "total": "Number of C/C++ functions, constructors, destructors, and methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

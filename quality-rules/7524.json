@@ -1,0 +1,41 @@
+{
+    "id": 7524,
+    "type": "quality-rule",
+    "name": "Avoid using BREAK or BREAK-POINT statement",
+    "href": "quality-rules/7524.json",
+    "associatedValueName": "Number of BREAK or BREAK-POINT",
+    "description": "This metric retrieves all ABAP Artifacts using the BREAK or BREAK-POINT statement.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of BREAK or BREAK-POINT",
+    "rationale": "BREAK and BREAK-POINT are breakpoints statement: a signal at a particular point in the program that tells the ABAP runtime processor to interrupt processing and start the Debugger. The Debugger is activated when the program reaches this point so this should never happen in production. Such statement must never be used in a production release and thus must not appear in the source code.",
+    "remediation": "Remove or Comment-out the BREAK statement",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

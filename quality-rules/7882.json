@@ -1,0 +1,41 @@
+{
+    "id": 7882,
+    "type": "quality-rule",
+    "name": "Avoid using Native SQL",
+    "href": "quality-rules/7882.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule checks all Abap code containing Native SQL queries. These queries start with EXEC SQL macro.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "Most ABAP programs containing database-specific SQL statements do not run with different databases. If different databases are involved, then use Open SQL. \nOpen SQL (Subset of standard SQL statements), allows you to access all database tables available in the R/3 System, regardless of the manufacturer. Moreover, Open SQL queries are optimized for SAP dictionary. \nUse of Native SQL is highly discouraged by SAP.",
+    "remediation": "Replace Native SQL queries by corresponding Open SQL queries as much as possible.",
+    "total": "Number of Abap artifacts",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

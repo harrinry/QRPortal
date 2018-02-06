@@ -1,0 +1,37 @@
+{
+    "id": 1001172,
+    "type": "quality-rule",
+    "name": "Avoid Programs overriding the *PROCESS statement (PL1)",
+    "href": "quality-rules/1001172.json",
+    "description": "This rule searches for PL1 Main Procedures (Programs) overriding the *PROCESS statement.",
+    "output": "The report lists all the PL1 Main Procedures overriding the *PROCESS statement.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
+    "rationale": "Not using the parameters defined in the procedure will override the standard options of the compiler and can generate unexpected behavior due to inconsistency between  load modules.",
+    "remediation": "Try to reduce the use in programs of the overriding  *PROCESS statements.",
+    "remediationSample": "*PROCESS;",
+    "sample": "*PROCESS TEST1,TEST2",
+    "total": "Number of PL1 Main Procedures.",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

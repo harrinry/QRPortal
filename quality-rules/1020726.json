@@ -1,0 +1,33 @@
+{
+    "id": 1020726,
+    "type": "quality-rule",
+    "name": "Ensure that CSRF Protection is enabled",
+    "href": "quality-rules/1020726.json",
+    "description": "In Node.js, to avoid Cross-Site forgery, you need to activate a csrf module. This rule is compliant with OWASP 2013 and 2017 A8 - Cross-Site Request Forgery (CSRF) and OMG CISQ ASCSM-CWE-079 recommendations",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "CSRF takes advantage the fact that most web apps allow attackers to predict all the details of a particular action. Because browsers send credentials like session cookies automatically, attackers can create malicious web pages which generate forged requests that are indistinguishable from legitimate ones.",
+    "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF) \nhttps://www.owasp.org/index.php/Top_10_2017-A8-Cross-Site_Request_Forgery_(CSRF) \nOMG CISQ ASCSM-CWE-079",
+    "remediation": "Ensure you have enable CSRF module in Express and pass the information to the templates",
+    "remediationSample": "// default csrf library \n\nvar express = require('express'); \nvar app = express(); \napp.use(csrf()); \n\napp.use(function (req, res, next) { \n  res.cookie('XSRF-TOKEN', req.csrfToken()); \n  res.locals.csrftoken = req.csrfToken(); \n  next(); \n}); \napp.use(app.router); \n\napp.listen(3000); \n\n// or example with csurf library \n\nvar csrf = require('csurf') \n// setup route middlewares \nvar csrfProtection = csrf({ cookie: true }) \n\n// create express app \nvar app = express() \n\napp.get('/form', csrfProtection, function (req, res) { \n  // pass the csrfToken to the view \n  res.render('send', { csrfToken: req.csrfToken() }) \n}) \n\n// or example with express-csrf library \n\nvar express = require('express'), \n    csrf = require('express-csrf'); \n\napp = express.createServer(); \n\napp.dynamicHelpers({ \n    csrf: csrf.token \n}); \n\napp.use(express.cookieParser()); \napp.use(express.bodyParser()); \napp.use(express.session()); \napp.use(csrf.check()); \n\napp.listen(3000);",
+    "sample": "var express = require('express'); \nvar app = express(); \n\napp.listen(3000);",
+    "total": "Number of javascript source codes using express",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

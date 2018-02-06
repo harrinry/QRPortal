@@ -1,0 +1,32 @@
+{
+    "id": 1007070,
+    "type": "quality-rule",
+    "name": "Avoid artifacts not checking the ending comments on Methods and Functions (PHP)",
+    "href": "quality-rules/1007070.json",
+    "description": "This rule searches for all Methods and Functions having comments that are not terminated correctly i.e. without an //end comment.",
+    "output": "\"This report lists all Methods and Functions having comments that are not terminated correctly.\n\nThis QR provides the following information:\nMethod and Function full name.\"",
+    "rationale": "Source code comments must be terminated correctly in order to be valid.",
+    "remediation": "Review the comments for all the Methods and Functions in the source code and ensure they are always terminated correctly.",
+    "remediationSample": "\"public function setVariable1($name1, $var1)\n{\n\n//comments\n}//end\"",
+    "sample": "\"public function setVariable1($name1, $var1)\n{\n\n//comments\n}\"",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

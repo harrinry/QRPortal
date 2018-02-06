@@ -1,0 +1,37 @@
+{
+    "id": 7876,
+    "type": "quality-rule",
+    "name": "Avoid using SELECT ... FOR UPDATE",
+    "href": "quality-rules/7876.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule search for SELECT statement using the FOR UPDATE addition.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "Some addition to Open SQL statements automatically bypass the buffer. Bypassing buffer means that SELECT statement will not go to buffered results but always directly to the database. This can impact the performance significantly.",
+    "remediation": "Check if the FOR UPDATE addition is really necessary and use this addition carefully.",
+    "sample": "SELECT employee_name \nFROM employees \nWHERE employee_id = 123 \nFOR UPDATE.",
+    "total": "Number of ABAP Artifacts containing OpenSQL queries.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "id": 7518,
+    "type": "quality-rule",
+    "name": "Avoid missing WHEN OTHERS in CASE statements",
+    "href": "quality-rules/7518.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This metric retrieves all ABAP Artifacts that contain a CASE statement with no or with an empty WHEN OTHERS clause.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "The keyword WHEN OTHERS is executed when none of the conditions being tested for in the CASE statement are met or executed. Having no WHEN OTHERS means that there is a strong assumption about the value of data.\nThe cases that are \"impossible\" today are the ones most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.",
+    "reference": "Enhancing the Quality of ABAP Development, \nMeijs-Krouwels-Heulmans-Sommen, SAP Press\nISBN 1-59229-030-2\nPage 223",
+    "remediation": "Add the proper exception handling code in the WHEN OTHERS clause.",
+    "remediationSample": "Remediation example:\n\nCASE tp_materialtype.\n  WHEN co_materialtype_raw.\n* Handling of material type RAW starts here\n  WHEN co_materialtype_semi.\n* Handling of material type SEMI starts here\n  WHEN OTHERS\n* The exception is caught here\nENDCASE.",
+    "sample": "CASE tp_materialtype.\n  WHEN co_materialtype_raw.\n* Handling of material type RAW starts here\n  WHEN co_materialtype_semi.\n* Handling of material type SEMI starts here\nENDCASE.",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

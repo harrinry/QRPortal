@@ -1,0 +1,42 @@
+{
+    "id": 1007196,
+    "type": "quality-rule",
+    "name": "Avoid using period for echo function (PHP)",
+    "href": "quality-rules/1007196.json",
+    "description": "This rule searches all the methods, functions and PHP Sections having echo function using period.",
+    "output": "This report lists all the Methods, Functions and PHP Sections containing echo function using period.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "When using function Echo with periods, PHP has to concatenate the strings before it outputs and therefore decrease the performance. If instead of using periods, echo function is used with commas, , it just outputs them in order with no extra processing and therefore the performance are much better.",
+    "remediation": "Try and limit the use of echo function using period. Try and used instead the same echo function using commas.",
+    "remediationSample": "<?php\n\necho 'this ', 'string ', 'has', 'been made', 'with several parameters.', chr(10); // Violation removed\n\n?>",
+    "sample": "<?php\n\necho 'this' . 'string' . 'has' . 'been made' . 'using the concatenation' . \"\\n\";      //Violation\n\n?>",
+    "total": "Number of Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

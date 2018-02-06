@@ -1,0 +1,36 @@
+{
+    "id": 1084,
+    "type": "quality-rule",
+    "name": "Non static functions naming conventions - case control",
+    "href": "quality-rules/1084.json",
+    "associatedValueName": "Function name",
+    "description": "This rule searches for non-static C functions that do not respect naming conventions.\n\nNote: Static functions should start with an uppercase character. Symbols such as '_' are to be avoided.",
+    "output": "Associated to each C non-static function with violations, the Quality Rule provides:\n- function name",
+    "rationale": "For readability aspects, naming conventions must be respected.",
+    "remediation": "Change name according to the naming convention",
+    "total": "Number of C static functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        }
+    ]
+}

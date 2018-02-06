@@ -1,0 +1,38 @@
+{
+    "id": 1020008,
+    "type": "quality-rule",
+    "name": "Avoid for-in loop",
+    "href": "quality-rules/1020008.json",
+    "description": "Since each iteration through the loop results in a property lookup either on the instance or on a prototype, the for-in loop has considerably more overhead per iteration and is therefore slower than the other loops. For the same number of loop iterations, a for-in loop can end up as much as seven times slower than the other loop types. For this reason, it's recommended to avoid the for-in loop unless your intent is to iterate over an unknown number of object properties.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "ASCPEM-PRF-04",
+    "reference": "CISQ OMG",
+    "remediation": "Replace the for-in with regular for with index",
+    "remediationSample": "function printArray(arr) { \n    var l = arr.length; \n    for (var i = 0; i < l; i++) { \n        print(arr[i]); \n    } \n}",
+    "sample": "function printArray(arr) { \n    for (var key in arr) { \n        print(arr[key]); \n    } \n}",
+    "total": "Number of Javascript Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

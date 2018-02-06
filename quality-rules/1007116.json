@@ -1,0 +1,36 @@
+{
+    "id": 1007116,
+    "type": "quality-rule",
+    "name": "Avoid Methods with Object Instantiation in loops (PHP)",
+    "href": "quality-rules/1007116.json",
+    "description": "This rule searches for all the Methods with object instantiation in loops.",
+    "output": "\"This report lists all Methods with object instantiations in loops.\n\nThis QR provides the following information:\nSection full name.\"",
+    "rationale": "One of the fundamental OO performance management principles is: avoid excessive object creation. This doesn't mean that you should give up the benefits of object-oriented programming by not creating any objects, but you should be wary of object creation inside tight loops when executing performance-critical code. Object creation is expensive enough that you should avoid unnecessarily creating temporary or intermediate objects in situations where performance is an issue.",
+    "remediation": "Modify the source code to reduce the number of Methods containing object instantiation in loops.",
+    "sample": "\"class ClassTest\n{\n    function test1()\n    {\n        for ($i=0; $i<10; $i++)\n {\n  $bar = new Test;\n  $bar->do_something();\n }\n    }\n}\n\"",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

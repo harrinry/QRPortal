@@ -1,0 +1,36 @@
+{
+    "id": 5572,
+    "type": "quality-rule",
+    "name": "Avoid objects without COMMENT property",
+    "href": "quality-rules/5572.json",
+    "associatedValueName": "Associated Value",
+    "description": "Avoid objects without COMMENT property.\n\nLimitation: if an object group subclass an object library without overriding the COMMENT property the object will be considered as a violation.",
+    "output": "This report lists all object without COMMENT property",
+    "rationale": "Not filling the COMMENT property makes the application harder to maintain over the time.",
+    "remediation": "Fill-in the comment property.",
+    "total": "All Forms artefact with properties",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        }
+    ]
+}

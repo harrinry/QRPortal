@@ -1,0 +1,40 @@
+{
+    "id": 1007190,
+    "type": "quality-rule",
+    "name": "Avoid using relative path (PHP)",
+    "href": "quality-rules/1007190.json",
+    "description": "This rule searches for Methods, Functions and PHP Sections using relatives path without using the constant WEB_ROOT.",
+    "output": "This report lists all the Methods, Functions and PHP Sections containing strings with double quotes and without any variable.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "It is highly advised to try to minimize relative paths for files inclusion. The general mechanism for relative path inclusion will search for default include paths, then continue with current directory then so on. So file search in that case may take more time.\nIf however you need to use relatives path, the better practice is to declare the constant called WEB_ROOT which defines the root.",
+    "remediation": "Try to limit relative path without using the constant WEB_ROOT.",
+    "total": "Number of Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

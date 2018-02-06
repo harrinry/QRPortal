@@ -1,0 +1,40 @@
+{
+    "id": 1018866,
+    "type": "quality-rule",
+    "name": "Avoid Activities with \"SELECT *\" queries (TIBCO BW)",
+    "href": "quality-rules/1018866.json",
+    "description": "This metric retrieves the artifacts containing queries using the \"SELECT *\" statement.",
+    "output": "This QR retrieves all the activies that use SQL statement with \"Select *\".",
+    "rationale": "A query that retrieves all columns of a table with a SELECT * can potentially be the source of important changeability problems. One cannot control how the columns will be ordered and returned to the client. This can lead to important data inconsistencies and thus stability issues. Also performance problems may arise when the execution of the query returns a large result sets (many rows with all the columns may then become a huge amount of data to transport over the network). Thus optimizer module can't provide a correct execution.",
+    "remediation": "Review the design of the query to select only useful Columns",
+    "total": "Number Process Activities",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1018000,
+            "name": "TIBCO",
+            "href": "technologies/1018000.json"
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": 1001118,
+    "type": "quality-rule",
+    "name": "Avoid Programs not using explicitly OPEN and CLOSE files (PL1)",
+    "href": "quality-rules/1001118.json",
+    "description": "This rule searches for PL1 Main Procedures (Programs) not using explicitly OPEN and CLOSE files.",
+    "output": "The report lists all the PL1 Main Procedures  using  OPEN and not using CLOSE for the same file.\n\nIt provides following information: \n-  program full name",
+    "rationale": "Each file used by a program must be properly opened and closed. If the file is not closed explicitly, then data can be lost.",
+    "remediation": "For each programs using files, check if files are closed. If not, then add a CLOSE statement at the end of the program",
+    "remediationSample": "OPEN  FILE (TEST1FILE);\n..\nWRITE FILE(TEST1FILE) FROM(MYSTRUCT);       \n\nCLOSE FILE (TEST1FILE);",
+    "sample": "DCL    TEST1FILE  FILE  RECORD OUTPUT;\n...\n     \nWRITE FILE(TEST1FILE) FROM (MYSTRUCT);       \n...\n/*violation NO OPEN. NO CLOSE */",
+    "total": "Number of PL1 Main Procedures",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

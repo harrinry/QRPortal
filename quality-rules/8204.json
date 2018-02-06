@@ -1,0 +1,30 @@
+{
+    "id": 8204,
+    "type": "quality-rule",
+    "name": "Avoid using NSException raise:format: and raise:format:arguments:",
+    "href": "quality-rules/8204.json",
+    "description": "False information can be injected by an attacker when raising an exception. you need to be careful that your display routines do not process format strings received from the untrusted source.\nThe injection could be done in NSException using the methods\nraise:format and raise:format:arguments: .This rule is compliant with CISQ OMG ASCSM-CWE-134 recommendation and with OWASP 2014-M7 recommendation",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "An attacker could access other user information thanks to string injection through the format method. This is why you have be very careful when using this API.",
+    "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2014-M7\n\nhttps://developer.apple.com/library/mac/documentation/Security/Conceptual/SecureCodingGuide/Articles/ValidatingInput.html#//apple_ref/doc/uid/TP40007246-SW3",
+    "total": "Number of Objective-C artifacts",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ]
+}

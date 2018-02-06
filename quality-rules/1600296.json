@@ -1,0 +1,51 @@
+{
+    "id": 1600296,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Related Language tables must have the same key structure as the table with the addition of the field LANGUAGE_CD.",
+    "href": "quality-rules/1600296.json",
+    "associatedValueName": "RecordTable",
+    "description": "List all Language Records that don't have the field LANGUAGE_CD in the key and all Language Records that don't have the same list of field in the key as in the base Record.",
+    "rationale": "As PeopleSoft generates automatically the SQL query to handle multi-language, the related language table must have the same key structure as the table with the addition of the field LANGUAGE_CD.",
+    "reference": "3.0",
+    "remediation": "Modify the key definition",
+    "total": "Number of PeopleSoft Lang record tables",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

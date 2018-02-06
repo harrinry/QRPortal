@@ -1,0 +1,44 @@
+{
+    "id": 7236,
+    "type": "quality-rule",
+    "name": "Avoid recursive calls with PERFORM statements",
+    "href": "quality-rules/7236.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs in which paragraphs call themselves with a PERFORM statement.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - PERFORM statement that refers to the paragraph it belongs to",
+    "rationale": "The PERFORM statement allows calling paragraphs with several call levels. However, Cobol is not a recursive language and can not manage paragraph recursive calls correctly. When a paragraph is called via a PERFORM statement, then the calling statement is saved into a stack and the control flow jumps to the beginning of the called paragraph. At the end of this paragraph, then the control flow returns to the calling statement. A recursive call can alter the calling statement stack and the control flow may be unpredictable. \nFurthermore, all data are global to the program. Then, if a paragraph called at level 'n' modifies a data, then this data is modified for all the call levels. \nFor all these reasons, it is better to replace paragraph recursive calls by loops.",
+    "reference": "IBM Enterprise Cobol for z/OS - Language Reference",
+    "remediation": "Try to remove recursive algorithms in the program and replace them by iterative algorithms.",
+    "remediationSample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01 UNTIL A = 13.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.",
+    "sample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.\n      * If condition is true then there is a recursive call\n           IF A < 13 THEN\n               PERFORM PROC-01\n           END-IF",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

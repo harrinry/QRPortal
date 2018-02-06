@@ -1,0 +1,36 @@
+{
+    "id": 558,
+    "type": "quality-rule",
+    "name": "Data Members naming convention - case control",
+    "href": "quality-rules/558.json",
+    "associatedValueName": "Data member name",
+    "description": "This rule searches for C++ class data members that do not respect naming conventions. \n\nNote: Data Member names should start with a lowercase character and symbols such as '_' are also to be avoided. Const Data Members are not taken into account.",
+    "output": "Associated to each C++ class data member with violations, the Quality Rule provides:\n- data member name",
+    "rationale": "For readability aspects, naming conventions must be respected",
+    "remediation": "Change name according to the naming convention",
+    "total": "Number of C++ class data members",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "id": 1003030,
+    "type": "quality-rule",
+    "name": "Avoid function with unused parameter (Flex)",
+    "href": "quality-rules/1003030.json",
+    "description": "adobe.ac.pmd.rules.unused.UnusedParameterRule",
+    "rationale": "Reports functions with unused parameters",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public function foo( param1 : Number, param2 : Number, param3 : Number, param4 : Number, param5 : Number ) : void // 4 violations\n      {\n         var i : int = param1;\n      }",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

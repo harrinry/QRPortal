@@ -1,0 +1,31 @@
+{
+    "id": 7300,
+    "type": "quality-rule",
+    "name": "Avoid large Paragraphs - too many Lines of Code",
+    "href": "quality-rules/7300.json",
+    "associatedValueName": "Number of LoC",
+    "description": "Avoid Paragraphs with more than X Lines of Code.\nThe threshold is a parameter and can be changed at will.",
+    "output": "Associated to each COBOL Paragraph with violations, the Quality Rule provides:\n- The number of LoC",
+    "rationale": "For maintainability aspect, COBOL Programs should contain a maximum of 100 lines of code.",
+    "remediation": "Split large paragraphs in a section.",
+    "total": "Number of Cobol Paragraphs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

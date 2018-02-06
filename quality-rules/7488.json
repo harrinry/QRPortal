@@ -1,0 +1,39 @@
+{
+    "id": 7488,
+    "type": "quality-rule",
+    "name": "Use lazy fetching for collection",
+    "href": "quality-rules/7488.json",
+    "associatedValueName": "Associated Value",
+    "description": "Reports all collection association (set, list, bag, idbag, map) that don't use lazy fetching strategy. This strategy is set through the lazy property set to \"true\".",
+    "output": "List all Hibernate Entity Property and JPA Entity Property of type collection that does not use lazy fetching.\n\nIt provides the following information:\n Hibernate Entity Property Full Name or JPA Entity Property Full Name",
+    "rationale": "In a lazy association, the associated object or collection is fetched when it's first accessed. This results in a new request to the database (unless the associated object is cached). This option is almost always used for collection mappings (it should be the default, and we recommend that you consider it as a default for all your collection mappings). Generally, the performance benefits are such that you will want to use lazy instantiation wherever possible (compared with the massive task of reading in all of the entities concerned)\n\nWhen eager fetching is used, the associated object or collection is fetched together with the owning object, using an SQL outer join, and no further database request is required. But the issue is that it will always be done like this and if the number of row is high, the performance will be affected. \n\n It is more common to specify the use of this strategy (eager fetching) at runtime for a particular HQL or criteria query to avoid that a lazy fetching requires several queries.",
+    "reference": "Hibernate in Action (ISBN 1932394-15-X) p 148",
+    "remediation": "When the table contains lot of rows, it is better to use a lazy fetching strategy and use a eager strategy at runtime for a particular HQL query, criteria query or JPQL query to avoid that the lazy fetching requires several queries.",
+    "remediationSample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // FIXED\n    <set name=\"b_items\" lazy=\"true\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
+    "sample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // VIOLATION (it could have been lazy = \"false\")\n    <set name=\"b_items\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
+    "total": "number of Hibernate Entity Property or JPA Entity Property of type collection",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

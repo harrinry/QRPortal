@@ -1,0 +1,51 @@
+{
+    "id": 578,
+    "type": "quality-rule",
+    "name": "Avoid Classes with multiple inheritance",
+    "href": "quality-rules/578.json",
+    "associatedValueName": "Number of parent classes",
+    "description": "This rule searches for C++ classes that are derived from more than one parent class. \n\nNote: Pure virtual classes (that can be used as interfaces) are not considered as violating this rule.",
+    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- The number of parent classes\n- Bookmarks for violation patterns found in source code:\n  - Parent class derivation",
+    "rationale": "Multiple inheritance increases the code complexity and therefore the maintenance costs. Furthermore it can lead to the Deadly Diamond of Derivation problem (several inheritance of the same base class).",
+    "remediation": "Review the design of the class hierarchy and try to limit multiple inheritance cases as much as possible.",
+    "total": "Number of C++ classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

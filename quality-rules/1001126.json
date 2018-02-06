@@ -1,0 +1,35 @@
+{
+    "id": 1001126,
+    "type": "quality-rule",
+    "name": "Avoid Main Procedures having SQL queries using NOT EXISTS (PL1)",
+    "href": "quality-rules/1001126.json",
+    "description": "This rule searches for all PL1 Main Procedures having SQL queries using NOT EXISTS.",
+    "output": "The report lists all the PL1 Main Procedures having SQL queries using NOT EXISTS.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
+    "rationale": "A NOT operator in a WHERE clause does not allow to use database indexes and has an impact in terms of performance. It is better to invert the logical expression in data selection.",
+    "remediation": "Review the SQL queries and not use NOT EXISTS anymore.",
+    "total": "Number of PL1 Main Procedures",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

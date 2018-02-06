@@ -1,0 +1,36 @@
+{
+    "id": 1007086,
+    "type": "quality-rule",
+    "name": "Avoid uppercase keywords for control structures in Functions and Methods(PHP)",
+    "href": "quality-rules/1007086.json",
+    "description": "This rule searches for all Methods and Functions containing control structures written in upper case.",
+    "output": "\"This report lists all Methods and Functions containing control structures written in upper case.\n\nThis QR provides the following information:\nMethod/Function full name.\"",
+    "rationale": "Using a naming convention makes the source code easier to read and therefore to maintain.",
+    "reference": "Code Sniffer - http://pear.php.net/reference/PHP_CodeSniffer-1.5.2/PHP_CodeSniffer/Squiz_Sniffs_ControlStructures_LowercaseDeclarationSniff.html",
+    "remediation": "Modify the source code to reduce the number of artifacts containing control structures written in upper case.",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

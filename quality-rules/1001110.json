@@ -1,0 +1,42 @@
+{
+    "id": 1001110,
+    "type": "quality-rule",
+    "name": "Avoid  PLC Copybooks using FIXED variable type declaration (PL1)",
+    "href": "quality-rules/1001110.json",
+    "description": "This rule searches all the PLC Copybooks procedures using FIXED variables declaration type.",
+    "output": "The report lists all the PLC Copybooks using FIXED variable type declaration.\n\nIt provides following information: \n-  PLC Copybooks full name",
+    "rationale": "Scale of the numeric variable should be fixed. May lead to loss of precision while performing arithmetic operations",
+    "remediation": "Try to reduce the use of FIXED in the declaration of the variables.",
+    "remediationSample": "....\nDECLARE TEST FLOAT BIN; \n....",
+    "sample": "....\nDECLARE TEST FIXED BIN; \n....",
+    "total": "Number of PLC Copybooks",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1005000,
+            "name": "PLC",
+            "href": "technologies/1005000.json"
+        }
+    ]
+}

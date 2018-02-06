@@ -1,0 +1,35 @@
+{
+    "id": 1007108,
+    "type": "quality-rule",
+    "name": "Avoid Sections with a very low comment/code ratio (PHP)",
+    "href": "quality-rules/1007108.json",
+    "description": "This rule searches for all Sections with a very low comment/code ratio.",
+    "output": "This report lists all Sections with a very low comment/code ratio.\n\nThis QR provides the following information:\n- Section full name\n- Comment/code ratio",
+    "rationale": "A very low comment/code ratio makes the source code difficult to read, maintain and test. It is highly recommended to keep this ratio as high as possible.",
+    "remediation": "Modify the source code to reduce the number of Sections with a very low comment/code ratio.",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

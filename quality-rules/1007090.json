@@ -1,0 +1,37 @@
+{
+    "id": 1007090,
+    "type": "quality-rule",
+    "name": "Avoid having variable with a too long  name (PHP)",
+    "href": "quality-rules/1007090.json",
+    "description": "This rule searches for all the Sections with variable names that are too long. A name is considered too long if it has more than 20 characters.",
+    "output": "\"This report lists all the Sections with variable names that are too long.\n\nThis QR provides the following information:\nSection full name.\"",
+    "rationale": "Source code containing long variable names is difficult to read and therefore to maintain.",
+    "reference": "PHPMD http://phpmd.org/rules/naming.html#longvariable",
+    "remediation": "Modify the source code to reduce the number of artifacts with variable names that are too long.",
+    "sample": "\"class CastExample\n{\n protected $reallyLongIntName = -6; // VIOLATION - Field\n\n public static function main( array $argumentsList[] ) { // VIOLATION - Formal\n\n  $otherReallyLongName = -7; // VIOLATION - Local\n\n  for ($interestingIntIndex = 0; // VIOLATION - For\n\n  $interestingIntIndex < 20;\n\n  $interestingIntIndex++ ) {\n  }\n }\n}\"",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

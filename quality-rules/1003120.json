@@ -1,0 +1,38 @@
+{
+    "id": 1003120,
+    "type": "quality-rule",
+    "name": "Avoid ModelLocator not only accessible from the main application file (Flex)",
+    "href": "quality-rules/1003120.json",
+    "description": "adobe.ac.pmd.rules.cairngorm.ReferenceModelLocatorOutsideTheMainApplicationRule",
+    "rationale": "The ModelLocator should be only accessible from the main application file. Then sub-models should be injected to the nested views.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

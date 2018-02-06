@@ -1,0 +1,42 @@
+{
+    "id": 1007124,
+    "type": "quality-rule",
+    "name": "Avoid Functions throwing exceptions and not having a @Throws tag (PHP)",
+    "href": "quality-rules/1007124.json",
+    "description": "This rule searches for all the Functions that throw exceptions without using an @Throws tag.",
+    "output": "\"This report lists all Functions throwing exceptions without using an @Throws tag.\n\nThis QR provides the following information:\nFunction  full name.\"",
+    "rationale": "Every Function that throws an exception must have an @Throws tag.",
+    "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_Commenting_FunctionCommentThrowTagSniff.html",
+    "remediation": "Modify the source code to reduce the number of Functions that throw exceptions without using an @Throws tag.",
+    "sample": "\" class CastTest {\n   public function __construct($a, $b) {\n     parent::__construct($a, $b);\n   }\n }\n\"",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

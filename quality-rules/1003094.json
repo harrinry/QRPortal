@@ -1,0 +1,28 @@
+{
+    "id": 1003094,
+    "type": "quality-rule",
+    "name": "Avoid embedded metadata in script where a stylesheet may be cleaner (Flex)",
+    "href": "quality-rules/1003094.json",
+    "description": "adobe.ac.pmd.rules.css.UseCssInsteadOfEmbedMetaDataRule",
+    "rationale": "Detects scripts with embed metadata in source code where a stylesheet may be cleaner",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

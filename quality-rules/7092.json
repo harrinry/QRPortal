@@ -1,0 +1,41 @@
+{
+    "id": 7092,
+    "type": "quality-rule",
+    "name": "Avoid Include Circular references",
+    "href": "quality-rules/7092.json",
+    "associatedValueName": "Level of inclusion",
+    "description": "This reports show all the ABAP includes that are part of a circular reference.",
+    "output": "Associated to each ABAP Include with violations, the Quality Rule provides:\n- The level of inclusion",
+    "rationale": "Includes should not have circular references. Circular references between Include files can lead to problems compiling a Program or even the complete inability to do so.",
+    "remediation": "The best answer to this problem is to reconsider the architecture of the program. Sometimes you can use forward declarations to avoid circular references.",
+    "total": "Number of ABAP Includes",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

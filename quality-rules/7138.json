@@ -1,0 +1,41 @@
+{
+    "id": 7138,
+    "type": "quality-rule",
+    "name": "Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
+    "href": "quality-rules/7138.json",
+    "associatedValueName": "Called Action Class full name",
+    "description": "All Action classes that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x) that are invoked by other Java code are listed except when the caller is in the inheritance tree of the Action class.",
+    "output": "This report lists all methods that call Action Classes \nIt provides the following information:\n - Non action mapping class method that call the action class except those in its inheritance tree\n - Action Class full name",
+    "rationale": "Action Classes should only be called by Action Mappings to respect struts pattern design",
+    "remediation": "Use the action mapping table in struts configuration file instead of direct call.",
+    "total": "number of methods or objects that call struts actions classes",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

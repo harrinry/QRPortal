@@ -1,0 +1,35 @@
+{
+    "id": 1007220,
+    "type": "quality-rule",
+    "name": "Avoid Select * queries in PHP Section (PHP)",
+    "href": "quality-rules/1007220.json",
+    "description": "This rule searches all the PHP Sections having \"SELECT * FROM \u2026\" clause.",
+    "output": "The report lists all PHP Sections  having \"SELECT * FROM \" clause.\n\nThis QR provides following information:\n- PHP Section full name",
+    "rationale": "A query that retrieves all columns of a table with a SELECT * can potentially be\nthe source of performance problems:\n\nSuch performance problems may arise\nwhen the execution of the query returns a large result sets (many row with all the columns may then become\na huge amount of data to transport over the network).\nThus optimzer module can't provide a\ncorrect execution.\n\nAlso, when using such queries, one cannot control how the columns\nwill be ordered and returned to the client. This can lead to important data inconsistencies and thus\nstability issues.",
+    "remediation": "Limit the columns in your SQL select statements to those applications really needing it.",
+    "total": "Number of PHP Sections.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

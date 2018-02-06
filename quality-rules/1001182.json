@@ -1,0 +1,35 @@
+{
+    "id": 1001182,
+    "type": "quality-rule",
+    "name": "Avoid PLI Programs with more then 500 LoC and less then 5 Procedures (PL1)",
+    "href": "quality-rules/1001182.json",
+    "description": "This rule searches for PL1 Main Procedures (Programs) that have more 500 LoC and less than 5 procedures.",
+    "output": "The report lists all the PL1 Main Procedures (Programs)  having more than 500 lines of code and less than 5 procedures.\n\nIt provides following information: \n- PL1 Main Procedures full name",
+    "rationale": "Having large programs with no structured sub artifacts is difficult to maintain.",
+    "remediation": "Review the PLI programs in order to not have more than 500 lines of code and less than 5 procedures.",
+    "total": "Number of PL1 Main Procedures",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

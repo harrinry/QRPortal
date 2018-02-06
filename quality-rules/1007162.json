@@ -1,0 +1,37 @@
+{
+    "id": 1007162,
+    "type": "quality-rule",
+    "name": "Avoid having lonely variables (PHP)",
+    "href": "quality-rules/1007162.json",
+    "description": "This rule searches for all the Sections containing calls to a method or function with a variable as a string.",
+    "output": "This report lists all the Sections containing calls for a method or function with a variable as a string.\n\nThis QR provides the following information:\nSection  full name.",
+    "rationale": "In PHP when a string variable is given as a string value parameter, the string\nwill be evaluated to the value of the variable. The result will be a string that holds the string representation\nof the value. This practice could provoke unexpected results to be used as a given parameter. Usually\nthe intention would be to pass the raw value of the variable instead of the string-representation.\nThe\nsame type of unexpected results are also obtained when the strings are created as follows:\n\n- .$variable\n    - \"\"{$variable}\"\"\n    - $variable.\"\"\"\"\n\n    - \"\"\"\".$variable.\"\"\"\"\"",
+    "remediation": "Modify the source code and pass the variables to a specific function/construct, possibly with a string cast.",
+    "remediationSample": "<?php\n\n    $param = 'someValue';\n\n    test((string)$param);\n\n    if((string)$param){\n       //do something\n    }\n\n    $array[(string)$param];\n ?>",
+    "sample": "<?php\n\n    $param = 'someValue';\n\n    test(\"\"$param\"\");\n\n    if(\"\"$param\"\"){\n       //do something\n    }\n\n    $array[\"\"$param\"\"];\n?>",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "id": 1018530,
+    "type": "quality-rule",
+    "name": "Avoid undocumented processes (TIBCO BW)",
+    "href": "quality-rules/1018530.json",
+    "description": "Processes should have comments",
+    "output": "This report lists all undocumented processes.\nIt provides the following information:\nProcess full name.",
+    "rationale": "No comments in Process makes the code harder to understand and maintain.",
+    "reference": "3.4.8 MAI-008: undocumented processes",
+    "remediation": "Add comments",
+    "total": "Number of Process",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1018000,
+            "name": "TIBCO",
+            "href": "technologies/1018000.json"
+        }
+    ]
+}

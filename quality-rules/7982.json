@@ -1,0 +1,49 @@
+{
+    "id": 7982,
+    "type": "quality-rule",
+    "name": "Avoid using strlen() function family",
+    "href": "quality-rules/7982.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for C/C++ functions, methods, constructors, and destructors that call 'strlen' group of functions.",
+    "output": "Associated to each C/C++ function/method/constructor/destructor with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - 'strlen()' function call",
+    "rationale": "The 'strlen()' function requires to have a null-terminated sequence of chars to return the size of the string. Otherwise it will return an incorrect length that may lead to memory allocation troubles or security problems.",
+    "reference": "Build Security In (https://buildsecurityin.us-cert.gov/bsi/articles/knowledge/coding)\nhttp://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_crt_strlen.2c_.wcslen.2c_._mbslen.2c_._mbstrlen.asp",
+    "remediation": "Check if the buffer is correctly null-terminated before using the 'strlen()' function. This can be done by setting the 'sizeof(buf)-1' position to 0. \nYou can also use a more secure variant of the function: 'strlen_s()'.",
+    "remediationSample": "char dest[50];\nstrncpy(dest, src, sizeof(dest));\ndest[sizeof(dest)-1] = 0;",
+    "sample": "char dest[50];\nstrncpy(dest, src, strlen(src));",
+    "total": "Number of C/C++ functions, constructors, destructors, and methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

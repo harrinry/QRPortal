@@ -1,0 +1,41 @@
+{
+    "id": 1001044,
+    "type": "quality-rule",
+    "name": "Avoid Functions and Procedures using RETURN statements (PL1)",
+    "href": "quality-rules/1001044.json",
+    "description": "This rule searches for all the PL1 Procedures and PL1 Functions using RETURN statements.",
+    "output": "The report lists all the PL1 Procedures and PL1 Functions using RETURN statements.\n\nIt provides following information: \n-  PL1 Procedure and PL1 Function full name",
+    "rationale": "RETURN statement should not be used in PL1 Procedures.",
+    "remediation": "Replace the RETURN statement in the procedures.",
+    "sample": "CALL CAST TEST;        \n IF TEST1 THEN RETURN;",
+    "total": "Number of PL1 Procedures and PL1 Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

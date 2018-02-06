@@ -1,0 +1,41 @@
+{
+    "id": 1011016,
+    "type": "quality-rule",
+    "name": "Avoid unreferenced Logical file  (DDS400)",
+    "href": "quality-rules/1011016.json",
+    "description": "This rule searches for all the unreferenced logical  files.",
+    "output": "This report lists DDS400 unreferenced logical File.\nIt provides the following information:\nDDS400 Logical File full name",
+    "rationale": "Unreferenced Logical files may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code",
+    "remediation": "Check if the unreferenced Logical files is not the symptome of missing code and if it is not the case, remove them.",
+    "remediationSample": "Reduce number of unreferenced logical files. Logical file are referred in RPG programs in following way\n\nFMYFILE IF E DISK INFDS(FILEFBK)",
+    "total": "Total number of DDS400 Logical File",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1011000,
+            "name": "DDS400",
+            "href": "technologies/1011000.json"
+        }
+    ]
+}

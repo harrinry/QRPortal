@@ -1,0 +1,40 @@
+{
+    "id": 1007214,
+    "type": "quality-rule",
+    "name": "Avoid using arrays as parameters of str functions (PHP)",
+    "href": "quality-rules/1007214.json",
+    "description": "This rule searches all the Methods, Functions and PHP Sections having calls to string replacement function having arrays as parameters.",
+    "output": "This report lists all the Methods, Functions and PHP Sections having calls to string replacement function having arrays as parameters.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "Using arrays as arguments for the string replacement function can be very costly therefore it is recommended if possible to use the function directly with the arrays string items.",
+    "remediation": "Try to limit the use replacement function having arrays as parameters and use if possible the functions directly with the arrays string items.",
+    "total": "All Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

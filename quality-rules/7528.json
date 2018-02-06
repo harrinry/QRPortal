@@ -1,0 +1,39 @@
+{
+    "id": 7528,
+    "type": "quality-rule",
+    "name": "Never use the ON CHANGE OF statement",
+    "href": "quality-rules/7528.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This metric retrieves all ABAP artifacts using the ON CHANGE OF statement.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "The ON CHANGE OF statement can prove dangerous and is often misunderstood. Also, troubleshooting problems created by inadequate use of ON CHANGE OF statement can often be time-consuming because such errors are very difficult to reproduce and often appear to be random ones. Indeed, the use of  the ON CHANGE OF statement is not suitable within functions or subroutines as many developers expect the comparison field's value to be reset for every new function call which is not the case. \nThe  control structure ON CHANGE OF - ENDON is not allowed in ABAP Objects, i.e. in a method.",
+    "reference": "Enhancing the Quality of ABAP Development, Meijs-Krouwels-Heulmans-Sommen, SAP Press\nPage 98",
+    "remediation": "You can replace the ON CHANGE OF statements by explicitly programming the comparisons with IF statements.",
+    "remediationSample": "Remediation example:\n\nLOOP AT ts_invoices INTO wa_invoices\n  IF wa_invoices-matnr NE ltp_matnr_old.\n    Ltp_matnr_old = wa_invoices-matnr.\n...\n  ENDIF.\nENDLOOP.",
+    "sample": "LOOP AT ts_invoices INTO wa_invoices\n  ON CHANGE OF wa_invoices-matnr.\n...\n  ENDON.\nENDLOOP.",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+    "id": 7054,
+    "type": "quality-rule",
+    "name": "Avoid large Programs - too many Lines of Code",
+    "href": "quality-rules/7054.json",
+    "associatedValueName": "Number of LoC",
+    "description": "ABAP programs should have a reasonable size. This reports shows all the ABAP programs with more than 500 lines of code. 500 being a parameter.",
+    "output": "Associated to each ABAP Program with violations, the Quality Rule provides:\n- The number of LoC",
+    "rationale": "Large programs are more difficult to understand, and are a sign of a bad modularity of the code.",
+    "remediation": "Review the design of the program to reduce its size.",
+    "total": "Number of  ABAP Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": 1001162,
+    "type": "quality-rule",
+    "name": "Avoid PLC Copybook using GOTO statement  (PL1)",
+    "href": "quality-rules/1001162.json",
+    "description": "This rule searches for all PLC Copybook using the GO TO statement to manage the control flow.",
+    "output": "The report lists all the PLC Copybook having GOTO statement.\n\nIt provides following information: \n- PLC Copybook full name",
+    "rationale": "Using Goto code breaks the process execution flow and makes the code more difficult to understand and maintain",
+    "remediation": "Try to reduce the number of GO TO and when it is possible replace it with alternative statements.",
+    "sample": "MY_PROG: PROC OPTIONS(MAIN) REORDER;\n  ...  \nGOTO TEST; \n... \nTEST:\nEND MY_PROG;",
+    "total": "Number of PLC CopyBooks",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1005000,
+            "name": "PLC",
+            "href": "technologies/1005000.json"
+        }
+    ]
+}

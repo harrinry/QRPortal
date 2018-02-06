@@ -1,0 +1,42 @@
+{
+    "id": 8190,
+    "type": "quality-rule",
+    "name": "Make base class destructor public and virtual, or protected and non virtual",
+    "href": "quality-rules/8190.json",
+    "description": "This rule searches for C++ classes that should have a virtual destructor, but don't. First we detect what is a base class. It can be:\n* Either a class with some virtual functions\n* Or a class that other classes inherit from\n\nA base class should have either a public virtual destructor (the most common usage), or a protected non virtual destructor.",
+    "output": "This report lists all base classes without a public virtual destructor or a protected non-virtual destructor. \nIt provides the following information: \nObject full name, number of violations",
+    "rationale": "If a class has a non-virtual destructor, and an attempt is made to destroy an object of a derived type through a pointer to the base type, the behavior is undefined.\nOn some platforms, it may call the base-class version of the destructor instead of the derived-class version, provoking memory leaks, resource losses and stability issues. On others, it may simply crash.\nIf you want to allow polymorphic destruction, the destructor should be virtual (either declared virtual, or defined as such in a base class), if you don't want to allow polymorphic destruction (this is a more uncommon situation, it can be the case for instance for policy classes), then you should totally disallow destruction from the base class, by making the destructor protected and non virtual.\n",
+    "reference": "* Sutter and Alexandrescu, *C++ coding standards* 50 (http://www.gotw.ca/publications/c\\+\\+cs.htm)\n* *C\\+\\+ FAQ Lite* [20.7] When should my destructor be virtual?: http://www.parashift.com/c\\+\\+-faq-lite/virtual-functions.html##faq-20.7\n* This rule is compliant with OMG CISQ ASCRM-RLB-15 and ASCRM-RLB-16 recommendations.\n",
+    "remediation": "Prefer using designation like NSURLRequestReloadIgnoringCacheData.",
+    "remediationSample": "class A \n{\n  virtual ~A();\n};\nclass B : public A {};\nint main()\n{\n  A* a = new B;\n  delete a; // Well defined behaviour\n}\n    ",
+    "sample": "class A {};\nclass B : public A {};\nint main()\n{\n  A* a = new B;\n  delete a; // Undefined behaviour\n}\n    ",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ]
+}

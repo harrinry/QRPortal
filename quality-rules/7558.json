@@ -1,0 +1,43 @@
+{
+    "id": 7558,
+    "type": "quality-rule",
+    "name": "Avoid accessing data by using the position and length",
+    "href": "quality-rules/7558.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs accessing part of data by using a position and a length.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Data accessed via a position and a length in the PROCEDURE division",
+    "rationale": "Parts of data can be accessed by using their position and their length in a data group. This mechanism is error prone for two points: the developer can introduce errors in defining the position of the part of data to access. \nIn addition, this position is dependent of any changes in the data before placed before it.\nThus, problems can easily occur in production and data may be corrupted.",
+    "remediation": "Data which need to be accessed partially must have detailed fields. Then, look for accesses using position and length and replace them by fields accesses.",
+    "remediationSample": "01 WSS-RUB.\n    05 WSS-RUB-ID PIC X(3).\n    05 FILLER           PIC X(7).\n01 WSS-VAL.\n    05 WSS-VAL-ENTITY    PIC X(8).\n    05 WSS-OTHER-DATA PIC X(12).\n01 WSS-ENTITY PIC X(8).\n...\nIF WSS-RUB-ID = 'BAK' \n    MOVE WSS-VAL-ENTITY TO WSS-ENTITE\nEND-IF",
+    "sample": "01 WSS-RUB     PIC X(10).\n01 WSS-VAL     PIC X(20).\n01 WSS-ENTITY PIC X(8).\n...\nIF WSS-RUB(1:3) = 'BAK' \n    MOVE WSS-VAL (1:8) TO WSS-ENTITE\nEND-IF",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

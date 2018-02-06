@@ -1,0 +1,36 @@
+{
+    "id": 1005060,
+    "type": "quality-rule",
+    "name": "Avoid using GROUP BY in SQL statement (EGL)",
+    "href": "quality-rules/1005060.json",
+    "description": "This rule searches for all programs having a GROUP BY inside the SQL code.",
+    "output": "This report provides the following information: Function full name, Count of GROUP BY",
+    "rationale": "Having complex queries in Artifacts can cause performance problems. Queries using group by is considered complex and not performant.",
+    "reference": "Standard suggestions based on CAST Quality Model",
+    "remediation": "Try to reduce the use of GROUP BY.",
+    "total": "Number of Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

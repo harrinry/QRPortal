@@ -1,0 +1,36 @@
+{
+    "id": 562,
+    "type": "quality-rule",
+    "name": "File naming convention - embedded Class",
+    "href": "quality-rules/562.json",
+    "associatedValueName": "Source file name",
+    "description": "This rule searches for C++ classes that are saved in a file with a different name.",
+    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- The source file name",
+    "rationale": "For readability and maintainability aspects, naming conventions must be respected",
+    "remediation": "Change name according to the naming convention",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ]
+}

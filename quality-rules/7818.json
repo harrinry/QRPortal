@@ -1,0 +1,65 @@
+{
+    "id": 7818,
+    "type": "quality-rule",
+    "name": "Avoid Functions having a very low Comment/Code ratio",
+    "href": "quality-rules/7818.json",
+    "associatedValueName": "Associated Value",
+    "description": "Functions should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Functions with comment/code ratio lower than X %\nIt provides the following information:\n Function full name, comment/code ratio",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
+    "remediation": "Enrich Artifact code with comments",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -19,
+            "name": "ASP",
+            "href": "technologies/-19.json"
+        },
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "technologies/-9.json"
+        },
+        {
+            "id": -8,
+            "name": "PowerBuilder",
+            "href": "technologies/-8.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "technologies/138663.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

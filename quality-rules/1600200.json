@@ -1,0 +1,45 @@
+{
+    "id": 1600200,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Don't use hardscode message",
+    "href": "quality-rules/1600200.json",
+    "associatedValueName": "Number of hardcoded messages",
+    "output": "Failed checks gives the number of objects that contain a call to the message functions without using a message catalog reference",
+    "rationale": "Hardcoded messages are not translated and it decrease the maintenance of the application",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Events, Functions and Methods",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

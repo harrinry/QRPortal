@@ -1,0 +1,42 @@
+{
+    "id": 1007206,
+    "type": "quality-rule",
+    "name": "Avoid using @error suppression (PHP)",
+    "href": "quality-rules/1007206.json",
+    "description": "This rule searches all the the Methods, Functions and PHP Sections having @ before a function in order to hide the errors.",
+    "output": "This report lists all the Methods, Functions and PHP Sections  having @ before a function in order to hide the errors.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
+    "rationale": "Having the errors displayed on the web page for the user can not be such a good idea but hiding it is not either because it is time consuming. Every time when an error is hidden the performance of your application is decreasing. Instead of trying to hide the errors it is much better to try and handle them.",
+    "remediation": "Try to reduce the use of @ and instead provide a mechanish of errors handling.",
+    "remediationSample": "<?php\nmove_uploaded_file('CAST', '/tmp/file.csv');\n?>",
+    "sample": "<?php\n\n@move_uploaded_file('CAST', '/tmp/file.csv');\n\n?>",
+    "total": "Number of Methods, Functions and PHP Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

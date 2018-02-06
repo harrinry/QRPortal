@@ -1,0 +1,23 @@
+{
+    "id": 7588,
+    "type": "quality-rule",
+    "name": "Avoid custom code with OSS notes",
+    "href": "quality-rules/7588.json",
+    "associatedValueName": "Number of references to OSS Notes",
+    "description": "ABAP custom code that contains reference to OSS notes must be checked.",
+    "output": "Associated to each ABAP Program/Include/User-Exit with violations, the Quality Rule provides:\n- The number of references to OSS Notes",
+    "rationale": "If ABAP custom code is created by copying standard code which contains OSS notes or if the custom code has been modified in order to take into account OSS notes, then part of this code could be altered when SAP patches corresponding to these notes will be applied or when an upgrade is performed. So, for obvious reasons of robustness and code integrity, it is important to check custom code containing OSS notes.",
+    "remediation": "Check why the OSS note reference has been inserted into the custom code and try to adapt this custom code in order to avoid using code related to the OSS note.",
+    "sample": "*     D_TFILL  LIKE SY-TFILL.  \"<<<< DELETE - NOTE 70203\n      D_TFILL  LIKE SY-TFILL, \"<<<< INSERT - NOTE 70203\n. . .\n* Description : OSS 139176 M7302: Field overflw in  WERT_SIMULIEREN",
+    "total": "Number of ABAP Programs, Include, User-Exit",
+    "businessCriteria": [
+        
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

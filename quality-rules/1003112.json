@@ -1,0 +1,28 @@
+{
+    "id": 1003112,
+    "type": "quality-rule",
+    "name": "Avoid too many public fields or functions (Flex)",
+    "href": "quality-rules/1003112.json",
+    "description": "Rule detects classes with more than 10 public fields or functions.",
+    "rationale": "A large number of public methods and attributes declared in a class can indicate the class may need to be broken up as increased effort will be required to thoroughly test it.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

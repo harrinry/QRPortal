@@ -1,0 +1,46 @@
+{
+    "id": 1608,
+    "type": "quality-rule",
+    "name": "Avoid cascading Triggers",
+    "href": "quality-rules/1608.json",
+    "associatedValueName": "Trigger name",
+    "description": "Triggers should not modify data in a Table which has a Trigger for this action.",
+    "output": "This report lists all cascading Triggers\nIt provides the following information: \nTrigger Full Name, Cascaded Trigger Name",
+    "rationale": "Creating cascade in Trigger's execution can have unexpected results. Meaning having triggers that act on other tables in a way that causes triggers on that table to fire lead to obscure behavior. \nThis behavior should be avoided.",
+    "remediation": "Review the design of the Triggers",
+    "sample": "Example: \nTrigger_A is a trigger ON INSERT on the Table A \nTrigger_B which is a trigger of anytype is performing an INSERT on the same table Table_A therefore we consider that Trigger_B is cascading Trigger_A over Table_A",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "technologies/-10.json"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "technologies/139287.json"
+        }
+    ]
+}

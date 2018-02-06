@@ -1,0 +1,40 @@
+{
+    "id": 1600662,
+    "type": "quality-rule",
+    "name": "PeopleSoft: All records with SETID in its key, must be linked to a record group.",
+    "href": "quality-rules/1600662.json",
+    "description": "List all records with SETID in its key and not linked to a record group.",
+    "rationale": "SETID is an ID that represents a set of control table information, or TableSets. TableSets enable you to share control table information and processing options among business units. The goal is to minimize redundant data and system maintenance tasks. When you assign a setID to a record group in a business unit, you indicate that all of the tables in the record group are shared between that business unit and any other business unit that also assigns that setID to that record group. For example, you can define a group of common job codes that are shared between several business units. Each business unit that shares the job codes is assigned the same setID for that record group.",
+    "reference": "3.0",
+    "remediation": "In order to check that all developments are correctly done, assign the setID to at least one record group in a business unit with a restricted set of data and one with a full access to all data.",
+    "total": "Number of PeopleSoft Records with SETID in its key",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

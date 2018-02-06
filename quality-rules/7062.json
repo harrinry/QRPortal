@@ -1,0 +1,35 @@
+{
+    "id": 7062,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Includes",
+    "href": "quality-rules/7062.json",
+    "associatedValueName": "Associated Value",
+    "description": "ABAP includes should be documented. This reports shows all the ABAP includes with no comments.",
+    "output": "This rule lists all undocumented ABAP Includes.\nIt provides following information:\n- ABAP Include full name",
+    "remediation": "Add comments into includes to explain what is their goal and how they work.",
+    "total": "Number of ABAP includes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

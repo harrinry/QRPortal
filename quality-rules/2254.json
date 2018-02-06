@@ -1,0 +1,28 @@
+{
+    "id": 2254,
+    "type": "quality-rule",
+    "name": "Avoid large Page files",
+    "href": "quality-rules/2254.json",
+    "associatedValueName": "Number of lines",
+    "description": "Pages should not have more than X lines of code. The threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Page files with more than X lines of code. \nIt provides the following information: \n - Page name\n - number of lines",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

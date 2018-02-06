@@ -1,0 +1,43 @@
+{
+    "id": 1007058,
+    "type": "quality-rule",
+    "name": "Avoid unused Function parameters (PHP)",
+    "href": "quality-rules/1007058.json",
+    "description": "This rule searches for all the Functions and Methods containing unused parameters",
+    "output": "\"This report lists all Functions and Methods containing unused parameters.\nThis QR provides the following information: Function or Method full name.\"",
+    "rationale": "For readability reasons, Functions should not have unused parameters.",
+    "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UnusedFunctionParameterSniff.html",
+    "remediation": "Review the source code to try to reduce the number of Functions and Methods containing unused parameters.",
+    "remediationSample": "<?php\nprivate function bar() //Violation removed : the unused parameter has been removed\n{\n\n}\n?>",
+    "sample": "<?php\nprivate function bar(test $param) //Violation : $param is not used\n{\n\n}\n?>",
+    "total": "Number of Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

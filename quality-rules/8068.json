@@ -1,0 +1,49 @@
+{
+    "id": 8068,
+    "type": "quality-rule",
+    "name": "Do not return a dereferenced pointer allocated inside the function",
+    "href": "quality-rules/8068.json",
+    "associatedValueName": "Pointer allocated in the function or method",
+    "description": "This rule searches for functions where memory is allocated and the pointed-to data is returned from the function.",
+    "output": "Associated to each C function and C++ method with violations, the Quality Rule provides:\n- pointer allocated in the function or method\n- Bookmarks for violation patterns found in source code:\n  - pointer dynamic allocation",
+    "rationale": "If you allocate memory dynamically, at one time, you will have to deallocate it to avoid memory leaks. If you return the pointed-to data, it means you have not deallocated it within the function. And since you don't return the pointer itself, there will be no way for the function caller to deallocate the memory.",
+    "reference": "High Integrity C++ Coding Standard Manual",
+    "remediation": "You can correct this problem by using a smart pointer that will automatically reclaim the memory at the function end (replace 'unique_ptr' with another smart pointer, depending on what smart pointer is available to you)",
+    "remediationSample": "int f()\n{\n unique_ptr<int> i (new int(42));\n return *i;\n}",
+    "sample": "int f()\n{\n int *i = new int(42);\n return *i;\n}",
+    "total": "Number of C/C++ functins and methods",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        }
+    ]
+}

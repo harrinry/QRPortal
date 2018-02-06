@@ -1,0 +1,32 @@
+{
+    "id": 1600564,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Non-Standard SQL Table Name must be empty for a Record View",
+    "href": "quality-rules/1600564.json",
+    "associatedValueName": "Name of the physical view",
+    "description": "Identify each record with a defined Non-Standard SQL Table Name",
+    "output": "This report lists all the Record Views with the property not empty",
+    "rationale": "For a new record view, don't use the \"Non Standard SQL Table Name' property to specify the view name. It will override the standard convention of prefixing PS_ to the record name",
+    "reference": "2.3",
+    "remediation": "Delete the specific name. This impact should be study because, the table name is probably referenced in some SQL and / or PeopleCode",
+    "total": "Number of PeopleSoft Record View",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

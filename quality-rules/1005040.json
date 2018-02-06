@@ -1,0 +1,36 @@
+{
+    "id": 1005040,
+    "type": "quality-rule",
+    "name": "Avoid Programs with a very low comment/code ratio (EGL)",
+    "href": "quality-rules/1005040.json",
+    "description": "This rule searches for the programs having a low comment/code ratio. The threshold is a parameter and can be changed at will.",
+    "output": "This report provides the following information: PROGRAM full name, Comment Code ratio",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the artifact",
+    "reference": "Standard suggestions based on CAST Quality Model",
+    "remediation": "Try to always have programs with line of 80 characteres.",
+    "total": "Number of Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

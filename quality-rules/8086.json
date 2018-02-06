@@ -1,0 +1,49 @@
+{
+    "id": 8086,
+    "type": "quality-rule",
+    "name": "Avoid types that own disposable fields and are not disposable",
+    "href": "quality-rules/8086.json",
+    "associatedValueName": "Associated Value",
+    "description": "This rule searches all the classes that declare an IDisposable and not implement the IDisposable interface.",
+    "output": "This report lists all the classes that declare an IDisposable and not implement the IDisposable interface.\n\nIt provides following information:\n- Class name",
+    "rationale": "In an application if a class declares an IDisposable field indirectly that owns an unmanaged resource then the class should implement the IDisposable interface. When the class implements the IDisposable interface , the class dispose of unmanaged resources that it owns. If the class has an instance field that is an IDisposable type, that indicates that the field owns an unmanaged resource.\nSo if the class does not directly own any unmanaged resources, it should not implement a finalizer.",
+    "reference": "http://msdn.microsoft.com/en-us/library/ms182172.aspx",
+    "remediation": "Try either to remove the IDisposable fields or to make the class IDisposable. In the last case, invoke in the Dispose method the Dispose method of each IDisposable field.",
+    "remediationSample": "using System;\nusing System.IO;\n\nnamespace DesignLibrary\n{\n   \n   public class HasDisposeMethod: IDisposable\n   {\n      FileStream newFile;\n\n      public HasDisposeMethod()\n      {\n         newFile = new FileStream(@\"c:\\temp.txt\", FileMode.Open);\n      }\n\n      protected virtual void Dispose(bool disposing)\n      {\n         if (disposing)\n            {\n               // dispose managed resources\n               newFile.Close();\n            }\n          // free native resources\n      }\n\n      public void Dispose()\n      {\n         Dispose(true);\n      GC.SuppressFinalize(this);\n      }\n   }\n}",
+    "sample": "using System;\nusing System.IO;\n\nnamespace DesignLibrary\n{\n   // Violation \n   public class NoDisposeMethod\n   {\n      FileStream newFile;\n\n      public NoDisposeMethod()\n      {\n         newFile = new FileStream(@\"c:\\temp.txt\", FileMode.Open);\n      }\n   }\n\n}",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        }
+    ]
+}

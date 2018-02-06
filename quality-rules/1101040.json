@@ -1,0 +1,44 @@
+{
+    "id": 1101040,
+    "type": "quality-rule",
+    "name": "Avoid empty catch blocks",
+    "href": "quality-rules/1101040.json",
+    "associatedValueName": "This metric lists SQL Artifacts with empty catch blocks.",
+    "description": "In a TRY..CATCH statement, CATCH blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
+    "output": "This report lists all SQL Artifacts with empty catch blocks.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.",
+    "rationale": "An empty catch block defeats the purpose of exceptions.\nWhen an exception occurs, nothing happens and the program fails for an unknown reason. The application can be in an unknown state that will affect subsequent processing.\nSince the reason for the issue (the exception type and potential embedded message) are ignored, it will require more time to fix the issue.",
+    "reference": "An insider's guide to writing robust, understandable, maintainable, state-of-the-art ABAP programs - Part 3\nAndreas Blumenthal - Horst Keller \n\nhttp://www.javapractices.com/Topic16.cjp\nhttp://cwe.mitre.org/data/definitions/391.html",
+    "remediation": "The exception must be handled correctly according to its type.",
+    "remediationSample": "Microsoft SQL Server:\nBEGIN TRY  \n-- Generate divide-by-zero error. \n    SELECT 1/0 \nEND TRY \nBEGIN CATCH  \n-- Compliant\n SELECT ERROR_NUMBER() AS ErrorNumber, ERROR_MESSAGE() AS ErrorMessage;\nEND CATCH; \n\nMySQL and MariaDB:\nDECLARE CONTINUE HANDLER FOR SQLWARNING \n# Compliant\nBEGIN \n# not an empty block\nSET done = TRUE;\nEND;\n\nPostgreSQL:\nBEGIN\n    INSERT INTO db(a,b) VALUES (key, data);\n        RETURN;\n    EXCEPTION WHEN unique_violation THEN\n    RAISE NOTICE 'caught unique_violation ';\n    RETURN;\nEND;\n\nOracle:\nDECLARE\n    pe_ratio NUMBER(3,1);\n    BEGIN\n        BEGIN  ---------- sub-block begins\n            SELECT 1 / NVL(null, 0) INTO pe_ratio FROM dual;\n        EXCEPTION\n          WHEN ZERO_DIVIDE THEN\n            -- Compliant\n            pe_ratio := 0;\n        END;  ---------- sub-block ends\n    EXCEPTION\n        WHEN OTHERS THEN\n            NULL;\n            -- Compliant\n            pe_ratio := Null;\n    END;",
+    "sample": "Microsoft SQL Server:\nBEGIN TRY  \n-- Generate divide-by-zero error. \n    SELECT 1/0 \nEND TRY \nBEGIN CATCH  \n-- Non-compliant\nEND CATCH;\n\nMySQL and MariaDB:\nDECLARE CONTINUE HANDLER FOR SQLWARNING \n# Non-compliant \nBEGIN \n# empty block\nEND;\n\nPostgreSQL:\nBEGIN\n    INSERT INTO db(a,b) VALUES (key, data);\n        RETURN;\n    EXCEPTION WHEN unique_violation THEN\n    -- Do nothing, and loop to try the UPDATE again.\n    NULL;\nEND;\n\nOracle:\nDECLARE\n    pe_ratio NUMBER(3,1);\n    BEGIN\n        BEGIN  ---------- sub-block begins\n            SELECT 1 / NVL(null, 0) INTO pe_ratio FROM dual;\n        EXCEPTION\n          WHEN ZERO_DIVIDE THEN\n            -- Compliant\n            pe_ratio := 0;\n        END;  ---------- sub-block ends\n    EXCEPTION\n        WHEN OTHERS THEN\n            -- Non-Compliant\n            NULL;\n    END;",
+    "total": "The total procedure counts Artifacts with SQL code.",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1101000,
+            "name": "SQLAnalyzer",
+            "href": "technologies/1101000.json"
+        }
+    ]
+}

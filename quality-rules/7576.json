@@ -1,0 +1,36 @@
+{
+    "id": 7576,
+    "type": "quality-rule",
+    "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
+    "href": "quality-rules/7576.json",
+    "associatedValueName": "ABAP Table/View accessed multiple times",
+    "description": "This metric retrieves the ABAP includes making more than a defined number of accesses to the same database table or view. If an include defines classes, then methods belonging to the first level of classes are taken into account.\nThe number of accesses is a parameter of the rule.",
+    "output": "Associated to each ABAP Include with violations, the Quality Rule provides:\n- The ABAP Table/View accessed multiple times",
+    "rationale": "For maintainability and performance aspect, avoid making access multiple times to the same database table or view in the same include.",
+    "remediation": "Try to use a common component to make access to the database table or view. The different parts of the include that need to make access to the same database table or view will have to call this component.",
+    "total": "Number of ABAP Includes",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

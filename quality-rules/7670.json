@@ -1,0 +1,41 @@
+{
+    "id": 7670,
+    "type": "quality-rule",
+    "name": "Avoid accessing SAP standard Tables in modification from custom code",
+    "href": "quality-rules/7670.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for all custom programs, user-exits, includes, functions, and methods with OpenSQL queries that access SAP standard tables in modification. \n\nSAP standard tables are identified as follows:\n- Their name does not start with Y and Z\n- They do not belong to a user namespace\n\nNote: Following tables are considered as custom tables and accessing them is not considered as a violation: T9* P9* PA9* PB9* PS9* PT9* HRT9* HRP9* HRI9*\n\nCustom components are identified as follows:\n- Their name starts with Y or Z\n- They belong to a user namespace",
+    "output": "Associated to each ABAP custom components with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "SAP standard tables are part of the SAP software and they must not be modified by custom components. These can be affected by the modification of the SAP system tables, in terms of structure, content or business rules. In addition, they can lead to data corruption and unpredictable behavior of SAP packages.\nThe best way is to use standard functions and badis released by SAP.",
+    "remediation": "You should call SAP standard functions and badis to modify the content of SAP standard tables.",
+    "total": "Number of ABAP custom Programs, User-exits, Includes, Functions, and Class Methods that contain OpenSQL queries",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ]
+}

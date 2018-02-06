@@ -1,0 +1,34 @@
+{
+    "id": 1003058,
+    "type": "quality-rule",
+    "name": "Avoid field incorrectly named. (Flex)",
+    "href": "quality-rules/1003058.json",
+    "description": "adobe.ac.pmd.rules.naming.WronglyNamedVariableRule",
+    "rationale": "n/a",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public class SomeClass \n{\n   public var myField : int = 0; // VIOLATION - my prefix is forbidden\n   \n   public function tmpFoo() : void // VIOLATION - tmp prefix is forbidden\n   {\n    var tempFoo : int = 9; // VIOLATION - temp prefix is forbidden\n   }\n}",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "technologies/1007000.json"
+        }
+    ]
+}

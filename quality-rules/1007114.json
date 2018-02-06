@@ -1,0 +1,36 @@
+{
+    "id": 1007114,
+    "type": "quality-rule",
+    "name": "Avoid Sections with string concatenations (PHP)",
+    "href": "quality-rules/1007114.json",
+    "description": "This rule searches for all Sections containing string concatenations in loops.",
+    "output": "\"This report lists all Sections containing string concatenations.\n\nThis QR provides the following information:\nSection full name.\"",
+    "rationale": "String concatenation results in the creation and garbage collection of large numbers of temporary objects. This consumes memory and can dramatically slow the script execution. It is recommended to avoid string concatenations as far as possible.",
+    "remediation": "Modify the source code to reduce the number of Sections containing string concatenations.",
+    "sample": "<?php\n\n $str1. $str2;     // Violation\n\n?>",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

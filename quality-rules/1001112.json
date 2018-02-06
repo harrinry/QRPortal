@@ -1,0 +1,42 @@
+{
+    "id": 1001112,
+    "type": "quality-rule",
+    "name": "Avoid Functions and Procedures not using the REORDER option (PL1)",
+    "href": "quality-rules/1001112.json",
+    "description": "This rule searches for all PL1 Functions and PL1 Procedures not using the REORDER option.",
+    "output": "The report lists all the PL1 Functions and PL1 Procedures not using REORDER option.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
+    "rationale": "REORDER is one of the optimization options that are specified for a procedure or begin-block. The REORDER option allows the compiler to generate optimized code to produce the result specified by the source program when error-free execution takes place",
+    "remediation": "Always use the REORDER option for the procedures.",
+    "remediationSample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3) REORDER;",
+    "sample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3);",
+    "total": "Number of PL1 Functions and PL1 Procedures.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

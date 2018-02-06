@@ -1,0 +1,40 @@
+{
+    "id": 1001048,
+    "type": "quality-rule",
+    "name": "Avoid excessive number of successive nested Procedure calls  and limit it to two  (PL1)",
+    "href": "quality-rules/1001048.json",
+    "description": "This rule searches all the PL1 Functions and PL1 Procedures using a number superior to two of successive nested procedures calls.",
+    "output": "The report lists all the PL1 Functions and PL1 Procedures using  a large number of successive nested procedures calls.  \n\nIt provides following information: \n-  PL1 Functions and PL1 Procedures full name",
+    "rationale": "Using a large number of successive nested procedures call can make very difficult the readability and the understanding of the source code.",
+    "remediation": "Try to reduce the number of successive nested procedures calls.",
+    "total": "Number of PL1 Functions and PL1 Procedures",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "id": 1007042,
+    "type": "quality-rule",
+    "name": "Avoid having Classes implementing too many Interfaces (PHP)",
+    "href": "quality-rules/1007042.json",
+    "description": "This rule searches for all the Classes implementing too many interfaces.",
+    "output": "This report lists all the Classes implementing too many interfaces.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "Classes that implement too many interfaces increase the complexity of the source code and makes it difficult to maintain and test.",
+    "remediation": "Review the architecture of the application to reduce the number of interface implementations by the class.",
+    "sample": "<?php\ninterface A\n{\n    public function A();\n}\n\ninterface\nB\n{\n    public function B();\n}\n\n// several other interfaces\nclass\nM\n{\n    public function M()\n    {\n    }\n\n}\n\n\nclass\nClassTest implements A,B,C,...,L,M\n{\n    public function A()\n    {\n\n}\n\n    public function B()\n    {\n    }\n\n    //\nseveral others methods\n\n    public function M()\n    {\n    }\n\n}\n?>",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+{
+    "id": 1020006,
+    "type": "quality-rule",
+    "name": "Avoid to call a function in a termination loop",
+    "href": "quality-rules/1020006.json",
+    "description": "Reports all JavaScript code that call a function in a loop termination.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "When calling a function in a end loop, the function will be computed for each loop iteration and will decrease dramatically performances.",
+    "remediation": "Use a variable to store the result of a function and use it as the loop termination.",
+    "remediationSample": "var total=0; \nvar loopCounter = myfunction(count); \n\nfor (var i=0; i<loopCounter; i++){ // FIXED \n   total+=i; \n}",
+    "sample": "var total=0; \n  \nfor (var i=0;i<myfunction(count);i++){ // VIOLATION \n   total+=i; \n}",
+    "total": "Number of Javascript Functions",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

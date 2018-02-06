@@ -1,0 +1,44 @@
+{
+    "id": 7288,
+    "type": "quality-rule",
+    "name": "Avoid cyclic calls with PERFORM statements",
+    "href": "quality-rules/7288.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for Cobol programs containing cycles without at least one PERFORM statement in the paragraph call graph.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n    - PERFORM statements that belong to the cycle\n    - GO TO statements that could belong to the cycle\n\nNote: Last bookmark refers to the same statement than the first one.",
+    "rationale": "A PERFORM statement must not cause itself to be executed into a cycle. A cyclic PERFORM statement can cause unpredictable results.",
+    "reference": "IBM Enterprise Cobol for z/OS - Language Reference",
+    "remediation": "Try to remove cyclic algorithms in the program and replace them by iterative algorithms.",
+    "remediationSample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01 UNTIL A = 13.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.",
+    "sample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.\n           PERFORM PROC-02.\n\n       PROC-02.\n      * If condition is true then there is a recursive call\n           IF A < 13 THEN\n               PERFORM PROC-01\n           END-IF",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

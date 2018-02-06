@@ -1,0 +1,40 @@
+{
+    "id": 4606,
+    "type": "quality-rule",
+    "name": "Avoid using 'sun.*' Classes",
+    "href": "quality-rules/4606.json",
+    "associatedValueName": "Sun classes referenced by this artifact",
+    "description": "Java artifacts should not use 'sun.*' Classes",
+    "output": "This report lists all java artifacts using 'sun.*' Classes.\nIt provides the following information:\n - Artifact full name\n - sun classes referenced by this artifact",
+    "rationale": "Sun.*' Classes should not be used. Sun preserves the right to change the structure of those Classes without notice or documentation. Also, sun.* packages are not guaranteed to work on all Java-compatible platforms. These classes will not in general be present on another vendor's Java platform. If your Java program asks for a class \"sun.package.Foo\" by name, it may fail with ClassNotFoundError, and you will have lost a major advantage of developing in Java.",
+    "reference": "http://java.sun.com/products/jdk/faq/faq-sun-packages.html",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

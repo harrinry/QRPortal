@@ -1,0 +1,37 @@
+{
+    "id": 1007102,
+    "type": "quality-rule",
+    "name": "Avoid undocumented classes (PHP)",
+    "href": "quality-rules/1007102.json",
+    "description": "This rule searches for all undocumented Classes.",
+    "output": "\"This report lists all undocumented Classes.\n\nThis QR provides the following information:\nClass full name.\"",
+    "rationale": "Code maintainability can be improved if there is documentation in the code. This rule will ensure that comments exist in Classes.",
+    "remediation": "Modify the source code to reduce the number of undocumented Classes.",
+    "remediationSample": "\"class CastTest{\n    // Item\n    var $items;\n\n    // Add of the Item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\"",
+    "sample": "\"class CastTest{\n    var $items;\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\"",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

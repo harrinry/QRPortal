@@ -1,0 +1,28 @@
+{
+    "id": 2282,
+    "type": "quality-rule",
+    "name": "Avoid large Include Files",
+    "href": "quality-rules/2282.json",
+    "associatedValueName": "Included files",
+    "description": "Included files should not have more than X lines of code. The threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Files including Files with more than X lines of code. \nIt provides the following information: \n- JSP page name\n- Included files",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "id": 4702,
+    "type": "quality-rule",
+    "name": "Avoid using 'Throwable.printStackTrace()' outside a try catch block",
+    "href": "quality-rules/4702.json",
+    "associatedValueName": "Associated Value",
+    "description": "'Throwable.printStackTrace()' should not be used outside a try catch block.",
+    "output": "This report lists all Java artifacts using 'Throwable.printStackTrace()' outside a try catch block. It provides the following information:\n - Artifact full name",
+    "rationale": "Using 'Throwable.printStackTrace()' outside a catch block usually means that it is used to log the stack of errors, which has the risk of filling up the stdout or the log file.",
+    "total": "Number of non-abstract Java artifacts.",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

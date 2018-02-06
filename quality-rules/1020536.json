@@ -1,0 +1,36 @@
+{
+    "id": 1020536,
+    "type": "quality-rule",
+    "name": "Avoid using $ or jQuery, use angular.element instead",
+    "href": "quality-rules/1020536.json",
+    "description": "The angular.element method should be used instead of the $ or jQuery object (if you are using jQuery of course). If the jQuery library is imported, angular.element will be a wrapper around the jQuery object. This rule is compliant with CISQ OMG recommendation ASCMM-MNT-20.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you are using the official AngularJS API, always use the angular.element method instead of $ or jQuery object.",
+    "remediationSample": "// valid \nangular.element('.some-class');",
+    "sample": "// invalid \n$('.some-class'); // error: You should use angular.element instead of the jQuery $ object \n\n// invalid \njQuery('.another-class'); // error: You should use angular.element instead of the jQuery $ object",
+    "total": "Number of angular artifacts (controllers, services, factories, directives)",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

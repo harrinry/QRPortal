@@ -1,0 +1,32 @@
+{
+    "id": 1007228,
+    "type": "quality-rule",
+    "name": "Avoid having control structures without proper spacing in the open and close brace - PSR2 (PHP)",
+    "href": "quality-rules/1007228.json",
+    "description": "This rule reports all PHP Sections having control structures without proper spacing in the open and close brace.\nThis QR provides the following information:\nPHP Section full name.\"\n\nThis rule is based on Code Sniffer 2.5.0",
+    "output": "This rule reports all PHP Sections having control structures without proper spacing in the open and close brace.\nThis QR provides the following information:\nPHP Section full name.\"",
+    "rationale": "Using the proper Indentation in control structures helps to read , understand , modify , maintain and enhance the code easily.",
+    "reference": "https://pear.php.net/reference/PHP_CodeSniffer-latest/PHP_CodeSniffer/PSR2_Sniffs_ControlStructures_ControlStructureSpacingSniff.html",
+    "remediationSample": "foreach ($this as $that) { //Spacing between $that and ) is removed\n      }\n      do {\n      } while (true)",
+    "sample": "foreach ($this as $that ) {\n      }\n      do {\n      } while ( true )",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

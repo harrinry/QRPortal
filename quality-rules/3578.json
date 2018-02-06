@@ -1,0 +1,51 @@
+{
+    "id": 3578,
+    "type": "quality-rule",
+    "name": "Avoid large Classes - too many Constructors",
+    "href": "quality-rules/3578.json",
+    "associatedValueName": "Associated Value",
+    "description": "Classes should have less than X Constructors.\nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Classes with more than X Constructors.\nIt provides the following information: Class full name, number of Constructors",
+    "rationale": "For maintainability and readability reasons, Classes should not have too many Constructors.",
+    "remediation": "Review the Class design to reduce the number of Constructors",
+    "total": "Total number of classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        }
+    ]
+}

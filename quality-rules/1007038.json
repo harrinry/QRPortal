@@ -1,0 +1,40 @@
+{
+    "id": 1007038,
+    "type": "quality-rule",
+    "name": "Avoid classes having too many dependencies (PHP)",
+    "href": "quality-rules/1007038.json",
+    "description": "This rule searches for all the Classes with too many dependencies. The number of dependencies must not be greater than 13.",
+    "output": "\"This report lists all the Classes with too many dependencies.\n\nThis QR provides the following information:\nClass full name.\"",
+    "rationale": "A class with too many dependencies has a negative impact on several quality aspects of a class, including stability, maintainability and understandability.",
+    "remediation": "Review the architecture of the application.",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

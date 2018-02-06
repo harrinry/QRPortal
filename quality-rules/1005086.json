@@ -1,0 +1,35 @@
+{
+    "id": 1005086,
+    "type": "quality-rule",
+    "name": "Avoid functions having creator to prefix table names in SQL statements and in SQL records (EGL)",
+    "href": "quality-rules/1005086.json",
+    "description": "This rule searches for all the functions having creator to prefix tables in SQL statements and in SQL records.",
+    "output": "This report lists the following information: Function Full Name",
+    "rationale": "Creator prefix will prevent the default creator to be used in the different environments : DEV, TEST, PREPROD, PROD.",
+    "remediation": "Try to reduce the use of creator to prefix tables names in SQL statements and SQL records in functions.",
+    "total": "Number of Functions",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

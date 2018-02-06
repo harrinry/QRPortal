@@ -1,0 +1,35 @@
+{
+    "id": 1600770,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid Pages with more than X linked Records",
+    "href": "quality-rules/1600770.json",
+    "associatedValueName": "Number of Linked Records",
+    "output": "This report lists all the Pages with too many linked records",
+    "rationale": "Do not access to many records in the same page",
+    "reference": "2.3",
+    "total": "Number of PeopleSoft Pages (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

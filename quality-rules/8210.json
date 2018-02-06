@@ -1,0 +1,39 @@
+{
+    "id": 8210,
+    "type": "quality-rule",
+    "name": "Objective-C interface overrides the isEqual: method but not the hash method",
+    "href": "quality-rules/8210.json",
+    "description": "Class that overwrites -isEqual: also must override -hash. This rule is compliant with CISQ OMG recommendation ASCRM-RLB-04",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "If -isEqual: determines that two objects are equal, they must have the same hash value. This is why, if you override the isEqual method, you also need to override the hash method.",
+    "reference": "https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/ObjectComparison.html",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ]
+}

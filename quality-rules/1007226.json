@@ -1,0 +1,32 @@
+{
+    "id": 1007226,
+    "type": "quality-rule",
+    "name": "Avoid having For-loops that use a function call in the test expression (PHP)",
+    "href": "quality-rules/1007226.json",
+    "description": "Detects for-loops that use a function call in the test expression",
+    "output": "This rule reports all the for-loops that use a function call in the test expression.\nThis QR provides the following information:\nPHP Section full name.\"",
+    "rationale": "Using function call in the test expression for a FOR loop decrease the performance of your application by calling the same function multiple times. Using variables is much faster and can improve the performance of the application.",
+    "reference": "Code Sniffer - https://pear.php.net/reference/PHP_CodeSniffer-latest/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_ForLoopWithTestFunctionCallSniff.html",
+    "remediationSample": "$x = getValue($a)\n      for ($i = 0; $i < $x; $i++) {\n       $a[$i] *= $i;\n      }",
+    "sample": "for ($i = 0; $i < getValue($a); $i++) {\n       $a[$i] *= $i;\n      }",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

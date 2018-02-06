@@ -1,0 +1,41 @@
+{
+    "id": 1600668,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Do not define a recordField EFFDT or EFF_STATUS without the other",
+    "href": "quality-rules/1600668.json",
+    "associatedValueName": "Either 'Missing EFF_STATUS' or 'Missing EFFDT'",
+    "description": "When EFFDT is used on a non-employee data record, the EFF_STATUS field should also be defined for the record. Do not define only one without the other.",
+    "output": "This report lists all the PeopleSoft Records with either EFFDT or EFF_STATUS but not the other",
+    "rationale": "As PeopleSoft generates automatically the SQL query to handle the effective date, both columns should be defined.",
+    "reference": "2.3",
+    "total": "Number of PeopleSoft Records with EFFDT or EFFSTATUS",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

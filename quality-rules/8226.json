@@ -1,0 +1,32 @@
+{
+    "id": 8226,
+    "type": "quality-rule",
+    "name": "Avoid Weak Encryption Algorithm",
+    "href": "quality-rules/8226.json",
+    "description": "When using the CCCrypt function, you must provide an encryption algorithm. Antiquated encryption algorithms, especially those that use keys of insufficient size, no longer provide sufficient protection for use with sensitive data, as technological advancements have made it computationally feasible to obtain small encryption keys through brute-force in a reasonable amount of time. This rule is compliant with OWASP M5 2016 and with CISQ-OMG ASCSM-CWE-327 recommendation.",
+    "output": "This report lists all uses of CCCrypt function call\n\nIt provides the following information:\nObject full name, number of violations\n",
+    "rationale": "Insecure use of cryptography is common in most mobile apps that leverage encryption. There are two fundamental ways that broken cryptography is manifested within mobile apps. First, the mobile app may use a process behind the encryption / decryption that is fundamentally flawed and can be exploited by the adversary to decrypt sensitive data. Second, the mobile app may implement or leverage an encryption / decryption algorithm that is weak in nature and can be directly decrypted by the adversary.",
+    "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M5-Insufficient_Cryptography",
+    "remediation": "Better to use the value kCCAlgorithmAES128 instead of kCCAlgorithmDES, kCCAlgorithm3DES, kCCAlgorithmCAST, kCCAlgorithmRC4",
+    "remediationSample": "CCCrypt(kCCEncrypt,\n        kCCAlgorithmAES128,\n        kCCOptionPKCS7Padding,\n        key,\n        kCCKeySizeAES128, // 128-bit key size\n        iv,\n        plaintext,\n        sizeof(plaintext),\n        ciphertext,\n        sizeof(ciphertext),\n        &numBytesEncrypted);",
+    "sample": "CCCrypt(kCCEncrypt,\n        kCCAlgorithmDES,\n        kCCOptionPKCS7Padding,\n        key,\n        kCCKeySizeDES, // 64-bit key size\n        iv,\n        plaintext,\n        sizeof(plaintext),\n        ciphertext,\n        sizeof(ciphertext),\n        &numBytesEncrypted);",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ]
+}

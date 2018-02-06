@@ -1,0 +1,34 @@
+{
+    "id": 4718,
+    "type": "quality-rule",
+    "name": "Package size control",
+    "href": "quality-rules/4718.json",
+    "associatedValueName": "Number of Classes and Interfaces",
+    "description": "A Package should not have more than X and less than Y Public Classes/interfaces. The parameters X and Y, maximum number and minimum number can be customized at will.",
+    "output": "This report lists all Packages having more than X and less than Y Public Classes or Interfaces.\nIt provides the following information:\n - Package full name\n - Number of Classes and Interfaces",
+    "rationale": "Packages must have a reasonable size when measured in number of Classes/interfaces.",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

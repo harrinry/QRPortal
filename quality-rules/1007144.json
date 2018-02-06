@@ -1,0 +1,37 @@
+{
+    "id": 1007144,
+    "type": "quality-rule",
+    "name": "Avoid classes exceeding number of weighted methods (PHP)",
+    "href": "quality-rules/1007144.json",
+    "description": "This rule searches for all the classes exceeding the number of weighted methods. The number of weighted methods is set to 50.",
+    "output": "\"This report lists all the classes exceeding the number of weighted methods.\n\nThis QR provides the following information:\nClass  full name.\"",
+    "rationale": "The number of weighted methods of a class is a good indicator of how much time and effort is required to modify and maintain this class. A class with a large number of methods also means that this class has a greater potential impact on derived classes and therefore the cost to maintain and test it is also high.\n\nA large number of methods also means that this class has a greater potential impact on derived classes.\n\n\nA class is violating the rules when having more than 50 weighted methods",
+    "reference": "PHPMD http://phpmd.org/rules/codesize.html#excessiveclasscomplexity",
+    "remediation": "Modify the source code of the class to reduce the number of weighted methods.",
+    "sample": "\"class CastTest\n{\n public function test1()\n {\n\n  if ($a == $b)\n  {\n   if ($a1 == $b1)\n   {\n    test();\n\n   }\n   else if ($a2 == $b2)\n   {\n    test();\n   }\n\n   else {\n   }\n  }\n }\n\n public function test2()\n\n {\n  if ($a == $b)\n  {\n   if ($a1 == $b1)\n   {\n\ntest();\n   }\n   else if ($a2 == $b2)\n   {\n    test();\n\n}\n   else { }\n  }\n }\n // Several other complex methods\n}\"",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

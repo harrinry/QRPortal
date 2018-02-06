@@ -1,0 +1,35 @@
+{
+    "id": 1600168,
+    "type": "quality-rule",
+    "name": "PeopleSoft: All new Translate value shoud be at dd/mm/yyyy",
+    "href": "quality-rules/1600168.json",
+    "description": "Identify each added Translate value with an effective date not equal to the parameter value",
+    "output": "Failed checks gives the number of fields that contain new XLAT wrongly defined. The XLAT name can be found in the value column",
+    "rationale": "To ensure that added Translate values are used in place of the standard value, choose an effective date greater than 01/01/1900.",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Field translate values (MODIFIED)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

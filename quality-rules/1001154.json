@@ -1,0 +1,42 @@
+{
+    "id": 1001154,
+    "type": "quality-rule",
+    "name": "Avoid Programs having files declared and not having the ON UNDF or ON UNDEFINEDFILE statement except SYSPRINT and SYSIN (PL1)",
+    "href": "quality-rules/1001154.json",
+    "description": "This rule searches for all PL1 Main Procedures (Programs)  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.",
+    "output": "The report lists all the  PL1 Main Procedures  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.\n\nIt provides following information: \n- PL1 Main Procedures full name",
+    "rationale": "When a program doesn't check for its files availability, it may produce an abend.",
+    "remediation": "Always have ON UNDF or ON UNDEFINEDFILE statement for the declared files.",
+    "remediationSample": "DCL     SYSPRINT FILE  STREAM OUTPUT PRINT;\nDCL     FTEST1   FILE  RECORD INPUT;       \nDCL     FTEST2   FILE  RECORD INPUT;       \nDCL     FTEST3  FILE  RECORD OUTPUT;      \nON UNDF (FTEST1) UDF_FTEST1 = ON;  \nON UNDF (FTEST2) UDF_FTEST2 = ON;  \nON UNDF (FTEST3) UDF_FTEST3 = ON;",
+    "sample": "DCL     SYSPRINT FILE  STREAM OUTPUT PRINT;\nDCL     FTEST1   FILE  RECORD INPUT;       \nDCL     FTEST2   FILE  RECORD INPUT;       \nDCL     FTEST3  FILE  RECORD OUTPUT;      \nON UNDF (FTEST1) UDF_FTEST1 = ON;  \nON UNDF (FTEST2) UDF_FTEST2 = ON;",
+    "total": "Number of PL1 Main Procedures.",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

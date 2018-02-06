@@ -1,0 +1,50 @@
+{
+    "id": 1600286,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid use the Hints to force Oracle to use a specific access method",
+    "href": "quality-rules/1600286.json",
+    "description": "To force Oracle to use a specific access method use the Hints",
+    "rationale": "To force Oracle to use a specific access method use the Hints",
+    "reference": "3.0",
+    "remediation": "To force Oracle to use a specific access method use the Hints. But do so knowingly (Oracle will not use the right index...) and be aware of the consequences (if tomorrow the indexes change, you may degrade database performance without knowing).\nSo, when you know what you are doing, you might use the hints.\nThe Hints are enclosed in comment :\n{DELETE|INSERT|SELECT|UPDATE} /*+ hint [text] [hint[text]]... */\nlocated between the SELECT clause and the first column in the list.",
+    "total": "Number of PeopleSoft SQL Definitions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

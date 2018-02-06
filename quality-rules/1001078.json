@@ -1,0 +1,35 @@
+{
+    "id": 1001078,
+    "type": "quality-rule",
+    "name": "Avoid having Copybooks with reserved prefix (PL1)",
+    "href": "quality-rules/1001078.json",
+    "description": "This rule searches all the Copybooks using reserved prefixes like below:\n- CEE : IBM routines \n- DFH : CICS vendor modules\n- IGY : Cobol\n- EYU : Cicsplex SM\n- DSN : DB2\n- CTG : CTG\n- CSQ / MQ  : MQ framework",
+    "output": "The report lists all the Copybook not following the Naming Convention for the Prefix.\nIt provides following information: \n- Copybook full name",
+    "rationale": "These prefixes are used as a standard by software vendors and modules could overlap.",
+    "remediation": "Verify the copybooks in violation are not your custom copybooks. If this is the case, change their name to avoid any confusion.",
+    "total": "Number of Copybooks",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "technologies/1004000.json"
+        }
+    ]
+}

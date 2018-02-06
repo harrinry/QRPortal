@@ -1,0 +1,39 @@
+{
+    "id": 7502,
+    "type": "quality-rule",
+    "name": "Never use array to map a collection",
+    "href": "quality-rules/7502.json",
+    "associatedValueName": "Associated Value",
+    "description": "Reports any association made using array",
+    "output": "List all Hibernate Entities that use array to map a collection.\n\nIt provides the following information:\n Hibernate Entity Full Name",
+    "rationale": "Hibernate supports this usage; indeed, the details of an array mapping are virtually identical to those of a list. However, we very strongly recommend against the use of arrays, since arrays can't be lazily initialized (there is no way to proxy an array at the virtual machine level).\nLists, maps and sets are the most efficient collection types.\n\nSo, using array can affect your application performance when it can contain many items, it looses lazy loading, optimized dirty checking and performance features for persistent collections.",
+    "reference": "Hibernate in Action (ISBN 1932394-15-X) p 214\nhttp://srcrr.com/java/hibernate/3.6.2/reference/org/hibernate/collection/PersistentArrayHolder.html",
+    "remediation": "Use lists, maps, bags, idbags and sets depending on your case.",
+    "remediationSample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // FIXED with a list (it could have been set, map, idbag or bag)\n    <list name=\"Bitems\" cascade=\"all\" fetch=\"join\"> \n      <key column=\"B_ID\"/>\n      <list-index column=\"ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n  <class name=\"B\" table=\"B\" lazy=\"true\">\n    <id name=\"id\" column=\"B_ID\">\n      <generator class=\"increment\"/>\n    </id>\n  </class>\n\n</hibernate-mapping>",
+    "sample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\">\n    <id name=\"id\" column=\"A_ID\">\n      <generator class=\"increment\"/>\n    </id>\n     <array name=\"Bitems\" cascade=\"all\" fetch=\"join\"> // VIOLATION\n      <key column=\"A_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n  <class name=\"B\" table=\"B\" lazy=\"true\">\n    <id name=\"id\" column=\"B_ID\">\n      <generator class=\"increment\"/>\n    </id>\n  </class>\n\n</hibernate-mapping",
+    "total": "The total will be the number of Hibernate Entities that map a collection that could be: array, map, list, set, bag or idbag",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}

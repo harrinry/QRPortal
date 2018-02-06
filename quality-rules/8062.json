@@ -1,0 +1,48 @@
+{
+    "id": 8062,
+    "type": "quality-rule",
+    "name": "An unconditional 'throw', 'return' or 'break' shall terminate every non-empty switch-clause",
+    "href": "quality-rules/8062.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule checks for a 'switch'-clause that does not end with a 'break', a 'return' or a 'throw'. This construct should be at the top level in the 'switch'-clause. The rule is not triggered if the last 'switch'-clause of a 'switch' statement is 'default', and does not explicitly end with 'break', 'return' or 'throw'.",
+    "output": "Associated to each C function, C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- The number of violations patterns\n- Bookmarks for violation patterns found in source code:\n  - case clause",
+    "rationale": "By default, when the program reaches the end of a 'switch'-clause, it continues to the next clause. While this may prove useful in some cases, it is very uncommon and not at all obvious.",
+    "reference": "MISRA C++",
+    "remediation": "Add a 'break', 'return' or 'throw' statement to end 'case' clauses.",
+    "sample": "int main()\n{\n    int i = 2;\n    switch(i)\n    {\n    case 0:\n        cout << \"0\" << endl;\n        // Violation\n    case 1:\n        // No violation: Empty clause\n    case 2:\n        cout << \"1 or 2\" << endl;\n        break; // No violation: A break\n    default:\n        cout << \"Other\" << endl;\n        // No violation: Last clause is default\n    }\n}",
+    "total": "Number of C functions, C++ methods, constructors, and destructors",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        }
+    ]
+}

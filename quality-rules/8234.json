@@ -1,0 +1,30 @@
+{
+    "id": 8234,
+    "type": "quality-rule",
+    "name": "Avoid using SecTransform API",
+    "href": "quality-rules/8234.json",
+    "description": "The SecTransform API must not be used for Security are deprecated and must not be used within an iOS application. This rule is compliant with OWASP M5 2016 and with CISQ-OMG ASCSM-CWE-327 recommendations.",
+    "output": "This report lists all uses of SecTransform functions like:\n- SecTransformCreateReadTransformWithReadStream\n- SecTransformRef\n- SecTransformGetTypeID\n- SecEncodeTransformCreate\n- SecDecodeTransformCreate\n- SecEncryptTransformCreate\n- SecDecryptTransformCreate\n- SecEncryptTransformGetTypeID\n- SecDecryptTransformGetTypeID\n- SecSignTransformCreate\n- SecVerifyTransformCreate\n- SecDigestTransformCreate\n- SecDigestTransformGetTypeID\n- SecTransformCreate\n- SecTransformRegister\n- SecTransformCreateFP\n- SecTransformInstanceBlock\n- SecTransformImplementationRef\n- SecTransformCreateGroupTransform\n- SecTransformFindByName\n- SecGroupTransformRef\n- SecGroupTransformGetTypeID\n- SecTransformSetAttribute\n- SecTransformGetAttribute\n- SecTransformCustomSetAttribute\n- SecTransformCustomGetAttribute\n- SecTransformPushbackAttribute\n- SecTransformAttributeRef\n- SecTransformStringOrAttributeRef\n- SecTransformMetaAttributeType\n- SecTransformSetDataAction\n- SecTransformSetAttributeAction\n- SecTransformSetTransformAction\n- SecTransformActionBlock\n- SecTransformAttributeActionBlock\n- SecTransformDataBlock\n- SecTransformConnectTransforms\n- SecTransformExecute\n- SecTransformExecuteAsync\n- SecTransformNoData\n- SecTransformCopyExternalRepresentation\n- SecTransformCreateFromExternalRepresentation\n \nIt provides the following information: \nObject full name, number of violations\n",
+    "rationale": "Mobile apps that communicate over the Internet often fail to properly implement SSL/TLS, if they implement it at all. These failures could leave users\u2019 communications open to interception and even session hijacking. Using SSL/TLS properly involves careful checking of the server\u2019s certificate chain. Thus, an app or library that validates SSL/TLS certificates should do the following checks to ensure strong authentication, confidentiality and integrity.",
+    "reference": "https://developer.apple.com/security/\nhttps://developer.apple.com/documentation/security/security_transforms?language=objc",
+    "remediation": "Please use the SecKey API instead.",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ]
+}

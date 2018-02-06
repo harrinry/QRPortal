@@ -1,0 +1,40 @@
+{
+    "id": 1005020,
+    "type": "quality-rule",
+    "name": "Avoid old VAGen Compatibility statements (EGL)",
+    "href": "quality-rules/1005020.json",
+    "description": "This rule searches for all programs having old VAGen Compatibility statements",
+    "output": "This report provides the following information: Program full name",
+    "rationale": "VAGen Compatibility must be set to YES.\nWe want to get rid of this mode in the futur.",
+    "remediation": "Try to reduce the number of VAGen Compatibility statements and when possible replace them.",
+    "total": "Number of Programs",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1015000,
+            "name": "EGL",
+            "href": "technologies/1015000.json"
+        }
+    ]
+}

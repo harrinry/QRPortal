@@ -1,0 +1,42 @@
+{
+    "id": 1007158,
+    "type": "quality-rule",
+    "name": "Avoid using exit and die expressions (PHP)",
+    "href": "quality-rules/1007158.json",
+    "description": "This rule searches for all the methods and functions containing exit and die expressions.",
+    "output": "\"This report lists all the methods and functions containing exit and die expressions.\n\nThis QR provides the following information:\nmethod full name and function full name.\"",
+    "rationale": "Source code containing exit and die expressions is difficult to test and should therefore be avoided.",
+    "reference": "PHPMD - http://phpmd.org/rules/design.html#exitexpression",
+    "remediation": "Modify the source code to reduce the use of exit and die expressions.",
+    "sample": "\"class CastTest{\n public function test($param) {\n  if ($param === 90)\n  {\n   exit(10);\n  }\n }\n}\"",
+    "total": "Methods and Functions",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

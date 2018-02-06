@@ -1,0 +1,43 @@
+{
+    "id": 4084,
+    "type": "quality-rule",
+    "name": "Avoid nested Stored Procedures using temporary Tables",
+    "href": "quality-rules/4084.json",
+    "associatedValueName": "Associated Value",
+    "description": "Nested Stored Procedures should not use temporary Tables",
+    "output": "This report lists all nested Stored Procedures using temporary Tables\nIt provides the following information:  Procedure name, Procedure full name, number of used temporary Tables",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "technologies/140998.json"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "technologies/141001.json"
+        }
+    ]
+}

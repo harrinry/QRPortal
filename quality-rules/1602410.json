@@ -1,0 +1,30 @@
+{
+    "id": 1602410,
+    "type": "quality-rule",
+    "name": "PeopleSoft: All created or modified Record Query must be in a project.",
+    "href": "quality-rules/1602410.json",
+    "description": "Check for objects not belonging to a project",
+    "rationale": "Projects are used to identify and deliver objects that have been created or modified",
+    "reference": "3.0",
+    "remediation": "If an object is created or modified, you must insert it into a project by using \"Insert / Current definition into project\"",
+    "total": "Number of PeopleSoft Record Query",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

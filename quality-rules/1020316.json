@@ -1,0 +1,37 @@
+{
+    "id": 1020316,
+    "type": "quality-rule",
+    "name": "Avoid Universal Selectors",
+    "href": "quality-rules/1020316.json",
+    "description": "Avoid Universal Selectors because element selections that could be matched anywhere in the document can be very slow. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure that using jQuery selector request do not lead to a performance issue.",
+    "reference": "http://learn.jquery.com/performance/optimize-selectors/",
+    "remediationSample": "$('div.container').children(); // BETTER\nor\n$( \"input:radio\" ); // Much better.",
+    "sample": "$('div.container > *'); // SLOW\nor\n$( \":radio\" ); // Implied universal selection.\nor\n$( \"*:radio\" ); // Implied universal selection.",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ]
+}

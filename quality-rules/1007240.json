@@ -1,0 +1,47 @@
+{
+    "id": 1007240,
+    "type": "quality-rule",
+    "name": "Avoid having object not instantiated using parenthesis - Symfony STD (PHP)",
+    "href": "quality-rules/1007240.json",
+    "description": "This QR will have violations if parentheses are not used while instantiating objects. \nObjects when being constructed can use non-parentheses syntax which is not recommended.",
+    "output": "PHP Sections that have object instantiations without parentheses.",
+    "rationale": "Use parentheses when instantiating classes regardless of the number of arguments the constructor has because usually, when method is being called PHP requires () and constructors are methods.\nAlso, it's more consistent with instantiations that have parameters.",
+    "remediation": "Use parentheses when instantiating classes regardless of the number of arguments the constructor has.",
+    "remediationSample": "<?php\n\n   class test\n   {\n      public function test();\n   }\n                           \n   $testobj = new test();\n\n?>",
+    "sample": "<?php\n\n   class test\n   {\n      public function test();\n   }\n                           \n   $testobj = new test;\n\n?>",
+    "total": "Number of Sections",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "technologies/1017000.json"
+        }
+    ]
+}

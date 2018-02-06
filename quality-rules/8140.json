@@ -1,0 +1,39 @@
+{
+    "id": 8140,
+    "type": "quality-rule",
+    "name": "Subscripts and iterators must be defined with BINARY usage",
+    "href": "quality-rules/8140.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule lists Cobol Programs that access internal tables with a subscript rather than an index.",
+    "output": "This rule lists all Cobol Programs that define internal tables without any index, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n- Cobol Section/Pragraph fullname, number of voilations",
+    "rationale": "How you define numeric fields can have an impact on performance. If you are using a field for arithmetic increment or as a subscript \nand the field has 8 or fewer digits it is quite often best to define it as a binary number (usage is BINARY, COMP or COMP-4) \nthat is signed. This is because binary numbers can be manipulated much faster and consume less CPU.",
+    "reference": "IBM Cobol - Best Practices and Recommendations",
+    "remediation": "Check declaration of variables used as subscripts or iterators and add a sign in their picture, adapt the number of digit to 4 or 8, and set  BINARY in their usage clause.\n",
+    "remediationSample": "01 DIRECT-TAX-RATE. \n01 I PIC 9(01) USAGE BINARY.\n02 TAX-RATE PIC 99 OCCURS 5 TIMES INDEXED BY TX-INDEX. \n...\nPROCEDURE DIVISION. \nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 6\n... \nEND-PERFORM.",
+    "sample": "01 DIRECT-TAX-RATE. \n01 I PIC 9(01).\n02 TAX-RATE PIC 99 OCCURS 5 TIMES INDEXED BY TX-INDEX. \n...\nPROCEDURE DIVISION. \nPERFORM VARYING I FROM 1 BY 1 UNTIL I > 6\n... \nEND-PERFORM.",
+    "total": "Number of violations",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "technologies/-4.json"
+        }
+    ]
+}

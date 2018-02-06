@@ -1,0 +1,47 @@
+{
+    "id": 8158,
+    "type": "quality-rule",
+    "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+    "href": "quality-rules/8158.json",
+    "associatedValueName": "Associated Value",
+    "description": "This rule reports Resource Management Control Element in a Component Built to Run on Application Servers.Reports components that are using threads.",
+    "output": "\nThis report lists all artifacts having Resource Management Control Element in a Component Built to Run on Application Servers. \nIt provides the following information: \n - Artifact full name\n",
+    "rationale": "Software featuring known weak coding practices results in unexpected and erroneous behaviours",
+    "remediation": "Change the architecture of the application.",
+    "sample": "public static void Main() { \n        Console.WriteLine(\"Main thread: Start a second thread.\"); \n        // The constructor for the Thread class requires a ThreadStart \n        // delegate that represents the method to be executed on the \n        // thread. C# simplifies the creation of this delegate. \n        Thread t = new Thread(new ThreadStart(ThreadProc)); \n\n        // Start ThreadProc. Note that on a uniprocessor, the new \n        // thread does not get any processor time until the main thread \n        // is preempted or yields. Uncomment the Thread.Sleep that \n        // follows t.Start() to see the difference. \n        t.Start(); \n        //Thread.Sleep(0); \n\n        for (int i = 0; i < 4; i++) { \n            Console.WriteLine(\"Main thread: Do some work.\"); \n            Thread.Sleep(0); \n        } \n\n        Console.WriteLine(\"Main thread: Call Join(), to wait until ThreadProc ends.\"); \n        t.Join(); \n        Console.WriteLine(\"Main thread: ThreadProc.Join has returned. Press Enter to end program.\"); \n        Console.ReadLine(); \n    }\n  ",
+    "total": "The number of artifacts",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        }
+    ]
+}

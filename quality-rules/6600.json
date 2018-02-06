@@ -1,0 +1,21 @@
+{
+    "id": 6600,
+    "type": "quality-rule",
+    "name": "DELETED:6600 Avoid functions and procedures with a very low comment/code ratio",
+    "href": "quality-rules/6600.json",
+    "associatedValueName": "Associated Value",
+    "description": "Procedures should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Procedures with comment/code ratio lower than X %.\nIt provides the following information:\nProcedure name, Procedure full name, comment/code ratio",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
+    "remediation": "Enrich Artifact code with comments",
+    "businessCriteria": [
+        
+    ],
+    "technologies": [
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "technologies/-14.json"
+        }
+    ]
+}

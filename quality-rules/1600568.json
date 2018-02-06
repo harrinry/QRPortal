@@ -1,0 +1,31 @@
+{
+    "id": 1600568,
+    "type": "quality-rule",
+    "name": "PeopleSoft: New field added in a standard record must be at the end of the record",
+    "href": "quality-rules/1600568.json",
+    "associatedValueName": "Added field full name",
+    "description": "New field added in a standard record must be done in a specific <KEY> sub-record, always at the end of the record; except when the last field have type long, then add the new field before this field.\nFor new record, it's not mandatory to add a specific sub-record. You can add a standard sub-record to a new record.",
+    "output": "This report lists all Records that contain added fields before a standard field. It provides the following information:\n- Records full name,\n- Added Fields full name",
+    "rationale": "New field added in a standard record must be at the end of the record",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Records with added fields (MODIFIED)",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ]
+}

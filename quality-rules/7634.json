@@ -1,0 +1,39 @@
+{
+    "id": 7634,
+    "type": "quality-rule",
+    "name": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
+    "href": "quality-rules/7634.json",
+    "associatedValueName": "Hibernate Entity name",
+    "description": "Reports Hibernate Entities that set select-before-update property to true and that are not associated to a table that fires an UPDATE trigger.",
+    "output": "List all Hibernate Entity that use select-before-update and that are not associated to a table that fires an UPDATE trigger.\n\nIt provides the following information:\n - XML File\n - Hibernate Entity",
+    "rationale": "Triggers and object-relational mapping often create issues due to the difficulties of synchronizing the effect of a trigger with the representation of data in memory.\nTo enhance performances, it is a best practice to use the attribute select-before-update for the persistent class associated to a table that have the UPDATE trigger.\nBut if the table is not associated to an UPDATE trigger, then it will affect your performance since the application will perform unnecessary SELECT.",
+    "reference": "Hibernate in Action (ISBN 1932394-15-X) p 339",
+    "remediation": "Remove the attribute select-before-update for the persistent class that is not associated to a table that have the UPDATE trigger.",
+    "remediationSample": "---> sample.hbm.xml\n// FIXED\n<class name=\"Sample\" table=\"SAMPLE\">\n...\n</class>",
+    "sample": "SAMPLE is a table not managed by an UPDATE trigger\n---> sample.hbm.xml\n// VIOLATION\n<class name=\"Sample\" table=\"SAMPLE\" select-before-update=\"true\">\n...\n</class>",
+    "total": "The number of Hibernate XML Entities that have the select-before-update property",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ]
+}
