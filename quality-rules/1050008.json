@@ -1,0 +1,30 @@
+{
+    "id": 1050008,
+    "type": "quality-rule",
+    "name": "Avoid using NSMutableString appendFormat: on behalf of NSURL instance",
+    "href": "quality-rules/1050008.json",
+    "description": "An attacker can tamper with the URL and point it to an unintended server. Sensitive information may then be transmitted to the attacker's server.\nThe injection could be done in NSMutableString using the methods\nappendFormat:\nand used when instanciating through NSURL URLWithString.\nThis rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and with OWASP 2014-M7 recommendation",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "An attacker could access other user information thanks to string injection threw the addFormat method. This is why it is highly recommended to avoid the usage of the API.",
+    "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2014-M7\n\nhttps://developer.apple.com/library/mac/documentation/Security/Conceptual/SecureCodingGuide/Articles/ValidatingInput.html#//apple_ref/doc/uid/TP40007246-SW3",
+    "total": "Number of Objective-C artifacts",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ]
+}
