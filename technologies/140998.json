@@ -2,236 +2,283 @@
     {
         "id": 1634,
         "name": "Avoid unreferenced Tables",
-        "href": "quality-rules/1634.json"
+        "href": "quality-rules/1634.json",
+        "critical": false
     },
     {
         "id": 4056,
         "name": "Avoid recursive Triggers",
-        "href": "quality-rules/4056.json"
+        "href": "quality-rules/4056.json",
+        "critical": false
     },
     {
         "id": 4062,
         "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction",
-        "href": "quality-rules/4062.json"
+        "href": "quality-rules/4062.json",
+        "critical": false
     },
     {
         "id": 4064,
         "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
-        "href": "quality-rules/4064.json"
+        "href": "quality-rules/4064.json",
+        "critical": true
     },
     {
         "id": 4066,
         "name": "Avoid Stored Procedures not returning a status value",
-        "href": "quality-rules/4066.json"
+        "href": "quality-rules/4066.json",
+        "critical": false
     },
     {
         "id": 4070,
         "name": "Avoid use of \"truncate table\"",
-        "href": "quality-rules/4070.json"
+        "href": "quality-rules/4070.json",
+        "critical": true
     },
     {
         "id": 4076,
         "name": "Avoid using temporary Objects",
-        "href": "quality-rules/4076.json"
+        "href": "quality-rules/4076.json",
+        "critical": false
     },
     {
         "id": 4084,
         "name": "Avoid nested Stored Procedures using temporary Tables",
-        "href": "quality-rules/4084.json"
+        "href": "quality-rules/4084.json",
+        "critical": false
     },
     {
         "id": 7386,
         "name": "Avoid Tables without a clustered Index",
-        "href": "quality-rules/7386.json"
+        "href": "quality-rules/7386.json",
+        "critical": false
     },
     {
         "id": 7404,
         "name": "Avoid unreferenced views",
-        "href": "quality-rules/7404.json"
+        "href": "quality-rules/7404.json",
+        "critical": false
     },
     {
         "id": 7420,
         "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
-        "href": "quality-rules/7420.json"
+        "href": "quality-rules/7420.json",
+        "critical": false
     },
     {
         "id": 7660,
         "name": "Never use SQL queries with a cartesian product on XXL Tables",
-        "href": "quality-rules/7660.json"
+        "href": "quality-rules/7660.json",
+        "critical": true
     },
     {
         "id": 7662,
         "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
-        "href": "quality-rules/7662.json"
+        "href": "quality-rules/7662.json",
+        "critical": true
     },
     {
         "id": 7760,
         "name": "Avoid triggers, functions and procedures with a very low comment/code ratio",
-        "href": "quality-rules/7760.json"
+        "href": "quality-rules/7760.json",
+        "critical": false
     },
     {
         "id": 7762,
         "name": "Avoid undocumented Triggers, Functions and Procedures",
-        "href": "quality-rules/7762.json"
+        "href": "quality-rules/7762.json",
+        "critical": false
     },
     {
         "id": 7766,
         "name": "Avoid Artifacts with High Cyclomatic Complexity",
-        "href": "quality-rules/7766.json"
+        "href": "quality-rules/7766.json",
+        "critical": false
     },
     {
         "id": 7768,
         "name": "Avoid Artifacts with High Depth of Code",
-        "href": "quality-rules/7768.json"
+        "href": "quality-rules/7768.json",
+        "critical": false
     },
     {
         "id": 7770,
         "name": "Avoid Artifacts with too many parameters",
-        "href": "quality-rules/7770.json"
+        "href": "quality-rules/7770.json",
+        "critical": false
     },
     {
         "id": 7772,
         "name": "Avoid Artifacts with High Essential Complexity",
-        "href": "quality-rules/7772.json"
+        "href": "quality-rules/7772.json",
+        "critical": false
     },
     {
         "id": 7774,
         "name": "Avoid Artifacts with High Integration Complexity",
-        "href": "quality-rules/7774.json"
+        "href": "quality-rules/7774.json",
+        "critical": false
     },
     {
         "id": 7776,
         "name": "Avoid Artifacts with High Fan-In",
-        "href": "quality-rules/7776.json"
+        "href": "quality-rules/7776.json",
+        "critical": false
     },
     {
         "id": 7778,
         "name": "Avoid Artifacts with High Fan-Out",
-        "href": "quality-rules/7778.json"
+        "href": "quality-rules/7778.json",
+        "critical": false
     },
     {
         "id": 7784,
         "name": "Avoid Artifacts with lines longer than X characters",
-        "href": "quality-rules/7784.json"
+        "href": "quality-rules/7784.json",
+        "critical": false
     },
     {
         "id": 7786,
         "name": "Avoid long Table or View names",
-        "href": "quality-rules/7786.json"
+        "href": "quality-rules/7786.json",
+        "critical": false
     },
     {
         "id": 7790,
         "name": "Avoid Cursors inside a loop",
-        "href": "quality-rules/7790.json"
+        "href": "quality-rules/7790.json",
+        "critical": true
     },
     {
         "id": 7806,
         "name": "Avoid Artifacts with Group By",
-        "href": "quality-rules/7806.json"
+        "href": "quality-rules/7806.json",
+        "critical": false
     },
     {
         "id": 7808,
         "name": "Avoid Artifacts with SQL statement including subqueries",
-        "href": "quality-rules/7808.json"
+        "href": "quality-rules/7808.json",
+        "critical": false
     },
     {
         "id": 7810,
         "name": "Avoid Artifacts with a Complex SELECT Clause",
-        "href": "quality-rules/7810.json"
+        "href": "quality-rules/7810.json",
+        "critical": false
     },
     {
         "id": 7814,
         "name": "Avoid Tables not using referential integrity",
-        "href": "quality-rules/7814.json"
+        "href": "quality-rules/7814.json",
+        "critical": false
     },
     {
         "id": 7816,
         "name": "Avoid using GOTO statement",
-        "href": "quality-rules/7816.json"
+        "href": "quality-rules/7816.json",
+        "critical": false
     },
     {
         "id": 7820,
         "name": "Never use SQL queries with a cartesian product",
-        "href": "quality-rules/7820.json"
+        "href": "quality-rules/7820.json",
+        "critical": false
     },
     {
         "id": 7822,
         "name": "Avoid Artifacts with queries on more than 4 Tables",
-        "href": "quality-rules/7822.json"
+        "href": "quality-rules/7822.json",
+        "critical": false
     },
     {
         "id": 7828,
         "name": "Avoid Artifacts with High RAW SQL Complexity",
-        "href": "quality-rules/7828.json"
+        "href": "quality-rules/7828.json",
+        "critical": false
     },
     {
         "id": 7840,
         "name": "Trigger naming convention - prefix control",
-        "href": "quality-rules/7840.json"
+        "href": "quality-rules/7840.json",
+        "critical": false
     },
     {
         "id": 7842,
         "name": "Avoid large Artifacts - too many Lines of Code",
-        "href": "quality-rules/7842.json"
+        "href": "quality-rules/7842.json",
+        "critical": false
     },
     {
         "id": 7852,
         "name": "Database view naming convention - prefix control",
-        "href": "quality-rules/7852.json"
+        "href": "quality-rules/7852.json",
+        "critical": false
     },
     {
         "id": 7854,
         "name": "Database table naming convention - prefix control",
-        "href": "quality-rules/7854.json"
+        "href": "quality-rules/7854.json",
+        "critical": false
     },
     {
         "id": 7856,
         "name": "Avoid Tables with more than 20 columns on an OLTP system",
-        "href": "quality-rules/7856.json"
+        "href": "quality-rules/7856.json",
+        "critical": false
     },
     {
         "id": 7860,
         "name": "Avoid unreferenced Functions",
-        "href": "quality-rules/7860.json"
+        "href": "quality-rules/7860.json",
+        "critical": false
     },
     {
         "id": 7896,
         "name": "Avoid using Cursors",
-        "href": "quality-rules/7896.json"
+        "href": "quality-rules/7896.json",
+        "critical": false
     },
     {
         "id": 7898,
         "name": "SQL Function naming convention - prefix control",
-        "href": "quality-rules/7898.json"
+        "href": "quality-rules/7898.json",
+        "critical": false
     },
     {
         "id": 7900,
         "name": "Stored Procedure naming convention - prefix control",
-        "href": "quality-rules/7900.json"
+        "href": "quality-rules/7900.json",
+        "critical": false
     },
     {
         "id": 7902,
         "name": "Avoid SQL queries that no index can support",
-        "href": "quality-rules/7902.json"
+        "href": "quality-rules/7902.json",
+        "critical": false
     },
     {
         "id": 7904,
         "name": "Avoid SQL queries on XXL tables that no index can support",
-        "href": "quality-rules/7904.json"
+        "href": "quality-rules/7904.json",
+        "critical": true
     },
     {
         "id": 7946,
         "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
-        "href": "quality-rules/7946.json"
+        "href": "quality-rules/7946.json",
+        "critical": false
     },
     {
         "id": 8080,
         "name": "Avoid exists independent clauses",
-        "href": "quality-rules/8080.json"
+        "href": "quality-rules/8080.json",
+        "critical": true
     },
     {
         "id": 8082,
         "name": "Avoid Tables without Primary Key",
-        "href": "quality-rules/8082.json"
+        "href": "quality-rules/8082.json",
+        "critical": true
     }
 ]
