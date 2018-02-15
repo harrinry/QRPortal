@@ -19,7 +19,7 @@ require('http').createServer(function (request, response) {
         file.serve(request, response);
     }).resume();
 }).listen(port);
-
+/*
 app.get('/default.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/static/default.html'));
 });
@@ -30,4 +30,4 @@ app.listen(port, function() {
 
 	console.log("Listening..."+port);	
 	
-});
+});*/
