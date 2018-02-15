@@ -8,7 +8,7 @@ app.get('/default.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/static/default.html'));
 });
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
+    res.sendFile(path.join(__dirname + '/root.json'));
 });
 app.listen(8080);
 console.log("Listening 8080...");

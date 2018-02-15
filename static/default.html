@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <title>Simple REST Client</title>
+    <link rel="stylesheet" href="stylesheets/jquery-ui.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+
+    <script src="libs/jquery/jquery-1.9.1.min.js"></script>
+    <script src="libs/jquery/ui/1.10.2/jquery-ui.min.js"></script>
+    <script src="libs/jquery/tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
+
+    <script src="initialize.js"></script>
+    <script src="session.js"></script>
+
+    <style type="text/css">
+    
+      	.editor {
+ 		   	border: 1px solid #cccccc;
+		    padding: 4px 6px;
+	    	margin-bottom: 10px;
+	    	word-wrap:normal;
+	    	white-space:pre-wrap;
+	    	overflow:auto;
+		}
+		
+		.editor:empty:before {
+		    content: "Enter a content according to the preferred media type...";
+	    	color:grey;
+		}
+		
+		#htmlresponse:empty:before,  #rawresponse:empty:before{
+			content: "No content";
+			color:grey;
+		}
+
+		.editor:focus:empty:before {
+	    	content: "";
+	    }
+	    
+        body {
+            font-family: arial;
+            font-size: 14px;
+        }
+
+        .preformatted {
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-style: none;
+            background-color: gainsboro;
+            border-top-width: 2px;
+            border-color: white;
+            border-style: solid;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-color: black;
+        }
+
+        td {
+            vertical-align: top;
+            border-style: solid;
+            border-width: 1px;
+            border-spacing: 0px;
+            font-family: arial;
+            font-size: 0.95em;
+            word-wrap:normal;
+            white-space:pre-wrap;            
+        }
+
+        .title {
+            background-color: gainsboro;
+            font-family: sans-serif;
+            font-size: 1em;
+
+        }
+
+        .ui-widget {
+            font-family: arial;
+            font-size: 0.95em;
+        }
+
+        .ui-widget-content a {
+            color: blue;
+        }
+
+        .col20 {
+            float: left;
+            width: 20%;
+        }
+
+        .container {
+            padding: 4px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -khtml-border-radius: 10px;
+            background-color: #eee;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0 0 0 0.25em;
+            text-indent: 0;
+            list-style: none;
+        }
+
+        li {
+            margin: 0;
+            padding: 0 0 0.25em;
+            text-indent: 0;
+            font-size: 80%;
+        }
+
+        .container h4 {
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            color: grey;
+        }
+
+        .login-error {
+            background-color: #dc89a6;
+            font-family: sans-serif;
+            font-size: 1em;
+            border-bottom: 1px solid #e55e58;
+        }
+        
+        #help-tabs .ui-state- {
+ 			 background-color: white;
+		}
+		
+		#help-tabs .ui-state-default {
+  			background-color: white;
+  			border-color: transparent;
+  			border-style: solid;
+  			margin-right: 40px;
+  			border-radius: 0;
+  			border-width: 0 0 2px 0;
+
+   		}
+   		
+   		#help-tabs .ui-state-default a {
+   			padding: 4px 0;
+   		}	
+  
+  		#help-tabs .ui-state-active a, #help-tabs .ui-state-focus a{outline: none;}
+  		#help-tabs .ui-state-active{
+  			border-color: black;
+  		}
+
+		.tile {
+    		text-decoration: none;      
+    		display: inline-block;      
+    		padding: 5px;        
+    		margin: 5px;      
+    		color: #212121;
+    		background-color: #E4E4E4;
+    		
+    		border-style: solid;
+    		border-width: 1px;
+
+    		border-color: #E4E4E4;
+    		border-top-width: 0;
+    		border-bottom-width: 0;
+    		border-left-width: 6px;
+		}
+		
+		.tile-error {
+			border-left-color: red;
+		}
+
+		.tile-warning {
+			border-left-color: orange;
+		}
+
+		.tile-success {
+			border-left-color: green;
+		}
+
+		.tile-title {
+ 			text-transform: uppercase;    
+ 			text-align: left;        
+    		font-size: 12px; 
+    		height: 18px;                
+    		font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;        
+    		font-weight: 200;        
+    		letter-spacing: 0.01em;
+		}
+
+		.tile-value {
+    		text-align: right;        
+    		font-size: 16px;        
+    		font-family: 'Open Sans', Verdana, Arial, Helvetica, sans-serif;        
+    		font-weight: 200;        
+    		letter-spacing: 0.01em;
+		}
+    </style>
+    <script>
+        var decodedURL = decodeURI(location.href);
+        if (decodedURL !== location.href) {
+            window.location.href = decodedURL
+        }
+
+        function stringifyNavigate(href) {
+            var s = JSON.stringify (href);
+            return 'javascript:MyHistory.navigate(' + s + ')';
+        }
+
+        function stringifySelect(href) {
+            var s = JSON.stringify (href);
+            return 'javascript:$("#href").val(' + s + ')';
+        }
+
+        function stringify(data) {
+            if (Array.isArray(data)) {
+                if (data.length > MAX_ITEMS)
+                    return JSON.stringify(data.splice(0, MAX_ITEMS), null, '\t') + "\nThere are more items...";
+            }
+            return JSON.stringify(data, null, '\t');
+        }
+
+        // Display a JSON Object as HTML
+        function appendJsonAsHTML(element, json) {
+            if (Array.isArray(json))
+                appendArrayAsHTML(element, json);
+            else
+                appendObjectAsHTML(element, json);
+        }
+
+        var MAX_ITEMS = 1000;
+
+        function appendCsvAsHTML(element, text) {
+            var tableElement = $("<table></table>").appendTo (element);
+            var theadElement = $("<thead></thead>").appendTo (tableElement);
+            var tbodyElement = $("<tbody></tbody>").appendTo (tableElement);
+       		var trElement ;
+            var tdElement ;
+            
+            var rows = text.split("\n");
+            var more = false;
+            for (var i = 0, len = rows.length; i < len - 1; i++) { // len-1 to skip last line
+		   
+                if (i == MAX_ITEMS) {
+                    more = true;
+                    break;
+                }
+
+                var row = rows[i];
+                var cols = row.split(";")
+
+                if (i == 0) { // this is the title line
+                    trElement = $("<tr></tr>").appendTo (theadElement);
+                    tdElement = $("<td class='title'>#</td>").appendTo (trElement);
+                    for (var j = 0, nb = cols.length; j < nb; j++) {
+                        tdElement = $("<td class='title'></td>").appendTo (trElement);
+                        tdElement.text(cols[j]);
+                    }
+                }
+                else { // Any row
+					trElement = $("<tr></tr>").appendTo (tbodyElement);                
+                    tdElement = $("<td>#</td>").appendTo (trElement);
+                    tdElement.text(i);
+                    for (var j = 0, nb = cols.length; j < nb; j++) {
+                        tdElement = $("<td></td>").appendTo (trElement);
+                        tdElement.text(cols[j]);                    
+                    }
+                }
+            }
+            if (more) 
+                $("<h2>There are more items...</h2>").appendTo(element);
+        }
+
+
+
+        function appendExcelAsHTML(element, text) {
+           
+		   var findElement = function (parent, tag) {
+		   		var children = parent.children
+		   		if (children.length == 0) return null;
+		   		for (var i = 0, len = children.length; i < len; i++) {
+					var element = children[i];
+					if (element.localName == tag) return element;
+				}
+				return null;
+			}
+			
+			var error = function () {
+				element.text(text);
+			}
+
+			try {
+				var xmlDoc = $.parseXML(text);
+			}
+			catch (e)
+			{
+				error();
+				return;
+			}	
+  
+			var xmlWorkbookElement = findElement (xmlDoc, "Workbook");
+			if (! xmlWorkbookElement) { error(); return; }
+   
+			var xmlWorksheetElement = findElement (xmlWorkbookElement, "Worksheet");
+			if (! xmlWorksheetElement) { error(); return; }
+   
+			var xmlTableElement = findElement (xmlWorksheetElement, "Table");
+			if (! xmlTableElement)  { error(); return; }
+
+	        var tableElement = $("<table></table>").appendTo (element);
+   	        var theadElement = $("<thead></thead>").appendTo (tableElement);
+          	var tbodyElement = $("<tbody></tbody>").appendTo (tableElement);
+   			var trElement ;
+          	var tdElement ;
+  
+			var xmlRowElements = xmlTableElement.children;
+			var xmlRowElement;
+			var xmlCellElements;
+			var xmlCellElement;
+			
+			var more = false;   				
+			for (var i = 0, rows = xmlRowElements.length; i < rows; i++) {
+				if (i == MAX_ITEMS) {
+                    more = true;
+                   	break;
+               	}
+			
+    			xmlRowElement = xmlRowElements[i];
+   				xmlCellElements = xmlRowElement.children;
+   	   				
+  	            if (i == 0) { // this is the title line
+                   	trElement = $("<tr></tr>").appendTo (theadElement);
+                   	tdElement = $("<td class='title'>#</td>").appendTo (trElement);
+   	   				for (var j = 0, cells = xmlCellElements.length; j < cells; j++) {
+   	   				   	xmlCellElement = xmlCellElements[j];
+                        tdElement = $("<td class='title'></td>").appendTo (trElement);
+                       	tdElement.text($(xmlCellElement).text());
+                   	}
+               	}
+                else { // Any row
+                    trElement = $("<tr></tr>").appendTo (tbodyElement);
+                    tdElement = $("<td>#</td>").appendTo (trElement);
+                    tdElement.text(i);                    
+   	   				for (var j = 0, cells = xmlCellElements.length; j < cells; j++) {
+   	   						xmlCellElement = xmlCellElements[j];
+                        	tdElement = $("<td></td>").appendTo (trElement);
+                        	tdElement.text($(xmlCellElement).text());                    
+   	   					}
+   					}
+			}           
+            if (more) 
+                $("<h2>There are more items...</h2>").appendTo(element);
+        }
+
+        
+        function appendTextAsHTML(element, text) {
+            var tableElement = $("<table></table>").appendTo (element);
+            var tbodyElement = $("<tbody></tbody>").appendTo (tableElement);
+            var rows = text.split("\n");
+            var more = false;
+            for (var i = 0, len = rows.length; i < len - 1; i++) { // len-1 to skip last line
+                if (i == MAX_ITEMS) {
+                    more = true;
+                    break;
+                }
+                var trElement = $("<tr></tr>").appendTo(tbodyElement);
+                var tdElement = $("<td class='preformatted'></td>").appendTo(trElement);
+                tdElement.text(String(i + 1));
+                tdElement = $("<td class='preformatted'></td>").appendTo(trElement);
+                tdElement.text (rows[i]);
+            }
+            if (more)
+                $("<h2>There are more lines...</h2>").appendTo(element);
+		}        
+
+
+        function XMLstringify(text) {
+        	try {
+				var xmlDoc = $.parseXML(text);
+			}
+			catch (e)
+			{
+				return String(e) ;
+			}	
+        
+            var serializeNode = function (node, tab) {
+                if (node.nodeType == 3) return node.nodeValue;
+                
+                var element = node;
+                var tagName = element.tagName;
+                var attributes = element.attributes;
+                var attributesString = "";
+                
+                // begin 
+                var elementString = "";
+                for (var i = 0, len = attributes.length; i < len; i++) {
+                    var attr = attributes[i]; 
+                	attributesString += ' ' + attr.name + '="' + attr.value + '"';
+                }
+                elementString += '\n' + tab + '<' + tagName + attributesString + '>';
+                
+                
+                // child nodes                
+                var children = element.childNodes;
+                for (var i = 0, len = children.length; i < len; i++) {
+                	elementString += serializeNode(children[i], tab + "    ");
+                }
+                
+                // end
+                elementString += '\n'+ tab + '</' + tagName + '>';
+            	return elementString;
+            }	
+            
+        	var children = xmlDoc.children;
+            for (var i = 0, len = children.length; i < len; i++)
+        		return serializeNode (children[i], "");
+        }
+
+
+        //Display an Array of JSON objects (each JSON object is displayed as a row of a table)
+        function appendArrayAsHTML(element, json) {
+            var tableElement;
+            var theadElement;
+            var tbodyElement;
+       		var trElement ;
+            var tdElement ;
+	        var aElement ;
+        
+            if (json.length == 0) return;
+           
+            var firstItem = json[0];
+            if (isSimpleValue(firstItem)) {
+            	// This an array of simples value such as ["C++", "Java", ...]
+                var buffer = ""
+                var separator = "["
+                for (var i in json) {
+                    buffer += separator + json[i]
+                    separator = ", "
+                }
+                buffer += "]"
+				var tableElement = $("<table></table>").appendTo (element);                
+				trElement = $("<tr></tr>").appendTo (tableElement);
+                tdElement = $("<td></td>").appendTo (trElement);
+                tdElement.text(buffer);
+                return; 
+            }
+
+			tableElement = $("<table></table>").appendTo (element);
+            theadElement = $("<thead></thead>").appendTo (tableElement);			
+            tbodyElement = $("<tbody></tbody>").appendTo (tableElement);
+            var titles = {}
+            var more = false;
+            for (var i = 0, len = json.length; i < len; i++) {
+
+                if (i == MAX_ITEMS) {
+                    more = true;
+                    break;
+                }
+
+                var item = json[i]
+
+				trElement = $("<tr></tr>").appendTo (tbodyElement);
+                tdElement = $("<td></td>").appendTo (trElement);
+                tdElement.text(i + 1);
+
+                // Check all attributes, merge all titles
+                for (var j in item) {
+                    if (typeof (titles[j]) == "undefined")
+                        titles[j] = true;
+                }
+              
+                // User titles order to fill in attributes
+                var href = titles["href"];
+                for (var j in titles) {
+                    if (href && j == "name") continue;
+                    if (href && j == "href") {
+		                tdElement = $("<td></td>").appendTo (trElement);
+		                if (item["href"]) {
+                            aElement = $("<a></a>").appendTo (tdElement);
+                            aElement.attr("href", stringifyNavigate(item["href"]));
+                            aElement.text (item["name"]);
+                        }
+                        else {
+                            tdElement.text(item["name"]);
+                        }
+                        continue;
+                    }
+                    var val = item[j];
+                    if (isSimpleValue(val)) {
+		                tdElement = $("<td></td>").appendTo (trElement);
+		                tdElement.text(val);
+                    }    
+                    else {
+		                tdElement = $("<td></td>").appendTo (trElement);
+		                appendJsonAsHTML(tdElement, val);                    
+                    }
+                }
+            }
+
+        	// Add titles
+        	trElement = $("<tr></tr>").appendTo (theadElement);
+			tdElement = $("<td class='title'>#</td>").appendTo (trElement);        	
+            for (var j in titles) {
+                var href = titles["href"];
+                if (href && j == "name") continue;
+                tdElement = $("<td class='title'></td>").appendTo (trElement);
+                tdElement.text(j);
+            }
+            if (more)
+            	$("<h2>There are more items...</h2>").appendTo(element);
+        }
+
+        Date.prototype.toLocaleISOString = function () {
+            var pad = function (num) {
+                norm = Math.abs(Math.floor(num));
+                return (norm < 10 ? '0' : '') + norm;
+            }
+
+            var tzo = -this.getTimezoneOffset();
+            var sign = tzo >= 0 ? '+' : '-';
+            return this.getFullYear()
+                    + '-' + pad(this.getMonth() + 1)
+                    + '-' + pad(this.getDate())
+                    + 'T' + pad(this.getHours())
+                    + ':' + pad(this.getMinutes())
+                    + ':' + pad(this.getSeconds())
+                    + sign + pad(tzo / 60)
+                    + ':' + pad(tzo % 60);
+        }
+
+        // Display a JSON object as a single table with titles in columns
+        function appendObjectAsHTML(element, json) {
+        
+           var appendProperty  = function (tableElement, name, value) {
+				var trElement = $("<tr></tr>").appendTo (tableElement);
+				var tdElement = $("<td class='title'></td>").appendTo (trElement);
+				tdElement.text(name);
+            	tdElement = $("<td></td>").appendTo (trElement);
+            	tdElement.text(value);
+           }
+        
+            var href = false;
+
+            if (json == null) {
+	           return;
+            }
+
+            var tableElement = $("<table></table>").appendTo (element);
+
+            if (isDateObject(json)) {
+                appendProperty(tableElement, "time", new Date(json.time).toLocaleISOString());
+                appendProperty(tableElement, "isoDate", json.isoDate);
+                return;
+            }
+
+            if (typeof(json["href"]) != "undefined") {
+				trElement = $("<tr></tr>").appendTo (tableElement);
+				tdElement = $("<td class='title'>href</td>").appendTo (trElement);
+            	tdElement = $("<td></td>").appendTo (trElement);
+            	var aElement = $("<a></a>").appendTo (tdElement);
+            	aElement.attr("href", stringifyNavigate(json["href"]));
+            	aElement.text(json["name"]);
+                href = true;
+            }
+
+            for (var i in json) {
+                if (i == "href" && href) continue;
+                if (i == "name" && href) continue;
+
+                var val = json[i]
+
+                if (isSimpleValue(val))
+                    appendProperty(tableElement, i,  val);                
+                else {
+					trElement = $("<tr></tr>").appendTo (tableElement);
+					tdElement = $("<td class='title'></td>").appendTo (trElement);
+					tdElement.text(i);
+					
+            		tdElement = $("<td></td>").appendTo (trElement);
+            		appendJsonAsHTML(tdElement, val);
+                }    
+            }
+            return;
+        }
+
+        function isDateObject(object) {
+            if (object == null) return false;
+            if (!(typeof (object) == "object")) return false;
+            if (Object.keys(object).length != 2) return false;
+            if (!(typeof (object.time) == "number")) return false;
+            if (!(typeof (object.isoDate) == "string")) return false;
+            return true;
+        }
+
+        function isSimpleValue(val) {
+            if (val == null) return true;
+            if (Array.isArray(val) && val.length == 0) return true;
+            var type = typeof(val);
+            if (type == "boolean") return true;
+            if (type == "string") return true;
+            if (type == "number") return true;
+            return false;
+        }
+
+
+        function printStackTrace(e) {
+            var stack = e.stack.replace(/^[^\(]+?[\n$]/gm, '')
+                    .replace(/^\s+at\s+/gm, '')
+                    .replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@')
+                    .split('\n');
+            console.log(stack);
+        }
+
+        function encodeURI(href) {
+            var queryIndex = href.indexOf("?");
+            if (queryIndex == -1)
+                return href;
+            var queryString = href.substr(queryIndex + 1);
+            return href.substr(0, queryIndex + 1) + $.param(queryString.split("&").map(function (it) {
+                        var a = it.split("=");
+                        return {name: a[0], value: a[1]}
+                    }));
+        }
+
+        function ajax(request) {
+            var action, href, payload;
+            action = request.method;
+            href = request.url;
+            payload = request.payload;
+            var responseElement = $("#htmlresponse")
+            responseElement.empty();
+            $("#time").html ("&nbsp;");// empty without blicking
+            $("#httpstatus").html("&nbsp;");
+            $("#httpstatus").parent().removeClass("tile-success");
+            $("#httpstatus").parent().removeClass("tile-error");
+            $("#httpstatus").parent().removeClass("tile-warning");
+            $("#response-size").html("&nbsp;");
+            $("#rawresponse").empty();
+
+            var url
+            var rootPath = $("#rootPath").val()
+            if (rootPath != "")
+                url = rootPath + href;
+            else
+                url = href;
+
+            var decodedUrl = decodeURIComponent(url)
+            var encodedUrl = encodeURI(decodedUrl)
+            $("#url").val(action + " " + window.location.host + encodedUrl);
+            $("#decodedUrl").val(action + " " + window.location.host + decodedUrl);
+            var startTime = new Date().getTime();
+
+			// set in the above scope
+            MAX_ITEMS = $("#maxItems").val();
+
+		    var ajaxSettings = {
+                type: action,
+                url: encodedUrl,
+                cache: !$('input[name="cacheDisabled"]').prop('checked'),
+                headers: {},
+                success: function (data,_,xhr) {
+                    var endTime = new Date().getTime();
+                    var elapsedTime = endTime - startTime;
+                    var contentType = xhr.getResponseHeader("content-type");
+                    $("#httpstatus").parent().addClass("tile-success");
+                    $("#httpstatus").text(xhr.status + " " + xhr.statusText);
+                    $("#time").text(elapsedTime);
+                    
+                    switch (contentType) {
+
+                        case "application/json; charset=UTF-8":
+                            appendJsonAsHTML($("#htmlresponse"), data);
+                            $('#htmlresponse').find('table').tablesorter(); // add sorting ability
+                            var preElement = $("<pre/>").appendTo("#rawresponse");
+                            $("#response-size").text(JSON.stringify(data).length);                            
+                            preElement.text(stringify(data));
+                            break;
+
+                        default:
+                            var pElement = $("<p></p>").appendTo("#htmlresponse");
+                            var aElement = $("<a target='_blank'>Save to file</a>").appendTo(pElement);
+                            aElement.attr('href', encodedUrl);
+                            appendCsvAsHTML($("#htmlresponse"), data);
+                            $('#htmlresponse').find('table').tablesorter();
+                            var preElement = $("<pre/>").appendTo("#rawresponse");
+                            preElement.text(data);
+                            $("#response-size").text(data.length);                            
+                            break;
+                    }
+                },
+                error: function (xhr, statusText, error) {
+                    var endTime = new Date().getTime();
+                    var elapsedTime = endTime - startTime;
+                    $("#time").text(elapsedTime);
+                	
+                    $("#httpstatus").text(xhr.status + " " + error);
+                    $("#httpstatus").parent().addClass((xhr.status == 470) ? "tile-warning" : "tile-error");
+                    
+                    var contentType = xhr.getResponseHeader("content-type");
+                    if (contentType.match(/^text\/html/)) {
+                    	var iframeElement = $("<iframe style='width:100%; height:400px; border: none'></iframe>").appendTo($("#htmlresponse"));
+                    	var iframeNode = iframeElement.get(0);
+                        var iframeDocument = iframeNode.contentDocument || iframeNode.contentWindow.document;
+	                    iframeDocument.body.innerHTML = xhr.responseText;
+                    }	
+                    else
+                    	appendJsonAsHTML($("#htmlresponse"),JSON.parse(xhr.responseText)); 
+                    var preElement = $("<pre/>").appendTo("#rawresponse");
+                    preElement.text(xhr.responseText);
+                    $("#response-size").text(xhr.responseText.length);
+                }
+		    };
+		    
+		    // -----
+		    // Extend ajax settings 
+		    // -----
+	    	ajaxSettings.headers["accept"] = "application/json";
+
+				
+            $.ajax(ajaxSettings);
+        }
+
+		/**
+		 *****************************************************************************************************
+		 * JSON Lint
+		 *****************************************************************************************************
+		 */
+
+		/**
+	     * Check that a text is a valid JSON text
+	     * Insert a message in message placeholder
+	     * Return true if valid, otherwise false
+	     */
+		function jsonLint() {
+			var text = $('#payload').val()
+			var element = $("#lint-message");
+			element.empty();
+			try {
+				JSON.parse(text);
+			}
+			catch (e)
+			{
+				element.text(e.toString());
+				return false;
+			}
+			element.text ("Valid JSON");
+			return true;
+		}
+
+		function jsonIndent()
+		{		
+		  var text = $('#payload').val();
+		  if (jsonLint(text)) {
+              text = JSON.stringify (JSON.parse(text), null, "\t");
+			  $('#payload').val(text)
+		  }	  
+ 		}
+
+		/**
+		 *****************************************************************************************************
+		 * History 
+		 *****************************************************************************************************
+		 */
+    
+        var MyHistory = (function() { 
+        	var stack = new Array();
+        	var index = -1;
+		
+			return {
+				// submit previous url
+				previous: function previous() {
+            		if (index <= 0) return;
+            		index--;
+            		var request = stack[index];
+            		this.select(request);            		
+        		},
+
+				// submit next url
+        		next: function next() {
+            		if (index == stack.length - 1) return;
+            		index++;
+            		var request = stack[index];
+            		this.select(request);            		
+        		},
+
+				// submit first url
+        		first: function first() {
+            		if (stack.length == 0) return;
+            		index = 0;
+            		var request = stack[index];
+            		this.select(request);            		
+        		},
+
+				// submit last url
+        		last: function last() {
+            		if (stack.length == 0) return;
+            		index = stack.length - 1;
+            		var request = stack[index];
+            		this.select(request);            		
+       		 	},
+
+				// Push url in the history stack
+				add:  function add(request) {
+           			stack.push(request);
+            		index = stack.length - 1;
+            	},
+                
+                navigate:  function navigate(href) {
+                    var request = {method:"GET", mediaType:"application/json", url:href};
+                    this.add(request);            
+                    $('#href').val(request.url);
+              		$('#payload').val("");
+                    this.submit(request);
+                },
+                
+                onSubmit: function() {
+                    var request = this.recover();
+                	this.add(request);
+                	this.submit(request);
+                },
+                	
+                submit: function submit(request) {
+                    var href = request.url;
+                    // Test if already registered			
+                    if ($('#completion option[value="' + href + '"]').length == 0) {
+                        // add completion
+                        var option = $("<option/>").appendTo($("#completion"));
+                        // Write as Text and not as HTML to avoid XSS injection
+                        option.attr("value", href); 
+                    }
+                    $("#href").val(href);
+                    ajax(request);             
+                },
+
+                select: function select(request) {
+                    $('#href').val(request.url);
+                    var payload = request.payload || "";
+              		$('#payload').val(payload);
+                },
+
+                recover: function recover() {
+                    var request = {};
+                    var method = request.method = "GET";
+                    request.url = $('#href').val();
+                    if (method != "GET") 		
+                        request.payload = $('#payload').val();
+                    return request;
+                 }
+        	}
+        })();
+
+		/**
+		 *****************************************************************************************************
+		 * Bookmarks
+		 *****************************************************************************************************
+		 */
+		
+		var Bookmarks = {};
+        
+        Bookmarks.requests = {};
+		
+        Bookmarks.render = function renderBookmark(request) 
+        {
+			var trElement = $("<tr style='line-height:20px;'></tr>").prependTo("#bookmarks-table");
+			var tdTemplate = "<td style='border:0px;padding:5px;'></td>";
+
+			// 1st column
+			tdElement = $(tdTemplate).appendTo(trElement);
+			aElement = $("<a>remove</a>").appendTo(tdElement);
+			aElement.attr("href", 'javascript:Bookmarks.remove(' + request.id + ')');
+
+			// 2nd column
+			tdElement = $(tdTemplate).appendTo(trElement);
+          	var date = new Date(request.time);
+          	
+          	var format = function(s) {
+          		if (s.length > 2) // this is a year
+          			return ("20"+s).substr(-4)
+          		return ("0"+s).substr(-2); // this is a month or a day	 
+          	}
+          	
+          	var dateNumbers = date.toLocaleDateString().split("/");
+          	var dateString = format(dateNumbers[0]) + "/" + format(dateNumbers[1]) + "/" + format(dateNumbers[2]);
+			tdElement.text(dateString + " " + date.toLocaleTimeString());
+
+			// 3rd column
+			tdElement = $(tdTemplate).appendTo(trElement);
+			var strongElement = $("<strong style='white-space:pre;'></strong>").appendTo(tdElement);
+			strongElement.text(request.method || "GET");
+
+            // 4th column
+			var url = request.url;
+			tdElement = $(tdTemplate).appendTo(trElement);
+			aElement = $("<a></a>").appendTo(tdElement);				
+			aElement.attr("href", 'javascript:Bookmarks.select(' + request.id + ')');
+			aElement.attr("title", request.payload)
+			aElement.text(url);
+        }
+
+        Bookmarks.add = function addBookmark() 
+        {
+        	var request = MyHistory.recover();
+            var requests = this.requests;
+            // Format date, ensure that all numbers are on 2 digits
+            var id = request.id = requests.lastId = requests.lastId+1;
+            request.time = Date.now();
+            requests.map[id] = request;
+            localStorage["favoritesRequests"] = JSON.stringify(requests);
+            this.render(request);
+        }
+
+        Bookmarks.remove = function removeBookmark(id) 
+        {
+            var requests = this.requests;
+            console.log(requests.map);
+			delete requests.map[id];
+			console.log(requests.map);
+            localStorage["favoritesRequests"] = JSON.stringify(requests);
+            console.log(localStorage["favoritesRequests"]);
+            Bookmarks.refresh();
+        }
+        
+        Bookmarks.select = function selectBookmark(id) 
+        {
+            var requests = this.requests;
+			var request = requests.map[id];
+			MyHistory.select(request);
+        }
+
+        Bookmarks.refresh = function refreshBookmarks() 
+        {
+            var requests = this.requests;
+            $("#bookmarks-table").empty();
+            
+            var map = requests.map;
+			var values = $.map(map, function(value, index) { return [value];});
+			values.sort(function(a,b) { return (a.time - b.time);});
+            for (var i = 0, len = values.length;  i < len; i++) {	
+				this.render(values[i]);         		
+            }
+        }
+
+        Bookmarks.load = function loadBookmarks()
+        {
+            var requests = {};
+            var requestsString = localStorage["favoritesRequests"];
+            
+            if (typeof (requestsString) == "undefined")
+                requests = {lastId:0,map:{}};
+            else
+                requests = JSON.parse(requestsString);
+                           
+            if (Array.isArray(requests)) {
+            	// automatic upgrade
+            	localStorage["backup-favoritesRequests"] = requestString;
+            	var map = {}
+            	for (var i = 0, len = requests.length; i < len; i++) {
+            	    var request = map[i] = requests[i];
+            		request.id = i;
+           		
+            		// move date to time
+            		var dates = request.date.split(" ");
+            		var calendar = dates[0].split("/");
+            		var clock = dates[1].split(":");
+            		var time = new Date(Number(calendar[2]),Number(calendar[1])-1,Number(calendar[0]),Number(clock[0]),Number(clock[1]),Number(clock[2]),0).getTime();
+            		request.time = time || Date.now();  
+            	}	
+            	requests = {}
+            	requests.lastId = len-1;
+            	requests.map = map;	 
+            }
+            
+            this.requests = requests;
+            this.refresh();
+        }
+
+    </script>
+</head>
+<body>
+
+
+<h2>Simple REST Client</h2>
+
+<div>
+    <span style="display:inline-block;">Server: </span><input id="rootPath"/> URI: <input id="href" type="text"
+                                                                                          list="completion"
+                                                                                          style="width:50%;"/>
+
+    <button onclick="javascript:MyHistory.onSubmit();">Submit</button>
+    <a href="#" onclick="javascript:MyHistory.first();">First</a>
+    |<a href="#" onclick="javascript:MyHistory.previous();">Previous</a>
+    |<a href="#" onclick="javascript:MyHistory.next();">Next</a>
+    |<a href="#" onclick="javascript:MyHistory.last();">Last</a>
+    
+</div>
+<br/>
+
+<div>
+    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="cacheDisabled">Disable client cache
+</div>
+
+<br/>
+
+
+<div>
+    Display up to <input id="maxItems" value="10000" style="max-width:6em;text-align:right;"> items
+</div>
+
+<datalist id="completion"></datalist>
+
+<br/>
+
+<div class="tile">
+    <div class="tile-title">Response Status</div>
+    <div class="tile-value" id="httpstatus">&nbsp;</div>
+</div>
+<div class="tile">
+    <div class="tile-title">Elapsed Time (ms)</div>
+    <div class="tile-value" id="time">&nbsp;</div>
+</div>
+<div class="tile">
+    <div class="tile-title">Response Size (bytes)</div>
+    <div class="tile-value" id="response-size">&nbsp;</div>
+</div>
+
+
+<br/>
+
+<div id="tabs" style="border:0;">
+    <ul style="background:transparent;border:0;">
+        <li><a href="#htmlresponse">Response (Pre-view)</a></li>
+        <li><a href="#rawresponse">Response (Raw)</a></li>
+        <li><a href="#request">Request</a></li>
+        <li><a href="#bookmarks">Bookmarks</a></li>
+    </ul>
+    <div id="request">
+        <div>
+            Encoded URL: <input id="url" type="text" style="width:100%;" disabled/>
+            Decoded URL:<input id="decodedUrl" type="text" style="width:100%;" disabled/>
+        </div>
+    </div>
+    <div id="htmlresponse"></div>
+    <div id="rawresponse"></div>
+    <div id="bookmarks">
+    <button onclick="javascript:Bookmarks.add();">Add</button>
+    <table><tbody id="bookmarks-table"></tbody></table></div>
+</div>
+
+
+<script>
+    $("#tabs").tabs();
+    $("#rootPath").val("/");
+
+    Bookmarks.load();
+
+    // ON Carriage Return triggers "submit"
+    $("#href").keypress(function( event ) {
+  		if ( event.which == 13 ) {
+     		event.preventDefault();
+     		MyHistory.onSubmit();
+  		}
+	});
+ 
+    $(".editor").on('paste',function(e) {
+        e.preventDefault();
+        var text = (e.originalEvent || e).clipboardData.getData('text/plain') || '';
+        document.execCommand('insertText', false, text);
+    });
+    
+</script>
+
+</body>
+</html>
