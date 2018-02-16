@@ -1,15 +1,15 @@
 {
     "id": 1007058,
     "type": "quality-rule",
-    "name": "Avoid unused Function parameters (PHP)",
+    "name": "Avoid unused parameters (PHP)",
     "href": "quality-rules/1007058.json",
-    "description": "This rule searches for all the Functions and Methods containing unused parameters",
-    "output": "\"This report lists all Functions and Methods containing unused parameters.\nThis QR provides the following information: Function or Method full name.\"",
-    "rationale": "For readability reasons, Functions should not have unused parameters.",
+    "description": "This rule searches for all Functions and Methods with unused parameters",
+    "output": "This report lists all Functions and Methods with unused parameters.\nThis QR provides following information: \nFunction or Method full name.",
+    "rationale": "For readability and usability reasons, Functions and methods should not have unused parameters.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UnusedFunctionParameterSniff.html",
-    "remediation": "Review the source code to try to reduce the number of Functions and Methods containing unused parameters.",
-    "remediationSample": "<?php\nprivate function bar() //Violation removed : the unused parameter has been removed\n{\n\n}\n?>",
-    "sample": "<?php\nprivate function bar(test $param) //Violation : $param is not used\n{\n\n}\n?>",
+    "remediation": "Modify the source code to reduce the number of Functions and Methods with unused parameters.",
+    "remediationSample": "<?php\nfunction bar() //Violation removed : the unused parameter has been removed\n{\n   echo \"unused parameter\", PHP_EOL;\n}\n?>",
+    "sample": "<?php\nfunction bar($param) //Violation : $param is not used\n{\n   echo \"unused parameter\", PHP_EOL;\n}\n?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -39,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

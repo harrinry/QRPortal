@@ -1,15 +1,15 @@
 {
     "id": 1007202,
     "type": "quality-rule",
-    "name": "Avoid copying needless the variables (PHP)",
+    "name": "Avoid direct access to superglobals (PHP)",
     "href": "quality-rules/1007202.json",
-    "description": "This rule searches all the Methods, Functions and PHP Sections copying predefined variables into other variables.",
-    "output": "This report lists all the Methods, Functions and PHP Sections containing strings with double quotes and without any variable.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "Even if making the code \"cleaner\" by copying predefined variables to variables with shorter names before working with them seems a good idea, actually it is not such a good idea because the results in is doubled memory consumption (when the variable is altered), and therefore, slow scripts. For example, if a user had inserted 512KB worth of characters into a text area field. This implementation would result in nearly 1MB of memory being used.",
-    "remediation": "Try to avoid copying predefined variables into other variables.",
-    "remediationSample": "<?php\n\necho strip_tags($_POST['variable']);\n\n?>",
-    "sample": "<?php\n\n$variable1 = strip_tags($_POST['variable']);\necho $variable1;\n\n?>",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches all artifacts that access superglobals directly.",
+    "output": "This report lists artifacts that directly access PHP superglobals. It provides:\n- Artifact Full Name",
+    "rationale": "PHP superglobals should not be accessed directly. Use one of the filter APIs instead.",
+    "remediation": "Use PHP filter APIs to access superglobals.",
+    "remediationSample": "<?php\n      \n         $search_html = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);\n         echo \"search html\", $search_html, \"</br>\";\n      ?>",
+    "sample": "<?php\n         $search_html = $_GET['search'];\n         echo \"search html\", $search_html, \"</br>\";\n      ?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

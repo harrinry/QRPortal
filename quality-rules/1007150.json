@@ -1,13 +1,15 @@
 {
     "id": 1007150,
     "type": "quality-rule",
-    "name": "Avoid unassigned default values in Functions (PHP)",
+    "name": "Avoid functions with optional parameters before required parameters (PHP)",
     "href": "quality-rules/1007150.json",
-    "description": "This rule searches for all Functions with unassigned default values.",
-    "output": "\"This report lists all the Functions with unassigned default values.\n\nThis QR provides the following information:\nFunction  full name.\"",
-    "rationale": "Unassigned values are very dangerous because in some cases this can cause the failure of the whole application.",
+    "description": "This rule searches for all the functions and methods with optional parameters before required ones.",
+    "output": "This report lists all methods and functions with optional parameters listed before required ones.\n\nThis QR provides the following information:\nMethod or function full name.",
+    "rationale": "Using optional parameters is a common practice in PHP. When using optional parameters, it is very important to assign a value to the optional parameters and to ensure that the optional parameters always follow required parameters. This will prevent application from giving unpredictable results.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/PEAR_Sniffs_Functions_ValidDefaultValueSniff.html",
-    "remediation": "Modify the source code and try to reduce the use of unassigned values inside Functions.",
+    "remediation": "Modify the source code and try to reduce the use of unassigned default values inside Functions.",
+    "remediationSample": "<?php\nfunction optionalBeforeRequired ($optionalParameter = \"\", $requiredParameter = \"\")\n{\n    echo \"optionalBeforeRequired\", PHP_EOL;\n}\n?>",
+    "sample": "<?php\nfunction optionalBeforeRequired ($optionalParameter = \"\", $requiredParameter)\n{\n    echo \"optionalBeforeRequired\", PHP_EOL;\n}\n?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -37,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

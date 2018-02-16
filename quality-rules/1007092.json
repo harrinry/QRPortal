@@ -1,14 +1,12 @@
 {
     "id": 1007092,
     "type": "quality-rule",
-    "name": "Avoid Classes with lines of more than 120 characters (PHP)",
+    "name": "Avoid Classes with lines more than 120 characters in length (PHP)",
     "href": "quality-rules/1007092.json",
-    "description": "This rule searches for all the classes containing lines with more than 120 characters.",
-    "output": "\"This report lists all the Classes containing lines with more than 120 characters.\n\nThis QR provides the following information:\nClass full name.\"",
-    "rationale": "For readability reasons, lines in Classes should not contain more than 120 characters.",
-    "remediation": "Modify the source code to reduce the number of classes with lines of more than 120 characters.",
-    "remediationSample": "\"class CastTest{\n\n    var $items;\n    var $Var1;\n    var $Var2;\n    var $Var3;\n    // Add of the Item\n\n    function add_item($artnr, $num)\n { $this->items[$artnr] += $num;\n   $Var1 =$Var1+1;\n   $Var2 =$Var2+1;\n   $Var3 =$Var3+1;\n   $Var2 =$Var2+1;\n   $Var3 =$Var3+1;\n }\n}\"",
-    "sample": "\"class CastTest{\n\n    var $items;\n    var $Var1;\n    var $Var2;\n    var $Var3;\n    // Add of the Item\n\n    function add_item($artnr, $num) { $this->items[$artnr] += $num;$Var1 =$Var1+1;$Var2 =$Var2+1;$Var3 =$Var3+1;$Var2 =$Var2+1;$Var3 =$Var3+1;   }\n}\"",
+    "description": "This rule searches for all classes containing lines with length more than 120 characters including comments.",
+    "output": "This report lists all Classes containing lines with more than 120 character(including comments) in length.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "For maintainability and readability reasons, length of lines in Classes should not be more than 120 characters.",
+    "remediation": "Modify the source code to reduce the number of classes with lines more than 120 characters in length including comments.",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -28,5 +26,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

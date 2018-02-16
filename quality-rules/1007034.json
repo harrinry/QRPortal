@@ -3,11 +3,11 @@
     "type": "quality-rule",
     "name": "Avoid empty style definition (PHP)",
     "href": "quality-rules/1007034.json",
-    "description": "This rule searches for all the files containing an empty style definition.",
-    "output": "\"This report lists all files containing empty style definitions.\n\nThis QR provides the following information:\nFile full name.\"",
+    "description": "This rule searches for all files containing an empty style definition.",
+    "output": "This report lists all empty style definitions.\n\nThis QR provides the following information:\nFile full name.",
     "rationale": "For maintainability reasons, empty style definitions should be avoided.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_CSS_EmptyStyleDefinitionSniff.html",
-    "remediation": "Try to reduce the number of files containing an empty style definition.",
+    "remediation": "Modify the source code to reduce the number of files containing an empty style definition.",
     "total": "Number of Files",
     "businessCriteria": [
         {
@@ -32,5 +32,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

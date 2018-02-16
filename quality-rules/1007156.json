@@ -1,15 +1,15 @@
 {
     "id": 1007156,
     "type": "quality-rule",
-    "name": "Avoid using eval expressions (PHP)",
+    "name": "Avoid using eval expression (PHP)",
     "href": "quality-rules/1007156.json",
-    "description": "This rule searches for all the functions and methods containing eval-expressions.",
-    "output": "\"This report lists all the methods and functions containing eval-expressions.\n\nThis QR provides the following information:\nmethod full name and function full name.\"",
-    "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk. The use of eval-expressions should be avoided because it is considered bad practice.",
+    "description": "This rule searches for all artifacts using eval expression.",
+    "output": "This report lists all artifacts using eval expression.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk.",
     "reference": "PHPMD -  http://phpmd.org/rules/design.html#evalexpression",
-    "remediation": "Modify the source and consider replacing the eval-expression with regular code.",
-    "sample": "\"class CastTest{\n public function test($param) {\n  if ($param === 10) {\n   eval('$param = 10;');\n  }\n }\n}\"",
-    "total": "Method and Functions",
+    "remediation": "Modify the source code to reduce the use of eval expression.",
+    "sample": "<?php\nclass CastTest {\n public function test( $param ) {\n  if (10 === $param) {\n   eval('$param = 10;');   //violation\n  }\n }\n}\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

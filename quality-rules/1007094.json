@@ -1,14 +1,12 @@
 {
     "id": 1007094,
     "type": "quality-rule",
-    "name": "Avoid Methods and Functions with lines of more than 120 characters (PHP)",
+    "name": "Avoid Methods and Functions with lines more than 120 characters in length (PHP)",
     "href": "quality-rules/1007094.json",
-    "description": "This rule searches for all the Functions and Methods containing lines with more than 120 characteres.",
-    "output": "\"This report lists all the Methods and Functions containing lines with more than 120 characters.\n\nThis QR provides the following information:\nMethod or Function full name.\"",
-    "rationale": "For readability reasons, Functions and Methods should not contain lines with more than 120 characters.",
-    "remediation": "Modify the source code to reduce the number of Functions and Methods containing lines of more than 120 characters.",
-    "remediationSample": "\"class CastTest{\n\n    var $items;\n    var $Var1;\n    var $Var2;\n    var $Var3;\n    // Add of the Item\n\n    function add_item($artnr, $num)\n { $this->items[$artnr] += $num;\n   $Var1 =$Var1+1;\n   $Var2 =$Var2+1;\n   $Var3 =$Var3+1;\n   $Var2 =$Var2+1;\n   $Var3 =$Var3+1;\n }\n}\"",
-    "sample": "\"class CastTest{\n\n    var $items;\n    var $Var1;\n    var $Var2;\n    var $Var3;\n    // Add of the Item\n\n    function add_item($artnr, $num) { $this->items[$artnr] += $num;$Var1 =$Var1+1;$Var2 =$Var2+1;$Var3 =$Var3+1;$Var2 =$Var2+1;$Var3 =$Var3+1;   }\n}\"",
+    "description": "This rule searches for all functions and methods containing lines with length more than 120 characters including comments.",
+    "output": "This report lists all Methods and Functions containing lines with more than 120 character(including comments) in length.\n\nThis QR provides the following information:\nMethod or Function full name.",
+    "rationale": "For maintainability and readability reasons, length of lines in functions and methods should not be more than 120 characters.",
+    "remediation": "Modify the source code to reduce the number of functions and methods with lines more than 120 characters in length including comments.",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -28,5 +26,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

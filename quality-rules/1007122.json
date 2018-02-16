@@ -4,7 +4,7 @@
     "name": "Avoid empty catch blocks (PHP)",
     "href": "quality-rules/1007122.json",
     "description": "This rule searches for all the  Methods and Functions containing at least one empty catch block (empty or containing only comments).\nIn a Try and Catch statement, Catch blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
-    "output": "\"This report lists all Methods and Functions containing an empty catch block.\n\nThis QR provides the following information:\nArtifact full name.\"",
+    "output": "This report lists all Methods and Functions containing an empty catch block.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "An empty catch block defeats the purpose of exceptions.\nWhen an exception occurs, nothing happens and the program fails for an unknown reason. The application can be in an unknown state that will affect subsequent processing.\nSince the reason for the issue (the type of the exception and potential embedded message) are not known, it will require more time to fix the issue.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_Commenting_EmptyCatchCommentSniff.html",
     "remediation": "The exception must be handled properly according to its type.",
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

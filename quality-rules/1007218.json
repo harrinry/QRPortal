@@ -1,13 +1,13 @@
 {
     "id": 1007218,
     "type": "quality-rule",
-    "name": "Avoid using $row[xxx] (PHP)",
+    "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
     "href": "quality-rules/1007218.json",
-    "description": "This rules searches all the Methods, Functions and PHP Sections using  $row[xxx].",
-    "output": "This report lists all the Methods, Functions and PHP Sections using  $row[xxx].\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "Using $row[xxx] when exploiting data from a database it can decrease the performance of your application. Using $row[\u2018xxx\u2019] is much faster and can improve the performance of the application.",
-    "remediation": "Try to reduce the use of $row[xxx] and use insead $row['xxx']",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches for all artifacts that fetch database rows as array through call to xxx_fetch_array with xxx_NUM parameter or through xxx_fetch_row.",
+    "output": "This report lists all artifacts that fetch database rows as array through call to xxx_fetch_array with xxx_NUM result type or through xxx_fetch_row. This QR provides the following information:\n- Artifact full name",
+    "rationale": "Fetching database rows as array and accessing through subscript makes the program dependent on backend column order.",
+    "remediation": "Fetch database rows as associate array with call to xxx_fetch_assoc or xxx_fetch_array with xxx_ASSOC or xxx_BOTH as result type. Even though data fetched through xxx_BOTH contains array, it is advised to access rows thorugh column names and not subscript.",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -36,5 +36,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

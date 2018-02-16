@@ -1,13 +1,14 @@
 {
     "id": 1007036,
     "type": "quality-rule",
-    "name": "Avoid classes having too many children (PHP)",
+    "name": "Avoid classes having excessive number of derived classes(PHP)",
     "href": "quality-rules/1007036.json",
-    "description": "This rule searches for all the Classes with an excessive number of children. A class is considered as having too many children if there are more than 15.",
-    "output": "This report lists all the Classes with an excessive number of children.\n\nThis QR provides the following information:\nClass full name.",
-    "rationale": "A class with an excessive number of children is an indicator of an unbalanced class hierarchy. You should consider refactoring this class hierarchy.",
+    "description": "This rule searches for all classes with excessive number of derived classes. A class is considered as having excessive number of derived classes if number of derived classes are more than 15.",
+    "output": "This report lists all classes with excessive number of derived classes.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "A class with excessive number of derived classes is an indicator of unbalanced class hierarchy. You should consider refactoring this class hierarchy.",
     "reference": "PHPMD - http://phpmd.org/rules/design.html#numberofchildren",
     "remediation": "Review the architecture of the application.",
+    "sample": "<?php\n\nclass BaseClass {\n}\n\nClass DerivedClass1 extends BaseClass {\n}\n\nClass DerivedClass2 extends BaseClass {\n}\n\n\u2026\n\nClass DerivedClass16 extends BaseClass {\n}\n\n?>",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -37,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

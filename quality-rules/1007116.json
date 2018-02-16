@@ -1,14 +1,14 @@
 {
     "id": 1007116,
     "type": "quality-rule",
-    "name": "Avoid Methods with Object Instantiation in loops (PHP)",
+    "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
     "href": "quality-rules/1007116.json",
-    "description": "This rule searches for all the Methods with object instantiation in loops.",
-    "output": "\"This report lists all Methods with object instantiations in loops.\n\nThis QR provides the following information:\nSection full name.\"",
-    "rationale": "One of the fundamental OO performance management principles is: avoid excessive object creation. This doesn't mean that you should give up the benefits of object-oriented programming by not creating any objects, but you should be wary of object creation inside tight loops when executing performance-critical code. Object creation is expensive enough that you should avoid unnecessarily creating temporary or intermediate objects in situations where performance is an issue.",
-    "remediation": "Modify the source code to reduce the number of Methods containing object instantiation in loops.",
-    "sample": "\"class ClassTest\n{\n    function test1()\n    {\n        for ($i=0; $i<10; $i++)\n {\n  $bar = new Test;\n  $bar->do_something();\n }\n    }\n}\n\"",
-    "total": "Number of Methods and Functions",
+    "description": "This rule searches for all the artifacts with object instantiation in loops.",
+    "output": "This report lists all artifacts with object instantiation in loops.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Creating objects in loops can be expensive. Code creating objects in loops should be avoided especially in performance-critical code.",
+    "remediation": "Modify the source code to reduce the number of artifacts containing object instantiation in loops.",
+    "sample": "<?php\nclass Test {\n    function do_something() {\n\t    echo \"Hello\";\n    }\n}\nclass ClassTest {\n    function methodCreatingObjectsInLoops() {\n        for ($i=0; $i<10; $i++) {   \n            $bar = new Test();        //VIOLATION\n            $bar->do_something();\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> test1();\n?>",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -32,5 +32,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -1,15 +1,15 @@
 {
     "id": 1007074,
     "type": "quality-rule",
-    "name": "Avoid having Methods and Functions without a  naming convention (PHP)",
+    "name": "Avoid having Methods and Functions without naming convention (PHP)",
     "href": "quality-rules/1007074.json",
-    "description": "This rule searches for all the Functions and Methods that do not respect the naming convention.\nFollow the name convention that should be accepted.\nIf the name contains UpperCase + \"_\"  So No Violation is reported\nIf the name contains UpperCase +  No \"_\"   So The Violation is reported\nIf the name contains No UpperCase + \"_\"   So The Violation is reported\nIf the name contains No UpperCase + No \"_\"   So No Violation is reported",
-    "output": "\"This report lists all the Functions and Methods that do not respect the naming convention.\n\nThis QR provides the following information:\nFunction or Method full name.\"",
-    "rationale": "Using a naming convention makes the source code easier to read and therefore to maintain.",
+    "description": "This rule searches for all Functions and Methods that do not respect the naming convention.\nFollowing are the naming convention that should be accepted:\nIf method name is not in camel case,violation will be reported.\nIf global function is neither in camel nor in snake case, violation will be reported.",
+    "output": "This report lists all Functions and Methods that do not respect the naming convention.\n\nThis QR provides the following information:\nFunction or Method full name.",
+    "rationale": "Using naming convention makes the source code easier to read and therefore to maintain.",
     "remediation": "Modify the source code to reduce the number of Functions and Methods that do not respect the naming convention.",
-    "remediationSample": "\"function MyCompany_Test(){\n}\"",
-    "sample": "\"function MyCompanyTest(){\n}\"",
-    "total": "Number of Methods and Functions",
+    "remediationSample": "<?php\n\t\tclass foo {\n   public function testClass() { // a method\n     ........\n   }\n}\nfunction foo_bar() {  // a function\n.......  \n}\nfunction testBar() {  // a function\n.......\n}\n?<",
+    "sample": "<?php\n\t\tclass foo {\n   public function testclass() { // a method\n     ........\n   }\n}\nfunction foobar() {  // a function\n.......  \n}\nfunction testbar() {  // a function\n.......\n}\n?<",
+    "total": "Number of Methods or Functions",
     "businessCriteria": [
         {
             "id": 60011,
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

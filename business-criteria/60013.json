@@ -343,13 +343,13 @@
     },
     {
         "id": 1007000,
-        "name": "Avoid Sections directly access to database tables (PHP)",
+        "name": "Avoid php sections directly access database tables (PHP)",
         "href": "quality-rules/1007000.json",
         "critical": false
     },
     {
         "id": 1007002,
-        "name": "Avoid Methods and Functions directly access to database tables (PHP)",
+        "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
         "href": "quality-rules/1007002.json",
         "critical": false
     },
@@ -783,6 +783,12 @@
         "id": 1101036,
         "name": "Use ANSI standard operators in SQL WHERE clauses",
         "href": "quality-rules/1101036.json",
+        "critical": false
+    },
+    {
+        "id": 1101958,
+        "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
+        "href": "quality-rules/1101958.json",
         "critical": false
     },
     {
@@ -1351,7 +1357,7 @@
     },
     {
         "id": 1007022,
-        "name": "Avoid FOR loops which can be simplified to a WHILE loop (PHP)",
+        "name": "Avoid artifacts using \"for\" loops which can be simplified to a \"while\" loop (PHP)",
         "href": "quality-rules/1007022.json",
         "critical": false
     },
@@ -1363,13 +1369,13 @@
     },
     {
         "id": 1007026,
-        "name": "Use identical type operators rather than EQUAL operators (PHP)",
+        "name": "Use identical type operator rather than \"equal\" operator (PHP)",
         "href": "quality-rules/1007026.json",
         "critical": false
     },
     {
         "id": 1007028,
-        "name": "Use Increment/decrement operators where possible",
+        "name": "Use increment/decrement operators where possible (PHP)",
         "href": "quality-rules/1007028.json",
         "critical": false
     },
@@ -1645,43 +1651,37 @@
     },
     {
         "id": 1007036,
-        "name": "Avoid classes having too many children (PHP)",
+        "name": "Avoid classes having excessive number of derived classes(PHP)",
         "href": "quality-rules/1007036.json",
         "critical": false
     },
     {
         "id": 1007038,
-        "name": "Avoid classes having too many dependencies (PHP)",
+        "name": "Avoid classes having excessive number of dependencies (PHP)",
         "href": "quality-rules/1007038.json",
         "critical": false
     },
     {
-        "id": 1007040,
-        "name": "Avoid classes having too many parents (PHP)",
-        "href": "quality-rules/1007040.json",
-        "critical": false
-    },
-    {
         "id": 1007042,
-        "name": "Avoid having Classes implementing too many Interfaces (PHP)",
+        "name": "Avoid Classes implementing excessive number of Interfaces (PHP)",
         "href": "quality-rules/1007042.json",
         "critical": false
     },
     {
         "id": 1007046,
-        "name": "Avoid Classes and Interfaces with a High Depth of Inheritance Tree (PHP)",
+        "name": "Avoid Classes with High Depth of Inheritance Tree (PHP)",
         "href": "quality-rules/1007046.json",
         "critical": false
     },
     {
         "id": 1007048,
-        "name": "Avoid large Interfaces - too many Methods (PHP)",
+        "name": "Avoid Interfaces with excessive number of methods (PHP)",
         "href": "quality-rules/1007048.json",
         "critical": false
     },
     {
         "id": 1007236,
-        "name": "Avoid having class methods without scope modifiers - Symfony STD (PHP)",
+        "name": "Avoid having Class Methods or Constructor without scope modifiers - Symfony STD (PHP)",
         "href": "quality-rules/1007236.json",
         "critical": false
     },
@@ -3289,7 +3289,7 @@
     },
     {
         "id": 1007146,
-        "name": "Avoid unconditional IF and ELSEIF statements (PHP)",
+        "name": "Avoid unconditional \"if\" and \"elseif\" statements (PHP)",
         "href": "quality-rules/1007146.json",
         "critical": false
     },
@@ -3301,25 +3301,25 @@
     },
     {
         "id": 1007150,
-        "name": "Avoid unassigned default values in Functions (PHP)",
+        "name": "Avoid functions with optional parameters before required parameters (PHP)",
         "href": "quality-rules/1007150.json",
         "critical": true
     },
     {
         "id": 1007154,
-        "name": "Avoid using a goto statements (PHP)",
+        "name": "Avoid using goto statements (PHP)",
         "href": "quality-rules/1007154.json",
         "critical": true
     },
     {
         "id": 1007156,
-        "name": "Avoid using eval expressions (PHP)",
+        "name": "Avoid using eval expression (PHP)",
         "href": "quality-rules/1007156.json",
         "critical": false
     },
     {
         "id": 1007158,
-        "name": "Avoid using exit and die expressions (PHP)",
+        "name": "Avoid artifacts using exit and die expressions (PHP)",
         "href": "quality-rules/1007158.json",
         "critical": false
     },
@@ -4075,7 +4075,7 @@
     },
     {
         "id": 1007058,
-        "name": "Avoid unused Function parameters (PHP)",
+        "name": "Avoid unused parameters (PHP)",
         "href": "quality-rules/1007058.json",
         "critical": false
     },
@@ -4429,7 +4429,7 @@
     },
     {
         "id": 1007240,
-        "name": "Avoid having object not instantiated using parenthesis - Symfony STD (PHP)",
+        "name": "Avoid artifacts having object instantiation without parenthesis - Symfony STD (PHP)",
         "href": "quality-rules/1007240.json",
         "critical": false
     },
@@ -5340,24 +5340,6 @@
         "critical": false
     },
     {
-        "id": 1007160,
-        "name": "Avoid using variable without testing them for initialisation (PHP)",
-        "href": "quality-rules/1007160.json",
-        "critical": true
-    },
-    {
-        "id": 1007162,
-        "name": "Avoid having lonely variables (PHP)",
-        "href": "quality-rules/1007162.json",
-        "critical": false
-    },
-    {
-        "id": 1007164,
-        "name": "Avoid functions having the optional parameters before the others (PHP)",
-        "href": "quality-rules/1007164.json",
-        "critical": true
-    },
-    {
         "id": 1007166,
         "name": "Avoid having properties with __get and no __set (PHP)",
         "href": "quality-rules/1007166.json",
@@ -5382,14 +5364,8 @@
         "critical": false
     },
     {
-        "id": 1007174,
-        "name": "Avoid having the assignment to \"$this\" (PHP)",
-        "href": "quality-rules/1007174.json",
-        "critical": false
-    },
-    {
         "id": 1007176,
-        "name": "Avoid using break statement in FOR loops (PHP)",
+        "name": "Avoid using break or continue statements in loops with high cyclomatic complexity (PHP)",
         "href": "quality-rules/1007176.json",
         "critical": false
     },

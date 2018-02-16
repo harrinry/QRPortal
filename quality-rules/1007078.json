@@ -1,15 +1,15 @@
 {
     "id": 1007078,
     "type": "quality-rule",
-    "name": "A class name should start with a upper case letter (PHP)",
+    "name": "A class name should start with an upper case letter (PHP)",
     "href": "quality-rules/1007078.json",
     "description": "This rule searches for all the classes that do not respect the naming convention. The name of the class should start with an upper case character.",
-    "output": "\"This report lists all the Classes that do not respect the naming convention.\n\nThis QR provides the following information:\nClass full name.\"",
-    "rationale": "Using a naming convention makes the source code easier to read and therefore to maintain.",
-    "remediation": "Modify the source code to reduce the number of Classes that do not respect the naming convention.",
-    "remediationSample": "\"class CastTest{\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n\n]\"",
-    "sample": "\"class castTest{ //violation\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n\n]\"",
-    "total": "Number of Classes",
+    "output": "This report lists all the Classes that do not respect the naming convention.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "Using naming convention makes the source code easier to read and therefore to maintain.",
+    "remediation": "Modify source code to reduce the number of classes that do not respect the naming convention.",
+    "remediationSample": "<?php\n\t\tclass CastTest{ //violation removed\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
+    "sample": "<?php\n\t\tclass castTest{ //violation\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60011,
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -1,13 +1,13 @@
 {
     "id": 1007042,
     "type": "quality-rule",
-    "name": "Avoid having Classes implementing too many Interfaces (PHP)",
+    "name": "Avoid Classes implementing excessive number of Interfaces (PHP)",
     "href": "quality-rules/1007042.json",
-    "description": "This rule searches for all the Classes implementing too many interfaces.",
-    "output": "This report lists all the Classes implementing too many interfaces.\n\nThis QR provides the following information:\nClass full name.",
-    "rationale": "Classes that implement too many interfaces increase the complexity of the source code and makes it difficult to maintain and test.",
-    "remediation": "Review the architecture of the application to reduce the number of interface implementations by the class.",
-    "sample": "<?php\ninterface A\n{\n    public function A();\n}\n\ninterface\nB\n{\n    public function B();\n}\n\n// several other interfaces\nclass\nM\n{\n    public function M()\n    {\n    }\n\n}\n\n\nclass\nClassTest implements A,B,C,...,L,M\n{\n    public function A()\n    {\n\n}\n\n    public function B()\n    {\n    }\n\n    //\nseveral others methods\n\n    public function M()\n    {\n    }\n\n}\n?>",
+    "description": "This rule searches for all the Classes implementing excessive number of interfaces. A class implementing more than 3 interfaces is considered as violation for this rule. The parameter denoting number of interfaces can be changed to suit scenario.",
+    "output": "This report lists all the Classes implementing excessive number of interfaces.\n      \nThis QR provides the following information:\nClass full name.",
+    "rationale": "A Class that implements excessive number of interfaces increases complexity of source code and makes it difficult to maintain and test.",
+    "remediation": "Review class design to reduce the number of interface implementations by the class.",
+    "sample": "<?php\ninterface A\n{\n    public function A();\n}\ninterface B\n{\n    public function B();\n}\ninterface C\n{\n    public function C();\n}\ninterface D\n{\n    public function D();\n}\nclass ClassTest implements A,B,C,D\n{\n    public function A()\n    {\n    }\n    public function B()\n    {\n    }\n    public function C()\n    {\n    }\n    public function D()\n    {\n    }\n}\n?>",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -37,5 +37,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

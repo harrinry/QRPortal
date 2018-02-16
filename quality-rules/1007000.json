@@ -1,12 +1,12 @@
 {
     "id": 1007000,
     "type": "quality-rule",
-    "name": "Avoid Sections directly access to database tables (PHP)",
+    "name": "Avoid php sections directly access database tables (PHP)",
     "href": "quality-rules/1007000.json",
-    "description": "This rule searches for all the Sections that are directly accessing an SQL Table.",
-    "output": "This report lists all Sections that directly access an SQL table.\n\nThis QR provides the following information:\nSection full name.",
+    "description": "This rule searches for all php Sections that directly access database table.",
+    "output": "This report lists all php Sections that directly access database table.\n\nThis QR provides the following information:\nSection full name.",
     "rationale": "For security reasons, directly accessing database tables is not advised.",
-    "remediation": "Modify the source code to reduce the number of Sections that directly access an SQL Table.",
+    "remediation": "Avoid direct access to database tables. Use views instead.",
     "total": "Number of Sections",
     "businessCriteria": [
         {
@@ -36,5 +36,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }
