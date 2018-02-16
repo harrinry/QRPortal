@@ -1,11 +1,11 @@
 var express = require('express');
 var path = require('path');
-var static = require('node-static');
+//var static = require('node-static');
 
 var port = process.env.PORT || 8080;
 
 var app = express();
-app.use(express.static('QRPortal'));
+//app.use(express.static('QRPortal'));
 app.use(express.static('static'));
 
 
@@ -20,9 +20,9 @@ require('http').createServer(function (request, response) {
     }).resume();
 }).listen(port);*/
 
-app.get('/default.html', function(req, res) {
+/*app.get('/default.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/static/default.html'));
-});
+});*/
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/root.json'));
 });
