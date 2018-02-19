@@ -1,12 +1,14 @@
 {
     "id": 1007038,
     "type": "quality-rule",
-    "name": "Avoid classes having too many dependencies (PHP)",
+    "name": "Avoid classes having excessive number of dependencies (PHP)",
     "href": "quality-rules/1007038.json",
-    "description": "This rule searches for all the Classes with too many dependencies. The number of dependencies must not be greater than 13.",
-    "output": "\"This report lists all the Classes with too many dependencies.\n\nThis QR provides the following information:\nClass full name.\"",
-    "rationale": "A class with too many dependencies has a negative impact on several quality aspects of a class, including stability, maintainability and understandability.",
+    "description": "This rule searches for all Classes with excessive number of dependencies. A class is considered as having excessive number of dependencies if number of dependencies are more than 13.",
+    "output": "This report lists all Classes with excessive number of dependencies.\n                \nThis QR provides the following information:\nClass full name.",
+    "rationale": "A class with excessive number of dependencies has negative impact on several quality aspects of a class, including stability, maintainability and understandability.",
+    "reference": "PHPMD -  https://phpmd.org/rules/design.html#CouplingBetweenObjects",
     "remediation": "Review the architecture of the application.",
+    "sample": "<?php\n\nclass DependencySingleFunction\n{\n    public function getDepend()\n    {\n        $this->depend1 = new Test1();\n        $this->depend2 = new Test2();\n        ... \n        $this->depend14 = new Test14();       \n    } \n}\nclass DependencyMultipleFunctions\n{\n    public function getDepend1()\n    {\n        $this->depend1 = new Test1();        \n    } \n    public function getDepend2()\n    {\n        $this->depend2 = new Test2();        \n    } \n    ...\n    public function getDepend14()\n    {\n        $this->depend14 = new Test14();        \n    } \n?>",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -36,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

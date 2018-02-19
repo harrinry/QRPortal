@@ -1,16 +1,16 @@
 {
     "id": 1007026,
     "type": "quality-rule",
-    "name": "Use identical type operators rather than EQUAL operators (PHP)",
+    "name": "Use identical type operator rather than \"equal\" operator (PHP)",
     "href": "quality-rules/1007026.json",
-    "description": "This rule searches for all the Methods and Functions using type operators instead of EQUAL operators.",
-    "output": "\"This report lists all Methods and Functions with operators rather than EQUAL operators.\n\nThis QR provides the following information:\nMethods and Function full name.\"",
-    "rationale": "For performance reasons, it is preferable to avoid identical type operators because they increase response time and memory consumption.",
+    "description": "This rule searches for all artifacts using \"equal\" operators instead of type operator.",
+    "output": "This report lists all artifacts that use implicit true checking or equal operators rather than identical type operators.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "To compare with type safety,identical type operators should be preffered over implicit true check or equal operators.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_Operators_ComparisonOperatorUsageSniff.html",
-    "remediation": "Try to reduce the number of Methods and Functions using type operators instead of EQUAL operators.",
-    "remediationSample": "<?php\nif ($a === true) //Violation removed\n  {\n      ...\n  }\n ?>",
-    "sample": "<?php\nif ($a) //Violation\n {\n      ...\n  }\n?>\n\n}\"",
-    "total": "Number of Methods and Functions",
+    "remediation": "Reduce number of artifacts using true check or equal operators instead of identical type operators.",
+    "remediationSample": "<?php\nclass Test\n{\n  function testOperator()\n  {\n    $a = \"1\";\n\tif ($a === \"1\")  //violation removed\n\t{\n\t echo \"this is true\";\n\t}\n  }\n}\n$test = new Test();\n$test-> testOperator();\n?>",
+    "sample": "<?php\nclass Test\n{\n function testOperator()\n {\n  $a = \"1\";\n  if ($a == \"1\")      //violation\n  {\n   echo \"this is false\";  \n  }\n }\n}\n$test = new Test();\n$test-> testOperator();\n?>",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -39,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

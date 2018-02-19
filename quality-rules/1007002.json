@@ -1,13 +1,13 @@
 {
     "id": 1007002,
     "type": "quality-rule",
-    "name": "Avoid Methods and Functions directly access to database tables (PHP)",
+    "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
     "href": "quality-rules/1007002.json",
-    "description": "This rule searches for all the Methods and Functions that are directly accessing an SQL Table.\nAvoid Methods and Functions directly access to database tables (PHP)",
-    "output": "This report lists all Methods and Functions that are directly accessing an SQL table.\n\nThis QR provides the following information:\nMethod and Function full name.\"",
+    "description": "This rule searches for all php Methods and php Functions that directly accessing database Table.",
+    "output": "This report lists all php Methods and php Functions that directly access database table.\n\nThis QR provides the following information:\nMethod or Function full name.",
     "rationale": "For security reasons, directly accessing database tables is not advised.",
-    "remediation": "Modify the source code to reduce the number of Methods and Functions directly accessing  an SQL Table.",
-    "total": "Number of Methods and Functions",
+    "remediation": "Avoid direct access to database tables. Use views instead",
+    "total": "Number of Methods or Functions",
     "businessCriteria": [
         {
             "id": 60012,
@@ -36,5 +36,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

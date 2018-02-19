@@ -1,13 +1,15 @@
 {
     "id": 1007086,
     "type": "quality-rule",
-    "name": "Avoid uppercase keywords for control structures in Functions and Methods(PHP)",
+    "name": "Use lowercase for control structures in Methods and Functions (PHP)",
     "href": "quality-rules/1007086.json",
-    "description": "This rule searches for all Methods and Functions containing control structures written in upper case.",
-    "output": "\"This report lists all Methods and Functions containing control structures written in upper case.\n\nThis QR provides the following information:\nMethod/Function full name.\"",
-    "rationale": "Using a naming convention makes the source code easier to read and therefore to maintain.",
+    "description": "This rule searches for all Methods and Functions containing control structures not in lowercase.",
+    "output": "This report lists all Methods and Functions containing control structures not in lowercase.\n\nThis QR provides the following information:\nMethod or Function full name.",
+    "rationale": "Use of naming convention makes the source code easier to read and therefore to maintain.",
     "reference": "Code Sniffer - http://pear.php.net/reference/PHP_CodeSniffer-1.5.2/PHP_CodeSniffer/Squiz_Sniffs_ControlStructures_LowercaseDeclarationSniff.html",
-    "remediation": "Modify the source code to reduce the number of artifacts containing control structures written in upper case.",
+    "remediation": "Modify the source code to reduce the number of Methods and Functions containing control structures not in lowercase.",
+    "remediationSample": "<?php\nclass ClassTest {\n    function testCondition() {\n        $status = 0;\n\n        if ($status === 0) {          //VIOLATION REMOVED\n            echo \"section: status\",PHP_EOL;\n        } elseif ($status === 1) {    //VIOLATION REMOVED\n            echo \"section: status\",PHP_EOL;\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> testCondition();\n?>",
+    "sample": "<?php\nclass ClassTest {\n    function testCondition() {\n        $status = 0;\n\n        IF ($status === 0) {          //VIOLATION  \n            echo \"section: status\",PHP_EOL;\n        } elseIf ($status === 1) {    //VIOLATION \n            echo \"section: status\",PHP_EOL;\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> testCondition();\n\t\t\n?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -32,5 +34,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

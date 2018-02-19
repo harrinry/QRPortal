@@ -1,15 +1,15 @@
 {
     "id": 1007154,
     "type": "quality-rule",
-    "name": "Avoid using a goto statements (PHP)",
+    "name": "Avoid using goto statements (PHP)",
     "href": "quality-rules/1007154.json",
-    "description": "This rule searches for all the Sections containing goto statements.",
-    "output": "\"This report lists all the Sections containing goto statements.\n\nThis QR provides the following information:\nSections full name.\"",
-    "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct. It should therefore be avoided.",
+    "description": "This rule searches for all the artifacts containing goto statements.",
+    "output": "This report lists all the artifacts containing goto statements.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct. Therefore, it should be avoided.",
     "reference": "PHPMD - http://phpmd.org/rules/design.html#gotostatement",
     "remediation": "Modify the source code and consider replacing Goto statements with regular control structures and separate methods/functions, which are easier to read.",
-    "sample": "\"class CastTest{\n\n public function bar($param) {\n  A:\n  if ($param === 10) {\n   goto C;\n  }\n\n  B:\n  if (time() % 90 === 10) {\n   goto D;\n  }\n\n  C:\n  if (time() % 10 === 90) {\n   goto B;\n  }\n\n  D: return 90;\n }\n}\"",
-    "total": "Number of Sections",
+    "sample": "<?php\nclass CastTest {\n\n    public function bar($param) {\n        A:\n        if ($param === 10) {\n           goto C;\n        }\n\n        B:\n        if (time() % 90 === 10) {\n            goto D;\n        }\n\n        C:\n        if (time() % 10 === 90) {\n            goto B;\n        }\n\n        D: return 90;\n    }\n}\n$obj = new CastTest();\n$obj-> bar(10);\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

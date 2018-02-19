@@ -4,11 +4,11 @@
     "name": "Avoid useless overriding Methods (PHP)",
     "href": "quality-rules/1007148.json",
     "description": "This rule searches for all the useless overridden Methods.",
-    "output": "\"This report lists all useless overridden Methods.\n\nThis QR provides the following information:\nMethod  full name.\"",
+    "output": "This report lists all useless overridden Methods.\n\nThis QR provides the following information:\nMethod  full name.",
     "rationale": "Overriding Methods is a very powerful way to refactor the code and produce complete functionalities. However useless overriding methods can make the source code more complex.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UselessOverridingMethodSniff.html",
     "remediation": "Modify the source code to reduce the number of useless overridden Methods.",
-    "sample": "\" class CastTest {\n   public function __construct($a, $b) {\n     parent::__construct($a, $b);\n   }\n }\n\"",
+    "sample": "class CastTest {\n   public function __construct($a, $b) {\n     parent::__construct($a, $b);\n   }\n }",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

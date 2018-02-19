@@ -1,15 +1,15 @@
 {
     "id": 1007046,
     "type": "quality-rule",
-    "name": "Avoid Classes and Interfaces with a High Depth of Inheritance Tree (PHP)",
+    "name": "Avoid Classes with High Depth of Inheritance Tree (PHP)",
     "href": "quality-rules/1007046.json",
-    "description": "This rule searches for all the Classes and Interfaces with a High Depth of Inheritance Tree",
-    "output": "This report lists all the Classes and Interfaces with a High Depth of Inheritance Tree.\n\nThis QR provides the following information:\nClass and Interface full name.",
-    "rationale": "Changing a class (or interface) requires prior understanding, which, in turn, is\nmore complicated for classes (or interfaces) with many methods. Classes (or interfaces) that are deep\ndown in the class (or interface) hierarchy potentially inherit many methods from super-classes (or super-interfaces).\nMoreover, the definitions of inherited methods are not local to the class making it even harder to understand.\n\nComplete\ntesting requires coverage of all execution paths. The number of possible execution paths of a class increases\nwith the number of methods and their control flow complexity. Classes (or interfaces) that are deep down\nin the classes hierarchy potentially inherit many methods from super-classes (super-interfaces). Due\nto late binding, super-class (or super-interfaces) methods need to be tested again in the sub-class (or\nsub-interfaces) context. This makes it potentially harder to test classes (interfaces) deep down in the\nclasses (interfaces) hierarchy.\n\nTechnical or framework classes which are evolving\nand will not be changed often should not be concerned by this rule.",
+    "description": "This rule searches for all Classes with High Depth of Inheritance Tree",
+    "output": "This report lists all the Classes with High Depth of Inheritance Tree.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "Changing a class requires prior understanding, which, in turn, is\nmore complicated for classes with many methods. Classes that are deep\ndown in hierarchy potentially inherit many methods. Moreover, the definitions of inherited methods are not local to the class making it even harder to understand.\n\nComplete testing requires coverage of all execution paths. The number of possible execution paths of class increases\nwith the number of methods and their control flow complexity.Due to late binding, base methods need to be tested again in the sub type context. This makes it potentially harder to test.\n\nTechnical or framework classes which are evolving and will not be changed often should not be concerned by this rule.",
     "reference": "PHPMD - http://phpmd.org/rules/design.html#depthofinheritance",
-    "remediation": "Review the architecture of the application to reduce the depth of the Inheritence Tree.",
-    "sample": "<?php\nclass ClassTest1{\n    public function __construct()\n{\n    }\n}\n\nclass ClassTest2 extends ClassTest1{{\n    public\nfunction __construct(ArrayObject $arrayObj, $number = 0) {\n        /* do stuff with $arrayObj\nand $number */\n    }\n}\n\nclass ClassTest2 extends ClassTest3 {\n\npublic function __construct() {\n        //  do stuff\n    }\n}\n\n//........................\n\n\nclass\nClassTest10 extends ClassTest11 {\n    public function __construct() {\n        //  do\nstuff\n    }\n}\n\nclass ClassTest11 extends ClassTest12 {\n\npublic function __construct() {\n        //  do stuff\n    }\n}\n?>",
-    "total": "Number of Classes and Interfaces",
+    "remediation": "Review the architecture of the application to reduce the depth of the inheritence Tree.",
+    "sample": "<?php\nclass ClassTest1{\n    public function __construct()\n    {\n    }\n}\n\nclass ClassTest2 extends ClassTest1{{\n    public function __construct(ArrayObject $arrayObj, $number = 0) \n\t{\n        \n    }\n}\n\nclass ClassTest3 extends ClassTest2 {\n\npublic function __construct() \n    {\n      parent::__construct(array(1));   \n    }\n}\n...\n\n\nclass\nClassTest11 extends ClassTest10 {\n    public function __construct() \n\t{\n    }\n}\n\nclass ClassTest12 extends ClassTest11 {\n\npublic function __construct() \n    {\n    }\n}\n?>",
+    "total": "Number of Classes",
     "businessCriteria": [
         {
             "id": 60011,
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

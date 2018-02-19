@@ -3,10 +3,10 @@
     "type": "quality-rule",
     "name": "Avoid using embedded CSS in Web Pages (PHP)",
     "href": "quality-rules/1007012.json",
-    "description": "This rule searches for all the PHP Files that are not linked to a css style sheet and instead contain hardcoded style definitions. Style sheets (*.css) should be used instead of hardcoded style definitions.",
-    "output": "This report lists all PHP Files with hardcoded style definitions and no links to a style sheet.\n\nThis QR provides the following information:\nPHP File  full name.",
-    "rationale": "Using style sheets (*.css) instead of hardcoded style definitions improves redeability and is less costly to maintain.",
-    "remediation": "Modify the source code to reduce the number of  web pages with hardcoded style definitions and no link to a css style sheet.",
+    "description": "This rule searches for all PHP Files that are not linked to a style sheet(*.css) and contain hardcoded style definition. Style sheets (*.css) should be used instead of hardcoded style definition.",
+    "output": "This report lists all PHP Files with hardcoded style definition and no link to a style sheet.\n\nThis QR provides the following information:\nPHP File  full name.",
+    "rationale": "Using style sheets (*.css) instead of hardcoded style definition improves redeability and is less costly to maintain.",
+    "remediation": "Modify the source code to reduce the number of web pages with hardcoded style definition and no link to a style sheet(*.css).",
     "total": "Number of PHP Files",
     "businessCriteria": [
         {
@@ -31,5 +31,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

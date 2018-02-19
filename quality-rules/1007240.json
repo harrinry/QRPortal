@@ -1,15 +1,15 @@
 {
     "id": 1007240,
     "type": "quality-rule",
-    "name": "Avoid having object not instantiated using parenthesis - Symfony STD (PHP)",
+    "name": "Avoid artifacts having object instantiation without parenthesis - Symfony STD (PHP)",
     "href": "quality-rules/1007240.json",
-    "description": "This QR will have violations if parentheses are not used while instantiating objects. \nObjects when being constructed can use non-parentheses syntax which is not recommended.",
-    "output": "PHP Sections that have object instantiations without parentheses.",
-    "rationale": "Use parentheses when instantiating classes regardless of the number of arguments the constructor has because usually, when method is being called PHP requires () and constructors are methods.\nAlso, it's more consistent with instantiations that have parameters.",
-    "remediation": "Use parentheses when instantiating classes regardless of the number of arguments the constructor has.",
-    "remediationSample": "<?php\n\n   class test\n   {\n      public function test();\n   }\n                           \n   $testobj = new test();\n\n?>",
-    "sample": "<?php\n\n   class test\n   {\n      public function test();\n   }\n                           \n   $testobj = new test;\n\n?>",
-    "total": "Number of Sections",
+    "description": "This QR will have violations if parenthesis are not used while instantiating objects.",
+    "output": "This report will list all artifacts that instantiate object without using parenthesis. It provides:\nArtifact full name",
+    "rationale": "Parenthesis should be used when instantiating classes regardless of the number of arguments since when method is being called PHP requires \"()\" and constructors are methods. \n\t\tAlso, it's more consistent with instantiations that have parameters.",
+    "remediation": "Use parenthesis when instantiating classes regardless of the number of arguments of the constructor.",
+    "remediationSample": "<?php\n\n   class Test\n   {\n      public function test() {\n\t  }\n   }\n                           \n   $obj = new Test();\n\n?>",
+    "sample": "<?php\n\n   class Test\n   {\n      public function test() {\n\t  }\n   }\n                           \n   $obj = new Test;\n\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -43,5 +43,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

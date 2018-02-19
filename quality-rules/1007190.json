@@ -1,13 +1,15 @@
 {
     "id": 1007190,
     "type": "quality-rule",
-    "name": "Avoid using relative path (PHP)",
+    "name": "Avoid using relative path for including files (PHP)",
     "href": "quality-rules/1007190.json",
-    "description": "This rule searches for Methods, Functions and PHP Sections using relatives path without using the constant WEB_ROOT.",
-    "output": "This report lists all the Methods, Functions and PHP Sections containing strings with double quotes and without any variable.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "It is highly advised to try to minimize relative paths for files inclusion. The general mechanism for relative path inclusion will search for default include paths, then continue with current directory then so on. So file search in that case may take more time.\nIf however you need to use relatives path, the better practice is to declare the constant called WEB_ROOT which defines the root.",
-    "remediation": "Try to limit relative path without using the constant WEB_ROOT.",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches artifacts that include files using relative paths.",
+    "output": "This report lists all artifacts containing that use relative paths to include files. It provides:\n- Artifact full name",
+    "rationale": "The mechanism for relative path inclusion will search for default include paths, then continue with current directory then so on. So file search in that case may take more time. It is recommended to use fully qualified path that are based on configuration of application.",
+    "remediation": "Use fully qualified path that is based on configuration of application.",
+    "remediationSample": "<?php\n\ninclude $APPROOT.\"../A.php\"; //violation removed\n?>",
+    "sample": "<?php\n\ninclude \"../A.php\"; //violation\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -36,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

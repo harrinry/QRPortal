@@ -1,13 +1,13 @@
 {
     "id": 1007048,
     "type": "quality-rule",
-    "name": "Avoid large Interfaces - too many Methods (PHP)",
+    "name": "Avoid Interfaces with excessive number of methods (PHP)",
     "href": "quality-rules/1007048.json",
-    "description": "This rule searches for all the large Interfaces.",
-    "output": "This report lists all the large Interfaces.\n\nThis QR provides the following information:\nInterface full name.",
-    "rationale": "For maintainability and readability reasons, interfaces should not have too many methods.",
+    "description": "This rule searches for all Interfaces which have excessive number of methods.",
+    "output": "This report lists all large Interfaces.\n\nThis QR provides the following information:\nInterface full name.",
+    "rationale": "For maintainability and readability reasons, interfaces should not have excessive number of methods.",
     "remediation": "Review the architecture of the application to reduce the number of methods in an Interface.",
-    "sample": "<?php\ninterface iTemplateCastExample // Violation - the interface has too many methods\n{\n public function setVariable1($name1, $var1);\n public function setVariable2($name2, $var2);\n  public function setVariable3($name3, $var3);\n public function setVariable4($name4, $var4);\n //... many other methods\n public function setVariable30($name30, $var30);\n public function setVariable31($name31, $var31);\n}\n\n?>",
+    "sample": "<?php\ninterface ILargeInterface // Violation - the interface has too many methods\n{\n public function setVariable1($name1, $var1);\n public function setVariable2($name2, $var2);\n public function setVariable3($name3, $var3);\n public function setVariable4($name4, $var4);\n //...many other methods\n public function setVariable30($name30, $var30);\n public function setVariable31($name31, $var31);\n}\n\n?>",
     "total": "Number of Interfaces",
     "businessCriteria": [
         {
@@ -37,5 +37,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

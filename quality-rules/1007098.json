@@ -4,11 +4,11 @@
     "name": "Avoid undocumented Methods or Functions (PHP)",
     "href": "quality-rules/1007098.json",
     "description": "This rule searches for all undocumented Methods and Functions.",
-    "output": "\"This report lists all undocumented Methods and Functions.\n\nThis QR provides the following information:\nMethod and Function full name.\"",
-    "rationale": "Code maintainability can be improved if there is documentation in the code. This rule will ensure that comments exist in Methods and Functions.",
+    "output": "This report lists all undocumented Methods and Functions.\n\nThis QR provides the following information:\nMethod or Function full name.",
+    "rationale": "Code maintainability is improved if code has comments.This rule reports whether methods and function has comments.",
     "remediation": "Modify the source code to reduce the number of undocumented Methods and Functions.",
-    "remediationSample": "\"class CastTest{\n    // Item\n    var $items;\n\n\n\n    function add_item($artnr, $num) {\n// Add of the Item\n$this->items[$artnr] += $num;\n    }\n}\"",
-    "sample": "\"class CastTest{\n    var $items;\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\"",
+    "remediationSample": "<?php\nclass CastTest {\n    function addItem($num1,$num2) {\n        // Add items\n        $num1 += $num2;\n\t    echo $num1;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem(2,3);\n?>",
+    "sample": "<?php\nclass CastTest {\n    function addItem($num1,$num2) {\n        $num1 += $num2;\n\t    echo $num1;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem(2,3);\n?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

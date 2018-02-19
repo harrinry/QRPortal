@@ -3,10 +3,10 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Interfaces (PHP)",
     "href": "quality-rules/1007062.json",
-    "description": "This rule searches for all the unreferenced Interfaces.",
-    "output": "\"This report lists all unreferenced Interfaces\n\nThis QR provides the following information:\nInterface full name.\"",
-    "rationale": "Unreferenced code may be a symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be an indication of missing code (code not included in the source code analysis) and / or can be a symptom of the use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
-    "remediation": "Review the source code of the application to minimize the number of unreferenced Interfaces.",
+    "description": "This rule searches for all unreferenced Interfaces.",
+    "output": "This report lists all unreferenced Interfaces\n\nThis QR provides the following information:\nInterface full name.",
+    "rationale": "Unreferenced code may be a symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be an indication of missing code (code referring to the interface not included in the source code analysis) or can be a symptom of the use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
+    "remediation": "Review the source code of application to minimize the number of unreferenced Interfaces.",
     "total": "Number of Interfaces",
     "businessCriteria": [
         {
@@ -36,5 +36,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

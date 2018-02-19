@@ -3,10 +3,11 @@
     "type": "quality-rule",
     "name": "Avoid classes with a very low comment/code ratio (PHP)",
     "href": "quality-rules/1007104.json",
-    "description": "This rule searches for all Classes with a very low comment/code ratio.",
-    "output": "This report lists all Classes with a very low comment/code ratio.\n\nThis QR provides the following information:\n- Class full name\n- Comment/code ratio",
-    "rationale": "A very low comment/code ratio makes the source code difficult to read, maintain and test. It is highly recommended to keep this ratio as high as possible.",
-    "remediation": "Try to reduce the number of Classes with a very low comment/code ratio.",
+    "associatedValueName": "Current Comment Percent",
+    "description": "This rule searches for all Classes with comment/code ratio below five percent. This parameter can be changed to suit the scenario.",
+    "output": "This report lists all Classes with very low comment/code ratio.\n\nThis QR provides the following information:\n- Class full name\n- Comment/code ratio",
+    "rationale": "A very low comment/code ratio makes the source code difficult to read, maintain and test. It is highly recommended to keep this ratio at least five percent.",
+    "remediation": "Modify the source code to reduce the number of Classes with very low comment/code ratio.",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -31,5 +32,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

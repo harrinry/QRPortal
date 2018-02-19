@@ -4,11 +4,11 @@
     "name": "Avoid having call function return ignored (PHP)",
     "href": "quality-rules/1007170.json",
     "description": "This rule searches for all the Methods and Functions containing call function returns that are ignored.",
-    "output": "\"This report lists all the Methods and Functions containing call function returns that are ignored.\n\nThis QR provides the following information:\nMethod and Function full name.\"",
+    "output": "This report lists all the Methods and Functions containing call function returns that are ignored.\n\nThis QR provides the following information:\nMethod and Function full name.",
     "rationale": "In PHP ignoring the result of a function indicates that the programmer has made an assumption about this return value. Unfortunately, sometimes this assumption can be wrong and produce unexpected results for the application.",
     "remediation": "Modify the source code and always check the return value of functions.",
-    "remediationSample": "\"  <?php\n\n    function foo($param1, $param2){\n      return $param1 + $param2;\n    }\n\n    $result =foo(1,2);//Remediation\n    //further processing\n  ?>\"",
-    "sample": "\"  <?php\n\n    function foo($param1, $param2){\n      return $param1 + $param2;\n    }\n\n    foo(1,2);//violation\n    //further processing\n  ?>\"",
+    "remediationSample": "<?php\n\n    function foo($param1, $param2){\n      return $param1 + $param2;\n    }\n\n    $result =foo(1,2);//Remediation\n    //further processing\n  ?>",
+    "sample": "<?php\n\n    function foo($param1, $param2){\n      return $param1 + $param2;\n    }\n\n    foo(1,2);//violation\n    //further processing\n  ?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }
