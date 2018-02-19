@@ -1,14 +1,16 @@
 {
     "id": 1007236,
     "type": "quality-rule",
-    "name": "Avoid having class methods without scope modifiers - Symfony STD (PHP)",
+    "name": "Avoid having Class Methods or Constructor without scope modifiers - Symfony STD (PHP)",
     "href": "quality-rules/1007236.json",
-    "description": "This rules verifies that class method have scope modifiers.\n\nThe visibility of method can be defined by prefixing the declaration with the keywords public, protected or private. Class methods declared public can be accessed everywhere. Methods declared protected can be accessed only within the class itself and by inherited classes. Methods declared as private may only be accessed by the class that defines the Method.\n\nClass Methods must be defined as public, private, or protected.",
-    "output": "PHP class methods not having scope modifiers.",
-    "reference": "Symfony2-coding-standard - Author : <Symfony2-coding-standard@escapestudios.github.com>\n\n\nhttps://github.com/djoos/Symfony2-coding-standard/blob/master/Symfony2/Sniffs/Scope/MethodScopeSniff.php\n\n\nhttps://pear.php.net/reference/PHP_CodeSniffer-latest/PHP_CodeSniffer/Squiz_Sniffs_Scope_MethodScopeSniff.html",
-    "remediationSample": "class Toys {\nprivate $categories = array(\"puzzles\",\"pull back\",\"remote\",\"soft\");\n\npublic function getToysCategories() {\nreturn $this->categories;\n}\n}\n$objToys = new Toys();\nprint \"<pre>\";\nprint_r($objToys->getToysCategories());\nprint \"</pre>\";",
-    "sample": "class Toys {\n$categories = array(\"puzzles\",\"pull back\",\"remote\",\"soft\");\n\nfunction getToysCategories() {\nreturn $this->categories;\n}\n}\n$objToys = new Toys();\nprint \"<pre>\";\nprint_r($objToys->getToysCategories());\nprint \"</pre>\";",
-    "total": "Number of Classes",
+    "description": "This rules verifies that Class Methods and Constructor have scope modifiers. Class Methods and constructors must be defined as public, private, or protected.",
+    "output": "This report will list all PHP class Methods and Constructor not having scope modifiers. It provides:\nClass Method or Constructor full name.",
+    "rationale": "Access modifiers are essential element of object oriented language. Use of access modifier helps achieve encapsulation and abstraction. They also make code understanding clearer.",
+    "reference": "Symfony2-coding-standard -https://pear.php.net/reference/PHP_CodeSniffer-latest/PHP_CodeSniffer/Squiz_Sniffs_Scope_MethodScopeSniff.html",
+    "remediation": "Try to reduce the number of Class Methods and constructor without scope modifiers.",
+    "remediationSample": "<?php\nclass Toys {\n    private $categories;\n    public function __construct() {\n        $this->categories = array(\"puzzles\", \"pull back\", \"remote\", \"soft\");\n   }\n    public function getToysCategories() {\n        return $this->categories;\n    }\n}\n$objToys = new Toys();\nprint_r($objToys->getToysCategories());\n\n?>",
+    "sample": "<?php\nclass Toys {\n    private $categories;\n    function __construct() {\n        $this->categories = array(\"puzzles\", \"pull back\", \"remote\", \"soft\");\n   }\n \n    function getToysCategories() {\n        return $this->categories;\n    }\n}\n$objToys = new Toys();\nprint_r($objToys->getToysCategories());\n?>",
+    "total": "Number of Class Methods and Constructors",
     "businessCriteria": [
         {
             "id": 60011,
@@ -37,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

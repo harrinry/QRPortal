@@ -715,7 +715,7 @@
     },
     {
         "id": 1007022,
-        "name": "Avoid FOR loops which can be simplified to a WHILE loop (PHP)",
+        "name": "Avoid artifacts using \"for\" loops which can be simplified to a \"while\" loop (PHP)",
         "href": "quality-rules/1007022.json",
         "critical": false
     },
@@ -727,13 +727,13 @@
     },
     {
         "id": 1007026,
-        "name": "Use identical type operators rather than EQUAL operators (PHP)",
+        "name": "Use identical type operator rather than \"equal\" operator (PHP)",
         "href": "quality-rules/1007026.json",
         "critical": false
     },
     {
         "id": 1007028,
-        "name": "Use Increment/decrement operators where possible",
+        "name": "Use increment/decrement operators where possible (PHP)",
         "href": "quality-rules/1007028.json",
         "critical": false
     },
@@ -1009,43 +1009,37 @@
     },
     {
         "id": 1007036,
-        "name": "Avoid classes having too many children (PHP)",
+        "name": "Avoid classes having excessive number of derived classes(PHP)",
         "href": "quality-rules/1007036.json",
         "critical": false
     },
     {
         "id": 1007038,
-        "name": "Avoid classes having too many dependencies (PHP)",
+        "name": "Avoid classes having excessive number of dependencies (PHP)",
         "href": "quality-rules/1007038.json",
         "critical": false
     },
     {
-        "id": 1007040,
-        "name": "Avoid classes having too many parents (PHP)",
-        "href": "quality-rules/1007040.json",
-        "critical": false
-    },
-    {
         "id": 1007042,
-        "name": "Avoid having Classes implementing too many Interfaces (PHP)",
+        "name": "Avoid Classes implementing excessive number of Interfaces (PHP)",
         "href": "quality-rules/1007042.json",
         "critical": false
     },
     {
         "id": 1007046,
-        "name": "Avoid Classes and Interfaces with a High Depth of Inheritance Tree (PHP)",
+        "name": "Avoid Classes with High Depth of Inheritance Tree (PHP)",
         "href": "quality-rules/1007046.json",
         "critical": false
     },
     {
         "id": 1007048,
-        "name": "Avoid large Interfaces - too many Methods (PHP)",
+        "name": "Avoid Interfaces with excessive number of methods (PHP)",
         "href": "quality-rules/1007048.json",
         "critical": false
     },
     {
         "id": 1007236,
-        "name": "Avoid having class methods without scope modifiers - Symfony STD (PHP)",
+        "name": "Avoid having Class Methods or Constructor without scope modifiers - Symfony STD (PHP)",
         "href": "quality-rules/1007236.json",
         "critical": false
     },
@@ -2496,38 +2490,20 @@
         "critical": false
     },
     {
-        "id": 1007178,
-        "name": "Avoid using \"print\" function (PHP)",
-        "href": "quality-rules/1007178.json",
-        "critical": false
-    },
-    {
         "id": 1007180,
-        "name": "Avoid using include_once (PHP)",
+        "name": "Use file inclusion based on API suitability (PHP)",
         "href": "quality-rules/1007180.json",
         "critical": false
     },
     {
-        "id": 1007182,
-        "name": "Avoid using double quote for long strings without variables (PHP)",
-        "href": "quality-rules/1007182.json",
-        "critical": false
-    },
-    {
         "id": 1007184,
-        "name": "Avoid using count function inside a for loop (PHP)",
+        "name": "Avoid using size functions inside loops (PHP)",
         "href": "quality-rules/1007184.json",
         "critical": false
     },
     {
-        "id": 1007188,
-        "name": "Avoid using regular expressions",
-        "href": "quality-rules/1007188.json",
-        "critical": false
-    },
-    {
         "id": 1007190,
-        "name": "Avoid using relative path (PHP)",
+        "name": "Avoid using relative path for including files (PHP)",
         "href": "quality-rules/1007190.json",
         "critical": false
     },
@@ -2538,22 +2514,10 @@
         "critical": false
     },
     {
-        "id": 1007196,
-        "name": "Avoid using period for echo function (PHP)",
-        "href": "quality-rules/1007196.json",
-        "critical": false
-    },
-    {
         "id": 1007202,
-        "name": "Avoid copying needless the variables (PHP)",
+        "name": "Avoid direct access to superglobals (PHP)",
         "href": "quality-rules/1007202.json",
         "critical": true
-    },
-    {
-        "id": 1007204,
-        "name": "Avoid passing the variables of a function by reference(PHP)",
-        "href": "quality-rules/1007204.json",
-        "critical": false
     },
     {
         "id": 1007206,
@@ -2568,14 +2532,8 @@
         "critical": false
     },
     {
-        "id": 1007214,
-        "name": "Avoid using arrays as parameters of str functions (PHP)",
-        "href": "quality-rules/1007214.json",
-        "critical": false
-    },
-    {
         "id": 1007218,
-        "name": "Avoid using $row[xxx] (PHP)",
+        "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
         "href": "quality-rules/1007218.json",
         "critical": false
     },
@@ -4903,7 +4861,7 @@
     },
     {
         "id": 1007146,
-        "name": "Avoid unconditional IF and ELSEIF statements (PHP)",
+        "name": "Avoid unconditional \"if\" and \"elseif\" statements (PHP)",
         "href": "quality-rules/1007146.json",
         "critical": false
     },
@@ -4915,25 +4873,25 @@
     },
     {
         "id": 1007150,
-        "name": "Avoid unassigned default values in Functions (PHP)",
+        "name": "Avoid functions with optional parameters before required parameters (PHP)",
         "href": "quality-rules/1007150.json",
         "critical": true
     },
     {
         "id": 1007154,
-        "name": "Avoid using a goto statements (PHP)",
+        "name": "Avoid using goto statements (PHP)",
         "href": "quality-rules/1007154.json",
         "critical": true
     },
     {
         "id": 1007156,
-        "name": "Avoid using eval expressions (PHP)",
+        "name": "Avoid using eval expression (PHP)",
         "href": "quality-rules/1007156.json",
         "critical": false
     },
     {
         "id": 1007158,
-        "name": "Avoid using exit and die expressions (PHP)",
+        "name": "Avoid artifacts using exit and die expressions (PHP)",
         "href": "quality-rules/1007158.json",
         "critical": false
     },
@@ -5689,7 +5647,7 @@
     },
     {
         "id": 1007058,
-        "name": "Avoid unused Function parameters (PHP)",
+        "name": "Avoid unused parameters (PHP)",
         "href": "quality-rules/1007058.json",
         "critical": false
     },
@@ -6043,7 +6001,7 @@
     },
     {
         "id": 1007240,
-        "name": "Avoid having object not instantiated using parenthesis - Symfony STD (PHP)",
+        "name": "Avoid artifacts having object instantiation without parenthesis - Symfony STD (PHP)",
         "href": "quality-rules/1007240.json",
         "critical": false
     },
@@ -6997,19 +6955,19 @@
     },
     {
         "id": 1007050,
-        "name": "Avoid method invocation in a loop termination expression (PHP)",
+        "name": "Avoid method invocation in loop termination expression (PHP)",
         "href": "quality-rules/1007050.json",
         "critical": false
     },
     {
         "id": 1007114,
-        "name": "Avoid Sections with string concatenations (PHP)",
+        "name": "Avoid unnecessary string concatenations (PHP)",
         "href": "quality-rules/1007114.json",
         "critical": false
     },
     {
         "id": 1007116,
-        "name": "Avoid Methods with Object Instantiation in loops (PHP)",
+        "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
         "href": "quality-rules/1007116.json",
         "critical": false
     },

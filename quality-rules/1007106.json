@@ -3,10 +3,12 @@
     "type": "quality-rule",
     "name": "Avoid undocumented Sections (PHP)",
     "href": "quality-rules/1007106.json",
+    "associatedValueName": "Associated Value",
     "description": "This rule searches for all the undocumented Sections.",
-    "output": "\"This report lists all undocumented Sections.\n\nThis QR provides the following information:\nSection full name.\"",
-    "rationale": "Code maintainability can be improved if there is documentation in the code. This rule will ensure that comments exist in the Section.",
+    "output": "This report lists all undocumented Sections.\n\nThis QR provides the following information:\nSection full name.",
+    "rationale": "Code maintainability and readability can be improved if there is documentation in the code. This rule ensures that sections are documented.",
     "remediation": "Modify the source code to reduce the number of undocumented Sections.",
+    "remediationSample": "<?php\n/**\n* created to perform operations on items\n* contains a sample function addItem\n*/\t\nclass CastTest {\n    // Item\n    var $items;\n\n    //addition of items\n\tfunction addItem($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem();\n?>",
     "total": "Number of Sections",
     "businessCriteria": [
         {
@@ -31,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -1,15 +1,15 @@
 {
     "id": 1007072,
     "type": "quality-rule",
-    "name": "Avoid having Files without a naming convention  (PHP)",
+    "name": "Avoid files with names not following naming convention (PHP)",
     "href": "quality-rules/1007072.json",
-    "description": "Using a file naming convention makes the source code easier to read and therefore to maintain. The name of the file should start with an upper case character.",
-    "output": "\"This report lists all the Files that do not respect the naming convention.\n\nThis QR provides the following information:\nFile full name.\"",
-    "rationale": "Using a file naming convention makes the source code easier to read and therefore to maintain.",
+    "description": "The name of the file should start with an upper case character.",
+    "output": "This report lists all files that do not respect the naming convention.\n\nThis QR provides the following information:\nFile full name.",
+    "rationale": "Filenames with naming convention makes source code easier to read and therefore to maintain.",
     "remediation": "Modify the source code to reduce the number of Files that do not respect the naming convention.",
     "remediationSample": "Filetest.php",
     "sample": "filetest.php // violation",
-    "total": "Number of Files",
+    "total": "Number of files",
     "businessCriteria": [
         {
             "id": 60011,
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

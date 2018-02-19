@@ -3,10 +3,11 @@
     "type": "quality-rule",
     "name": "Avoid Methods and Functions with a very low comment/code ratio (PHP)",
     "href": "quality-rules/1007100.json",
-    "description": "This rule searches for all Methods and Functions containing a very low comment/code ratio.",
-    "output": "This report lists all Methods and Functions with a very low comment/code ratio.\n\nThis QR provides the following information:\n- Method or Function full name\n- Comment/code ratio",
-    "rationale": "A very low comment/code ratio makes the source code difficult to read, maintain and test. It is highly recommended to keep this ratio as high as possible.",
-    "remediation": "Modify the source code to reduce the number of Methods and Functions with a very low comment/code ratio.",
+    "associatedValueName": "Current Comment Percent",
+    "description": "This rule searches for all Methods and Functions with comment/code ratio below five percent. This parameter can be changed to suit the scenario.",
+    "output": "This report lists all Methods and Functions with very low comment/code ratio.\n\nThis QR provides the following information:\n- Method or Function full name\n- Comment/code ratio",
+    "rationale": "A very low comment/code ratio makes the source code difficult to read, maintain and test. It is highly recommended to keep this ratio at least five percent.",
+    "remediation": "Modify the source code to reduce the number of Methods and Functions with very low comment/code ratio.",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -31,5 +32,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

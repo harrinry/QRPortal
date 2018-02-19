@@ -1,16 +1,16 @@
 {
     "id": 1007146,
     "type": "quality-rule",
-    "name": "Avoid unconditional IF and ELSEIF statements (PHP)",
+    "name": "Avoid unconditional \"if\" and \"elseif\" statements (PHP)",
     "href": "quality-rules/1007146.json",
-    "description": "This rule searches for all the Methods and Functions containing unconditional IF and ELSEIF statements.",
-    "output": "\"This report lists all Methods or Functions containing unconditional IF and ELSEIF statements.\n\nThis QR provides the following information:\nMethod or Function full name.\"",
-    "rationale": "Using unconditional IF and ELSEIF statements often increases memory use and reduces performance.",
+    "description": "This rule searches for all artifacts containing unconditional \"if\" and \"elseif\" statements.",
+    "output": "This report lists all artifacts containing unconditional \"if\" and \"elseif\" statements.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Using unconditional \"if\" and \"elseif\" statements often increases memory use and reduces performance.",
     "reference": "Code Sniffer http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Generic_Sniffs_CodeAnalysis_UnconditionalIfStatementSniff.html",
-    "remediation": "Modify the source code to reduce the number of unconditional IF and ELSEIF statements.",
-    "remediationSample": "\"class CAST{\n    public function close() {\n        echo 'test';\n    }\n}\"",
-    "sample": "\"class CAST{\n    public function close() {\n        if (true) {\n            echo 'test';\n        }\n    }\n}\"",
-    "total": "Number of Methods or Functions",
+    "remediation": "Modify the source code to reduce the number of unconditional \"if\" and \"elseif\" statements.",
+    "remediationSample": "<?php\nclass CastTest {\n    public function close() {\n        echo \"test\";\n    }\n}\n$obj = new CastTest();\n$obj-> close();\n?>",
+    "sample": "<?php\nclass CastTest {\n    public function close() {\n        if (true) {\n            echo \"test\";\n        }\n    }\n}\n$obj = new CastTest();\n$obj-> close();\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -39,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

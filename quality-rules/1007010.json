@@ -3,10 +3,10 @@
     "type": "quality-rule",
     "name": "Avoid Script Functions with High Fan-Out (PHP)",
     "href": "quality-rules/1007010.json",
-    "description": "This rules searches for all the Script Functions with a High Fan-Out.",
-    "output": "This report lists all Script Functions with a High Fan-Out.\n\nThis QR provides the following information:\nScript Function full name.",
-    "rationale": "The higher the number of referenced Artifacts, the more difficult the maintenance and evolution is. The updates in referenced Artifacts will need to be tested and taken into account.",
-    "remediation": "Modify the source code to reduce the number of Script Functions with a High Fan-Out.",
+    "description": "This rule searches for all Script Functions with High Fan-Out. \n         The Fan-out of Script Function is the number of other artifacts that are referencing in it. \n         When computing the Fan-Out of an artifact, multiple accesses to the same component of an artifact are counted as one access.\n         The threshold is a parameter and can be changed as per requirement.",
+    "output": "This report lists all Script Functions with a High Fan-Out.\n      \nThis QR provides the following information:\nScript Function full name.",
+    "rationale": "If an artifact is referencing large number of artificats, maintenance and evolution becomes difficult. This is because all the referenced artifacts need to be updated and\\or retested.",
+    "remediation": "Modify the source code to reduce the number of Script Functions with a high Fan-Out.",
     "total": "Number of Script Functions",
     "businessCriteria": [
         {
@@ -36,5 +36,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

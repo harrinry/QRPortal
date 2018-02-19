@@ -1,15 +1,16 @@
 {
     "id": 1007158,
     "type": "quality-rule",
-    "name": "Avoid using exit and die expressions (PHP)",
+    "name": "Avoid artifacts using exit and die expressions (PHP)",
     "href": "quality-rules/1007158.json",
-    "description": "This rule searches for all the methods and functions containing exit and die expressions.",
-    "output": "\"This report lists all the methods and functions containing exit and die expressions.\n\nThis QR provides the following information:\nmethod full name and function full name.\"",
-    "rationale": "Source code containing exit and die expressions is difficult to test and should therefore be avoided.",
+    "description": "This rule searches for all artifacts using exit and die expressions.",
+    "output": "This report lists all artifacts using exit and die expressions.\n\nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Exit and die expressions end the program prematurely without giving any chance to do error handling.",
     "reference": "PHPMD - http://phpmd.org/rules/design.html#exitexpression",
-    "remediation": "Modify the source code to reduce the use of exit and die expressions.",
-    "sample": "\"class CastTest{\n public function test($param) {\n  if ($param === 90)\n  {\n   exit(10);\n  }\n }\n}\"",
-    "total": "Methods and Functions",
+    "remediation": "Instead of exit or die expressions, use exception handling and graceful program exit.",
+    "remediationSample": "<?php\nclass CastTest {\n   public function test($param) {\n      if (90 === $param) {\n         throw new Exception(\"Param should not be 90\");\n      }\n   }\n} \ntry {\n   $obj = new CastTest();\n   $obj->test(90);\n} catch(Exception $e) {\n   echo $e->getMessage(), PHP_EOL;\n}\n\n?>",
+    "sample": "<?php\nclass CastTest {\n   public function test($param) {\n      if (90 === $param) {\n         exit(10);  //violation\n      }\n   }\n}\n$obj = new CastTest();\n$obj->test(90);\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,
@@ -38,5 +39,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

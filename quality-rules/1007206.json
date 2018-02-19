@@ -3,13 +3,13 @@
     "type": "quality-rule",
     "name": "Avoid using @error suppression (PHP)",
     "href": "quality-rules/1007206.json",
-    "description": "This rule searches all the the Methods, Functions and PHP Sections having @ before a function in order to hide the errors.",
-    "output": "This report lists all the Methods, Functions and PHP Sections  having @ before a function in order to hide the errors.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "Having the errors displayed on the web page for the user can not be such a good idea but hiding it is not either because it is time consuming. Every time when an error is hidden the performance of your application is decreasing. Instead of trying to hide the errors it is much better to try and handle them.",
-    "remediation": "Try to reduce the use of @ and instead provide a mechanish of errors handling.",
-    "remediationSample": "<?php\nmove_uploaded_file('CAST', '/tmp/file.csv');\n?>",
-    "sample": "<?php\n\n@move_uploaded_file('CAST', '/tmp/file.csv');\n\n?>",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches for all artifacts having @ in order to hide the errors.",
+    "output": "This report lists all the artifacts having @ in order to hide the errors.\n      \nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Use of @ decreases the performance of application. Instead of trying to hide the errors it is much better to handle them.",
+    "remediation": "Try to reduce use of @ and instead provide a mechanism for error handling.",
+    "remediationSample": "<?php\n      \nfunction getFiles($dir) {\n   if (file_exists($dir)) {\n      return scandir($dir);\n   } else {\n      return null;\n   }\n}\n \n$files = getFiles(\"C:\\\\non-existant\");\n \nif (null === $files) {\n   echo \"Could not get files!\", PHP_EOL;\n}\n\n?>",
+    "sample": "<?php\n\nfunction getFiles($dir) {\n   return @scandir($dir);\n   } \n$files = getFiles(\"C:\\\\non-existant\");\n\n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -38,5 +38,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -4,7 +4,7 @@
     "name": "Avoid Sections With Queries on more than 4 Tables (PHP)",
     "href": "quality-rules/1007118.json",
     "description": "This rule searches for all Sections containing queries on more than 4 tables.",
-    "output": "\"This report lists all Sections with queries on more than 4 tables.\n\nThis QR provides the following information:\nSection full name.\"",
+    "output": "This report lists all Sections with queries on more than 4 tables.\n\nThis QR provides the following information:\nSection full name.",
     "rationale": "Using complex queries in Artifacts can cause performance issues.",
     "remediation": "Modify the source code to reduce the number of Sections with queries on more than 4 tables.",
     "total": "Number of Sections",
@@ -31,5 +31,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

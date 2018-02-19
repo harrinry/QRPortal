@@ -1,14 +1,14 @@
 {
     "id": 1007070,
     "type": "quality-rule",
-    "name": "Avoid artifacts not checking the ending comments on Methods and Functions (PHP)",
+    "name": "Avoid method and functions without comments denoting scope end (PHP)",
     "href": "quality-rules/1007070.json",
-    "description": "This rule searches for all Methods and Functions having comments that are not terminated correctly i.e. without an //end comment.",
-    "output": "\"This report lists all Methods and Functions having comments that are not terminated correctly.\n\nThis QR provides the following information:\nMethod and Function full name.\"",
-    "rationale": "Source code comments must be terminated correctly in order to be valid.",
-    "remediation": "Review the comments for all the Methods and Functions in the source code and ensure they are always terminated correctly.",
-    "remediationSample": "\"public function setVariable1($name1, $var1)\n{\n\n//comments\n}//end\"",
-    "sample": "\"public function setVariable1($name1, $var1)\n{\n\n//comments\n}\"",
+    "description": "This rule searches for all Methods and Functions that do not end with comments i.e. without an //end <function or method name>() For-example, //end anyFunction().",
+    "output": "This report lists all Methods and Functions that do not end with comments.\n\nThis QR provides the following information:\nMethod or Function full name.",
+    "rationale": "Methods and functions should end with comments denoting end of scope. This increases readability.",
+    "remediation": "Review the comments for all methods and functions in the source code and ensure they are always terminated correctly.",
+    "remediationSample": "<?php\nfunction test_function()\n{\n  echo \"this is test\",PHP_EOL;\n}//end test_function()\n\nclass Test\n{\n public function testMethod()\n {\n   echo \"this is test\",PHP_EOL;\n }//end testMethod()\n}\n?>",
+    "sample": "<?php\nfunction test_function()\n{\n  echo \"this is test\",PHP_EOL;\n}\n\nclass Test\n{\n public function testMethod()\n {\n   echo \"this is test\",PHP_EOL;\n }\n}\n?>",
     "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
@@ -28,5 +28,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -343,13 +343,13 @@
     },
     {
         "id": 1007000,
-        "name": "Avoid Sections directly access to database tables (PHP)",
+        "name": "Avoid php sections directly access database tables (PHP)",
         "href": "quality-rules/1007000.json",
         "critical": false
     },
     {
         "id": 1007002,
-        "name": "Avoid Methods and Functions directly access to database tables (PHP)",
+        "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
         "href": "quality-rules/1007002.json",
         "critical": false
     },
@@ -597,6 +597,12 @@
         "id": 1101036,
         "name": "Use ANSI standard operators in SQL WHERE clauses",
         "href": "quality-rules/1101036.json",
+        "critical": false
+    },
+    {
+        "id": 1101958,
+        "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
+        "href": "quality-rules/1101958.json",
         "critical": false
     },
     {
@@ -1746,38 +1752,20 @@
         "critical": false
     },
     {
-        "id": 1007178,
-        "name": "Avoid using \"print\" function (PHP)",
-        "href": "quality-rules/1007178.json",
-        "critical": false
-    },
-    {
         "id": 1007180,
-        "name": "Avoid using include_once (PHP)",
+        "name": "Use file inclusion based on API suitability (PHP)",
         "href": "quality-rules/1007180.json",
         "critical": false
     },
     {
-        "id": 1007182,
-        "name": "Avoid using double quote for long strings without variables (PHP)",
-        "href": "quality-rules/1007182.json",
-        "critical": false
-    },
-    {
         "id": 1007184,
-        "name": "Avoid using count function inside a for loop (PHP)",
+        "name": "Avoid using size functions inside loops (PHP)",
         "href": "quality-rules/1007184.json",
         "critical": false
     },
     {
-        "id": 1007188,
-        "name": "Avoid using regular expressions",
-        "href": "quality-rules/1007188.json",
-        "critical": false
-    },
-    {
         "id": 1007190,
-        "name": "Avoid using relative path (PHP)",
+        "name": "Avoid using relative path for including files (PHP)",
         "href": "quality-rules/1007190.json",
         "critical": false
     },
@@ -1788,22 +1776,10 @@
         "critical": false
     },
     {
-        "id": 1007196,
-        "name": "Avoid using period for echo function (PHP)",
-        "href": "quality-rules/1007196.json",
-        "critical": false
-    },
-    {
         "id": 1007202,
-        "name": "Avoid copying needless the variables (PHP)",
+        "name": "Avoid direct access to superglobals (PHP)",
         "href": "quality-rules/1007202.json",
         "critical": true
-    },
-    {
-        "id": 1007204,
-        "name": "Avoid passing the variables of a function by reference(PHP)",
-        "href": "quality-rules/1007204.json",
-        "critical": false
     },
     {
         "id": 1007206,
@@ -1818,14 +1794,8 @@
         "critical": false
     },
     {
-        "id": 1007214,
-        "name": "Avoid using arrays as parameters of str functions (PHP)",
-        "href": "quality-rules/1007214.json",
-        "critical": false
-    },
-    {
         "id": 1007218,
-        "name": "Avoid using $row[xxx] (PHP)",
+        "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
         "href": "quality-rules/1007218.json",
         "critical": false
     },
@@ -3378,24 +3348,6 @@
         "critical": false
     },
     {
-        "id": 1007160,
-        "name": "Avoid using variable without testing them for initialisation (PHP)",
-        "href": "quality-rules/1007160.json",
-        "critical": true
-    },
-    {
-        "id": 1007162,
-        "name": "Avoid having lonely variables (PHP)",
-        "href": "quality-rules/1007162.json",
-        "critical": false
-    },
-    {
-        "id": 1007164,
-        "name": "Avoid functions having the optional parameters before the others (PHP)",
-        "href": "quality-rules/1007164.json",
-        "critical": true
-    },
-    {
         "id": 1007166,
         "name": "Avoid having properties with __get and no __set (PHP)",
         "href": "quality-rules/1007166.json",
@@ -3420,14 +3372,8 @@
         "critical": false
     },
     {
-        "id": 1007174,
-        "name": "Avoid having the assignment to \"$this\" (PHP)",
-        "href": "quality-rules/1007174.json",
-        "critical": false
-    },
-    {
         "id": 1007176,
-        "name": "Avoid using break statement in FOR loops (PHP)",
+        "name": "Avoid using break or continue statements in loops with high cyclomatic complexity (PHP)",
         "href": "quality-rules/1007176.json",
         "critical": false
     },

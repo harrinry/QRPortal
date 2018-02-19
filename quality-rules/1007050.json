@@ -1,15 +1,15 @@
 {
     "id": 1007050,
     "type": "quality-rule",
-    "name": "Avoid method invocation in a loop termination expression (PHP)",
+    "name": "Avoid method invocation in loop termination expression (PHP)",
     "href": "quality-rules/1007050.json",
-    "description": "This rule searches for all the Sections containing function calls in FOR loops test expressions.",
-    "output": "This report lists all Sections containing function calls in FOR loop test expressions.\n\nThis QR provides the following information:\nSection full name.",
-    "rationale": "When calling a function in a test expression of a FOR loop, the function will be computed for each loop iteration and will reduce performance dramatically.",
-    "remediation": "Try to reduce the number of artifacts containing function calls in FOR loop test expressions.",
-    "remediationSample": "<?php\nvar $MaxValue;\n\n$MaxValue = getMaxValueMethod();\n\nfor (int i=0; i <$MaxValue ; i++)  //Violation is removed. A variable is used instead of calling the method in a loop termination expression\n{\n  tab[i] = i;\n}\n?>",
-    "sample": "<?php\n\n\nfor (int i=0; i <getMaxvalue(); i++) //Violation - a method is invocated in a loop termination expression\n{\n  tab[i] = i;\n}\n\n?>",
-    "total": "Number of Sections",
+    "description": "This rule searches for all artifacts containing function calls in loop test expressions. \nNote: foreach loop is not considered for this QR.",
+    "output": "This report lists all artifact containing function calls in loop test expressions.\n\nThis QR provides the following information:\nartifact full name.",
+    "rationale": "When calling a function in a test expression of loop, the function will be computed in each loop iteration and will reduce performance dramatically.",
+    "remediation": "Reduce the number of artifacts containing function calls in loop test expressions.",
+    "remediationSample": "<?php\n\nfunction getMaxValue() { return 2; }\n\n$maxValue = getMaxValue();\n\nfor ($i=0; $i < $maxValue; $i++) { //Violation removed\n  echo \"for: \", $i, PHP_EOL;\n}\n\n$i = 0;\nwhile($i < $maxValue) { //Violation removed\n  echo \"while: \", $i++, PHP_EOL;\n}\n\n$i = 0;\ndo {\n  echo \"do-while: \", $i++, PHP_EOL;\n} while($i < $maxValue); //Violation removed\n?>",
+    "sample": "<?php\nfunction getMaxValue() { return 2; }\n\nfor ($i=0; $i < getMaxvalue(); $i++) { //Violation - a method is invocated in a loop termination expression\n  echo \"for: \", $i, PHP_EOL;\n}\n\n$i = 0;\nwhile($i < getMaxValue()) { //Violation - a method is invocated in a loop termination expression\n  echo \"while: \", $i++, PHP_EOL;\n}\n\n$i = 0;\ndo {\n  echo \"do-while: \", $i++, PHP_EOL;\n} while($i < getMaxValue()); //Violation - a method is invocated in a loop termination expression\n\n\n?>",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

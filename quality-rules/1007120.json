@@ -4,7 +4,7 @@
     "name": "Avoid Sections with Group By (PHP)",
     "href": "quality-rules/1007120.json",
     "description": "This rule searches for all the Sections using a Group By.",
-    "output": "\"This report lists all sections using a Group By.\n\nThis QR provides the following information:\nSection full name.\"",
+    "output": "This report lists all sections using a Group By.\n\nThis QR provides the following information:\nSection full name.",
     "rationale": "Using complex queries in Artifacts can cause performance problems. Queries using Group By are considered complex and inefficient.",
     "remediation": "Modify the source code to reduce the number of Sections using Group By.",
     "total": "Number of Sections",
@@ -31,5 +31,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

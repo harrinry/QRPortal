@@ -4,11 +4,11 @@
     "name": "Avoid unused private fields (PHP)",
     "href": "quality-rules/1007140.json",
     "description": "This rule searches for all the classes with unused private fields.",
-    "output": "\"This report lists all the classes with unused private fields.\n\nThis QR provides the following information:\nClass  full name.\"",
+    "output": "This report lists all the classes with unused private fields.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "Unused private fields make the code more complex to read and are redundant.",
     "reference": "PHPMD - http://phpmd.org/rules/unusedcode.html#unusedprivatefield",
     "remediation": "Modify the source code of the class to reduce the number of unused private fields.",
-    "sample": "\"class CastTest {\n private static $test = 2; // Unused\n private $a = 5; // Unused\n private $b = 6;\n\n public function testtest() {\n  return $this->b++;\n }\n}\"",
+    "sample": "class CastTest {\n private static $test = 2; // Unused\n private $a = 5; // Unused\n private $b = 6;\n\n public function testtest() {\n  return $this->b++;\n }\n}",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -4,11 +4,11 @@
     "name": "Avoid unused private  methods (PHP)",
     "href": "quality-rules/1007142.json",
     "description": "This rule searches for all the classes with unused private methods.",
-    "output": "\"This report lists all the Classes with unused private methods.\n\nThis QR provides the following information:\nClass  full name.\"",
+    "output": "This report lists all the Classes with unused private methods.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "Unused private methods make the code more complex to read and are redundant.",
     "reference": "PHPMD - http://phpmd.org/rules/unusedcode.html#unusedprivatemethod",
     "remediation": "Modify the source code of the class to reduce the number of unused private methods.",
-    "sample": "\"class CastTest{\n private function test() {} //violation - the private method is unused\n}\"",
+    "sample": "class CastTest{\n private function test() {} //violation - the private method is unused\n}",
     "total": "Number of Classes",
     "businessCriteria": [
         {
@@ -33,5 +33,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -1,13 +1,14 @@
 {
     "id": 1007184,
     "type": "quality-rule",
-    "name": "Avoid using count function inside a for loop (PHP)",
+    "name": "Avoid using size functions inside loops (PHP)",
     "href": "quality-rules/1007184.json",
-    "description": "This rule searches all the Methods, Functions and PHP Sections using count function inside a for loop.",
-    "output": "This report lists all the Methods, Functions and PHP Sections using count function inside a four loop.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "Using Count function inside a loop can decrease the performance of the application, the function being called at every iteration of the loop. Instead of calling the function inside the loop it is recommended to call the function before the loop and use a variable for the value.",
-    "remediation": "Try to reduce the use of count function inside a for loop and use instead a variable having the return of the count function.",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches all artifacts using size functions inside loops. The functions include count, sizeof and strlen.",
+    "output": "This report lists all the artifacts using size function inside loops.\n      \nThis QR provides the following information:\nArtifact full name.",
+    "rationale": "Using size functions inside loops can decrease performance.",
+    "remediation": "Try to reduce artifacts that use size functions inside loops.",
+    "sample": "<?php\n      \nclass Test\n   {\n      public function testNames($names) {\n         for($counter = 0; $counter < count($names); $counter++) { //violation\n            if (10 < strlen($names[$counter])) { //violation\n               if (100 > sizeof($names)) { //violation\n                  break;\n               }\n            } \n         }\n      }\n   }\n                           \n   $obj = new Test();\n   $obj->testNames(array(\"first name\", \"second name\", \"third name\"));\n   \n?>",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -36,5 +37,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }

@@ -1,14 +1,13 @@
 {
     "id": 1007176,
     "type": "quality-rule",
-    "name": "Avoid using break statement in FOR loops (PHP)",
+    "name": "Avoid using break or continue statements in loops with high cyclomatic complexity (PHP)",
     "href": "quality-rules/1007176.json",
-    "description": "This rule searches for all Methods and Functions containing a break statement in a FOR loop.",
-    "output": "\"This report lists all the Methods and Functions containing a break statement in a FOR loop.\n\nThis QR provides the following information:\nMethod and Function  full name.\"",
-    "rationale": "In the source code a FOR loop must be easy to read. Using break statements in FOR loops makes them much more difficult to read.",
-    "remediation": "Try to remove the 'break' statements from the loop and to manage the end-of-loop within the loop condition part.",
-    "sample": "\"   for (int $i = 0; $i < 10; $i++) {\n         if (true) {\n             break; // Violation\n         }\n\"",
-    "total": "Number of Methods and Functions",
+    "description": "This rule searches for all artifacts containing break or continue statements in loops with high cyclomatic complexity.",
+    "output": "This report lists all artifacts containing break or continue statements in loops with high cyclomatic complexity.\n\nThis QR provides the following information:\nArtifact full name",
+    "rationale": "Using break or continue statements in loops with high cyclomatic complexity makes code unreadable and difficult to maintain.",
+    "remediation": "Remove break or continue statements and use loop condition or reduce cyclomatic complexity of the loop.",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60013,
@@ -32,5 +31,8 @@
             "name": "PHP",
             "href": "technologies/1017000.json"
         }
+    ],
+    "qualityStandards": [
+        
     ]
 }
