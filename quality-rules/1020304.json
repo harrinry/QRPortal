@@ -1,9 +1,9 @@
 {
     "id": 1020304,
     "type": "quality-rule",
-    "name": "Implement success and error callbacks when using $.ajax interface",
+    "name": "Implement success and error callbacks when using jquery web service call",
     "href": "quality-rules/1020304.json",
-    "description": "Use the promise $.ajax interface to implement success and error callbacks. This rule is compliant with CISQ OMG ASCSM-CWE-396, ASCSM-CWE-397, ASCRM-RLB-01 recommendations.",
+    "description": "Use the promise $.ajax, $.get, $.getJSON interface to implement success and error callbacks. This rule is compliant with CISQ OMG ASCSM-CWE-396, ASCSM-CWE-397, ASCRM-RLB-01 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that each web service callback is going to be properly checked in order to make sure you will not miss any problem that occurred in your application and you will give the information to the user.",
     "remediation": "$.ajax({ ... }).then(successHandler, failureHandler); \n// OR \nvar jqxhr = $.ajax({ ... }); \njqxhr.done(successHandler); \njqxhr.fail(failureHandler);",
@@ -39,6 +39,35 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "ASCRM-RLB-1",
+            "name": "ASCRM-RLB-1: Empty Exception Block",
+            "href": "quality-standards/cisq/ASCRM-RLB-1.json"
+        },
+        {
+            "id": "ASCSM-CWE-396",
+            "name": "ASCSM-CWE-396: Declaration of Catch for Generic Exception",
+            "href": "quality-standards/cisq/ASCSM-CWE-396.json"
+        },
+        {
+            "id": "ASCSM-CWE-397",
+            "name": "ASCSM-CWE-397: Declaration of Throws for Generic Exception",
+            "href": "quality-standards/cisq/ASCSM-CWE-397.json"
+        },
+        {
+            "id": "CISQ",
+            "name": "CISQ",
+            "href": "quality-standards/cisq/CISQ.json"
+        },
+        {
+            "id": "CISQ-Reliability",
+            "name": "CISQ-Reliability",
+            "href": "quality-standards/cisq/CISQ-Reliability.json"
+        },
+        {
+            "id": "CISQ-Security",
+            "name": "CISQ-Security",
+            "href": "quality-standards/cisq/CISQ-Security.json"
+        }
     ]
 }
