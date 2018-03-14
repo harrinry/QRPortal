@@ -1,0 +1,49 @@
+{
+    "id": 1020064,
+    "type": "quality-rule",
+    "name": "Avoid Superclass knowing Subclass in Javascript",
+    "href": "quality-rules/1020064.json",
+    "description": "A Superclass is not allowed to have knowledge of one of its Subclasses. The Superclass has knowledge of the Subclass if the Superclass directly calls a Subclass-method, uses a Subclass-attribute or refers to the name of the Subclass. \nThis rule is compliant with OMG CISQ recommendation ASCRM-RLB-14.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Referencing down the inheritance tree is against Object-Oriented coding practices. It is a way of having two-way inheritance between class and subclass. This is an indication of poor class design and class inheritance. Such practices increase the complexity of the application.",
+    "reference": "CISQ rule: ASCRM-RLB-14.",
+    "remediation": "Review the design of the Class hierarchy",
+    "sample": "class Base { \nsomething() \n{ c = new MySubclass() } \n} \n\nclass MySubclass extends Base { \n}",
+    "total": "Number of Javascript Classes",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCRM-RLB-14",
+            "name": "ASCRM-RLB-14: Parent Class Element with References to Child Class Element",
+            "href": "quality-standards/cisq/ASCRM-RLB-14.json"
+        },
+        {
+            "id": "ASCRM-RLB-14",
+            "name": "ASCRM-RLB-14: Parent Class Element with References to Child Class Element",
+            "href": "quality-standards/cisq/ASCRM-RLB-14.json"
+        }
+    ]
+}

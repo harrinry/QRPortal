@@ -1,0 +1,52 @@
+{
+    "id": 1020728,
+    "type": "quality-rule",
+    "name": "Avoid creating cookie without setting httpOnly option",
+    "href": "quality-rules/1020728.json",
+    "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. This is why all major browsers support the HttpOnly cookie property that prevents client-side scripts from accessing the cookie. When HttpOnly is not enabled, attackers may more easily access user cookies. This rule is compliant with OWASP 2013 and 2017 A6 - Sensitive Data Exposure",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "reference": "https://cwe.mitre.org/data/definitions/922.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10_2017-A6-Sensitive_Data_Exposure",
+    "remediation": "Always setting httpOnly option when creating a cookie",
+    "remediationSample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    httpOnly: true, \n    secure: true \n  } \n}));",
+    "sample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n}));",
+    "total": "Number of javascript source codes using express-session",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A6-2013",
+            "name": "A6-2013: Sensitive Data Exposure",
+            "href": "quality-standards/owasp/A6-2013.json",
+            "reference": {
+                "name": "A6-2013: Sensitive Data Exposure",
+                "href": "owasp-specifications/A6-2013.json"
+            }
+        },
+        {
+            "id": "A6-2017",
+            "name": "A6-2017: Security Misconfiguration",
+            "href": "quality-standards/owasp/A6-2017.json",
+            "reference": {
+                "name": "A6-2017: Security Misconfiguration",
+                "href": "owasp-specifications/A6-2017.json"
+            }
+        }
+    ]
+}

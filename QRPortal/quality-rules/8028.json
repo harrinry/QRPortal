@@ -1,0 +1,86 @@
+{
+    "id": 8028,
+    "type": "quality-rule",
+    "name": "Avoid missing default in switch statements",
+    "href": "quality-rules/8028.json",
+    "associatedValueName": "Function name",
+    "description": "This rule searches for artifacts that contain no 'default' statement in a 'switch' block.",
+    "output": "Associated to each Function with violations, the Quality Rule provides:\n- Function name",
+    "rationale": "The keyword 'default' is executed when none of the conditions being tested for in the switch statement are met or executed. Having no default keyword, means that there is no backup. The cases that are \"impossible\" today are those most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.",
+    "reference": "CISQ rule: ASCMM-MNT-1.",
+    "remediation": "Add the 'default' statement with appropriate handling of unexpected values.",
+    "remediationSample": "// Sample for C/C++\nswitch(color)\n{\ncase Red:\n    // Handle red case\ncase Black:\n    // Handle black case\ndefault:\n    assert(false && \"Impossible node color\");\n    // Error recovery code\n}",
+    "sample": "// Sample for C/C++\nswitch(color)\n{\ncase Red:\n    // Handle red case\ncase Black:\n    // Handle black case\n} // VIOLATION",
+    "total": "Number of non-abstract artifacts (methods, functions, constructors, destructors, finalizers)",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        },
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        },
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "technologies/1050571.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCMM-MNT-1",
+            "name": "ASCMM-MNT-1: Control Flow Transfer Control Element outside Switch Block",
+            "href": "quality-standards/cisq/ASCMM-MNT-1.json"
+        }
+    ]
+}

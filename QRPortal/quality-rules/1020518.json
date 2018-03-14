@@ -1,0 +1,58 @@
+{
+    "id": 1020518,
+    "type": "quality-rule",
+    "name": "Avoid using Javascript Date typecheck in AngularJS application",
+    "href": "quality-rules/1020518.json",
+    "description": "You should use the angular.isDate method instead of the default JavaScript implementation (typeof new Date() === \"[object Date]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you are using the official AngularJS API, you should use the angular.isDate",
+    "remediationSample": "var myObject = new Date(); \n\nif(angular.isDate(myObject)) { \n\n}",
+    "sample": "var myObject = new Date(); \n\nif(typeof myObject === \"[object Date]\") { \n\n}",
+    "total": "Number of angular artifacts",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCMM-MNT-20",
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "href": "quality-standards/cisq/ASCMM-MNT-20.json"
+        },
+        {
+            "id": "ASCRM-CWE-252-data",
+            "name": "ASCRM-CWE-252-data: Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
+            "href": "quality-standards/cisq/ASCRM-CWE-252-data.json"
+        },
+        {
+            "id": "ASCRM-CWE-704",
+            "name": "ASCRM-CWE-704: Incorrect Type Conversion or Cast",
+            "href": "quality-standards/cisq/ASCRM-CWE-704.json"
+        }
+    ]
+}

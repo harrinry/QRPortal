@@ -1,0 +1,49 @@
+{
+    "id": 7740,
+    "type": "quality-rule",
+    "name": "CWE-79: Avoid cross-site scripting DOM vulnerabilities",
+    "href": "quality-rules/7740.json",
+    "associatedValueName": "Call stack from user input source down to the target HTML user output method",
+    "description": "Using CAST dataflow engine, this metric detects paths from user input methods to HTML user output methods which are open vulnerabilities to cross-site scripting injection flaws (XSS).\n\nThe list of user input methods can be customized as well as the output method and the sanitization methods (methods encoding the output to avoid hacks).",
+    "output": "List all methods that miss calling the required sanitization method and provides access to the path demonstrating the vulnerability :\n\nIt provides the following information:\n- The full name of the method that calls the user input method. That is the source of the XSS flaw.\n- Call stack from user input source down to the target HTML user output method.",
+    "rationale": "The most dangerous web application vulnerabilty is known as cross-site scripting (XSS). It is caused by malicious script echoed back into HTML returned from a trusted site, and runs under trusted context.\nTo avoid the creation of XSS flaws, the Open Web Application Security Project (OWASP) recommends both input validation and \"strong output encoding\" or sanitization:\n\"Strong output encoding. Ensure that all user-supplied data is appropriately entity encoded (either HTML or XML depending on the output mechanism) before rendering, taking the approach to encode all characters other than a very limited subset. This is the approach of the Microsoft Anti-XSS library, and the forthcoming OWASP PHP Anti-XSS library. Also, set the character encodings for each page you output, which will reduce exposure to some variants.\"\n\nThis metric ensures that the appropriate output encoding (sanitization) is coded, as close as possible to user input method call, making security checking easier for all team members.",
+    "reference": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')\nhttp://cwe.mitre.org/data/definitions/79.html\n\nOpen Web Application Security Project (OWASP) \nhttp://www.owasp.org/index.php/Top_10_2007\n\nCISQ rule: ASCSM-CWE-79.",
+    "remediation": "Code the appropriate sanitization methods as close as possible to the user input method call.",
+    "total": "The number of methods calling user input methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCSM-CWE-79",
+            "name": "ASCSM-CWE-79: Cross-site Scripting Improper Input Neutralization",
+            "href": "quality-standards/cisq/ASCSM-CWE-79.json"
+        }
+    ]
+}

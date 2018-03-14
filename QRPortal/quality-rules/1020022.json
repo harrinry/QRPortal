@@ -1,0 +1,42 @@
+{
+    "id": 1020022,
+    "type": "quality-rule",
+    "name": "Avoid using submitted markup containing \"form\" and \"formaction\" attributes",
+    "href": "quality-rules/1020022.json",
+    "description": "Do not allow uses to submit markup containing \"form\" and \"formaction\" attributes. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "An attacker can use the combination of form and formaction markups to use the form to do spam.",
+    "reference": "https://html5sec.org/#1",
+    "sample": "<form id=\"test\"></form><button form=\"test\" formaction=\"javascript:alert(1)\">X</button>\n<form><button formaction=\"javascript:alert(1)\">X</button></form>",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

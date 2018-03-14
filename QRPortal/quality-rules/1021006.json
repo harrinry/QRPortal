@@ -1,0 +1,44 @@
+{
+    "id": 1021006,
+    "type": "quality-rule",
+    "name": "Avoid using a web service with Python aiohttp ClientSession inside a loop",
+    "href": "quality-rules/1021006.json",
+    "associatedValueName": "Single Value",
+    "description": "When designing web service to get/post/put data, you want to make sure that you minimize the number of calls between the client application and web service server. This rule will check the official Python requests syntax, to do call to web service. This rule is compliant with CISQ OMG ASCPEM-PRF-08 recommendation.",
+    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "rationale": "When designing web service to get/put/post data, you want to make sure that you minimize the number of calls between the client application and web service server. By minimizing the number of calls, you improve application speed, reduce communications overhead (why send three request when you can do it by one), and reduce network traffic.",
+    "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrent requests. When a request callback has been managed a new request could be fired.",
+    "sample": ">>> import aiohttp\n>>> session = aiohttp.ClientSession()\n>>> for url in urllist:\n>>>     res = session.get(url)\n",
+    "total": "Python artifacts web service with Python aiohttp",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1021000,
+            "name": "Python",
+            "href": "technologies/1021000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCPEM-PRF-8",
+            "name": "ASCPEM-PRF-8: Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "href": "quality-standards/cisq/ASCPEM-PRF-8.json"
+        }
+    ]
+}

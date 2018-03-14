@@ -1,0 +1,34 @@
+{
+    "id": 1020088,
+    "type": "quality-rule",
+    "name": "Avoid Artifacts with lines longer than X characters",
+    "href": "quality-rules/1020088.json",
+    "associatedValueName": "Associated Value",
+    "description": "Avoid Artifacts with lines longer than X characters.\nThe number of characters is a parameter and can be changed at will.",
+    "output": "This report lists all Artifacts with lines longer than X characters.\nIt provides the following information:\n Artifact full name, number of characters of the longest line.",
+    "rationale": "For better readability and portability (printers, terminals, IDE), Artifacts should not have lines longer than X characters.",
+    "remediation": "Consider splitting the line.",
+    "total": "Total number of artifacts",
+    "businessCriteria": [
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

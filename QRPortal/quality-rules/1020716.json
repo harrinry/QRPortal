@@ -1,0 +1,49 @@
+{
+    "id": 1020716,
+    "type": "quality-rule",
+    "name": "Avoid using the call of web service with Node.js http.get or http.request inside a loop",
+    "href": "quality-rules/1020716.json",
+    "description": "When designing web service to get/post/put data, you want to make sure that you minimize the number of calls between the client application and web service server. This rule will check the official Node.js syntax http.get or http.request to do call to web service. This rule is compliant with CISQ OMG recommendation ASCPEM-PRF-08.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "When designing web service to get/put/post data, you want to make sure that you minimize the number of calls between the client application and web service server. By minimizing the number of calls, you improve application speed, reduce communications overhead (why send three request when you can do it by one), and reduce network traffic.",
+    "reference": "CISQ Recommendation: ASCPEM-PRF-08",
+    "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrent requests. When a request callback has been managed a new request could be fired.",
+    "sample": "var http = require('http');\n\nfor (i = 0; i < paths.length; i++) {\n  http.get( ...); \n}\n\nfor (i = 0; i < paths.length; i++) { \n  http.request( ...);\n}",
+    "total": "Number of javascript source codes using http",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCPEM-PRF-8",
+            "name": "ASCPEM-PRF-8: Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "href": "quality-standards/cisq/ASCPEM-PRF-8.json"
+        },
+        {
+            "id": "ASCPEM-PRF-8",
+            "name": "ASCPEM-PRF-8: Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "href": "quality-standards/cisq/ASCPEM-PRF-8.json"
+        }
+    ]
+}

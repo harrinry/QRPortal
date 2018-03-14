@@ -1,0 +1,41 @@
+{
+    "id": 1020030,
+    "type": "quality-rule",
+    "name": "Avoid using javascript or expression in the CSS file",
+    "href": "quality-rules/1020030.json",
+    "description": "You will have to ensure that URLs only start with \"http\" not \"javascript\" and that properties never start with \"expression\". This rule is compliant with CIS OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure your css files will not get data from untrusted source.",
+    "sample": "{ background-url : \"javascript:alert(1)\"; } // and all other URLs \n { text-size: \"expression(alert('XSS'))\"; } // only in IE",
+    "total": "Number of CSS Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

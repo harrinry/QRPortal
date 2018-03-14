@@ -1,0 +1,43 @@
+{
+    "id": 1020542,
+    "type": "quality-rule",
+    "name": "Enable Content Security Policy when creating an AngularJS application",
+    "href": "quality-rules/1020542.json",
+    "description": "In AngularJS, ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.",
+    "reference": "https://docs.angularjs.org/guide/security",
+    "remediationSample": "<html ng-app ng-scp>...</html>",
+    "sample": "<html ng-app>...</html>",
+    "total": "Number of angular applications based on an HTML file",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

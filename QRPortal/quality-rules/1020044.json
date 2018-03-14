@@ -1,0 +1,42 @@
+{
+    "id": 1020044,
+    "type": "quality-rule",
+    "name": "Avoid using setData in ondragstart with attribute draggable set to true",
+    "href": "quality-rules/1020044.json",
+    "description": "This is a text injection by drag-and-drop. If you have a draggable block which triggered an ondragstart event that contains a malicious code and an iframe, the malicious code could be executed. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you do not have html pattern that allows an attacker to try a text injection using drag and drop features.",
+    "reference": "http://www.w3.org/TR/html5/dnd.html#dnd \nhttps://html5sec.org/#118",
+    "sample": "<div draggable=\"true\" ondragstart=\"event.dataTransfer.setData(\"text/plain\",\"malicious code\");\"> <h1>Drop me</h1> </div> <iframe src=\"http://www.example.org/dropHere.html\"></iframe>",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

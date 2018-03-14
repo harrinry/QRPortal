@@ -1,0 +1,43 @@
+{
+    "id": 1020026,
+    "type": "quality-rule",
+    "name": "Avoid using autofocus and onfocus in submitted markup",
+    "href": "quality-rules/1020026.json",
+    "description": "Do not allow self-executing focus event via autofocus otherwise it will execute a command without no user interaction. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you don't use html pattern that can give a way to execute code without user interaction.",
+    "reference": "https://html5sec.org/#7 \nhttp://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control",
+    "remediationSample": "<input autofocus>",
+    "sample": "<input onfocus=write(1) autofocus>",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id": 1020312,
+    "type": "quality-rule",
+    "name": "Avoid use of anonymous functions to attach events",
+    "href": "quality-rules/1020312.json",
+    "description": "Avoid use of anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse. This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure the maintainability of the code, providing explicit function name instead of using anonymous function.",
+    "reference": "http://learn.jquery.com/code-organization/beware-anonymous-functions/",
+    "remediation": "Use explicit function name",
+    "remediationSample": "function myLinkClickHandler(){...} $(\"#myLink\").on(\"click\", myLinkClickHandler); // GOOD",
+    "sample": "$(\"#myLink\").on(\"click\", function(){...}); // BAD",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "ASCMM-MNT-20",
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "href": "quality-standards/cisq/ASCMM-MNT-20.json"
+        }
+    ]
+}

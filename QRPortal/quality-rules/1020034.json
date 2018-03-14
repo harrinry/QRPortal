@@ -1,0 +1,44 @@
+{
+    "id": 1020034,
+    "type": "quality-rule",
+    "name": "Avoid hosting HTML code in iframe srcdoc",
+    "href": "quality-rules/1020034.json",
+    "description": "HTML5 specifies a \"srcdoc\" attribute for Iframes. This attribute, quite similar to data URIs, is capable of hosting HTML text to be rendered by the browser as the content of the Iframe. The pseudo-document created by the \"srcdoc\" attribute has full access to the hosting domain, although it runs in an artificial origin. This attribute should if at all only be used in combination with the Iframe Sandbox. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you do not have html pattern that allows an attacker to try an injection using iframe content features.",
+    "reference": "https://html5sec.org/#139",
+    "remediation": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox. Otherwise, XSS attacks might slip through existing filters rules as the payload can be HTML encoded.",
+    "remediationSample": "<iframe sandbox srcdoc=\"&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;\" />",
+    "sample": "<iframe srcdoc=\"&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;\" />",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A3-2013",
+            "name": "A3-2013: Cross-Site Scripting (XSS)",
+            "href": "quality-standards/owasp/A3-2013.json",
+            "reference": {
+                "name": "A3-2013: Cross-Site Scripting (XSS)",
+                "href": "owasp-specifications/A3-2013.json"
+            }
+        }
+    ]
+}

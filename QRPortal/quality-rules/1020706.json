@@ -1,0 +1,53 @@
+{
+    "id": 1020706,
+    "type": "quality-rule",
+    "name": "Ensure the Content-Security-Policy is activated",
+    "href": "quality-rules/1020706.json",
+    "description": "In Node.js, to avoid connection to untrusted source, you have to make sure that Content-Security-Policy HTTP header has been activated. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 and 2017 A5 - Security Misconfiguration.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure the developer will work with a list of trusted source. Thanks to Content-Security-Policy HTTP header setup, you will only access the white-list of trusted sources.",
+    "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Content_Security_Policy",
+    "remediation": "Ensure you are manually setting up the Content-Security-Policy header in your express instance or use third-party helmet package",
+    "remediationSample": "var express = require('express'); \nvar app = express(); \n\napp.use(function(req, res, next){ \n    res.header(\"Content-Security-Policy\", \"default-src 'self';script-src 'self';object-src 'none';img-src 'self';media-src 'self';frame-src 'none';font-src 'self' data:;connect-src 'self';style-src 'self'\"); \n    next(); \n}); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body><html>\"); \n}); \n\napp.listen(3000); \n\n// or with helmet \n\nvar express = require('express'); \nvar app = express(); \nvar helmet = require('helmet'); \n\n// @see https://github.com/evilpacket/helmet \n// you should activate even more headers provided by helmet \napp.use(helmet.csp({ \n    defaultSrc: [\"'self'\"], \n    scriptSrc: [\"'self'\"], \n    styleSrc: [\"'self'\"], \n    imgSrc: [\"'self'\"], \n    connectSrc: [\"'self'\"], \n    fontSrc: [\"'self'\"], \n    objectSrc: [\"'none'\"], \n    mediaSrc: [\"'self'\"], \n    frameSrc: [\"'none'\"], \n    // reportUri: '/report-violation', \n    reportOnly: false, // set to true if you only want to report errors \n    setAllHeaders: false, // set to true if you want to set all headers \n    safari5: false // set to true if you want to force buggy CSP in Safari 5 \n})); \n\n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body><html>\"); \n}); \n\napp.listen(3000);",
+    "sample": "var express = require('express'); \nvar app = express(); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body><html>\"); \n});\n\napp.listen(3000);",
+    "total": "Number of javascript source codes using express",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A5-2013",
+            "name": "A5-2013: Security Misconfiguration",
+            "href": "quality-standards/owasp/A5-2013.json",
+            "reference": {
+                "name": "A5-2013: Security Misconfiguration",
+                "href": "owasp-specifications/A5-2013.json"
+            }
+        },
+        {
+            "id": "A5-2017",
+            "name": "A5-2017: Broken Access Control",
+            "href": "quality-standards/owasp/A5-2017.json",
+            "reference": {
+                "name": "A5-2017: Broken Access Control",
+                "href": "owasp-specifications/A5-2017.json"
+            }
+        }
+    ]
+}
