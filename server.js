@@ -8,6 +8,17 @@ app.use(express.static('QRPortal'));
 app.use(express.static('static'));
 
 
+app.get('/qrportal/extensions/*/*', function(req, res) {
+	
+	console.log("index>"+req.url);
+	
+	var urlfull = req.url;
+	
+   res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')*/));
+//    res.sendFile(path.join(__dirname + req.url));
+});
+
+
 app.get('/default.html', function(req, res) {
     res.sendFile(path.join(__dirname + '/static/default.html'));
 });
