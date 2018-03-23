@@ -4,9 +4,9 @@ var path = require('path');
 var port = process.env.PORT || 8080;
 
 var app = express();
+
 app.use(express.static('QRPortal'));
 app.use(express.static('static'));
-
 
 app.get('/qrportal/extensions/*/*', function(req, res) {
 	
@@ -18,13 +18,24 @@ app.get('/qrportal/extensions/*/*', function(req, res) {
 //    res.sendFile(path.join(__dirname + req.url));
 });
 
+app.get('/', function(req, res) {
+	+    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
+ });
 
-app.get('/default.html', function(req, res) {
-    res.sendFile(path.join(__dirname + '/static/default.html'));
+// ---------------------- React Front End Routes ------------------------------ //
+
+app.get('/react.html', function(req, res) {
+		res.sendFile(path.join(__dirname + '/qrp_WebApp/react.html'));
 });
 
-app.get('/', function(req, res) {
- +    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
+app.get('/QRPortal.js', (req, res)=> {
+	res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
+});
+
+// ------------------------ End of React Routes ------------------------------ //
+
+app.get('/default.html', function(req, res) {
+    res.sendFile(path.join(__dirname + '/static/'));
 });
 
 app.listen(port, function() {

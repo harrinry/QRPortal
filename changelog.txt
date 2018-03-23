@@ -1,0 +1,34 @@
+0.3.1 : 
+  - creationg of folder "qrp_WebApp"
+  - installed modules for implementation of a React based front end WebApp
+  
+  - package.json :
+    - scripts :
+      - added build script to run webpack on the react web structure
+      - added test script tests run reqursively through subfolders
+      - state script updated to include nodemon process management on the server runtime
+    - dependencies updated : 
+      - React
+      - React-Dom
+    - dev dependencies updated :
+      - Babel loader
+      - Mocha and Chai has been added to be used as testing libraries.
+      - Webpack has been added as a bundler and dev-server during the construction of the front end interface.
+      - nodemon added for server stability, and process management
+
+  - qrp_WebApp :
+    - Created the basic structure for React App
+    - Created the base Index.html file
+    - setup Webpack to create production package as QRPortal.js in qrp_WebApp base dir
+    - created header test component
+    - created body test component
+
+  - Tests : 
+    - added basic test to assert configuration is working as intended
+
+  - Server.js : 
+    - added new react.html route to act as a non static resource for react frontend
+    - added new QRPortal.js route to supply scripting for the react route as a non static resource
+  
+  - .gitignore :
+    - updated to be more complete
