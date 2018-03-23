@@ -32,6 +32,10 @@ app.get('/QRPortal.js', (req, res)=> {
 	res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
 });
 
+app.get('/style.css', (req, res)=> {
+	res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
+});
+
 // ------------------------ End of React Routes ------------------------------ //
 
 app.get('/default.html', function(req, res) {

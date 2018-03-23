@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  entry: path.join(__dirname, 'qrp_WebApp', 'src','index'),
+  entry: path.join(__dirname, 'qrp_WebApp', 'src','app'),
   output: {
     filename: 'QRPortal.js',
     path: path.resolve(__dirname, 'qrp_WebApp')
