@@ -14,7 +14,7 @@ export default class Technologies extends React.Component{
   }
 
   render(){
-      if( this.state && this.state.data ){
+      if( this.state.data ){
         let tech = this.state.data.map( t => t.name );
         
         return ( tech.map(name => <div>{name}</div>) )
