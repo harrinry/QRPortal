@@ -10,40 +10,40 @@ app.use(express.static('static'));
 
 app.get('/qrportal/extensions/*/*', function(req, res) {
 	
-	console.log("index>"+req.url);
+  console.log('index>'+req.url);
 	
-	var urlfull = req.url;
+  var urlfull = req.url;
 	
-   res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')*/));
+  res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')*/));
 //    res.sendFile(path.join(__dirname + req.url));
 });
 
 app.get('/', function(req, res) {
-	+    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
- });
+  +    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
+});
 
 // ---------------------- React Front End Routes ------------------------------ //
 
 app.get('/react.html', function(req, res) {
-		res.sendFile(path.join(__dirname + '/qrp_WebApp/react.html'));
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/react.html'));
 });
 
 app.get('/QRPortal.js', (req, res)=> {
-	res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
 });
 
 app.get('/style.css', (req, res)=> {
-	res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
 });
 
 // ------------------------ End of React Routes ------------------------------ //
 
 app.get('/default.html', function(req, res) {
-    res.sendFile(path.join(__dirname + '/static/'));
+  res.sendFile(path.join(__dirname + '/static/'));
 });
 
 app.listen(port, function() {
 
-	console.log("Listening..."+port);	
+  console.log('Listening...'+port);	
 	
 });
