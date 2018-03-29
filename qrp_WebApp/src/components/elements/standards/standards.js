@@ -28,7 +28,7 @@ export default class Standards extends React.Component {
 
   getCisqStandards( res ){
     const data = res.data,
-      match = /\/cisq\//g,
+      match = /\/cisq\//ig,
       mapping = data.filter( std => match.test(std.href) === true ),
       _mapping = mapping.map( e => {
         return {id: e.id, name:e.id, title:e.name, href: e.href};
@@ -41,7 +41,7 @@ export default class Standards extends React.Component {
 
   getOwaspStandards( res ){
     const data = res.data,
-      match = /\/owasp\//g,
+      match = /\/owasp\//ig,
       mapping = data.filter( std => match.test(std.href) === true ),
       _mapping = mapping.map( e => {
         return {id: e.id, name:e.id, title:e.name, href: e.href};
