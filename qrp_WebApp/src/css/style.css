@@ -15,7 +15,8 @@
 
 /* body element */
 .inline{display: inline-block;}
-.bodyElement{min-width:80px; height:80px; border:1px solid black; padding: 0 10px ; margin: 0 0 10px 10px ; line-height:80px; text-align:center;}
+.bodyElement{min-width:80px; height:80px; border:1px solid black; padding: 0 10px ; margin: 0 0 10px 10px ; line-height:80px; text-align:center; user-select: none;
+  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}
 
 .scrollTest{ min-height: 1200px; }
 .body{ position: absolute; top: 60px; left: 0; overflow-y: auto; width: 100%;}
