@@ -1,0 +1,51 @@
+{
+    "id": 8098,
+    "type": "quality-rule",
+    "name": "CWE-134: Avoid uncontrolled format string",
+    "href": "quality-rules/8098.json",
+    "associatedValueName": "Call stack from user input source down to the string format method",
+    "description": "Using CAST dataflow engine, this metric detects execution paths from user input methods down to format string manipulation methods which open vulnerabilities to uncontrolled format string flaw.\n\nThe list of user input methods can be customized as well as the target methods and the sanitization methods (methods encoding the user input to avoid hacks).\n\nNote: This quality rule implements the rule ASCSM-CWE-134 of the CISQ standard, and recommendation CWE-134 of the MITRE.",
+    "output": "List all methods that miss calling the required input validation calls \n\nIt provides the following information: \n - Method full name \n - Call stack from user input source down to the string format method.",
+    "rationale": "The programmer rarely intends for a format string to be user-controlled at all. This weakness is frequently introduced in code that constructs log messages, where a constant format string is omitted.\nIn cases such as localization and internationalization, the language-specific message repositories could be an avenue for exploitation, but the format string issue would be resultant, since attacker control of those repositories would also allow modification of message length, format, and content.\nAs a consequence, format string problems allow for information disclosure which can severely simplify exploitation of the program.",
+    "reference": "ASCSM 1.0, Automated Source Code Security Measure, Object Management Group. \nCWE-134: http://cwe.mitre.org/data/definitions/134.html",
+    "sample": "public class FormatterCase {\n    FormatterCase() {}\n \n    public void printStreamFormat(String val) throws SQLException {\n        PrintStream ps = new PrintStream(new FileOutputStream(FileDescriptor.out));\n        // format a string\n        ps.printf(val, \"Hello\");// VIOLATION\n        // flush the stream\n        ps.flush();\n    }\n}\n\npublic class PrintWithReqFormat {\n        FormatterCase formatter = FormatterCase();\n \n        PrintReq() {}\n \n        public void execute(ServletRequest req) throws Exception {\n               String format = req.getParameter(\"format\");\n               formatter.printStreamFormat(format);\n       }\n}",
+    "total": "The number of methods calling user input methods",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "technologies/138383.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-134",
+            "name": "Format String Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

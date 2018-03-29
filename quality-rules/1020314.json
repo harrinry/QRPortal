@@ -1,0 +1,47 @@
+{
+    "id": 1020314,
+    "type": "quality-rule",
+    "name": "Avoid using css() of many elements",
+    "href": "quality-rules/1020314.json",
+    "description": "If you're changing the CSS of more than 20 elements using .css(), consider adding a style tag to the page instead for a nearly 60% increase in speed. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Changing display attributes thanks to .css() method could generate some performance issues.",
+    "reference": "CISQ OMG, https://learn.jquery.com/performance/use-stylesheets-for-changing-css/",
+    "remediation": "Use stylesheets style tag",
+    "remediationSample": "$( \"<style type=\\\"text/css\\\">a.swedberg { color: #0769ad }</style>\") \n    .appendTo( \"head\" );",
+    "sample": "$( \"a.swedberg\" ).css( \"color\", \"#0769ad\" );",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-4",
+            "name": "Data Resource Read and Write Access Excessive Complexity",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

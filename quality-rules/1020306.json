@@ -1,0 +1,45 @@
+{
+    "id": 1020306,
+    "type": "quality-rule",
+    "name": "Always use find for Id->Child nested selectors",
+    "href": "quality-rules/1020306.json",
+    "description": "Use find for Id->Child nested selectors. The .find() approach is faster because the first selection is handled without going through the Sizzle selector engine. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure that using jQuery selector request do not lead to a performance issue.",
+    "remediationSample": "var $productIds = $(\"#products\").find(\"div.id\"); // FAST",
+    "sample": "var $productIds = $(\"#products div.id\"); // SLOW",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "business-criteria/60014.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-4",
+            "name": "Data Resource Read and Write Access Excessive Complexity",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

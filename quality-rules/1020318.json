@@ -1,0 +1,44 @@
+{
+    "id": 1020318,
+    "type": "quality-rule",
+    "name": "Avoid using jQuery deprecated methods",
+    "href": "quality-rules/1020318.json",
+    "description": "Be careful when using deprecated methods. The deprecation period should be used to smoothly make the transition. The rule raises an issue when any of the following methods is used:\n- .andSelf()\n- .context\n- .die()\n- .error()\n- jQuery.boxModel\n- jQuery.browser\n- jQuery.sub()\n- jQuery.support\n- .live()\n- .load()\n- .selector\n- .size()\n- .toggle()\n- .unload()\nThis rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Using deprecated jQuery API could lead to security compliancy issues.",
+    "reference": "http://api.jquery.com/die/",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

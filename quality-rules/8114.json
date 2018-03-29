@@ -1,0 +1,46 @@
+{
+    "id": 8114,
+    "type": "quality-rule",
+    "name": "Avoid numerical data corruption during incompatible mutation",
+    "href": "quality-rules/8114.json",
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule identifies ABAP control elements that contain numeric data which are updated with a value which has an incompatible type. \n\nThis quality rule checks if exceptions are correctly used. \n\nNote: This quality rule implements the rule ASCSM-CWE-681 of the CISQ standard.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of risky type cast operations \n- Bookmarks for violation patterns found in source code: \n  - Type cast operation",
+    "rationale": "Software featuring weak numerical conversion practices incurs the risk of using the wrong number and generating incorrect results, possibly introducing new vulnerability when related to resource allocation and security decision.",
+    "reference": "ASCSM 1.0, Automated Source Code Security Measure, Object Management Group.",
+    "sample": "Waiting for examples",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "technologies/-15.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-681",
+            "name": "Numeric Types Incorrect Conversion",
+            "reference": null,
+            "description": null
+        }
+    ]
+}
