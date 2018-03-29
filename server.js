@@ -18,14 +18,14 @@ app.get('/qrportal/extensions/*/*', function(req, res) {
 //    res.sendFile(path.join(__dirname + req.url));
 });
 
-app.get('/', function(req, res) {
+app.get('/root.json', function(req, res) {
   +    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
 });
 
 // ---------------------- React Front End Routes ------------------------------ //
 
-app.get('/react.html', function(req, res) {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/react.html'));
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/index.html'));
 });
 
 app.get('/QRPortal.js', (req, res)=> {

@@ -1,8 +1,8 @@
 /* Global UI components */
 export { default as Header } from './header/header';
 export { default as Body } from './body/body';
-export { default as Technologies } from './elements/technologies';
-export { default as Standards } from './elements/stadards';
+export { default as Technologies } from './elements/technologies/technologies';
+export { default as Standards } from './elements/standards/standards';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';

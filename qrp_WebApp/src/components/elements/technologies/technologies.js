@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElement, BodyBlock, BodyTitle} from '../index';
+import {BodyElement, BodyBlock, BodyTitle} from '../../index';
 
 export default class Technologies extends React.Component{
   constructor(props){
