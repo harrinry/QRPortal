@@ -1,0 +1,42 @@
+{
+    "id": 1060004,
+    "type": "quality-rule",
+    "name": "Avoid Empty Finally Block When Calling Resource",
+    "href": "quality-rules/1060004.json",
+    "description": "This metric reports all arti facts calling databasewith at least one empty finally block (empty or only containing comments). In a try and catch/finally statement, finally blocks should contain code to handle the thrown exception.",
+    "output": "This report lists artifacts calling database resources with an empty finally block.",
+    "rationale": "Finally blocks must be used to execute the code that is needed after either the try and/or the catch block have been executed. It is usually the place to code the release of resources used in the try block. As such, an empty finally block is most probably the sign of potential \"resource leaks\" that will jeopardize the application's stability.",
+    "total": "Artifacts calling database resources",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
