@@ -1,0 +1,49 @@
+.left{ float: left; }
+.right{ float: right; }
+.black{ color: black; background-color: black }
+.whiteBorder{ border: 1px solid #fff;}
+.fixedTop{ position:fixed; top:0; left:0; }
+.menu-icon{ position: absolute; margin: 15px }
+.square30{ height: 45px; width: 45px;}
+.header{ height: 60px; width: 100%; background: rgb(141, 141, 204); z-index: 1;}
+
+/* body row */
+.bodyRow{width: 100%;}
+
+/* body container */
+.bodyElement-container{width:100%;}
+
+/* body element */
+.inline{display: inline-block;}
+.bodyElement{min-width:80px; height:80px; border:1px solid black; padding: 0 10px ; margin: 0 0 10px 10px ; line-height:80px; text-align:center; user-select: none;
+  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}
+
+.scrollTest{ min-height: 1200px; }
+.body{ position: absolute; top: 60px; left: 0; overflow-y: auto; width: 100%;}
+.scroll-x-overflow{overflow-y: hidden; overflow-x: auto ; white-space: nowrap; }
+
+.scrollbar-small::-webkit-scrollbar-{ height: 5px; }
+.scrollbar-small::-webkit-scrollbar-thumb{ background: #666; border-radius: 10px; }
+.scrollbar-small::-webkit-scrollbar-track{ background: #ddd; }
+
+.background-blue{ background: #3ef }
+
+.slidedown-menu { 
+  width: 100%; 
+  left: 0px; 
+  height: 0px; 
+  margin: 10px auto; 
+  position: relative;
+  visibility: hidden;
+  padding: 0; 
+  border-top: 0; 
+  -webkit-transition: height 0.1s ease-in;
+  -moz-transition: height 0.1s ease-in;
+  -o-transition: height 0.1s ease-in;
+  -ms-transition: height 0.1s ease-in;
+   transition: height 0.1s ease-in;}
+
+.slidedown-menu.visible{
+  visibility: visible;
+  height: auto;
+}
