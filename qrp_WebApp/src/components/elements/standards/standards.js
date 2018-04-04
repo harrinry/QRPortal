@@ -1,8 +1,9 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
+import {LOADRULESLIST} from '../../actions/actions';
 
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
@@ -68,6 +69,6 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement value={e.name} href={e.href} id={e.id} title={e.title}/> );
+    return data.map( e => <BodyElement value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
   }
 }
