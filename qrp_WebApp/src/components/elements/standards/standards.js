@@ -29,15 +29,18 @@ export default class Standards extends React.Component {
 
   getCisqStandards( res ){
     const data = res.data,
-      match = /\/cisq\//ig,
-      mapping = data.filter( std => match.test(std.href) === true ),
-      _mapping = mapping.map( e => {
-        return {id: e.id, name:e.id, title:e.name, href: e.href};
-      } ),
-      menuEls = this.buildSlideDownMenuElements( _mapping ),
-      nextScope = CISQ;
-
-    return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+      name = 'CISQ',
+      href = data.find( ( e ) => e.name === name ).href;
+      
+    APIQuery( href, rr =>{
+      let d = rr.data,
+        out = d.map( c => {
+          return { name: c.name, href: c.href };
+        } ),
+        menuEls = this.buildSlideDownMenuElements( out ),
+        nextScope = CISQ;
+      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    });
   }
 
   getOwaspStandards( res ){
