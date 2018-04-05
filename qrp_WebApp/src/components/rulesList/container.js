@@ -12,10 +12,7 @@ export default class RulesContainer extends React.Component{
     this.state = {};
 
     Radio.listen(lOADDETAILS, function( url ) {
-      APIQuery(url, res => 
-        this.setState({ 
-          details: res.data
-        }));
+      APIQuery(url, (res) => this.setState({ details: res.data }));
     }.bind(this));
   }
 
@@ -23,7 +20,7 @@ export default class RulesContainer extends React.Component{
     return (
       <div className={localClassName.join( sp )} >
         <RulesList href={this.props.href}/>
-        <RuleDetails href={this.state.details}/>
+        <RuleDetails data={this.state.details}/>
       </div>
     );
   }

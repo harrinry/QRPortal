@@ -1,7 +1,7 @@
 import React from 'react';
 import {RuleListRowElement,APIQuery} from '../index';
 
-const localClassName = ['ruleList-container', 'table-contaier', 'L50-margins'],
+const localClassName = ['ruleList-container', 'table-contaier', 'L50-margins', 'scrollbar-small'],
   sp = ' ';
 
 export default class RulesList extends React.Component{

@@ -18,10 +18,10 @@ export default class RuleListRowElement extends React.Component{
 
   render(){
     return (
-      <tr className={localClassName} onClick={() => this.dispatchLoadDetails().bind(this)}>
+      <tr className={localClassName} onClick={function (){ return this.dispatchLoadDetails();}.bind(this)}>
         <td className={cellClass}>{this.props.el.id}</td>
         <td className={cellClass}>{this.props.el.name}</td>
-        <td className={cellClass}>{this.props.el.critical}</td>
+        <td className={cellClass}>{this.props.el.critical.toString()}</td>
       </tr>
     );
   }
