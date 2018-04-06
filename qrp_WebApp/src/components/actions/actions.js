@@ -1,0 +1,1 @@
+export const LOADRULESLIST = 'LoadRulesListFromPassedQueryFromUI_click';

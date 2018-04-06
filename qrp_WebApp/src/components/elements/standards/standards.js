@@ -1,8 +1,9 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
+import {LOADRULESLIST} from '../../actions/actions';
 
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
@@ -28,15 +29,18 @@ export default class Standards extends React.Component {
 
   getCisqStandards( res ){
     const data = res.data,
-      match = /\/cisq\//ig,
-      mapping = data.filter( std => match.test(std.href) === true ),
-      _mapping = mapping.map( e => {
-        return {id: e.id, name:e.id, title:e.name, href: e.href};
-      } ),
-      menuEls = this.buildSlideDownMenuElements( _mapping ),
-      nextScope = CISQ;
-
-    return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+      name = 'CISQ',
+      href = data.find( ( e ) => e.name === name ).href;
+      
+    APIQuery( href, rr =>{
+      let d = rr.data,
+        out = d.map( c => {
+          return { name: c.name, href: c.href };
+        } ),
+        menuEls = this.buildSlideDownMenuElements( out ),
+        nextScope = CISQ;
+      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    });
   }
 
   getOwaspStandards( res ){
@@ -68,6 +72,6 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement value={e.name} href={e.href} id={e.id} title={e.title}/> );
+    return data.map( e => <BodyElement value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
   }
 }
