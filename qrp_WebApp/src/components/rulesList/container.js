@@ -12,6 +12,7 @@ export default class RulesContainer extends React.Component{
     this.state = {};
 
     Radio.listen(lOADDETAILS, function( url ) {
+      if (!url) return;
       APIQuery(url, (res) => this.setState({ details: res.data }));
     }.bind(this));
 

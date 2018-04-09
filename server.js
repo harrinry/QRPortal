@@ -54,7 +54,6 @@ app.get('/quality-standards/*', (req, res)=> {
   res.sendFile(path.join(__dirname + req.url ));
 });
 
-
 // ------------------------ End of React Routes ------------------------------ //
 
 app.get('/default.html', function(req, res) {

@@ -34,7 +34,7 @@ export default class RuleListRowElement extends React.Component{
         return this.dispatchLoadDetails();}.bind(this)}>
         <td className={cellClass}>{this.props.el.id}</td>
         <td className={cellClass}>{this.props.el.name}</td>
-        <td className={cellClass}>{this.props.el.critical.toString()}</td>
+        <td className={cellClass}>{ this.props.el.critical ? this.props.el.critical.toString() : undefined}</td>
       </tr>
     );
   }
