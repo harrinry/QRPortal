@@ -1,5 +1,5 @@
 import React from 'react';
-import { Technologies, Standards, RulesBody, Radio, LOADRULESLIST } from '../index';
+import { Technologies, Standards, RulesBody, Radio, LOADRULESLIST, RETURNTOSTART, UNSELECTME } from '../index';
 
 export default class Body extends React.Component{
   constructor(props){
@@ -8,8 +8,16 @@ export default class Body extends React.Component{
     this.state = {};
 
     Radio.listen( LOADRULESLIST, this.LoadRuleList.bind(this) );
+    Radio.listen( RETURNTOSTART, this.hideRuleList.bind(this));
   }
   
+  hideRuleList(){
+    this.setState({
+      rulesVisible: false
+    });
+    Radio.emit(UNSELECTME);
+  }
+
   LoadRuleList( url, name ){
     this.setState({
       rulesVisible: true,

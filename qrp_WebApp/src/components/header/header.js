@@ -1,11 +1,29 @@
 import React from 'react';
+import { Radio, RETURNTOSTART, LOADRULESLIST } from '../index';
 
 export default class Header extends React.Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      backButton: 'hidden'
+    };
+
+    Radio.listen(LOADRULESLIST, function(){
+      return this.setState({
+        backButton: 'visible'
+      });
+    }.bind(this));
+
+  }
+  
   render(){
     return (
       <div className='fixedTop header'>
         <div className='left menu-container'>
-          <div className='menu-icon square30 borderWhite'>icon</div>
+          <div className='menu-icon square30 borderWhite'>
+            <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}>Back</button></div>
+          </div>
           <div className='hidden menu-elements'></div>
         </div>
         <div className='search-container right'>
@@ -16,5 +34,12 @@ export default class Header extends React.Component{
         </div>
       </div>
     );
+  }
+
+  returnToMain(){
+    this.setState({
+      backButton: 'hidden'
+    });
+    return Radio.emit(RETURNTOSTART);
   }
 }

@@ -29,7 +29,7 @@ export default class Standards extends React.Component {
 
   getCisqStandards( res ){
     const data = res.data,
-      name = 'CISQ',
+      name = CISQ,
       href = data.find( ( e ) => e.name === name ).href;
       
     APIQuery( href, rr =>{
@@ -45,15 +45,18 @@ export default class Standards extends React.Component {
 
   getOwaspStandards( res ){
     const data = res.data,
-      match = /\/owasp\//ig,
-      mapping = data.filter( std => match.test(std.href) === true ),
-      _mapping = mapping.map( e => {
-        return {id: e.id, name:e.id, title:e.name, href: e.href};
-      } ),
-      menuEls = this.buildSlideDownMenuElements( _mapping ),
-      nextScope = OWASP;
-
-    return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+      name = OWASP,
+      href = data.find( ( e ) => e.name === name ).href;
+    
+    APIQuery( href, rr =>{
+      let d = rr.data,
+        out = d.map( c => {
+          return { name: c.name, href: c.href };
+        } ),
+        menuEls = this.buildSlideDownMenuElements( out ),
+        nextScope = OWASP;
+      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    });
   }
 
   getBusinessCritera( res ){
@@ -61,7 +64,7 @@ export default class Standards extends React.Component {
       out = data.map( ( c ) => { 
         return { id: idPrefix + c.id, name: c.name, href: c.href} ;
       });
-    // do something with output
+
     const menuEls = this.buildSlideDownMenuElements( out ),
       nextScope = CAST;
     return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });

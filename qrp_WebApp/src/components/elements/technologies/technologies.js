@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElement, BodyBlock, BodyTitle} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, Radio, LOADRULESLIST} from '../../index';
 
 export default class Technologies extends React.Component{
   constructor(props){
@@ -16,7 +16,7 @@ export default class Technologies extends React.Component{
 
   render(){
     if( this.state.data ){
-      let technos = this.state.data.map(t => <BodyElement value={t.name} href={t.href}/>);
+      let technos = this.state.data.map(t => <BodyElement value={t.name} onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>);
 
       return ( <div className='bodyRow container block'>
         <BodyTitle value='Technologies' />

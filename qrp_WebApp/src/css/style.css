@@ -6,6 +6,8 @@
 .menu-icon{ position: absolute; margin: 15px }
 .square30{ height: 45px; width: 45px;}
 .header{ height: 60px; width: 100%; background: rgb(141, 141, 204); z-index: 1;}
+.hidden{display: none;}
+.visible{display: block;}
 
 /* body row */
 .bodyRow{width: 100%;}
@@ -53,3 +55,7 @@
 .static-overlay.visible{ display: block;}
 
 .ruleList-container{ max-height: 90vh; overflow-y: auto; }
+table tr.table-row { border: 0; border-bottom: 1px solid #83bfe7;}
+table tr.table-row:hover { border-bottom: 1px solid #1a8bd6; cursor: pointer; transition: border-bottom 300ms ease-in;}
+table { border-collapse: collapse;}
+table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bottom: none;}
