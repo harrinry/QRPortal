@@ -12,6 +12,15 @@ export default class Standards extends React.Component {
   constructor(props){
     super(props);
     this.state = {};
+
+    Radio.listen( LOADRULESLIST, () => 
+      this.setState( _state => { 
+        return { 
+          menuVisible: false,
+          menuData: _state.menuData,
+          scope: undefined
+        };
+      }));
   }
 
   render(){
