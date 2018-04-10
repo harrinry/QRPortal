@@ -1,5 +1,5 @@
 import React from 'react';
-import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART } from '../index';
+import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL } from '../index';
 import {lOADDETAILS} from './actions';
 
 const localClassName = ['rule-container', 'block'],
@@ -13,7 +13,10 @@ export default class RulesContainer extends React.Component{
 
     Radio.listen(lOADDETAILS, function( url ) {
       if (!url) return;
-      APIQuery(url, (res) => this.setState({ details: res.data }));
+      APIQuery(url, (res) => {
+        this.setState({ details: res.data });
+        UpdateURL( null, null, url );
+      });
     }.bind(this));
 
     Radio.listen(RETURNTOSTART, () => this.setState({details: undefined}));

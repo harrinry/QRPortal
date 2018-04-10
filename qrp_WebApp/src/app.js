@@ -1,8 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Header, Body} from './components/index';
+import { Header, Body, ParseQueryString, Radio, LOADRULESLIST, lOADDETAILS } from './components/index';
 
 class App extends React.Component {
+
+  componentDidMount(){
+    let url = window ? window.location : undefined;
+
+    if (!url) return;
+    if (url.search === '') return;
+    const qryParams = ParseQueryString( url.search );
+    const { rlH, rlName, rlDH } = qryParams;
+    Radio.emit( LOADRULESLIST, rlH, rlName );
+    if ( rlDH ) Radio.emit( lOADDETAILS, rlDH );
+  }
+
   render(){
     return (
       <div>

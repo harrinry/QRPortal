@@ -22,6 +22,8 @@ export { default as RuleListRowElement } from './rulesList/listElement';
 /* untility functions */
 export { APIQuery }  from '../modules/apiQuery';
 export { default as Radio }  from '../modules/radio';
+export { default as ParseQueryString } from '../modules/queryStringParser';
+export { default as UpdateURL } from '../modules/urlUpdater';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME } from './rulesList/actions';
