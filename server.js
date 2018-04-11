@@ -50,6 +50,10 @@ app.get('/style.css', (req, res)=> {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
 });
 
+app.get('/quality-standards/*', (req, res)=> {
+  res.sendFile(path.join(__dirname + req.url ));
+});
+
 // ------------------------ End of React Routes ------------------------------ //
 
 app.get('/default.html', function(req, res) {

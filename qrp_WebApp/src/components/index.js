@@ -22,7 +22,10 @@ export { default as RuleListRowElement } from './rulesList/listElement';
 /* untility functions */
 export { APIQuery }  from '../modules/apiQuery';
 export { default as Radio }  from '../modules/radio';
+export { default as ParseQueryString } from '../modules/queryStringParser';
+export { default as UpdateURL } from '../modules/urlUpdater';
 
 /* Global Actions */
-export { lOADDETAILS } from './rulesList/actions';
+export { lOADDETAILS, UNSELECTME } from './rulesList/actions';
 export { LOADRULESLIST } from './actions/actions';
+export { RETURNTOSTART } from './header/actions';

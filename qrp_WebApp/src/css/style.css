@@ -6,6 +6,8 @@
 .menu-icon{ position: absolute; margin: 15px }
 .square30{ height: 45px; width: 45px;}
 .header{ height: 60px; width: 100%; background: rgb(141, 141, 204); z-index: 1;}
+.hidden{display: none;}
+.visible{display: block;}
 
 /* body row */
 .bodyRow{width: 100%;}
@@ -49,7 +51,18 @@
 }
 
 .L50-margins{ float: left; margin: 0 10px ; width: calc(50% - 20px)}
-.static-overlay{ top: 0; left: 0; width: 100%; height: 100%; position: absolute; display: none; background: white; z-index: 2;}
+.R50-margins{ float: right; margin: 0 10px ; width: calc(50% - 20px)}
+.static-overlay{ top: 60px; left: 0; width: 100%; height: 100%; position: fixed; display: none; background: white; z-index: 2;}
 .static-overlay.visible{ display: block;}
-
-.ruleList-container{ max-height: 90vh; overflow-y: auto; }
+pre {
+  white-space: pre-wrap;       /* css-3 */
+  white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;      /* Opera 4-6 */
+  white-space: -o-pre-wrap;    /* Opera 7 */
+  word-wrap: break-word;       /* Internet Explorer 5.5+ */
+ }
+.ruleList-container, .RuleInfo-container{ max-height: 80vh; overflow-y: auto; }
+table tr.table-row { border: 0; border-bottom: 1px solid #83bfe7;}
+table tr.table-row:hover { border-bottom: 1px solid #1a8bd6; cursor: pointer; transition: border-bottom 300ms ease-in;}
+table { border-collapse: collapse;}
+table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bottom: none;}

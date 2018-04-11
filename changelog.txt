@@ -1,3 +1,21 @@
+0.3.11 :
+  - qrp_WebApp :
+    - implemented Client side query string rendering from history API
+
+0.3.10 :
+  - QRPortal : 
+    - Fixed bad json route for CISQ quality standards
+  - qrp_WebApp : 
+    - Components: 
+      - Technologies now load in details view
+      - Header Component now produces a back button when viewing the rules list
+      - RulesDetails is now cleared when exiting rule list view
+      - Added RulesList selected state, tentative behaviour
+    - CSS:
+      - added tentative rules to mimic desired component behaviour
+  - Server :
+    - added route to manage missing json files for quality-standards in QRPortal
+    
 0.3.9 : 
   - qrp_WebApp : 
     - Components : 
@@ -12,7 +30,7 @@
 0.3.8 : 
   - qrp_WebApp : 
     - Components : 
-      - RulesList / Details :
+      - RulesList / Details : 
         - RulesList pure component added for modularity
         - RulesBody component added as static hidden element to display details
         - RulesTitle pure component added for modularity
