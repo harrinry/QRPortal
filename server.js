@@ -19,22 +19,30 @@ app.use(cors({
   withCredentials: true
 }));
 
-app.use(express.static('QRPortal'));
+//app.use(express.static('QRPortal'));
 app.use(express.static('static'));
 
-app.get('/qrportal/extensions/*/*', function(req, res) {
+/*app.get('/qrportal/extensions/', function(req, res) {
 	
   console.log('index>'+req.url);
 	
   var urlfull = req.url;
 	
-  res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')*/));
+  res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')));
 //    res.sendFile(path.join(__dirname + req.url));
+});*/
+
+// ----------------------------- Global API routes ---------------------------- //
+
+app.get(/^\/[A-a-z-]+.json/i, function(req, res) {
+  res.sendFile(path.join(__dirname + req.url));
 });
 
-app.get('/root.json', function(req, res) {
-  +    res.sendFile(path.join(__dirname + '/QRPortal/root.json'));
+app.get(/\/[A-a-z-]+\//i, function(req, res) {
+  res.sendFile(path.join(__dirname + req.url));
 });
+
+// ---------------------------------------------------------------------------- //
 
 // ---------------------- React Front End Routes ------------------------------ //
 
@@ -50,9 +58,22 @@ app.get('/style.css', (req, res)=> {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
 });
 
-app.get('/quality-standards/*', (req, res)=> {
+/*app.get('/quality-standards/*', (req, res)=> {
   res.sendFile(path.join(__dirname + req.url ));
 });
+
+app.get('/technologies/*', (req, res)=> {
+  res.sendFile(path.join(__dirname + req.url ));
+});
+
+app.get('/quality-rules/*', (req, res)=> {
+  res.sendFile(path.join(__dirname + req.url ));
+});
+
+app.get('/business-criteria/*', (req, res)=> {
+  res.sendFile(path.join(__dirname + req.url ));
+});*/
+
 
 // ------------------------ End of React Routes ------------------------------ //
 
