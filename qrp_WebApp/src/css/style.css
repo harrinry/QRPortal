@@ -4,10 +4,12 @@
 .whiteBorder{ border: 1px solid #fff;}
 .fixedTop{ position:fixed; top:0; left:0; }
 .menu-icon{ position: absolute; margin: 15px }
-.square30{ height: 45px; width: 45px;}
-.header{ height: 60px; width: 100%; background: rgb(141, 141, 204); z-index: 1;}
+.square30{ height: 36px; width: 36px; background-image: url('cast_structural_rules.svg');}
+.header{ height: 60px; width: 100%; background: #1987FF; z-index: 1;}
+.menu-container{ height:60px; width:60px; background:#1A4F8E;}
 .hidden{display: none;}
 .visible{display: block;}
+.title{margin-left: 30px; font-size:22px;}
 
 /* body row */
 .bodyRow{width: 100%;}
@@ -17,11 +19,13 @@
 
 /* body element */
 .inline{display: inline-block;}
-.bodyElement{min-width:80px; height:80px; border:1px solid black; padding: 0 10px ; margin: 0 0 10px 10px ; line-height:80px; text-align:center; user-select: none;
+.bodyElement{min-width:80px; width:160px ;height:160px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin-left: auto; margin-right: auto; line-height:80px; text-align:center; user-select: none;
   -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}
 
+.bodyElement:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}
+
 .scrollTest{ min-height: 1200px; }
-.body{ position: absolute; top: 60px; left: 0; overflow-y: auto; width: 100%;}
+.body{ position: absolute; top: 60px; left: 0; overflow-y: auto; width: 100%; font-family:"Helvetica"}
 .scroll-x-overflow{overflow-y: hidden; overflow-x: auto ; white-space: nowrap; }
 
 .scrollbar-small::-webkit-scrollbar-{ height: 5px; }
