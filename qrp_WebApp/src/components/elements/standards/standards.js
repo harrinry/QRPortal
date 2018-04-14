@@ -8,14 +8,17 @@ import {LOADRULESLIST} from '../../actions/actions';
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
 
+const casticon = '/img/castsoftware.svg';
+
+
 export default class Standards extends React.Component {
   constructor(props){
     super(props);
     this.state = {};
 
-    Radio.listen( LOADRULESLIST, () => 
-      this.setState( _state => { 
-        return { 
+    Radio.listen( LOADRULESLIST, () =>
+      this.setState( _state => {
+        return {
           menuVisible: false,
           menuData: _state.menuData,
           scope: undefined
@@ -23,14 +26,15 @@ export default class Standards extends React.Component {
       }));
   }
 
+/* <!--BodyElement value={CWE}/--> */
+
   render(){
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
       <BodyBlock value={[
-        <BodyElement value={CAST} onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
-        <BodyElement value={CISQ} onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
-        <BodyElement value={OWASP} onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
-        <BodyElement value={CWE}/>
+        <BodyElement value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
+        <BodyElement value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
+        <BodyElement value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
       ]}/>
       <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
@@ -40,7 +44,7 @@ export default class Standards extends React.Component {
     const data = res.data,
       name = CISQ,
       href = data.find( ( e ) => e.name === name ).href;
-      
+
     APIQuery( href, rr =>{
       let d = rr.data,
         out = d.map( c => {
@@ -56,7 +60,7 @@ export default class Standards extends React.Component {
     const data = res.data,
       name = OWASP,
       href = data.find( ( e ) => e.name === name ).href;
-    
+
     APIQuery( href, rr =>{
       let d = rr.data,
         out = d.map( c => {
@@ -70,7 +74,7 @@ export default class Standards extends React.Component {
 
   getBusinessCritera( res ){
     const data = res.data,
-      out = data.map( ( c ) => { 
+      out = data.map( ( c ) => {
         return { id: idPrefix + c.id, name: c.name, href: c.href} ;
       });
 

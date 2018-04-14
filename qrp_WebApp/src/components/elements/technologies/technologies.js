@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElement, BodyBlock, BodyTitle, Radio, LOADRULESLIST} from '../../index';
+import {BodyElementTechno, BodyBlock, BodyTitle, Radio, LOADRULESLIST} from '../../index';
 
 export default class Technologies extends React.Component{
   constructor(props){
@@ -16,14 +16,14 @@ export default class Technologies extends React.Component{
 
   render(){
     if( this.state.data ){
-      let technos = this.state.data.map(t => <BodyElement value={t.name} onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>);
+      let technos = this.state.data.map(t => <BodyElementTechno value={t.name} onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>);
 
       return ( <div className='bodyRow container block'>
         <BodyTitle value='Technologies' />
         <BodyBlock value={technos}/>
       </div> );
     }
-    
+
     return (<div></div>);
   }
 }

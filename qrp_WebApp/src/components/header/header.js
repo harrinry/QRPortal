@@ -16,7 +16,7 @@ export default class Header extends React.Component{
     }.bind(this));
 
   }
-  
+
   render(){
     return (
       <div className='fixedTop header'>
@@ -25,6 +25,7 @@ export default class Header extends React.Component{
             <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}>Back</button></div>
           </div>
           <div className='hidden menu-elements'></div>
+          <div className='titleheader'><b>CAST</b> Structural Rules</div>
         </div>
         <div className='search-container right'>
           <div className='search-icon inline'></div>

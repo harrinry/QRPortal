@@ -6,6 +6,7 @@ export { default as Standards } from './elements/standards/standards';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';
+export { default as BodyElementTechno } from './body/bodyElementTechno';
 export { default as BodyTitle } from './body/bodyTitle';
 export { default as BodyRowScrollX } from './body/bodyRowScrollX';
 export { default as BodyBlock } from './body/bodyBlock';
