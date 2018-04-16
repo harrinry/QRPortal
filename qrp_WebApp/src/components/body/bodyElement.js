@@ -1,7 +1,5 @@
 import React from 'react';
 
-const className = 'bodyElement inline';
-
 export default class BodyElement extends React.Component{
 
   render(){
