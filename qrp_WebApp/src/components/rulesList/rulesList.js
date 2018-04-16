@@ -2,7 +2,8 @@ import React from 'react';
 import {RuleListRowElement,APIQuery} from '../index';
 
 const localClassName = ['ruleList-container', 'table-contaier', 'L50-margins', 'scrollbar-small'],
-  sp = ' ';
+  sp = ' ',
+  prefix = 'keyx_';
 
 export default class RulesList extends React.Component{
   constructor(props){
@@ -35,6 +36,6 @@ export default class RulesList extends React.Component{
   }
 
   buildListFromState(){
-    return this.state.els.map( el => <RuleListRowElement el={el} />);
+    return this.state.els.map( el => <RuleListRowElement el={el} key={prefix + el.id} />);
   }
 }

@@ -26,15 +26,16 @@ export default class Standards extends React.Component {
       }));
   }
 
-/* <!--BodyElement value={CWE}/--> */
+  /* <!--BodyElement value={CWE}/--> */
 
   render(){
+    let key = 0;
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
       <BodyBlock value={[
-        <BodyElement value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
-        <BodyElement value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
-        <BodyElement value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
+        <BodyElement key={key++} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
+        <BodyElement key={key++} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
+        <BodyElement key={key++} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
       ]}/>
       <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
@@ -88,6 +89,6 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
+    return data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
   }
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Radio, lOADDETAILS, UNSELECTME} from '../index';
 
-const localClassName = 'table-row', cellClass = 'table-cell';
-
+const localClassName = 'table-row', cellClass = 'table-cell', prefix = 'letr_';
 
 export default class RuleListRowElement extends React.Component{
   constructor(props){
