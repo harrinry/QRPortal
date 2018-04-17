@@ -30,4 +30,4 @@ export { default as UpdateURL } from '../modules/urlUpdater';
 export { lOADDETAILS, UNSELECTME } from './rulesList/actions';
 export { LOADRULESLIST } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
-export { ICONURLS } from './elements/technologies/technoIcons';
+export { default as ICONURLS } from './elements/technologies/technoIcons';
