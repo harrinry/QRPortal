@@ -15,8 +15,10 @@ export default class BodyElementTechno extends React.Component{
   stylize( key ){
     const iconURL = ICONURLS[key];
     return {
-      background: iconURL ? 'url('+ iconURL +')' : undefined,
-      backgroundSize: 'cover'
+      backgroundImage: iconURL ? 'url('+ iconURL +')' : undefined,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: '80%'
     };
   }
 }
