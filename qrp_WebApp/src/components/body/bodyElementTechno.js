@@ -1,9 +1,5 @@
 import React from 'react';
 import {ICONURLS} from '../index';
-/*const divStyle = {
-  background: 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.securityforjava.png)',
-  backgroundSize: 'cover'
-};*/
 
 export default class BodyElementTechno extends React.Component{
   render(){

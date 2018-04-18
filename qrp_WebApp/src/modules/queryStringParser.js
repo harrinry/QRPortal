@@ -1,13 +1,15 @@
 
 export default function ParseQueryString( qryStr ){
-  const cleanStr = qryStr.substring(1),
-    params = cleanStr.split(/&/),
-    parsedParams = params.map( p => p.split(/=/) );
-  
   let o = {};
-  parsedParams.forEach( ( dataSet ) => {
-    o [ dataSet[0] ] = dataSet[1];
-  });
+  const cleanStr = qryStr.substring(1),
+    rx = /(?:\w{3,}|[$@()+.])+=/gi,
+    params = cleanStr.match(rx),
+    paramValues = cleanStr.split(rx);
+  paramValues.splice(0,1);
+  const end = params.length;
+  for (let index = 0; index < end; index++) {
+    o[params[ index ].replace(/=$/g,'') ] = paramValues[ index ].replace(/&$/g, '');
+  }
 
   return o;
 }

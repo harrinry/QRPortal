@@ -25,6 +25,7 @@ export { APIQuery }  from '../modules/apiQuery';
 export { default as Radio }  from '../modules/radio';
 export { default as ParseQueryString } from '../modules/queryStringParser';
 export { default as UpdateURL } from '../modules/urlUpdater';
+export { default as MultiQuery } from '../modules/multiURLQueryBuilder';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME } from './rulesList/actions';

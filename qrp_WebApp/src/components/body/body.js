@@ -7,7 +7,7 @@ export default class Body extends React.Component{
 
     this.state = {};
 
-    Radio.listen( LOADRULESLIST, this.LoadRuleList.bind(this) );
+    Radio.listen( LOADRULESLIST, this.LoadRuleList.bind(this));
     Radio.listen( RETURNTOSTART, this.hideRuleList.bind(this));
   }
   

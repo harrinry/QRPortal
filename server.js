@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-
+const UNIQ = require('./serverModules/uniq');
 // cors
 const cors = require('cors');
 
@@ -50,6 +50,16 @@ app.get('/img/*', (req, res)=>{
   res.sendFile(path.join(__dirname + '/qrp_WebApp/src' + req.url));
 });
 
+app.get('/mlturl/*', (req, res)=>{
+  const q = req.query;
+  let r = undefined;
+  if( q.hasOwnProperty('u') ){
+    const arr = q.u.map( u => require( path.join( __dirname, u)));
+    r = [].concat(...arr);
+  }
+  const uniqArr = UNIQ(r, val => val.id );
+  res.json(uniqArr);
+});
 /*app.get('/quality-standards/*', (req, res)=> {
   res.sendFile(path.join(__dirname + req.url ));
 });

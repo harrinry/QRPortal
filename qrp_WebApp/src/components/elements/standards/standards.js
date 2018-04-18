@@ -1,6 +1,6 @@
 import React from 'react';
 import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
-import {CAST, CISQ, OWASP, CWE} from './elements';
+import {CAST, CISQ, OWASP} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
 import {LOADRULESLIST} from '../../actions/actions';
@@ -9,7 +9,6 @@ const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
 
 const casticon = '/img/castsoftware.svg';
-
 
 export default class Standards extends React.Component {
   constructor(props){
@@ -25,8 +24,6 @@ export default class Standards extends React.Component {
         };
       }));
   }
-
-  /* <!--BodyElement value={CWE}/--> */
 
   render(){
     let key = 0;
