@@ -73,9 +73,11 @@
   height: auto;
 }
 
-.L50-margins{ float: left; margin: 0 10px ; width: calc(50% - 20px)}
-.R50-margins{ float: right; margin: 0 10px ; width: calc(50% - 20px)}
-.static-overlay{ top: 60px; left: 0; width: 100%; height: 100%; position: fixed; display: none; background: white; z-index: 2;}
+/*.L50-margins{ float: left; margin: 0 10px ; width: calc(50% - 20px)}
+.R50-margins{ float: right; margin: 0 10px ; width: calc(50% - 20px)}*/
+.L50-margins{ float: left; width: calc(50%)}
+.R50-margins{ float: right; width: calc(50%)}
+.static-overlay{ top: 60px; bottom:0px; left: 0; width: 100%; height: 100%; position: fixed; display: none; background: white; z-index: 2;}
 .static-overlay.visible{ display: block;}
 pre {
   background-color: #EEEEEE;padding: 10px; margin: 10px;
@@ -94,6 +96,9 @@ pre {
   white-space: -o-pre-wrap;    /* Opera 7 */
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
+
+.critical-container{position: absolute; right:0px; float:right; width:24px;height:24px;background: url("/image/criticalrule.png") no-repeat center center;background-size: 24px 24px}
+.weight-container{float:right;wdith:24px;height:24px;border-radius: 12px;border-width: 1px; border-style: solid;}
 
 .ruleList-container, .RuleInfo-container{ max-height: 80vh; overflow-y: auto;}
 .ruleList-container table{ width:100%;}

@@ -1,7 +1,7 @@
 import React from 'react';
 import {RuleListRowElement,APIQuery} from '../index';
 
-const localClassName = ['ruleList-container', 'table-contaier', 'L50-margins', 'scrollbar-small'],
+const localClassName = ['ruleList-container', 'table-container', 'L50-margins', 'scrollbar-small'],
   sp = ' ',
   prefix = 'keyx_';
 
@@ -13,7 +13,7 @@ export default class RulesList extends React.Component{
       els: []
     };
   }
-  
+
   componentWillReceiveProps( props ){
     if ( props.href ){
       APIQuery(props.href, res => this.setState({els: res.data}));

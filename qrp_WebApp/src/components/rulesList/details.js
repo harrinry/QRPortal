@@ -12,11 +12,11 @@ export default class RuleDetails extends React.Component{
           <div className='tags-container'>
             <ul>{this.props.data.qualityStandards.id}</ul>
           </div>
-          <div className='critical-container'>
-            <p>{this.props.data.critical}</p>
-          </div>
           <div className='weight-container'>
-            <p>{this.props.data.weight}</p>
+            {this.props.data.weight}
+          </div>
+          <div className='critical-container'>
+            {this.props.data.critical ? 'nbsp;':undefined}
           </div>
           <div className='description-container'>
             <p className='rulesection'>Description</p>
