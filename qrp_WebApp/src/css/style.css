@@ -114,6 +114,22 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
   opacity: 0;
   transition: 0.2s ease-in;
 }
+
+.dropOnhoverLarge{
+  position: absolute;
+  width: 160px;
+  margin-left: -80px;
+  margin-top: 80px;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+
+.bodyElement:hover > .dropOnhoverLarge{
+  margin-top: 132px;
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+
 .bodyElementTechno:hover > .dropOnhover{
   margin-top: 102px;
   opacity: 1;

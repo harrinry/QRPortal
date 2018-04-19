@@ -19918,39 +19918,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Body = function (_React$Component) {
   _inherits(Body, _React$Component);
 
-  function Body(props) {
+  function Body() {
     _classCallCheck(this, Body);
 
-    var _this = _possibleConstructorReturn(this, (Body.__proto__ || Object.getPrototypeOf(Body)).call(this, props));
-
-    _this.state = {};
-
-    _index.Radio.listen(_index.LOADRULESLIST, _this.LoadRuleList.bind(_this));
-    _index.Radio.listen(_index.RETURNTOSTART, _this.hideRuleList.bind(_this));
-    return _this;
+    return _possibleConstructorReturn(this, (Body.__proto__ || Object.getPrototypeOf(Body)).apply(this, arguments));
   }
 
   _createClass(Body, [{
-    key: 'hideRuleList',
-    value: function hideRuleList() {
-      this.setState({
-        rulesVisible: false
-      });
-      history.pushState(null, null, '/');
-      _index.Radio.emit(_index.UNSELECTME);
-    }
-  }, {
-    key: 'LoadRuleList',
-    value: function LoadRuleList(url, name) {
-      this.setState({
-        rulesVisible: true,
-        title: name,
-        rulesHref: url
-      });
-
-      (0, _index.UpdateURL)(url, name);
-    }
-  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -19965,11 +19939,7 @@ var Body = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'rules' },
-          _react2.default.createElement(_index.RulesBody, { visible: this.state.rulesVisible,
-            icon: this.state.title,
-            title: this.state.title,
-            href: this.state.rulesHref,
-            details: this.state.details })
+          _react2.default.createElement(_index.Rules, null)
         )
       );
     }
@@ -20067,6 +20037,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var cn = 'dropOnhoverLarge';
+
 var BodyElement = function (_React$Component) {
   _inherits(BodyElement, _React$Component);
 
@@ -20086,7 +20058,11 @@ var BodyElement = function (_React$Component) {
           'a',
           { href: this.props.href },
           this.props.value
-        ) : this.props.value
+        ) : _react2.default.createElement(
+          'span',
+          { className: this.props.slideDown ? cn : undefined },
+          this.props.value
+        )
       );
     }
   }]);
@@ -20365,6 +20341,99 @@ exports.default = SlidedownMenu;
 
 /***/ }),
 
+/***/ "./qrp_WebApp/src/components/elements/rules/rulesSticky.js":
+/*!*****************************************************************!*\
+  !*** ./qrp_WebApp/src/components/elements/rules/rulesSticky.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__(/*! ../../index */ "./qrp_WebApp/src/components/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var localClassName = ['rulesList-container', 'static-overlay'],
+    visibleClass = 'visible',
+    sp = ' ';
+
+var Rules = function (_React$Component) {
+  _inherits(Rules, _React$Component);
+
+  function Rules() {
+    _classCallCheck(this, Rules);
+
+    var _this = _possibleConstructorReturn(this, (Rules.__proto__ || Object.getPrototypeOf(Rules)).call(this));
+
+    _this.state = {};
+
+    _index.Radio.listen(_index.LOADRULESLIST, _this.LoadRuleList.bind(_this));
+    _index.Radio.listen(_index.RETURNTOSTART, _this.hideRuleList.bind(_this));
+    return _this;
+  }
+
+  _createClass(Rules, [{
+    key: 'hideRuleList',
+    value: function hideRuleList() {
+      this.setState({
+        rulesVisible: false
+      });
+      history.pushState(null, null, '/');
+      _index.Radio.emit(_index.UNSELECTME);
+    }
+  }, {
+    key: 'LoadRuleList',
+    value: function LoadRuleList(url, name) {
+      this.setState({
+        rulesVisible: true,
+        title: name,
+        rulesHref: url
+      });
+
+      (0, _index.UpdateURL)(url, name);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(_index.RulesBody, { visible: this.state.rulesVisible,
+        icon: this.state.title,
+        title: this.state.title,
+        href: this.state.rulesHref,
+        details: this.state.details });
+    }
+  }, {
+    key: 'getContainerClass',
+    value: function getContainerClass(props) {
+      return props && props.visible ? localClassName.concat(visibleClass).join(sp) : localClassName.join(sp);
+    }
+  }]);
+
+  return Rules;
+}(_react2.default.Component);
+
+exports.default = Rules;
+
+/***/ }),
+
 /***/ "./qrp_WebApp/src/components/elements/standards/elements.js":
 /*!******************************************************************!*\
   !*** ./qrp_WebApp/src/components/elements/standards/elements.js ***!
@@ -20445,7 +20514,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var idPrefix = 'BC_',
     MainDivClassName = 'bodyRow container block';
 
-var casticon = '/img/castsoftware.svg';
+//const casticon = '/img/castsoftware.svg';
 
 var Standards = function (_React$Component) {
   _inherits(Standards, _React$Component);
@@ -20479,11 +20548,11 @@ var Standards = function (_React$Component) {
         'div',
         { className: MainDivClassName },
         _react2.default.createElement(_index.BodyTitle, { value: _title.Title }),
-        _react2.default.createElement(_index.BodyBlock, { value: [_react2.default.createElement(_index.BodyElement, { key: key++, value: _elements.CAST, className: 'bodyElement inline casticon', onclick: function onclick() {
+        _react2.default.createElement(_index.BodyBlock, { value: [_react2.default.createElement(_index.BodyElement, { key: key++, slideDown: true, value: _elements.CAST, className: 'bodyElement inline casticon', onclick: function onclick() {
               return (0, _index.APIQuery)(_queries.businessCrit, _this2.getBusinessCritera.bind(_this2));
-            } }), _react2.default.createElement(_index.BodyElement, { key: key++, value: _elements.CISQ, className: 'bodyElement inline cisqicon', onclick: function onclick() {
+            } }), _react2.default.createElement(_index.BodyElement, { key: key++, slideDown: true, value: _elements.CISQ, className: 'bodyElement inline cisqicon', onclick: function onclick() {
               return (0, _index.APIQuery)(_queries.qualityStandards, _this2.getCisqStandards.bind(_this2));
-            } }), _react2.default.createElement(_index.BodyElement, { key: key++, value: _elements.OWASP, className: 'bodyElement inline owaspicon', onclick: function onclick() {
+            } }), _react2.default.createElement(_index.BodyElement, { key: key++, slideDown: true, value: _elements.OWASP, className: 'bodyElement inline owaspicon', onclick: function onclick() {
               return (0, _index.APIQuery)(_queries.qualityStandards, _this2.getOwaspStandards.bind(_this2));
             } })] }),
         _react2.default.createElement(_index.SlidedownMenu, { value: this.state.menuData, visible: this.state.menuVisible })
@@ -20997,6 +21066,15 @@ Object.defineProperty(exports, 'Standards', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_standards).default;
+  }
+});
+
+var _rulesSticky = __webpack_require__(/*! ./elements/rules/rulesSticky */ "./qrp_WebApp/src/components/elements/rules/rulesSticky.js");
+
+Object.defineProperty(exports, 'Rules', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_rulesSticky).default;
   }
 });
 

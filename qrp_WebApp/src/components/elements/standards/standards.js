@@ -8,7 +8,7 @@ import {LOADRULESLIST} from '../../actions/actions';
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
 
-const casticon = '/img/castsoftware.svg';
+//const casticon = '/img/castsoftware.svg';
 
 export default class Standards extends React.Component {
   constructor(props){
@@ -30,9 +30,9 @@ export default class Standards extends React.Component {
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
       <BodyBlock value={[
-        <BodyElement key={key++} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
-        <BodyElement key={key++} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
-        <BodyElement key={key++} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
+        <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
+        <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
+        <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
       ]}/>
       <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
