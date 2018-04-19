@@ -79,6 +79,7 @@
 .R50-margins{ float: right; width: calc(50%)}
 .static-overlay{ top: 60px; bottom:0px; left: 0; width: 100%; height: 100%; position: fixed; display: none; background: white; z-index: 2;}
 .static-overlay.visible{ display: block;}
+
 pre {
   background-color: #EEEEEE;padding: 10px; margin: 10px;
   border-radius: 4px;
@@ -97,8 +98,8 @@ pre {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-.critical-container{position: absolute; right:0px; float:right; width:24px;height:24px;background: url("/image/criticalrule.png") no-repeat center center;background-size: 24px 24px}
-.weight-container{float:right;wdith:24px;height:24px;border-radius: 12px;border-width: 1px; border-style: solid;}
+.critical-container{right:30px; margin-right:8px; margin-top:20px; float:right; width:24px; height:24px; background: url("/img/criticalrule.png") no-repeat center center;background-size: 24px 24px}
+.weight-container{color:black; margin-right:8px; margin-top:20px; float:right; width:22px; height:22px;border-radius: 12px;border-width: 1px; border-style: solid;}
 
 .ruleList-container, .RuleInfo-container{ max-height: 80vh; overflow-y: auto;}
 .ruleList-container table{ width:100%;}
@@ -110,6 +111,8 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
 .table-cell{padding: 6px;}
 .critical-cell{padding-right: 26px; padding-left: 26px; background: url("/img/criticalrule.png") no-repeat center center; background-size: 16px 16px}
 
+.detailssection{padding-left: 10px;}
+.ruleTitle{padding-left: 10px;}
 .rulesection{color:#1A4F8E; font-weight: bold; }
 
 .dropOnhover{
@@ -146,3 +149,12 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
   height: 100px;
   width: 100px;
 }
+
+.noruleselected{/* No Rule Selected: */
+  text-align: center;
+  float: right;
+  width: calc(50%);
+font-family: HelveticaNeue;
+font-size: 18px;
+color: #9B9B9B;
+letter-spacing: 1px;}
