@@ -19841,7 +19841,10 @@ var App = function (_React$Component) {
           rlDH = qryParams.rlDH;
 
       _index.Radio.emit(_index.LOADRULESLIST, rlH, rlName);
-      if (rlDH) _index.Radio.emit(_index.lOADDETAILS, rlDH);
+      if (rlDH) {
+        _index.Radio.emit(_index.lOADDETAILS, rlDH);
+        _index.Radio.emit(_index.SELECTME, rlDH);
+      }
     }
   }, {
     key: 'render',
@@ -20126,6 +20129,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var cn = 'dropOnhover';
+
 var BodyElementTechno = function (_React$Component) {
   _inherits(BodyElementTechno, _React$Component);
 
@@ -20147,7 +20152,7 @@ var BodyElementTechno = function (_React$Component) {
           this.props.value
         ) : _react2.default.createElement(
           'span',
-          null,
+          { className: cn },
           this.props.value
         )
       );
@@ -20720,6 +20725,14 @@ var Technologies = function (_React$Component) {
   }
 
   _createClass(Technologies, [{
+    key: 'shouldComponentUpdate',
+    value: function shouldComponentUpdate(nextProps, nextState) {
+      if (!nextProps && !nextState) return false;
+      if (this.state.data) return false;
+
+      return true;
+    }
+  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
       var _this2 = this;
@@ -20742,6 +20755,7 @@ var Technologies = function (_React$Component) {
       var _this3 = this;
 
       if (this.state.data) {
+        var ID = 'id';
         var key = 0,
             cpp = void 0,
             dotNet = void 0,
@@ -20760,10 +20774,10 @@ var Technologies = function (_React$Component) {
                   urls = u.map(function (o) {
                 return o.href;
               });
-              t.href = _index.MultiQuery.apply(undefined, _toConsumableArray(urls));
-              t.name = 'C/C++';
-              return _react2.default.createElement(_index.BodyElementTechno, { key: key++ /*url={ICONURLS[t.name]}*/, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
-                  return _index.Radio.emit(_index.LOADRULESLIST, t.href, t.name);
+              var href = _index.MultiQuery.apply(undefined, [ID].concat(_toConsumableArray(urls))),
+                  name = 'C/C++';
+              return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
+                  return _index.Radio.emit(_index.LOADRULESLIST, href, name);
                 }, id: t.id, title: t.title });
             } else if (i === 3 && !dotNet) {
               dotNet = true;
@@ -20776,15 +20790,15 @@ var Technologies = function (_React$Component) {
                   _urls = _u.map(function (o) {
                 return o.href;
               });
-              t.href = _index.MultiQuery.apply(undefined, _toConsumableArray(_urls));
-              t.name = 'RPG';
-              return _react2.default.createElement(_index.BodyElementTechno, { key: key++ /*url={ICONURLS[t.name]}*/, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
-                  return _index.Radio.emit(_index.LOADRULESLIST, t.href, t.name);
+              var _href = _index.MultiQuery.apply(undefined, [ID].concat(_toConsumableArray(_urls))),
+                  _name = 'RPG';
+              return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: _name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
+                  return _index.Radio.emit(_index.LOADRULESLIST, _href, _name);
                 }, id: t.id, title: t.title });
             }
             return;
           }
-          return _react2.default.createElement(_index.BodyElementTechno, { key: key++ /*url={ICONURLS[t.name]}*/, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
+          return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
               return _index.Radio.emit(_index.LOADRULESLIST, t.href, t.name);
             }, id: t.id, title: t.title });
         });
@@ -21153,6 +21167,12 @@ Object.defineProperty(exports, 'UNSELECTME', {
     return _actions.UNSELECTME;
   }
 });
+Object.defineProperty(exports, 'SELECTME', {
+  enumerable: true,
+  get: function get() {
+    return _actions.SELECTME;
+  }
+});
 
 var _actions2 = __webpack_require__(/*! ./actions/actions */ "./qrp_WebApp/src/components/actions/actions.js");
 
@@ -21200,6 +21220,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 var lOADDETAILS = exports.lOADDETAILS = 'LoadDetailsFromListEvent_Click';
 var UNSELECTME = exports.UNSELECTME = 'IfIamSelectedUnselectMeNow';
+var SELECTME = exports.SELECTME = 'IfIamNotSelectedselectMeNow';
 
 /***/ }),
 
@@ -21256,6 +21277,7 @@ var RulesContainer = function (_React$Component) {
       (0, _index.APIQuery)(url, function (res) {
         _this2.setState({ details: res.data });
         (0, _index.UpdateURL)(null, null, url);
+        _index.Radio.emit(_actions.SELECTME, url);
       });
     }.bind(_this));
 
@@ -21328,148 +21350,151 @@ var RuleDetails = function (_React$Component) {
   _createClass(RuleDetails, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: localClassName.join(sp) },
-        _react2.default.createElement(
-          'h2',
-          { className: 'ruleTitle' },
-          this.props.data ? this.props.data.name : undefined
-        ),
-        _react2.default.createElement(
+      if (this.props.data) {
+        return _react2.default.createElement(
           'div',
-          { className: 'tags-container' },
+          { className: localClassName.join(sp) },
           _react2.default.createElement(
-            'ul',
-            null,
-            this.props.data ? this.props.data.qualityStandards.id : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'critical-container' },
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.data ? this.props.data.critical : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'weight-container' },
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.data ? this.props.data.weight : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'description-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Description'
+            'h2',
+            { className: 'ruleTitle' },
+            this.props.data.name
           ),
           _react2.default.createElement(
-            'p',
-            null,
-            this.props.data ? this.props.data.description : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'rationale-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Rationale'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.data ? this.props.data.rationale : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'remediation-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Remediation'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.data ? this.props.data.remediation : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'sample-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Sample'
-          ),
-          _react2.default.createElement(
-            'pre',
-            null,
+            'div',
+            { className: 'tags-container' },
             _react2.default.createElement(
-              'code',
+              'ul',
               null,
-              this.props.data ? this.props.data.sample : undefined
+              this.props.data.qualityStandards.id
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'critical-container' },
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.data.critical
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'weight-container' },
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.data.weight
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'description-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Description'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.data.description
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'rationale-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Rationale'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.data.rationale
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'remediation-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Remediation'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              this.props.data.remediation
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'sample-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Sample'
+            ),
+            _react2.default.createElement(
+              'pre',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                this.props.data.sample
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'remediationsample-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Remediation Sample'
+            ),
+            _react2.default.createElement(
+              'pre',
+              null,
+              _react2.default.createElement(
+                'code',
+                null,
+                this.props.data.remediationSample
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'reference-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Reference'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'textrule' },
+              this.props.data.reference
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'output-container' },
+            _react2.default.createElement(
+              'p',
+              { className: 'rulesection' },
+              'Output'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'textrule' },
+              this.props.data.output
             )
           )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'remediationsample-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Remediation Sample'
-          ),
-          _react2.default.createElement(
-            'pre',
-            null,
-            _react2.default.createElement(
-              'code',
-              null,
-              this.props.data ? this.props.data.remediationSample : undefined
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'reference-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Reference'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'textrule' },
-            this.props.data ? this.props.data.reference : undefined
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'output-container' },
-          _react2.default.createElement(
-            'p',
-            { className: 'rulesection' },
-            'Output'
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'textrule' },
-            this.props.data ? this.props.data.output : undefined
-          )
-        )
-      );
+        );
+      }
+      return _react2.default.createElement('div', null);
     }
   }, {
     key: 'parseCodeSample',
@@ -21519,8 +21544,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var localClassName = 'table-row',
-    cellClass = 'table-cell',
-    prefix = 'letr_';
+    cellClass = 'table-cell' /*, prefix = 'letr_'*/;
 
 var RuleListRowElement = function (_React$Component) {
   _inherits(RuleListRowElement, _React$Component);
@@ -21542,6 +21566,14 @@ var RuleListRowElement = function (_React$Component) {
         });
       }
     });
+
+    _index.Radio.listen(_index.SELECTME, function (url) {
+      if (_this.state.href === url) {
+        _this.setState(function (_state) {
+          return { href: _state.href, selected: true };
+        });
+      }
+    });
     return _this;
   }
 
@@ -21549,9 +21581,7 @@ var RuleListRowElement = function (_React$Component) {
     key: 'dispatchLoadDetails',
     value: function dispatchLoadDetails() {
       _index.Radio.emit(_index.UNSELECTME);
-      this.setState(function (preState) {
-        return { href: preState.href, selected: true };
-      });
+      // this.setState( preState => { return { href: preState.href, selected: true}; });
       _index.Radio.emit(_index.lOADDETAILS, this.state.href);
     }
   }, {
@@ -21884,21 +21914,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = MultiQuery;
-function MultiQuery() {
-  for (var _len = arguments.length, urls = Array(_len), _key = 0; _key < _len; _key++) {
-    urls[_key] = arguments[_key];
+function MultiQuery(filter) {
+  for (var _len = arguments.length, urls = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    urls[_key - 1] = arguments[_key];
   }
 
   if (urls.length === 0) return;
 
-  var cleanUrls = urls.map(function (u) {
-    return u.replace(/\/mlturl\/\?u=/gi, '');
-  });
-
-  var pre = '/mlturl/',
-      qURLS = cleanUrls.map(function (u) {
+  var pre = '/mlturl/';
+  var qURLS = urls.map(function (u) {
     return 'u=' + u;
   }).join('&');
+  if (filter) qURLS += '&f=' + filter;
   return pre.concat('?', qURLS);
 }
 
@@ -22006,7 +22033,8 @@ function updateURL(href, name, detailsHref) {
     rlDH: detailsHref || undefined
   },
       valSeparator = '=',
-      propSeparator = '&';
+      propSeparator = '&',
+      qqstr = 'QRP_QueryStr';
 
   var qStr = ['?'];
 
@@ -22019,7 +22047,7 @@ function updateURL(href, name, detailsHref) {
 
   qStr.pop();
 
-  window.history.pushState(nextState, 'QRP_QueryStr', qStr.join(''));
+  window.history.pushState(nextState, qqstr, qStr.join(''));
 }
 
 /***/ })

@@ -9,6 +9,13 @@ export default class Technologies extends React.Component{
     this.state = {};
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    if ( !nextProps && !nextState ) return false;
+    if ( this.state.data ) return false;
+
+    return true;
+  }
+
   componentDidMount(){
     Axios.get( 'technologies.json' )
       .then((res)=> this.setState({data: res.data}))
@@ -22,6 +29,7 @@ export default class Technologies extends React.Component{
 
   render(){
     if( this.state.data ){
+      const ID = 'id';
       let key = 0, cpp, dotNet, rpm;
       const technos = this.state.data.map(t => {
         const i = this.filterIndex( t.id );
@@ -35,9 +43,9 @@ export default class Technologies extends React.Component{
                 }
               },this ),
               urls = u.map( o => o.href );
-            t.href = MultiQuery( ...urls );
-            t.name = 'C/C++';
-            return <BodyElementTechno key={key++} /*url={ICONURLS[t.name]}*/ value={t.name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>;
+            const href = MultiQuery(ID, ...urls ),
+              name = 'C/C++';
+            return <BodyElementTechno key={key++} value={name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, href, name)} id={t.id} title={t.title}/>;
           } else if ( i === 3 && !dotNet ){
             dotNet = true;
             return ;
@@ -45,13 +53,13 @@ export default class Technologies extends React.Component{
             rpm = true;
             const u = this.state.data.filter( e => this.filterIndex( e.id ) > 3),
               urls = u.map( o => o.href );
-            t.href = MultiQuery( ...urls );
-            t.name = 'RPG';
-            return <BodyElementTechno key={key++} /*url={ICONURLS[t.name]}*/ value={t.name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>;
+            const href = MultiQuery( ID, ...urls ),
+              name = 'RPG';
+            return <BodyElementTechno key={key++} value={name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, href, name)} id={t.id} title={t.title}/>;
           }
           return;
         }
-        return <BodyElementTechno key={key++} /*url={ICONURLS[t.name]}*/ value={t.name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>;
+        return <BodyElementTechno key={key++} value={t.name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>;
       });
 
       return ( <div className='bodyRow container block'>

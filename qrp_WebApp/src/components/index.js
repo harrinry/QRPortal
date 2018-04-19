@@ -28,7 +28,7 @@ export { default as UpdateURL } from '../modules/urlUpdater';
 export { default as MultiQuery } from '../modules/multiURLQueryBuilder';
 
 /* Global Actions */
-export { lOADDETAILS, UNSELECTME } from './rulesList/actions';
+export { lOADDETAILS, UNSELECTME, SELECTME } from './rulesList/actions';
 export { LOADRULESLIST } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
 export { default as ICONURLS } from './elements/technologies/technoIcons';

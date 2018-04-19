@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Header, Body, ParseQueryString, Radio, LOADRULESLIST, lOADDETAILS } from './components/index';
+import { Header, Body, ParseQueryString, Radio, LOADRULESLIST, lOADDETAILS, SELECTME } from './components/index';
 
 class App extends React.Component {
 
@@ -12,7 +12,10 @@ class App extends React.Component {
     const qryParams = ParseQueryString( url.search );
     const { rlH, rlName, rlDH } = qryParams;
     Radio.emit( LOADRULESLIST, rlH, rlName );
-    if ( rlDH ) Radio.emit( lOADDETAILS, rlDH );
+    if ( rlDH ){
+      Radio.emit( lOADDETAILS, rlDH );
+      Radio.emit( SELECTME, rlDH );
+    }
   }
 
   render(){

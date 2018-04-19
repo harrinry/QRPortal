@@ -1,7 +1,7 @@
 import React from 'react';
-import { Radio, lOADDETAILS, UNSELECTME} from '../index';
+import { Radio, lOADDETAILS, UNSELECTME, SELECTME} from '../index';
 
-const localClassName = 'table-row', cellClass = 'table-cell', prefix = 'letr_';
+const localClassName = 'table-row', cellClass = 'table-cell'/*, prefix = 'letr_'*/;
 
 export default class RuleListRowElement extends React.Component{
   constructor(props){
@@ -19,11 +19,19 @@ export default class RuleListRowElement extends React.Component{
         });
       }
     });
+
+    Radio.listen(SELECTME, ( url ) => {
+      if( this.state.href === url){
+        this.setState( _state => { 
+          return { href: _state.href, selected: true}; 
+        });
+      }
+    });
   }
 
   dispatchLoadDetails(){
     Radio.emit( UNSELECTME );
-    this.setState( preState => { return { href: preState.href, selected: true}; });
+    // this.setState( preState => { return { href: preState.href, selected: true}; });
     Radio.emit(lOADDETAILS, this.state.href);
   }
 

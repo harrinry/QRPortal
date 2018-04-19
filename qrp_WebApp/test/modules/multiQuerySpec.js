@@ -10,20 +10,7 @@ describe('MultiQuery Module ', () => {
       'technologies/138385.json'
     ];
 
-    const qString = MultiQuery( ...urls );
-
-    assert.equal( qString, '/mlturl/?u=technologies/1050571.json&u=technologies/-2.json&u=technologies/-3.json&u=technologies/138385.json' );
-  });
-
-  it('clean dirty queries', () => {
-    const urls = [
-      '/mlturl/?u=technologies/1050571.json',
-      '/mlturl/?u=technologies/-2.json',
-      '/mlturl/?u=technologies/-3.json',
-      '/mlturl/?u=technologies/138385.json'
-    ];
-
-    const qString = MultiQuery( ...urls );
+    const qString = MultiQuery(null, ...urls );
 
     assert.equal( qString, '/mlturl/?u=technologies/1050571.json&u=technologies/-2.json&u=technologies/-3.json&u=technologies/138385.json' );
   });

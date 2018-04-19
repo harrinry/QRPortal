@@ -57,7 +57,7 @@ app.get('/mlturl/*', (req, res)=>{
     const arr = q.u.map( u => require( path.join( __dirname, u)));
     r = [].concat(...arr);
   }
-  const uniqArr = UNIQ(r, val => val.id );
+  const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
   res.json(uniqArr);
 });
 /*app.get('/quality-standards/*', (req, res)=> {

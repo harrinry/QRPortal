@@ -8,7 +8,7 @@
 .header{ height: 60px; width: 100%; background: #1987FF; z-index: 1;}
 .menu-container{ height:60px; width:60px; background:#1A4F8E;}
 .hidden{display: none;}
-.visible{display: block;}
+.visible, .block{display: block;}
 .visible button {width:36px; height:36px;background-image: url('/img/navback.png'); background-size: 50% 100%; border:none; cursor:pointer; background-color:#1A4F8E;background-repeat: no-repeat;background-position: center;}
 .title{margin-left: 30px; font-size:22px;}
 
@@ -38,7 +38,7 @@
 .cisqicon:hover{background-image: url("/img/cisq.png");}
 .owaspicon:hover{background-image: url("/img/owasp.svg");}
 
-.bodyElementTechno{background: #FFFFFF; width:100px ;height:100px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin: 0 32px 20px 0; user-select: none;
+.bodyElementTechno{background: #FFFFFF; width:100px ;height:100px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin: 0 32px 32px 0; user-select: none;
   -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}
 .bodyElementTechno:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}
 .bodyElementTechno:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}
@@ -105,3 +105,22 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
 .table-cell{padding: 6px;}
 
 .rulesection{color:#1A4F8E; font-weight: bold; }
+
+.dropOnhover{
+  position: absolute;
+  width: 100px;
+  margin-left: -50px;
+  margin-top: 80px;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+.bodyElementTechno:hover > .dropOnhover{
+  margin-top: 102px;
+  opacity: 1;
+  transition: 0.2s ease-in;
+}
+
+.fixed100{
+  height: 100px;
+  width: 100px;
+}

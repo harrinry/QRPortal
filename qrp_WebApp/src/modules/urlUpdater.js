@@ -5,7 +5,7 @@ export default function updateURL( href, name, detailsHref ){
       rlName: name || (prevState ? prevState.rlName : undefined),
       rlDH: detailsHref || undefined
     },
-    valSeparator = '=', propSeparator = '&';
+    valSeparator = '=', propSeparator = '&', qqstr = 'QRP_QueryStr';
 
   let qStr = ['?'];
   
@@ -18,5 +18,5 @@ export default function updateURL( href, name, detailsHref ){
 
   qStr.pop();
 
-  window.history.pushState( nextState, 'QRP_QueryStr', qStr.join('') );
+  window.history.pushState( nextState, qqstr, qStr.join('') );
 }
