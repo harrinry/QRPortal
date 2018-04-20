@@ -16,15 +16,16 @@ export default class Header extends React.Component{
     }.bind(this));
 
   }
-  
+
   render(){
     return (
       <div className='fixedTop header'>
         <div className='left menu-container'>
           <div className='menu-icon square30 borderWhite'>
-            <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}>Back</button></div>
+            <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}></button></div>
           </div>
           <div className='hidden menu-elements'></div>
+          <div className='titleheader'><b>CAST</b> Structural Rules</div>
         </div>
         <div className='search-container right'>
           <div className='search-icon inline'></div>

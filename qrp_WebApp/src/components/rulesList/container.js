@@ -1,6 +1,6 @@
 import React from 'react';
 import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL } from '../index';
-import {lOADDETAILS} from './actions';
+import {lOADDETAILS, SELECTME} from './actions';
 
 const localClassName = ['rule-container', 'block'],
   sp = ' ';
@@ -16,6 +16,7 @@ export default class RulesContainer extends React.Component{
       APIQuery(url, (res) => {
         this.setState({ details: res.data });
         UpdateURL( null, null, url );
+        Radio.emit( SELECTME, url);
       });
     }.bind(this));
 
