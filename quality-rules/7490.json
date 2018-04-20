@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid UPDATE trigger firing when not necessary",
     "href": "quality-rules/7490.json",
+    "critical": true,
     "associatedValueName": "Hibernate Entity name",
     "description": "Reports Hibernate Entities that does not set select-before-update property to true and that are associated to a table that fires an UPDATE trigger.",
     "output": "List all Hibernate Entity that don't use select-before-update and that are associated to a table that fires an UPDATE trigger.\n\nIt provides the following information:\n XML File, Hibernate Entity",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "'Initialize ancestors when overriding __init__'",
     "href": "quality-rules/1021022.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Single Value",
     "description": "Inheritance in object-oriented programming allows code reuse between hierarchically related classes. In Python by default the subclass inherits all of the methods including the __init__ method which is usually used for instance member initialization. However the subclass can replace any particular implementation that has inherited. To avoid accidental access to uninitialized instance members we strongly suggest you to initialize ancestor classes in the overriden __init__ method or to reconsider refactoring the code so that no inheritance is needed.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

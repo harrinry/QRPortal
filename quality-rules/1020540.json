@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using $http success and error function",
     "href": "quality-rules/1020540.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "This rule expects that when you're not using the $http methods success() and error(). This rule is compliant with CISQ OMG ASCRM-CWE-396, ASCRM-CWE-397 and ASCRM-RLB-01 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that each web service callback is going to be properly checked in order to make sure you will not miss any problem that occurred in your application and you will give the information to the user.",
@@ -43,8 +45,8 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCRM-RLB-1",
-            "name": "Empty Exception Block",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
             "reference": null,
             "description": null
         },
@@ -57,8 +59,8 @@
         },
         {
             "standard": "CISQ",
-            "id": "ASCRM-CWE-396",
-            "name": "Declaration of Catch for Generic Exception",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
             "reference": null,
             "description": null
         }

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Prefer boolean operators (EXISTS, NOT EXISTS) and non-negative predicates",
     "href": "quality-rules/1600518.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "Check the use of negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=)",
     "rationale": "Negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=) are statements that generates full scan.\nThis rule is a best practice on query construction to improve performances.",
     "reference": "2.3",

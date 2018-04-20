@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Javascript Object typecheck in AngularJS application",
     "href": "quality-rules/1020524.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "You should use the angular.isObject method instead of the default JavaScript implementation (typeof {} === \"[object Object]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, you should use AngularJS isObject.",
@@ -41,13 +43,6 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCRM-CWE-704",
-            "name": "Incorrect Type Conversion or Cast",
-            "reference": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-20",
             "name": "Unreachable Named Callable or Method Control Element",
             "reference": null,
@@ -57,6 +52,13 @@
             "standard": "CISQ",
             "id": "ASCRM-CWE-252-data",
             "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-704",
+            "name": "Incorrect Type Conversion or Cast",
             "reference": null,
             "description": null
         }

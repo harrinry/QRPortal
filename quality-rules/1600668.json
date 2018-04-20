@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Do not define a recordField EFFDT or EFF_STATUS without the other",
     "href": "quality-rules/1600668.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Either 'Missing EFF_STATUS' or 'Missing EFFDT'",
     "description": "When EFFDT is used on a non-employee data record, the EFF_STATUS field should also be defined for the record. Do not define only one without the other.",
     "output": "This report lists all the PeopleSoft Records with either EFFDT or EFF_STATUS but not the other",

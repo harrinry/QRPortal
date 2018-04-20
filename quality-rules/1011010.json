@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Logical File without associated Physical File  (DDS400)",
     "href": "quality-rules/1011010.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for all the Logical files not having associated a Physical File.",
     "output": "This report lists DDS400 Logical File not associated with physical file.\nIt provides the following information:\nDDS400 Logical File full name",
     "rationale": "This is an indication of a unused LF and that means that it always need to be associated with  PF. Can also be a missing PF delivery.",

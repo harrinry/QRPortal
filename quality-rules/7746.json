@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "CWE-90: Avoid LDAP injection vulnerabilities",
     "href": "quality-rules/7746.json",
+    "critical": true,
     "associatedValueName": "Call stack from user input source down to the target LDAP execution method",
     "description": "Using CAST dataflow engine, this metric detects paths from user input methods down to LDAP methods which are open vulnerabilities to LDAP injection flaws ( LDAP : Lightweight Directory Access Protocol ). \nThe list of user input methods can be customized as well as the target methods and the sanitization methods (methods encoding the user input to avoid hacks).",
     "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target LDAP execution method.",
@@ -39,6 +40,26 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-90",
+            "name": "Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",
+            "reference": "https://cwe.mitre.org/data/definitions/90.html",
+            "description": null
+        }
     ]
 }

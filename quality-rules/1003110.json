@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid function that are too long (Flex)",
     "href": "quality-rules/1003110.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Rule detects methods with more than 20 lines,",
     "rationale": "Violations of this rule usually indicate that the method has too much responsibility. Try to reduce the method size by creating helper methods and removing any copy/pasted code.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

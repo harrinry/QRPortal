@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Persistent classes should Implement hashCode() and equals()",
     "href": "quality-rules/7504.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all persistent classes that don't implement equals() or hashCode() directly (class that is referenced in the mapping file) or in an inherited class that holds persistent fields (this is the case when a persistent class makes persistent inherited fields).",
     "output": "List all Hibernate and JPA persistent classes that don't implement equals() or hashCode() directly or in an inherited class that holds persistent fields.\n\nIt provides the following information:\n- Class Full Name",

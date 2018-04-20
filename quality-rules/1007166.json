@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having properties with __get and no __set (PHP)",
     "href": "quality-rules/1007166.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the classes containing attributes with a __get property and no __set property.",
     "output": "This report lists all the classes containing attributes with a __get property and no __set property.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "In PHP source code if there is a write action to a property that does not exist and there is no '__set'-method, the property will be created. The '__get' method will only be called if there is no property with the given name.  So having properties without a __set method could produce unexpected values for the __get method of the same property.",

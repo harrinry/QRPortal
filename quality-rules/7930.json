@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid redeclaring and overriding Methods with different default parameter values",
     "href": "quality-rules/7930.json",
+    "critical": false,
+    "maxWeight": 2,
     "associatedValueName": "Overridden method",
     "description": "This rule searches for C++ methods redeclaring and overriding methods that assign different default parameter values. \n\nNote: the same parameters expressed differently (such as 2 +2 instead of 4) are considered as different.",
     "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- The name of the overridden method\n- Bookmarks for violation patterns found in the source code:\n  - Overridden method",

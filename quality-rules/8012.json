@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unchecked return code (SY-SUBRC) after opening and reading dataset",
     "href": "quality-rules/8012.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for all ABAP artifacts that open and read datasets but do not check the value of the return code SY-SUBRC.\nThe rule takes in account the following cases:\n- Use of a temporary variable\n\nOPEN DATASET dsn FOR INPUT IN TEXT MODE ENCODING DEFAULT.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nOPEN DATASET dsn FOR INPUT IN TEXT MODE ENCODING DEFAULT.\n\nWRITE: / Do some testing.\n\nIF SY-SUBRC NE 0.\n    list of statements\nEND-IF.\n    ",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

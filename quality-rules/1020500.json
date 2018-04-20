@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid the use of the default JavaScript implementation [].forEach in AngularJS web app",
     "href": "quality-rules/1020500.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "You should use the angular.forEach method instead of the default JavaScript implementation [].forEach. The rule is compliant with the CISQ OMG recommendation ASCSM-CWE-835 and ASCMM-MNT-20",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, in addtition AngularJS foreach function will check the loop exit condition value.",
@@ -36,15 +38,15 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCSM-CWE-835",
-            "name": "Loop with Unreachable Exit Condition (Infinite Loop)",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
             "reference": null,
             "description": null
         },
         {
             "standard": "CISQ",
-            "id": "ASCMM-MNT-20",
-            "name": "Unreachable Named Callable or Method Control Element",
+            "id": "ASCSM-CWE-835",
+            "name": "Loop with Unreachable Exit Condition (Infinite Loop)",
             "reference": null,
             "description": null
         }

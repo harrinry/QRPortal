@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid Fields in Servlet Classes that are not final static",
     "href": "quality-rules/7152.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Find all non final static fields that belong to Servlets.\nAll Classes that extend HttpServlet at any level are considered as Servlets.",
     "output": "This report lists all non final static fields that belong to Servlet classes.\nIt provides the following information:\n  - Field full name",

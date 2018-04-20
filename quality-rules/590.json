@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using global objects in Constructors and Destructors",
     "href": "quality-rules/590.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Global object used",
     "description": "This rule searches for C++ constructors and destructors using global objects. Note that constructors and destructors using global variables defined in the same compilation are not considered as violating the rule.",
     "output": "Associated to each C++ destructor and destructor with violations, the Quality Rule provides:\n- The global object used\n- Bookmarks for violation patterns found in source code:\n  - global object used",

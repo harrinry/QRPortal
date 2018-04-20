@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid empty finally blocks",
     "href": "quality-rules/7782.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "This metric reports all methods with at least one empty finally block (empty or only containing comments). In a try and catch/finally statement, finally blocks should contain code to handle the thrown exception.",
     "output": "This report lists all Artifacts with an empty finally block. It provides the following information: Artifact full name",
@@ -62,14 +64,15 @@
             "id": 1020000,
             "name": "HTML5",
             "href": "technologies/1020000.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
+            "reference": null,
+            "description": null
+        }
     ]
 }

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid Open SQL queries in loops",
     "href": "quality-rules/7868.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "The rule searches for SELECT, INSERT, UPDATE, MODIFY, DELETE statements that are contained in loops. These loops are:\n- SELECT ... ENDSELECT\n- LOOP ... ENDLOOP\n- DO ... ENDDO\n- WHILE ... ENDWHILE\n- PROVIDE ... ENDPROVIDE",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

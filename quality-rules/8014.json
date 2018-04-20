@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
     "href": "quality-rules/8014.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches in ABAP code for AUTHORITY-CHECK declarations that are not followed by a test of SY-SUBC system field.\n    The rule takes in account the following cases:\n- Use of a temporary variable\n\nAUTHORITY-CHECK OBJECT 'F_BKPF_BUK'\n    ID 'BUKRS' FIELD p_bukrs\n    ID 'ACTVT' FIELD p_actvt.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nAUTHORITY-CHECK OBJECT 'F_BKPF_BUK'\n    ID 'BUKRS' FIELD p_bukrs\n    ID 'ACTVT' FIELD p_actvt.\n    \nWRITE: / Do some testing.\n\nIF SUBRC NE 0.\n    list of statements\nEND-IF.\n",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

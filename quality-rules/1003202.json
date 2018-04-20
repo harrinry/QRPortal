@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid public variables inside a custom event (Flex)",
     "href": "quality-rules/1003202.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.event.PublicVariableInCustomEventRule",
     "rationale": "In order to improve encapsulation in your custom event, it is better not to have public variable in your event. Prefer having read-only attributes, set by the event constructor.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

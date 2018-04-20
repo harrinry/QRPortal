@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid indirect exception handling inside loops",
     "href": "quality-rules/7956.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Associated Value",
     "description": "Reports all methods which contain a try/catch block and are called within a loop (for, while, do while) at a depth level less than <depth level>.\n\n<depth level> is a parameter that can be changed at will.",
     "output": "This reports all methods having a loop in which there is a call to a method that contains try/catch blocks.\nIt provides the following information:\n Method full name that has the loop, the call path from the method that contains the loop to the method that does the try/catch\n\nNote that:\n1/ The call path may contain different paths while only one is an error. For example:\nvoid myException(){\n     try{  throw exception(); }\n     catch(exception e){}\n}\n\nvoid g() {myException();}\n\nvoid  f() {\n       while (myCondition) { g ();}\n        g();\n        } \n\nwill report both path to g() while only one is a violation, the one that is called in the loop.\n\n2/ Several paths for the same method violating the rule are identified in the Metric Detail page by a sequence ID (in the Value column), this ID is dynamically set during each snapshot and the same path can have a different sequence ID in different snapshots.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using CALL FUNCTION without error handling",
     "href": "quality-rules/8120.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for ABAP artifacts that contain calls to function modules without error handling. \nIf the function module manages exceptions, then these should be referenced in the CALL FUNCTION and SY-SUBRC variable should be tested after.\nThe rule takes in account the following cases:\n- Use of a temporary variable\n\nCALL FUNCTION zzz.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nCALL FUNCTION zzz.\n\nWRITE: / Do some testing.\n\nIF SY-SUBRC NE 0.\n    list of statements\nEND-IF.\n",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to function modules without error handling\n- Bookmarks for violation patterns found in source code: \n  - CALL FUNCTION without error handling",

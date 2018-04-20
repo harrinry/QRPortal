@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid declaring Final Instance Variables that are not dynamically initialized",
     "href": "quality-rules/4572.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Final Fields should be declared as Static (Class Variable and not Instance Variable) if they are not dynamically initialized. Here is an example of dynamic initialization of a Final Instance Variable: 'public  final int nFact = (int) BasicObjectFactory.makeObject();'",
     "output": "This report lists all Final Instance Variables, except those that are dynamically initialized. It provides the following information: Field full name",

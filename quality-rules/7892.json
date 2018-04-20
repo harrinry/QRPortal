@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Web Dynpro - Avoid changing the program flow",
     "href": "quality-rules/7892.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule checks Web Dynpro source code for statements that can change the program flow such as \"LEAVE PROGRAM\", \"CALL TRANSACTION\", \"LEAVE TO TRANSACTION\" and \"SUBMIT\".",
     "output": "Associated to each ABAP Web Dynpro Method/Event Handler/Supply Function with violations, the Quality Rule provides:\n- The number of violation patterns",

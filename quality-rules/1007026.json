@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use identical type operator rather than \"equal\" operator (PHP)",
     "href": "quality-rules/1007026.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts using \"equal\" operators instead of type operator.",
     "output": "This report lists all artifacts that use implicit true checking or equal operators rather than identical type operators.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "To compare with type safety,identical type operators should be preffered over implicit true check or equal operators.",

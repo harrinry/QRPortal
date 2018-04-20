@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid event dispatched in a constructor (Flex)",
     "href": "quality-rules/1003150.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.event.ConstructorDispatchingEventRule",
     "rationale": "This is pointless, since event listeners cannot be attached to an object before it has been constructed, so nothing can ever hear the event",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

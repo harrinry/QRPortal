@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using break or continue statements in loops with high cyclomatic complexity (PHP)",
     "href": "quality-rules/1007176.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts containing break or continue statements in loops with high cyclomatic complexity.",
     "output": "This report lists all artifacts containing break or continue statements in loops with high cyclomatic complexity.\n\nThis QR provides the following information:\nArtifact full name",
     "rationale": "Using break or continue statements in loops with high cyclomatic complexity makes code unreadable and difficult to maintain.",

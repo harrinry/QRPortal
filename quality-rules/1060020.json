@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid empty catch blocks for methods with high fan-in",
     "href": "quality-rules/1060020.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "This metric reports all methods with at least one empty catch block (empty or only containing comments).\nIn a Try and Catch statement, Catch blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
     "output": "This report lists Artifacts with high fan-in having an empty catch block.\nIt provides the following information:\n- Artifact full name\n- Number of empty catch blocks",
@@ -62,6 +63,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
+            "reference": null,
+            "description": null
+        }
     ]
 }

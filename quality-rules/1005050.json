@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Programs having textLiteralDefaultIsString property set to YES (EGL)",
     "href": "quality-rules/1005050.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches for all the programs with textLiteralDefaultIsString set to YES.",
     "output": "This report provides the following information: Program full name",
     "rationale": "\"textLiteralDefaultIsString property must be set to NO\nThe textLiteralDefaultIsString property tells EGL how to deal with text literals.\nBy default, EGL treats a literal that has no explicit type declaration as a STRING. This can create conflict with VisualAge\u00ae Generator programs, where developers generally use fixed text variable types. In these programs it is inefficient to implement literals as variable length, Unicode strings which require time consuming conversions.\n\nIn addition, when passing a literal as an argument in a call , transfer , or show statement, the argument must match the type of the receiving parameter (generally a CHAR type in VisualAge Generator).\n\nIf you set textLiteralDefaultIsString to NO, EGL gives the literal an appropriate type for assignment to a VisualAge Generator parameter.\"",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid calling blocking functions with an infinite timeout",
     "href": "quality-rules/8054.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ methods that call blocking functions with the infinite timeout parameter. Functions that are detected by the rule are:\n- WaitForSingleObject() \n- WaitForMultipleObjects() \n- Sleep()",
     "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- the number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - blocking function call",

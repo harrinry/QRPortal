@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Close SQL connection ASAP",
     "href": "quality-rules/3612.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "SQL connection should be closed within the Method / Function / Sub that opened it",
     "output": "This report lists all Methods / Functions / Subs that do not close the SQL connections they opened\nIt provides the following information:  Method / Function / Sub full name",
@@ -52,15 +53,15 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCRM-CWE-772",
-            "name": "Missing Release of Resource after Effective Lifetime",
+            "id": "ASCPEM-PRF-15",
+            "name": "Storable and Member Data Element Reference Missing De-Referencing Control Element",
             "reference": null,
             "description": null
         },
         {
             "standard": "CISQ",
-            "id": "ASCPEM-PRF-15",
-            "name": "Storable and Member Data Element Reference Missing De-Referencing Control Element",
+            "id": "ASCRM-CWE-772",
+            "name": "Missing Release of Resource after Effective Lifetime",
             "reference": null,
             "description": null
         }

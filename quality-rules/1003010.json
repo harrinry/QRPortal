@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid class that imports an internal class from another function area (Flex)",
     "href": "quality-rules/1003010.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.architecture.UseInternalClassOutsideApiClass",
     "rationale": "If you have different functionalities, you probably do not want every class of each to be accessible from any other functional areas. This rule makes sure that no restricted classes is accessed from outside its own function area.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

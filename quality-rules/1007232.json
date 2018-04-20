@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having variables passed by reference when calling a function (PHP)",
     "href": "quality-rules/1007232.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Passing a variable by reference to a function will cause the original value to be changed if that variable is modified inside the called function\n\nSo we need to ensures that variables are not passed by reference when calling a function.",
     "output": "PHP Sections having variables passed by reference when calling a function",
     "reference": "Code Sniffer - https://github.com/squizlabs/PHP_CodeSniffer/blob/master/CodeSniffer/Standards/Generic/Sniffs/Functions/CallTimePassByReferenceSniff.php",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use only Struts HTTP Servlet",
     "href": "quality-rules/7700.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Servlet Class Name",
     "description": "When Struts is used, reports all Servlet that inherit from javax.servlet.http.HttpServlet but not from org.apache.struts.action.ActionServlet class.",
     "output": "This report lists all HTTP Servlets that don't inherit from Struts action Servlet.\nIt provides the following information:\n  Servlet Full Name, Servlet Class Name",

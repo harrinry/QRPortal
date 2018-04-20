@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using time() to get the system time (PHP)",
     "href": "quality-rules/1007210.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches all the methods, functions or PHP Sections having call to time() function.",
     "output": "This report lists all the Methods, Functions and PHP Sections having call to time() function.\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
     "rationale": "Using time()  can slow drastically your performances. Instead of using this function try to replace it with $_SERVER['REQUEST_TIME'] it is possible or just try to define only once and the use it whenever you need.",

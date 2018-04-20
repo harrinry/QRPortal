@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced CL Programs  (CL400)",
     "href": "quality-rules/1012016.json",
+    "critical": false,
+    "maxWeight": 0,
     "description": "This rule searches for CL400 programs which are not referenced by other objects.",
     "output": "This report lists all CL400 unreferenced programs.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "Unreferenced Sections and Paragraph may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis).",

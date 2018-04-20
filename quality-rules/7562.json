@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid static Field of type collection",
     "href": "quality-rules/7562.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "Reports all static field defined as a class or interface that implements:\n\n* java.util.Collection or java.util.Collection<E>\n\n* or java.util.Map or java.util.Map<K,V> except when:\n   - it is the class or a subclass of java.util.WeakHashMap or java.util.WeakHashMap<K,V>\n   - the field is defined as an interface and is initialized with an instance of the class or a subclass of  java.util.WeakHashMap or java.util.WeakHashMap<K,V>.",
     "output": "This report lists all static field defined as collection (class or interface).\nIt provides the following information:\n  Field full name",
@@ -42,6 +44,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-15",
+            "name": "Storable and Member Data Element Reference Missing De-Referencing Control Element",
+            "reference": null,
+            "description": null
+        }
     ]
 }

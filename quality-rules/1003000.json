@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid packages with high number of imports (Flex)",
     "href": "quality-rules/1003000.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.maintanability.ExcessiveImportRule",
     "rationale": "A high number of imports can indicate a high degree of coupling within an object. Rule counts the number of unique imports and reports a violation if the count is above 15.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

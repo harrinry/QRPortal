@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Copy Members  (RPG300)",
     "href": "quality-rules/1009124.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches all the unreferenced copy members.",
     "output": "This report lists RPG30 unreferenced copy members.\nIt provides the following information:\nRPG400 Copy Member full name",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance. \nWarning: \nUnreferenced code can also be the symptoms of missing code",

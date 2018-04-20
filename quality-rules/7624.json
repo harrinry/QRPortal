@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Class members should be declared as Private",
     "href": "quality-rules/7624.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Class member visibility",
     "description": "This rule searches for class members that are not declared as Private. The following situations are excluded from the list of violations:\n- Protected members belonging to a class having sub-classes\n- Public members declared with the addition READ-ONLY\n- Constants",
     "output": "Associated to each ABAP Class Member with violations, the Quality Rule provides:\n- The Class Member visibility",

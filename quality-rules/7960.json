@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid looping chain of synonyms in PL/SQL context",
     "href": "quality-rules/7960.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Synonym",
     "description": "This metric retrieves synonyms  that are part of a looping chain of synonym. Indeed through a series of CREATE synonym statements, a synonym could be defined and in fact refer to itself",
     "output": "This report lists all the ordered looping chain of synonyms :\nIt provides the following information:\n\nthe ordered list of each synonym that is part of the looping chain. The name of each synonym that is part of  the  full name,",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid disabling certificate check when requesting secured urls",
     "href": "quality-rules/1021032.json",
+    "critical": true,
     "associatedValueName": "Single Value",
     "description": "In Python, to avoid connection to unsecured source, developer has to ensure that all HTTP communication are encrypted. Avoid man-in-the-middle attacks by validating certificates on HTTPS connections to the server. This rule is compliant with OWASP A5 2013 and 2017 recommendations.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

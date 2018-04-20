@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid use of RCLRSC  (CL400)",
     "href": "quality-rules/1012020.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "This rule searches for CL400 programs using the RCLRSC command.",
     "output": "This report lists all CL400 programs using RCLRSC.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "This command can have effect on files which have been opened incorrectly. In this situation, it is better to open and close files correctly. \nMoreover, RCLRSC should only be used against files opened in the default activation group. If a file is opened out of one library from the library list which is used and if the library list is changed, then going back to files to be processed while references may need to be resolved to a library that is no longer available can lead to errors.",

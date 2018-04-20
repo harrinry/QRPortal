@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid Functions and Procedures with DB2 SQL containing the builtin function UPPER, LOWER or SUBSTR in the WHERE clause (PL1)",
     "href": "quality-rules/1001140.json",
+    "critical": true,
     "description": "This rule searches all PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL containing builtin function UPPER, LOWER or SUBSTR  in the WHERE clause.",
     "output": "This report lists all the PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL containing builtin function UPPER, LOWER or SUBSTR  in the WHERE clause.\n\nIt provides the following information: PL1 Main Procedures, PL1 Functions and PL1 Procedures full name.",
     "rationale": "A builtin function on column table increases CPU consumption and changes access path.",

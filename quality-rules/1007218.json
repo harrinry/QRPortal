@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
     "href": "quality-rules/1007218.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts that fetch database rows as array through call to xxx_fetch_array with xxx_NUM parameter or through xxx_fetch_row.",
     "output": "This report lists all artifacts that fetch database rows as array through call to xxx_fetch_array with xxx_NUM result type or through xxx_fetch_row. This QR provides the following information:\n- Artifact full name",
     "rationale": "Fetching database rows as array and accessing through subscript makes the program dependent on backend column order.",

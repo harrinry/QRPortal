@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "SiebelReview: Avoid Link using Search specifications on non-indexed Fields",
     "href": "quality-rules/1520490.json",
+    "critical": true,
     "associatedValueName": "Name of the Search Specification",
     "description": "Sorting or searching on non-indexed fields can have detrimental effects on database performance, especially on large tables, as it will produce table scans and temporary tables in the SQL execution plan.\nKeep in mind that pre-defined queries where the filter or sort is based on a non-indexed column will also result in a performance impact.",
     "output": "This rule reports Links using a non-indexed Search Specification",

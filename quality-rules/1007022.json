@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid artifacts using \"for\" loops which can be simplified to a \"while\" loop (PHP)",
     "href": "quality-rules/1007022.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts containing \"for\" loops which can be simplified to \"while\" loops.",
     "output": "This report lists all artifacts containing \"for\" loops which can be simplified to \"while\" loops.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "If for-loop does not have initialization and increment step, while loop is better suited.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Avoid disabling Deferred Processing on Components",
     "href": "quality-rules/1600494.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "By default, the property is activated.",
     "output": "Failed checks gives the number of components contain wrongly defined.",
     "rationale": "To improve online performance of internet applications, you must optimize the transmissions to the server. Optimizing transmissions improves overall processing speed and reduces the user's data entry time. Transactions that are designed using deferred mode reduce traffic to the application server but do not operate interactively.\nPeopleSoft applications can run in two different processing modes: interactive and deferred.\n-In interactive mode, when the user exits a field that has a field-level event, a transmission to the application server is performed to run that field-level event and the page is displayred again\n-Deferred mode enables you to defer many of the conditions that need server processing until running them on the application server is required or requested.",

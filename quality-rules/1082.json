@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid header files with a very low comment/code ratio",
     "href": "quality-rules/1082.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Comment/code ratio",
     "description": "This rule searches for header files that have a comment/code ratio less than X%. The threshold is a parameter that can be changed at will.",
     "output": "Associated to each C/C++ header file with violations, the Quality Rule provides:\n- The comment/code ratio",

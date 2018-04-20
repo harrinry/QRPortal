@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid non-indexed XXL SQL queries",
     "href": "quality-rules/1101006.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "\nThis metric retrieves the artifacts with at least one XXL table accessed on non-indexed columns.\nA SQL query is considered on indexed columns when all the following conditions are true:\n\n- At least one index is accessed for each XXL table\n- The access is on the left-most columns of the indexes\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",
     "output": "Associated to each Artifact with violations, the Quality Rule provides:\n- The number of violation patterns.\n- Each violation pattern shows :\n- the query \n- each XXL table accessed on non-indexed columns\n- the XXL table's indexes",

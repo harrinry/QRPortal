@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Casting from pointer to base Class to pointer to derived Class should be done through 'dynamic_cast' or 'static_cast'",
     "href": "quality-rules/8078.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Pointer incorrectly casted",
     "description": "This rule searches for C++ functions that do not cast a pointer to a base class to a pointer to a derived class by using a 'static_cast' or a 'dynamic_cast'.\nThis rule is deactivated by default. If you want to activate it, please deactivate the rule #8060.",
     "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- pointer incorrectly casted\n- Bookmarks for violation patterns found in source code:\n  - pointer cast\n  - source class\n  - target class",
@@ -39,16 +41,6 @@
             "id": -2,
             "name": "C",
             "href": "technologies/-2.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

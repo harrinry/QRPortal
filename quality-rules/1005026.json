@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Too Many Copy Pasted Artifacts (EGL)",
     "href": "quality-rules/1005026.json",
+    "critical": false,
+    "maxWeight": 9,
     "description": "This rule searches for all Copy-Pasted artifacts with custom parameters.",
     "output": "This report lists all Program having Copy Pasted Artifacts.\nIt provides the following information: Artifact full name, Copy Pasted Artifact full name",
     "rationale": "A program with a lot of duplication is hard to change. It might be required to change every copy of a copy/pasted code while it is very difficult to locate these  copy/pasted code elements. Copy-and-paste is not always bad for a quick urgent \"hack\", but it is always a very dangerous practice in the long run.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Subroutines with High Fan-In  (RPG300)",
     "href": "quality-rules/1009016.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches for the subroutines having High Fan-In.",
     "output": "This report lists RPG300 Subroutines with High Fan-In.\nIt provides the following information:\nRPG300 Subroutines full name",
     "rationale": "The higher the number of reference to an Soubroutine, the more difficult the maintenance as all referencing. Artifacts will have to be updated or tested.",

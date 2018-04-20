@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid 'catch-all' statement",
     "href": "quality-rules/8000.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for methods catching all exceptions (i.e. using the 'catch (...)' statement), except for 'main()' functions to catch unknown errors. This rule is compliant with OMG CISQ ASCRM-CWE-396 recommendation.",
     "output": "Associated to each C++ method with violations, the Quality Rule provides:\n  - the number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - catch (...)",
@@ -38,16 +40,6 @@
             "id": -3,
             "name": "C++",
             "href": "technologies/-3.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

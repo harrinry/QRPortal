@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using CALL METHOD without error handling",
     "href": "quality-rules/8122.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for ABAP artifacts that contain calls to class methods without error handling. \nIf the method manages exceptions, then these should be referenced in the CALL METHOD and SY-SUBRC variable should be tested after. \nSyntax <obj>->meth is also supported.\nThe rule takes in account the following cases:\n- Use of a temporary variable\n\nCALL METHOD zzz.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nCALL METHOD zzz.\n\nWRITE: / Do some testing.\n\nIF SY-SUBRC NE 0.\n    list of statements\nEND-IF.\n",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to class methods without error handling\n- Bookmarks for violation patterns found in source code: \n  - CALL METHOD without error handling",
@@ -42,6 +44,19 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-397",
+            "name": "Declaration of Throws for Generic Exception",
+            "reference": null,
+            "description": null
+        }
     ]
 }

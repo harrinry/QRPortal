@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using nested programs",
     "href": "quality-rules/7550.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs containing nested subprograms. A nested subprogram is a Cobol program defined at the end of the main program and is visible by this one only.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - IDENTIFICATION division of the nested subprogram",

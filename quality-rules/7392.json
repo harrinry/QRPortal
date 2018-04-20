@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having multiple artifacts deleting data on the same SQL table",
     "href": "quality-rules/7392.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of potential ways to delete the SQL Table",
     "description": "This metric detects tables having too many sources of delete data deletion (too many artifacts deleting them).  It retrieves table having more than X artifacts deleting these tables, where X a configurable parameter.",
     "output": "Associated to each SQL table with violations, the Quality Rule provides: \n- The Number of potential ways to delete data of the SQL Table.",

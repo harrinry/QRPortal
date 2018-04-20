@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
     "href": "quality-rules/8110.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule identifies client-side control elements that embed a number of data resource access actions that exceed a threshold value.\n\nThe threshold for the number of data queries is a parameter and can be changed at will. The default value is 2.",
     "output": "Associated to each Method in violation, the Quality Rule provides:\n- The number of SQL accesses\n- Bookmarks for violation patterns found in source code:\n- SQL access",

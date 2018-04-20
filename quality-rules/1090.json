@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Files",
     "href": "quality-rules/1090.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "File name",
     "description": "This rule searches for C files that are not referenced. \n\nNote: A file is considered as unreferenced if it does not contain any called function nor the main() function.",
     "output": "Associated to each C file with violations, the Quality Rule provides:\n- File name",

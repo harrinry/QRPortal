@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid Stateful Beans not removed",
     "href": "quality-rules/7940.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all classes that define an instance variable or local variable whose type is a local or remote business interface of a Stateful Session and that don't invoke the remove method in any of its methods. \nIt will also report these classes when the Stateful Session Bean doesn't implement the remove method.\n\nThe remove method is defined by means of the @Remove annotation or remove-method deployment descriptor element on the Sateful Session Bean.\n\nNote that in the case of several EJB instance there is not grantee that all EJB instance will be removed. \nWe only check there is at least one call to remove method for the concerned class",
     "output": "This report lists all classes that define a variable whose type is a remote or local business interface of a stateful bean and that don't call the remove method.\n\nIt provides the following information:\n     Class Full Name",

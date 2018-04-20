@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid addEventListener containing hard coded strings (Flex)",
     "href": "quality-rules/1003154.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.event.ListenForHardCodedEventNameRule",
     "rationale": "When creating your own custom Event class, you must override the inherited Event.clone() method in order for it to duplicate the properties of your custom class. If you do not set all the properties that you add in your event subclass, those properties will not have the correct values when the event is cloned. This is important because the Flex SDK clones events whenever redispatching takes place.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

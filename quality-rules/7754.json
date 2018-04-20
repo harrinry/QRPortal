@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using COMPUTE statement for elementary arithmetic operation",
     "href": "quality-rules/7754.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using the COMPUTE statement for elementary arithmetic operation.\n\nExpressions with only one binary operator (+, -, *, /) are taken into account. Expressions based on the exponentiation operator ('**') are not considered as violating the rule.\n\nExpression with only one operand (with or without an unary operator) are taken into account. Example:\n- A = B\n- A = -1\n- A = 0",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - COMPUTE statement",

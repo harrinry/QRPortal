@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid artifacts having recursive calls",
     "href": "quality-rules/7388.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This metric retrieves all artifacts that are explicitly calling themselves (recursive call). Only executable artifacts are considered.",
     "output": "This report lists all recursive artifacts.\nIt provides the following information:\n  artifact full name.",

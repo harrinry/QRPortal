@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Script Functions with High Fan-In (PHP)",
     "href": "quality-rules/1007008.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all Script Functions with High Fan-In.\n         The Fan-in of Script Function is the number of other Artifacts that are referencing it.\n         When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all Script Functions with a High Fan-In.\n               \nThis QR provides the following information:\nScript Function full name.",
     "rationale": "If an artifact is referenced by large number of artifacts, maintenance and evolution becomes difficult. This is because all the referencing artifacts need to be updated and\\or retested.",

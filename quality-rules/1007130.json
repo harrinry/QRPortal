@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Methods exceeding maximum length (PHP)",
     "href": "quality-rules/1007130.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the Methods exceeding the maximum length.\nA method is violating the rule when having more than 100 lines of code",
     "output": "This report lists all the Methods exceeding the maximum length.\n\nThis QR provides the following information:\nMethod  full name.",
     "rationale": "If a Method exceeds the maximum length this usually indicates that the class is doing too much and will therefore be difficult to understand and maintain.",

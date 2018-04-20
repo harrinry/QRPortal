@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid artifacts without proper switch case declarations (PSR2) (PHP)",
     "href": "quality-rules/1007230.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule reports all artifacts having control structures without proper switch case declarations.\nThis quality rules checks for following in switch case declaration:\n\n-Statements must be defined using a colon\n-Terminating statement must be on a line by itself\n-Terminating statement must be indented to the same level as the CASE body\n-There must be a comment when fall-through is intentional in a non-empty case body\n-Body must start on the line following the statement\n-There must be no space before the colon in a statement",
     "output": "This rule reports all artifacts having control structures without proper switch case declarations.\nIt provides the following information:\nArtifact full name.",
     "rationale": "Using the proper declaration in switch statements helps to read, understand, modify, maintain and enhance the code easily.",

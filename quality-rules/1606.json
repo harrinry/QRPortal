@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Triggers should not directly modify tables, a procedure or function should be used instead",
     "href": "quality-rules/1606.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Trigger name",
     "description": "This metric retrieves all database triggers which directly access tables for update, insert or delete operations.",
     "output": "This report lists all Triggers directly modifying data (insert, update or delate) in Tables.\n\nIt provides the following information:\n\n\n- Trigger full name, \n- accessed Table",

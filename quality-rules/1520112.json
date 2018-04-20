@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "SiebelReview: Missing Join Specification for Custom Joins",
     "href": "quality-rules/1520112.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "Join specifications provide the relationship information needed to connect two tables when an SQL statement is generated at run time.\nIf no join specification is provided, but columns from the joined table are used in the BusComp, the table will be included in the FROM statement using the default join of TABLE1.ROW_ID = TABLE2.ROW_ID.\nWith the exception of an extension table, where the ROW_ID of the extension table is generally the same as that of the parent table, this join will never return a match.\n* For an inner join, no rows will be returned.\n* For an outer join, a row will be returned from the parent table, but no child record will ever be returned.",
     "output": "This rule reports all Joins without specification",
     "rationale": "Joins configured without setting the relevant join specification have been found in the supplied repository.  These joins have at least one field associated to them.",

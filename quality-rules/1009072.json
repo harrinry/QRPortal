@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using dynamic SQL (EXECUTE IMMEDIATE)  (RPG300)",
     "href": "quality-rules/1009072.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches all the aryifacts using dynamic SQL (EXECUTE IMMEDIATE)",
     "output": "This report lists RPG300 programs using dynamic SQL (EXECUTE IMMEDIATE).\nIt provides the following information:\nRPG300 Program full name",
     "rationale": "Dynamic SQL is difficult to test and can decrease the code understanding.",

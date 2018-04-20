@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Universal Selectors",
     "href": "quality-rules/1020316.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "Avoid Universal Selectors because element selections that could be matched anywhere in the document can be very slow. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that using jQuery selector request do not lead to a performance issue.",

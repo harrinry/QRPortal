@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
     "href": "quality-rules/1020502.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "You should use angular.fromJson or angular.toJson instead of JSON.parse and JSON.stringify. This rule is compliant with the CISQ OMG recommendation ASCRM-CWE-252-data",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the AngularJS API, you have to use the JSON.parse and JSON.stringify methods",

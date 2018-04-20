@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid undocumented Paragraphs",
     "href": "quality-rules/5116.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs containing paragraphs without any comment.\n\nNote: Empty paragraphs and paragraphs that contain EXIT verb only are excluded from violation. The EXIT statement does nothing and then cannot be considered as a real statement",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Undocumented paragraph",

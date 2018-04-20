@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having Methods and Functions without naming convention (PHP)",
     "href": "quality-rules/1007074.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all Functions and Methods that do not respect the naming convention.\nFollowing are the naming convention that should be accepted:\nIf method name is not in camel case,violation will be reported.\nIf global function is neither in camel nor in snake case, violation will be reported.",
     "output": "This report lists all Functions and Methods that do not respect the naming convention.\n\nThis QR provides the following information:\nFunction or Method full name.",
     "rationale": "Using naming convention makes the source code easier to read and therefore to maintain.",

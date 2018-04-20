@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid testing floating point numbers for equality",
     "href": "quality-rules/8096.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all equality or inequality operations on floating point variables:\n- float x == (...)\n- float x != (...)\n- double x == (...)\n- double x != (...)\nA violation is raised if one of the operands of the ==/!= operator is a float or a double. The other operand is not considered, it can be another floating point variable, an integer or a boolean.",
     "output": "Report all artifact that perform float equality comparison. \nIt reports:\n- artifact fullname",

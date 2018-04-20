@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid OPEN/CLOSE inside loops",
     "href": "quality-rules/7218.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using OPEN or CLOSE in loops. Following loops are taken into account:\n- PERFORM - TIMES\n- PERFORM - UNTIL\n- PERFORM - VARYING",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n    - Statement creating the loop in which OPEN or CLOSE statements are used\n    - OPEN statement used the loop\n    - CLOSE statement used in the loop",

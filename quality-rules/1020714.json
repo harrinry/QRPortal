@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid having multiple routes for the same path with Node.js Express App",
     "href": "quality-rules/1020714.json",
+    "critical": true,
     "description": "When designing the routing system of the server, you have to make sure you have only one routing handler per path. This rule will check if a routing call is called within a loop and/or there are multiple routing call on the same path. This rule is compliant with CISQ OMG recommendation ASCPEM-PRF-08.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "When designing the routing system of the server, you have to make sure you have only one routing handler per path. Duplicating handler will affect the global performance of the server creating latency issues.",

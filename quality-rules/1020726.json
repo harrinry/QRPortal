@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Ensure that CSRF Protection is enabled",
     "href": "quality-rules/1020726.json",
+    "critical": true,
     "description": "In Node.js, to avoid Cross-Site forgery, you need to activate a csrf module. This rule is compliant with OWASP 2013 and 2017 A8 - Cross-Site Request Forgery (CSRF) and OMG CISQ ASCSM-CWE-079 recommendations",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "CSRF takes advantage the fact that most web apps allow attackers to predict all the details of a particular action. Because browsers send credentials like session cookies automatically, attackers can create malicious web pages which generate forged requests that are indistinguishable from legitimate ones.",
@@ -50,6 +51,13 @@
             "id": "ASCSM-CWE-79",
             "name": "Cross-site Scripting Improper Input Neutralization",
             "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-352",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "reference": "https://cwe.mitre.org/data/definitions/352.html",
             "description": null
         }
     ]

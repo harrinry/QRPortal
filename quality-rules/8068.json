@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Do not return a dereferenced pointer allocated inside the function",
     "href": "quality-rules/8068.json",
+    "critical": true,
     "associatedValueName": "Pointer allocated in the function or method",
     "description": "This rule searches for functions where memory is allocated and the pointed-to data is returned from the function.",
     "output": "Associated to each C function and C++ method with violations, the Quality Rule provides:\n- pointer allocated in the function or method\n- Bookmarks for violation patterns found in source code:\n  - pointer dynamic allocation",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using \"SELECT DISTINCT\", use DELETE-ADJACENT",
     "href": "quality-rules/7594.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of SELECT DISTINCT",
     "description": "This metric retrieves the ABAP artifacts containing queries using the \"SELECT DISTINCT\" clause.",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of SELECT DISTINCT",

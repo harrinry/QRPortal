@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid methods having too many  parameters (PHP)",
     "href": "quality-rules/1007128.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the Methods with too many parameters.",
     "output": "This report lists all the Methods with too many parameters.\n\nThis QR provides the following information:\nMethod  full name.",
     "rationale": "Long parameter lists can indicate that a new object should be created to wrap the numerous parameters. In other words, always try to group the parameters together.",

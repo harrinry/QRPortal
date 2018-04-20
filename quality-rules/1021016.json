@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using MD5 hashes to hash passwords or to encrypt data",
     "href": "quality-rules/1021016.json",
+    "critical": true,
     "associatedValueName": "Single Value",
     "description": "MD5 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that's used as additional input to a one-way function. Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. As a consequence, somebody can break your encryption or log on to your website. This rule is compliant with CISQ OMG ASCSM-CWE-327 recommendation.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

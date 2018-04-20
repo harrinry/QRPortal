@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using prepare statement (EGL)",
     "href": "quality-rules/1005054.json",
+    "critical": true,
     "description": "This rule searches for all the functions using prepare statement",
     "output": "This report lists all Functions using prepared statements.\nIt provides the following information: Function full name, count of prepared statement.",
     "rationale": "SQL statements in COBOL provide the best performance when they can be prepared by the DB2 precompiler prior to the COBOL compilation. Using the EGL prepare statement to prepare SQLstatements at runtime bypasses the DB2 precompiler.\nRecommendation\nDon\u0092t use the prepare statement in applications intended for COBOL environments.",

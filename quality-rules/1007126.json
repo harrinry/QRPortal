@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid classes exceeding maximum length (PHP)",
     "href": "quality-rules/1007126.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches all the Classes exceeding the maximum length.\nLong Class files are indications that the class may be trying to do too much. Try to break it down, and reduce the size to something manageable.\nOne class is violating this rule when having more than 1000 lines of code.",
     "output": "This report lists all the Classes exceeding the maximum length.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "If a Class exceeds the maximum length this usually indicates that the class is doing too much and will therefore be difficult to understand and maintain.\n\nOne class is violating this rule when having more than 1000 lines of code.",

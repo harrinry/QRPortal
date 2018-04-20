@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid too many packages referencing Mainframe",
     "href": "quality-rules/7676.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Associated Value",
     "description": "This quality rule retrieves all packages that are making Mainframe invocation. This number must not exceed 1 (The threshold is a parameter and can be changed at will.)",
     "output": "This report lists all packages that reference Mainframe.\nIt provides the following information:\n package full name",

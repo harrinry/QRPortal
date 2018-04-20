@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Sections in the PROCEDURE DIVISION (use Paragraphs only)",
     "href": "quality-rules/5086.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using sections in the PROCEDURE division.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Section found in the PROCEDURE division",

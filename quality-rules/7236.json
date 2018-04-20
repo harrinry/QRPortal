@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid recursive calls with PERFORM statements",
     "href": "quality-rules/7236.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs in which paragraphs call themselves with a PERFORM statement.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - PERFORM statement that refers to the paragraph it belongs to",

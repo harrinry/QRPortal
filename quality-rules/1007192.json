@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using short tags like \"<?=$name> (PHP)",
     "href": "quality-rules/1007192.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches all the Methods, Functions and PHP Sections using short tags.",
     "output": "This report lists all the Methods, Functions and PHP Sections containing short tags like \"<?=$name>\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
     "rationale": "Avoid using short tags like <?=$name> because it can create a problem for you if you are going to deploy your application on another server. Instead of using these shorts tags it is highly recommended to use <?php echo $name; >  which have the same results without introducing issues.",

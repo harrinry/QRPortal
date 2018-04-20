@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using setTimeout()",
     "href": "quality-rules/1020078.json",
+    "critical": true,
     "description": "The setTimeout() function is used to run text as code. In almost all cases, it should not be necessary to use it. Because it allows arbitrary code to be run, it also represents a security problem. \nThe rule is compliant with MITRE CWE-95 and OWASP A1 2013, 2017 and OMG CISQ ASCSM-CWE-78 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before using the input in a dynamic evaluation call.",

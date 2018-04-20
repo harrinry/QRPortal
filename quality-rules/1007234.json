@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having inline control statements (PHP)",
     "href": "quality-rules/1007234.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "When using control statements without the curly braces, remember than only one statement will be executed as part of that condition. If you want to place multiple statements you must use curly braces, and not just put them on the same line.\n\nControl statements should have one space between the control keyword and opening parenthesis, to distinguish them from function calls.\nYou are strongly encouraged to always use curly braces even in situations where they are technically optional. Having them increases readability and decreases the likelihood of logic errors being introduced when new lines are added.",
     "output": "PHP Section having inline control statements",
     "reference": "https://github.com/squizlabs/PHP_CodeSniffer/blob/master/CodeSniffer/Standards/Generic/Sniffs/ControlStructures/InlineControlStructureSniff.php\n\nhttp://pear.php.net/package/PHP_CodeSniffer/docs/2.5.1/PHP_CodeSniffer/Generic_Sniffs_ControlStructures_InlineControlStructureSniff.html",

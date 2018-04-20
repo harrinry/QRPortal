@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Methods and Functions with High Fan-In (PHP)",
     "href": "quality-rules/1007004.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all Functions and Methods with High Fan-In.\n         The Fan-in of Method or Function is the number of other artifacts that are referencing it.\n         When computing the Fan-In of an artifact, multiple accesses to it from the same artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all Methods and Functions with a High Fan-In.\n               \nThis QR provides the following information:\nMethod or Function full name.",
     "rationale": "If an artifact is referenced by large number of artifacts, maintenance and evolution becomes difficult. This is because all the referencing artifacts need to be updated and\\or retested.",

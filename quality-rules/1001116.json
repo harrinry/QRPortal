@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Function and Procedures using Builtin Function \"String\" (PL1)",
     "href": "quality-rules/1001116.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all PL1 Functions and PL1 Procedures using builtin function 'String'",
     "output": "The report lists all the PL1 Functions and PL1 Procedures using Builtin function 'String'.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
     "rationale": "Builtin 'String'  function may not be efficient if large structures are passed to it as arguments.",

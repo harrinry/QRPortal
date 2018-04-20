@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
     "href": "quality-rules/7494.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "This Quality Rule reports all persistent class method's equals() and hashCode() that directly access its own fields without using getter methods. This rule takes into account the case where equals and hashCode are implemented on an inherited class of the persistent class (this can happen when inherited fields are persistent).",
     "output": "List all equals or hashCode methods of persistent classes that rely on the fields (persistent or not). It provides the following information: Method Full Name",

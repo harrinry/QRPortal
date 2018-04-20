@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Always validate user input with Request variables",
     "href": "quality-rules/7448.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "List all locations (functions or pages when done directly into a page) where request variables are use directly without content validation (i.e. where the variable is not used as an argument of a function).\nNB: this can list location where the code is safe (like the content is affected to a variable that is in turn processed to ensure that this will not break). However, this is a potential problem, as future changes in the code might use the variable before it is checked.",
     "output": "List all locations (functions or pages) where request variables are not used as an argument of a function.",

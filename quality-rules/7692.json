@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Each opened file must be closed",
     "href": "quality-rules/7692.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Cobol File Link name",
     "description": "This rule searches for Cobol programs in which a file is opened and not closed.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The Cobol File Link name\n- Bookmarks for violation patterns found in source code:\n    - FD clause associated to the file\n    - OPEN statement",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using GROUP BY in SQL statement (EGL)",
     "href": "quality-rules/1005060.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all programs having a GROUP BY inside the SQL code.",
     "output": "This report provides the following information: Function full name, Count of GROUP BY",
     "rationale": "Having complex queries in Artifacts can cause performance problems. Queries using group by is considered complex and not performant.",

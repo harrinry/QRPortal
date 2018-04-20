@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using the RFC_ABAP_INSTALL_AND_RUN function",
     "href": "quality-rules/8118.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for ABAP artifacts that contain calls to the RFC_ABAP_INSTALL_AND_RUN function module.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation patterns found in source code: \n  - CALL FUNCTION \"RFC_ABAP_INSTALL_AND_RUN\"",

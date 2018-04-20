@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "SiebelScriptingReview: Scripting The PreCanInvokeMethod Event For A Business Service",
     "href": "quality-rules/1520512.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "Using this event for a business service may degrade the performance of the business service.",
     "output": "This rule reports Business Services with code in the PreCanInvokeMethod",
     "rationale": "The Service_PreCanInvokeMethod event is there to allow the selective ability to invoke a business service's method.  One does not have to script this event to enable the method.  Business service methods are active by default.",

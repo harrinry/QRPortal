@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using External Command Activities (TIBCO BW)",
     "href": "quality-rules/1018142.json",
+    "critical": true,
     "description": "This rule searches for ProcessActivities of type External Command.\nProcessActivity is a property captured in the metamodel.",
     "output": "This report lists all  Processe Activities of type Java Activity.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the activityType.",
     "rationale": "The External Command activity is known to have portability issue since it will make a system call.",

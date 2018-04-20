@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with High Fan-In",
     "href": "quality-rules/7776.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Associated Value",
     "description": "Avoid Artifacts with High Fan-In (Fan-In > X). The Fan-In of an Artifact is the number of other Artifacts that are referencing it. When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. The threshold level is a parameter that can be changed at will.",
     "output": "This report lists all Artifacts with High Fan-In. It provides the following information:  Artifact full name, Fan-In value",

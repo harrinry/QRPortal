@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using relative path for including files (PHP)",
     "href": "quality-rules/1007190.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches artifacts that include files using relative paths.",
     "output": "This report lists all artifacts containing that use relative paths to include files. It provides:\n- Artifact full name",
     "rationale": "The mechanism for relative path inclusion will search for default include paths, then continue with current directory then so on. So file search in that case may take more time. It is recommended to use fully qualified path that are based on configuration of application.",

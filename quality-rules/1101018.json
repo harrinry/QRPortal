@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using the GROUP BY clause",
     "href": "quality-rules/1101018.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "Using complex queries can cause performance problems. Queries using group by clauses are considered complex and inefficient.",
     "output": "List all Artifacts containing GROUP BY clauses.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

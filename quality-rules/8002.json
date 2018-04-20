@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Never perform C-style cast between incompatible Class pointers",
     "href": "quality-rules/8002.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ methods, constructors, and destructors performing C-style casts between pointers to classes that are not compatible. \n\nNote: Compatible classes belong to the same class hierarchy. However, even to cast between those classes, C-style casts are not the preferred solution: see rules #8058 and #8060.",
     "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n  - The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - dangerous cast",

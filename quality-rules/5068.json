@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid STOP RUN (use GOBACK instead)",
     "href": "quality-rules/5068.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using STOP RUN statements. Main batch programs (e.g: called by a JCL STEP) are not taken into account.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - STOP RUN statement",

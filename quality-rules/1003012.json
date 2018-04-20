@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using code behind files (Flex)",
     "href": "quality-rules/1003012.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.mxml.CodeBehindInMxmlRule",
     "rationale": "Code behind files are tightly coupled with the view, not unit-testable, not easy to navigate the code base and not reusable. Try using presentation model pattern, or observer pattern",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

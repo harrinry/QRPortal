@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Beans with normal scope must be proxyable to avoid runtime errors",
     "href": "quality-rules/8136.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This quality rules checks all the CDI Beans, that is all the classes and producer methods which are annotated with a scope or a qualifier",
     "output": "This quality rule reports all the CDI beans which cannot be proxied.\n\nIt handles both the standard scopes and the custom scopes.\n    ",

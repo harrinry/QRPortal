@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
     "href": "quality-rules/7642.json",
+    "critical": true,
     "associatedValueName": "Name of the table having a misused composite index",
     "description": "This metric retrieves all client-server artifacts that contain an SQL query with a WHERE clause not using the first column of composite index (multiple column base index).\n\nThe value of the metric is number of client-server artifacts that contain an SQL query not using the first column of a composite index divided by the number of client-server artifacts using a composite index.\nAn artifacts using a composite index means here artifacts containing a query that uses at least one column of a compostite index.\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",
     "output": "Associated to each artifact with violations, the Quality Rule provides: \n- Name of the table having a misused composite index.",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Ensure to use secure HTTPS protocol",
     "href": "quality-rules/1020722.json",
+    "critical": true,
     "description": "In Node.js, to avoid connection to unsecured source, you have to make sure that all HTTP communication are encrypted. This rule is compliant with OWASP 2013 and 2017 A6 - Sensitive Data Exposure",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure the developer will work with a list of trusted source. Thanks to Strict-Transport-Security header you will enforces secure (HTTP over SSL/TLS) connections to the server.",
@@ -33,17 +34,17 @@
     "qualityStandards": [
         {
             "standard": "OWASP",
-            "id": "A6-2017",
-            "name": "Security Misconfiguration",
-            "reference": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
-            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
-        },
-        {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
             "reference": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
             "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "reference": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
         }
     ]
 }

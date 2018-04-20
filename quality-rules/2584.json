@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using late binding",
     "href": "quality-rules/2584.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Avoid using late binding.\n\nLate binding is done when a call to CreateObject is done AND that the variables are of type Object/Variant.\nWhenever  a variable is typed during the definition (dim var as MyObject) it becomes early binding.",
     "output": "This report lists all uses of late binding",

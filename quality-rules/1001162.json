@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid PLC Copybook using GOTO statement  (PL1)",
     "href": "quality-rules/1001162.json",
+    "critical": true,
     "description": "This rule searches for all PLC Copybook using the GO TO statement to manage the control flow.",
     "output": "The report lists all the PLC Copybook having GOTO statement.\n\nIt provides following information: \n- PLC Copybook full name",
     "rationale": "Using Goto code breaks the process execution flow and makes the code more difficult to understand and maintain",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
     "href": "quality-rules/8132.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for artifacts implementing subsequent local conditions in SELECT..ENDSELECT loops.\nNote: The rule is applicable in SAP HANA context.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- Bookmarks for violation patterns found in source code",

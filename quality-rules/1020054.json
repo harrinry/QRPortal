@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using delete on arrays",
     "href": "quality-rules/1020054.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "The delete operator can be used to remove a property from any object. Arrays are objects, so the delete operator can be used here too, but if it is, a hole will be left in the array because the indexes/keys won't be shifted to reflect the deletion. Use the following methods to: \n- add/remove elements from the the array : Array.prototype.splice \n- add/remove elements from the end of the array : Array.prototype.pop \n- add/remove elements from the beginning of the array : Array.prototype.shift",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "ASCMM-MNT-20",

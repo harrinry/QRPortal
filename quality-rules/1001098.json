@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid PLC Copybook with a very low comment/code ratio (PL1)",
     "href": "quality-rules/1001098.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "This rule searches for all the PLC Copybooks having a very low comment/code ratio. PLC Copybooks should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
     "output": "The report lists all the PLC Copybooks with a very low comment/code ratio.\n\nIt provides following information: \n-  PLC Copybooks full name",
     "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",

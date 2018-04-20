@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'new[]', prefer 'std::vector' or 'std::array'",
     "href": "quality-rules/8076.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ functions that use the 'new[]' operator.",
     "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - new[] operator",

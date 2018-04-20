@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Main Procedures having queries with joins on more than 4 Tables (PL1)",
     "href": "quality-rules/1001128.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all PL1 Main Procedures having queries with joins on more than 4 tables.",
     "output": "The report lists all the PL1 Main Procedures having joins on more than 4 tables.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "Having complex queries in artifacts can cause performance problems. Queries with more than 4 tables is considered complex.",
