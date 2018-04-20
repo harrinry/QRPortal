@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid call to AcceptChanges in a loop",
     "href": "quality-rules/7358.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Avoid call to AcceptChanges (of DataSet, DataTable etc) in loop as this have a negative impact on performance.",
     "output": "The metric will list all the artifacts where a call to AcceptChanges is done within a loop: NameSpace + Class + Method names.",

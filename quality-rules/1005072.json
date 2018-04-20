@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Enable Exception for migrated programs - throwNrfEofExceptions property must be set to YES (EGL)",
     "href": "quality-rules/1005072.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches for all the migrated programs having enabled Exception and  having throwNrfEofExceptions property not set to YES",
     "output": "This report lists the following information: Program full name",
     "rationale": "throwNrfEofExceptions property must be set to YES\n\nIf the throwNrfEofExceptions property is set to YES, a soft error (typically \"no record found\" or \"end of file\") causes an exception to be thrown, allowing you to handle the exception.",

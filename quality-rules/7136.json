@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Each method in an Action Class should have a small complexity",
     "href": "quality-rules/7136.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Cyclomatic Complexity",
     "description": "Each method in an Action Class (and inherited methods) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x) should have a small cyclomatic complexity.",
     "output": "This report lists all Action methods with Cyclomatic complexity greater than X\nIt provides the following information:\n - Action Method full name\n - Cyclomatic Complexity",

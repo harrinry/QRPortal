@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Methods",
     "href": "quality-rules/7908.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "Reports all methods and constructors that are not referenced except main, getter and setter.  A threshold parameter permit to include getter and setter methods. \n\nNOTE:\n* a method/constructor is considered as unreferenced when it is never called and the method doesn't override a method of a class or doesn't implement a method of an interface.\n* For .net, getter and setter (of properties and indexer) are included\n* For J2EE, getter and setter methods are not included by default because usually these methods are automatically created from IDE and also they can be involved through dynamic mechanism like reflection.",
     "output": "This report lists all unreferenced Methods.\nIt provides the following information: Method full name",
@@ -67,16 +69,6 @@
             "id": 141901,
             "name": ".NET (Legacy Analyzer)",
             "href": "technologies/141901.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

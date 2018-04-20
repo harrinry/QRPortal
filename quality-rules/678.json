@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Never throw an exception from a Destructor",
     "href": "quality-rules/678.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ destructors that throw exceptions.",
     "output": "Associated to each C++ destructor with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - 'throw' statement",
@@ -38,16 +39,6 @@
             "id": -3,
             "name": "C++",
             "href": "technologies/-3.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Javascript Function typecheck in AngularJS application",
     "href": "quality-rules/1020520.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "You should use the angular.isFunction method instead of the default JavaScript implementation (typeof function({}) === \"[object Function]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, you should use AngularJS isFunction.",
@@ -41,15 +43,15 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCRM-CWE-252-data",
-            "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
             "reference": null,
             "description": null
         },
         {
             "standard": "CISQ",
-            "id": "ASCMM-MNT-20",
-            "name": "Unreachable Named Callable or Method Control Element",
+            "id": "ASCRM-CWE-252-data",
+            "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
             "reference": null,
             "description": null
         },

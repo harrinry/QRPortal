@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft : Create all new Record Table in a specific tablespace",
     "href": "quality-rules/1600484.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Tablespace",
     "description": "Create new record in tablespaces : TAB_<KEY>DATA_XL for specific data tables \nAll projects on OneCRM ersion must use tablespaces with <KEY> = KL",
     "rationale": "In order to better identify the amount of datas in specific table, all new record should be created in specific tablespaces",

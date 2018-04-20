@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Good use of Interfaces with collections as Method return types",
     "href": "quality-rules/4578.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Returned Type Full Name",
     "description": "When a collection is returned as a returned value from a Function, it should be of the Interface type, and not as the Class. Collections are considered to be any classes implementing java.util.Collection, java.util.Collection<E>, java.util.Map or java.util.Map<U,V> or one of their sub-interfaces.",
     "output": "This report lists all the Methods not using the Interfaces for Collection types. It provides the following information:\n - Method full name\n - Returned Type Full Name",

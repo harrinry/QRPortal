@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid functions without returning exit code  (Shell)",
     "href": "quality-rules/1006012.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "This rule searches all the functions without an exit code.",
     "output": "The report lists all the  Shell Functions without returning exit code\nIt provides following information: \n- function full name",
     "rationale": "Every function  should have a returning exit code. This will provide a modularity to the code.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "EVALUATE statements must be closed by END-EVALUATE",
     "href": "quality-rules/7234.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using EVALUATE statements without associated terminator END-EVALUATE.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - EVALUATE statement that is not ended by the END-EVALUATE terminator",

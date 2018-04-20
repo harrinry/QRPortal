@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Method override fails due to mismatch of const/volatile qualifiers",
     "href": "quality-rules/8056.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Number of const or volatile qualifiers that are not respected",
     "description": "This rule searches for C++ methods that override another method without respecting the 'const' or 'volatile' qualifiers.",
     "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- number of const or volatile qualifiers that are not respected\n- Bookmarks for violation patterns found in source code:\n  - overridden method\n  - overriding method",

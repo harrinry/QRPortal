@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using too much dot notation in loop",
     "href": "quality-rules/1020016.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "List all JavaScript file, HTML file or function that reference more than 2 times the same variable name with more than one dot.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Every time the interpreter encounters a dot character, it will look up the child variable against the parent. For example, var hourHand=myGrandFather.clock.hands.hour make three lookup. When used too much in a loop, dot notation can affect performance of a javascript function. Reducing the dotation usage can win 50% of the time consumed by this function.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid database tables associated to more than one Entity",
     "href": "quality-rules/7654.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Associated table name",
     "description": "Reports tables associated to more than one Entity except for Entities that belong to the same hierarchy and that are stored into a single table using the table-per-class-hierarchy strategy (also know as SINGLE_TABLE in JPA) or that are stored into several tables using table-per-sub-class strategy (also know as JOINED in JPA).\n\nNote that in the case where two hierarchy are associated to the same table, only the root Entity will be reported, not all the hierarchy.",
     "output": "List all Entities that reference the same table.\nIt provides the following information:\n- Entity Full Name\n- table name",

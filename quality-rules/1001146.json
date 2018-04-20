@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs having cursors that doesn't contain the \"FOR UPDATE\" clause and not containing the \"FOR READ ONLY\" or \"FOR FETCH ONLY\" clause (PL1)",
     "href": "quality-rules/1001146.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches all PL1 Main Procedures (Programs) having cursors not containing either  \"FOR UPDATE\" or \"FOR READ ONLY\" or FOR FETCH ONLY\" clause.",
     "output": "The report lists all PL1 Main Procedures having cursors not containing either  \"FOR UPDATE\" or \"FOR READ ONLY\" or FOR FETCH ONLY\" clause. \nIt provides the following information: PL1 Function and PL1 Procedure full name.",
     "rationale": "While FOR UPDATE forces a certain access path, FOR FETCH ONLY provides more opportunities to the optimizer to choose the most efficient access path.",

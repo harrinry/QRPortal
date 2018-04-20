@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Functions with High Vocabulary Frequency (VOCF)  (FORTRAN)",
     "href": "quality-rules/1002130.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This calculation is using the results of the calculated Halstead metrics n1, n2, N1 and N2. This diagnostic is a result of this calculation",
     "rationale": "VOCF: Vocabulary Frequency corresponds to the average number of times the vocabulary is used (sum of distinct operands and operators) in a component. This metric is calculated as follows:\n        VOCF = (N1+N2)/ (n1+n2)\n where:\n        N1 is the number of operator occurrences,\n        N2 is the number of operand occurrences,\n        n1 is the number of distinct operators,\n        n2 is the number of distinct operands",
     "businessCriteria": [

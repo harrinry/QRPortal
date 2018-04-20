@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Validator field without Form Field",
     "href": "quality-rules/7382.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Form Field Name",
     "description": "This metric reports form validator with all their unused form field validator. Note that it can be related to a form name or an action name (in the case of a form shared among different actions)",
     "output": "This report lists all validator form with fields that are not related to a form bean field. It provides the following information:\n  - Validation Form\n  - Form Field",

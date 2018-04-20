@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid multiple validation form with the same name",
     "href": "quality-rules/7364.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Associated Value",
     "description": "This metric reports all duplicated form validators with the same name. Note that it can be the form name or the action name (in the case of a form shared among different actions)",
     "output": "This report lists all validation forms that are duplicated. It provides the following information:\n  Form Validation Full Name",
@@ -32,6 +34,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-102",
+            "name": "Struts: Duplicate Validation Forms",
+            "reference": "https://cwe.mitre.org/data/definitions/102.html",
+            "description": null
+        }
     ]
 }

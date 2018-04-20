@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Functions and Procedures not using the REORDER option (PL1)",
     "href": "quality-rules/1001112.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all PL1 Functions and PL1 Procedures not using the REORDER option.",
     "output": "The report lists all the PL1 Functions and PL1 Procedures not using REORDER option.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
     "rationale": "REORDER is one of the optimization options that are specified for a procedure or begin-block. The REORDER option allows the compiler to generate optimized code to produce the result specified by the source program when error-free execution takes place",

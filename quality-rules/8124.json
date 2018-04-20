@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Do not use function module DB_EXISTS_INDEX (HANA)",
     "href": "quality-rules/8124.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for artifacts calling the function module DB_EXIST_INDEX.\nNote: The rule is applicable in SAP HANA context.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation patterns found in source code: \n  - CALL FUNCTION \"DB_EXISTS_INDEX\"",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Functions and Procedures using BLKSIZE or RECSIZE (PL1)",
     "href": "quality-rules/1001114.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all the PL1 Functions and PL1 Procedures using BLKSIZE and RECSIZE.",
     "output": "The report lists all the PL1 Functions and PL1 Procedures using BLK or RECSIZE.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
     "rationale": "Using these statements may prevent the compiler perform memory management efficiently.",

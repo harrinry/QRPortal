@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "CWE-434: Content type should be checked when receiving a HTTP Post",
     "href": "quality-rules/8218.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "A violation is reported only if getContentType is not called inside the body of a HttpServlet.doPost or HttpServlet.doGet methods:\n   ",
     "output": "A violation is reported only if getContentType is not called inside the body of a HttpServlet.doPost or HttpServlet.doGet methods. \n  ",
@@ -37,6 +38,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-434",
+            "name": "File Upload Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        }
     ]
 }

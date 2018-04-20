@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid JavaScript to block page loading",
     "href": "quality-rules/1020020.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Reports any code which contains the instruction <script src=\"http://*.js\"> in the html body block. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "When you include javascript under this form <script src=\"http://*.js\">, you create a Single Point of Failure. Loading the script in this way is blocking all other download in the page and any element below the script are blocked from rendering. \nIt is better to load the script asynchronously.",

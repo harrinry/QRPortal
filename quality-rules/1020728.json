@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid creating cookie without setting httpOnly option",
     "href": "quality-rules/1020728.json",
+    "critical": true,
     "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. This is why all major browsers support the HttpOnly cookie property that prevents client-side scripts from accessing the cookie. When HttpOnly is not enabled, attackers may more easily access user cookies. This rule is compliant with OWASP 2013 and 2017 A6 - Sensitive Data Exposure",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "reference": "https://cwe.mitre.org/data/definitions/922.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10_2017-A6-Sensitive_Data_Exposure",
@@ -43,6 +44,13 @@
             "name": "Security Misconfiguration",
             "reference": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
             "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1004",
+            "name": "Sensitive Cookie Without 'HttpOnly' Flag",
+            "reference": "https://cwe.mitre.org/data/definitions/1004.html",
+            "description": null
         }
     ]
 }

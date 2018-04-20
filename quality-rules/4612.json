@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using native Methods (JNI)",
     "href": "quality-rules/4612.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Native Method name",
     "description": "List all artifacts that call a native method except native methods contained in the libraries defined by the threshold parameter. \nThe threshold is a parameter and can be changed at will with libraries that you consider to be safe.",
     "output": "This report lists all artifacts using native methods except those contained in libraries defined by the parameter.\nIt provides the following information:\n - Artifact full name\n - Native Method name",
@@ -44,6 +46,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-111",
+            "name": "Direct Use of Unsafe JNI",
+            "reference": "https://cwe.mitre.org/data/definitions/111.html",
+            "description": null
+        }
     ]
 }

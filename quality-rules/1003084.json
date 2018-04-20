@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid calls to the StyleManager that do not pass FALSE as the second parameter (Flex)",
     "href": "quality-rules/1003084.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.performance.RecursiveStyleManagerRule",
     "rationale": "A recursive style manager call can be a very expensive operation, causing parts of the UI to flicker visibly. Instead it is preferable to defer the creation of parts of the UI that depend on a run time CSS SWF until after the SWF has been loaded. In this case a recursive call is not required.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

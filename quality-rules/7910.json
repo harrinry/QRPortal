@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Never exit a finally block with a return, break, continue, or throw",
     "href": "quality-rules/7910.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all methods that contain an abrupt in a finally block. An abrupt completion of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method.",
     "output": "Reports all methods that contain an abrupt exit in a finally block. An abrupt exit of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method.\n\nIt provides the following information:\n Method full name",

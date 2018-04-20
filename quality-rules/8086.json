@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid types that own disposable fields and are not disposable",
     "href": "quality-rules/8086.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "This rule searches all the classes that declare an IDisposable and not implement the IDisposable interface.",
     "output": "This report lists all the classes that declare an IDisposable and not implement the IDisposable interface.\n\nIt provides following information:\n- Class name",

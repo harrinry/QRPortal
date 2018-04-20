@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "An include file must contain at most one Class definition",
     "href": "quality-rules/3148.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of classes",
     "description": "This rule searches for include files (i.e. a file that is included at least by another file) that contain multiple class definitions.",
     "output": "Associated to each C++ header file with violations, the Quality Rule provides:\n- The number of classes",

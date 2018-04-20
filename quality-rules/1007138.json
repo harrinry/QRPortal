@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having unused variables (PHP)",
     "href": "quality-rules/1007138.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the Sections with too many unused variables.\nA violation is detected when a local variable is declared and/or assigned, but not used",
     "output": "This report lists all the Sections with too many unused variables.\n\nThis QR provides the following information:\nSections  full name.",
     "rationale": "Unused variables make the code more complex to read and are redundant.\nThe violation is reported even only one unused variable is found",

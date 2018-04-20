@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
     "href": "quality-rules/8158.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "This rule reports Resource Management Control Element in a Component Built to Run on Application Servers.Reports components that are using threads.",
     "output": "\nThis report lists all artifacts having Resource Management Control Element in a Component Built to Run on Application Servers. \nIt provides the following information: \n - Artifact full name\n",
@@ -45,6 +46,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-798",
+            "name": "Hard-Coded Credentials Usage for Remote Authentication",
+            "reference": null,
+            "description": null
+        }
     ]
 }

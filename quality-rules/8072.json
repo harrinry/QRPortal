@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Never define collection of 'std::auto_ptr'",
     "href": "quality-rules/8072.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ functions that define collections of 'std::auto_ptr'.",
     "output": "Associated to each C++ constructor, destructor,and method with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - assignment of 'auto_ptr' variables in collection",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid local variables that are not initialized at declaration time",
     "href": "quality-rules/7998.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ functions, methods, constructors, and destructors where at least one local variable is not initialized at declaration time. This applies to standard types ('char', 'int', etc) and pointers of any type. This does not apply to: \n- classes (i.e. local declarations like: 'myclass var;') as they have a constructor\n- structs and arrays\n\nVariables that are initialized after their declaration are considered as initialized as long as this is done before any program logic.",
     "output": "Associated to each C++ Function/Method/Constructor/Destructor with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - Uninitialized variable",
@@ -39,16 +41,6 @@
             "id": -2,
             "name": "C",
             "href": "technologies/-2.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using database hints",
     "href": "quality-rules/8130.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for artifacts using database hints in Open SQL queries.\nNote: The rule is applicable in SAP HANA context.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to database hints\n- Bookmarks for violation patterns found in source code",

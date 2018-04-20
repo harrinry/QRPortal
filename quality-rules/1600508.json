@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Use as possible SQL section rather than PeopleCode in the application engine",
     "href": "quality-rules/1600508.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "PeopleCode step",
     "description": "When programs must verify that a certain condition is true before they run a particular section, PeopleCode enables you to set state record variables dynamically. For example, if the hourly wage is less than or equal to X, do Step A; if not, fetch the next row. In certain instances, you must modify variables that exist in a state record. \n\nLoading data into a rowset can use a significant amount of memory, which this formula approximates:\nmem = nrows * (row overhead + nrecords * (rec overhead + nfields * (field overhead) + average cumulative fielddata))\nwhere\n-mem is the amount of memory required to store the rowset.\n-nrows is the number of rows.\n-row overhead is the overhead per row.\n-nrecords is the number of records per row.\n-rec overhead is the record overhead (approximately 40 bytes).\n-nfields is the number of fields in the record.\n-field overhead is the overhead per field (approximately 80 bytes).\n-average cumulative fielddata is the average amount of data per field.\nUsing this formula, a rowset containing 500,000 rows with one record per row, 50 fields, and 200 bytes per field would require approximately 2.3 gigabytes of memory",
     "output": "This report lists all Application Engines with PeopleCode steps",

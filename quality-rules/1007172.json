@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having constructors with a return value (PHP)",
     "href": "quality-rules/1007172.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the Classes containing contructors returning a value.",
     "output": "This report lists all the Classes containing contructors that return a value.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "In PHP a constructor is the function that is called when an object is created and can be used to initialize object-variables. Using a return-value in a constructor is probably used to generate an error when something goes wrong during initialization. The  return value from an object will be ignored and the result will always be the object itself. In this situation, the returned value of the constructor is a corrupt object which will be re-used in the source code and which could produce unexpected results.",

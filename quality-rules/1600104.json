@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Avoid disabling insert or delete on grid based on a record table",
     "href": "quality-rules/1600104.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "RecordTable referenced by the page field",
     "description": "If the main record for the grid is a Record Table, you should uncheck the \"No Row Insert\" and \"No Row Delete\" properties in the Use properties",
     "output": "Failed checks gives the number of pages that contain wrongly defined grids. The grid name can be found in the value column",

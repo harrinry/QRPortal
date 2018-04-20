@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using GOTO statement",
     "href": "quality-rules/5144.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of GOTO",
     "description": "This rule searches for Cobol programs using GOTO statements to manage the control flow. The \"GOTO\" statement of embedded SQL is not taken into account.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of GO TO\n- Bookmarks for violation patterns found in the source code:\n  - GO TO statement",

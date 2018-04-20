@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid declaring throwing an exception and not throwing it",
     "href": "quality-rules/4656.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Exception Class Full Name",
     "description": "Reports all methods with code (i.e. not interface or abstract method or instance of generic method) that are declared to throw an exception that is never thrown in the method body.\n\nThat is to say all methods:\n- declared to throw an exception in the signature\n- AND \n   o not throwing this exception or subclass directly or via a method declared to throw it\n   o OR that catch this exception \n\nNote that catching an exception is verified independently of where it occurs in the method code.",
     "output": "This report lists all Methods declaring throwing an exception and not throwing it.\nIt provides the following information:\n - Method full name\n - Exception Class Full Name",
@@ -42,6 +44,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-397",
+            "name": "Declaration of Throws for Generic Exception",
+            "reference": null,
+            "description": null
+        }
     ]
 }

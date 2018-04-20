@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Programs  (Shell)",
     "href": "quality-rules/1006004.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "This rule searches all the unreferenced Shell Programs.",
     "output": "The report lists all the  unreferenced Shell Programs\n\nIt provides following information: \n- Program full name",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",

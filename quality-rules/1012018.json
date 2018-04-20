@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid use of DLYJOB  (CL400)",
     "href": "quality-rules/1012018.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for CL400 programs using the DLYJOB command.",
     "output": "This report lists all CL400 programs using DLYJOB.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "This command should be used carefuly. It allows a job to wait for an information before continuing to its execution.\nAs a consequence, the JOB queue and the sub-system can be blocked.",

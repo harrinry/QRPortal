@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
     "href": "quality-rules/7946.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Position of join",
     "description": "List all statements that include JOIN clause(s) defined with the Oracle proprietary syntax",
     "output": "This report lists all queries using old style joins instead of ANSI-Standard joins,\nThis includes \"classic\" joins as well as outer joins (*= and =*)",

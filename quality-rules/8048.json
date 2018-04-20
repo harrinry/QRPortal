@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Invoke 'delete' with the same form as the matching 'new'",
     "href": "quality-rules/8048.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ classes that allocate and deallocate objects with incoherent new/delete forms.",
     "output": "Associated to each C++ function, method, constructor, and destructor with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - object deallocation (delete)\n  - object allocation (new)",

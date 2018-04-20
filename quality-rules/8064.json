@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Assignment operator should assign all non-static members of the target object",
     "href": "quality-rules/8064.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for C++ assignment operators that do not assign all the non static members of the class.",
     "output": "Associated to each C++ assignment operator with violations, the Quality Rule provides:\n- The number of missing static members\n- Bookmarks for violation patterns found in source code:\n  - assignment operator\n  - missing static member",

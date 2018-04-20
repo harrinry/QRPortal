@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid globally bindable classes. (Flex)",
     "href": "quality-rules/1003192.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Reports packages containing globally bindable classes",
     "rationale": "It can lead to unexpected behaviour, especially when you have a setter to a property, and hits the performance of the application",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

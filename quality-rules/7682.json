@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid domain model depending on other Java API",
     "href": "quality-rules/7682.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Reports any direct or indirect (via successive calls) calls from persistent classes' artifact to the methods of the following packages:\n- java.sql.*\n- javax.sql.*\n- javax.naming.* (include javax.naming.directory, javax.naming.event, javax.naming.ldap, javax.naming.spi)\n- javax.jms.*\n\nNote that we don't take into account method parameters and exception that belongs to these packages.\n\nThis list can be completed with the threshold.",
     "output": "List all persistent classes' artifact that call other JAVA API.\n\nIt provides the following information:\n Artifact Full Name",

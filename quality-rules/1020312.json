@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid use of anonymous functions to attach events",
     "href": "quality-rules/1020312.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Avoid use of anonymous functions to attach events. Anonymous functions are difficult to debug, maintain, test, or reuse. This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure the maintainability of the code, providing explicit function name instead of using anonymous function.",

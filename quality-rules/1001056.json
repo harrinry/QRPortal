@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced PLC Procedures & Functions (PL1)",
     "href": "quality-rules/1001056.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches for all PLC Procedures or Functions that are not referenced i.e. not called.",
     "output": "The report lists all the PLC unreferenced Procedures and Functions.\n\nIt provides following information: \n-  procedures and functions full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

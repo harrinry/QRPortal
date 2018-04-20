@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having Records without a naming convention (EGL)",
     "href": "quality-rules/1005036.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rules searches for all the Record with name not adhering to a pattern. The pattern will be provided as parameter of the rule.\nThis rule will list out the record name which has the Upper or lower case of parameter valuer not present in the name.\nThe default parameter value is W.\nThe parameter value can be changed by user.",
     "output": "This report provides the following information: OTHER RECORD full name",
     "rationale": "Having the naming conventions make the source code more easy to ready and so to maintain.",

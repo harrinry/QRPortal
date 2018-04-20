@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "A pointer to a derived Class shall only be cast implicitly to a pointer to base Class",
     "href": "quality-rules/8058.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ functions that contain C-style casts or static_casts from a pointer to a derived class to a pointer to one of its base classes.",
     "output": "Associated to each C++ constructor, destructor, or method with violations, the Quality Rule provides:\n- Number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - cast between derived and base classes\n  - derived class declaration\n  - base class declaration",
@@ -37,16 +39,6 @@
             "id": -2,
             "name": "C",
             "href": "technologies/-2.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

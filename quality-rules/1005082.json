@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid declaring null arrays; prefer to set to empty (EGL)",
     "href": "quality-rules/1005082.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches for all programs declaring null arrays",
     "output": "This report lists the following information: Program full name, Number of Null Arrays",
     "rationale": "Make sure you start with an empty dynamic array (array exists, but doesn\u0092t have any entries) rather than a null array (array doesn\u0092t exist). Declare your array variable with a dimension of 0 or attribute clause or assign a \u0093not null\u0094 array to the variable.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Favor PreparedStatement or CallableStatement over Statement",
     "href": "quality-rules/7150.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Full Name of createStatement method called",
     "description": "All references to the method java.sql.Connection.createStatement() must be avoided.",
     "output": "This report lists all methods that reference java.sql.Connection.Statement interface instances (or its sub-interface or sub-class).\nIt provides the following information: \n - Method Full Name\n - The Full Name of createStatement method that has been called",

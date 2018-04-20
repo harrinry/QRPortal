@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using css() of many elements",
     "href": "quality-rules/1020314.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "If you're changing the CSS of more than 20 elements using .css(), consider adding a style tag to the page instead for a nearly 60% increase in speed. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Changing display attributes thanks to .css() method could generate some performance issues.",

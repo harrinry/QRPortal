@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid control statement in Constructor (must be as lightweight as possible) (Flex)",
     "href": "quality-rules/1003080.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.performance.HeavyConstructorRule",
     "rationale": "The Just-In-Time compiler does not compile constructors. Make them as lightweight as possible, or move the complexity of the code to a method called by the constructor. Then the complexity will be compiled by the JIT.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

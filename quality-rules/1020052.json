@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using import with external URI",
     "href": "quality-rules/1020052.json",
+    "critical": true,
     "description": "JavaScript could be executed via cross-origin HTML imports. Make sure that HTML imports are limited to the same origin. Avoid permitting users to have <link> tags in user-generated rich-text as they can now directly execute JavaScript without any user interaction. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you do not import content from an untrusted source.",

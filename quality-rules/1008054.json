@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs with COUNT(*) statement  (RPG400)",
     "href": "quality-rules/1008054.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches all the programs having COUNT(*) statements.",
     "output": "This report lists RPG400 Programs with COUNT(*) statement.\nIt provides the following information:\nRPG400 Program full name",
     "rationale": "COUNT(*) statement is time and ressource consuming and it can dramatically slow your application.",

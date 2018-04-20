@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
     "href": "quality-rules/7862.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "The exception Exception should never be caught in a catch statement. Always Subclass Exception and use the Subclassed Classes.",
     "output": "This rule lists all Methods catching an exception of type Exception.\nIt provides the following information:\n- Method full name",

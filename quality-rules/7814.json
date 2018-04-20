@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Tables not using referential integrity",
     "href": "quality-rules/7814.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Table name",
     "description": "This diag is a clone of the old diag called \"Avoid tables not involved in a Foreign key\" listing all tables not involved in a Foreign Key (FK). \nThe use of Foreign Keys between Tables must be applied to manage referential integrity only.",
     "output": "This report lists all tables not involved in a Foreign Key \n\nIt provides the following information:  \n\n- Table name",

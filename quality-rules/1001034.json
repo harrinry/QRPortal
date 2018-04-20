@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid PLI Procedures & Functions with High Cyclomatic Complexity (PL1)",
     "href": "quality-rules/1001034.json",
+    "critical": false,
+    "maxWeight": 9,
     "description": "This rule searches for all the PLI procedures and functions with High Cyclomatic Complexity (CC greater than X)\nCyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.",
     "output": "The report lists all the PLI procedures and functions with High Cyclomatic Complexity.\n\nIt provides following information: \n-  PLI procedures and functions full name",
     "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. \nAnalyzability declines with increasing Cyclomatic Complexity. \nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nChangeability declines with increasing Cyclomatic Complexity. \nComplete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nTestability declines with increasing Cyclomatic Complexity.",

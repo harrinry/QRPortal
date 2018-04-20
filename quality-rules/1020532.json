@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use Angular factory() instead of service()",
     "href": "quality-rules/1020532.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Because factories are singletons and return an object that contains the members of the service, it is highly recommanded to use factory() instead of service()",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "ASCPEM-PRF-03, ASCRM-RLB-12",

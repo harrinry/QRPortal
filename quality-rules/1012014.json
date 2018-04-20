@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid locking object by ALCOBJ command    (CL400)",
     "href": "quality-rules/1012014.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule seraches for CL400 programs containing objects locked by the ALCOBJ command.",
     "output": "This report lists CL400 programs .\nIt provides the following information:\n- CL400 artifact full name",
     "rationale": "Objects that are allocated to you should be deallocated as soon as you are finished using them because other users may need those objects. However, allocated objects are automatically deallocated at the end of the routing step.",

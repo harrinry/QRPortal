@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using $ or jQuery, use angular.element instead",
     "href": "quality-rules/1020536.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "The angular.element method should be used instead of the $ or jQuery object (if you are using jQuery of course). If the jQuery library is imported, angular.element will be a wrapper around the jQuery object. This rule is compliant with CISQ OMG recommendation ASCMM-MNT-20.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, always use the angular.element method instead of $ or jQuery object.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
     "href": "quality-rules/1101014.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "The old syntax used for joining tables should definitely be abandoned in favor of the standard ANSI syntax, which is more readable and more maintainable.",
     "output": "List all Artifacts containing NON ANSI joins.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

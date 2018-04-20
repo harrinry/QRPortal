@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having Copybooks with reserved prefix (PL1)",
     "href": "quality-rules/1001078.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches all the Copybooks using reserved prefixes like below:\n- CEE : IBM routines \n- DFH : CICS vendor modules\n- IGY : Cobol\n- EYU : Cicsplex SM\n- DSN : DB2\n- CTG : CTG\n- CSQ / MQ  : MQ framework",
     "output": "The report lists all the Copybook not following the Naming Convention for the Prefix.\nIt provides following information: \n- Copybook full name",
     "rationale": "These prefixes are used as a standard by software vendors and modules could overlap.",

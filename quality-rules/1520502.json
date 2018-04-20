@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "SiebelReview: Link Specification For BusComp Field Property Set To TRUE",
     "href": "quality-rules/1520502.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Reports if :\nUnecessary LinkSpec\nMissing LinkSpec, used as Pre or Post DefVal\nMissing LinkSpec, used as ParentFieldValue\nMissing LinkSpec for, used as Parent Read Only Field",
     "description": "Setting Link Specification to TRUE has the following impacts on performance when set unnecessarily:\n* Increases the size of the result set returned to the client.\n* For joined fields, it will result in a join to an additional table where this join may not have been present.\n* For MVFs, it will result in an extra primary join to the child table where a primary is configured or secondary queries to the child table where a primary is not configured.",
     "output": "This rule reports Fields in Business Components having an invalid Link Specification",

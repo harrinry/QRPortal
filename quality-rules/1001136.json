@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid Main Procedures having \"SELECT * FROM ...\" clause (PL1)",
     "href": "quality-rules/1001136.json",
+    "critical": true,
     "description": "This rule searches all the PL1 Main Procedures (Programs) having \"SELECT * FROM ...\" clause.",
     "output": "The report lists all PL1 Main Procedures  having \"SELECT * FROM \" clause.\n\nIt provides following information: \n- PL1 Main Procedures  full name",
     "rationale": "You incur an extra CPU cost for passing the columns from DB2 to your application. But this is not the\nonly consideration, retrieving additional columns can cause an additional access to the data\npages instead of an index-only access, resulting in additional I/Os, accumulating higher CPU,\nand elapsed time.",

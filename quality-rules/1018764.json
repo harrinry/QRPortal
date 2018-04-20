@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Processes using JDBC SQL Direct  (TIBCO BW)",
     "href": "quality-rules/1018764.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for ProcessActivities of type JDBCGeneralActivity.\nProcessActivity is a property captured in the metamodel.",
     "output": "This report lists all  Processes having a JDBCGeneraleActivity.\nIt provides the following information:\nProcess Activity full name.",
     "rationale": "The SQL Direct allows to execute custom SQL commands.\nHowever it can lead to inconsistency because of underlying different SQL dialects.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid includes in Header Files",
     "href": "quality-rules/7966.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Associated Value",
     "description": "Recursion in header files makes applications difficult to compile and to maintain. A header file should not include any other files.",
     "output": "This report lists all Header files including a file. It provides the following information: File full name",

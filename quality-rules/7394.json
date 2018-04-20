@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having multiple Artifacts updating data on the same SQL Table",
     "href": "quality-rules/7394.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of potential ways to update the SQL Table",
     "description": "This metric detects tables having too many ways to update them. It retrieves tables having more than X artifacts updating these tables, where X a configurable parameter.",
     "output": "Associated to each SQL table with violations, the Quality Rule provides: \n- The Number of potential ways to update the SQL Table.",

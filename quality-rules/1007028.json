@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use increment/decrement operators where possible (PHP)",
     "href": "quality-rules/1007028.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts which do not use increment\\decrement operator for increment\\decrement.",
     "output": "This report lists all artifacts not using increment/decrement operators where possible.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Increment\\decrement without increment\\decrement operator makes code confusing and increases chances of mistake.",

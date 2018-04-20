@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs with too many FROM Clauses  (RPG300)",
     "href": "quality-rules/1009064.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches all the programs having too many FROM clauses.",
     "output": "This report lists RPG300 Programs with having more than 5 FROM Clauses.\n\nIt provides the following information:\nRPG300 Program full name \"",
     "rationale": "Having complex queries in Programs can cause performance problems.",

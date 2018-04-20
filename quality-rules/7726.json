@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Action artifacts that call packages that reference database",
     "href": "quality-rules/7726.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "The package that reference the database",
     "description": "Find all Action Classes (and parent classes) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x) list artifacts that call classes referenced in a package that reference directly the database or reference JPA or Hibernate Entities.",
     "output": "This report lists all action artifacts that call a package that reference database or reference JPA or Hibernate Entities.\nIt provides the following information:\n Artifact full name, the package that reference the database",

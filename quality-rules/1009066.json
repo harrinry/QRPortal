@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs with too many WHERE Clauses  (RPG300)",
     "href": "quality-rules/1009066.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches all the programs having too many WHERE clauses.",
     "output": "This report lists RPG300 Programs having more than 5 WHERE Clauses.\nIt provides the following information:\nRPG300 Program full name",
     "rationale": "Having complex queries in Programs can cause performance problems.",

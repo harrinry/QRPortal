@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid empty catch statement (Flex)",
     "href": "quality-rules/1003086.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.empty.EmptyCatchStatementRule",
     "rationale": "Catch blocks should have code to handle the thrown exception. If they are empty or have only comments, the Exception will not be handled.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

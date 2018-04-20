@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having Class Methods or Constructor without scope modifiers - Symfony STD (PHP)",
     "href": "quality-rules/1007236.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rules verifies that Class Methods and Constructor have scope modifiers. Class Methods and constructors must be defined as public, private, or protected.",
     "output": "This report will list all PHP class Methods and Constructor not having scope modifiers. It provides:\nClass Method or Constructor full name.",
     "rationale": "Access modifiers are essential element of object oriented language. Use of access modifier helps achieve encapsulation and abstraction. They also make code understanding clearer.",

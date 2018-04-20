@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid locking of Objects with weak identities",
     "href": "quality-rules/8094.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "The quality rule searches all the methods or functions having threads that try to lock objects with weak identity.",
     "output": "This report lists all the methods having threads that try to lock objects with weak identity.\nIt provides following information:\n-  Method name or Function name",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid  classes with too many fields (PHP)",
     "href": "quality-rules/1007132.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the classes with too many fields.",
     "output": "This report lists all the classes that have too many fields.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "Classes that have too many fields could be redesigned to have fewer fields, possibly through some nested object grouping of some of the information. For example, a class with city/state/zip fields could instead have one Address field.",

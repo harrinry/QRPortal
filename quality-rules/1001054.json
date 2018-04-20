@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced PLI Procedures & Functions (PL1)",
     "href": "quality-rules/1001054.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches for all PLI  Procedures and Functions that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced PLI Procedures and Functions.\n\nIt provides following information: \n-  PL1 Procedure and Function full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

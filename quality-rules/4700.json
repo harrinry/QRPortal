@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'Throwable.printStackTrace()' within a try catch block",
     "href": "quality-rules/4700.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Catch blocks should not use 'Throwable.printStackTrace()' to log the stack of errors.",
     "output": "This report lists all Methods using 'Throwable.printStackTrace()' in catch blocks.It provides the following information: Method full name",
@@ -38,6 +40,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        }
     ]
 }

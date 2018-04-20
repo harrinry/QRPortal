@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using inline PERFORM with too many lines of code",
     "href": "quality-rules/7370.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rules searches for Cobol programs containing PERFORM - END-PERFORM loops with more than 80 lines.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - PERFORM - END-PERFORM block with more than 80 lines",

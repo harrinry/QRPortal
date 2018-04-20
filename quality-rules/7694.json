@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid calling the same paragraph with PERFORM and GO TO statements",
     "href": "quality-rules/7694.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs containing paragraphs called by GO TO statements and by PERFORM statements.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n    - The PERFORM statements\n    - The GO TO statements",

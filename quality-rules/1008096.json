@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Better to use QUALIFIED data structures  (RPG400)",
     "href": "quality-rules/1008096.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for all RPG400 programs not using QUALIFIED data structures.",
     "output": "This report lists RPG400 programs not using QUALIFIED data structures.\nIt provides the following information:\nRPG400 Program full name",
     "rationale": "Qualified data structures allow you to use the same field name in multiple structures without name conflict, provide a means of defining standard structures (the most obvious use of this is for APIs), and they lead to self documenting code.",

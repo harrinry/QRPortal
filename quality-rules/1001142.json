@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Functions and Procedures with DB2 SQL containing \"UNION\" clause without \"ALL\" option (PL1)",
     "href": "quality-rules/1001142.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches all PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL code containing UNION clause without ALL option.",
     "output": "The report lists all the PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL code containing UNION clause without ALL option. \n\nIt provides following information: \n- PL1 Main Procedure, PL1 Function and PL1 Procedure full name",
     "rationale": "A UNION without the ALL keyword required a sort and increased CPU consumption",

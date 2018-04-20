@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "SiebelReview: Duplicate Column Mappings",
     "href": "quality-rules/1520126.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Number of mappings",
     "description": "When two or more BusComp fields are mapped to the same table column, it can lead to the following problems:\n* If both fields are active in the same BusComp context, it can lead to duplicate column insert errors during an insert or copy operation.  This behavior occurs most frequently during a copy.\n* It adds to repository overhead and introduces maintenance difficulties.",
     "output": "This rule reports all Fields within a Business Component which are mapped to the same column",

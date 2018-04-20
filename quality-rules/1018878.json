@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Process Groups (TIBCO BW)",
     "href": "quality-rules/1018878.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "This metric retrieves all Tibco Process Groups that are not referenced i.e. not used by Tibco code.",
     "output": "This report lists all Number of Tibco Process Groups that are not referenced.\nIt provides the following information:\nTibco Process Groups full name",
     "rationale": "Unreferenced Process Groups like any other example of dead code make maintenance more difficult and more expensive.",

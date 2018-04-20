@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid accessing data by using the position and length",
     "href": "quality-rules/7558.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs accessing part of data by using a position and a length.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Data accessed via a position and a length in the PROCEDURE division",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Pointers",
     "href": "quality-rules/7302.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs containing data declarations for which the usage clause is POINTER.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - Data declaration with the usage set to POINTER",

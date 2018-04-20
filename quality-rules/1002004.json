@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Do not use EQUIVALENCE in Programs  (FORTRAN)",
     "href": "quality-rules/1002004.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "The number of EQUIVALENCE statements are counted per artifact; whenever the artifact has 1 or more occurences of this statement, it is considered as being in violation. The number of EQUIVALENCE statements is presented in the value of the violated artifact.",
     "rationale": "Use of the instruction EQUIVALENCE is forbidden.",
     "remediation": "Reduce the number of EQUIVALENCE statements, or seek alternatives to this statement",

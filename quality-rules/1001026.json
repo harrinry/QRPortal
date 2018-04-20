@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid PLC Procedures & Functions with a High Fan-in (PL1)",
     "href": "quality-rules/1001026.json",
+    "critical": false,
+    "maxWeight": 2,
     "description": "This rule searches for all the PLC procedures or functions having number of other Artifacts that are referencing it very high. When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. \nThe threshold level is a parameter that can be changed at will.\nSpecial procedures ignored are PT%, ERROR, ERRORMSG, ERRORDB, DEBUG, ERR_DL1 and XERR_DL1.",
     "output": "The report lists all the PLC  procedures and functions with high Fan-in. \n\nIt provides following information: \n-  procedures and functions full name",
     "rationale": "The higher the number of referenced Artifacts, the more difficult the maintenance and evolution as all updates in referenced Artifacts will have to be tested and taken into account. Avoid Artifacts with High Fan-In (Fan-In > X)",

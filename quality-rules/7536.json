@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using AT Events in combination of LOOP AT .... WHERE constructs",
     "href": "quality-rules/7536.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This metric retrieves all ABAP Artifacts which contain a the combination of a LOOP AT .... WHERE construct and an AT event such as :\nAT FIRST\nAT NEW \nAT END\nAT LAST",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

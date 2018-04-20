@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "CWE-681: Avoid numerical data corruption during incompatible mutation",
     "href": "quality-rules/8216.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all incorrect numeric type conversions which may produce unexpected results:\n- int i = (int) 33457.8f; \n- int i1 = 1 + 2+ (int)3.5\n- if(integerValue == (int)floatValue)\nA violation is raised if converting from one data type to another, such as long to integer in the data which can be translated in a way that produces unexpected values.",
     "output": "Reports all incorrect numeric type conversions which may produce unexpected results. \nIt reports:\n- artifact fullname",
@@ -37,6 +38,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-681",
+            "name": "Numeric Types Incorrect Conversion",
+            "reference": null,
+            "description": null
+        }
     ]
 }

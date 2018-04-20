@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using PLI Main Procedures using FIXED variable type declaration  (PL1)",
     "href": "quality-rules/1001106.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches all the PLI Main Procedures using FIXED variables declaration type.",
     "output": "The report lists all the PLI Main Procedures using FIXED variable type declaration.\n\nIt provides following information: \n-  PLI main procedures full name",
     "rationale": "Use of FIXED variable may lead to loss of precision while performing arithmetic operations in the Main Procedures.",

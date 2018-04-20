@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Pages should use error handling page",
     "href": "quality-rules/2232.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "When the web.xml file doesn't reference an error page through the <error-page> directive, this Quality Rule reports each page that does not reference an error page directive (<%@ page errorPage=\"error.jsp\" %>) except for the error page itself (page with the directive <%@ page isErrorPage=\"true\"%>)",
     "output": "This report lists all JSP pages not using error page (except the error pages themselves) and the web.xml file when no error-page is specified in the web.xml file.\nIt provides the following information: \n JSP page full file name",
@@ -40,6 +41,19 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-397",
+            "name": "Declaration of Throws for Generic Exception",
+            "reference": null,
+            "description": null
+        }
     ]
 }

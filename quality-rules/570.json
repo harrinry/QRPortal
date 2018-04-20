@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid large Interfaces - too many Methods",
     "href": "quality-rules/570.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of methods",
     "description": "This rule searches for interfaces that have too many methods. The threshold is a parameter that can be changed at will.\n\nNote: C++ interfaces are pure virtual classes.",
     "output": "Associated to each C++ interface with violations, the Quality Rule provides:\n- The number of methods",

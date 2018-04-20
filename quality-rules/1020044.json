@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using setData in ondragstart with attribute draggable set to true",
     "href": "quality-rules/1020044.json",
+    "critical": true,
     "description": "This is a text injection by drag-and-drop. If you have a draggable block which triggered an ondragstart event that contains a malicious code and an iframe, the malicious code could be executed. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you do not have html pattern that allows an attacker to try a text injection using drag and drop features.",

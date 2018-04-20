@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid redundant indexes",
     "href": "quality-rules/7346.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "List all indexes that are redundant i.e. indexes on the same column(s) or included into another composite index.",
     "output": "List all tables with indexes which:\n- Columns list (ordered) are the same as another index\n- Columns list (ordered) is contained (in the same order, starting from the start) in another index",

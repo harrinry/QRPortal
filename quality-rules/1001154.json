@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs having files declared and not having the ON UNDF or ON UNDEFINEDFILE statement except SYSPRINT and SYSIN (PL1)",
     "href": "quality-rules/1001154.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for all PL1 Main Procedures (Programs)  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.",
     "output": "The report lists all the  PL1 Main Procedures  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.\n\nIt provides following information: \n- PL1 Main Procedures full name",
     "rationale": "When a program doesn't check for its files availability, it may produce an abend.",

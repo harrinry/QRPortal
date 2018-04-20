@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "CWE-117: Avoid Log forging vulnerabilities",
     "href": "quality-rules/8044.json",
+    "critical": true,
     "associatedValueName": "Call stack from user input source down to the target log method",
     "description": "This metric uses CAST dataflow engine to detect a call path where input data from the user is written into the application logs without prior validation & sanitization.\n\nThe list of user input methods, Log writing and as well as the validation method can be customized.",
     "output": "- Method full name\n- Call stack from user input source down to the target log method",

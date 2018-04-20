@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having call function return ignored (PHP)",
     "href": "quality-rules/1007170.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the Methods and Functions containing call function returns that are ignored.",
     "output": "This report lists all the Methods and Functions containing call function returns that are ignored.\n\nThis QR provides the following information:\nMethod and Function full name.",
     "rationale": "In PHP ignoring the result of a function indicates that the programmer has made an assumption about this return value. Unfortunately, sometimes this assumption can be wrong and produce unexpected results for the application.",

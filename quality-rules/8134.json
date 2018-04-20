@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid unsorted data after SELECT queries",
     "href": "quality-rules/8134.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for all cases where SELECT queries without an ORDER BY clause or a subsequent SORT are followed by statements that require the result set (internal tables) to be sorted. The following ABAP statements require internal tables to be sorted:\n    - AT NEW\n    - AT END OF\n    - AT FIRST\n    - AT LAST\n    - DELETE ADJACENT DUPLICATES FROM ...\n    - READ TABLE ... BINARY SEARCH",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- Bookmarks for violation patterns found in source code",

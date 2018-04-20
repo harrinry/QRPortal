@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Specify Error Subroutine for File Exception Handling  (RPG400)",
     "href": "quality-rules/1008074.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches all the artifacts not having File Exception Handling and not specifying Error Subroutines.",
     "output": "This report lists RPG400 Programs not having File Exception Handling.\nIt provides the following information:\n- RPG400 Program full name",
     "rationale": "The error handling subroutine needs to be specific to prevent the application from unhandled exceptions. These can lead to application halt or unvalidated results. No specifying this on the file declaration part (F-spec) can show that the exceptions are not handled properly.",

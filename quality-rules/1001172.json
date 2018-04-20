@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Programs overriding the *PROCESS statement (PL1)",
     "href": "quality-rules/1001172.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches for PL1 Main Procedures (Programs) overriding the *PROCESS statement.",
     "output": "The report lists all the PL1 Main Procedures overriding the *PROCESS statement.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "Not using the parameters defined in the procedure will override the standard options of the compiler and can generate unexpected behavior due to inconsistency between  load modules.",

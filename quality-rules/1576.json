@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use varchar2 instead of char and varchar",
     "href": "quality-rules/1576.json",
+    "critical": false,
+    "maxWeight": 2,
     "associatedValueName": "Associated Value",
     "description": "You use the VARCHAR2 datatype to store variable-length character data. \nThe STRING and VARCHAR are subtypes of VARCHAR2 having the same range of values as their base type. For example, VARCHAR is just another name for VARCHAR2.\nVARCHAR is synonymous with VARCHAR2. \nHowever, in future releases of PL/SQL, to accommodate emerging SQL standards,\nVARCHAR might become a separate datatype with different comparison semantics. \n\nTherefore the recommendation from Oracle is to change char to varchar2 to save space and change varchar to varchar2 to accomodate future changes.",
     "output": "This report lists all tables, package procedures, package functions, procedures and functions not using the varchar2 type\nIt provides the following information: \n- tables, package procedure, package function, function or procedure Name, \n- tables, package procedure, package function, function or procedure full Name.",

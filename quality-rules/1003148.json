@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid clone event not overriden in a custom event (Flex)",
     "href": "quality-rules/1003148.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.event.EventMissingCloneFunctionRule",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
     "sample": "public class FirstCustomEvent   // VIOLATION - clone method is missing\n{\n   public var lala : String;\n   \n   public function FirstCustomEvent()\n   {         \n   }\n}",

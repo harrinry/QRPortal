@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid having iframe inside a tag",
     "href": "quality-rules/1020042.json",
+    "critical": true,
     "description": "This is a reverse clickjacking via iframe issue. For example, Internet Explorer allows to place <IFRAME> tags inside <A> tags. By clicking on a not clickable element inside the IFRAME there will be executed the URL defined in the \"href\" attribute of the <A> tag. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you do not have html pattern that allows an attacker to do a reverse clickjacking.",

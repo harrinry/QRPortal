@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use Angular wrapper service $window",
     "href": "quality-rules/1020510.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "Instead of the default window object, you should prefer the AngularJS wrapper service $window. This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the AngularJS API, you should use the AngularJS window wrapper method.",

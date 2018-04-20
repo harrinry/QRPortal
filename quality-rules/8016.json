@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid unsecured EJB remote method",
     "href": "quality-rules/8016.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Report all EJB remote methods that are not associated to a permission unless this method is associated to an unchecked permission (i.e permitted for any authenticated role) or defined in the excluded-list (can't be called). It works for EJB 3.0 and takes into account both annotation and descriptor specifications.",
     "output": "This report all EJB remote methods (i.e methods of the remote interface and its parent) that are not associated to a permission unless this method is associated to an unchecked permission (i.e permitted for any authenticated role) or defined in the excluded-list. \nIt provides the following information:\n Method Full Name",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use Angular wrapper service $document",
     "href": "quality-rules/1020508.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "Instead of the default document object, you should prefer the AngularJS wrapper service $document. The rule is compliant with the CISQ OMG recommendation ASCMM-MNT-20",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, you should use the AngularJS wrapper $document.",

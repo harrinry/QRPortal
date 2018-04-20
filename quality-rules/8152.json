@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having transaction with the Thread.Sleep method in a loop",
     "href": "quality-rules/8152.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "Avoid and replace the Thread.Sleep method in a loop in a transaction.",
     "output": "This report lists all artifacts having transactions with Thread.Sleep call in a loop.\nIt provides the following information: \n  Artifact full name.",

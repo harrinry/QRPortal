@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Call 'super.finalize ()' in the \"finally\" block of 'finalize ()' methods",
     "href": "quality-rules/7252.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "List all finalize method with no try finally block or with no call to super.finalize() within the finally block.",
     "output": "This report lists all Methods  'finalize()' with no try finally block or with no call to super.finalize() within the finally block.\nIt provides the following information:\n Method full name",

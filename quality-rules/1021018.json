@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid catch-all except blocks with empty handlers",
     "href": "quality-rules/1021018.json",
+    "critical": true,
     "associatedValueName": "Single Value",
     "description": "This metric reports all methods with at least one cath-all except block with an empty implementation. Working with exceptions is common to Python but sometimes using try/except blocks without doing anything when an exception happened is very dangerous. This rule is compliant with the CISQ OMG ASCRM-RLB-01 recommendation.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

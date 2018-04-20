@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Constructors not supplying an initial value for all non-static data members",
     "href": "quality-rules/7932.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ class constructors that do not initialize all class members defined with a scalar type or that are pointers.  \n\nInitializations can be created in the constructor declaration or in the constructor body.\n\nClass members that are not taken into account are:\n- Class instances\n- Defined with a non-scalar type",
     "output": "Associated to each C++ constructor with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - Class member with a scalar type and not initialized",

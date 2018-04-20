@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Tables having Indexes with a too large Index definition",
     "href": "quality-rules/7350.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This metrics retrieves all tables having indexes with a too large index definition (larger than the threshold parameter). The index definition size is measured as the sum of index column's size in bytes.",
     "output": "This Quality Rule does not report any additional value on the Violation.",

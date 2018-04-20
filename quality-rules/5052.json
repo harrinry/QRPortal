@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using IGNORE CONDITION",
     "href": "quality-rules/5052.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of IGNORE CONDITION",
     "description": "This rule searches for Cobol programs containing the CICS \"IGNORE CONDITION\" command.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of IGNORE CONDITION\n- Bookmarks for violation patterns found in the source code:\n  - EXEC CICS IGNORE CONDITION command",

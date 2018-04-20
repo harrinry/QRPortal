@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use BeginUpdate/EndUpdate when using Items.Add method in loop",
     "href": "quality-rules/7474.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Associated Value",
     "description": "This metric list all objects where calls to Items.Add (of WinForm controls) are done in loops without using BeginUpdate/EndUpdate.",
     "output": "This metric list all objects where calls to Items.Add are done in loops without using BeginUpdate/EndUpdate.\nThis only display objects were BeginUpdate and EndUpdate are available for the control used.",

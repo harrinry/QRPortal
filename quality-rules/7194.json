@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid large number of String concatenation",
     "href": "quality-rules/7194.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "All artifacts should not call more than X times the += operator or Concat Method\n\nLimitation: This does not apply to C# code contained directly into an ASP.net page (with <% tags)",
     "output": "This report lists all artifacts calling more than X times the '+=' operator or Concat method on String object.\nIt provides the following information:\n Method full name, the number of time the '+=' or Concat is called",
