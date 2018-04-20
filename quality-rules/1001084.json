@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Main Procedures having the FETCH statement not followed by the word \"TITLE\" (PL1)",
     "href": "quality-rules/1001084.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This rule searches all PL1 Main Procedures  having FETCH without the TITLE option.",
     "output": "The report lists all the PL1 Main Procedures  having FETCH without the TITLE option. \n\nIt provides following information: \n-  PL1 Main Procedure full name",
     "rationale": "For better performance, It is recommended to declare a component as fetchable in the fetchable component itself rather then issuing a fetch.",

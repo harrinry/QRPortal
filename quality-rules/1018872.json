@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Activities using ROWNUM (TIBCO BW)",
     "href": "quality-rules/1018872.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Avoid ROWNUM if it is possible, use ROW_NUMBER built-in SQL function.",
     "output": "This report lists all Tibco Activity using COUNT(*) in queries.\nIt provides the following information:\n- Tibco Activity full name",

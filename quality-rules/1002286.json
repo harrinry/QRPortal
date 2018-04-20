@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "All ALLOCATE statements in Fortran-90 Functions must use the return code STAT (FORTRAN)",
     "href": "quality-rules/1002286.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "The number of ALLOCATE statements are compared against the number of STAT return code statements. The artifacts that have a ALLOCATE without a STAT return code are reported as a violation.",
     "businessCriteria": [
         {

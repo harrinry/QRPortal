@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid PLI Programs with more then XX Procedures (PL1)",
     "href": "quality-rules/1001178.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches for PL1 Main Procedures (Programs) that have more than XX procedures and functions. XX Parameter can be set at will.",
     "output": "The report lists all the for PL1 Main Procedures having more than XX procedures.\n\nIt provides following information: \n- for PL1 Main Procedures full name",
     "rationale": "Having artifacts with more then XX Procedures makes them more difficult to maintain.",

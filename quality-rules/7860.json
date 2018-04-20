@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Functions",
     "href": "quality-rules/7860.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "Reports all Functions that are not referenced except main.\n\nNotes: \n- JavaScript eventHandler are not taken in account.\n- PL/SQL stored procedures are taken in account.",
     "output": "This report lists all unreferenced Functions\nIt provides the following information:\n  Function full name.",
@@ -88,22 +90,18 @@
             "href": "technologies/141001.json"
         },
         {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
-        },
-        {
             "id": 1101000,
             "name": "SQLAnalyzer",
             "href": "technologies/1101000.json"
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "reference": null,
+            "description": null
+        }
     ]
 }

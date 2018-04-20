@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using javascript or expression in the CSS file",
     "href": "quality-rules/1020030.json",
+    "critical": true,
     "description": "You will have to ensure that URLs only start with \"http\" not \"javascript\" and that properties never start with \"expression\". This rule is compliant with CIS OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure your css files will not get data from untrusted source.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced PLC DB2 tables (PL1)",
     "href": "quality-rules/1001066.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This metric searches for all the PLC  DB2 tables that are not referenced i.e. not called.",
     "output": "The report lists all the PLC DB2 tables.\n\nIt provides following information: \n-  PLC DB2 tables full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

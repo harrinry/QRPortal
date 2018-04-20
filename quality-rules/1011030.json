@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Physical files with fields defined locally  (DDS400)",
     "href": "quality-rules/1011030.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches for all the Physical files having fields that don't specify a REFFLD.",
     "output": "This report lists DDS400 physical File having fields defined locally.\nIt provides the following information:\nDDS400 Physical File full name",
     "rationale": "For reuse reasons, the field should be defined in a file reference. If not, you might define different types for the same field.",

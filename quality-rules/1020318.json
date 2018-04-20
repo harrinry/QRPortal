@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using jQuery deprecated methods",
     "href": "quality-rules/1020318.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Be careful when using deprecated methods. The deprecation period should be used to smoothly make the transition. The rule raises an issue when any of the following methods is used:\n- .andSelf()\n- .context\n- .die()\n- .error()\n- jQuery.boxModel\n- jQuery.browser\n- jQuery.sub()\n- jQuery.support\n- .live()\n- .load()\n- .selector\n- .size()\n- .toggle()\n- .unload()\nThis rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Using deprecated jQuery API could lead to security compliancy issues.",

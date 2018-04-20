@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Avoid deleting delivered values in standard XLAT",
     "href": "quality-rules/1600160.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Deleted XLAT value",
     "description": "Identify each field with XLAT in the Vanilla not in the project environment",
     "output": "Failed checks gives the number of fields that contain deleted XLAT. The XLAT name (detected in the vanilla) can be found in the value column",

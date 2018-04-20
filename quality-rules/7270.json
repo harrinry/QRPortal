@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Declare as Static all methods not using instance members",
     "href": "quality-rules/7270.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Associated Value",
     "description": "All methods that don't use instance fields will be reported except if they have been extended in a subclass or inherit from their parents.\n\nFor all .Net Classes, including .Net Forms : \nIf a method doesn't use an instance field or const, it should be declared static except if the method is overriden or override another method.",
     "output": "All methods that don't use instance fields (either const or not) will be reported except if they have been extended in a subclass or inherit from their parents.",

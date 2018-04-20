@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid use of standard SQL API",
     "href": "quality-rules/2236.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation",
     "description": "Reports all pages that reference a class, interface or method whose full qualified name begin with 'java.sql.' or 'javax.sql'",
     "output": "This report lists all JSP pages using standard SQL APIs \nIt provides the following information: \n - Page name\n - the number of violation",

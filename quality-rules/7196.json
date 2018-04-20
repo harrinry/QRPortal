@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid large number of String concatenation",
     "href": "quality-rules/7196.json",
+    "critical": false,
+    "maxWeight": 2,
     "associatedValueName": "Number of time the '+' is called",
     "description": "All String Classes should not call more than X times the + Method. \n\n However: \n * This does not take into account literals since they are automatically optimized by the compiler. For example: String a = \"abc\"+\"abcd\" will not be counted as a concatenation. \n * Since version 1.6, the Oracle JVM also automatically optimizes this pattern in most cases. However, other JVMs might not. So this quality rule is kept in the AIP quality model, albeit with a low weight. ",
     "output": "This report lists all methods calling more than X times the '+' method on String object.\nIt provides the following information:\n - Method full name\n - the number of time the '+' is called",

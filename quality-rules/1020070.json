@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid hardcoded network resource names in Javascript",
     "href": "quality-rules/1020070.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "This quality rule reports all artifacts that contain hardcoded \n- IP addresses (IPv4 and IPv6) \nThe rule is compliant with OMG CISQ ASCRM-RLB-18 recommendation.\n",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Built-in remote addresses cause problems when the target is moved. Avoid hardcoded network resources (e.g., IP addresses, URLs, etc.)",

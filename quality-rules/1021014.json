@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using yield and return with value inside a function",
     "href": "quality-rules/1021014.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Single Value",
     "description": "Functions that are using yield and return with value (different from None) are very sensitive to the Python version. To avoid any technical complexity, we strongly suggest you to do not use these annotations together within functions in your code.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

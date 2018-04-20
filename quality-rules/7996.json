@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
     "href": "quality-rules/7996.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for utility classes which do not have any constructors. Utility classes are static classes: all their fields and functions are static and at least one static function must exist. Default constructors are constructors without any parameters. \n\nNote: The following do not prevent a class from being considered as static: \n- Non-static Constructors \n- Destructors \n- Affectation assignment operators \n\nA class containing only protected constructors (instead of private) is not considered as violating the rule.",
     "output": "Associated to each C++ utility class with violations, the Quality Rule provides:\n- the number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - class",

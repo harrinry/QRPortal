@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid NATURAL JOIN queries",
     "href": "quality-rules/1101010.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "List all SQL Artifacts containing a query that has NATURAL JOINs.",
     "output": "List all Artifacts having NATURAL JOINs.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

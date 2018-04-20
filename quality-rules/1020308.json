@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Always cache the returned objects in variables to be reused",
     "href": "quality-rules/1020308.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "Always cache your jQuery selector, based on class, returned objects in variables for reuse. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that using jQuery selector will not lead to a performance issue. Requesting Id or caching the results is a good way to improve performance.",

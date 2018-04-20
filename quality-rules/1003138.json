@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid BindingUtils class that uses hard coded strings (Flex)",
     "href": "quality-rules/1003138.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.binding.BindingUtilsRule",
     "rationale": "BindingUtils class uses hard coded strings, which will not be picked up by the compiler if you rename this attribute. You should probably consider refactoring using events",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

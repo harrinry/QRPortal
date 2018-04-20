@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Implementation files with a very low comment/code ratio",
     "href": "quality-rules/1094.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Comment/code ratio",
     "description": "Implementation files should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.\n\nNote: Implementation files are files ending with .c, .cpp or .cc",
     "output": "Associated to each C/C++ implementation file with violations, the Quality Rule provides:\n- The comment/code ratio",

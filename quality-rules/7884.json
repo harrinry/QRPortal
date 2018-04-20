@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid disabling source code inspection",
     "href": "quality-rules/7884.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule checks ABAP source code for searching directives that allow the deactivation of specific checks performed by the Code Inspector tool. These directives are: \"SET EXTENDED CHECK OFF\" and \"\"#EC...\".",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

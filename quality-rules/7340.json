@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Classes with Destructor not explicitly virtual whenever one of its base Class has a virtual Destructor",
     "href": "quality-rules/7340.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for derived classes which provide a destructor not explicitly declared as virtual and which inherit from a base class that provides a virtual destructor.",
     "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation patterns found in source code:\n  - Derived-class non-virtual destructor\n  - Base-class virtual destructor",
@@ -38,16 +40,6 @@
             "id": -3,
             "name": "C++",
             "href": "technologies/-3.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

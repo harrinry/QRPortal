@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid thread creation for application running on application server",
     "href": "quality-rules/7728.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Associated Value",
     "description": "Reports all methods that call one of the following methods:\n* <class full name>.start() where <class full name> inherit from java.lang.Thread\n* java.lang.Thread.start()\nor reference one of the following interfaces or an implementation of these:\n* java.util.concurrent.Executor\n* java.util.concurrent.ExecutorService\n\nwhen ejb-jar.xml or web.xml are present in the application that is being analyzed.",
     "output": "This Quality Rule reports all methods that create threads. It provides the following information: Method or Constructor Full Name",

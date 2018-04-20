@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
     "href": "quality-rules/8026.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for classes which implement an assignment operator (operator=) but which let the compiler generate a default version for the destructor or the copy constructor.",
     "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - operator=",

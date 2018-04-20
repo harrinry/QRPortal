@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Always define column names when inserting values",
     "href": "quality-rules/1101026.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "This metric lists SQL Artifacts without columns in insert clauses.",
     "description": "To preserve code functionality and avoid mistakes with regard to column handling, always explicitly use the column name.",
     "output": "List all Artifacts without columns in INSERT clause.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.\n",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction",
     "href": "quality-rules/4062.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Associated Value",
     "description": "Avoid Stored Procedures doing an Insert, Update or Delete and not managing a transaction (execute \"begin tran\" if @@trancount=0)",
     "output": "This report lists all Stored Procedures doing an Insert, Update or Delete and not managing a transaction (execute \"begin tran\" if @@trancount=0)",

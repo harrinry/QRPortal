@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Subroutines with nested if Statements  (RPG300)",
     "href": "quality-rules/1009034.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "This rule searches the subroutines having nested IF statements.\nThe rule checks for ENDIF statements and when it finds atleast 5 nested ENDIFs, it throws a violation.",
     "output": "The rule checks for ENDIF statements and when it finds atleast 5 nested ENDIFs, it throws a violation.\nIt provides the following information:\nRPG300 Subroutines full name \"",
     "rationale": "Nested IF statements made source code more difficult to read and to test.",

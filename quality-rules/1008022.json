@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Subroutines with High Fan-Out  (RPG400)",
     "href": "quality-rules/1008022.json",
+    "critical": false,
+    "maxWeight": 4,
     "description": "This rule searches all the subroutines with High Fan-Out.",
     "output": "This report lists RPG400 Subroutines with High Fan-Out.\nIt provides the following information:\nRPG400 Subroutine full name",
     "rationale": "The higher the number of referenced subroutines, the more difficult the maintenance and evolution as all updates in referenced Programs will have to be tested and taken into account.",

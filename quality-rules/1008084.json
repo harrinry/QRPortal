@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using obsolete \"Conditional Operations\" statements in RPG Subroutines (RPG-IV only)  (RPG400)",
     "href": "quality-rules/1008084.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches all the subroutines having obsolete \"Conditional Operations\" statements.",
     "output": "This report lists RPG400 subroutines using obsolete \"Conditional Operations\" statements in RPG Programs (RPG-IV only)\nIt provides the following information:\nRPG400 subroutine full name",
     "rationale": "During the upgrade of the different RPG versions (V2 / V3 / ILE V4) some statements are no longer supported. Where ever in the code these statements the artifact is reported as a violation.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using global SAVE in Fortran-90 Modules  (FORTRAN)",
     "href": "quality-rules/1002100.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "The keyword  SAVE will be searched for, indicating this global save. Any artifact having this statement is considered being in violation.",
     "rationale": "Instruction SAVE maintains local variables in memory until the program exit. The data area is normally used for variables that are in common, saved variables, and initialized variables.  The size of the data area is system dependent .",
     "remediation": "Limit the use of the global SAVE.",

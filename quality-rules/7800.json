@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Classes with High Coupling Between Objects",
     "href": "quality-rules/7800.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Coupling Between Object Classes (CBO)",
     "description": "Avoid Classes with High Coupling Between Objects (CBO > X)\nThe Coupling Between Objects (CBO) is equal to the fan-out of a Class, that is, the number of other Classes that are referenced through one of its methods or one of its fields. \nThe threshold is a parameter and can be changed at will.",
     "output": "This report lists all Classes with Coupling Between Objects greater than X. It provides the following information:  Class full name, CBO",

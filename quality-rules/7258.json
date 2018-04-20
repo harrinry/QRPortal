@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
     "href": "quality-rules/7258.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "The purpose of this quality rule is to detect calls to the DataReader's ExecuteReader method made without the use the CommandBehavior.CloseConnection style.\n\nThis quality rule is valid for any class that the inherit directly or indirectly from IDataReader including SqlDataReader, OleDbDataReader, OracleDataReader, OdbcDataReader.",
     "output": "List all methods where a call to ExecuteReader without the CommandBehavior.CloseConnection parameter.",

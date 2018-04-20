@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with High Cyclomatic Complexity (Python)",
     "href": "quality-rules/1021000.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Cyclomatic complexity",
     "description": "Avoid Artifacts with High Cyclomatic Complexity (CC > 20). Complex Artifacts are difficult to maintain. Keeping Artifacts small and simple ensures an good readability of the code.  The threshold level is a parameter that can be changed at will.",
     "output": "Associated to each Python Artifact with violations, the Quality Rule provides:\n- The Cyclomatic complexity",

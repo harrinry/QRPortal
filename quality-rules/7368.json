@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "When using binary data items (COMP), then use the SYNCHRONIZED clause",
     "href": "quality-rules/7368.json",
+    "critical": false,
+    "maxWeight": 2,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs in which binary numeric data are not defined with the SYNCHRONIZED clause.\n\nThe SYNCHRONIZED clause can be used on the data declaration itself or on the declaration of its parent structure.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Binary numeric data definition that is not used with the SYNC clause",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid large Macros - too many Lines of Code",
     "href": "quality-rules/1060.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of LoC",
     "description": "This rule searches for C/C++ macros defined with too many lines. The threshold is a parameter that can be changed at will.",
     "output": "Associated to each C++ Macro with violations, the Quality Rule provides:\n- The number of LoC",

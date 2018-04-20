@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid return statement in finally block",
     "href": "quality-rules/1021024.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Single Value",
     "description": "Reports all methods that contain an abrupt in a finally block. An abrupt completion of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method. This rule is compliant with CISQ OMG ASCMM-MNT-01 recommendation.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

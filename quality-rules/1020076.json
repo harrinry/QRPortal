@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with too many parameters (Javascript)",
     "href": "quality-rules/1020076.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "Avoid artifacts with more than X parameters. The threshold X is a parameter and it can be changed at will.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "For maintainability and readability reasons, artifacts should not have too many parameters.",

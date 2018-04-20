@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Use declarative transaction",
     "href": "quality-rules/7730.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "When EJB Session and/or Message Driven Beans exist, this Quality Rule reports all methods that directly (or indirectly through inheritance) reference an object of the following type:\n* java.sql.Connection\n* javax.transaction.UserTransaction\n* javax.persistence.EntityTransaction\n* org.hibernate.Transaction\n* org.springframework.transaction.PlatformTransactionManager\n* org.springframework.transaction.support.TransactionTemplate",
     "output": "This Quality Rule reports all methods that reference programmatic transactions. It provides the following information: Method or Constructor Full Name",

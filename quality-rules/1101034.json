@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "DISTINCT should not be used in SQL SELECT statements",
     "href": "quality-rules/1101034.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
     "description": "List all Artifacts having \"DISTINCT\", \"DISTINCTROW\", \"UNIQUE\" modifiers in SQL \"SELECT\" statements",
     "output": "List all Artifacts which contain \"DISTINCT\", \"DISTINCTROW\", \"UNIQUE\" modifiers in SQL \"SELECT\" statements.\nThe following information is provided: \n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

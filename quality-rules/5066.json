@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using PERFORM ... THROUGH | THRU",
     "href": "quality-rules/5066.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using PERFORM ... THROUGH | THRU statements.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - PERFORM THOUGH | THRU statement",

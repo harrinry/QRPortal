@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Specify column names instead of column numbers in ORDER BY clauses",
     "href": "quality-rules/1101012.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Number of violation patterns",
     "description": "List all SQL Artifacts containing a query that has column numbers in ORDER BY clauses.",
     "output": "List all Artifacts containing column numbers in ORDER BY clauses.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

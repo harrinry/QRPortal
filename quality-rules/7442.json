@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid to use this within Constructor in multi-thread environment",
     "href": "quality-rules/7442.json",
+    "critical": true,
     "associatedValueName": "Number of occurrences of this",
     "description": "This metric will detect all cases where this is - directly or not - referenced in a constructor.\nIndirect reference to this means the definition of an inner class in the constructor. It includes also the case where the constructor call the method start of a thread within a constructor (i.e. a method that inherits from java.lang.Thread.start())",
     "output": "This report lists all constructors that involve this directly or indirectly.\nIt provides the following information:\n  - Method full name\n  - the number of occurrences of this detected in the constructor",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid php sections directly access database tables (PHP)",
     "href": "quality-rules/1007000.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all php Sections that directly access database table.",
     "output": "This report lists all php Sections that directly access database table.\n\nThis QR provides the following information:\nSection full name.",
     "rationale": "For security reasons, directly accessing database tables is not advised.",

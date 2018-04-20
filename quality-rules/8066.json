@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'using namespace' or 'using' declarations in header files",
     "href": "quality-rules/8066.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Namespace that is referenced",
     "description": "This rule searches for header files that contain, at namespace level, a 'using namespace' declarative or a namespace 'using' declaration.",
     "output": "Associated to each C++ header file with violations, the Quality Rule provides:\n- The namespace that is referenced\n- Bookmarks for violation patterns found in source code:\n  - \"Using namespace\" statement",

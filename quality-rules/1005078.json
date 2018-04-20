@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid program calls outside a try end block (EGL)",
     "href": "quality-rules/1005078.json",
+    "critical": true,
     "description": "This rules searches for all the functions calling programs outside a try end block",
     "output": "This report lists the following information: Program full name",
     "rationale": "Program call can raise exception. If they are not properly catched, the troubleshooting get harder and thus cost is higher.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "SiebelReview: MVL Primary Configuration",
     "href": "quality-rules/1520548.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Reason for violation (Do not define PrimaryIDField|Do not use PrimaryJoin)",
     "description": "In general, to improve performance, it is recommended to configure all MVLs by specifying the \"Primary Id Field\" property and setting the \"Use Primary Join\" property to TRUE. With these settings, the application will only generate and execute the additional select statement to retrieve all child records when the user invokes the MVG applet.This is valid even when the aforementioned occurrences come from cloning standard BCs.The above can be configured as follows:1. Identify an appropriate primary ID field to use:  * Consider using an unused standard column that contains the correct foreign key relationship to the table.  * If an unused standard column cannot be found, it will be necessary to extend the base table with new columns to store the primary Id fields and expose this column in the parent BC.2. The Primary Id field property of the MVL should be set to the new field.3. The Use Primary Join property of the MVL should be set to TRUE.4. Modify the MVG applets to expose the [SSA Primary Field] as the primary indicator if necessary.",
     "output": "This rule reports Multi-Value Links with an invalid configuration",

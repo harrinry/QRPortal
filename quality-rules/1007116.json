@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
     "href": "quality-rules/1007116.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the artifacts with object instantiation in loops.",
     "output": "This report lists all artifacts with object instantiation in loops.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Creating objects in loops can be expensive. Code creating objects in loops should be avoided especially in performance-critical code.",

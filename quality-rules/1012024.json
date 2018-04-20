@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid use of OPNQRYF  (CL400)",
     "href": "quality-rules/1012024.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for CL400 programs which use the OPNQRYF command.",
     "output": "This report lists all CL400 programs using OPNQRYF.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "As the OPNQRYF command has to process the query every time it is called, this can impact the performance of the calling program.",

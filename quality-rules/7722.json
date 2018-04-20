@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using references to the id in the persistent class's method equals()",
     "href": "quality-rules/7722.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "Reports all the equals() methods of a persistent class that refer to the persistence class's identifier (through the identifier attribute or the identifier getter). Note that the case where the equals method is implemented on a parent class and reference the id is taken into account too.",
     "output": "Lists all methods equals() methods of a persistent class that refer to the id. It provides the following information: Method full name",

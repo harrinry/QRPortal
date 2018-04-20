@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Validator form validate() Method must call super.validate()",
     "href": "quality-rules/7190.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that don't call super.validate()",
     "output": "This report lists all validate() methods that violate this rule.\nIt provides the following information:\n Method Full Name",
@@ -32,6 +34,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-103",
+            "name": "Struts: Validator Turned Off",
+            "reference": null,
+            "description": null
+        }
     ]
 }

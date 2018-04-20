@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Action Artifacts should not directly call a JSP page",
     "href": "quality-rules/7140.json",
+    "critical": true,
     "associatedValueName": "JSP page name",
     "description": "For all action class (and parent classes) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x), list artifacts that refers to JSP pages will be reported.",
     "output": "This report lists all Action artifacts calling a JSP pages.\nIt provides the following information:\n- Artifact full name\n- JSP page name",

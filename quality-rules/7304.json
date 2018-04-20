@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "IF statements must be closed by END-IF",
     "href": "quality-rules/7304.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using IF statements that are not closed by the END-IF terminator.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - IF statement that is not ended by the END-IF terminator",

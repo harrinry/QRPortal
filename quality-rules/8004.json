@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'delete this'",
     "href": "quality-rules/8004.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ Methods/Constructors/Destructors using 'delete this'.",
     "output": "Associated to each C++ Method with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code:\n  - 'delete this'",
@@ -33,16 +35,6 @@
             "id": -3,
             "name": "C++",
             "href": "technologies/-3.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

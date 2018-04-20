@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid having functions with no return (PHP)",
     "href": "quality-rules/1007168.json",
+    "critical": true,
     "description": "This rule searches for all the functions that do not have a return and they are used in a right side of an assignation.",
     "output": "This report lists all the functions without a return.\n\nThis QR provides the following information:\nFunction  full name.",
     "rationale": "In PHP the assignment of a function that has no return will always result in the value 'null'. This means that this statement has no effect.  If the value returned by the function is re-used in the source code, this could produce a crash of part of the application or even the entire application.",

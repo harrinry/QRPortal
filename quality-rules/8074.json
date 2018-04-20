@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
     "href": "quality-rules/8074.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C/C++ functions that pass class instances to variadic functions.",
     "output": "Associated to each C/C++ function, method, constructor, and destructor with violations, the Quality Rule provides:\n- number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - printf() or format() function call",
@@ -38,16 +40,6 @@
             "id": -2,
             "name": "C",
             "href": "technologies/-2.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

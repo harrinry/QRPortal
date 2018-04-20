@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid functions with optional parameters before required parameters (PHP)",
     "href": "quality-rules/1007150.json",
+    "critical": true,
     "description": "This rule searches for all the functions and methods with optional parameters before required ones.",
     "output": "This report lists all methods and functions with optional parameters listed before required ones.\n\nThis QR provides the following information:\nMethod or function full name.",
     "rationale": "Using optional parameters is a common practice in PHP. When using optional parameters, it is very important to assign a value to the optional parameters and to ensure that the optional parameters always follow required parameters. This will prevent application from giving unpredictable results.",

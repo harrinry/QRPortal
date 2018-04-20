@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using literals in assignments (hardcoded values)",
     "href": "quality-rules/7522.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "This metric retrieves all ABAP Artifacts using literals in assignments (hard-coded values). \n\nStatements that are taken into account are the following:\n- = assignment operator (ex: a = 'b'.)\n- Concatenate (ex: CONCATENATE a 'b' INTO c.)\n- Move (ex: MOVE 'a' TO b.)\n- Replace (ex: REPLACE 'a' WITH 'b' INTO c.)\n- Data initialization (ex: DATA a VALUE 'b'.)",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

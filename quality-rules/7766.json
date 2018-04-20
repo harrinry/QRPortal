@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with High Cyclomatic Complexity",
     "href": "quality-rules/7766.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "Retrieves all Artifacts having a Cyclomatic Complexity greater than the specified threshold . Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.",
     "output": "This report lists all Artifacts with a Cyclomatic Complexity greater than X.It provides the following information:  Artifact full name, CC",
@@ -122,16 +124,6 @@
             "id": 141901,
             "name": ".NET (Legacy Analyzer)",
             "href": "technologies/141901.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         },
         {
             "id": 1101000,

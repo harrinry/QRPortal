@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Related Language tables must have the same key structure as the table with the addition of the field LANGUAGE_CD.",
     "href": "quality-rules/1600296.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "RecordTable",
     "description": "List all Language Records that don't have the field LANGUAGE_CD in the key and all Language Records that don't have the same list of field in the key as in the base Record.",
     "rationale": "As PeopleSoft generates automatically the SQL query to handle multi-language, the related language table must have the same key structure as the table with the addition of the field LANGUAGE_CD.",

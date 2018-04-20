@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Functions  (FORTRAN)",
     "href": "quality-rules/1002148.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "The number of Allocate statements is compared to the number of Deallocate statements. More allocate statements than deallocate statements indicates un-allocated variables from memory",
     "rationale": "If an array or variable is not de-allocated, memory is not freed up. This main lead to memory issues. Advised standard is to both limit the use of ALLOCATE and to make sure that variables are de-allocated from memory",
     "remediation": "Make sure each allocated variable is deallocated in the same artifact.",

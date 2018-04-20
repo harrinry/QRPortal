@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Do not use MONMSG CPF0000 without EXEC  (CL400)",
     "href": "quality-rules/1012026.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for CL400 programs which use the MONMSG CPF0000 command without EXEC.",
     "output": "This report lists all CL400 programs.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "Checking this generic message will catch all associated exceptions. Then, not using the subsequent EXEC command means that no actions will be performed when an error accurs.",

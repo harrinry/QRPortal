@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: SELECT ... FROM ... WHERE alias.col LIKE '%xxx'",
     "href": "quality-rules/1600516.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "Only the use of LIKE '%xxx' is checked",
     "rationale": "In the where clause, if a LIKE statement is used and the clause starts with %, no index will be use.\nThis rule is a best practice on query construction to improve performances.",
     "reference": "2.3",

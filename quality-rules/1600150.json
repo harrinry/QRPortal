@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Number of substitution joker for message text must be equal",
     "href": "quality-rules/1600150.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "Check that the number of substitution joker (%) into the default language message text and language message text is equal.\nThe translate language is defined as a parameter at extraction time.",
     "output": "Failed checks gives the number of wrongly defined Message Catalogs",
     "rationale": "Message Catalog allows to define messages in multiple languages. PeopleCode functions substitutes the values of the parameters in paramlist into the explain text. If the number of substitution joker in messages is not the same, it will generate inconsistent message to the user.",

@@ -3,12 +3,14 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with SQL statement including subqueries",
     "href": "quality-rules/7808.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "Artifacts should not use SQL statement including subqueries (at least subqueries should be avoided).",
     "output": "This report lists all Artifacts with SQL statement including subqueries.\nIt provides the following information:\n- Artifact full name\n- Number of Subqueries",
     "rationale": "Having complex queries in Artifacts can cause performance problems. Queries with subqueries are considered complex.",
     "reference": "http://it-cisq.org/\nCISQ: ASCPEM-PRF-04",
-    "remediation": "Review the design of the query to avoid if possible Subqueries",
+    "remediation": "Review the design of the query to avoid possible Subqueries",
     "businessCriteria": [
         {
             "id": 60014,
@@ -94,6 +96,13 @@
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A3-2013",
+            "name": "Cross-Site Scripting (XSS)",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
+            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+        },
         {
             "standard": "CISQ",
             "id": "ASCPEM-PRF-4",

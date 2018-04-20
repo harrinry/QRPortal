@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Don't use hardscode message",
     "href": "quality-rules/1600200.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of hardcoded messages",
     "output": "Failed checks gives the number of objects that contain a call to the message functions without using a message catalog reference",
     "rationale": "Hardcoded messages are not translated and it decrease the maintenance of the application",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid hardcoded network resource names",
     "href": "quality-rules/1021030.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Single Value",
     "description": "Reports all Python artifacts harcoding network resources that do not partain to configuration, installation, or test files. This rule is compliant with OMG CISQ ASCRM-RLB-18 recommendation.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

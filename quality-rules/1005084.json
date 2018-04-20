@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using parameters on the Record column level (EGL)",
     "href": "quality-rules/1005084.json",
+    "critical": true,
     "description": "This rules searches for records having specific parameter statements on the column declarations.",
     "output": "This report lists the following information: Record Full Name",
     "rationale": "Block the parameter that comes with retrieve sql.\nCOBOL will be generated, but you will get errors with DATE and TIMESTAMP at runtime.",

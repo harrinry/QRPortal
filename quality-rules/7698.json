@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Files should be declared with a FILE-STATUS",
     "href": "quality-rules/7698.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using files defined without a FILE-STATUS indicator. \n\nNote: Sort files are not considered as violating the rule.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - SELECT ... ASSIGN declaration in the FILE-CONTROL",

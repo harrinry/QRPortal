@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Classes with a High Public Data Ratio",
     "href": "quality-rules/7794.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "Avoid Classes with a High Public Data Ratio greater than X %. Public Data Ratio is the percentage of public fields among all fields. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all Classes with a Public Data Ratio greater than X %. Const data members are not considered as public. Properties (.NET) are not considered as fields. It provides the following information:\n- Class full name, PDC",
@@ -60,16 +62,6 @@
             "id": 141901,
             "name": ".NET (Legacy Analyzer)",
             "href": "technologies/141901.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

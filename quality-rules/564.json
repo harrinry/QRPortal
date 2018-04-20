@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid including files other than header files",
     "href": "quality-rules/564.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Include name",
     "description": "This rule searches for C/C++ files that include files other than header files (with file extensions like \".h\", etc). The extension list is a parameter and can be changed at will. \n\nNote: Including files without extensions is not considered as being problematic.",
     "output": "Associated to each implementation file with violations, the Quality Rule provides:\n- The Include name",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having multiple classes defined in a single file - Symfony STD (PHP)",
     "href": "quality-rules/1007238.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This QR will have violation if multiple classes are defined in a single file.\u00a0\nDefine one class per file - this does not apply to private helper classes that are not intended to be instantiated from the outside and thus are not concerned by the PSR-0 and PSR-4 autoload standards;",
     "output": "PHP Section having multiple classes defined.",
     "rationale": "Each class should be in its own file for maintainablity.",

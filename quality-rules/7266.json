@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
     "href": "quality-rules/7266.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Associated Value",
     "description": "This quality rule checks that when implementing the MS recommended dispose pattern (defined here: http://msdn.microsoft.com/en-us/library/b1yfkh5e(VS.71).aspx ), that within the 'Dispose(bool)' methods you have a try/finally block and that from within the finally block you have a all to 'base.Dispose(bool)' (C#) or to 'MyBase.Finalize()' (VB.NET)\nSo it lists all Dispose methods with no try/finally block or with no call to 'base.Dispose(bool)' or 'MyBase.Finalize()' within the finally block.\nThis applies only for Dispose(bool) method defined in classes which implement the IDisposable interface.",
     "rationale": "If a type inherits from a disposable type, it must call the Dispose method of the base type from within its own Dispose method in order to make sure all allocated resources are released properly and timely.\nFailing to do so can provoke a resource leak that will  lead to serious application availability and stability issues.",

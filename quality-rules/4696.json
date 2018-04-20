@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
     "href": "quality-rules/4696.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Associated Value",
     "description": "Catch blocks should not use 'System.err' and 'System.out' to handle the errors.",
     "output": "This report lists all Methods using 'System.err' in catch blocks. It provides the following information: Method full name",
@@ -38,6 +40,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        }
     ]
 }

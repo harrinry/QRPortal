@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "PeopleSoft: FIELDNUM values should be numbered sequentially for Record",
     "href": "quality-rules/1600670.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Either 'FIELDNUM not sequential = <FIELDNUM value>' or 'Same FIELDNUM = <FIELDNUM value>'",
     "description": "The PSRECFIELD.FIELDNUM values should be numbered sequentially from 1 through PSRECDEFN.FIELDCOUNT.\nNote: when using Application Designer, it is not possible to generate errors",
     "output": "This report lists all Record fields with a bad FIELDNUM:\n- No field with FIELDNUM - 1\n- Another field with the same FIELDNUM",

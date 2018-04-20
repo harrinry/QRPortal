@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid calling Alert.show directly (Flex)",
     "href": "quality-rules/1003088.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.maintanability.AlertShowRule",
     "rationale": "You should not Alert.show() directly. If an error occurred in the system, you should probably use an ErrorManager to have a consistent way to manage those errors.",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

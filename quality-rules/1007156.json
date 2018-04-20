@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using eval expression (PHP)",
     "href": "quality-rules/1007156.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts using eval expression.",
     "output": "This report lists all artifacts using eval expression.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk.",

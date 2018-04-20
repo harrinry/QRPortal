@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid adding or removing displayable children from updateDisplayList (Flex specific) (Flex)",
     "href": "quality-rules/1003076.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "adobe.ac.pmd.rules.component.UpdateChildrenNumberInUpdateDisplayListRule",
     "rationale": "UpdateDisplayList is called everytime a child is invalidated. So calling addChild or removeChild in a function could be really CPU consuming",
     "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",

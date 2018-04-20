@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid hiding attributes",
     "href": "quality-rules/8022.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Hidden attribute name",
     "description": "This rule searches for classes that override data members in the inheritance tree. \n\nA data member <member> of class <BaseClass> is overridden in a derived class <DerivedClass> if <DerivedClass> contains an identical declaration of <member> (i.e. same name (type can be different)). \n\nA list of data member name exceptions can be provided to manage specific cases where the field is generated or required to be used by a specific framework.",
     "output": "Associated to each overridden data member with violations, the Quality Rule provides:\n- Hidden attribute full name",

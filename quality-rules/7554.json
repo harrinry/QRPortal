@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Never access an IMS segment with an access mode not authorized in the PCB",
     "href": "quality-rules/7554.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "IMS PCB name",
     "description": "Access to IMS segment must respect the access mode defined in PCB with the PROCOPT clause.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The IMS PCB name",

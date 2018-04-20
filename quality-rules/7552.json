@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid incoherent file accesses in Cobol programs and DISP clauses in JCL",
     "href": "quality-rules/7552.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "JCL step name",
     "description": "This rule searches for Cobol programs that access files in mode that is not coherent with the DISP clause of DD cards defined in JCL job.",
     "output": "Associated to each COBOL File Link with violations, the Quality Rule provides:\n- The JCL step name\n- Bookmarks for violation patterns found in source code:\n    - The OPEN statement (in the Cobol program) corresponding to the file\n    - The DD card (in the JCL) corresponding to the dataset accessed by the program",

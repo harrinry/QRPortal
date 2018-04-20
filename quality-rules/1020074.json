@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid enabling autocomplete \"on\" for inputs/forms",
     "href": "quality-rules/1020074.json",
+    "critical": false,
+    "maxWeight": 7,
     "description": "Be careful with browsers automatically that can fill the content of input elements of type 'password' when this password has already been provided in the past. \nBeginning with HTML 5 the ability to turn this functionality off exists on a field-by-field basis using the autocomplete attribute. \nThis rule is compliant with CISQ OMG ASCSM-CWE-79 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "An attacker can use the autofill password feature to access login-based web site.",

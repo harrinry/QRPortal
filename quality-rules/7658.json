@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
     "href": "quality-rules/7658.json",
+    "critical": true,
     "associatedValueName": "Name of the first column used as function parameter",
     "description": "This metric retrieves all SQL artifacts that query XXL tables and that use functions on indexed columns in WHERE clause.\nIt retrieves all SQL artifacts  with a WHERE clause using a function that takes a table column used as a database index as a function parameter (except specific indexes such as function-based indexes).\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",
     "output": "Associated to each artifact with violations, the Quality Rule provides: \n- Name of the column (first column used as function parameter).",

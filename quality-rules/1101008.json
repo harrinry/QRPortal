@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid non-SARGable queries",
     "href": "quality-rules/1101008.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Number of violation patterns",
     "description": "List all SQL Artifacts containing a query that has only non-SARGable arquments expressions in where clauses or in the join.",
     "output": "List all Artifacts having a non-SARGable query.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

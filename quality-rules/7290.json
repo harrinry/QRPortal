@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced Sections and Paragraphs",
     "href": "quality-rules/7290.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs containing sections or paragraphs that are not called. A section or a paragraph is not called when:\n- there is no GO TO statement that refers to it\n- there is no PERFORM statement that refers to it\n- there is no fall through logic in which it is involved\n\nHowever, sections for which all statements are attached to a paragraph are excluded from the list of objects violating this rule.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Section or paragraph that is not executed",

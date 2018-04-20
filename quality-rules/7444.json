@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Serialize session objects",
     "href": "quality-rules/7444.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Session Bean Name",
     "description": "This metric will report all classes that are not serialized (i.e. don't implement or inherit from the java.io.Serializable interface) and that are instantiated by beans stored in the session. This includes JSP beans and also JSF backing beans.",
     "output": "Report all classes that don't implement (or inherit from) Serializable interface and that instantiated as session scope objects.\nIt provides the following information:\n  - Full Class Name\n  - Session Bean Name",

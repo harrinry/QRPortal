@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid duplicated Main Procedures (PL1)",
     "href": "quality-rules/1001028.json",
+    "critical": false,
+    "maxWeight": 1,
     "description": "This rule searches for all the main procedures having exactly the same number of code lines with the same number of comment lines and the same cyclomatic complexity.",
     "output": "The report lists all the  PL1 duplicated Main Procedures.\n\nIt provides following information: \n-  duplicated PL1 Main Procedures full name",
     "rationale": "The aim is here to clean-up the code delivered in production.",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced JSPs and web client files",
     "href": "quality-rules/2238.json",
+    "critical": false,
+    "maxWeight": 3,
     "associatedValueName": "Associated Value",
     "description": "All Pages and web client files (java script, html, css ...) should be referenced. An unreferenced Artifact is an Artifact that is not explicitly called from within the analyzed code.",
     "output": "This report lists all unreferenced JSP pages and web client files\nIt provides the following information: \n - Page name or client file name (html, js, css...)",

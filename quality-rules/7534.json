@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid READ TABLE without BINARY SEARCH",
     "href": "quality-rules/7534.json",
+    "critical": true,
     "associatedValueName": "Number of violation patterns",
     "description": "This metric retrieves all ABAP Artifacts using READ statements on standard ABAP internal tables without using the BINARY SEARCH option.\nREAD statement on SORTED and HASHED tables are not taken into account as they do not require the  BINARY SEARCH option.",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

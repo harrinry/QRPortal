@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid classes exceeding number of weighted methods (PHP)",
     "href": "quality-rules/1007144.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the classes exceeding the number of weighted methods. The number of weighted methods is set to 50.",
     "output": "This report lists all the classes exceeding the number of weighted methods.\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "The number of weighted methods of a class is a good indicator of how much time and effort is required to modify and maintain this class. A class with a large number of methods also means that this class has a greater potential impact on derived classes and therefore the cost to maintain and test it is also high.\n\nA large number of methods also means that this class has a greater potential impact on derived classes.\n\n\nA class is violating the rules when having more than 50 weighted methods",

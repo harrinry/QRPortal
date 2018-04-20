@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using size functions inside loops (PHP)",
     "href": "quality-rules/1007184.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches all artifacts using size functions inside loops. The functions include count, sizeof and strlen.",
     "output": "This report lists all the artifacts using size function inside loops.\n      \nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Using size functions inside loops can decrease performance.",

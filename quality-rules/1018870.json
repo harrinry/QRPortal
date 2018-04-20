@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Activities using \"Group By\" statement (TIBCO BW)",
     "href": "quality-rules/1018870.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "This metric retrieves the artifacts containing queries using the \"Group By\" statement.",
     "output": "This QR retrieves all the activies that use SQL statement with \"Group By\".",
     "rationale": "Having complex queries in Tibco Activities can cause performance problems. Queries using group by are considered complex and not efficient.",

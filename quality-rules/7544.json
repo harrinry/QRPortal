@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using SELECT ... ENDSELECT statement",
     "href": "quality-rules/7544.json",
+    "critical": false,
+    "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "This metric retrieves all ABAP artifacts using SELECT ... ENDSELECT statement on tables and views. Loops using the addition UP TO 1 ROWS (or UP TO ONE ROWS) are not considered as violations.",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",

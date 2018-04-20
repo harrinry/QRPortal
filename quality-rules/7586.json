@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid cyclic calls between Event and its handled Method",
     "href": "quality-rules/7586.json",
+    "critical": false,
+    "maxWeight": 9,
     "associatedValueName": "Abap Event name",
     "description": "This report shows ABAP Event Methods that are handled by an Abap Event and that activate this Abap Event, directly or indirectly by calling other Abap Methods. A cycle can be created by :\n- a sequence based on an Abap Event calling an Abap Event Method calling this Abap Event\n- a sequence based on an Abap Event calling an Abap Event Method calling an Abap Method calling the same Abap Event (the maximum number of Abap Methods is set to 2)\n- several sequences of Abap Event E1 calling . . . Abap Event E2",
     "output": "Associated to each ABAP Event Method with violations, the Quality Rule provides:\n- The ABAP Event name",

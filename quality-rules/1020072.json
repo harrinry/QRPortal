@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid direct access to Database Tables in Javascript",
     "href": "quality-rules/1020072.json",
+    "critical": false,
+    "maxWeight": 6,
     "description": "Applications should not access directly database Tables \nThis rule is compliant with CISQ OMG ASCPEM-PRF-9 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Direct access to database Table prevents the control at the database level of accesses. E.g.: use of non-optimized query against the database.",

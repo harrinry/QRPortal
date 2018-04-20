@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Proper overriding of 'clone()'",
     "href": "quality-rules/4614.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "When overriding the 'clone()' Method, a call to 'super.clone()' is necessary. Note that where a class 'A' that has a field 'a' of type 'A' and is calling a.clone() without calling super.clone() will not be reported as a violation.",
     "output": "This report lists all Methods overriding 'clone()' and not calling 'super.clone()'.\nIt provides the following information:\n Method full name",
@@ -33,6 +34,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-580",
+            "name": "clone() Method Without super.clone()",
+            "reference": null,
+            "description": null
+        }
     ]
 }

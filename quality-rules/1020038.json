@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid defining and calling functions inside loops",
     "href": "quality-rules/1020038.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "Writing functions within loops tends to result in errors due to the way the function creates a closure around the loop.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "ASCPEM-PRF-08, ASCMM-MNT-05",

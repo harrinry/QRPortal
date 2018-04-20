@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid raising an exception in a Web Dynpro Supply Function or in a Method called by a Supply Function",
     "href": "quality-rules/7850.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This rule checks all supply functions of Web Dynpro for ABAP and methods called by these supply functions to verify if they do not raise exceptions.",
     "output": "This report lists all Web Dynpro supply functions that raise exceptions or that call methods raising exceptions.\nIt provides the following information:\n- Supply Function full name",

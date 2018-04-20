@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid having variable with too short name (PHP)",
     "href": "quality-rules/1007088.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all artifacts with variables name that are too short. A name is considered short if it has less than 3 characters.",
     "output": "This report lists all artifacts with variables name that are too short.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Source code containing short variable name is difficult to read and therefore to maintain.",

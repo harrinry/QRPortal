@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
     "href": "quality-rules/1020530.json",
+    "critical": false,
+    "maxWeight": 3,
     "description": "Do not use !angular.isUndefined and !angular.isDefined (you should prefer the reverse function). This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the AngularJS API, you have to use the AngularJS isUndefined and isDefined methods.",

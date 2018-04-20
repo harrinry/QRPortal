@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using a web service with Python urllib2 inside a loop",
     "href": "quality-rules/1021010.json",
+    "critical": true,
     "associatedValueName": "Single Value",
     "description": "When designing web service to get/post/put data, you want to make sure that you minimize the number of calls between the client application and web service server. This rule will check the official Python requests syntax, to do call to web service. This rule is compliant with CISQ OMG ASCPEM-PRF-08 recommendation.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid improperly written  triangular joins with XXL tables in PL/SQL code",
     "href": "quality-rules/8036.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Position of join",
     "description": "List all SQL artifacts having a query that includes  improper triangular join.\n\nA Triangular Join is nothing more than about half of a Cross-Join. The \"shape\" of the Triangular Join depends on the relationship of < or >, <= or >=, or < > between tables.\n\nthe diag should detect:\n- <= or >= or \"Equality\" Triangular Join\n- < or > \"Inequality\" Triangular Join\n- < > \"Not Equal\" Triangular Join \n\n\nThey appear in the SELECT list as correlated subqueries usually with a stand-alone inequality of some sort.\nThey can also appear in WHERE clauses with the same type of standalone inequality.\n\nWith some restraint and the right criteria, Triangular Joins can be used. As a consequence we will only detect statements that include improperly written triangular joins i.e  that include at least one triangular join and nothing else in terms of restrictive criteria ....\n\n.",
     "output": "List all Client-Server Artifacts having at least triangular join. \nDisplay the name of each faulty statement.",

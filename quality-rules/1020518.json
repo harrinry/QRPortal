@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using Javascript Date typecheck in AngularJS application",
     "href": "quality-rules/1020518.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "You should use the angular.isDate method instead of the default JavaScript implementation (typeof new Date() === \"[object Date]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, you should use the angular.isDate",

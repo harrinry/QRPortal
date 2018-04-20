@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Do not alter a control variable in the body of a 'for' statement",
     "href": "quality-rules/8070.json",
+    "critical": false,
+    "maxWeight": 5,
     "associatedValueName": "Loop control variable",
     "description": "This rule searches for C functions, C++ methods, constructors, and destructors that contain 'for' bodies in which a control variable is altered.\nWe consider a variable as altered when we assign it a new value, or when it is passed as a non-const reference to a function (including calling a non-const member function on the variable if it is of class type).",
     "output": "Associated to each C function, C++ method, constructor and destructor with violations, the Quality Rule provides:\n- loop control variable\n- Bookmarks for violation patterns found in source code:\n  - control variable alteration",

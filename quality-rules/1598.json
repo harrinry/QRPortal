@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Rule HINT  /*+ rule */ or --+ rule in PL/SQL code",
     "href": "quality-rules/1598.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "Oracle hints are optimizer directives that are used in SQL debugging to change the default execution plan for SQL.  One of them is the RULE hint. it force the optimizer to use rule based optimizer mode (RBO mode) instead of the default mode (CBO mode).  RBO is a simple set of heuristics, and has many limitations. The RULE hint explicitly chooses rule-based optimization for a statement block. It also makes the optimizer ignore other hints specified for the statement block",
     "output": "This report lists all functions,  procedures, triggers, views, cursors and package procedures and functions  with queries using the \"RULE\" hint.\n\nIt provides the following information:\n- object name,\n- object  full name",

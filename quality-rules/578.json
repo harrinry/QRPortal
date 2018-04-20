@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Classes with multiple inheritance",
     "href": "quality-rules/578.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of parent classes",
     "description": "This rule searches for C++ classes that are derived from more than one parent class. \n\nNote: Pure virtual classes (that can be used as interfaces) are not considered as violating this rule.",
     "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- The number of parent classes\n- Bookmarks for violation patterns found in source code:\n  - Parent class derivation",
@@ -36,16 +38,6 @@
             "id": -3,
             "name": "C++",
             "href": "technologies/-3.json"
-        },
-        {
-            "id": 1050001,
-            "name": "Objective-C",
-            "href": "technologies/1050001.json"
-        },
-        {
-            "id": 1050571,
-            "name": "C/C++",
-            "href": "technologies/1050571.json"
         }
     ],
     "qualityStandards": [

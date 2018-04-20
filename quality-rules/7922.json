@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid usage of 'std::find_first_of'",
     "href": "quality-rules/7922.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for C++ functions using the 'std::find_first_of' algorithm.",
     "output": "Associated to each C++ constructor, destructor, and method with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - Call to 'std::find_first_of'",

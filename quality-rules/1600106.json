@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "PeopleSoft: Avoid using the SqlExec statements in the PeopleCode",
     "href": "quality-rules/1600106.json",
+    "critical": true,
     "associatedValueName": "Number of SqlExec",
     "description": "Only the use of the SqlExec is checked here.\nFor data corruption, the use of insert, delete, update, commit statements should be also checked",
     "output": "Failed checks gives the number of objects that contain a call to the SqlExec function",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid empty IF-ENDIF blocks",
     "href": "quality-rules/8106.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "This rule searches in ABAP code for empty IF-ENDIF statements. An empty IF block is a combination of:\nIF <cond>.\nENDIF.\n\nELSIF <cond>.\nENDIF.\n\nELSE\nENDIF.",
     "output": "This report lists all ABAP artifacts containing an empty IF-ENDIF block. \n\nIt provides the following information : \n- Artifact fullname\n- Number of violations",

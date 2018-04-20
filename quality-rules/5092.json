@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Include a WHEN OTHER clause when using EVALUATE",
     "href": "quality-rules/5092.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol programs using EVALUATE statements without a WHEN OTHER clause.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - EVALUATE statement without a WHEN OTHER clause",

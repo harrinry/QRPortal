@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid empty catch blocks",
     "href": "quality-rules/1101040.json",
+    "critical": true,
     "associatedValueName": "This metric lists SQL Artifacts with empty catch blocks.",
     "description": "In a TRY..CATCH statement, CATCH blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
     "output": "This report lists all SQL Artifacts with empty catch blocks.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.",
@@ -42,6 +43,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
+            "reference": null,
+            "description": null
+        }
     ]
 }

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid wrapping angular.element objects with jQuery or $",
     "href": "quality-rules/1020538.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "You should not wrap angular.element object into jQuery(), because angular.element already return jQLite element. This rule is compliant with CISQ OMG recommendation ASCMM-MNT-20.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, always use the angular.element method without wrapping it with $ or jQuery.",

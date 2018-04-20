@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid unchecked return code (SQLCODE) after EXEC SQL query",
     "href": "quality-rules/7690.json",
+    "critical": true,
     "associatedValueName": "Number of unchecked return codes",
     "description": "This rule searches for COBOL programs that access relational databases without checking the SQLCODE return code after SQL queries in the same paragraph. SQL queries containing following verbs are checked: SELECT, INSERT, UPDATE, DELETE, OPEN, and FETCH. \n\nThe rule checks the following cases: \n\nCase 1: direct check \n\nEXEC SQL ... END-EXEC \n\nIF SQLCODE = xxx \nEND-IF \n\nCase 2: indirect check with variable \n\nEXEC SQL ... END-EXEC \n\nMOVE SQLCODE TO VAR. \n\nIF VAR = xxx \nEND-IF \n\nCase 3: indirect check with 88-level items \n\n01 VAR PIC 999. \n88 VAL100 VALUE 100. \n....... \nEXEC SQL ... END-EXEC \n\nMOVE SQLCODE TO VAR. \n\nIF VAL100 \nEND-IF \n\nNote: \"MOVE SQLxxx TO VAR\" and DISPLAY statements can be inserted between the SQL query and the return code check. ",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides: \n\n- The number of unchecked return codes \n- Bookmarks for violation patterns found in source code: \n  - EXEC SQL query that is not followed by a test of SQLCODE",

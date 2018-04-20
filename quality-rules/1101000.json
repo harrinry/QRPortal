@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Never use SQL queries with a cartesian product",
     "href": "quality-rules/1101000.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation patterns",
     "description": "List all SQL Artifacts which contain a query that has a cartesian join, i.e; that does not explicitly state a join condition among the tables\nA cartesian join is found if, for any of the table in the from clause, no column of the table is found in a join (either in the from or where clause).",
     "output": "List all Artifacts which contain a cartesian join.\nThe following information is provided: \n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",

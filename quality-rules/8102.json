@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid hardcoded network resource names",
     "href": "quality-rules/8102.json",
+    "critical": false,
+    "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "This quality rule reports all artifacts that contain hardcoded: \n\n- URLs (of the form file:///c:/Tmp/Folder/ or http://host.com/folder) \n- Paths (Windows absolute paths of the form c:\\Tmp\\Folder) \n- JDBC URL (of the form jdbc:oracle:thin:@//myhost:1521/orcl) \n- IP addresses (IPv4 format like 0.0.0.0 to 255.255.255.255) \n- JNDI lookup path \n\nNote: This quality rule implements the rule ASCRM-RLB-18 of the CISQ standard.\n",
     "output": "List all artifacts that reference hard coded IP adresses, URL, paths\nIt provides the following information: \n - Artifact full name",

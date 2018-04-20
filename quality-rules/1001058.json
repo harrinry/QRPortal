@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid unreferenced PLC Copybooks (PL1)",
     "href": "quality-rules/1001058.json",
+    "critical": false,
+    "maxWeight": 5,
     "description": "This rule searches for all the PLC Copybooks that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced PLC Copybooks.\n\nIt provides following information: \n- Copybooks  full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid using autofocus and onfocus in submitted markup",
     "href": "quality-rules/1020026.json",
+    "critical": true,
     "description": "Do not allow self-executing focus event via autofocus otherwise it will execute a command without no user interaction. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you don't use html pattern that can give a way to execute code without user interaction.",
@@ -31,18 +32,18 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
-            "id": "ASCSM-CWE-79",
-            "name": "Cross-site Scripting Improper Input Neutralization",
-            "reference": null,
-            "description": null
-        },
-        {
             "standard": "OWASP",
             "id": "A3-2013",
             "name": "Cross-Site Scripting (XSS)",
             "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
             "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-79",
+            "name": "Cross-site Scripting Improper Input Neutralization",
+            "reference": null,
+            "description": null
         }
     ]
 }

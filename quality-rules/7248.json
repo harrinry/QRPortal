@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Packages with High Afferent Coupling (CA)",
     "href": "quality-rules/7248.json",
+    "critical": false,
+    "maxWeight": 4,
     "associatedValueName": "Afferent Coupling",
     "description": "Afferent Coupling (also known as Incoming Dependencies and Number of Types outside a Package that Depend on Types of the Package) indicates the number of other packages that depend upon classes within the analyzed package. Afferent Coupling is a time consuming determination of couplings between packages, hence showing which packages that depend upon each other. The number of packages that depend upon the analyzed package is an indication of the analyzed package's level of responsibility. In order to improve modularity and promote encapsulation, inter-object class couples should be kept to a minimum. If the package is relatively abstract then a large number of incoming dependencies is acceptable but the larger the number of couples, the higher the sensitivity to changes in other parts of the design, and therefore maintenance is difficult. Excessive coupling between concrete object classes is detrimental to modular design and prevents reuse.\n\nThe threshold contains the maximum afferent coupling.",
     "output": "This report all classes ( and interfaces ) of a package with a high afferent Coupling. \nIt provides the following information : \n- Class ( Or Interface)\n- CA",

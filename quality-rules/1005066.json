@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid Artifacts with Subqueries (EGL)",
     "href": "quality-rules/1005066.json",
+    "critical": false,
+    "maxWeight": 8,
     "description": "This rule searches for all artifacts having queries with subqueries considered  as complex.",
     "output": "This report lists  the following information: Function full name, Number of SubQueries",
     "rationale": "Having complex queries in artifacts can cause performance problems. Queries with Subqueries is considered complex.",

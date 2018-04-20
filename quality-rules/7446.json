@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid double checked locking",
     "href": "quality-rules/7446.json",
+    "critical": true,
     "associatedValueName": "Associated Value",
     "description": "For JSE 4.x and previous version, all methods that are not synchronized and that check a value of one of its field before using synchronized and then check this field again and then assign a value to this field will be reported.",
     "output": "This report lists all Methods that use double checked locking pattern.\nIt provides the following information:\n Method full name",

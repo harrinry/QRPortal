@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
     "href": "quality-rules/7708.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "Reports all methods that reference:\n - net.sf.hibernate.Session.setFlushMode(org.hibernate.FlushMode) or org.hibernate.Session.setFlushMode(org.hibernate.FlushMode) \nand also the parameters:\n   * net.sf.hibernate.COMMIT, net.sf.hibernate.NEVER\n   * org.hibernate.FlushMode.COMMIT, org.hibernate.FlushMode.NEVER or org.hibernate.FlushMode.MANUAL",
     "output": "List all methods that call setFlushMode with FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL as value.\n\nIt provides the following information:\n Method Full Name",

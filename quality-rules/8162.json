@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "CICS return code should be checked",
     "href": "quality-rules/8162.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation patterns",
     "description": "This rule searches for Cobol Programs that do not check return code (specified in RESP clause) after CICS macros.",
     "output": "This rule lists all Cobol Programs that use CICS macros and do not check the RESP return code. \n\nIt provides the following information: \n- Cobol Program full name \n- Number of violations \n\nIt also provides bookmarks for violation patterns found in source code: \n- CICS macro ",

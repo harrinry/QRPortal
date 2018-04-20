@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "CWE-798 : Use of Hard-coded Credentials",
     "href": "quality-rules/8222.json",
+    "critical": true,
     "associatedValueName": "Call stack from hardcoded string down to the target method",
     "description": "This Quality Rule uses the CAST AIP dataflow engine to detect a call path where a hardcoded credential is sent to a method used for its own inbound authentication, outbound communication to external components or validate the authentication for retrieval of data. \n\nThe list of credential passing methods can be customized.",
     "output": "Lists all methods that call target methods, passing at least one hardcoded credential parameter. \n\nIt provides the following information : \n - Method full name. \n - Call stack with bookmarks from hardcoded credential literal down to the target method.",
@@ -41,6 +42,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-798",
+            "name": "CWE",
+            "reference": null,
+            "description": null
+        }
     ]
 }

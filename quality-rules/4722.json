@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Track Classes referencing Database objects",
     "href": "quality-rules/4722.json",
+    "critical": false,
+    "maxWeight": 1,
     "associatedValueName": "Database object used",
     "description": "All Classes should not have embedded SQL to the database. Only some Classes are allowed.",
     "output": "This report lists all Classes having accesses to the database.\nIt provides the following information:\n - Class full name\n - Database object used",

@@ -3,6 +3,8 @@
     "type": "quality-rule",
     "name": "Avoid base Classes without virtual Destructors",
     "href": "quality-rules/620.json",
+    "critical": false,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for classes that are derived in sub-classes and that do not provide a virtual destructor.",
     "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation patterns found in source code:\n  - Class definition\n  - Non-virtual destructor if any",

@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Avoid exists independent clauses",
     "href": "quality-rules/8080.json",
+    "critical": true,
     "associatedValueName": "SQL artifacts",
     "description": "The diag will identify the sql objects using \"exists\" which are independent (not referring to the parent object)",
     "output": "Returns all the sql objects violating this rule",

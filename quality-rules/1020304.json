@@ -3,6 +3,7 @@
     "type": "quality-rule",
     "name": "Implement success and error callbacks when using jquery web service call",
     "href": "quality-rules/1020304.json",
+    "critical": true,
     "description": "Use the promise $.ajax, $.get, $.getJSON interface to implement success and error callbacks. This rule is compliant with CISQ OMG ASCSM-CWE-396, ASCSM-CWE-397, ASCRM-RLB-01 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that each web service callback is going to be properly checked in order to make sure you will not miss any problem that occurred in your application and you will give the information to the user.",
@@ -41,13 +42,6 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCSM-CWE-397",
-            "name": "Declaration of Throws for Generic Exception",
-            "reference": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-1",
             "name": "Empty Exception Block",
             "reference": null,
@@ -57,6 +51,13 @@
             "standard": "CISQ",
             "id": "ASCSM-CWE-396",
             "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-397",
+            "name": "Declaration of Throws for Generic Exception",
             "reference": null,
             "description": null
         }
