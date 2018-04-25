@@ -1,6 +1,8 @@
 import React from 'react';
 
-const localClassName = ['RuleInfo-container', 'R50-margins'],
+const localClassName = 'RuleInfo-container',
+  standardClass = 'R50-margins',
+  nStdClass = 'L33-margins',
   sp = ' ';
 
 export default class RuleDetails extends React.Component{
@@ -17,9 +19,11 @@ export default class RuleDetails extends React.Component{
       const outputblock = this.props.data.output ? (<div className='output-container detailssection'><p className='rulesection'>Output</p><p className='textrule'>{this.props.data.output}</p></div>) : ('');
 
       return (
-        <div className={localClassName.join( sp )}>
-        {criticalblock}
-        {weightblock}
+        <div className={this.props.isStandard 
+          ? localClassName.concat(sp, standardClass) 
+          : localClassName.concat(sp, nStdClass)}>
+          {criticalblock}
+          {weightblock}
           <h2 className='ruleTitle'>{this.props.data.name}</h2>
           <div className='tags-container'>
             <ul>{this.props.data.qualityStandards.id}</ul>

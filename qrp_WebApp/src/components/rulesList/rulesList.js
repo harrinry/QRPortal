@@ -1,9 +1,7 @@
 import React from 'react';
-import {RuleListRowElement,APIQuery} from '../index';
+import {StandardList, RuleListRowElement, APIQuery} from '../index';
 
-const localClassName = ['ruleList-container', 'table-container', 'L50-margins', 'scrollbar-small'],
-  sp = ' ',
-  prefix = 'keyx_';
+const prefix = 'keyx_';
 
 export default class RulesList extends React.Component{
   constructor(props){
@@ -21,18 +19,9 @@ export default class RulesList extends React.Component{
   }
 
   render(){
-    return (
-      <div className={localClassName.join( sp )} >
-        <table>
-          <tbody>
-            <tr>
-              <th>ID</th><th>Name</th><th>Critical?</th>
-            </tr>
-            {this.buildListFromState()}
-          </tbody>
-        </table>
-      </div>
-    );
+    return (this.props.isStandard ? ( <StandardList>
+      {this.buildListFromState()}
+    </StandardList> ) : (<div></div>));
   }
 
   buildListFromState(){

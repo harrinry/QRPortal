@@ -1,5 +1,5 @@
 import React from 'react';
-import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL } from '../index';
+import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL, isStandard } from '../index';
 import {lOADDETAILS, SELECTME} from './actions';
 
 const localClassName = ['rule-container', 'block'],
@@ -24,10 +24,11 @@ export default class RulesContainer extends React.Component{
   }
 
   render(){
+    const isStand = isStandard(this.props.href);
     return (
-      <div className={localClassName.join( sp )} >
-        <RulesList href={this.props.href}/>
-        <RuleDetails data={this.state.details}/>
+      <div className={localClassName.join( sp )}>
+        <RulesList href={this.props.href} isStandard={isStand}/>
+        <RuleDetails data={this.state.details} isStandard={isStand}/>
       </div>
     );
   }

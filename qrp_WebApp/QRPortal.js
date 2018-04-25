@@ -21195,6 +21195,15 @@ Object.defineProperty(exports, 'RuleListRowElement', {
   }
 });
 
+var _standardList = __webpack_require__(/*! ./rulesList/standardList */ "./qrp_WebApp/src/components/rulesList/standardList.js");
+
+Object.defineProperty(exports, 'StandardList', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_standardList).default;
+  }
+});
+
 var _apiQuery = __webpack_require__(/*! ../modules/apiQuery */ "./qrp_WebApp/src/modules/apiQuery.js");
 
 Object.defineProperty(exports, 'APIQuery', {
@@ -21237,6 +21246,15 @@ Object.defineProperty(exports, 'MultiQuery', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_multiURLQueryBuilder).default;
+  }
+});
+
+var _isCISQorOWASP = __webpack_require__(/*! ../modules/isCISQorOWASP */ "./qrp_WebApp/src/modules/isCISQorOWASP.js");
+
+Object.defineProperty(exports, 'isStandard', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_isCISQorOWASP).default;
   }
 });
 
@@ -21377,11 +21395,12 @@ var RulesContainer = function (_React$Component) {
   _createClass(RulesContainer, [{
     key: 'render',
     value: function render() {
+      var isStand = (0, _index.isStandard)(this.props.href);
       return _react2.default.createElement(
         'div',
         { className: localClassName.join(sp) },
-        _react2.default.createElement(_index.RulesList, { href: this.props.href }),
-        _react2.default.createElement(_index.RuleDetails, { data: this.state.details })
+        _react2.default.createElement(_index.RulesList, { href: this.props.href, isStandard: isStand }),
+        _react2.default.createElement(_index.RuleDetails, { data: this.state.details, isStandard: isStand })
       );
     }
   }]);
@@ -21422,7 +21441,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var localClassName = ['RuleInfo-container', 'R50-margins'],
+var localClassName = 'RuleInfo-container',
+    standardClass = 'R50-margins',
+    nStdClass = 'L33-margins',
     sp = ' ';
 
 var RuleDetails = function (_React$Component) {
@@ -21544,7 +21565,7 @@ var RuleDetails = function (_React$Component) {
 
         return _react2.default.createElement(
           'div',
-          { className: localClassName.join(sp) },
+          { className: this.props.isStandard ? localClassName.concat(sp, standardClass) : localClassName.concat(sp, nStdClass) },
           criticalblock,
           weightblock,
           _react2.default.createElement(
@@ -21815,9 +21836,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var localClassName = ['ruleList-container', 'table-container', 'L50-margins', 'scrollbar-small'],
-    sp = ' ',
-    prefix = 'keyx_';
+var prefix = 'keyx_';
 
 var RulesList = function (_React$Component) {
   _inherits(RulesList, _React$Component);
@@ -21847,38 +21866,11 @@ var RulesList = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: localClassName.join(sp) },
-        _react2.default.createElement(
-          'table',
-          null,
-          _react2.default.createElement(
-            'tbody',
-            null,
-            _react2.default.createElement(
-              'tr',
-              null,
-              _react2.default.createElement(
-                'th',
-                null,
-                'ID'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Name'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Critical?'
-              )
-            ),
-            this.buildListFromState()
-          )
-        )
-      );
+      return this.props.isStandard ? _react2.default.createElement(
+        _index.StandardList,
+        null,
+        this.buildListFromState()
+      ) : _react2.default.createElement('div', null);
     }
   }, {
     key: 'buildListFromState',
@@ -21967,6 +21959,92 @@ exports.default = RulesTitle;
 
 /***/ }),
 
+/***/ "./qrp_WebApp/src/components/rulesList/standardList.js":
+/*!*************************************************************!*\
+  !*** ./qrp_WebApp/src/components/rulesList/standardList.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var localClassName = ['ruleList-container', 'table-container', 'L50-margins', 'scrollbar-small'],
+    sp = ' ';
+
+var StandardList = function (_React$PureComponent) {
+  _inherits(StandardList, _React$PureComponent);
+
+  function StandardList() {
+    _classCallCheck(this, StandardList);
+
+    return _possibleConstructorReturn(this, (StandardList.__proto__ || Object.getPrototypeOf(StandardList)).apply(this, arguments));
+  }
+
+  _createClass(StandardList, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: localClassName.join(sp) },
+        _react2.default.createElement(
+          'table',
+          null,
+          _react2.default.createElement(
+            'tbody',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'ID'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Name'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Critical?'
+              )
+            ),
+            this.props.children
+          )
+        )
+      );
+    }
+  }]);
+
+  return StandardList;
+}(_react2.default.PureComponent);
+
+exports.default = StandardList;
+
+/***/ }),
+
 /***/ "./qrp_WebApp/src/modules/apiQuery.js":
 /*!********************************************!*\
   !*** ./qrp_WebApp/src/modules/apiQuery.js ***!
@@ -21994,6 +22072,27 @@ function APIQuery(dataName, callback) {
   }).catch(function (err) {
     return console.log(err.stack);
   });
+}
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/modules/isCISQorOWASP.js":
+/*!*************************************************!*\
+  !*** ./qrp_WebApp/src/modules/isCISQorOWASP.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isNonStandardList;
+function isNonStandardList(url) {
+  var reg = /\/OWASP\/|\/CISQ\//i;
+  return reg.test(url) ? false : true;
 }
 
 /***/ }),
