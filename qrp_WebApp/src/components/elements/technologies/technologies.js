@@ -64,7 +64,7 @@ export default class Technologies extends React.Component{
 
       return ( <div className='bodyRow container block'>
         <BodyTitle value='Technologies' />
-        <BodyBlock value={technos}/>
+        <BodyBlock>{technos}</BodyBlock>
       </div> );
     }
 

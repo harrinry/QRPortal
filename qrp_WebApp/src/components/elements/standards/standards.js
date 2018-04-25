@@ -29,11 +29,11 @@ export default class Standards extends React.Component {
     let key = 0;
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
-      <BodyBlock value={[
+      <BodyBlock>{[
         <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
-      ]}/>
+      ]}</BodyBlock>
       <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
   }
