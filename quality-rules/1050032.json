@@ -1,0 +1,48 @@
+{
+    "id": 1050032,
+    "type": "quality-rule",
+    "name": "Ensure that LAContext evaluatePolicy: reply block success is checked",
+    "href": "quality-rules/1050032.json",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "The Local Authentication framework provides facilities for requesting authentication from users with specified security policies. If you do not use properly the API, you can break the Touch ID security check. This rule is compliant with OWASP M1 2016 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Using LAContext evaluatePolicy: method provides a callback reply block reply:(void (^)(BOOL success, NSError *error))reply. The success returned value must be checked properly to avoid any misuse of the authentication check.",
+    "reference": "https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LocalAuthentication_Framework/",
+    "remediation": "Make sure you have implemented the check of success variable in the reply block callback",
+    "remediationSample": "LAContext *myContext = [[LAContext alloc] init];\nNSError *authError = nil;\nNSString *myLocalizedReasonString = <#String explaining why app needs authentication#>;\n \nif ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {\n    [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics\n                  localizedReason:myLocalizedReasonString\n                            reply:^(BOOL success, NSError *error) {\n            if (success) {\n                // User authenticated successfully, take appropriate action\n            } else {\n                // User did not authenticate successfully, look at error and take appropriate action\n            }\n        }];\n} else {\n    // Could not evaluate policy; look at authError and present an appropriate message to user\n}",
+    "sample": "LAContext *myContext = [[LAContext alloc] init];\nNSError *authError = nil;\nNSString *myLocalizedReasonString = <#String explaining why app needs authentication#>;\n\nif ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {\n    [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics\n                  localizedReason:myLocalizedReasonString\n                            reply:^(BOOL success, NSError *error) {\n            \n           NSLog(@\"Is it ok ?\"); // not sure it is...\n        }];\n}\n} else {\n    // Could not evaluate policy; look at authError and present an appropriate message to user\n}",
+    "businessCriteria": [
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "technologies/1050001.json"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M1-2016",
+            "name": "Improper Platform Usage",
+            "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
+            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+        }
+    ]
+}
