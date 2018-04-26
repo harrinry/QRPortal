@@ -1044,6 +1044,12 @@
         "critical": false
     },
     {
+        "id": 1050012,
+        "name": "Objective-C interface overrides the isEqual: method but not the hash method",
+        "href": "quality-rules/1050012.json",
+        "critical": true
+    },
+    {
         "id": 7810,
         "name": "Avoid Artifacts with a Complex SELECT Clause",
         "href": "quality-rules/7810.json",
@@ -1671,6 +1677,18 @@
         "id": 1021028,
         "name": "Avoid empty finally block",
         "href": "quality-rules/1021028.json",
+        "critical": true
+    },
+    {
+        "id": 1050020,
+        "name": "Avoid return statement in @finally block",
+        "href": "quality-rules/1050020.json",
+        "critical": true
+    },
+    {
+        "id": 1050030,
+        "name": "Ensure the Objective-C error condition check is not fragile",
+        "href": "quality-rules/1050030.json",
         "critical": true
     },
     {
@@ -6265,8 +6283,26 @@
     },
     {
         "id": 8222,
-        "name": "CWE-798 : Use of Hard-coded Credentials",
+        "name": "CWE-798: Use of hard-coded credentials",
         "href": "quality-rules/8222.json",
+        "critical": true
+    },
+    {
+        "id": 8238,
+        "name": "CWE-501: Trust boundary violation",
+        "href": "quality-rules/8238.json",
+        "critical": true
+    },
+    {
+        "id": 8240,
+        "name": "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+        "href": "quality-rules/8240.json",
+        "critical": true
+    },
+    {
+        "id": 8242,
+        "name": "CWE-330: Use of insufficiently random values",
+        "href": "quality-rules/8242.json",
         "critical": true
     },
     {
@@ -6492,6 +6528,30 @@
         "critical": true
     },
     {
+        "id": 1050002,
+        "name": "Avoid using NSString stringWithFormat on behalf of NSURL instance",
+        "href": "quality-rules/1050002.json",
+        "critical": true
+    },
+    {
+        "id": 1050004,
+        "name": "Avoid using NSPredicate predicateWithFormat",
+        "href": "quality-rules/1050004.json",
+        "critical": true
+    },
+    {
+        "id": 1050006,
+        "name": "Avoid using NSException raise:format: and raise:format:arguments:",
+        "href": "quality-rules/1050006.json",
+        "critical": true
+    },
+    {
+        "id": 1050008,
+        "name": "Avoid using NSMutableString appendFormat: on behalf of NSURL instance",
+        "href": "quality-rules/1050008.json",
+        "critical": true
+    },
+    {
         "id": 1520822,
         "name": "SiebelReview: View Visibility Settings",
         "href": "quality-rules/1520822.json",
@@ -6657,6 +6717,84 @@
         "id": 1021042,
         "name": "Avoid hardcoded passwords",
         "href": "quality-rules/1021042.json",
+        "critical": true
+    },
+    {
+        "id": 1050016,
+        "name": "Never use strcat() function",
+        "href": "quality-rules/1050016.json",
+        "critical": true
+    },
+    {
+        "id": 1050018,
+        "name": "Never use strcpy() function",
+        "href": "quality-rules/1050018.json",
+        "critical": true
+    },
+    {
+        "id": 1050022,
+        "name": "Avoid using deprecated SSL protocol",
+        "href": "quality-rules/1050022.json",
+        "critical": true
+    },
+    {
+        "id": 1050024,
+        "name": "Avoid using kSecAttrAccessibleAlways attribute when storing data in the Keychain",
+        "href": "quality-rules/1050024.json",
+        "critical": true
+    },
+    {
+        "id": 1050026,
+        "name": "Avoid using non thread-safe Objective-C singleton pattern",
+        "href": "quality-rules/1050026.json",
+        "critical": true
+    },
+    {
+        "id": 1050036,
+        "name": "Ensure that iOS Projects are ARC enabled",
+        "href": "quality-rules/1050036.json",
+        "critical": false
+    },
+    {
+        "id": 1050038,
+        "name": "Avoid using NSURLRequestUseProtocolCachePolicy for NSURLRequest",
+        "href": "quality-rules/1050038.json",
+        "critical": false
+    },
+    {
+        "id": 1050040,
+        "name": "Avoid using SecTransform API",
+        "href": "quality-rules/1050040.json",
+        "critical": true
+    },
+    {
+        "id": 1050042,
+        "name": "Avoid synchronizing the credentials with iCloud",
+        "href": "quality-rules/1050042.json",
+        "critical": false
+    },
+    {
+        "id": 1050044,
+        "name": "Avoid weak encryption providing sufficient key size",
+        "href": "quality-rules/1050044.json",
+        "critical": true
+    },
+    {
+        "id": 1050046,
+        "name": "Avoid weak encryption algorithm",
+        "href": "quality-rules/1050046.json",
+        "critical": false
+    },
+    {
+        "id": 1050048,
+        "name": "Avoid creating file without protection",
+        "href": "quality-rules/1050048.json",
+        "critical": true
+    },
+    {
+        "id": 1050050,
+        "name": "Avoid using cryptography hash without salt",
+        "href": "quality-rules/1050050.json",
         "critical": true
     },
     {
@@ -7005,6 +7143,12 @@
         "id": 1021012,
         "name": "Avoid using a web service with Python httplib2 Http inside a loop",
         "href": "quality-rules/1021012.json",
+        "critical": true
+    },
+    {
+        "id": 1050000,
+        "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
+        "href": "quality-rules/1050000.json",
         "critical": true
     },
     {
