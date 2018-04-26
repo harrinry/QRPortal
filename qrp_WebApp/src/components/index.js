@@ -31,6 +31,7 @@ export { default as ParseQueryString } from '../modules/queryStringParser';
 export { default as UpdateURL } from '../modules/urlUpdater';
 export { default as MultiQuery } from '../modules/multiURLQueryBuilder';
 export { default as isStandard } from '../modules/isCISQorOWASP';
+export { default as TechnoFilter } from '../modules/filter';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME, SELECTME } from './rulesList/actions';
