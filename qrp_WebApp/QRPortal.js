@@ -22314,7 +22314,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = isNonStandardList;
 function isNonStandardList(url) {
-  var reg = /\/OWASP\/|\/CISQ\//i;
+  var reg = /\/OWASP\/|\/CISQ\/|\/CWE\//i;
   return reg.test(url) ? false : true;
 }
 
