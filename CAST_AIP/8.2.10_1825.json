@@ -113,7 +113,7 @@
     },
     {
         "id": 592,
-        "name": "Avoid Classes using \"new\" to allocate Instances but not defining a copy Constructor",
+        "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
         "href": "quality-rules/592.json",
         "status": "renewed",
         "critical": true
@@ -382,7 +382,7 @@
         "name": "Pages should use error handling page",
         "href": "quality-rules/2232.json",
         "status": "renewed",
-        "critical": true
+        "critical": false
     },
     {
         "id": 2236,
@@ -918,7 +918,7 @@
     },
     {
         "id": 4064,
-        "name": "Avoid Functions and Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
+        "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
         "href": "quality-rules/4064.json",
         "status": "renewed",
         "critical": true
@@ -2220,7 +2220,7 @@
     },
     {
         "id": 7254,
-        "name": "Declare as static all Methods not using Instance Fields",
+        "name": "Declare as Static all methods not using instance members",
         "href": "quality-rules/7254.json",
         "status": "renewed",
         "critical": false
@@ -2276,7 +2276,7 @@
     },
     {
         "id": 7270,
-        "name": "Declare as static all Methods not using Instance Fields",
+        "name": "Declare as Static all methods not using instance members",
         "href": "quality-rules/7270.json",
         "status": "renewed",
         "critical": false
@@ -2804,7 +2804,7 @@
         "name": "Avoid missing WHEN OTHERS in CASE statements",
         "href": "quality-rules/7518.json",
         "status": "renewed",
-        "critical": true
+        "critical": false
     },
     {
         "id": 7520,
@@ -4158,7 +4158,7 @@
     },
     {
         "id": 7964,
-        "name": "Avoid directly instantiating a Class used as a Spring bean",
+        "name": "Avoid directly instantiating a Class used as a managed bean",
         "href": "quality-rules/7964.json",
         "status": "renewed",
         "critical": true
@@ -4354,7 +4354,7 @@
     },
     {
         "id": 8026,
-        "name": "Avoid Classes with an assignment operator and the default Destructor or assignment operator",
+        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
         "href": "quality-rules/8026.json",
         "status": "renewed",
         "critical": false
@@ -4476,7 +4476,7 @@
         "name": "A pointer to a base Class shall only be cast to a pointer to a derived Class by means of 'dynamic_cast'",
         "href": "quality-rules/8060.json",
         "status": "renewed",
-        "critical": true
+        "critical": false
     },
     {
         "id": 8062,
@@ -4539,7 +4539,7 @@
         "name": "Casting from pointer to base Class to pointer to derived Class should be done through 'dynamic_cast' or 'static_cast'",
         "href": "quality-rules/8078.json",
         "status": "renewed",
-        "critical": true
+        "critical": false
     },
     {
         "id": 8080,
@@ -4659,5 +4659,81 @@
         "href": "quality-rules/8114.json",
         "status": "renewed",
         "critical": false
+    },
+    {
+        "id": 8116,
+        "name": "Avoid calling system function (CALL 'cfunc') BETA",
+        "href": "quality-rules/8116.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8118,
+        "name": "Avoid using the RFC_ABAP_INSTALL_AND_RUN function BETA",
+        "href": "quality-rules/8118.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8120,
+        "name": "Avoid using CALL FUNCTION without error handling BETA",
+        "href": "quality-rules/8120.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8122,
+        "name": "Avoid using CALL METHOD without error handling BETA",
+        "href": "quality-rules/8122.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8124,
+        "name": "Do not use function module DB_EXISTS_INDEX (HANA) BETA",
+        "href": "quality-rules/8124.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8126,
+        "name": "Avoid using empty SELECT ... ENDSELECT loop BETA",
+        "href": "quality-rules/8126.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8128,
+        "name": "Avoid using UPDATE and DELETE without WHERE condition BETA",
+        "status": "deprecated",
+        "critical": true
+    },
+    {
+        "id": 8130,
+        "name": "Avoid using database hints BETA",
+        "href": "quality-rules/8130.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8132,
+        "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops BETA",
+        "href": "quality-rules/8132.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8134,
+        "name": "Avoid unsorted data after SELECT queries BETA",
+        "href": "quality-rules/8134.json",
+        "status": "renewed",
+        "critical": true
+    },
+    {
+        "id": 8136,
+        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "href": "quality-rules/8136.json",
+        "status": "renewed",
+        "critical": true
     }
 ]
