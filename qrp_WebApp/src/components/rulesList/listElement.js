@@ -1,7 +1,7 @@
 import React from 'react';
-import { Radio, UNSELECTME, SELECTME} from '../index';
+import { Radio, UNSELECTME, SELECTME, TableCell } from '../index';
 
-const localClassName = 'table-row', cellClass = 'table-cell', criticalClass = 'critical-cell'/*, prefix = 'letr_'*/;
+const localClassName = 'table-row'/*, prefix = 'letr_'*/;
 
 export default class RuleListRowElement extends React.Component{
   constructor(props){
@@ -35,10 +35,15 @@ export default class RuleListRowElement extends React.Component{
       <tr className={localClassName.concat(this.state.selected ? ' selected' : '' )} onClick={()=>{
         this.dispatchSelectMe();
         this.props.onClick();}}>
-        <td className={cellClass}>{this.props.el.id}</td>
-        <td className={cellClass}>{this.props.el.name}</td>
-        <td className={cellClass}><span className={this.props.el.critical ? criticalClass : undefined}>&nbsp;</span></td>
+        {this.renderCells()}
       </tr>
     );
+  }
+
+  renderCells(){
+    if( this.props.values && this.props.el ){
+      let k = 0;
+      return this.props.values.map( val => <TableCell key={k++} critical={this.props.el.critical && val === 'critical'}>{this.props.el[val]}</TableCell>);
+    }
   }
 }
