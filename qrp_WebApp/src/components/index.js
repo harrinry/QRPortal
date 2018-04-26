@@ -22,6 +22,7 @@ export { default as RulesContainer } from './rulesList/container';
 export { default as RuleListRowElement } from './rulesList/listElement';
 export { default as StandardList } from './rulesList/standardList';
 export { default as ListHeader } from './rulesList/listHeader';
+export { default as TableCell } from './rulesList/cell';
 
 /* untility functions */
 export { APIQuery }  from '../modules/apiQuery';

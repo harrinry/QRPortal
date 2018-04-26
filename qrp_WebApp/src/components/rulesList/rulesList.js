@@ -2,7 +2,9 @@ import React from 'react';
 import {Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery} from '../index';
 
 const prefix = 'keyx_',
-  standardHeaders = [ 'ID', 'Name', 'Critical?'];
+  standardHeaders = [ 'ID', 'Name', 'Critical?'],
+  standardValues = ['id', 'name', 'critical'],
+  nameValOnly = ['name'];
 
 export default class RulesList extends React.Component{
   constructor(props){
@@ -22,10 +24,12 @@ export default class RulesList extends React.Component{
 
   render(){
     return (this.props.isStandard ? ( <StandardList l50={true} headers={standardHeaders}>
-      {this.buildListFromState(this.state.els, this.loadRuleDetails)}
+      {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)}
     </StandardList> ) : (<div>
-      <StandardList l33={true} headers={['Name']}>{this.buildListFromState(this.state.els, this.queryForNextList.bind(this) )}</StandardList>
-      <StandardList l33={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails)}</StandardList>
+      <StandardList l33={true} headers={['Name']}>
+        {this.buildListFromState(this.state.els, this.queryForNextList.bind(this), nameValOnly )}
+      </StandardList>
+      <StandardList l33={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues)}</StandardList>
     </div>));
   }
 
@@ -35,9 +39,9 @@ export default class RulesList extends React.Component{
     }) );
   }
 
-  buildListFromState( arr, onClickFunction ){
+  buildListFromState( arr, onClickFunction, values ){
     let key = 0;
-    return arr.map( el => <RuleListRowElement el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
+    return arr.map( el => <RuleListRowElement values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
   }
 
   loadRuleDetails( url ){

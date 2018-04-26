@@ -21213,6 +21213,15 @@ Object.defineProperty(exports, 'ListHeader', {
   }
 });
 
+var _cell = __webpack_require__(/*! ./rulesList/cell */ "./qrp_WebApp/src/components/rulesList/cell.js");
+
+Object.defineProperty(exports, 'TableCell', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_cell).default;
+  }
+});
+
 var _apiQuery = __webpack_require__(/*! ../modules/apiQuery */ "./qrp_WebApp/src/modules/apiQuery.js");
 
 Object.defineProperty(exports, 'APIQuery', {
@@ -21335,6 +21344,69 @@ Object.defineProperty(exports, "__esModule", {
 var lOADDETAILS = exports.lOADDETAILS = 'LoadDetailsFromListEvent_Click';
 var UNSELECTME = exports.UNSELECTME = 'IfIamSelectedUnselectMeNow';
 var SELECTME = exports.SELECTME = 'IfIamNotSelectedselectMeNow';
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/components/rulesList/cell.js":
+/*!*****************************************************!*\
+  !*** ./qrp_WebApp/src/components/rulesList/cell.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var cellClass = 'table-cell',
+    criticalClass = 'critical-cell';
+
+var TableCell = function (_React$PureComponent) {
+  _inherits(TableCell, _React$PureComponent);
+
+  function TableCell() {
+    _classCallCheck(this, TableCell);
+
+    return _possibleConstructorReturn(this, (TableCell.__proto__ || Object.getPrototypeOf(TableCell)).apply(this, arguments));
+  }
+
+  _createClass(TableCell, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'td',
+        { className: cellClass },
+        _react2.default.createElement(
+          'span',
+          { className: this.props.critical ? criticalClass : undefined },
+          this.props.critical ? ' ' : this.props.children
+        )
+      );
+    }
+  }]);
+
+  return TableCell;
+}(_react2.default.PureComponent);
+
+exports.default = TableCell;
 
 /***/ }),
 
@@ -21666,9 +21738,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var localClassName = 'table-row',
-    cellClass = 'table-cell',
-    criticalClass = 'critical-cell' /*, prefix = 'letr_'*/;
+var localClassName = 'table-row' /*, prefix = 'letr_'*/;
 
 var RuleListRowElement = function (_React$Component) {
   _inherits(RuleListRowElement, _React$Component);
@@ -21714,26 +21784,24 @@ var RuleListRowElement = function (_React$Component) {
             _this2.dispatchSelectMe();
             _this2.props.onClick();
           } },
-        _react2.default.createElement(
-          'td',
-          { className: cellClass },
-          this.props.el.id
-        ),
-        _react2.default.createElement(
-          'td',
-          { className: cellClass },
-          this.props.el.name
-        ),
-        _react2.default.createElement(
-          'td',
-          { className: cellClass },
-          _react2.default.createElement(
-            'span',
-            { className: this.props.el.critical ? criticalClass : undefined },
-            '\xA0'
-          )
-        )
+        this.renderCells()
       );
+    }
+  }, {
+    key: 'renderCells',
+    value: function renderCells() {
+      var _this3 = this;
+
+      if (this.props.values && this.props.el) {
+        var k = 0;
+        return this.props.values.map(function (val) {
+          return _react2.default.createElement(
+            _index.TableCell,
+            { key: k++, critical: _this3.props.el.critical && val === 'critical' },
+            _this3.props.el[val]
+          );
+        });
+      }
     }
   }]);
 
@@ -21900,7 +21968,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var prefix = 'keyx_',
-    standardHeaders = ['ID', 'Name', 'Critical?'];
+    standardHeaders = ['ID', 'Name', 'Critical?'],
+    standardValues = ['id', 'name', 'critical'],
+    nameValOnly = ['name'];
 
 var RulesList = function (_React$Component) {
   _inherits(RulesList, _React$Component);
@@ -21934,19 +22004,19 @@ var RulesList = function (_React$Component) {
       return this.props.isStandard ? _react2.default.createElement(
         _index.StandardList,
         { l50: true, headers: standardHeaders },
-        this.buildListFromState(this.state.els, this.loadRuleDetails)
+        this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)
       ) : _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
           _index.StandardList,
           { l33: true, headers: ['Name'] },
-          this.buildListFromState(this.state.els, this.queryForNextList.bind(this))
+          this.buildListFromState(this.state.els, this.queryForNextList.bind(this), nameValOnly)
         ),
         _react2.default.createElement(
           _index.StandardList,
           { l33: true, headers: standardHeaders },
-          this.buildListFromState(this.state.els2, this.loadRuleDetails)
+          this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues)
         )
       );
     }
@@ -21963,10 +22033,10 @@ var RulesList = function (_React$Component) {
     }
   }, {
     key: 'buildListFromState',
-    value: function buildListFromState(arr, onClickFunction) {
+    value: function buildListFromState(arr, onClickFunction, values) {
       var key = 0;
       return arr.map(function (el) {
-        return _react2.default.createElement(_index.RuleListRowElement, { el: el, key: prefix + key++, onClick: onClickFunction ? function () {
+        return _react2.default.createElement(_index.RuleListRowElement, { values: values, el: el, key: prefix + key++, onClick: onClickFunction ? function () {
             return onClickFunction(el.href);
           } : undefined });
       });
