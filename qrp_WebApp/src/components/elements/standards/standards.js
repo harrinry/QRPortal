@@ -1,14 +1,12 @@
 import React from 'react';
 import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
-import {CAST, CISQ, OWASP} from './elements';
+import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
 import {LOADRULESLIST} from '../../actions/actions';
 
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
-
-//const casticon = '/img/castsoftware.svg';
 
 export default class Standards extends React.Component {
   constructor(props){
@@ -32,7 +30,8 @@ export default class Standards extends React.Component {
       <BodyBlock value={[
         <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
-        <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>
+        <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
+        <BodyElement key={key++} slideDown={true} value={CWE} className="bodyElement inline cweicon" onclick={()=> APIQuery(qualityStandards, this.getCweStandards.bind(this))}/>
       ]}/>
       <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
@@ -66,6 +65,22 @@ export default class Standards extends React.Component {
         } ),
         menuEls = this.buildSlideDownMenuElements( out ),
         nextScope = OWASP;
+      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    });
+  }
+
+  getCweStandards( res ){
+    const data = res.data,
+      name = CWE,
+      href = data.find( ( e ) => e.name === name ).href;
+
+    APIQuery( href, rr =>{
+      let d = rr.data,
+        out = d.map( c => {
+          return { name: c.name, href: c.href };
+        } ),
+        menuEls = this.buildSlideDownMenuElements( out ),
+        nextScope = CWE;
       return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
     });
   }
