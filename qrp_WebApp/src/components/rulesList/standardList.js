@@ -1,16 +1,15 @@
 import React from 'react';
-
-const localClassName = ['ruleList-container', 'table-container', 'L50-margins', 'scrollbar-small'],
-  sp = ' ';
+import { ListHeader } from '../index';
 
 export default class StandardList extends React.PureComponent{
   render(){
+    let k = 0;
     return (
-      <div className={localClassName.join( sp )} >
+      <div className={buildClassList(this.props)} >
         <table>
           <tbody>
             <tr>
-              <th>ID</th><th>Name</th><th>Critical?</th>
+              {this.props.headers.map( header => <ListHeader key={header + k++}>{header}</ListHeader>)}
             </tr>
             {this.props.children}
           </tbody>
@@ -18,5 +17,22 @@ export default class StandardList extends React.PureComponent{
       </div>
     );
   }
-  
 }
+
+const buildClassList = ( props ) => {
+  if(!props) return;
+  const { l50, l33 } = props;
+  const left50 = 'L50-margins', left33 = 'L33-margins', sp = ' ';
+  let localClassName = ['ruleList-container', 'table-container', 'scrollbar-small'];
+
+  return ( l50 ? 
+    localClassName
+      .concat(left50)
+      .join(sp) 
+    : ( l33 ? 
+      localClassName
+        .concat(left33)
+        .join(sp) : 
+      localClassName.join(sp)
+    ));
+};
