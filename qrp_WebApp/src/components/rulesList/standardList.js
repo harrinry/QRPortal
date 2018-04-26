@@ -21,18 +21,24 @@ export default class StandardList extends React.PureComponent{
 
 const buildClassList = ( props ) => {
   if(!props) return;
-  const { l50, l33 } = props;
-  const left50 = 'L50-margins', left33 = 'L33-margins', sp = ' ';
+  const { l50, l20, l30 } = props;
+  const left50 = 'L50-margins', left20 = 'L20-margins', left30 = 'L30-margins', sp = ' ';
   let localClassName = ['ruleList-container', 'table-container', 'scrollbar-small'];
 
-  return ( l50 ? 
-    localClassName
-      .concat(left50)
-      .join(sp) 
-    : ( l33 ? 
-      localClassName
-        .concat(left33)
-        .join(sp) : 
-      localClassName.join(sp)
-    ));
+  let thevalue = localClassName.join(sp);
+
+  if(l50)
+  {
+    thevalue = localClassName.concat(left50).join(sp);
+  }
+  else if(l30)
+  {
+    thevalue = localClassName.concat(left30).join(sp);
+  }
+  else if(l20)
+  {
+    thevalue = localClassName.concat(left20).join(sp);
+  }
+
+  return (thevalue);
 };
