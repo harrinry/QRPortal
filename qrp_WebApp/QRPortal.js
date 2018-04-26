@@ -20679,36 +20679,6 @@ var Title = exports.Title = 'Standards';
 
 /***/ }),
 
-/***/ "./qrp_WebApp/src/components/elements/technologies/filters.js":
-/*!********************************************************************!*\
-  !*** ./qrp_WebApp/src/components/elements/technologies/filters.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _ref;
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-var filters = {
-  cpp: [-2, -3, 1050571],
-  dotNet: [141901],
-  rpg: [1008000, 1009000, 1011000, 1012000]
-};
-
-filters.all = (_ref = []).concat.apply(_ref, _toConsumableArray(filters.cpp).concat(_toConsumableArray(filters.dotNet), _toConsumableArray(filters.rpg)));
-
-exports.default = filters;
-
-/***/ }),
-
 /***/ "./qrp_WebApp/src/components/elements/technologies/technoIcons.js":
 /*!************************************************************************!*\
   !*** ./qrp_WebApp/src/components/elements/technologies/technoIcons.js ***!
@@ -20795,19 +20765,15 @@ var _axios2 = _interopRequireDefault(_axios);
 
 var _index = __webpack_require__(/*! ../../index */ "./qrp_WebApp/src/components/index.js");
 
-var _filters = __webpack_require__(/*! ./filters */ "./qrp_WebApp/src/components/elements/technologies/filters.js");
-
-var _filters2 = _interopRequireDefault(_filters);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+//import Filters from './filters';
 
 var Technologies = function (_React$Component) {
   _inherits(Technologies, _React$Component);
@@ -20835,71 +20801,15 @@ var Technologies = function (_React$Component) {
       var _this2 = this;
 
       _axios2.default.get('technologies.json').then(function (res) {
-        return _this2.setState({ data: res.data });
+        return _this2.setState({ data: (0, _index.TechnoFilter)(res.data) });
       }).catch(function (err) {
         return console.error(err.stack);
       });
     }
   }, {
-    key: 'filterIndex',
-    value: function filterIndex(id) {
-      var index = _filters2.default.all.indexOf(id);
-      return index;
-    }
-  }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
-
       if (this.state.data) {
-        var ID = 'id';
-        var key = 0,
-            cpp = void 0,
-            dotNet = void 0,
-            rpm = void 0;
-        var technos = this.state.data.map(function (t) {
-          var i = _this3.filterIndex(t.id);
-          if (i !== -1) {
-            if (i < 3 && !cpp) {
-              cpp = true;
-              var u = _this3.state.data.filter(function (e) {
-                var idx = _this3.filterIndex(e.id);
-                if (idx !== -1 && idx < 3) {
-                  return e;
-                }
-              }, _this3),
-                  urls = u.map(function (o) {
-                return o.href;
-              });
-              var href = _index.MultiQuery.apply(undefined, [ID].concat(_toConsumableArray(urls))),
-                  name = 'C/C++';
-              return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
-                  return _index.Radio.emit(_index.LOADRULESLIST, href, name);
-                }, id: t.id, title: t.title });
-            } else if (i === 3 && !dotNet) {
-              dotNet = true;
-              return;
-            } else if (i > 3 && !rpm) {
-              rpm = true;
-              var _u = _this3.state.data.filter(function (e) {
-                return _this3.filterIndex(e.id) > 3;
-              }),
-                  _urls = _u.map(function (o) {
-                return o.href;
-              });
-              var _href = _index.MultiQuery.apply(undefined, [ID].concat(_toConsumableArray(_urls))),
-                  _name = 'RPG';
-              return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: _name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
-                  return _index.Radio.emit(_index.LOADRULESLIST, _href, _name);
-                }, id: t.id, title: t.title });
-            }
-            return;
-          }
-          return _react2.default.createElement(_index.BodyElementTechno, { key: key++, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
-              return _index.Radio.emit(_index.LOADRULESLIST, t.href, t.name);
-            }, id: t.id, title: t.title });
-        });
-
         return _react2.default.createElement(
           'div',
           { className: 'bodyRow container block' },
@@ -20907,7 +20817,11 @@ var Technologies = function (_React$Component) {
           _react2.default.createElement(
             _index.BodyBlock,
             null,
-            technos
+            this.state.data.map(function (t) {
+              return _react2.default.createElement(_index.BodyElementTechno, { key: t.id, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
+                  return _index.Radio.emit(_index.LOADRULESLIST, t.href, t.name);
+                }, id: t.id, title: t.title });
+            })
           )
         );
       }
@@ -21296,6 +21210,15 @@ Object.defineProperty(exports, 'isStandard', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_isCISQorOWASP).default;
+  }
+});
+
+var _filter = __webpack_require__(/*! ../modules/filter */ "./qrp_WebApp/src/modules/filter.js");
+
+Object.defineProperty(exports, 'TechnoFilter', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_filter).default;
   }
 });
 
@@ -22267,6 +22190,112 @@ function APIQuery(dataName, callback) {
     return callback(res);
   }).catch(function (err) {
     return console.log(err.stack);
+  });
+}
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/modules/filter.js":
+/*!******************************************!*\
+  !*** ./qrp_WebApp/src/modules/filter.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _ref;
+
+exports.default = filter;
+
+var _multiURLQueryBuilder = __webpack_require__(/*! ./multiURLQueryBuilder */ "./qrp_WebApp/src/modules/multiURLQueryBuilder.js");
+
+var _multiURLQueryBuilder2 = _interopRequireDefault(_multiURLQueryBuilder);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+var filters = {
+  cpp: [-2, -3, 1050571],
+  dotNet: [141901],
+  rpg: [1008000, 1009000, 1011000, 1012000]
+};
+
+filters.all = (_ref = []).concat.apply(_ref, _toConsumableArray(filters.cpp).concat(_toConsumableArray(filters.dotNet), _toConsumableArray(filters.rpg)));
+
+function isCPP(id) {
+  return filters.cpp.indexOf(id) === -1 ? false : true;
+}
+
+function getCppEntries(arr) {
+  return arr.filter(function (en) {
+    return isCPP(en.id);
+  });
+}
+
+function getRPGEntries(arr) {
+  return arr.filter(function (en) {
+    return isRPG(en.id);
+  });
+}
+
+function isRPG(id) {
+  return filters.rpg.indexOf(id) === -1 ? false : true;
+}
+
+function isPure(id) {
+  return filters.all.indexOf(id);
+}
+
+function filter(arr) {
+  var ID = 'id';
+  var cpp = void 0,
+      dotNet = void 0,
+      rpm = void 0;
+
+  var filtered = arr.map(function (e) {
+    var idx = isPure(e.id);
+
+    if (idx !== -1) {
+      if (idx < 3 && !cpp) {
+        cpp = true;
+        var cppus = getCppEntries(arr);
+        var urls = cppus.map(function (a) {
+          return a.href;
+        });
+        var newHref = _multiURLQueryBuilder2.default.apply(undefined, [ID].concat(_toConsumableArray(urls)));
+        e.id = filters.cpp[2];
+        e.href = newHref;
+        e.name = 'C/C++';
+        return e;
+      } else if (idx === 3 && !dotNet) {
+        dotNet = true;
+        return;
+      } else if (idx > 3 && !rpm) {
+        rpm = true;
+        var us = getRPGEntries(arr);
+        var _urls = us.map(function (a) {
+          return a.href;
+        });
+        var _newHref = _multiURLQueryBuilder2.default.apply(undefined, [ID].concat(_toConsumableArray(_urls)));
+        e.id = filters.rpg[0];
+        e.href = _newHref;
+        e.name = 'RPG';
+      } else {
+        return;
+      }
+    }
+    return e;
+  });
+
+  return filtered.filter(function (ele) {
+    return ele !== undefined;
   });
 }
 
