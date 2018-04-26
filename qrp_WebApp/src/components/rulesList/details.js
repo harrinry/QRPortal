@@ -19,8 +19,8 @@ export default class RuleDetails extends React.Component{
       const outputblock = this.props.data.output ? (<div className='output-container detailssection'><p className='rulesection'>Output</p><p className='textrule'>{this.props.data.output}</p></div>) : ('');
 
       return (
-        <div className={this.props.isStandard 
-          ? localClassName.concat(sp, standardClass) 
+        <div className={this.props.isStandard
+          ? localClassName.concat(sp, standardClass)
           : localClassName.concat(sp, nStdClass)}>
           {criticalblock}
           {weightblock}
