@@ -21567,7 +21567,7 @@ var RuleDetails = function (_React$Component) {
         var criticalblock = this.props.data.critical ? _react2.default.createElement(
           'div',
           { className: 'critical-container' },
-          '&nbsp'
+          ' '
         ) : '';
         var weightblock = this.props.data.weight ? _react2.default.createElement(
           'div',

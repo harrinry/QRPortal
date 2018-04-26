@@ -9,7 +9,7 @@ export default class RuleDetails extends React.Component{
   render(){
     if (this.props.data){
 
-      const criticalblock = this.props.data.critical ? (<div className='critical-container'>&nbsp</div>) : ('');
+      const criticalblock = this.props.data.critical ? (<div className='critical-container'>{' '}</div>) : ('');
       const weightblock = this.props.data.weight ? (<div className='weight-container'>{this.props.data.weight}</div>) : ('');
       const remediationblock = this.props.data.remediation ? (<div className='remediation-container detailssection'><p className='rulesection'>Remediation</p><p>{this.props.data.remediation}</p></div>) : ('');
       const rationaleblock = this.props.data.rationale ? (<div className='rationale-container detailssection'><p className='rulesection'>Rationale</p><p>{this.props.data.rationale}</p></div>) : ('');
