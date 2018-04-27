@@ -18,6 +18,14 @@ export default class RuleDetails extends React.Component{
       const referenceblock = this.props.data.reference ? (<div className='reference-container detailssection'><p className='rulesection'>Reference</p><p className='textrule'>{this.props.data.reference}</p></div>) : ('');
       const outputblock = this.props.data.output ? (<div className='output-container detailssection'><p className='rulesection'>Output</p><p className='textrule'>{this.props.data.output}</p></div>) : ('');
 
+      const length = this.props.data.qualityStandards.length;
+      let tagsblock = ('');
+
+      if(length>0)
+      {
+        tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li className='detail-tag'>{listValue.id}</li>;})}</ul>);
+      }
+
       return (
         <div className={this.props.isStandard
           ? localClassName.concat(sp, standardClass)
@@ -26,7 +34,7 @@ export default class RuleDetails extends React.Component{
           {weightblock}
           <h2 className='ruleTitle'>{this.props.data.name}</h2>
           <div className='tags-container'>
-            <ul>{this.props.data.qualityStandards.id}</ul>
+            {tagsblock}
           </div>
           <div className='description-container detailssection'>
             <p className='rulesection'>Description</p>
