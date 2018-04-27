@@ -5,9 +5,11 @@ const filters = {
   dotNet: [141901],
   rpg: [1008000, 1009000, 1011000, 1012000],
   pli: [1004000, 1005000],
+  mssql: [-13,140998],
+  sap: [-15,-20],
 };
 
-filters.all = [].concat(...filters.cpp, ...filters.dotNet, ...filters.rpg,...filters.pli);
+filters.all = [].concat(...filters.cpp, ...filters.dotNet, ...filters.rpg, ...filters.pli, ...filters.mssql, ...filters.sap);
 
 function isCPP( id ){
   return filters.cpp.indexOf( id ) === -1 ? false : true;
@@ -33,13 +35,29 @@ function isPLI( id ){
   return filters.pli.indexOf( id ) === -1 ? false : true;
 }
 
+function getMSSQLEntries( arr ){
+  return arr.filter( en => isMSSQL(en.id));
+}
+
+function isMSSQL( id ){
+  return filters.mssql.indexOf( id ) === -1 ? false : true;
+}
+
+function getSAPEntries( arr ){
+  return arr.filter( en => isSAP(en.id));
+}
+
+function isSAP( id ){
+  return filters.sap.indexOf( id ) === -1 ? false : true;
+}
+
 function isPure( id ){
   return filters.all.indexOf( id );
 }
 
 export default function filter( arr ){
   const ID = 'id';
-  let cpp, dotNet, rpm, pli;
+  let cpp, dotNet, rpm, pli, mssql, sap;
 
   const filtered = arr.map( e => {
     const idx = isPure( e.id );
@@ -57,7 +75,7 @@ export default function filter( arr ){
       } else if( idx === 3 && !dotNet){
         dotNet = true;
         return;
-      } else if ( idx > 3 && idx < 8 && !rpm ) {
+      } else if ( idx > 3 && idx <= 7 && !rpm ) {
         rpm = true;
         const us = getRPGEntries( arr );
         const urls = us.map( a => a.href );
@@ -65,7 +83,7 @@ export default function filter( arr ){
         e.id = filters.rpg[0];
         e.href = newHref;
         e.name = 'RPG';
-      } else if ( idx > 7 && !pli ) {
+      } else if ( idx > 7 && idx <= 9 && !pli ) {
         pli = true;
         const us = getPLIEntries( arr );
         const urls = us.map( a => a.href );
@@ -73,6 +91,22 @@ export default function filter( arr ){
         e.id = filters.pli[0];
         e.href = newHref;
         e.name = 'PLI';
+      } else if ( idx > 9 && idx <= 11 && !mssql ) {
+        mssql = true;
+        const us = getMSSQLEntries( arr );
+        const urls = us.map( a => a.href );
+        const newHref = MultiQuery( ID, ...urls );
+        e.id = filters.mssql[0];
+        e.href = newHref;
+        e.name = 'SQL Server';
+      } else if ( idx > 11 && idx <= 13 && !sap ) {
+        sap = true;
+        const us = getSAPEntries( arr );
+        const urls = us.map( a => a.href );
+        const newHref = MultiQuery( ID, ...urls );
+        e.id = filters.sap[0];
+        e.href = newHref;
+        e.name = 'SAP';
       } else {
         return;
       }
