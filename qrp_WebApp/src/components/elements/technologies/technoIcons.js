@@ -12,9 +12,10 @@ const ICONURLS = {
   'sybase t-sql':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.sapase.png',
   'powerbuilder':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.powerbuilder.png',
   'abap':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.sapabap.png',
+  'sap':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.sapabap.png',
   'business object':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.bo.png',
   'javascript':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.javascript.png',
-
+  'all technologies':'https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png',
   'python':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.python.png',
   'tibco':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.tibco.png',
   'asp.net':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aspdotnet.png',
