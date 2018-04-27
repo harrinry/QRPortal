@@ -2,7 +2,7 @@ import React from 'react';
 
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
-  nStdClass = 'L33-margins',
+  nStdClass = 'D40-margins',
   sp = ' ';
 
 export default class RuleDetails extends React.Component{
@@ -37,7 +37,7 @@ export default class RuleDetails extends React.Component{
           {sampleblock}
           {remediationsampleblock}
           {referenceblock}
-          {outputblock}
+          /*{outputblock}*/
         </div>
       );
     }

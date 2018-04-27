@@ -26,10 +26,10 @@ export default class RulesList extends React.Component{
     return (this.props.isStandard ? ( <StandardList l50={true} headers={standardHeaders}>
       {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)}
     </StandardList> ) : (<div>
-      <StandardList l33={true} headers={['Name']}>
+      <StandardList l20={true} headers={['Standard Name']}>
         {this.buildListFromState(this.state.els, this.queryForNextList.bind(this), nameValOnly )}
       </StandardList>
-      <StandardList l33={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues)}</StandardList>
+      <StandardList l30={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues)}</StandardList>
     </div>));
   }
 
