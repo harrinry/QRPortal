@@ -26,6 +26,10 @@ export default class RuleDetails extends React.Component{
         tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li className='detail-tag'>{listValue.id}</li>;})}</ul>);
       }
 
+      // optional at the end of the block
+      /*{outputblock}*/
+
+
       return (
         <div className={this.props.isStandard
           ? localClassName.concat(sp, standardClass)
@@ -45,7 +49,6 @@ export default class RuleDetails extends React.Component{
           {sampleblock}
           {remediationsampleblock}
           {referenceblock}
-          /*{outputblock}*/
         </div>
       );
     }
