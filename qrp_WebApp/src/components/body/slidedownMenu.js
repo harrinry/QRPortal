@@ -20,7 +20,7 @@ export default class SlidedownMenu extends React.Component{
 
   render(){
     return (<div className={this.state.className}>
-      {this.props.value}
+      {this.props.children}
     </div>);
   }
 }
