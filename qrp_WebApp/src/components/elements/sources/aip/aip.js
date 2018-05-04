@@ -1,12 +1,10 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../../index';
+import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, Radio} from '../../../index';
 
 const idPrefix = 'AIP_',
   MainDivClassName = 'bodyRow container block';
 
-//const casticon = '/img/castsoftware.svg';
-
-export default class Standards extends React.Component {
+export default class AIPSources extends React.Component {
   constructor(props){
     super(props);
     this.state = {};

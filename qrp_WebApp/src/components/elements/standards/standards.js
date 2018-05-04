@@ -35,7 +35,7 @@ export default class Standards extends React.Component {
         <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CWE} className="bodyElement inline cweicon" onclick={()=> APIQuery(qualityStandards, this.getCweStandards.bind(this))}/>
       ]}</BodyBlock>
-      <SlidedownMenu visible={this.state.menuVisible}>{this.state.menuData}</SlidedownMenu>
+      <SlidedownMenu visible={this.state.menuVisible}>{this.state.menuData}</SlidedownMenu>,
     </div>);
   }
 
@@ -90,7 +90,7 @@ export default class Standards extends React.Component {
   getBusinessCritera( res ){
     const data = res.data,
       out = data.map( ( c ) => {
-        return { id: idPrefix + c.id, name: c.name, href: c.href} ;
+        return { id: idPrefix + c.id, name: c.name, href: c.href};
       });
 
     const menuEls = this.buildSlideDownMenuElements( out ),

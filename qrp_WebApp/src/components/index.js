@@ -4,6 +4,7 @@ export { default as Body } from './body/body';
 export { default as Technologies } from './elements/technologies/technologies';
 export { default as Standards } from './elements/standards/standards';
 export { default as Rules } from './elements/rules/rulesSticky';
+export { default as AIPSources } from './elements/sources/aip/aip';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';
