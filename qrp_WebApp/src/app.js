@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Header, Body, ParseQueryString, Radio, LOADRULESLIST, lOADDETAILS, SELECTME } from './components/index';
+import { Overlay, Header, Body, ParseQueryString, Radio, LOADRULESLIST, lOADDETAILS, SELECTME } from './components/index';
 
 class App extends React.Component {
 
@@ -23,6 +23,7 @@ class App extends React.Component {
       <div>
         <Header/>
         <Body/>
+        <Overlay visible={false}/>
       </div>
     );
   }

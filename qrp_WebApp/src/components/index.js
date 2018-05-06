@@ -5,6 +5,10 @@ export { default as Technologies } from './elements/technologies/technologies';
 export { default as Standards } from './elements/standards/standards';
 export { default as Rules } from './elements/rules/rulesSticky';
 export { default as AIPSources } from './elements/sources/aip/aip';
+export { default as Overlay} from './overlay/overlay';
+export { default as OverlayContainer} from './overlay/roundedContainer';
+export { default as Layout } from './overlay/layout';
+export { default as Column } from './overlay/column';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';
