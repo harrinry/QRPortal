@@ -3,7 +3,7 @@ import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from 
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
-import {LOADRULESLIST} from '../../actions/actions';
+import {LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY} from '../../actions/actions';
 
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
@@ -93,9 +93,8 @@ export default class Standards extends React.Component {
         return { id: idPrefix + c.id, name: c.name, href: c.href};
       });
 
-    const menuEls = this.buildSlideDownMenuElements( out ),
-      nextScope = CAST;
-    return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    const menuEls = this.buildSlideDownMenuElements( out );
+    return Radio.emit(SHOWOVERLAY, { children: menuEls });
   }
 
   determineMenuVisibility( nextScope ){
@@ -103,6 +102,9 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
+    return data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
+      Radio.emit(LOADRULESLIST, e.href, e.name);
+      Radio.emit( HIDEOVERLAY );
+    }} id={e.id} title={e.title}/> );
   }
 }

@@ -5,6 +5,8 @@ export { default as Technologies } from './elements/technologies/technologies';
 export { default as Standards } from './elements/standards/standards';
 export { default as Rules } from './elements/rules/rulesSticky';
 export { default as AIPSources } from './elements/sources/aip/aip';
+/* Overlay dedicated UI components */
+export { default as StaticOverlay} from './overlay/main';
 export { default as Overlay} from './overlay/overlay';
 export { default as OverlayContainer} from './overlay/roundedContainer';
 export { default as Layout } from './overlay/layout';
@@ -40,6 +42,6 @@ export { default as TechnoFilter } from '../modules/filter';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME, SELECTME } from './rulesList/actions';
-export { LOADRULESLIST } from './actions/actions';
+export { LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
 export { default as ICONURLS } from './elements/technologies/technoIcons';

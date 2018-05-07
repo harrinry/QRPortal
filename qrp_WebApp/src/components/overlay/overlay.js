@@ -9,7 +9,7 @@ export default class Overlay extends React.Component{
     return (
       <div className={className.concat( visible ).join(' ')}>
         <OverlayContainer>
-          <h1>{'hello overlay'}</h1>
+          {this.props.children}
         </OverlayContainer>
       </div>
     );

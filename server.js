@@ -7,6 +7,8 @@ const cors = require('cors');
 // helmet handle request security
 const helmet = require('helmet');
 
+const searchIndex = require('./serverModules/qr_searchParser');
+
 var port = process.env.PORT || 8080;
 
 var app = express();
@@ -60,21 +62,13 @@ app.get('/mlturl/*', (req, res)=>{
   const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
   res.json(uniqArr);
 });
-/*app.get('/quality-standards/*', (req, res)=> {
-  res.sendFile(path.join(__dirname + req.url ));
-});
 
-app.get('/technologies/*', (req, res)=> {
-  res.sendFile(path.join(__dirname + req.url ));
+app.get('/search', (req, res)=>{
+  const q = req.query;
+  console.log(q);
+  const r = searchIndex( q.s );
+  res.json(r);
 });
-
-app.get('/quality-rules/*', (req, res)=> {
-  res.sendFile(path.join(__dirname + req.url ));
-});
-
-app.get('/business-criteria/*', (req, res)=> {
-  res.sendFile(path.join(__dirname + req.url ));
-});*/
 
 // ------------------------ End of React Routes ------------------------------ //
 
