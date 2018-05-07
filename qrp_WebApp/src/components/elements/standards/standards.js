@@ -1,5 +1,5 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, Column, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
@@ -11,9 +11,13 @@ const idPrefix = 'BC_',
 //const casticon = '/img/castsoftware.svg';
 
 export default class Standards extends React.Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      menuVisible: false,
+      menuData: undefined,
+      scope: undefined
+    };
 
     Radio.listen( LOADRULESLIST, () =>
       this.setState( _state => {
@@ -23,7 +27,7 @@ export default class Standards extends React.Component {
           scope: undefined
         };
       }));
-  }
+  }*/
 
   render(){
     let key = 0;
@@ -35,7 +39,6 @@ export default class Standards extends React.Component {
         <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CWE} className="bodyElement inline cweicon" onclick={()=> APIQuery(qualityStandards, this.getCweStandards.bind(this))}/>
       ]}</BodyBlock>
-      <SlidedownMenu visible={this.state.menuVisible}>{this.state.menuData}</SlidedownMenu>,
     </div>);
   }
 
@@ -49,9 +52,8 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = CISQ;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'CISQ Standards'});
     });
   }
 
@@ -65,9 +67,8 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = OWASP;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'OWASP Standards'});
     });
   }
 
@@ -81,9 +82,8 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = CWE;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'CWE Standards'});
     });
   }
 
@@ -94,7 +94,7 @@ export default class Standards extends React.Component {
       });
 
     const menuEls = this.buildSlideDownMenuElements( out );
-    return Radio.emit(SHOWOVERLAY, { children: menuEls });
+    return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'Business Criteria'});
   }
 
   determineMenuVisibility( nextScope ){
@@ -102,9 +102,10 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
-      Radio.emit(LOADRULESLIST, e.href, e.name);
+    return (<Column width={'100%'} textAlign={'center'}>{data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
+      Radio.emit( LOADRULESLIST, e.href, e.name);
       Radio.emit( HIDEOVERLAY );
-    }} id={e.id} title={e.title}/> );
+    }} id={e.id} title={e.title}/> )}
+    </Column>);
   }
 }

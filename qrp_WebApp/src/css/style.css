@@ -214,6 +214,9 @@ body{
 }
 
 .overlay.visible{ display: block; }
-.ovlContainer{position: absolute; max-height: 500px; width: 50%; height: 30%; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%)}
+.ovlContainer{position: absolute; max-height: 500px; width: 50%; height: auto; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%)}
 .ovl-body{margin: 25px; height: calc(100% - 50px);}
-.layout-column{display: 'inline-block'; float: 'left'; width: '30%';}
+.layoutContainer span{padding: 6px; cursor: pointer;}
+.layout-column{display: block; float: left; width: 30%;}
+button.OverlayCloseBtn {width:36px; height:36px;background-color: transparent;background-size: 100%;background-image: url('/img/delete-button.svg'); border:none; cursor:pointer;}
+.layoutTitle{float: left;width: calc(100% - 72px);padding-left: 36px; margin-top: auto; text-align: center;}

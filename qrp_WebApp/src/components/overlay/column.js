@@ -8,6 +8,7 @@ export default class Column extends Component{
       float: this.props.float,
       width: this.props.width,
       backgroundColor: this.props.backgroundColor,
+      textAlign: this.props.textAlign
     };
     return (
       <div className={'layout-column'} style={this.props.styles ? this.props.styles : styles}>

@@ -7,22 +7,34 @@ export default class StaticOverlay extends React.Component{
 
     this.state = {
       visible: undefined,
-      children: undefined
+      children: undefined,
+      height: undefined,
+      width: undefined,
+      title: undefined
     };
-    const boundSetState = ( state, callback ) => this.setState.bind(this, state, callback);
+    
     Radio.listen( SHOWOVERLAY, ( params ) => this.setState( { 
       visible: true,
-      children: params.children
+      children: params.children,
+      height: params.height,
+      width: params.width,
+      title: params.title
     }));
 
-    Radio.listen( HIDEOVERLAY, resetState );
+    const resetState = () => this.setState({
+      visible: undefined,
+      children: undefined,
+      height: undefined,
+      width: undefined,
+      title: undefined
+    });
 
-    const resetState = () => this.setState({visible: undefined, children: undefined});
+    Radio.listen( HIDEOVERLAY, resetState.bind(this) );
   }
 
   render(){
     return (
-      <Overlay visible={this.state.visible}>
+      <Overlay visible={this.state.visible} height={this.state.height} width={this.state.width} title={this.state.title}>
         {this.state.children}
       </Overlay>
     );
