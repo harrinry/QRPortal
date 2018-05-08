@@ -4,13 +4,20 @@ export { default as Body } from './body/body';
 export { default as Technologies } from './elements/technologies/technologies';
 export { default as Standards } from './elements/standards/standards';
 export { default as Rules } from './elements/rules/rulesSticky';
+export { default as Sources } from './elements/sources/index';
+
+/* resources for sources */
 export { default as AIPSources } from './elements/sources/aip/aip';
+export { default as BodyElementSources } from './body/bodyElementSources';
+export { EXTENTIONICONS } from './elements/sources/extentionIcons';
+
 /* Overlay dedicated UI components */
 export { default as StaticOverlay} from './overlay/main';
 export { default as Overlay} from './overlay/overlay';
 export { default as OverlayContainer} from './overlay/roundedContainer';
 export { default as Layout } from './overlay/layout';
 export { default as Column } from './overlay/column';
+export { default as dynOvlSettings } from './overlay/dynamicOvlSettings';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';

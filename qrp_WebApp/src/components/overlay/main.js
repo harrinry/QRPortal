@@ -10,7 +10,8 @@ export default class StaticOverlay extends React.Component{
       children: undefined,
       height: undefined,
       width: undefined,
-      title: undefined
+      title: undefined,
+      backgroundColor: undefined
     };
     
     Radio.listen( SHOWOVERLAY, ( params ) => this.setState( { 
@@ -18,7 +19,8 @@ export default class StaticOverlay extends React.Component{
       children: params.children,
       height: params.height,
       width: params.width,
-      title: params.title
+      title: params.title,
+      backgroundColor: params.backgroundColor
     }));
 
     const resetState = () => this.setState({
@@ -26,7 +28,8 @@ export default class StaticOverlay extends React.Component{
       children: undefined,
       height: undefined,
       width: undefined,
-      title: undefined
+      title: undefined,
+      backgroundColor: undefined
     });
 
     Radio.listen( HIDEOVERLAY, resetState.bind(this) );
@@ -34,7 +37,7 @@ export default class StaticOverlay extends React.Component{
 
   render(){
     return (
-      <Overlay visible={this.state.visible} height={this.state.height} width={this.state.width} title={this.state.title}>
+      <Overlay visible={this.state.visible} height={this.state.height} width={this.state.width} title={this.state.title} backgroundColor={this.state.backgroundColor}>
         {this.state.children}
       </Overlay>
     );

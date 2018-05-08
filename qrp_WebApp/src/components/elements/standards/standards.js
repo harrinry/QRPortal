@@ -1,5 +1,5 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, Column, APIQuery, Radio} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, dynOvlSettings, Column, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
 import {Title} from './title';
@@ -53,7 +53,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'CISQ Standards'});
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length));
     });
   }
 
@@ -68,7 +68,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'OWASP Standards'});
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length));
     });
   }
 
@@ -83,7 +83,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'CWE Standards'});
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length));
     });
   }
 
@@ -94,7 +94,7 @@ export default class Standards extends React.Component {
       });
 
     const menuEls = this.buildSlideDownMenuElements( out );
-    return Radio.emit(SHOWOVERLAY, { children: menuEls, title: 'Business Criteria'});
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length));
   }
 
   determineMenuVisibility( nextScope ){
@@ -105,7 +105,7 @@ export default class Standards extends React.Component {
     return (<Column width={'100%'} textAlign={'center'}>{data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
       Radio.emit( LOADRULESLIST, e.href, e.name);
       Radio.emit( HIDEOVERLAY );
-    }} id={e.id} title={e.title}/> )}
+    }} id={e.id} title={e.title}/>)}
     </Column>);
   }
 }

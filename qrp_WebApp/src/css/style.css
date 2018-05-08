@@ -17,14 +17,14 @@
 .title-body{margin-left: 30px;}
 
 /* body row */
-.bodyRow{width: 100%;}
+.bodyRow{width: 100%; display: block;}
 
 /* body container */
-.bodyElement-container{width:100%;text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
+.bodyElement-container{width:100%; display: block; text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
 
 /* body element */
 .inline{display: inline-block;}
-.element-inline{float: left;}
+.element-inline{/*float: left;*/ display: inline-block;}
 .bodyElement{background: #FFFFFF; min-width:80px; width:160px ;height:160px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin-right: 62px; line-height:80px; text-align:center; user-select: none;
   -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; background-size: 80%; background-position-y: center; background-position-x: center;background-repeat:no-repeat;}
 .bodyElement:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);background-size: 80%; background-position-y: center; background-position-x: center;background-repeat:no-repeat;}
@@ -214,8 +214,9 @@ body{
 }
 
 .overlay.visible{ display: block; }
-.ovlContainer{position: absolute; max-height: 500px; width: 50%; height: auto; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%)}
-.ovl-body{margin: 25px; height: calc(100% - 50px);}
+.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%)}
+.ovl-body{margin: 25px; height: calc(100% - 50px); width: calc(100% - 50px);position: absolute}
+.layoutContainer{height: 100%; width: 100%}
 .layoutContainer span{padding: 6px; cursor: pointer;}
 .layout-column{display: block; float: left; width: 30%;}
 button.OverlayCloseBtn {width:36px; height:36px;background-color: transparent;background-size: 100%;background-image: url('/img/delete-button.svg'); border:none; cursor:pointer;}

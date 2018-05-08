@@ -3,7 +3,7 @@ import React from 'react';
 export default class OverlayContainer extends React.PureComponent{
   render(){
     const styles = {
-      height: this.props.float,
+      height: this.props.height,
       width: this.props.width,
       backgroundColor: this.props.backgroundColor,
     };

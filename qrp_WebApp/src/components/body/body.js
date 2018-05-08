@@ -1,5 +1,5 @@
 import React from 'react';
-import { Technologies, Standards, Rules } from '../index';
+import { Technologies, Standards, Rules, Sources } from '../index';
 
 export default class Body extends React.Component{
   render(){
@@ -8,6 +8,7 @@ export default class Body extends React.Component{
         <div className='static-UI'>
           <Standards />
           <Technologies />
+          <Sources />
         </div>
         <div className='rules'>
           <Rules/>

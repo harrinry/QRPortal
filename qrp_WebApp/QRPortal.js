@@ -21133,7 +21133,8 @@ var Body = function (_React$Component) {
           'div',
           { className: 'static-UI' },
           _react2.default.createElement(_index.Standards, null),
-          _react2.default.createElement(_index.Technologies, null)
+          _react2.default.createElement(_index.Technologies, null),
+          _react2.default.createElement(_index.Sources, null)
         ),
         _react2.default.createElement(
           'div',
@@ -21270,6 +21271,81 @@ var BodyElement = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BodyElement;
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/components/body/bodyElementSources.js":
+/*!**************************************************************!*\
+  !*** ./qrp_WebApp/src/components/body/bodyElementSources.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _index = __webpack_require__(/*! ../index */ "./qrp_WebApp/src/components/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var cn = 'dropOnhover';
+
+var BodyElementSources = function (_React$Component) {
+  _inherits(BodyElementSources, _React$Component);
+
+  function BodyElementSources() {
+    _classCallCheck(this, BodyElementSources);
+
+    return _possibleConstructorReturn(this, (BodyElementSources.__proto__ || Object.getPrototypeOf(BodyElementSources)).apply(this, arguments));
+  }
+
+  _createClass(BodyElementSources, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: this.props.className, style: this.stylize(this.props.value.toLowerCase()), onMouseDown: this.props.onclick, id: this.props.id },
+        _react2.default.createElement(
+          'span',
+          { className: cn },
+          this.props.value
+        )
+      );
+    }
+  }, {
+    key: 'stylize',
+    value: function stylize(key) {
+      var iconURL = _index.EXTENTIONICONS[key];
+      return {
+        backgroundImage: iconURL ? 'url(' + iconURL + ')' : undefined,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: '80%'
+      };
+    }
+  }]);
+
+  return BodyElementSources;
+}(_react2.default.Component);
+
+exports.default = BodyElementSources;
 
 /***/ }),
 
@@ -21665,50 +21741,80 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var idPrefix = 'AIP_',
-    MainDivClassName = 'bodyRow container block';
+var id = 'AIP_id',
+    ClassName = 'bodyElementTechno element-inline',
+    val = 'CAST AIP',
+    aipQuery = 'CAST_AIP.json';
 
 var AIPSources = function (_React$Component) {
   _inherits(AIPSources, _React$Component);
 
-  function AIPSources(props) {
+  function AIPSources() {
     _classCallCheck(this, AIPSources);
 
-    var _this = _possibleConstructorReturn(this, (AIPSources.__proto__ || Object.getPrototypeOf(AIPSources)).call(this, props));
-
-    _this.state = {};
-
-    return _this;
+    return _possibleConstructorReturn(this, (AIPSources.__proto__ || Object.getPrototypeOf(AIPSources)).apply(this, arguments));
   }
 
   _createClass(AIPSources, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: MainDivClassName },
-        _react2.default.createElement(_index.BodyTitle, { value: '' }),
-        _react2.default.createElement(_index.BodyBlock, null),
-        _react2.default.createElement(
-          _index.SlidedownMenu,
-          { visible: this.state.menuVisible },
-          this.state.menuData
-        )
-      );
+      var _this2 = this;
+
+      return _react2.default.createElement(_index.BodyElementSources, { key: id, className: ClassName, id: id,
+        value: val, onclick: function onclick() {
+          (0, _index.APIQuery)(aipQuery, _this2.onClickHandler.bind(_this2));
+        } });
     }
   }, {
-    key: 'determineMenuVisibility',
-    value: function determineMenuVisibility(nextScope) {
-      return this.state.scope === nextScope && this.state.menuVisible ? false : true;
-    }
-  }, {
-    key: 'buildSlideDownMenuElements',
-    value: function buildSlideDownMenuElements(data) {
-      return data.map(function (e) {
-        return _react2.default.createElement(_index.BodyElement, { key: e.name + e.id, value: e.name, onclick: function onclick() {
-            return _index.Radio.emit(LOADRULESLIST, e.href, e.name);
-          }, id: e.id, title: e.title });
+    key: 'onClickHandler',
+    value: function onClickHandler(res) {
+      var _this3 = this;
+
+      var data = res.data;
+      var ref = data.map(function (e) {
+        var name = e.name.substring(0, e.name.search(/_/g));
+        return {
+          id: e.name,
+          name: name,
+          version: parseInt(name.replace(/\./g, '')),
+          href: e.href
+        };
       });
+      ref.sort(function (a, b) {
+        return a.version - b.version;
+      });
+      var ret = [];
+      ret[0] = ref.filter(function (e) {
+        return e.version >= 800 && e.version < 810;
+      });
+      ret[1] = ref.filter(function (e) {
+        return e.version >= 810 && e.version < 820;
+      });
+      ret[2] = ref.filter(function (e) {
+        return e.version >= 820 && e.version < 830 || e.version === 8210;
+      });
+      ret[3] = ref.filter(function (e) {
+        return e.version >= 830 && e.version < 840;
+      });
+
+      var menuEls = ret.map(function (e) {
+        return _this3.buildOverlayElemnents(e);
+      });
+      return _index.Radio.emit(_index.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, val, ret[2].length));
+    }
+  }, {
+    key: 'buildOverlayElemnents',
+    value: function buildOverlayElemnents(data) {
+      return _react2.default.createElement(
+        _index.Column,
+        { key: JSON.stringify(data), width: '20%', textAlign: 'center' },
+        data.map(function (e) {
+          return _react2.default.createElement(_index.BodyElement, { key: e.id, value: e.name, onclick: function onclick() {
+              _index.Radio.emit(_index.LOADRULESLIST, e.href, val.concat(' ', e.name));
+              _index.Radio.emit(_index.HIDEOVERLAY);
+            }, id: e.id });
+        })
+      );
     }
   }]);
 
@@ -21716,6 +21822,173 @@ var AIPSources = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AIPSources;
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/components/elements/sources/extentionIcons.js":
+/*!**********************************************************************!*\
+  !*** ./qrp_WebApp/src/components/elements/sources/extentionIcons.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var EXTENTIONICONS = exports.EXTENTIONICONS = {
+  'CAST AIP': undefined
+};
+
+/***/ }),
+
+/***/ "./qrp_WebApp/src/components/elements/sources/index.js":
+/*!*************************************************************!*\
+  !*** ./qrp_WebApp/src/components/elements/sources/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _index = __webpack_require__(/*! ../../index */ "./qrp_WebApp/src/components/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Sources = function (_React$Component) {
+  _inherits(Sources, _React$Component);
+
+  function Sources(props) {
+    _classCallCheck(this, Sources);
+
+    var _this = _possibleConstructorReturn(this, (Sources.__proto__ || Object.getPrototypeOf(Sources)).call(this, props));
+
+    _this.state = {
+      data: undefined
+    };
+    return _this;
+  }
+  /*
+  shouldComponentUpdate(nextProps, nextState){
+    if ( !nextProps && !nextState ) return false;
+    if ( this.state.data ) return false;
+    return true;
+  }*/
+
+  _createClass(Sources, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var OnMountFilter = function OnMountFilter(data) {
+        var ref = data.map(function (e) {
+          return {
+            id: e.name,
+            name: e.name.substring(17),
+            href: e.href
+          };
+        });
+        ref.sort(function (a, b) {
+          return a.name.toUpperCase() - b.name.toUpperCase();
+        });
+
+        var res = ref.filter(function (e) {
+          return e.id !== 'com.castsoftware.internal.platform';
+        });
+        return res;
+      };
+
+      (0, _index.APIQuery)('extensions.json', function (res) {
+        return _this2.setState({ data: OnMountFilter(res.data) });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      if (this.state.data) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'bodyRow container block' },
+          _react2.default.createElement(_index.BodyTitle, { value: 'Sources' }),
+          _react2.default.createElement(
+            _index.BodyBlock,
+            null,
+            _react2.default.createElement(_index.AIPSources, { key: 'cast_aip_souce' }),
+            this.state.data.map(function (t) {
+              return _react2.default.createElement(_index.BodyElementSources, { key: t.id, value: t.name, className: 'bodyElementTechno element-inline', onclick: function onclick() {
+                  return _axios2.default.get(t.href).then(function (res) {
+                    return _this3.onClickHandler(res, t.name);
+                  }).catch(function (err) {
+                    return console.log(err.stack);
+                  });
+                }, id: t.id });
+            })
+          )
+        );
+      }
+
+      return _react2.default.createElement('div', null);
+    }
+  }, {
+    key: 'onClickHandler',
+    value: function onClickHandler(res, name) {
+      var data = res.data;
+      var ref = data.map(function (e) {
+        return {
+          id: e.name,
+          name: e.name,
+          href: e.href
+        };
+      });
+      var menuEls = this.buildOverlayElemnents(ref, name);
+      _index.Radio.emit(_index.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, name, ref.length));
+    }
+  }, {
+    key: 'buildOverlayElemnents',
+    value: function buildOverlayElemnents(data, name) {
+      return _react2.default.createElement(
+        _index.Column,
+        { key: JSON.stringify(data), width: '100%', textAlign: 'center' },
+        data.map(function (e) {
+          return _react2.default.createElement(_index.BodyElement, { key: e.id + name, value: e.name, onclick: function onclick() {
+              _index.Radio.emit(_index.LOADRULESLIST, e.href, name);
+              _index.Radio.emit(_index.HIDEOVERLAY);
+            }, id: e.id });
+        })
+      );
+    }
+  }]);
+
+  return Sources;
+}(_react2.default.Component);
+
+exports.default = Sources;
 
 /***/ }),
 
@@ -21870,7 +22143,7 @@ var Standards = function (_React$Component) {
           return { name: c.name, href: c.href };
         }),
             menuEls = _this3.buildSlideDownMenuElements(out);
-        return _index.Radio.emit(_actions.SHOWOVERLAY, { children: menuEls, title: 'CISQ Standards' });
+        return _index.Radio.emit(_actions.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, 'CISQ Standards', out.length));
       });
     }
   }, {
@@ -21890,7 +22163,7 @@ var Standards = function (_React$Component) {
           return { name: c.name, href: c.href };
         }),
             menuEls = _this4.buildSlideDownMenuElements(out);
-        return _index.Radio.emit(_actions.SHOWOVERLAY, { children: menuEls, title: 'OWASP Standards' });
+        return _index.Radio.emit(_actions.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, 'OWASP Standards', out.length));
       });
     }
   }, {
@@ -21910,7 +22183,7 @@ var Standards = function (_React$Component) {
           return { name: c.name, href: c.href };
         }),
             menuEls = _this5.buildSlideDownMenuElements(out);
-        return _index.Radio.emit(_actions.SHOWOVERLAY, { children: menuEls, title: 'CWE Standards' });
+        return _index.Radio.emit(_actions.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, 'CWE Standards', out.length));
       });
     }
   }, {
@@ -21922,7 +22195,7 @@ var Standards = function (_React$Component) {
       });
 
       var menuEls = this.buildSlideDownMenuElements(out);
-      return _index.Radio.emit(_actions.SHOWOVERLAY, { children: menuEls, title: 'Business Criteria' });
+      return _index.Radio.emit(_actions.SHOWOVERLAY, (0, _index.dynOvlSettings)(menuEls, 'Business Criteria', out.length));
     }
   }, {
     key: 'determineMenuVisibility',
@@ -22321,12 +22594,39 @@ Object.defineProperty(exports, 'Rules', {
   }
 });
 
+var _index = __webpack_require__(/*! ./elements/sources/index */ "./qrp_WebApp/src/components/elements/sources/index.js");
+
+Object.defineProperty(exports, 'Sources', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_index).default;
+  }
+});
+
 var _aip = __webpack_require__(/*! ./elements/sources/aip/aip */ "./qrp_WebApp/src/components/elements/sources/aip/aip.js");
 
 Object.defineProperty(exports, 'AIPSources', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_aip).default;
+  }
+});
+
+var _bodyElementSources = __webpack_require__(/*! ./body/bodyElementSources */ "./qrp_WebApp/src/components/body/bodyElementSources.js");
+
+Object.defineProperty(exports, 'BodyElementSources', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_bodyElementSources).default;
+  }
+});
+
+var _extentionIcons = __webpack_require__(/*! ./elements/sources/extentionIcons */ "./qrp_WebApp/src/components/elements/sources/extentionIcons.js");
+
+Object.defineProperty(exports, 'EXTENTIONICONS', {
+  enumerable: true,
+  get: function get() {
+    return _extentionIcons.EXTENTIONICONS;
   }
 });
 
@@ -22372,6 +22672,15 @@ Object.defineProperty(exports, 'Column', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_column).default;
+  }
+});
+
+var _dynamicOvlSettings = __webpack_require__(/*! ./overlay/dynamicOvlSettings */ "./qrp_WebApp/src/components/overlay/dynamicOvlSettings.js");
+
+Object.defineProperty(exports, 'dynOvlSettings', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_dynamicOvlSettings).default;
   }
 });
 
@@ -22700,6 +23009,34 @@ exports.default = Column;
 
 /***/ }),
 
+/***/ "./qrp_WebApp/src/components/overlay/dynamicOvlSettings.js":
+/*!*****************************************************************!*\
+  !*** ./qrp_WebApp/src/components/overlay/dynamicOvlSettings.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = dynamicOverlaySettings;
+function dynamicOverlaySettings(children, title, elementCount, width, bgColor) {
+  var heightCalc = elementCount * 31 + 10;
+  if (heightCalc < 200) heightCalc = 200;
+  return {
+    children: children,
+    title: title,
+    height: !width || width > 360 ? heightCalc + 'px' : heightCalc + 30 + 'px',
+    width: width + 'px',
+    backgroundColor: bgColor
+  };
+}
+
+/***/ }),
+
 /***/ "./qrp_WebApp/src/components/overlay/layout.js":
 /*!*****************************************************!*\
   !*** ./qrp_WebApp/src/components/overlay/layout.js ***!
@@ -22814,7 +23151,8 @@ var StaticOverlay = function (_React$Component) {
       children: undefined,
       height: undefined,
       width: undefined,
-      title: undefined
+      title: undefined,
+      backgroundColor: undefined
     };
 
     _index.Radio.listen(_index.SHOWOVERLAY, function (params) {
@@ -22823,7 +23161,8 @@ var StaticOverlay = function (_React$Component) {
         children: params.children,
         height: params.height,
         width: params.width,
-        title: params.title
+        title: params.title,
+        backgroundColor: params.backgroundColor
       });
     });
 
@@ -22833,7 +23172,8 @@ var StaticOverlay = function (_React$Component) {
         children: undefined,
         height: undefined,
         width: undefined,
-        title: undefined
+        title: undefined,
+        backgroundColor: undefined
       });
     };
 
@@ -22846,7 +23186,7 @@ var StaticOverlay = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         _index.Overlay,
-        { visible: this.state.visible, height: this.state.height, width: this.state.width, title: this.state.title },
+        { visible: this.state.visible, height: this.state.height, width: this.state.width, title: this.state.title, backgroundColor: this.state.backgroundColor },
         this.state.children
       );
     }
@@ -22910,7 +23250,7 @@ var Overlay = function (_React$Component) {
         { className: className.concat(visible).join(' ') },
         _react2.default.createElement(
           _index.OverlayContainer,
-          { height: this.props.height, width: this.props.width },
+          { height: this.props.height, width: this.props.width, backgroundColor: this.props.backgroundColor },
           _react2.default.createElement(
             _index.Layout,
             { title: this.props.title },
@@ -22970,7 +23310,7 @@ var OverlayContainer = function (_React$PureComponent) {
     key: 'render',
     value: function render() {
       var styles = {
-        height: this.props.float,
+        height: this.props.height,
         width: this.props.width,
         backgroundColor: this.props.backgroundColor
       };
