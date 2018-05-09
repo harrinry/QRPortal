@@ -8,6 +8,7 @@
   "main": "server.js",
   "scripts": {
     "start": "set NODE_ENV=production&& \"node_modules/.bin/nodemon\" server.js",
+    "start--mac": "NODE_ENV=production&& \"node_modules/.bin/nodemon\" server.js",
     "dev": "set NODE_ENV=development&& \"node_modules/.bin/nodemon\" server.js",
     "build": "node_modules/.bin/webpack-cli --mode development",
     "build--watch": "node_modules/.bin/webpack-cli --mode development --watch",
