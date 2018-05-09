@@ -37,9 +37,9 @@ const initializationTest = () =>{
 
 /* initialization */
 (function (){
-  glob( rulesDir, function ( fileName, contents ) {
+  glob( rulesDir, ( fileName, contents, i ) => {
     const searchString = convertToSearchString( contents );
-    index.push( searchString );
+    index[i] = searchString ;
   }, ( err ) => {
     throw err;
   }, () => {

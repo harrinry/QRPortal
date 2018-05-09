@@ -11,7 +11,10 @@
 .visible, .block{display: block;}
 .visible button {width:36px; height:36px;background-image: url('/img/navback.png'); background-size: 50% 100%; border:none; cursor:pointer; background-color:#1A4F8E;background-repeat: no-repeat;background-position: center;}
 .title{margin-left: 30px; font-size:22px;}
-
+.search-icon{background-image: url("/img/searchiconwhite.png"); background-repeat: no-repeat; background-position: center; background-size: 80%; float: left; height: 50px; width: 50px;}
+.search-input-container{margin: 5px 0 0 0; height: 38px;}
+input{height: 38px; border: none; border-bottom: 2px solid #fff; background-color: #1987FF; font-size: 1.6em; width: 170px; color: #fff}
+.search-container{width: 245px;}
 .titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:14px; margin-bottom: 10px; width: 400px; color:white;}
 
 .title-body{margin-left: 30px;}
@@ -214,7 +217,7 @@ body{
 }
 
 .overlay.visible{ display: block; }
-.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%)}
+.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
 .ovl-body{margin: 25px; height: calc(100% - 50px); width: calc(100% - 50px);position: absolute}
 .layoutContainer{height: 100%; width: 100%}
 .layoutContainer span{padding: 6px; cursor: pointer;}

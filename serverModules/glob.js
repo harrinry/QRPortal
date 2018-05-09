@@ -14,7 +14,7 @@ function Glob( dirName, onFileContent, onError, onComplete ){
           onError( err );
           return;
         }
-        onFileContent( fileName, JSON.parse(fileContents) );
+        onFileContent( fileName, JSON.parse(fileContents), index );
         if ( index === len -1 ) onComplete();
       });
     });

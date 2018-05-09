@@ -18,6 +18,7 @@ export { default as OverlayContainer} from './overlay/roundedContainer';
 export { default as Layout } from './overlay/layout';
 export { default as Column } from './overlay/column';
 export { default as dynOvlSettings } from './overlay/dynamicOvlSettings';
+export { default as SearchResultElement} from './body/searchResultsBlock';
 
 /* pure body components */
 export { default as BodyElement } from './body/bodyElement';
@@ -46,6 +47,7 @@ export { default as UpdateURL } from '../modules/urlUpdater';
 export { default as MultiQuery } from '../modules/multiURLQueryBuilder';
 export { default as isStandard } from '../modules/isCISQorOWASP';
 export { default as TechnoFilter } from '../modules/filter';
+export { default as Search }  from '../modules/searchQuery';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME, SELECTME } from './rulesList/actions';
