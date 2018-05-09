@@ -25,6 +25,7 @@ export default class Technologies extends React.Component{
     if( this.state.data ){
       return ( <div className='bodyRow container block'>
         <BodyTitle value='Technologies' />
+        <p className="bodySection">Browse the CAST Structural Rules by Technologies</p>
         <BodyBlock>{this.state.data.map(t => {
           return <BodyElementTechno key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => Radio.emit(LOADRULESLIST, t.href, t.name)} id={t.id} title={t.title}/>;
         })}</BodyBlock>

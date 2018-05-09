@@ -19,6 +19,9 @@ export default class Sources extends React.Component{
   componentDidMount(){
     const OnMountFilter = ( data ) =>{
       let ref = data.map( e => {
+
+console.log(e);
+
         return {
           id: e.name,
           name: e.name.substring(17),
@@ -38,6 +41,7 @@ export default class Sources extends React.Component{
     if( this.state.data ){
       return ( <div className='bodyRow container block'>
         <BodyTitle value='Sources' />
+        <p className="bodySection">Browse the CAST Structural Rules by Sources/Release Versions</p>
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {

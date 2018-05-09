@@ -1,5 +1,5 @@
 export const EXTENTIONICONS = {
-  'CAST_AIP':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
+  'cast_aip_souce':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
   'angularjs':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.angularjs.png',
   'cfamily':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
   'egl':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.egl.png',

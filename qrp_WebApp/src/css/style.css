@@ -15,12 +15,13 @@
 .search-input-container{margin: 5px 0 0 0; height: 38px;}
 input{height: 38px; border: none; border-bottom: 2px solid #fff; background-color: #1987FF; font-size: 1.6em; width: 170px; color: #fff}
 .search-container{width: 245px;}
-.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:14px; margin-bottom: 10px; width: 400px; color:white;}
+.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:14px; margin-bottom: 10px; width: 500px; color:white;}
 
 .title-body{margin-left: 30px;}
 
 /* body row */
 .bodyRow{width: 100%; display: block;}
+.bodySection{margin-left: 30px;}
 
 /* body container */
 .bodyElement-container{width:100%; display: block; text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
@@ -211,16 +212,16 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(43, 43, 43, 0.295);
+  background-color: rgba(43, 43, 43, 0.595);
   z-index: 10;
   cursor: default;
 }
 
-.overlay.visible{ display: block; }
-.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: #F8F8F8; transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
-.ovl-body{margin: 25px; height: calc(100% - 50px); width: calc(100% - 50px);position: absolute}
+.overlay.visible{ display: block;   transition: 0.5s ease-in;}
+.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: rgba(255,255,255,0.9); transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
+.ovl-body{font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";margin: 25px; height: calc(100% - 50px); width: calc(100% - 50px);position: absolute}
 .layoutContainer{height: 100%; width: 100%}
 .layoutContainer span{padding: 6px; cursor: pointer;}
-.layout-column{display: block; float: left; width: 30%;}
-button.OverlayCloseBtn {width:36px; height:36px;background-color: transparent;background-size: 100%;background-image: url('/img/delete-button.svg'); border:none; cursor:pointer;}
+.layout-column{display: block; float: left; width: 30%;text-align: left;}
+button.OverlayCloseBtn {width:32px; height:32px;background-color: transparent;background-size: 80%;background-image: url('/img/delete-button.svg'); border:none; cursor:pointer;}
 .layoutTitle{float: left;width: calc(100% - 72px);padding-left: 36px; margin-top: auto; text-align: center;}

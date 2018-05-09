@@ -27,7 +27,7 @@ export default class Header extends React.Component{
             <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}></button></div>
           </div>
           <div className='hidden menu-elements'></div>
-          <div className='titleheader'><b>CAST</b> Structural Rules <span>{this.state.ruleName ? '- '.concat( this.state.ruleName.replace(/(%20)/g, ' ') ): undefined}</span></div>
+          <div className='titleheader'>{this.state.ruleName ? this.state.ruleName : 'CAST Structural Rules'}</div>
         </div>
         <div className='search-container right'>
           <div className='search-icon inline'></div>

@@ -2,7 +2,7 @@ import React from 'react';
 import {BodyElement, BodyBlock, BodyTitle, dynOvlSettings, Column, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
-import {Title} from './title';
+import {Title,SectionStandard} from './title';
 import {LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY} from '../../actions/actions';
 
 const idPrefix = 'BC_',
@@ -33,6 +33,7 @@ export default class Standards extends React.Component {
     let key = 0;
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
+      <p className="bodySection">{SectionStandard}</p>
       <BodyBlock>{[
         <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
