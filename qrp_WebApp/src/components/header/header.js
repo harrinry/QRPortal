@@ -63,7 +63,7 @@ export default class Header extends React.Component{
       resulttitle = "No Rule Found";
     }
 
-    Radio.emit( SHOWOVERLAY, dynOvlSettings(els,resulttitle, searchResults.length, 'Do something'));
+    Radio.emit( SHOWOVERLAY, dynOvlSettings(els,resulttitle, searchResults.length, 'Select one of the found rules to have more details'));
   }
 
   buildOverlayElemnents( data ){
