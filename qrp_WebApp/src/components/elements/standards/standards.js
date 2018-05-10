@@ -54,7 +54,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length,"Select one of the following category:"));
     });
   }
 
@@ -69,7 +69,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length,"Select one the following Top Ten:"));
     });
   }
 
@@ -84,7 +84,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length,"Select one if the following category:"));
     });
   }
 
@@ -95,7 +95,7 @@ export default class Standards extends React.Component {
       });
 
     const menuEls = this.buildSlideDownMenuElements( out );
-    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length));
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length,"Select one of the following criteria:"));
   }
 
   determineMenuVisibility( nextScope ){
@@ -103,7 +103,7 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return (<Column width={'100%'} textAlign={'center'}>{data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
+    return (<Column width={'100%'} textAlign={'left'}>{data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
       Radio.emit( LOADRULESLIST, e.href, e.name);
       Radio.emit( HIDEOVERLAY );
     }} id={e.id} title={e.title}/>)}

@@ -49,12 +49,25 @@ export default class Header extends React.Component{
 
   displaySearchResults(searchResults){
     const els = this.buildOverlayElemnents( searchResults );
+    let resulttitle = "";
 
-    Radio.emit( SHOWOVERLAY, dynOvlSettings(els, 'Search Results ...', searchResults.length));
+    if(searchResults.length>1)
+    {
+      resulttitle = searchResults.length+" results found";
+    }
+    else if(searchResults.length==1)
+    {
+      resulttitle = "1 result found";
+    }
+    else {
+      resulttitle = "No Rule Found";
+    }
+
+    Radio.emit( SHOWOVERLAY, dynOvlSettings(els,resulttitle, searchResults.length, 'Do something'));
   }
 
   buildOverlayElemnents( data ){
-    return (<Column key={0} width={'100%'} textAlign={'center'}>
+    return (<Column key={0} width={'100%'} textAlign={'left'}>
       {data.map( e => {
         return e.resString.map( (res, index) => <BodyElement key={res + index} value={res} onclick={()=> {
           Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);

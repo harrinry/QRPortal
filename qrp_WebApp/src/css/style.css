@@ -1,3 +1,4 @@
+
 .left{ float: left; }
 .right{ float: right; }
 .black{ color: black; background-color: black }
@@ -23,10 +24,12 @@
 .titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:16px; margin-bottom: 10px; width: 500px; color:white;}
 
 .title-body{margin-left: 30px;}
+.WelcomeTitle{margin-left: 30px; font-size: 24px; text-color: #333; text-align: center;}
 
 /* body row */
 .bodyRow{width: 100%; display: block;}
 .bodySection{margin-left: 30px;}
+.sectiontitle{margin-left: 15px; font-size: 110%;}
 
 /* body container */
 .bodyElement-container{width:100%; display: block; text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
@@ -152,6 +155,11 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
   transition: 0.1s ease-in;
 }
 
+.aipbackground {
+  background-image:url('https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png');
+
+}
+
 .bodyElement:hover > .dropOnhoverLarge{
   margin-top: 142px;
   opacity: 1;
@@ -206,6 +214,7 @@ letter-spacing: 1px;}
   resolutions greater than webapp maximum size */
 body{
   background-color: #F8F8F8;
+  font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";
 }
 
 .overlay {
@@ -227,8 +236,8 @@ body{
 .ovl-body{font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";margin: 15px; height: calc(100% - 30px); width: calc(100% - 30px);position: absolute}
 .layoutContainer{height: 100%; width: 100%}
 .layoutContainer span{padding: 6px; cursor: pointer;}
-.layout-column{display: block; float: left; width: 30%; text-align: left;}
-button.OverlayCloseBtn {width:32px; height:32px;background-color: transparent;background-size: 90%;background-image: url('/img/delete-button.svg'); border:none; cursor:pointer;}
+.layout-column{display: block; float: left; width: 30%; text-align: left; margin-left:12px;}
+button.OverlayCloseBtn {width:32px; height:32px;background-color: transparent;background-size: 90%;background-image: url('/img/close-button.svg'); border:none; cursor:pointer;}
 .layoutTitle{font-size:120%; float: left;width: calc(100% - 72px);padding-left: 36px; margin-top: auto; text-align: center;}
-.layout-column div{padding:1px; color:black;font-weight: regular;}
-.layout-column div:hover{color:blue;font-weight: bold;}
+.layout-column div{padding:1px; color:black;}
+.layout-column div:hover{color:#1987FF;padding-left: 5px;}

@@ -61,7 +61,7 @@ export default class Sources extends React.Component{
       };
     });
     const menuEls = this.buildOverlayElemnents( ref, name );
-    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, name, ref.length));
+    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, name, ref.length,"Select one of the following version:"));
   }
 
   buildOverlayElemnents( data, name ){

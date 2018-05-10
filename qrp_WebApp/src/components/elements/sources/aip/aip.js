@@ -2,7 +2,7 @@ import React from 'react';
 import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings} from '../../../index';
 
 const id = 'AIP_id',
-  ClassName = 'bodyElementTechno element-inline',
+  ClassName = 'bodyElementTechno element-inline aipbackground',
   val ='CAST AIP',
   aipQuery = 'CAST_AIP.json';
 
@@ -31,13 +31,13 @@ export default class AIPSources extends React.Component {
     ret[1] = ref.filter( e => (e.version >= 810 && e.version < 820));
     ret[2] = ref.filter( e => (e.version >= 820 && e.version < 830) || e.version === 8210 );
     ret[3] = ref.filter( e => (e.version >= 830 && e.version < 840));
-  
+
     const menuEls = ret.map( e => this.buildOverlayElemnents( e ) );
-    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[2].length));
+    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[2].length,"Select one of the following version:"));
   }
 
   buildOverlayElemnents( data ) {
-    return (<Column key={JSON.stringify(data)} width={'20%'} textAlign={'center'}>
+    return (<Column key={JSON.stringify(data)} width={'20%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id} value={e.name} onclick={()=> {
         Radio.emit( LOADRULESLIST, e.href, val.concat(' ', e.name));
         Radio.emit( HIDEOVERLAY );
@@ -45,4 +45,3 @@ export default class AIPSources extends React.Component {
     </Column>);
   }
 }
-

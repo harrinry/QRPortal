@@ -9,7 +9,7 @@ export default class Overlay extends React.Component{
     return (
       <div className={className.concat( visible ).join(' ')}>
         <OverlayContainer height={this.props.height} width={this.props.width} backgroundColor={this.props.backgroundColor}>
-          <Layout title={this.props.title}>
+          <Layout title={this.props.title} sectiontitle={this.props.sectiontitle}>
             {this.props.children}
           </Layout>
         </OverlayContainer>
@@ -17,4 +17,3 @@ export default class Overlay extends React.Component{
     );
   }
 }
-
