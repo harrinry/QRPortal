@@ -8,6 +8,7 @@ export default class Layout extends Component{
         <div className={'layoutTitleContainer'}>
           <h1 className={'layoutTitle'}>{this.props.title}</h1>
           <button className={'OverlayCloseBtn'} type={'button'} onClick={() => Radio.emit(HIDEOVERLAY)}></button>
+          <p>Select one the following version</p>
         </div>
         {this.props.children}
       </div>

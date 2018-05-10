@@ -20,11 +20,9 @@ export default class Sources extends React.Component{
     const OnMountFilter = ( data ) =>{
       let ref = data.map( e => {
 
-console.log(e);
-
         return {
           id: e.name,
-          name: e.name.substring(17),
+          name: e.name.substring(17), // FIXME : need a prettyprint name of the extension
           href: e.href
         };
       });
@@ -67,7 +65,7 @@ console.log(e);
   }
 
   buildOverlayElemnents( data, name ){
-    return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'center'}>
+    return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id + name} value={e.name} onclick={()=> {
         Radio.emit( LOADRULESLIST, e.href, name);
         Radio.emit( HIDEOVERLAY );

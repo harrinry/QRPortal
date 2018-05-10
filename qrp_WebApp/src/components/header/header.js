@@ -32,7 +32,7 @@ export default class Header extends React.Component{
         <div className='search-container right'>
           <div className='search-icon inline'></div>
           <div className='search-input-container'>
-            <input type='text' className='searchInput botBorder' ref='searchInput' onKeyPress={this.handleInput.bind(this)} />
+            <input type='text' placeholder='Search Rules' className='searchInput botBorder' ref='searchInput' onKeyPress={this.handleInput.bind(this)} />
           </div>
         </div>
       </div>
