@@ -1,3 +1,4 @@
+
 .left{ float: left; }
 .right{ float: right; }
 .black{ color: black; background-color: black }
@@ -11,20 +12,32 @@
 .visible, .block{display: block;}
 .visible button {width:36px; height:36px;background-image: url('/img/navback.png'); background-size: 50% 100%; border:none; cursor:pointer; background-color:#1A4F8E;background-repeat: no-repeat;background-position: center;}
 .title{margin-left: 30px; font-size:22px;}
+.search-icon{background-image: url("/img/searchiconwhite.png"); background-repeat: no-repeat; background-position: center; background-size: 70%; float: left; margin-top:8px ; height: 32px; width: 32px;}
+.search-input-container{margin: 5px 0 0 0; height: 38px;}
+.search-input-container input{height: 38px; border: none; border-bottom: 1px solid #fff; background-color: #1987FF; font-size: 1.6em; width: 170px; color: #fff; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";}
+.search-input-container input::-webkit-input-placeholder{color:#A5C5EB;}
+.search-input-container input::-moz-placeholder{color:#A5C5EB;}
+.search-input-container input::-moz-placeholder{color:#A5C5EB;}
+.search-input-container input:-ms-input-placeholder{color:#A5C5EB;}
 
-.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:14px; margin-bottom: 10px; width: 400px; color:white;}
+.search-container{width: 245px;}
+.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:16px; margin-bottom: 10px; width: 500px; color:white;}
 
 .title-body{margin-left: 30px;}
+.WelcomeTitle{margin-left: 30px; font-size: 24px; text-color: #333; text-align: center;}
+.WelcomeTitle span{margin-left: 8px; padding:6px; font-size:80%; color:white;background-color: red; border-radius: 6px; background-image: linear-gradient(-90deg, #F5515F 0%, #9F041B 100%);}
 
 /* body row */
-.bodyRow{width: 100%;}
+.bodyRow{width: 100%; display: block;}
+.bodySection{margin-left: 30px;}
+.sectiontitle{margin-left: 15px; font-size: 110%;}
 
 /* body container */
-.bodyElement-container{width:100%;text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
+.bodyElement-container{width:100%; display: block; text-align:center;padding-left: 30px; padding-right: 30px; padding-top: 10px;}
 
 /* body element */
 .inline{display: inline-block;}
-.element-inline{float: left;}
+.element-inline{/*float: left;*/ display: inline-block;}
 .bodyElement{background: #FFFFFF; min-width:80px; width:160px ;height:160px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin-right: 62px; line-height:80px; text-align:center; user-select: none;
   -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; background-size: 80%; background-position-y: center; background-position-x: center;background-repeat:no-repeat;}
 .bodyElement:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);background-size: 80%; background-position-y: center; background-position-x: center;background-repeat:no-repeat;}
@@ -46,7 +59,7 @@
 .bodyElementTechno:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}
 
 .scrollTest{ min-height: 1200px; }
-.body{ position: absolute; top: 60px; left: 0; overflow-y: auto; width: 100%; font-family:"Helvetica"; background-color:#F8F8F8;}
+.body{ position: absolute; top: 60px; left: 0; overflow: hidden; width: 100%; font-family:"Helvetica"; background-color:#F8F8F8;}
 .scroll-x-overflow{overflow-y: hidden; overflow-x: auto ; white-space: nowrap; }
 
 .scrollbar-small::-webkit-scrollbar-{ height: 5px; }
@@ -143,6 +156,11 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
   transition: 0.1s ease-in;
 }
 
+.aipbackground {
+  background-image:url('https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png');
+
+}
+
 .bodyElement:hover > .dropOnhoverLarge{
   margin-top: 142px;
   opacity: 1;
@@ -192,3 +210,35 @@ letter-spacing: 1px;}
   border-radius: 12px;
   margin-right:8px;
 }
+
+/* body style for color continuity on screens and
+  resolutions greater than webapp maximum size */
+body{
+  background-color: #F8F8F8;
+  font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(43, 43, 43, 0.595);
+  z-index: 10;
+  cursor: default;
+}
+
+.overlay.visible{ display: block;   transition: 0.5s ease-in;}
+.ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: rgba(255,255,255,0.9); transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
+.ovl-body{font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";margin: 15px; height: calc(100% - 30px); width: calc(100% - 30px);position: absolute}
+.layoutContainer{height: 100%; width: 100%}
+.layoutContainer span{padding: 6px; cursor: pointer;}
+.layout-column{display: block; float: left; width: 30%; text-align: left; margin-left:12px;}
+button.OverlayCloseBtn {width:32px; height:32px;background-color: transparent;background-size: 90%;background-image: url('/img/close-button.svg'); border:none; cursor:pointer;}
+.layoutTitle{font-size:120%; float: left;width: calc(100% - 72px);padding-left: 36px; margin-top: auto; text-align: center;}
+.layout-column div{padding:1px; color:black;}
+.layout-column div:hover{color:#1987FF;padding-left: 5px;}

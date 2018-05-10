@@ -35,10 +35,11 @@ export default class Rules extends React.Component{
   }
 
   render(){
+    const safeSpace = /(%20)/g;
     return (
       <RulesBody visible={this.state.rulesVisible} 
         icon={this.state.title} 
-        title={this.state.title}
+        title={this.state.title ? this.state.title.replace(safeSpace, ' ') : undefined}
         href={this.state.rulesHref}
         details={this.state.details}/>
     );

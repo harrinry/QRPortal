@@ -1,17 +1,21 @@
 import React from 'react';
-import {BodyElement, BodyBlock, BodyTitle, SlidedownMenu, APIQuery, Radio} from '../../index';
+import {BodyElement, BodyBlock, BodyTitle, dynOvlSettings, Column, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
 import {businessCrit, qualityStandards} from './queries';
-import {Title} from './title';
-import {LOADRULESLIST} from '../../actions/actions';
+import {Title,SectionStandard} from './title';
+import {LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY} from '../../actions/actions';
 
 const idPrefix = 'BC_',
   MainDivClassName = 'bodyRow container block';
 
 export default class Standards extends React.Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
-    this.state = {};
+    this.state = {
+      menuVisible: false,
+      menuData: undefined,
+      scope: undefined
+    };
 
     Radio.listen( LOADRULESLIST, () =>
       this.setState( _state => {
@@ -21,19 +25,19 @@ export default class Standards extends React.Component {
           scope: undefined
         };
       }));
-  }
+  }*/
 
   render(){
     let key = 0;
     return (<div className={MainDivClassName}>
       <BodyTitle value={Title}/>
+      <p className="bodySection">{SectionStandard}</p>
       <BodyBlock>{[
         <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
         <BodyElement key={key++} slideDown={true} value={CWE} className="bodyElement inline cweicon" onclick={()=> APIQuery(qualityStandards, this.getCweStandards.bind(this))}/>
       ]}</BodyBlock>
-      <SlidedownMenu value={this.state.menuData} visible={this.state.menuVisible} />
     </div>);
   }
 
@@ -47,9 +51,8 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = CISQ;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length,"Select one of the following category:"));
     });
   }
 
@@ -63,9 +66,8 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = OWASP;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length,"Select one the following Top Ten:"));
     });
   }
 
@@ -79,21 +81,19 @@ export default class Standards extends React.Component {
         out = d.map( c => {
           return { name: c.name, href: c.href };
         } ),
-        menuEls = this.buildSlideDownMenuElements( out ),
-        nextScope = CWE;
-      return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+        menuEls = this.buildSlideDownMenuElements( out );
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length,"Select one if the following category:"));
     });
   }
 
   getBusinessCritera( res ){
     const data = res.data,
       out = data.map( ( c ) => {
-        return { id: idPrefix + c.id, name: c.name, href: c.href} ;
+        return { id: idPrefix + c.id, name: c.name, href: c.href};
       });
 
-    const menuEls = this.buildSlideDownMenuElements( out ),
-      nextScope = CAST;
-    return this.setState({ menuData: menuEls, menuVisible: this.determineMenuVisibility( nextScope ), scope: nextScope });
+    const menuEls = this.buildSlideDownMenuElements( out );
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length,"Select one of the following criteria:"));
   }
 
   determineMenuVisibility( nextScope ){
@@ -101,6 +101,10 @@ export default class Standards extends React.Component {
   }
 
   buildSlideDownMenuElements( data ){
-    return data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => Radio.emit(LOADRULESLIST, e.href, e.name)} id={e.id} title={e.title}/> );
+    return (<Column width={'100%'} textAlign={'left'}>{data.map( e => <BodyElement key={e.name + e.id} value={e.name} onclick={() => {
+      Radio.emit( LOADRULESLIST, e.href, e.name);
+      Radio.emit( HIDEOVERLAY );
+    }} id={e.id} title={e.title}/>)}
+    </Column>);
   }
 }
