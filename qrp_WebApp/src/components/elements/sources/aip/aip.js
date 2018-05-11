@@ -2,7 +2,7 @@ import React from 'react';
 import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings} from '../../../index';
 
 const id = 'AIP_id',
-  ClassName = 'bodyElementTechno element-inline aipbackground',
+  ClassName = 'bodyElementTechno element-inline',
   val ='CAST AIP',
   aipQuery = 'CAST_AIP.json';
 
@@ -33,7 +33,7 @@ export default class AIPSources extends React.Component {
     ret[3] = ref.filter( e => (e.version >= 830 && e.version < 840));
 
     const menuEls = ret.map( e => this.buildOverlayElemnents( e ) );
-    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[2].length,"Select one of the following version:"));
+    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[2].length,'Select one of the following version:'));
   }
 
   buildOverlayElemnents( data ) {

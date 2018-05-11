@@ -36,12 +36,19 @@ export default class RulesList extends React.Component{
   queryForNextList( url ){
     APIQuery( url, res => this.setState( _state => {
       return ( { els: _state.els, els2: res.data } );
-    }) );
+    }), err => {
+      this.loadRuleDetails();
+      this.setState( _state => {
+        return ( { els: _state.els, els2: [] } );
+      } );
+    } );
   }
 
   buildListFromState( arr, onClickFunction, values ){
     let key = 0;
-    return arr.map( el => <RuleListRowElement values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
+    return arr.length === 0 ? 
+      <tr><td colSpan='3' key={prefix + key++}>No Rules</td></tr> :
+      arr.map( el => <RuleListRowElement values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
   }
 
   loadRuleDetails( url ){

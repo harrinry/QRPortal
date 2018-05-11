@@ -49,18 +49,12 @@ export default class Header extends React.Component{
 
   displaySearchResults(searchResults){
     const els = this.buildOverlayElemnents( searchResults );
-    let resulttitle = "";
+    let resulttitle = '';
 
-    if(searchResults.length>1)
-    {
-      resulttitle = searchResults.length+" results found";
-    }
-    else if(searchResults.length==1)
-    {
-      resulttitle = "1 result found";
-    }
-    else {
-      resulttitle = "No Rule Found";
+    if(searchResults.length>=1) {
+      resulttitle = searchResults.length+' results found';
+    } else {
+      resulttitle = 'No Rule Found';
     }
 
     Radio.emit( SHOWOVERLAY, dynOvlSettings(els,resulttitle, searchResults.length, 'Select one of the found rules to have more details'));

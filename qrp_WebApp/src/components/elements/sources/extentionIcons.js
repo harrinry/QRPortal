@@ -1,4 +1,5 @@
 export const EXTENTIONICONS = {
+  'cast aip': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
   'cast_aip_souce':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
   'angularjs':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.angularjs.png',
   'cfamily':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
@@ -24,5 +25,4 @@ export const EXTENTIONICONS = {
   'python':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.python.png',
   'shell':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.shell.png',
   'peoplesoft':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.peoplesoft.png',
-
 };

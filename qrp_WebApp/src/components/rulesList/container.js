@@ -12,7 +12,7 @@ export default class RulesContainer extends React.Component{
     this.state = {};
 
     Radio.listen(lOADDETAILS, function( url ) {
-      if (!url) return;
+      if (!url) return this.setState({ details: undefined });
       APIQuery(url, (res) => {
         this.setState({ details: res.data });
         UpdateURL( null, null, url );
