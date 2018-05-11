@@ -1,5 +1,5 @@
 import React from 'react';
-import {Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery} from '../index';
+import {Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery, LISTLENGTH} from '../index';
 
 const prefix = 'keyx_',
   standardHeaders = [ 'ID', 'Name', 'Critical?'],
@@ -23,6 +23,7 @@ export default class RulesList extends React.Component{
   }
 
   render(){
+    Radio.emit(LISTLENGTH, this.state.els.length);
     return (this.props.isStandard ? ( <StandardList l50={true} headers={standardHeaders}>
       {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)}
     </StandardList> ) : (<div>
@@ -34,9 +35,11 @@ export default class RulesList extends React.Component{
   }
 
   queryForNextList( url ){
-    APIQuery( url, res => this.setState( _state => {
-      return ( { els: _state.els, els2: res.data } );
-    }), err => {
+    APIQuery( url, res => {
+      this.loadRuleDetails();
+      this.setState( _state => {
+        return ( { els: _state.els, els2: res.data } );
+      });}, err => {
       this.loadRuleDetails();
       this.setState( _state => {
         return ( { els: _state.els, els2: [] } );
