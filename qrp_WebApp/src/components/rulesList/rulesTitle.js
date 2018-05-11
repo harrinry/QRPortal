@@ -19,7 +19,7 @@ export default class RulesTitle extends React.Component{
       <div className={TitleheaderClasses.join( sp )}>
         <div className={iconClasses.concat( this.props.icon ).join( sp )}></div>
         <div className={ titleClasses.join( sp ) }>
-          <h2 className={ titleBody }>{this.props.title} - { this.state.len } Rules</h2>
+          <h2 className={ titleBody }>{ this.state.len } Rules</h2>
         </div>
       </div>
     );

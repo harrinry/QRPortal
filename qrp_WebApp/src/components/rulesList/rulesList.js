@@ -23,7 +23,7 @@ export default class RulesList extends React.Component{
   }
 
   render(){
-    Radio.emit(LISTLENGTH, this.state.els.length);
+    Radio.emit(LISTLENGTH, this.props.isStandard ? this.state.els.length : this.state.els2.length );
     return (this.props.isStandard ? ( <StandardList l50={true} headers={standardHeaders}>
       {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)}
     </StandardList> ) : (<div>
@@ -36,14 +36,15 @@ export default class RulesList extends React.Component{
 
   queryForNextList( url ){
     APIQuery( url, res => {
-      this.loadRuleDetails();
       this.setState( _state => {
         return ( { els: _state.els, els2: res.data } );
-      });}, err => {
+      });
       this.loadRuleDetails();
+    }, err => {
       this.setState( _state => {
         return ( { els: _state.els, els2: [] } );
       } );
+      this.loadRuleDetails();
     } );
   }
 
