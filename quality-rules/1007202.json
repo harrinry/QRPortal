@@ -4,7 +4,7 @@
     "name": "Avoid direct access to superglobals (PHP)",
     "href": "quality-rules/1007202.json",
     "critical": true,
-    "description": "This rule searches all artifacts that access superglobals directly.",
+    "description": "This rule searches all artifacts that access superglobals directly. Artifacts considered for this QR are php section, constructor, method and functions.",
     "output": "This report lists artifacts that directly access PHP superglobals. It provides:\n- Artifact Full Name",
     "rationale": "PHP superglobals should not be accessed directly. Use one of the filter APIs instead.",
     "remediation": "Use PHP filter APIs to access superglobals.",

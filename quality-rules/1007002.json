@@ -1,15 +1,15 @@
 {
     "id": 1007002,
     "type": "quality-rule",
-    "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
+    "name": "Avoid artifacts directly accessing database tables (PHP)",
     "href": "quality-rules/1007002.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all php Methods and php Functions that directly accessing database Table.",
-    "output": "This report lists all php Methods and php Functions that directly access database table.\n\nThis QR provides the following information:\nMethod or Function full name.",
+    "description": "This rule searches for all artifacts that direct access database Table. The artifacts checked are php section, function, method and constructors.",
+    "output": "This report lists all artifacts that directly access database table.\n\nThis QR provides the following information:\n- Artifact full name",
     "rationale": "For security reasons, directly accessing database tables is not advised.",
     "remediation": "Avoid direct access to database tables. Use views instead",
-    "total": "Number of Methods or Functions",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

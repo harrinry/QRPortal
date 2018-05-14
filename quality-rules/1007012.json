@@ -6,9 +6,11 @@
     "critical": false,
     "maxWeight": 5,
     "description": "This rule searches for all PHP Files that are not linked to a style sheet(*.css) and contain hardcoded style definition. Style sheets (*.css) should be used instead of hardcoded style definition.",
-    "output": "This report lists all PHP Files with hardcoded style definition and no link to a style sheet.\n\nThis QR provides the following information:\nPHP File  full name.",
-    "rationale": "Using style sheets (*.css) instead of hardcoded style definition improves redeability and is less costly to maintain.",
-    "remediation": "Modify the source code to reduce the number of web pages with hardcoded style definition and no link to a style sheet(*.css).",
+    "output": "This report lists all PHP Files with hardcoded style definition instead of having link to a style sheet.\n\nThis QR provides the following information:\nPHP File full name.",
+    "rationale": "Using style sheets (*.css) instead of hardcoded style definition improves readability and is less costly to maintain.",
+    "remediation": "Modify the source code to reduce the number of web pages with hardcoded style definition instead of having link to a style sheet(*.css).",
+    "remediationSample": "<?php echo \"!!!A Title - Uses css file!!!\"; ?>\n\n<html>\n<head>\n<title>...</title>\n<link rel=\"stylesheet\" href=\"styles.css\">\n</head>\n<body>\n\n</body>\n</html>",
+    "sample": "<?php echo \"Text\"; ?>\n\n<html>\n<head>\n<title>...</title>\n<style> \n/*violation*/\nbody {background-color: powderblue;}\nh1   {color: blue;}\np    {color: red;}\n</style>\n</head>\n<body>\n\n</body>\n</html>",
     "total": "Number of PHP Files",
     "businessCriteria": [
         {

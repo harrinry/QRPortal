@@ -1,16 +1,16 @@
 {
     "id": 1007132,
     "type": "quality-rule",
-    "name": "Avoid  classes with too many fields (PHP)",
+    "name": "Avoid classes with excessive number of fields (PHP)",
     "href": "quality-rules/1007132.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the classes with too many fields.",
-    "output": "This report lists all the classes that have too many fields.\n\nThis QR provides the following information:\nClass  full name.",
-    "rationale": "Classes that have too many fields could be redesigned to have fewer fields, possibly through some nested object grouping of some of the information. For example, a class with city/state/zip fields could instead have one Address field.",
+    "description": "This rule searches for all the classes with excessive number of fields. Modifiers which we consider with fields are public, private, protected, const and static. A class with more than 15 fields is considered as violation.",
+    "output": "This report lists all the classes with excessive number of fields.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "Classes with excessive number of fields could be redesigned to have fewer fields, possibly through some nested object grouping of related information. For example, a class with city/state/zip fields could have one field as address.",
     "reference": "PHPMD http://phpmd.org/rules/codesize.html#toomanyfields",
-    "remediation": "Modify the source code of the class to reduce the number of fields.",
-    "sample": "class CastExample\n{\n protected $one;\n private $two;\n private $three;\n [... many more fields ...]\n protected $fourteen;\n private $fifteen;\n private $sixteen;\n}",
+    "remediation": "Modify the source code to reduce the number of fields associated with a class.",
+    "sample": "<?php\nclass CastExample\n{\n  protected $one;\n  private $two;\n  public $three;\n  ...\n  static $fourteen;\n  const $fifteen;\n  private $sixteen;\n}\n?>",
     "total": "Number of Classes",
     "businessCriteria": [
         {

@@ -5,11 +5,13 @@
     "href": "quality-rules/1007014.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for Script Functions having direct definition in a web page.",
-    "output": "This report lists all Script Functions having direct definition in a web page.\n\nThis QR provides the following information:\nScript Function full name.",
+    "description": "This rule searches for JavaScript Functions having direct definition in a web page.",
+    "output": "This report lists all JavaScript Functions having direct definition in a web page.\n\nThis QR provides the following information:\nJavaScript Function full name.",
     "rationale": "For security reasons, the direct definition of Javascript functions in a web page is not recommended.",
     "remediation": "Modify the source code to reduce the number of web pages having direct defination of Javascript Functions.",
-    "total": "Number of Script Functions",
+    "remediationSample": "<?php\n $a = 1;\n if ($a=1){\n?>\n<script type =\"text/javascript\" src=\"javascript.js\"> </script>    //VIOLATION REMOVED\n<?php\n}\n?>",
+    "sample": "<?php\n $a = 1;\n if ($a=1){\n?>\n<script>\nfunction f(){ alert('f() called'); }        //VIOLATION \n</script>\n<?php\n}\n?>",
+    "total": "Number of JavaScript Functions",
     "businessCriteria": [
         {
             "id": 60012,

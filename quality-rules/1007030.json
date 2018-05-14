@@ -5,7 +5,7 @@
     "href": "quality-rules/1007030.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all artifacts containing empty statements.",
+    "description": "This rule searches for all artifacts containing empty statements. Artifacts considered for this QR are PHP section, method, function and constructors.",
     "output": "This report lists all artifacts containing empty statements.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "For maintainability reasons, empty statements should be avoided. Empty statements make the source code harder to read and to maintain.",
     "reference": "Code Sniffer - http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_CodeAnalysis_EmptyStatementSniff.html",

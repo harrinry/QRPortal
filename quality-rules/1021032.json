@@ -9,7 +9,7 @@
     "output": "Line and column for each violation\nAssociated value => number of violations found",
     "rationale": "Ensure the developer will work with a list of trusted source. Thanks to Strict-Transport-Security header you will enforces secure (HTTP over SSL/TLS) connections to the server.",
     "remediation": "Ensure you have enabled secure https connection when creating your connection.",
-    "remediationSample": ">>> import requests\n>>> requests.get(url = \"https://www.openstack.org/\", verify = CONF.ca_file) #Certificate check will be performed using file \n>>> requests.get(url = \"https://myserver.com\") # Certificate check will be perfomed. Default value of verify \"True\" will be processed\n        ",
+    "remediationSample": ">>> import requests\n>>> requests.get(url = \"https://www.openstack.org/\", verify = CONF.ca_file) #Certificate check will be performed using file\n>>> requests.get(url = \"https://myserver.com\") # Certificate check will be perfomed. Default value of verify \"True\" will be processed\n        ",
     "sample": ">>> import requests\n>>> requests.get(url = \"https://www.openstack.org/\",verify = False)\n",
     "total": "Python artifacts using requests",
     "businessCriteria": [
