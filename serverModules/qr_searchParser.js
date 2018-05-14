@@ -1,10 +1,11 @@
 const glob = require('./glob');
 const path = require('path');
 const rulesDir = path.basename('../quality-rules');
-const StandardsDir = path.basename('../quality-standards');
 const search = require('./search');
 const filter = require('./filters');
 const QS = require('../quality-standards.json');
+
+const readJsonFile = require('../serverModules/readFile');
 
 let index = {
   qualityRules: [],
@@ -21,6 +22,15 @@ function convertToSearchString ( dataObject ) {
   };
 }
 
+function convertQsToSearchIndex( dataObject, par ){
+  return {
+    id: dataObject.id,
+    searchid: dataObject.id,
+    name: par.name,
+    resHref: par.href
+  };
+}
+
 function SearchIndex( query, indexDef ){
   return search( query, index[ indexDef ], ( e ) => e.searchid );
   /*return res.map( e => {
@@ -33,12 +43,19 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-const initializationTest = () =>{
-  const testidx = getRandomInt(index.length),
-    test = getRandomInt( 2 ) === 0 ? index[testidx].id : index[testidx].name.substring( /:/g, getRandomInt(index[testidx].name.length) );
+const QRinitializationTest = () =>{
+  const testidx = getRandomInt(index.qualityRules.length),
+    test = getRandomInt( 2 ) === 0 ? index.qualityRules[testidx].id : index.qualityRules[testidx].name.substring( /:/g, getRandomInt(index.qualityRules[testidx].name.length) );
   console.log('testquery search : ' + test);
-  console.log(SearchIndex(test));
+  console.log(SearchIndex(test, 'qualityRules'));
 }; 
+
+const QSinitializationTest = () => {
+  const testidx = getRandomInt(index.qualityStandards.length),
+    test = index.qualityStandards[testidx].id;
+  console.log('testquery search : ' + test);
+  console.log(SearchIndex(test, 'qualityStandards'));
+};
 
 /* initialization */
 (function (){
@@ -49,9 +66,30 @@ const initializationTest = () =>{
     throw err;
   }, () => {
     console.log('Quality Rules Search Index created');
-    if( process.env.NODE_ENV !== 'production' )initializationTest();
+    if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
-  
+  let qsi = 0;
+  QS.forEach((std) => {
+    readJsonFile(std.href, ( name, content ) => {
+      content.forEach( fLink => {
+        readJsonFile( fLink.href, ( n, c ) => {
+          c.forEach( o => {
+            const indexObj = convertQsToSearchIndex( o, fLink );
+            index.qualityStandards[qsi++] = indexObj;
+          } );
+        }, undefined, ( e ) => {
+          throw e;
+        });
+      });
+    }, undefined, ( e ) => {
+      throw e;
+    });
+  });
 }());
+
+setTimeout(() => {
+  console.log('Quality Standards Search Index created');
+  if( process.env.NODE_ENV !== 'production' )QSinitializationTest();
+}, 1000);
 
 module.exports = SearchIndex;

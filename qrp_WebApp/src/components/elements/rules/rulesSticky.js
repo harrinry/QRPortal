@@ -29,6 +29,7 @@ export default class Rules extends React.Component{
       rulesVisible: true,
       title: name,
       rulesHref: url,
+      details: undefined
     });
 
     UpdateURL(url, name);

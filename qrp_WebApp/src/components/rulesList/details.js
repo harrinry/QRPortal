@@ -1,5 +1,5 @@
 import React from 'react';
-import {LOADRULESLIST, Radio, APIQuery} from '../index';
+import {LOADRULESLIST, Radio, Search} from '../index';
 
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
@@ -7,8 +7,9 @@ const localClassName = 'RuleInfo-container',
   sp = ' ';
 
 function queryFromTag( tagValue ){
-  const query = 'quality-standards/'.concat(tagValue.standard, '/', tagValue.id, '.json');
-  console.log(query);
+  
+  Search(tagValue.id, 'qualityStandards')
+    .then( res => Radio.emit(LOADRULESLIST, res.data.resHref, res.data.name));
 }
 
 export default class RuleDetails extends React.Component{

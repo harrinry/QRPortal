@@ -1,14 +1,13 @@
 const fs = require('fs');
-const path = require('path');
-const baseDir = path.basename('../');
 
-module.exports = function readJsonFile( path, onFileContent, onError ){
-  fs.readFile( path.join( baseDir, path ), 'utf8', ( err, fileContents ) => {
+function readJsonFile( filePath, onFileContent, onComplete, onError ){
+  fs.readFile( filePath, 'utf8', ( err, fileContents ) => {
     if ( err ) {
       onError( err );
       return;
     }
-    onFileContent( path, JSON.parse(fileContents) );
+    onFileContent( filePath, JSON.parse(fileContents), onComplete );
   });
-};
-  
+}
+
+module.exports = readJsonFile;
