@@ -1,9 +1,25 @@
 import React from 'react';
+import {LOADRULESLIST, Radio, APIQuery} from '../index';
+
+//import Axios from 'axios'; // curently only for testing
 
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
   nStdClass = 'D40-margins',
   sp = ' ';
+
+function queryFromTag( tagValue ){
+  const query = 'quality-standards/'.concat(tagValue.standard, '/', tagValue.id, '.json');
+  const nameQuery = 'quality-standards/'+ tagValue.standard + '.json';
+  return APIQuery( nameQuery, ( resStandards ) => {
+    const standardsData = resStandards.data;
+    console.log( standardsData );
+    const name = standardsData.find( v => v.href === query );
+    console.log(name);
+    return Radio.emit( LOADRULESLIST, query, name );
+  });
+  
+}
 
 export default class RuleDetails extends React.Component{
   render(){
@@ -23,7 +39,7 @@ export default class RuleDetails extends React.Component{
 
       if(length>0)
       {
-        tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li className='detail-tag'>{listValue.id}</li>;})}</ul>);
+        tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li className='detail-tag' onClick={() => queryFromTag(listValue)}>{listValue.id}</li>;})}</ul>);
       }
 
       // optional at the end of the block

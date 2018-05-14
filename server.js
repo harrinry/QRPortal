@@ -69,7 +69,7 @@ app.get('/mlturl/*', (req, res)=>{
 
 app.get('/search', (req, res)=>{
   const q = req.query;
-  const r = searchIndex( q.s );
+  const r = searchIndex( q.s, q.f );
   res.json(r);
 });
 

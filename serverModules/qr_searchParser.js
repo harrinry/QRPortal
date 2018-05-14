@@ -1,10 +1,15 @@
 const glob = require('./glob');
 const path = require('path');
 const rulesDir = path.basename('../quality-rules');
+const StandardsDir = path.basename('../quality-standards');
 const search = require('./search');
 const filter = require('./filters');
+const QS = require('../quality-standards.json');
 
-let index = [];
+let index = {
+  qualityRules: [],
+  qualityStandards: []
+};
 
 function convertToSearchString ( dataObject ) {
   return {
@@ -16,8 +21,8 @@ function convertToSearchString ( dataObject ) {
   };
 }
 
-function SearchIndex( query ){
-  return search( query, index, ( e ) => e.searchid );
+function SearchIndex( query, indexDef ){
+  return search( query, index[ indexDef ], ( e ) => e.searchid );
   /*return res.map( e => {
     filter(e.technologies);
     return JSON.stringify(e);
@@ -39,13 +44,14 @@ const initializationTest = () =>{
 (function (){
   glob( rulesDir, ( fileName, contents, i ) => {
     const searchString = convertToSearchString( contents );
-    index[i] = searchString ;
+    index.qualityRules[i] = searchString ;
   }, ( err ) => {
     throw err;
   }, () => {
-    console.log('Search Index created');
+    console.log('Quality Rules Search Index created');
     if( process.env.NODE_ENV !== 'production' )initializationTest();
   });
+  
 }());
 
 module.exports = SearchIndex;
