@@ -1,8 +1,6 @@
 import React from 'react';
 import {LOADRULESLIST, Radio, APIQuery} from '../index';
 
-//import Axios from 'axios'; // curently only for testing
-
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
   nStdClass = 'D40-margins',
@@ -10,15 +8,7 @@ const localClassName = 'RuleInfo-container',
 
 function queryFromTag( tagValue ){
   const query = 'quality-standards/'.concat(tagValue.standard, '/', tagValue.id, '.json');
-  const nameQuery = 'quality-standards/'+ tagValue.standard + '.json';
-  return APIQuery( nameQuery, ( resStandards ) => {
-    const standardsData = resStandards.data;
-    console.log( standardsData );
-    const name = standardsData.find( v => v.href === query );
-    console.log(name);
-    return Radio.emit( LOADRULESLIST, query, name );
-  });
-  
+  console.log(query);
 }
 
 export default class RuleDetails extends React.Component{
