@@ -1,17 +1,16 @@
 {
     "id": 1007130,
     "type": "quality-rule",
-    "name": "Avoid Methods exceeding maximum length (PHP)",
+    "name": "Avoid Artifacts with excessive lines of code (PHP)",
     "href": "quality-rules/1007130.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the Methods exceeding the maximum length.\nA method is violating the rule when having more than 100 lines of code",
-    "output": "This report lists all the Methods exceeding the maximum length.\n\nThis QR provides the following information:\nMethod  full name.",
-    "rationale": "If a Method exceeds the maximum length this usually indicates that the class is doing too much and will therefore be difficult to understand and maintain.",
+    "description": "This rule searches for all the artifacts with excessive lines of code including comments. Artifacts being checked including methods, functions and constructor. An artifact with more than 100 lines of code is considered as violation.",
+    "output": "This report lists all the artifacts with excessive lines of code.\n\nThis QR provides the following information:\n- Artifact full name.",
+    "rationale": "Artifact with excessive lines of code indicates that it has lot of operations to perform and therefore will be difficult to understand and maintain.",
     "reference": "PHPMD http://phpmd.org/rules/codesize.html#excessivemethodlength",
-    "remediation": "Modify the source code of the method to reduce the length.",
-    "sample": "class ClassTest\n{\npublic function doSomething()\n {\n  print(\"\"function doSomething() \"\" . PHP_EOL);\n  print(\"\"function doSomething() \"\" . PHP_EOL);\n  // 99 copies omitted for brevity.\n }\n}",
-    "total": "Number of Methods",
+    "remediation": "Refactor the code to reduce the number of code lines in an artifact.",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60011,

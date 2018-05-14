@@ -330,14 +330,8 @@
         "critical": false
     },
     {
-        "id": 1007000,
-        "name": "Avoid php sections directly access database tables (PHP)",
-        "href": "quality-rules/1007000.json",
-        "critical": false
-    },
-    {
         "id": 1007002,
-        "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
+        "name": "Avoid artifacts directly accessing database tables (PHP)",
         "href": "quality-rules/1007002.json",
         "critical": false
     },
@@ -1135,7 +1129,7 @@
     },
     {
         "id": 1007124,
-        "name": "Avoid Functions throwing exceptions and not having a @Throws tag (PHP)",
+        "name": "Avoid artifacts throwing exceptions without @Throws tag in doc comments (PHP)",
         "href": "quality-rules/1007124.json",
         "critical": false
     },
@@ -1795,7 +1789,7 @@
     },
     {
         "id": 1007192,
-        "name": "Avoid using short tags like \"<?=$name> (PHP)",
+        "name": "Avoid using PHP short tags (PHP)",
         "href": "quality-rules/1007192.json",
         "critical": false
     },
@@ -1863,6 +1857,12 @@
         "id": 1020056,
         "name": "Avoid using Javascript Document.all collection",
         "href": "quality-rules/1020056.json",
+        "critical": false
+    },
+    {
+        "id": 1020092,
+        "name": "Avoid direct definition of JavaScript Functions in a Web page (Javascript/HTML5)",
+        "href": "quality-rules/1020092.json",
         "critical": false
     },
     {
@@ -2694,6 +2694,12 @@
         "critical": true
     },
     {
+        "id": 1012002,
+        "name": "Avoid using RSA Cryptographic algorithms without OAEP",
+        "href": "quality-rules/1012002.json",
+        "critical": true
+    },
+    {
         "id": 7152,
         "name": "Avoid Fields in Servlet Classes that are not final static",
         "href": "quality-rules/7152.json",
@@ -3373,19 +3379,19 @@
     },
     {
         "id": 1007168,
-        "name": "Avoid having functions with no return (PHP)",
+        "name": "Avoid using function or method return value that do not have return (PHP)",
         "href": "quality-rules/1007168.json",
         "critical": true
     },
     {
         "id": 1007170,
-        "name": "Avoid having call function return ignored (PHP)",
+        "name": "Avoid function return value ignored (PHP)",
         "href": "quality-rules/1007170.json",
         "critical": false
     },
     {
         "id": 1007172,
-        "name": "Avoid having constructors with a return value (PHP)",
+        "name": "Avoid having constructors with return value (PHP)",
         "href": "quality-rules/1007172.json",
         "critical": false
     },

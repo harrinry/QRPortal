@@ -1,15 +1,17 @@
 {
     "id": 1007242,
     "type": "quality-rule",
-    "name": "Avoid artifacts having recursive calls (PHP)",
+    "name": "Avoid Methods and Functions having recursive calls (PHP)",
     "href": "quality-rules/1007242.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This metric retrieves all artifacts that are explicitly calling themselves (recursive call). Only executable artifacts are considered.",
-    "output": "PHP Functions and Methods",
-    "rationale": "Recursive calls can be unpredictable with regard to consumption of resources, especially memory.  Under certain condition, a function or procedure using a recursive call can keep calling itself and as each call consumes memory, the entire application runs out of memory. \nRecursive calls are known to be difficult to test for because the termination condition and thus the resource consumption might be dependent on the data used for the test.  For all these reasons, it is often forbidden and limited to academic usage rather than for mission-critical systems. Because the flip side is complexity, such a trade-off should be carefully chosen by architects or senior developers, balancing cost with reliability and in all cases the conditions under which it is used should be reviewed in details.",
-    "remediation": "Review the Function / Procedure design",
-    "total": "Number of methods",
+    "description": "This quality rule retrieves all functions and methods that are recursive in nature.",
+    "output": "This report lists all methods and functions having recursive calls.\nThis QR provides the following information:\nMethod or Function full name",
+    "rationale": "Recursive calls can be unpredictable with regard to memory consumption, takes more time than iterative. It may cause stack-overflow if recursion goes deep to solve problem. It is very difficult to debug and trace the values with each step of recursion",
+    "remediation": "Review the source code to reduce the number of methods and function with recursive call",
+    "remediationSample": "<?php\nfunction iterative_global($a) {\n   for($a;$a < 4;$a++)\n   {\n      echo \"$a \\n\" ;                            //violation removed\n   }\n}\nclass CastTest {\n   public function iterative($b) {\n      for($b;$b <7;$b++) {\n        echo \"$b \\n\" ;                            //violation removed\n      }\n   }\n}\n$test =  new CastTest();\n$test->iterative(4);\niterative_global(1);\n?>",
+    "sample": "<?php\nfunction recursive_global($a) {\n   if($a < 4) {\n      echo \"$a \\n\";\n      recursive_global($a +1);                       //violation\n   }\n}   \nclass CastTest {\n   public function recursive($b) {\n      if($b < 7) {\n         echo \"$b \\n\";\n         $this->recursive($b +1);                  //violation\n      }\n   }\n}\n$test =  new CastTest();\n$test->recursive(4);\nrecursive_global(1);\n?>",
+    "total": "Number of Methods and Functions",
     "businessCriteria": [
         {
             "id": 60011,

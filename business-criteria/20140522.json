@@ -565,7 +565,7 @@
     },
     {
         "id": 1007124,
-        "name": "Avoid Functions throwing exceptions and not having a @Throws tag (PHP)",
+        "name": "Avoid artifacts throwing exceptions without @Throws tag in doc comments (PHP)",
         "href": "quality-rules/1007124.json",
         "critical": false
     },
@@ -1225,7 +1225,7 @@
     },
     {
         "id": 1007192,
-        "name": "Avoid using short tags like \"<?=$name> (PHP)",
+        "name": "Avoid using PHP short tags (PHP)",
         "href": "quality-rules/1007192.json",
         "critical": false
     },
@@ -1293,6 +1293,12 @@
         "id": 1020056,
         "name": "Avoid using Javascript Document.all collection",
         "href": "quality-rules/1020056.json",
+        "critical": false
+    },
+    {
+        "id": 1020092,
+        "name": "Avoid direct definition of JavaScript Functions in a Web page (Javascript/HTML5)",
+        "href": "quality-rules/1020092.json",
         "critical": false
     },
     {
@@ -2017,19 +2023,19 @@
     },
     {
         "id": 1007118,
-        "name": "Avoid Sections With Queries on more than 4 Tables (PHP)",
+        "name": "Avoid artifacts with sql statements referring more than 4 Tables (PHP)",
         "href": "quality-rules/1007118.json",
         "critical": false
     },
     {
         "id": 1007120,
-        "name": "Avoid Sections with Group By (PHP)",
+        "name": "Avoid artifacts with Group By sql statement (PHP)",
         "href": "quality-rules/1007120.json",
         "critical": false
     },
     {
         "id": 1007220,
-        "name": "Avoid Select * queries in PHP Section (PHP)",
+        "name": "Avoid artifacts with \"select *\" Sql statement (PHP)",
         "href": "quality-rules/1007220.json",
         "critical": false
     },
@@ -2530,6 +2536,12 @@
         "name": "PeopleSoft: Avoid PeopleCode using HAVING",
         "href": "quality-rules/1600536.json",
         "critical": false
+    },
+    {
+        "id": 1012002,
+        "name": "Avoid using RSA Cryptographic algorithms without OAEP",
+        "href": "quality-rules/1012002.json",
+        "critical": true
     },
     {
         "id": 7152,
@@ -3421,19 +3433,19 @@
     },
     {
         "id": 1007168,
-        "name": "Avoid having functions with no return (PHP)",
+        "name": "Avoid using function or method return value that do not have return (PHP)",
         "href": "quality-rules/1007168.json",
         "critical": true
     },
     {
         "id": 1007170,
-        "name": "Avoid having call function return ignored (PHP)",
+        "name": "Avoid function return value ignored (PHP)",
         "href": "quality-rules/1007170.json",
         "critical": false
     },
     {
         "id": 1007172,
-        "name": "Avoid having constructors with a return value (PHP)",
+        "name": "Avoid having constructors with return value (PHP)",
         "href": "quality-rules/1007172.json",
         "critical": false
     },

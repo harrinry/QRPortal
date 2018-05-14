@@ -1,15 +1,17 @@
 {
     "id": 1007192,
     "type": "quality-rule",
-    "name": "Avoid using short tags like \"<?=$name> (PHP)",
+    "name": "Avoid using PHP short tags (PHP)",
     "href": "quality-rules/1007192.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches all the Methods, Functions and PHP Sections using short tags.",
-    "output": "This report lists all the Methods, Functions and PHP Sections containing short tags like \"<?=$name>\nThis QR provides the following information:\nMethods, Functions and PHP Sections full name.",
-    "rationale": "Avoid using short tags like <?=$name> because it can create a problem for you if you are going to deploy your application on another server. Instead of using these shorts tags it is highly recommended to use <?php echo $name; >  which have the same results without introducing issues.",
-    "remediation": "Try and limit the use of short tags. Instead of using them, try and replace them with constructions of this type.",
-    "total": "Number of Methods, Functions and PHP Sections",
+    "description": "This rule searches for all PHP file which uses PHP short tags.",
+    "output": "This report lists all artifacts containing PHP short tags.\nThis QR provides the following information:\nPHP file full name.",
+    "rationale": "Usage of PHP Short tags is discouraged because, short tags may or may not be enabled on the server where application is deployed or will be deployed in future.",
+    "remediation": "Try and limit the use of PHP short tags.",
+    "remediationSample": "<?php\nfunction afunc() {\n   echo \"afunc\", PHP_EOL;\n}\n?>\n \n<?php afunc();?>",
+    "sample": "<?php\nfunction afunc() {\n   echo \"afunc\", PHP_EOL;\n}\n?>\n<? afunc();?>",
+    "total": "Number of PHP files",
     "businessCriteria": [
         {
             "id": 60014,

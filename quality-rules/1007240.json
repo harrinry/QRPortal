@@ -7,10 +7,10 @@
     "maxWeight": 5,
     "description": "This QR will have violations if parenthesis are not used while instantiating objects.",
     "output": "This report will list all artifacts that instantiate object without using parenthesis. It provides:\nArtifact full name",
-    "rationale": "Parenthesis should be used when instantiating classes regardless of the number of arguments since when method is being called PHP requires \"()\" and constructors are methods. \n\t\tAlso, it's more consistent with instantiations that have parameters.",
+    "rationale": "Parenthesis should be used when instantiating classes regardless of the number of arguments since when method is being called PHP requires \"()\" and constructors are methods. \n      Also, it's more consistent with instantiations that have parameters.",
     "remediation": "Use parenthesis when instantiating classes regardless of the number of arguments of the constructor.",
-    "remediationSample": "<?php\n\n   class Test\n   {\n      public function test() {\n\t  }\n   }\n                           \n   $obj = new Test();\n\n?>",
-    "sample": "<?php\n\n   class Test\n   {\n      public function test() {\n\t  }\n   }\n                           \n   $obj = new Test;\n\n?>",
+    "remediationSample": "<?php\n\n   class Test\n   {\n      public function test() {\n      }\n   }\n                           \n   $obj = new Test();\n\n?>",
+    "sample": "<?php\n\n   class Test\n   {\n      public function test() {\n      }\n   }\n                           \n   $obj = new Test;\n\n?>",
     "total": "Number of Artifacts",
     "businessCriteria": [
         {

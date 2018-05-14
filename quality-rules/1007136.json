@@ -1,16 +1,16 @@
 {
     "id": 1007136,
     "type": "quality-rule",
-    "name": "Avoid classes having a  number of public methods and attributes exceeds maximum (PHP)",
+    "name": "Avoid classes having with excessive number of public methods and fields (PHP)",
     "href": "quality-rules/1007136.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the classes with too many public methods and attributes.",
-    "output": "This report lists all the classes with too many public methods and attributes.\n\nThis QR provides the following information:\nClass full name.",
-    "rationale": "A large number of public methods and attributes declared in a class can indicate that the class may need to be broken up as increased effort will be required to thoroughly test it.",
+    "description": "This rule searches for all the classes with excessive number of public methods and fields. All public methods, instance or static along with access modifiers final and abstract are considered for this QR. All member variables, instance or static except const members are considered for this QR. Base class members unless overriden do not contribute to the evalution of this QR.",
+    "output": "This report lists all the classes with excessive number of public methods and fields.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "A large number of public methods and attributes in a class can be an indication that the class has too many responsibilities and can be refactored into multiple classes.",
     "reference": "PHPMD - http://phpmd.org/rules/codesize.html#excessivepubliccount",
     "remediation": "Modify the source code of the class to reduce the number of public methods and attributes.",
-    "sample": "class CastTest\n{\n\npublic $public1;\npublic\n$public2;\n//several others public datamembers\npublic $public20;\npublic $public21;\n\n\npublic function test1()\n {\n\n }\n\n public function test2()\n\n {\n }\n // Several other complex methods\n\n public function\ntest20()\n {\n }\n\n public function test21()\n {\n\n}\n\n}",
+    "sample": "<?php\nclass ExcessivePublicMethodsAttributes {\n\n   public $publicMember1;\n   //.. lot of other public members\n  public $publicMember16;\n\n  public static $publicStaticMember1;\n  //.. Lot of other public static members\n   static $publicStaticMember10;\n\n   public function publicMethod1() {}\n   \n   public final function publicMethod2() {}\n\n   public abstract function publicMethod3();\n   //lot of other public member methods...\n   function publicMethod10() {}\n\n   public static function publicStaticMethod1() {}\n   //lot of other public static member methods...\n   static function publicStaticMethod10() {}\n}\n?>",
     "total": "Number of Classes",
     "businessCriteria": [
         {

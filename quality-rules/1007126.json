@@ -1,16 +1,15 @@
 {
     "id": 1007126,
     "type": "quality-rule",
-    "name": "Avoid classes exceeding maximum length (PHP)",
+    "name": "Avoid classes with excessive lines of code (PHP)",
     "href": "quality-rules/1007126.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches all the Classes exceeding the maximum length.\nLong Class files are indications that the class may be trying to do too much. Try to break it down, and reduce the size to something manageable.\nOne class is violating this rule when having more than 1000 lines of code.",
-    "output": "This report lists all the Classes exceeding the maximum length.\n\nThis QR provides the following information:\nClass full name.",
-    "rationale": "If a Class exceeds the maximum length this usually indicates that the class is doing too much and will therefore be difficult to understand and maintain.\n\nOne class is violating this rule when having more than 1000 lines of code.",
+    "description": "This rule searches for all the Classes with excessive lines of code including comments. A class with more than 1000 lines of code is considered as violation.",
+    "output": "This report lists all the Classes with excessive lines of code.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "Class with excessive lines of code indicates that it is performing lot of operation and therefore will be difficult to understand and maintain.",
     "reference": "PHPMD - http://phpmd.org/rules/codesize.html#excessiveclasslength",
-    "remediation": "Modify the source code of the class to reduce its  length.",
-    "sample": "class ClassTooBig\n{\n public function test()\n {\n // 1000 lines of code\n }\n}",
+    "remediation": "Try to breakdown the class and reduce the lines of code to something manageable.",
     "total": "Number of Classes",
     "businessCriteria": [
         {
