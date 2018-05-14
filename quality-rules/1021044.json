@@ -7,10 +7,10 @@
     "associatedValueName": "Single Value",
     "description": "This rule identifies potential risky string interpolations used to parameterize SQL queries.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",
-    "rationale": "To avoid the creation of Injection flaws, the Open Web Application Security Project (OWASP) recommends to check \"Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attacker\u2019s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.\" \n\nThe Common Weakness Enumeration defines Improper Neutralization of Special Elements used in an SQL Command ( CWE-89 ) as follows: \n\n\"Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data. This can be used to alter query logic to bypass security checks, or to insert additional statements that modify the back-end database, possibly including execution of system commands. \nSQL injection has become a common issue with database-driven web sites. The flaw is easily detected, and easily exploited, and as such, any site or software package with even a minimal user base is likely to be subject to an attempted attack of this kind. This flaw depends on the fact that SQL makes no real distinction between the control and data planes.\"",
+    "rationale": "To avoid the creation of Injection flaws, the Open Web Application Security Project (OWASP) recommends to check \"Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attacker\u2019s hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization.\"\n\nThe Common Weakness Enumeration defines Improper Neutralization of Special Elements used in an SQL Command ( CWE-89 ) as follows:\n\n\"Without sufficient removal or quoting of SQL syntax in user-controllable inputs, the generated SQL query can cause those inputs to be interpreted as SQL instead of ordinary user data. This can be used to alter query logic to bypass security checks, or to insert additional statements that modify the back-end database, possibly including execution of system commands.\nSQL injection has become a common issue with database-driven web sites. The flaw is easily detected, and easily exploited, and as such, any site or software package with even a minimal user base is likely to be subject to an attempted attack of this kind. This flaw depends on the fact that SQL makes no real distinction between the control and data planes.\"",
     "remediation": "Common database libraries handling SQL code provide specific API to perform parameterized SQL queries. Use them to assure sanitized SQL queries.",
-    "remediationSample": ">>> from flask.ext.sqlalchemy import SQLAlchemy \n>>> db = SQLAlchemy(app) \n>>> db.execute('insert into entries (title, text) values (?, ?)', [request.form['title'], request.form['text']])",
-    "sample": ">>> from flask.ext.sqlalchemy import SQLAlchemy \n>>> db = SQLAlchemy(app) \n>>> db.execute(\"insert into entries (title, text) values ('{0}', '{1}')\".format(request.form['title'], request.form['text']))",
+    "remediationSample": ">>> from flask.ext.sqlalchemy import SQLAlchemy\n>>> db = SQLAlchemy(app)\n>>> db.execute('insert into entries (title, text) values (?, ?)', [request.form['title'], request.form['text']])",
+    "sample": ">>> from flask.ext.sqlalchemy import SQLAlchemy\n>>> db = SQLAlchemy(app)\n>>> db.execute(\"insert into entries (title, text) values ('{0}', '{1}')\".format(request.form['title'], request.form['text']))",
     "total": "Python artifacts",
     "businessCriteria": [
         {
@@ -32,6 +32,33 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2017",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
+            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-89",
+            "name": "SQL Injection Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-89",
+            "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+            "reference": "https://cwe.mitre.org/data/definitions/89.html",
+            "description": null
+        }
     ]
 }

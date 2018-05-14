@@ -4,12 +4,13 @@
     "name": "Avoid using goto statements (PHP)",
     "href": "quality-rules/1007154.json",
     "critical": true,
-    "description": "This rule searches for all the artifacts containing goto statements.",
-    "output": "This report lists all the artifacts containing goto statements.\n\nThis QR provides the following information:\nArtifact full name.",
-    "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct. Therefore, it should be avoided.",
+    "description": "This rule searches for all the artifacts containing goto statements. Artifacts considered for this quality rule are PHP Section, method, function and constructor.",
+    "output": "This report lists all the artifacts containing goto statements.\n\nThis QR provides the following information:\n-Artifact full name.",
+    "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct.",
     "reference": "PHPMD - http://phpmd.org/rules/design.html#gotostatement",
     "remediation": "Modify the source code and consider replacing Goto statements with regular control structures and separate methods/functions, which are easier to read.",
-    "sample": "<?php\nclass CastTest {\n\n    public function bar($param) {\n        A:\n        if ($param === 10) {\n           goto C;\n        }\n\n        B:\n        if (time() % 90 === 10) {\n            goto D;\n        }\n\n        C:\n        if (time() % 10 === 90) {\n            goto B;\n        }\n\n        D: return 90;\n    }\n}\n$obj = new CastTest();\n$obj-> bar(10);\n?>",
+    "remediationSample": "<?php\nclass CastTest {\n    public function test($param) {\n        if ($param === 10) {\n          if ($foo % 10 === 90) {\n            if ($bar % 90 === 10) {\n               return 90;\n            }\n         }\n      }\n   }\n}\n$obj = new CastTest();\n$obj -> bar(10);\n?>",
+    "sample": "<?php\nclass CastTest {\n\n    public function test($param) {\n        A:\n        if ($param === 10) {\n           goto C;\n        }\n\n        B:\n        if ($foo % 90 === 10) {\n            goto D;\n        }\n\n        C:\n        if ($bar % 10 === 90) {\n            goto B;\n        }\n\n        D: return 90;\n    }\n}\n$obj = new CastTest();\n$obj-> bar(10);\n?>",
     "total": "Number of Artifacts",
     "businessCriteria": [
         {

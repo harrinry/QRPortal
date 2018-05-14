@@ -1,0 +1,38 @@
+{
+    "id": 1012002,
+    "type": "quality-rule",
+    "name": "Avoid using RSA Cryptographic algorithms without OAEP",
+    "href": "quality-rules/1012002.json",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "The aim of this rule is to report violation when RSA encryption algorithim is used without Padding. This can identified when literal value starting with RSA/NONE is found in source code\n   ",
+    "output": "This rule is reports full name of the java method violate using without rsa cryptography algorithm. \n  ",
+    "rationale": "Optimal Asymmetric Encryption Padding schemes are often used with cryptographic algorithms to make the plaintext less predictable and complicate attack efforts. The OAEP scheme is often used with RSA to nullify the impact of predictable common text \n",
+    "reference": "MITRE CWE-780 - Use of RSA Algorithm without OAEP \nMITRE CWE-327: Use of a Broken or Risky Cryptographic Algorithm \nhttps://rdist.root.org/2009/10/06/why-rsa-encryption-padding-is-critical/",
+    "remediation": "Federal agencies are encouraged to use the Advanced Encryption Standard, a faster and stronger algorithm approved as FIPS 197 in 2001.",
+    "remediationSample": " \npublic class TestRSA { \n\n    public static void main(String[] args) throws Exception { \n\n byte[] input = new byte[100]; \n\n Cipher cipher = Cipher.getInstance(\"RSA/None/NoPadding\", \"BC\"); \n KeyFactory keyFactory = KeyFactory.getInstance(\"RSA\", \"BC\"); \n",
+    "sample": "Cipher cipher = Cipher.getInstance(\"RSA/ECB/PKCS1Padding\", \"BC\");\n",
+    "total": " The number of methods containing weak encryption algorithm",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "technologies/140029.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

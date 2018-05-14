@@ -7,9 +7,9 @@
     "maxWeight": 5,
     "description": "This rule searches for all undocumented Classes.",
     "output": "This report lists all undocumented Classes.\n\nThis QR provides the following information:\nClass full name.",
-    "rationale": "Code maintainability and readability can be improved if there is documentation in the code.This rule ensures that classes are documented.",
+    "rationale": "Code maintainability is improved if code is accompanied with comments. This rule ensures that classes are documented.",
     "remediation": "Modify the source code to reduce the number of undocumented Classes.",
-    "remediationSample": "<?php\n/**\n* created to perform operations on items\n* contains a sample function addItem\n*/\t\nclass CastTest {\n    // Item\n    var $items;\n\n    //addition of items\n\tfunction addItem($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem();\n?>",
+    "remediationSample": "<?php\n/**\n* created to perform operations on items\n* contains a sample function addItem\n*/\nclass CastTest {\n    // Item\n    var $items;\n\n    //addition of items\n   function addItem($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem();\n?>",
     "sample": "<?php\nclass CastTest {\n    var $items;\n    function addItem($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n$obj = new CastTest();\n$obj->addItem();\n?>",
     "total": "Number of Classes",
     "businessCriteria": [

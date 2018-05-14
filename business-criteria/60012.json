@@ -330,14 +330,8 @@
         "critical": false
     },
     {
-        "id": 1007000,
-        "name": "Avoid php sections directly access database tables (PHP)",
-        "href": "quality-rules/1007000.json",
-        "critical": false
-    },
-    {
         "id": 1007002,
-        "name": "Avoid php methods and php functions directly accessing database tables (PHP)",
+        "name": "Avoid artifacts directly accessing database tables (PHP)",
         "href": "quality-rules/1007002.json",
         "critical": false
     },
@@ -1153,7 +1147,7 @@
     },
     {
         "id": 1007016,
-        "name": "Avoid Methods and Functions with High Cyclomatic Complexity (PHP)",
+        "name": "Avoid artifacts with High Cyclomatic Complexity (PHP)",
         "href": "quality-rules/1007016.json",
         "critical": false
     },
@@ -1201,7 +1195,7 @@
     },
     {
         "id": 1007242,
-        "name": "Avoid artifacts having recursive calls (PHP)",
+        "name": "Avoid Methods and Functions having recursive calls (PHP)",
         "href": "quality-rules/1007242.json",
         "critical": false
     },
@@ -1741,13 +1735,13 @@
     },
     {
         "id": 1007008,
-        "name": "Avoid Script Functions with High Fan-In (PHP)",
+        "name": "Avoid JavaScript Functions with High Fan-In (PHP)",
         "href": "quality-rules/1007008.json",
         "critical": false
     },
     {
         "id": 1007010,
-        "name": "Avoid Script Functions with High Fan-Out (PHP)",
+        "name": "Avoid JavaScript Functions with High Fan-Out (PHP)",
         "href": "quality-rules/1007010.json",
         "critical": false
     },
@@ -2400,14 +2394,8 @@
         "critical": false
     },
     {
-        "id": 1007084,
-        "name": "Use lowercase for control structures in Sections (PHP)",
-        "href": "quality-rules/1007084.json",
-        "critical": false
-    },
-    {
         "id": 1007086,
-        "name": "Use lowercase for control structures in Methods and Functions (PHP)",
+        "name": "Use lowercase for control structures (PHP)",
         "href": "quality-rules/1007086.json",
         "critical": false
     },
@@ -2425,13 +2413,13 @@
     },
     {
         "id": 1007126,
-        "name": "Avoid classes exceeding maximum length (PHP)",
+        "name": "Avoid classes with excessive lines of code (PHP)",
         "href": "quality-rules/1007126.json",
         "critical": false
     },
     {
         "id": 1007130,
-        "name": "Avoid Methods exceeding maximum length (PHP)",
+        "name": "Avoid Artifacts with excessive lines of code (PHP)",
         "href": "quality-rules/1007130.json",
         "critical": false
     },
@@ -3421,19 +3409,19 @@
     },
     {
         "id": 1007146,
-        "name": "Avoid unconditional \"if\" and \"elseif\" statements (PHP)",
+        "name": "Avoid unconditional \"if\" and \"else if\\elseif\" statements (PHP)",
         "href": "quality-rules/1007146.json",
         "critical": false
     },
     {
         "id": 1007148,
-        "name": "Avoid useless overriding Methods (PHP)",
+        "name": "Avoid methods and constructor overridden only with parent artifact call (PHP)",
         "href": "quality-rules/1007148.json",
         "critical": false
     },
     {
         "id": 1007150,
-        "name": "Avoid functions with optional parameters before required parameters (PHP)",
+        "name": "Avoid artifacts with optional parameters before required parameters (PHP)",
         "href": "quality-rules/1007150.json",
         "critical": true
     },
@@ -3669,6 +3657,12 @@
         "id": 1021040,
         "name": "Avoid instance attributes only differing by capitalization",
         "href": "quality-rules/1021040.json",
+        "critical": false
+    },
+    {
+        "id": 1021046,
+        "name": "Avoid Not ... Is",
+        "href": "quality-rules/1021046.json",
         "critical": false
     },
     {
@@ -4165,7 +4159,7 @@
     },
     {
         "id": 1007054,
-        "name": "Avoid unreferenced Script Functions (PHP)",
+        "name": "Avoid unreferenced JavaScript Functions (PHP)",
         "href": "quality-rules/1007054.json",
         "critical": false
     },
@@ -4177,7 +4171,7 @@
     },
     {
         "id": 1007058,
-        "name": "Avoid unused parameters (PHP)",
+        "name": "Avoid artifacts with unused parameters (PHP)",
         "href": "quality-rules/1007058.json",
         "critical": false
     },
@@ -4885,13 +4879,13 @@
     },
     {
         "id": 1007098,
-        "name": "Avoid undocumented Methods or Functions (PHP)",
+        "name": "Avoid undocumented artifacts (PHP)",
         "href": "quality-rules/1007098.json",
         "critical": false
     },
     {
         "id": 1007100,
-        "name": "Avoid Methods and Functions with a very low comment/code ratio (PHP)",
+        "name": "Avoid artifacts with a very low comment/code ratio (PHP)",
         "href": "quality-rules/1007100.json",
         "critical": false
     },
@@ -4921,13 +4915,13 @@
     },
     {
         "id": 1007110,
-        "name": "Avoid undocumented Script Functions (PHP)",
+        "name": "Avoid undocumented JavaScript Functions (PHP)",
         "href": "quality-rules/1007110.json",
         "critical": false
     },
     {
         "id": 1007112,
-        "name": "Avoid Script Functions with a very low comment/code ratio (PHP)",
+        "name": "Avoid JavaScript Functions with a very low comment/code ratio (PHP)",
         "href": "quality-rules/1007112.json",
         "critical": false
     },
@@ -5353,7 +5347,7 @@
     },
     {
         "id": 1007232,
-        "name": "Avoid having variables passed by reference when calling a function (PHP)",
+        "name": "Avoid artifacts with variables passed by reference when calling a function (PHP)",
         "href": "quality-rules/1007232.json",
         "critical": false
     },

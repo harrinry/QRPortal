@@ -1,15 +1,17 @@
 {
     "id": 1007008,
     "type": "quality-rule",
-    "name": "Avoid Script Functions with High Fan-In (PHP)",
+    "name": "Avoid JavaScript Functions with High Fan-In (PHP)",
     "href": "quality-rules/1007008.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all Script Functions with High Fan-In.\n         The Fan-in of Script Function is the number of other Artifacts that are referencing it.\n         When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",
-    "output": "This report lists all Script Functions with a High Fan-In.\n               \nThis QR provides the following information:\nScript Function full name.",
+    "associatedValueName": "Fan-In",
+    "description": "This rule searches for all JavaScript Functions with High Fan-In.\n         The Fan-in of JavaScript Function is the number of other Artifacts that are referencing it.\n         When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",
+    "output": "This report lists all JavaScript Functions with a High Fan-In.\n               \nThis QR provides the following information:\nJavaScript Function full name.",
     "rationale": "If an artifact is referenced by large number of artifacts, maintenance and evolution becomes difficult. This is because all the referencing artifacts need to be updated and\\or retested.",
-    "remediation": "Modify the source code to reduce the number of script functions with a High Fan-In.",
-    "total": "Number of Script Functions",
+    "remediation": "Modify the source code to reduce the number of Javascript functions with a High Fan-In.",
+    "sample": "<!--\nJavaScriptFanIn.php\n-->\n<html>\n<head>\n\n</head>\n   <body>\n      <?php\n         echo \"JavaScript functions - Fan In\", \"</br>\";\n      ?>\n      \n      \n      <script type=\"text/javascript\" language=\"javascript\">\n      \n         function highFanInOperation() {\n            document.write(\"highFanInOperation</br>\");\n         }\n         \n         function dohighFanInOperation1() {\n            highFanInOperation();\n         }\n\n         function dohighFanInOperation2() {\n            highFanInOperation();\n         }\n\n         function dohighFanInOperation3() {\n            highFanInOperation();\n         }\n\n         function dohighFanInOperation4() {\n            highFanInOperation();\n         }\n\n         function dohighFanInOperation5() {\n            highFanInOperation();\n         }\n\n         function dohighFanInOperation6() {\n            highFanInOperation();\n         }\n         \n         dohighFanInOperation1();\n         dohighFanInOperation2();\n         dohighFanInOperation3();\n         dohighFanInOperation4();\n         dohighFanInOperation5();\n         dohighFanInOperation6();\n         \n      </script>\n      \n   </body>\n</html>",
+    "total": "Number of JavaScript Functions",
     "businessCriteria": [
         {
             "id": 60011,

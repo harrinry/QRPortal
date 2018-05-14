@@ -5,7 +5,7 @@
     "href": "quality-rules/1007028.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all artifacts which do not use increment\\decrement operator for increment\\decrement.",
+    "description": "This rule searches for all artifacts which do not use increment\\decrement operator for increment\\decrement. Artifacts considered for this QR are PHP Section, constructor, method and functions.",
     "output": "This report lists all artifacts not using increment/decrement operators where possible.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Increment\\decrement without increment\\decrement operator makes code confusing and increases chances of mistake.",
     "reference": "Code Sniffer - http://pear.php.net/reference/PHP_CodeSniffer-1.5.2/PHP_CodeSniffer/Squiz_Sniffs_Operators_IncrementDecrementUsageSniff.html",
