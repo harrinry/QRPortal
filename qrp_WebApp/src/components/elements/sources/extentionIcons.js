@@ -2,7 +2,7 @@ export const EXTENTIONICONS = {
   'cast aip': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
   'cast_aip_souce':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.aip.png',
   'angularjs':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.angularjs.png',
-  'cfamily':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
+  'cfamily':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.objective-c.png',
   'egl':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.egl.png',
   'flex':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.flex.png',
   'fortran':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.fortran.png',
