@@ -5,6 +5,7 @@
     "href": "quality-rules/1007006.json",
     "critical": false,
     "maxWeight": 5,
+    "associatedValueName": "Fan-Out",
     "description": "This rule searches for all the Functions and Methods with High Fan-Out. \n         The Fan-out of Method or Function is the number of other artifacts that are referred in it. \n         When computing the Fan-Out of an artifact, multiple accesses to the same component of an artifact are counted as one access.\n         The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all Methods and Functions with a High Fan-Out.\n      \nThis QR provides the following information:\nMethod or Function full name.",
     "rationale": "If an artifact is referencing large number of artifcats, maintenance and evolution becomes difficult. This is because all the referenced artifacts need to be updated and\\or retested.",

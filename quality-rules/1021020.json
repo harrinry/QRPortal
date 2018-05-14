@@ -10,7 +10,7 @@
     "output": "Line and column for each violation\nAssociated value => number of violations found",
     "rationale": "Software that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code ",
     "remediation": "Avoid using wildcard (*) imports. Either import the full module. A direct import would bind to the same name as that of another object. Second way is to make the import statement more specific.",
-    "remediationSample": ">>> from math import floor \n>>> from numpy import floor as np_floor\n>>> values = array([2.3, 8.7])\n>>> np_floor(values)\n        ",
+    "remediationSample": ">>> from math import floor\n>>> from numpy import floor as np_floor\n>>> values = array([2.3, 8.7])\n>>> np_floor(values)\n        ",
     "sample": ">>> from math import *\n>>> from numpy import *\n",
     "total": "Python artifacts importing modules",
     "businessCriteria": [

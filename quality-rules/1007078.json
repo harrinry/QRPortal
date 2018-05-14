@@ -9,8 +9,8 @@
     "output": "This report lists all the Classes that do not respect the naming convention.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "Using naming convention makes the source code easier to read and therefore to maintain.",
     "remediation": "Modify source code to reduce the number of classes that do not respect the naming convention.",
-    "remediationSample": "<?php\n\t\tclass CastTest{ //violation removed\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
-    "sample": "<?php\n\t\tclass castTest{ //violation\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
+    "remediationSample": "<?php\n   class CastTest{ //violation removed\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
+    "sample": "<?php\n   class castTest{ //violation\n    // items\n    var $items;\n\n    // add an item\n\n    function add_item($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n?>",
     "total": "Number of classes",
     "businessCriteria": [
         {

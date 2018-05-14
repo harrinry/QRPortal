@@ -1,16 +1,15 @@
 {
     "id": 1007144,
     "type": "quality-rule",
-    "name": "Avoid classes exceeding number of weighted methods (PHP)",
+    "name": "Avoid classes with excessive number of weighted methods (PHP)",
     "href": "quality-rules/1007144.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the classes exceeding the number of weighted methods. The number of weighted methods is set to 50.",
-    "output": "This report lists all the classes exceeding the number of weighted methods.\n\nThis QR provides the following information:\nClass  full name.",
-    "rationale": "The number of weighted methods of a class is a good indicator of how much time and effort is required to modify and maintain this class. A class with a large number of methods also means that this class has a greater potential impact on derived classes and therefore the cost to maintain and test it is also high.\n\nA large number of methods also means that this class has a greater potential impact on derived classes.\n\n\nA class is violating the rules when having more than 50 weighted methods",
+    "description": "This rule searches for all the classes with excessive number of weighted methods. Threshold for weighted methods is set to 50. Weight of a method is it's cyclomatic complexity.",
+    "output": "This report lists all the classes with excessive number of weighted methods.\n\nThis QR provides the following information:\nClass  full name.",
+    "rationale": "The number of weighted methods in a class is a good indicator of how much time and effort is required to modify and maintain this class. A class with a large number of weighted methods also means that this class has a greater potential impact on derived classes and therefore the cost to maintain and test it is also high.\n\nLarge number of weighted methods also means that this class has a greater potential impact on derived classes.\n\n\nA class with more than 50 weighted methods is considered violation for this QR.",
     "reference": "PHPMD http://phpmd.org/rules/codesize.html#excessiveclasscomplexity",
     "remediation": "Modify the source code of the class to reduce the number of weighted methods.",
-    "sample": "class CastTest\n{\n public function test1()\n {\n\n  if ($a == $b)\n  {\n   if ($a1 == $b1)\n   {\n    test();\n\n   }\n   else if ($a2 == $b2)\n   {\n    test();\n   }\n\n   else {\n   }\n  }\n }\n\n public function test2()\n\n {\n  if ($a == $b)\n  {\n   if ($a1 == $b1)\n   {\n\ntest();\n   }\n   else if ($a2 == $b2)\n   {\n    test();\n\n}\n   else { }\n  }\n }\n // Several other complex methods\n}",
     "total": "Number of Classes",
     "businessCriteria": [
         {

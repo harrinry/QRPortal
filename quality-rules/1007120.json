@@ -1,15 +1,16 @@
 {
     "id": 1007120,
     "type": "quality-rule",
-    "name": "Avoid Sections with Group By (PHP)",
+    "name": "Avoid artifacts with Group By sql statement (PHP)",
     "href": "quality-rules/1007120.json",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the Sections using a Group By.",
-    "output": "This report lists all sections using a Group By.\n\nThis QR provides the following information:\nSection full name.",
+    "description": "This rule searches for all the Sections using a Group By sql statement. Artifacts considered for this quality rule  is php section, method, function and constructor.",
+    "output": "This report lists all artifacts using a Group By sql statement.\n\nThis QR provides the following information:\n- Artifact full name.",
     "rationale": "Using complex queries in Artifacts can cause performance problems. Queries using Group By are considered complex and inefficient.",
-    "remediation": "Modify the source code to reduce the number of Sections using Group By.",
-    "total": "Number of Sections",
+    "remediation": "Modify the source code to reduce the number of Sections using Group By sql statement.",
+    "sample": "<?php\n \n$query =  \"SELECT column1, column2, column3, count(column4)\n  FROM aTable\nGROUP\n    BY column1, column2, column3\";\n \n?>",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,
