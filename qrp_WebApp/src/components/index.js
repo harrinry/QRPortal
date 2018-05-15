@@ -10,6 +10,7 @@ export { default as Sources } from './elements/sources/index';
 export { default as AIPSources } from './elements/sources/aip/aip';
 export { default as BodyElementSources } from './body/bodyElementSources';
 export { EXTENTIONICONS } from './elements/sources/extentionIcons';
+export { EXTENTIONNAMES } from './elements/sources/extentionNames';
 
 /* Overlay dedicated UI components */
 export { default as StaticOverlay} from './overlay/main';
