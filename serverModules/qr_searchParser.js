@@ -12,10 +12,11 @@ let index = {
   qualityStandards: []
 };
 
-function convertToSearchString ( dataObject ) {
+function convertToSearchString ( dataObject, fileName ) {
   return {
     id: dataObject.id,
     name: dataObject.name,
+    href: 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: dataObject.technologies,
     resString: dataObject.technologies.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
@@ -32,7 +33,13 @@ function convertQsToSearchIndex( dataObject, par ){
 }
 
 function SearchIndex( query, indexDef ){
-  return search( query, index[ indexDef ], ( e ) => e.searchid );
+  switch (indexDef) {
+  case 'qualityRules':
+    return search( query, index[ indexDef ], ( e ) => e.searchid );
+  case 'qualityStandards':
+    return index.qualityStandards.find( e => e.id === query );
+  }
+  
   /*return res.map( e => {
     filter(e.technologies);
     return JSON.stringify(e);
@@ -60,7 +67,7 @@ const QSinitializationTest = () => {
 /* initialization */
 (function (){
   glob( rulesDir, ( fileName, contents, i ) => {
-    const searchString = convertToSearchString( contents );
+    const searchString = convertToSearchString( contents, fileName );
     index.qualityRules[i] = searchString ;
   }, ( err ) => {
     throw err;
