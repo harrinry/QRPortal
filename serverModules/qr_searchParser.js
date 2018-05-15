@@ -12,10 +12,11 @@ let index = {
   qualityStandards: []
 };
 
-function convertToSearchString ( dataObject ) {
+function convertToSearchString ( dataObject, fileName ) {
   return {
     id: dataObject.id,
     name: dataObject.name,
+    href: 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: dataObject.technologies,
     resString: dataObject.technologies.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
@@ -66,7 +67,7 @@ const QSinitializationTest = () => {
 /* initialization */
 (function (){
   glob( rulesDir, ( fileName, contents, i ) => {
-    const searchString = convertToSearchString( contents );
+    const searchString = convertToSearchString( contents, fileName );
     index.qualityRules[i] = searchString ;
   }, ( err ) => {
     throw err;

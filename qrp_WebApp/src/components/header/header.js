@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY} from '../index';
+import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS} from '../index';
 
 export default class Header extends React.Component{
   constructor(props){
@@ -64,6 +64,7 @@ export default class Header extends React.Component{
       {data.map( e => {
         return e.resString.map( (res, index) => <BodyElement key={res + index} value={res} onclick={()=> {
           Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);
+          Radio.emit( lOADDETAILS, e.href);
           Radio.emit( HIDEOVERLAY );
         }} id={e.id} />);
       })}
