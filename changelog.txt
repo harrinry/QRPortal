@@ -1,0 +1,188 @@
+0.3.15 :
+  - slide down is now available for quality standards without impacting the slide down menu.
+  - tentative CSS added
+
+0.3.14 :
+  - fixed technologies Component infinite re-render issue
+  - fixed issue causing multiple file api requests to contain other multiple file api requests.
+  - server now removes duplicate values in case of multiple file api requests
+  - added filter parameter for multiple file api requests, in order to create filters based on selected parameters, defaults to 'id'
+  - Tentative CSS changes, technology block transitions
+0.3.13 : 
+  - added technologies filters
+  - added multiple file api requests
+  - updated client side hitory api handling to handle new features
+
+0.3.12 :
+  - server.js :
+    - Added RegEx qualifiers to determine query routes ( temporary )
+
+0.3.11 :
+  - qrp_WebApp :
+    - implemented Client side query string rendering from history API
+
+0.3.10 :
+  - QRPortal : 
+    - Fixed bad json route for CISQ quality standards
+  - qrp_WebApp : 
+    - Components: 
+      - Technologies now load in details view
+      - Header Component now produces a back button when viewing the rules list
+      - RulesDetails is now cleared when exiting rule list view
+      - Added RulesList selected state, tentative behaviour
+    - CSS:
+      - added tentative rules to mimic desired component behaviour
+  - Server :
+    - added route to manage missing json files for quality-standards in QRPortal
+    
+0.3.9 : 
+  - qrp_WebApp : 
+    - Components : 
+      - Standards: 
+        - updated to follow new JSON structure (partial WIP)
+
+  - server :
+    - added helmet for internet security
+    - added cors to allow x-site access
+    - disabled "EVIL" headers
+
+0.3.8 : 
+  - qrp_WebApp : 
+    - Components : 
+      - RulesList / Details : 
+        - RulesList pure component added for modularity
+        - RulesBody component added as static hidden element to display details
+        - RulesTitle pure component added for modularity
+        - updated indexed import/export file
+        - RulesContainer component added
+        - RulesDetails pure component added, updated to mirror wireframe provided
+        - Body Component edited for testing
+        - RulesListRowElement component added
+        - updated logic and event handling
+
+    - Modules :
+      - Radio module added to handle multi-level component communication
+    - CSS : 
+      - tentative stylesheet updated to add rules for new Components
+
+0.3.7 : 
+  - qrp_WebApp : 
+    - CSS : 
+      - tentative stylesheet updated to remove user text selection on BodyElement components
+
+0.3.6 :
+  - qrp_WebApp : 
+    - Components : 
+      - Standards :
+        - update matching filter to account for case change for OWASP Standards
+        - update matching filter to account for case change for CISQ Standards
+
+0.3.5 : 
+  - qrp_WebApp : 
+    - Components : 
+      - Standards :
+        - updated index import point
+        - added menu elements for WASP Standards
+        - added menu elements for CISQ Standards
+        - grouped query strings in queries.js
+        - grouped element strings in elements.js
+        - grouped title strings in title.js
+      - BodyElement :
+        - updated to take an additional "title" properly
+      - Technologies :
+        - updated index import point
+    - global : 
+      - updated folder architecture for modularity and clarity
+      - progressive movement of static strings to seperate folders for clarity  
+    - updated entry point, react.html renamed to index.html
+  - server.js :
+    - updated express server to use qrp_WebApp as the default landing page.
+    - static / default / retained /default.html
+    - /root.json is now the main entry point for initial json content
+  - Modules :  
+    - APIQuery updated to meet architechture changes
+
+0.3.4 : 
+  - qrp_WebApp : 
+    - Components : 
+      - BodyElement pure component added for modularity
+      - BodyRow pure component added for modularity
+      - BodyRowScrollX pure component added for modularity
+      - BodyTitle pure component added for modularity
+      - SlidedownMenu Component added for modularity
+      - Standards : 
+        - added tentative classes 
+        - created basic div sctructure 
+        - integration of slidedownmenu component
+        - handling of slidedownmenu visibility state
+      - BodyElement : 
+        - updated to include an optional onclick property 
+        - temporarly added <a href></a> tag for element validation based on server json responses.
+
+    - CSS : 
+      - tentative stylesheet updated to reflect roughly desired layout.
+      - slidedownmenu tentative rules added
+
+0.3.3 :
+  - esLint : 
+    - set as default linter
+    - installed all react plugins for esLint
+  
+  - global : 
+    - updated code cleanliness
+
+  - qrp_WebApp : 
+    - Components : 
+      - Technologies component : 
+        - Updated with a developed structure
+        - added tentative classes
+
+0.3.2 :
+  - package.json : 
+    -scripts :
+      - added build--watch for continuous automated refresh
+      - script "dev" now obsolete, testing requires both start script and build--watch script for continous integration
+    - dependencies : 
+      - axios added to handle server queries from the front-end
+  
+  - qrp_WebApp : 
+    - css :
+      - created a temporary css file to simply act as a rudemetary style setup
+    - Components :
+      - updated Header to take the structure of the wire demo provided
+      - added technologies component to get a full list of technologies from the server and render them
+
+0.3.1 : 
+  - creationg of folder "qrp_WebApp"
+  - installed modules for implementation of a React based front end WebApp
+  
+  - package.json :
+    - scripts :
+      - added build script to run webpack on the react web structure
+      - added test script tests run reqursively through subfolders
+      - state script updated to include nodemon process management on the server runtime
+    - dependencies updated : 
+      - React
+      - React-Dom
+    - dev dependencies updated :
+      - Babel loader
+      - Mocha and Chai has been added to be used as testing libraries.
+      - Webpack has been added as a bundler and dev-server during the construction of the front end interface.
+      - nodemon added for server stability, and process management
+
+  - qrp_WebApp :
+    - Created the basic structure for React App
+    - Created the base Index.html file
+    - setup Webpack to create production package as QRPortal.js in qrp_WebApp base dir
+    - created header test component
+    - created body test component
+
+  - Tests : 
+    - added basic test to assert configuration is working as intended
+
+  - Server.js : 
+    - added new react.html route to act as a non static resource for react frontend
+    - added new QRPortal.js route to supply scripting for the react route as a non static resource
+  
+  - .gitignore :
+    - updated to be more complete
