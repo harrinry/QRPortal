@@ -32,7 +32,13 @@ function convertQsToSearchIndex( dataObject, par ){
 }
 
 function SearchIndex( query, indexDef ){
-  return search( query, index[ indexDef ], ( e ) => e.searchid );
+  switch (indexDef) {
+  case 'qualityRules':
+    return search( query, index[ indexDef ], ( e ) => e.searchid );
+  case 'qualityStandards':
+    return index.qualityStandards.find( e => e.id === query );
+  }
+  
   /*return res.map( e => {
     filter(e.technologies);
     return JSON.stringify(e);

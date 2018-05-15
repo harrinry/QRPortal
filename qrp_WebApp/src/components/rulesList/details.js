@@ -10,7 +10,7 @@ function queryFromTag( tagValue ){
   
   Search(tagValue.id, 'qualityStandards')
     .then( res => {
-      Radio.emit(LOADRULESLIST, res.data[0].resHref, res.data[0].name);
+      Radio.emit(LOADRULESLIST, res.data.resHref, res.data.name);
     });
 }
 
