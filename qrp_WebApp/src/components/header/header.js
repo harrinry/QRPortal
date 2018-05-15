@@ -43,6 +43,7 @@ export default class Header extends React.Component{
     if (key === 'Enter') {
       Search( this.refs.searchInput.value, 'qualityRules' )
         .then(res => this.displaySearchResults(res.data));
+      this.refs.searchInput.value = '';
     }
   }
 
