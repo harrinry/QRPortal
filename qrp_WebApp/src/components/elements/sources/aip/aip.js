@@ -1,5 +1,6 @@
 import React from 'react';
-import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings} from '../../../index';
+import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings, EXTENTIONNAMES} from '../../../index';
+import formatVersionName from '../versionNamePP';
 
 const id = 'AIP_id',
   ClassName = 'bodyElementTechno element-inline',
@@ -27,10 +28,10 @@ export default class AIPSources extends React.Component {
     });
     ref.sort(( a , b ) => a.version - b.version );
     let ret = [];
-    ret[0] = ref.filter( e => (e.version >= 830 && e.version < 840) );
-    ret[1] = ref.filter( e => (e.version >= 820 && e.version < 830) || e.version === 8210 );
-    ret[2] = ref.filter( e => (e.version >= 810 && e.version < 820));
-    ret[3] = ref.filter( e => (e.version >= 800 && e.version < 810));
+    ret[0] = ref.filter( e => (e.version >= 830 && e.version < 840) ).reverse();
+    ret[1] = ref.filter( e => (e.version >= 820 && e.version < 830) || e.version === 8210 ).reverse();
+    ret[2] = ref.filter( e => (e.version >= 810 && e.version < 820)).reverse();
+    ret[3] = ref.filter( e => (e.version >= 800 && e.version < 810)).reverse();
 
     const menuEls = ret.map( e => this.buildOverlayElemnents( e ) );
     return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[1].length,'Select one of the following version:'));
@@ -38,7 +39,7 @@ export default class AIPSources extends React.Component {
 
   buildOverlayElemnents( data ) {
     return (<Column key={JSON.stringify(data)} width={'20%'} textAlign={'left'}>
-      {data.map( e => <BodyElement key={e.id} value={e.name} onclick={()=> {
+      {data.map( e => <BodyElement key={e.id} value={formatVersionName(e.name)} onclick={()=> {
         Radio.emit( LOADRULESLIST, e.href, val.concat(' ', e.name));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
