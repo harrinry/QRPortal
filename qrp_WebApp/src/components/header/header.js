@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY} from '../index';
+import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS} from '../index';
 
 export default class Header extends React.Component{
   constructor(props){
@@ -16,7 +16,6 @@ export default class Header extends React.Component{
         ruleName: techName
       });
     }.bind(this));
-
   }
 
   render(){
@@ -42,25 +41,20 @@ export default class Header extends React.Component{
   handleInput( e ){
     const key = e.key;
     if (key === 'Enter') {
-      Search( this.refs.searchInput.value )
+      Search( this.refs.searchInput.value, 'qualityRules' )
         .then(res => this.displaySearchResults(res.data));
+      this.refs.searchInput.value = '';
     }
   }
 
   displaySearchResults(searchResults){
     const els = this.buildOverlayElemnents( searchResults );
-    let resulttitle = "";
+    let resulttitle = '';
 
-    if(searchResults.length>1)
-    {
-      resulttitle = searchResults.length+" results found";
-    }
-    else if(searchResults.length==1)
-    {
-      resulttitle = "1 result found";
-    }
-    else {
-      resulttitle = "No Rule Found";
+    if(searchResults.length>=1) {
+      resulttitle = searchResults.length+' results found';
+    } else {
+      resulttitle = 'No Rule Found';
     }
 
     Radio.emit( SHOWOVERLAY, dynOvlSettings(els,resulttitle, searchResults.length, 'Select one of the found rules to have more details'));
@@ -71,6 +65,7 @@ export default class Header extends React.Component{
       {data.map( e => {
         return e.resString.map( (res, index) => <BodyElement key={res + index} value={res} onclick={()=> {
           Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);
+          Radio.emit( lOADDETAILS, e.href);
           Radio.emit( HIDEOVERLAY );
         }} id={e.id} />);
       })}

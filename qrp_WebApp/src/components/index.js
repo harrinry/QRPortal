@@ -10,6 +10,7 @@ export { default as Sources } from './elements/sources/index';
 export { default as AIPSources } from './elements/sources/aip/aip';
 export { default as BodyElementSources } from './body/bodyElementSources';
 export { EXTENTIONICONS } from './elements/sources/extentionIcons';
+export { EXTENTIONNAMES } from './elements/sources/extentionNames';
 
 /* Overlay dedicated UI components */
 export { default as StaticOverlay} from './overlay/main';
@@ -50,7 +51,7 @@ export { default as TechnoFilter } from '../modules/filter';
 export { default as Search }  from '../modules/searchQuery';
 
 /* Global Actions */
-export { lOADDETAILS, UNSELECTME, SELECTME } from './rulesList/actions';
+export { lOADDETAILS, UNSELECTME, SELECTME, LISTLENGTH } from './rulesList/actions';
 export { LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
 export { default as ICONURLS } from './elements/technologies/technoIcons';

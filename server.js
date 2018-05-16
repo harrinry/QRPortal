@@ -44,6 +44,10 @@ app.get('/QRPortal.js', (req, res)=> {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
 });
 
+app.get('/QRPortal.js.map', (req, res)=> {
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js.map'));
+});
+
 app.get('/style.css', (req, res)=> {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
 });
@@ -65,8 +69,7 @@ app.get('/mlturl/*', (req, res)=>{
 
 app.get('/search', (req, res)=>{
   const q = req.query;
-  console.log(q);
-  const r = searchIndex( q.s );
+  const r = searchIndex( q.s, q.f );
   res.json(r);
 });
 

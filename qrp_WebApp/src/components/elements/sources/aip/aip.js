@@ -2,7 +2,7 @@ import React from 'react';
 import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings} from '../../../index';
 
 const id = 'AIP_id',
-  ClassName = 'bodyElementTechno element-inline aipbackground',
+  ClassName = 'bodyElementTechno element-inline',
   val ='CAST AIP',
   aipQuery = 'CAST_AIP.json';
 
@@ -27,13 +27,13 @@ export default class AIPSources extends React.Component {
     });
     ref.sort(( a , b ) => a.version - b.version );
     let ret = [];
-    ret[0] = ref.filter( e => (e.version >= 800 && e.version < 810) );
-    ret[1] = ref.filter( e => (e.version >= 810 && e.version < 820));
-    ret[2] = ref.filter( e => (e.version >= 820 && e.version < 830) || e.version === 8210 );
-    ret[3] = ref.filter( e => (e.version >= 830 && e.version < 840));
+    ret[0] = ref.filter( e => (e.version >= 830 && e.version < 840) );
+    ret[1] = ref.filter( e => (e.version >= 820 && e.version < 830) || e.version === 8210 );
+    ret[2] = ref.filter( e => (e.version >= 810 && e.version < 820));
+    ret[3] = ref.filter( e => (e.version >= 800 && e.version < 810));
 
     const menuEls = ret.map( e => this.buildOverlayElemnents( e ) );
-    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[2].length,"Select one of the following version:"));
+    return Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, val, ret[1].length,'Select one of the following version:'));
   }
 
   buildOverlayElemnents( data ) {
