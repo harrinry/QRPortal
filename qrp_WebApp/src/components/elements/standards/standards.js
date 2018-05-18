@@ -52,7 +52,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length,"Select one of the following category:"));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length,'Select one of the following category:'));
     });
   }
 
@@ -67,7 +67,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length,"Select one the following Top Ten:"));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length,'Select one the following Top Ten:'));
     });
   }
 
@@ -82,7 +82,7 @@ export default class Standards extends React.Component {
           return { name: c.name, href: c.href };
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length,"Select one if the following category:"));
+      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length,'Select one if the following category:'));
     });
   }
 
@@ -93,7 +93,7 @@ export default class Standards extends React.Component {
       });
 
     const menuEls = this.buildSlideDownMenuElements( out );
-    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length,"Select one of the following criteria:"));
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls, 'Business Criteria', out.length,'Select one of the following criteria:'));
   }
 
   determineMenuVisibility( nextScope ){

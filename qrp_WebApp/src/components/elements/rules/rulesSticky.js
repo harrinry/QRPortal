@@ -1,5 +1,5 @@
 import React from 'react';
-import { RulesBody, LOADRULESLIST, RETURNTOSTART, Radio, UNSELECTME, UpdateURL} from '../../index';
+import { RulesBody, LOADRULESLIST, RETURNTOSTART, Radio, UNSELECTME, UpdateURL, lOADDETAILS} from '../../index';
 
 
 const localClassName = ['rulesList-container', 'static-overlay'],
@@ -25,12 +25,13 @@ export default class Rules extends React.Component{
   }
 
   LoadRuleList( url, name ){
+    if( url === this.state.rulesHref && name === this.state.title ) return;
     this.setState({
       rulesVisible: true,
       title: name,
       rulesHref: url,
     });
-
+    Radio.emit(lOADDETAILS);
     UpdateURL(url, name);
   }
 
@@ -40,8 +41,7 @@ export default class Rules extends React.Component{
       <RulesBody visible={this.state.rulesVisible} 
         icon={this.state.title} 
         title={this.state.title ? this.state.title.replace(safeSpace, ' ') : undefined}
-        href={this.state.rulesHref}
-        details={this.state.details}/>
+        href={this.state.rulesHref}/>
     );
   }
 

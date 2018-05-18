@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, APIQuery, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY} from '../../index';
+import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, APIQuery, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, EXTENTIONNAMES} from '../../index';
+import formatVersionName from './versionNamePP';
 
 export default class Sources extends React.Component{
   constructor(props){
@@ -61,12 +62,12 @@ export default class Sources extends React.Component{
       };
     });
     const menuEls = this.buildOverlayElemnents( ref, name );
-    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, name, ref.length,"Select one of the following version:"));
+    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, EXTENTIONNAMES[name], ref.length,'Select one of the following version:'));
   }
 
   buildOverlayElemnents( data, name ){
     return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
-      {data.map( e => <BodyElement key={e.id + name} value={e.name} onclick={()=> {
+      {data.map( e => <BodyElement key={e.id + name} value={formatVersionName(e.name)} onclick={()=> {
         Radio.emit( LOADRULESLIST, e.href, name);
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
