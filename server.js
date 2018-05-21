@@ -1,6 +1,8 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 const UNIQ = require('./serverModules/uniq');
+const fs = require('fs');
+const readJsonFile = require('./serverModules/readFile');
 // cors
 const cors = require('cors');
 
@@ -71,6 +73,21 @@ app.get('/search', (req, res)=>{
   const q = req.query;
   const r = searchIndex( q.s, q.f );
   res.json(r);
+});
+
+app.get('/about', (req,res)=>{
+  fs.readFile( './LICENSE', 'utf8', ( err, fileContents ) => {
+    if ( err ) {
+      console.log( err );
+      res.status(500).send({error: 'a problem occured'});
+    }
+    readJsonFile( 'package.json', (fileName, jsonData ) =>{
+      res.json({licence: fileContents, version: jsonData.version});
+    }, undefined, (e) => {
+      console.log( e );
+      res.status(500).send({error: 'a problem occured'});
+    });
+  });
 });
 
 // ------------------------ End of React Routes ------------------------------ //
