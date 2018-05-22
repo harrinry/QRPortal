@@ -11,6 +11,9 @@ const helmet = require('helmet');
 
 const searchIndex = require('./serverModules/qr_searchParser');
 
+// rest dir base 
+const restDir = path.resolve('./rest/');
+
 var port = process.env.PORT || 8080;
 
 var app = express();
@@ -43,26 +46,26 @@ app.get('/', function(req, res) {
 });
 
 app.get('/QRPortal.js', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/QRPortal.js'));
 });
 
 app.get('/QRPortal.js.map', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js.map'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/QRPortal.js.map'));
 });
 
 app.get('/style.css', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/src/css/style.css'));
 });
 
 app.get('/img/*', (req, res)=>{
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/src' + req.url));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/src' + req.url));
 });
 
 app.get('/mlturl/*', (req, res)=>{
   const q = req.query;
   let r = undefined;
   if( q.hasOwnProperty('u') ){
-    const arr = q.u.map( u => require( path.join( __dirname, u)));
+    const arr = q.u.map( u => require( path.join( __dirname, restDir, u)));
     r = [].concat(...arr);
   }
   const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
@@ -95,17 +98,17 @@ app.get('/about', (req,res)=>{
 // ----------------------------- Global API routes ---------------------------- //
 
 app.get(/^\/[A-a-z-]+.json/i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname, restDir, req.url));
 });
 
 app.get(/\/[A-a-z-]+\//i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname, restDir, req.url));
 });
 
 // ---------------------------------------------------------------------------- //
 
 app.get('/default.html', function(req, res) {
-  res.sendFile(path.join(__dirname + '/static/'));
+  res.sendFile(path.join(__dirname, '/static/'));
 });
 
 app.listen(port, function() {
