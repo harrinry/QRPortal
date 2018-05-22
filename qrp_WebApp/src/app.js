@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { StaticOverlay, Header, Body, ParseQueryString, Radio, LOADRULESLIST/*, lOADDETAILS, SELECTME */} from './components/index';
-import { createStore } from 'redux';
-import { connect } from 'react-redux';
+import { Provider } from 'react-redux';
 class App extends React.Component {
 
   componentDidMount(){
