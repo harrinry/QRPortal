@@ -3,6 +3,12 @@ const path = require('path');
 const UNIQ = require('./serverModules/uniq');
 const fs = require('fs');
 const readJsonFile = require('./serverModules/readFile');
+
+/*
+// google analytics back-end
+const got = require('got');
+const GA_TRACKING_ID = process.env.GA_TRACKING_ID || 'UA-119529646-1';
+*/
 // cors
 const cors = require('cors');
 
