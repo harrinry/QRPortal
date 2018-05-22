@@ -10,8 +10,11 @@ class App extends React.Component {
     if (!url) return;
     if (url.search === '') return;
     const qryParams = ParseQueryString( url.search );
-    const { rlH, rlName/*, rlDH */} = qryParams;
-    Radio.emit( LOADRULESLIST, rlH, rlName );
+    const { rlH/*, rlName/*, rlDH */} = qryParams;
+
+    
+
+    Radio.emit( LOADRULESLIST, rlH/*, rlName */);
     /*if ( rlDH ){
       Radio.emit( lOADDETAILS, rlDH );
       Radio.emit( SELECTME, rlDH );

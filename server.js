@@ -3,7 +3,7 @@ const path = require('path');
 const UNIQ = require('./serverModules/uniq');
 const fs = require('fs');
 const readJsonFile = require('./serverModules/readFile');
-
+const technoMapping = require('./serverModules/technologies-map');
 /*
 // google analytics back-end
 const got = require('got');
@@ -65,6 +65,18 @@ app.get('/style.css', (req, res)=> {
 
 app.get('/img/*', (req, res)=>{
   res.sendFile(path.join(__dirname, '/qrp_WebApp/src' + req.url));
+});
+
+app.get('/technologies.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( technoMapping );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
 });
 
 app.get('/mlturl/*', (req, res)=>{
