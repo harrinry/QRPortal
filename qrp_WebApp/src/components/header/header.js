@@ -82,15 +82,12 @@ export default class Header extends React.Component{
 
   loadAbout(){
     if (this.state.backButton === 'visible') return ;
+    const title = 'About CAST Structural Rules';
     APIQuery('about', ( res ) => {
       const aboutContent = this.aboutOverlayElements(res.data);
-      const title = 'About CAST QRPortal';
-
       Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
     }, (err)=>{
-      const aboutContent = <p>{err.error}</p>;
-      const title = 'About CAST QRPortal';
-
+      const aboutContent = <p>{err}</p>;
       Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
     });
   }
@@ -100,7 +97,7 @@ export default class Header extends React.Component{
       <h2>LICENSE</h2>
       <p>{data.licence}</p>
       <br/>
-      <p><strong>QR Portal build : </strong>{ data.version }</p>
+      <p><strong>CAST Structural Rules build : </strong>{ data.version }</p>
     </Column>);
   }
 }
