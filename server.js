@@ -78,11 +78,11 @@ app.get('/search', (req, res)=>{
 // ----------------------------- Global API routes ---------------------------- //
 
 app.get(/^\/[A-a-z-]+.json/i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname + "/rest/" + req.url));
 });
 
 app.get(/\/[A-a-z-]+\//i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname + "/rest/" + req.url));
 });
 
 // ---------------------------------------------------------------------------- //
