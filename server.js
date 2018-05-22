@@ -18,7 +18,7 @@ const helmet = require('helmet');
 const searchIndex = require('./serverModules/qr_searchParser');
 
 // rest dir base 
-const restDir = path.resolve('./rest/');
+const restDir = path.basename('./rest/');
 
 var port = process.env.PORT || 8080;
 

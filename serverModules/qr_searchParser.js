@@ -1,6 +1,6 @@
 const glob = require('./glob');
 const path = require('path');
-const rootMetricsDir  = "rest/";
+const rootMetricsDir  = 'rest/';
 const rulesDir = path.resolve('rest/quality-rules');
 const search = require('./search');
 const filter = require('./filters');
