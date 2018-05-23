@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StaticOverlay, Header, Body, ParseQueryString, Radio, LOADRULESLIST/*, lOADDETAILS, SELECTME */} from './components/index';
+import { StaticOverlay, Header, Body, ParseQueryString, Radio, LOADRULESLIST, GetTitleFromURL/*, lOADDETAILS, SELECTME */} from './components/index';
 
 class App extends React.Component {
 
@@ -12,9 +12,10 @@ class App extends React.Component {
     const qryParams = ParseQueryString( url.search );
     const { rlH/*, rlName/*, rlDH */} = qryParams;
 
-    
+    GetTitleFromURL( rlH, 
+      ( title ) => Radio.emit( LOADRULESLIST, rlH, title ), 
+      ( err ) => console.log('An error occured while trying to load this url'));
 
-    Radio.emit( LOADRULESLIST, rlH/*, rlName */);
     /*if ( rlDH ){
       Radio.emit( lOADDETAILS, rlDH );
       Radio.emit( SELECTME, rlDH );

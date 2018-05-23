@@ -49,6 +49,7 @@ export { default as MultiQuery } from '../modules/multiURLQueryBuilder';
 export { default as isStandard } from '../modules/isCISQorOWASP';
 export { default as TechnoFilter } from '../modules/filter';
 export { default as Search }  from '../modules/searchQuery';
+export { default as GetTitleFromURL} from '../modules/urlCategory';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME, SELECTME, LISTLENGTH } from './rulesList/actions';

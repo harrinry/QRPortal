@@ -1,7 +1,7 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import filter from '../../src/modules/filter';
-import technos from '../../../technologies.json';
+import filter from '../../../serverModules/filters';
+import technos from '../../../rest/technologies.json';
 describe('filter module for technologies', () => {
   it('should return a new array with merged values', () => {
     const filteredResults = filter( technos );
@@ -30,12 +30,7 @@ describe('filter module for technologies', () => {
       {
         id: -13,
         name: 'SQL Server',
-        href: 'technologies/-13.json'
-      },
-      {
-        id: 140998,
-        name: 'Microsoft T-SQL',
-        href: 'technologies/140998.json'
+        href: '/mlturl/?u=technologies/-13.json&u=technologies/140998.json&f=id'
       },
       {
         id: 141001,
@@ -84,8 +79,8 @@ describe('filter module for technologies', () => {
       },
       {
         id: -15,
-        name: 'ABAP',
-        href: 'technologies/-15.json'
+        name: 'SAP',
+        href: '/mlturl/?u=technologies/-15.json&u=technologies/-20.json&f=id'
       },
       {
         id: 0,
@@ -113,11 +108,6 @@ describe('filter module for technologies', () => {
         href: 'technologies/1021000.json'
       },
       {
-        id: -20,
-        name: 'SAP SQL',
-        href: 'technologies/-20.json'
-      },
-      {
         id: 1050001,
         name: 'Objective-C',
         href: 'technologies/1050001.json'
@@ -125,12 +115,7 @@ describe('filter module for technologies', () => {
       {
         id: 1004000,
         name: 'PLI',
-        href: 'technologies/1004000.json'
-      },
-      {
-        id: 1005000,
-        name: 'PLC',
-        href: 'technologies/1005000.json'
+        href: '/mlturl/?u=technologies/1004000.json&u=technologies/1005000.json&f=id'
       },
       {
         id: 1006000,
