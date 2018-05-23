@@ -1,5 +1,5 @@
 export default function dynamicOverlaySettings( children, title, elementCount, sectiontitle, width, bgColor ){
-  let heightCalc = elementCount * 32 + 20;
+  let heightCalc = elementCount * 34 + 20;
   if ( heightCalc < 250 ) heightCalc = 250;
 
   return {
