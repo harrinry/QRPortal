@@ -1,6 +1,14 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 const UNIQ = require('./serverModules/uniq');
+const fs = require('fs');
+const readJsonFile = require('./serverModules/readFile');
+
+/*
+// google analytics back-end
+const got = require('got');
+const GA_TRACKING_ID = process.env.GA_TRACKING_ID || 'UA-119529646-1';
+*/
 // cors
 const cors = require('cors');
 
@@ -8,6 +16,9 @@ const cors = require('cors');
 const helmet = require('helmet');
 
 const searchIndex = require('./serverModules/qr_searchParser');
+
+// rest dir base 
+const restDir = path.basename('./rest/');
 
 var port = process.env.PORT || 8080;
 
@@ -41,26 +52,26 @@ app.get('/', function(req, res) {
 });
 
 app.get('/QRPortal.js', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/QRPortal.js'));
 });
 
 app.get('/QRPortal.js.map', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/QRPortal.js.map'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/QRPortal.js.map'));
 });
 
 app.get('/style.css', (req, res)=> {
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/src/css/style.css'));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/src/css/style.css'));
 });
 
 app.get('/img/*', (req, res)=>{
-  res.sendFile(path.join(__dirname + '/qrp_WebApp/src' + req.url));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/src' + req.url));
 });
 
 app.get('/mlturl/*', (req, res)=>{
   const q = req.query;
   let r = undefined;
   if( q.hasOwnProperty('u') ){
-    const arr = q.u.map( u => require( path.join( __dirname, u)));
+    const arr = q.u.map( u => require( path.join( __dirname, restDir, u)));
     r = [].concat(...arr);
   }
   const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
@@ -73,22 +84,37 @@ app.get('/search', (req, res)=>{
   res.json(r);
 });
 
+app.get('/about', (req,res)=>{
+  fs.readFile( './LICENSE', 'utf8', ( err, fileContents ) => {
+    if ( err ) {
+      console.log( err );
+      res.status(500).send({error: 'a problem occured'});
+    }
+    readJsonFile( 'package.json', (fileName, jsonData ) =>{
+      res.json({licence: fileContents, version: jsonData.version});
+    }, undefined, (e) => {
+      console.log( e );
+      res.status(500).send({error: 'a problem occured'});
+    });
+  });
+});
+
 // ------------------------ End of React Routes ------------------------------ //
 
 // ----------------------------- Global API routes ---------------------------- //
 
 app.get(/^\/[A-a-z-]+.json/i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname, restDir, req.url));
 });
 
 app.get(/\/[A-a-z-]+\//i, function(req, res) {
-  res.sendFile(path.join(__dirname + req.url));
+  res.sendFile(path.join(__dirname, restDir, req.url));
 });
 
 // ---------------------------------------------------------------------------- //
 
 app.get('/default.html', function(req, res) {
-  res.sendFile(path.join(__dirname + '/static/'));
+  res.sendFile(path.join(__dirname, '/static/'));
 });
 
 app.listen(port, function() {

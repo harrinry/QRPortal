@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS} from '../index';
+import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS, APIQuery} from '../index';
 
 export default class Header extends React.Component{
   constructor(props){
@@ -22,7 +22,7 @@ export default class Header extends React.Component{
     return (
       <div className='fixedTop header'>
         <div className='left menu-container'>
-          <div className='menu-icon square30 borderWhite'>
+          <div className='menu-icon square30 borderWhite pointerOnHover' onClick={this.loadAbout.bind(this)}>
             <div className={this.state.backButton}><button type='button' onClick={this.returnToMain.bind(this)}></button></div>
           </div>
           <div className='hidden menu-elements'></div>
@@ -61,7 +61,7 @@ export default class Header extends React.Component{
   }
 
   buildOverlayElemnents( data ){
-    return (<Column key={0} width={'100%'} textAlign={'left'}>
+    return (<Column key={0} width={'97%'} textAlign={'left'}>
       {data.map( e => {
         return e.resString.map( (res, index) => <BodyElement key={res + index} value={res} onclick={()=> {
           Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);
@@ -78,5 +78,26 @@ export default class Header extends React.Component{
       ruleName: undefined
     });
     return Radio.emit(RETURNTOSTART);
+  }
+
+  loadAbout(){
+    if (this.state.backButton === 'visible') return ;
+    const title = 'About CAST Structural Rules';
+    APIQuery('about', ( res ) => {
+      const aboutContent = this.aboutOverlayElements(res.data);
+      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
+    }, (err)=>{
+      const aboutContent = <p>{err}</p>;
+      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
+    });
+  }
+
+  aboutOverlayElements( data ){
+    return (<Column key={0} width={'97%'} textAlign={'left'}>
+      <h2>LICENSE</h2>
+      <p>{data.licence}</p>
+      <br/>
+      <p><strong>CAST Structural Rules build : </strong>{ data.version }</p>
+    </Column>);
   }
 }

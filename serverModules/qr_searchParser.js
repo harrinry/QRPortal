@@ -1,9 +1,10 @@
 const glob = require('./glob');
 const path = require('path');
-const rulesDir = path.basename('../quality-rules');
+const rootMetricsDir  = 'rest/';
+const rulesDir = path.resolve('rest/quality-rules');
 const search = require('./search');
 const filter = require('./filters');
-const QS = require('../quality-standards.json');
+const QS = require('../rest/quality-standards.json');
 
 const readJsonFile = require('../serverModules/readFile');
 
@@ -77,9 +78,9 @@ const QSinitializationTest = () => {
   });
   let qsi = 0;
   QS.forEach((std) => {
-    readJsonFile(std.href, ( name, content ) => {
+    readJsonFile(rootMetricsDir + std.href, ( name, content ) => {
       content.forEach( fLink => {
-        readJsonFile( fLink.href, ( n, c ) => {
+        readJsonFile( rootMetricsDir + fLink.href, ( n, c ) => {
           c.forEach( o => {
             const indexObj = convertQsToSearchIndex( o, fLink );
             index.qualityStandards[qsi++] = indexObj;
