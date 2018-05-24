@@ -10,7 +10,23 @@ describe('filter module for technologies', () => {
       {
         id: 1050571,
         name: 'C/C++',
-        href: '/mlturl/?u=technologies/-3.json&u=technologies/-2.json&u=technologies/1050571.json&f=id'
+        href: '/mlturl/?u=technologies/-3.json&u=technologies/-2.json&u=technologies/1050571.json&f=id',
+        glob: [
+          {
+            href: 'technologies/-3.json',
+            id: -3,
+            name: 'C++'
+          },
+          {
+            href: 'technologies/-2.json',
+            id: -2,
+            name: 'C'
+          },
+          {
+            href: 'technologies/1050571.json',
+            id: 1050571,
+            name: 'C/C++'
+          }]
       },
       {
         id: 139287,
@@ -30,7 +46,18 @@ describe('filter module for technologies', () => {
       {
         id: -13,
         name: 'SQL Server',
-        href: '/mlturl/?u=technologies/-13.json&u=technologies/140998.json&f=id'
+        href: '/mlturl/?u=technologies/-13.json&u=technologies/140998.json&f=id',
+        glob: [
+          {
+            id: -13,
+            name: 'SQL Server',
+            href: 'technologies/-13.json'
+          },
+          {
+            id: 140998,
+            name: 'Microsoft T-SQL',
+            href: 'technologies/140998.json'
+          }]
       },
       {
         id: 141001,
@@ -80,7 +107,17 @@ describe('filter module for technologies', () => {
       {
         id: -15,
         name: 'SAP',
-        href: '/mlturl/?u=technologies/-15.json&u=technologies/-20.json&f=id'
+        href: '/mlturl/?u=technologies/-15.json&u=technologies/-20.json&f=id',
+        glob: [{
+          id: -15,
+          name: 'ABAP',
+          href: 'technologies/-15.json'
+        },
+        {
+          id: -20,
+          name: 'SAP SQL',
+          href: 'technologies/-20.json'
+        }]
       },
       {
         id: 0,
@@ -93,14 +130,18 @@ describe('filter module for technologies', () => {
         href: 'technologies/-23.json'
       },
       {
-        id: 138663,
-        name: 'JavaScript',
-        href: 'technologies/138663.json'
-      },
-      {
         id: 1020000,
-        name: 'HTML5',
-        href: 'technologies/1020000.json'
+        name: 'HTML5 JavaScript',
+        href: '/mlturl/?u=technologies/138663.json&u=technologies/1020000.json&f=id',
+        glob: [{
+          id: 138663,
+          name: 'JavaScript',
+          href: 'technologies/138663.json'
+        },{
+          id: 1020000,
+          name: 'HTML5',
+          href: 'technologies/1020000.json',
+        }]
       },
       {
         id: 1021000,
@@ -115,7 +156,17 @@ describe('filter module for technologies', () => {
       {
         id: 1004000,
         name: 'PLI',
-        href: '/mlturl/?u=technologies/1004000.json&u=technologies/1005000.json&f=id'
+        href: '/mlturl/?u=technologies/1004000.json&u=technologies/1005000.json&f=id',
+        glob: [{
+          id: 1004000,
+          name: 'PLI',
+          href: 'technologies/1004000.json'
+        },
+        {
+          id: 1005000,
+          name: 'PLC',
+          href: 'technologies/1005000.json'
+        }]
       },
       {
         id: 1006000,
@@ -145,7 +196,27 @@ describe('filter module for technologies', () => {
       {
         id: 1008000,
         name: 'RPG',
-        href: '/mlturl/?u=technologies/1008000.json&u=technologies/1009000.json&u=technologies/1011000.json&u=technologies/1012000.json&f=id'
+        href: '/mlturl/?u=technologies/1008000.json&u=technologies/1009000.json&u=technologies/1011000.json&u=technologies/1012000.json&f=id',
+        glob:[{
+          id: 1008000,
+          name: 'RPG400',
+          href: 'technologies/1008000.json'
+        },
+        {
+          id: 1009000,
+          name: 'RPG300',
+          href: 'technologies/1009000.json'
+        },
+        {
+          id: 1011000,
+          name: 'DDS400',
+          href: 'technologies/1011000.json'
+        },
+        {
+          id: 1012000,
+          name: 'CL400',
+          href: 'technologies/1012000.json'
+        }]
       },
       {
         id: 1018000,
