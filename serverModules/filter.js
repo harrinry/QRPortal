@@ -5,9 +5,16 @@ const filters = {
   pli: [1004000, 1005000],
   mssql: [-13,140998],
   sap: [-15,-20],
+  html5js: [138663, 1020000]
 };
 
-filters.all = [].concat(...filters.cpp, ...filters.dotNet, ...filters.rpg, ...filters.pli, ...filters.mssql, ...filters.sap);
+filters.all = [].concat(...filters.cpp, 
+  ...filters.dotNet, 
+  ...filters.rpg, 
+  ...filters.pli, 
+  ...filters.mssql, 
+  ...filters.sap, 
+  ...filters.html5js);
 
 
 module.exports = filters;

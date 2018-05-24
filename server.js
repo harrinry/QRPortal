@@ -47,8 +47,12 @@ app.use(express.static('static'));
 
 // ---------------------- React Front End Routes ------------------------------ //
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/index.html'));
+});
+
+app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/googleda2a1d9b51c2edfd.html'));
 });
 
 app.get('/QRPortal.js', (req, res)=> {
@@ -63,8 +67,12 @@ app.get('/style.css', (req, res)=> {
   res.sendFile(path.join(__dirname, '/qrp_WebApp/src/css/style.css'));
 });
 
+app.get('/favicon.ico', (req, res)=> {
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/favicon/favicon32.png'));
+});
+
 app.get('/img/*', (req, res)=>{
-  res.sendFile(path.join(__dirname, '/qrp_WebApp/src' + req.url));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp' + req.url));
 });
 
 app.get('/technologies.json', (req, res) => {

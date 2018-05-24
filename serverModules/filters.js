@@ -2,6 +2,14 @@
 const filters = require('./filter');
 const MultiQuery = require('./multiqueryurl');
 
+function isHTMLJS( id ){
+  return filters.html5js.indexOf( id ) === -1 ? false : true;
+}
+
+function getHTMLJSEntries( arr ){
+  return arr.filter( en => isHTMLJS(en.id));
+}
+
 function isCPP( id ){
   return filters.cpp.indexOf( id ) === -1 ? false : true;
 }
@@ -48,7 +56,7 @@ function isPure( id ){
 
 module.exports = function filter( arr ){
   const ID = 'id';
-  let cpp, dotNet, rpm, pli, mssql, sap;
+  let cpp, dotNet, rpm, pli, mssql, sap, html5js;
 
   const filtered = arr.map( e => {
     const idx = isPure( e.id );
@@ -105,6 +113,15 @@ module.exports = function filter( arr ){
         ret.id = filters.sap[0];
         ret.href = newHref;
         ret.name = 'SAP';
+        ret.glob = us;
+      } else if ( idx > 11 && idx <= 13 && !html5js) {
+        html5js = true;
+        const us = getHTMLJSEntries( arr );
+        const urls = us.map( a => a.href );
+        const newHref = MultiQuery( ID, ...urls );
+        ret.id = filters.html5js[0];
+        ret.href = newHref;
+        ret.name = 'HTML5 JavaScript';
         ret.glob = us;
       } else {
         return;
