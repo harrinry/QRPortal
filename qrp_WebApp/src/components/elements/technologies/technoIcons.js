@@ -2,7 +2,7 @@ const ICONURLS = {
 
   jee:'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.jee.png',
   html5:'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.html5.png',
-
+  'html5 javascript':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.html5.png',
   'objective-c':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.objective-c.png',
   'pl/sql':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.oracleplsql.png',
   'forms':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.forms.png',

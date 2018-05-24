@@ -2,6 +2,14 @@
 const filters = require('./filter');
 const MultiQuery = require('./multiqueryurl');
 
+function isHTMLJS( id ){
+  return filters.html5js.indexOf( id ) === -1 ? false : true;
+}
+
+function getHTMLJSEntries( arr ){
+  return arr.filter( en => isHTMLJS(en.id));
+}
+
 function isCPP( id ){
   return filters.cpp.indexOf( id ) === -1 ? false : true;
 }
@@ -48,21 +56,25 @@ function isPure( id ){
 
 module.exports = function filter( arr ){
   const ID = 'id';
-  let cpp, dotNet, rpm, pli, mssql, sap;
+  let cpp, dotNet, rpm, pli, mssql, sap, html5js;
 
   const filtered = arr.map( e => {
     const idx = isPure( e.id );
-
+    let ret = {
+      id: e.id,
+      href: e.href,
+      name: e.name
+    };
     if (idx !== -1) {
       if (idx < 3 && !cpp) {
         cpp = true;
         const cppus = getCppEntries( arr );
         const urls = cppus.map( a => a.href );
         const newHref = MultiQuery( ID, ...urls );
-        e.id = filters.cpp[2];
-        e.href = newHref;
-        e.name = 'C/C++';
-        return e;
+        ret.id = filters.cpp[2];
+        ret.href = newHref;
+        ret.name = 'C/C++';
+        ret.glob = cppus;
       } else if( idx === 3 && !dotNet){
         dotNet = true;
         return;
@@ -71,38 +83,51 @@ module.exports = function filter( arr ){
         const us = getRPGEntries( arr );
         const urls = us.map( a => a.href );
         const newHref = MultiQuery( ID, ...urls );
-        e.id = filters.rpg[0];
-        e.href = newHref;
-        e.name = 'RPG';
+        ret.id = filters.rpg[0];
+        ret.href = newHref;
+        ret.name = 'RPG';
+        ret.glob = us;
       } else if ( idx > 7 && idx <= 9 && !pli ) {
         pli = true;
         const us = getPLIEntries( arr );
         const urls = us.map( a => a.href );
         const newHref = MultiQuery( ID, ...urls );
-        e.id = filters.pli[0];
-        e.href = newHref;
-        e.name = 'PLI';
+        ret.id = filters.pli[0];
+        ret.href = newHref;
+        ret.name = 'PLI';
+        ret.glob = us;
       } else if ( idx > 9 && idx <= 11 && !mssql ) {
         mssql = true;
         const us = getMSSQLEntries( arr );
         const urls = us.map( a => a.href );
         const newHref = MultiQuery( ID, ...urls );
-        e.id = filters.mssql[0];
-        e.href = newHref;
-        e.name = 'SQL Server';
+        ret.id = filters.mssql[0];
+        ret.href = newHref;
+        ret.name = 'SQL Server';
+        ret.glob = us;
       } else if ( idx > 11 && idx <= 13 && !sap ) {
         sap = true;
         const us = getSAPEntries( arr );
         const urls = us.map( a => a.href );
         const newHref = MultiQuery( ID, ...urls );
-        e.id = filters.sap[0];
-        e.href = newHref;
-        e.name = 'SAP';
+        ret.id = filters.sap[0];
+        ret.href = newHref;
+        ret.name = 'SAP';
+        ret.glob = us;
+      } else if ( idx > 11 && idx <= 13 && !html5js) {
+        html5js = true;
+        const us = getHTMLJSEntries( arr );
+        const urls = us.map( a => a.href );
+        const newHref = MultiQuery( ID, ...urls );
+        ret.id = filters.html5js[0];
+        ret.href = newHref;
+        ret.name = 'HTML5 JavaScript';
+        ret.glob = us;
       } else {
         return;
       }
     }
-    return e;
+    return ret;
   });
 
   return filtered.filter( ele => ele !== undefined );
