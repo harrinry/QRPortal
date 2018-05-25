@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { StaticOverlay, Header, Body, ParseQueryString, Radio, LOADRULESLIST, GetTitleFromURL/*, lOADDETAILS, SELECTME */} from './components/index';
+import { Provider } from 'react-redux';
 
 class App extends React.Component {
 
