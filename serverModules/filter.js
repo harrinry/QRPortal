@@ -1,11 +1,11 @@
 const filters = {
-  cpp: [ -2, -3, 1050571 ],
+  cpp: [ 1050571, -2, -3 ],
   dotNet: [141901],
   rpg: [1008000, 1009000, 1011000, 1012000],
   pli: [1004000, 1005000],
   mssql: [-13,140998],
   sap: [-15,-20],
-  html5js: [138663, 1020000]
+  html5js: [1020000, 138663]
 };
 
 filters.all = [].concat(...filters.cpp, 
@@ -16,5 +16,6 @@ filters.all = [].concat(...filters.cpp,
   ...filters.sap, 
   ...filters.html5js);
 
+filters.pure = ( id ) => filters.all.indexOf( id ) === -1 ? true : false;
 
 module.exports = filters;

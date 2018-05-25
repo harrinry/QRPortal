@@ -1,5 +1,6 @@
 import { TECHNOLOGY, BUSINESSCRITERIA, QUALITYSTANDARD, EXTENTION, CASTAIP } from './urlTypes';
 import { EXTENTIONNAMES } from '../components/elements/sources/extentionNames';
+import prettyPrintVersion from '../components/elements/sources/versionNamePP';
 import Axios from 'axios';
 const technos = 'technologies.json?env=webapp';
 const businessCriteriaList = 'business-criteria.json';
@@ -37,7 +38,8 @@ function getNameFromUrl ( url ){
 
 function getNameFromExtentionUrl ( url ){
   const name = url.substring( 28, url.indexOf( '/', 28) );
-  return EXTENTIONNAMES[ name ];
+  const version = url.substring( url.indexOf( '/', 28) + 1, url.indexOf('.json', 28) );
+  return EXTENTIONNAMES[ name ] + ' ' + prettyPrintVersion(version);
 }
 
 function requestAndFilter( query, url, callback, errorHandler ) {

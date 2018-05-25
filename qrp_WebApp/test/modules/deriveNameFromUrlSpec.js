@@ -5,7 +5,7 @@ import deriveNameFromURL from '../../src/modules/urlCategory';
 describe('deriveNameFromURL module', () => {
   it('should return the extention name', () => {
     const url = 'extensions/com.castsoftware.nosqldotnet/1.0.0-alpha6.json';
-    deriveNameFromURL( url, ( name ) => assert.equal(name, 'NoSQL .NET Analyzer'), () => assert.equal(true, false) );
+    deriveNameFromURL( url, ( name ) => assert.equal(name, 'NoSQL .NET Analyzer 1.0.0 Alpha 6'), () => assert.equal(true, false) );
   });
   it('should return the name of the parent technology', () =>{
     const url = '/mlturl/?u=technologies/-3.json&u=technologies/-2.json&u=technologies/1050571.json&f=id';

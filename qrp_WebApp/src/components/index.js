@@ -52,7 +52,7 @@ export { default as Search }  from '../modules/searchQuery';
 export { default as GetTitleFromURL} from '../modules/urlCategory';
 
 /* Global Actions */
-export { lOADDETAILS, UNSELECTME, SELECTME, LISTLENGTH } from './rulesList/actions';
+export { lOADDETAILS, UNSELECTME, UNSELECTME2, SELECTME, SELECTME2, LISTLENGTH } from './rulesList/actions';
 export { LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
 export { default as ICONURLS } from './elements/technologies/technoIcons';
