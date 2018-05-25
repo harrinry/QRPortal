@@ -1,5 +1,5 @@
 import React from 'react';
-import {Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery, LISTLENGTH} from '../index';
+import {Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery, LISTLENGTH, SELECTME, SELECTME2, UNSELECTME, UNSELECTME2} from '../index';
 
 const prefix = 'keyx_',
   standardHeaders = [ 'ID', 'Name', 'Critical?'],
@@ -25,12 +25,12 @@ export default class RulesList extends React.Component{
   render(){
     Radio.emit(LISTLENGTH, this.props.isStandard ? this.state.els.length : this.state.els2.length );
     return (this.props.isStandard ? ( <StandardList l50={true} headers={standardHeaders}>
-      {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues)}
+      {this.buildListFromState(this.state.els, this.loadRuleDetails, standardValues, SELECTME, UNSELECTME)}
     </StandardList> ) : (<div>
       <StandardList l20={true} headers={['Standard Name']}>
-        {this.buildListFromState(this.state.els, this.queryForNextList.bind(this), nameValOnly )}
+        {this.buildListFromState(this.state.els, this.queryForNextList.bind(this), nameValOnly , SELECTME, UNSELECTME)}
       </StandardList>
-      <StandardList l30={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues)}</StandardList>
+      <StandardList l30={true} headers={standardHeaders}>{this.buildListFromState(this.state.els2, this.loadRuleDetails, standardValues, SELECTME2, UNSELECTME2)}</StandardList>
     </div>));
   }
 
@@ -48,11 +48,11 @@ export default class RulesList extends React.Component{
     } );
   }
 
-  buildListFromState( arr, onClickFunction, values ){
+  buildListFromState( arr, onClickFunction, values, selectAction, clearAction ){
     let key = 0;
     return arr.length === 0 ? 
       <tr><td colSpan='3' key={prefix + key++}>No Rules</td></tr> :
-      arr.map( el => <RuleListRowElement values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
+      arr.map( el => <RuleListRowElement selectAction={selectAction} clearAction={clearAction} values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
   }
 
   loadRuleDetails( url ){
