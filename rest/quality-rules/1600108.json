@@ -1,0 +1,44 @@
+{
+    "id": 1600108,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Check if \"Commit\" statements have been used only where it is necessary",
+    "href": "quality-rules/1600108.json",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "This metric detects all artifacts using commit or rollback statements",
+    "output": "This report lists all artifacts using commit or rollback statements\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number commit and rollback found in the artifact source code",
+    "remediation": "This report is there to prepare a list for review. Upon review, some commit or rollback statement could be removed when appropriate.",
+    "total": "Number of PeopleSoft Events, Functions and Methods",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "technologies/1600000.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
