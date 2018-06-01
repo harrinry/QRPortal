@@ -1,0 +1,37 @@
+{
+    "id": 1020094,
+    "type": "quality-rule",
+    "name": "Avoid creating cookie without setting httpOnly option (Javascript)",
+    "href": "quality-rules/1020094.json",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. This is why all major browsers support the HttpOnly cookie property that prevents client-side scripts from accessing the cookie. When HttpOnly is not enabled, attackers may more easily access user cookies. This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. If write access is not properly restricted, then attackers can modify and possibly delete the data, causing incorrect results and possibly a denial of service.",
+    "reference": "https://cwe.mitre.org/data/definitions/1004.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+    "remediationSample": "res.cookie('cookie', info, {domain: 'secure.example.com', path: '/admin'}); \nres.cookie.setHttpOnly(true);",
+    "sample": "res.cookie('cookie', info, {domain: 'secure.example.com', path: '/admin'});",
+    "total": "The number of JavaScript Functions using cookies",
+    "businessCriteria": [
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "technologies/1020000.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
