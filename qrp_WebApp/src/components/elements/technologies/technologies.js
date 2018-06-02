@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElementTechno, BodyBlock, BodyTitle, Radio, TechnoFilter, LOADRULESLIST} from '../../index';
+import {BodyElementTechno, BodyBlock, BodyTitle, Radio, LOADRULESLIST} from '../../index';
 
 export default class Technologies extends React.Component{
   constructor(props){
@@ -16,8 +16,8 @@ export default class Technologies extends React.Component{
   }
 
   componentDidMount(){
-    Axios.get( 'technologies.json' )
-      .then((res)=> this.setState({data: TechnoFilter(res.data)}))
+    Axios.get( 'technologies.json?env=webapp' )
+      .then((res)=> this.setState({data: res.data}))
       .catch(err=> console.error(err.stack));
   }
 

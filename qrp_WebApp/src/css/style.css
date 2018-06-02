@@ -14,14 +14,14 @@
 .title{margin-left: 30px; font-size:22px;}
 .search-icon{background-image: url("/img/searchiconwhite.png"); background-repeat: no-repeat; background-position: center; background-size: 70%; float: left; margin-top:8px ; height: 32px; width: 32px;}
 .search-input-container{margin: 5px 0 0 0; height: 38px;}
-.search-input-container input{height: 38px; border: none; border-bottom: 1px solid #fff; background-color: #1987FF; font-size: 1.6em; width: 170px; color: #fff; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";}
-.search-input-container input::-webkit-input-placeholder{color:#A5C5EB;}
-.search-input-container input::-moz-placeholder{color:#A5C5EB;}
+.search-input-container input{height: 38px; border: none; border-bottom: 1px solid #fff; background-color: #1987FF; font-size: 1.6em; width: 170px; color: #fff; font-family: 'Roboto', sans-serif;}
+.search-input-container input::-webkit-input-placeholder{color:#A5C5EB;font-family: "Roboto"; font-weight: 200;}
+.search-input-container input::-moz-placeholder{color:#A5C5EB;font-family: "RobotoThin"}
 .search-input-container input::-moz-placeholder{color:#A5C5EB;}
 .search-input-container input:-ms-input-placeholder{color:#A5C5EB;}
-
+.pointerOnHover{ cursor: pointer; }
 .search-container{width: 245px;}
-.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial"; margin-top:16px; margin-bottom: 10px; width: 500px; color:white;}
+.titleheader{letter-spacing: 1.1px;text-transform: uppercase; margin-left: 70px; font-size:22px; font-family: 'Roboto', sans-serif; margin-top:16px; margin-bottom: 10px; width: 600px; color:white;}
 
 .title-body{margin-left: 30px;}
 .WelcomeTitle{margin-left: 30px; font-size: 24px; color: #333; text-align: center;}
@@ -59,7 +59,8 @@
 .bodyElementTechno:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}
 
 .scrollTest{ min-height: 1200px; }
-.body{ position: absolute; top: 60px; left: 0; overflow: hidden; width: 100%; font-family:"Helvetica"; background-color:#F8F8F8;}
+.body{ position: absolute; top: 60px; left: 0; overflow: hidden; width: 100%; font-family:"Roboto"; background-color:#F8F8F8;}
+.static-UI{ padding-bottom: 20px;}
 .scroll-x-overflow{overflow-y: hidden; overflow-x: auto ; white-space: nowrap; }
 
 .scrollbar-small::-webkit-scrollbar-{ height: 5px; }
@@ -134,7 +135,7 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
 .table-cell{padding: 6px;}
 .critical-cell{padding-right: 26px; padding-left: 26px; background: url("/img/criticalrule.png") no-repeat center center; background-size: 16px 16px}
 
-.detailssection{padding-left: 10px;text-align: left;}
+.detailssection{padding-left: 10px;text-align: left; white-space: pre-line;}
 .ruleTitle{padding-left: 10px;}
 .rulesection{color:#1A4F8E; font-weight: bold; }
 
@@ -182,7 +183,7 @@ table tr.table-row.selected { background-color: #1a8bd6; color: #fff; border-bot
   text-align: center;
   float: right;
   width: calc(50%);
-font-family: HelveticaNeue, Helvetica, Arial;
+font-family: Roboto, sans-serif;
 font-size: 18px;
 color: #9B9B9B;
 letter-spacing: 1px;}
@@ -216,7 +217,7 @@ letter-spacing: 1px;}
   resolutions greater than webapp maximum size */
 body{
   background-color: #F8F8F8;
-  font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";
+  font-family: 'Roboto', sans-serif;
 }
 
 .overlay {
@@ -235,7 +236,7 @@ body{
 
 .overlay.visible{ display: block;   transition: 0.5s ease-in;}
 .ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: rgba(255,255,255,0.9); transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
-.ovl-body{font-family: "HelveticaNeue-Thin", "HelveticaNeue", "Helvetica", "Arial";margin: 15px; height: calc(100% - 30px); width: calc(100% - 30px);position: absolute}
+.ovl-body{font-family: 'Roboto', sans-serif; margin: 15px; height: calc(100% - 30px); width: calc(100% - 30px);position: absolute}
 .layoutContainer{height: 100%; width: 100%}
 .layoutContainer span{padding: 6px; cursor: pointer;}
 .layout-column{display: block; float: left; width: 30%; text-align: left; margin-left:12px;}

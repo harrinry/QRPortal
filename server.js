@@ -1,6 +1,14 @@
-var express = require('express');
-var path = require('path');
+const express = require('express');
+const path = require('path');
 const UNIQ = require('./serverModules/uniq');
+const fs = require('fs');
+const readJsonFile = require('./serverModules/readFile');
+const technoMapping = require('./serverModules/technologies-map');
+/*
+// google analytics back-end
+const got = require('got');
+const GA_TRACKING_ID = process.env.GA_TRACKING_ID || 'UA-119529646-1';
+*/
 // cors
 const cors = require('cors');
 
@@ -10,7 +18,7 @@ const helmet = require('helmet');
 const searchIndex = require('./serverModules/qr_searchParser');
 
 // rest dir base 
-const restDir = path.resolve('./rest/');
+const restDir = path.basename('./rest/');
 
 var port = process.env.PORT || 8080;
 
@@ -39,8 +47,12 @@ app.use(express.static('static'));
 
 // ---------------------- React Front End Routes ------------------------------ //
 
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/qrp_WebApp/index.html'));
+});
+
+app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
+  res.sendFile(path.join(__dirname + '/qrp_WebApp/googleda2a1d9b51c2edfd.html'));
 });
 
 app.get('/QRPortal.js', (req, res)=> {
@@ -55,8 +67,24 @@ app.get('/style.css', (req, res)=> {
   res.sendFile(path.join(__dirname, '/qrp_WebApp/src/css/style.css'));
 });
 
+app.get('/favicon.ico', (req, res)=> {
+  res.sendFile(path.join(__dirname, '/qrp_WebApp/favicon/favicon32.png'));
+});
+
 app.get('/img/*', (req, res)=>{
-  res.sendFile(path.join(__dirname, '/qrp_WebApp/src' + req.url));
+  res.sendFile(path.join(__dirname, '/qrp_WebApp' + req.url));
+});
+
+app.get('/technologies.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( technoMapping );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
 });
 
 app.get('/mlturl/*', (req, res)=>{
@@ -74,6 +102,21 @@ app.get('/search', (req, res)=>{
   const q = req.query;
   const r = searchIndex( q.s, q.f );
   res.json(r);
+});
+
+app.get('/about', (req,res)=>{
+  fs.readFile( './LICENSE', 'utf8', ( err, fileContents ) => {
+    if ( err ) {
+      console.log( err );
+      res.status(500).send({error: 'a problem occured'});
+    }
+    readJsonFile( 'package.json', (fileName, jsonData ) =>{
+      res.json({licence: fileContents, version: jsonData.version});
+    }, undefined, (e) => {
+      console.log( e );
+      res.status(500).send({error: 'a problem occured'});
+    });
+  });
 });
 
 // ------------------------ End of React Routes ------------------------------ //

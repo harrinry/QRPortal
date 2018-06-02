@@ -1,6 +1,6 @@
 const glob = require('./glob');
 const path = require('path');
-const rootMetricsDir  = "rest/";
+const rootMetricsDir  = 'rest/';
 const rulesDir = path.resolve('rest/quality-rules');
 const search = require('./search');
 const filter = require('./filters');
@@ -14,13 +14,14 @@ let index = {
 };
 
 function convertToSearchString ( dataObject, fileName ) {
+  const technos = filter(dataObject.technologies);
   return {
     id: dataObject.id,
     name: dataObject.name,
     href: 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: dataObject.technologies,
-    resString: dataObject.technologies.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
+    resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
   };
 }
 
