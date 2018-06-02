@@ -18,7 +18,9 @@ export default class Rules extends React.Component{
 
   hideRuleList(){
     this.setState({
-      rulesVisible: false
+      rulesVisible: false,
+      rulesHref: undefined,
+      title: undefined
     });
     history.pushState(null, null, '/');
     Radio.emit(UNSELECTME);
@@ -36,11 +38,10 @@ export default class Rules extends React.Component{
   }
 
   render(){
-    const safeSpace = /(%20)/g;
     return (
       <RulesBody visible={this.state.rulesVisible} 
         icon={this.state.title} 
-        title={this.state.title ? this.state.title.replace(safeSpace, ' ') : undefined}
+        title={this.state.title}
         href={this.state.rulesHref}/>
     );
   }

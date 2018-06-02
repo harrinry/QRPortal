@@ -68,7 +68,7 @@ export default class Sources extends React.Component{
   buildOverlayElemnents( data, name ){
     return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id + name} value={formatVersionName(e.name)} onclick={()=> {
-        Radio.emit( LOADRULESLIST, e.href, name);
+        Radio.emit( LOADRULESLIST, e.href, EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
     </Column>);

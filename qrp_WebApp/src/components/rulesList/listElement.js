@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, UNSELECTME, SELECTME, TableCell } from '../index';
+import { Radio, TableCell } from '../index';
 
 const localClassName = 'table-row'/*, prefix = 'letr_'*/;
 
@@ -11,13 +11,13 @@ export default class RuleListRowElement extends React.Component{
       selected: false
     };
 
-    Radio.listen(UNSELECTME, () => {
+    Radio.listen(this.props.clearAction, () => {
       if( this.state.selected ){
         this.setState({selected: false});
       }
     });
 
-    Radio.listen(SELECTME, ( url ) => {
+    Radio.listen(this.props.selectAction, ( url ) => {
       if( this.state.href === url){
         this.setState({selected: true});
       }
@@ -25,7 +25,7 @@ export default class RuleListRowElement extends React.Component{
   }
 
   dispatchSelectMe(){
-    Radio.emit( UNSELECTME );
+    Radio.emit( this.props.clearAction );
     this.setState({selected: true});
     //Radio.emit(lOADDETAILS, this.state.href);
   }
