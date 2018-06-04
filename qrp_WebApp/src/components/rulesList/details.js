@@ -26,7 +26,7 @@ export default class RuleDetails extends React.Component{
       const remediationsampleblock = this.props.data.remediationSample ? (<div className='remediationsample-container detailssection'><p className='rulesection'>Remediation Sample</p><pre><code>{this.props.data.remediationSample}</code></pre></div>) : ('');
       const referenceblock = this.props.data.reference ? (<div className='reference-container detailssection'><p className='rulesection'>Reference</p><p className='textrule'>{this.props.data.reference}</p></div>) : ('');
       const outputblock = this.props.data.output ? (<div className='output-container detailssection'><p className='rulesection'>Output</p><p className='textrule'>{this.props.data.output}</p></div>) : ('');
-
+      //const techCriteria = this.props.data.
       const length = this.props.data.qualityStandards.length;
       let tagsblock = ('');
 

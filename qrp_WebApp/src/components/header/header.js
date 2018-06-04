@@ -85,7 +85,7 @@ export default class Header extends React.Component{
     const title = 'About CAST Structural Rules';
     APIQuery('about', ( res ) => {
       const aboutContent = this.aboutOverlayElements(res.data);
-      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
+      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title.concat(' ', res.data.version), 50));
     }, (err)=>{
       const aboutContent = <p>{err}</p>;
       Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
@@ -96,8 +96,6 @@ export default class Header extends React.Component{
     return (<Column key={0} width={'97%'} textAlign={'left'}>
       <h2>LICENSE</h2>
       <p>{data.licence}</p>
-      <br/>
-      <p><strong>CAST Structural Rules build : </strong>{ data.version }</p>
     </Column>);
   }
 }
