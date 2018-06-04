@@ -39,7 +39,7 @@
 	    }
 	    
         body {
-            font-family: helvetica;
+            font-family: arial;
             font-size: 14px;
         }
 
@@ -454,6 +454,21 @@
             tbodyElement = $("<tbody></tbody>").appendTo (tableElement);
             var titles = {}
             var more = false;
+
+             // Compute titles
+            for (var i = 0, len = json.length; i < len; i++) {
+                if (i == MAX_ITEMS) {
+                    more = true;
+                    break;
+                }
+                var item = json[i]
+                // Check all attributes, merge all titles
+                for (var j in item) {
+                    if (typeof (titles[j]) == "undefined")
+                        titles[j] = true;
+                }
+            }    
+            
             for (var i = 0, len = json.length; i < len; i++) {
 
                 if (i == MAX_ITEMS) {
@@ -467,14 +482,9 @@
                 tdElement = $("<td></td>").appendTo (trElement);
                 tdElement.text(i + 1);
 
-                // Check all attributes, merge all titles
-                for (var j in item) {
-                    if (typeof (titles[j]) == "undefined")
-                        titles[j] = true;
-                }
-              
                 // User titles order to fill in attributes
                 var href = titles["href"];
+                console.log("titles", titles);
                 for (var j in titles) {
                     if (href && j == "name") continue;
                     if (href && j == "href") {
@@ -489,10 +499,10 @@
                         }
                         continue;
                     }
-                    var val = item[j];
-                    if (isSimpleValue(val)) {
+                    var value = item[j];
+                    if (isSimpleValue(value)) {
 		                tdElement = $("<td></td>").appendTo (trElement);
-		                tdElement.text(val);
+                        insertSimpleValue(tdElement, value);
                     }    
                     else {
 		                tdElement = $("<td></td>").appendTo (trElement);
@@ -532,15 +542,24 @@
                     + ':' + pad(tzo % 60);
         }
 
+        var insertSimpleValue = function(tdElement, value)
+        {
+            if (typeof (value) == "string" && (value.startsWith("http://") || value.startsWith("https://"))) {
+                    value = value.replace(/(https?:\/\/[^\s]+)/g,"<a href='$1' target='_blank'>$1</a>");
+                    tdElement.html(value);
+                }
+            else
+                tdElement.text(value);
+        }
+        
         // Display a JSON object as a single table with titles in columns
         function appendObjectAsHTML(element, json) {
-        
            var appendProperty  = function (tableElement, name, value) {
 				var trElement = $("<tr></tr>").appendTo (tableElement);
 				var tdElement = $("<td class='title'></td>").appendTo (trElement);
-				tdElement.text(name);
+                tdElement.text(name);
             	tdElement = $("<td></td>").appendTo (trElement);
-            	tdElement.text(value);
+                insertSimpleValue(tdElement, value);   
            }
         
             var href = false;
@@ -805,6 +824,14 @@
 
 				// Push url in the history stack
 				add:  function add(request) {
+                    // do not add the same request
+                    if (stack[index]){
+                        if ((stack[index].method == request.method)
+                            && (stack[index].mediaType == request.mediaType)
+                            && (stack[index].url == request.url)) return;
+                    }    
+                    // cut history at index
+                    stack = stack.slice(0,index+1);
            			stack.push(request);
             		index = stack.length - 1;
             	},
@@ -845,6 +872,7 @@
                 recover: function recover() {
                     var request = {};
                     var method = request.method = "GET";
+                    request.mediaType = "application/json";
                     request.url = $('#href').val();
                     if (method != "GET") 		
                         request.payload = $('#payload').val();
@@ -1054,6 +1082,7 @@
 <script>
     $("#tabs").tabs();
     $("#rootPath").val("/");
+    $("#href").val("root.json");
 
     Bookmarks.load();
 
