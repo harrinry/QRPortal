@@ -87,6 +87,18 @@ app.get('/technologies.json', (req, res) => {
   }
 });
 
+app.get('/extensions.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( require('./rest/extensions.json').filter( e => e.qualityModel === true ) );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
+});
+
 app.get('/mlturl/*', (req, res)=>{
   const q = req.query;
   let r = undefined;
