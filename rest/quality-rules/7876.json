@@ -11,7 +11,7 @@
     "rationale": "Some addition to Open SQL statements automatically bypass the buffer. Bypassing buffer means that SELECT statement will not go to buffered results but always directly to the database. This can impact the performance significantly.",
     "remediation": "Check if the FOR UPDATE addition is really necessary and use this addition carefully.",
     "sample": "SELECT employee_name \nFROM employees \nWHERE employee_id = 123 \nFOR UPDATE.",
-    "total": "Number of ABAP Artifacts containing OpenSQL queries.",
+    "total": "Number of ABAP Artifacts containing OpenSQL statements",
     "businessCriteria": [
         {
             "id": 60014,

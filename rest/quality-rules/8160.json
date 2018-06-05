@@ -12,7 +12,7 @@
     "remediation": "Check the PCB status code after queries in order to manage all situations. ",
     "remediationSample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GE' \n    MOVE 'Y' TO WS-EOJ \nEND-IF \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GB' \n    MOVE 'Y' TO WS-EOJ \nEND-IF\n",
     "sample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n",
-    "total": "Number of Cobol Programs accessing IMS database",
+    "total": "Number of Cobol Programs",
     "businessCriteria": [
         {
             "id": 60013,

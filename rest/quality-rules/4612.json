@@ -6,10 +6,10 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Native Method name",
-    "description": "List all artifacts that call a native method except native methods contained in the libraries defined by the threshold parameter. \nThe threshold is a parameter and can be changed at will with libraries that you consider to be safe.",
+    "description": "List all artifacts that call a native method except native methods contained in the libraries defined by the threshold parameter. \nThe threshold is a parameter and can be changed at will with libraries that you consider to be safe.\nSee : CWE-111: Direct Use of Unsafe JNI",
     "output": "This report lists all artifacts using native methods except those contained in libraries defined by the parameter.\nIt provides the following information:\n - Artifact full name\n - Native Method name",
     "rationale": "JNI is one of the most serious cause of application server crash that can be due for example to buffer overflow. Even if your code works on a plateform, it doesn't mean that it will work on other plateform because the internals of JVMs differ.\nIn case of crash, your JVM suplier's support will probably ask you to remove these calls before investigating your issue.\n\nAlso, for portability purposes, native Methods should not be used. Native Methods could be compared to Interfaces to encapsulate calls to C Methods and Functions. Doing so relies on having the appropriate environment setup at the operating system level.",
-    "reference": "http://publib.boulder.ibm.com/infocenter/iseries/v5r4/index.jsp?topic=%2Frzaha%2Fothlang.htm\nhttp://en.wikipedia.org/wiki/Java_Native_Interface#Pitfalls",
+    "reference": "http://publib.boulder.ibm.com/infocenter/iseries/v5r4/index.jsp?topic=%2Frzaha%2Fothlang.htm\nhttp://en.wikipedia.org/wiki/Java_Native_Interface#Pitfalls\nhttps://cwe.mitre.org/data/definitions/111.html ",
     "total": "number of artifacts",
     "businessCriteria": [
         {
