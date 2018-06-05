@@ -12,7 +12,7 @@
     "remediation": "Add a test of the SY-SUBRC return code after each AUTHORITY-CHECK object and manage values that are not equal to 0.",
     "remediationSample": "AUTHORITY-CHECK OBJECT 'F_BKPF_BUK'\n    ID 'BUKRS' FIELD p_bukrs\n    ID 'ACTVT' FIELD p_actvt.\n\nIF SY-SUBRC NE '0'.\n    MESSAGE e000(38) WITH text-e01 p_bukrs.\nENDIF.\n\n<list of statements>",
     "sample": "AUTHORITY-CHECK OBJECT 'F_BKPF_BUK'\n    ID 'BUKRS' FIELD p_bukrs\n    ID 'ACTVT' FIELD p_actvt.\n\n<list of statements>",
-    "total": "Number of Abap Artifacts",
+    "total": "Number of ABAP Artifacts",
     "businessCriteria": [
         {
             "id": 60013,

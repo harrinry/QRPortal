@@ -12,7 +12,7 @@
     "reference": "SAP - Considerations for Custom ABAP Code When Migrating to SAP HANA - Best Practices and Recommendations",
     "remediation": "Validate the artifacts and try to remove the calls to this function module.",
     "sample": "CALL FUNCTION 'DB_EXISTS_INDEX' \n* EXPORTING \n* dbindex = \" dd12l-dbindex Name of the index on the DB \n* dbindex = \" dd12l-dbindex \n* tabname = \" dd12l-sqltab Table Name \n* indexname = \" dd12l-indexname Name of the index to be checked \n  IMPORTING \n    constraint = \" dd12l-dbindex \n    realname = \" dd12l-dbindex Real name in the database \n    subrc = \" sy-subrc 0: index created; 4: index not created \n    subrc = \" sy-subrc \n    unique = \" dd12l-uniqueflag \n    unique = \" dd12l-uniqueflag X: unique; space: not unique (if subrc = 0) \n  EXCEPTIONS \n    PARAMETER_ERROR = 1 \n    . \" DB_EXISTS_INDEX",
-    "total": "Number of ABAP Artifacts containing OpenSQL",
+    "total": "Number of ABAP Artifacts containing OpenSQL statements",
     "businessCriteria": [
         {
             "id": 60013,
