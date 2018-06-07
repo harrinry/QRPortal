@@ -4,6 +4,7 @@ const UNIQ = require('./serverModules/uniq');
 const fs = require('fs');
 const readJsonFile = require('./serverModules/readFile');
 const technoMapping = require('./serverModules/technologies-map');
+const Determinator = require('./determinator/determinator');
 /*
 // google analytics back-end
 const got = require('got');
@@ -135,10 +136,9 @@ app.get('/about', (req,res)=>{
   });
 });
 
-app.get('/determinator*', (req, res) => {
+app.get('/determinator', (req, res) => {
   const query = req.query;
-  console.log(query);
-  // to be completed
+  res.json( Determinator( query ) );
 });
 
 // ------------------------ End of React Routes ------------------------------ //
