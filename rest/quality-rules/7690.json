@@ -12,7 +12,7 @@
     "remediation": "Check the value of the SQLCODE variable after each database access action in the PROCEDURE DIVISION. Then take any necessary action.",
     "remediationSample": "EXEC SQL \n  SELECT ACT_NO, EENDDATE \n  INTO :ACT-NO, :EENDDATE \n  FROM MP_PROJ_ACT \n  WHERE PROJ_NO = :WS-PROJ-NO \nEND-EXEC \n\nEVALUATE SQLCODE \n    WHEN 0 \n         CONTINUE \n    WHEN OTHER \n         PERFORM 950-DBERROR \nEND-EVALUATE \n\nMOVE ACT-NO TO OTHER-VAR",
     "sample": "EXEC SQL \n  SELECT ACT_NO, EENDDATE \n  INTO :ACT-NO, :EENDDATE \n  FROM MP_PROJ_ACT \n  WHERE PROJ_NO = :WS-PROJ-NO \nEND-EXEC \n\nMOVE ACT-NO TO OTHER-VAR",
-    "total": "Number of Cobol Programs accessing relational databases",
+    "total": "Number of Cobol Programs embedding SQL",
     "businessCriteria": [
         {
             "id": 60013,
