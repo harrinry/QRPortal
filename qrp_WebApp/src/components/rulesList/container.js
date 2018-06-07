@@ -1,6 +1,6 @@
 import React from 'react';
 import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL, isStandard } from '../index';
-import {lOADDETAILS} from './actions';
+import {lOADDETAILS, SELECTME} from './actions';
 
 const localClassName = ['rule-container', 'block'],
   sp = ' ';
@@ -11,12 +11,12 @@ export default class RulesContainer extends React.Component{
 
     this.state = {};
 
-    Radio.listen(lOADDETAILS, function( url /*, fromURL = false */) {
+    Radio.listen(lOADDETAILS, function( url, fromURL = false) {
       if (!url) return this.setState({ details: undefined });
       APIQuery(url, (res) => {
         this.setState({ details: res.data });
-        UpdateURL( null, null, url );
-        //if(fromURL) Radio.emit( SELECTME, url);
+        UpdateURL( null, url );
+        if(fromURL) Radio.emit( SELECTME, url);
       });
     }.bind(this));
 

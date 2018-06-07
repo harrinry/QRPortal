@@ -123,12 +123,22 @@ app.get('/about', (req,res)=>{
       res.status(500).send({error: 'a problem occured'});
     }
     readJsonFile( 'package.json', (fileName, jsonData ) =>{
-      res.json({licence: fileContents, version: jsonData.version});
+      res.json({
+        licence: fileContents, 
+        version: jsonData.version, 
+        news: require('./changelog.json')[jsonData.version]
+      });
     }, undefined, (e) => {
       console.log( e );
       res.status(500).send({error: 'a problem occured'});
     });
   });
+});
+
+app.get('/determinator*', (req, res) => {
+  const query = req.query;
+  console.log(query);
+  // to be completed
 });
 
 // ------------------------ End of React Routes ------------------------------ //
