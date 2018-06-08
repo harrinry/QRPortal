@@ -12,7 +12,7 @@
     "remediation": "Check if the BYPASSING BUFFER addition is really necessary and use this addition carefully.",
     "remediationSample": "SELECT * \n       FROM spfli AS s \n       INTO wa \n       where carrid in s_carrid.\n  WRITE: / wa-carrid, wa-connid. \nENDSELECT.",
     "sample": "SELECT * \n       FROM spfli AS s \n       INTO wa \n     BYPASSING BUFFER\n       where carrid in s_carrid.\n  WRITE: / wa-carrid, wa-connid. \nENDSELECT.",
-    "total": "Number of ABAP Artifacts containing OpenSQL queries.",
+    "total": "Number of ABAP Artifacts containing OpenSQL statements",
     "businessCriteria": [
         {
             "id": 60014,

@@ -5,6 +5,7 @@ const rulesDir = path.resolve('rest/quality-rules');
 const search = require('./search');
 const filter = require('./filters');
 const QS = require('../rest/quality-standards.json');
+const technoMapping = require('./technologies-map');
 
 const readJsonFile = require('../serverModules/readFile');
 
@@ -20,7 +21,7 @@ function convertToSearchString ( dataObject, fileName ) {
     name: dataObject.name,
     href: 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
-    technologies: dataObject.technologies,
+    technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
   };
 }

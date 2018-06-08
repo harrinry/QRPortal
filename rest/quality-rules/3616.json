@@ -8,7 +8,7 @@
     "associatedValueName": "Associated Value",
     "description": "Data Access must be based on Stored Procedure Calls.",
     "output": "This report lists all Dynamic SQL\nIt provides the following information: Object full name",
-    "rationale": "By using Stored Procedures the database engine is more able to optimize the access plan and to reuse them. It also limit the parsing phase of the SQL order. This generally result in better performance.\nFrom a security point of view, it is generally safer to use SP rather than dynamic SQL as this limit the risk of having SQL-injection.",
+    "rationale": "By using Stored Procedures the database engine is more able to optimize the access plan and to reuse them. It also limits the parsing phase of the SQL order. This generally results in better performance.\nFrom a security point of view, it is generally safer to use SP that do not use dynamic SQL rather than dynamic SQL, as this limits the risk of SQL-injection.",
     "remediation": "Transform the SQL into a SP and use parameters. Then call the SP.\nDo not transform the SQL in a SP that in turn uses dynamic SQL (e.g. @exec or EXECUTE_IMMEDIATE) as this deny all the benefits of the change.",
     "remediationSample": "class MyClass\n{\n   public void fct( String sVal )\n   {\n      exec \"MySP +sVal\"\n   }",
     "sample": "class MyClass\n{\n   private String s = \"select col1from MyTable where col2 =\";\n   public void fct( String sVal )\n   {\n      s +=  \"'\" + sVal + \"'\"; \n      exec s;\n   }",

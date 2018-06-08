@@ -93,9 +93,13 @@ export default class Header extends React.Component{
   }
 
   aboutOverlayElements( data ){
-    return (<Column key={0} width={'97%'} textAlign={'left'}>
+    return (<Column key={0} width={'97%'} textAlign={'left'} marginBottom={'20px'}>
       <h2>LICENSE</h2>
       <p>{data.licence}</p>
+      <h3>What's new:</h3>
+      <tr>
+        {data.news.map( (info, idx) => <li key={idx}>{info}</li> )}
+      </tr>
     </Column>);
   }
 }

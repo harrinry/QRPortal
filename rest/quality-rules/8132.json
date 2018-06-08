@@ -12,7 +12,7 @@
     "remediation": "If only the existence (at least) of one record is to be checked, it is recommended to use the addition 'UP TO 1 ROWS', or reading the database with 'SELECT SINGLE'. Both solutions have the effect that only one record is read from the database. This also applies if only some subfields instead of the entire record need to be read.",
     "remediationSample": "SELECT SINGLE *\nFROM sflight\nINTO ls_flight\nWHERE carrid EQ lv_carrid AND connid EQ lv_connid AND fldate EQ lv_fldate.\nIF sy-subrc NE 0.\nWRITE:/ 'NOT FOUND'.\nENDIF.",
     "sample": "SELECT *\nFROM sflight\nINTO ls_flight\nWHERE carrid EQ lv_carrid AND connid EQ lv_connid AND fldate EQ lv_fldate.\nEXIT.\nENDSELECT.\nIF sy-subrc NE 0.\nWRITE:/ 'NOT FOUND'.\nENDIF.",
-    "total": "Number of ABAP Artifacts containing OpenSQL",
+    "total": "Number of ABAP Artifacts containing OpenSQL statements",
     "businessCriteria": [
         {
             "id": 60014,

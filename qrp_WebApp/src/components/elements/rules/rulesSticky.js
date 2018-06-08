@@ -34,7 +34,7 @@ export default class Rules extends React.Component{
       rulesHref: url,
     });
     Radio.emit(lOADDETAILS);
-    UpdateURL(url, name);
+    UpdateURL(url);
   }
 
   render(){

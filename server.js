@@ -4,6 +4,7 @@ const UNIQ = require('./serverModules/uniq');
 const fs = require('fs');
 const readJsonFile = require('./serverModules/readFile');
 const technoMapping = require('./serverModules/technologies-map');
+const Determinator = require('./determinator/determinator');
 /*
 // google analytics back-end
 const got = require('got');
@@ -87,6 +88,18 @@ app.get('/technologies.json', (req, res) => {
   }
 });
 
+app.get('/extensions.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( require('./rest/extensions.json').filter( e => e.qualityModel === true ) );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
+});
+
 app.get('/mlturl/*', (req, res)=>{
   const q = req.query;
   let r = undefined;
@@ -111,12 +124,21 @@ app.get('/about', (req,res)=>{
       res.status(500).send({error: 'a problem occured'});
     }
     readJsonFile( 'package.json', (fileName, jsonData ) =>{
-      res.json({licence: fileContents, version: jsonData.version});
+      res.json({
+        licence: fileContents, 
+        version: jsonData.version, 
+        news: require('./changelog.json')[jsonData.version]
+      });
     }, undefined, (e) => {
       console.log( e );
       res.status(500).send({error: 'a problem occured'});
     });
   });
+});
+
+app.get('/determinator', (req, res) => {
+  const query = req.query;
+  res.json( Determinator( query ) );
 });
 
 // ------------------------ End of React Routes ------------------------------ //

@@ -11,7 +11,7 @@
     "rationale": "Improperly written Triangular Joins are worse than even Cursors or While Loops and can bring a CPU and Disk System right to it's knees. their processing algorithm is close to quadratic complexity.\n\nFor very small counts, the number of internal rows spawned are nearly trivial. But, it doesn't take very many rows to spawn nightmarish numbers of internal rows that can bring a server to its knees. \nThere's danger in thinking that just avoiding the loop leads to set based code. Triangular Joins are a form of \"Hidden row by row agonizing row\" that can and will crush performance in the face of even the smallest scalability expectations.",
     "remediation": "restrict the conditions using other critersion",
     "sample": "SELECT x.OrderID, x.Freight, \n        (SELECT SUM(y.Freight) FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningTotal,\n        (SELECT COUNT(y.Freight)\n           FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningCount\n  FROM dbo.Orders X\n ORDER BY x.OrderID",
-    "total": "The total procedure counts the number of Client-Server Artifacts",
+    "total": "Number of SQL Artifacts",
     "businessCriteria": [
         {
             "id": 60014,

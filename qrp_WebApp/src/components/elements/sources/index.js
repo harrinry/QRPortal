@@ -33,7 +33,7 @@ export default class Sources extends React.Component{
       return res;
     };
 
-    APIQuery( 'extensions.json', (res)=> this.setState({data: OnMountFilter(res.data)}));
+    APIQuery( 'extensions.json?env=webapp', (res) => this.setState({data: OnMountFilter(res.data)}));
   }
 
   render(){
