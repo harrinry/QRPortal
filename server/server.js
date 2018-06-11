@@ -1,0 +1,102 @@
+const express = require('express');
+const path = require('path');
+/*const UNIQ = require('../serverModules/uniq');
+const fs = require('fs');
+const readJsonFile = require('../serverModules/readFile');
+const technoMapping = require('../serverModules/technologies-map');*/
+
+const port = require('./settings/serverConfig').port;
+
+let app = express();
+
+require('./middleware/security')(app);
+require('./middleware/staticRoutes')(app);
+
+//const searchIndex = require('../serverModules/qr_searchParser');
+
+// ---------------------- Routers initiation ------------------------------ //
+
+require('./settings/routerConfig')(app);
+
+// ----------------------------------------------------------------------- //
+
+// ---------------------- Google site identification ------------------------------ //
+app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../qrp_WebApp/googleda2a1d9b51c2edfd.html'));
+});
+// -------------------------------------------------------------------------------- //
+
+// -------------------------------- Fav ICON -------------------------------------- //
+
+app.get('/favicon.ico', (req, res)=> {
+  res.sendFile(path.resolve(__dirname, '..', 'qrp_WebApp', 'favicon/favicon32.png'));
+});
+
+// -------------------------------------------------------------------------------- //
+/*
+app.get('/technologies.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( technoMapping );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
+});
+
+app.get('/extensions.json', (req, res) => {
+  const query = req.query;
+  switch (query.env) {
+  case 'webapp':
+    res.json( require('./rest/extensions.json').filter( e => e.qualityModel === true ) );
+    break;
+  default:
+    res.sendFile(path.join(__dirname, restDir, req.url));
+    break;
+  }
+});
+
+app.get('/mlturl/*', (req, res)=>{
+  const q = req.query;
+  let r = undefined;
+  if( q.hasOwnProperty('u') ){
+    const arr = q.u.map( u => require( path.join( __dirname, restDir, u)));
+    r = [].concat(...arr);
+  }
+  const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
+  res.json(uniqArr);
+});
+
+app.get('/search', (req, res)=>{
+  const q = req.query;
+  const r = searchIndex( q.s, q.f );
+  res.json(r);
+});
+
+app.get('/about', (req,res)=>{
+  fs.readFile( './LICENSE', 'utf8', ( err, fileContents ) => {
+    if ( err ) {
+      console.log( err );
+      res.status(500).send({error: 'a problem occured'});
+    }
+    readJsonFile( 'package.json', (fileName, jsonData ) =>{
+      res.json({
+        licence: fileContents, 
+        version: jsonData.version, 
+        news: require('./changelog.json')[jsonData.version]
+      });
+    }, undefined, (e) => {
+      console.log( e );
+      res.status(500).send({error: 'a problem occured'});
+    });
+  });
+});
+*/
+
+app.listen(port, function() {
+
+  console.log('Listening...'+port);	
+	
+});
