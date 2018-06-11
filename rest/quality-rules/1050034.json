@@ -14,6 +14,11 @@
     "sample": "LAContext *myContext = [[LAContext alloc] init];\nNSError *authError = nil;\nNSString *myLocalizedReasonString = <#String explaining why app needs authentication#>;\n\nif ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {\n    [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics\n                  localizedReason:myLocalizedReasonString\n                            reply:^(BOOL success, NSError *error) {\n            \n           // empty callback block\n        }];\n}\n} else {\n    // Could not evaluate policy; look at authError and present an appropriate message to user\n}",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        },
+        {
             "id": 60013,
             "name": "Robustness",
             "href": "business-criteria/60013.json"
@@ -22,17 +27,14 @@
             "id": 60016,
             "name": "Security",
             "href": "business-criteria/60016.json"
-        },
-        {
-            "id": 20140522,
-            "name": "Green Stuff",
-            "href": "business-criteria/20140522.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66069,
-            "name": "Programming Practices - Unexpected Behavior"
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 7,
+            "critical": false
         }
     ],
     "technologies": [

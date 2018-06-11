@@ -13,23 +13,30 @@
     "total": "Total number of methods",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61023,
-            "name": "Volume - Number of LOC"
+            "name": "Volume - Number of LOC",
+            "weight": 6,
+            "critical": false
         }
     ],
     "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        },
         {
             "id": 138383,
             "name": "C#",
@@ -39,11 +46,6 @@
             "id": 138385,
             "name": "VB.NET",
             "href": "technologies/138385.json"
-        },
-        {
-            "id": 141901,
-            "name": ".NET (Legacy Analyzer)",
-            "href": "technologies/141901.json"
         }
     ],
     "qualityStandards": [

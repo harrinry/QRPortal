@@ -14,20 +14,22 @@
     "total": "The number of methods calling user input methods",
     "businessCriteria": [
         {
-            "id": 60016,
-            "name": "Security",
-            "href": "business-criteria/60016.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
-            "name": "Secure Coding - Input Validation"
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
         }
     ],
     "technologies": [
@@ -37,30 +39,30 @@
             "href": "technologies/138383.json"
         },
         {
-            "id": 138385,
-            "name": "VB.NET",
-            "href": "technologies/138385.json"
-        },
-        {
             "id": 140029,
             "name": "JEE",
             "href": "technologies/140029.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "OWASP",
-            "id": "A3-2017",
-            "name": "Sensitive Data Exposure",
-            "reference": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
-        },
         {
             "standard": "CWE",
             "id": "CWE-501",
             "name": "Trust Boundary Violation",
             "reference": "https://cwe.mitre.org/data/definitions/501.html",
             "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "reference": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
         }
     ]
 }

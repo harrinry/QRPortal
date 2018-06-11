@@ -11,14 +11,14 @@
     "sample": "package control\n{\n   import control.GetItems1Command;\n   import control.GetItems1Event;\n   import control.GetItems2Command;\n   import control.GetItems2Event;\n   // A lot of other imports\n   \n   public class MyFrontController // VIOLATION\n   {\n      public function MyFrontController()\n      {\n         addCommand( \n            GetItems1Event.EVENT_NAME,\n            GetItems1Command );\n\n         addCommand( \n            GetItems2Event.EVENT_NAME,\n            GetItems2Command );\n\n         // A lot of other addCommand\n      }\n   } \n}",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
         },
         {
             "id": 60013,
@@ -26,15 +26,17 @@
             "href": "business-criteria/60013.json"
         },
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "business-criteria/66031.json"
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61024,
-            "name": "Programming Practices - Structuredness"
+            "name": "Programming Practices - Structuredness",
+            "weight": 5,
+            "critical": false
         }
     ],
     "technologies": [

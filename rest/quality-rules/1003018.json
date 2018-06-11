@@ -11,6 +11,11 @@
     "sample": "public function foo( a : Number, b : Number ) : void\n      {\n          switch( a )\n          {\n             case 1:\n                break;\n             case 2:                   \n                switch ( b ) \n                {\n                  case 3 :\n                     break;\n                  case 4 :\n                     break;\n                }\n                break;                     \n          }\n      }",
     "businessCriteria": [
         {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
@@ -19,17 +24,14 @@
             "id": 60013,
             "name": "Robustness",
             "href": "business-criteria/60013.json"
-        },
-        {
-            "id": 66032,
-            "name": "Architectural Design",
-            "href": "business-criteria/66032.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66009,
-            "name": "Architecture - Reuse"
+            "name": "Architecture - Reuse",
+            "weight": 5,
+            "critical": false
         }
     ],
     "technologies": [

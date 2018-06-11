@@ -10,19 +10,9 @@
     "rationale": "Avoid variants when possible. They are slow, and they consume memory. If you use variant instead of, say, integer you waste 14 bytes of memory. This can be significant in a large project. Integers are much faster than variants. This is true particularly in For..Next loops\n\nAlso if you plan to upgrade to VB.NET, variant are not supported.",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
-        },
-        {
-            "id": 60013,
-            "name": "Robustness",
-            "href": "business-criteria/60013.json"
         },
         {
             "id": 60014,
@@ -33,12 +23,24 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61029,
-            "name": "Complexity - Dynamic Instantiation"
+            "name": "Complexity - Dynamic Instantiation",
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [

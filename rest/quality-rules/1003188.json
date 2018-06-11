@@ -11,6 +11,11 @@
     "sample": "[AsyncInit(x=\"y\")] // VIOLATION\npublic class UnknownMetaDataAttribute\n{\n   [Inject(x=\"y\")] // VIOLATION\n   public var inject;\n\n   [MessageHandler(x=\"y\")] // VIOLATION\n   public function messageHandler() : void\n   {\n   }\n}",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        },
+        {
             "id": 60013,
             "name": "Robustness",
             "href": "business-criteria/60013.json"
@@ -19,17 +24,14 @@
             "id": 60016,
             "name": "Security",
             "href": "business-criteria/60016.json"
-        },
-        {
-            "id": 20140522,
-            "name": "Green Stuff",
-            "href": "business-criteria/20140522.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66069,
-            "name": "Programming Practices - Unexpected Behavior"
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
         }
     ],
     "technologies": [

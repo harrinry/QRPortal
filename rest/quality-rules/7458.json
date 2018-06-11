@@ -13,14 +13,14 @@
     "total": "Total number of interfaces",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
         },
         {
             "id": 60013,
@@ -28,18 +28,25 @@
             "href": "business-criteria/60013.json"
         },
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "business-criteria/66031.json"
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61010,
-            "name": "Complexity - OO Inheritance and Polymorphism"
+            "name": "Complexity - OO Inheritance and Polymorphism",
+            "weight": 4,
+            "critical": false
         }
     ],
     "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "technologies/141901.json"
+        },
         {
             "id": 138383,
             "name": "C#",
@@ -49,11 +56,6 @@
             "id": 138385,
             "name": "VB.NET",
             "href": "technologies/138385.json"
-        },
-        {
-            "id": 141901,
-            "name": ".NET (Legacy Analyzer)",
-            "href": "technologies/141901.json"
         }
     ],
     "qualityStandards": [

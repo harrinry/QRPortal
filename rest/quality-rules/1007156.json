@@ -14,14 +14,14 @@
     "total": "Number of Artifacts",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
         },
         {
             "id": 60013,
@@ -29,15 +29,17 @@
             "href": "business-criteria/60013.json"
         },
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "business-criteria/66031.json"
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61024,
-            "name": "Programming Practices - Structuredness"
+            "name": "Programming Practices - Structuredness",
+            "weight": 5,
+            "critical": false
         }
     ],
     "technologies": [
@@ -48,6 +50,13 @@
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-78",
+            "name": "OS Command Injection Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
         {
             "standard": "OWASP",
             "id": "A1-2013",
@@ -61,13 +70,6 @@
             "name": "Injection",
             "reference": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
             "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCSM-CWE-78",
-            "name": "OS Command Injection Improper Input Neutralization",
-            "reference": null,
-            "description": null
         }
     ]
 }

@@ -14,20 +14,22 @@
     "total": "Python artifacts",
     "businessCriteria": [
         {
-            "id": 60016,
-            "name": "Security",
-            "href": "business-criteria/60016.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
-            "name": "Secure Coding - Input Validation"
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -38,6 +40,13 @@
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-78",
+            "name": "OS Command Injection Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
         {
             "standard": "OWASP",
             "id": "A1-2013",
@@ -51,13 +60,6 @@
             "name": "Injection",
             "reference": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
             "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCSM-CWE-78",
-            "name": "OS Command Injection Improper Input Neutralization",
-            "reference": null,
-            "description": null
         }
     ]
 }
