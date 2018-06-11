@@ -13,14 +13,22 @@
     "total": "Number of javascript source codes using express-session",
     "businessCriteria": [
         {
-            "id": 60016,
-            "name": "Security",
-            "href": "business-criteria/60016.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66066,
+            "name": "Secure Coding - Encapsulation",
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -31,6 +39,13 @@
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-1004",
+            "name": "Sensitive Cookie Without 'HttpOnly' Flag",
+            "reference": "https://cwe.mitre.org/data/definitions/1004.html",
+            "description": null
+        },
         {
             "standard": "OWASP",
             "id": "A6-2013",
@@ -44,13 +59,6 @@
             "name": "Security Misconfiguration",
             "reference": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
             "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
-        },
-        {
-            "standard": "CWE",
-            "id": "CWE-1004",
-            "name": "Sensitive Cookie Without 'HttpOnly' Flag",
-            "reference": "https://cwe.mitre.org/data/definitions/1004.html",
-            "description": null
         }
     ]
 }
