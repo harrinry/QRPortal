@@ -11,6 +11,11 @@
     "sample": "package functional\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class FunctionClient\n {\n }\n}\npackage functional.func1.api\n\n{\n import functional.func1.restricted.Func1RestrictedClass; \n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1ExposedClass\n {\n }\n}\npackage functional.func1.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1RestrictedClass\n {\n }\n}\npackage functional.func2.api\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.restricted.Func2RestrictedClass;\n \n public class Func2ExposedClass\n {\n }\n}\npackage functional.func2.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n \n public class Func2RestrictedClass\n {\n }\n}",
     "businessCriteria": [
         {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "business-criteria/60012.json"
@@ -19,11 +24,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "business-criteria/60013.json"
-        },
-        {
-            "id": 66032,
-            "name": "Architectural Design",
-            "href": "business-criteria/66032.json"
         }
     ],
     "technicalCriteria": [

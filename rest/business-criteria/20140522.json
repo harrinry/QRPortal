@@ -1,92 +1,44 @@
 [
     {
-        "id": 4612,
-        "name": "Avoid using native Methods (JNI)",
-        "href": "quality-rules/4612.json",
-        "critical": false
-    },
-    {
-        "id": 8010,
-        "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
-        "href": "quality-rules/8010.json",
-        "critical": false
-    },
-    {
-        "id": 7810,
-        "name": "Avoid Artifacts with a Complex SELECT Clause",
-        "href": "quality-rules/7810.json",
-        "critical": false
-    },
-    {
-        "id": 7828,
-        "name": "Avoid Artifacts with High RAW SQL Complexity",
-        "href": "quality-rules/7828.json",
-        "critical": false
-    },
-    {
-        "id": 1005030,
-        "name": "Avoid \"SELECT *\" queries (EGL)",
-        "href": "quality-rules/1005030.json",
-        "critical": false
-    },
-    {
-        "id": 1600280,
-        "name": "PeopleSoft: Avoid put PeopleCode into Fields, prefer Component Level",
-        "href": "quality-rules/1600280.json",
-        "critical": false
-    },
-    {
-        "id": 1600282,
-        "name": "PeopleSoft: Write UNION ALL instead of UNION statement",
-        "href": "quality-rules/1600282.json",
-        "critical": false
-    },
-    {
-        "id": 1600284,
-        "name": "PeopleSoft: Avoid using comments in SQL queries",
-        "href": "quality-rules/1600284.json",
-        "critical": false
-    },
-    {
-        "id": 1600286,
-        "name": "PeopleSoft: Avoid use the Hints to force Oracle to use a specific access method",
-        "href": "quality-rules/1600286.json",
-        "critical": false
-    },
-    {
-        "id": 1600288,
-        "name": "PeopleSoft: Avoid using count(*) syntax",
-        "href": "quality-rules/1600288.json",
-        "critical": false
-    },
-    {
-        "id": 1600290,
-        "name": "PeopleSoft: Avoid using ROWNUM and ORDER BY",
-        "href": "quality-rules/1600290.json",
-        "critical": false
-    },
-    {
-        "id": 1600292,
-        "name": "PeopleSoft: In an INSERT statement define explicitly the values for all the table columns",
-        "href": "quality-rules/1600292.json",
-        "critical": false
-    },
-    {
-        "id": 1600294,
-        "name": "PeopleSoft: Child records must share all keys as the parent record, plus one or more keys that uniquely identify each row.",
-        "href": "quality-rules/1600294.json",
-        "critical": false
-    },
-    {
-        "id": 1600296,
-        "name": "PeopleSoft: Related Language tables must have the same key structure as the table with the addition of the field LANGUAGE_CD.",
-        "href": "quality-rules/1600296.json",
-        "critical": false
+        "id": 592,
+        "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
+        "href": "quality-rules/592.json",
+        "critical": true
     },
     {
         "id": 678,
         "name": "Never throw an exception from a Destructor",
         "href": "quality-rules/678.json",
+        "critical": true
+    },
+    {
+        "id": 1072,
+        "name": "Avoid using memory management Functions (free/malloc/realloc)",
+        "href": "quality-rules/1072.json",
+        "critical": false
+    },
+    {
+        "id": 1074,
+        "name": "Avoid using signals management Functions",
+        "href": "quality-rules/1074.json",
+        "critical": false
+    },
+    {
+        "id": 1576,
+        "name": "Use varchar2 instead of char and varchar",
+        "href": "quality-rules/1576.json",
+        "critical": false
+    },
+    {
+        "id": 1578,
+        "name": "Avoid using LONG & LONG RAW datatype for Table Columns",
+        "href": "quality-rules/1578.json",
+        "critical": false
+    },
+    {
+        "id": 1580,
+        "name": "Avoid using execute immediate",
+        "href": "quality-rules/1580.json",
         "critical": true
     },
     {
@@ -96,9 +48,45 @@
         "critical": false
     },
     {
+        "id": 1596,
+        "name": "Avoid using \"nullable\" Columns except in the last position in a Table",
+        "href": "quality-rules/1596.json",
+        "critical": false
+    },
+    {
+        "id": 1598,
+        "name": "Avoid Rule HINT  /*+ rule */ or --+ rule in PL/SQL code",
+        "href": "quality-rules/1598.json",
+        "critical": false
+    },
+    {
+        "id": 2230,
+        "name": "Use of style sheets",
+        "href": "quality-rules/2230.json",
+        "critical": false
+    },
+    {
         "id": 2232,
         "name": "Pages should use error handling page",
         "href": "quality-rules/2232.json",
+        "critical": false
+    },
+    {
+        "id": 2242,
+        "name": "Avoid direct definition of JavaScript Functions in a Web page",
+        "href": "quality-rules/2242.json",
+        "critical": false
+    },
+    {
+        "id": 2278,
+        "name": "Check the use of \"foreach\" custom tag library",
+        "href": "quality-rules/2278.json",
+        "critical": false
+    },
+    {
+        "id": 2280,
+        "name": "Avoid using Document.all collection",
+        "href": "quality-rules/2280.json",
         "critical": false
     },
     {
@@ -106,6 +94,12 @@
         "name": "Use a single Error Handling Method",
         "href": "quality-rules/2564.json",
         "critical": false
+    },
+    {
+        "id": 2586,
+        "name": "Utilization of \"DoEvents\" inside a loop",
+        "href": "quality-rules/2586.json",
+        "critical": true
     },
     {
         "id": 2590,
@@ -117,6 +111,24 @@
         "id": 3062,
         "name": "Use of error handling page",
         "href": "quality-rules/3062.json",
+        "critical": false
+    },
+    {
+        "id": 3064,
+        "name": "Avoid use of Session variables from Session_OnEnd",
+        "href": "quality-rules/3064.json",
+        "critical": false
+    },
+    {
+        "id": 3612,
+        "name": "Close SQL connection ASAP",
+        "href": "quality-rules/3612.json",
+        "critical": true
+    },
+    {
+        "id": 3614,
+        "name": "Avoid using String.Empty for empty string tests",
+        "href": "quality-rules/3614.json",
         "critical": false
     },
     {
@@ -132,6 +144,18 @@
         "critical": false
     },
     {
+        "id": 4070,
+        "name": "Avoid use of \"truncate table\"",
+        "href": "quality-rules/4070.json",
+        "critical": true
+    },
+    {
+        "id": 4084,
+        "name": "Avoid nested Stored Procedures using temporary Tables",
+        "href": "quality-rules/4084.json",
+        "critical": false
+    },
+    {
         "id": 4600,
         "name": "Avoid using 'java.System.exit()'",
         "href": "quality-rules/4600.json",
@@ -144,6 +168,18 @@
         "critical": false
     },
     {
+        "id": 4612,
+        "name": "Avoid using native Methods (JNI)",
+        "href": "quality-rules/4612.json",
+        "critical": false
+    },
+    {
+        "id": 4618,
+        "name": "Avoid instantiating Boolean",
+        "href": "quality-rules/4618.json",
+        "critical": false
+    },
+    {
         "id": 4652,
         "name": "Avoid direct Class inheritance from java.lang.Throwable",
         "href": "quality-rules/4652.json",
@@ -153,6 +189,12 @@
         "id": 4656,
         "name": "Avoid declaring throwing an exception and not throwing it",
         "href": "quality-rules/4656.json",
+        "critical": false
+    },
+    {
+        "id": 4694,
+        "name": "Avoid using 'System.gc'",
+        "href": "quality-rules/4694.json",
         "critical": false
     },
     {
@@ -180,612 +222,6 @@
         "critical": false
     },
     {
-        "id": 5050,
-        "name": "Avoid using HANDLE CONDITION",
-        "href": "quality-rules/5050.json",
-        "critical": false
-    },
-    {
-        "id": 5052,
-        "name": "Avoid using IGNORE CONDITION",
-        "href": "quality-rules/5052.json",
-        "critical": false
-    },
-    {
-        "id": 5054,
-        "name": "Avoid using HANDLE ABEND",
-        "href": "quality-rules/5054.json",
-        "critical": false
-    },
-    {
-        "id": 5072,
-        "name": "Avoid DISPLAY ... UPON CONSOLE",
-        "href": "quality-rules/5072.json",
-        "critical": false
-    },
-    {
-        "id": 5092,
-        "name": "Include a WHEN OTHER clause when using EVALUATE",
-        "href": "quality-rules/5092.json",
-        "critical": false
-    },
-    {
-        "id": 7518,
-        "name": "Avoid missing WHEN OTHERS in CASE statements",
-        "href": "quality-rules/7518.json",
-        "critical": false
-    },
-    {
-        "id": 7520,
-        "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
-        "href": "quality-rules/7520.json",
-        "critical": true
-    },
-    {
-        "id": 7536,
-        "name": "Avoid using AT Events in combination of LOOP AT .... WHERE constructs",
-        "href": "quality-rules/7536.json",
-        "critical": true
-    },
-    {
-        "id": 7640,
-        "name": "Avoid catch blocks with assertion",
-        "href": "quality-rules/7640.json",
-        "critical": false
-    },
-    {
-        "id": 7652,
-        "name": "Avoid throwing an exception in a catch block without chaining it",
-        "href": "quality-rules/7652.json",
-        "critical": false
-    },
-    {
-        "id": 7690,
-        "name": "Avoid unchecked return code (SQLCODE) after EXEC SQL query",
-        "href": "quality-rules/7690.json",
-        "critical": true
-    },
-    {
-        "id": 7698,
-        "name": "Files should be declared with a FILE-STATUS",
-        "href": "quality-rules/7698.json",
-        "critical": false
-    },
-    {
-        "id": 7756,
-        "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
-        "href": "quality-rules/7756.json",
-        "critical": false
-    },
-    {
-        "id": 7782,
-        "name": "Avoid empty finally blocks",
-        "href": "quality-rules/7782.json",
-        "critical": false
-    },
-    {
-        "id": 7788,
-        "name": "Avoid empty catch blocks",
-        "href": "quality-rules/7788.json",
-        "critical": true
-    },
-    {
-        "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
-        "href": "quality-rules/7824.json",
-        "critical": true
-    },
-    {
-        "id": 7850,
-        "name": "Avoid raising an exception in a Web Dynpro Supply Function or in a Method called by a Supply Function",
-        "href": "quality-rules/7850.json",
-        "critical": false
-    },
-    {
-        "id": 7862,
-        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
-        "href": "quality-rules/7862.json",
-        "critical": false
-    },
-    {
-        "id": 7910,
-        "name": "Never exit a finally block with a return, break, continue, or throw",
-        "href": "quality-rules/7910.json",
-        "critical": true
-    },
-    {
-        "id": 8000,
-        "name": "Avoid 'catch-all' statement",
-        "href": "quality-rules/8000.json",
-        "critical": false
-    },
-    {
-        "id": 8012,
-        "name": "Avoid unchecked return code (SY-SUBRC) after opening and reading dataset",
-        "href": "quality-rules/8012.json",
-        "critical": false
-    },
-    {
-        "id": 8028,
-        "name": "Avoid missing default in switch statements",
-        "href": "quality-rules/8028.json",
-        "critical": false
-    },
-    {
-        "id": 8030,
-        "name": "Check alphanumeric data before moving it into numeric data",
-        "href": "quality-rules/8030.json",
-        "critical": false
-    },
-    {
-        "id": 8106,
-        "name": "Avoid empty IF-ENDIF blocks",
-        "href": "quality-rules/8106.json",
-        "critical": true
-    },
-    {
-        "id": 8112,
-        "name": "Avoid improper processing of the execution status of data handling operations",
-        "href": "quality-rules/8112.json",
-        "critical": true
-    },
-    {
-        "id": 8120,
-        "name": "Avoid using CALL FUNCTION without error handling",
-        "href": "quality-rules/8120.json",
-        "critical": false
-    },
-    {
-        "id": 8122,
-        "name": "Avoid using CALL METHOD without error handling",
-        "href": "quality-rules/8122.json",
-        "critical": false
-    },
-    {
-        "id": 8160,
-        "name": "Check PCB status code after DLI queries",
-        "href": "quality-rules/8160.json",
-        "critical": false
-    },
-    {
-        "id": 8162,
-        "name": "CICS return code should be checked",
-        "href": "quality-rules/8162.json",
-        "critical": false
-    },
-    {
-        "id": 1001148,
-        "name": "Avoid Main Procedures not having an ON ERROR clause (PL1)",
-        "href": "quality-rules/1001148.json",
-        "critical": true
-    },
-    {
-        "id": 1001150,
-        "name": "Avoid Functions and Procedures having a SELECT without the default OTHERWISE clause (PL1)",
-        "href": "quality-rules/1001150.json",
-        "critical": false
-    },
-    {
-        "id": 1001152,
-        "name": "Avoid Programs having files declared as RECORD INPUT or RECORD UPDATE and not having  the ON EOF or ON ENDFILE statement (PL1)",
-        "href": "quality-rules/1001152.json",
-        "critical": false
-    },
-    {
-        "id": 1001154,
-        "name": "Avoid Programs having files declared and not having the ON UNDF or ON UNDEFINEDFILE statement except SYSPRINT and SYSIN (PL1)",
-        "href": "quality-rules/1001154.json",
-        "critical": false
-    },
-    {
-        "id": 1001156,
-        "name": "Avoid PL1 Errors Blocks having ON ERROR SYSTEM blocks and not containing and displaying ONCODE and ONLOC (PL1)",
-        "href": "quality-rules/1001156.json",
-        "critical": false
-    },
-    {
-        "id": 1001158,
-        "name": "Avoid Functions and Procedures not testing the SQLCODE return code after each SQL statement (PL1)",
-        "href": "quality-rules/1001158.json",
-        "critical": true
-    },
-    {
-        "id": 1002016,
-        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Programs  (FORTRAN)",
-        "href": "quality-rules/1002016.json",
-        "critical": false
-    },
-    {
-        "id": 1002018,
-        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Subroutines  (FORTRAN)",
-        "href": "quality-rules/1002018.json",
-        "critical": false
-    },
-    {
-        "id": 1002020,
-        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Functions  (FORTRAN)",
-        "href": "quality-rules/1002020.json",
-        "critical": false
-    },
-    {
-        "id": 1002022,
-        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Modules  (FORTRAN)",
-        "href": "quality-rules/1002022.json",
-        "critical": false
-    },
-    {
-        "id": 1002208,
-        "name": "All Read and Write statements in Programs must use the return code IOSTAT (FORTRAN)",
-        "href": "quality-rules/1002208.json",
-        "critical": false
-    },
-    {
-        "id": 1002210,
-        "name": "All Read and Write statements in Subroutines must use the return code IOSTAT (FORTRAN)",
-        "href": "quality-rules/1002210.json",
-        "critical": false
-    },
-    {
-        "id": 1002212,
-        "name": "All Read and Write statements in Functions must use the return code IOSTAT (FORTRAN)",
-        "href": "quality-rules/1002212.json",
-        "critical": false
-    },
-    {
-        "id": 1002214,
-        "name": "All Read and Write statements in Modules must use the return code IOSTAT (FORTRAN)",
-        "href": "quality-rules/1002214.json",
-        "critical": false
-    },
-    {
-        "id": 1002238,
-        "name": "Avoid untested Return Code variables after Read or Write in Programs (FORTRAN)",
-        "href": "quality-rules/1002238.json",
-        "critical": false
-    },
-    {
-        "id": 1002240,
-        "name": "Avoid untested Return Code variables after Read or Write in Subroutines (FORTRAN)",
-        "href": "quality-rules/1002240.json",
-        "critical": false
-    },
-    {
-        "id": 1002242,
-        "name": "Avoid untested Return Code variables after Read or Write in Functions (FORTRAN)",
-        "href": "quality-rules/1002242.json",
-        "critical": false
-    },
-    {
-        "id": 1002244,
-        "name": "Avoid untested Return Code variables after Read or Write in Modules (FORTRAN)",
-        "href": "quality-rules/1002244.json",
-        "critical": false
-    },
-    {
-        "id": 1002246,
-        "name": "Avoid untested Return Code variables after ALLOCATE in Programs (FORTRAN)",
-        "href": "quality-rules/1002246.json",
-        "critical": false
-    },
-    {
-        "id": 1002248,
-        "name": "Avoid untested Return Code variables after ALLOCATE in Subroutines (FORTRAN)",
-        "href": "quality-rules/1002248.json",
-        "critical": false
-    },
-    {
-        "id": 1002250,
-        "name": "Avoid untested Return Code variables after ALLOCATE in Functions (FORTRAN)",
-        "href": "quality-rules/1002250.json",
-        "critical": false
-    },
-    {
-        "id": 1002252,
-        "name": "Avoid untested Return Code variables after ALLOCATE in Modules (FORTRAN)",
-        "href": "quality-rules/1002252.json",
-        "critical": false
-    },
-    {
-        "id": 1002282,
-        "name": "All ALLOCATE statements in Fortran-90 Programs must use the return code STAT (FORTRAN)",
-        "href": "quality-rules/1002282.json",
-        "critical": false
-    },
-    {
-        "id": 1002284,
-        "name": "All ALLOCATE statements in Fortran-90 Subroutines must use the return code STAT (FORTRAN)",
-        "href": "quality-rules/1002284.json",
-        "critical": false
-    },
-    {
-        "id": 1002286,
-        "name": "All ALLOCATE statements in Fortran-90 Functions must use the return code STAT (FORTRAN)",
-        "href": "quality-rules/1002286.json",
-        "critical": false
-    },
-    {
-        "id": 1002288,
-        "name": "All ALLOCATE statements in Fortran-90 Modules must use the return code STAT (FORTRAN)",
-        "href": "quality-rules/1002288.json",
-        "critical": false
-    },
-    {
-        "id": 1003086,
-        "name": "Avoid empty catch statement (Flex)",
-        "href": "quality-rules/1003086.json",
-        "critical": false
-    },
-    {
-        "id": 1003088,
-        "name": "Avoid calling Alert.show directly (Flex)",
-        "href": "quality-rules/1003088.json",
-        "critical": false
-    },
-    {
-        "id": 1005068,
-        "name": "Avoid SQL query outside try-on block (EGL)",
-        "href": "quality-rules/1005068.json",
-        "critical": true
-    },
-    {
-        "id": 1005070,
-        "name": "Avoid Program calls without checking the return code (EGL)",
-        "href": "quality-rules/1005070.json",
-        "critical": true
-    },
-    {
-        "id": 1005072,
-        "name": "Enable Exception for migrated programs - throwNrfEofExceptions property must be set to YES (EGL)",
-        "href": "quality-rules/1005072.json",
-        "critical": false
-    },
-    {
-        "id": 1005074,
-        "name": "Avoid having handleHardIOErrors property enabled (EGL)",
-        "href": "quality-rules/1005074.json",
-        "critical": false
-    },
-    {
-        "id": 1005076,
-        "name": "Avoid having V60ExceptionCompatibility property set to NO (EGL)",
-        "href": "quality-rules/1005076.json",
-        "critical": false
-    },
-    {
-        "id": 1005078,
-        "name": "Avoid program calls outside a try end block (EGL)",
-        "href": "quality-rules/1005078.json",
-        "critical": true
-    },
-    {
-        "id": 1007122,
-        "name": "Avoid empty catch blocks (PHP)",
-        "href": "quality-rules/1007122.json",
-        "critical": true
-    },
-    {
-        "id": 1007124,
-        "name": "Avoid artifacts throwing exceptions without @Throws tag in doc comments (PHP)",
-        "href": "quality-rules/1007124.json",
-        "critical": false
-    },
-    {
-        "id": 1008074,
-        "name": "Specify Error Subroutine for File Exception Handling  (RPG400)",
-        "href": "quality-rules/1008074.json",
-        "critical": false
-    },
-    {
-        "id": 1008076,
-        "name": "Specify Program Status Data Area  (RPG400)",
-        "href": "quality-rules/1008076.json",
-        "critical": false
-    },
-    {
-        "id": 1009074,
-        "name": "Specify Error Subroutine for File Exception Handling  (RPG300)",
-        "href": "quality-rules/1009074.json",
-        "critical": false
-    },
-    {
-        "id": 1012026,
-        "name": "Do not use MONMSG CPF0000 without EXEC  (CL400)",
-        "href": "quality-rules/1012026.json",
-        "critical": false
-    },
-    {
-        "id": 1020068,
-        "name": "Avoid return statement in finally block",
-        "href": "quality-rules/1020068.json",
-        "critical": true
-    },
-    {
-        "id": 1020304,
-        "name": "Implement success and error callbacks when using jquery web service call",
-        "href": "quality-rules/1020304.json",
-        "critical": true
-    },
-    {
-        "id": 1020540,
-        "name": "Avoid using $http success and error function",
-        "href": "quality-rules/1020540.json",
-        "critical": false
-    },
-    {
-        "id": 1020700,
-        "name": "Avoid the lack of error handling in the Node.js callbacks",
-        "href": "quality-rules/1020700.json",
-        "critical": false
-    },
-    {
-        "id": 1020702,
-        "name": "Avoid using process.exit()",
-        "href": "quality-rules/1020702.json",
-        "critical": false
-    },
-    {
-        "id": 1021018,
-        "name": "Avoid catch-all except blocks with empty handlers",
-        "href": "quality-rules/1021018.json",
-        "critical": true
-    },
-    {
-        "id": 1021024,
-        "name": "Avoid return statement in finally block",
-        "href": "quality-rules/1021024.json",
-        "critical": false
-    },
-    {
-        "id": 1021028,
-        "name": "Avoid empty finally block",
-        "href": "quality-rules/1021028.json",
-        "critical": true
-    },
-    {
-        "id": 1050020,
-        "name": "Avoid return statement in @finally block",
-        "href": "quality-rules/1050020.json",
-        "critical": true
-    },
-    {
-        "id": 1050030,
-        "name": "Ensure the Objective-C error condition check is not fragile",
-        "href": "quality-rules/1050030.json",
-        "critical": true
-    },
-    {
-        "id": 1060000,
-        "name": "Avoid Empty Catch Block When Calling Resource",
-        "href": "quality-rules/1060000.json",
-        "critical": true
-    },
-    {
-        "id": 1060004,
-        "name": "Avoid Empty Finally Block When Calling Resource",
-        "href": "quality-rules/1060004.json",
-        "critical": true
-    },
-    {
-        "id": 1060018,
-        "name": "Avoid String concatenation in loops for artifacts with high fan in",
-        "href": "quality-rules/1060018.json",
-        "critical": true
-    },
-    {
-        "id": 1060020,
-        "name": "Avoid empty catch blocks for methods with high fan-in",
-        "href": "quality-rules/1060020.json",
-        "critical": true
-    },
-    {
-        "id": 1101040,
-        "name": "Avoid empty catch blocks",
-        "href": "quality-rules/1101040.json",
-        "critical": true
-    },
-    {
-        "id": 1520580,
-        "name": "Siebel eScript: Avoid Functions without Try, Catch and Finally block",
-        "href": "quality-rules/1520580.json",
-        "critical": false
-    },
-    {
-        "id": 1520582,
-        "name": "Siebel eScript: Avoid Functions destroying variables outside of the finally clause",
-        "href": "quality-rules/1520582.json",
-        "critical": false
-    },
-    {
-        "id": 1520584,
-        "name": "Siebel eScript: Avoid Functions having Return statement in the Finally clause",
-        "href": "quality-rules/1520584.json",
-        "critical": false
-    },
-    {
-        "id": 1520586,
-        "name": "Siebel eScript: Prefer using GotoView in the Finally clause of a Function",
-        "href": "quality-rules/1520586.json",
-        "critical": false
-    },
-    {
-        "id": 1520588,
-        "name": "Siebel Scripting Review: Using Error Code in scripts",
-        "href": "quality-rules/1520588.json",
-        "critical": false
-    },
-    {
-        "id": 1072,
-        "name": "Avoid using memory management Functions (free/malloc/realloc)",
-        "href": "quality-rules/1072.json",
-        "critical": false
-    },
-    {
-        "id": 1074,
-        "name": "Avoid using signals management Functions",
-        "href": "quality-rules/1074.json",
-        "critical": false
-    },
-    {
-        "id": 1576,
-        "name": "Use varchar2 instead of char and varchar",
-        "href": "quality-rules/1576.json",
-        "critical": false
-    },
-    {
-        "id": 2230,
-        "name": "Use of style sheets",
-        "href": "quality-rules/2230.json",
-        "critical": false
-    },
-    {
-        "id": 2242,
-        "name": "Avoid direct definition of JavaScript Functions in a Web page",
-        "href": "quality-rules/2242.json",
-        "critical": false
-    },
-    {
-        "id": 2278,
-        "name": "Check the use of \"foreach\" custom tag library",
-        "href": "quality-rules/2278.json",
-        "critical": false
-    },
-    {
-        "id": 2280,
-        "name": "Avoid using Document.all collection",
-        "href": "quality-rules/2280.json",
-        "critical": false
-    },
-    {
-        "id": 3064,
-        "name": "Avoid use of Session variables from Session_OnEnd",
-        "href": "quality-rules/3064.json",
-        "critical": false
-    },
-    {
-        "id": 3612,
-        "name": "Close SQL connection ASAP",
-        "href": "quality-rules/3612.json",
-        "critical": true
-    },
-    {
-        "id": 3614,
-        "name": "Avoid using String.Empty for empty string tests",
-        "href": "quality-rules/3614.json",
-        "critical": false
-    },
-    {
-        "id": 4618,
-        "name": "Avoid instantiating Boolean",
-        "href": "quality-rules/4618.json",
-        "critical": false
-    },
-    {
-        "id": 4694,
-        "name": "Avoid using 'System.gc'",
-        "href": "quality-rules/4694.json",
-        "critical": false
-    },
-    {
         "id": 4704,
         "name": "Avoid using Vector",
         "href": "quality-rules/4704.json",
@@ -810,6 +246,90 @@
         "critical": true
     },
     {
+        "id": 5050,
+        "name": "Avoid using HANDLE CONDITION",
+        "href": "quality-rules/5050.json",
+        "critical": false
+    },
+    {
+        "id": 5052,
+        "name": "Avoid using IGNORE CONDITION",
+        "href": "quality-rules/5052.json",
+        "critical": false
+    },
+    {
+        "id": 5054,
+        "name": "Avoid using HANDLE ABEND",
+        "href": "quality-rules/5054.json",
+        "critical": false
+    },
+    {
+        "id": 5056,
+        "name": "Avoid using SEARCH without the ALL addition",
+        "href": "quality-rules/5056.json",
+        "critical": false
+    },
+    {
+        "id": 5058,
+        "name": "Avoid using SORT",
+        "href": "quality-rules/5058.json",
+        "critical": false
+    },
+    {
+        "id": 5060,
+        "name": "Avoid using MERGE",
+        "href": "quality-rules/5060.json",
+        "critical": false
+    },
+    {
+        "id": 5072,
+        "name": "Avoid DISPLAY ... UPON CONSOLE",
+        "href": "quality-rules/5072.json",
+        "critical": false
+    },
+    {
+        "id": 5092,
+        "name": "Include a WHEN OTHER clause when using EVALUATE",
+        "href": "quality-rules/5092.json",
+        "critical": false
+    },
+    {
+        "id": 5550,
+        "name": "Avoid having joins with more than 4 Tables",
+        "href": "quality-rules/5550.json",
+        "critical": false
+    },
+    {
+        "id": 5554,
+        "name": "Avoid having SQL code in Triggers named \"pre-record\"",
+        "href": "quality-rules/5554.json",
+        "critical": false
+    },
+    {
+        "id": 6184,
+        "name": "Avoid Artifacts with Subqueries",
+        "href": "quality-rules/6184.json",
+        "critical": true
+    },
+    {
+        "id": 7130,
+        "name": "Avoid Artifacts with High Depth of Nested Subqueries",
+        "href": "quality-rules/7130.json",
+        "critical": false
+    },
+    {
+        "id": 7152,
+        "name": "Avoid Fields in Servlet Classes that are not final static",
+        "href": "quality-rules/7152.json",
+        "critical": true
+    },
+    {
+        "id": 7154,
+        "name": "Avoid Fields in Action Classes that are not final static",
+        "href": "quality-rules/7154.json",
+        "critical": true
+    },
+    {
         "id": 7194,
         "name": "Avoid large number of String concatenation",
         "href": "quality-rules/7194.json",
@@ -820,6 +340,60 @@
         "name": "Avoid large number of String concatenation",
         "href": "quality-rules/7196.json",
         "critical": false
+    },
+    {
+        "id": 7198,
+        "name": "Avoid String concatenation in loops",
+        "href": "quality-rules/7198.json",
+        "critical": false
+    },
+    {
+        "id": 7200,
+        "name": "Avoid String concatenation in loops",
+        "href": "quality-rules/7200.json",
+        "critical": false
+    },
+    {
+        "id": 7202,
+        "name": "Check usage of '==' and '!=' on objects",
+        "href": "quality-rules/7202.json",
+        "critical": true
+    },
+    {
+        "id": 7204,
+        "name": "Avoid method invocation in a loop termination expression",
+        "href": "quality-rules/7204.json",
+        "critical": false
+    },
+    {
+        "id": 7206,
+        "name": "Avoid the use of InstanceOf inside loops",
+        "href": "quality-rules/7206.json",
+        "critical": false
+    },
+    {
+        "id": 7208,
+        "name": "Avoid the use of is inside loops",
+        "href": "quality-rules/7208.json",
+        "critical": false
+    },
+    {
+        "id": 7210,
+        "name": "Avoid instantiations inside loops",
+        "href": "quality-rules/7210.json",
+        "critical": true
+    },
+    {
+        "id": 7212,
+        "name": "Avoid instantiations inside loops",
+        "href": "quality-rules/7212.json",
+        "critical": true
+    },
+    {
+        "id": 7218,
+        "name": "Avoid OPEN/CLOSE inside loops",
+        "href": "quality-rules/7218.json",
+        "critical": true
     },
     {
         "id": 7250,
@@ -876,6 +450,48 @@
         "critical": false
     },
     {
+        "id": 7344,
+        "name": "Avoid \"SELECT *\" queries",
+        "href": "quality-rules/7344.json",
+        "critical": false
+    },
+    {
+        "id": 7346,
+        "name": "Avoid redundant indexes",
+        "href": "quality-rules/7346.json",
+        "critical": false
+    },
+    {
+        "id": 7348,
+        "name": "Avoid too many Indexes on one Table",
+        "href": "quality-rules/7348.json",
+        "critical": false
+    },
+    {
+        "id": 7350,
+        "name": "Avoid Tables having Indexes with a too large Index definition",
+        "href": "quality-rules/7350.json",
+        "critical": false
+    },
+    {
+        "id": 7352,
+        "name": "Avoid calling properties that clone values in loops",
+        "href": "quality-rules/7352.json",
+        "critical": false
+    },
+    {
+        "id": 7358,
+        "name": "Avoid call to AcceptChanges in a loop",
+        "href": "quality-rules/7358.json",
+        "critical": true
+    },
+    {
+        "id": 7366,
+        "name": "File descriptor block must be defined with 0 record",
+        "href": "quality-rules/7366.json",
+        "critical": true
+    },
+    {
         "id": 7368,
         "name": "When using binary data items (COMP), then use the SYNCHRONIZED clause",
         "href": "quality-rules/7368.json",
@@ -888,15 +504,243 @@
         "critical": false
     },
     {
+        "id": 7386,
+        "name": "Avoid Tables without a clustered Index",
+        "href": "quality-rules/7386.json",
+        "critical": false
+    },
+    {
+        "id": 7418,
+        "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
+        "href": "quality-rules/7418.json",
+        "critical": false
+    },
+    {
+        "id": 7420,
+        "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
+        "href": "quality-rules/7420.json",
+        "critical": false
+    },
+    {
+        "id": 7424,
+        "name": "Avoid using SQL queries inside a loop",
+        "href": "quality-rules/7424.json",
+        "critical": true
+    },
+    {
+        "id": 7428,
+        "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
+        "href": "quality-rules/7428.json",
+        "critical": false
+    },
+    {
+        "id": 7436,
+        "name": "Prefer UNION ALL to UNION",
+        "href": "quality-rules/7436.json",
+        "critical": false
+    },
+    {
+        "id": 7438,
+        "name": "Avoid non thread safe singleton",
+        "href": "quality-rules/7438.json",
+        "critical": true
+    },
+    {
+        "id": 7442,
+        "name": "Avoid to use this within Constructor in multi-thread environment",
+        "href": "quality-rules/7442.json",
+        "critical": true
+    },
+    {
         "id": 7444,
         "name": "Serialize session objects",
         "href": "quality-rules/7444.json",
         "critical": false
     },
     {
+        "id": 7446,
+        "name": "Avoid double checked locking",
+        "href": "quality-rules/7446.json",
+        "critical": true
+    },
+    {
+        "id": 7466,
+        "name": "Avoid changing DataSource member before ValueMember/DisplayMember",
+        "href": "quality-rules/7466.json",
+        "critical": false
+    },
+    {
+        "id": 7468,
+        "name": "Disable constraints before merging DataSet",
+        "href": "quality-rules/7468.json",
+        "critical": false
+    },
+    {
+        "id": 7470,
+        "name": "Avoid doing select on Datatable in loop",
+        "href": "quality-rules/7470.json",
+        "critical": true
+    },
+    {
+        "id": 7474,
+        "name": "Use BeginUpdate/EndUpdate when using Items.Add method in loop",
+        "href": "quality-rules/7474.json",
+        "critical": false
+    },
+    {
+        "id": 7476,
+        "name": "Turn off \"Multiple SQL statements for each measure\"",
+        "href": "quality-rules/7476.json",
+        "critical": true
+    },
+    {
+        "id": 7480,
+        "name": "Use aggregate awareness for indicators",
+        "href": "quality-rules/7480.json",
+        "critical": false
+    },
+    {
+        "id": 7482,
+        "name": "Do not use Cartesian products in Universe properties",
+        "href": "quality-rules/7482.json",
+        "critical": true
+    },
+    {
         "id": 7486,
         "name": "Split universes of more than X MB",
         "href": "quality-rules/7486.json",
+        "critical": false
+    },
+    {
+        "id": 7488,
+        "name": "Use lazy fetching for collection",
+        "href": "quality-rules/7488.json",
+        "critical": true
+    },
+    {
+        "id": 7490,
+        "name": "Avoid UPDATE trigger firing when not necessary",
+        "href": "quality-rules/7490.json",
+        "critical": true
+    },
+    {
+        "id": 7494,
+        "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
+        "href": "quality-rules/7494.json",
+        "critical": true
+    },
+    {
+        "id": 7496,
+        "name": "Use table-per-subclass strategy when subclasses have many properties",
+        "href": "quality-rules/7496.json",
+        "critical": false
+    },
+    {
+        "id": 7498,
+        "name": "Collection must be the same between getter and setter",
+        "href": "quality-rules/7498.json",
+        "critical": false
+    },
+    {
+        "id": 7500,
+        "name": "Use table-per-class-hierarchy when subclasses have few properties",
+        "href": "quality-rules/7500.json",
+        "critical": false
+    },
+    {
+        "id": 7502,
+        "name": "Never use array to map a collection",
+        "href": "quality-rules/7502.json",
+        "critical": true
+    },
+    {
+        "id": 7504,
+        "name": "Persistent classes should Implement hashCode() and equals()",
+        "href": "quality-rules/7504.json",
+        "critical": true
+    },
+    {
+        "id": 7506,
+        "name": "Define equals() and hashCode() for component",
+        "href": "quality-rules/7506.json",
+        "critical": true
+    },
+    {
+        "id": 7508,
+        "name": "Collection-typed attributes getter must be defined with the correct interface",
+        "href": "quality-rules/7508.json",
+        "critical": false
+    },
+    {
+        "id": 7518,
+        "name": "Avoid missing WHEN OTHERS in CASE statements",
+        "href": "quality-rules/7518.json",
+        "critical": false
+    },
+    {
+        "id": 7520,
+        "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
+        "href": "quality-rules/7520.json",
+        "critical": true
+    },
+    {
+        "id": 7528,
+        "name": "Never use the ON CHANGE OF statement",
+        "href": "quality-rules/7528.json",
+        "critical": false
+    },
+    {
+        "id": 7530,
+        "name": "Avoid \"SELECT *\" or \"SELECT SINGLE *\" queries",
+        "href": "quality-rules/7530.json",
+        "critical": false
+    },
+    {
+        "id": 7532,
+        "name": "Avoid nested SELECT ... ENDSELECT statements",
+        "href": "quality-rules/7532.json",
+        "critical": true
+    },
+    {
+        "id": 7534,
+        "name": "Avoid READ TABLE without BINARY SEARCH",
+        "href": "quality-rules/7534.json",
+        "critical": true
+    },
+    {
+        "id": 7536,
+        "name": "Avoid using AT Events in combination of LOOP AT .... WHERE constructs",
+        "href": "quality-rules/7536.json",
+        "critical": true
+    },
+    {
+        "id": 7538,
+        "name": "Avoid using SELECT ... INTO CORRESPONDING FIELDS OF",
+        "href": "quality-rules/7538.json",
+        "critical": true
+    },
+    {
+        "id": 7542,
+        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
+        "href": "quality-rules/7542.json",
+        "critical": false
+    },
+    {
+        "id": 7544,
+        "name": "Avoid using SELECT ... ENDSELECT statement",
+        "href": "quality-rules/7544.json",
+        "critical": false
+    },
+    {
+        "id": 7548,
+        "name": "Never use incompatible statements with the CICS environment",
+        "href": "quality-rules/7548.json",
+        "critical": true
+    },
+    {
+        "id": 7556,
+        "name": "Avoid instanceof in Methods that override or implement Object.equals(), Comparable.compareTo()",
+        "href": "quality-rules/7556.json",
         "critical": false
     },
     {
@@ -906,9 +750,93 @@
         "critical": false
     },
     {
+        "id": 7572,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (DELETE)",
+        "href": "quality-rules/7572.json",
+        "critical": false
+    },
+    {
+        "id": 7576,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
+        "href": "quality-rules/7576.json",
+        "critical": false
+    },
+    {
+        "id": 7578,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (UPDATE)",
+        "href": "quality-rules/7578.json",
+        "critical": false
+    },
+    {
+        "id": 7580,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (DELETE)",
+        "href": "quality-rules/7580.json",
+        "critical": false
+    },
+    {
+        "id": 7582,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
+        "href": "quality-rules/7582.json",
+        "critical": false
+    },
+    {
+        "id": 7584,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (UPDATE)",
+        "href": "quality-rules/7584.json",
+        "critical": false
+    },
+    {
+        "id": 7586,
+        "name": "Avoid cyclic calls between Event and its handled Method",
+        "href": "quality-rules/7586.json",
+        "critical": false
+    },
+    {
+        "id": 7592,
+        "name": "Avoid using \"ORDER BY\" in SELECTS",
+        "href": "quality-rules/7592.json",
+        "critical": false
+    },
+    {
+        "id": 7594,
+        "name": "Avoid using \"SELECT DISTINCT\", use DELETE-ADJACENT",
+        "href": "quality-rules/7594.json",
+        "critical": false
+    },
+    {
+        "id": 7634,
+        "name": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
+        "href": "quality-rules/7634.json",
+        "critical": true
+    },
+    {
+        "id": 7636,
+        "name": "Use version instead of timestamp",
+        "href": "quality-rules/7636.json",
+        "critical": false
+    },
+    {
         "id": 7638,
         "name": "Avoid using DriverManager",
         "href": "quality-rules/7638.json",
+        "critical": false
+    },
+    {
+        "id": 7640,
+        "name": "Avoid catch blocks with assertion",
+        "href": "quality-rules/7640.json",
+        "critical": false
+    },
+    {
+        "id": 7642,
+        "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
+        "href": "quality-rules/7642.json",
+        "critical": true
+    },
+    {
+        "id": 7644,
+        "name": "Avoid executing multiple OPEN statements",
+        "href": "quality-rules/7644.json",
         "critical": false
     },
     {
@@ -918,9 +846,99 @@
         "critical": false
     },
     {
+        "id": 7650,
+        "name": "All types of a serializable Class must be serializable (ASCRM-RLB-2)",
+        "href": "quality-rules/7650.json",
+        "critical": false
+    },
+    {
+        "id": 7652,
+        "name": "Avoid throwing an exception in a catch block without chaining it",
+        "href": "quality-rules/7652.json",
+        "critical": false
+    },
+    {
+        "id": 7658,
+        "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
+        "href": "quality-rules/7658.json",
+        "critical": true
+    },
+    {
+        "id": 7660,
+        "name": "Never use SQL queries with a cartesian product on XXL Tables",
+        "href": "quality-rules/7660.json",
+        "critical": true
+    },
+    {
+        "id": 7662,
+        "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
+        "href": "quality-rules/7662.json",
+        "critical": true
+    },
+    {
+        "id": 7664,
+        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
+        "href": "quality-rules/7664.json",
+        "critical": false
+    },
+    {
+        "id": 7666,
+        "name": "Avoid using SELECT ... ENDSELECT statement on XXL Tables",
+        "href": "quality-rules/7666.json",
+        "critical": false
+    },
+    {
         "id": 7668,
         "name": "Avoid using incorrect XML parsing model",
         "href": "quality-rules/7668.json",
+        "critical": false
+    },
+    {
+        "id": 7688,
+        "name": "Never truncate data in MOVE statements",
+        "href": "quality-rules/7688.json",
+        "critical": true
+    },
+    {
+        "id": 7690,
+        "name": "Avoid unchecked return code (SQLCODE) after EXEC SQL query",
+        "href": "quality-rules/7690.json",
+        "critical": true
+    },
+    {
+        "id": 7692,
+        "name": "Each opened file must be closed",
+        "href": "quality-rules/7692.json",
+        "critical": false
+    },
+    {
+        "id": 7698,
+        "name": "Files should be declared with a FILE-STATUS",
+        "href": "quality-rules/7698.json",
+        "critical": false
+    },
+    {
+        "id": 7702,
+        "name": "Use a third party connection pool",
+        "href": "quality-rules/7702.json",
+        "critical": false
+    },
+    {
+        "id": 7708,
+        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
+        "href": "quality-rules/7708.json",
+        "critical": false
+    },
+    {
+        "id": 7710,
+        "name": "Avoid non serializable Entities",
+        "href": "quality-rules/7710.json",
+        "critical": false
+    },
+    {
+        "id": 7712,
+        "name": "Avoid public/protected setter for the generated identifier field",
+        "href": "quality-rules/7712.json",
         "critical": false
     },
     {
@@ -930,9 +948,105 @@
         "critical": true
     },
     {
+        "id": 7722,
+        "name": "Avoid using references to the id in the persistent class's method equals()",
+        "href": "quality-rules/7722.json",
+        "critical": true
+    },
+    {
+        "id": 7724,
+        "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
+        "href": "quality-rules/7724.json",
+        "critical": true
+    },
+    {
+        "id": 7728,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "quality-rules/7728.json",
+        "critical": false
+    },
+    {
+        "id": 7730,
+        "name": "Use declarative transaction",
+        "href": "quality-rules/7730.json",
+        "critical": false
+    },
+    {
         "id": 7734,
         "name": "Avoid to use Log.debug() without calling Log.isDebugEnabled()",
         "href": "quality-rules/7734.json",
+        "critical": false
+    },
+    {
+        "id": 7756,
+        "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
+        "href": "quality-rules/7756.json",
+        "critical": false
+    },
+    {
+        "id": 7782,
+        "name": "Avoid empty finally blocks",
+        "href": "quality-rules/7782.json",
+        "critical": false
+    },
+    {
+        "id": 7788,
+        "name": "Avoid empty catch blocks",
+        "href": "quality-rules/7788.json",
+        "critical": true
+    },
+    {
+        "id": 7790,
+        "name": "Avoid Cursors inside a loop",
+        "href": "quality-rules/7790.json",
+        "critical": true
+    },
+    {
+        "id": 7806,
+        "name": "Avoid Artifacts with Group By",
+        "href": "quality-rules/7806.json",
+        "critical": false
+    },
+    {
+        "id": 7808,
+        "name": "Avoid Artifacts with SQL statement including subqueries",
+        "href": "quality-rules/7808.json",
+        "critical": false
+    },
+    {
+        "id": 7810,
+        "name": "Avoid Artifacts with a Complex SELECT Clause",
+        "href": "quality-rules/7810.json",
+        "critical": false
+    },
+    {
+        "id": 7820,
+        "name": "Never use SQL queries with a cartesian product",
+        "href": "quality-rules/7820.json",
+        "critical": false
+    },
+    {
+        "id": 7822,
+        "name": "Avoid Artifacts with queries on more than 4 Tables",
+        "href": "quality-rules/7822.json",
+        "critical": false
+    },
+    {
+        "id": 7824,
+        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "href": "quality-rules/7824.json",
+        "critical": true
+    },
+    {
+        "id": 7828,
+        "name": "Avoid Artifacts with High RAW SQL Complexity",
+        "href": "quality-rules/7828.json",
+        "critical": false
+    },
+    {
+        "id": 7850,
+        "name": "Avoid raising an exception in a Web Dynpro Supply Function or in a Method called by a Supply Function",
+        "href": "quality-rules/7850.json",
         "critical": false
     },
     {
@@ -942,9 +1056,135 @@
         "critical": false
     },
     {
+        "id": 7862,
+        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+        "href": "quality-rules/7862.json",
+        "critical": false
+    },
+    {
+        "id": 7864,
+        "name": "BAPIs must not cause the Program to abort or terminate",
+        "href": "quality-rules/7864.json",
+        "critical": true
+    },
+    {
+        "id": 7866,
+        "name": "Avoid SELECT ... BYPASSING BUFFER",
+        "href": "quality-rules/7866.json",
+        "critical": false
+    },
+    {
+        "id": 7868,
+        "name": "Avoid Open SQL queries in loops",
+        "href": "quality-rules/7868.json",
+        "critical": true
+    },
+    {
+        "id": 7870,
+        "name": "Avoid using the NOT LIKE operator in WHERE clauses",
+        "href": "quality-rules/7870.json",
+        "critical": false
+    },
+    {
+        "id": 7872,
+        "name": "Avoid using IS [NOT] NULL in WHERE condition",
+        "href": "quality-rules/7872.json",
+        "critical": false
+    },
+    {
+        "id": 7876,
+        "name": "Avoid using SELECT ... FOR UPDATE",
+        "href": "quality-rules/7876.json",
+        "critical": false
+    },
+    {
+        "id": 7878,
+        "name": "Avoid Open SQL SELECT queries without WHERE condition",
+        "href": "quality-rules/7878.json",
+        "critical": true
+    },
+    {
+        "id": 7880,
+        "name": "Avoid nested loops",
+        "href": "quality-rules/7880.json",
+        "critical": false
+    },
+    {
+        "id": 7884,
+        "name": "Avoid disabling source code inspection",
+        "href": "quality-rules/7884.json",
+        "critical": false
+    },
+    {
+        "id": 7888,
+        "name": "Web Dynpro - Never use direct calls to routine via \"me->\", use \"wd_This->\" instead",
+        "href": "quality-rules/7888.json",
+        "critical": false
+    },
+    {
+        "id": 7890,
+        "name": "Web Dynpro - Never use INCLUDE statement",
+        "href": "quality-rules/7890.json",
+        "critical": true
+    },
+    {
+        "id": 7892,
+        "name": "Web Dynpro - Avoid changing the program flow",
+        "href": "quality-rules/7892.json",
+        "critical": true
+    },
+    {
+        "id": 7894,
+        "name": "Avoid using LOOP INTO, use LOOP ASSIGNING instead",
+        "href": "quality-rules/7894.json",
+        "critical": false
+    },
+    {
+        "id": 7896,
+        "name": "Avoid using Cursors",
+        "href": "quality-rules/7896.json",
+        "critical": false
+    },
+    {
+        "id": 7902,
+        "name": "Avoid SQL queries that no index can support",
+        "href": "quality-rules/7902.json",
+        "critical": false
+    },
+    {
+        "id": 7904,
+        "name": "Avoid SQL queries on XXL tables that no index can support",
+        "href": "quality-rules/7904.json",
+        "critical": true
+    },
+    {
+        "id": 7910,
+        "name": "Never exit a finally block with a return, break, continue, or throw",
+        "href": "quality-rules/7910.json",
+        "critical": true
+    },
+    {
         "id": 7922,
         "name": "Avoid usage of 'std::find_first_of'",
         "href": "quality-rules/7922.json",
+        "critical": false
+    },
+    {
+        "id": 7924,
+        "name": "Avoid defining Functions with 'struct' or 'class' parameters passed by value",
+        "href": "quality-rules/7924.json",
+        "critical": false
+    },
+    {
+        "id": 7926,
+        "name": "Abstract Classes should be non copy-assignable",
+        "href": "quality-rules/7926.json",
+        "critical": false
+    },
+    {
+        "id": 7932,
+        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
+        "href": "quality-rules/7932.json",
         "critical": false
     },
     {
@@ -960,9 +1200,159 @@
         "critical": true
     },
     {
+        "id": 7942,
+        "name": "Avoid EJBs using 'synchronized' qualifier, 'wait', 'notify' and 'notifyAll' Methods",
+        "href": "quality-rules/7942.json",
+        "critical": false
+    },
+    {
+        "id": 7946,
+        "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
+        "href": "quality-rules/7946.json",
+        "critical": false
+    },
+    {
+        "id": 7948,
+        "name": "Do not mix Ansi joins syntax  with Oracle proprietary joins syntax in the same query",
+        "href": "quality-rules/7948.json",
+        "critical": false
+    },
+    {
+        "id": 7950,
+        "name": "Avoid definition of synonym as PUBLIC in PL/SQL context",
+        "href": "quality-rules/7950.json",
+        "critical": false
+    },
+    {
+        "id": 7952,
+        "name": "Avoid synonym with both private & PUBLIC Definition in PL/SQL context",
+        "href": "quality-rules/7952.json",
+        "critical": false
+    },
+    {
+        "id": 7954,
+        "name": "Avoid indirect String concatenation inside loops",
+        "href": "quality-rules/7954.json",
+        "critical": false
+    },
+    {
+        "id": 7956,
+        "name": "Avoid indirect exception handling inside loops",
+        "href": "quality-rules/7956.json",
+        "critical": false
+    },
+    {
+        "id": 7958,
+        "name": "Avoid orphaned synonyms in PL/SQL context",
+        "href": "quality-rules/7958.json",
+        "critical": false
+    },
+    {
+        "id": 7960,
+        "name": "Avoid looping chain of synonyms in PL/SQL context",
+        "href": "quality-rules/7960.json",
+        "critical": false
+    },
+    {
+        "id": 7962,
+        "name": "Avoid direct or indirect remote calls inside a loop(ASCPEM-PRF-8)",
+        "href": "quality-rules/7962.json",
+        "critical": true
+    },
+    {
+        "id": 7964,
+        "name": "Avoid directly instantiating a Class used as a managed bean",
+        "href": "quality-rules/7964.json",
+        "critical": true
+    },
+    {
         "id": 7996,
         "name": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
         "href": "quality-rules/7996.json",
+        "critical": false
+    },
+    {
+        "id": 7998,
+        "name": "Avoid local variables that are not initialized at declaration time",
+        "href": "quality-rules/7998.json",
+        "critical": false
+    },
+    {
+        "id": 8000,
+        "name": "Avoid 'catch-all' statement",
+        "href": "quality-rules/8000.json",
+        "critical": false
+    },
+    {
+        "id": 8002,
+        "name": "Never perform C-style cast between incompatible Class pointers",
+        "href": "quality-rules/8002.json",
+        "critical": false
+    },
+    {
+        "id": 8004,
+        "name": "Avoid using 'delete this'",
+        "href": "quality-rules/8004.json",
+        "critical": false
+    },
+    {
+        "id": 8006,
+        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
+        "href": "quality-rules/8006.json",
+        "critical": false
+    },
+    {
+        "id": 8010,
+        "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
+        "href": "quality-rules/8010.json",
+        "critical": false
+    },
+    {
+        "id": 8012,
+        "name": "Avoid unchecked return code (SY-SUBRC) after opening and reading dataset",
+        "href": "quality-rules/8012.json",
+        "critical": false
+    },
+    {
+        "id": 8014,
+        "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
+        "href": "quality-rules/8014.json",
+        "critical": true
+    },
+    {
+        "id": 8024,
+        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
+        "href": "quality-rules/8024.json",
+        "critical": false
+    },
+    {
+        "id": 8026,
+        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
+        "href": "quality-rules/8026.json",
+        "critical": false
+    },
+    {
+        "id": 8028,
+        "name": "Avoid missing default in switch statements",
+        "href": "quality-rules/8028.json",
+        "critical": false
+    },
+    {
+        "id": 8030,
+        "name": "Check alphanumeric data before moving it into numeric data",
+        "href": "quality-rules/8030.json",
+        "critical": false
+    },
+    {
+        "id": 8034,
+        "name": "Variables defined in Working-Storage section must be initialized before to be read",
+        "href": "quality-rules/8034.json",
+        "critical": false
+    },
+    {
+        "id": 8036,
+        "name": "Avoid improperly written  triangular joins with XXL tables in PL/SQL code",
+        "href": "quality-rules/8036.json",
         "critical": false
     },
     {
@@ -972,9 +1362,75 @@
         "critical": true
     },
     {
+        "id": 8052,
+        "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
+        "href": "quality-rules/8052.json",
+        "critical": true
+    },
+    {
+        "id": 8054,
+        "name": "Avoid calling blocking functions with an infinite timeout",
+        "href": "quality-rules/8054.json",
+        "critical": false
+    },
+    {
+        "id": 8056,
+        "name": "Method override fails due to mismatch of const/volatile qualifiers",
+        "href": "quality-rules/8056.json",
+        "critical": false
+    },
+    {
+        "id": 8064,
+        "name": "Assignment operator should assign all non-static members of the target object",
+        "href": "quality-rules/8064.json",
+        "critical": false
+    },
+    {
         "id": 8068,
         "name": "Do not return a dereferenced pointer allocated inside the function",
         "href": "quality-rules/8068.json",
+        "critical": true
+    },
+    {
+        "id": 8072,
+        "name": "Never define collection of 'std::auto_ptr'",
+        "href": "quality-rules/8072.json",
+        "critical": true
+    },
+    {
+        "id": 8074,
+        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
+        "href": "quality-rules/8074.json",
+        "critical": false
+    },
+    {
+        "id": 8080,
+        "name": "Avoid exists independent clauses",
+        "href": "quality-rules/8080.json",
+        "critical": true
+    },
+    {
+        "id": 8082,
+        "name": "Avoid Tables without Primary Key",
+        "href": "quality-rules/8082.json",
+        "critical": true
+    },
+    {
+        "id": 8090,
+        "name": "Avoid using NaN to test the result of an expression",
+        "href": "quality-rules/8090.json",
+        "critical": false
+    },
+    {
+        "id": 8094,
+        "name": "Avoid locking of Objects with weak identities",
+        "href": "quality-rules/8094.json",
+        "critical": false
+    },
+    {
+        "id": 8096,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "quality-rules/8096.json",
         "critical": true
     },
     {
@@ -990,15 +1446,117 @@
         "critical": true
     },
     {
+        "id": 8106,
+        "name": "Avoid empty IF-ENDIF blocks",
+        "href": "quality-rules/8106.json",
+        "critical": true
+    },
+    {
         "id": 8108,
         "name": "Close the outermost stream ASAP",
         "href": "quality-rules/8108.json",
         "critical": true
     },
     {
+        "id": 8110,
+        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
+        "href": "quality-rules/8110.json",
+        "critical": true
+    },
+    {
+        "id": 8112,
+        "name": "Avoid improper processing of the execution status of data handling operations",
+        "href": "quality-rules/8112.json",
+        "critical": true
+    },
+    {
+        "id": 8114,
+        "name": "Avoid numerical data corruption during incompatible mutation",
+        "href": "quality-rules/8114.json",
+        "critical": false
+    },
+    {
+        "id": 8120,
+        "name": "Avoid using CALL FUNCTION without error handling",
+        "href": "quality-rules/8120.json",
+        "critical": false
+    },
+    {
+        "id": 8122,
+        "name": "Avoid using CALL METHOD without error handling",
+        "href": "quality-rules/8122.json",
+        "critical": false
+    },
+    {
+        "id": 8124,
+        "name": "Do not use function module DB_EXISTS_INDEX (HANA)",
+        "href": "quality-rules/8124.json",
+        "critical": false
+    },
+    {
+        "id": 8126,
+        "name": "Avoid using empty SELECT ... ENDSELECT loop",
+        "href": "quality-rules/8126.json",
+        "critical": true
+    },
+    {
+        "id": 8128,
+        "name": "Avoid using UPDATE and DELETE without WHERE condition",
+        "href": "quality-rules/8128.json",
+        "critical": true
+    },
+    {
+        "id": 8130,
+        "name": "Avoid using database hints",
+        "href": "quality-rules/8130.json",
+        "critical": false
+    },
+    {
+        "id": 8132,
+        "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
+        "href": "quality-rules/8132.json",
+        "critical": true
+    },
+    {
+        "id": 8134,
+        "name": "Avoid unsorted data after SELECT queries",
+        "href": "quality-rules/8134.json",
+        "critical": true
+    },
+    {
+        "id": 8136,
+        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "href": "quality-rules/8136.json",
+        "critical": true
+    },
+    {
+        "id": 8140,
+        "name": "Subscripts and iterators must be defined with BINARY usage",
+        "href": "quality-rules/8140.json",
+        "critical": false
+    },
+    {
+        "id": 8142,
+        "name": "Prefer using indexes instead of subscripts",
+        "href": "quality-rules/8142.json",
+        "critical": false
+    },
+    {
+        "id": 8144,
+        "name": "Avoid using INITIALIZE statement on data structures",
+        "href": "quality-rules/8144.json",
+        "critical": false
+    },
+    {
         "id": 8146,
         "name": "Avoid calling programs statically",
         "href": "quality-rules/8146.json",
+        "critical": false
+    },
+    {
+        "id": 8150,
+        "name": "Avoid using Parse for primitive types and used instead TryParse",
+        "href": "quality-rules/8150.json",
         "critical": false
     },
     {
@@ -1008,10 +1566,58 @@
         "critical": false
     },
     {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "quality-rules/8156.json",
+        "critical": false
+    },
+    {
+        "id": 8158,
+        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+        "href": "quality-rules/8158.json",
+        "critical": true
+    },
+    {
+        "id": 8160,
+        "name": "Check PCB status code after DLI queries",
+        "href": "quality-rules/8160.json",
+        "critical": false
+    },
+    {
+        "id": 8162,
+        "name": "CICS return code should be checked",
+        "href": "quality-rules/8162.json",
+        "critical": false
+    },
+    {
         "id": 8214,
         "name": "CWE-672: Expired or Released Resource should not be used",
         "href": "quality-rules/8214.json",
         "critical": true
+    },
+    {
+        "id": 8216,
+        "name": "CWE-681: Avoid numerical data corruption during incompatible mutation",
+        "href": "quality-rules/8216.json",
+        "critical": true
+    },
+    {
+        "id": 8218,
+        "name": "CWE-434: Content type should be checked when receiving a HTTP Post",
+        "href": "quality-rules/8218.json",
+        "critical": true
+    },
+    {
+        "id": 8220,
+        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "href": "quality-rules/8220.json",
+        "critical": true
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "quality-rules/8402.json",
+        "critical": false
     },
     {
         "id": 1001104,
@@ -1071,846 +1677,6 @@
         "id": 1001122,
         "name": "Avoid Functions and Procedures using BIN FIXED(15) instead of  BIN FIXED(31)  for all local variables (PL1)",
         "href": "quality-rules/1001122.json",
-        "critical": false
-    },
-    {
-        "id": 1002096,
-        "name": "Avoid using global SAVE in Fortran-90 Subroutines  (FORTRAN)",
-        "href": "quality-rules/1002096.json",
-        "critical": false
-    },
-    {
-        "id": 1002098,
-        "name": "Avoid using global SAVE in Fortran-90 Functions  (FORTRAN)",
-        "href": "quality-rules/1002098.json",
-        "critical": false
-    },
-    {
-        "id": 1002100,
-        "name": "Avoid using global SAVE in Fortran-90 Modules  (FORTRAN)",
-        "href": "quality-rules/1002100.json",
-        "critical": false
-    },
-    {
-        "id": 1002102,
-        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Programs  (FORTRAN)",
-        "href": "quality-rules/1002102.json",
-        "critical": false
-    },
-    {
-        "id": 1002104,
-        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Subroutines  (FORTRAN)",
-        "href": "quality-rules/1002104.json",
-        "critical": false
-    },
-    {
-        "id": 1002106,
-        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Functions  (FORTRAN)",
-        "href": "quality-rules/1002106.json",
-        "critical": false
-    },
-    {
-        "id": 1002108,
-        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Modules  (FORTRAN)",
-        "href": "quality-rules/1002108.json",
-        "critical": false
-    },
-    {
-        "id": 1002142,
-        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Modules  (FORTRAN)",
-        "href": "quality-rules/1002142.json",
-        "critical": false
-    },
-    {
-        "id": 1002144,
-        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Programs  (FORTRAN)",
-        "href": "quality-rules/1002144.json",
-        "critical": false
-    },
-    {
-        "id": 1002146,
-        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Subroutines  (FORTRAN)",
-        "href": "quality-rules/1002146.json",
-        "critical": false
-    },
-    {
-        "id": 1002148,
-        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Functions  (FORTRAN)",
-        "href": "quality-rules/1002148.json",
-        "critical": false
-    },
-    {
-        "id": 1002280,
-        "name": "Avoid using global SAVE in Fortran-90 Programs (FORTRAN)",
-        "href": "quality-rules/1002280.json",
-        "critical": false
-    },
-    {
-        "id": 1003074,
-        "name": "Avoid modelLocator that is Bindable at a class level (Flex)",
-        "href": "quality-rules/1003074.json",
-        "critical": false
-    },
-    {
-        "id": 1003076,
-        "name": "Avoid adding or removing displayable children from updateDisplayList (Flex specific) (Flex)",
-        "href": "quality-rules/1003076.json",
-        "critical": false
-    },
-    {
-        "id": 1003078,
-        "name": "Avoid popup using dynamic filters (Flex)",
-        "href": "quality-rules/1003078.json",
-        "critical": false
-    },
-    {
-        "id": 1003080,
-        "name": "Avoid control statement in Constructor (must be as lightweight as possible) (Flex)",
-        "href": "quality-rules/1003080.json",
-        "critical": false
-    },
-    {
-        "id": 1003082,
-        "name": "Avoid Instantiating a variable in a loop (Flex)",
-        "href": "quality-rules/1003082.json",
-        "critical": false
-    },
-    {
-        "id": 1003084,
-        "name": "Avoid calls to the StyleManager that do not pass FALSE as the second parameter (Flex)",
-        "href": "quality-rules/1003084.json",
-        "critical": false
-    },
-    {
-        "id": 1005046,
-        "name": "Avoid using string datatype (EGL)",
-        "href": "quality-rules/1005046.json",
-        "critical": false
-    },
-    {
-        "id": 1005048,
-        "name": "Avoid using Unicode or dbCHar datatypes (EGL)",
-        "href": "quality-rules/1005048.json",
-        "critical": false
-    },
-    {
-        "id": 1005050,
-        "name": "Avoid using Programs having textLiteralDefaultIsString property set to YES (EGL)",
-        "href": "quality-rules/1005050.json",
-        "critical": false
-    },
-    {
-        "id": 1005052,
-        "name": "Avoid using copyStr and compareStr functions (EGL)",
-        "href": "quality-rules/1005052.json",
-        "critical": false
-    },
-    {
-        "id": 1007180,
-        "name": "Use file inclusion based on API suitability (PHP)",
-        "href": "quality-rules/1007180.json",
-        "critical": false
-    },
-    {
-        "id": 1007184,
-        "name": "Avoid using size functions inside loops (PHP)",
-        "href": "quality-rules/1007184.json",
-        "critical": false
-    },
-    {
-        "id": 1007190,
-        "name": "Avoid using relative path for including files (PHP)",
-        "href": "quality-rules/1007190.json",
-        "critical": false
-    },
-    {
-        "id": 1007192,
-        "name": "Avoid using PHP short tags (PHP)",
-        "href": "quality-rules/1007192.json",
-        "critical": false
-    },
-    {
-        "id": 1007202,
-        "name": "Avoid direct access to superglobals (PHP)",
-        "href": "quality-rules/1007202.json",
-        "critical": true
-    },
-    {
-        "id": 1007206,
-        "name": "Avoid using @error suppression (PHP)",
-        "href": "quality-rules/1007206.json",
-        "critical": false
-    },
-    {
-        "id": 1007210,
-        "name": "Avoid using time() to get the system time (PHP)",
-        "href": "quality-rules/1007210.json",
-        "critical": false
-    },
-    {
-        "id": 1007218,
-        "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
-        "href": "quality-rules/1007218.json",
-        "critical": false
-    },
-    {
-        "id": 1011018,
-        "name": "Avoid Logical Files using DYNSLT  (DDS400)",
-        "href": "quality-rules/1011018.json",
-        "critical": false
-    },
-    {
-        "id": 1012018,
-        "name": "Avoid use of DLYJOB  (CL400)",
-        "href": "quality-rules/1012018.json",
-        "critical": false
-    },
-    {
-        "id": 1012020,
-        "name": "Avoid use of RCLRSC  (CL400)",
-        "href": "quality-rules/1012020.json",
-        "critical": false
-    },
-    {
-        "id": 1012022,
-        "name": "Avoid use of *NOMAX  (CL400)",
-        "href": "quality-rules/1012022.json",
-        "critical": true
-    },
-    {
-        "id": 1018540,
-        "name": "Avoid JMS Synchronous Activities (TIBCO BW)",
-        "href": "quality-rules/1018540.json",
-        "critical": true
-    },
-    {
-        "id": 1020020,
-        "name": "Avoid JavaScript to block page loading",
-        "href": "quality-rules/1020020.json",
-        "critical": false
-    },
-    {
-        "id": 1020056,
-        "name": "Avoid using Javascript Document.all collection",
-        "href": "quality-rules/1020056.json",
-        "critical": false
-    },
-    {
-        "id": 1020092,
-        "name": "Avoid direct definition of JavaScript Functions in a Web page (Javascript/HTML5)",
-        "href": "quality-rules/1020092.json",
-        "critical": false
-    },
-    {
-        "id": 1520494,
-        "name": "Siebel eScript: Avoid complex PreGetFieldValue Functions",
-        "href": "quality-rules/1520494.json",
-        "critical": false
-    },
-    {
-        "id": 1520496,
-        "name": "Siebel eScript: Avoid using ExecuteQuery() statement in Functions",
-        "href": "quality-rules/1520496.json",
-        "critical": false
-    },
-    {
-        "id": 1520498,
-        "name": "SiebelReview: Force Active property Set to TRUE at BusComp level",
-        "href": "quality-rules/1520498.json",
-        "critical": false
-    },
-    {
-        "id": 1520500,
-        "name": "SiebelReview: Force Active BusComp Field Property Set to TRUE",
-        "href": "quality-rules/1520500.json",
-        "critical": false
-    },
-    {
-        "id": 1520502,
-        "name": "SiebelReview: Link Specification For BusComp Field Property Set To TRUE",
-        "href": "quality-rules/1520502.json",
-        "critical": false
-    },
-    {
-        "id": 1520508,
-        "name": "SiebelReview: Nested MVFs",
-        "href": "quality-rules/1520508.json",
-        "critical": false
-    },
-    {
-        "id": 1520510,
-        "name": "SiebelScriptingReview: Explicit Object Release",
-        "href": "quality-rules/1520510.json",
-        "critical": false
-    },
-    {
-        "id": 1520512,
-        "name": "SiebelScriptingReview: Scripting The PreCanInvokeMethod Event For A Business Service",
-        "href": "quality-rules/1520512.json",
-        "critical": false
-    },
-    {
-        "id": 1600480,
-        "name": "PeopleSoft: Avoid too many Related displays",
-        "href": "quality-rules/1600480.json",
-        "critical": false
-    },
-    {
-        "id": 1600482,
-        "name": "PeopleSoft: Avoid unlimited occurs on grids",
-        "href": "quality-rules/1600482.json",
-        "critical": false
-    },
-    {
-        "id": 1600484,
-        "name": "PeopleSoft : Create all new Record Table in a specific tablespace",
-        "href": "quality-rules/1600484.json",
-        "critical": false
-    },
-    {
-        "id": 1600486,
-        "name": "PeopleSoft: Create all new Record Temp in a specific tablespace",
-        "href": "quality-rules/1600486.json",
-        "critical": true
-    },
-    {
-        "id": 1600488,
-        "name": "PeopleSoft: Avoid tables having indexes with a too large index definition",
-        "href": "quality-rules/1600488.json",
-        "critical": false
-    },
-    {
-        "id": 1600490,
-        "name": "PeopleSoft: Avoid disabling Deferred Processing on Fields",
-        "href": "quality-rules/1600490.json",
-        "critical": false
-    },
-    {
-        "id": 1600492,
-        "name": "PeopleSoft: Avoid disabling Deferred Processing on Pages",
-        "href": "quality-rules/1600492.json",
-        "critical": false
-    },
-    {
-        "id": 1600494,
-        "name": "PeopleSoft: Avoid disabling Deferred Processing on Components",
-        "href": "quality-rules/1600494.json",
-        "critical": false
-    },
-    {
-        "id": 1600496,
-        "name": "PeopleSoft: Send messages in the SavePostChange event",
-        "href": "quality-rules/1600496.json",
-        "critical": false
-    },
-    {
-        "id": 1578,
-        "name": "Avoid using LONG & LONG RAW datatype for Table Columns",
-        "href": "quality-rules/1578.json",
-        "critical": false
-    },
-    {
-        "id": 1580,
-        "name": "Avoid using execute immediate",
-        "href": "quality-rules/1580.json",
-        "critical": true
-    },
-    {
-        "id": 1596,
-        "name": "Avoid using \"nullable\" Columns except in the last position in a Table",
-        "href": "quality-rules/1596.json",
-        "critical": false
-    },
-    {
-        "id": 1598,
-        "name": "Avoid Rule HINT  /*+ rule */ or --+ rule in PL/SQL code",
-        "href": "quality-rules/1598.json",
-        "critical": false
-    },
-    {
-        "id": 4084,
-        "name": "Avoid nested Stored Procedures using temporary Tables",
-        "href": "quality-rules/4084.json",
-        "critical": false
-    },
-    {
-        "id": 5056,
-        "name": "Avoid using SEARCH without the ALL addition",
-        "href": "quality-rules/5056.json",
-        "critical": false
-    },
-    {
-        "id": 5058,
-        "name": "Avoid using SORT",
-        "href": "quality-rules/5058.json",
-        "critical": false
-    },
-    {
-        "id": 5060,
-        "name": "Avoid using MERGE",
-        "href": "quality-rules/5060.json",
-        "critical": false
-    },
-    {
-        "id": 5550,
-        "name": "Avoid having joins with more than 4 Tables",
-        "href": "quality-rules/5550.json",
-        "critical": false
-    },
-    {
-        "id": 5554,
-        "name": "Avoid having SQL code in Triggers named \"pre-record\"",
-        "href": "quality-rules/5554.json",
-        "critical": false
-    },
-    {
-        "id": 6184,
-        "name": "Avoid Artifacts with Subqueries",
-        "href": "quality-rules/6184.json",
-        "critical": true
-    },
-    {
-        "id": 7130,
-        "name": "Avoid Artifacts with High Depth of Nested Subqueries",
-        "href": "quality-rules/7130.json",
-        "critical": false
-    },
-    {
-        "id": 7344,
-        "name": "Avoid \"SELECT *\" queries",
-        "href": "quality-rules/7344.json",
-        "critical": false
-    },
-    {
-        "id": 7346,
-        "name": "Avoid redundant indexes",
-        "href": "quality-rules/7346.json",
-        "critical": false
-    },
-    {
-        "id": 7348,
-        "name": "Avoid too many Indexes on one Table",
-        "href": "quality-rules/7348.json",
-        "critical": false
-    },
-    {
-        "id": 7350,
-        "name": "Avoid Tables having Indexes with a too large Index definition",
-        "href": "quality-rules/7350.json",
-        "critical": false
-    },
-    {
-        "id": 7358,
-        "name": "Avoid call to AcceptChanges in a loop",
-        "href": "quality-rules/7358.json",
-        "critical": true
-    },
-    {
-        "id": 7366,
-        "name": "File descriptor block must be defined with 0 record",
-        "href": "quality-rules/7366.json",
-        "critical": true
-    },
-    {
-        "id": 7386,
-        "name": "Avoid Tables without a clustered Index",
-        "href": "quality-rules/7386.json",
-        "critical": false
-    },
-    {
-        "id": 7418,
-        "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
-        "href": "quality-rules/7418.json",
-        "critical": false
-    },
-    {
-        "id": 7420,
-        "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
-        "href": "quality-rules/7420.json",
-        "critical": false
-    },
-    {
-        "id": 7428,
-        "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
-        "href": "quality-rules/7428.json",
-        "critical": false
-    },
-    {
-        "id": 7436,
-        "name": "Prefer UNION ALL to UNION",
-        "href": "quality-rules/7436.json",
-        "critical": false
-    },
-    {
-        "id": 7466,
-        "name": "Avoid changing DataSource member before ValueMember/DisplayMember",
-        "href": "quality-rules/7466.json",
-        "critical": false
-    },
-    {
-        "id": 7468,
-        "name": "Disable constraints before merging DataSet",
-        "href": "quality-rules/7468.json",
-        "critical": false
-    },
-    {
-        "id": 7476,
-        "name": "Turn off \"Multiple SQL statements for each measure\"",
-        "href": "quality-rules/7476.json",
-        "critical": true
-    },
-    {
-        "id": 7480,
-        "name": "Use aggregate awareness for indicators",
-        "href": "quality-rules/7480.json",
-        "critical": false
-    },
-    {
-        "id": 7482,
-        "name": "Do not use Cartesian products in Universe properties",
-        "href": "quality-rules/7482.json",
-        "critical": true
-    },
-    {
-        "id": 7488,
-        "name": "Use lazy fetching for collection",
-        "href": "quality-rules/7488.json",
-        "critical": true
-    },
-    {
-        "id": 7490,
-        "name": "Avoid UPDATE trigger firing when not necessary",
-        "href": "quality-rules/7490.json",
-        "critical": true
-    },
-    {
-        "id": 7496,
-        "name": "Use table-per-subclass strategy when subclasses have many properties",
-        "href": "quality-rules/7496.json",
-        "critical": false
-    },
-    {
-        "id": 7498,
-        "name": "Collection must be the same between getter and setter",
-        "href": "quality-rules/7498.json",
-        "critical": false
-    },
-    {
-        "id": 7500,
-        "name": "Use table-per-class-hierarchy when subclasses have few properties",
-        "href": "quality-rules/7500.json",
-        "critical": false
-    },
-    {
-        "id": 7502,
-        "name": "Never use array to map a collection",
-        "href": "quality-rules/7502.json",
-        "critical": true
-    },
-    {
-        "id": 7530,
-        "name": "Avoid \"SELECT *\" or \"SELECT SINGLE *\" queries",
-        "href": "quality-rules/7530.json",
-        "critical": false
-    },
-    {
-        "id": 7534,
-        "name": "Avoid READ TABLE without BINARY SEARCH",
-        "href": "quality-rules/7534.json",
-        "critical": true
-    },
-    {
-        "id": 7538,
-        "name": "Avoid using SELECT ... INTO CORRESPONDING FIELDS OF",
-        "href": "quality-rules/7538.json",
-        "critical": true
-    },
-    {
-        "id": 7542,
-        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
-        "href": "quality-rules/7542.json",
-        "critical": false
-    },
-    {
-        "id": 7544,
-        "name": "Avoid using SELECT ... ENDSELECT statement",
-        "href": "quality-rules/7544.json",
-        "critical": false
-    },
-    {
-        "id": 7572,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (DELETE)",
-        "href": "quality-rules/7572.json",
-        "critical": false
-    },
-    {
-        "id": 7576,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
-        "href": "quality-rules/7576.json",
-        "critical": false
-    },
-    {
-        "id": 7578,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (UPDATE)",
-        "href": "quality-rules/7578.json",
-        "critical": false
-    },
-    {
-        "id": 7580,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (DELETE)",
-        "href": "quality-rules/7580.json",
-        "critical": false
-    },
-    {
-        "id": 7582,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
-        "href": "quality-rules/7582.json",
-        "critical": false
-    },
-    {
-        "id": 7584,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (UPDATE)",
-        "href": "quality-rules/7584.json",
-        "critical": false
-    },
-    {
-        "id": 7592,
-        "name": "Avoid using \"ORDER BY\" in SELECTS",
-        "href": "quality-rules/7592.json",
-        "critical": false
-    },
-    {
-        "id": 7594,
-        "name": "Avoid using \"SELECT DISTINCT\", use DELETE-ADJACENT",
-        "href": "quality-rules/7594.json",
-        "critical": false
-    },
-    {
-        "id": 7634,
-        "name": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
-        "href": "quality-rules/7634.json",
-        "critical": true
-    },
-    {
-        "id": 7642,
-        "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
-        "href": "quality-rules/7642.json",
-        "critical": true
-    },
-    {
-        "id": 7644,
-        "name": "Avoid executing multiple OPEN statements",
-        "href": "quality-rules/7644.json",
-        "critical": false
-    },
-    {
-        "id": 7658,
-        "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
-        "href": "quality-rules/7658.json",
-        "critical": true
-    },
-    {
-        "id": 7660,
-        "name": "Never use SQL queries with a cartesian product on XXL Tables",
-        "href": "quality-rules/7660.json",
-        "critical": true
-    },
-    {
-        "id": 7662,
-        "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
-        "href": "quality-rules/7662.json",
-        "critical": true
-    },
-    {
-        "id": 7664,
-        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
-        "href": "quality-rules/7664.json",
-        "critical": false
-    },
-    {
-        "id": 7666,
-        "name": "Avoid using SELECT ... ENDSELECT statement on XXL Tables",
-        "href": "quality-rules/7666.json",
-        "critical": false
-    },
-    {
-        "id": 7692,
-        "name": "Each opened file must be closed",
-        "href": "quality-rules/7692.json",
-        "critical": false
-    },
-    {
-        "id": 7702,
-        "name": "Use a third party connection pool",
-        "href": "quality-rules/7702.json",
-        "critical": false
-    },
-    {
-        "id": 7806,
-        "name": "Avoid Artifacts with Group By",
-        "href": "quality-rules/7806.json",
-        "critical": false
-    },
-    {
-        "id": 7808,
-        "name": "Avoid Artifacts with SQL statement including subqueries",
-        "href": "quality-rules/7808.json",
-        "critical": false
-    },
-    {
-        "id": 7820,
-        "name": "Never use SQL queries with a cartesian product",
-        "href": "quality-rules/7820.json",
-        "critical": false
-    },
-    {
-        "id": 7822,
-        "name": "Avoid Artifacts with queries on more than 4 Tables",
-        "href": "quality-rules/7822.json",
-        "critical": false
-    },
-    {
-        "id": 7866,
-        "name": "Avoid SELECT ... BYPASSING BUFFER",
-        "href": "quality-rules/7866.json",
-        "critical": false
-    },
-    {
-        "id": 7870,
-        "name": "Avoid using the NOT LIKE operator in WHERE clauses",
-        "href": "quality-rules/7870.json",
-        "critical": false
-    },
-    {
-        "id": 7872,
-        "name": "Avoid using IS [NOT] NULL in WHERE condition",
-        "href": "quality-rules/7872.json",
-        "critical": false
-    },
-    {
-        "id": 7876,
-        "name": "Avoid using SELECT ... FOR UPDATE",
-        "href": "quality-rules/7876.json",
-        "critical": false
-    },
-    {
-        "id": 7878,
-        "name": "Avoid Open SQL SELECT queries without WHERE condition",
-        "href": "quality-rules/7878.json",
-        "critical": true
-    },
-    {
-        "id": 7896,
-        "name": "Avoid using Cursors",
-        "href": "quality-rules/7896.json",
-        "critical": false
-    },
-    {
-        "id": 7902,
-        "name": "Avoid SQL queries that no index can support",
-        "href": "quality-rules/7902.json",
-        "critical": false
-    },
-    {
-        "id": 7904,
-        "name": "Avoid SQL queries on XXL tables that no index can support",
-        "href": "quality-rules/7904.json",
-        "critical": true
-    },
-    {
-        "id": 7924,
-        "name": "Avoid defining Functions with 'struct' or 'class' parameters passed by value",
-        "href": "quality-rules/7924.json",
-        "critical": false
-    },
-    {
-        "id": 7946,
-        "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
-        "href": "quality-rules/7946.json",
-        "critical": false
-    },
-    {
-        "id": 7948,
-        "name": "Do not mix Ansi joins syntax  with Oracle proprietary joins syntax in the same query",
-        "href": "quality-rules/7948.json",
-        "critical": false
-    },
-    {
-        "id": 7950,
-        "name": "Avoid definition of synonym as PUBLIC in PL/SQL context",
-        "href": "quality-rules/7950.json",
-        "critical": false
-    },
-    {
-        "id": 7952,
-        "name": "Avoid synonym with both private & PUBLIC Definition in PL/SQL context",
-        "href": "quality-rules/7952.json",
-        "critical": false
-    },
-    {
-        "id": 7960,
-        "name": "Avoid looping chain of synonyms in PL/SQL context",
-        "href": "quality-rules/7960.json",
-        "critical": false
-    },
-    {
-        "id": 8036,
-        "name": "Avoid improperly written  triangular joins with XXL tables in PL/SQL code",
-        "href": "quality-rules/8036.json",
-        "critical": false
-    },
-    {
-        "id": 8080,
-        "name": "Avoid exists independent clauses",
-        "href": "quality-rules/8080.json",
-        "critical": true
-    },
-    {
-        "id": 8082,
-        "name": "Avoid Tables without Primary Key",
-        "href": "quality-rules/8082.json",
-        "critical": true
-    },
-    {
-        "id": 8110,
-        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
-        "href": "quality-rules/8110.json",
-        "critical": true
-    },
-    {
-        "id": 8126,
-        "name": "Avoid using empty SELECT ... ENDSELECT loop",
-        "href": "quality-rules/8126.json",
-        "critical": true
-    },
-    {
-        "id": 8128,
-        "name": "Avoid using UPDATE and DELETE without WHERE condition",
-        "href": "quality-rules/8128.json",
-        "critical": true
-    },
-    {
-        "id": 8130,
-        "name": "Avoid using database hints",
-        "href": "quality-rules/8130.json",
-        "critical": false
-    },
-    {
-        "id": 8132,
-        "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
-        "href": "quality-rules/8132.json",
-        "critical": true
-    },
-    {
-        "id": 8140,
-        "name": "Subscripts and iterators must be defined with BINARY usage",
-        "href": "quality-rules/8140.json",
-        "critical": false
-    },
-    {
-        "id": 8142,
-        "name": "Prefer using indexes instead of subscripts",
-        "href": "quality-rules/8142.json",
         "critical": false
     },
     {
@@ -1986,1258 +1752,40 @@
         "critical": false
     },
     {
-        "id": 1005054,
-        "name": "Avoid using prepare statement (EGL)",
-        "href": "quality-rules/1005054.json",
+        "id": 1001148,
+        "name": "Avoid Main Procedures not having an ON ERROR clause (PL1)",
+        "href": "quality-rules/1001148.json",
         "critical": true
     },
     {
-        "id": 1005056,
-        "name": "Always specify a result set id when doing result set operations like Open/get next or open for update/replace (EGL)",
-        "href": "quality-rules/1005056.json",
+        "id": 1001150,
+        "name": "Avoid Functions and Procedures having a SELECT without the default OTHERWISE clause (PL1)",
+        "href": "quality-rules/1001150.json",
         "critical": false
     },
     {
-        "id": 1005058,
-        "name": "Avoid functions having UNION instead of UNION ALL (EGL)",
-        "href": "quality-rules/1005058.json",
+        "id": 1001152,
+        "name": "Avoid Programs having files declared as RECORD INPUT or RECORD UPDATE and not having  the ON EOF or ON ENDFILE statement (PL1)",
+        "href": "quality-rules/1001152.json",
         "critical": false
     },
     {
-        "id": 1005060,
-        "name": "Avoid using GROUP BY in SQL statement (EGL)",
-        "href": "quality-rules/1005060.json",
+        "id": 1001154,
+        "name": "Avoid Programs having files declared and not having the ON UNDF or ON UNDEFINEDFILE statement except SYSPRINT and SYSIN (PL1)",
+        "href": "quality-rules/1001154.json",
         "critical": false
     },
     {
-        "id": 1005062,
-        "name": "Avoid Artifacts with a Complex SELECT Clause (EGL)",
-        "href": "quality-rules/1005062.json",
+        "id": 1001156,
+        "name": "Avoid PL1 Errors Blocks having ON ERROR SYSTEM blocks and not containing and displaying ONCODE and ONLOC (PL1)",
+        "href": "quality-rules/1001156.json",
         "critical": false
     },
     {
-        "id": 1005064,
-        "name": "Avoid Artifacts With Queries on too many Tables (EGL)",
-        "href": "quality-rules/1005064.json",
-        "critical": false
-    },
-    {
-        "id": 1005066,
-        "name": "Avoid Artifacts with Subqueries (EGL)",
-        "href": "quality-rules/1005066.json",
-        "critical": false
-    },
-    {
-        "id": 1007118,
-        "name": "Avoid artifacts with sql statements referring more than 4 Tables (PHP)",
-        "href": "quality-rules/1007118.json",
-        "critical": false
-    },
-    {
-        "id": 1007120,
-        "name": "Avoid artifacts with Group By sql statement (PHP)",
-        "href": "quality-rules/1007120.json",
-        "critical": false
-    },
-    {
-        "id": 1007220,
-        "name": "Avoid artifacts with \"select *\" Sql statement (PHP)",
-        "href": "quality-rules/1007220.json",
-        "critical": false
-    },
-    {
-        "id": 1008054,
-        "name": "Avoid Programs with COUNT(*) statement  (RPG400)",
-        "href": "quality-rules/1008054.json",
-        "critical": false
-    },
-    {
-        "id": 1008056,
-        "name": "Avoid Programs With Queries on more than 4 Tables  (RPG400)",
-        "href": "quality-rules/1008056.json",
-        "critical": false
-    },
-    {
-        "id": 1008058,
-        "name": "Avoid Programs With Queries using GROUP BY  (RPG400)",
-        "href": "quality-rules/1008058.json",
-        "critical": false
-    },
-    {
-        "id": 1008060,
-        "name": "Avoid Programs with SELECT * statement  (RPG400)",
-        "href": "quality-rules/1008060.json",
-        "critical": false
-    },
-    {
-        "id": 1008062,
-        "name": "Avoid Programs with Subqueries  (RPG400)",
-        "href": "quality-rules/1008062.json",
-        "critical": false
-    },
-    {
-        "id": 1008064,
-        "name": "Avoid Programs with too many FROM Clauses  (RPG400)",
-        "href": "quality-rules/1008064.json",
-        "critical": false
-    },
-    {
-        "id": 1008066,
-        "name": "Avoid Programs with too many WHERE Clauses  (RPG400)",
-        "href": "quality-rules/1008066.json",
-        "critical": false
-    },
-    {
-        "id": 1008068,
-        "name": "Avoid using NOT EXISTS  (RPG400)",
-        "href": "quality-rules/1008068.json",
-        "critical": true
-    },
-    {
-        "id": 1008070,
-        "name": "Avoid using NOT IN  (RPG400)",
-        "href": "quality-rules/1008070.json",
-        "critical": true
-    },
-    {
-        "id": 1008072,
-        "name": "Avoid using dynamic SQL (EXECUTE IMMEDIATE)  (RPG400)",
-        "href": "quality-rules/1008072.json",
-        "critical": false
-    },
-    {
-        "id": 1009054,
-        "name": "Avoid Programs with COUNT(*) statement  (RPG300)",
-        "href": "quality-rules/1009054.json",
-        "critical": false
-    },
-    {
-        "id": 1009056,
-        "name": "Avoid Programs With Queries on more than 4 Tables  (RPG300)",
-        "href": "quality-rules/1009056.json",
-        "critical": false
-    },
-    {
-        "id": 1009058,
-        "name": "Avoid Programs With Queries using GROUP BY  (RPG300)",
-        "href": "quality-rules/1009058.json",
-        "critical": false
-    },
-    {
-        "id": 1009060,
-        "name": "Avoid Programs with SELECT * statement  (RPG300)",
-        "href": "quality-rules/1009060.json",
-        "critical": false
-    },
-    {
-        "id": 1009062,
-        "name": "Avoid Programs with Subqueries  (RPG300)",
-        "href": "quality-rules/1009062.json",
-        "critical": false
-    },
-    {
-        "id": 1009064,
-        "name": "Avoid Programs with too many FROM Clauses  (RPG300)",
-        "href": "quality-rules/1009064.json",
-        "critical": false
-    },
-    {
-        "id": 1009066,
-        "name": "Avoid Programs with too many WHERE Clauses  (RPG300)",
-        "href": "quality-rules/1009066.json",
-        "critical": false
-    },
-    {
-        "id": 1009068,
-        "name": "Avoid using NOT EXISTS  (RPG300)",
-        "href": "quality-rules/1009068.json",
-        "critical": true
-    },
-    {
-        "id": 1009070,
-        "name": "Avoid using NOT IN  (RPG300)",
-        "href": "quality-rules/1009070.json",
-        "critical": true
-    },
-    {
-        "id": 1009072,
-        "name": "Avoid using dynamic SQL (EXECUTE IMMEDIATE)  (RPG300)",
-        "href": "quality-rules/1009072.json",
-        "critical": false
-    },
-    {
-        "id": 1012024,
-        "name": "Avoid use of OPNQRYF  (CL400)",
-        "href": "quality-rules/1012024.json",
-        "critical": false
-    },
-    {
-        "id": 1020004,
-        "name": "Avoid to use querySelectorAll",
-        "href": "quality-rules/1020004.json",
-        "critical": true
-    },
-    {
-        "id": 1020006,
-        "name": "Avoid to call a function in a termination loop",
-        "href": "quality-rules/1020006.json",
-        "critical": true
-    },
-    {
-        "id": 1020010,
-        "name": "Avoid using forEach()",
-        "href": "quality-rules/1020010.json",
-        "critical": false
-    },
-    {
-        "id": 1020016,
-        "name": "Avoid using too much dot notation in loop",
-        "href": "quality-rules/1020016.json",
-        "critical": false
-    },
-    {
-        "id": 1020302,
-        "name": "Avoid using element type in jQuery",
-        "href": "quality-rules/1020302.json",
-        "critical": false
-    },
-    {
-        "id": 1020306,
-        "name": "Always use find for Id->Child nested selectors",
-        "href": "quality-rules/1020306.json",
-        "critical": false
-    },
-    {
-        "id": 1020308,
-        "name": "Always cache the returned objects in variables to be reused",
-        "href": "quality-rules/1020308.json",
-        "critical": false
-    },
-    {
-        "id": 1020310,
-        "name": "Use \"type=\" to select elements by type",
-        "href": "quality-rules/1020310.json",
-        "critical": false
-    },
-    {
-        "id": 1020314,
-        "name": "Avoid using css() of many elements",
-        "href": "quality-rules/1020314.json",
-        "critical": false
-    },
-    {
-        "id": 1020316,
-        "name": "Avoid Universal Selectors",
-        "href": "quality-rules/1020316.json",
-        "critical": false
-    },
-    {
-        "id": 1020714,
-        "name": "Avoid having multiple routes for the same path with Node.js Express App",
-        "href": "quality-rules/1020714.json",
-        "critical": true
-    },
-    {
-        "id": 1021026,
-        "name": "Avoid leaving open file resources",
-        "href": "quality-rules/1021026.json",
-        "critical": true
-    },
-    {
-        "id": 1060012,
-        "name": "Avoid SQL queries on XXL tables that no index can support for artifacts with high fan-in",
-        "href": "quality-rules/1060012.json",
-        "critical": true
-    },
-    {
-        "id": 1060014,
-        "name": "Avoid SQL queries that no index can support for artifacts with high fan-in",
-        "href": "quality-rules/1060014.json",
-        "critical": true
-    },
-    {
-        "id": 1060022,
-        "name": "Avoid too many SQL calls for methods with high fan-in",
-        "href": "quality-rules/1060022.json",
-        "critical": true
-    },
-    {
-        "id": 1101000,
-        "name": "Never use SQL queries with a cartesian product",
-        "href": "quality-rules/1101000.json",
-        "critical": false
-    },
-    {
-        "id": 1101002,
-        "name": "Never use SQL queries with a cartesian product on XXL Tables",
-        "href": "quality-rules/1101002.json",
-        "critical": true
-    },
-    {
-        "id": 1101004,
-        "name": "Avoid non-indexed SQL queries",
-        "href": "quality-rules/1101004.json",
-        "critical": false
-    },
-    {
-        "id": 1101006,
-        "name": "Avoid non-indexed XXL SQL queries",
-        "href": "quality-rules/1101006.json",
-        "critical": true
-    },
-    {
-        "id": 1101008,
-        "name": "Avoid non-SARGable queries",
-        "href": "quality-rules/1101008.json",
-        "critical": false
-    },
-    {
-        "id": 1101010,
-        "name": "Avoid NATURAL JOIN queries",
-        "href": "quality-rules/1101010.json",
-        "critical": false
-    },
-    {
-        "id": 1101012,
-        "name": "Specify column names instead of column numbers in ORDER BY clauses",
-        "href": "quality-rules/1101012.json",
-        "critical": false
-    },
-    {
-        "id": 1101014,
-        "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
-        "href": "quality-rules/1101014.json",
-        "critical": false
-    },
-    {
-        "id": 1101018,
-        "name": "Avoid using the GROUP BY clause",
-        "href": "quality-rules/1101018.json",
-        "critical": false
-    },
-    {
-        "id": 1101022,
-        "name": "Avoid Tables without Primary Key",
-        "href": "quality-rules/1101022.json",
-        "critical": true
-    },
-    {
-        "id": 1101024,
-        "name": "Avoid using dynamic SQL in SQL Artifacts",
-        "href": "quality-rules/1101024.json",
-        "critical": false
-    },
-    {
-        "id": 1101028,
-        "name": "Use MINUS or EXCEPT operator instead of NOT EXISTS and NOT IN subqueries",
-        "href": "quality-rules/1101028.json",
-        "critical": false
-    },
-    {
-        "id": 1101030,
-        "name": "Avoid Artifacts with queries on too many Tables and or Views",
-        "href": "quality-rules/1101030.json",
-        "critical": false
-    },
-    {
-        "id": 1101032,
-        "name": "Avoid exists and not exists independent clauses",
-        "href": "quality-rules/1101032.json",
-        "critical": true
-    },
-    {
-        "id": 1101034,
-        "name": "DISTINCT should not be used in SQL SELECT statements",
-        "href": "quality-rules/1101034.json",
-        "critical": false
-    },
-    {
-        "id": 1101038,
-        "name": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
-        "href": "quality-rules/1101038.json",
-        "critical": false
-    },
-    {
-        "id": 1520480,
-        "name": "SiebelReview: Avoid BusComp using Sort specifications on non-indexed Fields",
-        "href": "quality-rules/1520480.json",
-        "critical": true
-    },
-    {
-        "id": 1520482,
-        "name": "SiebelReview: Avoid PickList using Sort specifications on non-indexed Fields",
-        "href": "quality-rules/1520482.json",
-        "critical": true
-    },
-    {
-        "id": 1520484,
-        "name": "SiebelReview: Avoid Link using Sort specifications on non-indexed Fields",
-        "href": "quality-rules/1520484.json",
-        "critical": true
-    },
-    {
-        "id": 1520486,
-        "name": "SiebelReview: Avoid BusComp using Search specifications on non-indexed Fields",
-        "href": "quality-rules/1520486.json",
-        "critical": true
-    },
-    {
-        "id": 1520488,
-        "name": "SiebelReview: Avoid PickList using Search specifications on non-indexed Fields",
-        "href": "quality-rules/1520488.json",
-        "critical": true
-    },
-    {
-        "id": 1520490,
-        "name": "SiebelReview: Avoid Link using Search specifications on non-indexed Fields",
-        "href": "quality-rules/1520490.json",
-        "critical": true
-    },
-    {
-        "id": 1520492,
-        "name": "SiebelReview: Avoid Applet using Search specifications on non-indexed Fields",
-        "href": "quality-rules/1520492.json",
-        "critical": true
-    },
-    {
-        "id": 1520540,
-        "name": "Siebel: Avoid too many MVG on list applet",
-        "href": "quality-rules/1520540.json",
-        "critical": false
-    },
-    {
-        "id": 1520544,
-        "name": "Siebel: Don't overload Siebel Tables",
-        "href": "quality-rules/1520544.json",
-        "critical": false
-    },
-    {
-        "id": 1520548,
-        "name": "SiebelReview: MVL Primary Configuration",
-        "href": "quality-rules/1520548.json",
-        "critical": false
-    },
-    {
-        "id": 1520550,
-        "name": "SiebelReview: Check No Match Property Set to TRUE for MVLs",
-        "href": "quality-rules/1520550.json",
-        "critical": false
-    },
-    {
-        "id": 1520552,
-        "name": "SiebelReview: Joins to XM Tables",
-        "href": "quality-rules/1520552.json",
-        "critical": false
-    },
-    {
-        "id": 1520554,
-        "name": "SiebelReview: Using Extension Tables",
-        "href": "quality-rules/1520554.json",
-        "critical": false
-    },
-    {
-        "id": 1600500,
-        "name": "PeopleSoft: Using DISTINCT, GROUP BY or UNION clause in a View implies that no join using an index can be done on this View.",
-        "href": "quality-rules/1600500.json",
-        "critical": true
-    },
-    {
-        "id": 1600502,
-        "name": "PeopleSoft: All record must have at least one column as key",
-        "href": "quality-rules/1600502.json",
-        "critical": false
-    },
-    {
-        "id": 1600504,
-        "name": "PeopleSoft: All keys should be located at the top of the record definition, and listed in order of importance.",
-        "href": "quality-rules/1600504.json",
-        "critical": false
-    },
-    {
-        "id": 1600506,
-        "name": "PeopleSoft: All select statement must list each field specifically",
-        "href": "quality-rules/1600506.json",
-        "critical": false
-    },
-    {
-        "id": 1600508,
-        "name": "PeopleSoft: Use as possible SQL section rather than PeopleCode in the application engine",
-        "href": "quality-rules/1600508.json",
-        "critical": false
-    },
-    {
-        "id": 1600510,
-        "name": "PeopleSoft: Always prefer joining tables to subqueries",
-        "href": "quality-rules/1600510.json",
-        "critical": false
-    },
-    {
-        "id": 1600512,
-        "name": "PeopleSoft: Use the DISTINCT clause only when we are sure that the query will return duplicate results",
-        "href": "quality-rules/1600512.json",
-        "critical": false
-    },
-    {
-        "id": 1600514,
-        "name": "PeopleSoft: Prefer using UNION to the OR operator.",
-        "href": "quality-rules/1600514.json",
-        "critical": false
-    },
-    {
-        "id": 1600516,
-        "name": "PeopleSoft: SELECT ... FROM ... WHERE alias.col LIKE '%xxx'",
-        "href": "quality-rules/1600516.json",
-        "critical": false
-    },
-    {
-        "id": 1600518,
-        "name": "PeopleSoft: Prefer boolean operators (EXISTS, NOT EXISTS) and non-negative predicates",
-        "href": "quality-rules/1600518.json",
-        "critical": false
-    },
-    {
-        "id": 1600520,
-        "name": "PeopleSoft: IN vs EXIST Use IN when the subquery is the most selective",
-        "href": "quality-rules/1600520.json",
-        "critical": false
-    },
-    {
-        "id": 1600522,
-        "name": "PeopleSoft: Use TRUNCATE statement to clean a whole table",
-        "href": "quality-rules/1600522.json",
-        "critical": false
-    },
-    {
-        "id": 1600524,
-        "name": "PeopleSoft: For complex query, always prefer the subqueries to retrieve display fields not used as joins search criterias",
-        "href": "quality-rules/1600524.json",
-        "critical": false
-    },
-    {
-        "id": 1600528,
-        "name": "PeopleSoft: Avoid SQL with queries on more than 4 Tables",
-        "href": "quality-rules/1600528.json",
-        "critical": false
-    },
-    {
-        "id": 1600530,
-        "name": "PeopleSoft: Avoid SQL using GROUP BY",
-        "href": "quality-rules/1600530.json",
-        "critical": false
-    },
-    {
-        "id": 1600532,
-        "name": "PeopleSoft: Avoid PeopleCode using GROUP BY",
-        "href": "quality-rules/1600532.json",
-        "critical": false
-    },
-    {
-        "id": 1600534,
-        "name": "PeopleSoft: Avoid SQL using HAVING",
-        "href": "quality-rules/1600534.json",
-        "critical": false
-    },
-    {
-        "id": 1600536,
-        "name": "PeopleSoft: Avoid PeopleCode using HAVING",
-        "href": "quality-rules/1600536.json",
-        "critical": false
-    },
-    {
-        "id": 1600538,
-        "name": "PeopleSoft: Using the GetNextNumberWithGaps Function",
-        "href": "quality-rules/1600538.json",
-        "critical": false
-    },
-    {
-        "id": 1022000,
-        "name": "Avoid using weak encryption algorithm as DES and triple DES",
-        "href": "quality-rules/1022000.json",
-        "critical": true
-    },
-    {
-        "id": 1022002,
-        "name": "Avoid using RSA Cryptographic algorithms without OAEP (Optimal Asymmetric Encryption Padding)",
-        "href": "quality-rules/1022002.json",
-        "critical": true
-    },
-    {
-        "id": 1600720,
-        "name": "PeopleSoft: All new menu item must be into a permission list",
-        "href": "quality-rules/1600720.json",
-        "critical": false
-    },
-    {
-        "id": 1600722,
-        "name": "PeopleSoft: All new component interface must be into a permission list",
-        "href": "quality-rules/1600722.json",
-        "critical": false
-    },
-    {
-        "id": 1600724,
-        "name": "PeopleSoft: All new message channel must be into a permission list",
-        "href": "quality-rules/1600724.json",
-        "critical": false
-    },
-    {
-        "id": 1600734,
-        "name": "PeopleSoft: All new mobile page must be into a permission list",
-        "href": "quality-rules/1600734.json",
-        "critical": false
-    },
-    {
-        "id": 1600736,
-        "name": "PeopleSoft: All new process group must be into a permission list",
-        "href": "quality-rules/1600736.json",
-        "critical": false
-    },
-    {
-        "id": 7152,
-        "name": "Avoid Fields in Servlet Classes that are not final static",
-        "href": "quality-rules/7152.json",
-        "critical": true
-    },
-    {
-        "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
-        "href": "quality-rules/7154.json",
-        "critical": true
-    },
-    {
-        "id": 7438,
-        "name": "Avoid non thread safe singleton",
-        "href": "quality-rules/7438.json",
-        "critical": true
-    },
-    {
-        "id": 7442,
-        "name": "Avoid to use this within Constructor in multi-thread environment",
-        "href": "quality-rules/7442.json",
-        "critical": true
-    },
-    {
-        "id": 7446,
-        "name": "Avoid double checked locking",
-        "href": "quality-rules/7446.json",
-        "critical": true
-    },
-    {
-        "id": 7636,
-        "name": "Use version instead of timestamp",
-        "href": "quality-rules/7636.json",
-        "critical": false
-    },
-    {
-        "id": 8094,
-        "name": "Avoid locking of Objects with weak identities",
-        "href": "quality-rules/8094.json",
-        "critical": false
-    },
-    {
-        "id": 8158,
-        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
-        "href": "quality-rules/8158.json",
-        "critical": true
-    },
-    {
-        "id": 2586,
-        "name": "Utilization of \"DoEvents\" inside a loop",
-        "href": "quality-rules/2586.json",
-        "critical": true
-    },
-    {
-        "id": 7198,
-        "name": "Avoid String concatenation in loops",
-        "href": "quality-rules/7198.json",
-        "critical": false
-    },
-    {
-        "id": 7200,
-        "name": "Avoid String concatenation in loops",
-        "href": "quality-rules/7200.json",
-        "critical": false
-    },
-    {
-        "id": 7204,
-        "name": "Avoid method invocation in a loop termination expression",
-        "href": "quality-rules/7204.json",
-        "critical": false
-    },
-    {
-        "id": 7206,
-        "name": "Avoid the use of InstanceOf inside loops",
-        "href": "quality-rules/7206.json",
-        "critical": false
-    },
-    {
-        "id": 7208,
-        "name": "Avoid the use of is inside loops",
-        "href": "quality-rules/7208.json",
-        "critical": false
-    },
-    {
-        "id": 7210,
-        "name": "Avoid instantiations inside loops",
-        "href": "quality-rules/7210.json",
-        "critical": true
-    },
-    {
-        "id": 7212,
-        "name": "Avoid instantiations inside loops",
-        "href": "quality-rules/7212.json",
-        "critical": true
-    },
-    {
-        "id": 7218,
-        "name": "Avoid OPEN/CLOSE inside loops",
-        "href": "quality-rules/7218.json",
-        "critical": true
-    },
-    {
-        "id": 7352,
-        "name": "Avoid calling properties that clone values in loops",
-        "href": "quality-rules/7352.json",
-        "critical": false
-    },
-    {
-        "id": 7424,
-        "name": "Avoid using SQL queries inside a loop",
-        "href": "quality-rules/7424.json",
-        "critical": true
-    },
-    {
-        "id": 7470,
-        "name": "Avoid doing select on Datatable in loop",
-        "href": "quality-rules/7470.json",
-        "critical": true
-    },
-    {
-        "id": 7474,
-        "name": "Use BeginUpdate/EndUpdate when using Items.Add method in loop",
-        "href": "quality-rules/7474.json",
-        "critical": false
-    },
-    {
-        "id": 7532,
-        "name": "Avoid nested SELECT ... ENDSELECT statements",
-        "href": "quality-rules/7532.json",
-        "critical": true
-    },
-    {
-        "id": 7790,
-        "name": "Avoid Cursors inside a loop",
-        "href": "quality-rules/7790.json",
-        "critical": true
-    },
-    {
-        "id": 7868,
-        "name": "Avoid Open SQL queries in loops",
-        "href": "quality-rules/7868.json",
-        "critical": true
-    },
-    {
-        "id": 7880,
-        "name": "Avoid nested loops",
-        "href": "quality-rules/7880.json",
-        "critical": false
-    },
-    {
-        "id": 7894,
-        "name": "Avoid using LOOP INTO, use LOOP ASSIGNING instead",
-        "href": "quality-rules/7894.json",
-        "critical": false
-    },
-    {
-        "id": 7954,
-        "name": "Avoid indirect String concatenation inside loops",
-        "href": "quality-rules/7954.json",
-        "critical": false
-    },
-    {
-        "id": 7956,
-        "name": "Avoid indirect exception handling inside loops",
-        "href": "quality-rules/7956.json",
-        "critical": false
-    },
-    {
-        "id": 7962,
-        "name": "Avoid direct or indirect remote calls inside a loop(ASCPEM-PRF-8)",
-        "href": "quality-rules/7962.json",
-        "critical": true
-    },
-    {
-        "id": 1005044,
-        "name": "Avoid Opening Cursor in a loop (EGL)",
-        "href": "quality-rules/1005044.json",
-        "critical": true
-    },
-    {
-        "id": 1007050,
-        "name": "Avoid method invocation in loop termination expression (PHP)",
-        "href": "quality-rules/1007050.json",
-        "critical": false
-    },
-    {
-        "id": 1007114,
-        "name": "Avoid unnecessary string concatenations (PHP)",
-        "href": "quality-rules/1007114.json",
-        "critical": false
-    },
-    {
-        "id": 1007116,
-        "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
-        "href": "quality-rules/1007116.json",
-        "critical": false
-    },
-    {
-        "id": 1020008,
-        "name": "Avoid for-in loop",
-        "href": "quality-rules/1020008.json",
-        "critical": false
-    },
-    {
-        "id": 1020012,
-        "name": "Avoid using a web service with WebSocket inside a loop",
-        "href": "quality-rules/1020012.json",
-        "critical": true
-    },
-    {
-        "id": 1020014,
-        "name": "Avoid using a web service with XMLHttpRequest inside a loop",
-        "href": "quality-rules/1020014.json",
-        "critical": true
-    },
-    {
-        "id": 1020038,
-        "name": "Avoid defining and calling functions inside loops",
-        "href": "quality-rules/1020038.json",
-        "critical": false
-    },
-    {
-        "id": 1020300,
-        "name": "Avoid using the call of web service $.ajax inside a loop",
-        "href": "quality-rules/1020300.json",
-        "critical": true
-    },
-    {
-        "id": 1020500,
-        "name": "Avoid the use of the default JavaScript implementation [].forEach in AngularJS web app",
-        "href": "quality-rules/1020500.json",
-        "critical": false
-    },
-    {
-        "id": 1020504,
-        "name": "Avoid using the call of web service with AngularJS $http inside a loop",
-        "href": "quality-rules/1020504.json",
-        "critical": true
-    },
-    {
-        "id": 1020534,
-        "name": "Avoid using a web service with AngularJS $resource inside a loop",
-        "href": "quality-rules/1020534.json",
-        "critical": true
-    },
-    {
-        "id": 1020716,
-        "name": "Avoid using the call of web service with Node.js http.get or http.request inside a loop",
-        "href": "quality-rules/1020716.json",
-        "critical": true
-    },
-    {
-        "id": 1021002,
-        "name": "Avoid using a web service with Python httplib HTTPConnection inside a loop",
-        "href": "quality-rules/1021002.json",
-        "critical": true
-    },
-    {
-        "id": 1021004,
-        "name": "Avoid using a web service with Python requests inside a loop",
-        "href": "quality-rules/1021004.json",
-        "critical": true
-    },
-    {
-        "id": 1021006,
-        "name": "Avoid using a web service with Python aiohttp ClientSession inside a loop",
-        "href": "quality-rules/1021006.json",
-        "critical": true
-    },
-    {
-        "id": 1021008,
-        "name": "Avoid using a web service with Python urllib.request inside a loop",
-        "href": "quality-rules/1021008.json",
-        "critical": true
-    },
-    {
-        "id": 1021010,
-        "name": "Avoid using a web service with Python urllib2 inside a loop",
-        "href": "quality-rules/1021010.json",
-        "critical": true
-    },
-    {
-        "id": 1021012,
-        "name": "Avoid using a web service with Python httplib2 Http inside a loop",
-        "href": "quality-rules/1021012.json",
-        "critical": true
-    },
-    {
-        "id": 1050000,
-        "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
-        "href": "quality-rules/1050000.json",
-        "critical": true
-    },
-    {
-        "id": 1520460,
-        "name": "Siebel eScript: Avoid exception handling on Loops in Functions",
-        "href": "quality-rules/1520460.json",
-        "critical": false
-    },
-    {
-        "id": 1600460,
-        "name": "PeopleSoft: Isolate common expressions",
-        "href": "quality-rules/1600460.json",
-        "critical": false
-    },
-    {
-        "id": 592,
-        "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
-        "href": "quality-rules/592.json",
-        "critical": true
-    },
-    {
-        "id": 4070,
-        "name": "Avoid use of \"truncate table\"",
-        "href": "quality-rules/4070.json",
-        "critical": true
-    },
-    {
-        "id": 7202,
-        "name": "Check usage of '==' and '!=' on objects",
-        "href": "quality-rules/7202.json",
-        "critical": true
-    },
-    {
-        "id": 7494,
-        "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
-        "href": "quality-rules/7494.json",
-        "critical": true
-    },
-    {
-        "id": 7504,
-        "name": "Persistent classes should Implement hashCode() and equals()",
-        "href": "quality-rules/7504.json",
-        "critical": true
-    },
-    {
-        "id": 7506,
-        "name": "Define equals() and hashCode() for component",
-        "href": "quality-rules/7506.json",
-        "critical": true
-    },
-    {
-        "id": 7508,
-        "name": "Collection-typed attributes getter must be defined with the correct interface",
-        "href": "quality-rules/7508.json",
-        "critical": false
-    },
-    {
-        "id": 7528,
-        "name": "Never use the ON CHANGE OF statement",
-        "href": "quality-rules/7528.json",
-        "critical": false
-    },
-    {
-        "id": 7548,
-        "name": "Never use incompatible statements with the CICS environment",
-        "href": "quality-rules/7548.json",
-        "critical": true
-    },
-    {
-        "id": 7556,
-        "name": "Avoid instanceof in Methods that override or implement Object.equals(), Comparable.compareTo()",
-        "href": "quality-rules/7556.json",
-        "critical": false
-    },
-    {
-        "id": 7586,
-        "name": "Avoid cyclic calls between Event and its handled Method",
-        "href": "quality-rules/7586.json",
-        "critical": false
-    },
-    {
-        "id": 7650,
-        "name": "All types of a serializable Class must be serializable (ASCRM-RLB-2)",
-        "href": "quality-rules/7650.json",
-        "critical": false
-    },
-    {
-        "id": 7688,
-        "name": "Never truncate data in MOVE statements",
-        "href": "quality-rules/7688.json",
-        "critical": true
-    },
-    {
-        "id": 7708,
-        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
-        "href": "quality-rules/7708.json",
-        "critical": false
-    },
-    {
-        "id": 7710,
-        "name": "Avoid non serializable Entities",
-        "href": "quality-rules/7710.json",
-        "critical": false
-    },
-    {
-        "id": 7712,
-        "name": "Avoid public/protected setter for the generated identifier field",
-        "href": "quality-rules/7712.json",
-        "critical": false
-    },
-    {
-        "id": 7722,
-        "name": "Avoid using references to the id in the persistent class's method equals()",
-        "href": "quality-rules/7722.json",
-        "critical": true
-    },
-    {
-        "id": 7724,
-        "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
-        "href": "quality-rules/7724.json",
-        "critical": true
-    },
-    {
-        "id": 7728,
-        "name": "Avoid thread creation for application running on application server",
-        "href": "quality-rules/7728.json",
-        "critical": false
-    },
-    {
-        "id": 7730,
-        "name": "Use declarative transaction",
-        "href": "quality-rules/7730.json",
-        "critical": false
-    },
-    {
-        "id": 7864,
-        "name": "BAPIs must not cause the Program to abort or terminate",
-        "href": "quality-rules/7864.json",
-        "critical": true
-    },
-    {
-        "id": 7884,
-        "name": "Avoid disabling source code inspection",
-        "href": "quality-rules/7884.json",
-        "critical": false
-    },
-    {
-        "id": 7888,
-        "name": "Web Dynpro - Never use direct calls to routine via \"me->\", use \"wd_This->\" instead",
-        "href": "quality-rules/7888.json",
-        "critical": false
-    },
-    {
-        "id": 7890,
-        "name": "Web Dynpro - Never use INCLUDE statement",
-        "href": "quality-rules/7890.json",
-        "critical": true
-    },
-    {
-        "id": 7892,
-        "name": "Web Dynpro - Avoid changing the program flow",
-        "href": "quality-rules/7892.json",
-        "critical": true
-    },
-    {
-        "id": 7926,
-        "name": "Abstract Classes should be non copy-assignable",
-        "href": "quality-rules/7926.json",
-        "critical": false
-    },
-    {
-        "id": 7932,
-        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
-        "href": "quality-rules/7932.json",
-        "critical": false
-    },
-    {
-        "id": 7942,
-        "name": "Avoid EJBs using 'synchronized' qualifier, 'wait', 'notify' and 'notifyAll' Methods",
-        "href": "quality-rules/7942.json",
-        "critical": false
-    },
-    {
-        "id": 7958,
-        "name": "Avoid orphaned synonyms in PL/SQL context",
-        "href": "quality-rules/7958.json",
-        "critical": false
-    },
-    {
-        "id": 7964,
-        "name": "Avoid directly instantiating a Class used as a managed bean",
-        "href": "quality-rules/7964.json",
-        "critical": true
-    },
-    {
-        "id": 7998,
-        "name": "Avoid local variables that are not initialized at declaration time",
-        "href": "quality-rules/7998.json",
-        "critical": false
-    },
-    {
-        "id": 8002,
-        "name": "Never perform C-style cast between incompatible Class pointers",
-        "href": "quality-rules/8002.json",
-        "critical": false
-    },
-    {
-        "id": 8004,
-        "name": "Avoid using 'delete this'",
-        "href": "quality-rules/8004.json",
-        "critical": false
-    },
-    {
-        "id": 8006,
-        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
-        "href": "quality-rules/8006.json",
-        "critical": false
-    },
-    {
-        "id": 8014,
-        "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
-        "href": "quality-rules/8014.json",
-        "critical": true
-    },
-    {
-        "id": 8024,
-        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
-        "href": "quality-rules/8024.json",
-        "critical": false
-    },
-    {
-        "id": 8026,
-        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
-        "href": "quality-rules/8026.json",
-        "critical": false
-    },
-    {
-        "id": 8034,
-        "name": "Variables defined in Working-Storage section must be initialized before to be read",
-        "href": "quality-rules/8034.json",
-        "critical": false
-    },
-    {
-        "id": 8052,
-        "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
-        "href": "quality-rules/8052.json",
-        "critical": true
-    },
-    {
-        "id": 8054,
-        "name": "Avoid calling blocking functions with an infinite timeout",
-        "href": "quality-rules/8054.json",
-        "critical": false
-    },
-    {
-        "id": 8056,
-        "name": "Method override fails due to mismatch of const/volatile qualifiers",
-        "href": "quality-rules/8056.json",
-        "critical": false
-    },
-    {
-        "id": 8064,
-        "name": "Assignment operator should assign all non-static members of the target object",
-        "href": "quality-rules/8064.json",
-        "critical": false
-    },
-    {
-        "id": 8072,
-        "name": "Never define collection of 'std::auto_ptr'",
-        "href": "quality-rules/8072.json",
-        "critical": true
-    },
-    {
-        "id": 8074,
-        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
-        "href": "quality-rules/8074.json",
-        "critical": false
-    },
-    {
-        "id": 8090,
-        "name": "Avoid using NaN to test the result of an expression",
-        "href": "quality-rules/8090.json",
-        "critical": false
-    },
-    {
-        "id": 8096,
-        "name": "Avoid testing floating point numbers for equality",
-        "href": "quality-rules/8096.json",
+        "id": 1001158,
+        "name": "Avoid Functions and Procedures not testing the SQLCODE return code after each SQL statement (PL1)",
+        "href": "quality-rules/1001158.json",
         "critical": true
-    },
-    {
-        "id": 8114,
-        "name": "Avoid numerical data corruption during incompatible mutation",
-        "href": "quality-rules/8114.json",
-        "critical": false
-    },
-    {
-        "id": 8124,
-        "name": "Do not use function module DB_EXISTS_INDEX (HANA)",
-        "href": "quality-rules/8124.json",
-        "critical": false
-    },
-    {
-        "id": 8134,
-        "name": "Avoid unsorted data after SELECT queries",
-        "href": "quality-rules/8134.json",
-        "critical": true
-    },
-    {
-        "id": 8136,
-        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
-        "href": "quality-rules/8136.json",
-        "critical": true
-    },
-    {
-        "id": 8144,
-        "name": "Avoid using INITIALIZE statement on data structures",
-        "href": "quality-rules/8144.json",
-        "critical": false
-    },
-    {
-        "id": 8150,
-        "name": "Avoid using Parse for primitive types and used instead TryParse",
-        "href": "quality-rules/8150.json",
-        "critical": false
-    },
-    {
-        "id": 8156,
-        "name": "Persistent classes should implement GetHashCode() and Equals()",
-        "href": "quality-rules/8156.json",
-        "critical": false
-    },
-    {
-        "id": 8216,
-        "name": "CWE-681: Avoid numerical data corruption during incompatible mutation",
-        "href": "quality-rules/8216.json",
-        "critical": true
-    },
-    {
-        "id": 8218,
-        "name": "CWE-434: Content type should be checked when receiving a HTTP Post",
-        "href": "quality-rules/8218.json",
-        "critical": true
-    },
-    {
-        "id": 8220,
-        "name": "Avoid using deprecated method, constructor, field, type or package",
-        "href": "quality-rules/8220.json",
-        "critical": true
-    },
-    {
-        "id": 8402,
-        "name": "All types of a serializable class must be serializable",
-        "href": "quality-rules/8402.json",
-        "critical": false
     },
     {
         "id": 1001172,
@@ -3255,6 +1803,246 @@
         "id": 1001176,
         "name": "Avoid Programs having FIXED without BIN or BINARY or DEC or DECIMAL.The character \"(\"  is mandatory. (PL1)",
         "href": "quality-rules/1001176.json",
+        "critical": false
+    },
+    {
+        "id": 1002016,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Programs  (FORTRAN)",
+        "href": "quality-rules/1002016.json",
+        "critical": false
+    },
+    {
+        "id": 1002018,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Subroutines  (FORTRAN)",
+        "href": "quality-rules/1002018.json",
+        "critical": false
+    },
+    {
+        "id": 1002020,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Functions  (FORTRAN)",
+        "href": "quality-rules/1002020.json",
+        "critical": false
+    },
+    {
+        "id": 1002022,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Modules  (FORTRAN)",
+        "href": "quality-rules/1002022.json",
+        "critical": false
+    },
+    {
+        "id": 1002096,
+        "name": "Avoid using global SAVE in Fortran-90 Subroutines  (FORTRAN)",
+        "href": "quality-rules/1002096.json",
+        "critical": false
+    },
+    {
+        "id": 1002098,
+        "name": "Avoid using global SAVE in Fortran-90 Functions  (FORTRAN)",
+        "href": "quality-rules/1002098.json",
+        "critical": false
+    },
+    {
+        "id": 1002100,
+        "name": "Avoid using global SAVE in Fortran-90 Modules  (FORTRAN)",
+        "href": "quality-rules/1002100.json",
+        "critical": false
+    },
+    {
+        "id": 1002102,
+        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Programs  (FORTRAN)",
+        "href": "quality-rules/1002102.json",
+        "critical": false
+    },
+    {
+        "id": 1002104,
+        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Subroutines  (FORTRAN)",
+        "href": "quality-rules/1002104.json",
+        "critical": false
+    },
+    {
+        "id": 1002106,
+        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Functions  (FORTRAN)",
+        "href": "quality-rules/1002106.json",
+        "critical": false
+    },
+    {
+        "id": 1002108,
+        "name": "Limit the use of the attribute ALLOCATE in Fortran-90 Modules  (FORTRAN)",
+        "href": "quality-rules/1002108.json",
+        "critical": false
+    },
+    {
+        "id": 1002142,
+        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Modules  (FORTRAN)",
+        "href": "quality-rules/1002142.json",
+        "critical": false
+    },
+    {
+        "id": 1002144,
+        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Programs  (FORTRAN)",
+        "href": "quality-rules/1002144.json",
+        "critical": false
+    },
+    {
+        "id": 1002146,
+        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Subroutines  (FORTRAN)",
+        "href": "quality-rules/1002146.json",
+        "critical": false
+    },
+    {
+        "id": 1002148,
+        "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Functions  (FORTRAN)",
+        "href": "quality-rules/1002148.json",
+        "critical": false
+    },
+    {
+        "id": 1002208,
+        "name": "All Read and Write statements in Programs must use the return code IOSTAT (FORTRAN)",
+        "href": "quality-rules/1002208.json",
+        "critical": false
+    },
+    {
+        "id": 1002210,
+        "name": "All Read and Write statements in Subroutines must use the return code IOSTAT (FORTRAN)",
+        "href": "quality-rules/1002210.json",
+        "critical": false
+    },
+    {
+        "id": 1002212,
+        "name": "All Read and Write statements in Functions must use the return code IOSTAT (FORTRAN)",
+        "href": "quality-rules/1002212.json",
+        "critical": false
+    },
+    {
+        "id": 1002214,
+        "name": "All Read and Write statements in Modules must use the return code IOSTAT (FORTRAN)",
+        "href": "quality-rules/1002214.json",
+        "critical": false
+    },
+    {
+        "id": 1002238,
+        "name": "Avoid untested Return Code variables after Read or Write in Programs (FORTRAN)",
+        "href": "quality-rules/1002238.json",
+        "critical": false
+    },
+    {
+        "id": 1002240,
+        "name": "Avoid untested Return Code variables after Read or Write in Subroutines (FORTRAN)",
+        "href": "quality-rules/1002240.json",
+        "critical": false
+    },
+    {
+        "id": 1002242,
+        "name": "Avoid untested Return Code variables after Read or Write in Functions (FORTRAN)",
+        "href": "quality-rules/1002242.json",
+        "critical": false
+    },
+    {
+        "id": 1002244,
+        "name": "Avoid untested Return Code variables after Read or Write in Modules (FORTRAN)",
+        "href": "quality-rules/1002244.json",
+        "critical": false
+    },
+    {
+        "id": 1002246,
+        "name": "Avoid untested Return Code variables after ALLOCATE in Programs (FORTRAN)",
+        "href": "quality-rules/1002246.json",
+        "critical": false
+    },
+    {
+        "id": 1002248,
+        "name": "Avoid untested Return Code variables after ALLOCATE in Subroutines (FORTRAN)",
+        "href": "quality-rules/1002248.json",
+        "critical": false
+    },
+    {
+        "id": 1002250,
+        "name": "Avoid untested Return Code variables after ALLOCATE in Functions (FORTRAN)",
+        "href": "quality-rules/1002250.json",
+        "critical": false
+    },
+    {
+        "id": 1002252,
+        "name": "Avoid untested Return Code variables after ALLOCATE in Modules (FORTRAN)",
+        "href": "quality-rules/1002252.json",
+        "critical": false
+    },
+    {
+        "id": 1002280,
+        "name": "Avoid using global SAVE in Fortran-90 Programs (FORTRAN)",
+        "href": "quality-rules/1002280.json",
+        "critical": false
+    },
+    {
+        "id": 1002282,
+        "name": "All ALLOCATE statements in Fortran-90 Programs must use the return code STAT (FORTRAN)",
+        "href": "quality-rules/1002282.json",
+        "critical": false
+    },
+    {
+        "id": 1002284,
+        "name": "All ALLOCATE statements in Fortran-90 Subroutines must use the return code STAT (FORTRAN)",
+        "href": "quality-rules/1002284.json",
+        "critical": false
+    },
+    {
+        "id": 1002286,
+        "name": "All ALLOCATE statements in Fortran-90 Functions must use the return code STAT (FORTRAN)",
+        "href": "quality-rules/1002286.json",
+        "critical": false
+    },
+    {
+        "id": 1002288,
+        "name": "All ALLOCATE statements in Fortran-90 Modules must use the return code STAT (FORTRAN)",
+        "href": "quality-rules/1002288.json",
+        "critical": false
+    },
+    {
+        "id": 1003074,
+        "name": "Avoid modelLocator that is Bindable at a class level (Flex)",
+        "href": "quality-rules/1003074.json",
+        "critical": false
+    },
+    {
+        "id": 1003076,
+        "name": "Avoid adding or removing displayable children from updateDisplayList (Flex specific) (Flex)",
+        "href": "quality-rules/1003076.json",
+        "critical": false
+    },
+    {
+        "id": 1003078,
+        "name": "Avoid popup using dynamic filters (Flex)",
+        "href": "quality-rules/1003078.json",
+        "critical": false
+    },
+    {
+        "id": 1003080,
+        "name": "Avoid control statement in Constructor (must be as lightweight as possible) (Flex)",
+        "href": "quality-rules/1003080.json",
+        "critical": false
+    },
+    {
+        "id": 1003082,
+        "name": "Avoid Instantiating a variable in a loop (Flex)",
+        "href": "quality-rules/1003082.json",
+        "critical": false
+    },
+    {
+        "id": 1003084,
+        "name": "Avoid calls to the StyleManager that do not pass FALSE as the second parameter (Flex)",
+        "href": "quality-rules/1003084.json",
+        "critical": false
+    },
+    {
+        "id": 1003086,
+        "name": "Avoid empty catch statement (Flex)",
+        "href": "quality-rules/1003086.json",
+        "critical": false
+    },
+    {
+        "id": 1003088,
+        "name": "Avoid calling Alert.show directly (Flex)",
+        "href": "quality-rules/1003088.json",
         "critical": false
     },
     {
@@ -3432,6 +2220,120 @@
         "critical": false
     },
     {
+        "id": 1005030,
+        "name": "Avoid \"SELECT *\" queries (EGL)",
+        "href": "quality-rules/1005030.json",
+        "critical": false
+    },
+    {
+        "id": 1005044,
+        "name": "Avoid Opening Cursor in a loop (EGL)",
+        "href": "quality-rules/1005044.json",
+        "critical": true
+    },
+    {
+        "id": 1005046,
+        "name": "Avoid using string datatype (EGL)",
+        "href": "quality-rules/1005046.json",
+        "critical": false
+    },
+    {
+        "id": 1005048,
+        "name": "Avoid using Unicode or dbCHar datatypes (EGL)",
+        "href": "quality-rules/1005048.json",
+        "critical": false
+    },
+    {
+        "id": 1005050,
+        "name": "Avoid using Programs having textLiteralDefaultIsString property set to YES (EGL)",
+        "href": "quality-rules/1005050.json",
+        "critical": false
+    },
+    {
+        "id": 1005052,
+        "name": "Avoid using copyStr and compareStr functions (EGL)",
+        "href": "quality-rules/1005052.json",
+        "critical": false
+    },
+    {
+        "id": 1005054,
+        "name": "Avoid using prepare statement (EGL)",
+        "href": "quality-rules/1005054.json",
+        "critical": true
+    },
+    {
+        "id": 1005056,
+        "name": "Always specify a result set id when doing result set operations like Open/get next or open for update/replace (EGL)",
+        "href": "quality-rules/1005056.json",
+        "critical": false
+    },
+    {
+        "id": 1005058,
+        "name": "Avoid functions having UNION instead of UNION ALL (EGL)",
+        "href": "quality-rules/1005058.json",
+        "critical": false
+    },
+    {
+        "id": 1005060,
+        "name": "Avoid using GROUP BY in SQL statement (EGL)",
+        "href": "quality-rules/1005060.json",
+        "critical": false
+    },
+    {
+        "id": 1005062,
+        "name": "Avoid Artifacts with a Complex SELECT Clause (EGL)",
+        "href": "quality-rules/1005062.json",
+        "critical": false
+    },
+    {
+        "id": 1005064,
+        "name": "Avoid Artifacts With Queries on too many Tables (EGL)",
+        "href": "quality-rules/1005064.json",
+        "critical": false
+    },
+    {
+        "id": 1005066,
+        "name": "Avoid Artifacts with Subqueries (EGL)",
+        "href": "quality-rules/1005066.json",
+        "critical": false
+    },
+    {
+        "id": 1005068,
+        "name": "Avoid SQL query outside try-on block (EGL)",
+        "href": "quality-rules/1005068.json",
+        "critical": true
+    },
+    {
+        "id": 1005070,
+        "name": "Avoid Program calls without checking the return code (EGL)",
+        "href": "quality-rules/1005070.json",
+        "critical": true
+    },
+    {
+        "id": 1005072,
+        "name": "Enable Exception for migrated programs - throwNrfEofExceptions property must be set to YES (EGL)",
+        "href": "quality-rules/1005072.json",
+        "critical": false
+    },
+    {
+        "id": 1005074,
+        "name": "Avoid having handleHardIOErrors property enabled (EGL)",
+        "href": "quality-rules/1005074.json",
+        "critical": false
+    },
+    {
+        "id": 1005076,
+        "name": "Avoid having V60ExceptionCompatibility property set to NO (EGL)",
+        "href": "quality-rules/1005076.json",
+        "critical": false
+    },
+    {
+        "id": 1005078,
+        "name": "Avoid program calls outside a try end block (EGL)",
+        "href": "quality-rules/1005078.json",
+        "critical": true
+    },
+    {
         "id": 1005082,
         "name": "Avoid declaring null arrays; prefer to set to empty (EGL)",
         "href": "quality-rules/1005082.json",
@@ -3480,6 +2382,48 @@
         "critical": false
     },
     {
+        "id": 1007050,
+        "name": "Avoid method invocation in loop termination expression (PHP)",
+        "href": "quality-rules/1007050.json",
+        "critical": false
+    },
+    {
+        "id": 1007114,
+        "name": "Avoid unnecessary string concatenations (PHP)",
+        "href": "quality-rules/1007114.json",
+        "critical": false
+    },
+    {
+        "id": 1007116,
+        "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
+        "href": "quality-rules/1007116.json",
+        "critical": false
+    },
+    {
+        "id": 1007118,
+        "name": "Avoid artifacts with sql statements referring more than 4 Tables (PHP)",
+        "href": "quality-rules/1007118.json",
+        "critical": false
+    },
+    {
+        "id": 1007120,
+        "name": "Avoid artifacts with Group By sql statement (PHP)",
+        "href": "quality-rules/1007120.json",
+        "critical": false
+    },
+    {
+        "id": 1007122,
+        "name": "Avoid empty catch blocks (PHP)",
+        "href": "quality-rules/1007122.json",
+        "critical": true
+    },
+    {
+        "id": 1007124,
+        "name": "Avoid artifacts throwing exceptions without @Throws tag in doc comments (PHP)",
+        "href": "quality-rules/1007124.json",
+        "critical": false
+    },
+    {
         "id": 1007166,
         "name": "Avoid having properties with __get and no __set (PHP)",
         "href": "quality-rules/1007166.json",
@@ -3510,6 +2454,240 @@
         "critical": false
     },
     {
+        "id": 1007180,
+        "name": "Use file inclusion based on API suitability (PHP)",
+        "href": "quality-rules/1007180.json",
+        "critical": false
+    },
+    {
+        "id": 1007184,
+        "name": "Avoid using size functions inside loops (PHP)",
+        "href": "quality-rules/1007184.json",
+        "critical": false
+    },
+    {
+        "id": 1007190,
+        "name": "Avoid using relative path for including files (PHP)",
+        "href": "quality-rules/1007190.json",
+        "critical": false
+    },
+    {
+        "id": 1007192,
+        "name": "Avoid using PHP short tags (PHP)",
+        "href": "quality-rules/1007192.json",
+        "critical": false
+    },
+    {
+        "id": 1007202,
+        "name": "Avoid direct access to superglobals (PHP)",
+        "href": "quality-rules/1007202.json",
+        "critical": true
+    },
+    {
+        "id": 1007206,
+        "name": "Avoid using @error suppression (PHP)",
+        "href": "quality-rules/1007206.json",
+        "critical": false
+    },
+    {
+        "id": 1007210,
+        "name": "Avoid using time() to get the system time (PHP)",
+        "href": "quality-rules/1007210.json",
+        "critical": false
+    },
+    {
+        "id": 1007218,
+        "name": "Avoid fetching database rows as array and accessing using subscript (PHP)",
+        "href": "quality-rules/1007218.json",
+        "critical": false
+    },
+    {
+        "id": 1007220,
+        "name": "Avoid artifacts with \"select *\" Sql statement (PHP)",
+        "href": "quality-rules/1007220.json",
+        "critical": false
+    },
+    {
+        "id": 1008054,
+        "name": "Avoid Programs with COUNT(*) statement  (RPG400)",
+        "href": "quality-rules/1008054.json",
+        "critical": false
+    },
+    {
+        "id": 1008056,
+        "name": "Avoid Programs With Queries on more than 4 Tables  (RPG400)",
+        "href": "quality-rules/1008056.json",
+        "critical": false
+    },
+    {
+        "id": 1008058,
+        "name": "Avoid Programs With Queries using GROUP BY  (RPG400)",
+        "href": "quality-rules/1008058.json",
+        "critical": false
+    },
+    {
+        "id": 1008060,
+        "name": "Avoid Programs with SELECT * statement  (RPG400)",
+        "href": "quality-rules/1008060.json",
+        "critical": false
+    },
+    {
+        "id": 1008062,
+        "name": "Avoid Programs with Subqueries  (RPG400)",
+        "href": "quality-rules/1008062.json",
+        "critical": false
+    },
+    {
+        "id": 1008064,
+        "name": "Avoid Programs with too many FROM Clauses  (RPG400)",
+        "href": "quality-rules/1008064.json",
+        "critical": false
+    },
+    {
+        "id": 1008066,
+        "name": "Avoid Programs with too many WHERE Clauses  (RPG400)",
+        "href": "quality-rules/1008066.json",
+        "critical": false
+    },
+    {
+        "id": 1008068,
+        "name": "Avoid using NOT EXISTS  (RPG400)",
+        "href": "quality-rules/1008068.json",
+        "critical": true
+    },
+    {
+        "id": 1008070,
+        "name": "Avoid using NOT IN  (RPG400)",
+        "href": "quality-rules/1008070.json",
+        "critical": true
+    },
+    {
+        "id": 1008072,
+        "name": "Avoid using dynamic SQL (EXECUTE IMMEDIATE)  (RPG400)",
+        "href": "quality-rules/1008072.json",
+        "critical": false
+    },
+    {
+        "id": 1008074,
+        "name": "Specify Error Subroutine for File Exception Handling  (RPG400)",
+        "href": "quality-rules/1008074.json",
+        "critical": false
+    },
+    {
+        "id": 1008076,
+        "name": "Specify Program Status Data Area  (RPG400)",
+        "href": "quality-rules/1008076.json",
+        "critical": false
+    },
+    {
+        "id": 1009054,
+        "name": "Avoid Programs with COUNT(*) statement  (RPG300)",
+        "href": "quality-rules/1009054.json",
+        "critical": false
+    },
+    {
+        "id": 1009056,
+        "name": "Avoid Programs With Queries on more than 4 Tables  (RPG300)",
+        "href": "quality-rules/1009056.json",
+        "critical": false
+    },
+    {
+        "id": 1009058,
+        "name": "Avoid Programs With Queries using GROUP BY  (RPG300)",
+        "href": "quality-rules/1009058.json",
+        "critical": false
+    },
+    {
+        "id": 1009060,
+        "name": "Avoid Programs with SELECT * statement  (RPG300)",
+        "href": "quality-rules/1009060.json",
+        "critical": false
+    },
+    {
+        "id": 1009062,
+        "name": "Avoid Programs with Subqueries  (RPG300)",
+        "href": "quality-rules/1009062.json",
+        "critical": false
+    },
+    {
+        "id": 1009064,
+        "name": "Avoid Programs with too many FROM Clauses  (RPG300)",
+        "href": "quality-rules/1009064.json",
+        "critical": false
+    },
+    {
+        "id": 1009066,
+        "name": "Avoid Programs with too many WHERE Clauses  (RPG300)",
+        "href": "quality-rules/1009066.json",
+        "critical": false
+    },
+    {
+        "id": 1009068,
+        "name": "Avoid using NOT EXISTS  (RPG300)",
+        "href": "quality-rules/1009068.json",
+        "critical": true
+    },
+    {
+        "id": 1009070,
+        "name": "Avoid using NOT IN  (RPG300)",
+        "href": "quality-rules/1009070.json",
+        "critical": true
+    },
+    {
+        "id": 1009072,
+        "name": "Avoid using dynamic SQL (EXECUTE IMMEDIATE)  (RPG300)",
+        "href": "quality-rules/1009072.json",
+        "critical": false
+    },
+    {
+        "id": 1009074,
+        "name": "Specify Error Subroutine for File Exception Handling  (RPG300)",
+        "href": "quality-rules/1009074.json",
+        "critical": false
+    },
+    {
+        "id": 1011018,
+        "name": "Avoid Logical Files using DYNSLT  (DDS400)",
+        "href": "quality-rules/1011018.json",
+        "critical": false
+    },
+    {
+        "id": 1012018,
+        "name": "Avoid use of DLYJOB  (CL400)",
+        "href": "quality-rules/1012018.json",
+        "critical": false
+    },
+    {
+        "id": 1012020,
+        "name": "Avoid use of RCLRSC  (CL400)",
+        "href": "quality-rules/1012020.json",
+        "critical": false
+    },
+    {
+        "id": 1012022,
+        "name": "Avoid use of *NOMAX  (CL400)",
+        "href": "quality-rules/1012022.json",
+        "critical": true
+    },
+    {
+        "id": 1012024,
+        "name": "Avoid use of OPNQRYF  (CL400)",
+        "href": "quality-rules/1012024.json",
+        "critical": false
+    },
+    {
+        "id": 1012026,
+        "name": "Do not use MONMSG CPF0000 without EXEC  (CL400)",
+        "href": "quality-rules/1012026.json",
+        "critical": false
+    },
+    {
+        "id": 1018540,
+        "name": "Avoid JMS Synchronous Activities (TIBCO BW)",
+        "href": "quality-rules/1018540.json",
+        "critical": true
+    },
+    {
         "id": 1018760,
         "name": "Avoid AE Schema with Target namespace not defined (TIBCO BW)",
         "href": "quality-rules/1018760.json",
@@ -3519,6 +2697,60 @@
         "id": 1018764,
         "name": "Avoid Processes using JDBC SQL Direct  (TIBCO BW)",
         "href": "quality-rules/1018764.json",
+        "critical": false
+    },
+    {
+        "id": 1020004,
+        "name": "Avoid to use querySelectorAll",
+        "href": "quality-rules/1020004.json",
+        "critical": true
+    },
+    {
+        "id": 1020006,
+        "name": "Avoid to call a function in a termination loop",
+        "href": "quality-rules/1020006.json",
+        "critical": true
+    },
+    {
+        "id": 1020008,
+        "name": "Avoid for-in loop",
+        "href": "quality-rules/1020008.json",
+        "critical": false
+    },
+    {
+        "id": 1020010,
+        "name": "Avoid using forEach()",
+        "href": "quality-rules/1020010.json",
+        "critical": false
+    },
+    {
+        "id": 1020012,
+        "name": "Avoid using a web service with WebSocket inside a loop",
+        "href": "quality-rules/1020012.json",
+        "critical": true
+    },
+    {
+        "id": 1020014,
+        "name": "Avoid using a web service with XMLHttpRequest inside a loop",
+        "href": "quality-rules/1020014.json",
+        "critical": true
+    },
+    {
+        "id": 1020016,
+        "name": "Avoid using too much dot notation in loop",
+        "href": "quality-rules/1020016.json",
+        "critical": false
+    },
+    {
+        "id": 1020020,
+        "name": "Avoid JavaScript to block page loading",
+        "href": "quality-rules/1020020.json",
+        "critical": false
+    },
+    {
+        "id": 1020038,
+        "name": "Avoid defining and calling functions inside loops",
+        "href": "quality-rules/1020038.json",
         "critical": false
     },
     {
@@ -3534,9 +2766,75 @@
         "critical": false
     },
     {
+        "id": 1020056,
+        "name": "Avoid using Javascript Document.all collection",
+        "href": "quality-rules/1020056.json",
+        "critical": false
+    },
+    {
         "id": 1020066,
         "name": "Avoid using Javascript Function constructor",
         "href": "quality-rules/1020066.json",
+        "critical": false
+    },
+    {
+        "id": 1020068,
+        "name": "Avoid return statement in finally block",
+        "href": "quality-rules/1020068.json",
+        "critical": true
+    },
+    {
+        "id": 1020092,
+        "name": "Avoid direct definition of JavaScript Functions in a Web page (Javascript/HTML5)",
+        "href": "quality-rules/1020092.json",
+        "critical": false
+    },
+    {
+        "id": 1020300,
+        "name": "Avoid using the call of web service $.ajax inside a loop",
+        "href": "quality-rules/1020300.json",
+        "critical": true
+    },
+    {
+        "id": 1020302,
+        "name": "Avoid using element type in jQuery",
+        "href": "quality-rules/1020302.json",
+        "critical": false
+    },
+    {
+        "id": 1020304,
+        "name": "Implement success and error callbacks when using jquery web service call",
+        "href": "quality-rules/1020304.json",
+        "critical": true
+    },
+    {
+        "id": 1020306,
+        "name": "Always use find for Id->Child nested selectors",
+        "href": "quality-rules/1020306.json",
+        "critical": false
+    },
+    {
+        "id": 1020308,
+        "name": "Always cache the returned objects in variables to be reused",
+        "href": "quality-rules/1020308.json",
+        "critical": false
+    },
+    {
+        "id": 1020310,
+        "name": "Use \"type=\" to select elements by type",
+        "href": "quality-rules/1020310.json",
+        "critical": false
+    },
+    {
+        "id": 1020314,
+        "name": "Avoid using css() of many elements",
+        "href": "quality-rules/1020314.json",
+        "critical": false
+    },
+    {
+        "id": 1020316,
+        "name": "Avoid Universal Selectors",
+        "href": "quality-rules/1020316.json",
         "critical": false
     },
     {
@@ -3544,6 +2842,18 @@
         "name": "Avoid using jQuery deprecated methods",
         "href": "quality-rules/1020318.json",
         "critical": false
+    },
+    {
+        "id": 1020500,
+        "name": "Avoid the use of the default JavaScript implementation [].forEach in AngularJS web app",
+        "href": "quality-rules/1020500.json",
+        "critical": false
+    },
+    {
+        "id": 1020504,
+        "name": "Avoid using the call of web service with AngularJS $http inside a loop",
+        "href": "quality-rules/1020504.json",
+        "critical": true
     },
     {
         "id": 1020514,
@@ -3558,6 +2868,12 @@
         "critical": false
     },
     {
+        "id": 1020534,
+        "name": "Avoid using a web service with AngularJS $resource inside a loop",
+        "href": "quality-rules/1020534.json",
+        "critical": true
+    },
+    {
         "id": 1020536,
         "name": "Avoid using $ or jQuery, use angular.element instead",
         "href": "quality-rules/1020536.json",
@@ -3570,10 +2886,82 @@
         "critical": false
     },
     {
+        "id": 1020540,
+        "name": "Avoid using $http success and error function",
+        "href": "quality-rules/1020540.json",
+        "critical": false
+    },
+    {
+        "id": 1020700,
+        "name": "Avoid the lack of error handling in the Node.js callbacks",
+        "href": "quality-rules/1020700.json",
+        "critical": false
+    },
+    {
+        "id": 1020702,
+        "name": "Avoid using process.exit()",
+        "href": "quality-rules/1020702.json",
+        "critical": false
+    },
+    {
         "id": 1020704,
         "name": "Avoid using string concatenation when using __dirname and __filename",
         "href": "quality-rules/1020704.json",
         "critical": false
+    },
+    {
+        "id": 1020714,
+        "name": "Avoid having multiple routes for the same path with Node.js Express App",
+        "href": "quality-rules/1020714.json",
+        "critical": true
+    },
+    {
+        "id": 1020716,
+        "name": "Avoid using the call of web service with Node.js http.get or http.request inside a loop",
+        "href": "quality-rules/1020716.json",
+        "critical": true
+    },
+    {
+        "id": 1021002,
+        "name": "Avoid using a web service with Python httplib HTTPConnection inside a loop",
+        "href": "quality-rules/1021002.json",
+        "critical": true
+    },
+    {
+        "id": 1021004,
+        "name": "Avoid using a web service with Python requests inside a loop",
+        "href": "quality-rules/1021004.json",
+        "critical": true
+    },
+    {
+        "id": 1021006,
+        "name": "Avoid using a web service with Python aiohttp ClientSession inside a loop",
+        "href": "quality-rules/1021006.json",
+        "critical": true
+    },
+    {
+        "id": 1021008,
+        "name": "Avoid using a web service with Python urllib.request inside a loop",
+        "href": "quality-rules/1021008.json",
+        "critical": true
+    },
+    {
+        "id": 1021010,
+        "name": "Avoid using a web service with Python urllib2 inside a loop",
+        "href": "quality-rules/1021010.json",
+        "critical": true
+    },
+    {
+        "id": 1021012,
+        "name": "Avoid using a web service with Python httplib2 Http inside a loop",
+        "href": "quality-rules/1021012.json",
+        "critical": true
+    },
+    {
+        "id": 1021018,
+        "name": "Avoid catch-all except blocks with empty handlers",
+        "href": "quality-rules/1021018.json",
+        "critical": true
     },
     {
         "id": 1021020,
@@ -3582,15 +2970,63 @@
         "critical": false
     },
     {
+        "id": 1021024,
+        "name": "Avoid return statement in finally block",
+        "href": "quality-rules/1021024.json",
+        "critical": false
+    },
+    {
+        "id": 1021026,
+        "name": "Avoid leaving open file resources",
+        "href": "quality-rules/1021026.json",
+        "critical": true
+    },
+    {
+        "id": 1021028,
+        "name": "Avoid empty finally block",
+        "href": "quality-rules/1021028.json",
+        "critical": true
+    },
+    {
         "id": 1021034,
         "name": "Avoid inconsistent initialization when deriving a new exception",
         "href": "quality-rules/1021034.json",
         "critical": false
     },
     {
+        "id": 1022000,
+        "name": "Avoid using weak encryption algorithm as DES and triple DES",
+        "href": "quality-rules/1022000.json",
+        "critical": true
+    },
+    {
+        "id": 1022002,
+        "name": "Avoid using RSA Cryptographic algorithms without OAEP (Optimal Asymmetric Encryption Padding)",
+        "href": "quality-rules/1022002.json",
+        "critical": true
+    },
+    {
+        "id": 1050000,
+        "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
+        "href": "quality-rules/1050000.json",
+        "critical": true
+    },
+    {
+        "id": 1050020,
+        "name": "Avoid return statement in @finally block",
+        "href": "quality-rules/1050020.json",
+        "critical": true
+    },
+    {
         "id": 1050028,
         "name": "Always use LAContext canEvaluatePolicy: before using evaluatePolicy:",
         "href": "quality-rules/1050028.json",
+        "critical": true
+    },
+    {
+        "id": 1050030,
+        "name": "Ensure the Objective-C error condition check is not fragile",
+        "href": "quality-rules/1050030.json",
         "critical": true
     },
     {
@@ -3606,15 +3042,321 @@
         "critical": false
     },
     {
+        "id": 1060000,
+        "name": "Avoid Empty Catch Block When Calling Resource",
+        "href": "quality-rules/1060000.json",
+        "critical": true
+    },
+    {
+        "id": 1060004,
+        "name": "Avoid Empty Finally Block When Calling Resource",
+        "href": "quality-rules/1060004.json",
+        "critical": true
+    },
+    {
+        "id": 1060012,
+        "name": "Avoid SQL queries on XXL tables that no index can support for artifacts with high fan-in",
+        "href": "quality-rules/1060012.json",
+        "critical": true
+    },
+    {
+        "id": 1060014,
+        "name": "Avoid SQL queries that no index can support for artifacts with high fan-in",
+        "href": "quality-rules/1060014.json",
+        "critical": true
+    },
+    {
+        "id": 1060018,
+        "name": "Avoid String concatenation in loops for artifacts with high fan in",
+        "href": "quality-rules/1060018.json",
+        "critical": true
+    },
+    {
+        "id": 1060020,
+        "name": "Avoid empty catch blocks for methods with high fan-in",
+        "href": "quality-rules/1060020.json",
+        "critical": true
+    },
+    {
+        "id": 1060022,
+        "name": "Avoid too many SQL calls for methods with high fan-in",
+        "href": "quality-rules/1060022.json",
+        "critical": true
+    },
+    {
+        "id": 1101000,
+        "name": "Never use SQL queries with a cartesian product",
+        "href": "quality-rules/1101000.json",
+        "critical": false
+    },
+    {
+        "id": 1101002,
+        "name": "Never use SQL queries with a cartesian product on XXL Tables",
+        "href": "quality-rules/1101002.json",
+        "critical": true
+    },
+    {
+        "id": 1101004,
+        "name": "Avoid non-indexed SQL queries",
+        "href": "quality-rules/1101004.json",
+        "critical": false
+    },
+    {
+        "id": 1101006,
+        "name": "Avoid non-indexed XXL SQL queries",
+        "href": "quality-rules/1101006.json",
+        "critical": true
+    },
+    {
+        "id": 1101008,
+        "name": "Avoid non-SARGable queries",
+        "href": "quality-rules/1101008.json",
+        "critical": false
+    },
+    {
+        "id": 1101010,
+        "name": "Avoid NATURAL JOIN queries",
+        "href": "quality-rules/1101010.json",
+        "critical": false
+    },
+    {
+        "id": 1101012,
+        "name": "Specify column names instead of column numbers in ORDER BY clauses",
+        "href": "quality-rules/1101012.json",
+        "critical": false
+    },
+    {
+        "id": 1101014,
+        "name": "Avoid queries using old style join convention  instead of ANSI-Standard joins",
+        "href": "quality-rules/1101014.json",
+        "critical": false
+    },
+    {
+        "id": 1101018,
+        "name": "Avoid using the GROUP BY clause",
+        "href": "quality-rules/1101018.json",
+        "critical": false
+    },
+    {
         "id": 1101020,
         "name": "Avoid using quoted identifiers",
         "href": "quality-rules/1101020.json",
         "critical": false
     },
     {
+        "id": 1101022,
+        "name": "Avoid Tables without Primary Key",
+        "href": "quality-rules/1101022.json",
+        "critical": true
+    },
+    {
+        "id": 1101024,
+        "name": "Avoid using dynamic SQL in SQL Artifacts",
+        "href": "quality-rules/1101024.json",
+        "critical": false
+    },
+    {
         "id": 1101026,
         "name": "Always define column names when inserting values",
         "href": "quality-rules/1101026.json",
+        "critical": false
+    },
+    {
+        "id": 1101028,
+        "name": "Use MINUS or EXCEPT operator instead of NOT EXISTS and NOT IN subqueries",
+        "href": "quality-rules/1101028.json",
+        "critical": false
+    },
+    {
+        "id": 1101030,
+        "name": "Avoid Artifacts with queries on too many Tables and or Views",
+        "href": "quality-rules/1101030.json",
+        "critical": false
+    },
+    {
+        "id": 1101032,
+        "name": "Avoid exists and not exists independent clauses",
+        "href": "quality-rules/1101032.json",
+        "critical": true
+    },
+    {
+        "id": 1101034,
+        "name": "DISTINCT should not be used in SQL SELECT statements",
+        "href": "quality-rules/1101034.json",
+        "critical": false
+    },
+    {
+        "id": 1101038,
+        "name": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
+        "href": "quality-rules/1101038.json",
+        "critical": false
+    },
+    {
+        "id": 1101040,
+        "name": "Avoid empty catch blocks",
+        "href": "quality-rules/1101040.json",
+        "critical": true
+    },
+    {
+        "id": 1520460,
+        "name": "Siebel eScript: Avoid exception handling on Loops in Functions",
+        "href": "quality-rules/1520460.json",
+        "critical": false
+    },
+    {
+        "id": 1520480,
+        "name": "SiebelReview: Avoid BusComp using Sort specifications on non-indexed Fields",
+        "href": "quality-rules/1520480.json",
+        "critical": true
+    },
+    {
+        "id": 1520482,
+        "name": "SiebelReview: Avoid PickList using Sort specifications on non-indexed Fields",
+        "href": "quality-rules/1520482.json",
+        "critical": true
+    },
+    {
+        "id": 1520484,
+        "name": "SiebelReview: Avoid Link using Sort specifications on non-indexed Fields",
+        "href": "quality-rules/1520484.json",
+        "critical": true
+    },
+    {
+        "id": 1520486,
+        "name": "SiebelReview: Avoid BusComp using Search specifications on non-indexed Fields",
+        "href": "quality-rules/1520486.json",
+        "critical": true
+    },
+    {
+        "id": 1520488,
+        "name": "SiebelReview: Avoid PickList using Search specifications on non-indexed Fields",
+        "href": "quality-rules/1520488.json",
+        "critical": true
+    },
+    {
+        "id": 1520490,
+        "name": "SiebelReview: Avoid Link using Search specifications on non-indexed Fields",
+        "href": "quality-rules/1520490.json",
+        "critical": true
+    },
+    {
+        "id": 1520492,
+        "name": "SiebelReview: Avoid Applet using Search specifications on non-indexed Fields",
+        "href": "quality-rules/1520492.json",
+        "critical": true
+    },
+    {
+        "id": 1520494,
+        "name": "Siebel eScript: Avoid complex PreGetFieldValue Functions",
+        "href": "quality-rules/1520494.json",
+        "critical": false
+    },
+    {
+        "id": 1520496,
+        "name": "Siebel eScript: Avoid using ExecuteQuery() statement in Functions",
+        "href": "quality-rules/1520496.json",
+        "critical": false
+    },
+    {
+        "id": 1520498,
+        "name": "SiebelReview: Force Active property Set to TRUE at BusComp level",
+        "href": "quality-rules/1520498.json",
+        "critical": false
+    },
+    {
+        "id": 1520500,
+        "name": "SiebelReview: Force Active BusComp Field Property Set to TRUE",
+        "href": "quality-rules/1520500.json",
+        "critical": false
+    },
+    {
+        "id": 1520502,
+        "name": "SiebelReview: Link Specification For BusComp Field Property Set To TRUE",
+        "href": "quality-rules/1520502.json",
+        "critical": false
+    },
+    {
+        "id": 1520508,
+        "name": "SiebelReview: Nested MVFs",
+        "href": "quality-rules/1520508.json",
+        "critical": false
+    },
+    {
+        "id": 1520510,
+        "name": "SiebelScriptingReview: Explicit Object Release",
+        "href": "quality-rules/1520510.json",
+        "critical": false
+    },
+    {
+        "id": 1520512,
+        "name": "SiebelScriptingReview: Scripting The PreCanInvokeMethod Event For A Business Service",
+        "href": "quality-rules/1520512.json",
+        "critical": false
+    },
+    {
+        "id": 1520540,
+        "name": "Siebel: Avoid too many MVG on list applet",
+        "href": "quality-rules/1520540.json",
+        "critical": false
+    },
+    {
+        "id": 1520544,
+        "name": "Siebel: Don't overload Siebel Tables",
+        "href": "quality-rules/1520544.json",
+        "critical": false
+    },
+    {
+        "id": 1520548,
+        "name": "SiebelReview: MVL Primary Configuration",
+        "href": "quality-rules/1520548.json",
+        "critical": false
+    },
+    {
+        "id": 1520550,
+        "name": "SiebelReview: Check No Match Property Set to TRUE for MVLs",
+        "href": "quality-rules/1520550.json",
+        "critical": false
+    },
+    {
+        "id": 1520552,
+        "name": "SiebelReview: Joins to XM Tables",
+        "href": "quality-rules/1520552.json",
+        "critical": false
+    },
+    {
+        "id": 1520554,
+        "name": "SiebelReview: Using Extension Tables",
+        "href": "quality-rules/1520554.json",
+        "critical": false
+    },
+    {
+        "id": 1520580,
+        "name": "Siebel eScript: Avoid Functions without Try, Catch and Finally block",
+        "href": "quality-rules/1520580.json",
+        "critical": false
+    },
+    {
+        "id": 1520582,
+        "name": "Siebel eScript: Avoid Functions destroying variables outside of the finally clause",
+        "href": "quality-rules/1520582.json",
+        "critical": false
+    },
+    {
+        "id": 1520584,
+        "name": "Siebel eScript: Avoid Functions having Return statement in the Finally clause",
+        "href": "quality-rules/1520584.json",
+        "critical": false
+    },
+    {
+        "id": 1520586,
+        "name": "Siebel eScript: Prefer using GotoView in the Finally clause of a Function",
+        "href": "quality-rules/1520586.json",
+        "critical": false
+    },
+    {
+        "id": 1520588,
+        "name": "Siebel Scripting Review: Using Error Code in scripts",
+        "href": "quality-rules/1520588.json",
         "critical": false
     },
     {
@@ -3639,6 +3381,264 @@
         "id": 1520774,
         "name": "SiebelScriptReview: Setting field values using hardcoded values",
         "href": "quality-rules/1520774.json",
+        "critical": false
+    },
+    {
+        "id": 1600280,
+        "name": "PeopleSoft: Avoid put PeopleCode into Fields, prefer Component Level",
+        "href": "quality-rules/1600280.json",
+        "critical": false
+    },
+    {
+        "id": 1600282,
+        "name": "PeopleSoft: Write UNION ALL instead of UNION statement",
+        "href": "quality-rules/1600282.json",
+        "critical": false
+    },
+    {
+        "id": 1600284,
+        "name": "PeopleSoft: Avoid using comments in SQL queries",
+        "href": "quality-rules/1600284.json",
+        "critical": false
+    },
+    {
+        "id": 1600286,
+        "name": "PeopleSoft: Avoid use the Hints to force Oracle to use a specific access method",
+        "href": "quality-rules/1600286.json",
+        "critical": false
+    },
+    {
+        "id": 1600288,
+        "name": "PeopleSoft: Avoid using count(*) syntax",
+        "href": "quality-rules/1600288.json",
+        "critical": false
+    },
+    {
+        "id": 1600290,
+        "name": "PeopleSoft: Avoid using ROWNUM and ORDER BY",
+        "href": "quality-rules/1600290.json",
+        "critical": false
+    },
+    {
+        "id": 1600292,
+        "name": "PeopleSoft: In an INSERT statement define explicitly the values for all the table columns",
+        "href": "quality-rules/1600292.json",
+        "critical": false
+    },
+    {
+        "id": 1600294,
+        "name": "PeopleSoft: Child records must share all keys as the parent record, plus one or more keys that uniquely identify each row.",
+        "href": "quality-rules/1600294.json",
+        "critical": false
+    },
+    {
+        "id": 1600296,
+        "name": "PeopleSoft: Related Language tables must have the same key structure as the table with the addition of the field LANGUAGE_CD.",
+        "href": "quality-rules/1600296.json",
+        "critical": false
+    },
+    {
+        "id": 1600460,
+        "name": "PeopleSoft: Isolate common expressions",
+        "href": "quality-rules/1600460.json",
+        "critical": false
+    },
+    {
+        "id": 1600480,
+        "name": "PeopleSoft: Avoid too many Related displays",
+        "href": "quality-rules/1600480.json",
+        "critical": false
+    },
+    {
+        "id": 1600482,
+        "name": "PeopleSoft: Avoid unlimited occurs on grids",
+        "href": "quality-rules/1600482.json",
+        "critical": false
+    },
+    {
+        "id": 1600484,
+        "name": "PeopleSoft : Create all new Record Table in a specific tablespace",
+        "href": "quality-rules/1600484.json",
+        "critical": false
+    },
+    {
+        "id": 1600486,
+        "name": "PeopleSoft: Create all new Record Temp in a specific tablespace",
+        "href": "quality-rules/1600486.json",
+        "critical": true
+    },
+    {
+        "id": 1600488,
+        "name": "PeopleSoft: Avoid tables having indexes with a too large index definition",
+        "href": "quality-rules/1600488.json",
+        "critical": false
+    },
+    {
+        "id": 1600490,
+        "name": "PeopleSoft: Avoid disabling Deferred Processing on Fields",
+        "href": "quality-rules/1600490.json",
+        "critical": false
+    },
+    {
+        "id": 1600492,
+        "name": "PeopleSoft: Avoid disabling Deferred Processing on Pages",
+        "href": "quality-rules/1600492.json",
+        "critical": false
+    },
+    {
+        "id": 1600494,
+        "name": "PeopleSoft: Avoid disabling Deferred Processing on Components",
+        "href": "quality-rules/1600494.json",
+        "critical": false
+    },
+    {
+        "id": 1600496,
+        "name": "PeopleSoft: Send messages in the SavePostChange event",
+        "href": "quality-rules/1600496.json",
+        "critical": false
+    },
+    {
+        "id": 1600500,
+        "name": "PeopleSoft: Using DISTINCT, GROUP BY or UNION clause in a View implies that no join using an index can be done on this View.",
+        "href": "quality-rules/1600500.json",
+        "critical": true
+    },
+    {
+        "id": 1600502,
+        "name": "PeopleSoft: All record must have at least one column as key",
+        "href": "quality-rules/1600502.json",
+        "critical": false
+    },
+    {
+        "id": 1600504,
+        "name": "PeopleSoft: All keys should be located at the top of the record definition, and listed in order of importance.",
+        "href": "quality-rules/1600504.json",
+        "critical": false
+    },
+    {
+        "id": 1600506,
+        "name": "PeopleSoft: All select statement must list each field specifically",
+        "href": "quality-rules/1600506.json",
+        "critical": false
+    },
+    {
+        "id": 1600508,
+        "name": "PeopleSoft: Use as possible SQL section rather than PeopleCode in the application engine",
+        "href": "quality-rules/1600508.json",
+        "critical": false
+    },
+    {
+        "id": 1600510,
+        "name": "PeopleSoft: Always prefer joining tables to subqueries",
+        "href": "quality-rules/1600510.json",
+        "critical": false
+    },
+    {
+        "id": 1600512,
+        "name": "PeopleSoft: Use the DISTINCT clause only when we are sure that the query will return duplicate results",
+        "href": "quality-rules/1600512.json",
+        "critical": false
+    },
+    {
+        "id": 1600514,
+        "name": "PeopleSoft: Prefer using UNION to the OR operator.",
+        "href": "quality-rules/1600514.json",
+        "critical": false
+    },
+    {
+        "id": 1600516,
+        "name": "PeopleSoft: SELECT ... FROM ... WHERE alias.col LIKE '%xxx'",
+        "href": "quality-rules/1600516.json",
+        "critical": false
+    },
+    {
+        "id": 1600518,
+        "name": "PeopleSoft: Prefer boolean operators (EXISTS, NOT EXISTS) and non-negative predicates",
+        "href": "quality-rules/1600518.json",
+        "critical": false
+    },
+    {
+        "id": 1600520,
+        "name": "PeopleSoft: IN vs EXIST Use IN when the subquery is the most selective",
+        "href": "quality-rules/1600520.json",
+        "critical": false
+    },
+    {
+        "id": 1600522,
+        "name": "PeopleSoft: Use TRUNCATE statement to clean a whole table",
+        "href": "quality-rules/1600522.json",
+        "critical": false
+    },
+    {
+        "id": 1600524,
+        "name": "PeopleSoft: For complex query, always prefer the subqueries to retrieve display fields not used as joins search criterias",
+        "href": "quality-rules/1600524.json",
+        "critical": false
+    },
+    {
+        "id": 1600528,
+        "name": "PeopleSoft: Avoid SQL with queries on more than 4 Tables",
+        "href": "quality-rules/1600528.json",
+        "critical": false
+    },
+    {
+        "id": 1600530,
+        "name": "PeopleSoft: Avoid SQL using GROUP BY",
+        "href": "quality-rules/1600530.json",
+        "critical": false
+    },
+    {
+        "id": 1600532,
+        "name": "PeopleSoft: Avoid PeopleCode using GROUP BY",
+        "href": "quality-rules/1600532.json",
+        "critical": false
+    },
+    {
+        "id": 1600534,
+        "name": "PeopleSoft: Avoid SQL using HAVING",
+        "href": "quality-rules/1600534.json",
+        "critical": false
+    },
+    {
+        "id": 1600536,
+        "name": "PeopleSoft: Avoid PeopleCode using HAVING",
+        "href": "quality-rules/1600536.json",
+        "critical": false
+    },
+    {
+        "id": 1600538,
+        "name": "PeopleSoft: Using the GetNextNumberWithGaps Function",
+        "href": "quality-rules/1600538.json",
+        "critical": false
+    },
+    {
+        "id": 1600720,
+        "name": "PeopleSoft: All new menu item must be into a permission list",
+        "href": "quality-rules/1600720.json",
+        "critical": false
+    },
+    {
+        "id": 1600722,
+        "name": "PeopleSoft: All new component interface must be into a permission list",
+        "href": "quality-rules/1600722.json",
+        "critical": false
+    },
+    {
+        "id": 1600724,
+        "name": "PeopleSoft: All new message channel must be into a permission list",
+        "href": "quality-rules/1600724.json",
+        "critical": false
+    },
+    {
+        "id": 1600734,
+        "name": "PeopleSoft: All new mobile page must be into a permission list",
+        "href": "quality-rules/1600734.json",
+        "critical": false
+    },
+    {
+        "id": 1600736,
+        "name": "PeopleSoft: All new process group must be into a permission list",
+        "href": "quality-rules/1600736.json",
         "critical": false
     }
 ]

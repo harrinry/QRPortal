@@ -12,14 +12,14 @@
     "total": "The number of methods calling user input methods",
     "businessCriteria": [
         {
-            "id": 60016,
-            "name": "Security",
-            "href": "business-criteria/60016.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
         }
     ],
     "technicalCriteria": [
@@ -35,17 +35,24 @@
             "href": "technologies/138383.json"
         },
         {
-            "id": 138385,
-            "name": "VB.NET",
-            "href": "technologies/138385.json"
-        },
-        {
             "id": 140029,
             "name": "JEE",
             "href": "technologies/140029.json"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "technologies/138385.json"
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-90",
+            "name": "Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",
+            "reference": "https://cwe.mitre.org/data/definitions/90.html",
+            "description": null
+        },
         {
             "standard": "OWASP",
             "id": "A1-2013",
@@ -59,13 +66,6 @@
             "name": "Injection",
             "reference": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
             "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
-        },
-        {
-            "standard": "CWE",
-            "id": "CWE-90",
-            "name": "Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",
-            "reference": "https://cwe.mitre.org/data/definitions/90.html",
-            "description": null
         }
     ]
 }
