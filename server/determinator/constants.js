@@ -8,6 +8,5 @@ module.exports = {
     FUNCREL: 'FUNCREL',
     ALPHA: 'ALPHA',
     BETA: 'BETA'
-  },
-  route: '/'
+  }
 };
