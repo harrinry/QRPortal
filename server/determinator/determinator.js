@@ -1,4 +1,4 @@
-const queryParser = require('./queryParser');
+const queryParser = require('../lib/queryParser');
 const { queryKey } = require('./constants');
 const matcher = require('./matcher');
 const getRecomendedVersion = require('./latestVersion');

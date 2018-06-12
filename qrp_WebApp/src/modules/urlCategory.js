@@ -2,8 +2,8 @@ import { TECHNOLOGY, BUSINESSCRITERIA, QUALITYSTANDARD, EXTENTION, CASTAIP } fro
 import { EXTENTIONNAMES } from '../components/elements/sources/extentionNames';
 import prettyPrintVersion from '../components/elements/sources/versionNamePP';
 import Axios from 'axios';
-const technos = 'technologies.json?env=webapp';
-const businessCriteriaList = 'business-criteria.json';
+const technos = 'rules/technologies.json';
+const businessCriteriaList = 'rest/business-criteria.json';
 
 export default function deriveNameFromURL( url, callback, errorHandler ){
   if ( !url ) return;

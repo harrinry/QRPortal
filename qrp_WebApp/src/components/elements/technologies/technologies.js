@@ -16,7 +16,7 @@ export default class Technologies extends React.Component{
   }
 
   componentDidMount(){
-    Axios.get( 'technologies.json?env=webapp' )
+    Axios.get( 'rules/technologies.json' )
       .then((res)=> this.setState({data: res.data}))
       .catch(err=> console.error(err.stack));
   }

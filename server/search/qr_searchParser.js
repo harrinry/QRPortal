@@ -1,17 +1,17 @@
-const glob = require('./glob');
+const glob = require('../lib/glob');
 const path = require('path');
-const rootMetricsDir  = 'rest/';
-const rulesDir = path.resolve('rest/quality-rules');
+const rootMetricsDir  = path.resolve( __dirname, '..','..', 'rest');
+const rulesDir = path.resolve( __dirname, '..','..', 'rest', 'quality-rules');
 const search = require('./search');
-const filter = require('./filters');
-const QS = require('../rest/quality-standards.json');
-const technoMapping = require('./technologies-map');
+const filter = require('../lib/filters');
+const QS = require('../../rest/quality-standards.json');
+const technoMapping = require('../lib/technologies-map');
 
-const readJsonFile = require('../serverModules/readFile');
+const readJsonFile = require('../lib/readFile');
 
 let index = {
-  qualityRules: [],
-  qualityStandards: []
+  qualityrules: [],
+  qualitystandards: []
 };
 
 function convertToSearchString ( dataObject, fileName ) {
@@ -19,7 +19,7 @@ function convertToSearchString ( dataObject, fileName ) {
   return {
     id: dataObject.id,
     name: dataObject.name,
-    href: 'quality-rules/' + fileName,
+    href: 'rest/' + 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
@@ -37,16 +37,11 @@ function convertQsToSearchIndex( dataObject, par ){
 
 function SearchIndex( query, indexDef ){
   switch (indexDef) {
-  case 'qualityRules':
+  case 'qualityrules':
     return search( query, index[ indexDef ], ( e ) => e.searchid );
-  case 'qualityStandards':
-    return index.qualityStandards.find( e => e.id === query );
+  case 'qualitystandards':
+    return index.qualitystandards.find( e => e.id === query );
   }
-  
-  /*return res.map( e => {
-    filter(e.technologies);
-    return JSON.stringify(e);
-  } );*/
 }
 
 function getRandomInt(max) {
@@ -54,24 +49,24 @@ function getRandomInt(max) {
 }
 
 const QRinitializationTest = () =>{
-  const testidx = getRandomInt(index.qualityRules.length),
-    test = getRandomInt( 2 ) === 0 ? index.qualityRules[testidx].id : index.qualityRules[testidx].name.substring( /:/g, getRandomInt(index.qualityRules[testidx].name.length) );
+  const testidx = getRandomInt(index.qualityrules.length),
+    test = getRandomInt( 2 ) === 0 ? index.qualityrules[testidx].id : index.qualityrules[testidx].name.substring( /:/g, getRandomInt(index.qualityrules[testidx].name.length) );
   console.log('testquery search : ' + test);
   console.log(SearchIndex(test, 'qualityRules'));
 }; 
 
 const QSinitializationTest = () => {
-  const testidx = getRandomInt(index.qualityStandards.length),
-    test = index.qualityStandards[testidx].id;
+  const testidx = getRandomInt(index.qualitystandards.length),
+    test = index.qualitystandards[testidx].id;
   console.log('testquery search : ' + test);
-  console.log(SearchIndex(test, 'qualityStandards'));
+  console.log(SearchIndex(test, 'qualitystandards'));
 };
 
 /* initialization */
 (function (){
   glob( rulesDir, ( fileName, contents, i ) => {
     const searchString = convertToSearchString( contents, fileName );
-    index.qualityRules[i] = searchString ;
+    index.qualityrules[i] = searchString ;
   }, ( err ) => {
     throw err;
   }, () => {
@@ -80,12 +75,12 @@ const QSinitializationTest = () => {
   });
   let qsi = 0;
   QS.forEach((std) => {
-    readJsonFile(rootMetricsDir + std.href, ( name, content ) => {
+    readJsonFile(path.join(rootMetricsDir, std.href), ( name, content ) => {
       content.forEach( fLink => {
-        readJsonFile( rootMetricsDir + fLink.href, ( n, c ) => {
+        readJsonFile( path.join(rootMetricsDir, fLink.href), ( n, c ) => {
           c.forEach( o => {
             const indexObj = convertQsToSearchIndex( o, fLink );
-            index.qualityStandards[qsi++] = indexObj;
+            index.qualitystandards[qsi++] = indexObj;
           } );
         }, undefined, ( e ) => {
           throw e;

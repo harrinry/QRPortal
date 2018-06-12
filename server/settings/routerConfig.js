@@ -1,12 +1,12 @@
-const { rules, images, api, determinator } = require('./routes');
-const RULES = require('../rules/rules');
-const IMGS = require('../images/imgRouter');
-const API = require('../restApi/api');
-const DETERMINATOR = require('../determinator/router');
+const routeConfigurations = require('./routes');
+function initiateRouters( expressApp ){
+  const len = routeConfigurations.length;
 
-module.exports = function initiateRouters( expressApp ){
-  expressApp.use(rules, RULES);
-  expressApp.use(images, IMGS);
-  expressApp.use(api, API);
-  expressApp.use(determinator, DETERMINATOR);
-};
+  for (let i = 0; i < len; i++) {
+    const config = routeConfigurations[i];
+    const ROUTER = require( '../'.concat( config.name, '/', config.router ) );
+    expressApp.use(config.route, ROUTER);
+  }
+}
+
+module.exports = initiateRouters;

@@ -1,8 +1,8 @@
 const express = require('express');
 const options = require('./options');
+const technoMapping = require('../lib/technologies-map');
+const extensions = require('../../rest/extensions.json').filter( e => e.qualityModel === true );
 let rulesRouter = express.Router();
-
-// ---------------------- React Front End Routes ------------------------------ //
 
 rulesRouter.get('/', (req, res) => {
   res.sendFile('index.html', options, (err)=>{
@@ -38,6 +38,14 @@ rulesRouter.get('/style.css', (req, res)=> {
       res.status(500).send({error: 'a problem occured'});
     }
   });
+});
+
+rulesRouter.get('/technologies.json', (req, res) => {
+  res.json( technoMapping );
+});
+
+rulesRouter.get('/extensions.json', (req, res) => {
+  res.json( extensions );
 });
 
 module.exports = rulesRouter;
