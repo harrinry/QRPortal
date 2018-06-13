@@ -8,9 +8,9 @@
     "description": "Avoid Functions with a high Fan-out.  Avoid Artifacts with High Fan-Out (Fan-Out > X). The Fan-out of an Artifact is the number of other Artifacts that are referenced in it. When computing the Fan-Out of an Artifact, multiple accesses to the same component of an Artifact are counted as one access. The threshold is a parameter and can be changed at will.",
     "businessCriteria": [
         {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "business-criteria/60011.json"
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "business-criteria/66032.json"
         },
         {
             "id": 60012,
@@ -23,9 +23,17 @@
             "href": "business-criteria/60013.json"
         },
         {
-            "id": 66032,
-            "name": "Architectural Design",
-            "href": "business-criteria/66032.json"
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61013,
+            "name": "Architecture - Object-level Dependencies",
+            "weight": 1,
+            "critical": false
         }
     ],
     "technologies": [
