@@ -1,28 +1,22 @@
 const express = require('express');
-const { apiRoute, multiUrlRoute } = require('./routes');
+const { apiRoute } = require('./routes');
 const options = require('./options');
 const errHandler = require('../middleware/errorHandler');
 const concatQueries = require('./concatQueries');
+const QueryParser = require('../lib/queryParser');
+
+const queryKey = 'q';
 
 let apiRouter = express.Router();
 
-// potentionally obsolete
-apiRouter.get(multiUrlRoute, (req, res)=>{
-  const urls = req.query.u || [];
-  const ret = concatQueries( ...urls );
-  res.json(ret);
-});
-
 apiRouter.get(apiRoute, ( req, res ) => {
-  const parsedURL = req.url.split(/\+/g);
-  
-  if (parsedURL.length !== 1) {
-    const ret = concatQueries( ...parsedURL );
+  const query = QueryParser(req.query, queryKey);
+  if (query.length !== 1) {
+    const ret = concatQueries( ...query );
     res.json(ret);
   } else {
-    res.sendFile(req.url, options, (err) => errHandler(err, res));
+    res.sendFile(query[0], options, (err) => errHandler(err, res));
   }
-
 });
 
 module.exports = apiRouter;
