@@ -12,14 +12,22 @@
     "total": "Number of angular applications",
     "businessCriteria": [
         {
-            "id": 60016,
-            "name": "Security",
-            "href": "business-criteria/60016.json"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "business-criteria/60016.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -31,18 +39,18 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
-            "id": "A3-2013",
-            "name": "Cross-Site Scripting (XSS)",
-            "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
-            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
-        },
-        {
             "standard": "CISQ",
             "id": "ASCSM-CWE-79",
             "name": "Cross-site Scripting Improper Input Neutralization",
             "reference": null,
             "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2013",
+            "name": "Cross-Site Scripting (XSS)",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
+            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
         }
     ]
 }

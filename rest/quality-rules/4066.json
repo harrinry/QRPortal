@@ -13,6 +13,16 @@
     "remediationSample": "Declare @OpenedTran      bit\nDeclare @Error           int\n\n/*See if a transaction is already opened and possibly open a new one*/\nIf @@trancount>0\n     Select @OpenedTran = 1\nElse\n  Begin\n     Select @OpenedTran = 0\n     Begin Tran\n  End\n\nupdate mytable set col1 = 123\nwhere col2 = 456\n\nSelect @Error = @@error\nGTRAN:\n/*Close or rollback the transaction if it has been opened in this procedure*/\nIf @OpenedTran = 0\n  Begin\n     If @Error = 0   /* no error occurs*/\n          Commit Tran\n     Else\n          Rollback Tran\n  End\n/*If this procedure is not called from another one, Raise an error*/\nIf @@nestlevel = 1\n  Begin\n     If @Error !=0\n          Raiserror xxx\n\n  End\n/*return the error value*/\nReturn @Error",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "business-criteria/20140522.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
             "id": 60013,
             "name": "Robustness",
             "href": "business-criteria/60013.json"
@@ -21,28 +31,26 @@
             "id": 60016,
             "name": "Security",
             "href": "business-criteria/60016.json"
-        },
+        }
+    ],
+    "technicalCriteria": [
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "business-criteria/66031.json"
-        },
-        {
-            "id": 20140522,
-            "name": "Green Stuff",
-            "href": "business-criteria/20140522.json"
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 6,
+            "critical": false
         }
     ],
     "technologies": [
         {
-            "id": -13,
-            "name": "SQL Server",
-            "href": "technologies/-13.json"
-        },
-        {
             "id": 140998,
             "name": "Microsoft T-SQL",
             "href": "technologies/140998.json"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "technologies/-13.json"
         },
         {
             "id": 141001,
