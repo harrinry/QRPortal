@@ -1,10 +1,10 @@
 const express = require('express');
-const { mainRoute } = require('../lib/constants');
+const { main } = require('../routes/routes');
 const Determinator = require('./determinator');
 
 let determinatorRouter = express.Router();
 
-determinatorRouter.get(mainRoute, (req, res) => {
+determinatorRouter.get(main, (req, res) => {
   const query = req.query;
   res.json( Determinator( query ) );
 });

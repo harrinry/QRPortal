@@ -1,6 +1,6 @@
 const UNIQ = require('../lib/uniq');
 const path = require('path');
-const { restDir } = require('../lib/constants');
+const { restDir } = require('../routes/paths');
 
 function concatQueries( ...urls ){
   let ret;

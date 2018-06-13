@@ -19,7 +19,7 @@ function convertToSearchString ( dataObject, fileName ) {
   return {
     id: dataObject.id,
     name: dataObject.name,
-    href: 'rest/' + 'quality-rules/' + fileName,
+    href: 'quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)

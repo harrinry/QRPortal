@@ -1,5 +1,5 @@
 const express = require('express');
-const { apiRoute } = require('./routes');
+const { main } = require('../routes/routes');
 const options = require('./options');
 const errHandler = require('../middleware/errorHandler');
 const concatQueries = require('./concatQueries');
@@ -9,7 +9,7 @@ const queryKey = 'q';
 
 let apiRouter = express.Router();
 
-apiRouter.get(apiRoute, ( req, res ) => {
+apiRouter.get(main, ( req, res ) => {
   const query = QueryParser(req.query, queryKey);
   if (query.length !== 1) {
     const ret = concatQueries( ...query );

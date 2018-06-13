@@ -1,5 +1,5 @@
 const path = require('path');
-const { webappDir } = require('../lib/constants');
+const { webappDir } = require('../routes/paths');
 
 module.exports = {
   root: path.resolve( ...webappDir ),

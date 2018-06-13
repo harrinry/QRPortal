@@ -2,11 +2,12 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const readJsonFile = require('../lib/readFile');
-const { infoDir, packagePath, route } = require('./constants');
+const { infoDir, packagePath } = require('../routes/paths');
+const { main } = require('../routes/routes');
 
 let aboutRouter = express.Router();
 
-aboutRouter.get(route, (req,res)=>{
+aboutRouter.get(main, (req,res)=>{
   fs.readFile( path.resolve(...infoDir, 'LICENSE'), 'utf8', ( err, fileContents ) => {
     if ( err ) {
       console.log( err );

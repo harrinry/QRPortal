@@ -1,10 +1,11 @@
 const express = require('express');
 const options = require('./options');
+const { main } = require('../routes/routes');
 const technoMapping = require('../lib/technologies-map');
 const extensions = require('../../rest/extensions.json').filter( e => e.qualityModel === true );
 let rulesRouter = express.Router();
 
-rulesRouter.get('/', (req, res) => {
+rulesRouter.get(main, (req, res) => {
   res.sendFile('index.html', options, (err)=>{
     if ( err ) {
       console.log( err ); // replace with error logger

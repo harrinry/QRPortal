@@ -1,5 +1,5 @@
 const path = require('path');
-const { restDir } = require('../lib/constants');
+const { restDir } = require('../routes/paths');
 
 module.exports = {
   root: path.join( ...restDir ),

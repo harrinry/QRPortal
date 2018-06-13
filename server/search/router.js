@@ -1,9 +1,9 @@
 const express = require('express');
-const { route } = require('./constants');
+const { searchRoute } = require('../routes/routes');
 const searchIndex = require('./qr_searchParser');
 let searchRouter = express.Router();
 
-searchRouter.get(route, (req, res) => {
+searchRouter.get(searchRoute, (req, res) => {
   const ret = searchIndex( req.query.q, req.params.filter );
   res.json(ret);
 });
