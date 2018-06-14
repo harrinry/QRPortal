@@ -1,0 +1,49 @@
+{
+    "id": 1101044,
+    "type": "quality-rule",
+    "name": "View naming convention - character set control",
+    "href": "quality-rules/1101044.json",
+    "critical": false,
+    "maxWeight": 1,
+    "associatedValueName": "Associated Value",
+    "description": "List of views that contain characters other than [a-Z,0-9,_]",
+    "output": "This report lists all View names containing characters other than [a-Z,0-9,_]\n\nIt provides the following information:\n\n-  View name, \n- View full name",
+    "rationale": "For readability and changeability aspects, naming conventions must be respected.\n\n\n=> View names should not contain characters other than [a-Z,0-9,_]",
+    "remediation": "Change name according to the naming convention",
+    "total": "The total procedure counts Views.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61017,
+            "name": "Documentation - Naming Convention Conformity",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1101000,
+            "name": "SQLAnalyzer",
+            "href": "technologies/1101000.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
