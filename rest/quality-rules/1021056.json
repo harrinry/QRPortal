@@ -1,0 +1,46 @@
+{
+    "id": 1021056,
+    "type": "quality-rule",
+    "name": "Missing whitespace after comma",
+    "href": "quality-rules/1021056.json",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Multiple Values",
+    "description": "A violation is raised when detected missing whitespaces in comma-separated object lists. This does not apply to trailing commas in multiline expressions or single-element tuples. This rule is compliant with the PEP-8 recommendation.",
+    "output": "Line and column for each violation.\nAssociated value => number of violations found",
+    "rationale": "Readability of code is one of the most important factors behind the design of the Python language. Thus it is common to find Python syntax constructs and conventions that closely follow English grammar and rules. In this spirit, a sequence of comma-separated objects should include a single whitespace after each comma.",
+    "remediation": "Add a single whitespace after each comma-separated object sequences (lists, dictionaries, function arguments etc.). Most editors can be configurated to automatically introduce missing whitespaces.",
+    "remediationSample": "parameters = [var1, var2, var3]",
+    "sample": "parameters = [var1,var2,var3]",
+    "total": "Python artifacts",
+    "businessCriteria": [
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "business-criteria/66033.json"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61006,
+            "name": "Documentation - Style Conformity",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1021000,
+            "name": "Python",
+            "href": "technologies/1021000.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
