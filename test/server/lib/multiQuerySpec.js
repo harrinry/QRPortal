@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import MultiQuery from '../../src/modules/multiURLQueryBuilder';
+import MultiQuery from '../../../server/lib/multiqueryurl';
 describe('MultiQuery Module ', () => {
   it('should take multiple urls and combine them to form a correct query string for the server', () => {
     const urls = [
@@ -10,8 +10,8 @@ describe('MultiQuery Module ', () => {
       'technologies/138385.json'
     ];
 
-    const qString = MultiQuery(null, ...urls );
+    const qString = MultiQuery(...urls );
 
-    assert.equal( qString, '/mlturl/?u=technologies/1050571.json&u=technologies/-2.json&u=technologies/-3.json&u=technologies/138385.json' );
+    assert.equal( qString, 'technologies/1050571.json+technologies/-2.json+technologies/-3.json+technologies/138385.json' );
   });
 });

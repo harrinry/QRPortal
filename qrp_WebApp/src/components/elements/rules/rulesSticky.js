@@ -22,7 +22,7 @@ export default class Rules extends React.Component{
       rulesHref: undefined,
       title: undefined
     });
-    history.pushState(null, null, '/');
+    history.pushState(null, null, '/rules');
     Radio.emit(UNSELECTME);
   }
 

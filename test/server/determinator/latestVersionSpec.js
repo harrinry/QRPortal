@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import latestVersion from '../../../determinator/latestVersion';
+import latestVersion from '../../../server/determinator/latestVersion';
 
 describe('getLatestVersion()', () => {
   it('should return the latest stable version', () => {

@@ -1,7 +1,7 @@
 const queryParser = require('../lib/queryParser');
 const { queryKey } = require('./constants');
 const matcher = require('./matcher');
-const getRecomendedVersion = require('./latestVersion');
+const getRecommendedVersion = require('./latestVersion');
 
 function determinator ( query ){
   if( !query ) return;
@@ -15,7 +15,9 @@ function determinator ( query ){
     if (matching) {
       const extUID = matching.extensionuid;
       ret[keyWords[i]] = matching ;
-      ret[keyWords[i]].recomendedversion = getRecomendedVersion(extUID);
+      ret[keyWords[i]].recommendedversion = getRecommendedVersion(extUID);
+    } else {
+      ret[keyWords[i]] = 'Unknown parameter';
     }
   }
 

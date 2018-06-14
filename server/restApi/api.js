@@ -11,7 +11,7 @@ let apiRouter = express.Router();
 
 apiRouter.get(main, ( req, res ) => {
   const query = QueryParser(req.query, queryKey);
-  if (query.length !== 1) {
+  if (query.length > 1) {
     const ret = concatQueries( ...query );
     res.json(ret);
   } else {

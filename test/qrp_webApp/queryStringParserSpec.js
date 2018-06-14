@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import QueryStringParser from '../../src/modules/queryStringParser';
+import QueryStringParser from '../../qrp_WebApp/src/modules/queryStringParser';
 describe('Query String Parser Module ', () => {
   
   it('should take a query string and split it based on 3 paramters', () => {

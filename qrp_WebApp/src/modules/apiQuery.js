@@ -1,5 +1,5 @@
 import Axios from 'axios';
-const rest = 'rest/';
+const rest = 'rest?q=';
 
 export function APIQuery( dataName, callback, onError ){
   Axios.get( rest + dataName )

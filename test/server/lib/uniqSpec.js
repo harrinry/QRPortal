@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import uniq from '../../../serverModules/uniq';
+import uniq from '../../../server/lib/uniq';
 
 describe('Uniq Array server module', () => {
   it('should compare elements of an array and return a new array of uniq elements', () => {

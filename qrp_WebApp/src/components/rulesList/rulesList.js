@@ -35,17 +35,19 @@ export default class RulesList extends React.Component{
   }
 
   queryForNextList( url ){
-    APIQuery( url, res => {
-      this.setState( _state => {
-        return ( { els: _state.els, els2: res.data } );
+    if (url) {
+      APIQuery( url, res => {
+        this.setState( _state => {
+          return ( { els: _state.els, els2: res.data } );
+        });
+        this.loadRuleDetails();
       });
-      this.loadRuleDetails();
-    }, err => {
+    } else {
       this.setState( _state => {
         return ( { els: _state.els, els2: [] } );
       } );
       this.loadRuleDetails();
-    } );
+    }
   }
 
   buildListFromState( arr, onClickFunction, values, selectAction, clearAction ){

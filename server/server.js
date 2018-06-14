@@ -17,12 +17,14 @@ app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
 
 // -------------------------------- Fav ICON -------------------------------------- //
 app.get('/favicon.ico', (req, res)=> {
-  res.sendFile(path.resolve(__dirname, '..', 'qrp_WebApp', 'favicon/favicon32.png'));
+  //if (req.url.includes('rules')) {
+  res.sendFile(path.resolve(__dirname, '..', 'qrp_WebApp', 'favicon', 'favicon32.png'));
+  /*} else if ( req.url.includes('temp') ){
+    res.sendFile(path.resolve(__dirname, '..', 'public', 'favicon', 'LogoStructuralRules.png'));
+  }*/
 });
 
 // --------------------------- Start Server ---------------------------//
 app.listen(port, function() {
-
   console.log('Listening...' + port);	
-	
 });

@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import filter from '../../../serverModules/filters';
+import filter from '../../../server/lib/filters';
 import technos from '../../../rest/technologies.json';
 describe('filter module for technologies', () => {
   it('should return a new array with merged values', () => {
@@ -10,7 +10,7 @@ describe('filter module for technologies', () => {
       {
         id: 1050571,
         name: 'C/C++',
-        href: '/mlturl/?u=technologies/-3.json&u=technologies/-2.json&u=technologies/1050571.json&f=id',
+        href: 'technologies/-3.json+technologies/-2.json+technologies/1050571.json',
         glob: [
           {
             href: 'technologies/-3.json',
@@ -46,7 +46,7 @@ describe('filter module for technologies', () => {
       {
         id: -13,
         name: 'SQL Server',
-        href: '/mlturl/?u=technologies/-13.json&u=technologies/140998.json&f=id',
+        href: 'technologies/-13.json+technologies/140998.json',
         glob: [
           {
             id: -13,
@@ -107,7 +107,7 @@ describe('filter module for technologies', () => {
       {
         id: -15,
         name: 'SAP',
-        href: '/mlturl/?u=technologies/-15.json&u=technologies/-20.json&f=id',
+        href: 'technologies/-15.json+technologies/-20.json',
         glob: [{
           id: -15,
           name: 'ABAP',
@@ -132,7 +132,7 @@ describe('filter module for technologies', () => {
       {
         id: 1020000,
         name: 'HTML5 JavaScript',
-        href: '/mlturl/?u=technologies/138663.json&u=technologies/1020000.json&f=id',
+        href: 'technologies/138663.json+technologies/1020000.json',
         glob: [{
           id: 138663,
           name: 'JavaScript',
@@ -156,7 +156,7 @@ describe('filter module for technologies', () => {
       {
         id: 1004000,
         name: 'PLI',
-        href: '/mlturl/?u=technologies/1004000.json&u=technologies/1005000.json&f=id',
+        href: 'technologies/1004000.json+technologies/1005000.json',
         glob: [{
           id: 1004000,
           name: 'PLI',
@@ -196,7 +196,7 @@ describe('filter module for technologies', () => {
       {
         id: 1008000,
         name: 'RPG',
-        href: '/mlturl/?u=technologies/1008000.json&u=technologies/1009000.json&u=technologies/1011000.json&u=technologies/1012000.json&f=id',
+        href: 'technologies/1008000.json+technologies/1009000.json+technologies/1011000.json+technologies/1012000.json',
         glob:[{
           id: 1008000,
           name: 'RPG400',

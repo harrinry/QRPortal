@@ -28,5 +28,10 @@ module.exports = [
     name: 'about',
     route: '/about',
     router: 'router'
+  },
+  {
+    name: 'temp',
+    route: '/temp',
+    router: 'router'
   }
 ];

@@ -8,7 +8,7 @@ const localClassName = 'RuleInfo-container',
 
 function queryFromTag( tagValue ){
   
-  Search(tagValue.id, 'qualityStandards')
+  Search(tagValue.id, 'qualitystandards')
     .then( res => {
       Radio.emit(LOADRULESLIST, res.data.resHref, res.data.name);
     });

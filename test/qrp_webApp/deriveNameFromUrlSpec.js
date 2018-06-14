@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import deriveNameFromURL from '../../src/modules/urlCategory';
+import deriveNameFromURL from '../../qrp_WebApp/src/modules/urlCategory';
 
 describe('deriveNameFromURL module', () => {
   it('should return the extention name', () => {

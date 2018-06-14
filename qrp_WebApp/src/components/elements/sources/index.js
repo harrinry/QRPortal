@@ -33,7 +33,9 @@ export default class Sources extends React.Component{
       return res;
     };
 
-    APIQuery( 'extensions.json?env=webapp', (res) => this.setState({data: OnMountFilter(res.data)}));
+    Axios.get( 'rules/extensions.json')
+      .then(res => this.setState({data: OnMountFilter(res.data)}))
+      .catch(err => console.log(err));
   }
 
   render(){
@@ -44,7 +46,7 @@ export default class Sources extends React.Component{
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {
-            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => Axios.get(t.href).then( res => this.onClickHandler(res, t.name)).catch(err => console.log(err.stack))} id={t.id} />;
+            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => Axios.get('rest?q='+t.href).then( res => this.onClickHandler(res, t.name)).catch(err => console.log(err.stack))} id={t.id} />;
           })}</BodyBlock>
       </div>);
     }

@@ -1,6 +1,6 @@
 import { it, describe } from 'mocha';
 import { assert } from 'chai';
-import isStandard from '../../src/modules/isCISQorOWASP';
+import isStandard from '../../qrp_WebApp/src/modules/isCISQorOWASP';
 
 describe('CISQ or OWASP', () => {
   it('should check if the url provided is pointing to BC or QS', () => {
