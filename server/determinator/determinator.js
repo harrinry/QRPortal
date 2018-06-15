@@ -17,7 +17,7 @@ function determinator ( query ){
       ret[keyWords[i]] = matching ;
       ret[keyWords[i]].recommendedversion = getRecommendedVersion(extUID);
     } else {
-      ret[keyWords[i]] = 'Unknown parameter';
+      ret[keyWords[i]] = {id: null, errormessage: 'Technology not supported' };
     }
   }
 
