@@ -7,7 +7,11 @@ function determinator ( query ){
   if( !query ) return;
   const keyWords = queryParser( query, queryKey ),
     len = keyWords.length;
-  
+  let stats = {
+    originalquery: keyWords,
+    matched: [],
+    notsupported: []
+  };
   let ret = {};
   
   for (let i = 0; i < len; i++) {
@@ -16,11 +20,13 @@ function determinator ( query ){
       const extUID = matching.extensionuid;
       ret[keyWords[i]] = matching ;
       ret[keyWords[i]].recommendedversion = getRecommendedVersion(extUID);
+      stats.matched.push(keyWords[i]);
     } else {
       ret[keyWords[i]] = {id: null, errormessage: 'Technology not supported' };
+      stats.notsupported.push(keyWords[i]);
     }
   }
-
+  // logger.info(stats);
   return ret;
 }
 

@@ -4,7 +4,11 @@ const searchIndex = require('./qr_searchParser');
 let searchRouter = express.Router();
 
 searchRouter.get(searchRoute, (req, res) => {
-  const ret = searchIndex( req.query.q, req.params.filter );
+  const searchParams = {
+    query: req.query.q,
+    index: req.params.filter
+  };
+  const ret = searchIndex( searchParams.query, searchParams.index );
   res.json(ret);
 });
 
