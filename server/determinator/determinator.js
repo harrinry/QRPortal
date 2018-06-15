@@ -11,7 +11,7 @@ function determinator ( query ){
   let ret = {};
   
   for (let i = 0; i < len; i++) {
-    const matching = matcher( keyWords[i] );
+    const matching = matcher( keyWords[i].toLowerCase() );
     if (matching) {
       const extUID = matching.extensionuid;
       ret[keyWords[i]] = matching ;

@@ -23,6 +23,9 @@ app.get('/favicon.ico', (req, res)=> {
     res.sendFile(path.resolve(__dirname, '..', 'public', 'favicon', 'LogoStructuralRules.png'));
   }*/
 });
+app.get('/', (req, res)=>{
+  res.redirect('/rules');
+});
 
 // --------------------------- Start Server ---------------------------//
 app.listen(port, function() {
