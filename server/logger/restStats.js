@@ -6,7 +6,7 @@ const RestStatLogger = winston.createLogger({
   format: winston.format.json(),
   transports: [
     new winston.transports.File({
-      filename: `${appRoot}/logs/restStatistics.json`,
+      filename: appRoot.resolve('logs/restStatistics.log'),
       level: 'info',
       maxsize: 2.5e+7
     })
