@@ -8,9 +8,10 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before using the input in a dynamic evaluation call.",
     "reference": "http://cwe.mitre.org/data/definitions/95.html \nhttps://www.owasp.org/index.php/Top_10_2013-A1-Injection \nhttps://www.w3schools.com/js/js_best_practices.asp",
-    "remediation": "If possible, refactor your code so that it does not need to use setTimeout() at all.",
-    "sample": "setTimeout(function(){ alert(\"Hello\"); }, 3000);",
-    "total": "Number of Javascript Functions",
+    "remediation": "Do not use setTimeout with function passed as a string value.",
+    "remediationSample": "function delayedFunction() { \nalert(\"This is a delay\"); \n} \n\n// safe - direct call of the function \nwindow.setTimeout(delayedFunction, 100);",
+    "sample": "function delayedFunction() { \nalert(\"This is a delay\"); \n} \n\n// unsafe - call to code that will be evaluated before getting the function \nwindow.setTimeout(\"delayedFunction\", 100);",
+    "total": "Number of Javascript Functions using setTimeout",
     "businessCriteria": [
         {
             "id": 66031,

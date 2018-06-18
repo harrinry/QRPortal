@@ -7,7 +7,7 @@
     "description": "In Node.js, to avoid connection to unsecured source, you have to make sure that all HTTP communication are encrypted. This rule is compliant with OWASP 2013 and 2017 A5 - Security Misconfiguration",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure the developer will work with a list of trusted source. Thanks to Strict-Transport-Security header you will enforces secure (HTTP over SSL/TLS) connections to the server.",
-    "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration \nhttps://www.owasp.org/index.php/Top_10_2017-A5-Security_Misconfiguration",
+    "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration \nhttps://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
     "remediation": "Ensure you have enable Strict-Transport-Security header that enforces secure (HTTP over SSL/TLS) connections to the server.",
     "remediationSample": "// with helmet \n\nvar express = require('express'); \nvar app = express(); \nvar helmet = require('helmet'); \n\napp.use(helmet.hsts()); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body><html>\"); \n}); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
