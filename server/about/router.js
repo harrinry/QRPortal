@@ -4,13 +4,14 @@ const path = require('path');
 const readJsonFile = require('../lib/readFile');
 const { infoDir, packagePath } = require('../routes/paths');
 const { main } = require('../routes/routes');
+const errLogger = require('../logger/error');
 
 let aboutRouter = express.Router();
 
 aboutRouter.get(main, (req,res)=>{
   fs.readFile( path.resolve(...infoDir, 'LICENSE'), 'utf8', ( err, fileContents ) => {
     if ( err ) {
-      console.log( err );
+      errLogger.error( err );
       res.status(500).send({error: 'a problem occured'});
     }
     readJsonFile(path.resolve(...packagePath), (fileName, jsonData ) =>{
@@ -20,7 +21,7 @@ aboutRouter.get(main, (req,res)=>{
         news: require('../info/changelog.json')[jsonData.version]
       });
     }, undefined, (e) => {
-      console.log( e );
+      errLogger.error( e );
       res.status(500).send({error: 'a problem occured'});
     });
   });

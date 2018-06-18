@@ -1,6 +1,8 @@
+const logger = require('../logger/error');
+
 module.exports = function errorHandler( err, res, next ){
   if ( err ) {
-    console.log( err ); // replace with error logger
+    logger.error( err ); 
     res.sendStatus(err.statusCode);
   } else {
     if( next ) next();

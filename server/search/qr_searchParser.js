@@ -6,6 +6,7 @@ const search = require('./search');
 const filter = require('../lib/filters');
 const QS = require('../../rest/quality-standards.json');
 const technoMapping = require('../lib/technologies-map');
+const errLogger = require('../logger/error');
 
 const readJsonFile = require('../lib/readFile');
 
@@ -41,6 +42,15 @@ function SearchIndex( query, indexDef ){
     return search( query, index[ indexDef ], ( e ) => e.searchid );
   case 'qualitystandards':
     return index.qualitystandards.find( e => e.id === query );
+  default:
+    errLogger.error({
+      module: 'search',
+      index: indexDef,
+      query: query,
+      errortype: 'index not found',
+      errorcode: 404
+    });
+    break;
   }
 }
 
@@ -83,11 +93,11 @@ const QSinitializationTest = () => {
             index.qualitystandards[qsi++] = indexObj;
           } );
         }, undefined, ( e ) => {
-          throw e;
+          errLogger.error( e );
         });
       });
     }, undefined, ( e ) => {
-      throw e;
+      errLogger.error( e );
     });
   });
 }());

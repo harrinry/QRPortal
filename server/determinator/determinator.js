@@ -2,6 +2,7 @@ const queryParser = require('../lib/queryParser');
 const { queryKey } = require('./constants');
 const matcher = require('./matcher');
 const getRecommendedVersion = require('./latestVersion');
+const logger = require('../logger/determinator');
 
 function determinator ( query ){
   if( !query ) return;
@@ -26,7 +27,7 @@ function determinator ( query ){
       stats.notsupported.push(keyWords[i]);
     }
   }
-  // logger.info(stats);
+  logger.info(stats);
   return ret;
 }
 
