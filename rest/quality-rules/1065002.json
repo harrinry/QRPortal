@@ -1,0 +1,61 @@
+{
+    "id": 1065002,
+    "type": "quality-rule",
+    "name": "\"enum\" members other than the first one should not be explicitly initialized unless all members are explicitly initialized.",
+    "href": "quality-rules/1065002.json",
+    "critical": false,
+    "maxWeight": 2,
+    "associatedValueName": "Single Value",
+    "description": "This rule raises a violation when \"enum\" members initialization rule is infringed.. This rule is compliant with MISRA-C:2004 and MISRA-C++:2008.",
+    "output": " Line and column for each violation\nAssociated value => number of violations found\n",
+    "rationale": "\"enum\" members other than the first one should not be explicitly initialized unless all members are explicitly initialized.",
+    "remediation": "Always initialized all, none or the first members of an enum.",
+    "remediationSample": "enum color { red = 3, blue = 4, green = 5, yellow = 6 };",
+    "sample": "enum color { red = 3, blue, green, yellow = 5 };",
+    "total": "Number of C++ constructors, destructors, methods, C and C++ functions",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "business-criteria/60012.json"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "business-criteria/66031.json"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "business-criteria/60013.json"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "business-criteria/60011.json"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -2,
+            "name": "C",
+            "href": "technologies/-2.json"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "technologies/-3.json"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
