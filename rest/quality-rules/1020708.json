@@ -4,7 +4,7 @@
     "name": "Ensure the X-Powered-By header is disabled",
     "href": "quality-rules/1020708.json",
     "critical": true,
-    "description": "In Node.js, Attackers can use the X-Powered-By header (which is enabled by default) to detect apps running Express and then launch specifically-targeted attacks. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A5 - Security Misconfiguration.",
+    "description": "In Node.js, Attackers can use the X-Powered-By header (which is enabled by default) to detect apps running Express and then launch specifically-targeted attacks. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 and 2017 A5 - Security Misconfiguration",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure the X-Powered-By is disabled.",
     "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Content_Security_Policy",

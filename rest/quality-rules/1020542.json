@@ -8,7 +8,7 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.",
     "reference": "https://docs.angularjs.org/guide/security",
-    "remediationSample": "<html ng-app ng-scp>...</html>",
+    "remediationSample": "<html ng-app ng-csp>...</html>",
     "sample": "<html ng-app>...</html>",
     "total": "Number of angular applications based on an HTML file",
     "businessCriteria": [
