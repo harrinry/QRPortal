@@ -1,8 +1,13 @@
 .NavItem{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 50px;
   cursor: pointer;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
 }
 
 .NavItem:hover{
@@ -21,15 +26,33 @@
   animation-timing-function: ease-in-out;
 }
 
-.NavItem > .Name{
+.NavItem .Name{
   font-size: 22px;
   font-weight: 600;
   line-height: 50px;
   margin-left: 30px;
-  margin-right: auto;
 }
 
-.NavItem > .DropDown{
+.NavItem.Open > .dropdown-container{
+  height: auto;
+}
+
+.NavItem .DropDown{
   margin-left: auto;
   margin: auto 50px;
+}
+
+.dropdown-container{
+  height: 0px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-container > div{
+  height: 0px;
+  opacity: 0;
+}
+
+.NavItem.Open > .dropdown-container > div{
+  opacity: 1;
 }

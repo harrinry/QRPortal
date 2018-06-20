@@ -2,16 +2,27 @@ import { TOGGLENAVBAR } from '../actions/types';
 
 const initialState = {
   navBar: {
+    selected: null,
     isOpen: false,
     sections: [
       {
         name: 'Standards',
+        children:[
+          {title:'testing', href: '/rest?q=root.js'},
+          {title:'testing', href: '/rest?q=root.js'},
+          {title:'testing', href: '/rest?q=root.js'},
+          {title:'testing', href: '/rest?q=root.js'},
+          {title:'testing', href: '/rest?q=root.js'},
+          {title:'testing', href: '/rest?q=root.js'},
+        ]
       },
       {
-        name: 'Technologies'
+        name: 'Technologies',
+        children:[]
       },
       {
-        name: 'Sources'
+        name: 'Sources',
+        children:[]
       }
     ]
   }
