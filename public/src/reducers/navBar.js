@@ -1,12 +1,17 @@
-import { TOGGLENAVBAR } from '../actions/types';
+import { TOGGLENAVBAR, SETSELECTEDNAVITEM } from '../actions/types';
 
 const initState = {
-  selected: null,
+  selected: {},
   isOpen: false,
 };
 
 const navBarReducer = (state = initState, action) => {
   switch (action.type) {
+  case SETSELECTEDNAVITEM: 
+    return {
+      ...state,
+      selected: action.payload
+    };
   case TOGGLENAVBAR:
     return {
       ...state,

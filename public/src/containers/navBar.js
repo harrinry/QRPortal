@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { toggleNavBar } from '../actions/index';
+import { toggleNavBar, setSelectedNavItem } from '../actions/index';
 import NavBar from '../navBar/navbar';
 
 const mapStateToProps = (state) => {
   return {
     isOpen: state.navBar.isOpen,
+    selected: state.navBar.selected,
     children: state.navItems
   };
 };
@@ -14,9 +15,10 @@ const mapDispatchToProps = (dispatch) => {
     onClick: () => {
       dispatch(toggleNavBar());
     },
-    onItemClick: ( index, props ) => {
-      console.log( index );
+    onItemClick: ( ref, props, title ) => {
+      dispatch(setSelectedNavItem(ref));
       console.log( props );
+      console.log( title );
     }
   };
 };

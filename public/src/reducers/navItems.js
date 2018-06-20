@@ -6,10 +6,12 @@ const initState = [
     href: '/rest?q=quality-standards.json'
   }, 
   {
-    name:'Technologies'
+    name:'Technologies',
+    href: '/rules/technologies.json'
   },
   { 
-    name:'Sources'
+    name:'Sources',
+    href: '/rules/extensions.json'
   }];
 
 const navItemsReducer = (state = initState, action) => {

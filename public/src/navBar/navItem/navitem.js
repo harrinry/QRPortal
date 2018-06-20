@@ -42,7 +42,7 @@ export default class NavItem extends React.PureComponent {
           <div className={'Name'}>{this.props.name}</div>
           <div className={'DropDown'}></div>
         </div>
-        <div className={'dropdown-container'}>{this.state.children.map( ( c, idx ) => <MenuItem key={idx} index={idx} title={c.name} href={c.href} /*selected={}*/ onclick={this.props.onItemClick}/>)}</div>
+        <div className={'dropdown-container'}>{this.state.children.map( ( c, idx ) => <MenuItem key={idx} _ref={{name: this.props.name, index: idx}} title={c.name} href={c.href} selected={this.props.selected.name === this.props.name && this.props.selected.index === idx} onclick={this.props.onItemClick}/>)}</div>
       </div>
     );
   }
