@@ -1,0 +1,54 @@
+{
+    "id": 1600180,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid modification on lenghts or types on Field",
+    "href": "AIP/quality-rules/1600180",
+    "critical": true,
+    "associatedValueName": "Value in the Vanilla",
+    "description": "FIELDTYPE and LENGTH are compared with those defined in the Vanilla",
+    "output": "Failed checks gives the number of wrongly defined fields. The defined values in the vanilla and in the project can be found in the value column",
+    "rationale": "Modification on length or type on Field will impact each record and the display on each page that contains it. You have to do an impact analysis on the entire environment (PeopleCode, SQR, Crystal, ...).",
+    "reference": "3.0",
+    "remediation": "Avoid as much as possible modification on Field and document them.",
+    "total": "Number of PeopleSoft DBField (MODIFIED)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "id": 1600620,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid PeopleCode Events with a low comment/code ratio",
+    "href": "AIP/quality-rules/1600620",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Comment/code ratio",
+    "output": "This report lists all PeopleSoft Events with comment/code ratio lower than X %.",
+    "total": "Number of PeopleSoft Events",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

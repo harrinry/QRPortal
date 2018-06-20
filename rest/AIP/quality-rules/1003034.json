@@ -1,0 +1,51 @@
+{
+    "id": 1003034,
+    "type": "quality-rule",
+    "name": "Avoid unused private method (Flex)",
+    "href": "AIP/quality-rules/1003034",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.unused.UnusedPrivateMethodRule",
+    "rationale": "Reports unused private methods",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

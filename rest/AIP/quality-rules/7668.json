@@ -1,0 +1,57 @@
+{
+    "id": 7668,
+    "type": "quality-rule",
+    "name": "Avoid using incorrect XML parsing model",
+    "href": "AIP/quality-rules/7668",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Associated Value",
+    "description": "Reports all methods that reference:\n* javax.xml.parsers.DocumentBuilder class",
+    "output": "List all methods, that reference javax.xml.parsers.DocumentBuilder class.\n\nIt provides the following information:\n Java Method Fullname",
+    "rationale": "Efficient parsing of XML documents is more and more critical as XML gets adopted more widely. It is very important to have an efficient way to parse XML data, especially in applications that are intended to handle large volumes. Improper parsing can result in excessive memory usage and processing times that can hurt scalability.\n\nWhen you use DOM parsing techniques to read an XML, it means that entire XML document will be parsed at one time and load into memory. \nSo it will time and memory expensive and must be used only when you have to modify XML documents.",
+    "reference": "http://ptgmedia.pearsoncmg.com/images/0131453491/samplechapter/megginson_ch08.pdf\nhttp://www.extreme.indiana.edu/~aslom/exxp/",
+    "remediation": "Use SAX when no modification are made on the document and when used in different threads (session, EJB...), in a loop.",
+    "remediationSample": "import java.io.IOException;\nimport java.util.ArrayList;\nimport java.util.Iterator;\nimport java.util.List;\n\nimport javax.xml.parsers.ParserConfigurationException;\nimport javax.xml.parsers.SAXParser;\nimport javax.xml.parsers.SAXParserFactory;\n\nimport org.xml.sax.Attributes;\nimport org.xml.sax.SAXException;\n\nimport org.xml.sax.helpers.DefaultHandler;\n\npublic class SAXParserExample extends DefaultHandler{\n    [...]\n    \n    public SAXParserExample(){\n        [...]\n    }\n\n    private void parseDocument() {\n        SAXParserFactory spf = SAXParserFactory.newInstance();\n        try {\n            SAXParser sp = spf.newSAXParser();\n            sp.parse(\"sample.xml\", this);\n        }catch(SAXException se) {\n            se.printStackTrace();\n        }catch(ParserConfigurationException pce) {\n            pce.printStackTrace();\n        }catch (IOException ie) {\n            ie.printStackTrace();\n        }\n    }\n\n    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {\n        [...]\n    }\n\n    public void characters(char[] ch, int start, int length) throws SAXException {\n        [...]\n    }\n\n    public void endElement(String uri, String localName, String qName) throws SAXException {\n        [...]\n    }\n\n    [...]\n}",
+    "sample": "import javax.xml.parsers.DocumentBuilder;\nimport javax.xml.parsers.DocumentBuilderFactory;\nimport javax.xml.parsers.ParserConfigurationException;\n\nimport org.w3c.dom.Document;\nimport org.w3c.dom.Element;\nimport org.w3c.dom.NodeList;\nimport org.xml.sax.SAXException;\n\npublic class DomParserExample {\n    Document dom;\n\n    private void parseXmlFile(){\n        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\n        try {\n            DocumentBuilder db = dbf.newDocumentBuilder();  // VIOLATION\n            dom = db.parse(\"sample.xml\");\n        }catch(ParserConfigurationException pce) {\n            pce.printStackTrace();\n        }catch(SAXException se) {\n            se.printStackTrace();\n        }catch(IOException ioe) {\n            ioe.printStackTrace();\n        }\n    }\n}",
+    "total": "The number of methods that reference javax.xml.parsers.SAXParser and javax.xml.parsers.DocumentBuilder",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

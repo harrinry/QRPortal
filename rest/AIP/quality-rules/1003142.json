@@ -1,0 +1,47 @@
+{
+    "id": 1003142,
+    "type": "quality-rule",
+    "name": "Avoid CairngormEventDispatcher called explicitly (Flex)",
+    "href": "AIP/quality-rules/1003142",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.cairngorm.CairngormEventDispatcherCallExplicitlyRule",
+    "rationale": "Reports functions calling CairngormEventDispatcher explicitly",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public function foo() : void\n{\n   CairngormEventDispatcher.getInstance().dispatchEvent(new Event(CONSTANT)); // VIOLATION - use cairngormEvent.dispatch();\n   CairngormEventDispatcher.getInstance().addEventListener(CONSTANT, onHearing); // VIOLATION - MVC broken\n}",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

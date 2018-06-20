@@ -1,0 +1,49 @@
+{
+    "id": 1601712,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Naming convention prefix on Record Temp",
+    "href": "AIP/quality-rules/1601712",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "The naming convention check is designed to identify the prefix and suffix corresponding to the type (or subtype) and to the module",
+    "rationale": "The naming convention is mandatory in PeopleSoft to easily identify the added custom objects.\n-Upgrade: allow to identify impacts on external objects\n-Maintain: the search is used to find the potential objects",
+    "reference": "2.3",
+    "remediation": "Rename the object using the good naming convention and research all the references to this object using the old reference (function find reference and find in in the application designer)",
+    "remediationSample": "<KEY>_<LABEL>_{TAO|TMP} \nWith <LABEL> = AE name with TAO ending",
+    "total": "Number of PeopleSoft Record Temp (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61017,
+            "name": "Documentation - Naming Convention Conformity",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

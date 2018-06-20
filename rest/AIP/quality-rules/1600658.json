@@ -1,0 +1,54 @@
+{
+    "id": 1600658,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Display control field must be before the related display field that depend on it",
+    "href": "AIP/quality-rules/1600658",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Formatted string in the form of: 'Related=<Page Field Number> before Control= <Page Field Number>'",
+    "output": "This report lists all the Display Controls having a Page Field Number lower than XXX.",
+    "reference": "2.3",
+    "remediation": "Open the page in application designer, choose order tab and modifiy the order of the concerned fields",
+    "remediationSample": "Related=' || T4.METRIC_VALUE || ' before Control=' || T3.METRIC_VALUE",
+    "total": "Number of PeopleSoft Display controls",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

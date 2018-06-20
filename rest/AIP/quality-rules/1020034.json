@@ -1,0 +1,58 @@
+{
+    "id": 1020034,
+    "type": "quality-rule",
+    "name": "Avoid hosting HTML code in iframe srcdoc",
+    "href": "AIP/quality-rules/1020034",
+    "critical": true,
+    "description": "HTML5 specifies a \"srcdoc\" attribute for Iframes. This attribute, quite similar to data URIs, is capable of hosting HTML text to be rendered by the browser as the content of the Iframe. The pseudo-document created by the \"srcdoc\" attribute has full access to the hosting domain, although it runs in an artificial origin. This attribute should if at all only be used in combination with the Iframe Sandbox. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you do not have html pattern that allows an attacker to try an injection using iframe content features.",
+    "reference": "https://html5sec.org/#139",
+    "remediation": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox. Otherwise, XSS attacks might slip through existing filters rules as the payload can be HTML encoded.",
+    "remediationSample": "<iframe sandbox srcdoc=\"&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;\" />",
+    "sample": "<iframe srcdoc=\"&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;\" />",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-79",
+            "name": "Cross-site Scripting Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2013",
+            "name": "Cross-Site Scripting (XSS)",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
+            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+        }
+    ]
+}

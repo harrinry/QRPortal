@@ -1,0 +1,45 @@
+{
+    "id": 7372,
+    "type": "quality-rule",
+    "name": "Enable Struts Validator plugin",
+    "href": "AIP/quality-rules/7372",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "This metric reports whether or not the struts Validator plugin has been defined in the struts-config.xml. Not that in the case where a several struts configuration files belong to the same module, only one plugin declaration is needed. When one declaration exist, none of these struts configuration files will be reported.",
+    "output": "Report the list of struts configuration file that does not define the struts validator plugin.",
+    "rationale": "Input validation is required to secure an application. Moreover, the web interface is exposed to anyone. Non validating input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like erasing the content of a database.",
+    "reference": "http://cwe.mitre.org/data/definitions/106.html",
+    "remediation": "Update your application's struts-config.xml file with the Validator plugin declaration.",
+    "remediationSample": "Add the following lines in your application's struts-config.xml file:\n\n<!-- Validator Configuration -->\n<plug-in className=\"org.apache.struts.validator.ValidatorPlugIn\">\n  <set-property property=\"pathnames\"               value=\"/technology/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml\"/>\n</plug-in>\n\nUpon initialization, the plug-in loads the comma-delimited list of Validator config files specified by the pathnames property. Each config file's path should be specified by use of a Web application-relative path.",
+    "total": "the total is equal to the number of struts configuration file if object of type \"Struts Configuration File\" is present, 0 if not",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

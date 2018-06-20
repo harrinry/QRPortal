@@ -1,0 +1,43 @@
+{
+    "id": 1008120,
+    "type": "quality-rule",
+    "name": "Avoid Subroutines with more than X lines of code  (RPG400)",
+    "href": "AIP/quality-rules/1008120",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This rule searches all the subroutines having more than X  lines of code.\nX is a parameter and can be changed at will.",
+    "output": "This report lists RPG400 Subroutines with more than X lines of code.\nIt provides the following information:\nRPG400 Subroutine full name",
+    "rationale": "Maintainability of the code is facilitated if there the subroutines are not too big.",
+    "remediation": "Review the source code in order to have subroutines with less than X lines of code.",
+    "total": "Total number of RPG400 Subroutines",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1008000,
+            "name": "RPG400",
+            "href": "AIP/technologies/1008000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

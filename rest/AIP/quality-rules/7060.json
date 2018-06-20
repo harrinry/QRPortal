@@ -1,0 +1,48 @@
+{
+    "id": 7060,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Programs",
+    "href": "AIP/quality-rules/7060",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Associated Value",
+    "description": "ABAP programs should be documented. This reports shows all the ABAP programs with no comments.",
+    "output": "This rule lists all undocumented ABAP Programs.\nIt provides following information:\n- ABAP Program full name",
+    "remediation": "Add comments into programs to explain what is their goal and how they work.",
+    "total": "Number of  ABAP Programs",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

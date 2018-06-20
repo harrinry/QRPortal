@@ -1,0 +1,53 @@
+{
+    "id": 7132,
+    "type": "quality-rule",
+    "name": "Action Mappings should have few forwards",
+    "href": "AIP/quality-rules/7132",
+    "critical": false,
+    "maxWeight": 1,
+    "associatedValueName": "Number of forward",
+    "description": "All Action Mappings with more than 5 forward will be listed.",
+    "output": "This report lists all action mapping that have more than X forward and the number of forwards.\nIt provides the following information:\n Action Class full name, Number of forward",
+    "rationale": "Action Mappings should have few forwards to avoid managing too complex behaviors in the Action class. A forward contains the request URI path to which control is passed when the mapping is invoked.",
+    "total": "total of action mapping",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

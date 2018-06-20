@@ -1,0 +1,47 @@
+{
+    "id": 7370,
+    "type": "quality-rule",
+    "name": "Avoid using inline PERFORM with too many lines of code",
+    "href": "AIP/quality-rules/7370",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rules searches for Cobol programs containing PERFORM - END-PERFORM loops with more than 80 lines.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - PERFORM - END-PERFORM block with more than 80 lines",
+    "rationale": "If the code to be performed is short, an inline PERFORM can be easier to read. But if the code extends over several screens, the logical flow of the program might be clearer if you use an out-of-line PERFORM. (Each paragraph in structured programming should perform one logical function, however.)",
+    "reference": "IBM Enterprise Cobol for z/OS - Programming Guide",
+    "remediation": "Create a dedicated paragraph and put the lines of code in it. Then change the inline PERFORM to an out-of-line PERFORM.",
+    "remediationSample": "PAR-01.\n     ...\n     MOVE 0 TO CPT.\n     PERFORM PAR-2 UNTIL CPT = 10.\n     ...\n\n PAR-2.\n* Lines of code on several screens\n     ADD 1 TO CPT.",
+    "sample": "PAR-01.\n     ...\n     MOVE 0 TO CPT.\n     PERFORM UNTIL CPT = 10\n* Lines of code on several screens\n         ADD 1 TO CPT\n     END-PERFORM\n     ...",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

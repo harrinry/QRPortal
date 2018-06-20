@@ -1,0 +1,47 @@
+{
+    "id": 1003190,
+    "type": "quality-rule",
+    "name": "Avoid classes with unknown metadata attribute (Flex)",
+    "href": "AIP/quality-rules/1003190",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.parsley.UnknownMetaDataAttributeRule",
+    "rationale": "Reports classes with members that have unknown metadata attribute",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "[AsyncInit(x=\"y\")] // VIOLATION\npublic class UnknownMetaDataAttribute\n{\n   [Inject(x=\"y\")] // VIOLATION\n   public var inject;\n\n   [MessageHandler(x=\"y\")] // VIOLATION\n   public function messageHandler() : void\n   {\n   }\n}",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

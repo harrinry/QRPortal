@@ -1,0 +1,47 @@
+{
+    "id": 4616,
+    "type": "quality-rule",
+    "name": "Proper overriding of 'finalize()'",
+    "href": "AIP/quality-rules/4616",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "When overriding the 'finalize()' Method, a call to 'super.finalize()' is necessary.",
+    "output": "This report lists all Methods overriding 'finalize()' and not calling 'super.finalize()'. It provides the following information: Method full name",
+    "rationale": "A call to 'super.finalize()' ensures the finalize behavior will still work.",
+    "remediation": "Review the Method's definition.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61003,
+            "name": "Programming Practices - OO Inheritance and Polymorphism",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
