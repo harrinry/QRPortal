@@ -1,0 +1,91 @@
+{
+    "id": 7908,
+    "type": "quality-rule",
+    "name": "Avoid unreferenced Methods",
+    "href": "AIP/quality-rules/7908",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Associated Value",
+    "description": "Reports all methods and constructors that are not referenced except main, getter and setter.  A threshold parameter permit to include getter and setter methods. \n\nNOTE:\n* a method/constructor is considered as unreferenced when it is never called and the method doesn't override a method of a class or doesn't implement a method of an interface.\n* For .net, getter and setter (of properties and indexer) are included\n* For J2EE, getter and setter methods are not included by default because usually these methods are automatically created from IDE and also they can be involved through dynamic mechanism like reflection.",
+    "output": "This report lists all unreferenced Methods.\nIt provides the following information: Method full name",
+    "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
+    "reference": "http://it-cisq.org/\nCISQ: ASCMM-MNT-20",
+    "remediation": "Check if the Method is truly unnecessary.\nRemove Methods that are not used.",
+    "total": "Total number of methods",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "id": 4702,
+    "type": "quality-rule",
+    "name": "Avoid using 'Throwable.printStackTrace()' outside a try catch block",
+    "href": "AIP/quality-rules/4702",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Associated Value",
+    "description": "'Throwable.printStackTrace()' should not be used outside a try catch block.",
+    "output": "This report lists all Java artifacts using 'Throwable.printStackTrace()' outside a try catch block. It provides the following information:\n - Artifact full name",
+    "rationale": "Using 'Throwable.printStackTrace()' outside a catch block usually means that it is used to log the stack of errors, which has the risk of filling up the stdout or the log file.",
+    "total": "Number of non-abstract Java artifacts.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

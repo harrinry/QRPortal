@@ -1,0 +1,46 @@
+{
+    "id": 6102,
+    "type": "quality-rule",
+    "name": "Avoid undocumented Events",
+    "href": "AIP/quality-rules/6102",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Associated Value",
+    "description": "This rule will ensure there are comments within the Events.",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -8,
+            "name": "PowerBuilder",
+            "href": "AIP/technologies/-8"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

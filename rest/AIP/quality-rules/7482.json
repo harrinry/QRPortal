@@ -1,0 +1,49 @@
+{
+    "id": 7482,
+    "type": "quality-rule",
+    "name": "Do not use Cartesian products in Universe properties",
+    "href": "AIP/quality-rules/7482",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "Do not use Cartesian products in universe properties.",
+    "output": "List all universes not having the option Cartesian product to \"prevent\".",
+    "rationale": "Universes should not allow Cartesian products since they are a symptom of incomplete joins and will affect performance and accuracy",
+    "reference": "BO Best Practices for v5",
+    "remediation": "Set Cartesian products to Prevent (File > Parameters > SQL in Designer)",
+    "total": "Count of universes",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -23,
+            "name": "Business Object",
+            "href": "AIP/technologies/-23"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

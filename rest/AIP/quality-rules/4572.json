@@ -1,0 +1,54 @@
+{
+    "id": 4572,
+    "type": "quality-rule",
+    "name": "Avoid declaring Final Instance Variables that are not dynamically initialized",
+    "href": "AIP/quality-rules/4572",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Associated Value",
+    "description": "Final Fields should be declared as Static (Class Variable and not Instance Variable) if they are not dynamically initialized. Here is an example of dynamic initialization of a Final Instance Variable: 'public  final int nFact = (int) BasicObjectFactory.makeObject();'",
+    "output": "This report lists all Final Instance Variables, except those that are dynamically initialized. It provides the following information: Field full name",
+    "rationale": "If a Final Instance Variable is not dynamically initialized, its value will be the same for all Instances and need not be an Instance Variable. This final instance variable requires memory for each new instantiation while it could be declared as static and require memory only once for all instances of the class.",
+    "remediation": "Review the Field declaration to add the Static modifier.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61020,
+            "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
+            "weight": 6,
+            "critical": false
+        },
+        {
+            "id": 66066,
+            "name": "Secure Coding - Encapsulation",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

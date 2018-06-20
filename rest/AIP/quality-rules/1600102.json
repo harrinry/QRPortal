@@ -1,0 +1,54 @@
+{
+    "id": 1600102,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid inserting or deleting data on grid based on a record view",
+    "href": "AIP/quality-rules/1600102",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "RecordView referenced by the page field",
+    "description": "If the main record for the grid is a Record View, you should check the \"No Row Insert\" and \"No Row Delete\" properties in the Use properties",
+    "output": "Failed checks gives the number of pages that contain wrongly defined grids. The grid name can be found in the value column",
+    "rationale": "As grid integrates data entry controls, you should be careful before allowing insertion or deletion",
+    "reference": "2.3",
+    "total": "Number of PeopleSoft Grids",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

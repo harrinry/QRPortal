@@ -1,0 +1,53 @@
+{
+    "id": 1600648,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid use a radio button or check box when the user has more than three choices",
+    "href": "AIP/quality-rules/1600648",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Corresponding Record Field",
+    "output": "This report lists all the Radio buttons or Check boxes with more than three choices",
+    "rationale": "Use a radio button or check box when the user has less than three choices",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Radio button or Check box",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

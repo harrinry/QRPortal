@@ -1,0 +1,65 @@
+{
+    "id": 7268,
+    "type": "quality-rule",
+    "name": "Dispose() methods should call GC.SuppressFinalize",
+    "href": "AIP/quality-rules/7268",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Associated Value",
+    "description": "List all Dispose() methods that do not call GC.SuppressFinalize().\nThis applies only for Dispose() method defined in classes which implement the IDisposable interface.",
+    "rationale": "Because the cleanup code executed at dispose-time is a superset of the code executed at the finalize-time, there is no need to call the finalize-time code during object finalization after the object has been disposed. Moreover, keeping objects that don't need to be finalized in the finalization queue has a cost associated with it. This is why the Dispose() method should call GC.SuppressFinalize, which removes the object from the finalization queue and thus prevents unnecessary finalization.",
+    "reference": "Resource Management in .NET\nby Krzysztof Cwalina\nProgram Manager - Microsoft .NET Framework \nhttp://www.gotdotnet.com/team/libraries/whitepapers/resourcemanagement/resourcemanagement.aspx",
+    "remediationSample": "public void Dispose(){\n\n Dispose(true);\n\n GC.SupressFinalize(this);\n\n}",
+    "sample": "public void Dispose() {\n\n}",
+    "total": "The Total procedure counts only the Dispose() methods without parameters and defined in classes which implement the IDisposable interface.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

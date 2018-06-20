@@ -1,0 +1,48 @@
+{
+    "id": 7966,
+    "type": "quality-rule",
+    "name": "Avoid includes in Header Files",
+    "href": "AIP/quality-rules/7966",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Associated Value",
+    "description": "Recursion in header files makes applications difficult to compile and to maintain. A header file should not include any other files.",
+    "output": "This report lists all Header files including a file. It provides the following information: File full name",
+    "rationale": "Including files in a header file increases the number of dependencies within the system and increases the risk of having circular references.\nIt should, therefore, be minimized.",
+    "remediation": "For C++, if the include is created to use a class, it is better to use a forward declaration of that class and pointers to that class.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61015,
+            "name": "Programming Practices - File Organization Conformity",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -2,
+            "name": "C",
+            "href": "AIP/technologies/-2"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,56 @@
+{
+    "id": 1020316,
+    "type": "quality-rule",
+    "name": "Avoid Universal Selectors",
+    "href": "AIP/quality-rules/1020316",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "Avoid Universal Selectors because element selections that could be matched anywhere in the document can be very slow. This rule is compliant with CISQ OMG ASCPEM-PRF-04 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure that using jQuery selector request do not lead to a performance issue.",
+    "reference": "http://learn.jquery.com/performance/optimize-selectors/",
+    "remediationSample": "$('div.container').children(); // BETTER\nor\n$( \"input:radio\" ); // Much better.",
+    "sample": "$('div.container > *'); // SLOW\nor\n$( \":radio\" ); // Implied universal selection.\nor\n$( \"*:radio\" ); // Implied universal selection.",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-4",
+            "name": "Data Resource Read and Write Access Excessive Complexity",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

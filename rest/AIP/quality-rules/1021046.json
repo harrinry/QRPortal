@@ -1,0 +1,46 @@
+{
+    "id": 1021046,
+    "type": "quality-rule",
+    "name": "Avoid Not ... Is",
+    "href": "AIP/quality-rules/1021046",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Single Value",
+    "description": "This rule will raise a violation in Python artifacts containing expressions using the \"not ... is\" syntax.",
+    "output": "Line and column for each violation.\nAssociated value => number of violations found",
+    "rationale": "Since Python version 2.3 the \"is not\" keyword pair is an operator in its own right. The expression \"x is not y\" is equivalent to \"not (x is y)\" and because of operator precedence rules it can be also expressed without parenthesis as \"not x is y\". The latter form can be a source of unexpected logical behavior as it appears reversed with respect to the natural English construction \"is not\". Thus it is recommended to use the \"x is not y\" form.",
+    "remediation": "Highlight operator precedence by adding parenthesis or even better rewrite the identity comparison with the \"is not\" operator.",
+    "remediationSample": ">>> if not (x is y):\n>>>     ...\n>>>\n>>> # Or preferably\n>>>\n>>> if x is not y:\n>>>     ...",
+    "sample": ">>> if not x is y:\n>>>     ... ",
+    "total": "Python artifacts",
+    "businessCriteria": [
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61006,
+            "name": "Documentation - Style Conformity",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1021000,
+            "name": "Python",
+            "href": "AIP/technologies/1021000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

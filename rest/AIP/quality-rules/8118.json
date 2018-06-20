@@ -1,0 +1,44 @@
+{
+    "id": 8118,
+    "type": "quality-rule",
+    "name": "Avoid using the RFC_ABAP_INSTALL_AND_RUN function",
+    "href": "AIP/quality-rules/8118",
+    "critical": true,
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for ABAP artifacts that contain calls to the RFC_ABAP_INSTALL_AND_RUN function module.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation patterns found in source code: \n  - CALL FUNCTION \"RFC_ABAP_INSTALL_AND_RUN\"",
+    "rationale": "This function module allows to register a program with its code in an SAP system, execute it, and remove it after the execution. As a consequence, using this function module can be very dangerous and SAP recommends to not use it.",
+    "reference": "SAP",
+    "sample": "FORM MY-FORM. \n  call function 'RFC_ABAP_INSTALL_AND_RUN' \n    destination 'NSP' \n    tables \n      program = source \n      writes = output. \nENDFORM.",
+    "total": "Number of ABAP Artifacts",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "id": 5138,
+    "type": "quality-rule",
+    "name": "Avoid Programs with lines of more than 80 characters",
+    "href": "AIP/quality-rules/5138",
+    "critical": false,
+    "maxWeight": 2,
+    "associatedValueName": "Number of lines with more than 80 characters",
+    "description": "For better readability and portability, Cobol Programs should not have lines longer than 80 characters.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of lines with more than 80 characters",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61006,
+            "name": "Documentation - Style Conformity",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

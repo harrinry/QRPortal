@@ -1,0 +1,55 @@
+{
+    "id": 1020530,
+    "type": "quality-rule",
+    "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
+    "href": "AIP/quality-rules/1020530",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "Do not use !angular.isUndefined and !angular.isDefined (you should prefer the reverse function). This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you are using the AngularJS API, you have to use the AngularJS isUndefined and isDefined methods.",
+    "remediationSample": "if (angular.isUndefined()) { \n}; \nif (angular.isDefined()) { \n};",
+    "sample": "if (!angular.isDefined()) { \n}; \nif (!angular.isUndefined()) { \n};",
+    "total": "Number of angular artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

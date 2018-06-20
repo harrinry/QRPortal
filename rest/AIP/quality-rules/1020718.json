@@ -1,0 +1,59 @@
+{
+    "id": 1020718,
+    "type": "quality-rule",
+    "name": "Ensure that browser cannot cache or store a page",
+    "href": "AIP/quality-rules/1020718",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "In Node.js, to avoid the browser to do client-side caching, you have to turn on the no cache option. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A5 - Security Misconfiguration.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure the client-side is always up to date with the server. Prevent the client browser to cache pages that could be misused or outdated and then give bad information to the user.",
+    "reference": "https://helmetjs.github.io/docs/nocache/ \nhttps://expressjs.com/en/advanced/best-practice-security.html",
+    "remediation": "Ensure you are manually setting up the No Cache headers in your express instance or use third-party helmet package",
+    "remediationSample": "var express = require('express'); \nvar app = express(); \nvar helmet = require('helmet'); \napp.use(helmet) \n\n// direclty use nocache package \nvar nocache = require('nocache') \napp.use(nocache()) \n// or with helmet \napp.use(helmet.noCache()) \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
+    "sample": "var express = require('express'); \nvar app = express(); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
+    "total": "Number of javascript source codes using express",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration",
+            "description": "Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. Secure settings should be defined, implemented, and maintained, as defaults are often insecure. Additionally, software should be kept up to date."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "reference": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
+        }
+    ]
+}

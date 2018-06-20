@@ -1,0 +1,41 @@
+{
+    "id": 1003118,
+    "type": "quality-rule",
+    "name": "Avoid Value Objects with too many fields (Flex)",
+    "href": "AIP/quality-rules/1003118",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Rule detects Value Objects with more than 3 fields.",
+    "rationale": "Value Objects should not have too many fields.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61020,
+            "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

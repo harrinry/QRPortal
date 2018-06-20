@@ -1,0 +1,47 @@
+{
+    "id": 1003010,
+    "type": "quality-rule",
+    "name": "Avoid class that imports an internal class from another function area (Flex)",
+    "href": "AIP/quality-rules/1003010",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.architecture.UseInternalClassOutsideApiClass",
+    "rationale": "If you have different functionalities, you probably do not want every class of each to be accessible from any other functional areas. This rule makes sure that no restricted classes is accessed from outside its own function area.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "package functional\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class FunctionClient\n {\n }\n}\npackage functional.func1.api\n\n{\n import functional.func1.restricted.Func1RestrictedClass; \n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1ExposedClass\n {\n }\n}\npackage functional.func1.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1RestrictedClass\n {\n }\n}\npackage functional.func2.api\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.restricted.Func2RestrictedClass;\n \n public class Func2ExposedClass\n {\n }\n}\npackage functional.func2.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n \n public class Func2RestrictedClass\n {\n }\n}",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66009,
+            "name": "Architecture - Reuse",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

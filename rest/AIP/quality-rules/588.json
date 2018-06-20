@@ -1,0 +1,45 @@
+{
+    "id": 588,
+    "type": "quality-rule",
+    "name": "Avoid using Global Variables",
+    "href": "AIP/quality-rules/588",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Global variable used",
+    "description": "This rule searches for C++ code using global variables.",
+    "output": "Associated to each C++ Method/Constructor/Destructor with violations, the Quality Rule provides: \n- the global variable used.",
+    "rationale": "Global variables should be encapsulated in a class.",
+    "remediation": "Create a static data member in the appropriate class to replace the global variable.",
+    "sample": "int m_iGlobal = 0;\n\nvoid m()\n{\n m_iGlobal = 1; // VIOLATION\n}",
+    "total": "Number of C++ methods, constructors, and destructors",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61020,
+            "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

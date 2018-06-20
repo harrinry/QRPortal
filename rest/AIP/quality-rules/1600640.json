@@ -1,0 +1,53 @@
+{
+    "id": 1600640,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Field label don't contain \":\"",
+    "href": "AIP/quality-rules/1600640",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Field label don't contain \":\", use attribute on page.",
+    "rationale": "Field label don't contain \":\", use attribute on page.",
+    "reference": "2.3",
+    "remediation": "In application designer, fill the property label id to avoir the apparition of \":\" in the end of the text",
+    "total": "Number of PeopleSoft DBField Label",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

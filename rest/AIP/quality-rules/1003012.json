@@ -1,0 +1,46 @@
+{
+    "id": 1003012,
+    "type": "quality-rule",
+    "name": "Avoid using code behind files (Flex)",
+    "href": "AIP/quality-rules/1003012",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.mxml.CodeBehindInMxmlRule",
+    "rationale": "Code behind files are tightly coupled with the view, not unit-testable, not easy to navigate the code base and not reusable. Try using presentation model pattern, or observer pattern",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66009,
+            "name": "Architecture - Reuse",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

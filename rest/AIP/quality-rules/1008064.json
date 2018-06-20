@@ -1,0 +1,50 @@
+{
+    "id": 1008064,
+    "type": "quality-rule",
+    "name": "Avoid Programs with too many FROM Clauses  (RPG400)",
+    "href": "AIP/quality-rules/1008064",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "This rule searches all the programs having too many FROM clauses.",
+    "output": "This report lists RPG400 Programs with too many FROM Clauses.\nIt provides the following information:\nRPG400 Program full name",
+    "rationale": "Having complex queries in Programs can cause performance problems.",
+    "remediation": "The best solution is to review the query to reduce the number of FROM clauses",
+    "remediationSample": "Using Joins instead of from clauses\n\n   66        C*                                                                              6500\n   67        C                     EXCPTRECA                                                 6600\n   68      6 C/EXEC SQL DECLARE C1 CURSOR FOR                                                6700\n   69        C+    SELECT DISTINCT PROJNO, EMPPROJACT.EMPNO,                                 6800\n   70        C+           LASTNAME||', '||FIRSTNME, SALARY                                   6900\n   71        C+        FROM CORPDATA/EMPPROJACT                                              7000\n   72        C+        INNER JOIN   CORPDATA/EMPLOYEE                                        7000\n   72        C+        ON  EMPLOYEE.ID = EMPPROJACT.PRJEMP_ID                                7000\n   72        C+        WHERE EMPPROJACT.EMPNO = EMPLOYEE.EMPNO AND                           7100\n   73        C+              COMM = :COMMI                                                   7200\n   74        C+        ORDER BY PROJNO, EMPNO                                                7300\n   75        C/END-EXEC                                                                      7400\n   76        C*                                                                              7500\n   77      7 C/EXEC SQL                                                                      7600",
+    "sample": "105     11 C/EXEC SQL                                                                     10400\n  106        C+  DECLARE C2 CURSOR FOR                                                      10500\n  107        C+    SELECT EMPPROJACT.PROJNO, PROJNAME, COUNT(*),                            10600\n  108        C+       SUM((DAYS(EMENDATE) - DAYS(EMSTDATE)) * EMPTIME *                     10700\n  109        C+           DECIMAL((SALARY/:WRKDAY),8,2))                                    10800\n  110        C+    FROM CORPDATA/EMPPROJACT, CORPDATA/PROJECT, CORPDATA/EMPLOYEE            10900\n  111        C+    WHERE EMPPROJACT.PROJNO = PROJECT.PROJNO AND                             11000\n  112        C+          EMPPROJACT.EMPNO = EMPLOYEE.EMPNO AND                              11100\n  113        C+          PRENDATE = :RDATE                                                  11200\n  114        C+    GROUP BY EMPPROJACT.PROJNO                                               11300\n  115        C+    ORDER BY 1                                                               11400\n  116        C/END-EXEC                                                                     11500",
+    "total": "Total number of RPG400 Programs",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1008000,
+            "name": "RPG400",
+            "href": "AIP/technologies/1008000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

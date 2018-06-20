@@ -1,0 +1,49 @@
+{
+    "id": 7868,
+    "type": "quality-rule",
+    "name": "Avoid Open SQL queries in loops",
+    "href": "AIP/quality-rules/7868",
+    "critical": true,
+    "associatedValueName": "Number of violation patterns",
+    "description": "The rule searches for SELECT, INSERT, UPDATE, MODIFY, DELETE statements that are contained in loops. These loops are:\n- SELECT ... ENDSELECT\n- LOOP ... ENDLOOP\n- DO ... ENDDO\n- WHILE ... ENDWHILE\n- PROVIDE ... ENDPROVIDE",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation patterns",
+    "rationale": "For performance reason, it is better to avoid accessing database in loops.",
+    "reference": "SAP",
+    "sample": "loop at i_incl.\n      select single * from trdir into s_trdir\n      where name = i_incl-rep\n        and cdat in s_cdat\n        and udat in s_udat.\n    if sy-subrc ne 0.\n      continue.\n    endif.\nendloop",
+    "total": "Number of ABAP Artifacts containing OpenSQL statements",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66068,
+            "name": "Efficiency - Expensive Calls in Loops",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id": 1601812,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Record Temp should have a OwnerID",
+    "href": "AIP/quality-rules/1601812",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "OwnerID if it must start with a prefix",
+    "description": "OwnerID should be filled",
+    "output": "This report lists all the Records Temp not having an OwnerID\nIt provides the following information: \n-  Record Temp  full name.\n- The associated value is the OwnerID if it must start with a prefix",
+    "rationale": "The Owner ID allows for a way to identify which definitions are owned by which PeopleSoft applications, such as PeopleSoft General Ledger, Accounts Receivables, and so on.",
+    "reference": "2.3",
+    "remediation": "Change the property owner ID for the object in the application designer",
+    "total": "Number of PeopleSoft Record Temp (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61006,
+            "name": "Documentation - Style Conformity",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

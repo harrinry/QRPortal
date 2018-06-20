@@ -1,0 +1,52 @@
+{
+    "id": 4716,
+    "type": "quality-rule",
+    "name": "Avoid Classes implementing too many Interfaces",
+    "href": "AIP/quality-rules/4716",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Number of implemented interfaces",
+    "description": "Avoid Classes implementing more than X Interfaces",
+    "output": "This report lists all Classes implementing more than X Interfaces\nIt provides the following information:\n - Class full name\n - Number of implemented interfaces",
+    "remediation": "Review the design to reduce the number of implementations",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61010,
+            "name": "Complexity - OO Inheritance and Polymorphism",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

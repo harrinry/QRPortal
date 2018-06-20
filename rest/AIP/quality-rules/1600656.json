@@ -1,0 +1,54 @@
+{
+    "id": 1600656,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid specific visual design for grid",
+    "href": "AIP/quality-rules/1600656",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Reason of the specific design: either 'ShowBorder' or/and 'ShowGridLines' or/and 'Column headings'.",
+    "description": "Grid properties shoul be:\n\"Show Border\" checked (on)\n\"Show Grid Lines\" unchecked (off)\n\"Column headings\" checked (on)",
+    "output": "This report lists all the PeopleSoft Grids having a specific visual design.",
+    "rationale": "Improve look & feel for the user",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Grids",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
