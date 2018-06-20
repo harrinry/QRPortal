@@ -1,0 +1,49 @@
+{
+    "id": 5104,
+    "type": "quality-rule",
+    "name": "Avoid large Programs - too many Sections",
+    "href": "AIP/quality-rules/5104",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Number of Sections",
+    "description": "Avoid Programs with more than X Sections.\nThe threshold is a parameter and can be changed at will.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of Sections",
+    "rationale": "For maintainability aspect, COBOL programs with more than 10 Sections",
+    "remediation": "If two sections do the same actions then try to merge them. This can improve the readability, the reusability and maintainability of the code. If it is not possible then try to split the program by extracting its functionalities into subprograms.",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

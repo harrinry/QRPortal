@@ -1,0 +1,55 @@
+{
+    "id": 1001112,
+    "type": "quality-rule",
+    "name": "Avoid Functions and Procedures not using the REORDER option (PL1)",
+    "href": "AIP/quality-rules/1001112",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "This rule searches for all PL1 Functions and PL1 Procedures not using the REORDER option.",
+    "output": "The report lists all the PL1 Functions and PL1 Procedures not using REORDER option.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
+    "rationale": "REORDER is one of the optimization options that are specified for a procedure or begin-block. The REORDER option allows the compiler to generate optimized code to produce the result specified by the source program when error-free execution takes place",
+    "remediation": "Always use the REORDER option for the procedures.",
+    "remediationSample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3) REORDER;",
+    "sample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3);",
+    "total": "Number of PL1 Functions and PL1 Procedures.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1004000,
+            "name": "PLI",
+            "href": "AIP/technologies/1004000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

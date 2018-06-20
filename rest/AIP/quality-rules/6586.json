@@ -1,0 +1,49 @@
+{
+    "id": 6586,
+    "type": "quality-rule",
+    "name": "Table naming convention - name size control",
+    "href": "AIP/quality-rules/6586",
+    "critical": false,
+    "maxWeight": 1,
+    "associatedValueName": "Table name size",
+    "description": "This rule searches for database tables for which the name size is greater than X characters. The length is a parameter that can be changed at will.",
+    "output": "Associated to each DB2 table with violations, the Quality Rule provides:\n- The name size",
+    "rationale": "For readability aspects, naming conventions must be respected\n\n=> Table names should not be longer than X characters.",
+    "remediation": "Change name according to the naming convention",
+    "total": "Number of  tables",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61017,
+            "name": "Documentation - Naming Convention Conformity",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "AIP/technologies/-14"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

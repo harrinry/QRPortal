@@ -1,0 +1,58 @@
+{
+    "id": 4070,
+    "type": "quality-rule",
+    "name": "Avoid use of \"truncate table\"",
+    "href": "AIP/quality-rules/4070",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "Avoid using \"truncate table\",",
+    "output": "This report lists all uses of \"truncate table\" in database objects containing code: SP, Functions, and Triggers.",
+    "rationale": "Although \"truncate table\" statement can be desirable under some circumstances from a performance point of view it is problematic because deletion are not logged. Thus the log backups become useless.",
+    "remediation": "Ensure that the truncate table is necessary.\nOtherwise use delete.",
+    "total": "Number of SQL Artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "AIP/technologies/140998"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "AIP/technologies/-13"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "AIP/technologies/141001"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

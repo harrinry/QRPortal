@@ -1,0 +1,58 @@
+{
+    "id": 3558,
+    "type": "quality-rule",
+    "name": "Enumerations naming convention - case and character set control",
+    "href": "AIP/quality-rules/3558",
+    "critical": false,
+    "maxWeight": 2,
+    "associatedValueName": "Associated Value",
+    "description": "Names of Enumerations should start with an uppercase character and should not include any underscore",
+    "output": "This report lists all Enumerations with first letter not in uppercase or having an underscore.\nIt provides the following information:\n  Enumeration full name",
+    "rationale": "For readability aspects, naming conventions must be respected",
+    "remediation": "Change name according to the naming convention",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61017,
+            "name": "Documentation - Naming Convention Conformity",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

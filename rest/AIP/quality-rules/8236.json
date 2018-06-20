@@ -1,0 +1,56 @@
+{
+    "id": 8236,
+    "type": "quality-rule",
+    "name": "Avoid using hard-coded values",
+    "href": "AIP/quality-rules/8236",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Number of violation patterns",
+    "description": "This rule searches for specific alphanumeric literals used in COBOL programs. \n\nThe patterns to be searched are defined in COBOL parameterization file. \n\nNote: Literals used in DISPLAY statements are not taken in account.",
+    "output": "The report lists all Cobol Programs using the alphanumeric literals. \n\nIt provides the following information: \n- Cobol Program full name \n- Number of violations \n\nIt also provides bookmarks for violation patterns found in source code: \n- Alphanumeric literal",
+    "rationale": "In order to ease change, increase the program adaptability, and avoid specific information potential misuse, it is highly recommended not to use non-trivial alphanumeric literals in COBOL PROCEDURE DIVISION.",
+    "remediation": "Define variables initialized with alphanumeric literals and use these variables in the PROCEDURE DIVISION. If the literals are used by several programs, then the variables can be grouped in dedicated copybooks. \nMoreover, you should also validate the use of literals in conditional statements such as IF or EVALUATE. ",
+    "remediationSample": "01 REF-DATE PIC X(10) VALUE \"2017/09/08\". \n\nIF THE-DATE = REF-DATE \n... \nEND-IF\n",
+    "sample": "IF THE-DATE = \"2017/09/08\" \n... \nEND-IF \n",
+    "total": "Number of Cobol Programs",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

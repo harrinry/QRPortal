@@ -1,0 +1,50 @@
+{
+    "id": 1007032,
+    "type": "quality-rule",
+    "name": "Avoid empty class definition (PHP)",
+    "href": "AIP/quality-rules/1007032",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This rule searches for all empty class definition.",
+    "output": "This report lists all empty class definitions.\n\nThis QR provides the following information:\nClass full name.",
+    "rationale": "For maintainability reasons, empty class definitions should be avoided. Empty definitions will make modification and testing of the source code more difficult.",
+    "reference": "Code Sniffer -  http://pear.php.net/package/PHP_CodeSniffer/docs/1.5.2/PHP_CodeSniffer/Squiz_Sniffs_CSS_EmptyClassDefinitionSniff.html",
+    "remediation": "Modify the source code to reduce the number of classes containing an empty class definition.",
+    "sample": "<?php\n\nclass EmptyClass\n{ //Violation\n}\n?>",
+    "total": "Number of Classes",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61031,
+            "name": "Complexity - Empty Code",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

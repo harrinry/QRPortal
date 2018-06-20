@@ -1,0 +1,66 @@
+{
+    "id": 1021038,
+    "type": "quality-rule",
+    "name": "Avoid using exec",
+    "href": "AIP/quality-rules/1021038",
+    "critical": true,
+    "associatedValueName": "Single Value",
+    "description": "The exec statement is used to run Python stored in literal strings as code. In almost all cases, it should not be necessary to use it. Because it allows arbitrary code to be run, it also represents a security problem. The rule is compliant with MITRE CWE-95 and OWASP A1 2013, 2017 recommendations.",
+    "output": "Line and column for each violation.\nAssociated value => number of violations found",
+    "rationale": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. \"exec\").",
+    "reference": "http://cwe.mitre.org/data/definitions/95.html https://www.owasp.org/index.php/Top_10_2013-A1-Injection ",
+    "remediation": "In most scenarios, you can easily refactor the code to avoid the use of exec.",
+    "remediationSample": ">>> def print_hello_world()\n>>>     logging.debug(\"Hello, World!\")\n>>> print_hello_world()\n",
+    "sample": ">>> s = \"logging.debug(\\\"Hello, World!\\\")\"\n>>> exec s\n",
+    "total": "Python artifacts",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1021000,
+            "name": "Python",
+            "href": "AIP/technologies/1021000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-78",
+            "name": "OS Command Injection Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2017",
+            "name": "Injection",
+            "reference": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
+            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        }
+    ]
+}

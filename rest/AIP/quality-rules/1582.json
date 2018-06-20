@@ -1,0 +1,49 @@
+{
+    "id": 1582,
+    "type": "quality-rule",
+    "name": "Avoid large Tables - too many columns",
+    "href": "AIP/quality-rules/1582",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of columns",
+    "description": "List of schema tables that have more (>) than <%PARAM%> columns\nNote  threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Tables with more than <%PARAM%> Columns\nIt provides the following information: \n\n- Table name, \n- Table full name, \n- number of Columns",
+    "rationale": "All tables should not have more than <%PARAM%>  Columns",
+    "remediation": "Consider normalizing the application",
+    "total": "total is the number of  tables in the shema",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "AIP/technologies/139287"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "id": 1020074,
+    "type": "quality-rule",
+    "name": "Avoid enabling autocomplete \"on\" for inputs/forms",
+    "href": "AIP/quality-rules/1020074",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "Be careful with browsers automatically that can fill the content of input elements of type 'password' when this password has already been provided in the past. \nBeginning with HTML 5 the ability to turn this functionality off exists on a field-by-field basis using the autocomplete attribute. \nThis rule is compliant with CISQ OMG ASCSM-CWE-79 recommendation and OWASP 2013 A3 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "An attacker can use the autofill password feature to access login-based web site.",
+    "reference": "OMG CISQ \nOWASP A3 Recommendations",
+    "remediationSample": "// the whole form \n<form method=\"post\" action=\"/form\" autocomplete=\"off\"> \n[\u2026] \n</form> \n\n// for a given field \n<form method=\"post\" action=\"/form\"> \n  [\u2026] \n  <div>\n    <label for=\"cc\">Credit card:</label> \n    <input type=\"text\" id=\"cc\" name=\"cc\" autocomplete=\"off\"> \n  </div> \n</form>",
+    "sample": "// the whole form \n<form method=\"post\" action=\"/form\" autocomplete=\"on\"> \n[\u2026] \n</form> \n\n// for a given field \n<form method=\"post\" action=\"/form\"> \n  [\u2026] \n  <div> \n    <label for=\"cc\">Credit card:</label> \n    <input type=\"text\" id=\"cc\" name=\"cc\" autocomplete=\"on\"> \n  </div> \n</form>",
+    "total": "Number of HTML Contents",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-79",
+            "name": "Cross-site Scripting Improper Input Neutralization",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2013",
+            "name": "Cross-Site Scripting (XSS)",
+            "reference": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
+            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "id": 1020510,
+    "type": "quality-rule",
+    "name": "Use Angular wrapper service $window",
+    "href": "AIP/quality-rules/1020510",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "Instead of the default window object, you should prefer the AngularJS wrapper service $window. This rule is compliant with CISQ OMG ASCMM-MNT-20 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure you are using the AngularJS API, you should use the AngularJS window wrapper method.",
+    "remediationSample": "var myApp = angular.module('myApp', []); \n\n        myApp.controller(\"myController\", function ($scope, $window) { \n\n            $scope.DisplayAlert = function (message) { \n                $window.alert(message); \n            } \n\n            $scope.DisplayPrompt = function () { \n                var name = $window.prompt('Enter Your Name'); \n                 \n                $window.alert('Hello ' + name); \n            } \n\n        });",
+    "sample": "var myApp = angular.module('myApp', []); \n\n        myApp.controller(\"myController\", function ($scope) { \n\n            $scope.DisplayAlert = function (message) { \n                window.alert(message); \n            } \n\n            $scope.DisplayPrompt = function () { \n                var name = window.prompt('Enter Your Name'); \n                 \n                window.alert('Hello ' + name); \n            } \n\n        });",
+    "total": "Number of angular artifacts",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

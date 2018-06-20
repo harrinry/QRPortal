@@ -1,0 +1,98 @@
+{
+    "id": 8028,
+    "type": "quality-rule",
+    "name": "Avoid missing default in switch statements",
+    "href": "AIP/quality-rules/8028",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Function name",
+    "description": "This rule searches for artifacts that contain no 'default' statement in a 'switch' block.",
+    "output": "Associated to each Function with violations, the Quality Rule provides:\n- Function name",
+    "rationale": "The keyword 'default' is executed when none of the conditions being tested for in the switch statement are met or executed. Having no default keyword, means that there is no backup. The cases that are \"impossible\" today are those most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.",
+    "reference": "CISQ rule: ASCMM-MNT-1.",
+    "remediation": "Add the 'default' statement with appropriate handling of unexpected values.",
+    "remediationSample": "// Sample for C/C++\nswitch(color)\n{\ncase Red:\n    // Handle red case\ncase Black:\n    // Handle black case\ndefault:\n    assert(false && \"Impossible node color\");\n    // Error recovery code\n}",
+    "sample": "// Sample for C/C++\nswitch(color)\n{\ncase Red:\n    // Handle red case\ncase Black:\n    // Handle black case\n} // VIOLATION",
+    "total": "Number of non-abstract artifacts (methods, functions, constructors, destructors, finalizers)",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -2,
+            "name": "C",
+            "href": "AIP/technologies/-2"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        },
+        {
+            "id": 1050571,
+            "name": "C/C++",
+            "href": "AIP/technologies/1050571"
+        },
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "AIP/technologies/1050001"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-1",
+            "name": "Control Flow Transfer Control Element outside Switch Block",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

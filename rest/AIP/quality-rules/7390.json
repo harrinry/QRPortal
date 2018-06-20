@@ -1,0 +1,53 @@
+{
+    "id": 7390,
+    "type": "quality-rule",
+    "name": "Avoid having multiple Artifacts inserting data on the same SQL Table",
+    "href": "AIP/quality-rules/7390",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Number of potential ways to insert the SQL Table",
+    "description": "This metric detects tables having too many ways to insert data into them. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.",
+    "output": "Associated to each SQL table with violations, the Quality Rule provides: \n- The Number of potential ways to insert the SQL Table.",
+    "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.",
+    "total": "The total procedure counts the number of tables.",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 0,
+            "name": "ALL TECHNOLOGIES",
+            "href": "AIP/technologies/0"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

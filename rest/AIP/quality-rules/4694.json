@@ -1,0 +1,53 @@
+{
+    "id": 4694,
+    "type": "quality-rule",
+    "name": "Avoid using 'System.gc'",
+    "href": "AIP/quality-rules/4694",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Associated Value",
+    "description": "Report all java artifacts that call java.lang.System.gc()",
+    "output": "This report lists all java artifacts using the 'java.lang.System.gc' Method.\nIt provides the following information:\n - Artifact full name",
+    "rationale": "The garbage collector should not used explicitly in the code. It is an automated process scheduled by the Java Runtime Environment. System.gc() triggers a full collection, which includes tracing all live objects in the heap and sweeping and compacting the old generation. Lot of time can be spent during this operation. In general, it is better to let the system decide when it needs to collect the heap, and whether or not to do a full collection.",
+    "total": "Number of non abstract Java artifacts",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

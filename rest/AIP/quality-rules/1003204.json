@@ -1,0 +1,41 @@
+{
+    "id": 1003204,
+    "type": "quality-rule",
+    "name": "Avoid too long script block (Flex)",
+    "href": "AIP/quality-rules/1003204",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.mxml.TooLongScriptBlockRule",
+    "rationale": "Reports script blocks with more than 50 lines of code",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

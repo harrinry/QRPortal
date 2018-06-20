@@ -1,0 +1,62 @@
+{
+    "id": 7468,
+    "type": "quality-rule",
+    "name": "Disable constraints before merging DataSet",
+    "href": "AIP/quality-rules/7468",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Associated Value",
+    "description": "Call to Dataset.Merge method should be done with disabled constraints.",
+    "output": "List all artifacts where a call to a Merge is done and where EnforceConstraint is not set to false before the method call (in the same method).",
+    "rationale": "By disabling/enabling constraints before/after call to Merge method, the merge process is quicker.",
+    "reference": "MSDN",
+    "remediation": "Disable constraints before merging the document and re-enable them after the Merge using the EnforceConstraint property.",
+    "remediationSample": "dataset1.EnforceConstraints = false;\ndataset1.Merge( dataset2);\ndataset1.EnforceConstraints = true;",
+    "sample": "dataset1.Merge( dataset2);",
+    "total": "Total number of functions calling Merge method.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

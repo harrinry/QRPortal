@@ -1,0 +1,47 @@
+{
+    "id": 1003140,
+    "type": "quality-rule",
+    "name": "Avoid ChangeWatcher class that uses hard coded strings to specify the attribute name, to listen to. Prefer listening to events or setters (Flex)",
+    "href": "AIP/quality-rules/1003140",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.binding.ChangeWatcherRule",
+    "rationale": "ChangeWatcher class uses hard coded strings to specify the attribute name, to listen to. Prefer listening to events or setters",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public final class Title \n{\n private var watcher : ChangeWatcher; // VIOLATION\n}",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "id": 7826,
+    "type": "quality-rule",
+    "name": "Forms naming convention - prefix control",
+    "href": "AIP/quality-rules/7826",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Associated Value",
+    "description": "Names of Forms should start with X. \nThe prefix value is a parameter that can be changed at will",
+    "output": "This report lists all Forms whose name is not starting with the prefix.",
+    "rationale": "For readability aspects, naming conventions must be respected",
+    "remediation": "Change name according to the naming convention",
+    "total": "Total number of Forms.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61017,
+            "name": "Documentation - Naming Convention Conformity",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "AIP/technologies/-10"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

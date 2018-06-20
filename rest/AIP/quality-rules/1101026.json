@@ -1,0 +1,50 @@
+{
+    "id": 1101026,
+    "type": "quality-rule",
+    "name": "Always define column names when inserting values",
+    "href": "AIP/quality-rules/1101026",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "This metric lists SQL Artifacts without columns in insert clauses.",
+    "description": "To preserve code functionality and avoid mistakes with regard to column handling, always explicitly use the column name.",
+    "output": "List all Artifacts without columns in INSERT clause.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.\n",
+    "rationale": "To preserve code functionality and avoid mistakes with regard to column handling, always explicitly use the column name.",
+    "remediation": "Check the statement and if so, add columns in INSERT clause.",
+    "remediationSample": "The following procedure should be reviewed:\nCREATE PROCEDURE INSERT_VALUES\nBEGIN\n  INSERT INTO Persons VALUES ('Last', 'First', 'Add', 'City');\nEND;\n\nAdd columns in INSERT clause:\nCREATE PROCEDURE INSERT_VALUES\nBEGIN\n  INSERT INTO Persons (LastName, FirstName, Address, City) VALUES ('Last', 'First', 'Add', 'City');\nEND;\n",
+    "total": "The total procedure counts Artifacts with SQL code.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 0,
+            "name": "ALL TECHNOLOGIES",
+            "href": "AIP/technologies/0"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

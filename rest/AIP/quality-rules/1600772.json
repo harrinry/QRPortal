@@ -1,0 +1,48 @@
+{
+    "id": 1600772,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid Pages with more than X linked Pages",
+    "href": "AIP/quality-rules/1600772",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Number of Linked Pages",
+    "output": "This report lists all the Pages with too many linked pages",
+    "rationale": "Do not access to many pages in the same page",
+    "reference": "2.3",
+    "total": "Number of PeopleSoft Pages (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

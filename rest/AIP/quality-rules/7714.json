@@ -1,0 +1,52 @@
+{
+    "id": 7714,
+    "type": "quality-rule",
+    "name": "Do not use auto-wiring",
+    "href": "AIP/quality-rules/7714",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Associated Value",
+    "description": "Reports all Spring Bean that use autowire attribute.",
+    "output": "The metric will list all Spring bean that use auto-wiring. It provides the following information:\n  Spring Bean Full Name",
+    "rationale": "Auto-wiring can save you time in small applications, but in many cases, it leads to bad practices and is inflexible in large applications. Using byName seems like a good idea, but it may lead you to give your classes artificial property names so that you can take advantage of the auto-wiring functionality. The whole idea behind Spring is that you can create your classes how you like and have Spring work for you, not the other way around. You may be tempted to use byType until you realize\nthat you can only have one bean for each type in your BeanFactory -- a restriction that is problematic when you need to maintain beans with different configurations of the same type.\n\nAlso it will affect the performance of your application since auto-wiring is slow.",
+    "reference": "http://www.onjava.com/pub/a/onjava/2006/01/25/spring-xml-configuration-best-practices.html\nhttp://code.google.com/p/google-guice/wiki/SpringComparison",
+    "remediation": "Define your wiring explicitly, and you benefit from explicit semantics and full flexibility on property naming and on how many instances of\nthe same type you manage.",
+    "remediationSample": "<beans>\n   <bean id=\"myBean\" class=\"com.cast.MyBean\"/> // FIXED\n...\n</beans>",
+    "sample": "<beans>\n   <bean id=\"myBean\" autowire=\"byName\" class=\"com.cast.MyBean\"/> // VIOLATION\n...\n</beans>",
+    "total": "The total number of Spring bean, 0 if Spring is not used",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66009,
+            "name": "Architecture - Reuse",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

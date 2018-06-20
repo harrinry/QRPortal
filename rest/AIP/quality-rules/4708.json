@@ -1,0 +1,58 @@
+{
+    "id": 4708,
+    "type": "quality-rule",
+    "name": "Avoid using Dynamic instantiation",
+    "href": "AIP/quality-rules/4708",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Dynamic instantiation method",
+    "description": "Dynamic instantiation should be used only when necessary.\nDynamic instantiation is done through calls to:\n- 'java.lang.Class.newInstance()'\n- 'java.lang.reflect.Constructor.newInstance()' \n- 'java.lang.Class.getMethod(String name, Class... parameterTypes)'\n- 'java.lang.Class.getMethods()\n- 'java.lang.Class.getField(String name)'\n- 'java.lang.Class.getFields()'\n- 'java.lang.reflect.Method.invoke(Object obj, Object... args) \nmethods.",
+    "output": "This report lists all Artifacts using reflection API methods.\nIt provides the following information:\n - Artifacts full name\n - the method of the reflection API' that has been called",
+    "rationale": "Dynamic instantiation is slower than a regular Class invocation or Method call",
+    "total": "All Java artifacts",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61029,
+            "name": "Complexity - Dynamic Instantiation",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
