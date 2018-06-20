@@ -103,7 +103,7 @@ app.get('/mlturl/*', (req, res)=>{
   const q = req.query;
   let r = undefined;
   if( q.hasOwnProperty('u') ){
-    const arr = q.u.map( u => require( path.join( __dirname, restDir, u)));
+    const arr = q.u.map( u => require( path.join( __dirname, restDir, u, "quality-rules")));
     r = [].concat(...arr);
   }
   const uniqArr = q.hasOwnProperty('f') ? UNIQ(r, val => val[q.f] ) : UNIQ(r, val => val.id );
@@ -151,7 +151,7 @@ app.get("/AIP/extensions/:ext/versions/:ver", function (req, res) { res.sendFile
 
 app.get("/AIP/technologies/:techno", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
 app.get("AIP/technologies/:techno", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
-app.get("technologies/:techno.json", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+app.get("technologies/:techno", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
 
 app.get("/CAST_AIP.json", function (req, res) { res.sendFile(path.join(__dirname, restDir, "/AIP/versions.json")); });
 app.get("/AIP/versions/:ver", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
