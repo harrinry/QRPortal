@@ -4,7 +4,7 @@ import './style.css';
 
 class MenuItem extends React.PureComponent{
   render(){
-    return (<div className={createClassName('menuItem', (this.props.selected ? 'selected' : undefined))} onClick={this.props.onClick}>
+    return (<div className={createClassName('menuItem', (this.props.selected ? 'selected' : undefined))} onClick={() => this.props.onclick( this.props.index, this.props.href )}>
       <span className={'menuItem-title'}>{this.props.title}</span>
     </div>);
   }

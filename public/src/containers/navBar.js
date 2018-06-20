@@ -5,7 +5,7 @@ import NavBar from '../navBar/navbar';
 const mapStateToProps = (state) => {
   return {
     isOpen: state.navBar.isOpen,
-    children: state.navBar.sections
+    children: state.navItems
   };
 };
 
@@ -14,8 +14,9 @@ const mapDispatchToProps = (dispatch) => {
     onClick: () => {
       dispatch(toggleNavBar());
     },
-    onItemClick: () =>{
-      console.log('Item Clicked');
+    onItemClick: ( index, props ) => {
+      console.log( index );
+      console.log( props );
     }
   };
 };
