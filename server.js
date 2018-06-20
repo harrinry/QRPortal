@@ -91,7 +91,7 @@ app.get('/extensions.json', (req, res) => {
   const query = req.query;
   switch (query.env) {
   case 'webapp':
-    res.json( require('./rest/extensions.json').filter( e => e.qualityModel === true ) );
+    res.json( require('./rest/AIP/extensions.json').filter( e => e.qualityModel === true ) );
     break;
   default:
     res.sendFile(path.join(__dirname, restDir, req.url));
@@ -135,16 +135,34 @@ app.get('/about', (req,res)=>{
 
 // ----------------------------- Global API routes ---------------------------- //
 
-app.get(/^\/[A-a-z-]+.json/i, function(req, res) {
-  res.sendFile(path.join(__dirname, restDir, req.url));
-});
+// URLs temporary rewriting from old to new API version
+// React application SHOULD not use any more these URLs
 
-app.get(/\/[A-a-z-]+\//i, function(req, res) {
-  res.sendFile(path.join(__dirname, restDir, req.url));
-});
+app.get("/business-criteria.json",  function (req, res) { res.sendFile(path.join(__dirname, restDir, "/AIP/business-criteria.json")); });
+app.get("/AIP/business-criteria/:bcid",  function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+
+app.get("/quality-standards.json", function (req, res) { res.sendFile(path.join(__dirname, restDir, "/AIP/quality-standards.json")); });
+app.get("/AIP/quality-standards/:std", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/categories.json")));});
+app.get("/AIP/quality-standards/:std/categories/:cat", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/items.json")));});
+app.get("/AIP/quality-standards/:std/items/:cat", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+
+app.get("/AIP/extensions/:ext", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/versions.json")));});
+app.get("/AIP/extensions/:ext/versions/:ver", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+
+app.get("/AIP/technologies/:techno", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+app.get("AIP/technologies/:techno", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+app.get("technologies/:techno.json", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+
+app.get("/CAST_AIP.json", function (req, res) { res.sendFile(path.join(__dirname, restDir, "/AIP/versions.json")); });
+app.get("/AIP/versions/:ver", function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + "/quality-rules.json")));});
+
+// New API routes
+app.get("/AIP",  function (req, res) { res.sendFile(path.join(__dirname, restDir, "AIP.json")); });
+app.get("/AIP/*",  function (req, res) { res.sendFile(path.join(__dirname, restDir, (req.url + ".json"))); });
 
 // ---------------------------------------------------------------------------- //
 
+// Backdoor REST API browser
 app.get('/default.html', function(req, res) {
   res.sendFile(path.join(__dirname, '/static/'));
 });
