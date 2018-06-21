@@ -1,0 +1,49 @@
+{
+    "id": 7082,
+    "type": "quality-rule",
+    "name": "Avoid Function pools with more than 20 functions",
+    "href": "AIP/quality-rules/7082",
+    "critical": false,
+    "maxWeight": 4,
+    "associatedValueName": "Number of Functions",
+    "description": "This rule searches for Function Pools having more than 20 functions.",
+    "output": "Associated to each Function Pools with violations, the Quality Rule provides:\n- The number of Function Modules",
+    "rationale": "Each time a function of a function pool is accessed, the entire function pool is put in memory. For performance reason, it is better to avoid having too many functions in the same function pool.",
+    "remediation": "Try to have coherent Function Pools.",
+    "total": "Number of Function Pools",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

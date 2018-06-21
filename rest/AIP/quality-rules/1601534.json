@@ -1,0 +1,53 @@
+{
+    "id": 1601534,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid unused Menu",
+    "href": "AIP/quality-rules/1601534",
+    "critical": false,
+    "maxWeight": 2,
+    "output": "List all the unreference PeopleSoft Menu",
+    "rationale": "Dead code must be avoided, it makes source code less readable, and increases the maintenance cost.",
+    "reference": "2.3",
+    "remediation": "Check that the artefacts are truelly necessary, supress them if useless",
+    "total": "Number of PeopleSoft Menu (ADDED)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

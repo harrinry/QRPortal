@@ -1,10 +1,10 @@
 const glob = require('./glob');
 const path = require('path');
 const rootMetricsDir  = 'rest/';
-const rulesDir = path.resolve('rest/quality-rules');
+const rulesDir = path.resolve('rest/AIP/quality-rules');
 const search = require('./search');
 const filter = require('./filters');
-const QS = require('../rest/quality-standards.json');
+const QS = require('../rest/AIP/quality-standards.json');
 
 const readJsonFile = require('../serverModules/readFile');
 
@@ -79,9 +79,10 @@ const QSinitializationTest = () => {
   });
   let qsi = 0;
   QS.forEach((std) => {
-    readJsonFile(rootMetricsDir + std.href, ( name, content ) => {
+    readJsonFile(rootMetricsDir + "/AIP/quality-standards/" + std.name + "/items.json", ( name, content ) => {
       content.forEach( fLink => {
-        readJsonFile( rootMetricsDir + fLink.href, ( n, c ) => {
+        if (fLink.count == 0) return;
+        readJsonFile( rootMetricsDir + "/AIP/quality-standards/" + std.name + "/items/" + fLink.id + "/quality-rules.json", ( n, c ) => {
           c.forEach( o => {
             const indexObj = convertQsToSearchIndex( o, fLink );
             index.qualityStandards[qsi++] = indexObj;

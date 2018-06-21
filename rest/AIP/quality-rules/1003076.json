@@ -1,0 +1,51 @@
+{
+    "id": 1003076,
+    "type": "quality-rule",
+    "name": "Avoid adding or removing displayable children from updateDisplayList (Flex specific) (Flex)",
+    "href": "AIP/quality-rules/1003076",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.component.UpdateChildrenNumberInUpdateDisplayListRule",
+    "rationale": "UpdateDisplayList is called everytime a child is invalidated. So calling addChild or removeChild in a function could be really CPU consuming",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

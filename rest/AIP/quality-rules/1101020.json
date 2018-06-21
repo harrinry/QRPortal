@@ -1,0 +1,50 @@
+{
+    "id": 1101020,
+    "type": "quality-rule",
+    "name": "Avoid using quoted identifiers",
+    "href": "AIP/quality-rules/1101020",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Number of violation patterns",
+    "description": "Quoted identifiers are confusing, as they look similar to string literals.",
+    "output": "List all Artifacts containing quoted identifiers.\nThe following information is provided:\n- The number of violation patterns",
+    "rationale": "Quoted identifiers are confusing, as they look similar to string literals.",
+    "remediation": "Check the statement and if so, replace quoted identifiers with unquoted identifiers.",
+    "remediationSample": "The following statement should be reviewed:\nDECLARE\n  \"End\" NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||\"End\"||']');\nEND;\n/",
+    "total": "The total procedure counts Artifacts with SQL code.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1101000,
+            "name": "SQLAnalyzer",
+            "href": "AIP/technologies/1101000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

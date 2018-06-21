@@ -1,0 +1,46 @@
+{
+    "id": 1003166,
+    "type": "quality-rule",
+    "name": "Avoid using Object class in variables (Flex)",
+    "href": "AIP/quality-rules/1003166",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Reports fields based on Object class",
+    "rationale": "It is a bad practice to use the dynamic class Object. Prefer using strongly typed object, or marker interface in order to avoid silent compilation errors while refactoring",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

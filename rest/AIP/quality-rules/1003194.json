@@ -1,0 +1,47 @@
+{
+    "id": 1003194,
+    "type": "quality-rule",
+    "name": "Avoid constructor with a return type (Flex)",
+    "href": "AIP/quality-rules/1003194",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.style.ConstructorNonEmptyReturnTypeRule",
+    "rationale": "Even if this is syntactically correct, there should not be a return type for a constructor.",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public class VoidConstructor   \n   {\n      public function VoidConstructor() : void // VIOLATION\n      {         \n      }      \n   }",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

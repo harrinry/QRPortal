@@ -1,0 +1,54 @@
+{
+    "id": 8242,
+    "type": "quality-rule",
+    "name": "CWE-330: Use of insufficiently random values",
+    "href": "AIP/quality-rules/8242",
+    "critical": true,
+    "associatedValueName": "Call stack from the use of a method producing insufficiently random numbers down to the target method",
+    "description": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information. \n\nThe list of methods producing insufficiently random numbers can be customized.",
+    "output": "List all methods that use random numbers insufficiently generated.\n\nIt provides the following information : \n - Method full name. \n - Call stack with bookmarks from the method producing insufficiently random numbers down to the target method.",
+    "rationale": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.",
+    "reference": "CWE-330: Use of insufficiently random values\nhttp://cwe.mitre.org/data/definitions/330.html",
+    "remediation": "Potential remediations : \n- Use a well-vetted algorithm that is currently considered to be strong by experts in the field, and select well-tested implementations with adequate length seeds.",
+    "total": "The number of methods calling methods producing insufficiently random numbers",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

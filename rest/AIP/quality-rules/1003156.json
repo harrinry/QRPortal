@@ -1,0 +1,47 @@
+{
+    "id": 1003156,
+    "type": "quality-rule",
+    "name": "Avoid type not found within analysis scope (Flex)",
+    "href": "AIP/quality-rules/1003156",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "adobe.ac.pmd.rules.event.UnboundTypeInMetadataRule",
+    "rationale": "You should not dispatch a plain string. If you rename this string, you need to replace the string listener as well. Use constants instead",
+    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "sample": "public class Foo \n{\n   public function bar() : void\n   {\n      dispatch( new Event( \"myHardCodedEvent\" ) ); // VIOLATION\n   }\n}",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1007000,
+            "name": "Flex",
+            "href": "AIP/technologies/1007000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

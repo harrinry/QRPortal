@@ -1,0 +1,84 @@
+{
+    "id": 7804,
+    "type": "quality-rule",
+    "name": "Avoid Classes with High Weighted Methods per Class",
+    "href": "AIP/quality-rules/7804",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Associated Value",
+    "description": "Avoid Classes with High Weighted Methods per Class (WMC > X).\nThe Weighted Methods per Class metric is defined as the sum of all the Classes method's cyclomatic complexity. The threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Classes with a Weighted Methods per Class greater than X. It provides the following information: Class full name, WMC",
+    "rationale": "The number of methods and complexity of methods is an indicator of how much time and effort is required to develop and maintain the object.\nFor maintainability reasons, High Weighted Methods per Class should not be too high.",
+    "reference": "A Metrics Suite for Object Oriented Design\nChidamber, S.R. and C.F. Kemerer\nIEEE Transactions on Software Engineering, 1994",
+    "remediation": "Reduce the number  - by splitting the Class in two or moving method to a component Class - or the Cyclomatic Complexity of the method of the non compliant Class",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": -8,
+            "name": "PowerBuilder",
+            "href": "AIP/technologies/-8"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "id": 1600220,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Avoid unfilled Field Label",
+    "href": "AIP/quality-rules/1600220",
+    "critical": false,
+    "maxWeight": 3,
+    "output": "Failed checks gives the number of records that contain wrongly defined fields The field name can be found in the value column",
+    "rationale": "Use existing label whenever possible. A label must be filled (no empty label).",
+    "reference": "2.3",
+    "remediation": "In application designer, fill the property label id for field object",
+    "total": "Number of PeopleSoft DBField Label",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61031,
+            "name": "Complexity - Empty Code",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

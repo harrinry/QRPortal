@@ -1,0 +1,58 @@
+{
+    "id": 7954,
+    "type": "quality-rule",
+    "name": "Avoid indirect String concatenation inside loops",
+    "href": "AIP/quality-rules/7954",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Call path from the method that contains the loop to the method that does the concatenation",
+    "description": "All methods that call indirectly a method that uses string concatenation in loops (for, while, do while) at a depth level less than <depth level> will be reported.\n\nThe depth level is 50.",
+    "output": "This reports all methods that call indirectly string concatenation in loops.\nIt provides the following information:\nMethod full name that has the loop, the call path from the method that contains the loop to the method that does  the concatenation.\n\nNote that:\n1/ The the call paths may contain different paths while only one path is a violation. For example:\nvoid concatString(String name) {\n    String result = \" concat \";\n    result += name;  }\n\nvoid g() {concatString(\" String \");}\n\nvoid f() {\n       while (myCondition) { g ();}\n        g();\n        } \n\nwill report both path to g() while only one is a violation.\n\n2/ Several paths for the same method violating the rule are identified in the Metric Detail page by a sequence ID (in the Value column), this ID is dynamically set during each snapshot and the same path can have a different sequence ID in different snapshots. (the value column), this value can vary from a snapshot to another and is used just to distinguish the violations.",
+    "rationale": "String concatenation is not efficient because it creates a StringBuffer for each concatenation. When placed in an indirect loop, String concatenation  results in the creation and garbage collection of large numbers of temporary objects. This both consumes memory and can dramatically slow the program execution. It is recommended to create a StringBuffer before entering the loop, and append to it within the loop, thus reducing the overhead.",
+    "reference": "http://www.precisejava.com/javaperf/j2se/StringAndStringBuffer.htm#Strings104",
+    "remediation": "It is recommended to create a StringBuilder (if JDK >= 1.5 and not in thread environment) or StringBuffer before entering the loop, and append to it within the loop, thus reducing the overhead.",
+    "remediationSample": "public class ConcatenationTest {\n  public void concatString(StringBuffer result, String name) {\n    result.append(name);\n  }\n}\n\npublic class LoopTest {\n  static final int N = 18000000;\n  private ConcatenationTest ct = new ConcatenationTest();\n \n  public void myLoop() {\n    StringBuffer result = \"hello\";\n    String name = \"bob\";\n    for (int i = 1; i <= N; i++) {\n      ct.concatString(result, name); // FIXED\n    }\n  }\n}",
+    "sample": "public class ConcatenationTest {\n\n  public String concatString(String name) {\n    String result = \"hello \";\n    result += name;\n   return result\n  }\n}\n\npublic class LoopTest {\n  static final int N = 18000000;\n  private ConcatenationTest ct = new ConcatenationTest();\n \n  public void myLoop(void) {\n    String name = \"bob\";\n    for (int i = 1; i <= N; i++) {\n      ct.concatString(name); // VIOLATION\n    }\n  }\n}",
+    "total": "All methods calling at least one method inside a loop",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66068,
+            "name": "Efficiency - Expensive Calls in Loops",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-8",
+            "name": "Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

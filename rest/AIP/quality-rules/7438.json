@@ -1,0 +1,56 @@
+{
+    "id": 7438,
+    "type": "quality-rule",
+    "name": "Avoid non thread safe singleton",
+    "href": "AIP/quality-rules/7438",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "All singleton that initialize the static field that refer to the single instance in a non synchronized method will be reported. \n\nA singleton is defined as:\n- a class with a static member with the same type or parent type (extended or implemented) as the class\n- a static method that refers the instance and return an object of same type or a parent type (extended or implemented)\n- a class that has only private constructors",
+    "output": "The metric will list all singleton classes that are not thread safe.",
+    "rationale": "If singleton is invoked in a multi-threaded program, you could end up creating multiple instances of the class which will make the application instable.",
+    "reference": "http://tekpool.wordpress.com/2006/10/27/singleton-pattern-part-2-thread-safe-implemenation/\nhttp://www-128.ibm.com/developerworks/java/library/j-dcl.html",
+    "remediation": "To remediate to this issue (in case of multi-threaded environment), there is two solutions:\n1/ declare the field that hold the unique instance as static final and initialize it in the declaration\n2/ synchronize the method that initialize the field",
+    "remediationSample": "1/ declare a static final field\nclass Singleton\n{\n  private static final Singleton instance = new Singleton(); // FIXED\n  private Singleton() {}\n  public static Singleton getInstance() { \n    return instance;\n  }\n}\n\n2/ synchronize the method\nclass Singleton\n{\n  private static Singleton instance;\n  private Singleton() {}\n  public static synchronized Singleton getInstance() { \n    if (instance == null)              \n      instance = new Singleton();\n    return instance;\n  }",
+    "sample": "class Singleton\n{\n  private static Singleton instance;\n  private Singleton() {}\n  public static Singleton getInstance() { \n    if (instance == null)                    // VIOLATION\n      instance = new Singleton();\n    return instance;\n  }\n}",
+    "total": "the total procedure counts all singleton classes (as defined in the definition)",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66065,
+            "name": "Secure Coding - Time and State",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "id": 8092,
+    "type": "quality-rule",
+    "name": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
+    "href": "AIP/quality-rules/8092",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Associated Value",
+    "description": "This rule searches all the objects having IntPtr,UIntPtr, int* types as public or protected fields that are used to access unmanaged memory.",
+    "output": "This report lists all the classes  and structures having IntPtr and UIntPtr types as public or protected fields that are used to access unmanaged memory.\n\nIt provides following information:\n- Class name or Structure name",
+    "rationale": "For an application, if the pointers are exposed malicious code can change the value of the pointer, potentially allowing access to arbitrary locations in memory or causing application or system failures.",
+    "reference": "http://msdn.microsoft.com/en-us/library/ms182306.aspx",
+    "remediation": "try and always have these pointers as  read-only, internal, or private.",
+    "remediationSample": "using System;\n\nnamespace SecurityRulesLibrary\n{\n\n   public class ExposedPointers\n   {\n    \n      // Violation Corrected\n      internal UIntPtr Pointer1;\n      private UIntPtr privatePointer2;\n\n   }\n}",
+    "sample": "using System;\n\nnamespace SecurityRulesLibrary\n{\n\n   public class ExposedPointers\n   {\n      // Violation. The pointers should not be visibles\n      public IntPtr Pointer1;\n      public UIntPtr Pointer2;\n    \n\n}",
+    "total": "Number of Classes and Structures",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66066,
+            "name": "Secure Coding - Encapsulation",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

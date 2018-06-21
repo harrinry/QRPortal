@@ -1,0 +1,54 @@
+{
+    "id": 1020512,
+    "type": "quality-rule",
+    "name": "Use Angular wrapper service $timeout",
+    "href": "AIP/quality-rules/1020512",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "Instead of the default setTimeout function, you should use the AngularJS wrapper service $timeout",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "ASCMM-MNT-20",
+    "remediationSample": "$timeout(function() { \n   }, 10000);",
+    "sample": "setTimeout(function() { \n   }, 10000);",
+    "total": "Number of angular artifacts",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

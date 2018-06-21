@@ -1,0 +1,58 @@
+{
+    "id": 1600200,
+    "type": "quality-rule",
+    "name": "PeopleSoft: Don't use hardcoded message",
+    "href": "AIP/quality-rules/1600200",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of hardcoded messages",
+    "output": "Failed checks gives the number of objects that contain a call to the message functions without using a message catalog reference",
+    "rationale": "Hardcoded messages are not translated and it decrease the maintenance of the application",
+    "reference": "3.0",
+    "total": "Number of PeopleSoft Events, Functions and Methods",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61029,
+            "name": "Complexity - Dynamic Instantiation",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

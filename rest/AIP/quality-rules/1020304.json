@@ -1,0 +1,73 @@
+{
+    "id": 1020304,
+    "type": "quality-rule",
+    "name": "Implement success and error callbacks when using jquery web service call",
+    "href": "AIP/quality-rules/1020304",
+    "critical": true,
+    "description": "Use the promise $.ajax, $.get, $.getJSON interface to implement success and error callbacks. This rule is compliant with CISQ OMG ASCSM-CWE-396, ASCSM-CWE-397, ASCRM-RLB-01 recommendations.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure that each web service callback is going to be properly checked in order to make sure you will not miss any problem that occurred in your application and you will give the information to the user.",
+    "remediation": "$.ajax({ ... }).then(successHandler, failureHandler); \n// OR \nvar jqxhr = $.ajax({ ... }); \njqxhr.done(successHandler); \njqxhr.fail(failureHandler);",
+    "sample": "$.ajax({ ... }); ",
+    "total": "Number of JQuery resource service artifacts (JQuery GET resource service, JQuery PUT resource service, JQuery POST resource service)",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-396",
+            "name": "Declaration of Catch for Generic Exception",
+            "reference": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-397",
+            "name": "Declaration of Throws for Generic Exception",
+            "reference": null,
+            "description": null
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "id": 7902,
+    "type": "quality-rule",
+    "name": "Avoid SQL queries that no index can support",
+    "href": "AIP/quality-rules/7902",
+    "critical": false,
+    "maxWeight": 9,
+    "associatedValueName": "Database table name accessed without using any index",
+    "description": "This metric retrieves the artifacts containing at least one SQL Query not using a table's indexes. \nAn SQL Query is using table's indexes if all the following conditions are true: \n\n- At least one index is defined for each table participating in the from list\n- Queries must reference left-most columns of the index key",
+    "output": "Associated to each Artifact with violations, the Quality Rule provides:\n- The database table name accessed without using any index",
+    "rationale": "SQL Queries that do not use table indexes are extremely dangerous for the application's performance.\nIndeed, each execution of the query will result in a full table scan which is extremely time consuming.",
+    "reference": "http://it-cisq.org/\nCISQ: ASCPEM-PRF-05\n\nEnhancing the Quality of ABAP Development\nMeijs - Krouwels - Heuvelmans - Sommen\nSAP Press\nISBN 1-59229-030-2",
+    "remediation": "Try to use indexed columns in WHERE and HAVING clauses. If it is not possible, then create a secondary index for these columns.",
+    "total": "Number of Artifacts using Tables.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        },
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "AIP/technologies/-14"
+        },
+        {
+            "id": -10,
+            "name": "Forms",
+            "href": "AIP/technologies/-10"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "AIP/technologies/140998"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "AIP/technologies/139287"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "AIP/technologies/-13"
+        },
+        {
+            "id": 141001,
+            "name": "Sybase T-SQL",
+            "href": "AIP/technologies/141001"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-5",
+            "name": "Data Resource Read Access Unsupported by Index Element",
+            "reference": null,
+            "description": null
+        }
+    ]
+}
