@@ -3,7 +3,7 @@ import { EXTENTIONNAMES } from '../components/elements/sources/extentionNames';
 import prettyPrintVersion from '../components/elements/sources/versionNamePP';
 import Axios from 'axios';
 const technos = 'rules/technologies.json';
-const businessCriteriaList = 'rest/business-criteria.json';
+const businessCriteriaList = 'rest?q=business-criteria.json';
 
 export default function deriveNameFromURL( url, callback, errorHandler ){
   if ( !url ) return;

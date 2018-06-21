@@ -69,7 +69,7 @@ const filterArray = ( listArray ) => {
   const filtered = listArray.map( listEntry => {
     const eId = listEntry.id;
 
-    if( is(KEYS.pure, eId) ) return listEntry;
+    if( is(KEYS.pure, eId) ) return new filteredElement(listEntry.id, listEntry.name, listEntry.href + '/quality-rules', null);
 
     let ret;
 

@@ -2,7 +2,7 @@ const jsonExt = '.json';
 const AIP = 'AIP/';
 
 function normalize(url){
-  const dirTest = /AIP\//ig.test(url);
+  const dirTest = /(AIP)/ig.test(url);
   return dirTest ? normalizeFileName(url) : AIP.concat( normalizeFileName(url));
 }
 
