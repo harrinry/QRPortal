@@ -1,12 +1,24 @@
 const path = require('path');
 const { extPath, versionTypes } = require('./constants');
+const logger = require('../logger/error');
 
 function getLatestVersion( analyzerUID ){
   if( !analyzerUID ) return;
-  const versions = require( path.join(extPath, analyzerUID, 'versions.json')),
-    len = versions ? versions.length : 0;
   
-  let latestLTS, funcRelVersion, latestBeta, latestAlpha;
+  let versions, len, latestLTS, funcRelVersion, latestBeta, latestAlpha;
+  const PATH = path.join(extPath, analyzerUID, 'versions.json');
+  try {
+    versions = require( PATH ),
+    len = versions ? versions.length : 0;
+  } catch (error) {
+    logger.error({
+      module: 'determinator', 
+      error: 'Version file missing',
+      analyzerUID: analyzerUID,
+      fullPath: PATH
+    });
+    return null;
+  }
 
   for (let i = 0; i < len; i++) {
     const version = versions[i].name;

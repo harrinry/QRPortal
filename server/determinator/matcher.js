@@ -1,8 +1,11 @@
 const mapping = require('./technomapping/technoanalyzermapping.json');
 const analyzers = require('./technomapping/analyzers.json');
+const KeyMap = require('../lib/dataConstruct/keyMap');
+
+const stdMapping = new KeyMap(mapping, ( key ) => key.toLowerCase());
 
 function Match( key ){
-  const matchKey = getMapping( key );
+  const matchKey = getMapping( stdMapping[key] );
   if (!matchKey) return;
   const analyzerKey = matchKey.analyzer;
   switch (key) {

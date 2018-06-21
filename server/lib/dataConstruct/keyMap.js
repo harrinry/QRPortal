@@ -1,4 +1,4 @@
-module.exports = function KeyMap( objectToMap ){
+module.exports = function KeyMap( objectToMap, transform ){
   const __keys = Object.keys( objectToMap ),
     l = __keys.length;
 
@@ -19,7 +19,11 @@ module.exports = function KeyMap( objectToMap ){
 
   for (let i = 0; i < l; i++) {
     const key = __keys[i];
-    o[key] = key;
+    if( transform ){
+      o[transform(key)] = key;
+    } else {
+      o[key] = key;
+    }
   }
 
   return Object.freeze(o);
