@@ -5,22 +5,24 @@
 }
 
 .menuItem.selected{
-  background-color: aqua;
+  background-color: aqua; /* temp color */
 }
 
 .menuItem:hover{
   background-color: rgba(0,0,0,0.03);
 }
 
-.LeftBar.Closed > .Nav > .NavItem .menuItem{
+.LeftBar.Closed .NavItem .menuItem{
+  height: 0px;
   opacity: 0;
 }
 
 .NavItem.Open .menuItem{
+  display: block;
   color: #0D0D0D;
   opacity: 1;
   animation-duration: 0.4s;
-  animation-name: fadein;
+  animation-name: menuexpand;
   animation-timing-function: ease-in-out;
 }
 
@@ -29,6 +31,5 @@
   font-weight: 400;
   line-height: 50px;
   margin-left: 30px;
-  margin-right: auto;
 }
 

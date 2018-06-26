@@ -27,7 +27,12 @@ export default class NavItem extends React.PureComponent {
 
   }
 
-  onExpand(){
+  onExpand(event){
+    const r = {
+      0:'nv_' + this.props.name,
+      1: 'nv_' + this.props.name + 'ddIcon'
+    };
+    if ( event.target !== this.refs[r[0]] && event.target !== this.refs[r[1]] ) return;
     this.setState( (preState) => {
       return {
         isOpen: preState.isOpen ? false : true
@@ -37,12 +42,12 @@ export default class NavItem extends React.PureComponent {
 
   render() {
     return (
-      <div className={createClassName('NavItem', (this.state.isOpen ? 'Open' : undefined))} onClick={this.onExpand.bind(this)}>
-        <div className={'flex-row'}>
+      <div className={createClassName('NavItem', 'flxc', (this.state.isOpen ? 'Open' : undefined))} onClick={this.onExpand.bind(this)}>
+        <div className={'flxr jsb minh50p'} ref={'nv_' + this.props.name}>
           <div className={'Name'}>{this.props.name}</div>
-          <div className={'DropDown'}></div>
+          <div className={'DropDown'} ref={'nv_'+this.props.name+'ddIcon'}></div>
         </div>
-        <div className={'dropdown-container'}>{this.state.children.map( ( c, idx ) => <MenuItem key={idx} _ref={{name: this.props.name, index: idx}} title={c.name} href={c.href} selected={this.props.selected.name === this.props.name && this.props.selected.index === idx} onclick={this.props.onItemClick}/>)}</div>
+        <div className={'dropdown-container flxc'}>{this.state.children.map( ( c, idx ) => <MenuItem key={idx} _ref={{name: this.props.name, index: idx}} title={c.name} href={c.href} selected={this.props.selected.name === this.props.name && this.props.selected.index === idx} onclick={this.props.onItemClick}/>)}</div>
       </div>
     );
   }
