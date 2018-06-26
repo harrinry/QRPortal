@@ -208,7 +208,12 @@
     "struts":{"techno":"jee","type":["webservices"],"analyzer":"struts-1"},
     "jsp":{"techno":"jee","type":["presentation"],"analyzer":"jee-1"},
     "wsdl":{"techno":"jee","analyzer":"jee-1"},
-    "jms":{"techno":"jee","analyzer":"jms-1"},
+    "jms":{"techno":"jee","type":["messaging"],"analyzer":"mqe-1"},
+    "springapmq":{"techno":"jee","type":["messaging"],"analyzer":"mqe-1"},
+    "springrabbit":{"techno":["jee","python"],"type":["messaging"],"analyzer":"mqe-1"},
+    "rabbitmq":{"techno":["jee","python"],"type":["messaging"],"analyzer":"mqe-1"},
+    "activemq":{"techno":["jee","python"],"type":["messaging"],"analyzer":"mqe-1"},
+    "ibmmq":{"techno":"mainframe","type":["messaging"]},
     "springbatch":{"techno":"jee","analyzer":"springbatch-1"},
     "springintegration":{"techno":"jee","analyzer":"springintegration-1"}
   }
