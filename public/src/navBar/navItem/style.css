@@ -17,6 +17,7 @@
 
 .LeftBar.Closed .NavItem{
   opacity: 0;
+  transition: all linear 400ms;
 }
 
 .NavItem.Open{
@@ -34,25 +35,23 @@
   margin-left: 30px;
 }
 
-.NavItem.Open > .dropdown-container{
-  height: auto;
-}
-
 .NavItem .DropDown{
   margin: auto 50px;
 }
 
 .dropdown-container{
-  height: 0px;
   cursor: pointer;
+  transition: all linear 400ms;
 }
 
 .dropdown-container > div{
   height: 0px;
   opacity: 0;
+  transition: all linear 400ms;
 }
 
 .NavItem.Open > .dropdown-container > div{
-  height: auto;
+  height: 50px;
   opacity: 1;
+  transition: all linear 400ms;
 }
