@@ -162,13 +162,18 @@ app.get("/AIP/*",  function (req, res) { res.sendFile(path.join(__dirname, restD
 
 // ---------------------------------------------------------------------------- //
 
+// swagger-ui
+app.use('/swagger-ui', express.static('swagger-ui'));
+app.use(function(req, res, next) {
+    res.header('access-control-allow-origin', '*');
+    next();
+});
+
 // Backdoor REST API browser
 app.get('/default.html', function(req, res) {
   res.sendFile(path.join(__dirname, '/static/'));
 });
 
 app.listen(port, function() {
-
   console.log('Listening...'+port);	
-	
 });
