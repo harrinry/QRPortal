@@ -1,0 +1,45 @@
+{
+    "id": 1007244,
+    "name": "CWE-79: Avoid use of raw user input that can expose XSS vulnerability (PHP)",
+    "href": "AIP/quality-rules/1007244",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This rule detects the use of raw user input that could expose application to potential XSS attack vulnerability.",
+    "output": "This report lists all artifacts that uses raw user input which could potentially expose application to XSS attack. \nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "Using raw user input exposes application to XSS attack vulnerability.",
+    "reference": "https://cwe.mitre.org/data/definitions/79.html",
+    "remediation": "Use PHP user input cleaning functions. PHP offers htmlspecialchars and htmlentities to sanitize user input.",
+    "remediationSample": "<?php\n\necho(htmlspecialchars($_GET['a']));\n\n?>",
+    "sample": "<?php\n\necho($_GET['a']);\n\n?>",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,15 +1,13 @@
 {
     "id": 1007166,
-    "name": "Avoid having properties with __get and no __set (PHP)",
+    "name": "Avoid classes without matching __get and __set (PHP)",
     "href": "AIP/quality-rules/1007166",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches for all the classes containing attributes with a __get property and no __set property.",
-    "output": "This report lists all the classes containing attributes with a __get property and no __set property.\n\nThis QR provides the following information:\nClass  full name.",
-    "rationale": "In PHP source code if there is a write action to a property that does not exist and there is no '__set'-method, the property will be created. The '__get' method will only be called if there is no property with the given name.  So having properties without a __set method could produce unexpected values for the __get method of the same property.",
-    "remediation": "Modify the source code and add the '__set' method with an appropriate default. Also consider throwing an Exception that returns false.",
-    "remediationSample": "<?php\n      $rec->area = 10;\n      echo $rec->area; //outputs 10\n    ?>",
-    "sample": "<?php\n      $rec = new Rectangle(5, 5);\n      echo $rec->area; //outputs 25\n\n    ?>",
+    "description": "This rule searches for all the classes not having matching __get and __set.",
+    "output": "This rule searches for all the classes not having matching __get and __set\n\nThis QR provides the following information:\nClass  full name.",
+    "rationale": "PHP __get and __set magic methods are used to have control over dynamic properties. It is a practice to have matching __get and __set.",
+    "remediation": "Evaluate and add missing methods.",
     "total": "Number of Classes",
     "businessCriteria": [
         {

@@ -1,0 +1,55 @@
+{
+    "id": 1101918,
+    "name": "Avoid having MongoDB databases access without authentication activated",
+    "href": "AIP/quality-rules/1101918",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of violation patterns",
+    "description": "This report lists all artifacts without authentication activated. Accessing a database without proper authentication is not permitted. ",
+    "output": "This report lists all artifacts without authentication activated .\nIt provides the following information:\nartifact full name",
+    "rationale": "Avoid having MongoDB databases access without authentication activated.Accessing a database without a proper authentication will harm security of data. One should set user authentication over a database. ",
+    "remediation": "Set authentication for database before accessing.",
+    "remediationSample": "    \n\t\t MongoClientURI connstr = new MongoClientURI(\"mongodb://admin:@localhost:27017\");\n    \t DB database = connstr.getDB(\"IndexingCheck\");\n\t\t \n\t\t MongoClientURI connstr = new MongoClientURI(\"mongodb://:password@localhost:27017\");\n    \t DB database = connstr.getDB(\"IndexingCheck\");\n\t\t \n\t\t MongoClient mongo = new MongoClient(\"localhost\", 27017);\n\t\t \n\t\t \n\t\t",
+    "sample": "\n\t\tMongoClientURI connstr = new MongoClientURI(\"mongodb://admin:password@localhost:27017\");\n    \tDB database = connstr.getDB(\"IndexingCheck\");\n\t\t\n\t\tor using springData\n\t\t \n\t\tApplicationContext ctx = new ClassPathXmlApplicationContext(\"web_configg.xml\");\n\t\t\n\t\tSpringMongoConfig1 mongoOperation1 = (SpringMongoConfig1) ctx.getBean(\"mongoURI\");\n\t\t\n\t\tMongoClient mongoClient = new MongoClient(mongoOperation1.uri);\t\n\t\t",
+    "total": "The total procedure counts MongoDB Access.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
