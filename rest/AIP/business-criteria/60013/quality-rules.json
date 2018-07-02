@@ -3438,12 +3438,6 @@
         "critical": false
     },
     {
-        "id": 1007018,
-        "name": "Avoid Classes with High Cyclomatic Complexity (PHP)",
-        "href": "AIP/quality-rules/1007018",
-        "critical": false
-    },
-    {
         "id": 1007020,
         "name": "Avoid Sections with High Cyclomatic Complexity (PHP)",
         "href": "AIP/quality-rules/1007020",
@@ -3630,12 +3624,6 @@
         "critical": true
     },
     {
-        "id": 1007156,
-        "name": "Avoid using eval expression (PHP)",
-        "href": "AIP/quality-rules/1007156",
-        "critical": false
-    },
-    {
         "id": 1007158,
         "name": "Avoid artifacts using exit and die expressions (PHP)",
         "href": "AIP/quality-rules/1007158",
@@ -3643,7 +3631,7 @@
     },
     {
         "id": 1007166,
-        "name": "Avoid having properties with __get and no __set (PHP)",
+        "name": "Avoid classes without matching __get and __set (PHP)",
         "href": "AIP/quality-rules/1007166",
         "critical": false
     },
@@ -3705,6 +3693,12 @@
         "id": 1007242,
         "name": "Avoid Methods and Functions having recursive calls (PHP)",
         "href": "AIP/quality-rules/1007242",
+        "critical": false
+    },
+    {
+        "id": 1007254,
+        "name": "Avoid files that declare both symbols and execute logic with side effects (PHP)",
+        "href": "AIP/quality-rules/1007254",
         "critical": false
     },
     {
@@ -4470,6 +4464,12 @@
         "critical": false
     },
     {
+        "id": 1021070,
+        "name": "Avoid Superclass knowing Subclass",
+        "href": "AIP/quality-rules/1021070",
+        "critical": false
+    },
+    {
         "id": 1050010,
         "name": "Avoid using NSURLRequest setAllowsAnyHTTPSCertificate:forHost",
         "href": "AIP/quality-rules/1050010",
@@ -4576,6 +4576,18 @@
         "name": "Avoid empty catch blocks",
         "href": "AIP/quality-rules/1101040",
         "critical": true
+    },
+    {
+        "id": 1101916,
+        "name": "When using compound indexes, avoid having different indexes",
+        "href": "AIP/quality-rules/1101916",
+        "critical": false
+    },
+    {
+        "id": 1101918,
+        "name": "Avoid having MongoDB databases access without authentication activated",
+        "href": "AIP/quality-rules/1101918",
+        "critical": false
     },
     {
         "id": 1101958,
