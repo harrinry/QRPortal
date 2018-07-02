@@ -1,0 +1,1477 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "REST API for CAST Structural Rules.",
+    "version": "1.0.0",
+    "title": "CAST STRUCTURAL RULES",
+    "termsOfService": "https://technologies.castsoftware.com/terms/",
+    "contact": {
+      "email": "ppares@castsoftware.com"
+    },
+    "license": {
+      "name": "Apache 2.0 License",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "technologies.castsoftware.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "AIP",
+      "description": "Entry point of Web Services to reach collections of rules"
+    },
+    {
+      "name": "Extensions",
+      "description": "CAST AIP Extensions/Plugins"
+    },
+    {
+      "name": "Technologies",
+      "description": "A technology idenifies a development stack"
+    },
+    {
+      "name": "Quality Model",
+      "description": "Quality indicators: business criteria, quality rules"
+    },
+    {
+      "name": "Quality Standards",
+      "description": "References of Quality Standards such as vulnerabilities, risks, etc. organized by sub categories"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "parameters": {
+    "TECHNO": {
+      "name": "TECHNO",
+      "in": "path",
+      "required": true,
+      "description": "A technology ID such as 1021000",
+      "type": "integer"
+    },
+    "AIPVER": {
+      "name": "VER",
+      "in": "path",
+      "required": true,
+      "description": "A version name with a build number: 8.3.4_1632",
+      "type": "string"
+    },
+    "EXT": {
+      "name": "EXT",
+      "in": "path",
+      "required": true,
+      "description": "Extension full name such as 'com.castsoftware.html5'",
+      "type": "string"
+    },
+    "EXTVER": {
+      "name": "VER",
+      "in": "path",
+      "required": true,
+      "description": "A version name",
+      "type": "string"
+    },
+    "BCID": {
+      "name": "BCID",
+      "in": "path",
+      "required": true,
+      "description": "A Business criterion ID such as 60016 (Security), 60014 (Efficiency), etc.",
+      "type": "string"
+    },
+    "ID": {
+      "name": "ID",
+      "in": "path",
+      "required": true,
+      "description": "A quality rule ID",
+      "type": "string"
+    },
+    "STD": {
+      "name": "STD",
+      "in": "path",
+      "required": true,
+      "description": "A quality standard name such as CISQ",
+      "type": "string"
+    },
+    "CAT": {
+      "name": "CAT",
+      "in": "path",
+      "required": true,
+      "description": "A quality standard sub category name",
+      "type": "string"
+    },
+    "TAG": {
+      "name": "TAG",
+      "in": "path",
+      "required": true,
+      "description": "A quality standard reference ID,such as CWE-352",
+      "type": "string"
+    }
+  },
+  "paths": {
+    "/AIP": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "REST API entry point",
+        "produces": [
+          "application/json",
+          "application/csv"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/AIP"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/versions": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "All versions of CAST AIP since 8.0.0",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/VersionItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/versions/{VER}": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "Describe a version of CAST AIP",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/AIPVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Version"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/versions/{VER}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality-rules of a CAST AIP Version",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/AIPVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityRuleItemByVersion"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/business-criteria": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List Business Criteria",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/BusinessCriterionItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/business-criteria/{BCID}": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "Describe a business criterion",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/BCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/BusinessCriterion"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/business-criteria/{BCID}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List quality rules contributing to a business criterion",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/BCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityRuleItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-rules/{ID}": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/QualityRule"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List quality standards",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityStandardItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "Describe a quality standard",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/QualityStandard"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/items": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List all reference items of a quality standard",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityStandardReferenceItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/categories": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "A quality standard name such as 'CISQ-Maintainability'",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityStandardCategoryItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/categories/{CAT}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "Describe a quality standard sub-category",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          },
+          {
+            "$ref": "#/parameters/CAT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/QualityStandardCategory"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/categories/{CAT}/items": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List all reference items of a quality standard sub-category",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          },
+          {
+            "$ref": "#/parameters/CAT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityStandardReferenceItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/items/{TAG}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "A quality standard reference",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          },
+          {
+            "$ref": "#/parameters/TAG"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/QualityStandardReference"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/quality-standards/{STD}/items/{TAG}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List all quality rules attached to the quality standard reference",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/STD"
+          },
+          {
+            "$ref": "#/parameters/TAG"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityRuleItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/technologies": {
+      "get": {
+        "tags": [
+          "Technologies"
+        ],
+        "description": "List all technologies",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/TechnologyItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/technologies/{TECHNO}": {
+      "get": {
+        "tags": [
+          "Technologies"
+        ],
+        "description": "A technology",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/TECHNO"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Technology"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/technologies/{TECHNO}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality rules for a technology",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/TECHNO"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityRuleItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/extensions": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "All extensions",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExtensionItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/extensions/{EXT}": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "An extension with properties imported from nuget servers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/EXT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Extension"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/extensions/{EXT}/versions": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "Versions ordered from the most recent one to the oldest one",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/EXT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/ExtensionVersionItem"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/AIP/extensions/{EXT}/versions/{VER}": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "A version with properties imported from nuget servers",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/EXT"
+          },
+          {
+            "$ref": "#/parameters/EXTVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/ExtensionVersion"
+            }
+          }
+        }
+      }
+    },
+    "/AIP/extensions/{EXT}/versions/{VER}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality rules, ordered by ID, defined for a version of an extension",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/parameters/EXT"
+          },
+          {
+            "$ref": "#/parameters/EXTVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/QualityRuleItemByVersion"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "AIP": {
+      "type": "object",
+      "properties": {
+        "business-criteria": {
+          "type": "object",
+          "description": "URI to get all business criteria",
+          "properties": {
+            "href": {
+              "type": "string",
+              "example": "AIP/business-criteria"
+            },
+            "name": {
+              "type": "string",
+              "example": "Business Criteria in alphabetic order"
+            }
+          }
+        },
+        "versions": {
+          "type": "object",
+          "description": "URI to get all AIP versions",
+          "properties": {
+            "href": {
+              "type": "string",
+              "example": "AIP/versions"
+            },
+            "name": {
+              "type": "string",
+              "example": "AIP Versions from latest to newest"
+            }
+          }
+        },
+        "extensions": {
+          "type": "object",
+          "description": "URI to get all extensions",
+          "properties": {
+            "href": {
+              "type": "string",
+              "example": "AIP/extensions"
+            },
+            "name": {
+              "type": "string",
+              "example": "Extensions in alphabetic order"
+            }
+          }
+        },
+        "quality-standards": {
+          "type": "object",
+          "description": "URI to get all quality standards",
+          "properties": {
+            "href": {
+              "type": "string",
+              "example": "AIP/quality-standards"
+            },
+            "name": {
+              "type": "string",
+              "example": "Quality standards in alphabetic order"
+            }
+          }
+        },
+        "technologies": {
+          "type": "object",
+          "description": "URI to get all technologies",
+          "properties": {
+            "href": {
+              "type": "string",
+              "example": "AIP/technologies"
+            },
+            "name": {
+              "type": "string",
+              "example": "Technologies in alphabetic order"
+            }
+          }
+        }
+      }
+    },
+    "Version": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/Version.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Version.href"
+        },
+        "quality-rules": {
+          "$ref": "#/definitions/Resource.qualityRules"
+        }
+      }
+    },
+    "VersionItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/Version.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Version.href"
+        }
+      }
+    },
+    "Version.name": {
+      "type": "string",
+      "description": "Version name",
+      "example": "8.3.4_1632"
+    },
+    "Version.href": {
+      "type": "string",
+      "description": "Version URI",
+      "example": "AIP/versions/8.3.4_1632"
+    },
+    "QualityRuleItemByVersion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/QualityRule.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityRule.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityRule.href"
+        },
+        "status": {
+          "$ref": "#/definitions/QualityRule.status"
+        },
+        "critical": {
+          "$ref": "#/definitions/Contribution.critical"
+        }
+      }
+    },
+    "QualityRuleItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/QualityRule.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityRule.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityRule.href"
+        },
+        "critical": {
+          "$ref": "#/definitions/Contribution.critical"
+        }
+      }
+    },
+    "QualityRule": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/QualityRule.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityRule.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityRule.href"
+        },
+        "critical": {
+          "$ref": "#/definitions/Contribution.critical"
+        },
+        "maxWeight": {
+          "type": "integer",
+          "description": "Maximum contribution weight to technical criteria"
+        },
+        "associatedValueName": {
+          "type": "string",
+          "description": "Violation evidence name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Describe the purpose of the quality rule and explain what it searches for"
+        },
+        "output": {
+          "type": "string",
+          "description": "Violation evidence name"
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Explain the problem and what consequences related to this quality rule"
+        },
+        "remediation": {
+          "type": "string",
+          "description": "Explain how to avoid the violations"
+        },
+        "remediationSample": {
+          "type": "string",
+          "description": "Example of a remediation"
+        },
+        "sample": {
+          "type": "string",
+          "description": "Example of a violation"
+        },
+        "total": {
+          "type": "string",
+          "description": "Scope of checked objects"
+        },
+        "businessCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BusinessCriterionItem"
+          }
+        },
+        "technicalCriteria": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TechnicalCriterionItem"
+          }
+        },
+        "technologies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TechnologyItem"
+          }
+        },
+        "qualityStandards": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QualityStandardDescriptionItem"
+          }
+        }
+      }
+    },
+    "QualityRule.status": {
+      "type": "string",
+      "description": "Status of the quality rule compared to the previous version",
+      "example": "added",
+      "enum": [
+        "renewed",
+        "added"
+      ]
+    },
+    "QualityRule.id": {
+      "type": "integer",
+      "description": "Quality Rule ID",
+      "example": 4598
+    },
+    "QualityRule.name": {
+      "type": "string",
+      "description": "Quality Rule name",
+      "example": "Avoid using 'java.lang.Runtime.exec()'"
+    },
+    "QualityRule.href": {
+      "type": "string",
+      "description": "Quality Rule URI",
+      "example": "AIP/quality-rules/4598"
+    },
+    "Contribution.critical": {
+      "type": "boolean",
+      "description": "Indicates whether this quality rules is a critical contributor"
+    },
+    "Contribution.weight": {
+      "type": "integer",
+      "example": 7,
+      "description": "The weight contribution to calculate the weighted average of the technical criterion"
+    },
+    "Resource.qualityRules": {
+      "type": "object",
+      "description": "URI to get all quality rules defined for this resource",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Quality Rules in numeric ID order"
+        },
+        "href": {
+          "type": "string",
+          "example": "AIP/..."
+        }
+      }
+    },
+    "BusinessCriterionItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/BusinessCriterion.id"
+        },
+        "name": {
+          "$ref": "#/definitions/BusinessCriterion.name"
+        },
+        "href": {
+          "$ref": "#/definitions/BusinessCriterion.href"
+        }
+      }
+    },
+    "BusinessCriterion": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/BusinessCriterion.id"
+        },
+        "name": {
+          "$ref": "#/definitions/BusinessCriterion.name"
+        },
+        "href": {
+          "$ref": "#/definitions/BusinessCriterion.href"
+        },
+        "description": {
+          "$ref": "#/definitions/BusinessCriterion.description"
+        },
+        "quality-rules": {
+          "$ref": "#/definitions/Resource.qualityRules"
+        }
+      }
+    },
+    "BusinessCriterion.id": {
+      "type": "integer",
+      "description": "Business Criterion ID",
+      "example": 60016
+    },
+    "BusinessCriterion.name": {
+      "type": "string",
+      "description": "Business Criterion name",
+      "example": "Security"
+    },
+    "BusinessCriterion.description": {
+      "type": "string",
+      "description": "Business Criterion description",
+      "example": "Security measures the likelihood of potential security breaches linked to coding practices and application source code."
+    },
+    "BusinessCriterion.href": {
+      "type": "string",
+      "description": "Business Criterion URI",
+      "example": "AIP/business-criteria/60016"
+    },
+    "TechnicalCriterionItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/TechnicalCriterion.id"
+        },
+        "name": {
+          "$ref": "#/definitions/TechnicalCriterion.name"
+        },
+        "weight": {
+          "$ref": "#/definitions/Contribution.weight"
+        },
+        "critical": {
+          "$ref": "#/definitions/Contribution.critical"
+        }
+      }
+    },
+    "TechnicalCriterion.id": {
+      "type": "integer",
+      "description": "Technical Criterion ID",
+      "example": 66069
+    },
+    "TechnicalCriterion.name": {
+      "type": "integer",
+      "description": "Technical Criterion name",
+      "example": "Programming Practices - Unexpected Behavior"
+    },
+    "TechnologyItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/Technology.id"
+        },
+        "name": {
+          "$ref": "#/definitions/Technology.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Technology.href"
+        }
+      }
+    },
+    "Technology": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/Technology.id"
+        },
+        "name": {
+          "$ref": "#/definitions/Technology.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Technology.href"
+        },
+        "qualityRules": {
+          "$ref": "#/definitions/Resource.qualityRules"
+        }
+      }
+    },
+    "Technology.id": {
+      "type": "integer",
+      "description": "Technology ID",
+      "example": 1021000
+    },
+    "Technology.name": {
+      "type": "string",
+      "description": "Technology name",
+      "example": "Python"
+    },
+    "Technology.href": {
+      "type": "string",
+      "description": "Technology URI",
+      "example": "AIP/technologies/1021000"
+    },
+    "QualityStandardItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/QualityStandard.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandard.href"
+        }
+      }
+    },
+    "QualityStandardDescriptionItem": {
+      "type": "object",
+      "properties": {
+        "standard": {
+          "$ref": "#/definitions/QualityStandard.name"
+        },
+        "id": {
+          "$ref": "#/definitions/QualityStandardReference.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityStandardReference.name"
+        },
+        "description": {
+          "$ref": "#/definitions/QualityStandardReference.description"
+        },
+        "url": {
+          "$ref": "#/definitions/QualityStandardReference.url"
+        }
+      }
+    },
+    "QualityStandard": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/QualityStandard.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandard.href"
+        },
+        "categories": {
+          "$ref": "#/definitions/QualityStandard.categories"
+        },
+        "items": {
+          "$ref": "#/definitions/QualityStandard.items"
+        }
+      }
+    },
+    "QualityStandard.items": {
+      "type": "object",
+      "description": "URI to get all references",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "References in natural order"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    },
+    "QualityStandard.categories": {
+      "type": "object",
+      "description": "URI to get all sub categories",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Categories of references in natural order"
+        },
+        "href": {
+          "type": "string",
+          "example": "AIP/quality-standards/CISQ/categories"
+        }
+      }
+    },
+    "QualityStandard.name": {
+      "type": "string",
+      "example": "CISQ",
+      "description": "A Quality Standard name"
+    },
+    "QualityStandard.href": {
+      "type": "string",
+      "example": "AIP/quality-standards/CISQ",
+      "description": "A Quality Standard URI"
+    },
+    "QualityStandardCategory": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/QualityStandarCategory.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandarCategory.href"
+        },
+        "items": {
+          "$ref": "#/definitions/QualityStandard.items"
+        }
+      }
+    },
+    "QualityStandardCategoryItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/QualityStandarCategory.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandarCategory.href"
+        }
+      }
+    },
+    "QualityStandarCategory.name": {
+      "type": "string",
+      "example": "CISQ-Maintainability",
+      "description": "A Quality Standard sub-category name"
+    },
+    "QualityStandarCategory.href": {
+      "type": "string",
+      "example": "AIP/quality-standards/CISQ/categories/CISQ-Maintainability",
+      "description": "A Quality Standard sub-category URI"
+    },
+    "QualityStandardReferenceItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/QualityStandardReference.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityStandardReference.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandardReference.href"
+        },
+        "count": {
+          "$ref": "#/definitions/QualityStandardReference.count"
+        }
+      }
+    },
+    "QualityStandardReference": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/QualityStandardReference.id"
+        },
+        "name": {
+          "$ref": "#/definitions/QualityStandardReference.name"
+        },
+        "href": {
+          "$ref": "#/definitions/QualityStandardReference.href"
+        },
+        "url": {
+          "$ref": "#/definitions/QualityStandardReference.url"
+        },
+        "count": {
+          "$ref": "#/definitions/QualityStandardReference.count"
+        },
+        "quality-rules": {
+          "$ref": "#/definitions/Resource.qualityRules"
+        }
+      }
+    },
+    "QualityStandardReference.id": {
+      "type": "string",
+      "example": "A1-2013",
+      "description": "A Quality Standard ID"
+    },
+    "QualityStandardReference.name": {
+      "type": "string",
+      "example": "Injection",
+      "description": "A Quality Standard name"
+    },
+    "QualityStandardReference.href": {
+      "type": "string",
+      "example": "AIP/quality-standards/OWASP/items/A1-2013",
+      "description": "A Quality Standard reference URI"
+    },
+    "QualityStandardReference.description": {
+      "type": "string",
+      "example": "Injection",
+      "description": "A Quality Standard description"
+    },
+    "QualityStandardReference.url": {
+      "type": "string",
+      "example": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+      "description": "External documentation"
+    },
+    "QualityStandardReference.count": {
+      "type": "integer",
+      "example": 9,
+      "description": "Number of related quality rules"
+    },
+    "Extension": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/Extension.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Extension.href"
+        },
+        "title": {
+          "$ref": "#/definitions/Extension.title"
+        },
+        "description": {
+          "$ref": "#/definitions/Extension.description"
+        },
+        "qualityModel": {
+          "$ref": "#/definitions/Extension.qualityModel"
+        },
+        "transactionsConfiguration": {
+          "$ref": "#/definitions/Extension.transactionConfiguration"
+        },
+        "versions": {
+          "$ref": "#/definitions/Extension.versions"
+        }
+      }
+    },
+    "ExtensionItem": {
+      "type": "object",
+      "properties": {
+        "qualityModel": {
+          "$ref": "#/definitions/Extension.qualityModel"
+        },
+        "transactionsConfiguration": {
+          "$ref": "#/definitions/Extension.transactionConfiguration"
+        },
+        "name": {
+          "$ref": "#/definitions/Extension.name"
+        },
+        "href": {
+          "$ref": "#/definitions/Extension.href"
+        }
+      }
+    },
+    "ExtensionVersion": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/ExtensionVersion.name"
+        },
+        "href": {
+          "$ref": "#/definitions/ExtensionVersion.href"
+        },
+        "publishedTime": {
+          "$ref": "#/definitions/ExtensionVersion.publishedTime"
+        },
+        "extension": {
+          "$ref": "#/definitions/ExtensionVersion.extension"
+        },
+        "qualityModel": {
+          "$ref": "#/definitions/ExtensionVersion.qualityModel"
+        },
+        "transactionsConfiguration": {
+          "$ref": "#/definitions/ExtensionVersion.transactionConfiguration"
+        },
+        "qualityRules": {
+          "$ref": "#/definitions/Resource.qualityRules"
+        }
+      }
+    },
+    "ExtensionVersionItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/definitions/ExtensionVersion.name"
+        },
+        "href": {
+          "$ref": "#/definitions/ExtensionVersion.href"
+        }
+      }
+    },
+    "Extension.name": {
+      "type": "string",
+      "description": "Extension name",
+      "example": "com.castsoftware.html5"
+    },
+    "Extension.href": {
+      "type": "string",
+      "description": "Extension URI",
+      "example": "AIP/extensions/com.castsoftware.html5"
+    },
+    "Extension.title": {
+      "type": "string",
+      "description": "Display name",
+      "example": "HTML5/Javascript Analyzer"
+    },
+    "Extension.description": {
+      "type": "string",
+      "description": "Description of the extension content and purpose",
+      "example": "This extension provides support for HTML5/JavaScript. This analyzer enables you to compute Automated Function Points for your HTML5/JavaScript projects."
+    },
+    "Extension.versions": {
+      "type": "object",
+      "description": "URI to list all quality rules implemented by the technology of this extension",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "versions from latest to oldest"
+        },
+        "href": {
+          "type": "string",
+          "example": "AIP/extensions/com.castsoftware.html5/versions"
+        }
+      }
+    },
+    "Extension.qualityModel": {
+      "type": "boolean",
+      "description": "True if the last version of this extension defines some quality rules to produce violations",
+      "example": true
+    },
+    "Extension.transactionConfiguration": {
+      "type": "boolean",
+      "description": "True if the last version of this extension produces transactions",
+      "example": true
+    },
+    "ExtensionVersion.name": {
+      "type": "string",
+      "description": "Extension version name",
+      "example": "1.8.0-funcrel"
+    },
+    "ExtensionVersion.href": {
+      "type": "string",
+      "description": "Extension version URI",
+      "example": "AIP/extensions/com.castsoftware.html5/versions/1.8.0-funcrel"
+    },
+    "ExtensionVersion.publishedTime": {
+      "type": "string",
+      "description": "Timestamp of publication",
+      "example": "2018-06-15T09:07:00.4472866+00:00"
+    },
+    "ExtensionVersion.qualityModel": {
+      "type": "boolean",
+      "description": "True if this extension version defines some quality rules to produce violations",
+      "example": true
+    },
+    "ExtensionVersion.transactionConfiguration": {
+      "type": "boolean",
+      "description": "True if this extension version produces transactions",
+      "example": true
+    },
+    "ExtensionVersion.extension": {
+      "type": "object",
+      "description": "URI to the extension",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "com.castsoftware.html5"
+        },
+        "href": {
+          "type": "string",
+          "example": "AIP/extensions/com.castsoftware.html5"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
