@@ -1,0 +1,45 @@
+{
+    "id": 1007248,
+    "name": "CWE-311: Use sufficient SSL\\TLS context (PHP)",
+    "href": "AIP/quality-rules/1007248",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This rule detects the insufficient\\absence of SSL\\TLS context or use of http protocol while getting URL contents.",
+    "output": "This report lists all artifacts that use http protocol or https protocol while getting URL contents.\nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "Not using correct SSL\\TLS context exposes application to \"Man in the middle\" attack.",
+    "reference": "https://cwe.mitre.org/data/slices/311.html",
+    "remediation": "Use https protocol with sufficient SSL\\TLS context.",
+    "remediationSample": "<?php\n\n$url = 'https://www.example.com';\n$req = curl_init($url);\ncurl_setopt($req, CURLOPT_RETURNTRANSFER, TRUE);\n$result = curl_exec($req);\n\n\n$contextOptions = array(\n    'ssl' => array(\n        'verify_peer'   => true,\n        'cafile'        => '/etc/ssl/certs/ca-certificates.crt',\n        'verify_depth'  => 5,\n        'CN_match'      => 'api.twitter.com',\n        'disable_compression' => true,\n        'SNI_enabled'         => true,\n        'ciphers'             => 'ALL!EXPORT!EXPORT40!EXPORT56!aNULL!LOW!RC4'\n    )\n);\n$sslContext = stream_context_create($contextOptions);\n$result = file_get_contents('https://api.twitter.com/1/statuses/public_timeline.json', NULL, $sslContext);\n\n?>",
+    "sample": "<?php\n\nfile_get_contents('http://www.example.com');\n\nfile_get_contents('https://api.twitter.com/1/statuses/public_timeline.json');\n\n?>",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66066,
+            "name": "Secure Coding - Encapsulation",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "id": 1007246,
+    "name": "CWE-98: Avoid use of user input that can expose Stream Injection vulnerability (PHP)",
+    "href": "AIP/quality-rules/1007246",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This rule detects the use of raw user input for including files that may expose application to potential stream injection vulnerability.",
+    "output": "This report lists all artifacts that uses user input for file inclusion which could potentially expose application to stream injection attack. \nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "Using raw user input for purpose of including files can expose application to stream injection attack vulnerability.",
+    "reference": "https://cwe.mitre.org/data/definitions/98.html",
+    "remediation": "Remove including files based on user input.",
+    "sample": "<?php\n\ninclude($_GET['filename']);\n\n?>",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,42 +1,32 @@
 {
     "id": 1007156,
-    "name": "Avoid using eval expression (PHP)",
+    "name": "CWE-624: Avoid using eval expressions (PHP)",
     "href": "AIP/quality-rules/1007156",
     "critical": false,
     "maxWeight": 5,
     "description": "This rule searches for all artifacts using eval expression. Artifacts considered for this QR are PHP Section, method, function and constructors.",
     "output": "This report lists all artifacts using eval expression.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk.",
-    "reference": "PHPMD -  http://phpmd.org/rules/design.html#evalexpression",
+    "reference": "https://cwe.mitre.org/data/definitions/624.html",
     "remediation": "Modify the source code to reduce the use of eval expression.",
     "sample": "<?php\nclass CastTest {\n public function test( $param ) {\n  if (10 === $param) {\n   eval('$param = 10;');   //violation\n  }\n }\n}\n?>",
     "total": "Number of Artifacts",
     "businessCriteria": [
-        {
-            "id": 60012,
-            "name": "Changeability",
-            "href": "AIP/business-criteria/60012"
-        },
         {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
         },
         {
-            "id": 60013,
-            "name": "Robustness",
-            "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "AIP/business-criteria/60011"
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
         }
     ],
     "technicalCriteria": [
         {
-            "id": 61024,
-            "name": "Programming Practices - Structuredness",
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
             "weight": 5,
             "critical": false
         }
