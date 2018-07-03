@@ -24,7 +24,7 @@ export default class Sources extends React.Component{
         return {
           id: e.name,
           name: e.name.substring(17), // FIXME : need a prettyprint name of the extension
-          href: e.href
+          href: e.href + '/versions'
         };
       });
       ref.sort(( a , b ) => a.name.toUpperCase() - b.name.toUpperCase() );
@@ -70,7 +70,7 @@ export default class Sources extends React.Component{
   buildOverlayElemnents( data, name ){
     return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id + name} value={formatVersionName(e.name)} onclick={()=> {
-        Radio.emit( LOADRULESLIST, e.href, EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
+        Radio.emit( LOADRULESLIST, e.href+'/quality-rules', EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
     </Column>);

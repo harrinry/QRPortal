@@ -32,13 +32,13 @@ function getCastAIPNameFromURL( url ){
 }
 
 function getNameFromUrl ( url ){
-  const name = url.match( /[^/]+(?=\.json)/i );
+  const name = url.match( /[^/]+(?=\/quality-rules.json)/i );
   return name;
 }
 
 function getNameFromExtentionUrl ( url ){
-  const name = url.substring( 28, url.indexOf( '/', 28) );
-  const version = url.substring( url.indexOf( '/', 28) + 1, url.indexOf('.json', 28) );
+  const name = url.substring( 32, url.indexOf( '/', 32) );
+  const version = url.substring( url.indexOf( '/', 32) + 1, url.indexOf('.json', 32) );
   return EXTENTIONNAMES[ name ] + ' ' + prettyPrintVersion(version);
 }
 
@@ -71,7 +71,7 @@ function isExtention( url ){
 }
 
 function isCASTAIP( url ){
-  const reg = /(CAST_AIP\/)/i;
+  const reg = /(AIP\/versions\/)/i;
   return reg.test( url );
 }
 

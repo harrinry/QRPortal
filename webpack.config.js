@@ -1,15 +1,15 @@
 const path = require('path');
 module.exports = {
-  entry: path.join(__dirname, 'public', 'src','app'),
+  entry: path.join(__dirname, 'qrp_WebApp', 'src', 'app'),
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'public')
+    filename: 'QRPortal.js',
+    path: path.resolve(__dirname, 'qrp_WebApp')
   },
   module: {
     rules: [{
       test: /.js?$/,
       include: [
-        path.resolve(__dirname, 'public', 'src')
+        path.resolve(__dirname, 'qrp_WebApp', 'src')
       ],
       exclude: [
         path.resolve(__dirname, 'node_modules'),
