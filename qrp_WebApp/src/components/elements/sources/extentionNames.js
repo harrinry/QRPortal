@@ -24,4 +24,7 @@ export const EXTENTIONNAMES = {
   'python':'Python Analyzer',
   'shell':'Shell Analyzer',
   'peoplesoft':'PeopleSoft Analyzer',
+  'cpp': 'C/C++',
+  'wbslinker': 'Web Services',
+  'nosqljava': 'NoSQL Analyzer'
 };

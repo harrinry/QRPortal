@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  entry: path.join(__dirname, 'qrp_WebApp', 'src','app'),
+  entry: path.join(__dirname, 'qrp_WebApp', 'src', 'app'),
   output: {
     filename: 'QRPortal.js',
     path: path.resolve(__dirname, 'qrp_WebApp')
@@ -23,6 +23,14 @@ module.exports = {
           'transform-decorators-legacy',
           'transform-react-jsx']
       }
+    },
+    {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
+    },
+    {
+      test: /\.svg$/,
+      loader: 'svg-inline-loader'
     }]
   },
   resolve: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS, APIQuery} from '../index';
+import Axios from 'axios';
 
 export default class Header extends React.Component{
   constructor(props){
@@ -41,7 +42,7 @@ export default class Header extends React.Component{
   handleInput( e ){
     const key = e.key;
     if (key === 'Enter') {
-      Search( this.refs.searchInput.value, 'qualityRules' )
+      Search( this.refs.searchInput.value, 'qualityrules' )
         .then(res => this.displaySearchResults(res.data));
       this.refs.searchInput.value = '';
     }
@@ -83,19 +84,25 @@ export default class Header extends React.Component{
   loadAbout(){
     if (this.state.backButton === 'visible') return ;
     const title = 'About CAST Structural Rules';
-    APIQuery('about', ( res ) => {
-      const aboutContent = this.aboutOverlayElements(res.data);
-      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title.concat(' ', res.data.version), 50));
-    }, (err)=>{
-      const aboutContent = <p>{err}</p>;
-      Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
-    });
+    Axios.get('about') 
+      .then( res => {
+        const aboutContent = this.aboutOverlayElements(res.data);
+        Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title.concat(' ', res.data.version), 50));
+      }) 
+      .catch((err)=>{
+        const aboutContent = <p>{err}</p>;
+        Radio.emit( SHOWOVERLAY, dynOvlSettings(aboutContent, title, 50));
+      });
   }
 
   aboutOverlayElements( data ){
-    return (<Column key={0} width={'97%'} textAlign={'left'}>
+    return (<Column key={0} width={'97%'} textAlign={'left'} marginBottom={'20px'}>
       <h2>LICENSE</h2>
       <p>{data.licence}</p>
+      <h3>What's new:</h3>
+      <tr>
+        {data.news.map( (info, idx) => <li key={idx}>{info}</li> )}
+      </tr>
     </Column>);
   }
 }

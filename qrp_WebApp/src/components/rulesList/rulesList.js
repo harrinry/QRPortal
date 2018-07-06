@@ -34,25 +34,27 @@ export default class RulesList extends React.Component{
     </div>));
   }
 
-  queryForNextList( url ){
-    APIQuery( url, res => {
-      this.setState( _state => {
-        return ( { els: _state.els, els2: res.data } );
-      });
-      this.loadRuleDetails();
-    }, err => {
+  queryForNextList( url, count ){
+    if ( count === 0 ){
       this.setState( _state => {
         return ( { els: _state.els, els2: [] } );
       } );
       this.loadRuleDetails();
-    } );
+    } else {
+      APIQuery( url + '/quality-rules', res => {
+        this.setState( _state => {
+          return ( { els: _state.els, els2: res.data } );
+        } );
+        this.loadRuleDetails();
+      });
+    }
   }
 
   buildListFromState( arr, onClickFunction, values, selectAction, clearAction ){
     let key = 0;
     return arr.length === 0 ? 
       <tr><td colSpan='3' key={prefix + key++}>No Rules</td></tr> :
-      arr.map( el => <RuleListRowElement selectAction={selectAction} clearAction={clearAction} values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href) : undefined}/>);
+      arr.map( el => <RuleListRowElement selectAction={selectAction} clearAction={clearAction} values={values} el={el} key={prefix + key++} onClick={onClickFunction ? () => onClickFunction(el.href, el.count) : undefined}/>);
   }
 
   loadRuleDetails( url ){
