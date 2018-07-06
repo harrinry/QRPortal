@@ -16,9 +16,9 @@ describe('getLatestVersion()', () => {
     assert.equal( version, '1.7.3' );
   });
   it('should return the latest unstable version, when no stable is available', () => {
-    const uid = 'com.castsoftware.sapui5';
+    const uid = 'com.castsoftware.systemlevelrules';
     const version = latestVersion( uid );
 
-    assert.equal( version, '1.0.0-beta2' );
+    assert.equal( version, '1.0.0-alpha2' );
   });
 });

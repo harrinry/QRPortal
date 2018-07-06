@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, APIQuery, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, EXTENTIONNAMES} from '../../index';
+import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, EXTENTIONNAMES} from '../../index';
 import formatVersionName from './versionNamePP';
 
 export default class Sources extends React.Component{
@@ -24,7 +24,7 @@ export default class Sources extends React.Component{
         return {
           id: e.name,
           name: e.name.substring(17), // FIXME : need a prettyprint name of the extension
-          href: e.href + '/versions'
+          href: e.href
         };
       });
       ref.sort(( a , b ) => a.name.toUpperCase() - b.name.toUpperCase() );
@@ -46,7 +46,7 @@ export default class Sources extends React.Component{
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {
-            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => Axios.get('rest?q='+t.href).then( res => this.onClickHandler(res, t.name)).catch(err => console.log(err.stack))} id={t.id} />;
+            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => this.loadVersions(t)} id={t.id} />;
           })}</BodyBlock>
       </div>);
     }
@@ -54,8 +54,14 @@ export default class Sources extends React.Component{
     return (<div></div>);
   }
 
+  loadVersions( eData ){
+    Axios.get('rules/extensions?q='+ eData.href )
+      .then( res => this.onClickHandler(res, eData.name))
+      .catch( err => console.log(err));
+  }
+
   onClickHandler( res, name ){
-    const data = res.data;
+    const data = res.data || res;
     let ref = data.map( e => {
       return {
         id: e.name,

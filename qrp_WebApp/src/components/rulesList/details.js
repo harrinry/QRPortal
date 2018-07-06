@@ -1,5 +1,5 @@
 import React from 'react';
-import {LOADRULESLIST, Radio, Search} from '../index';
+import {LOADRULESLIST, Radio, APIQuery} from '../index';
 
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
@@ -8,10 +8,11 @@ const localClassName = 'RuleInfo-container',
 
 function queryFromTag( tagValue ){
   
-  Search(tagValue.id, 'qualitystandards')
-    .then( res => {
+  APIQuery(`AIP/quality-standards/${tagValue.standard}/items/${tagValue.id}/quality-rules`,
+    res => {
       Radio.emit(LOADRULESLIST, res.data.resHref, res.data.name);
-    });
+    },
+    err => console.log( err ));
 }
 
 export default class RuleDetails extends React.Component{
@@ -32,7 +33,7 @@ export default class RuleDetails extends React.Component{
 
       if(length>0)
       {
-        tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li key={listValue.id} className='detail-tag' onClick={() => queryFromTag(listValue)}>{listValue.id}</li>;})}</ul>);
+        tagsblock = (<ul className='details-tag'>{this.props.data.qualityStandards.map(function(listValue){return <li key={listValue.id} className='detail-tag' /*onClick={() => queryFromTag(listValue)}*/>{listValue.id}</li>;})}</ul>);
       }
 
       // optional at the end of the block

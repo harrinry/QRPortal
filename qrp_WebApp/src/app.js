@@ -11,12 +11,17 @@ class App extends React.Component {
     if (url.search === '') return;
     const qryParams = ParseQueryString( url.search );
     const { rlH, rlDH } = qryParams;
+    let urlApprouved = true;
 
     GetTitleFromURL( rlH, 
-      ( title ) => Radio.emit( LOADRULESLIST, rlH, title ), 
-      ( err ) => console.log('An error occured while trying to load this url'));
+      ( title ) => {
+        Radio.emit( LOADRULESLIST, rlH, title );}, 
+      ( err ) => {
+        urlApprouved = false;
+        console.log('An error occured while trying to load this url : '+ err);
+      });
 
-    if ( rlDH ){
+    if ( rlDH && urlApprouved ){
       Radio.emit( lOADDETAILS, rlDH );
       Radio.emit( SELECTME, rlDH );
     }

@@ -2,8 +2,14 @@ const express = require('express');
 const options = require('./options');
 const { main } = require('../routes/routes');
 const technoMapping = require('../lib/technologies-map');
-const extensions = require('../../rest/AIP/extensions.json').filter( e => e.qualityModel === true );
 const errLogger = require('../logger/error');
+const errorHandler = require('../middleware/errorHandler');
+const extensionsMap = require('../lib/extentions-map');
+extensionsMap.INIT();
+let extVersionMap;
+
+setTimeout(() => extVersionMap = extensionsMap.readExtMap(), 400);
+
 let rulesRouter = express.Router();
 
 rulesRouter.get(main, (req, res) => {
@@ -47,7 +53,16 @@ rulesRouter.get('/technologies.json', (req, res) => {
 });
 
 rulesRouter.get('/extensions.json', (req, res) => {
-  res.json( extensions );
+  res.json( extensionsMap.extensions );
+});
+
+rulesRouter.get('/extensions', ( req, res ) => {
+  const hrefKey = req.query.q;
+  if( extVersionMap.hasOwnProperty( hrefKey ) ){
+    res.json( extVersionMap[hrefKey] );
+  } else {
+    errorHandler( {statusCode: 404}, res );
+  }
 });
 
 module.exports = rulesRouter;

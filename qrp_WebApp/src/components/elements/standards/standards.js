@@ -1,7 +1,7 @@
 import React from 'react';
 import {BodyElement, BodyBlock, BodyTitle, dynOvlSettings, Column, APIQuery, Radio} from '../../index';
 import {CAST, CISQ, OWASP, CWE} from './elements';
-import {businessCrit, qualityStandards} from './queries';
+import {businessCrit, qualityStandardsCisq, qualityStandardsWASP} from './queries';
 import {Title,SectionStandard} from './title';
 import {LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY} from '../../actions/actions';
 
@@ -34,8 +34,8 @@ export default class Standards extends React.Component {
       <p className="bodySection">{SectionStandard}</p>
       <BodyBlock>{[
         <BodyElement key={key++} slideDown={true} value={CAST} className="bodyElement inline casticon" onclick={()=> APIQuery(businessCrit, this.getBusinessCritera.bind(this))}/>,
-        <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandards, this.getCisqStandards.bind(this))}/>,
-        <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandards, this.getOwaspStandards.bind(this))}/>,
+        <BodyElement key={key++} slideDown={true} value={CISQ} className="bodyElement inline cisqicon" onclick={()=> APIQuery(qualityStandardsCisq, this.getCisqStandards.bind(this))}/>,
+        <BodyElement key={key++} slideDown={true} value={OWASP} className="bodyElement inline owaspicon" onclick={()=> APIQuery(qualityStandardsWASP, this.getOwaspStandards.bind(this))}/>,
         //<BodyElement key={key++} slideDown={true} value={CWE} className="bodyElement inline cweicon" onclick={()=> APIQuery(qualityStandards, this.getCweStandards.bind(this))}/>
       ]}</BodyBlock>
     </div>);
@@ -43,32 +43,41 @@ export default class Standards extends React.Component {
 
   getCisqStandards( res ){
     const data = res.data,
-      name = CISQ,
-      href = data.find( ( e ) => e.name === name ).href;
-
-    APIQuery( href, rr =>{
+      //name = CISQ,
+      //href = data.find( ( e ) => e.name === name ).href;
+      dataList = this.standardizeHrefs(data),
+      /*APIQuery( href, rr =>{
       let d = rr.data,
         out = d.map( c => {
           return { name: c.name, href: c.href };
-        } ),
-        menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', out.length,'Select one of the following category:'));
+        } ),*/
+      menuEls = this.buildSlideDownMenuElements( dataList );
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CISQ Standards', dataList.length,'Select one of the following category:'));
+    //});
+  }
+
+  standardizeHrefs( data ){
+    return data.map( d => {
+      return {
+        name: d.name,
+        href: d.href + '/items'
+      };
     });
   }
 
   getOwaspStandards( res ){
     const data = res.data,
-      name = OWASP,
-      href = data.find( ( e ) => e.name === name ).href;
-
-    APIQuery( href, rr =>{
-      let d = rr.data,
-        out = d.map( c => {
-          return { name: c.name, href: c.href };
-        } ),
-        menuEls = this.buildSlideDownMenuElements( out );
-      return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', out.length,'Select one the following Top Ten:'));
-    });
+      //name = OWASP,
+      //href = data.find( ( e ) => e.name === name ).href;
+      dataList = this.standardizeHrefs(data),
+      //APIQuery( href, rr =>{
+      //let d = rr.data,
+      //out = d.map( c => {
+      //return { name: c.name, href: c.href + '/quality-rules' };
+      //} ),
+      menuEls = this.buildSlideDownMenuElements( dataList );
+    return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'OWASP Standards', dataList.length,'Select one the following Top Ten:'));
+    //});
   }
 
   getCweStandards( res ){
@@ -79,7 +88,7 @@ export default class Standards extends React.Component {
     APIQuery( href, rr =>{
       let d = rr.data,
         out = d.map( c => {
-          return { name: c.name, href: c.href };
+          return { name: c.name, href: c.href + '/quality-rules'};
         } ),
         menuEls = this.buildSlideDownMenuElements( out );
       return Radio.emit(SHOWOVERLAY, dynOvlSettings(menuEls,'CWE Standards', out.length,'Select one if the following category:'));
@@ -89,7 +98,7 @@ export default class Standards extends React.Component {
   getBusinessCritera( res ){
     const data = res.data,
       out = data.map( ( c ) => {
-        return { id: idPrefix + c.id, name: c.name, href: c.href};
+        return { id: idPrefix + c.id, name: c.name, href: c.href + '/quality-rules'};
       });
 
     const menuEls = this.buildSlideDownMenuElements( out );
