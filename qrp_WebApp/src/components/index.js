@@ -52,6 +52,6 @@ export { default as GetTitleFromURL} from '../modules/urlCategory';
 
 /* Global Actions */
 export { lOADDETAILS, UNSELECTME, UNSELECTME2, SELECTME, SELECTME2, LISTLENGTH } from './rulesList/actions';
-export { LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY } from './actions/actions';
+export { LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLISTSANDDETAILS } from './actions/actions';
 export { RETURNTOSTART } from './header/actions';
 export { default as ICONURLS } from './elements/technologies/technoIcons';

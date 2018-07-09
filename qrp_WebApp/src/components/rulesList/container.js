@@ -27,7 +27,7 @@ export default class RulesContainer extends React.Component{
     const isStand = isStandard(this.props.href);
     return (
       <div className={localClassName.join( sp )}>
-        <RulesList href={this.props.href} isStandard={isStand}/>
+        <RulesList href={this.props.href} href2={this.props.href2} isStandard={isStand}/>
         <RuleDetails data={this.state.details} isStandard={isStand}/>
       </div>
     );

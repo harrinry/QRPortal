@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS, APIQuery} from '../index';
+import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS, APIQuery, LOADRULESLISTSANDDETAILS} from '../index';
 import Axios from 'axios';
 
 export default class Header extends React.Component{
@@ -12,6 +12,13 @@ export default class Header extends React.Component{
     };
 
     Radio.listen(LOADRULESLIST, function( url, techName){
+      return this.setState({
+        backButton: 'visible',
+        ruleName: techName
+      });
+    }.bind(this));
+
+    Radio.listen(LOADRULESLISTSANDDETAILS, function( url, url2, techName){
       return this.setState({
         backButton: 'visible',
         ruleName: techName

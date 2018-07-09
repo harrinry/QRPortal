@@ -1,8 +1,8 @@
-export default function updateURL( href, detailsHref ){
+export default function updateURL( href, detailsHref, href2 ){
   const prevState = window.history.state,
     nextState = {
       rlH: href || (prevState ? prevState.rlH : undefined),
-      //rlName: name || (prevState ? prevState.rlName : undefined),
+      rlH2: href2 || (prevState ? prevState.rlH2 : undefined),
       rlDH: detailsHref || undefined
     },
     valSeparator = '=', propSeparator = '&', qqstr = 'QRP_QueryStr';
