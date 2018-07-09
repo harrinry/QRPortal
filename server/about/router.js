@@ -5,6 +5,7 @@ const readJsonFile = require('../lib/readFile');
 const { infoDir, packagePath } = require('../routes/paths');
 const { main } = require('../routes/routes');
 const errLogger = require('../logger/error');
+const changeLog = require('../info/changelog.json');
 
 let aboutRouter = express.Router();
 
@@ -18,7 +19,7 @@ aboutRouter.get(main, (req,res)=>{
       res.json({
         licence: fileContents, 
         version: jsonData.version, 
-        news: require('../info/changelog.json')[jsonData.version]
+        news: changeLog[jsonData.version] || []
       });
     }, undefined, (e) => {
       errLogger.error( e );

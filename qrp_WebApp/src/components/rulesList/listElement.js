@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, TableCell } from '../index';
+import { TableCell } from '../index';
 
 const localClassName = 'table-row'/*, prefix = 'letr_'*/;
 
@@ -7,20 +7,20 @@ export default class RuleListRowElement extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {
-      selected: false
+    /*this.state = {
+      selected: this.props.selected || false
     };
 
-    Radio.listen(this.props.clearAction, () => {
+    /*Radio.listen(this.props.clearAction, () => {
       if( this.state.selected ){
         this.setState({selected: false});
       }
     });
 
     Radio.listen(this.props.selectAction, ( url ) => {
-      if( this.state.href === url){
-        this.setState({selected: true});
-      }
+      //if( this.state.href === url){
+      this.setState({selected: true});
+      //}
     });
   }
 
@@ -30,10 +30,16 @@ export default class RuleListRowElement extends React.Component{
     //Radio.emit(lOADDETAILS, this.state.href);
   }
 
+  componentWillReceiveProps( props ){
+    if (props.selected) {
+      this.setState(_state => {return {selected: _state.selected};});
+    }*/
+  }
+
   render(){
     return (
-      <tr className={localClassName.concat(this.state.selected ? ' selected' : '' )} onClick={()=>{
-        this.dispatchSelectMe();
+      <tr className={localClassName.concat(this.props.selected ? ' selected' : '' )} onClick={()=>{
+        this.props.onSelected();
         this.props.onClick();}}>
         {this.renderCells()}
       </tr>
