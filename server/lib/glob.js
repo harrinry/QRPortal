@@ -9,13 +9,14 @@ function Glob( dirName, onFileContent, onError, onComplete ){
     }
     const len = fileNames.length;
     fileNames.forEach( ( fileName, index ) => {
-      fs.readFile( path.join( dirName, fileName ), 'utf8', ( err, fileContents ) => {
+      const PATH = path.join( dirName, fileName );
+      fs.readFile( PATH, 'utf8', ( err, fileContents ) => {
         if ( err ) {
           onError( err );
           return;
         }
-        onFileContent( fileName, JSON.parse(fileContents), index );
-        if ( index === len -1 ) onComplete();
+        onFileContent( fileName, JSON.parse(fileContents), index, PATH.toString() );
+        if ( index === len -1 && onComplete) onComplete();
       });
     });
   });

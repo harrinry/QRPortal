@@ -102,7 +102,6 @@ export default class RulesList extends React.Component{
   }
 
   setSelected( arr, arrID, index ){
-    console.log('setting selected');
     return this.setState( _state => {
       if (arrID === 'els') {
         return {

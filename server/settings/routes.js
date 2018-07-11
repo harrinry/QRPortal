@@ -15,6 +15,11 @@ module.exports = [
     router: 'api'
   },
   {
+    name: 'determinator',
+    route: '/determinator',
+    router: 'router'
+  },
+  {
     name: 'search',
     route: '/search',
     router: 'router'
@@ -22,6 +27,16 @@ module.exports = [
   {
     name: 'about',
     route: '/about',
+    router: 'router'
+  },
+  {
+    name: 'temp',
+    route: '/temp',
+    router: 'router'
+  },
+  {
+    name: 'admin',
+    route: '/admin',
     router: 'router'
   }
 ];

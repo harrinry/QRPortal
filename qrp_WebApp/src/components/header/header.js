@@ -72,10 +72,13 @@ export default class Header extends React.Component{
     return (<Column key={0} width={'97%'} textAlign={'left'}>
       {data.map( e => {
         return e.resString.map( (res, index) => <BodyElement key={res + index} value={res} onclick={()=> {
-          Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);
+          window.location.href = location.pathname + '?rlH=' + e.technologies[index].href + '&rlDH=' + e.href.replace('.json','');
+
+          /*Radio.emit( LOADRULESLIST, e.technologies[index].href, e.technologies[index].name);
           Radio.emit( lOADDETAILS, e.href);
-          Radio.emit( HIDEOVERLAY );
-        }} id={e.id} />);
+          Radio.emit( HIDEOVERLAY );*/
+        }
+        } id={e.id} />);
       })}
     </Column>);
   }
