@@ -1,6 +1,6 @@
 {
   "name": "qrportal",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "CAST Quality Rules Portal",
   "engines": {
     "node": "8.9.1"
@@ -14,12 +14,14 @@
     "build": "node_modules/.bin/webpack-cli --mode development",
     "build--watch": "node_modules/.bin/webpack-cli --mode development --watch",
     "build--production": "node_modules/.bin/webpack-cli --mode production",
-    "test": "node_modules/.bin/mocha --require ./test/testHelper.js ./test/**/*Spec.js"
+    "test": "node_modules/.bin/mocha --require ./test/testHelper.js ./test/**/*Spec.js",
+    "check": "node consistencyCheck/runCheck.js"
   },
   "dependencies": {
     "adm-zip": "^0.4.11",
     "app-root-path": "^2.0.1",
     "axios": "^0.18.0",
+    "commander": "^2.16.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "express-winston": "^2.5.1",

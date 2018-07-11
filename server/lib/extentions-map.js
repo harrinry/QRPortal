@@ -20,7 +20,9 @@ function INIT (){
 }
 
 function readExtMap(){
-  return JSON.parse( fs.readFileSync(root.resolve('/temp/extensions-map.json')));
+  const _path = root.resolve('/temp/extensions-map.json');
+  if (!fs.existsSync(_path)) INIT();
+  return JSON.parse( fs.readFileSync(_path));
 }
 
 module.exports = {

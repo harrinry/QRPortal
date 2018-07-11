@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StaticOverlay, Header, Body, ParseQueryString, Radio, GetTitleFromURL, lOADDETAILS, LOADRULESLISTSANDDETAILS } from './components/index';
+import { StaticOverlay, Header, Body, ParseQueryString, Radio, GetTitleFromURL, lOADDETAILS, LOADRULESLISTSANDDETAILS, UpdateURL } from './components/index';
 
 class App extends React.Component {
 
@@ -12,7 +12,7 @@ class App extends React.Component {
     const qryParams = ParseQueryString( url.search );
     const { rlH, rlH2, rlDH } = qryParams;
     let urlApprouved = true;
-
+    UpdateURL(rlH, rlDH, rlH2);
     GetTitleFromURL( rlH, 
       ( title ) => {
         Radio.emit( LOADRULESLISTSANDDETAILS, rlH, rlH2, title );
