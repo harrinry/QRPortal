@@ -3,10 +3,13 @@ const { staticRoutes } = require('./constants');
 
 function initiateStaticRoutes( expressApp ){
 
-  expressApp.use( express.static( staticRoutes.static.name ) );
-  expressApp.get( staticRoutes.static.url, ( req, res ) => {
-    res.sendFile( staticRoutes.static.PATH );
-  });
+  for (let i = 0; i < staticRoutes.length; i++) {
+    const route = staticRoutes[i];
+    expressApp.use( express.static( route.name ) );
+    expressApp.get( route.url, ( req, res ) => {
+      res.sendFile( route.PATH );
+    });
+  }
 }
 
 module.exports = initiateStaticRoutes;
