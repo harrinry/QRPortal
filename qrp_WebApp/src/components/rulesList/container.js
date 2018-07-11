@@ -1,6 +1,6 @@
 import React from 'react';
 import { RulesList, RuleDetails, Radio, APIQuery, RETURNTOSTART, UpdateURL, isStandard } from '../index';
-import {lOADDETAILS, SELECTME} from './actions';
+import {lOADDETAILS} from './actions';
 
 const localClassName = ['rule-container', 'block'],
   sp = ' ';

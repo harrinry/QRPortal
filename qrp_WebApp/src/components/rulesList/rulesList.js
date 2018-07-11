@@ -1,5 +1,5 @@
 import React from 'react';
-import { UpdateURL,Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery, LISTLENGTH, SELECTME, SELECTME2, UNSELECTME, UNSELECTME2 } from '../index';
+import { UpdateURL,Radio, lOADDETAILS, StandardList, RuleListRowElement, APIQuery, LISTLENGTH } from '../index';
 
 const prefix = 'keyx_',
   standardHeaders = [ 'ID', 'Name', 'Critical?'],
