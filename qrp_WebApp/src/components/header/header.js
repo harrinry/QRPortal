@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, HIDEOVERLAY, lOADDETAILS, APIQuery, LOADRULESLISTSANDDETAILS} from '../index';
+import { Radio, RETURNTOSTART, LOADRULESLIST, Search, dynOvlSettings, SHOWOVERLAY,BodyElement, Column, LOADRULESLISTSANDDETAILS} from '../index';
 import Axios from 'axios';
 
 export default class Header extends React.Component{
