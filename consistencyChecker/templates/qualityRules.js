@@ -5,7 +5,7 @@ module.exports = {
   itemProps:[
     {name: 'id', type: 'number'},
     {name: 'name', type: 'string'},
-    {name: 'href', type: 'string'},
+    {name: 'href', type: 'string', method: 'hrefCheck'},
     {name: 'critical', type: 'boolean'}
   ],
   reportFile: 'quality-rule-links'

@@ -15,7 +15,7 @@
     "build--watch": "node_modules/.bin/webpack-cli --mode development --watch",
     "build--production": "node_modules/.bin/webpack-cli --mode production",
     "test": "node_modules/.bin/mocha --require ./test/testHelper.js ./test/**/*Spec.js",
-    "check": "node consistencyCheck/runCheck.js"
+    "check": "node consistencyChecker/runCheck.js"
   },
   "dependencies": {
     "adm-zip": "^0.4.11",
