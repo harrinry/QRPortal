@@ -7,14 +7,13 @@ function getTemplates(){
   return templateFiles.map( fileName => require(PATH.toString() + '/' + fileName));
 }
 
-function matchTemplate( url ){
-  const templates = getTemplates(),
-    len = templates.length;
+const TEMPS = getTemplates();
 
-  for (let i = 0; i < len; i++) {
-    const identifier = templates[i].identifier;
+function matchTemplate( url ){
+  for (let i = 0; i < TEMPS.length; i++) {
+    const identifier = TEMPS[i].identifier;
     if (identifier.test( url )) {
-      return templates[i];
+      return TEMPS[i];
     }
   }
 }
