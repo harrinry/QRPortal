@@ -30,7 +30,9 @@ export default class RulesList extends React.Component{
             } else return Object.assign({}, e, {selected:false});
           } );
         }
-        this.setState({els: _data || res.data, els2: []});
+        const els = _data || res.data;
+        const e2 = els.filter( e => e.hasOwnProperty('href'));
+        this.setState({els: e2, els2: []});
       });
     }
     if ( props.href2 && this.props.href2 !== props.href2 ){
@@ -53,8 +55,9 @@ export default class RulesList extends React.Component{
             } else return Object.assign({}, e, {selected:false});
           } );
         }
-
-        this.setState({els: els, els2: _data || res.data});
+        const els2 = _data || res.data;
+        const e2 = els2.filter( e => e.hasOwnProperty('href'));
+        this.setState({els: els, els2: e2});
         
       });
     }
