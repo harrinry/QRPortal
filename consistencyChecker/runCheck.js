@@ -7,7 +7,7 @@ globSync('rest', ( path, fileName, contents ) => {
   const data = JSON.parse(contents);
   const template = matchTemplate(path);
   if( template ){
-    const propsLength = template.itemProps.length;
+    const propsLength = template.itemProps ? template.itemProps.length : undefined;
     const R = getReporter(template.reportFile);
     if(template.type === 'array' ? !Array.isArray(data) : (typeof data !== template.type)) console.log(`path: ${path} | fileName: ${fileName} | error: TYPE ERROR`);
     else {
@@ -22,7 +22,7 @@ globSync('rest', ( path, fileName, contents ) => {
             if (!item.hasOwnProperty(name) || item[name] === null ) {
               R.report( path, {index: i, type: 'missing property', msg: `the property ${name} is missing from the item` });
             } else {
-              if ( typeof item[name] !== type ) {
+              if ( type !== 'array' ? (typeof item[name] !== type) : Array.isArray(item[name]) ) {
                 R.report( path, {index: i, type: 'property type missmatch', msg: `the property ${name} does not match defined type` });
               }
 
@@ -33,6 +33,29 @@ globSync('rest', ( path, fileName, contents ) => {
                 if (!valid) {
                   R.report( path, {index: i, type: 'data validation', msg: `the property value of ${name} failed the validation check: ${method}` });
                 }
+              }
+            }
+          }
+        }
+        break;
+      }
+      case 'object': {
+        for (let x = 0; x < propsLength; x++) {
+          const { name, type, method } = template.props[x];
+          console.log('testing');
+          if (!data.hasOwnProperty(name) || data[name] === null ) {
+            R.report( path, {index: null, type: 'missing property', msg: `the property ${name} is missing from object` });
+          } else {
+            if ( type !== 'array' ? (typeof data[name] !== type) : Array.isArray(data[name]) ) {
+              R.report( path, {index: null, type: 'property type missmatch', msg: `the property ${name} does not match defined type` });
+            }
+
+            if (method) {
+              const _method = methods[method];
+              const valid = _method( data[name] );
+
+              if (!valid) {
+                R.report( path, {index: null, type: 'data validation', msg: `the property value of ${name} failed the validation check: ${method}` });
               }
             }
           }
