@@ -1,5 +1,5 @@
 import React from 'react';
-import {LOADRULESLIST, Radio, Search} from '../index';
+import {LOADRULESLIST, Radio} from '../index';
 
 const localClassName = 'RuleInfo-container',
   standardClass = 'R50-margins',
@@ -7,11 +7,8 @@ const localClassName = 'RuleInfo-container',
   sp = ' ';
 
 function queryFromTag( tagValue ){
-  
-  Search(tagValue.id, 'qualityStandards')
-    .then( res => {
-      Radio.emit(LOADRULESLIST, res.data.resHref, res.data.name);
-    });
+  const url = `AIP/quality-standards/${tagValue.standard}/items/${tagValue.id}/quality-rules`;
+  Radio.emit(LOADRULESLIST, url, tagValue.id);
 }
 
 export default class RuleDetails extends React.Component{
@@ -19,7 +16,7 @@ export default class RuleDetails extends React.Component{
     if (this.props.data){
 
       const criticalblock = this.props.data.critical ? (<div className='critical-container'>{' '}</div>) : ('');
-      const weightblock = this.props.data.weight ? (<div className='weight-container'>{this.props.data.weight}</div>) : ('');
+      const weightblock = this.props.data.maxWeight ? (<div className='weight-container'>{this.props.data.maxWeight}</div>) : ('');
       const remediationblock = this.props.data.remediation ? (<div className='remediation-container detailssection'><p className='rulesection'>Remediation</p><p>{this.props.data.remediation}</p></div>) : ('');
       const rationaleblock = this.props.data.rationale ? (<div className='rationale-container detailssection'><p className='rulesection'>Rationale</p><p>{this.props.data.rationale}</p></div>) : ('');
       const sampleblock = this.props.data.sample ? (<div className='sample-container detailssection'><p className="rulesection">Sample</p><pre><code>{this.props.data.sample}</code></pre></div>) : ('');

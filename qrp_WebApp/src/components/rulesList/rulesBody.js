@@ -12,7 +12,7 @@ export default class RulesBody extends React.Component{
     return (
       <div className={this.getContainerClass( this.props )}>
         <RulesTitle icon={this.props.icon} title={this.props.title} />
-        <RulesContainer href={this.props.href} />
+        <RulesContainer href={this.props.href} href2={this.props.href2}/>
       </div>
     );
   }

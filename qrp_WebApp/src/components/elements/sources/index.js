@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, APIQuery, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, EXTENTIONNAMES} from '../../index';
+import {BodyElementSources, BodyElement, Column,BodyBlock, BodyTitle, Radio, AIPSources, dynOvlSettings, LOADRULESLIST, SHOWOVERLAY, HIDEOVERLAY, EXTENTIONNAMES} from '../../index';
 import formatVersionName from './versionNamePP';
 
 export default class Sources extends React.Component{
@@ -33,7 +33,9 @@ export default class Sources extends React.Component{
       return res;
     };
 
-    APIQuery( 'extensions.json?env=webapp', (res) => this.setState({data: OnMountFilter(res.data)}));
+    Axios.get( 'rules/extensions.json')
+      .then(res => this.setState({data: OnMountFilter(res.data)}))
+      .catch(err => console.log(err));
   }
 
   render(){
@@ -44,7 +46,7 @@ export default class Sources extends React.Component{
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {
-            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => Axios.get(t.href).then( res => this.onClickHandler(res, t.name)).catch(err => console.log(err.stack))} id={t.id} />;
+            return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => this.loadVersions(t)} id={t.id} />;
           })}</BodyBlock>
       </div>);
     }
@@ -52,8 +54,14 @@ export default class Sources extends React.Component{
     return (<div></div>);
   }
 
+  loadVersions( eData ){
+    Axios.get('rules/extensions?q='+ eData.href )
+      .then( res => this.onClickHandler(res, eData.name))
+      .catch( err => console.log(err));
+  }
+
   onClickHandler( res, name ){
-    const data = res.data;
+    const data = res.data || res;
     let ref = data.map( e => {
       return {
         id: e.name,
@@ -68,7 +76,7 @@ export default class Sources extends React.Component{
   buildOverlayElemnents( data, name ){
     return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id + name} value={formatVersionName(e.name)} onclick={()=> {
-        Radio.emit( LOADRULESLIST, e.href, EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
+        Radio.emit( LOADRULESLIST, e.href+'/quality-rules', EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
     </Column>);

@@ -1,0 +1,41 @@
+.menuItem{
+  display: block;
+  height: 50px;
+  cursor: pointer;
+  transition: all linear 400ms;
+}
+
+.menuItem.selected{
+  background-color: aqua; /* temp color */
+}
+
+.menuItem:hover{
+  background-color: rgba(0,0,0,0.03);
+}
+
+.LeftBar.Closed .NavItem .menuItem{
+  height: 0px;
+  opacity: 0;
+  transition: all linear 400ms;
+}
+
+.NavItem.Open .menuItem > .menuItem-title{
+  opacity: 1;
+  transition: all linear 400ms;
+}
+
+.NavItem.Open .menuItem{
+  color: #0D0D0D;
+  opacity: 1;
+  transition: all linear 400ms;
+}
+
+.menuItem > .menuItem-title{
+  opacity: 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 50px;
+  margin-left: 30px;
+  transition: all linear 400ms;
+}
+

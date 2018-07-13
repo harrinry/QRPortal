@@ -2,21 +2,21 @@ import { TECHNOLOGY, BUSINESSCRITERIA, QUALITYSTANDARD, EXTENTION, CASTAIP } fro
 import { EXTENTIONNAMES } from '../components/elements/sources/extentionNames';
 import prettyPrintVersion from '../components/elements/sources/versionNamePP';
 import Axios from 'axios';
-const technos = 'technologies.json?env=webapp';
-const businessCriteriaList = 'business-criteria.json';
+const technos = 'rules/technologies.json';
+const businessCriteriaList = 'rest?q=business-criteria.json';
 
 export default function deriveNameFromURL( url, callback, errorHandler ){
   if ( !url ) return;
   const urlType = getUrlType( url );
   switch (urlType) {
   case TECHNOLOGY:
-    return requestAndFilter( technos, url, callback, errorHandler );
+    return requestAndFilterTechnos( technos, url, callback, errorHandler );
   case EXTENTION:
     return callback( getNameFromExtentionUrl( url ));
   case BUSINESSCRITERIA:
-    return requestAndFilter( businessCriteriaList, url, callback, errorHandler );
+    return requestAndFilterBC( businessCriteriaList, url, callback, errorHandler );
   case QUALITYSTANDARD:
-    return callback( getNameFromUrl( url ));
+    return callback( getNameFromQualityStandardUrl( url ));
   case CASTAIP:
     return callback( getCastAIPNameFromURL( url ));
   default:
@@ -31,23 +31,39 @@ function getCastAIPNameFromURL( url ){
   return fullName.substring(0, fullName.indexOf('_') );
 }
 
+function getNameFromQualityStandardUrl( url ){
+  const name = url.match( /[^/]+(?=\/items)/i );
+  return name;
+}
+
 function getNameFromUrl ( url ){
-  const name = url.match( /[^/]+(?=\.json)/i );
+  const name = url.match( /[^/]+(?=\/quality-rules)/i );
   return name;
 }
 
 function getNameFromExtentionUrl ( url ){
-  const name = url.substring( 28, url.indexOf( '/', 28) );
-  const version = url.substring( url.indexOf( '/', 28) + 1, url.indexOf('.json', 28) );
+  const name = url.substring( 32, url.indexOf( '/', 32) );
+  const versionIndex = url.indexOf( '/versions/', 32) + 10;
+  const version = url.substring( versionIndex, url.indexOf( '/', versionIndex));
   return EXTENTIONNAMES[ name ] + ' ' + prettyPrintVersion(version);
 }
 
-function requestAndFilter( query, url, callback, errorHandler ) {
+function requestAndFilterTechnos( query, url, callback, errorHandler ) {
   return Axios.get( query )
     .then( res => {
       const data = res.data;
       const element = data.find( entry => entry.href === url );
-      if ( callback ) callback( element.name );
+      callback( element.name );
+    })
+    .catch( err => errorHandler ? errorHandler( err ) : console.log( err ));
+}
+
+function requestAndFilterBC( query, url, callback, errorHandler ) {
+  return Axios.get( query )
+    .then( res => {
+      const data = res.data;
+      const element = data.find( entry => entry.href + '/quality-rules' === url );
+      callback( element.name );
     })
     .catch( err => errorHandler ? errorHandler( err ) : console.log( err ));
 }
@@ -71,7 +87,7 @@ function isExtention( url ){
 }
 
 function isCASTAIP( url ){
-  const reg = /(CAST_AIP\/)/i;
+  const reg = /(AIP\/versions\/)/i;
   return reg.test( url );
 }
 

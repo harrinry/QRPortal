@@ -1,11 +1,11 @@
 import React from 'react';
-import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings, EXTENTIONNAMES} from '../../../index';
+import {BodyElementSources, BodyElement, Column, Radio, APIQuery, SHOWOVERLAY, HIDEOVERLAY, LOADRULESLIST, dynOvlSettings} from '../../../index';
 import formatVersionName from '../versionNamePP';
 
 const id = 'AIP_id',
   ClassName = 'bodyElementTechno element-inline',
   val ='CAST AIP',
-  aipQuery = 'CAST_AIP.json';
+  aipQuery = 'AIP/versions.json';
 
 
 export default class AIPSources extends React.Component {
@@ -40,7 +40,7 @@ export default class AIPSources extends React.Component {
   buildOverlayElemnents( data ) {
     return (<Column key={JSON.stringify(data)} width={'20%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id} value={formatVersionName(e.name)} onclick={()=> {
-        Radio.emit( LOADRULESLIST, e.href, val.concat(' ', e.name));
+        Radio.emit( LOADRULESLIST, e.href+'/quality-rules', val.concat(' ', e.name));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
     </Column>);

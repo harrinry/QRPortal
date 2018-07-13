@@ -1,5 +1,5 @@
 import React from 'react';
-import { RulesBody, LOADRULESLIST, RETURNTOSTART, Radio, UNSELECTME, UpdateURL, lOADDETAILS} from '../../index';
+import { RulesBody, LOADRULESLIST, RETURNTOSTART, Radio, UNSELECTME, UpdateURL, lOADDETAILS, LOADRULESLISTSANDDETAILS} from '../../index';
 
 
 const localClassName = ['rulesList-container', 'static-overlay'],
@@ -14,15 +14,26 @@ export default class Rules extends React.Component{
 
     Radio.listen( LOADRULESLIST, this.LoadRuleList.bind(this));
     Radio.listen( RETURNTOSTART, this.hideRuleList.bind(this));
+    Radio.listen( LOADRULESLISTSANDDETAILS, this.loadLists.bind(this));
+  }
+
+  loadLists( rulesListUrl, nextRuleList, name ){
+    this.setState({
+      rulesVisible: true,
+      title: name,
+      rulesHref: rulesListUrl,
+      rulesHref2: nextRuleList
+    });
   }
 
   hideRuleList(){
     this.setState({
       rulesVisible: false,
       rulesHref: undefined,
+      rulesHref2: undefined,
       title: undefined
     });
-    history.pushState(null, null, '/');
+    history.pushState(null, null, '/rules');
     Radio.emit(UNSELECTME);
   }
 
@@ -34,7 +45,7 @@ export default class Rules extends React.Component{
       rulesHref: url,
     });
     Radio.emit(lOADDETAILS);
-    UpdateURL(url, name);
+    UpdateURL(url);
   }
 
   render(){
@@ -42,7 +53,8 @@ export default class Rules extends React.Component{
       <RulesBody visible={this.state.rulesVisible} 
         icon={this.state.title} 
         title={this.state.title}
-        href={this.state.rulesHref}/>
+        href={this.state.rulesHref}
+        href2={this.state.rulesHref2}/>
     );
   }
 

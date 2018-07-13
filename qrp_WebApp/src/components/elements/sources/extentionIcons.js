@@ -25,4 +25,8 @@ export const EXTENTIONICONS = {
   'python':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.python.png',
   'shell':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.shell.png',
   'peoplesoft':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.peoplesoft.png',
+  'cpp': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
+  'wbslinker': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.wbslinker.png',
+  'nosqljava': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.nosqljava.png',
+  'jeerules': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png'
 };

@@ -1,0 +1,200 @@
+/*body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #F2F2F2;
+  width: 100%;
+  height: 100vh;
+}
+
+.blk{display: block;}
+.iln{display: inline;}
+.flxr{display: flex; flex-direction: row}
+.flxc{display: flex; flex-direction: column}
+.std-bgc{background-color: #F2F2F2;}
+.App { display: block; text-align: center;}
+
+.LeftBar{
+  background-color: #F2F2F2;
+  height: 100vh;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.LeftBar.flxc.Closed{
+  width: 85px;
+  animation-duration: 0.2s;
+  animation-name: slideout;
+  animation-timing-function: ease-out;
+}
+
+.LeftBar.flxc.Open{
+  width: 365px;
+  animation-duration: 0.2s;
+  animation-name: slidein;
+  animation-timing-function: ease-out;
+}
+
+.LeftBar.flxc > .Top.flxr {
+  width: 100%;
+  height: 85px;
+  cursor: pointer;
+}
+
+.LeftBar.flxc > .Top.flxr:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.Top > .Logo {
+  width: 25px;
+  margin: auto 30px;
+}
+
+.Title.Open {
+  line-height: 85px;
+  margin: 0 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0D0D0D;
+  opacity: 1;
+  animation-duration: 0.4s;
+  animation-name: fadein;
+  animation-timing-function: ease-in-out;
+}
+
+.Title.Closed {
+  opacity: 0;
+  width: 0;
+}
+
+/*.LeftBar > .Nav{
+  display: flex;
+  flex-direction: column;
+}
+
+.LeftBar.flxc > .Bottom {
+  display: flex;
+  width: 100%;
+  height: 85px;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.LeftBar.flxc > .Bottom:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.Bottom > .ArrowSideBar {
+  width: 25px;
+  margin: auto 30px auto auto;
+  /*margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.Bottom > .ArrowSideBar.Open {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  margin: auto 30px auto auto;
+  width: 25px;
+  /*margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.NavItem{
+  min-height: 50px;
+  cursor: pointer;
+}
+
+.DropDown{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 8px 0 8px;
+  border-color: #0D0D0D transparent transparent transparent;
+}
+
+.NavItem:hover{
+  background-color: rgba(0,0,0,0.03);
+}
+
+.LeftBar.Closed .NavItem{
+  opacity: 0;
+}
+
+.NavItem.Open{
+  color: #0D0D0D;
+  opacity: 1;
+  animation-duration: 0.4s;
+  animation-name: fadein;
+  animation-timing-function: ease-in-out;
+}
+
+.NavItem .Name{
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 50px;
+  margin-left: 30px;
+}
+
+.NavItem.Open > .dropdown-container{
+  height: auto;
+}
+
+.NavItem .DropDown{
+  margin: auto 50px;
+}
+
+.dropdown-container{
+  height: 0px;
+  cursor: pointer;
+}
+
+.dropdown-container > div{
+  height: 0px;
+  opacity: 0;
+}
+
+.NavItem.Open > .dropdown-container > div{
+  opacity: 1;
+}*/
+
+.menuItem{
+  display: block;
+  height: 50px;
+  cursor: pointer;
+}
+
+.menuItem.selected{
+  background-color: aqua; /* temp color */
+}
+
+.menuItem:hover{
+  background-color: rgba(0,0,0,0.03);
+}
+
+.LeftBar.flxc.Closed .NavItem .menuItem{
+  opacity: 0;
+}
+
+.NavItem.flxc.Open .menuItem{
+  color: #0D0D0D;
+  opacity: 1;
+  animation-duration: 0.4s;
+  animation-name: fadein;
+  animation-timing-function: ease-in-out;
+}
+
+.menuItem > .menuItem-title{
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 50px;
+  margin-left: 30px;
+}
+
