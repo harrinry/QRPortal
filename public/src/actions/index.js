@@ -1,4 +1,4 @@
-import { TOGGLENAVBAR, SETSELECTEDNAVITEM } from './types';
+import { TOGGLENAVBAR, SETSELECTEDNAVITEM, OPENMENUELEMENT } from './types';
 
 export function toggleNavBar(){
   return {
@@ -10,5 +10,12 @@ export function setSelectedNavItem( ref ){
   return {
     type: SETSELECTEDNAVITEM,
     payload: ref
+  };
+}
+
+export function openMenuElement( index ){
+  return {
+    type: OPENMENUELEMENT,
+    payload: index
   };
 }

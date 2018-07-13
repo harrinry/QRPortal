@@ -1,7 +1,7 @@
 import React from 'react';
-import MenuItem from '../menuItem/menuItem';
-import { createClassName } from '../../common/lib';
-import './style.css';
+import MenuItem from './menuItem';
+import { createClassName } from '../common/lib';
+import '../style/navItem.css';
 import Axios from 'axios';
 
 export default class NavItem extends React.PureComponent {
@@ -9,7 +9,6 @@ export default class NavItem extends React.PureComponent {
     super(props);
 
     this.state = {
-      isOpen: false,
       children: []
     };
 
@@ -27,22 +26,9 @@ export default class NavItem extends React.PureComponent {
 
   }
 
-  onExpand(event){
-    const r = {
-      0:'nv_' + this.props.name,
-      1: 'nv_' + this.props.name + 'ddIcon'
-    };
-    if ( event.target !== this.refs[r[0]] && event.target !== this.refs[r[1]] ) return;
-    this.setState( (preState) => {
-      return {
-        isOpen: preState.isOpen ? false : true
-      };
-    });
-  }
-
   render() {
     return (
-      <div className={createClassName('NavItem', 'flxc', (this.state.isOpen ? 'Open' : undefined))} onClick={this.onExpand.bind(this)}>
+      <div className={createClassName('NavItem', 'flxc', (this.props.open ? 'Open' : undefined))} onClick={() => this.props.onMenuOpen(this.props.index)}>
         <div className={'flxr jsb minh50p'} ref={'nv_' + this.props.name}>
           <div className={'Name'}>{this.props.name}</div>
           <div className={'DropDown'} ref={'nv_'+this.props.name+'ddIcon'}></div>

@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
-import { toggleNavBar, setSelectedNavItem } from '../actions/index';
-import NavBar from '../navBar/navbar';
+import { toggleNavBar, setSelectedNavItem, openMenuElement } from '../actions/index';
+import NavBar from '../components/navbar';
 
 const mapStateToProps = (state) => {
   return {
     isOpen: state.navBar.isOpen,
     selected: state.navBar.selected,
-    children: state.navItems
+    children: state.navItems,
   };
 };
 
@@ -15,10 +15,14 @@ const mapDispatchToProps = (dispatch) => {
     onClick: () => {
       dispatch(toggleNavBar());
     },
-    onItemClick: ( ref, props, title ) => {
+    onMenuOpen: ( index ) => {
+      dispatch( openMenuElement(index) );
+    },
+    onItemClick: ( ref, props, title, data ) => {
       dispatch(setSelectedNavItem(ref));
       console.log( props );
       console.log( title );
+      console.log( data );
     }
   };
 };
