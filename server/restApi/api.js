@@ -1,5 +1,5 @@
 const express = require('express');
-const { mainWild } = require('../routes/routes');
+const { main } = require('../routes/routes');
 const options = require('./options');
 const errHandler = require('../middleware/errorHandler');
 const concatQueries = require('./concatQueries');
@@ -9,7 +9,7 @@ const normalize = require('../lib/normalize');
 
 let apiRouter = express.Router();
 
-apiRouter.get(mainWild, ( req, res ) => {
+apiRouter.get(main, ( req, res ) => {
   const queryKey = 'q', query = QueryParser(req.query, queryKey);
   if (query.length > 1) {
     StatLogger.info( query );
@@ -17,10 +17,12 @@ apiRouter.get(mainWild, ( req, res ) => {
   } else if ( query.length === 1 ){
     StatLogger.info( query );
     res.sendFile(normalize(query[0]), options, (err) => errHandler(err, res));
-  } else {
-    StatLogger.info( req.url );
-    res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
   }
+});
+
+apiRouter.get('/aip*', (req, res) => {
+  StatLogger.info( req.url );
+  res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
 });
 
 module.exports = apiRouter;
