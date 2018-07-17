@@ -11,12 +11,12 @@ let apiRouter = express.Router();
 
 apiRouter.get(mainWild, ( req, res ) => {
   const queryKey = 'q', query = QueryParser(req.query, queryKey);
-  if (query.length > 0) {
+  if (query.length > 1) {
     StatLogger.info( query );
     concatQueries( ( ret )=> res.json(ret), (err) => errHandler(err, res), ...query );
   } else {
     StatLogger.info( req.url );
-    res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
+    res.sendFile(normalize(query[0]), options, (err) => errHandler(err, res));
   }
 });
 
