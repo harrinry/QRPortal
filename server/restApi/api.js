@@ -10,9 +10,9 @@ const normalize = require('../lib/normalize');
 let apiRouter = express.Router();
 
 apiRouter.get(mainWild, ( req, res ) => {
-  if (req.query.length > 0) {
-    const queryKey = 'q', query = QueryParser(req.query, queryKey);
-    StatLogger( query );
+  const queryKey = 'q', query = QueryParser(req.query, queryKey);
+  if (query.length > 0) {
+    StatLogger.info( query );
     concatQueries( ( ret )=> res.json(ret), (err) => errHandler(err, res), ...query );
   } else {
     StatLogger.info( req.url );
