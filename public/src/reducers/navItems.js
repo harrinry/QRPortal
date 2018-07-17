@@ -3,7 +3,7 @@ import { OPENMENUELEMENT } from '../actions/types';
 const initState = [ 
   {
     name: 'Standards',
-    href: '/rest?q=quality-standards.json',
+    href: '/rest/AIP/quality-standards.json',
     open: false
   }, 
   {

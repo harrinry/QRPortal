@@ -23,7 +23,6 @@ export default class NavItem extends React.PureComponent {
         }))
         .catch( e => console.log(e));
     }
-
   }
 
   render() {
