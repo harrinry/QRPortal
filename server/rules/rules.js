@@ -8,8 +8,6 @@ const extensionsMap = require('../lib/extentions-map');
 extensionsMap.INIT();
 let extVersionMap;
 
-setTimeout(() => extVersionMap = extensionsMap.readExtMap(), 400);
-
 let rulesRouter = express.Router();
 
 rulesRouter.get(main, (req, res) => {
@@ -58,6 +56,7 @@ rulesRouter.get('/extensions.json', (req, res) => {
 
 rulesRouter.get('/extensions', ( req, res ) => {
   const hrefKey = req.query.q;
+  if ( !extVersionMap ) extVersionMap = extensionsMap.readExtMap();
   if( extVersionMap.hasOwnProperty( hrefKey ) ){
     res.json( extVersionMap[hrefKey] );
   } else {

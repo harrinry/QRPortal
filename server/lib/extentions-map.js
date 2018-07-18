@@ -21,7 +21,7 @@ function INIT (){
 
 function readExtMap(){
   const _path = root.resolve('/temp/extensions-map.json');
-  if (!fs.existsSync(_path)) INIT();
+  if (!fs.existsSync(_path)) return;
   return JSON.parse( fs.readFileSync(_path));
 }
 

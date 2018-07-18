@@ -1,6 +1,5 @@
 import React from 'react';
 // import { createClassName } from '../common/lib';
-import '../style/arrayElement.css';
 import ArrayCell from './arrayCell';
 
 export default class ArrayElement extends React.PureComponent{
