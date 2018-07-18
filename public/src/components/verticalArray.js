@@ -10,9 +10,9 @@ export default class VerticalArray extends React.PureComponent{
     return (<div className={createClassName('flxc', 'flxGrw1', 'ovfyauto')}>
       <table>
         <tbody>
-          <ArrayElement onItemClick={this.props.onHeaderItemClick} header={true}>{this.props.headers.map( hVal => new headerData(hVal))}</ArrayElement>
+          <ArrayElement onItemClick={this.props.onHeaderItemClick} values={this.props.headers} header={true}>{this.props.headers.map( hVal => new headerData(hVal))}</ArrayElement>
           {this.props.children.map( obj => 
-            <ArrayElement onItemClick={this.props.onItemClick} header={false}>
+            <ArrayElement values={obj} onItemClick={this.props.onItemClick} header={false}>
               {this.props.values.map( key => new ArrayElementData((key !== 'critical' ? obj[key] : undefined), key === 'critical' ? obj.critical : false ) )}
             </ArrayElement>)}
         </tbody>
