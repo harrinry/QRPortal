@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleNavBar, setSelectedNavItem, openMenuElement, updateVerticalArray } from '../actions/index';
+import { toggleNavBar, setSelectedNavItem, openMenuElement, updatePrimaryVerticalArray } from '../actions/index';
 import NavBar from '../components/navbar';
 import Axios from 'axios';
 
@@ -27,9 +27,11 @@ const mapDispatchToProps = (dispatch) => {
         .catch(err => console.log(err))
         .then(res => res.json())
         .then( data => {
-          if (Array.isArray( data )) dispatch( updateVerticalArray(data) );
-        } );
-      
+          if (Array.isArray( data )) dispatch( updatePrimaryVerticalArray({
+            headers: ['ID', 'Name', 'Critical'],
+            keys: ['id', 'name', 'critical'],
+            data: data}) );
+        });
     }
   };
 };
