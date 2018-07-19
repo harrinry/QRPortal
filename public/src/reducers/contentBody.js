@@ -1,4 +1,4 @@
-import { UPDATEPRIMARYVERTICALARRAY, UPDATEDETAILS } from '../actions/types';
+import { UPDATEPRIMARYVERTICALARRAY, UPDATEDETAILS, UPDATESECONDARYVERTICALARRAY } from '../actions/types';
 
 const initState = {
   details: null,
@@ -46,6 +46,14 @@ const contentBodyReducer = (state = initState, action) => {
     return {
       ...state,
       primaryArray: action.payload
+    };
+  case UPDATESECONDARYVERTICALARRAY:
+    return {
+      ...state,
+      secondaryArray: {
+        ...state.secondaryArray,
+        data: action.payload
+      }
     };
   case UPDATEDETAILS: 
     return {

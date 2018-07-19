@@ -20,7 +20,7 @@ export default class ContentBody extends React.PureComponent{
       <div className={createClassName('contentBody', 'flxr', 'std-bgc', 'vh100', 'flxGrw1')}>
         {primaryArrayBlock}
         {secondaryArrayBlock}
-        { primaryArrayBlock ? <DetailsPanel data={this.props.details}/> : undefined}
+        {primaryArrayBlock ? <DetailsPanel data={this.props.details}/> : undefined}
       </div>
     );
   }
