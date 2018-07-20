@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1020060",
     "critical": false,
     "maxWeight": 5,
-    "description": "You can expose sensitive information, slowing down the browser or break workflow of websites if you let log statements in production code. This rule is compliant with OWASP 2013 and 2017 A6 - Sensitive Data Exposure.",
+    "description": "You can expose sensitive information, slowing down the browser or break workflow of websites if you let log statements in production code. This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. If write access is not properly restricted, then attackers can modify and possibly delete the data, causing incorrect results and possibly a denial of service.",
     "reference": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10_2017-A6-Sensitive_Data_Exposure",

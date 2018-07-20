@@ -7,7 +7,7 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "An attacker can use the combination of form and formaction markups to use the form to do spam.",
     "reference": "https://html5sec.org/#1",
-    "sample": "<form id=\"test\"></form><button form=\"test\" formaction=\"javascript:alert(1)\">X</button>\n<form><button formaction=\"javascript:alert(1)\">X</button></form>",
+    "sample": "<form id=\"test\"><button form=\"test\" formaction=\"javascript:alert(1)\">X</button></form>\n<form><button formaction=\"javascript:alert(1)\">X</button></form>",
     "total": "Number of HTML Contents",
     "businessCriteria": [
         {
