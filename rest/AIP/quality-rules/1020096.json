@@ -9,9 +9,9 @@
     "rationale": "The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session.",
     "reference": "https://cwe.mitre.org/data/definitions/614.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
     "remediation": "Always setting secure option when creating a cookie",
-    "remediationSample": "res.cookie('important_cookie', info, {domain: 'secure.example.com', path: '/admin', secure: true});",
-    "sample": "res.cookie('important_cookie', info, {domain: 'secure.example.com', path: '/admin'});",
-    "total": "The number of JavaScript Functions using cookies",
+    "remediationSample": "document.cookie = \"tagname=test;secure\";",
+    "sample": "document.cookie = \"tagname=test\";",
+    "total": "The number of JavaScript Functions assigning document.cookie",
     "businessCriteria": [
         {
             "id": 66031,

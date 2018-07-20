@@ -1,0 +1,43 @@
+{
+    "id": 1020736,
+    "name": "Avoid bypassing self-signed ssl certificate (Node.js)",
+    "href": "AIP/quality-rules/1020736",
+    "critical": true,
+    "description": "In Node.js, do not allow node server to accept self signed certificates and is not an secure behaviour. This rule is compliant with OWASP 2013 A5 and 2017 A6 - Security Misconfiguration",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure the developer will work with a list of trusted source. Thanks to Strict-Transport-Security header you will enforces secure (HTTP over SSL/TLS) connections to the server.",
+    "reference": "https://cwe.mitre.org/data/definitions/295.html \nhttps://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration \nhttps://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+    "remediation": "Do not disable NODE_TLS_REJECT_UNAUTHORIZED attributes",
+    "sample": "process.env.NODE_TLS_REJECT_UNAUTHORIZED = \"0\"; \nor \nexport NODE_TLS_REJECT_UNAUTHORIZED = \"0\";",
+    "total": "Number of NodeJS source code",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 5,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -8,9 +8,9 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. If write access is not properly restricted, then attackers can modify and possibly delete the data, causing incorrect results and possibly a denial of service.",
     "reference": "https://cwe.mitre.org/data/definitions/1004.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-    "remediationSample": "res.cookie('cookie', info, {domain: 'secure.example.com', path: '/admin'}); \nres.cookie.setHttpOnly(true);",
-    "sample": "res.cookie('cookie', info, {domain: 'secure.example.com', path: '/admin'});",
-    "total": "The number of JavaScript Functions using cookies",
+    "remediationSample": "document.cookie = \"tagname=test;HttpOnly\";",
+    "sample": "document.cookie = \"tagname=test\";",
+    "total": "The number of JavaScript Functions assigning document.cookie",
     "businessCriteria": [
         {
             "id": 66031,
