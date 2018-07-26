@@ -29,11 +29,23 @@ module.exports = {
       use: ['style-loader', 'css-loader']
     },
     {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
+    },
+    {
       test: /\.svg$/,
       loader: 'svg-inline-loader'
     }]
   },
   resolve: {
+    modules: [
+      path.resolve('./node_modules'),
+      path.resolve('./public/src')
+    ],
     extensions: ['.json', '.js', '.jsx', '.css']
   },
   devtool: 'source-map'

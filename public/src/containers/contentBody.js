@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
       if (data.href) {
         let action;
         const qs = /(\/quality-standards\/)/ig.test(data.href);
-        if(qs) {
+        if( qs ) {
           data.href+= '/items';
           action = updateSecondaryVerticalArray;
         } else action = updateDetails;
