@@ -1,0 +1,4 @@
+export const VIEW_TYPES = {
+  TILES_VIEW: 'TILES_VIEW',
+  MENU_VIEW: 'MENU_VIEW'
+};
