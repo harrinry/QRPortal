@@ -26,5 +26,6 @@ export const EXTENTIONNAMES = {
   'peoplesoft':'PeopleSoft Analyzer',
   'cpp': 'C/C++',
   'wbslinker': 'Web Services',
-  'nosqljava': 'NoSQL Analyzer'
+  'nosqljava': 'NoSQL Analyzer',
+  'jeerules': 'JEE Rules'
 };

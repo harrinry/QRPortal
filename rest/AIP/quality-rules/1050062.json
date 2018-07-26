@@ -1,0 +1,55 @@
+{
+    "id": 1050062,
+    "name": "Avoid empty catch blocks",
+    "href": "AIP/quality-rules/1050062",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "This metric reports all methods with at least one empty catch block (empty or only containing comments).\nIn a Try and Catch statement, Catch blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
+    "output": "This report lists all Artifacts with an empty catch block.\nIt provides the following information:\n- Artifact full name\n- Number of empty catch blocks",
+    "rationale": "An empty catch block defeats the purpose of exceptions.\nWhen an exception occurs, nothing happens and the program fails for an unknown reason. The application can be in an unknown state that will affect subsequent processing.\nSince the reason for the issue (the exception type and potential embedded message) are ignored, it will require more time to fix the issue.",
+    "reference": "An insider's guide to writing robust, understandable, maintainable, state-of-the-art ABAP programs - Part 3\nAndreas Blumenthal - Horst Keller \n\nhttp://www.javapractices.com/Topic16.cjp\nhttp://cwe.mitre.org/data/definitions/391.html",
+    "remediation": "The exception must be handled correctly according to its type.",
+    "remediationSample": "C#\n\ntry { ,,, }\ncatch ( MyException e)\n{\n   DoSomething();\n}\n\nABAP\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n      TEXT = OREF->GET_TEXT( ).\n      cleanup.\n      clear RESULT.\nENDTRY.",
+    "sample": "C#\n\ntry { ... }\ncatch ( MyException e)\n{\n   // DO NOTHING <= VIOLATION\n}\n\nABAP\n\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n* This CATCH block does not contain statements\n* and can be considered as not existing...\n* TEXT = OREF->GET_TEXT( ).\nENDTRY.",
+    "total": "This counts all artifacts.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1050001,
+            "name": "Objective-C",
+            "href": "AIP/technologies/1050001"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

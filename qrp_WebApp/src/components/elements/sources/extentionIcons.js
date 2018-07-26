@@ -27,5 +27,6 @@ export const EXTENTIONICONS = {
   'peoplesoft':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.peoplesoft.png',
   'cpp': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
   'wbslinker': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.wbslinker.png',
-  'nosqljava': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.nosqljava.png'
+  'nosqljava': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.nosqljava.png',
+  'jeerules': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png'
 };
