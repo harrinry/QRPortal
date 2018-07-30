@@ -19,7 +19,7 @@ globSync('rest', ( path, fileName, contents ) => {
           for (let x = 0; x < propsLength; x++) {
             const { name, type, method } = template.itemProps[x];
             
-            if (!item.hasOwnProperty(name) || item[name] === null ) {
+            if ( !item.hasOwnProperty(name) ) {
               R.report( path, {index: i, type: 'missing property', msg: `the property ${name} is missing from the item` });
             } else {
               if ( type !== 'array' ? (typeof item[name] !== type) : Array.isArray(item[name]) ) {

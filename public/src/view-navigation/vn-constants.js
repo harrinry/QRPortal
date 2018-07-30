@@ -4,12 +4,12 @@ export const VIEW_TYPES = {
 };
 
 export const CLASSES = {
-  navBarHeader: 'navBar_header',
-  navIcon: 'navBar_Icon',
-  fixed: 'fixed',
-  imgIcon: 'navBar_img_icon',
-  expanded: 'expandedNav',
-  navTitle: 'navBar_title',
+  navBarHeader: 'qrp_navBar_header',
+  navIcon: 'qrp_navBar_Icon',
+  fixed: 'qrp_fixed',
+  imgIcon: 'qrp_navBar_img_icon',
+  expanded: 'qrp_expandedNav',
+  navTitle: 'qrp_navBar_title',
 };
 
 export const ILP = {

@@ -5,6 +5,7 @@ import store from './store/index';
 import App from './containers/app';
 import './common/style.css';
 import './common/keyframes.css';
+import './marketing/cta-styles.css';
 
 window.STORE = store;
 
