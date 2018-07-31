@@ -38,5 +38,10 @@ module.exports = [
     name: 'admin',
     route: '/admin',
     router: 'router'
+  },
+  {
+    name: 'marketing',
+    route: '/mkt',
+    router: 'router'
   }
 ];
