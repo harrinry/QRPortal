@@ -1,3 +1,3 @@
 #!/bin/bash
 git fetch
-git checkout marketing marketing/
+git checkout marketing -- marketing/
