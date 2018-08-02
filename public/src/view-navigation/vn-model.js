@@ -12,12 +12,16 @@ const Nav = ( props ) => {
   const viewTypeIsMenu = props.viewType === VIEW_TYPES.MENU_VIEW ? true : false;
   return (
     <div className={createClassName(CLASSES.navBarHeader, CLASSES.fixed, (viewTypeIsMenu ? CLASSES.expanded: undefined ))}>
-      <div className={CLASSES.navIcon} onClick={props.goToLandingPage}>
+      <div className={createClassName(CLASSES.navIcon, CLASSES.extraRightMargin)} onClick={props.goToLandingPage}>
         <img src={'img/LogoStructuralRules.svg'} className={CLASSES.imgIcon} alt='logo' />
       </div>
       { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{ILP[lang].title}</div> : undefined }
-      <div className={CLASSES.navIcon}  onClick={props.setTilesView}>Tiles</div>
-      <div className={CLASSES.navIcon}  onClick={props.setMenuView}>Menu</div>
+      <div className={CLASSES.navIcon}  onClick={props.setTilesView}>
+        <img src={'img/tiles.svg'} className={CLASSES.imgIcon} alt='Tiles' />
+      </div>
+      <div className={CLASSES.navIcon}  onClick={props.setMenuView}>
+        <img src={'img/list.svg'} className={CLASSES.imgIcon} alt='Menu' />
+      </div>
     </div>
   );
 };

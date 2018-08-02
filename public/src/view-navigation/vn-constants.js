@@ -10,6 +10,7 @@ export const CLASSES = {
   imgIcon: 'qrp_navBar_img_icon',
   expanded: 'qrp_expandedNav',
   navTitle: 'qrp_navBar_title',
+  extraRightMargin: 'qrp_xmrgl_10'
 };
 
 export const ILP = {
