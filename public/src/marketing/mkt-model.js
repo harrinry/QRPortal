@@ -10,6 +10,10 @@ export default class MktContent extends React.PureComponent{
 
   }
 
+  componentWillReceiveProps(){
+    this.setState({content: []});
+  }
+
   componentDidUpdate(prevProps){
     if (this.props.techno !== prevProps.techno) {
       fetchNuggets( this.props.techno )

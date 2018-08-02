@@ -33,3 +33,7 @@ export function ConstructArray( ...elements ){
     if( e !== undefined && e !== null ) return e;
   });
 }
+
+export const COMMON_CLASSES = {
+  hidden: 'hidden'
+};

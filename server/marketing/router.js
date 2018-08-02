@@ -5,8 +5,9 @@ const errHandler = require('../middleware/errorHandler');
 
 let marketingRouter = express.Router();
 
-marketingRouter.get('/cta-styles.css', (req, res) =>{
-  res.sendFile('cta-styles.css', options, (err) => errHandler(err, res));
+marketingRouter.get(main+'css/:fileName', (req, res) => {
+  const file = req.params.fileName;
+  res.sendFile(file + '.css', options, (err) => errHandler(err, res));
 });
 
 marketingRouter.get(main+':nuggetList', (req, res) => {
