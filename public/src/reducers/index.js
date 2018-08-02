@@ -4,7 +4,7 @@ import navItemsReducer from './navItems';
 import contentBodyReducer from './contentBody';
 import viewTypeReducer from '../view-navigation/vn-reducers';
 import mktReducers from '../marketing/mkt-reducers';
-import NavigationHeaderReducers from '../navigation-header/nv-reducers';
+import NavigationHeaderReducers from '../path-navigation/nv-reducers';
 
 const rootReducer = combineReducers({
   navBar: navBarReducer,
