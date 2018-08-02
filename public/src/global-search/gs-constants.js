@@ -1,0 +1,1 @@
+export const SEARCHAPI ='search/qualityrules/?q=';
