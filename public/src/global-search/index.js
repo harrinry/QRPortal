@@ -1,16 +1,20 @@
-import ACTIONS from './gs-actions';
-import ACTIONTYPES from './gs-actions-type';
-import CONSTANTS from './gs-constants';
-import Component  from './gs-model';
-import reducers from './gs-reducers';
-import Resources from './gs-resources';
+import { connect } from 'react-redux';
+import Model from './gs-model';
+import { fetchSearchResults } from './gs-actions';
 
-
-export const viewNagivation = {
-  CONSTANTS: CONSTANTS,
-  ACTIONS: ACTIONS,
-  ACTIONTYPE: ACTIONTYPES,
-  COMPONENT: Component,
-  REDUCERS: reducers,
-  RESOURCSES: Resources
+const mapStateToProps = (state) => {
+  return {
+    viewType: state.viewType.viewType,
+    language: state.language.language
+  };
 };
+
+const mapDispatchToProps = ( dispatch ) => {
+  return {
+    fetchSearchResults: ( query ) => {
+      dispatch(fetchSearchResults( query ));
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Model);

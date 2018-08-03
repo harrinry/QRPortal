@@ -1,54 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { createClassName } from '../common/lib';
-import { CLASSES, VIEW_TYPES, ILP } from './vn-constants';
-import { setMenuView, setTilesView, goToLandingPage } from './vn-actions';
+import { createClassName } from 'common/';
+import { CLASSES, VIEW_TYPES, Imgs } from './vn-constants';
 import './style.css';
 
-const lang = 'EN'; // currently only default available
-
-const Nav = ( props ) => {
+const ViewNavigation = ( props ) => {
   const viewTypeIsMenu = props.viewType === VIEW_TYPES.MENU_VIEW ? true : false;
   return (
     <div className={createClassName(CLASSES.navBarHeader, CLASSES.fixed, (viewTypeIsMenu ? CLASSES.expanded: undefined ))}>
       <div className={createClassName(CLASSES.navIcon, CLASSES.extraRightMargin)} onClick={props.goToLandingPage}>
-        <img src={'img/LogoStructuralRules.svg'} className={CLASSES.imgIcon} alt='logo' />
+        <img src={Imgs.logo.default} className={CLASSES.imgIcon} alt={props.language.logo} />
       </div>
-      { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{ILP[lang].title}</div> : undefined }
+      { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{props.language.title}</div> : undefined }
       <div className={CLASSES.navIcon}  onClick={props.setTilesView}>
-        <img src={'img/tiles.svg'} className={CLASSES.imgIcon} alt='Tiles' />
+        <img src={viewTypeIsMenu ? Imgs.tiles.grey : Imgs.tiles.black} className={CLASSES.imgIcon} alt={props.language.tiles} />
       </div>
       <div className={CLASSES.navIcon}  onClick={props.setMenuView}>
-        <img src={'img/list.svg'} className={CLASSES.imgIcon} alt='Menu' />
+        <img src={viewTypeIsMenu ? Imgs.menu.black : Imgs.menu.grey} className={CLASSES.imgIcon} alt={props.language.menu} />
       </div>
     </div>
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setTilesView: () => {
-      dispatch(setTilesView());
-    },
-    setMenuView: () => {
-      dispatch(setMenuView());
-    },
-    goToLandingPage: () => {
-      console.log('return to landing page');
-      dispatch(goToLandingPage());
-    }
-  };
-};
-
-const mapStateToProps = (state) => {
-  return {
-    viewType: state.viewType.VIEW_TYPE
-  };
-};
-
-Nav.propTypes = {
-  viewType: PropTypes.string,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default ViewNavigation;

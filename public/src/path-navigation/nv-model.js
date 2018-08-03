@@ -1,11 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { CLASSES } from './nv-constants';
-import { createClassName, COMMON_CLASSES } from '../common/lib';
+import { createClassName, COMMON_CLASSES } from 'common/';
 import PathElement from './nv-pathItem';
-import { navigateTo } from './nv-actions';
-import { VIEW_TYPES } from '../view-navigation/vn-constants';
+import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import './style.css';
 
 const NavHeader = ( props ) =>{
@@ -19,23 +16,4 @@ const NavHeader = ( props ) =>{
   );
 };
 
-const mapDispatchToProps = ( dispatch ) => {
-  return {
-    gotoLocation: (props) => {
-      dispatch(navigateTo(props, props.index));
-    }
-  };
-};
-
-const mapStateToProps = (state) => {
-  return {
-    path: state.navHeader.path,
-    viewType: state.viewType.VIEW_TYPE
-  };
-};
-
-NavHeader.PropTypes = {
-  path: PropTypes.array
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavHeader);
+export default NavHeader;

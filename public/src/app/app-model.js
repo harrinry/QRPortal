@@ -1,7 +1,7 @@
 import React from 'react';
-import { createClassName } from '../common/lib';
-import NAV from '../nav/n-model';
-import Mktwrapper from '../marketing/mkt-connectedModel';
+import { createClassName } from 'common/';
+import NAV from 'nav/';
+import Mktwrapper from 'marketing/';
 
 export default class App extends React.PureComponent{
   render(){

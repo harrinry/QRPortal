@@ -13,8 +13,14 @@ export const CLASSES = {
   extraRightMargin: 'qrp_xmrgl_10'
 };
 
-export const ILP = {
-  EN: {
-    title: 'Structural Rules'
+export const Imgs = {
+  logo: {
+    default: 'img/LogoStructuralRules.svg'
+  },
+  tiles: {
+    black: 'img/tiles.svg',
+  },
+  menu: {
+    black: 'img/list.svg'
   }
 };
