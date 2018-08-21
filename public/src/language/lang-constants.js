@@ -6,3 +6,7 @@ export const EN = {
   logo: 'Logo',
   search: 'Search Rules',
 };
+
+export const LANGUAGES = {
+  EN: 'EN'
+};

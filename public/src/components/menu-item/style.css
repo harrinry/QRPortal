@@ -1,0 +1,21 @@
+.qrp_menuItem{
+  display: block;
+  height: 50px;
+  cursor: pointer;
+  transition: all linear 400ms;
+  width: 100%;
+}
+
+.qrp_menuItem.selected{
+  background-color: aqua; /* temp color */
+}
+
+.qrp_menuItem:hover{
+  background-color: rgba(0,0,0,0.03);
+}
+
+.qrp_menuItem > .qrp_menuItem-title{
+  line-height: 50px;
+  margin-left: 30px;
+}
+

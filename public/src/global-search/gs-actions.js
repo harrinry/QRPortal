@@ -15,7 +15,7 @@ const setSearchResults = ( data, query ) => {
   };
 };
 
-const errorHandler = ( err, query) => {
+const errorHandler = ( err, query ) => {
   return {
     type: ERROR_WHILE_FETCHING_SEARCH_RESULTS,
     payload: {

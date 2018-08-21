@@ -1,6 +1,7 @@
 export const VIEW_TYPES = {
   TILES_VIEW: 'TILES_VIEW',
   MENU_VIEW: 'MENU_VIEW',
+  key: 'VIEW_TYPE'
 };
 
 export const CLASSES = {
@@ -19,8 +20,10 @@ export const Imgs = {
   },
   tiles: {
     black: 'img/tiles.svg',
+    grey: 'img/tiles_grey.png'
   },
   menu: {
-    black: 'img/list.svg'
+    black: 'img/list.svg',
+    grey: 'img/list_grey.png'
   }
 };

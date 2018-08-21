@@ -1,2 +1,2 @@
-export { ConstructArray, createClassName, Struct, restQuery } from './lib';
-export { COMMON_CLASSES } from './constants';
+export { ConstructArray, createClassName, Struct, restQuery, readLocalStorage, setLocalStorage } from './lib';
+export { COMMON_CLASSES, LOCALSTORAGEKEY } from './constants';
