@@ -1,0 +1,1 @@
+export const spinner = 'lds-dual-ring';

@@ -4,14 +4,14 @@ import { createClassName, COMMON_CLASSES } from 'common/';
 import { CLASSES } from './constants';
 import './style.css';
 
-const MenuItem = ( props ) => {
+const MenuItem = ( {selected, title, href, onClick} ) => {
   return (
-    <div className={createClassName(CLASSES.menuItem, (props.selected ? COMMON_CLASSES.selected : undefined))} 
+    <div className={createClassName(CLASSES.menuItem, (selected ? COMMON_CLASSES.selected : undefined))} 
       onClick={ (e) => {
         e.stopPropagation();
-        return props.onClick( props.href, props.title); 
+        return onClick( href, title); 
       }}>
-      <span className={CLASSES.title}>{props.title}</span>
+      <span className={CLASSES.title}>{title}</span>
     </div>
   );
 };

@@ -8,7 +8,8 @@ export const COMMON_CLASSES = {
   flexGrow1: 'flxGrw1',
   defaultBackgroundColor:'std-bgc',
   detailsArea_mktContent: 'qrp_details_mkt_zone',
-  selected: 'selected'
+  selected: 'selected',
+  marginAuto: 'marginAuto'
 };
 
 export const LOCALSTORAGEKEY = 'CAST_SP';

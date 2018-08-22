@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { createClassName, COMMON_CLASSES } from '../../common/index';
+import { createClassName, COMMON_CLASSES } from 'common/index';
 import { CLASSES } from './constants';
 import './style.css';
 
@@ -9,13 +9,18 @@ class SubMenu extends React.PureComponent{
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
+      exeCount: 0
     };
   }
   
   toggleMenu(e){
     e.stopPropagation();
     this.setState( ( _state ) => { return { isOpen: !_state.isOpen }; } );
+    if( this.props.onClick ) {
+      this.props.onClick(this.state.exeCount);
+      this.setState( ( _state ) => { return { isOpen: _state.isOpen, exeCount: _state.exeCount + 1 }; } );
+    }
   }
 
   render(){

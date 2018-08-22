@@ -6,10 +6,10 @@ import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
 
-import { fetchSearchResults } from './global-search/gs-actions';
+// import { fetchSearchResults } from './global-search/gs-actions';
 
 window.STORE = store;
-window.query = ( query ) => fetchSearchResults(query);
+// window.query = ( query ) => fetchSearchResults(query);
 
 ReactDOM.render(
   <Provider store={store}>

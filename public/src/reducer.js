@@ -4,6 +4,7 @@ import mktReducers from 'marketing/mkt-reducers';
 import pathNavigationReducers from 'path-navigation/nv-reducers';
 import languageReducer from 'language/lang-reducers';
 import globalSearchReducer from 'global-search/gs-reducers';
+import MenuNavigationReducers from 'menu-navigation/mn-reducers';
 
 const rootReducer = combineReducers({
   viewType: viewTypeReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   path: pathNavigationReducers,
   language: languageReducer,
   search: globalSearchReducer,
+  navMenu: MenuNavigationReducers
 });
 
 export default rootReducer;
