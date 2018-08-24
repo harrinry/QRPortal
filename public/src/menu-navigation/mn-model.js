@@ -14,41 +14,40 @@ const NavigationMenu = ( props ) => {
     <div className={createClassName(CLASSES.menu, (props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <SubMenu title={ITEMS.STANDARDS}>
         <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc}>
-          {props.std_bc ? 
-            props.std_bc.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
+          {props.std_bc.data ? 
+            props.std_bc.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onItemClick(e.name, e.href);
-            }}/>) : 
-            <LoadingSpinner/>}
+            }}/>) : ( props.std_bc.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
         <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq}>
-          {props.std_cisq ? 
-            props.std_cisq.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
+          {props.std_cisq.data ? 
+            props.std_cisq.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onItemClick(e.name, e.href);
-            }}/>) : <LoadingSpinner/>}
+            }}/>) : ( props.std_cisq.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
         <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp}>
-          {props.std_owasp ? 
-            props.std_owasp.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
+          {props.std_owasp.data ? 
+            props.std_owasp.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onItemClick(e.name, e.href);
-            }}/>) : <LoadingSpinner/>}
+            }}/>) : ( props.std_owasp.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
       </SubMenu>
       <SubMenu title={ITEMS.TECHNOLOGIES} onClick={props.populateTechnologies}>
-        {props.technologies ? 
-          props.technologies.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
+        {props.technologies.data ? 
+          props.technologies.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
             props.setSelected(JSON.stringify(e));
             props.onItemClick(e.name, e.href);
-          }}/>) : <LoadingSpinner/>}
+          }}/>) : ( props.technologies.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
-      <SubMenu title={ITEMS.EXTENTIONS} onClick={props.populateExtentions}>
-        {props.extentions ? 
-          props.extentions.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={lib.PrettyPrintExtentionName(e.name)} href={e.href} onClick={() => {
+      <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
+        {props.extensions.data ? 
+          props.extensions.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={lib.PrettyPrintExtentionName(e.title)} href={e.href} onClick={() => {
             props.setSelected(JSON.stringify(e));
-            props.onItemClick(lib.PrettyPrintExtentionName(e.name), e.href);
-          }}/>) : <LoadingSpinner/>}
+            props.onItemClick(lib.PrettyPrintExtentionName(e.title), e.href);
+          }}/>) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
     </div>
   );

@@ -10,7 +10,7 @@ export default class App extends React.PureComponent{
     return (
       <div className={props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.flexCol : COMMON_CLASSES.flexRow }>
         <NAV/>
-        <ContentBody/>
+        {/* <ContentBody/> */}
       </div>
     );
   }

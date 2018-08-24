@@ -1,4 +1,4 @@
-import {FETCHEXTENTIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES } from './mn-resources';
+import {FETCHEXTENSIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES } from './mn-resources';
 import * as ACTIONTYPES from './mn-actions-type';
 
 const errorOnFetch = ( err, query ) => {
@@ -20,9 +20,9 @@ const setTechnologies = ( data ) => {
   };
 };
 
-const setExtentions = ( data ) => {
+const setExtensions = ( data ) => {
   return {
-    type: ACTIONTYPES.SETEXTENTIONS,
+    type: ACTIONTYPES.SETEXTENSIONS,
     payload: {
       data: data
     }
@@ -56,8 +56,15 @@ const setOwasp = ( data ) => {
   };
 };
 
-const fetchApiData = ( fetchFunc, onSuccessAction, onFailAction ) => {
+const fetchingData = ( actionType ) => {
+  return {
+    type: actionType
+  };
+};
+
+const fetchApiData = ( fetchFunc, onSuccessAction, onFailAction, fetchActionType ) => {
   return function (dispatch) {
+    dispatch(fetchingData(fetchActionType));
     return fetchFunc().then(
       data => dispatch(onSuccessAction(data)),
       err => dispatch(onFailAction(err))
@@ -65,34 +72,34 @@ const fetchApiData = ( fetchFunc, onSuccessAction, onFailAction ) => {
   };
 };
 
-export const fetchExtentions = () => {
-  return fetchApiData( FETCHEXTENTIONS, 
-    setExtentions, 
-    (err) => errorOnFetch(err, QUERIES.extentions) );
+export const fetchExtensions = () => {
+  return fetchApiData( FETCHEXTENSIONS, 
+    setExtensions, 
+    (err) => errorOnFetch(err, QUERIES.extensions), ACTIONTYPES.FETCHEXTENSIONS );
 };
 
 export const fetchTechnologies = () => {
   return fetchApiData( FETCHTECHNOLOGIES, 
     setTechnologies, 
-    (err) => errorOnFetch(err, QUERIES.technologies) );
+    (err) => errorOnFetch(err, QUERIES.technologies), ACTIONTYPES.FETCHTECHNOLOGIES );
 };
 
 export const fetchBusinessCriteria = () => {
   return fetchApiData( FETCHBUSINESSCRITERIA, 
     setBusinessCriteria, 
-    (err) => errorOnFetch(err, QUERIES.businessCriteria) );
+    (err) => errorOnFetch(err, QUERIES.businessCriteria), ACTIONTYPES.FETCHBUSINESSCRITERIA );
 };
 
 export const fetchCisq = () => {
   return fetchApiData( FETCHCISQDATA, 
     setCisq, 
-    (err) => errorOnFetch(err, QUERIES.cisq) );
+    (err) => errorOnFetch(err, QUERIES.cisq), ACTIONTYPES.FETCHCISQ );
 };
 
 export const fetchOwasp = () => {
   return fetchApiData( FETCHOWASPDATA, 
     setOwasp, 
-    (err) => errorOnFetch(err, QUERIES.owasp) );
+    (err) => errorOnFetch(err, QUERIES.owasp), ACTIONTYPES.FETCHOWASP );
 };
 
 export const setSelectedItem = ( itemRef ) => {

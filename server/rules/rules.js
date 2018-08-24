@@ -4,7 +4,7 @@ const { main } = require('../routes/routes');
 const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
 const errorHandler = require('../middleware/errorHandler');
-const extensionsMap = require('../lib/extentions-map');
+const extensionsMap = require('../lib/extensions-map');
 extensionsMap.INIT();
 let extVersionMap;
 

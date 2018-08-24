@@ -5,7 +5,7 @@ export const QUERIES = {
   cisq: 'AIP/quality-standards/CISQ/categories',
   owasp: 'AIP/quality-standards/OWASP/categories',
   technologies: 'rules/technologies.json',
-  extentions: 'rules/extensions.json'
+  extensions: 'rules/extensions.json'
 };
 
 const FETCHAPIDATA = ( query ) => {
@@ -16,8 +16,8 @@ export const FETCHTECHNOLOGIES = () => {
   return fetch( QUERIES.technologies ).then( res => res.json() );
 };
 
-export const FETCHEXTENTIONS = () => {
-  return fetch( QUERIES.extentions ).then( res => res.json() );
+export const FETCHEXTENSIONS = () => {
+  return fetch( QUERIES.extensions ).then( res => res.json() );
 };
 
 export const FETCHBUSINESSCRITERIA = () => {

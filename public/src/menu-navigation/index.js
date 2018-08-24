@@ -7,7 +7,7 @@ const mapStateToProps = (state) => {
   return {
     viewType: state.viewType.viewType,
     technologies: state.navMenu.technologies,
-    extentions: state.navMenu.extentions,
+    extensions: state.navMenu.extensions,
     selected: state.navMenu.selected,
     std_bc: state.navMenu.std_cast,
     std_cisq: state.navMenu.std_cisq,
@@ -33,9 +33,9 @@ const mapDispatchToProps = (dispatch) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchTechnologies());
     },
-    populateExtentions:(exeCount) => {
+    populateExtensions:(exeCount) => {
       if( exeCount !== 0 ) return;
-      dispatch(ACTIONS.fetchExtentions());
+      dispatch(ACTIONS.fetchExtensions());
     },
     onItemClick: (name, href) => {
       console.log(name + ' - ' + href);

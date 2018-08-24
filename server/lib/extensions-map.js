@@ -1,7 +1,16 @@
 const fs = require('fs');
 const root = require('app-root-path');
-const validExtensions = require('../../rest/AIP/extensions.json').filter( e => e.qualityModel === true );
+const validExtensions = getValidExtensionMap();
 const eLength = validExtensions.length;
+
+function getValidExtensionMap(){
+  const extensions = require('../../rest/AIP/extensions.json').filter( e => e.qualityModel === true );
+  return extensions.map( ext => {
+    const path =  root.resolve('rest/AIP/extensions/'+ ext.name +'.json'),
+      extentionDetails = JSON.parse(fs.readFileSync(path));
+    return Object.assign({}, ext, { title: extentionDetails.title });
+  });
+}
 
 function INIT (){
   let extVersionMap = {};

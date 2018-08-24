@@ -2,11 +2,26 @@ import * as ACTIONS from './mn-actions-type';
 
 
 const initialState = {
-  std_cast: undefined,
-  std_cisq: undefined,
-  std_owasp: undefined,
-  technologies: undefined,
-  extentions: undefined,
+  std_cast: {
+    data: undefined,
+    loading: false
+  },
+  std_cisq: {
+    data: undefined,
+    loading: false
+  },
+  std_owasp: {
+    data: undefined,
+    loading: false
+  },
+  technologies: {
+    data: undefined,
+    loading: false
+  },
+  extensions: {
+    data: undefined,
+    loading: false
+  },
   selected: undefined
 };
 
@@ -15,27 +30,82 @@ const MenuNavigationReducer = (state = initialState, action) => {
   case ACTIONS.SETBUSINESSCRITERIA:
     return {
       ...state,
-      std_cast: action.payload.data
+      std_cast: {
+        data: action.payload.data,
+        loading: false
+      }
     };
   case ACTIONS.SETCISQ:
     return {
       ...state,
-      std_cisq: action.payload.data
+      std_cisq: {
+        data: action.payload.data,
+        loading: false
+      }
     };
   case ACTIONS.SETOWASP:
     return {
       ...state,
-      std_owasp: action.payload.data
+      std_owasp: {
+        data: action.payload.data,
+        loading: false
+      }
     };
   case ACTIONS.SETTECHNOLOGIES:
     return {
       ...state,
-      technologies: action.payload.data
+      technologies: {
+        data: action.payload.data,
+        loading: false
+      }
     };
-  case ACTIONS.SETEXTENTIONS:
+  case ACTIONS.SETEXTENSIONS:
     return {
       ...state,
-      extentions: action.payload.data
+      extensions: {
+        data: action.payload.data,
+        loading: false
+      }
+    };
+  case ACTIONS.FETCHBUSINESSCRITERIA: 
+    return {
+      ...state,
+      std_cast: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHCISQ: 
+    return {
+      ...state,
+      std_cisq: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHOWASP:
+    return {
+      ...state,
+      std_owasp: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHEXTENSIONS:
+    return {
+      ...state,
+      extensions: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHTECHNOLOGIES:
+    return {
+      ...state,
+      technologies: {
+        data: undefined,
+        loading: true
+      }
     };
   case ACTIONS.SETSELECTEDITEM: 
     return {

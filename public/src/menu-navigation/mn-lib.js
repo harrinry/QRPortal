@@ -1,5 +1,11 @@
 export const PrettyPrintExtentionName = ( name ) => {
-  const finalName = name.split('.'),
-    capName = finalName[2].charAt(0).toUpperCase() + finalName[2].substring(1);
-  return capName + ' Analyzer';
+  const wordsToClean = [' technology',' Linker','/Angular', 'for ', 'for Java', 'Techonology Extension For' ,'Technology Extension For ', ' Framework', 'Support of ' ], 
+    cl = wordsToClean.length,
+    exceptionNames = ['System Level Rules', 'Web Services'];
+  let cleanName = name;
+  for (let i = 0; i < cl; i++) {
+    const wordToRemove = wordsToClean[i];
+    cleanName = cleanName.replace(wordToRemove, '');
+  }
+  return (cleanName.includes('Analyzer') || exceptionNames.indexOf(cleanName) !== -1) ? cleanName : cleanName + ' Analyzer' ;
 };
