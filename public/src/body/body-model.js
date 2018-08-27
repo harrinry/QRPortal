@@ -5,12 +5,11 @@ const ContentBody = ( props ) => {
   return (
     <div className={createClassName(CLASSES.contentBody, COMMON_CLASSES.flexRow, COMMON_CLASSES.defaultBackgroundColor, COMMON_CLASSES.flexGrow1)}>
       {props.view === NAVIGATION_VIEW ? <div className={CLASSES.contentSpace}></div> : 
-        <div>
+        (<div>
           <div className={CLASSES.ListArea}></div>
           <div className={CLASSES.detailsArea}></div>
-        </div>}
-    </div>
-  );
+        </div>)}
+    </div>);
 };
 
 export default ContentBody;
