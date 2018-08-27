@@ -1,17 +1,32 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: #F2F2F2;
   width: 100%;
   height: 100vh;
 }
 
+.hidden{display: none;}
 .blk{display: block;}
 .iln{display: inline;}
+.fixed{position: fixed;}
+
 .flxr{display: flex; flex-direction: row}
 .flxc{display: flex; flex-direction: column}
+.flxShnk1{ flex-shrink: 1}
+.flxShnk4{ flex-shrink: 4}
+.flxGrw1{ flex-grow: 1}
+
 .std-bgc{background-color: #F2F2F2;}
 .jsb{ justify-content: space-between;}
 .minh50p{ min-height: 50px }
-.ovfy{ overflow-x: hidden; overflow-y: auto}
+.ovfy{ overflow-x: hidden; overflow-y: auto;}
+.ovfy::-webkit-scrollbar{ width: 5px}
+.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}
+.ovfy::-webkit-scrollbar-track { background: #ddd; }
+.vh100{ height: 100vh; }
+.txtcenter{ text-align: center}
+.fright{ float: right;}
+.fleft{ float: left;}
+.marginAuto{ margin: auto }

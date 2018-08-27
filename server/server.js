@@ -28,7 +28,7 @@ app.get('/', (req, res)=>{
   res.redirect('/rules');
 });
 
-app.use( require('./middleware/notFound'));
+app.use(require('./middleware/notFound'));
 
 // --------------------------- Start Server ---------------------------//
 app.listen(port, function() {

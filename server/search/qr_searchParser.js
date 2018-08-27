@@ -1,6 +1,6 @@
 const glob = require('../lib/glob');
 const path = require('path');
-const rootMetricsDir  = path.resolve( __dirname, '..','..', 'rest','AIP');
+//const rootMetricsDir  = path.resolve( __dirname, '..','..', 'rest','AIP');
 const rulesDir = path.resolve( __dirname, '..','..', 'rest','AIP', 'quality-rules');
 const search = require('./search');
 const filter = require('../lib/filters');
@@ -8,7 +8,7 @@ const filter = require('../lib/filters');
 const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
 
-const readJsonFile = require('../lib/readFile');
+//const readJsonFile = require('../lib/readFile');
 
 let index = {
   qualityrules: [],
@@ -27,14 +27,14 @@ function convertToSearchString ( dataObject, fileName ) {
   };
 }
 
-function convertQsToSearchIndex( dataObject, par ){
-  return {
-    id: dataObject.id,
-    searchid: dataObject.id,
-    name: par.name,
-    resHref: par.href
-  };
-}
+// function convertQsToSearchIndex( dataObject, par ){
+//   return {
+//     id: dataObject.id,
+//     searchid: dataObject.id,
+//     name: par.name,
+//     resHref: par.href
+//   };
+// }
 
 function SearchIndex( query, indexDef ){
   switch (indexDef) {

@@ -28,5 +28,6 @@ export const EXTENTIONNAMES = {
   'wbslinker': 'Web Services',
   'nosqljava': 'NoSQL Analyzer',
   'jeerules': 'JEE Rules',
-  'typescript':'TypeScript Analyzer'
+  springsecurity: 'Spring Security',
+  typescript: 'TypeScript Analyzer'
 };

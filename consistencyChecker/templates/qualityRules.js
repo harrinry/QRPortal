@@ -6,6 +6,7 @@ module.exports = {
     {name: 'id', type: 'number'},
     {name: 'name', type: 'string'},
     {name: 'href', type: 'string', method: 'hrefCheck'},
+    {name: 'status', type: 'string', method: 'statusCheck'},
     {name: 'critical', type: 'boolean'}
   ],
   reportFile: 'quality-rule-links'

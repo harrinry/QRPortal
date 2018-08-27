@@ -88,6 +88,8 @@ const filterArray = ( listArray ) => {
       ret = filterFor(KEYS.sap, listArray, 'SAP', statusMap);
     } else if (!statusMap.html5js && is(KEYS.html5js, eId)){
       ret = filterFor(KEYS.html5js, listArray, 'HTML5 JavaScript', statusMap);
+    } else if (!statusMap.vb && is(KEYS.vb, eId)){
+      ret = filterFor(KEYS.vb, listArray, 'VB.NET', statusMap);
     }
 
     return ret;

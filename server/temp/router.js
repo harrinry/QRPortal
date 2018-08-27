@@ -30,13 +30,4 @@ tempRouter.get('/bundle.js.map', (req, res)=> {
   });
 });
 
-/*tempRouter.get('/style.css', (req, res)=> {
-  res.sendFile('src/css/style.css', options, (err)=>{
-    if ( err ) {
-      console.log( err ); // replace with error logger
-      res.status(500).send({error: 'a problem occured'});
-    }
-  });
-});*/
-
 module.exports = tempRouter;
