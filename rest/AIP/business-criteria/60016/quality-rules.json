@@ -995,7 +995,7 @@
     },
     {
         "id": 7648,
-        "name": "Avoid calling finalize()",
+        "name": "CWE-586: Explicit Call to Finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false
@@ -1919,7 +1919,7 @@
     },
     {
         "id": 8240,
-        "name": "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+        "name": "CWE-614: Sensitive cookie in HTTPS session without 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true
@@ -3318,6 +3318,20 @@
         "critical": true
     },
     {
+        "id": 1020098,
+        "name": "Avoid creating cookie with overly broad path (Javascript)",
+        "href": "AIP/quality-rules/1020098",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020100,
+        "name": "Avoid having cookie with an overly broad domain (Javascript)",
+        "href": "AIP/quality-rules/1020100",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1020304,
         "name": "Implement success and error callbacks when using jquery web service call",
         "href": "AIP/quality-rules/1020304",
@@ -3330,6 +3344,27 @@
         "href": "AIP/quality-rules/1020318",
         "status": null,
         "critical": false
+    },
+    {
+        "id": 1020320,
+        "name": "Avoid using jQuery $.cookie",
+        "href": "AIP/quality-rules/1020320",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020322,
+        "name": "Avoid using Ajax method without dataType before jQuery 3.0",
+        "href": "AIP/quality-rules/1020322",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020324,
+        "name": "Avoid using dialog with closeText parameter before jQuery UI 1.12",
+        "href": "AIP/quality-rules/1020324",
+        "status": null,
+        "critical": true
     },
     {
         "id": 1020514,
@@ -3505,6 +3540,62 @@
         "href": "AIP/quality-rules/1020734",
         "status": null,
         "critical": true
+    },
+    {
+        "id": 1020736,
+        "name": "Avoid bypassing self-signed ssl certificate (Node.js)",
+        "href": "AIP/quality-rules/1020736",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020738,
+        "name": "Avoid disabling SSL verification in node-curl",
+        "href": "AIP/quality-rules/1020738",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020740,
+        "name": "Avoid creating cookie with overly broad path (Node.js)",
+        "href": "AIP/quality-rules/1020740",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020742,
+        "name": "Avoid creating cookie with overly broad domain (Node.js)",
+        "href": "AIP/quality-rules/1020742",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020800,
+        "name": "Avoid jump statements in finally ",
+        "href": "AIP/quality-rules/1020800",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020802,
+        "name": "Avoid having errors without throwing them ",
+        "href": "AIP/quality-rules/1020802",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020804,
+        "name": "Avoid using console logging ",
+        "href": "AIP/quality-rules/1020804",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020806,
+        "name": "Avoid using NaN in comparison ",
+        "href": "AIP/quality-rules/1020806",
+        "status": null,
+        "critical": false
     },
     {
         "id": 1020950,
@@ -3696,6 +3787,48 @@
         "critical": true
     },
     {
+        "id": 1040002,
+        "name": "Spring Security CSRF Protection must not be disabled",
+        "href": "AIP/quality-rules/1040002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040004,
+        "name": "Ensure that any application request is authenticated with HTTP basic",
+        "href": "AIP/quality-rules/1040004",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040006,
+        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "href": "AIP/quality-rules/1040006",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040008,
+        "name": "Ensure that form login is declared after requesting authorization and authentication",
+        "href": "AIP/quality-rules/1040008",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040010,
+        "name": "Cookies must be deleted during the logout",
+        "href": "AIP/quality-rules/1040010",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040012,
+        "name": "Ensure that HTTP Session has been Invalidating during logout",
+        "href": "AIP/quality-rules/1040012",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1050002,
         "name": "Avoid using NSString stringWithFormat on behalf of NSURL instance",
         "href": "AIP/quality-rules/1050002",
@@ -3860,6 +3993,20 @@
         "id": 1050050,
         "name": "Avoid using cryptography hash without salt",
         "href": "AIP/quality-rules/1050050",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1050052,
+        "name": "Avoid empty finally block",
+        "href": "AIP/quality-rules/1050052",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1050062,
+        "name": "Avoid empty catch blocks",
+        "href": "AIP/quality-rules/1050062",
         "status": null,
         "critical": true
     },

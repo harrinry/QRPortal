@@ -60,6 +60,11 @@ export default class Sources extends React.Component{
       .catch( err => console.log(err));
   }
 
+  getPrettyExtName( name ){
+    const boundName = EXTENTIONNAMES[name];
+    return boundName ? boundName : name;
+  }
+
   onClickHandler( res, name ){
     const data = res.data || res;
     let ref = data.map( e => {
@@ -70,13 +75,13 @@ export default class Sources extends React.Component{
       };
     });
     const menuEls = this.buildOverlayElemnents( ref, name );
-    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, EXTENTIONNAMES[name], ref.length,'Select one of the following version:'));
+    Radio.emit( SHOWOVERLAY, dynOvlSettings(menuEls, this.getPrettyExtName( name ), ref.length,'Select one of the following version:'));
   }
 
   buildOverlayElemnents( data, name ){
     return (<Column key={JSON.stringify(data)} width={'100%'} textAlign={'left'}>
       {data.map( e => <BodyElement key={e.id + name} value={formatVersionName(e.name)} onclick={()=> {
-        Radio.emit( LOADRULESLIST, e.href+'/quality-rules', EXTENTIONNAMES[name].concat(' ',formatVersionName(e.name)));
+        Radio.emit( LOADRULESLIST, e.href+'/quality-rules', this.getPrettyExtName( name ).concat(' ',formatVersionName(e.name)));
         Radio.emit( HIDEOVERLAY );
       }} id={e.id} /> )}
     </Column>);

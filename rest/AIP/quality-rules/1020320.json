@@ -1,0 +1,45 @@
+{
+    "id": 1020320,
+    "name": "Avoid using jQuery $.cookie",
+    "href": "AIP/quality-rules/1020320",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Using deprecated jQuery API could lead to security compliancy issues. $.cookie library has been deprecated and must not be used.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Component-heavy development patterns can lead to development teams not even understanding which components they use in their application or API, much less keeping them up to date.",
+    "reference": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+    "remediation": "Use the Cookie framework instead (https://github.com/js-cookie/js-cookie)",
+    "remediationSample": "// set value \nCookies.set('name', 'value', { domain: 'subdomain.site.com' }); \n\n// get value \nCookies.get('name'); // => 'value'",
+    "sample": "// set value \n$.cookie('name', 'value'); \n\n// get value \n$.cookie('name'); // => \"value\"",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

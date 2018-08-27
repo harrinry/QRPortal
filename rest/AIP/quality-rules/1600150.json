@@ -5,7 +5,7 @@
     "critical": false,
     "maxWeight": 8,
     "description": "Check that the number of substitution joker (%) into the default language message text and language message text is equal.\nThe translate language is defined as a parameter at extraction time.",
-    "output": "Failed checks gives the number of wrongly defined Message Catalogs",
+    "output": "Failed checks give the number of wrongly defined Message Catalogs",
     "rationale": "Message Catalog allows to define messages in multiple languages. PeopleCode functions substitutes the values of the parameters in paramlist into the explain text. If the number of substitution joker in messages is not the same, it will generate inconsistent message to the user.",
     "reference": "3.0",
     "remediation": "Verify that your message catalog translation contains the same number of substitution joker \"%\" as the original one.\nTo verify, log-in to PeopleSoft using XXX language and go to \"PeopleTools/Utilitaires/Administration/Message Catalog\".",

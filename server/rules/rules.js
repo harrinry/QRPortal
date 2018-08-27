@@ -4,11 +4,9 @@ const { main } = require('../routes/routes');
 const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
 const errorHandler = require('../middleware/errorHandler');
-const extensionsMap = require('../lib/extentions-map');
+const extensionsMap = require('../lib/extensions-map');
 extensionsMap.INIT();
 let extVersionMap;
-
-setTimeout(() => extVersionMap = extensionsMap.readExtMap(), 400);
 
 let rulesRouter = express.Router();
 
@@ -58,6 +56,7 @@ rulesRouter.get('/extensions.json', (req, res) => {
 
 rulesRouter.get('/extensions', ( req, res ) => {
   const hrefKey = req.query.q;
+  if ( !extVersionMap ) extVersionMap = extensionsMap.readExtMap();
   if( extVersionMap.hasOwnProperty( hrefKey ) ){
     res.json( extVersionMap[hrefKey] );
   } else {

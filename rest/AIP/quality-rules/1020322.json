@@ -1,0 +1,44 @@
+{
+    "id": 1020322,
+    "name": "Avoid using Ajax method without dataType before jQuery 3.0",
+    "href": "AIP/quality-rules/1020322",
+    "critical": true,
+    "description": "jQuery before 3.0.0 is vulnerable to Cross-site Scripting (XSS) attacks when a cross-domain Ajax request is performed without the dataType option, causing text/javascript responses to be executed. This rule is compliant with OWASP 2017 A9 recommendation and has been listed as CVE-2015-9251 in the CVE registry.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "While some known vulnerabilities lead to only minor impacts, some of the largest breaches to date have relied on exploiting known vulnerabilities in components. Depending on the assets you are protecting, perhaps this risk should be at the top of the list.",
+    "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-9251",
+    "remediation": "Always provide dataType parameter.",
+    "remediationSample": "<script src=\"https://code.jquery.com/jquery-2.1.4.js\"></script> \n    <script src=\"https://code.jquery.com/ui/1.12.0/jquery-ui.js\"></script> \n    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://code.jquery.com/ui/1.9.1/themes/base/ \njquery-ui.css\"> \n    <script> \n        $(document).ready(function () { \n            $('#dialog').dialog({ closeText: '<script>alert(\"XSS\")<\\/script>' }); \n        }); \n    </script>",
+    "sample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user, \n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
+    "total": "Number of JQuery artifacts calling Ajax function",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,15 +1,15 @@
 const path = require('path');
 module.exports = {
-  entry: path.join(__dirname, 'qrp_WebApp', 'src', 'app'),
+  entry: path.join(__dirname, 'public', 'src', 'index'),
   output: {
-    filename: 'QRPortal.js',
-    path: path.resolve(__dirname, 'qrp_WebApp')
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public')
   },
   module: {
     rules: [{
       test: /.js?$/,
       include: [
-        path.resolve(__dirname, 'qrp_WebApp', 'src')
+        path.resolve(__dirname, 'public', 'src')
       ],
       exclude: [
         path.resolve(__dirname, 'node_modules'),
@@ -29,11 +29,23 @@ module.exports = {
       use: ['style-loader', 'css-loader']
     },
     {
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
+    },
+    {
       test: /\.svg$/,
       loader: 'svg-inline-loader'
     }]
   },
   resolve: {
+    modules: [
+      path.resolve('./node_modules'),
+      path.resolve('./public/src')
+    ],
     extensions: ['.json', '.js', '.jsx', '.css']
   },
   devtool: 'source-map'

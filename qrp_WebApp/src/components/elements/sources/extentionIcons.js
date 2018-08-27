@@ -28,5 +28,7 @@ export const EXTENTIONICONS = {
   'cpp': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.cfamily.png',
   'wbslinker': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.wbslinker.png',
   'nosqljava': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.nosqljava.png',
-  'jeerules': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png'
+  'jeerules': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.jeeqr.png',
+  springsecurity: 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.springsecurity.png',
+  typescript: 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.typescriptangular.png'
 };

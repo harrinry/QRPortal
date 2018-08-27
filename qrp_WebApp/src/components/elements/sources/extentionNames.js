@@ -27,5 +27,7 @@ export const EXTENTIONNAMES = {
   'cpp': 'C/C++',
   'wbslinker': 'Web Services',
   'nosqljava': 'NoSQL Analyzer',
-  'jeerules': 'JEE Rules'
+  'jeerules': 'JEE Rules',
+  springsecurity: 'Spring Security',
+  typescript: 'TypeScript Analyzer'
 };

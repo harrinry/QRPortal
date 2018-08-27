@@ -680,7 +680,7 @@
     },
     {
         "id": 4616,
-        "name": "Proper overriding of 'finalize()'",
+        "name": "CWE-568: finalize() Method Without super.finalize()",
         "href": "AIP/quality-rules/4616",
         "status": null,
         "critical": true
@@ -1940,7 +1940,7 @@
     },
     {
         "id": 7648,
-        "name": "Avoid calling finalize()",
+        "name": "CWE-586: Explicit Call to Finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false
@@ -3074,7 +3074,7 @@
     },
     {
         "id": 8240,
-        "name": "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+        "name": "CWE-614: Sensitive cookie in HTTPS session without 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true
@@ -5923,21 +5923,21 @@
     },
     {
         "id": 1020004,
-        "name": "Avoid to use querySelectorAll",
+        "name": "Avoid using querySelectorAll",
         "href": "AIP/quality-rules/1020004",
         "status": null,
         "critical": true
     },
     {
         "id": 1020006,
-        "name": "Avoid to call a function in a termination loop",
+        "name": "Avoid calling a function in a termination loop",
         "href": "AIP/quality-rules/1020006",
         "status": null,
         "critical": true
     },
     {
         "id": 1020008,
-        "name": "Avoid for-in loop",
+        "name": "Avoid using for-in loop",
         "href": "AIP/quality-rules/1020008",
         "status": null,
         "critical": false
@@ -6188,6 +6188,20 @@
         "critical": true
     },
     {
+        "id": 1020098,
+        "name": "Avoid creating cookie with overly broad path (Javascript)",
+        "href": "AIP/quality-rules/1020098",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020100,
+        "name": "Avoid having cookie with an overly broad domain (Javascript)",
+        "href": "AIP/quality-rules/1020100",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1020300,
         "name": "Avoid using the call of web service jQuery ajax inside a loop",
         "href": "AIP/quality-rules/1020300",
@@ -6240,6 +6254,13 @@
         "id": 1020316,
         "name": "Avoid Universal Selectors",
         "href": "AIP/quality-rules/1020316",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020320,
+        "name": "Avoid using jQuery $.cookie",
+        "href": "AIP/quality-rules/1020320",
         "status": null,
         "critical": false
     },
@@ -6496,6 +6517,55 @@
         "critical": true
     },
     {
+        "id": 1020736,
+        "name": "Avoid bypassing self-signed ssl certificate (Node.js)",
+        "href": "AIP/quality-rules/1020736",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020738,
+        "name": "Avoid disabling SSL verification in node-curl",
+        "href": "AIP/quality-rules/1020738",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020740,
+        "name": "Avoid creating cookie with overly broad path (Node.js)",
+        "href": "AIP/quality-rules/1020740",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1020742,
+        "name": "Avoid creating cookie with overly broad domain (Node.js)",
+        "href": "AIP/quality-rules/1020742",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020800,
+        "name": "Avoid jump statements in finally ",
+        "href": "AIP/quality-rules/1020800",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020802,
+        "name": "Avoid having errors without throwing them ",
+        "href": "AIP/quality-rules/1020802",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020804,
+        "name": "Avoid using console logging ",
+        "href": "AIP/quality-rules/1020804",
+        "status": null,
+        "critical": false
+    },
+    {
         "id": 1020950,
         "name": "Avoid providing password in Web Service URL",
         "href": "AIP/quality-rules/1020950",
@@ -6692,6 +6762,41 @@
         "critical": true
     },
     {
+        "id": 1040002,
+        "name": "Spring Security CSRF Protection must not be disabled",
+        "href": "AIP/quality-rules/1040002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040006,
+        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "href": "AIP/quality-rules/1040006",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040008,
+        "name": "Ensure that form login is declared after requesting authorization and authentication",
+        "href": "AIP/quality-rules/1040008",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040010,
+        "name": "Cookies must be deleted during the logout",
+        "href": "AIP/quality-rules/1040010",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040012,
+        "name": "Ensure that HTTP Session has been Invalidating during logout",
+        "href": "AIP/quality-rules/1040012",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1050000,
         "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
         "href": "AIP/quality-rules/1050000",
@@ -6835,6 +6940,34 @@
         "id": 1050050,
         "name": "Avoid using cryptography hash without salt",
         "href": "AIP/quality-rules/1050050",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1050052,
+        "name": "Avoid empty finally block",
+        "href": "AIP/quality-rules/1050052",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1050054,
+        "name": "Mandate curly braces",
+        "href": "AIP/quality-rules/1050054",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1050060,
+        "name": "Avoid using a break statement in 'for' loops",
+        "href": "AIP/quality-rules/1050060",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1050062,
+        "name": "Avoid empty catch blocks",
+        "href": "AIP/quality-rules/1050062",
         "status": null,
         "critical": true
     },
@@ -7498,7 +7631,7 @@
     },
     {
         "id": 1600180,
-        "name": "PeopleSoft: Avoid modification on lenghts or types on Field",
+        "name": "PeopleSoft: Avoid modification of lenghts or types of Fields",
         "href": "AIP/quality-rules/1600180",
         "status": null,
         "critical": true
@@ -7554,7 +7687,7 @@
     },
     {
         "id": 1600280,
-        "name": "PeopleSoft: Avoid put PeopleCode into Fields, prefer Component Level",
+        "name": "PeopleSoft: Avoid placing PeopleCode into Fields, prefer Component Level",
         "href": "AIP/quality-rules/1600280",
         "status": null,
         "critical": false
@@ -7575,7 +7708,7 @@
     },
     {
         "id": 1600286,
-        "name": "PeopleSoft: Avoid use the Hints to force Oracle to use a specific access method",
+        "name": "PeopleSoft: Avoid using the Hints to force Oracle to use a specific access method",
         "href": "AIP/quality-rules/1600286",
         "status": null,
         "critical": false
@@ -7596,7 +7729,7 @@
     },
     {
         "id": 1600292,
-        "name": "PeopleSoft: In an INSERT statement define explicitly the values for all the table columns",
+        "name": "PeopleSoft: In an INSERT statement, define explicitly the values for all the table columns",
         "href": "AIP/quality-rules/1600292",
         "status": null,
         "critical": false
@@ -7715,7 +7848,7 @@
     },
     {
         "id": 1600506,
-        "name": "PeopleSoft: All select statement must list each field specifically",
+        "name": "PeopleSoft: All select statements must list each field specifically",
         "href": "AIP/quality-rules/1600506",
         "status": null,
         "critical": false
@@ -7918,7 +8051,7 @@
     },
     {
         "id": 1600648,
-        "name": "PeopleSoft: Avoid use a radio button or check box when the user has more than three choices",
+        "name": "PeopleSoft: Avoid using a radio button or check box when the user has more than three choices",
         "href": "AIP/quality-rules/1600648",
         "status": null,
         "critical": false
@@ -7953,14 +8086,14 @@
     },
     {
         "id": 1600658,
-        "name": "PeopleSoft: Display control field must be before the related display field that depend on it",
+        "name": "PeopleSoft: Display control field must be before the related display field that depends on it",
         "href": "AIP/quality-rules/1600658",
         "status": null,
         "critical": false
     },
     {
         "id": 1600660,
-        "name": "PeopleSoft: Display and related fields from same record must be avoid",
+        "name": "PeopleSoft: Display and related fields from same record must be avoided",
         "href": "AIP/quality-rules/1600660",
         "status": null,
         "critical": false
