@@ -11,13 +11,13 @@ export default class BodyElementSources extends React.Component{
   }
 
   prettyPrint( key ){
-    return EXTENTIONNAMES[key];
+    return EXTENTIONNAMES.hasOwnProperty(key) ? EXTENTIONNAMES[key] : key ;
   }
 
   stylize( key ){
     const iconURL = EXTENTIONICONS[key];
     return {
-      backgroundImage: iconURL ? 'url('+ iconURL +')' : undefined,
+      backgroundImage: iconURL ? 'url('+ iconURL +')' : 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '80%'
