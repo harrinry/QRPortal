@@ -1,5 +1,5 @@
 import * as ACTIONS from './mn-actions-type';
-
+import { AIP_VERSIONS_EXT } from './mn-constants';
 
 const initialState = {
   std_cast: {
@@ -19,7 +19,9 @@ const initialState = {
     loading: false
   },
   extensions: {
-    data: undefined,
+    data: [
+      AIP_VERSIONS_EXT
+    ],
     loading: false
   },
   selected: undefined
@@ -63,7 +65,9 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       extensions: {
-        data: action.payload.data,
+        data: [
+          AIP_VERSIONS_EXT,
+          ...action.payload.data],
         loading: false
       }
     };

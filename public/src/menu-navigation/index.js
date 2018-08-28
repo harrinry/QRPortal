@@ -2,6 +2,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
+import { fetchListData, showContentView, setListCount } from 'body/body-actions';
+import { setHeaderPath } from 'path-navigation/nv-actions';
+import { ITEMS } from './mn-constants';
+import { QUERIES } from './mn-resources';
 
 const mapStateToProps = (state) => {
   return {
@@ -37,11 +41,29 @@ const mapDispatchToProps = (dispatch) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchExtensions());
     },
-    onItemClick: (name, href) => {
-      console.log(name + ' - ' + href);
+    onQualityStandardClick: ( name, href ) => {
+      dispatch(setListCount(2));
+      dispatch(showContentView());
+      dispatch(fetchListData( href ));
+      dispatch(setHeaderPath( {name: ITEMS.STANDARDS, href: QUERIES.standards}, {name, href}  ));
+    },
+    onBusinessCriteriaClick: (name, href) => {
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchListData( href ));
+      dispatch(setHeaderPath({name: ITEMS.STANDARDS, href: QUERIES.standards}, {name: ITEMS.BUSINESSCRITERIA, href: QUERIES.businessCriteria}, {name, href} ));
+    },
+    onTechnologyClick: (name, href) => {
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchListData( href ));
+      dispatch(setHeaderPath( {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies}, {name, href}  ));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
+    },
+    onExtensionsClick: ( name, href ) => {
+      console.log(name + ' - ' + href);
     }
   };
 };

@@ -11,4 +11,9 @@ export const ITEMS = {
   STANDARDS: 'STANDARDS'
 };
 
-export const API_REQUEST = 'rest?q=';
+export const AIP_VERSIONS_EXT = {
+  title: 'CAST AIP',
+  href: 'AIP/versions.json'
+};
+
+export const EXTENTION_QUERY_PREFIX = 'rules/extensions?q=';

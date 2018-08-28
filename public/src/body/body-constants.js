@@ -6,5 +6,9 @@ export const CLASSES = {
   contentSpace: 'qrp_contentSpace'
 };
 
-export const DETAILS_VIEW = 'DETAILS_VIEW';
+export const ERROR_OCCURRED = 'Sorry An Error Occurred';
+
+export const CONTENT_VIEW = 'CONTENT_VIEW';
 export const NAVIGATION_VIEW = 'NAVIGATION_VIEW';
+export const TECHNOLOGIES = 'TECHNOLOGIES';
+export const EXTENSIONS = 'SOURCES';
