@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setMenuView, setTilesView, goToLandingPage } from './vn-actions';
+import { setMenuView, setTilesView } from './vn-actions';
 import ViewNavigation from './vn-model';
 import { defaultToTiles, defaultToMenu } from './vn-lib';
+import { goToLandingPage } from 'path-navigation/nv-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {

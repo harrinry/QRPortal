@@ -13,7 +13,11 @@ export const ITEMS = {
 
 export const AIP_VERSIONS_EXT = {
   title: 'CAST AIP',
-  href: 'AIP/versions.json'
+  href: 'AIP/versions.json',
+  versions: [],
+  loading: false
 };
+
+export const qualityRules_post = '/quality-rules';
 
 export const EXTENTION_QUERY_PREFIX = 'rules/extensions?q=';

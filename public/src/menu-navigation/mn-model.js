@@ -24,14 +24,14 @@ const NavigationMenu = ( props ) => {
           {props.std_cisq.data ? 
             props.std_cisq.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
-              props.onQualityStandardClick(e.name, e.href);
+              props.onCisqClick(e.name, e.href);
             }}/>) : ( props.std_cisq.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
         <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp}>
           {props.std_owasp.data ? 
             props.std_owasp.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
-              props.onQualityStandardClick(e.name, e.href);
+              props.onOwaspClick(e.name, e.href);
             }}/>) : ( props.std_owasp.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
       </SubMenu>
@@ -44,10 +44,12 @@ const NavigationMenu = ( props ) => {
       </SubMenu>
       <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
         {props.extensions.data ? 
-          props.extensions.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={lib.PrettyPrintExtentionName(e.title)} href={e.href} onClick={() => {
-            props.setSelected(JSON.stringify(e));
-            props.onExtensionsClick(lib.PrettyPrintExtentionName(e.title), e.href);
-          }}/>) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
+          props.extensions.data.map( e => (<SubMenu title={lib.PrettyPrintExtentionName(e.title)} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
+            {e.versions ? e.versions.map( ver => <MenuItem selected={props.selected === JSON.stringify(ver) ? true : false} title={ver.name} href={ver.href} onClick={() => {
+              props.setSelected(JSON.stringify(ver));
+              props.onExtensionsClick({...e,title: lib.PrettyPrintExtentionName(e.title)}, ver);
+            }}/> ) : ( e.loading ? <LoadingSpinner/> : undefined )}
+          </SubMenu>)) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
     </div>
   );

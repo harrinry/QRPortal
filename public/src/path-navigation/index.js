@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { navigateTo } from './nv-actions';
 import NavHeader from './nv-model';
 import { fetchNavigationData, fetchTechnologyNavigationData, fetchExtensionsNavigationData, showNavigationView } from 'body/body-actions';
-import { ITEMS } from '../menu-navigation/mn-constants';
+import { ITEMS } from 'menu-navigation/mn-constants';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
@@ -19,7 +19,7 @@ const mapDispatchToProps = ( dispatch ) => {
           dispatch(fetchExtensionsNavigationData());
           break;
         default:
-          dispatch(fetchNavigationData(props.href));
+          dispatch(fetchNavigationData(props.href, props.name));
           break;
         }
       }

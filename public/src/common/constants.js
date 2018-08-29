@@ -10,7 +10,8 @@ export const COMMON_CLASSES = {
   detailsArea_mktContent: 'qrp_details_mkt_zone',
   selected: 'selected',
   marginAuto: 'marginAuto',
-  vh100: 'vh100'
+  vh100: 'vh100',
+  overflowY: 'ovfy'
 };
 
 export const API_REQUEST = 'rest?q=';

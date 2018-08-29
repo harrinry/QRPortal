@@ -20,6 +20,7 @@ function convertToSearchString ( dataObject, fileName ) {
   return {
     id: dataObject.id,
     name: dataObject.name,
+    critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${dataObject.name}`,
     technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),

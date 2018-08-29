@@ -9,3 +9,28 @@ export const PrettyPrintExtentionName = ( name ) => {
   }
   return (cleanName.includes('Analyzer') || exceptionNames.indexOf(cleanName) !== -1) ? cleanName : cleanName + ' Analyzer' ;
 };
+
+export function updateExtensionVersionArray( array, payload ){
+  return array.map( (item, index) => {
+    if(index !== payload.index) {
+      return item;
+    }
+    return {
+      ...item,
+      versions: payload.versions,
+      loading: false
+    };
+  });
+}
+
+export function setLoadingState( array, payload ){
+  return array.map( (item, index) => {
+    if(index !== payload.index) {
+      return item;
+    }
+    return {
+      ...item,
+      loading: true
+    };
+  });
+}

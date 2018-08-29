@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
-import { fetchListData, showContentView, setListCount } from 'body/body-actions';
+import { fetchListData, showContentView, setListCount, fetchQualityStandardsListData, fetchBusinessCriteriaListData } from 'body/body-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { ITEMS } from './mn-constants';
 import { QUERIES } from './mn-resources';
@@ -17,6 +17,15 @@ const mapStateToProps = (state) => {
     std_cisq: state.navMenu.std_cisq,
     std_owasp: state.navMenu.std_owasp
   };
+};
+
+const paths = {
+  standard: {name: ITEMS.STANDARDS, href: QUERIES.standards},
+  cisq: {name: ITEMS.CISQ, href: QUERIES.cisq},
+  owasp: {name: ITEMS.OWASP, href: QUERIES.owasp},
+  businessCriteria: {name: ITEMS.BUSINESSCRITERIA, href: QUERIES.businessCriteria},
+  technologies: {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies},
+  extensions: {name: ITEMS.EXTENSIONS, href: QUERIES.extensions}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -41,29 +50,47 @@ const mapDispatchToProps = (dispatch) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchExtensions());
     },
-    onQualityStandardClick: ( name, href ) => {
+    onCisqClick: ( name, href ) => {
       dispatch(setListCount(2));
       dispatch(showContentView());
-      dispatch(fetchListData( href ));
-      dispatch(setHeaderPath( {name: ITEMS.STANDARDS, href: QUERIES.standards}, {name, href}  ));
+      dispatch(fetchQualityStandardsListData( href ));
+      dispatch(setHeaderPath( paths.standard, paths.cisq, {name} ));
+    },
+    onOwaspClick: ( name, href ) => {
+      dispatch(setListCount(2));
+      dispatch(showContentView());
+      dispatch(fetchQualityStandardsListData( href ));
+      dispatch(setHeaderPath( paths.standard, paths.owasp,  {name} ));
     },
     onBusinessCriteriaClick: (name, href) => {
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchListData( href ));
-      dispatch(setHeaderPath({name: ITEMS.STANDARDS, href: QUERIES.standards}, {name: ITEMS.BUSINESSCRITERIA, href: QUERIES.businessCriteria}, {name, href} ));
+      dispatch(fetchBusinessCriteriaListData( href ));
+      dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
     },
     onTechnologyClick: (name, href) => {
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchListData( href ));
-      dispatch(setHeaderPath( {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies}, {name, href}  ));
+      dispatch(setHeaderPath( paths.technologies , {name}));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
     },
-    onExtensionsClick: ( name, href ) => {
-      console.log(name + ' - ' + href);
+    onExtensionsClick: ( extension, version ) => {
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchListData( version.href ));
+      dispatch(setHeaderPath( paths.extensions, {name: extension.title, href: extension.href}, version));
+    },
+    fetchVersion: ( exeCount, extension ) =>{
+      if( exeCount !== 0 ) return;
+      if (extension.index !== 0) {
+        dispatch(ACTIONS.fetchExtensionVersion(extension));
+      } else {
+        dispatch(ACTIONS.fetchAIPVersions());
+      }
+      
     }
   };
 };

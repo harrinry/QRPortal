@@ -1,4 +1,5 @@
 import { NAVIGATION_VIEW, CONTENT_VIEW, ERROR_OCCURRED } from './body-constants';
+import { RETURN_TO_LANDING_PAGE } from 'path-navigation/nv-actions-type';
 import * as ACTIONTYPES from './body-actions-type';
 
 const initialState = {
@@ -13,6 +14,12 @@ const initialState = {
 
 const contentBodyReducer = (state = initialState, action) => {
   switch (action.type) {
+  case RETURN_TO_LANDING_PAGE:
+    return {
+      ...state,
+      view: NAVIGATION_VIEW,
+      nav: { data: [], title: undefined, loading: false }
+    };
   case ACTIONTYPES.SHOW_NAVIGATION_VIEW:
     return {
       ...state,
@@ -89,6 +96,14 @@ const contentBodyReducer = (state = initialState, action) => {
       list: {
         ...state.list,
         expandedContent: { ...action.payload }
+      }
+    };
+  case ACTIONTYPES.CLEAR_EXPANDED_LIST_DATA:
+    return {
+      ...state,
+      list:{
+        ...state.list,
+        expandedContent: {data: [], loading: false}
       }
     };
   case ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA: {

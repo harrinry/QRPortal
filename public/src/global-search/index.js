@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Model from './gs-model';
-import { fetchSearchResults } from './gs-actions';
+import * as actions from './gs-actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = ( dispatch ) => {
   return {
     fetchSearchResults: ( query ) => {
-      dispatch(fetchSearchResults( query ));
+      dispatch(actions.fetchSearchResults( query ));
     }
   };
 };

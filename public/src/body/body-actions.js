@@ -1,9 +1,10 @@
 import * as ACTIONTYPES from './body-actions-type';
 import { apiFetch } from 'common/';
-import { STATIC_QUERIES, fetchExtensionsList, fetchTechnologiesList } from './body-resources';
+import { STATIC_QUERIES, fetchExtensionsList, fetchTechnologiesList, fetchQualityStandardList, fetchBusinessCriteriaList } from './body-resources';
 import { TECHNOLOGIES, EXTENSIONS } from './body-constants';
 
 const errOnDataFetch = (err, actionType , query) => {
+  console.log(query);
   return {
     type: actionType,
     payload: {
@@ -76,7 +77,7 @@ const setExpandedListData = ( data ) => {
 export const fetchExpandedListData = ( query ) => {
   return ( dispatch ) => {
     dispatch(fetchingData(ACTIONTYPES.FETCH_EXPANDED_LIST_DATA));
-    return apiFetch( query ).then(
+    return fetchBusinessCriteriaList( query ).then(
       data => dispatch( setExpandedListData(data) ),
       err => dispatch( errOnDataFetch( err, ACTIONTYPES.FAILED_TO_FETCH_EXPANDED_LIST_DATA, query ))
     );
@@ -121,5 +122,31 @@ export const fetchExtensionsNavigationData = () => {
       data => dispatch(setNavigationData(EXTENSIONS, data)),
       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA, STATIC_QUERIES.sources))
     );
+  };
+};
+
+export const fetchQualityStandardsListData = ( url ) => {
+  return ( dispatch ) => {
+    dispatch(fetchingData(ACTIONTYPES.FETCH_LIST_DATA));
+    return fetchQualityStandardList(url).then(
+      data => dispatch(setListData( data )),
+      err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA, url))
+    );
+  };
+};
+
+export const fetchBusinessCriteriaListData = ( url ) => {
+  return ( dispatch ) => {
+    dispatch(fetchingData(ACTIONTYPES.FETCH_LIST_DATA));
+    return fetchBusinessCriteriaList(url).then(
+      data => dispatch(setListData( data )),
+      err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA, url))
+    );
+  };
+};
+
+export const clearExpandedListData = () =>{
+  return {
+    type: ACTIONTYPES.CLEAR_EXPANDED_LIST_DATA
   };
 };
