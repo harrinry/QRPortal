@@ -28,7 +28,7 @@ class SubMenu extends React.PureComponent{
       isOpen = this.state.isOpen;
     return (
       <div className={createClassName(CLASSES.subMenu, COMMON_CLASSES.flexCol)} onClick={this.toggleMenu.bind(this)} >
-        <div className={CLASSES.title}>{title}</div>
+        <div className={createClassName(CLASSES.title, (isOpen ? COMMON_CLASSES.fontWeightHeavy : undefined))}>{title}</div>
         <div className={createClassName(CLASSES.dropdown, (isOpen ? COMMON_CLASSES.flexCol : undefined) )}>
           {children}
         </div>

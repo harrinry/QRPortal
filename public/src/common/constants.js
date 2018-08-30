@@ -11,7 +11,8 @@ export const COMMON_CLASSES = {
   selected: 'selected',
   marginAuto: 'marginAuto',
   vh100: 'vh100',
-  overflowY: 'ovfy'
+  overflowY: 'ovfy',
+  fontWeightHeavy: 'qrp_fw800'
 };
 
 export const API_REQUEST = 'rest?q=';
