@@ -4,7 +4,6 @@ import { STATIC_QUERIES, fetchExtensionsList, fetchTechnologiesList, fetchQualit
 import { TECHNOLOGIES, EXTENSIONS } from './body-constants';
 
 const errOnDataFetch = (err, actionType , query) => {
-  console.log(query);
   return {
     type: actionType,
     payload: {
@@ -14,7 +13,7 @@ const errOnDataFetch = (err, actionType , query) => {
   };
 };
 
-const fetchingData = ( actionType, params ) => {
+export const fetchingData = ( actionType, params ) => {
   return {
     type: actionType,
     payload: {
@@ -32,6 +31,12 @@ export const showContentView = () => {
 export const showNavigationView = () => {
   return {
     type: ACTIONTYPES.SHOW_NAVIGATION_VIEW
+  };
+};
+
+export const showLandingPage = () => {
+  return {
+    type: ACTIONTYPES.SHOW_LANDING_PAGE
   };
 };
 

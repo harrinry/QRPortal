@@ -18,7 +18,7 @@ const ContentBody = ( props ) => {
           <div className={CLASSES.listArea}>
             <VerticalArray onItemClick={(i)=>props.onItemClick(i, 0, props.list.count)} 
               values={['id', 'name', 'critical']}
-              headers={['ID', 'Name', 'Critical']}>{props.list.content.data}</VerticalArray>
+              headers={['ID', 'Name', 'Critical']}>{ props.searchVisible ? (props.searchResults.length === 0 ? [{name:'No Results Found'}] : props.searchResults) : props.list.content.data}</VerticalArray>
           </div>
           <div className={CLASSES.detailsArea}>
             {/* <DetailsSection/> */}

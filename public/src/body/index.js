@@ -7,7 +7,9 @@ const mapStateToProps = (state) => {
     view: state.contentBody.view,
     navigation: state.contentBody.nav,
     list: state.contentBody.list,
-    viewType: state.viewType.viewType
+    viewType: state.viewType.viewType,
+    searchVisible: state.search.resultsVisible,
+    searchResults: state.search.results
   };
 };
 

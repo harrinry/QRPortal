@@ -5,6 +5,9 @@ import { SET_QUALITY_RULES_SEARCH_RESULTS,
   DISPLAY_QUALITY_RULES_SEARCH_RESULTS, 
   HIDE_QUALITY_RULES_SEARCH_RESULTS } from './gs-actions-type';
 
+// import { FETCH_LIST_DATA } from 'body/body-actions-type';
+// import {fetchingData} from 'body/body-actions';
+
 const setSearchResults = ( data, query ) => {
   return {
     type: SET_QUALITY_RULES_SEARCH_RESULTS,
@@ -27,6 +30,7 @@ const errorHandler = ( err, query ) => {
 
 export const fetchSearchResults = ( query ) => {
   return function (dispatch) {
+    // dispatch(fetchingData(FETCH_LIST_DATA));
     return FETCHSEARCHRESULTS(query).then(
       data => dispatch(setSearchResults(data, query)),
       err => dispatch(errorHandler(err, query))

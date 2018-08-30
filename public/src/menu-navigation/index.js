@@ -6,6 +6,7 @@ import { fetchListData, showContentView, setListCount, fetchQualityStandardsList
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { ITEMS } from './mn-constants';
 import { QUERIES } from './mn-resources';
+import { hideSearchResults } from '../global-search/gs-actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -51,24 +52,28 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(ACTIONS.fetchExtensions());
     },
     onCisqClick: ( name, href ) => {
+      dispatch(hideSearchResults());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchQualityStandardsListData( href ));
       dispatch(setHeaderPath( paths.standard, paths.cisq, {name} ));
     },
     onOwaspClick: ( name, href ) => {
+      dispatch(hideSearchResults());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchQualityStandardsListData( href ));
       dispatch(setHeaderPath( paths.standard, paths.owasp,  {name} ));
     },
     onBusinessCriteriaClick: (name, href) => {
+      dispatch(hideSearchResults());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchBusinessCriteriaListData( href ));
       dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
     },
     onTechnologyClick: (name, href) => {
+      dispatch(hideSearchResults());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchListData( href ));
@@ -78,6 +83,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(ACTIONS.setSelectedItem(ref));
     },
     onExtensionsClick: ( extension, version ) => {
+      dispatch(hideSearchResults());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchListData( version.href ));

@@ -9,7 +9,7 @@ const navHeaderReducer = (state = initialState, action) => {
   case APPEND_PATH_TO_HEADER:
     return {
       ...state,
-      path: [...state.path, action.payload]
+      path: [...state.path, ...action.payload]
     };
   case SET_PATH_TO_HEADER:
     return {

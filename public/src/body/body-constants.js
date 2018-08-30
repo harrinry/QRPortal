@@ -12,5 +12,6 @@ export const ERROR_OCCURRED = 'Sorry An Error Occurred';
 
 export const CONTENT_VIEW = 'CONTENT_VIEW';
 export const NAVIGATION_VIEW = 'NAVIGATION_VIEW';
+export const LANDING_PAGE = 'LANDING_PAGE';
 export const TECHNOLOGIES = 'TECHNOLOGIES';
 export const EXTENSIONS = 'SOURCES';
