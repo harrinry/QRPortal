@@ -15,3 +15,9 @@ export const NAVIGATION_VIEW = 'NAVIGATION_VIEW';
 export const LANDING_PAGE = 'LANDING_PAGE';
 export const TECHNOLOGIES = 'TECHNOLOGIES';
 export const EXTENSIONS = 'SOURCES';
+
+export const compareValueKeys = {
+  id: 'id',
+  name: 'name',
+  critical: 'critical'
+};

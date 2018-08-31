@@ -12,7 +12,8 @@ export const COMMON_CLASSES = {
   marginAuto: 'marginAuto',
   vh100: 'vh100',
   overflowY: 'ovfy',
-  fontWeightHeavy: 'qrp_fw800'
+  fontWeightHeavy: 'qrp_fw800',
+  width100pc: 'qrp_w100'
 };
 
 export const API_REQUEST = 'rest?q=';
