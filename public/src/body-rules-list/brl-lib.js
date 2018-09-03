@@ -1,4 +1,4 @@
-import { compareValueKeys } from './body-constants';
+import { compareValueKeys } from './brl-constants';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;

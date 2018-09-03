@@ -34,20 +34,20 @@ class VerticalArray extends React.PureComponent{
   }
 
   render(){
-    const { headers } = this.props;
+    const { headers, childConstructor, itemCountTitle, filterPlaceholder } = this.props;
     const filteredChildren = this.filterChildren();
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
-      <div className={createClassName('headerContainer', COMMON_CLASSES.flexRow)}>
-        <div className={CLASSES.itemCounter}>{filteredChildren.length + ' Rules'}</div>
+      <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
+        <div className={CLASSES.itemCounter}>{filteredChildren.length + ' ' + itemCountTitle}</div>
         <div className={CLASSES.internalFilter}>
-          <input value={this.state.filterValue} placeholder={'Filter Rules'} onChange={this.onfilterChange}></input>
+          <input value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}></input>
         </div>
       </div>
-      <div className={createClassName('TableContainer', COMMON_CLASSES.flexCol, COMMON_CLASSES.overflowY)}>
+      <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol, COMMON_CLASSES.overflowY)}>
         <table>
           <tbody>
             <tr>{headers.map(h => <th>{h}</th>)}</tr>
-            { filteredChildren.length !== 0 ? filteredChildren.map( val => <tr><td>{val.id}</td><td>{val.name}</td><td>{val.critical}</td></tr> ) : 
+            { filteredChildren.length !== 0 ? filteredChildren.map( val => childConstructor(val) ) : 
               <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>}
           </tbody>
         </table>
@@ -58,7 +58,10 @@ class VerticalArray extends React.PureComponent{
 
 VerticalArray.propTypes = {
   headers: PropTypes.array.isRequired,
-  children: PropTypes.array
+  itemCountTitle: PropTypes.string.isRequired,
+  filterPlaceholder: PropTypes.string.isRequired,
+  children: PropTypes.array,
+  childConstructor: PropTypes.func.isRequired
 };
 
 export default VerticalArray;
