@@ -1,4 +1,6 @@
+import React from 'react';
 import { compareValueKeys } from './brl-constants';
+import { COMMON_CLASSES } from 'common/';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;
@@ -8,4 +10,14 @@ export const compareFunction = ( textValue, obj ) =>{
     return [];
   }
   return (reg.test(obj[compareValueKeys.id]) || reg.test(obj[compareValueKeys.name]) || (textValue.toLowerCase() === compareValueKeys.critical ? obj.critical : false) ) ? true : false;
+};
+
+export const childConstructor = ( values ) => {
+  return (
+    <tr>
+      <td>{values.id}</td>
+      <td>{values.name}</td>
+      <td className={values.critical ? COMMON_CLASSES.critical : undefined}> </td>
+    </tr>
+  );
 };

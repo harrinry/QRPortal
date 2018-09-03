@@ -3,5 +3,5 @@ export const CLASSES = {
   itemCounter: 'qrp_iCtr',
   internalFilter: 'qrp_varrintflt',
   headerContainer: 'qrp_hCtr',
-  tableContainer: 'qrp_tCtr'
+  tableContainer: 'qrp_tCtr',
 };
