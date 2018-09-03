@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
 import BodyRulesList from './brl-model';
+import { childConstructor } from './brl-lib';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    dispatch1: () => {
-      dispatch(actionCreator)
+    arrayChildConstructor: (val) => {
+      return childConstructor(val);
     }
   };
 };
 
 const mapStateToProps = (state) => {
   return {
-    data: state.contentBody.list.content.data
+    data: state.contentBody.list.content.data,
+    searchVisible: state.search.resultsVisible,
+    searchResults: state.search.results
   };
 };
 
