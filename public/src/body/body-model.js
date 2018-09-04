@@ -3,7 +3,7 @@ import { COMMON_CLASSES, createClassName } from 'common/';
 import { CLASSES, NAVIGATION_VIEW, LANDING_PAGE } from './body-constants';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import BodyRulesList from 'body-rules-list/';
-// import DetailsSection from 'details-section/';
+import RuleDetails from 'details-section/';
 import './style.css';
 
 const ContentBody = ( props ) => {
@@ -14,7 +14,7 @@ const ContentBody = ( props ) => {
         (<div className={CLASSES.contentSpace}>
 
         </div>) : 
-        (<div className={COMMON_CLASSES.width100pc}>
+        (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>
             <BodyRulesList/>
             {/* <VerticalArray onItemClick={(i)=>props.onItemClick(i, 0, props.list.count)} 
@@ -22,7 +22,7 @@ const ContentBody = ( props ) => {
               headers={['ID', 'Name', 'Critical']}>{ props.searchVisible ? (props.searchResults.length === 0 ? [{name:'No Results Found'}] : props.searchResults) : props.list.content.data}</VerticalArray> */}
           </div>
           <div className={CLASSES.detailsArea}>
-            {/* <DetailsSection/> */}
+            <RuleDetails />
           </div>
         </div>)}
     </div>);

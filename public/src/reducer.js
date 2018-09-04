@@ -6,6 +6,7 @@ import languageReducer from 'language/lang-reducers';
 import globalSearchReducer from 'global-search/gs-reducers';
 import MenuNavigationReducers from 'menu-navigation/mn-reducers';
 import contentBodyReducers from 'body/body-reducers';
+import ruleDetailsReducers from 'details-section/ds-reducers';
 
 const rootReducer = combineReducers({
   viewType: viewTypeReducer,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
   language: languageReducer,
   search: globalSearchReducer,
   navMenu: MenuNavigationReducers,
-  contentBody: contentBodyReducers
+  contentBody: contentBodyReducers,
+  ruleDetails: ruleDetailsReducers
 });
 
 export default rootReducer;

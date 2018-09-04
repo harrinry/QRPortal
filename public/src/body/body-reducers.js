@@ -40,6 +40,15 @@ const contentBodyReducer = (state = initialState, action) => {
         ...action.payload,
       }
     };
+  case ACTIONTYPES.CLEAR_LIST_DATA:
+    return {
+      ...state,
+      list: {
+        ...state.list,
+        content: { data: [], loading: false },
+        expandedContent: { ...state.list.expandedContent }
+      }
+    };
   case ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA:
     return {
       ...state,
@@ -77,7 +86,7 @@ const contentBodyReducer = (state = initialState, action) => {
       list: {
         ...state.list,
         content: { ...action.payload },
-        expandedContent: { data: [], loading: false }
+        expandedContent: { ...state.list.expandedContent }
       }
     };
   case ACTIONTYPES.FETCH_EXPANDED_LIST_DATA: {
@@ -95,14 +104,6 @@ const contentBodyReducer = (state = initialState, action) => {
       list: {
         ...state.list,
         expandedContent: { ...action.payload }
-      }
-    };
-  case ACTIONTYPES.CLEAR_EXPANDED_LIST_DATA:
-    return {
-      ...state,
-      list:{
-        ...state.list,
-        expandedContent: {data: [], loading: false}
       }
     };
   case ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA: {
