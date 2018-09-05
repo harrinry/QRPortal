@@ -17,8 +17,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onItemClick: (item, index, maxIndex) => {
       if( index === 0 && maxIndex === 2 ){
-        if(item.count !== 0) dispatch(actions.fetchExpandedListData(item.href));
-        else dispatch(actions.clearExpandedListData());
+        if(item.count !== 0) dispatch(actions.fetchListData(item.href));
+        else {
+          dispatch(actions.clearListData());
+        }
         console.log(item.count);
       }
     }
