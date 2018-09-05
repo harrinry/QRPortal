@@ -1,33 +1,33 @@
-import { SET_LIST_DATA, FETCH_LIST_DATA, CLEAR_LIST_DATA, FAILED_TO_FETCH_LIST_DATA, SET_SELECTED_RULE_LIST_ITEM } from './brl-actions-type';
+import { FETCH_STANDRADS_LIST_DATA, SET_STANDRADS_LIST_DATA, FAILED_TO_FETCH_STANDRADS_LIST_DATA, SET_SELECTED_STANDARDS_ITEM } from './bsl-actions-type';
 
 const initialState = {
   data: [],
   query: null,
-  loading: false
+  loading: false,
 };
 
 
-const RulesListReducers = (state = initialState, action) => {
+const standardsListReducers = (state = initialState, action) => {
   switch (action.type) {
-  case FETCH_LIST_DATA:
+  case FETCH_STANDRADS_LIST_DATA:
     return {
       data: [],
       query: action.payload.query,
-      loading: true
+      loading: true,
     };
-  case SET_LIST_DATA: 
+  case SET_STANDRADS_LIST_DATA: 
     return {
       data: action.payload.data,
       query: action.payload.query,
-      loading: false
+      loading: false,
     };
-  case FAILED_TO_FETCH_LIST_DATA:
+  case FAILED_TO_FETCH_STANDRADS_LIST_DATA:
     return {
-      data: [{name:action.payload.err}],
+      data: [{...action.payload.err}],
       query: action.payload.query,
       loading: false
     };
-  case SET_SELECTED_RULE_LIST_ITEM:
+  case SET_SELECTED_STANDARDS_ITEM: 
     return {
       ...state,
       data: state.data.map( i => {
@@ -43,13 +43,9 @@ const RulesListReducers = (state = initialState, action) => {
         };
       })
     };
-  case CLEAR_LIST_DATA:
-    return {
-      ...initialState
-    };
   default:
     return state;
   }
 };
 
-export default RulesListReducers;
+export default standardsListReducers;
