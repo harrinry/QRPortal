@@ -14,10 +14,11 @@ export const compareFunction = ( textValue, obj ) =>{
 
 export const childConstructor = ( values, callback ) => {
   return (
-    <tr onClick={callback}>
+    <tr onClick={callback} className={values.selected ? COMMON_CLASSES.arraySelected : undefined}>
       <td>{values.id}</td>
       <td>{values.name}</td>
       <td className={values.critical ? COMMON_CLASSES.critical : undefined}> </td>
     </tr>
   );
 };
+

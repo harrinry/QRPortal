@@ -4,6 +4,7 @@ import { CLASSES, NAVIGATION_VIEW, LANDING_PAGE } from './body-constants';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import BodyRulesList from 'body-rules-list/';
 import RuleDetails from 'details-section/';
+import StandardsList from 'body-standards-list';
 import './style.css';
 
 const ContentBody = ( props ) => {
@@ -16,10 +17,8 @@ const ContentBody = ( props ) => {
         </div>) : 
         (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>
+            { props.listCount === 2 ? <StandardsList/> : undefined}
             <BodyRulesList/>
-            {/* <VerticalArray onItemClick={(i)=>props.onItemClick(i, 0, props.list.count)} 
-              values={['id', 'name', 'critical']}
-              headers={['ID', 'Name', 'Critical']}>{ props.searchVisible ? (props.searchResults.length === 0 ? [{name:'No Results Found'}] : props.searchResults) : props.list.content.data}</VerticalArray> */}
           </div>
           <div className={CLASSES.detailsArea}>
             <RuleDetails />

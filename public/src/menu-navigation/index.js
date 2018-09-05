@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
-import { fetchListData, showContentView, setListCount, fetchQualityStandardsListData, fetchBusinessCriteriaListData } from 'body/body-actions';
+import { showContentView, setListCount} from 'body/body-actions';
+import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
+import { fetchBusinessCriteriaList, fetchApiData } from 'body-rules-list/brl-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { ITEMS } from './mn-constants';
 import { QUERIES } from './mn-resources';
@@ -57,7 +59,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearDetailsData());
       dispatch(setListCount(2));
       dispatch(showContentView());
-      dispatch(fetchQualityStandardsListData( href ));
+      dispatch(fetchStandardsListData( href ));
       dispatch(setHeaderPath( paths.standard, paths.cisq, {name} ));
     },
     onOwaspClick: ( name, href ) => {
@@ -65,7 +67,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearDetailsData());
       dispatch(setListCount(2));
       dispatch(showContentView());
-      dispatch(fetchQualityStandardsListData( href ));
+      dispatch(fetchStandardsListData( href ));
       dispatch(setHeaderPath( paths.standard, paths.owasp,  {name} ));
     },
     onBusinessCriteriaClick: (name, href) => {
@@ -73,7 +75,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearDetailsData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchBusinessCriteriaListData( href ));
+      dispatch(fetchBusinessCriteriaList( href ));
       dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
     },
     onTechnologyClick: (name, href) => {
@@ -81,7 +83,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearDetailsData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchListData( href ));
+      dispatch(fetchApiData( href ));
       dispatch(setHeaderPath( paths.technologies , {name}));
     },
     setSelected: (ref) => {
@@ -92,7 +94,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearDetailsData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchListData( version.href ));
+      dispatch(fetchApiData( version.href ));
       dispatch(setHeaderPath( paths.extensions, {name: extension.title, href: extension.href}, version));
     },
     fetchVersion: ( exeCount, extension ) =>{
