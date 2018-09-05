@@ -13,7 +13,7 @@ class SubMenu extends React.PureComponent{
       exeCount: 0
     };
   }
-  
+
   toggleMenu(e){
     e.stopPropagation();
     this.setState( ( _state ) => { return { isOpen: !_state.isOpen }; } );
@@ -39,7 +39,7 @@ class SubMenu extends React.PureComponent{
 
 SubMenu.propTypes = {
   children: propTypes.array.isRequired,
-  title: propTypes.string.isRequired
+  title: propTypes.string.isRequired //Should be in lowercase
 };
 
 export default SubMenu;
