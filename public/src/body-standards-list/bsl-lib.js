@@ -1,6 +1,6 @@
 import React from 'react';
 import { compareValueKeys } from './bsl-constants';
-import { COMMON_CLASSES } from 'common/';
+import { COMMON_CLASSES, createClassName } from 'common/';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;
@@ -14,8 +14,8 @@ export const compareFunction = ( textValue, obj ) =>{
 
 export const childConstructor = ( values, callback ) => {
   return (
-    <tr onClick={callback} className={values.selected ? COMMON_CLASSES.arraySelected : undefined}>
-      <td>{values.name}</td>
+    <tr onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <td>{values.id + ' - ' + values.name}</td>
     </tr>
   );
 };

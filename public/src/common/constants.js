@@ -15,7 +15,8 @@ export const COMMON_CLASSES = {
   fontWeightHeavy: 'qrp_fw800',
   width100pc: 'qrp_w100',
   critical: 'qrp_critical',
-  arraySelected:'qrp_lselected'
+  arraySelected:'qrp_lselected',
+  arrayChildElement : 'qrp_arrlci'
 };
 
 export const API_REQUEST = 'rest?q=';
