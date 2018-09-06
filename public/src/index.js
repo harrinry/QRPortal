@@ -6,10 +6,7 @@ import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
 
-import * as actions from './body/body-actions';
-
 window.STORE = store;
-window.actions = actions;
 
 ReactDOM.render(
   <Provider store={store}>
