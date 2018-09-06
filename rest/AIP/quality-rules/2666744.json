@@ -1,0 +1,43 @@
+{
+    "id": 2666744,
+    "name": "Unicredit - Avoid Use of Hard-coded Credentials (CWE-798)",
+    "href": "AIP/quality-rules/2666744",
+    "critical": true,
+    "description": "This metric detects the usage of hard-coded password stored in variables or used by the following methods:\n\u0085TBC\u0085",
+    "output": "List all objects (Java, Jsp, Javascript, VBScript) that could contain hard coded passwords\nIt provides the following information:\n - Object full name",
+    "rationale": "Hard-coded credentials typically create a significant hole that allows an attacker to bypass the authentication that has been configured by the software administrator. \nThis hole might be difficult for the system administrator to detect. Even if detected, it can be difficult to fix, so the administrator may be forced into disabling the product entirely.",
+    "reference": "CWE-798: Use of Hard-coded Credentials\nhttps://cwe.mitre.org/data/definitions/798.html",
+    "remediation": "Remove hard-coded passwords strings",
+    "sample": "...\nDriverManager.getConnection(url, \"scott\", \"tiger\");         // VIOLATION\n\u0085",
+    "total": "The number of identified hard-coded passwords of minimum lenght of X, maximum length of Y, containing any combination of numbers, letters and special characters\nX and Y are parameters and can be modified\nX=6\nY=24",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

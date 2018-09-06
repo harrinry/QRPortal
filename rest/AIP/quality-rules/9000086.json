@@ -1,0 +1,41 @@
+{
+    "id": 9000086,
+    "name": "Pacbase: Avoid Large PMS (excluding macros) - too many Line of Code (-P)",
+    "href": "AIP/quality-rules/9000086",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Large programs are more difficult to read and manage. The higher number of Line of Code is 300, corresponding to three -P screens.`!xA!`The threshold for the number of lines of code is configurable at will.",
+    "output": "Nb of macro with more than X LOC in -P`!xA!`Value : Nb of LOC in -P",
+    "rationale": "Large programs are more difficult to read and manage. The higher number of Line of Code is 300, corresponding to three -P screens.`!xA!`The threshold for the number of lines of code is configurable at will.",
+    "reference": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow.  Analyzability declines with increasing Cyclomatic Complexity. Each modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. Changeability declines with increasing Cyclomatic Complexity. Complete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. Testability declines with increasing Cyclomatic Complexity.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

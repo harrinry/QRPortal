@@ -1,0 +1,187 @@
+{
+    "id": 2026904,
+    "name": "Avoid Use of Hard-coded Credentials (CWE-798)",
+    "href": "AIP/quality-rules/2026904",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "This metric detects the usage of hard-coded password stored in variables or used by the following methods:\r\n- java.sql.DriverManager and javax.sql. DataSource\r\n  \u00bf static Connection getConnection(String url)\r\n  \u00bf static Connection getConnection(String url, Properties info)\r\n  \u00bf static Connection getConnection(String url, String user, String password)\r\n- org.apache.tomcat.dbcp.dbcp.BasicDataSource\r\n  \u00bf Connection getConnection(String user, String pass)\r\n- javax.sql.XADataSource\r\n  \u00bf XAConnection getXAConnection(String user, String password)\r\n- org.jboss.security.SecurityAssociationcna\r\n  \u00bf static void setCredential(Object credential)\r\n- java.net.PasswordAuthentication\r\n  \u00bf PasswordAuthentication(String userName, char[] password)\r\n- org.apache.http.auth.UsernamePasswordCredentials\r\n  \u00bf UsernamePasswordCredentials(String usernamePassword)\r\n  \u00bf UsernamePasswordCredentials(String userName, String password)\r\n- org.springframework.jdbc.datasource.DriverManagerDataSource\r\n  \u00bf DriverManagerDataSource(String url, String username, String password)\r\n- org.apache.axis2.transport.http.HttpTransportProperties.Authenticator\r\n  \u00bf public void setUsername(String username)\r\n  \u00bf public void setPassword(String password)\r\n- org.apache.wss4j.common.ext.WSPasswordCallback\r\n  \u00bf public void setPassword(String passwd)",
+    "output": "List all objects (Java, Jsp, Javascript, VBScript) that could contain hard coded passwords\r\nIt provides the following information:\r\n - Object full name",
+    "rationale": "Hard-coded credentials typically create a significant hole that allows an attacker to bypass the authentication that has been configured by the software administrator. \r\nThis hole might be difficult for the system administrator to detect. Even if detected, it can be difficult to fix, so the administrator may be forced into disabling the product entirely.",
+    "reference": "CWE-798: Use of Hard-coded Credentials\r\nhttps://cwe.mitre.org/data/definitions/798.html",
+    "remediation": "Remove hard-coded passwords strings",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 141901,
+            "name": ".NET (Legacy Analyzer)",
+            "href": "AIP/technologies/141901"
+        },
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        },
+        {
+            "id": -19,
+            "name": "ASP",
+            "href": "AIP/technologies/-19"
+        },
+        {
+            "id": 138636,
+            "name": "ASP.NET",
+            "href": "AIP/technologies/138636"
+        },
+        {
+            "id": -23,
+            "name": "Business Object",
+            "href": "AIP/technologies/-23"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": -24,
+            "name": "CICS",
+            "href": "AIP/technologies/-24"
+        },
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        },
+        {
+            "id": -14,
+            "name": "DB2 Server",
+            "href": "AIP/technologies/-14"
+        },
+        {
+            "id": 141030,
+            "name": "DB2 z/OS",
+            "href": "AIP/technologies/141030"
+        },
+        {
+            "id": 138653,
+            "name": "HTML",
+            "href": "AIP/technologies/138653"
+        },
+        {
+            "id": -17,
+            "name": "IMS",
+            "href": "AIP/technologies/-17"
+        },
+        {
+            "id": -18,
+            "name": "JCL",
+            "href": "AIP/technologies/-18"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": -11,
+            "name": "JSP",
+            "href": "AIP/technologies/-11"
+        },
+        {
+            "id": -5,
+            "name": "Java",
+            "href": "AIP/technologies/-5"
+        },
+        {
+            "id": 138657,
+            "name": "Java Applet",
+            "href": "AIP/technologies/138657"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "AIP/technologies/138663"
+        },
+        {
+            "id": 138660,
+            "name": "JavaScript Server",
+            "href": "AIP/technologies/138660"
+        },
+        {
+            "id": 140998,
+            "name": "Microsoft T-SQL",
+            "href": "AIP/technologies/140998"
+        },
+        {
+            "id": -1292967296,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/-1292967296"
+        },
+        {
+            "id": -6,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/-6"
+        },
+        {
+            "id": -1,
+            "name": "Oracle Server",
+            "href": "AIP/technologies/-1"
+        },
+        {
+            "id": 139287,
+            "name": "PL/SQL",
+            "href": "AIP/technologies/139287"
+        },
+        {
+            "id": -20,
+            "name": "SAP SQL",
+            "href": "AIP/technologies/-20"
+        },
+        {
+            "id": -13,
+            "name": "SQL Server",
+            "href": "AIP/technologies/-13"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        },
+        {
+            "id": 138650,
+            "name": "VBScript Client",
+            "href": "AIP/technologies/138650"
+        },
+        {
+            "id": 138647,
+            "name": "VBScript Server",
+            "href": "AIP/technologies/138647"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "id": 9000052,
+    "name": "Pacbase: Avoid PMS using GO TO Statement",
+    "href": "AIP/quality-rules/9000052",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "Pacbase: Avoid PMS using GO TO Statement",
+    "output": "Nb of online programs (TP) with more than X decisions point`!xA!`Value: nb of decision points",
+    "rationale": "Using GOTO in Pacbase code breaks the process execution flow and makes the code more difficult to understand and maintain.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

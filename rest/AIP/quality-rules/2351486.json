@@ -1,0 +1,54 @@
+{
+    "id": 2351486,
+    "name": "ColdFusion: Avoid using inline-IF (IIF)",
+    "href": "AIP/quality-rules/2351486",
+    "critical": true,
+    "description": "Report all use of iif.\nRule could be improved to report usage of iif with de() since it compound the slowness.",
+    "output": "This report lists all Templates that use iif function.\n. It provides the following information:\n- Template full name\n- Number of iif",
+    "rationale": "IIF runs about twice as slow as a  <cfif >/ <cfelse > block\nSlow performance is compunded when used in conjunction with a delayed evaluation DE function.",
+    "reference": "http://www.ipaul.com/2009/08/01/coldfusion-best-practices/ http://christierney.com/2011/02/08/ternary-operator-within-coldfusion-9/",
+    "remediation": "As you can see, you can use a simple inline operator without having to worry about IIF quirks or drawn out conditional statements. Remember this is introduced in ColdFusion 9.\nOr you can just do:\n#(len(arguments.arg1))#\nSince CF treats positive numbers as a true value and zero as a false value it will work. If you want to be more explicit, you can use:\n#(len(arguments.arg1) gt 0)#\nIt certainly works in CF6+.",
+    "remediationSample": "<tr class=\"<cfif currentrow mod 2>lightRow<cfelse>darkRow</cfif>\">",
+    "sample": "<tr class=\"#IIF(currentrow mod 2, DE('lightRow'), DE('darkRow')#\">",
+    "total": "Number of Templates",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2351000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2351000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

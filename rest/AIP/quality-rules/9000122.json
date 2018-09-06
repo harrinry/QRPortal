@@ -1,0 +1,50 @@
+{
+    "id": 9000122,
+    "name": "Pacbase: Avoid PMS using COA statement",
+    "href": "AIP/quality-rules/9000122",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "Pacbase: The COA statement is used to implement Cobol labels into Functions and Sub-Functions. Thus, it should be reserved to Performed Functions (90 and following).",
+    "output": "nb of macro using COA",
+    "rationale": "Pacbase: The COA statement is used to implement Cobol labels into Functions and Sub-Functions.Thus, it should be reserved to Performed Functions.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
