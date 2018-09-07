@@ -4,7 +4,7 @@ import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
 import { showContentView, setListCount} from 'body/body-actions';
 import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
-import { fetchBusinessCriteriaList, fetchApiData } from 'body-rules-list/brl-actions';
+import { fetchBusinessCriteriaList, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { ITEMS } from './mn-constants';
 import { QUERIES } from './mn-resources';
@@ -57,6 +57,7 @@ const mapDispatchToProps = (dispatch) => {
     onCisqClick: ( name, href ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
@@ -65,6 +66,7 @@ const mapDispatchToProps = (dispatch) => {
     onOwaspClick: ( name, href ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
@@ -73,6 +75,7 @@ const mapDispatchToProps = (dispatch) => {
     onBusinessCriteriaClick: (name, href) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchBusinessCriteriaList( href ));
@@ -81,6 +84,7 @@ const mapDispatchToProps = (dispatch) => {
     onTechnologyClick: (name, href) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchApiData( href ));
@@ -92,6 +96,7 @@ const mapDispatchToProps = (dispatch) => {
     onExtensionsClick: ( extension, version ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchApiData( version.href ));
@@ -104,7 +109,6 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(ACTIONS.fetchAIPVersions());
       }
-      
     }
   };
 };

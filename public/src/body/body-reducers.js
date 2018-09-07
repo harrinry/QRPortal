@@ -1,10 +1,9 @@
-import { NAVIGATION_VIEW, CONTENT_VIEW, ERROR_OCCURRED, LANDING_PAGE } from './body-constants';
+import { NAVIGATION_VIEW, CONTENT_VIEW, LANDING_PAGE } from './body-constants';
 import * as ACTIONTYPES from './body-actions-type';
 
 const initialState = {
   view: NAVIGATION_VIEW,
   listCount: 0,
-  nav: { data: [], title: undefined, loading: false },
 };
 
 const contentBodyReducer = (state = initialState, action) => {
