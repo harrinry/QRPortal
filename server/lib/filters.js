@@ -72,7 +72,7 @@ const filterArray = ( listArray ) => {
       const key = KEYSARRAY[i];
       const fltrConfig = filters[key];
       
-      if (key === 'pure'  || key === 'all') continue;
+      if (key === KEYS.pure  || key === KEYS.all) continue;
 
       if (!statusMap[key] && is(KEYS[key], eId)) {
         if (fltrConfig.method === 'validate') {

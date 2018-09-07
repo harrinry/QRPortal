@@ -46,6 +46,7 @@ export default class Sources extends React.Component{
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {
+            if( /uc.|labs./i.test(t.name) ) return;
             return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => this.loadVersions(t)} id={t.id} />;
           })}</BodyBlock>
       </div>);
