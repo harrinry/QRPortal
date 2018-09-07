@@ -34,6 +34,7 @@ const ICONURLS = {
   'asp':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.asp.png',
   'rpg':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.rpg.png',
   'visual basic':'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.visualbasic.png',
+  'angts': 'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.typescriptangular.png'
 /*
 objective-c:'https://raw.githubusercontent.com/CAST-Extend/resources/master/com.castsoftware.objective-c.png',
 
