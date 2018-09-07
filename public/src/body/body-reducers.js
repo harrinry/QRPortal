@@ -20,31 +20,6 @@ const contentBodyReducer = (state = initialState, action) => {
       ...state,
       view: NAVIGATION_VIEW
     };
-  case ACTIONTYPES.FETCH_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        data: [],
-        title: action.payload.title,
-        loading: true
-      }
-    };
-  case ACTIONTYPES.SET_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        ...action.payload,
-      }
-    };
-  case ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        data: [],
-        title: ERROR_OCCURRED,
-        loading: false
-      }
-    };
   case ACTIONTYPES.SHOW_CONTENT_VIEW:
     return {
       ...state,
