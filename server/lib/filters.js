@@ -6,13 +6,15 @@ const KeyMap = require('./dataConstruct/keyMap');
 
 const filteredElement = STRUCT('id', 'name','href', 'glob');
 const KEYS = KeyMap(filters);
+const KEYSARRAY = Object.keys(KEYS);
+const KEYLENGTH = KEYSARRAY.length;
 
 const is = ( key, id ) => {
   switch (key) {
   case KEYS.pure:
     return filters.pure( id );    
   default:
-    return filters[key].indexOf( id ) === -1 ? false : true;
+    return filters[key].filter.indexOf( id ) === -1 ? false : true;
   }
 };
 
@@ -27,13 +29,7 @@ const genGlobURL = ( entriesArray ) => {
 const filterFor = ( key, listArray, title, __map ) => {
   const entries = getEntries( key, listArray );
   __map.validate( key );
-  return new filteredElement( filters[key][0], title, genGlobURL( entries ), entries );
-  /*({
-    id: filters[key][0],
-    name: title,
-    href: genGlobURL( entries ),
-    glob: entries,
-  });*/
+  return new filteredElement( filters[key].filter[0], title, genGlobURL( entries ), entries );
 };
 
 function StatusMap ( keys ){
@@ -72,26 +68,22 @@ const filterArray = ( listArray ) => {
     if( is(KEYS.pure, eId) ) return new filteredElement(listEntry.id, listEntry.name, listEntry.href + '/quality-rules', null);
 
     let ret;
+    for (let i = 0; i < KEYLENGTH; i++) {
+      const key = KEYSARRAY[i];
+      const fltrConfig = filters[key];
+      
+      if (key === 'pure'  || key === 'all') continue;
 
-    if (statusMap.cpp === false && is(KEYS.cpp, eId)){
-      ret = filterFor(KEYS.cpp, listArray, 'C/C++', statusMap);
-    } else if (!statusMap.dotNet && is(KEYS.dotNet, eId)){
-      statusMap.validate(KEYS.dotNet);
-      return;
-    } else if (!statusMap.rpg && is(KEYS.rpg, eId)){
-      ret = filterFor(KEYS.rpg, listArray, 'RPG', statusMap);
-    } else if (!statusMap.pli && is(KEYS.pli, eId)){
-      ret = filterFor(KEYS.pli, listArray, 'PLI', statusMap);
-    } else if (!statusMap.mssql && is(KEYS.mssql, eId)){
-      ret = filterFor(KEYS.mssql, listArray, 'SQL Server', statusMap);
-    } else if (!statusMap.sap && is(KEYS.sap, eId)){
-      ret = filterFor(KEYS.sap, listArray, 'SAP', statusMap);
-    } else if (!statusMap.html5js && is(KEYS.html5js, eId)){
-      ret = filterFor(KEYS.html5js, listArray, 'HTML5 JavaScript', statusMap);
-    } else if (!statusMap.vb && is(KEYS.vb, eId)){
-      ret = filterFor(KEYS.vb, listArray, 'VB.NET', statusMap);
+      if (!statusMap[key] && is(KEYS[key], eId)) {
+        if (fltrConfig.method === 'validate') {
+          statusMap.validate(KEYS[key]);
+          break;
+        } else if (fltrConfig.method === 'filter'){
+          ret = filterFor(KEYS[key], listArray, fltrConfig.name, statusMap);
+          break;
+        }
+      }
     }
-
     return ret;
   });
   return filtered.filter( ele => ele !== undefined );
