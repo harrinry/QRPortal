@@ -1,0 +1,47 @@
+{
+    "id": 2352606,
+    "name": "Remedy: Avoid Workflows with SELECT * statement",
+    "href": "AIP/quality-rules/2352606",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "Templates should not use SELECT * in SQL statement",
+    "output": "This report lists all \"SELECT *\" queries\nIt provides the following information:  \nWorkflow full name",
+    "rationale": "A query that retrieves all columns of a table with a SELECT * can potentially be the source of important performance problems:\nSuch performance problems may arise when the execution of the query returns a large result sets (many row with all the columns may then become a huge amount of data to transport over the network).\nThus optimzer module can't  provide a correct execution.\nAlso, when using such queries, one cannot control how the columns will be ordered and returned to the client. This can lead to important data inconsistencies and thus stability issues.",
+    "remediation": "Review the design of the query to select only useful Columns",
+    "total": "Total number of Workflows",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2352000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2352000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

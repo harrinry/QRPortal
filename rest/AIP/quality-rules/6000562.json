@@ -1,0 +1,52 @@
+{
+    "id": 6000562,
+    "name": "Natural: Avoid Nested Programs using plain UPDATE statement",
+    "href": "AIP/quality-rules/6000562",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "The number of artifacts that have the global UPDATE statement are reported as a violation. The value reported is the actual number of these statements",
+    "rationale": "If Natural is used with Adabas, any record which is to be updated will be placed in \"hold\" status until an END TRANSACTION or BACKOUT TRANSACTION statement is issued or the transaction time limit is exceeded. When a record is placed in \"hold\" status for one user, the record is not available for update by another user. Another user who wishes to update the same record will be placed in \"wait\" status until the record is released from \"hold\" when the first user ends or backs out his/her transaction.  Using a UPDATE (xx) statement will only lock the records that are part of the WHERE clause of the Read operation.",
+    "remediationSample": "DEFINE SUBROUTINE MAJ-TEL       \n* -----------------------       \nFA.     \nFIND CR-ACTEUR-VIEW WITH ACT-IDAC = #IDAC   \n     IF NO RECORD FOUND         \n        WRITE(1) 1T ID-CEN  12T #IDAC 25T 'ACTEUR INCONNU'          \n        MOVE TRUE TO ERREUR     \n        ESCAPE ROUTINE          \n      END-NOREC     \n*       \nGA.     \n      GET CR-ACTEUR-VIEW *ISN(FA.)          \n      MOVE NO-TEL1  TO ACT-NUTE \n      MOVE NO-TEL2  TO ACT-NUTESU           \n      UPDATE(GA.)   \n*       \n      ADD 1 TO #CPT-ACT         \nEND-FIND\n*       \nEND-SUBROUTINE",
+    "sample": "DEFINE SUBROUTINE BORNER-RATING \n******************************* \n                                    /* RECHERCHE SI RATING EN COURS \n  GET CR-RATING-VIEW #ISN       \n    MOVE *DATN        TO CR-RATING-VIEW.DAAN-RAT        \n    MOVE 'ACTB0565'   TO CR-RATING-VIEW.IDUTAN-RAT      \n    COMPUTE CR-RATING-VIEW.HEAN-RAT = *TIMN * 1000      \n    MOVE  0           TO CR-RATING-VIEW.ETAT-RAT        \n*       \n  UPDATE",
+    "total": "Number of Nested Programs ( read Subprograms)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1100000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1100000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

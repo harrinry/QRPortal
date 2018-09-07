@@ -2773,7 +2773,7 @@
     },
     {
         "id": 1006000,
-        "name": "Avoid scripts using SQL static statements (Shell)",
+        "name": "Avoid scripts and functions using SQL static statements (Shell)",
         "href": "AIP/quality-rules/1006000",
         "status": null,
         "critical": false
@@ -4455,6 +4455,601 @@
         "id": 1600840,
         "name": "CWE-798: Avoid using hardcoded usernames (PeopleSoft)",
         "href": "AIP/quality-rules/1600840",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665140,
+        "name": "PowerCenter:Use parameter files",
+        "href": "AIP/quality-rules/1665140",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665482,
+        "name": "PowerCenter:Set \"DTM Buffer size\" at \"Auto\" or at a consistent value on Sessions",
+        "href": "AIP/quality-rules/1665482",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665484,
+        "name": "PowerCenter:Avoid letting default memory size for complex transformations",
+        "href": "AIP/quality-rules/1665484",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665486,
+        "name": "PowerCenter:Avoid uncached lookup",
+        "href": "AIP/quality-rules/1665486",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1665488,
+        "name": "PowerCenter:Avoid too many Fields in a transformation",
+        "href": "AIP/quality-rules/1665488",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665580,
+        "name": "PowerCenter:Set \"Stop on errors\" to 1 on Sessions",
+        "href": "AIP/quality-rules/1665580",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665582,
+        "name": "PowerCenter:Historize the logs for session and workflow",
+        "href": "AIP/quality-rules/1665582",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665584,
+        "name": "PowerCenter:Set \"Fail parent if this task fails\" on tasks",
+        "href": "AIP/quality-rules/1665584",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665586,
+        "name": "PowerCenter:Avoid changing tracing level option other than normal",
+        "href": "AIP/quality-rules/1665586",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1665588,
+        "name": "PowerCenter:Avoid Folder with high save log by timestamp/save log by run ratio",
+        "href": "AIP/quality-rules/1665588",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665760,
+        "name": "PowerCenter:Avoid implicit data conversion",
+        "href": "AIP/quality-rules/1665760",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665762,
+        "name": "PowerCenter:Never truncate data",
+        "href": "AIP/quality-rules/1665762",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665764,
+        "name": "PowerCenter:Avoid Unmapped between source and source qualifier",
+        "href": "AIP/quality-rules/1665764",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1665766,
+        "name": "PowerCenter:Avoid unmapped target column",
+        "href": "AIP/quality-rules/1665766",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 2026902,
+        "name": "Avoid Improper Restriction of XML External Entity Reference  (XXE) vulnerabilities (CWE-611)",
+        "href": "AIP/quality-rules/2026902",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2026904,
+        "name": "Avoid Use of Hard-coded Credentials (CWE-798)",
+        "href": "AIP/quality-rules/2026904",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2026906,
+        "name": "Avoid Use of Socket, ClassLoader or Thread Classes (CWE-246, CWE-578, CWE-362)",
+        "href": "AIP/quality-rules/2026906",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2026908,
+        "name": "Avoid Use of Weak Encryption Algorithms (CWE-326)",
+        "href": "AIP/quality-rules/2026908",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2106004,
+        "name": "XQuery: XQueryVersionCheck",
+        "href": "AIP/quality-rules/2106004",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 2351482,
+        "name": "ColdFusion: Avoid using cffile for file access",
+        "href": "AIP/quality-rules/2351482",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2351484,
+        "name": "ColdFusion: Avoid using cfdump without IsDebugMode",
+        "href": "AIP/quality-rules/2351484",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2351486,
+        "name": "ColdFusion: Avoid using inline-IF (IIF)",
+        "href": "AIP/quality-rules/2351486",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2351760,
+        "name": "ColdFusion: Avoid missing cfdefaultcase in cfswitch construct",
+        "href": "AIP/quality-rules/2351760",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2666740,
+        "name": "Unicredit - Avoid Use of Socket, ClassLoader or Thread Classes (CWE-246, CWE-578, CWE-362)",
+        "href": "AIP/quality-rules/2666740",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2666742,
+        "name": "Unicredit - Avoid Use of Weak Encryption Algorithms (CWE-326)",
+        "href": "AIP/quality-rules/2666742",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2666744,
+        "name": "Unicredit - Avoid Use of Hard-coded Credentials (CWE-798)",
+        "href": "AIP/quality-rules/2666744",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 2666746,
+        "name": "Unicredit - Avoid Improper Restriction of XML External Entity Reference  (XXE) vulnerabilities (CWE-611)",
+        "href": "AIP/quality-rules/2666746",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000100,
+        "name": "Natural: Avoid Natural View in Program directly referencing Adabas File",
+        "href": "AIP/quality-rules/6000100",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000102,
+        "name": "Natural: Avoid Programs using a MAP while access Adabas via a Natural View",
+        "href": "AIP/quality-rules/6000102",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000104,
+        "name": "Natural: Avoid Nested Programs using a MAP while access Adabas via a Natural View",
+        "href": "AIP/quality-rules/6000104",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000540,
+        "name": "Natural: Avoid Programs using WHERE statement in Read operation",
+        "href": "AIP/quality-rules/6000540",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000542,
+        "name": "Natural: Avoid Nested Programs using WHERE statement in Read operation",
+        "href": "AIP/quality-rules/6000542",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000544,
+        "name": "Natural: Avoid Batch Programs using WHERE statement in Read operation",
+        "href": "AIP/quality-rules/6000544",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000548,
+        "name": "Natural: Avoid using WITH LIMIT(xx) in Programs",
+        "href": "AIP/quality-rules/6000548",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000550,
+        "name": "Natural: Avoid using WITH LIMIT(xx) in Nested Programs",
+        "href": "AIP/quality-rules/6000550",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000552,
+        "name": "Natural: Avoid using WITH LIMIT(xx) in Batch Programs",
+        "href": "AIP/quality-rules/6000552",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000554,
+        "name": "Natural: Prefer Programs using Select operations on Natural view using a limit",
+        "href": "AIP/quality-rules/6000554",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000556,
+        "name": "Natural: Prefer Nested Programs using Select operations on Natural view using a limit",
+        "href": "AIP/quality-rules/6000556",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000558,
+        "name": "Natural: Prefer Batch Programs using Select operations on Natural view using a limit",
+        "href": "AIP/quality-rules/6000558",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000560,
+        "name": "Natural: Avoid Programs using plain UPDATE statement",
+        "href": "AIP/quality-rules/6000560",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000562,
+        "name": "Natural: Avoid Nested Programs using plain UPDATE statement",
+        "href": "AIP/quality-rules/6000562",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000564,
+        "name": "Natural: Avoid Batch Programs using plain UPDATE statement",
+        "href": "AIP/quality-rules/6000564",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000580,
+        "name": "Natural: Avoid Programs not declaring the ON ERROR clause",
+        "href": "AIP/quality-rules/6000580",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000584,
+        "name": "Natural: Avoid Batch Programs not declaring the ON ERROR clause",
+        "href": "AIP/quality-rules/6000584",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000592,
+        "name": "Natural: Avoid empty ON ERROR clauses in Programs",
+        "href": "AIP/quality-rules/6000592",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000596,
+        "name": "Natural: Avoid empty ON ERROR clauses in Batch Programs",
+        "href": "AIP/quality-rules/6000596",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 6000598,
+        "name": "Natural: Avoid Programs using STOP and TERMINATE",
+        "href": "AIP/quality-rules/6000598",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000600,
+        "name": "Natural: Avoid Nested Programs using STOP and TERMINATE",
+        "href": "AIP/quality-rules/6000600",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 6000602,
+        "name": "Natural: Avoid Batch Programs using STOP and TERMINATE",
+        "href": "AIP/quality-rules/6000602",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000002,
+        "name": "Pacbase: Avoid Programs using INS statement",
+        "href": "AIP/quality-rules/9000002",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000004,
+        "name": "Pacbase: Avoid Programs using C statement",
+        "href": "AIP/quality-rules/9000004",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000020,
+        "name": "Pacbase: Avoid Programs using TRI operator",
+        "href": "AIP/quality-rules/9000020",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000022,
+        "name": "Pacbase: Avoid Programs using EXA statement",
+        "href": "AIP/quality-rules/9000022",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000040,
+        "name": "Pacbase: Avoid Online Programs using TRI statement",
+        "href": "AIP/quality-rules/9000040",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000042,
+        "name": "Pacbase: Avoid Online Programs using EXA statement",
+        "href": "AIP/quality-rules/9000042",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000044,
+        "name": "Pacbase: Avoid Online Programs using INS statement",
+        "href": "AIP/quality-rules/9000044",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000046,
+        "name": "Pacbase: Avoid Online Programs using C statement",
+        "href": "AIP/quality-rules/9000046",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000058,
+        "name": "Pacbase: Avoid PMS using TRI operator",
+        "href": "AIP/quality-rules/9000058",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000060,
+        "name": "Pacbase: Avoid PMS using EXA statement",
+        "href": "AIP/quality-rules/9000060",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000076,
+        "name": "Pacbase: Avoid PMS using INS statement",
+        "href": "AIP/quality-rules/9000076",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000078,
+        "name": "Pacbase: Avoid PMS using C statement",
+        "href": "AIP/quality-rules/9000078",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000124,
+        "name": "Pacbase: Avoid Programs using MES statement",
+        "href": "AIP/quality-rules/9000124",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000126,
+        "name": "Pacbase: Avoid Online Programs using MES statement",
+        "href": "AIP/quality-rules/9000126",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000128,
+        "name": "Pacbase: Avoid PMS using MES statement",
+        "href": "AIP/quality-rules/9000128",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000168,
+        "name": "Pacbase: Avoid Programs using COB statement (except GOTO)",
+        "href": "AIP/quality-rules/9000168",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000170,
+        "name": "Pacbase: Avoid Online Programs using COB statement (except GOTO)",
+        "href": "AIP/quality-rules/9000170",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000172,
+        "name": "Pacbase: Avoid PMS using COB statement (except GOTO)",
+        "href": "AIP/quality-rules/9000172",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000178,
+        "name": "Pacbase: Avoid use of operators : OPE,CLO,R,W,RW,RN,STA,DEL",
+        "href": "AIP/quality-rules/9000178",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000180,
+        "name": "Pacbase: Avoid using EXC LINK outside PMS (TP)",
+        "href": "AIP/quality-rules/9000180",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000190,
+        "name": "Pacbase: Avoid include PMS into PMS",
+        "href": "AIP/quality-rules/9000190",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000196,
+        "name": "Pacbase: Batch - avoid use of TP operators X in Batch programs",
+        "href": "AIP/quality-rules/9000196",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000200,
+        "name": "Pacbase: Avoid use of operators : CLO outside PMS",
+        "href": "AIP/quality-rules/9000200",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000202,
+        "name": "Pacbase: Avoid use of operators : OPE outside PMS",
+        "href": "AIP/quality-rules/9000202",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000204,
+        "name": "Pacbase: Avoid use of operators : R outside PMS",
+        "href": "AIP/quality-rules/9000204",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000206,
+        "name": "Pacbase: Avoid use of operators : W outside PMS",
+        "href": "AIP/quality-rules/9000206",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000210,
+        "name": "Pacbase: Avoid using EXC outside PMS",
+        "href": "AIP/quality-rules/9000210",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000212,
+        "name": "Pacbase: Avoid using SCB, SCH outside PMS",
+        "href": "AIP/quality-rules/9000212",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000218,
+        "name": "Pacbase: Batch - Avoid use of operators : ADC, ADT",
+        "href": "AIP/quality-rules/9000218",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000230,
+        "name": "Pacbase: Avoid call outside PMS",
+        "href": "AIP/quality-rules/9000230",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000234,
+        "name": "Pacbase: Avoid using obsolete PMS",
+        "href": "AIP/quality-rules/9000234",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000238,
+        "name": "Pacbase: Avoid SQL outside PMS",
+        "href": "AIP/quality-rules/9000238",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 9000264,
+        "name": "Pacbase: Avoid too many file access declarations",
+        "href": "AIP/quality-rules/9000264",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000266,
+        "name": "Pacbase: Avoid hard defined label",
+        "href": "AIP/quality-rules/9000266",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000286,
+        "name": "Pacbase: Avoid Batch & TP Programs (excluding macros) accessing too many tables",
+        "href": "AIP/quality-rules/9000286",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 9000288,
+        "name": "Pacbase: Avoid Batch &amp; TP Programs (including macros) accessing too many tables",
+        "href": "AIP/quality-rules/9000288",
         "status": null,
         "critical": false
     }

@@ -1,0 +1,48 @@
+{
+    "id": 2352604,
+    "name": "Remedy: Avoid Workflows With Queries using GROUP BY",
+    "href": "AIP/quality-rules/2352604",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "Templates should not use GROUP BY clause in SQL statement",
+    "output": "This report lists all Workflows with SQL statement using GROUP BY clause. It provides the following information: Workflow full name",
+    "rationale": "Having complex queries in artifacts can cause performance problems. Queries using GROUP BY is considered complex and not efficient.",
+    "reference": "CAST Consulting",
+    "remediation": "Review the design of the query to avoid if possible GROUP BY clause",
+    "total": "Total number of Workflows",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2352000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2352000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

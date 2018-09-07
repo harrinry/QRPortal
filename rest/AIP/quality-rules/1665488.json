@@ -1,0 +1,53 @@
+{
+    "id": 1665488,
+    "name": "PowerCenter:Avoid too many Fields in a transformation",
+    "href": "AIP/quality-rules/1665488",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "List all Transformations with more than X computed fields.\nThe X threshold is a parameter and can be changed at will.\nIt does not take into account the following Transformation Types : Router , Union , Aggregator, Joiner.",
+    "output": "This report lists all Mappings, Mapplets and Folders with Transformations having too many computed field\nit provides the following information\nMapping or Mapplet or Folder full name, Transformation full name",
+    "rationale": "Too many fields in a transformation could decrease drastically performance because thread in charge of the transformation, per partition, may be overwhelmed.",
+    "reference": "Informatica Best Practice",
+    "remediation": "Split transformation with lot of computed fields into several transformations",
+    "total": "Total number of Mappings, Mapplets and Folders",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

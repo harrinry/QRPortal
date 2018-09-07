@@ -1,0 +1,49 @@
+{
+    "id": 6000584,
+    "name": "Natural: Avoid Batch Programs not declaring the ON ERROR clause",
+    "href": "AIP/quality-rules/6000584",
+    "critical": true,
+    "description": "This diagnostic will return the Artifacts that have no ON ERROR clause specified",
+    "rationale": "Proactive handling of errors or exceptions significantly streamlines debugging. Without proper error handling, users may receive run-time errors, which are difficult to understand. The Natural Program has this Error routine and is used by all the Natural artifact subsequent in the call graph.",
+    "total": "Number of Batch Programs",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1100000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1100000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "id": 1665766,
+    "name": "PowerCenter:Avoid unmapped target column",
+    "href": "AIP/quality-rules/1665766",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "List all Workflows and Worklets with unmapped target column",
+    "output": "This report lists all Workflows and Worklets with unmapped target fields\nit provides the following information\nWorkflow full name, target field name",
+    "rationale": "For understandability and maintainability, unmapped target fieds should be avoided. If a session is in insert or data driven mode, having unmapped target fields could cause unexpected behavior.",
+    "reference": "Informatica Best Practice",
+    "remediation": "Map every fields of target objects, even if you have to use an expression before with default values.",
+    "total": "Total number of Workflows and Worklets",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

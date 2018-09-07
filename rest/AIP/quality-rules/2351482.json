@@ -1,0 +1,52 @@
+{
+    "id": 2351482,
+    "name": "ColdFusion: Avoid using cffile for file access",
+    "href": "AIP/quality-rules/2351482",
+    "critical": true,
+    "description": "This rule report all us of  <cffile>, whatever the size of the file.",
+    "output": "This report lists all Templates that .use <cffile>.\nIt provides the following information:\n- Template full name\n- Number of cffile",
+    "rationale": "<cffile> is slow for large file access.",
+    "reference": "http://stackoverflow.com/questions/1191131/common-programming-mistakes-for-coldfusion-programmer-to-avoid\nhttp://www.raymondcamden.com/index.cfm/2011/2/8/Comparing-different-ways-of-writing-out-large-amounts-of-data",
+    "remediation": "Either use the new CF8 \"File\" functions or hand off the task to Java on CF6 & 7.",
+    "total": "Number of Templates",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2351000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2351000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

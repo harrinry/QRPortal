@@ -1,0 +1,48 @@
+{
+    "id": 1665440,
+    "name": "PowerCenter:Avoid mapping with a very low comments/objects ratio",
+    "href": "AIP/quality-rules/1665440",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "Mapping should have at least a ratio [Commented objects@/[Total objects] greater than X %.\nThe X threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Mappings and Mapplets with commented objects/total objects ratio lower than X %\nIt provides the following information: \nMapping or Mapplet full name, Percentage of number of commented objects by the total number of objects in Mapping",
+    "rationale": "For understandability and maintainability, objects (source, transformations, target) withing a Mapping should be documented.",
+    "reference": "Informatica Velocity Methodology",
+    "remediation": "Enrich field Description with comments in objects.",
+    "total": "Total number of Mappings and Mapplets",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

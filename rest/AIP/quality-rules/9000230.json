@@ -1,0 +1,45 @@
+{
+    "id": 9000230,
+    "name": "Pacbase: Avoid call outside PMS",
+    "href": "AIP/quality-rules/9000230",
+    "critical": false,
+    "maxWeight": 9,
+    "description": "Avoid call outside PMS`!xA!` details",
+    "output": "Nb of batch or online programs using CALL`!xA!`Value: Nb of CALL in the program",
+    "rationale": "CALL is a reusable code and should be included only in PMS that includes error management and communication zone between programs.  This specific management is often an enterprise standard and it comes generaly whithin a distinct PMS skeleton. This PMS should centralize the error management for the entire application.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

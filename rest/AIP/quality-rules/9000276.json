@@ -1,0 +1,41 @@
+{
+    "id": 9000276,
+    "name": "Pacbase: Avoid too many Total Lines of Code (-P)",
+    "href": "AIP/quality-rules/9000276",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Large entities are more difficult to read and manage. `!xA!`The threshold for the number of lines of code is configurable at will.`!xA!`Total Lines of Code measures the LOC of the Program/TP including its Macros.",
+    "output": "This report lists all Pacbase Programs, Online Programs and PMS (Macros) with more than the number of lines of code defined in threshold. It provides the following information: Object full name, Number of LOC",
+    "rationale": "Large entities are more difficult to read and manage. `!xA!`The threshold for the number of lines of code is configurable at will.`!xA!`Total Lines of Code measures the LOC of the Program/TP including its Macros.",
+    "remediation": "Review the design of the Program, Online Program or PMS (Macros) to reduce its size",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

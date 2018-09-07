@@ -1,0 +1,68 @@
+{
+    "id": 2026908,
+    "name": "Avoid Use of Weak Encryption Algorithms (CWE-326)",
+    "href": "AIP/quality-rules/2026908",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "This metric detects the usage of defined encryption algorithms considered weak. It checks the usage of the following classes that implements weak encryption algorithm:\r\n- AlgorithmParameters.getInstance(\"[RC2|PBEWithMD5AndDES|DES|DESede]\")\r\n- Cipher.getInstance(\"([RC2|PBEWithMD5AndDES|DES|DESede|RC4]\")\r\n- KeyGenerator.getInstance(\"[HmacMD5|HmacSHA1|RC2|DES|DESede|RC4]\")\r\n- Mac.getInstance(\"[HmacMD5|HmacSHA1]\")\r\n- MessageDigest.getInstance(\"[MD2|MD5|SHA-1]\")\r\n- SecretKeyFactory.getInstance(\"[DES|DESede|PBEWithMD5AndDES]\")\r\n- SSLContext.getInstance(\"[SSL|SSLv2|SSLv3]\")",
+    "output": "This report lists all Java methods that refer to specific classes that implement a weak encription algorithm\r\nIt provides the following information:\r\n - Method full name\r\n - The associated value is the number of violation inside the violating method.",
+    "rationale": "When the software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required, an attacker may be able to decrypt the data using brute force attacks.\r\nA weak encryption scheme can be subjected to brute force attacks that have a reasonable chance of succeeding using current attack method.",
+    "reference": "CWE-326: Inadequate Encryption Strength\r\nhttps://cwe.mitre.org/data/definitions/326.html",
+    "remediation": "Use a cryptographic algorithm that is currently considered to be strong by experts in the field.",
+    "sample": "import java.security.*;\r\n...\r\nbyte[] bytesOfMessage = yourString.getBytes(\"UTF-8\");\r\nMessageDigest md = MessageDigest.getInstance(\"MD5\");        // VIOLATION\r\nbyte[] thedigest = md.digest(bytesOfMessage);",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": -11,
+            "name": "JSP",
+            "href": "AIP/technologies/-11"
+        },
+        {
+            "id": -5,
+            "name": "Java",
+            "href": "AIP/technologies/-5"
+        },
+        {
+            "id": 138657,
+            "name": "Java Applet",
+            "href": "AIP/technologies/138657"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "AIP/technologies/138663"
+        },
+        {
+            "id": 138660,
+            "name": "JavaScript Server",
+            "href": "AIP/technologies/138660"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
