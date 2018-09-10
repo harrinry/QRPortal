@@ -1,5 +1,5 @@
 import * as ACTIONTYPES from './bn-actions-type';
-import { fetchNavData } from './bn-resources';
+import { webFetch } from 'common/';
 
 const setFetchingState = ( title, query ) => {
   return {
@@ -38,7 +38,7 @@ export const clearNavigationData = () => {
 export const fetchNavigationData = ( title, query ) => {
   return (dispatch) => {
     dispatch(setFetchingState(title, query));
-    return fetchNavData( query ).then(
+    return webFetch( query ).then(
       data => dispatch(setNavigationData(data)),
       err => dispatch(errorFetchingNavData(err))
     );

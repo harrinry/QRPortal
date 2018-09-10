@@ -5,6 +5,7 @@ const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
 const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
+const getStandardsMap = require('../lib/standards-map');
 extensionsMap.INIT();
 let extVersionMap;
 
@@ -62,6 +63,10 @@ rulesRouter.get('/extensions', ( req, res ) => {
   } else {
     errorHandler( {statusCode: 404}, res );
   }
+});
+
+rulesRouter.get('/quality-standards', ( req, res ) => {
+  getStandardsMap(res);
 });
 
 module.exports = rulesRouter;

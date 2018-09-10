@@ -4,7 +4,7 @@ import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
 import { showContentView, setListCount} from 'body/body-actions';
 import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
-import { fetchBusinessCriteriaList, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
+import { fetchWebData, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { ITEMS } from './mn-constants';
 import { QUERIES } from './mn-resources';
@@ -78,7 +78,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchBusinessCriteriaList( href ));
+      dispatch(fetchWebData( href ));
       dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
     },
     onTechnologyClick: (name, href) => {
@@ -99,7 +99,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchApiData( version.href ));
+      dispatch(fetchWebData( version.href ));
       dispatch(setHeaderPath( paths.extensions, {name: extension.title, href: extension.href}, version));
     },
     fetchVersion: ( exeCount, extension ) =>{

@@ -15,6 +15,11 @@ module.exports = [
     router: 'api'
   },
   {
+    name: 'web',
+    route: '/aip',
+    router: 'router'
+  },
+  {
     name: 'determinator',
     route: '/determinator',
     router: 'router'
