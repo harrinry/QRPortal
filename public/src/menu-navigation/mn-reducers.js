@@ -1,5 +1,4 @@
 import * as ACTIONS from './mn-actions-type';
-import { AIP_VERSIONS_EXT } from './mn-constants';
 import { updateExtensionVersionArray, setLoadingState } from './mn-lib';
 
 const initialState = {
@@ -20,9 +19,7 @@ const initialState = {
     loading: false
   },
   extensions: {
-    data: [
-      AIP_VERSIONS_EXT
-    ],
+    data: [],
     loading: false
   },
   selected: undefined
@@ -66,9 +63,7 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       extensions: {
-        data: [
-          AIP_VERSIONS_EXT,
-          ...action.payload.data].map( ( e, i ) => {
+        data: [...action.payload.data].map( ( e, i ) => {
           return {
             ...e,
             index: i

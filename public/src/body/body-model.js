@@ -14,7 +14,7 @@ const ContentBody = ( props ) => {
     <div className={createClassName(CLASSES.contentBody, COMMON_CLASSES.flexRow, COMMON_CLASSES.defaultBackgroundColor, COMMON_CLASSES.flexGrow1, viewTypeClass)}>
       {props.view === NAVIGATION_VIEW || props.view === LANDING_PAGE ? 
         (<div className={CLASSES.contentSpace}>
-          <TileNavigation/>
+          {<TileNavigation/>}
         </div>) : 
         (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>

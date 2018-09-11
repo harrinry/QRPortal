@@ -8,12 +8,14 @@ function getQualityStandardsMap ( response ){
     }
     const businessCriteria = {
       name: 'CAST',
-      href: 'AIP/business-criteria'
+      href: 'AIP/business-criteria',
+      icon: 'img/castsoftware.svg'
     };
     const ret = JSON.parse(data).filter( e => e.name === 'CISQ' || e.name === 'OWASP').map( e => {
       return {
         name: e.name,
-        href: e.href + '/categories'
+        href: e.href + '/categories',
+        icon: 'img/'+ e.name.toLowerCase() +'.svg'
       };
     });
 

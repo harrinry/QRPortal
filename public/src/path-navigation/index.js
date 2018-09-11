@@ -11,7 +11,7 @@ const mapDispatchToProps = ( dispatch ) => {
       if(props.separator){
         dispatch(navigateTo(props, props.index));
         dispatch(showNavigationView());
-        dispatch(fetchNavigationData(props.name, props.href));
+        dispatch(fetchNavigationData(props.name, props.href, props.icon));
       }
     }
   };

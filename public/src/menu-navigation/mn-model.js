@@ -6,7 +6,6 @@ import LoadingSpinner from 'components/loading-spinner';
 import { COMMON_CLASSES, createClassName } from 'common/';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import { CLASSES, ITEMS } from './mn-constants';
-import * as lib from './mn-lib';
 import './style.css';
 
 const NavigationMenu = ( props ) => {
@@ -44,10 +43,10 @@ const NavigationMenu = ( props ) => {
       </SubMenu>
       <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
         {props.extensions.data ? 
-          props.extensions.data.map( e => (<SubMenu title={lib.PrettyPrintExtentionName(e.title)} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
+          props.extensions.data.map( e => (<SubMenu title={e.name} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
             {e.versions ? e.versions.map( ver => <MenuItem selected={props.selected === JSON.stringify(ver) ? true : false} title={ver.name} href={ver.href} onClick={() => {
               props.setSelected(JSON.stringify(ver));
-              props.onExtensionsClick({...e,title: lib.PrettyPrintExtentionName(e.title)}, ver);
+              props.onExtensionsClick(e, ver);
             }}/> ) : ( e.loading ? <LoadingSpinner/> : undefined )}
           </SubMenu>)) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>

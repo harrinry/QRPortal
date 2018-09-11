@@ -1,12 +1,13 @@
 import * as ACTIONTYPES from './bn-actions-type';
 import { webFetch } from 'common/';
 
-const setFetchingState = ( title, query ) => {
+const setFetchingState = ( title, icon, query ) => {
   return {
     type: ACTIONTYPES.FETCH_NAVIGATION_DATA,
     payload:{
       title,
-      query
+      query,
+      icon
     }
   };
 };
@@ -35,9 +36,9 @@ export const clearNavigationData = () => {
   };
 };
 
-export const fetchNavigationData = ( title, query ) => {
+export const fetchNavigationData = ( title, query, iconURL ) => {
   return (dispatch) => {
-    dispatch(setFetchingState(title, query));
+    dispatch(setFetchingState(title, iconURL, query));
     return webFetch( query ).then(
       data => dispatch(setNavigationData(data)),
       err => dispatch(errorFetchingNavData(err))

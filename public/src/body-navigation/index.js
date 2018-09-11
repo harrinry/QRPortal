@@ -17,13 +17,23 @@ const mapDispatchToProps = (dispatch) => {
         dispatch(fetchApiData(link.href));
         break;
       case SECTIONS.standards:
-        dispatch(fetchNavigationData(link.name, link.href));
+        dispatch(fetchNavigationData(link.name, link.href, link.icon ));
         break;
       case SECTIONS.cisq:
       case SECTIONS.owasp:
         dispatch(setListCount(2));
         dispatch(showContentView());
         dispatch(fetchStandardsListData(link.href));
+        break;
+      case SECTIONS.extensions:
+        fetch(link.href)
+          .then(res => res.json())
+          .then(data => {
+            dispatch(setListCount(1));
+            dispatch(showContentView());
+            dispatch(fetchWebData(data[0].href));
+            dispatch(appendToHeaderPath(data[0]));
+          });
         break;
       default:
         dispatch(setListCount(1));
@@ -40,7 +50,8 @@ const mapStateToProps = (state) => {
   return {
     loading: state.navTile.loading,
     title: state.navTile.title,
-    navContent: state.navTile.data
+    navContent: state.navTile.data,
+    icon: state.navTile.icon
   };
 };
 

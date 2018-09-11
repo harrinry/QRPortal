@@ -6,14 +6,14 @@ import './style.css';
 
 const Tile = ( props ) => {
   return ( 
-    <div className={createClassName(COMMON_CLASSES.txtCenter, CLASSES.tile, props.className)} style={stylize(props.iconURL)} onMouseDown={props.click} >
+    <div className={createClassName(COMMON_CLASSES.txtCenter, CLASSES.tile, props.className)} style={stylize(props.icon)} onMouseDown={props.click} >
       <span className={CLASSES.nameFloatOnHover}>{props.children}</span>
     </div>);
 };
 
-function stylize( iconURL ){
+function stylize( icon ){
   return {
-    backgroundImage: iconURL ? 'url('+ iconURL +')' : defaultIconURL,
+    backgroundImage: icon ? 'url(' + icon + ')' : defaultIconURL,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     backgroundSize: '80%'
@@ -23,7 +23,7 @@ function stylize( iconURL ){
 Tile.propTypes = {
   value: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
-  iconURL: PropTypes.string
+  iconURL: PropTypes.string.isRequired
 };
 
 export default Tile;

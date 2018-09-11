@@ -4,6 +4,7 @@ const initialState = {
   data: [], 
   query: null,
   title: null, 
+  icon: null,
   loading: false
 };
 
@@ -15,6 +16,7 @@ const TileNavigationReducer = (state = initialState, action) => {
       query: action.payload.query,
       data: [],
       title: action.payload.title,
+      icon: action.payload.icon,
       loading: true
     };
   case ACTIONTYPES.SET_NAVIGATION_DATA:
