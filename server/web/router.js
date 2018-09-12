@@ -4,6 +4,7 @@ const technoMapping = require('../lib/technologies-map');
 const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
 const getStandardsMap = require('../lib/standards-map');
+const businessCriteriaMap = require('../lib/business-criteria-map');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -53,7 +54,7 @@ WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
 });
 
 WebRouter.get('/business-criteria', (req, res) => {
-  res.sendFile(req.url + '.json', options, err => errorHandler(err, res));
+  businessCriteriaMap(res);
 });
 
 WebRouter.get('/business-criteria/:bcID', ( req, res ) => {

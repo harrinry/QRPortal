@@ -9,6 +9,7 @@ import { setHeaderPath } from 'path-navigation/nv-actions';
 import { PATHS } from './mn-constants';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearDetailsData } from 'details-section/ds-actions';
+// import { push } from 'connected-react-router';
 
 const mapStateToProps = (state) => {
   return {
@@ -52,6 +53,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
       dispatch(setHeaderPath( PATHS.standard, PATHS.cisq, {name} ));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.cisq.name}/${name}`));
     },
     onOwaspClick: ( name, href ) => {
       dispatch(hideSearchResults());
@@ -61,6 +63,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
       dispatch(setHeaderPath( PATHS.standard, PATHS.owasp,  {name} ));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.owasp.name}/${name}`));
     },
     onBusinessCriteriaClick: (name, href) => {
       dispatch(hideSearchResults());
@@ -70,6 +73,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchWebData( href ));
       dispatch(setHeaderPath(PATHS.standard, PATHS.businessCriteria, {name}));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.businessCriteria.name}/${name}`));
     },
     onTechnologyClick: (name, href) => {
       dispatch(hideSearchResults());
@@ -79,6 +83,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchApiData( href ));
       dispatch(setHeaderPath( PATHS.technologies , {name}));
+      // dispatch(push(`/temp/rules/${PATHS.technologies.name}/${name}`));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
@@ -91,6 +96,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchWebData( version.href ));
       dispatch(setHeaderPath( PATHS.extensions, {name: extension.name, href: extension.href, icon: extension.icon}, version));
+      // dispatch(push(`/temp/rules/${PATHS.extensions.name}/${extension.name}/${version.name}`));
     },
     fetchVersion: ( exeCount, extension ) =>{
       if( exeCount !== 0 ) return;
