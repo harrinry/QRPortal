@@ -15,12 +15,7 @@ export const COMMON_CLASSES = {
   fontWeightHeavy: 'qrp_fw800',
   width100pc: 'qrp_w100',
   critical: 'qrp_critical',
-<<<<<<< HEAD
   arraySelected:'qrp_lselected'
-=======
-  arraySelected:'qrp_lselected',
-  arrayChildElement : 'qrp_arrlci'
->>>>>>> origin/backend_dev_msu
 };
 
 export const API_REQUEST = 'rest?q=';

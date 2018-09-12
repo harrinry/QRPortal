@@ -13,21 +13,21 @@ const NavigationMenu = ( props ) => {
   return (
     <div className={createClassName(CLASSES.menu, (props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <SubMenu title={ITEMS.STANDARDS}>
-        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc} cssClass={CLASSES.standardsSubMenu}>
+        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc}>
           {props.std_bc.data ? 
             props.std_bc.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onBusinessCriteriaClick(e.name, e.href);
             }}/>) : ( props.std_bc.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq} cssClass={CLASSES.standardsSubMenu}>
+        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq}>
           {props.std_cisq.data ? 
             props.std_cisq.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onCisqClick(e.name, e.href);
             }}/>) : ( props.std_cisq.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp} cssClass={CLASSES.standardsSubMenu}>
+        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp}>
           {props.std_owasp.data ? 
             props.std_owasp.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));

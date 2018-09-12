@@ -15,10 +15,6 @@ class VerticalArray extends React.PureComponent{
     this.onfilterChange = this.onfilterChange.bind(this);
   }
 
-  componentWillReceiveProps(){
-    this.setState({filterValue: ''});
-  }
-
   onfilterChange( event ){
     this.setState({filterValue: event.target.value});
   }
@@ -49,11 +45,9 @@ class VerticalArray extends React.PureComponent{
       </div>
       <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol, COMMON_CLASSES.overflowY)}>
         <table>
-          <thead>
-            <tr>{headers.map(h => <th>{h}</th>)}</tr>
-          </thead>
           <tbody>
-            {filteredChildren.length !== 0 ? filteredChildren.map( val => childConstructor(val) ) : 
+            <tr>{headers.map(h => <th>{h}</th>)}</tr>
+            { filteredChildren.length !== 0 ? filteredChildren.map( val => childConstructor(val) ) : 
               <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>}
           </tbody>
         </table>

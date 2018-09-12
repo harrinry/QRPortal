@@ -1,6 +1,5 @@
 export const CLASSES = {
-  menu: 'qrp_menu-navigation',
-  standardsSubMenu: 'qrp_stdsm'
+  menu: 'qrp_menu-navigation'
 };
 
 export const ITEMS = {
