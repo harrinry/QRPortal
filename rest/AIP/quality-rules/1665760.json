@@ -1,0 +1,49 @@
+{
+    "id": 1665760,
+    "name": "PowerCenter:Avoid implicit data conversion",
+    "href": "AIP/quality-rules/1665760",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "List all Mappings and Mapplets having an object doing implicit convertion from one type to another type except between 2 types inside the same group.\nThe groups of tested types are the following (consider the  tests as case insentive).\nGroup 1: 'date/time', 'date', 'dateTime', 'datetime', 'timestamp', 'dats', 'tims', 'accp'\nGroup 2: 'string', 'varchar', 'varchar2', 'nvarchar', 'nvarchar2', 'nchar', 'nstring', 'char', 'clnt', 'unit', 'cuky', 'lang'\nGroup 3: 'int' , 'numeric', 'bigint', 'integer', 'double', 'number(p,s)', 'bigint', 'decimal', 'number', 'small integer', 'dec', 'fltp', 'int1', 'int2', 'int4', 'int8', 'int16', 'int32', 'int64', 'num1', 'num2', 'num4', 'num8', 'num16', 'num32', 'num64', 'numc', 'cur', 'quan', 'prec', 'curr', 'zoned', 'numchar'.\nGroup 4: 'raw', 'binary', 'varbin'.",
+    "output": "This report lists all Mappings and Mapplets with Objects containing implicit data conversion. \nIt provides the following information\nMapping or Mapplet full name, source field full name, target field full name, the source type and the target type",
+    "rationale": "For understandability and data consistency, implicit data conversion should be avoided. If you don't control explicitly data conversion, you might have unexpected behavior.",
+    "reference": "Informatica Best Practice",
+    "remediation": "Use conversion function like : TO_CHAR(Date), TO_CHAR(Number), TO_DATE(), TO_DECIMAL(), TO_FLOAT(), TO_INTEGER(), TO_NUMBER(), TO_BIGINT() in place of implicit data conversion.",
+    "sample": "For example, you map or apply a string datatype to a date, an integer or a float datatype.",
+    "total": "Total number of Mappings and Mapplets",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

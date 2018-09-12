@@ -1,5 +1,5 @@
 import * as ACTIONTYPES from './ds-actions-type';
-import { apiFetch } from 'common/';
+import { webFetch } from 'common/';
 
 const fetchingDetailsData = () => {
   return {
@@ -30,7 +30,7 @@ const errorOnDetailsFetch = (err, query) => {
 export const fetchDetailsData = ( url ) => {
   return (dispatch) => {
     dispatch(fetchingDetailsData());
-    return apiFetch( url ).then(
+    return webFetch( url ).then(
       data => dispatch(setDetailsData(data, url)),
       err => dispatch(errorOnDetailsFetch(err, url))
     );

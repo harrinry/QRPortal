@@ -4,12 +4,12 @@ import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
 import { showContentView, setListCount} from 'body/body-actions';
 import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
-import { fetchBusinessCriteriaList, fetchApiData } from 'body-rules-list/brl-actions';
+import { fetchWebData, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
-import { ITEMS } from './mn-constants';
-import { QUERIES } from './mn-resources';
+import { PATHS } from './mn-constants';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearDetailsData } from 'details-section/ds-actions';
+// import { push } from 'connected-react-router';
 
 const mapStateToProps = (state) => {
   return {
@@ -21,15 +21,6 @@ const mapStateToProps = (state) => {
     std_cisq: state.navMenu.std_cisq,
     std_owasp: state.navMenu.std_owasp
   };
-};
-
-const paths = {
-  standard: {name: ITEMS.STANDARDS, href: QUERIES.standards},
-  cisq: {name: ITEMS.CISQ, href: QUERIES.cisq},
-  owasp: {name: ITEMS.OWASP, href: QUERIES.owasp},
-  businessCriteria: {name: ITEMS.BUSINESSCRITERIA, href: QUERIES.businessCriteria},
-  technologies: {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies},
-  extensions: {name: ITEMS.EXTENSIONS, href: QUERIES.extensions}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -57,34 +48,42 @@ const mapDispatchToProps = (dispatch) => {
     onCisqClick: ( name, href ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
-      dispatch(setHeaderPath( paths.standard, paths.cisq, {name} ));
+      dispatch(setHeaderPath( PATHS.standard, PATHS.cisq, {name} ));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.cisq.name}/${name}`));
     },
     onOwaspClick: ( name, href ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
       dispatch(fetchStandardsListData( href ));
-      dispatch(setHeaderPath( paths.standard, paths.owasp,  {name} ));
+      dispatch(setHeaderPath( PATHS.standard, PATHS.owasp,  {name} ));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.owasp.name}/${name}`));
     },
     onBusinessCriteriaClick: (name, href) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchBusinessCriteriaList( href ));
-      dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
+      dispatch(fetchWebData( href ));
+      dispatch(setHeaderPath(PATHS.standard, PATHS.businessCriteria, {name}));
+      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.businessCriteria.name}/${name}`));
     },
     onTechnologyClick: (name, href) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchApiData( href ));
-      dispatch(setHeaderPath( paths.technologies , {name}));
+      dispatch(setHeaderPath( PATHS.technologies , {name}));
+      // dispatch(push(`/temp/rules/${PATHS.technologies.name}/${name}`));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
@@ -92,19 +91,16 @@ const mapDispatchToProps = (dispatch) => {
     onExtensionsClick: ( extension, version ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
+      dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchApiData( version.href ));
-      dispatch(setHeaderPath( paths.extensions, {name: extension.title, href: extension.href}, version));
+      dispatch(fetchWebData( version.href ));
+      dispatch(setHeaderPath( PATHS.extensions, {name: extension.name, href: extension.href, icon: extension.icon}, version));
+      // dispatch(push(`/temp/rules/${PATHS.extensions.name}/${extension.name}/${version.name}`));
     },
     fetchVersion: ( exeCount, extension ) =>{
       if( exeCount !== 0 ) return;
-      if (extension.index !== 0) {
-        dispatch(ACTIONS.fetchExtensionVersion(extension));
-      } else {
-        dispatch(ACTIONS.fetchAIPVersions());
-      }
-      
+      dispatch(ACTIONS.fetchExtensionVersion(extension));
     }
   };
 };

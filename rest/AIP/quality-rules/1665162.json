@@ -1,0 +1,47 @@
+{
+    "id": 1665162,
+    "name": "PowerCenter:Use Shortcuts",
+    "href": "AIP/quality-rules/1665162",
+    "critical": true,
+    "description": "Folder should have at least a ratio number of shared objects/total number of transformation greater than X%.\nThe X threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Folders with number of shared objects/total Transformations ratio lower than X %.\nIt provides the following information\nFolder full name, ratio value",
+    "rationale": "For speed of development, maintainability and evolutivity management use shortcuts to reuse transformation.",
+    "reference": "Informatica Best Practice",
+    "remediation": "Create shortcut on source, target and transformation objects and reuse them in other folders.",
+    "total": "Total number of Folders, excluding Shared Folders",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66009,
+            "name": "Architecture - Reuse",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route } from 'react-router';
 import store from 'store';
+import history from './history';
 import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
 
-import * as actions from './body/body-actions';
+import * as actions from './body-navigation/bn-actions';
 
 window.STORE = store;
 window.actions = actions;
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
-  </Provider>, document.getElementById('react-root'));
+    <ConnectedRouter history={history}>
+      <Route render={() => <App />}/>
+    </ConnectedRouter>
 
-//can you see this comment???
+  </Provider>, document.getElementById('react-root'));

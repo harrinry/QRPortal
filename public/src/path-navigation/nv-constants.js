@@ -6,3 +6,8 @@ export const CLASSES = {
   pathElementText: 'qrp_headerBar_pathElement_text',
   pathSeparator: 'qrp_headerBar_pathElement_Separator'
 };
+
+export const TYPES = {
+  item: 'item',
+  selector: 'selector'
+};

@@ -1,0 +1,46 @@
+{
+    "id": 9000006,
+    "name": "Pacbase: Avoid undocumented Programs",
+    "href": "AIP/quality-rules/9000006",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Pacbase programs",
+    "output": "This report lists all undocumented Pacbase Programs. `!xA!`It provides the following information: `!xA!`Program full name",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Pacbase programs.",
+    "remediation": "Enrich Program code with comments .",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

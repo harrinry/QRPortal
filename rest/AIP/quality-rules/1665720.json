@@ -1,0 +1,53 @@
+{
+    "id": 1665720,
+    "name": "PowerCenter:Avoid overriding SQL",
+    "href": "AIP/quality-rules/1665720",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "This rule check for presence of SQL override in the following properties (where SQL override is  not recommended) :\nSql_Query\nLookup Sql Override\nUpdate Override.\nThe only permitted properties with SQL override are Post_SQL and Pre_SQL (new behavior with PowerCenter package v2.2.1).",
+    "output": "This report lists all Mappings, Mapplet and Folders with Objects containing overriding SQL:\nIt provides the following information:\nMapping or Mapplet or Folder full name\nThe associated values are the child objects full name, child containing overriding SQL.",
+    "rationale": "For understandability, maintainability and scalability, overriding SQL should be avoided whenever possible. \nIn case of change (Source, Target, Transformation rules), complex manual change are necessary with SQL override which consumme time and put the project at risk. \nIn case of volume increase, complex manual change and SQL or RDBMS  complex optimization are necessary.\nIt is preferable to use the known, optimized and scalable standard PowerCenter technology. \nThis practice can demonstrate a lack of knowledge on PowerCenter",
+    "reference": "Informatica Best Practice",
+    "remediation": "When applicable, use the following properties : User Defined Join, Source filter, Number of Sorted Ports, Select Distinct in Properties dialog of Source Qualifier.",
+    "total": "Total number of Mappings, Mapplets and Folders",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

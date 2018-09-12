@@ -1,0 +1,46 @@
+{
+    "id": 9000032,
+    "name": "Pacbase: Avoid Online Programs with a low comment/code ratio",
+    "href": "AIP/quality-rules/9000032",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "Online Programs should have at least a ratio comment / code &gt;= 33%. The threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Pacbase Online Program with comment/code ratio lower than X % It provides the following information: Online full name, comment/code ratio",
+    "rationale": "Online Programs should have at least a ratio comment / code &gt;= 5 %. The threshold is a parameter and can be changed at will.",
+    "remediation": "Enrich Online Program code with comments.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61028,
+            "name": "Documentation - Volume of Comments",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

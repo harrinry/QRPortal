@@ -1,0 +1,53 @@
+{
+    "id": 1665582,
+    "name": "PowerCenter:Historize the logs for session and workflow",
+    "href": "AIP/quality-rules/1665582",
+    "critical": false,
+    "maxWeight": 9,
+    "description": "Historize more than X times the log of a Session or Workflow object. \nThe X threshold is a parameter and can be changed at will.",
+    "output": "This report lists all Workflow and Session with property \"Log Number\" less than X\nIt provides the following information:\nWorkflow or Session full name, value property",
+    "rationale": "For operationnal monitoring, it's mandatory to be able to analyze detailed Session and Workflow logs of past execution in case of failure or data problems. So that Session and Workflow logs must be historize for a specific number of days.",
+    "reference": "Informatica Velocity Methodology",
+    "remediation": "Set a value for Session and Workflow logs management.",
+    "total": "Number of Workflows, Worklets, Sessions and Folders having the parameter \"Save log\" set at \"By runs\"",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

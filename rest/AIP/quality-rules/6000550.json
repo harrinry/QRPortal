@@ -1,0 +1,53 @@
+{
+    "id": 6000550,
+    "name": "Natural: Avoid using WITH LIMIT(xx) in Nested Programs",
+    "href": "AIP/quality-rules/6000550",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "The number of artifacts that have this statement are reported as a violation. The value reported is the actual number of these statements",
+    "rationale": "This may cause an runtime error in the application whenever the number of records retrieved is bigger than the limit specified: NAT1005 More records found than specified in search limit",
+    "reference": "http://documentation.softwareag.com/natural/nat638dwin/mc/mcERRN_1001.htm",
+    "remediation": "Use Find (xx), or Read (xx), etc",
+    "sample": "FIND EMPLOYEES WITH LIMIT (1000)  NAME = 'SMITH' WHERE FIRST-NAME = 'MARK'",
+    "total": "Number of Nested Programs ( read Subprograms)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1100000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1100000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

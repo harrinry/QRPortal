@@ -1,54 +1,39 @@
-import { apiFetch } from 'common/';
-import { AIP_VERSIONS_EXT, qualityRules_post } from './mn-constants';
+import { webFetch } from 'common/';
+import { AIP_VERSIONS_EXT } from './mn-constants';
 
 export const QUERIES = {
   businessCriteria: 'AIP/business-criteria',
   cisq: 'AIP/quality-standards/CISQ/categories',
   owasp: 'AIP/quality-standards/OWASP/categories',
-  technologies: 'rules/technologies.json',
-  extensions: 'rules/extensions.json',
+  technologies: 'aip/technologies',
+  extensions: 'aip/extensions',
   standards: 'AIP/quality-standards',
-  ext_version_prefix: 'rules/extensions?q=',
 };
 
 export const FETCHTECHNOLOGIES = () => {
-  return fetch( QUERIES.technologies ).then( res => res.json() );
+  return webFetch( QUERIES.technologies );
 };
 
 export const FETCHEXTENSIONS = () => {
-  return fetch( QUERIES.extensions )
-    .then( res => res.json());
+  return webFetch( QUERIES.extensions );
 };
 
 export const fetchExtensionVersions = ( url ) => {
-  return fetch(QUERIES.ext_version_prefix + url)
-    .then(res => res.json())
-    .then(data => data.map( o => {
-      return {
-        ...o,
-        href: o.href + qualityRules_post
-      };
-    }));
+  return webFetch(url);
 };
 
 export const fetchCastAIPVersions = () => {
-  return apiFetch(AIP_VERSIONS_EXT.href)
-    .then(data => data.map( o => {
-      return {
-        ...o,
-        href: o.href + qualityRules_post
-      };
-    }));
+  return webFetch(AIP_VERSIONS_EXT.href);
 };
 
 export const FETCHBUSINESSCRITERIA = () => {
-  return apiFetch( QUERIES.businessCriteria );
+  return webFetch( QUERIES.businessCriteria );
 };
 
 export const FETCHCISQDATA = () => {
-  return apiFetch( QUERIES.cisq );
+  return webFetch( QUERIES.cisq );
 };
 
 export const FETCHOWASPDATA = () => {
-  return apiFetch( QUERIES.owasp );
+  return webFetch( QUERIES.owasp );
 };

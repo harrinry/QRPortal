@@ -1,0 +1,49 @@
+{
+    "id": 1665762,
+    "name": "PowerCenter:Never truncate data",
+    "href": "AIP/quality-rules/1665762",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "List all Mappings and Mapplets having an object doing data truncation. Truncation occurs when an InstanceField is connected to another InstanceField of type in the same group, but with a lower precision. The groups of tested types are the following (consider the  tests as case insentive).\nGroup 1: 'date/time', 'date', 'dateTime', 'datetime', 'timestamp', 'dats', 'tims', 'accp'\nGroup 2: 'string', 'varchar', 'varchar2', 'nvarchar', nvarchar2', 'nchar', 'nstring', 'char', 'clnt', 'unit', 'cuky', 'lang'\nGroup 3:  'int' , 'numeric', 'bigint', 'integer', 'double', 'number(p,s)', 'bigint', 'decimal', 'number', 'small integer', 'dec', 'fltp', 'int1', 'int2', 'int4', 'int8', 'int16', 'int32', 'int64', 'num1', 'num2', 'num4', 'num8', 'num16', 'num32', 'num64', 'numc', 'cur', 'quan', 'prec', 'curr', 'zoned', 'numchar'.\nGroup 4: 'raw', 'binary', 'varbin'.\nOptional exceptions : do not check the truncations:\ndate/time(29) > date(19).\ndate/time(29) > timestamp(26).\nThis option is a parameter, named 'Ignore Date/Time to Date conversions'. It is set to 1 (True) by default. You can set it to 0 in order to also check date/time(29) to date(19) or  timestamp(26) truncation.",
+    "output": "This report lists all Mappings and Mapplets with Objects containing implicit data conversion. \nIt provides the following information\nMapping or Mapplet full name, source field full name, target field full name, the source type and length, the target type and length",
+    "rationale": "For understandability and data consistency, change in sub-datatype and precision should be avoided. If you don't control change in type and precision, you might have unexpected behaviors",
+    "reference": "Informatica Best Practice",
+    "remediation": "Use conversion function listed above with String or Numerical functions (FLOOR(), CEIL(), SUBSR(), etc.)",
+    "sample": "For example you map a string of length 10 to a string of length 5, or you map a decimal to an integer.",
+    "total": "Total number of Mappings and Mapplets",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -5,12 +5,13 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Single Value",
-    "description": "Reports the code when NaN is used for comparison.",
+    "description": "The rule list all the artifacts that are using outputs of the functions that do not return anything. This rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations",
     "output": "Line and column for each violation\nAssociated value => number of violations found",
     "rationale": "Using NaN for comparison will produce unexpected results. Instead, the best way to see whether a variable is equal to NaN is to use Number.isNaN(), since ES2015, or (perhaps counter-intuitively) to compare it to itself. Since NaN !== NaN, when a !== a, you know it must equal NaN. ",
+    "reference": "CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations ",
     "remediation": "Use Number.isNaN() instead .",
-    "remediationSample": ">>> if (Number.isNaN(test )) { \n>>> return Number.isNaN(x)\n>>> } \n",
-    "sample": ">>> if (test === NaN) { // violation \n>>>  return x === NaN  // violation\n>>> } \n",
+    "remediationSample": " if (Number.isNaN(test )) { \n return Number.isNaN(x)\n } \n",
+    "sample": " if (test === NaN) { // violation \n  return x === NaN  // violation\n } \n",
     "total": "Typescript artifacts using NaN in comparison",
     "businessCriteria": [
         {

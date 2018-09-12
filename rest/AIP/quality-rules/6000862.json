@@ -1,0 +1,45 @@
+{
+    "id": 6000862,
+    "name": "Natural: Avoid Nested Program with too many Subroutines",
+    "href": "AIP/quality-rules/6000862",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Reports the artifacts that have more than XX Subroutines. The threshold is a parameter and can be changed at will.",
+    "rationale": "For maintainability and readability reasons, Programs artifacts should not have too many Subroutines.",
+    "total": "Number of Nested Programs ( read Subprograms)",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1100000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1100000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

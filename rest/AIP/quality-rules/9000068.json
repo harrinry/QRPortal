@@ -1,0 +1,50 @@
+{
+    "id": 9000068,
+    "name": "Pacbase: Avoid PMS with Low Fan-in (CallSection)",
+    "href": "AIP/quality-rules/9000068",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "Avoid PMS with Low Fan-In (Fan-In &lt; 4). The threshold is a parameter and can be changed at will.",
+    "output": "Nb of macro with fan-in &lt; X`!xA!`Value : fan-in",
+    "rationale": "Macro are designed to be used largely by programs",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61013,
+            "name": "Architecture - Object-level Dependencies",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

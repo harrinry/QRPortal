@@ -1,0 +1,47 @@
+{
+    "id": 1665558,
+    "name": "PowerCenter:Place \"=\" first and \"!=\" or \"<>\" last in the list of conditions in Lookup table transformation",
+    "href": "AIP/quality-rules/1665558",
+    "critical": true,
+    "description": "For a Lookup Transformation place \"=\" operator in the first position in condition list. This rule reports violation in the following cases:\n1/ if an operator \"<\", \">\", \"!=\" or \"<>\" is placed BEFORE operator \"=\"\n2/ if an operator \"<\", \">\" or \"=\" is placed AFTER operator \"!=\" or \"<>\"",
+    "output": "This report lists all Lookup table Transformations violating the rule.\nIt provides the following information:\nLookup Transformation full name",
+    "rationale": "A Lookup Transformation, used for reference search and transcodification, may load in memory a huge number of rows and process complex join condition (with following operators : \"=\",\"<\",\">\") in nested loop mode. \nThis could have a huge performance impact. \nThe operator \"=\" should be in first position.",
+    "reference": "Informatica Velocity Methodology",
+    "remediation": "Review the design of the Lookup table Transformation.",
+    "total": "Total number of Mappings, Mapplets and Folders having lookup transformation",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "id": 9000218,
+    "name": "Pacbase: Batch - Avoid use of operators : ADC, ADT",
+    "href": "AIP/quality-rules/9000218",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "Batch : Avoid use of operators : ADC, ADT`!xA!` details",
+    "rationale": "The date of operation should not be loaded from the system but from the parameters. The system date may change during the operation of batch",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

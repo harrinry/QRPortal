@@ -1,0 +1,50 @@
+{
+    "id": 9000076,
+    "name": "Pacbase: Avoid PMS using INS statement",
+    "href": "AIP/quality-rules/9000076",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "The INSPECT statement is expensive in terms of performance, so this statement should be avoided.",
+    "output": "Nb of macro using COB GOTO`!xA!`Value : Nb of COB GOTO in the macro",
+    "rationale": "The INSPECT statement is expensive in terms of performance, so this statement should be avoided.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

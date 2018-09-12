@@ -1,0 +1,50 @@
+{
+    "id": 1665116,
+    "name": "PowerCenter:Delete unnecessary links between transformation",
+    "href": "AIP/quality-rules/1665116",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "In a PowerCenter mapping, data field extracted from sources or generated in the flow itself and never used in targets, should be removed.",
+    "output": "This report lists all Mappings and Mapplets with Transformations containing unnecessary links\nIt provides the following information: \nMapping full name, Transformations full name",
+    "rationale": "Unnecessary links between transformation could impact  visiblity and complexity of the flow in the PowerCenter Designer environment. \nIn some cases, PowerCenter optimizer may be mistaken and performance impacted. \nThe rule does not take into account the unused outputs of Filter/Router transformation objects that are defined by default by PowerCenter.\nThis rule does not report the following Source Qualifiers as violation :\nSource Qualifier\nXML Source Qualifier\nMQ Series Source Qualifier\nApplication Source Qualifier\nApplication Multi-Group Source Qualifier",
+    "reference": "Informatica Velocity Methodology",
+    "remediation": "Check if links are truly unnecessary\nDelete links that are not necessary between Transformations",
+    "remediationSample": "Copy only necessary fields.",
+    "sample": "Copy all source data fields.",
+    "total": "Total number of Mappings and Mapplets",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1665000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1665000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

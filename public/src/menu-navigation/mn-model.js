@@ -6,28 +6,27 @@ import LoadingSpinner from 'components/loading-spinner';
 import { COMMON_CLASSES, createClassName } from 'common/';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import { CLASSES, ITEMS } from './mn-constants';
-import * as lib from './mn-lib';
 import './style.css';
 
 const NavigationMenu = ( props ) => {
   return (
     <div className={createClassName(CLASSES.menu, (props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <SubMenu title={ITEMS.STANDARDS}>
-        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc}>
+        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc} cssClass={CLASSES.standardsSubMenu}>
           {props.std_bc.data ? 
             props.std_bc.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onBusinessCriteriaClick(e.name, e.href);
             }}/>) : ( props.std_bc.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq}>
+        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq} cssClass={CLASSES.standardsSubMenu}>
           {props.std_cisq.data ? 
             props.std_cisq.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
               props.onCisqClick(e.name, e.href);
             }}/>) : ( props.std_cisq.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp}>
+        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp} cssClass={CLASSES.standardsSubMenu}>
           {props.std_owasp.data ? 
             props.std_owasp.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
@@ -44,10 +43,10 @@ const NavigationMenu = ( props ) => {
       </SubMenu>
       <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
         {props.extensions.data ? 
-          props.extensions.data.map( e => (<SubMenu title={lib.PrettyPrintExtentionName(e.title)} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
+          props.extensions.data.map( e => (<SubMenu title={e.name} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
             {e.versions ? e.versions.map( ver => <MenuItem selected={props.selected === JSON.stringify(ver) ? true : false} title={ver.name} href={ver.href} onClick={() => {
               props.setSelected(JSON.stringify(ver));
-              props.onExtensionsClick({...e,title: lib.PrettyPrintExtentionName(e.title)}, ver);
+              props.onExtensionsClick(e, ver);
             }}/> ) : ( e.loading ? <LoadingSpinner/> : undefined )}
           </SubMenu>)) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
