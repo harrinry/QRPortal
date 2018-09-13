@@ -24,7 +24,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-NavHeader.PropTypes = {
+NavHeader.propTypes = {
   path: PropTypes.array
 };
 

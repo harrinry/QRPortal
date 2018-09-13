@@ -38,7 +38,6 @@ class SubMenu extends React.PureComponent{
 }
 
 SubMenu.propTypes = {
-  children: propTypes.array.isRequired,
   title: propTypes.string.isRequired
 };
 

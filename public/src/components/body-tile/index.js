@@ -21,9 +21,8 @@ function stylize( icon ){
 }
 
 Tile.propTypes = {
-  value: PropTypes.string.isRequired,
   click: PropTypes.func.isRequired,
-  iconURL: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired
 };
 
 export default Tile;

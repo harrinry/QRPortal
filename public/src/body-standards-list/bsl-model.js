@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import VerticalArray from 'components/array/';
 import { compareFunction } from './bsl-lib';
 import { HEADER, NOSTANDARDS, FILTERPLACEHOLDER, STANDARDS } from './bsl-constants';
+import './style.css';
 
 const StandardsListArray = ( props ) => {
   return(

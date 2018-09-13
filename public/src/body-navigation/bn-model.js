@@ -29,10 +29,10 @@ function stylize( icon ){
 }
 
 BodyNavigation.propTypes = {
-  navContent: PropTypes.array.isRequired,
-  title: PropTypes.string.isRequired,
-  loading: PropTypes.bool.isRequired,
-  icon: PropTypes.string.isRequired
+  navContent: PropTypes.array,
+  title: PropTypes.string,
+  loading: PropTypes.bool,
+  icon: PropTypes.string
 };
 
 export default BodyNavigation;
