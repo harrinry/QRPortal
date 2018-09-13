@@ -50,10 +50,17 @@ class VerticalArray extends React.PureComponent{
       <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol, COMMON_CLASSES.overflowY)}>
         <table>
           <thead>
+<<<<<<< HEAD
             <tr>{headers.map(h => <th>{h}</th>)}</tr>
           </thead>
           <tbody>
             {filteredChildren.length !== 0 ? filteredChildren.map( val => childConstructor(val) ) : 
+=======
+            <tr>{headers.map((h, i) => <th key={i}>{h}</th>)}</tr>
+          </thead>
+          <tbody>
+            {filteredChildren.length !== 0 ? filteredChildren.map( (val, i) => childConstructor(val, i) ) : 
+>>>>>>> backend_dev_msu
               <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>}
           </tbody>
         </table>

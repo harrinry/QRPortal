@@ -7,8 +7,8 @@ import { setSelected } from './bsl-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    arrayChildConstructor: ( data ) => {
-      return childConstructor( data, () => {
+    arrayChildConstructor: ( data, index ) => {
+      return childConstructor( data, index, () => {
         if( !data.selected )dispatch(setSelected( data.id ));
         if( data.count > 0 ) dispatch(fetchWebData( data.href ) );
         else dispatch(clearListData());

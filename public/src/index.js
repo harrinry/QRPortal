@@ -14,10 +14,21 @@ import * as actions from './body-navigation/bn-actions';
 window.STORE = store;
 window.actions = actions;
 
+window.urlGen = () => {
+  const state = store.getState();
+  const res = `std=${state.standards.query}&rls=${state.rulesList.query}&rdts=${state.ruleDetails.query}&p=${encodeURI(btoa(JSON.stringify(state.path)))}&lstc=${state.contentBody.listCount}`;
+  return res;
+};
+
 ReactDOM.render(
   <Provider store={store}>
+<<<<<<< HEAD
     <ConnectedRouter history={history}>
       <Route render={() => <App />}/>
     </ConnectedRouter>
 
   </Provider>, document.getElementById('react-root'));
+=======
+    <App />
+  </Provider>, document.getElementById('react-root'));
+>>>>>>> backend_dev_msu

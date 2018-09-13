@@ -12,6 +12,13 @@ tempRouter.get(main, (req, res) => {
   });
 });
 
+tempRouter.get('/querytest', (req, res) => {
+  const queryParams = req.query;
+  console.log(queryParams);
+
+  res.sendStatus(200);
+});
+
 tempRouter.get('/bundle.js', (req, res)=> {
   res.sendFile('bundle.js', options, (err)=>{
     if ( err ) {

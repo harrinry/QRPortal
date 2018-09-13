@@ -38,7 +38,10 @@ class SubMenu extends React.PureComponent{
 }
 
 SubMenu.propTypes = {
+<<<<<<< HEAD
   children: propTypes.array.isRequired,
+=======
+>>>>>>> backend_dev_msu
   title: propTypes.string.isRequired
 };
 

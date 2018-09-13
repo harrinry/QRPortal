@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
 
 ViewNavigation.propTypes = {
   viewType: PropTypes.string,
-  language: PropTypes.string
+  language: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewNavigation);
