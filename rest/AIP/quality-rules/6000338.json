@@ -1,0 +1,51 @@
+{
+    "id": 6000338,
+    "name": "Natural: Avoid unreferenced Adabas Views",
+    "href": "AIP/quality-rules/6000338",
+    "critical": false,
+    "maxWeight": 2,
+    "description": "An unreferenced Artifact is an Artifact that is not explicitly called from within the analyzed code.",
+    "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreference code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
+    "remediation": "Check if the Artifact is truly unnecessary.\nRemove Artifacts that are not used.",
+    "total": "Number of Adabas views",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 2,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1100000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/1100000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

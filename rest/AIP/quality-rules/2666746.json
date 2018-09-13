@@ -1,0 +1,42 @@
+{
+    "id": 2666746,
+    "name": "Unicredit - Avoid Improper Restriction of XML External Entity Reference  (XXE) vulnerabilities (CWE-611)",
+    "href": "AIP/quality-rules/2666746",
+    "critical": true,
+    "description": "This metric detects the usage of XML parser calls not preceeded in same Java method by a call to the secure mode of the parser.\nThe following checks are made :\nfor Xerces : external-general-entities set to false\n or disallow-doctype-decl set to true\nfor SAX : FEATURE_SECURE_PROCESSING\nfor DOM : FEATURE_SECURE_PROCESSING\nfor StAX and XMLInputFactory : SUPPORT_DTD set to false\nfor JAXB : need to ? same as SAX...",
+    "output": "This report lists all Java methods performing XML parser calls not preceeded in same Java method by a call to the secure mode of the parser.\nIt provides the following information:\n - Method full name\n - The associated value is the number of violation inside the violating method.",
+    "reference": "https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing\nhttp://blog.bdoughan.com/2011/03/preventing-entity-expansion-attacks-in.html",
+    "remediationSample": "See sample remediation in references links",
+    "sample": "TO BE provided by Unicredit",
+    "total": "Number of Java methods (to keep it simple)",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

@@ -4,11 +4,12 @@ import { childConstructor } from './brl-lib';
 import { fetchDetailsData } from 'details-section/ds-actions';
 import { setSelected } from './brl-actions';
 import { setSelectedSearchResult } from 'global-search/gs-actions';
+import './style';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    arrayChildConstructor: (val) => {
-      return childConstructor(val, () => {
+    arrayChildConstructor: (val, index) => {
+      return childConstructor(val, index, () => {
         if(val.searchid) dispatch(setSelectedSearchResult(val.id));
         else dispatch(setSelected(val.id));
         dispatch(fetchDetailsData(val.href));

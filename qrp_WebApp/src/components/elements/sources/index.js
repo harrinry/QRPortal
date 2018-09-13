@@ -22,14 +22,14 @@ export default class Sources extends React.Component{
       let ref = data.map( e => {
 
         return {
-          id: e.name,
-          name: e.name.substring(17), // FIXME : need a prettyprint name of the extension
+          id: e.id,
+          name: e.id.substring(17), // FIXME : need a prettyprint name of the extension
           href: e.href
         };
       });
       ref.sort(( a , b ) => a.name.toUpperCase() - b.name.toUpperCase() );
 
-      const res = ref.filter( e => e.id !== 'com.castsoftware.internal.platform' );
+      const res = ref.filter( e => e.id !== 'com.castsoftware.aip' );
       return res;
     };
 
@@ -46,6 +46,7 @@ export default class Sources extends React.Component{
         <BodyBlock>
           <AIPSources key={'cast_aip_souce'} />
           {this.state.data.map(t => {
+            if( /uc.|labs./i.test(t.name) ) return;
             return <BodyElementSources key={t.id} value={t.name} className="bodyElementTechno element-inline" onclick={() => this.loadVersions(t)} id={t.id} />;
           })}</BodyBlock>
       </div>);

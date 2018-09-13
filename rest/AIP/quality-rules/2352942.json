@@ -1,0 +1,46 @@
+{
+    "id": 2352942,
+    "name": "Remedy: Avoid Guides with more than X Filters",
+    "href": "AIP/quality-rules/2352942",
+    "critical": true,
+    "description": "Guides should not have more than X Filters",
+    "output": "This report lists all Forms having more than X Filters It provides the following information: Guide full name, number of Filters",
+    "rationale": "Having complex Guides can cause performance problems as well as maintenability costs.",
+    "remediation": "Review the design of the Guide",
+    "total": "Total number of Guides",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61022,
+            "name": "Volume - Number of Components",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2352000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2352000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

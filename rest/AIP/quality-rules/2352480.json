@@ -1,0 +1,42 @@
+{
+    "id": 2352480,
+    "name": "Remedy: Avoid Workflow with no associated help text",
+    "href": "AIP/quality-rules/2352480",
+    "critical": true,
+    "description": "Workflows should be documented.",
+    "output": "This report lists all Worflows not having an help text. It provides the following information: Workflow full name",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact.",
+    "reference": "Remedy_DefinedQualityMetrics.rtf (sent 01-22-2009)",
+    "remediation": "Enrich Worflow code with comments",
+    "total": "Total number of Workflows",
+    "businessCriteria": [
+        {
+            "id": 66033,
+            "name": "Documentation",
+            "href": "AIP/business-criteria/66033"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61006,
+            "name": "Documentation - Style Conformity",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2352000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2352000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

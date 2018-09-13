@@ -13,7 +13,7 @@ const HeaderPathElement = ( props ) => {
   );
 };
 
-HeaderPathElement.PropTypes = {
+HeaderPathElement.propTypes = {
   name: PropTypes.string,
   href: PropTypes.string,
   icon: PropTypes.string,

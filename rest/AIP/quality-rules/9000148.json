@@ -1,0 +1,39 @@
+{
+    "id": 9000148,
+    "name": "Pacbase: Avoid PMS using Perform statement with function &lt;F90",
+    "href": "AIP/quality-rules/9000148",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Pacbase: Perform should execute only functions defined &gt;= F90",
+    "rationale": "Macros are designed to be used largely by programs. Macros should contain PERFORM statement only on function &gt;=F90 in order to respect Best Practices.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61020,
+            "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

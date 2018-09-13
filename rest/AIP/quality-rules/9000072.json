@@ -1,0 +1,50 @@
+{
+    "id": 9000072,
+    "name": "Pacbase: Avoid unreferenced Online Programs",
+    "href": "AIP/quality-rules/9000072",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "Pacbase: Avoid unreferenced Online Programs",
+    "output": "Nb of unreferenced Online Programs",
+    "rationale": "Pacbase: Avoid unreferenced online Programs. Unused online programs are a potential symptom for dead code. This makes the code more difficult to change and understand",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

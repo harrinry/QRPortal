@@ -1,10 +1,9 @@
-import { NAVIGATION_VIEW, CONTENT_VIEW, ERROR_OCCURRED, LANDING_PAGE } from './body-constants';
+import { NAVIGATION_VIEW, CONTENT_VIEW, LANDING_PAGE } from './body-constants';
 import * as ACTIONTYPES from './body-actions-type';
 
 const initialState = {
   view: NAVIGATION_VIEW,
   listCount: 0,
-  nav: { data: [], title: undefined, loading: false },
 };
 
 const contentBodyReducer = (state = initialState, action) => {
@@ -19,40 +18,6 @@ const contentBodyReducer = (state = initialState, action) => {
     return {
       ...state,
       view: NAVIGATION_VIEW
-    };
-  case ACTIONTYPES.FETCH_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        data: [],
-        title: action.payload.title,
-        loading: true
-      }
-    };
-  case ACTIONTYPES.SET_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        ...action.payload,
-      }
-    };
-  case ACTIONTYPES.CLEAR_LIST_DATA:
-    return {
-      ...state,
-      list: {
-        ...state.list,
-        content: { data: [], loading: false },
-        expandedContent: { ...state.list.expandedContent }
-      }
-    };
-  case ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA:
-    return {
-      ...state,
-      nav: {
-        data: [],
-        title: ERROR_OCCURRED,
-        loading: false
-      }
     };
   case ACTIONTYPES.SHOW_CONTENT_VIEW:
     return {

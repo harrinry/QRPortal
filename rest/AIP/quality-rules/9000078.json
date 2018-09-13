@@ -1,0 +1,50 @@
+{
+    "id": 9000078,
+    "name": "Pacbase: Avoid PMS using C statement",
+    "href": "AIP/quality-rules/9000078",
+    "critical": false,
+    "maxWeight": 1,
+    "description": "The COMPUTE statement rounds up the number to the weakest precision, so nested operations can lead to a false or unprecise result. This statement is also expensive in terms of performance.",
+    "output": "Nb of macro using COMPUTE`!xA!`Value : Nb of COMPUTE in the macro",
+    "rationale": "The COMPUTE statement rounds up the number to the weakest precision, so nested operations can lead to a false or unprecise result. This statement is also expensive in terms of performance.",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

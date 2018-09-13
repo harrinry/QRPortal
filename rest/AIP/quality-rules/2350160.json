@@ -1,0 +1,47 @@
+{
+    "id": 2350160,
+    "name": "Perl: Avoid Too Many Copy Pasted Artifacts",
+    "href": "AIP/quality-rules/2350160",
+    "critical": false,
+    "maxWeight": 1,
+    "description": "This metric measures the ratio between the number of duplicated, copy/pasted artifacts and the total number of artifacts. Copy / Paste detection is based on statistical detection methods. The statistical methods used compute a similarity metric between all artifacts. Artifacts are reported as copy / pasted when the similarity is higher than 95% (see metric parameter SIMILARITY). Like any statistical method, the detection algorithms require a well sized sample in order to provide significant results: testing these algorithms with a couple of classes will not do the job, a real life application's source code is required to yield usable results. The minimal size required stands at around 5000 lines of code. Below such a size, the algorithms detect the full list of exact copies for the copy/paste code detection but slightly modified copy/paste code will not always be detected. Also, for optimal efficiency, the copy/pasted code detection is enabled only for artifacts larger than X lines of code (Perl subroutines, functions, programs).",
+    "output": "This report lists all Artifacts with a Similarity greater than X It provides the following information: Artifact full name, Similar artifact full name",
+    "rationale": "A program with a lot of duplication is hard to change. It might be required to change every copy of a copy/pasted code while it is very difficult to locate these  copy/pasted code elements. Copy-and-paste is not always bad for a quick urgent \"hack\", but it is always a very dangerous practice in the long run.",
+    "reference": "Standard suggestions based on CAST Quality Model",
+    "total": "Total number of Artifacts (Program, Function, Subroutine) larger than 100 lines (parameter) of code",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66009,
+            "name": "Architecture - Reuse",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2350000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2350000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

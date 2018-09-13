@@ -1,8 +1,5 @@
-export { default as MenuItem } from './menuItem';
-export { default as NavBar } from './navbar';
-export { default as NavItem } from './navitem';
-export { default as ContentBody } from './contentBody';
-export { default as VerticalArray } from './verticalArray';
-export { default as ArrayCell } from './arrayCell';
-export { default as ArrayElement } from './arrayElement';
-export { default as DetailsPanel } from './detailsPanel';
+export { default as VerticalArray } from './array';
+export { default as LoadingSpinner } from './loading-spinner';
+export { default as MenuItem } from './menu-item';
+export { default as SubMenu } from './menu-submenu';
+export { default as Tile } from './body-tile';

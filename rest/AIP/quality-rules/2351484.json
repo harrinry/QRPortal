@@ -1,0 +1,54 @@
+{
+    "id": 2351484,
+    "name": "ColdFusion: Avoid using cfdump without IsDebugMode",
+    "href": "AIP/quality-rules/2351484",
+    "critical": true,
+    "description": "Report all use of cfdump without IsDebugMode.",
+    "output": "This report lists all Templates use of cfdump without IsDebugMode.\nIt provides the following information:\n- Template full name\n- Associated value is the difference between number of IsDebugMode and number of cfdump inside the Template.",
+    "rationale": "For both confidentaillity and performance reasons, dump should not be exposed to end users when code is released in production.",
+    "reference": "http://help.adobe.com/en_US/ColdFusion/9.0/Developing/WSc3ff6d0ea77859461172e0811cbec0d04c-7fe2.html\nhttp://www.ipaul.com/2009/08/01/coldfusion-best-practices/",
+    "remediation": "Add a test to check if Debug mode is on, thanks to the function IsDebugMode. It returns True if debugging mode is set in the ColdFusion Administrator; False if debugging mode is disabled.\nThis way you ensure that if you leave any cfdump tags in production code, they are not displayed when you disable debugging output.",
+    "remediationSample": "<cfif IsDebugMode()>           // fixed\n<cfdump var=#myVar#>\n</cfif>",
+    "sample": "<cfdump var=#myVar#>   // violation",
+    "total": "Number of Templates",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2351000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2351000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

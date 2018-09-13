@@ -1,0 +1,50 @@
+{
+    "id": 9000288,
+    "name": "Pacbase: Avoid Batch &amp; TP Programs (including macros) accessing too many tables",
+    "href": "AIP/quality-rules/9000288",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Accessing too many tables in a program is a good indicator of the complexity of a program Pacbase details",
+    "output": "Nb of online programs and TP Programs having SQL tables access (net) without its macro",
+    "rationale": "Accessing too many tables in a program is a good indicator of the complexity of a program Pacbase",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

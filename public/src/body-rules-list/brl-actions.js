@@ -58,4 +58,4 @@ export const fetchListData = ( query, fetchfunc ) => {
 export const fetchApiData = ( query ) => fetchListData( query, resources.fetchData );
 // export const fetchTechnologiesData = ( query ) => fetchListData( query, resources.fetchTechnologiesList );
 // export const fetchExtensionsList = ( query ) => fetchListData( query, resources.fetchExtensionsList );
-export const fetchBusinessCriteriaList = ( query ) => fetchListData( query, resources.fetchBusinessCriteriaList );
+export const fetchWebData = ( query ) => fetchListData( query, resources.fetchWebData );

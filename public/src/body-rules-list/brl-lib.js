@@ -12,9 +12,9 @@ export const compareFunction = ( textValue, obj ) =>{
   return (reg.test(obj[compareValueKeys.id]) || reg.test(obj[compareValueKeys.name]) || (textValue.toLowerCase() === compareValueKeys.critical ? obj.critical : false) ) ? true : false;
 };
 
-export const childConstructor = ( values, callback ) => {
+export const childConstructor = ( values, index, callback ) => {
   return (
-    <tr onClick={callback} className={values.selected ? COMMON_CLASSES.arraySelected : undefined}>
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
       <td>{values.id}</td>
       <td>{values.name}</td>
       <td className={values.critical ? COMMON_CLASSES.critical : undefined}> </td>

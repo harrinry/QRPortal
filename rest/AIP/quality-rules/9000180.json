@@ -1,0 +1,44 @@
+{
+    "id": 9000180,
+    "name": "Pacbase: Avoid using EXC LINK outside PMS (TP)",
+    "href": "AIP/quality-rules/9000180",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Avoid using EXC LINK outside PMS (TP)`!xA!` details",
+    "rationale": "Pacbase Programs should never include any EXEC-CICS LINK statement. It is better for maintainability to do a direct call to a program in a Macro component.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

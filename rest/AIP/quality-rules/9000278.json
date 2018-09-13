@@ -1,0 +1,50 @@
+{
+    "id": 9000278,
+    "name": "Pacbase: Avoid Programs (including macros) with High Cyclomatic Complexity",
+    "href": "AIP/quality-rules/9000278",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "For maintainability reasons, Total Cyclomatic Complexity should not be greater than 150.The threshold level is a parameter that can be changed at will.`!xA!`Total Cyclomatic Complexity measures the CC of the Program/TP INCLUDING its Macros.",
+    "output": "Nb of online programs with fan-out &gt; X`!xA!`Value: fan-out",
+    "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. `!xA!`Analyzability declines with increasing Cyclomatic Complexity. Each modification must be correct for all execution paths.`!xA!``!xA!`Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations.`!xA!`Changeability declines with increasing Cyclomatic Complexity. Complete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations.`!xA!`Testability declines with increasing Cyclomatic Complexity.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

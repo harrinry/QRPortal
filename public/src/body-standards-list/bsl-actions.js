@@ -1,5 +1,5 @@
 import * as ACTIONTYPES from './bsl-actions-type';
-import { fetchStandardsListElements } from './bsl-resources';
+import { webFetch } from 'common/';
 
 
 const setStandardsListData = ( query, data ) =>{
@@ -43,7 +43,7 @@ export const setSelected = ( itemRef ) => {
 export const fetchStandardsListData = ( query ) => {
   return ( dispatch ) => {
     dispatch(setFetchingState(query));
-    return fetchStandardsListElements( query ).then(
+    return webFetch( query ).then(
       data => dispatch(setStandardsListData(query, data)),
       err => dispatch(failedToFetchStandards(query, err))
     );

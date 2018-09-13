@@ -1,0 +1,44 @@
+{
+    "id": 9000178,
+    "name": "Pacbase: Avoid use of operators : OPE,CLO,R,W,RW,RN,STA,DEL",
+    "href": "AIP/quality-rules/9000178",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Avoid use of Batch Operators: OPE,CLO,R,W,RW,RN,STA,DEL",
+    "rationale": "When using specific file management, please use the common Pacbase statement.OPEN,CLOSE,FILEREAD,FILEWRITE,READWRITE,READNEXT,STARTREAD,RECORDDEL should be avoided.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 2600000,
+            "name": "NO LABEL",
+            "href": "AIP/technologies/2600000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

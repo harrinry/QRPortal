@@ -9,6 +9,7 @@ import contentBodyReducers from 'body/body-reducers';
 import ruleDetailsReducers from 'details-section/ds-reducers';
 import standardsListReducers from 'body-standards-list/bsl-reducers';
 import RulesListReducers from 'body-rules-list/brl-reducers';
+import TileNavigationReducers from 'body-navigation/bn-reducers';
 
 const rootReducer = combineReducers({
   viewType: viewTypeReducer,
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
   contentBody: contentBodyReducers,
   ruleDetails: ruleDetailsReducers,
   standards: standardsListReducers,
-  rulesList: RulesListReducers
+  rulesList: RulesListReducers,
+  navTile: TileNavigationReducers
 });
 
 export default rootReducer;

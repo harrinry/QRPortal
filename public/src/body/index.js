@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import ContentBody from './body-model';
-import * as actions from './body-actions';
 
 const mapStateToProps = (state) => {
   return {
