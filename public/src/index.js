@@ -22,13 +22,5 @@ window.urlGen = () => {
 
 ReactDOM.render(
   <Provider store={store}>
-<<<<<<< HEAD
-    <ConnectedRouter history={history}>
-      <Route render={() => <App />}/>
-    </ConnectedRouter>
-
-  </Provider>, document.getElementById('react-root'));
-=======
     <App />
   </Provider>, document.getElementById('react-root'));
->>>>>>> backend_dev_msu
