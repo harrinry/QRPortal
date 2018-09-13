@@ -1,6 +1,6 @@
 import React from 'react';
 import { compareValueKeys } from './brl-constants';
-import { COMMON_CLASSES } from 'common/';
+import { COMMON_CLASSES, createClassName } from 'common/';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;
@@ -21,4 +21,3 @@ export const childConstructor = ( values, index, callback ) => {
     </tr>
   );
 };
-

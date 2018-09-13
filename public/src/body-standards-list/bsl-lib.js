@@ -1,6 +1,6 @@
 import React from 'react';
 import { compareValueKeys } from './bsl-constants';
-import { COMMON_CLASSES } from 'common/';
+import { COMMON_CLASSES, createClassName } from 'common/';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;
