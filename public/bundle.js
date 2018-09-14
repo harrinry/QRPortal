@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ height: 100%; width: 100%; text-align: center; };", ""]);
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; };", ""]);
 
 // exports
 
