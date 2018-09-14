@@ -86,6 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css":
+/*!**************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/body-landing-page/style.css ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ height: 100%; width: 100%; text-align: center; };", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/body-navigation/style.css":
 /*!************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/body-navigation/style.css ***!
@@ -117,7 +136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".qrp_arrRlsHid{ min-width: 81px; padding-left: 8px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 60px;}\r\n\r\n\r\n.test-rules-list-row1{ min-width: 81px; color: blue ;}\r\n.test-rules-list-row2{ color: blue ;}", ""]);
 
 // exports
 
@@ -136,7 +155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".qrp_arrStdHri{ font-weight: 400; }", ""]);
 
 // exports
 
@@ -193,7 +212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n.ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; }\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{padding: 8px; background: url(\"/img/criticalrule.png\") no-repeat center center; background-size: 16px}\r\n.qrp_arrlci{ cursor: pointer; }\r\n", ""]);
+exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n.ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; }\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{padding: 8px; background: url(\"/img/criticalrule.png\") no-repeat center center; background-size: 16px}\r\n.qrp_arrlci{ cursor: pointer; }\r\n.qrp_srico{ cursor: pointer; color: black; padding: 8px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px}", ""]);
 
 // exports
 
@@ -212,7 +231,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_varr{width: 100% }\r\n.qrp_hCtr{height: 64px; padding: 0; margin: 0;}\r\n.qrp_iCtr{flex: 4 0 0; margin-left: 20px; font-weight: 600; line-height: 64px;}\r\n.qrp_varrintflt{flex: 1 0 0; margin: 0; margin-right: 20px;}\r\n.qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}\r\ntd { padding: 6px }\r\ntable{ text-align: left; width: 100%}\r\n.qrp_lselected{ font-weight: 800 }\r\n/* th { padding: 6px; } */\r\n/* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */\r\n/* table thead { display: block; } */", ""]);
+exports.push([module.i, ".qrp_varr{width: 100% }\r\n.qrp_hCtr{height: 64px; padding: 0; margin: 0;}\r\n.qrp_iCtr{flex: 4 0 0; margin-left: 20px; font-weight: 600; line-height: 64px;}\r\n.qrp_varrintflt{flex: 1 0 0; margin: 0; margin-right: 20px; display: flex; flex-direction: row;}\r\n.qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}\r\n.qrp_varrintflt > span.qrp_srico {margin-left: -20px;}\r\ntd { padding: 6px }\r\ntable{ text-align: left; width: 100%}\r\n.qrp_lselected{ font-weight: 800 }\r\n/* th { padding: 6px; } */\r\n/* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */\r\ntable thead, table tbody { display: block; }\r\n.qrp_tbodymxh{ max-height: calc(100vh - 88px) }", ""]);
 
 // exports
 
@@ -307,7 +326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "pre{ white-space: pre-wrap;}", ""]);
 
 // exports
 
@@ -326,7 +345,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #ffffff; border-radius: 2px;}\r\n.qrp_gSearch_input{border: none; height: 50px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 5px !important; padding-left: 0px !important;}\r\n", ""]);
+exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #ffffff; border-radius: 2px; max-width: 287px;}\r\n.qrp_gSearch_input{border: none; height: 50px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 10px 0 !important; padding: 0 20px 0 0 !important;}\r\n.qrp_gSearch.fright > .qrp_srico{ margin-left: -20px !important;}\r\n", ""]);
 
 // exports
 
@@ -345,7 +364,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_menu-navigation{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n  max-height: calc(100vh - 63px);\r\n  margin: 15px 30px 0 30px;\r\n}\r\n\r\n.qrp_stdsm{ color: blueviolet}", ""]);
+exports.push([module.i, ".qrp_menu-navigation{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n  max-height: calc(100vh - 63px);\r\n  margin: 15px 30px 0 30px;\r\n}\r\n\r\n/* .qrp_stdsm{ color: blueviolet} */", ""]);
 
 // exports
 
@@ -383,7 +402,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 40px;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 2px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 8px 15px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: 'no-repeat';\r\n  background-position: 'center';\r\n  background-size: '80%';\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer;}", ""]);
+exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 40px;\r\n  margin: 25px;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 2px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 8px 15px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: 'no-repeat';\r\n  background-position: 'center';\r\n  background-size: '80%';\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer;}", ""]);
 
 // exports
 
@@ -402,7 +421,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_navBar_header{\r\n  top:0;\r\n  left:0;\r\n  width: 100%;\r\n  height: 25px;\r\n  padding-top: 32.5px;\r\n  padding-bottom: 32.5px;\r\n  padding-left: 30px;\r\n  padding-right: 25px;\r\n}\r\n\r\n.qrp_navBar_title{ text-align: center; line-height: 25px; float: left; font-weight: 800; margin-right: 15px; font-size: 24px;}\r\n\r\n.qrp_expandedNav{\r\n  width: 292px !important;\r\n}\r\n.qrp_xmrgl_10{ margin-right: 15px !important; }\r\n.qrp_navBar_Icon{\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  height: 25px;\r\n  width: 25px;\r\n  float: left;\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_navBar_Icon:last-child{\r\n  margin-left: 10px;\r\n}\r\n\r\n.qrp_navBar_img_icon{\r\n  position: relative;\r\n}\r\n", ""]);
+exports.push([module.i, ".qrp_navBar_header{\r\n  top:0;\r\n  left:0;\r\n  /* width: 100%; */\r\n  height: 25px;\r\n  padding-top: 32.5px;\r\n  padding-bottom: 32.5px;\r\n  padding-left: 30px;\r\n  padding-right: 25px;\r\n}\r\n\r\n.qrp_navBar_title{ text-align: center; line-height: 25px; float: left; font-weight: 800; margin-right: 15px; font-size: 24px;}\r\n\r\n.qrp_expandedNav{\r\n  width: 292px !important;\r\n}\r\n.qrp_xmrgl_10{ margin-right: 15px !important; }\r\n.qrp_navBar_Icon{\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  height: 25px;\r\n  width: 25px;\r\n  float: left;\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_navBar_Icon:last-child{\r\n  margin-left: 10px;\r\n}\r\n\r\n.qrp_navBar_img_icon{\r\n  position: relative;\r\n}\r\n", ""]);
 
 // exports
 
@@ -23990,6 +24009,253 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(_appModel2.default);
 
 /***/ }),
 
+/***/ "./public/src/body-landing-page/blp-constants.js":
+/*!*******************************************************!*\
+  !*** ./public/src/body-landing-page/blp-constants.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.WELCOMETEXT = exports._oIconStyle = exports.CLASSES = exports.QUERYFAILED = exports.SECTIONSQUERY = undefined;
+
+var _vnConstants = __webpack_require__(/*! ../view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
+
+var SECTIONSQUERY = exports.SECTIONSQUERY = 'aip/web-navigation';
+var QUERYFAILED = exports.QUERYFAILED = {
+  value: 'ERROR: Failed to retrieve navigation data, please try again later.',
+  href: '#'
+};
+
+var CLASSES = exports.CLASSES = {
+  container: 'qrp_lpCntr',
+  iconContainer: 'qrp_lpiCntr',
+  welcomeText: 'qrp_lpwtxtCntr',
+  navigation: 'qrp_lpnav',
+  link: 'qrp_lpslink',
+  separator: 'qrp_lpSsep'
+};
+
+var _oIconStyle = exports._oIconStyle = {
+  backgroundImage: 'url(' + _vnConstants.Imgs.logo.default + ')',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center',
+  backgroundSize: '80%'
+};
+
+var WELCOMETEXT = exports.WELCOMETEXT = "Welcome to the CAST Structural Rules Portal, let's start browsing or searching the rules";
+
+/***/ }),
+
+/***/ "./public/src/body-landing-page/blp-model.js":
+/*!***************************************************!*\
+  !*** ./public/src/body-landing-page/blp-model.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+var _blpConstants = __webpack_require__(/*! ./blp-constants */ "./public/src/body-landing-page/blp-constants.js");
+
+var _vnConstants = __webpack_require__(/*! ../view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
+
+__webpack_require__(/*! ./style.css */ "./public/src/body-landing-page/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var LandingPage = function (_PureComponent) {
+  _inherits(LandingPage, _PureComponent);
+
+  function LandingPage(props) {
+    _classCallCheck(this, LandingPage);
+
+    var _this = _possibleConstructorReturn(this, (LandingPage.__proto__ || Object.getPrototypeOf(LandingPage)).call(this, props));
+
+    _this.state = {
+      sections: []
+    };
+
+    return _this;
+  }
+
+  _createClass(LandingPage, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      (0, _common.webFetch)(_blpConstants.SECTIONSQUERY).then(function (data) {
+        return _this2.setState({ sections: data });
+      }, function (err) {
+        return _this2.setState({ sections: [_extends({}, _blpConstants.QUERYFAILED, { err: err })] });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: _blpConstants.CLASSES.container },
+        _react2.default.createElement('div', { className: _blpConstants.CLASSES.iconContainer, style: _blpConstants._oIconStyle }),
+        _react2.default.createElement(
+          'div',
+          { className: _blpConstants.CLASSES.welcomeText },
+          _blpConstants.WELCOMETEXT
+        ),
+        this.props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _react2.default.createElement(
+          'div',
+          { className: _blpConstants.CLASSES.navigation },
+          _react2.default.createElement(
+            'span',
+            null,
+            this.state.sections.map(function (e, i, arr) {
+              return _react2.default.createElement(
+                'span',
+                { key: i },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: _blpConstants.CLASSES.link, onClick: function onClick() {
+                      return _this3.props.loadSection(e);
+                    } },
+                  e.name
+                ),
+                i !== arr.length - 1 ? _react2.default.createElement(
+                  'span',
+                  { className: _blpConstants.CLASSES.separator },
+                  ' - '
+                ) : undefined
+              );
+            })
+          )
+        ) : undefined
+      );
+    }
+  }]);
+
+  return LandingPage;
+}(_react.PureComponent);
+
+exports.default = LandingPage;
+
+
+LandingPage.propTypes = {
+  loadSection: _propTypes2.default.func.isRequired,
+  viewType: _propTypes2.default.string.isRequired
+};
+
+/***/ }),
+
+/***/ "./public/src/body-landing-page/index.js":
+/*!***********************************************!*\
+  !*** ./public/src/body-landing-page/index.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _blpModel = __webpack_require__(/*! ./blp-model */ "./public/src/body-landing-page/blp-model.js");
+
+var _blpModel2 = _interopRequireDefault(_blpModel);
+
+var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src/body/body-actions.js");
+
+var _nvActions = __webpack_require__(/*! ../path-navigation/nv-actions */ "./public/src/path-navigation/nv-actions.js");
+
+var _bnActions = __webpack_require__(/*! ../body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    loadSection: function loadSection(sectionData) {
+      dispatch((0, _bodyActions.showNavigationView)());
+      dispatch((0, _bnActions.fetchNavigationData)(sectionData.name, sectionData.href, sectionData.icon));
+      dispatch((0, _nvActions.appendToHeaderPath)(sectionData));
+    }
+  };
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    viewType: state.viewType.viewType
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_blpModel2.default);
+
+/***/ }),
+
+/***/ "./public/src/body-landing-page/style.css":
+/*!************************************************!*\
+  !*** ./public/src/body-landing-page/style.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./public/src/body-navigation/bn-actions-type.js":
 /*!*******************************************************!*\
   !*** ./public/src/body-navigation/bn-actions-type.js ***!
@@ -24514,9 +24780,9 @@ var compareValueKeys = exports.compareValueKeys = {
 };
 
 var HEADERS = exports.HEADERS = {
-  id: 'Id',
-  name: 'Name',
-  critical: 'Critical'
+  id: { name: 'Id', className: 'qrp_arrRlsHid' },
+  name: { name: 'Name', className: 'qrp_arrRlsHname' },
+  critical: { name: 'Critical', className: 'qrp_arrRlsHcrit' }
 };
 
 var NORULES = exports.NORULES = 'No Rules';
@@ -24572,17 +24838,17 @@ var childConstructor = exports.childConstructor = function childConstructor(valu
     { key: index, onClick: callback, className: (0, _common.createClassName)(_common.COMMON_CLASSES.arrayChildElement, values.selected ? _common.COMMON_CLASSES.arraySelected : undefined) },
     _react2.default.createElement(
       'td',
-      null,
+      { className: 'test-rules-list-row1' },
       values.id
     ),
     _react2.default.createElement(
       'td',
-      null,
+      { className: 'test-rules-list-row2' },
       values.name
     ),
     _react2.default.createElement(
       'td',
-      { className: values.critical ? _common.COMMON_CLASSES.critical : undefined },
+      { className: (0, _common.createClassName)('test-rules-list-row3', values.critical ? _common.COMMON_CLASSES.critical : undefined) },
       ' '
     )
   );
@@ -24939,7 +25205,7 @@ var fetchStandardsListData = exports.fetchStandardsListData = function fetchStan
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var HEADER = exports.HEADER = 'Standards Name';
+var HEADER = exports.HEADER = { name: 'Standards Name', className: 'qrp_arrStdHri' };
 var NOSTANDARDS = exports.NOSTANDARDS = 'No Standards found';
 var FILTERPLACEHOLDER = exports.FILTERPLACEHOLDER = 'Filter Standards';
 var STANDARDS = exports.STANDARDS = 'Standards';
@@ -24992,7 +25258,7 @@ var childConstructor = exports.childConstructor = function childConstructor(valu
     { key: index, onClick: callback, className: (0, _common.createClassName)(_common.COMMON_CLASSES.arrayChildElement, values.selected ? _common.COMMON_CLASSES.arraySelected : undefined) },
     _react2.default.createElement(
       'td',
-      null,
+      { className: 'test-std-list-row1' },
       values.id + ' - ' + values.name
     )
   );
@@ -25475,6 +25741,10 @@ var _bodyNavigation = __webpack_require__(/*! body-navigation */ "./public/src/b
 
 var _bodyNavigation2 = _interopRequireDefault(_bodyNavigation);
 
+var _bodyLandingPage = __webpack_require__(/*! body-landing-page */ "./public/src/body-landing-page/index.js");
+
+var _bodyLandingPage2 = _interopRequireDefault(_bodyLandingPage);
+
 __webpack_require__(/*! ./style.css */ "./public/src/body/style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25487,7 +25757,7 @@ var ContentBody = function ContentBody(props) {
     props.view === _bodyConstants.NAVIGATION_VIEW || props.view === _bodyConstants.LANDING_PAGE ? _react2.default.createElement(
       'div',
       { className: _bodyConstants.CLASSES.contentSpace },
-      _react2.default.createElement(_bodyNavigation2.default, null)
+      props.view === _bodyConstants.LANDING_PAGE ? _react2.default.createElement(_bodyLandingPage2.default, null) : _react2.default.createElement(_bodyNavigation2.default, null)
     ) : _react2.default.createElement(
       'div',
       { className: (0, _common.createClassName)(_common.COMMON_CLASSES.width100pc, _bodyConstants.CLASSES.contentBodyChild) },
@@ -25535,7 +25805,7 @@ var ACTIONTYPES = _interopRequireWildcard(_bodyActionsType);
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 var initialState = {
-  view: _bodyConstants.NAVIGATION_VIEW,
+  view: _bodyConstants.LANDING_PAGE,
   listCount: 0
 };
 
@@ -25669,7 +25939,8 @@ var COMMON_CLASSES = exports.COMMON_CLASSES = {
   width100pc: 'qrp_w100',
   critical: 'qrp_critical',
   arraySelected: 'qrp_lselected',
-  arrayChildElement: 'qrp_arrlci'
+  arrayChildElement: 'qrp_arrlci',
+  searchIcon: 'qrp_srico'
 };
 
 var API_REQUEST = exports.API_REQUEST = 'rest?q=';
@@ -25954,7 +26225,8 @@ var CLASSES = exports.CLASSES = {
   internalFilter: 'qrp_varrintflt',
   headerContainer: 'qrp_hCtr',
   tableContainer: 'qrp_tCtr',
-  tableBodyContainer: 'qrp_tbCtr'
+  tableBodyContainer: 'qrp_tbCtr',
+  tbody: 'qrp_tbodymxh'
 };
 
 /***/ }),
@@ -26043,13 +26315,16 @@ var VerticalArray = function (_React$PureComponent) {
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var _props = this.props,
           headers = _props.headers,
           childConstructor = _props.childConstructor,
           itemCountTitle = _props.itemCountTitle,
           filterPlaceholder = _props.filterPlaceholder;
 
-      var filteredChildren = this.filterChildren();
+      var filteredChildren = this.filterChildren(),
+          ref = JSON.stringify(headers);
       return _react2.default.createElement(
         'div',
         { className: (0, _common.createClassName)(_constants.CLASSES.verticalArray, _common.COMMON_CLASSES.flexCol) },
@@ -26064,12 +26339,15 @@ var VerticalArray = function (_React$PureComponent) {
           _react2.default.createElement(
             'div',
             { className: _constants.CLASSES.internalFilter },
-            _react2.default.createElement('input', { value: this.state.filterValue, placeholder: filterPlaceholder, onChange: this.onfilterChange })
+            _react2.default.createElement('input', { ref: ref, value: this.state.filterValue, placeholder: filterPlaceholder, onChange: this.onfilterChange }),
+            _react2.default.createElement('span', { className: _common.COMMON_CLASSES.searchIcon, onClick: function onClick() {
+                return _this3.refs[ref].focus();
+              } })
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: (0, _common.createClassName)(_constants.CLASSES.tableContainer, _common.COMMON_CLASSES.flexCol, _common.COMMON_CLASSES.overflowY) },
+          { className: (0, _common.createClassName)(_constants.CLASSES.tableContainer, _common.COMMON_CLASSES.flexCol) },
           _react2.default.createElement(
             'table',
             null,
@@ -26082,15 +26360,15 @@ var VerticalArray = function (_React$PureComponent) {
                 headers.map(function (h, i) {
                   return _react2.default.createElement(
                     'th',
-                    { key: i },
-                    h
+                    { key: i, className: h.className },
+                    h.name
                   );
                 })
               )
             ),
             _react2.default.createElement(
               'tbody',
-              null,
+              { className: (0, _common.createClassName)(_constants.CLASSES.tbody, _common.COMMON_CLASSES.overflowY) },
               filteredChildren.length !== 0 ? filteredChildren.map(function (val, i) {
                 return childConstructor(val, i);
               }) : _react2.default.createElement(
@@ -26229,7 +26507,7 @@ function stylize(icon) {
 
 Tile.propTypes = {
   click: _propTypes2.default.func.isRequired,
-  icon: _propTypes2.default.string.isRequired
+  icon: _propTypes2.default.string
 };
 
 exports.default = Tile;
@@ -27296,6 +27574,9 @@ var GlobalSearch = function (_React$PureComponent) {
               props.fetchSearchResults(_this2.refs[_gsConstants.INPUTREF].value);
               _this2.refs[_gsConstants.INPUTREF].value = '';
             }
+          } }),
+        _react2.default.createElement('span', { className: _common.COMMON_CLASSES.searchIcon, onClick: function onClick() {
+            return _this2.refs[_gsConstants.INPUTREF].focus();
           } })
       );
     }

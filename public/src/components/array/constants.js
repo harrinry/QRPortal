@@ -4,5 +4,6 @@ export const CLASSES = {
   internalFilter: 'qrp_varrintflt',
   headerContainer: 'qrp_hCtr',
   tableContainer: 'qrp_tCtr',
-  tableBodyContainer: 'qrp_tbCtr'
+  tableBodyContainer: 'qrp_tbCtr',
+  tbody: 'qrp_tbodymxh'
 };

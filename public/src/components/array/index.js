@@ -39,20 +39,22 @@ class VerticalArray extends React.PureComponent{
 
   render(){
     const { headers, childConstructor, itemCountTitle, filterPlaceholder } = this.props;
-    const filteredChildren = this.filterChildren();
+    const filteredChildren = this.filterChildren(),
+      ref = JSON.stringify(headers);
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
         <div className={CLASSES.itemCounter}>{filteredChildren.length + ' ' + itemCountTitle}</div>
         <div className={CLASSES.internalFilter}>
-          <input value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}></input>
+          <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
+          <span className={COMMON_CLASSES.searchIcon} onClick={() => this.refs[ref].focus()}></span>
         </div>
       </div>
-      <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol, COMMON_CLASSES.overflowY)}>
+      <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol)}>
         <table>
           <thead>
-            <tr>{headers.map((h, i) => <th key={i}>{h}</th>)}</tr>
+            <tr>{headers.map((h, i) => <th key={i} className={h.className}>{h.name}</th>)}</tr>
           </thead>
-          <tbody>
+          <tbody className={createClassName(CLASSES.tbody ,COMMON_CLASSES.overflowY)}>
             {filteredChildren.length !== 0 ? filteredChildren.map( (val, i) => childConstructor(val, i) ) : 
               <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>}
           </tbody>
