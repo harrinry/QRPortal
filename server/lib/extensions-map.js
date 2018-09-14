@@ -4,7 +4,8 @@ const root = require('app-root-path');
 const extensionExceptions = [ 
   {name:'com.castsoftware.cfamily', iconName: 'com.castsoftware.objective-c'},
   {name:'com.castsoftware.cpp', iconName: 'com.castsoftware.cfamily'},
-  {name:'com.castsoftware.pl1', iconName: 'com.castsoftware.pli'}
+  {name:'com.castsoftware.pl1', iconName: 'com.castsoftware.pli'},
+  {name: 'com.castsoftware.typescript', iconName: 'com.castsoftware.typescriptangular'}
 ];
 
 const validExtensions = getValidExtensionMap();
@@ -36,7 +37,7 @@ function getIconURL( extname ) {
 }
 
 function cleanExtentionName ( name ) {
-  const wordsToClean = [' technology',' Linker','Angular/', 'for ', 'for Java', 'Techonology Extension For' ,'Technology Extension For ', ' Framework', 'Support of ', 'Technology Extension' ], 
+  const wordsToClean = [' technology',' Linker', 'for ', 'for Java', 'Techonology Extension For' ,'Technology Extension For ', ' Framework', 'Support of ', 'Technology Extension' ], 
     cl = wordsToClean.length,
     exceptionNames = ['System Level Rules', 'Web Services', 'CAST AIP'];
   let cleanName = name;

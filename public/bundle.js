@@ -250,7 +250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 100px;\r\n  margin-left: -50px;\r\n  margin-top: 107px;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:100px ;height:100px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin: 16px 16px 32px 16px; user-select: none;\r\n  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}", ""]);
+exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 100px;\r\n  margin-left: -50px;\r\n  margin-top: 107px;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin: 16px 16px 32px 16px; user-select: none;\r\n  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}", ""]);
 
 // exports
 
