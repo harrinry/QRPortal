@@ -15,7 +15,7 @@ export const compareFunction = ( textValue, obj ) =>{
 export const childConstructor = ( values, index, callback ) => {
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
-      <td>{values.id + ' - ' + values.name}</td>
+      <td className={'test-std-list-row1'}>{values.id + ' - ' + values.name}</td>
     </tr>
   );
 };

@@ -5,6 +5,7 @@ const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
 const getStandardsMap = require('../lib/standards-map');
 const businessCriteriaMap = require('../lib/business-criteria-map');
+const navigationData = require('../lib/navigation-map');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -72,6 +73,11 @@ WebRouter.get('/versions.json', (req, res) => {
 
 WebRouter.get('/versions/:aipVersion', (req, res) => {
   res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+});
+
+WebRouter.get('/web-navigation', (req, res) => {
+  const navData = navigationData;
+  res.json(navData);
 });
 
 module.exports = WebRouter;
