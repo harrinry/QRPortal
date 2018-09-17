@@ -1,4 +1,4 @@
-export const HEADER = 'Standards Name';
+export const HEADER = {name: 'Standards Name', className: 'qrp_arrStdHri'};
 export const NOSTANDARDS = 'No Standards found';
 export const FILTERPLACEHOLDER = 'Filter Standards';
 export const STANDARDS = 'Standards';

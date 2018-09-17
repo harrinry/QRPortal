@@ -2,7 +2,7 @@ import { NAVIGATION_VIEW, CONTENT_VIEW, LANDING_PAGE } from './body-constants';
 import * as ACTIONTYPES from './body-actions-type';
 
 const initialState = {
-  view: NAVIGATION_VIEW,
+  view: LANDING_PAGE,
   listCount: 0,
 };
 

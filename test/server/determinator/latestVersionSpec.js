@@ -13,7 +13,7 @@ describe('getLatestVersion()', () => {
     const uid = 'com.castsoftware.html5';
     const version = latestVersion( uid );
 
-    assert.equal( version, '1.7.3' );
+    assert.equal( version, '1.7.6' );
   });
   it('should return the latest unstable version, when no stable is available', () => {
     const uid = 'com.castsoftware.systemlevelrules';

@@ -19,7 +19,7 @@ export default class GlobalSearch extends React.PureComponent{
             props.fetchSearchResults( this.refs[INPUTREF].value );
             this.refs[INPUTREF].value = '';
           }
-        }}/>
+        }}/><span className={COMMON_CLASSES.searchIcon} onClick={() => this.refs[INPUTREF].focus()}></span>
       </div>
     );
   }

@@ -5,9 +5,9 @@ export const compareValueKeys = {
 };
 
 export const HEADERS = {
-  id: 'Id',
-  name: 'Name',
-  critical: 'Critical'
+  id: {name: 'Id', className: 'qrp_arrRlsHid'},
+  name: {name: 'Name', className: 'qrp_arrRlsHname'},
+  critical: {name: 'Critical', className: 'qrp_arrRlsHcrit'}
 };
 
 export const NORULES = 'No Rules';

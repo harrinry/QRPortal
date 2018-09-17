@@ -1,11 +1,13 @@
 .qrp_varr{width: 100% }
 .qrp_hCtr{height: 64px; padding: 0; margin: 0;}
 .qrp_iCtr{flex: 4 0 0; margin-left: 20px; font-weight: 600; line-height: 64px;}
-.qrp_varrintflt{flex: 1 0 0; margin: 0; margin-right: 20px;}
+.qrp_varrintflt{flex: 1 0 0; margin: 0; margin-right: 20px; display: flex; flex-direction: row;}
 .qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}
+.qrp_varrintflt > span.qrp_srico {margin-left: -20px;}
 td { padding: 6px }
 table{ text-align: left; width: 100%}
 .qrp_lselected{ font-weight: 800 }
 /* th { padding: 6px; } */
 /* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */
-/* table thead { display: block; } */
+table thead, table tbody { display: block; }
+.qrp_tbodymxh{ max-height: calc(100vh - 88px) }
