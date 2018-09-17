@@ -7,7 +7,8 @@ const HeaderPathElement = ( props ) => {
     <span className={CLASSES.pathElement}>
       {props.icon ? <div className={CLASSES.pathElementIcon} 
         style={{backgroundImage: 'url('+ props.icon +')'}}></div> : undefined}
-      <div className={CLASSES.pathElementText} onClick={() => props.gotoLocation(props)} >{props.name}</div>
+      <div className={CLASSES.pathElementText} onClick={() => props.gotoLocation ? props.gotoLocation(props) : undefined} >{props.name}</div>
+      {props.closeBtn ? <div className={CLASSES.closeBtn} onClick={ () => props.onCloseBtnClick(props) }> x </div> : undefined }
       {props.separator ? <div className={CLASSES.pathSeparator}> > </div> : undefined}
     </span>
   );
@@ -18,7 +19,8 @@ HeaderPathElement.propTypes = {
   href: PropTypes.string,
   icon: PropTypes.string,
   index: PropTypes.number,
-  gotoLocation: PropTypes.func
+  gotoLocation: PropTypes.func,
+  onCloseBtnClick: PropTypes.func
 };
 
 export default HeaderPathElement;

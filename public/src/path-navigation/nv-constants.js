@@ -11,3 +11,5 @@ export const TYPES = {
   item: 'item',
   selector: 'selector'
 };
+
+export const SEARCHFOR = 'Search Results for : ';

@@ -24558,6 +24558,8 @@ var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src
 
 var _brlActions = __webpack_require__(/*! ../body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
+var _dsActions = __webpack_require__(/*! ../details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
+
 var _bslActions = __webpack_require__(/*! ../body-standards-list/bsl-actions */ "./public/src/body-standards-list/bsl-actions.js");
 
 var _nvActions = __webpack_require__(/*! ../path-navigation/nv-actions */ "./public/src/path-navigation/nv-actions.js");
@@ -24601,6 +24603,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
           break;
       }
       dispatch((0, _nvActions.appendToHeaderPath)(link));
+      dispatch((0, _dsActions.clearDetailsData)());
+      dispatch((0, _brlActions.clearListData)());
     }
   };
 };
@@ -24662,9 +24666,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_LIST_DATA = exports.FETCH_LIST_DATA = 'FETCH_LIST_DATA';
-var SET_LIST_DATA = exports.SET_LIST_DATA = 'SET_LIST_DATA';
+var SET_LIST_DATA = exports.SET_LIST_DATA = 'SET_RULES_LIST_DATA';
 var FAILED_TO_FETCH_LIST_DATA = exports.FAILED_TO_FETCH_LIST_DATA = 'FAILED_TO_FETCH_LIST_DATA';
-var CLEAR_LIST_DATA = exports.CLEAR_LIST_DATA = 'CLEAR_LIST_DATA';
+var CLEAR_LIST_DATA = exports.CLEAR_LIST_DATA = 'CLEAR_RULES_LIST_DATA';
 var SET_SELECTED_RULE_LIST_ITEM = exports.SET_SELECTED_RULE_LIST_ITEM = 'SET_SELECTED_RULE_LIST_ITEM';
 
 /***/ }),
@@ -24938,8 +24942,8 @@ var RulesListReducers = function RulesListReducers() {
   switch (action.type) {
     case _brlActionsType.FETCH_LIST_DATA:
       return {
-        data: [],
-        query: action.payload.query,
+        data: state.data,
+        query: action.payload.query ? action.payload.query : state.query,
         loading: true
       };
     case _brlActionsType.SET_LIST_DATA:
@@ -25764,7 +25768,7 @@ var ContentBody = function ContentBody(props) {
       _react2.default.createElement(
         'div',
         { className: _bodyConstants.CLASSES.listArea },
-        props.listCount === 2 ? _react2.default.createElement(_bodyStandardsList2.default, null) : undefined,
+        props.listCount === 2 && !props.searchVisible ? _react2.default.createElement(_bodyStandardsList2.default, null) : undefined,
         _react2.default.createElement(_bodyRulesList2.default, null)
       ),
       _react2.default.createElement(
@@ -26487,7 +26491,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Tile = function Tile(props) {
   return _react2.default.createElement(
     'div',
-    { className: (0, _common.createClassName)(_common.COMMON_CLASSES.txtCenter, _constants.CLASSES.tile, props.className), style: stylize(props.icon), onMouseDown: props.click },
+    { className: (0, _common.createClassName)(_common.COMMON_CLASSES.txtCenter, _constants.CLASSES.tile, props.className), style: stylize(props.icon), onClick: function onClick(event) {
+        switch (event.button) {
+          case 0:
+            return props.click();
+          default:
+            return;
+        }
+      } },
     _react2.default.createElement(
       'span',
       { className: _constants.CLASSES.nameFloatOnHover },
@@ -27711,8 +27722,6 @@ var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/bo
 
 var bodyActions = _interopRequireWildcard(_bodyActions);
 
-var _nvActions = __webpack_require__(/*! path-navigation/nv-actions */ "./public/src/path-navigation/nv-actions.js");
-
 var _dsActions = __webpack_require__(/*! details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -27729,12 +27738,10 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchSearchResults: function fetchSearchResults(query) {
-      dispatch(bodyActions.setListCount(1));
       dispatch(bodyActions.showContentView());
       dispatch(actions.fetchSearchResults(query));
       dispatch(actions.displaySearchResults());
       dispatch((0, _dsActions.clearDetailsData)());
-      dispatch((0, _nvActions.setHeaderPath)({ name: 'Search Results: ' + query }));
     }
   };
 };
@@ -28987,6 +28994,10 @@ var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/bo
 
 var _bnActions = __webpack_require__(/*! body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
+var _dsActions = __webpack_require__(/*! ../details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
+
+var _gsActions = __webpack_require__(/*! ../global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -28997,6 +29008,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         dispatch((0, _bodyActions.showNavigationView)());
         dispatch((0, _bnActions.fetchNavigationData)(props.name, props.href, props.icon));
       }
+    },
+    closeSearchResults: function closeSearchResults(props) {
+      var lastViewedRuleBeforeSearch = props.rules ? props.rules.find(function (e) {
+        return e.selected === true;
+      }) : undefined;
+      dispatch((0, _gsActions.hideSearchResults)());
+      if (lastViewedRuleBeforeSearch) dispatch((0, _dsActions.fetchDetailsData)(lastViewedRuleBeforeSearch.href));else dispatch((0, _dsActions.clearDetailsData)());
     }
   };
 };
@@ -29004,12 +29022,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     path: state.path.path,
-    viewType: state.viewType.viewType
+    viewType: state.viewType.viewType,
+    searchVisible: state.search.resultsVisible,
+    rules: state.rulesList.data
   };
 };
 
 _nvModel2.default.propTypes = {
-  path: _propTypes2.default.array
+  path: _propTypes2.default.arrayOf(_propTypes2.default.object),
+  searchVisible: _propTypes2.default.bool.isRequired
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_nvModel2.default);
@@ -29115,6 +29136,8 @@ var TYPES = exports.TYPES = {
   selector: 'selector'
 };
 
+var SEARCHFOR = exports.SEARCHFOR = 'Search Results for : ';
+
 /***/ }),
 
 /***/ "./public/src/path-navigation/nv-model.js":
@@ -29157,7 +29180,7 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.path.map(function (e, index) {
+      props.searchVisible ? _react2.default.createElement(_nvPathItem2.default, { rules: props.rules, separator: false, index: 0, name: _nvConstants.SEARCHFOR, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (e.type === _nvConstants.TYPES.selector) {
           return;
         } else return _react2.default.createElement(_nvPathItem2.default, { key: index, separator: index !== pl - 1, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
@@ -29205,10 +29228,17 @@ var HeaderPathElement = function HeaderPathElement(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathElementText, onClick: function onClick() {
-          return props.gotoLocation(props);
+          return props.gotoLocation ? props.gotoLocation(props) : undefined;
         } },
       props.name
     ),
+    props.closeBtn ? _react2.default.createElement(
+      'div',
+      { className: _nvConstants.CLASSES.closeBtn, onClick: function onClick() {
+          return props.onCloseBtnClick(props);
+        } },
+      ' x '
+    ) : undefined,
     props.separator ? _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathSeparator },
@@ -29222,7 +29252,8 @@ HeaderPathElement.propTypes = {
   href: _propTypes2.default.string,
   icon: _propTypes2.default.string,
   index: _propTypes2.default.number,
-  gotoLocation: _propTypes2.default.func
+  gotoLocation: _propTypes2.default.func,
+  onCloseBtnClick: _propTypes2.default.func
 };
 
 exports.default = HeaderPathElement;
