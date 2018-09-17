@@ -30,6 +30,11 @@ module.exports = [
     router: 'router'
   },
   {
+    name: 'compare',
+    route: '/compare',
+    router: 'router'
+  },
+  {
     name: 'about',
     route: '/about',
     router: 'router'

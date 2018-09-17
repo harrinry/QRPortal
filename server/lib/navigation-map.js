@@ -3,17 +3,17 @@ const navData = [
   {
     name: 'Standards',
     href: 'AIP/quality-standards',
-    icon: null
+    icon: '/img/standards.svg'
   },
   {
     name: 'Technologies',
     href: 'AIP/technologies',
-    icon: null
+    icon: '/img/technologies.svg'
   },
   {
     name: 'Sources',
     href: 'AIP/extensions',
-    icon: null
+    icon: '/img/sources.svg'
   }
 ];
 
