@@ -7,6 +7,9 @@ let app = express();
 require('./middleware/security')(app);
 require('./middleware/staticRoutes')(app);
 
+// ---------------------- Ensure Log directory  ------------------------------ //
+require('./settings/ensureLogDir')();
+
 // ---------------------- initiate Routers  ------------------------------ //
 require('./settings/routerConfig')(app);
 
