@@ -86,6 +86,2557 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/cfe-components/lib/button/cfe-button-component.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/button/cfe-button-component.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _isUndefined2 = __webpack_require__(/*! lodash/isUndefined */ "./node_modules/lodash/isUndefined.js");
+
+var _isUndefined3 = _interopRequireDefault(_isUndefined2);
+
+var _ink = __webpack_require__(/*! ../ink */ "./node_modules/cfe-components/lib/ink/index.js");
+
+var _ink2 = _interopRequireDefault(_ink);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var cloneElement = _react2.default.cloneElement;
+
+var Button = function (_PureComponent) {
+  _inherits(Button, _PureComponent);
+
+  function Button() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Button);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Button.__proto__ || Object.getPrototypeOf(Button)).call.apply(_ref, [this].concat(args))), _this), _this.iszDepthVisible = function (props) {
+      return (props.isRaised || props.isFab && !props.isIcon) && !props.isDisabled;
+    }, _this.getLinkComponent = function () {
+      return _react.Children.only(_this.props.children);
+    }, _this.getZDepth = function () {
+      return _this.iszDepthVisible(_this.props) ? _this.props.zDepth : 0;
+    }, _this.onClick = function (event) {
+      var _this$props = _this.props,
+          isDisabled = _this$props.isDisabled,
+          onClick = _this$props.onClick;
+
+
+      if (isDisabled) {
+        event.preventDefault();
+      } else {
+        !(0, _isUndefined3.default)(onClick) && onClick(event);
+      }
+    }, _this.renderLink = function (className) {
+      var props = _this.props;
+      var link = _this.getLinkComponent();
+      var linkChildren = link.props.children;
+
+      console.error('cfe-button: DEPRECATED "isLink" property for anchor tags, instead use the "tag" property and pass the other properties for the anchor such as "href"');
+
+      return cloneElement(link, {
+        className: className,
+        onClick: _this.onClick,
+        disabled: props.isDisabled
+      }, _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _react2.default.createElement(_ink2.default, { isDisabled: _this.props.isDisabled }),
+        linkChildren
+      ));
+    }, _this.renderButton = function (props, className) {
+      var Tag = props.tag,
+          isDisabled = props.isDisabled,
+          children = props.children,
+          restProps = _objectWithoutProperties(props, ['tag', 'isDisabled', 'children']);
+
+      return _react2.default.createElement(
+        Tag,
+        _extends({}, restProps, {
+          className: className,
+          onClick: _this.onClick,
+          disabled: isDisabled
+        }),
+        _react2.default.createElement(_ink2.default, { isDisabled: isDisabled }),
+        children
+      );
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Button, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          isFab = _props.isFab,
+          isOutlined = _props.isOutlined,
+          isRaised = _props.isRaised,
+          isPrimary = _props.isPrimary,
+          isSecondary = _props.isSecondary,
+          isWarn = _props.isWarn,
+          isIcon = _props.isIcon,
+          isLarge = _props.isLarge,
+          isSmall = _props.isSmall,
+          isLink = _props.isLink,
+          zDepth = _props.zDepth,
+          className = _props.className,
+          restProps = _objectWithoutProperties(_props, ['isFab', 'isOutlined', 'isRaised', 'isPrimary', 'isSecondary', 'isWarn', 'isIcon', 'isLarge', 'isSmall', 'isLink', 'zDepth', 'className']);
+
+      var buttonClassName = (0, _classnames2.default)({
+        'cfe-button--fab': isFab,
+        'cfe-button--outlined': isOutlined,
+        'cfe-button--raised': isRaised,
+        'cfe-button--primary': isPrimary,
+        'cfe-button--secondary': isSecondary,
+        'cfe-button--warn': isWarn,
+        'cfe-button--icon': isIcon,
+        'cfe-button--large': isLarge,
+        'cfe-button--small': isSmall
+      }, 'cfe-button', 'cfe-button--z-depth-' + this.getZDepth(), className);
+
+      return isLink ? this.renderLink(buttonClassName) : this.renderButton(restProps, buttonClassName);
+    }
+  }]);
+
+  return Button;
+}(_react.PureComponent);
+
+Button.propTypes = {
+  isRaised: _propTypes2.default.bool,
+  isOutlined: _propTypes2.default.bool,
+  isFab: _propTypes2.default.bool,
+  isIcon: _propTypes2.default.bool,
+  isLarge: _propTypes2.default.bool,
+  isSmall: _propTypes2.default.bool,
+  isPrimary: _propTypes2.default.bool,
+  isSecondary: _propTypes2.default.bool,
+  isWarn: _propTypes2.default.bool,
+  isDisabled: _propTypes2.default.bool,
+  isLink: _propTypes2.default.bool,
+  type: _propTypes2.default.string,
+  tag: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object, _propTypes2.default.func]),
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  zDepth: _propTypes2.default.number,
+  children: _propTypes2.default.any,
+  ink: _propTypes2.default.node,
+  onClick: _propTypes2.default.func
+};
+
+Button.defaultProps = {
+  tag: 'button',
+  zDepth: 2
+};
+
+exports.default = Button;
+//# sourceMappingURL=cfe-button-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/button/cfe-button-group-component.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/button/cfe-button-group-component.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ButtonGroup = function (_PureComponent) {
+  _inherits(ButtonGroup, _PureComponent);
+
+  function ButtonGroup() {
+    _classCallCheck(this, ButtonGroup);
+
+    return _possibleConstructorReturn(this, (ButtonGroup.__proto__ || Object.getPrototypeOf(ButtonGroup)).apply(this, arguments));
+  }
+
+  _createClass(ButtonGroup, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var className = (0, _classnames2.default)({
+        'cfe-button-group': true,
+        'cfe-button-group--vertical': props.isVertical
+      }, props.className);
+
+      return _react2.default.createElement(
+        'div',
+        { className: className },
+        _react2.default.Children.map(props.children, function (child) {
+          return _react2.default.createElement(
+            'span',
+            { className: 'cfe-button-group_children' },
+            child
+          );
+        })
+      );
+    }
+  }]);
+
+  return ButtonGroup;
+}(_react.PureComponent);
+
+ButtonGroup.propTypes = {
+  isVertical: _propTypes2.default.bool,
+  children: _propTypes2.default.any
+};
+
+exports.default = ButtonGroup;
+//# sourceMappingURL=cfe-button-group-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/button/index.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/cfe-components/lib/button/index.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ButtonGroup = undefined;
+
+var _cfeButtonComponent = __webpack_require__(/*! ./cfe-button-component */ "./node_modules/cfe-components/lib/button/cfe-button-component.js");
+
+var _cfeButtonComponent2 = _interopRequireDefault(_cfeButtonComponent);
+
+var _cfeButtonGroupComponent = __webpack_require__(/*! ./cfe-button-group-component */ "./node_modules/cfe-components/lib/button/cfe-button-group-component.js");
+
+var _cfeButtonGroupComponent2 = _interopRequireDefault(_cfeButtonGroupComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var ButtonGroup = exports.ButtonGroup = _cfeButtonGroupComponent2.default;
+exports.default = _cfeButtonComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-component.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-component.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _Layover = __webpack_require__(/*! react-md/lib/Helpers/Layover */ "./node_modules/react-md/lib/Helpers/Layover.js");
+
+var _Layover2 = _interopRequireDefault(_Layover);
+
+var _cfeDropdownTriggerComponent = __webpack_require__(/*! ./cfe-dropdown-trigger-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js");
+
+var _cfeDropdownTriggerComponent2 = _interopRequireDefault(_cfeDropdownTriggerComponent);
+
+var _cfeDropdownLayoverComponent = __webpack_require__(/*! ./cfe-dropdown-layover-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js");
+
+var _cfeDropdownLayoverComponent2 = _interopRequireDefault(_cfeDropdownLayoverComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var toArray = _react.Children.toArray;
+var HorizontalAnchors = _Layover2.default.HorizontalAnchors;
+var VerticalAnchors = _Layover2.default.VerticalAnchors;
+var Positions = _Layover2.default.Positions;
+
+var Dropdown = function (_PureComponent) {
+  _inherits(Dropdown, _PureComponent);
+
+  function Dropdown(props) {
+    _classCallCheck(this, Dropdown);
+
+    var _this = _possibleConstructorReturn(this, (Dropdown.__proto__ || Object.getPrototypeOf(Dropdown)).call(this, props));
+
+    _this.onCloseLayover = function () {
+      _this.props.onHideLayover();
+    };
+
+    _this.getChildOfType = function (type) {
+      return toArray(_this.props.children).find(function (children) {
+        return children.type === type;
+      });
+    };
+
+    _this.getAnchor = function (_ref) {
+      var xPos = _ref.xPos,
+          yPos = _ref.yPos;
+      return { x: xPos, y: yPos };
+    };
+
+    _this.getContainer = function (_ref2) {
+      var fixedTo = _ref2.fixedTo;
+
+      if (fixedTo && !_this.container) {
+        _this.container = document.querySelector(fixedTo);
+      }
+      return _this.container || undefined;
+    };
+
+    _this.container = null;
+    _this.anchor = _this.getAnchor(props);
+    return _this;
+  }
+
+  _createClass(Dropdown, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.container = null;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var className = (0, _classnames2.default)('cfe-dropdown', props.className);
+      var content = this.getChildOfType(_cfeDropdownLayoverComponent2.default);
+      var trigger = this.getChildOfType(_cfeDropdownTriggerComponent2.default) || _react2.default.createElement(_cfeDropdownTriggerComponent2.default, null);
+      var layoverClassName = (0, _classnames2.default)('cfe-dropdown_layover', content.props.className);
+
+      return _react2.default.createElement(
+        'div',
+        { className: className },
+        _react2.default.createElement(
+          _Layover2.default,
+          {
+            fixedTo: this.getContainer(props),
+            anchor: this.anchor,
+            simplified: props.isSimplified,
+            visible: props.isLayoverVisible,
+            toggle: trigger,
+            animationPosition: props.animationPos,
+            onClose: this.onCloseLayover
+          },
+          _react2.default.createElement(
+            'div',
+            { className: layoverClassName },
+            content
+          )
+        )
+      );
+    }
+  }]);
+
+  return Dropdown;
+}(_react.PureComponent);
+
+Dropdown.HorizontalPos = HorizontalAnchors;
+Dropdown.VerticalPos = VerticalAnchors;
+Dropdown.animationPos = Positions;
+
+Dropdown.propTypes = {
+  isSimplified: _propTypes2.default.bool,
+  isLayoverVisible: _propTypes2.default.bool.isRequired,
+  className: _propTypes2.default.string,
+  fixedTo: _propTypes2.default.string,
+  onHideLayover: _propTypes2.default.func.isRequired,
+  xPos: _propTypes2.default.oneOf([HorizontalAnchors.LEFT, HorizontalAnchors.INNER_LEFT, HorizontalAnchors.CENTER, HorizontalAnchors.RIGHT, HorizontalAnchors.INNER_RIGHT]).isRequired,
+  yPos: _propTypes2.default.oneOf([VerticalAnchors.TOP, VerticalAnchors.CENTER, VerticalAnchors.OVERLAP, VerticalAnchors.BOTTOM]).isRequired,
+  animationPos: _propTypes2.default.oneOf([Positions.TOP_LEFT, Positions.TOP_RIGHT, Positions.BOTTOM_LEFT, Positions.BOTTOM_RIGHT, Positions.BELOW]).isRequired,
+  children: function children(props, propName, componentName) {
+    var children = props[propName];
+    var errorMessage = 'Invalid prop ' + propName + ' supplied to ' + componentName + ', they should be instances of "DropdownTrigger" and "DropdownLayover"';
+    var error = void 0;
+
+    if (children.length !== 2) {
+      error = new Error(errorMessage);
+    }
+
+    _react2.default.Children.forEach(children, function (child) {
+      if (!(child.type === _cfeDropdownTriggerComponent2.default || child.type === _cfeDropdownLayoverComponent2.default)) {
+        error = new Error(errorMessage);
+      }
+    });
+    return error;
+  }
+};
+
+Dropdown.defaultProps = {
+  xPos: HorizontalAnchors.INNER_LEFT,
+  yPos: VerticalAnchors.BOTTOM,
+  animationPos: Positions.BOTTOM_LEFT,
+  isSimplified: false
+};
+
+exports.default = Dropdown;
+//# sourceMappingURL=cfe-dropdown-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownLayover = function (_PureComponent) {
+  _inherits(DropdownLayover, _PureComponent);
+
+  function DropdownLayover() {
+    _classCallCheck(this, DropdownLayover);
+
+    return _possibleConstructorReturn(this, (DropdownLayover.__proto__ || Object.getPrototypeOf(DropdownLayover)).apply(this, arguments));
+  }
+
+  _createClass(DropdownLayover, [{
+    key: 'render',
+    value: function render() {
+      return this.props.children;
+    }
+  }]);
+
+  return DropdownLayover;
+}(_react.PureComponent);
+
+DropdownLayover.propTypes = {
+  children: _propTypes2.default.any
+};
+
+exports.default = DropdownLayover;
+//# sourceMappingURL=cfe-dropdown-layover-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-component.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-component.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _noop2 = __webpack_require__(/*! lodash/noop */ "./node_modules/lodash/noop.js");
+
+var _noop3 = _interopRequireDefault(_noop2);
+
+var _cfeDropdownComponent = __webpack_require__(/*! ./cfe-dropdown-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-component.js");
+
+var _cfeDropdownComponent2 = _interopRequireDefault(_cfeDropdownComponent);
+
+var _cfeDropdownTriggerComponent = __webpack_require__(/*! ./cfe-dropdown-trigger-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js");
+
+var _cfeDropdownTriggerComponent2 = _interopRequireDefault(_cfeDropdownTriggerComponent);
+
+var _cfeDropdownLayoverComponent = __webpack_require__(/*! ./cfe-dropdown-layover-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js");
+
+var _cfeDropdownLayoverComponent2 = _interopRequireDefault(_cfeDropdownLayoverComponent);
+
+var _cfeDropdownMenuListComponent = __webpack_require__(/*! ./cfe-dropdown-menu-list-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-list-component.js");
+
+var _cfeDropdownMenuListComponent2 = _interopRequireDefault(_cfeDropdownMenuListComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownMenu = function (_PureComponent) {
+  _inherits(DropdownMenu, _PureComponent);
+
+  function DropdownMenu(props) {
+    _classCallCheck(this, DropdownMenu);
+
+    var _this = _possibleConstructorReturn(this, (DropdownMenu.__proto__ || Object.getPrototypeOf(DropdownMenu)).call(this, props));
+
+    _this.onClickTrigger = function () {
+      return !_this.props.isDisabled && _this.setState({ visible: !_this.state.visible });
+    };
+
+    _this.onClickOption = function (event, option) {
+      _this.setState({ visible: false });
+
+      if (option.onClick) {
+        option.onClick(event);
+      } else {
+        _this.props.onClickOption(option, event);
+      }
+    };
+
+    _this.onHideLayover = function () {
+      return _this.setState({ visible: false });
+    };
+
+    _this.state = {
+      visible: false
+    };
+    return _this;
+  }
+
+  _createClass(DropdownMenu, [{
+    key: 'render',
+    value: function render() {
+      var className = (0, _classnames2.default)(this.props.className);
+
+      return _react2.default.createElement(
+        _cfeDropdownComponent2.default,
+        {
+          isSimplified: this.props.isSimplified,
+          isLayoverVisible: this.state.visible,
+          className: className,
+          xPos: this.props.xPos,
+          yPos: this.props.yPos,
+          animationPos: this.props.animationPos,
+          fixedTo: this.props.fixedTo,
+          onHideLayover: this.onHideLayover
+        },
+        _react2.default.createElement(
+          _cfeDropdownTriggerComponent2.default,
+          { onClick: this.onClickTrigger },
+          this.props.children
+        ),
+        _react2.default.createElement(
+          _cfeDropdownLayoverComponent2.default,
+          null,
+          _react2.default.createElement(_cfeDropdownMenuListComponent2.default, {
+            options: this.props.options,
+            className: this.props.optionsClassName,
+            onClickItem: this.onClickOption
+          })
+        )
+      );
+    }
+  }]);
+
+  return DropdownMenu;
+}(_react.PureComponent);
+
+DropdownMenu.HorizontalPos = _cfeDropdownComponent2.default.HorizontalPos;
+DropdownMenu.VerticalPos = _cfeDropdownComponent2.default.VerticalPos;
+DropdownMenu.animationPos = _cfeDropdownComponent2.default.animationPos;
+
+DropdownMenu.propTypes = {
+  isSimplified: _propTypes2.default.bool,
+  isDisabled: _propTypes2.default.bool,
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  optionsClassName: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  xPos: _propTypes2.default.string,
+  yPos: _propTypes2.default.string,
+  animationPos: _propTypes2.default.string,
+  children: _propTypes2.default.any,
+  fixedTo: _propTypes2.default.any,
+  options: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    isDisabled: _propTypes2.default.bool,
+    hasDivider: _propTypes2.default.bool,
+    className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+    label: _propTypes2.default.any.isRequired
+  }))]),
+  onClickOption: _propTypes2.default.func
+};
+
+DropdownMenu.defaultProps = {
+  onClickOption: _noop3.default
+};
+
+exports.default = DropdownMenu;
+//# sourceMappingURL=cfe-dropdown-menu-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-list-component.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-list-component.js ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _isEmpty2 = __webpack_require__(/*! lodash/isEmpty */ "./node_modules/lodash/isEmpty.js");
+
+var _isEmpty3 = _interopRequireDefault(_isEmpty2);
+
+var _isUndefined2 = __webpack_require__(/*! lodash/isUndefined */ "./node_modules/lodash/isUndefined.js");
+
+var _isUndefined3 = _interopRequireDefault(_isUndefined2);
+
+var _get2 = __webpack_require__(/*! lodash/get */ "./node_modules/lodash/get.js");
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _cfeListComponent = __webpack_require__(/*! ../list/cfe-list-component */ "./node_modules/cfe-components/lib/list/cfe-list-component.js");
+
+var _cfeListComponent2 = _interopRequireDefault(_cfeListComponent);
+
+var _cfeListItemComponent = __webpack_require__(/*! ../list/cfe-list-item-component */ "./node_modules/cfe-components/lib/list/cfe-list-item-component.js");
+
+var _cfeListItemComponent2 = _interopRequireDefault(_cfeListItemComponent);
+
+var _input = __webpack_require__(/*! ../input */ "./node_modules/cfe-components/lib/input/index.js");
+
+var _input2 = _interopRequireDefault(_input);
+
+var _tile = __webpack_require__(/*! ../tile */ "./node_modules/cfe-components/lib/tile/index.js");
+
+var _cfeDropdownMenuOptionComponent = __webpack_require__(/*! ./cfe-dropdown-menu-option-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-option-component.js");
+
+var _cfeDropdownMenuOptionComponent2 = _interopRequireDefault(_cfeDropdownMenuOptionComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownMenuList = function (_React$PureComponent) {
+  _inherits(DropdownMenuList, _React$PureComponent);
+
+  _createClass(DropdownMenuList, null, [{
+    key: 'getDerivedStateFromProps',
+    value: function getDerivedStateFromProps(props, state) {
+      if (props.options !== state.prevOptions) {
+        return {
+          options: props.options,
+          prevOptions: props.options
+        };
+      }
+
+      return null;
+    }
+  }]);
+
+  function DropdownMenuList(props) {
+    _classCallCheck(this, DropdownMenuList);
+
+    var _this = _possibleConstructorReturn(this, (DropdownMenuList.__proto__ || Object.getPrototypeOf(DropdownMenuList)).call(this, props));
+
+    _initialiseProps.call(_this);
+
+    _this.state = {
+      filterText: '',
+      options: [],
+      prevOptions: []
+    };
+    return _this;
+  }
+
+  _createClass(DropdownMenuList, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var className = (0, _classnames2.default)('cfe-dropdown-menu_list', props.className);
+
+      return _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        this.renderSearch(),
+        _react2.default.createElement(
+          _cfeListComponent2.default,
+          { className: className },
+          this.renderList()
+        )
+      );
+    }
+  }]);
+
+  return DropdownMenuList;
+}(_react2.default.PureComponent);
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.onFilter = function (value) {
+    var props = _this2.props;
+
+    _this2.setState({ filterText: value });
+
+    if ((0, _isUndefined3.default)(props.onFilter)) {
+      var options = props.options.filter(function (option) {
+        return _this2.getFilteredOptions(option, value.toLowerCase());
+      });
+
+      _this2.setState({ options: options });
+    } else {
+      props.onFilter(value);
+    }
+  };
+
+  this.getLabel = function (option) {
+    var label = (0, _get3.default)(option, 'label');
+
+    return option.isLink ? label.props.children : label;
+  };
+
+  this.getFilteredOptions = function (option, value) {
+    return _this2.getLabel(option).toLowerCase().includes(value);
+  };
+
+  this.renderSearch = function () {
+    return _this2.props.hasSearch ? _react2.default.createElement(
+      'div',
+      { className: 'cfe-dropdown-selector_search' },
+      _react2.default.createElement(
+        _tile.TileContent,
+        null,
+        _react2.default.createElement(_input2.default, {
+          className: 'cfe-dropdown-selector_input',
+          placeholder: _this2.props.filterPlaceholder,
+          suffix: _this2.props.searchIcon,
+          value: _this2.state.filterText,
+          onChange: _this2.onFilter
+        })
+      )
+    ) : null;
+  };
+
+  this.renderList = function () {
+    return !(0, _isEmpty3.default)(_this2.state.options) ? _this2.state.options.map(function (option, index) {
+      return _react2.default.createElement(_cfeDropdownMenuOptionComponent2.default, {
+        value: _this2.props.value,
+        key: index,
+        option: option,
+        onClick: _this2.props.onClickItem
+      });
+    }) : _react2.default.createElement(
+      _cfeListItemComponent2.default,
+      { className: 'cfe-dropdown-selector_not-found', isClickable: false },
+      _react2.default.createElement(
+        _tile.TileContent,
+        null,
+        _this2.props.emptyFilterText
+      )
+    );
+  };
+};
+
+DropdownMenuList.propTypes = {
+  hasSearch: _propTypes2.default.bool,
+  value: _propTypes2.default.string,
+  emptyFilterText: _propTypes2.default.string,
+  filterPlaceholder: _propTypes2.default.string,
+  className: _propTypes2.default.string,
+  searchIcon: _propTypes2.default.any,
+  options: _propTypes2.default.array,
+  onClickItem: _propTypes2.default.func,
+  onFilter: _propTypes2.default.func
+};
+
+exports.default = DropdownMenuList;
+//# sourceMappingURL=cfe-dropdown-menu-list-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-option-component.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-option-component.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _isObject2 = __webpack_require__(/*! lodash/isObject */ "./node_modules/lodash/isObject.js");
+
+var _isObject3 = _interopRequireDefault(_isObject2);
+
+var _isUndefined2 = __webpack_require__(/*! lodash/isUndefined */ "./node_modules/lodash/isUndefined.js");
+
+var _isUndefined3 = _interopRequireDefault(_isUndefined2);
+
+var _cfeListItemComponent = __webpack_require__(/*! ../list/cfe-list-item-component */ "./node_modules/cfe-components/lib/list/cfe-list-item-component.js");
+
+var _cfeListItemComponent2 = _interopRequireDefault(_cfeListItemComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownMenuOption = function (_React$PureComponent) {
+  _inherits(DropdownMenuOption, _React$PureComponent);
+
+  function DropdownMenuOption() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, DropdownMenuOption);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = DropdownMenuOption.__proto__ || Object.getPrototypeOf(DropdownMenuOption)).call.apply(_ref, [this].concat(args))), _this), _this.onClick = function (event) {
+      return _this.props.onClick(event, _this.props.option);
+    }, _this.isActive = function (option, value) {
+      return !(0, _isUndefined3.default)(value) ? option.value === value : false;
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(DropdownMenuOption, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var option = (0, _isObject3.default)(props.option) ? props.option : { label: props.option };
+      var isActive = this.isActive(option, props.value);
+      var className = (0, _classnames2.default)('cfe-dropdown-menu_list-item', option.className);
+
+      var isDisabled = option.isDisabled,
+          isClickable = option.isClickable,
+          label = option.label,
+          restOptionProps = _objectWithoutProperties(option, ['isDisabled', 'isClickable', 'label']);
+
+      return _react2.default.createElement(
+        _cfeListItemComponent2.default,
+        _extends({
+          isActive: isActive,
+          isClickable: !isDisabled || isClickable,
+          isDisabled: isDisabled
+        }, restOptionProps, {
+          className: className,
+          onClick: this.onClick
+        }),
+        label
+      );
+    }
+  }]);
+
+  return DropdownMenuOption;
+}(_react2.default.PureComponent);
+
+DropdownMenuOption.propTypes = {
+  value: _propTypes2.default.string,
+  option: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  onClick: _propTypes2.default.func
+};
+
+exports.default = DropdownMenuOption;
+//# sourceMappingURL=cfe-dropdown-menu-option-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-selector-component.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-selector-component.js ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _noop2 = __webpack_require__(/*! lodash/noop */ "./node_modules/lodash/noop.js");
+
+var _noop3 = _interopRequireDefault(_noop2);
+
+var _isObject2 = __webpack_require__(/*! lodash/isObject */ "./node_modules/lodash/isObject.js");
+
+var _isObject3 = _interopRequireDefault(_isObject2);
+
+var _get2 = __webpack_require__(/*! lodash/get */ "./node_modules/lodash/get.js");
+
+var _get3 = _interopRequireDefault(_get2);
+
+var _isEmpty2 = __webpack_require__(/*! lodash/isEmpty */ "./node_modules/lodash/isEmpty.js");
+
+var _isEmpty3 = _interopRequireDefault(_isEmpty2);
+
+var _cfeDropdownComponent = __webpack_require__(/*! ./cfe-dropdown-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-component.js");
+
+var _cfeDropdownComponent2 = _interopRequireDefault(_cfeDropdownComponent);
+
+var _cfeDropdownTriggerComponent = __webpack_require__(/*! ./cfe-dropdown-trigger-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js");
+
+var _cfeDropdownTriggerComponent2 = _interopRequireDefault(_cfeDropdownTriggerComponent);
+
+var _cfeDropdownLayoverComponent = __webpack_require__(/*! ./cfe-dropdown-layover-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js");
+
+var _cfeDropdownLayoverComponent2 = _interopRequireDefault(_cfeDropdownLayoverComponent);
+
+var _cfeDropdownMenuListComponent = __webpack_require__(/*! ./cfe-dropdown-menu-list-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-list-component.js");
+
+var _cfeDropdownMenuListComponent2 = _interopRequireDefault(_cfeDropdownMenuListComponent);
+
+var _button = __webpack_require__(/*! ../button */ "./node_modules/cfe-components/lib/button/index.js");
+
+var _button2 = _interopRequireDefault(_button);
+
+var _fontIcon = __webpack_require__(/*! ../font-icon */ "./node_modules/cfe-components/lib/font-icon/index.js");
+
+var _fontIcon2 = _interopRequireDefault(_fontIcon);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownSelector = function (_PureComponent) {
+  _inherits(DropdownSelector, _PureComponent);
+
+  _createClass(DropdownSelector, null, [{
+    key: 'getDerivedStateFromProps',
+    value: function getDerivedStateFromProps(props, state) {
+      var newState = null;
+      var options = props.options.map(function (option) {
+        return DropdownSelector.getOption(option);
+      });
+
+      if (props.options !== state.prevOptions) {
+        newState = _extends({}, newState, {
+          options: options,
+          prevOptions: props.options
+        });
+      }
+      if (props.value !== state.prevValue) {
+        newState = _extends({}, newState, {
+          value: props.value,
+          label: props.value ? DropdownSelector.getLabel(options.find(function (option) {
+            return option.value === props.value;
+          })) : '',
+          prevValue: props.value
+        });
+      }
+      return newState;
+    }
+  }, {
+    key: 'getOption',
+    value: function getOption(option) {
+      return (0, _isObject3.default)(option) ? _extends({}, option, { value: option.value }) : _extends({}, option, { label: option, value: option });
+    }
+  }, {
+    key: 'getLabel',
+    value: function getLabel(option) {
+      var label = (0, _get3.default)(option, 'label');
+
+      return option.isLink ? label.props.children : label;
+    }
+  }]);
+
+  function DropdownSelector(props) {
+    _classCallCheck(this, DropdownSelector);
+
+    var _this = _possibleConstructorReturn(this, (DropdownSelector.__proto__ || Object.getPrototypeOf(DropdownSelector)).call(this, props));
+
+    _this.onClickTrigger = function () {
+      return !_this.props.isDisabled && _this.setState({ isVisible: !_this.state.isVisible });
+    };
+
+    _this.onClickOption = function (event, option) {
+      var value = (0, _get3.default)(option, 'value');
+      var label = DropdownSelector.getLabel(option);
+
+      _this.setState({ isVisible: false, value: value, label: label });
+      if (option.onClick) {
+        option.onClick(event);
+      } else {
+        _this.props.onClickOption(option, event);
+      }
+    };
+
+    _this.onHideLayover = function () {
+      return _this.setState({ isVisible: false });
+    };
+
+    _this.renderTriggerContent = function () {
+      return !(0, _isEmpty3.default)(_this.state.label) ? _react2.default.createElement(
+        _react2.default.Fragment,
+        null,
+        _this.state.label,
+        ' ',
+        _this.props.selectorIcon
+      ) : _this.props.triggerLabel;
+    };
+
+    _this.state = {
+      isVisible: false,
+      prevValue: '',
+      value: '',
+      label: '',
+      prevOptions: [],
+      options: []
+    };
+    return _this;
+  }
+
+  _createClass(DropdownSelector, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var state = this.state;
+
+      var options = props.options,
+          value = props.value,
+          onClickOption = props.onClickOption,
+          onFilter = props.onFilter,
+          isSimplified = props.isSimplified,
+          hasSearch = props.hasSearch,
+          triggerClassName = props.triggerClassName,
+          className = props.className,
+          optionsClassName = props.optionsClassName,
+          xPos = props.xPos,
+          yPos = props.yPos,
+          filterPlaceholder = props.filterPlaceholder,
+          emptyFilterText = props.emptyFilterText,
+          searchIcon = props.searchIcon,
+          restProps = _objectWithoutProperties(props, ['options', 'value', 'onClickOption', 'onFilter', 'isSimplified', 'hasSearch', 'triggerClassName', 'className', 'optionsClassName', 'xPos', 'yPos', 'filterPlaceholder', 'emptyFilterText', 'searchIcon']);
+
+      var dropdownClassName = (0, _classnames2.default)(className);
+      var buttonClassName = (0, _classnames2.default)({
+        'cfe-dropdown-selector_button': true,
+        'cfe-dropdown-selector_button--active': state.isVisible
+      }, triggerClassName);
+
+      return _react2.default.createElement(
+        _cfeDropdownComponent2.default,
+        {
+          isSimplified: isSimplified,
+          isLayoverVisible: state.isVisible,
+          className: dropdownClassName,
+          xPos: xPos,
+          yPos: yPos,
+          animationPos: this.props.animationPos,
+          fixedTo: this.props.fixedTo,
+          onHideLayover: this.onHideLayover
+        },
+        _react2.default.createElement(
+          _cfeDropdownTriggerComponent2.default,
+          { onClick: this.onClickTrigger },
+          _react2.default.createElement(
+            _button2.default,
+            _extends({}, restProps, { className: buttonClassName }),
+            this.renderTriggerContent()
+          )
+        ),
+        _react2.default.createElement(
+          _cfeDropdownLayoverComponent2.default,
+          null,
+          _react2.default.createElement(_cfeDropdownMenuListComponent2.default, {
+            hasSearch: hasSearch,
+            searchIcon: searchIcon,
+            className: optionsClassName,
+            value: state.value,
+            options: state.options,
+            filterPlaceholder: filterPlaceholder,
+            emptyFilterText: emptyFilterText,
+            onClickItem: this.onClickOption,
+            onFilter: props.onFilter
+          })
+        )
+      );
+    }
+  }]);
+
+  return DropdownSelector;
+}(_react.PureComponent);
+
+DropdownSelector.HorizontalPos = _cfeDropdownComponent2.default.HorizontalPos;
+DropdownSelector.VerticalPos = _cfeDropdownComponent2.default.VerticalPos;
+
+DropdownSelector.propTypes = {
+  hasSearch: _propTypes2.default.bool,
+  isSimplified: _propTypes2.default.bool,
+  isDisabled: _propTypes2.default.bool,
+  triggerLabel: _propTypes2.default.string,
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  triggerClassName: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  optionsClassName: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  xPos: _propTypes2.default.string,
+  yPos: _propTypes2.default.string,
+  animationPos: _propTypes2.default.string,
+  value: _propTypes2.default.string,
+  filterPlaceholder: _propTypes2.default.string,
+  emptyFilterText: _propTypes2.default.string,
+  fixedTo: _propTypes2.default.any,
+  selectorIcon: _propTypes2.default.any,
+  searchIcon: _propTypes2.default.any,
+  options: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.string), _propTypes2.default.arrayOf(_propTypes2.default.number), _propTypes2.default.arrayOf(_propTypes2.default.shape({
+    isDisabled: _propTypes2.default.bool,
+    hasDivider: _propTypes2.default.bool,
+    className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+    label: _propTypes2.default.any.isRequired
+  }))]),
+  onClickOption: _propTypes2.default.func,
+  onFilter: _propTypes2.default.func
+};
+
+DropdownSelector.defaultProps = {
+  selectorIcon: _react2.default.createElement(_fontIcon2.default, { id: 'arrow_drop_down' }),
+  searchIcon: _react2.default.createElement(_fontIcon2.default, { id: 'search' }),
+  hasSearch: false,
+  onClickOption: _noop3.default,
+  filterPlaceholder: 'Search...',
+  emptyFilterText: 'Not found'
+};
+
+exports.default = DropdownSelector;
+//# sourceMappingURL=cfe-dropdown-selector-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownTrigger = function (_PureComponent) {
+  _inherits(DropdownTrigger, _PureComponent);
+
+  function DropdownTrigger() {
+    _classCallCheck(this, DropdownTrigger);
+
+    return _possibleConstructorReturn(this, (DropdownTrigger.__proto__ || Object.getPrototypeOf(DropdownTrigger)).apply(this, arguments));
+  }
+
+  _createClass(DropdownTrigger, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        {
+          role: 'button',
+          onClick: this.props.onClick
+        },
+        this.props.children
+      );
+    }
+  }]);
+
+  return DropdownTrigger;
+}(_react.PureComponent);
+
+DropdownTrigger.propTypes = {
+  children: _propTypes2.default.any,
+  onClick: _propTypes2.default.func
+};
+
+exports.default = DropdownTrigger;
+//# sourceMappingURL=cfe-dropdown-trigger-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/dropdown/index.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/cfe-components/lib/dropdown/index.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.DropdownSelector = exports.DropdownMenu = exports.DropdownLayover = exports.DropdownTrigger = undefined;
+
+var _cfeDropdownComponent = __webpack_require__(/*! ./cfe-dropdown-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-component.js");
+
+var _cfeDropdownComponent2 = _interopRequireDefault(_cfeDropdownComponent);
+
+var _cfeDropdownTriggerComponent = __webpack_require__(/*! ./cfe-dropdown-trigger-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-trigger-component.js");
+
+var _cfeDropdownTriggerComponent2 = _interopRequireDefault(_cfeDropdownTriggerComponent);
+
+var _cfeDropdownLayoverComponent = __webpack_require__(/*! ./cfe-dropdown-layover-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-layover-component.js");
+
+var _cfeDropdownLayoverComponent2 = _interopRequireDefault(_cfeDropdownLayoverComponent);
+
+var _cfeDropdownMenuComponent = __webpack_require__(/*! ./cfe-dropdown-menu-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-menu-component.js");
+
+var _cfeDropdownMenuComponent2 = _interopRequireDefault(_cfeDropdownMenuComponent);
+
+var _cfeDropdownSelectorComponent = __webpack_require__(/*! ./cfe-dropdown-selector-component */ "./node_modules/cfe-components/lib/dropdown/cfe-dropdown-selector-component.js");
+
+var _cfeDropdownSelectorComponent2 = _interopRequireDefault(_cfeDropdownSelectorComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var DropdownTrigger = exports.DropdownTrigger = _cfeDropdownTriggerComponent2.default;
+var DropdownLayover = exports.DropdownLayover = _cfeDropdownLayoverComponent2.default;
+var DropdownMenu = exports.DropdownMenu = _cfeDropdownMenuComponent2.default;
+var DropdownSelector = exports.DropdownSelector = _cfeDropdownSelectorComponent2.default;
+
+exports.default = _cfeDropdownComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/font-icon/cfe-font-icon-component.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/font-icon/cfe-font-icon-component.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FontIcon = function (_React$PureComponent) {
+  _inherits(FontIcon, _React$PureComponent);
+
+  function FontIcon() {
+    _classCallCheck(this, FontIcon);
+
+    return _possibleConstructorReturn(this, (FontIcon.__proto__ || Object.getPrototypeOf(FontIcon)).apply(this, arguments));
+  }
+
+  _createClass(FontIcon, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          id = _props.id,
+          size = _props.size,
+          restProps = _objectWithoutProperties(_props, ['className', 'id', 'size']);
+
+      var iconClassName = (0, _classnames2.default)({
+        'cfe-font-icon': true
+      }, 'cfe-font-icon_size--' + size, className);
+
+      return _react2.default.createElement(
+        'i',
+        _extends({}, restProps, { className: iconClassName }),
+        id
+      );
+    }
+  }]);
+
+  return FontIcon;
+}(_react2.default.PureComponent);
+
+FontIcon.defaultProps = {
+  size: 24
+};
+
+FontIcon.propTypes = {
+  id: _propTypes2.default.string.isRequired,
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  size: _propTypes2.default.oneOf([18, 24, 36, 48])
+};
+
+exports.default = FontIcon;
+//# sourceMappingURL=cfe-font-icon-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/font-icon/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/font-icon/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeFontIconComponent = __webpack_require__(/*! ./cfe-font-icon-component */ "./node_modules/cfe-components/lib/font-icon/cfe-font-icon-component.js");
+
+var _cfeFontIconComponent2 = _interopRequireDefault(_cfeFontIconComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _cfeFontIconComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/ink/cfe-ink-component.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/ink/cfe-ink-component.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _InkContainer = __webpack_require__(/*! react-md/lib/Inks/InkContainer */ "./node_modules/react-md/lib/Inks/InkContainer.js");
+
+var _InkContainer2 = _interopRequireDefault(_InkContainer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Ink = function (_React$PureComponent) {
+  _inherits(Ink, _React$PureComponent);
+
+  function Ink() {
+    _classCallCheck(this, Ink);
+
+    return _possibleConstructorReturn(this, (Ink.__proto__ || Object.getPrototypeOf(Ink)).apply(this, arguments));
+  }
+
+  _createClass(Ink, [{
+    key: 'render',
+    value: function render() {
+      return !this.props.isDisabled ? _react2.default.createElement(_InkContainer2.default, {
+        key: 'ink-container',
+        transitionOverlap: 150,
+        transitionEnterTimeout: 400,
+        transitionLeaveTimeout: 300
+      }) : null;
+    }
+  }]);
+
+  return Ink;
+}(_react2.default.PureComponent);
+
+Ink.propTypes = {
+  /** Boolean to decide whether the Ink container is render or not */
+  isDisabled: _propTypes2.default.bool
+};
+
+exports.default = Ink;
+//# sourceMappingURL=cfe-ink-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/ink/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/cfe-components/lib/ink/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeInkComponent = __webpack_require__(/*! ./cfe-ink-component */ "./node_modules/cfe-components/lib/ink/cfe-ink-component.js");
+
+var _cfeInkComponent2 = _interopRequireDefault(_cfeInkComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _cfeInkComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/input/cfe-input-component.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/input/cfe-input-component.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _textField = __webpack_require__(/*! ../text-field */ "./node_modules/cfe-components/lib/text-field/index.js");
+
+var _textField2 = _interopRequireDefault(_textField);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Input = function (_React$PureComponent) {
+  _inherits(Input, _React$PureComponent);
+
+  function Input() {
+    _classCallCheck(this, Input);
+
+    return _possibleConstructorReturn(this, (Input.__proto__ || Object.getPrototypeOf(Input)).apply(this, arguments));
+  }
+
+  _createClass(Input, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          type = _props.type,
+          className = _props.className,
+          name = _props.name,
+          value = _props.value,
+          onChange = _props.onChange,
+          onFocus = _props.onFocus,
+          onBlur = _props.onBlur,
+          setRef = _props.setRef,
+          restProps = _objectWithoutProperties(_props, ['type', 'className', 'name', 'value', 'onChange', 'onFocus', 'onBlur', 'setRef']);
+
+      return _react2.default.createElement('input', _extends({}, restProps, {
+        type: type,
+        className: className,
+        name: name,
+        value: value,
+        ref: setRef,
+        onChange: onChange,
+        onFocus: onFocus,
+        onBlur: onBlur
+      }));
+    }
+  }]);
+
+  return Input;
+}(_react2.default.PureComponent);
+
+Input.propTypes = {
+  type: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  name: _propTypes2.default.string,
+  value: _propTypes2.default.string,
+  className: _propTypes2.default.string,
+  setRef: _propTypes2.default.func,
+  onChange: _propTypes2.default.func,
+  onFocus: _propTypes2.default.func,
+  onBlur: _propTypes2.default.func
+};
+
+Input.defaultProps = {
+  type: 'text'
+};
+
+exports.default = (0, _textField2.default)(Input);
+//# sourceMappingURL=cfe-input-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/input/index.js":
+/*!********************************************************!*\
+  !*** ./node_modules/cfe-components/lib/input/index.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeInputComponent = __webpack_require__(/*! ./cfe-input-component */ "./node_modules/cfe-components/lib/input/cfe-input-component.js");
+
+var _cfeInputComponent2 = _interopRequireDefault(_cfeInputComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _cfeInputComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/list/cfe-list-component.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/list/cfe-list-component.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var List = function (_PureComponent) {
+  _inherits(List, _PureComponent);
+
+  function List() {
+    _classCallCheck(this, List);
+
+    return _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).apply(this, arguments));
+  }
+
+  _createClass(List, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var className = (0, _classnames2.default)({
+        'cfe-list--small': props.isSmall,
+        'cfe-list--large': props.isLarge,
+        'cfe-list': true
+      }, props.className);
+
+      return _react2.default.createElement(
+        'ul',
+        { className: className },
+        props.children
+      );
+    }
+  }]);
+
+  return List;
+}(_react.PureComponent);
+
+List.propTypes = {
+  isSmall: _propTypes2.default.bool,
+  isLarge: _propTypes2.default.bool,
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  children: _propTypes2.default.any
+};
+
+exports.default = List;
+//# sourceMappingURL=cfe-list-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/list/cfe-list-item-component.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/list/cfe-list-item-component.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _isUndefined2 = __webpack_require__(/*! lodash/isUndefined */ "./node_modules/lodash/isUndefined.js");
+
+var _isUndefined3 = _interopRequireDefault(_isUndefined2);
+
+var _ink = __webpack_require__(/*! ../ink */ "./node_modules/cfe-components/lib/ink/index.js");
+
+var _ink2 = _interopRequireDefault(_ink);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ListItem = function (_PureComponent) {
+  _inherits(ListItem, _PureComponent);
+
+  function ListItem() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ListItem);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ListItem.__proto__ || Object.getPrototypeOf(ListItem)).call.apply(_ref, [this].concat(args))), _this), _this.isInkVisible = function () {
+      return _this.props.isClickable && !_this.props.isDisabled;
+    }, _this.onClick = function (event) {
+      var _this$props = _this.props,
+          isDisabled = _this$props.isDisabled,
+          onClick = _this$props.onClick;
+
+
+      if (isDisabled) {
+        event.stopPropagation();
+      } else {
+        !(0, _isUndefined3.default)(onClick) && onClick(event);
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ListItem, [{
+    key: 'render',
+    value: function render() {
+      var props = this.props;
+      var className = (0, _classnames2.default)({
+        'cfe-list-item--active': props.isActive,
+        'cfe-list-item--clickable': props.isClickable,
+        'cfe-list-item--link': props.isLink,
+        'cfe-list-item--divider': props.hasDivider,
+        'cfe-list-item': true }, props.className);
+
+      return _react2.default.createElement(
+        'li',
+        { className: className, disabled: props.isDisabled, onClick: this.onClick },
+        _react2.default.createElement(_ink2.default, { isDisabled: !this.isInkVisible() }),
+        props.children
+      );
+    }
+  }]);
+
+  return ListItem;
+}(_react.PureComponent);
+
+ListItem.propTypes = {
+  isActive: _propTypes2.default.bool,
+  isDisabled: _propTypes2.default.bool,
+  isClickable: _propTypes2.default.bool,
+  isLink: _propTypes2.default.bool,
+  hasDivider: _propTypes2.default.bool,
+  className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+  ink: _propTypes2.default.node,
+  children: _propTypes2.default.any,
+  onClick: _propTypes2.default.func
+};
+
+ListItem.defaultProps = {
+  isClickable: false
+};
+
+exports.default = ListItem;
+//# sourceMappingURL=cfe-list-item-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/text-field/cfe-text-field-hoc.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/text-field/cfe-text-field-hoc.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _reduce2 = __webpack_require__(/*! lodash/reduce */ "./node_modules/lodash/reduce.js");
+
+var _reduce3 = _interopRequireDefault(_reduce2);
+
+var _noop2 = __webpack_require__(/*! lodash/noop */ "./node_modules/lodash/noop.js");
+
+var _noop3 = _interopRequireDefault(_noop2);
+
+var _isEmpty2 = __webpack_require__(/*! lodash/isEmpty */ "./node_modules/lodash/isEmpty.js");
+
+var _isEmpty3 = _interopRequireDefault(_isEmpty2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function withTextField(Input) {
+  var TextField = function (_React$PureComponent) {
+    _inherits(TextField, _React$PureComponent);
+
+    function TextField(props) {
+      _classCallCheck(this, TextField);
+
+      var _this = _possibleConstructorReturn(this, (TextField.__proto__ || Object.getPrototypeOf(TextField)).call(this, props));
+
+      _this.hasValue = function (value) {
+        return value === 0 || !!value;
+      };
+
+      _this.hasChanged = function (nextProps, type) {
+        return nextProps[type] !== _this.props[type];
+      };
+
+      _this.isValid = function () {
+        return _this.state.isValid;
+      };
+
+      _this.validate = function (value) {
+        var errors = (0, _reduce3.default)(_this.props.validation, function (result, func, key) {
+          var isValid = func(value);
+
+          if (!isValid) {
+            result.push(_this.props.error[key]);
+          }
+
+          return result;
+        }, []);
+
+        _this.setState({ errors: errors, isValid: !errors.length });
+      };
+
+      _this.setRef = function (field) {
+        _this.field = field;
+      };
+
+      _this.focus = function () {
+        return _this.field.focus();
+      };
+
+      _this.blur = function () {
+        return _this.field.blur();
+      };
+
+      _this.onChange = function (event) {
+        var value = event.target.value;
+
+
+        _this.validate(value);
+        _this.setState({ value: value, isDirty: _this.hasValue(value) });
+        _this.props.onChange(value, _this.props.name, event);
+      };
+
+      _this.onFocus = function (event) {
+        _this.props.onFocus(event);
+      };
+
+      _this.onBlur = function (event) {
+        _this.validate(event.target.value);
+        _this.props.onBlur(event);
+      };
+
+      _this.onKeyPress = function (event) {
+        _this.props.onKeyPress(event);
+
+        if (event.key === 'Enter') {
+          _this.props.onEnter(event);
+        }
+      };
+
+      _this.renderErrors = function (errors) {
+        return errors.map(function (error, index) {
+          return _react2.default.createElement(
+            'div',
+            { key: index, className: 'cfe-text-field_error' },
+            error
+          );
+        });
+      };
+
+      _this.renderHelpMessage = function (errors, helpMessage) {
+        return !errors.length && helpMessage ? _react2.default.createElement(
+          'div',
+          { className: 'cfe-text-field_help-message' },
+          helpMessage
+        ) : null;
+      };
+
+      _this.renderPrefix = function (prefix) {
+        return prefix ? _react2.default.createElement(
+          'span',
+          { className: 'cfe-text-field_prefix' },
+          prefix
+        ) : null;
+      };
+
+      _this.renderSuffix = function (suffix) {
+        return suffix ? _react2.default.createElement(
+          'span',
+          { className: 'cfe-text-field_suffix' },
+          suffix
+        ) : null;
+      };
+
+      _this.isFocused = function () {
+        return _this.state.isDirty || _this.props.isFocus;
+      };
+
+      _this.state = {
+        value: props.value,
+        errors: [],
+        isValid: true,
+        isDirty: _this.hasValue(props.value)
+      };
+      _this.field = null;
+      return _this;
+    }
+
+    _createClass(TextField, [{
+      key: 'componentWillReceiveProps',
+      value: function componentWillReceiveProps(nextProps) {
+        if (this.hasChanged(nextProps, 'value')) {
+          var value = nextProps.value;
+
+
+          this.setState({ value: value, isDirty: this.hasValue(value) });
+          this.validate(value);
+        }
+
+        if (this.hasChanged(nextProps, 'errorMessage')) {
+          this.setState({ errorMessage: nextProps.errorMessage, isValid: !!nextProps.errorMessage });
+        }
+      }
+    }, {
+      key: 'render',
+      value: function render() {
+        var _props = this.props,
+            label = _props.label,
+            helpMessage = _props.helpMessage,
+            errorMessage = _props.errorMessage,
+            placeholder = _props.placeholder,
+            className = _props.className,
+            isDisabled = _props.isDisabled,
+            isReadonly = _props.isReadonly,
+            prefix = _props.prefix,
+            suffix = _props.suffix,
+            error = _props.error,
+            validation = _props.validation,
+            onEnter = _props.onEnter,
+            isFocus = _props.isFocus,
+            restProps = _objectWithoutProperties(_props, ['label', 'helpMessage', 'errorMessage', 'placeholder', 'className', 'isDisabled', 'isReadonly', 'prefix', 'suffix', 'error', 'validation', 'onEnter', 'isFocus']);
+
+        var state = this.state;
+        var errors = !(0, _isEmpty3.default)(errorMessage) ? [].concat(_toConsumableArray(state.errors), [errorMessage]) : state.errors;
+        var textFieldClassName = (0, _classnames2.default)(className, 'cfe-text-field', {
+          'cfe-text-field--has-errors': errors.length,
+          'cfe-text-field--no-label': !label
+        });
+        var inputClassName = (0, _classnames2.default)('cfe-text-field_control', {
+          'cfe-text-field_control--dirty': this.isFocused(),
+          'cfe-text-field_control--placeholder': !!placeholder,
+          'cfe-text-field_control--prefix': !!prefix,
+          'cfe-text-field_control--suffix': !!suffix,
+          'cfe-text-field_control--disabled': isDisabled || isReadonly
+        });
+
+        return _react2.default.createElement(
+          'div',
+          { className: 'cfe-text-field-group' },
+          _react2.default.createElement(
+            'div',
+            { className: textFieldClassName },
+            _react2.default.createElement(Input, _extends({}, restProps, {
+              disabled: isDisabled,
+              readOnly: isReadonly,
+              value: state.value,
+              className: inputClassName,
+              placeholder: placeholder,
+              setRef: this.setRef,
+              onChange: this.onChange,
+              onFocus: this.onFocus,
+              onBlur: this.onBlur,
+              onKeyPress: this.onKeyPress
+            })),
+            this.renderPrefix(prefix),
+            this.renderSuffix(suffix),
+            _react2.default.createElement(
+              'label',
+              { className: 'cfe-text-field_label' },
+              label
+            )
+          ),
+          this.renderErrors(errors),
+          this.renderHelpMessage(errors, helpMessage)
+        );
+      }
+    }]);
+
+    return TextField;
+  }(_react2.default.PureComponent);
+
+  TextField.propTypes = {
+    isDisabled: _propTypes2.default.bool,
+    isReadonly: _propTypes2.default.bool,
+    isFocus: _propTypes2.default.bool,
+    label: _propTypes2.default.string,
+    value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+    name: _propTypes2.default.string,
+    helpMessage: _propTypes2.default.string,
+    errorMessage: _propTypes2.default.string,
+    className: _propTypes2.default.string,
+    placeholder: _propTypes2.default.string,
+    error: _propTypes2.default.object,
+    validation: _propTypes2.default.object,
+    prefix: _propTypes2.default.node,
+    suffix: _propTypes2.default.node,
+    onChange: _propTypes2.default.func,
+    onFocus: _propTypes2.default.func,
+    onBlur: _propTypes2.default.func,
+    onKeyPress: _propTypes2.default.func,
+    onEnter: _propTypes2.default.func
+  };
+
+  TextField.defaultProps = {
+    value: '',
+    onChange: _noop3.default,
+    onFocus: _noop3.default,
+    onBlur: _noop3.default,
+    onKeyPress: _noop3.default,
+    onEnter: _noop3.default
+  };
+
+  return TextField;
+}
+
+exports.default = withTextField;
+//# sourceMappingURL=cfe-text-field-hoc.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/text-field/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/text-field/index.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeTextFieldHoc = __webpack_require__(/*! ./cfe-text-field-hoc */ "./node_modules/cfe-components/lib/text-field/cfe-text-field-hoc.js");
+
+var _cfeTextFieldHoc2 = _interopRequireDefault(_cfeTextFieldHoc);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _cfeTextFieldHoc2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/tile/cfe-tile-add-on-component.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/tile/cfe-tile-add-on-component.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeTileHoc = __webpack_require__(/*! ./cfe-tile-hoc */ "./node_modules/cfe-components/lib/tile/cfe-tile-hoc.js");
+
+var _cfeTileHoc2 = _interopRequireDefault(_cfeTileHoc);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _cfeTileHoc2.default)('cfe-tile_add-on', 'TileAddOn');
+//# sourceMappingURL=cfe-tile-add-on-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/tile/cfe-tile-component.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/tile/cfe-tile-component.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeTileHoc = __webpack_require__(/*! ./cfe-tile-hoc */ "./node_modules/cfe-components/lib/tile/cfe-tile-hoc.js");
+
+var _cfeTileHoc2 = _interopRequireDefault(_cfeTileHoc);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _cfeTileHoc2.default)('cfe-tile');
+//# sourceMappingURL=cfe-tile-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/tile/cfe-tile-content-component.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/tile/cfe-tile-content-component.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _cfeTileHoc = __webpack_require__(/*! ./cfe-tile-hoc */ "./node_modules/cfe-components/lib/tile/cfe-tile-hoc.js");
+
+var _cfeTileHoc2 = _interopRequireDefault(_cfeTileHoc);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = (0, _cfeTileHoc2.default)('cfe-tile_content', 'TileContent');
+//# sourceMappingURL=cfe-tile-content-component.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/tile/cfe-tile-hoc.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/cfe-components/lib/tile/cfe-tile-hoc.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function withTile(defaultClassName, displayName) {
+  var Tile = function (_PureComponent) {
+    _inherits(Tile, _PureComponent);
+
+    function Tile() {
+      _classCallCheck(this, Tile);
+
+      return _possibleConstructorReturn(this, (Tile.__proto__ || Object.getPrototypeOf(Tile)).apply(this, arguments));
+    }
+
+    _createClass(Tile, [{
+      key: 'render',
+      value: function render() {
+        var props = this.props;
+        var Tag = props.tag;
+        var className = (0, _classnames2.default)(defaultClassName, props.className, {
+          'cfe-tile--column': props.direction === 'column'
+        });
+
+        return _react2.default.createElement(
+          Tag,
+          { className: className },
+          props.children
+        );
+      }
+    }]);
+
+    return Tile;
+  }(_react.PureComponent);
+
+  Tile.propTypes = {
+    direction: _propTypes2.default.oneOf(['column', 'row']),
+    className: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object]),
+    children: _propTypes2.default.any,
+    tag: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.object, _propTypes2.default.func])
+  };
+
+  Tile.defaultProps = {
+    tag: 'div'
+  };
+
+  Tile.displayName = displayName || 'Tile';
+
+  return Tile;
+}
+
+exports.default = withTile;
+//# sourceMappingURL=cfe-tile-hoc.js.map
+
+/***/ }),
+
+/***/ "./node_modules/cfe-components/lib/tile/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/cfe-components/lib/tile/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Tile = exports.TileContent = exports.TileAddOn = undefined;
+
+var _cfeTileAddOnComponent = __webpack_require__(/*! ./cfe-tile-add-on-component */ "./node_modules/cfe-components/lib/tile/cfe-tile-add-on-component.js");
+
+var _cfeTileAddOnComponent2 = _interopRequireDefault(_cfeTileAddOnComponent);
+
+var _cfeTileContentComponent = __webpack_require__(/*! ./cfe-tile-content-component */ "./node_modules/cfe-components/lib/tile/cfe-tile-content-component.js");
+
+var _cfeTileContentComponent2 = _interopRequireDefault(_cfeTileContentComponent);
+
+var _cfeTileComponent = __webpack_require__(/*! ./cfe-tile-component */ "./node_modules/cfe-components/lib/tile/cfe-tile-component.js");
+
+var _cfeTileComponent2 = _interopRequireDefault(_cfeTileComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var TileAddOn = exports.TileAddOn = _cfeTileAddOnComponent2.default;
+var TileContent = exports.TileContent = _cfeTileContentComponent2.default;
+var Tile = exports.Tile = _cfeTileComponent2.default;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "./node_modules/classnames/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/classnames/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (true) {
+		// register as 'classnames', consistent with npm package name
+		!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function () {
+			return classNames;
+		}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+}());
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss":
+/*!**************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss ***!
+  \**************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "@charset \"UTF-8\";\n.md-list-unstyled, .md-list {\n  list-style: none;\n  margin: 0;\n  padding-left: 0; }\n\n.md-ink-container {\n  border-radius: inherit;\n  height: 100%;\n  left: 0;\n  overflow: hidden;\n  pointer-events: none;\n  position: absolute;\n  top: 0;\n  width: 100%;\n  z-index: 1; }\n\n.md-ink-container--2x {\n  height: 200%;\n  left: -50%;\n  top: -50%;\n  width: 200%; }\n\n.md-ink {\n  background: rgba(0, 0, 0, 0.12);\n  border-radius: 50%;\n  display: block;\n  opacity: 1;\n  position: absolute;\n  transform: scale(0);\n  z-index: -1; }\n\n.md-ink--active {\n  transition-duration: 0.45s;\n  transition-property: opacity, transform;\n  transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }\n\n.md-ink--expanded {\n  transform: scale(1); }\n\n.md-ink--leaving {\n  opacity: 0;\n  transition-duration: .3s;\n  transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n\n@media screen and (min-width: 320px) {\n  .md-tooltip {\n    font-size: 14px;\n    padding: 9px 16px; }\n    .md-tooltip--top {\n      top: -24px; }\n    .md-tooltip--right {\n      right: -24px; }\n    .md-tooltip--bottom {\n      bottom: -24px; }\n    .md-tooltip--left {\n      left: -24px; } }\n\n@media screen and (min-width: 1025px) {\n  .md-tooltip {\n    font-size: 10px;\n    padding: 6px 8px; }\n    .md-tooltip--top {\n      top: -14px; }\n    .md-tooltip--right {\n      right: -14px; }\n    .md-tooltip--bottom {\n      bottom: -14px; }\n    .md-tooltip--left {\n      left: -14px; } }\n\n.md-tooltip-container {\n  height: 100%;\n  left: 0;\n  pointer-events: none;\n  position: absolute;\n  top: 0;\n  user-select: none;\n  width: 100%;\n  z-index: 1; }\n\n.md-tooltip {\n  background: #616161;\n  color: #fff;\n  display: block;\n  font-weight: 500;\n  opacity: 0.9;\n  outline-style: none;\n  position: absolute;\n  white-space: nowrap; }\n  .md-tooltip--active {\n    transition-duration: 0.15s;\n    transition-property: opacity, transform; }\n  .md-tooltip--enter, .md-tooltip--leave-active {\n    opacity: 0; }\n  .md-tooltip--enter-active {\n    opacity: 0.9;\n    transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n  .md-tooltip--leave-active {\n    transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }\n  .md-tooltip--horizontal {\n    left: 50%;\n    transform: translate3d(-50%, 0, 0); }\n  .md-tooltip--vertical {\n    top: 50%;\n    transform: translate3d(0, -50%, 0); }\n  .md-tooltip--top-active {\n    transform: translate3d(-50%, -100%, 0); }\n  .md-tooltip--right-active {\n    transform: translate3d(100%, -50%, 0); }\n  .md-tooltip--bottom-active {\n    transform: translate3d(-50%, 100%, 0); }\n  .md-tooltip--left-active {\n    transform: translate3d(-100%, -50%, 0); }\n\n.md-layover-enter {\n  transform: scale(0); }\n  .md-layover-enter.md-layover-enter-active {\n    transform: scale(1);\n    transition-duration: 0.2s;\n    transition-property: transform;\n    transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }\n\n.md-layover-leave {\n  opacity: 1; }\n  .md-layover-leave.md-layover-leave-active {\n    opacity: 0;\n    transition-duration: 0.2s;\n    transition-property: opacity;\n    transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }\n\n.md-layover-child {\n  position: fixed;\n  z-index: 100; }\n  .md-layover-child--tl {\n    transform-origin: 0 0; }\n  .md-layover-child--tr {\n    transform-origin: 100% 0; }\n  .md-layover-child--bl {\n    transform-origin: 0 100%; }\n  .md-layover-child--br {\n    transform-origin: 100% 100%; }\n  .md-layover-child--below {\n    transform-origin: 50% 0; }\n    .md-layover-child--below.md-layover-enter {\n      transform: scaleY(0); }\n      .md-layover-child--below.md-layover-enter.md-layover-enter-active {\n        transform: scaleY(1); }\n\n.md-layover--simplified {\n  position: relative; }\n\n.md-layover-child--simplified {\n  position: absolute; }\n\n.md-list {\n  background: #fff;\n  user-select: none; }\n  .md-list .md-avatar,\n  .md-list .md-icon {\n    flex-shrink: 0; }\n  .md-list .md-divider {\n    margin-bottom: 8px;\n    margin-top: 8px; }\n  .md-list .md-list:not(.md-list--menu) {\n    background: inherit; }\n\n.md-list-tile {\n  align-items: center;\n  display: flex;\n  padding-left: 16px;\n  padding-right: 16px;\n  text-decoration: none;\n  transition-duration: 0.15s;\n  transition-property: background; }\n  .md-list-tile--active {\n    background: rgba(0, 0, 0, 0.12); }\n\n.md-list-item--inset {\n  padding-left: 72px; }\n\n.md-tile-content {\n  flex-grow: 1;\n  overflow: hidden; }\n  .md-tile-content--left-icon {\n    padding-left: 32px; }\n  .md-tile-content--left-avatar {\n    padding-left: 16px; }\n  .md-tile-content--right-padding {\n    padding-right: 16px; }\n\n.md-tile-addon {\n  line-height: 1.42857; }\n  .md-tile-addon--icon {\n    height: 24px; }\n  .md-tile-addon--avatar {\n    height: 40px; }\n\n.md-text--theme-primary .md-icon {\n  color: inherit; }\n\n.md-tile-text--primary, .md-tile-text--secondary {\n  display: block;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap; }\n\n.md-tile-text--three-lines {\n  white-space: pre-line;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2; }\n\n.md-list-tile--three-lines .md-tile-addon {\n  align-self: flex-start; }\n\n.md-list--nested-1 .md-list-tile {\n  padding-left: 72px; }\n\n.md-list--nested-2 .md-list-tile {\n  padding-left: 108px; }\n\n.md-list-control {\n  flex-grow: 1; }\n  .md-list-control .md-selection-control-label {\n    width: 100%; }\n    .md-list-control .md-selection-control-label > span {\n      width: 100%; }\n\n.md-tile-content--left-button {\n  padding-left: 24px; }\n\n.md-list-control--right {\n  justify-content: flex-end; }\n\n.md-list-tile--control-left {\n  padding-left: 0; }\n\n.md-list-tile--control-right {\n  padding-right: 0; }\n\n@media screen and (min-width: 320px) {\n  .md-list {\n    padding-bottom: 8px;\n    padding-top: 8px; }\n  .md-list-tile {\n    height: 48px; }\n  .md-tile-text--primary {\n    font-size: 16px; }\n  .md-tile-text--secondary {\n    font-size: 14px; }\n  .md-list-tile--avatar {\n    height: 56px; }\n  .md-list-tile--two-lines {\n    height: 72px; }\n  .md-list-tile--three-lines {\n    height: 88px; }\n    .md-list-tile--three-lines .md-tile-text--secondary {\n      height: 40px; }\n    .md-list-tile--three-lines .md-tile-addon {\n      margin-top: 14px; } }\n\n@media screen and (min-width: 1025px) {\n  .md-list {\n    padding-bottom: 4px;\n    padding-top: 4px; }\n  .md-list-tile {\n    height: 40px; }\n  .md-tile-text--primary, .md-tile-text--secondary {\n    font-size: 13px; }\n  .md-list-tile--avatar {\n    height: 48px; }\n  .md-list-tile--two-lines {\n    height: 60px; }\n  .md-list-tile--three-lines {\n    height: 76px; }\n    .md-list-tile--three-lines .md-tile-text--secondary {\n      height: 37.14286px; }\n    .md-list-tile--three-lines .md-tile-addon {\n      margin-top: 12px; }\n  .md-tile-addon--icon {\n    height: 20px; }\n  .md-tile-content--left-icon {\n    padding-left: 36px; } }\n\n.md-list--inline {\n  display: flex;\n  padding: 0; }\n\n@font-face {\n  font-family: 'Material Icons';\n  font-style: normal;\n  font-weight: 400;\n  src: url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format(\"woff2\"), url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.woff) format(\"woff\"), url(https://fonts.gstatic.com/s/materialicons/v38/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.ttf) format(\"truetype\"); }\n\n.cfe-font-icon {\n  font-family: 'Material Icons';\n  font-weight: normal;\n  font-style: normal;\n  font-size: 24px;\n  line-height: 1;\n  letter-spacing: normal;\n  text-transform: none;\n  display: inline-block;\n  white-space: nowrap;\n  word-wrap: normal;\n  direction: ltr;\n  -moz-font-feature-settings: 'liga';\n  font-feature-settings: 'liga';\n  -moz-osx-font-smoothing: grayscale;\n  vertical-align: middle; }\n  .cfe-font-icon_size--18 {\n    font-size: 18px; }\n  .cfe-font-icon_size--24 {\n    font-size: 24px; }\n  .cfe-font-icon_size--36 {\n    font-size: 36px; }\n  .cfe-font-icon_size--48 {\n    font-size: 48px; }\n\n/*\n* @group global/variables\n**/\n/*\n* Media Query breakpoints\n**/\n/**\n* Possible Heights for most of all the components (Button, List, Toolbar, Table, Tabs, etc.)\n*\n**/\n/**\n * TODO: are we okay with these font sizes?\n * font size\n *\n */\n/**\n * Padding for wrapper components\n *\n */\n/**\n * Color for indicators components (Buttons, Links)\n *\n */\n/* TODO: this value should come from a global variable or use the mixin for zDept */\n/**\n * @exclude\n * mixin to create box-shadow placeholder for creating z-depth component classes\n * TODO: Can we improve the approach of creating the z-depth classes with a function?\n */\n/**\n * Helper to add box-shadow properties to define the z depth dimension\n * This mixin depends on cfe-box-shadow--placeholder mixin be executed previously\n */\n.cfe-button--z-depth-0, .cfe-card--z-depth-0, .cfe-sidebar--z-depth-0, .cfe-toolbar--z-depth-0, .cfe-notification--z-depth-0 {\n  box-shadow: none; }\n\n.cfe-button--z-depth-1, .cfe-card--z-depth-1, .cfe-sidebar--z-depth-1, .cfe-toolbar--z-depth-1, .cfe-notification--z-depth-1 {\n  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }\n\n.cfe-button--z-depth-2, .cfe-card--z-depth-2, .cfe-dropdown_layover, .cfe-sidebar--z-depth-2, .cfe-toolbar--z-depth-2, .cfe-notification--z-depth-2 {\n  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4); }\n\n.cfe-button--z-depth-3, .cfe-card--z-depth-3, .cfe-sidebar--z-depth-3, .cfe-toolbar--z-depth-3, .cfe-notification--z-depth-3 {\n  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.4); }\n\n.cfe-button--z-depth-4, .cfe-card--z-depth-4, .cfe-sidebar--z-depth-4, .cfe-toolbar--z-depth-4, .cfe-notification--z-depth-4 {\n  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.4); }\n\n.cfe-button--z-depth-5, .cfe-card--z-depth-5, .cfe-sidebar--z-depth-5, .cfe-toolbar--z-depth-5, .cfe-notification--z-depth-5 {\n  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.4); }\n\n/**\r\n * @description: Defines the color contrast of the raised and fab buttons\r\n * @private\r\n */\n/**\r\n * @description: Defines the color contrast of the outlined button\r\n * @private\r\n */\n/**\n * @description: Defines the default styles for  TabItem and TabNav components\n * @private\n */\n/**\n * @description: Defines the default styles for Tabs, TabItem and TabNav components\n */\nbody {\n  margin: 0;\n  padding: 0;\n  font-family: Roboto, sans-serif;\n  font-size: 14px; }\n\n*, ::after, ::before {\n  box-sizing: border-box; }\n\n.cfe-content--fluid, .cfe-content {\n  width: 100%;\n  padding: 16px;\n  margin: 0 auto; }\n\n@media screen and (min-width: 576px) {\n  .cfe-content {\n    max-width: 540px; } }\n\n@media screen and (min-width: 768px) {\n  .cfe-content {\n    max-width: 720px; } }\n\n@media screen and (min-width: 992px) {\n  .cfe-content {\n    max-width: 960px; } }\n\n@media screen and (min-width: 1200px) {\n  .cfe-content {\n    max-width: 1140px; } }\n\n.cfe-button {\n  display: inline-block;\n  position: relative;\n  padding: 0 16px;\n  min-height: 32px;\n  line-height: 32px;\n  min-width: 88px;\n  border-radius: 2px;\n  border: none;\n  font-size: 14px;\n  font-weight: 500;\n  cursor: pointer;\n  text-transform: uppercase;\n  text-align: center;\n  text-decoration: none;\n  background-color: transparent;\n  color: inherit;\n  outline: none;\n  transition: 0.3s; }\n  .cfe-button:visited, .cfe-button:active {\n    color: inherit; }\n  .cfe-button:not([disabled]):hover {\n    background-color: rgba(0, 0, 0, 0.12);\n    outline: none; }\n  .cfe-button[disabled] {\n    cursor: default;\n    color: rgba(0, 0, 0, 0.26); }\n  .cfe-button--primary:not([disabled]) {\n    color: #3f51b5; }\n    .cfe-button--primary:not([disabled]):hover {\n      background-color: rgba(63, 81, 181, 0.1); }\n  .cfe-button--secondary:not([disabled]) {\n    color: #ff6e40; }\n    .cfe-button--secondary:not([disabled]):hover {\n      background-color: rgba(255, 110, 64, 0.1); }\n  .cfe-button--warn:not([disabled]) {\n    color: #b71c1c; }\n    .cfe-button--warn:not([disabled]):hover {\n      background-color: rgba(183, 28, 28, 0.1); }\n  .cfe-button--raised {\n    background-color: #fff; }\n    .cfe-button--raised[disabled] {\n      background-color: rgba(0, 0, 0, 0.13); }\n    .cfe-button--raised.cfe-button--primary:not([disabled]) {\n      background-color: #3f51b5;\n      color: #fff; }\n      .cfe-button--raised.cfe-button--primary:not([disabled]):hover {\n        background-color: rgba(63, 81, 181, 0.8); }\n    .cfe-button--raised.cfe-button--secondary:not([disabled]) {\n      background-color: #ff6e40;\n      color: #fff; }\n      .cfe-button--raised.cfe-button--secondary:not([disabled]):hover {\n        background-color: rgba(255, 110, 64, 0.8); }\n    .cfe-button--raised.cfe-button--warn:not([disabled]) {\n      background-color: #b71c1c;\n      color: #fff; }\n      .cfe-button--raised.cfe-button--warn:not([disabled]):hover {\n        background-color: rgba(183, 28, 28, 0.8); }\n  .cfe-button--outlined {\n    background-color: transparent;\n    color: #3f51b5;\n    border: 1px solid #3f51b5; }\n    .cfe-button--outlined:hover:not([disabled]) {\n      background-color: rgba(63, 81, 181, 0.1); }\n    .cfe-button--outlined[disabled] {\n      color: rgba(0, 0, 0, 0.26);\n      border-color: rgba(0, 0, 0, 0.26); }\n    .cfe-button--outlined.cfe-button--secondary:not([disabled]) {\n      color: #ff6e40;\n      border: 1px solid #ff6e40; }\n      .cfe-button--outlined.cfe-button--secondary:not([disabled]):hover:not([disabled]) {\n        background-color: rgba(255, 110, 64, 0.1); }\n    .cfe-button--outlined.cfe-button--warn:not([disabled]) {\n      color: #b71c1c;\n      border: 1px solid #b71c1c; }\n      .cfe-button--outlined.cfe-button--warn:not([disabled]):hover:not([disabled]) {\n        background-color: rgba(183, 28, 28, 0.1); }\n  .cfe-button--fab {\n    background-color: #fff;\n    line-height: 2.5rem;\n    height: 2.5rem;\n    width: 2.5rem;\n    min-width: 0;\n    padding: 0;\n    border-radius: 50%; }\n    .cfe-button--fab[disabled]:not(.cfe-button--icon) {\n      background-color: rgba(0, 0, 0, 0.13); }\n    .cfe-button--fab.cfe-button--primary:not([disabled]):not(.cfe-button--icon) {\n      background-color: #3f51b5;\n      color: #fff; }\n      .cfe-button--fab.cfe-button--primary:not([disabled]):not(.cfe-button--icon):hover {\n        background-color: rgba(63, 81, 181, 0.8); }\n    .cfe-button--fab.cfe-button--secondary:not([disabled]):not(.cfe-button--icon) {\n      background-color: #ff6e40;\n      color: #fff; }\n      .cfe-button--fab.cfe-button--secondary:not([disabled]):not(.cfe-button--icon):hover {\n        background-color: rgba(255, 110, 64, 0.8); }\n    .cfe-button--fab.cfe-button--warn:not([disabled]):not(.cfe-button--icon) {\n      background-color: #b71c1c;\n      color: #fff; }\n      .cfe-button--fab.cfe-button--warn:not([disabled]):not(.cfe-button--icon):hover {\n        background-color: rgba(183, 28, 28, 0.8); }\n    .cfe-button--fab.cfe-button--large {\n      line-height: 3.5rem;\n      min-height: 3.5rem;\n      height: 3.5rem;\n      width: 3.5rem; }\n    .cfe-button--fab.cfe-button--small {\n      line-height: 1.5rem;\n      min-height: 1.5rem;\n      height: 1.5rem;\n      width: 1.5rem; }\n  .cfe-button--icon {\n    min-width: 32px;\n    padding: 0 10px;\n    background: transparent; }\n    .cfe-button--icon.cfe-button--large {\n      min-width: 64px; }\n    .cfe-button--icon.cfe-button--small {\n      min-width: 20px;\n      padding: 0; }\n  .cfe-button--large {\n    min-height: 64px;\n    line-height: 64px;\n    font-size: 20px; }\n  .cfe-button--small {\n    min-height: 20px;\n    line-height: 20px;\n    font-size: 12px; }\n\n.cfe-button-group {\n  display: flex; }\n  .cfe-button-group > .cfe-button-group_children {\n    display: flex;\n    align-items: center;\n    margin: 0 6px; }\n  .cfe-button-group--vertical {\n    display: inline-flex;\n    flex-direction: column; }\n  .cfe-button-group--vertical > .cfe-button-group_children {\n    margin: 6px 0; }\n\n.cfe-card {\n  border-radius: 2px;\n  background: #fff; }\n\n.cfe-dropdown {\n  display: inline-block; }\n  .cfe-dropdown_layover {\n    -ms-transform: translateZ(0);\n    min-width: 112px;\n    color: #000; }\n\n.cfe-dropdown-menu_list-item {\n  color: rgba(0, 0, 0, 0.87);\n  position: relative;\n  min-height: 40px; }\n  .cfe-dropdown-menu_list-item:not(.cfe-list-item--link) {\n    padding: 0 16px; }\n\n.cfe-dropdown-selector_button {\n  text-transform: none; }\n\n.cfe-dropdown-selector_search {\n  background-color: white;\n  padding: 8px 0; }\n\n.cfe-dropdown-selector_not-found:not([disabled]):hover {\n  background-color: transparent; }\n\n.cfe-dropdown-menu_list.cfe-list {\n  max-height: 264px;\n  overflow: auto; }\n\n.cfe-dropdown-menu_list-item {\n  color: rgba(0, 0, 0, 0.87);\n  position: relative;\n  min-height: 40px; }\n  .cfe-dropdown-menu_list-item:not(.cfe-list-item--link) {\n    padding: 0 16px; }\n\n.cfe-dropdown-selector_button {\n  text-transform: none; }\n\n.cfe-dropdown-selector_search {\n  background-color: white;\n  padding: 8px 0; }\n\n.cfe-dropdown-selector_not-found:not([disabled]):hover {\n  background-color: transparent; }\n\n.cfe-dropdown-menu_list.cfe-list {\n  max-height: 264px;\n  overflow: auto; }\n\n.cfe-list {\n  list-style: none;\n  background: #fff;\n  font-size: 14px;\n  padding-left: 0;\n  margin: 0; }\n  .cfe-list--small {\n    font-size: 12px; }\n    .cfe-list--small .cfe-list-item {\n      min-height: 20px; }\n  .cfe-list--large {\n    font-size: 20px; }\n    .cfe-list--large .cfe-list-item {\n      min-height: 64px; }\n\n.cfe-list-item {\n  position: relative;\n  display: flex;\n  align-items: center;\n  height: 1px;\n  min-height: 48px; }\n  .cfe-list-item:not([disabled]):hover {\n    background-color: rgba(0, 0, 0, 0.12);\n    outline: none; }\n  .cfe-list-item--divider {\n    border-bottom: 1px solid rgba(0, 0, 0, 0.12); }\n  .cfe-list-item--active:before {\n    position: absolute;\n    content: '';\n    width: 6px;\n    top: 0;\n    left: 0;\n    height: 100%;\n    background: #3f51b5; }\n  .cfe-list-item--clickable {\n    cursor: pointer; }\n  .cfe-list-item.cfe-list-item--link a {\n    color: inherit;\n    text-decoration: none;\n    outline: none;\n    cursor: inherit;\n    width: 100%;\n    height: 100%;\n    padding: 0 16px;\n    display: flex;\n    align-items: center; }\n  .cfe-list-item[disabled] {\n    opacity: 0.26;\n    cursor: default;\n    pointer-events: none; }\n\n.cfe-sidebar {\n  background: #fff;\n  width: 256px;\n  transition: transform 0.3s, width 0.3s;\n  color: #000; }\n  .cfe-sidebar--fixed {\n    bottom: 0;\n    position: fixed;\n    top: 0;\n    z-index: 17; }\n  .cfe-sidebar--inline {\n    display: inline-block;\n    height: 100%; }\n  .cfe-sidebar--left {\n    left: 0;\n    transform: translate(-100%); }\n  .cfe-sidebar--right {\n    right: 0;\n    transform: translate(100%); }\n  .cfe-sidebar--active {\n    transform: translate(0); }\n  .cfe-sidebar--clipped {\n    margin-top: 64px; }\n  .cfe-sidebar--mini {\n    z-index: 16;\n    width: 64px; }\n\n.cfe-tabs {\n  position: relative;\n  display: flex;\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  min-height: 48px;\n  line-height: 48px;\n  background: #3f51b5; }\n  .cfe-tabs_indicator {\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    width: 160px;\n    height: 2px;\n    background-color: #ff6e40;\n    transition: left .5s ease-out, width .5s ease-out; }\n    .cfe-tabs_indicator--disabled {\n      display: none; }\n  .cfe-tabs a {\n    display: inline-block;\n    color: #fff;\n    text-decoration: none;\n    outline: none; }\n  .cfe-tabs--large {\n    min-height: 64px;\n    line-height: 64px;\n    font-size: 20px; }\n  .cfe-tabs--small {\n    min-height: 32px;\n    line-height: 32px;\n    font-size: 12px; }\n  .cfe-tabs_container {\n    display: flex;\n    flex-direction: column; }\n  .cfe-tabs_content-enter {\n    opacity: 0; }\n    .cfe-tabs_content-enter-done {\n      opacity: 1;\n      transition: opacity 250ms ease-in-out; }\n  .cfe-tabs_content-exit {\n    opacity: 0; }\n    .cfe-tabs_content-exit-active {\n      display: none; }\n\n.cfe-tabs_item {\n  position: relative;\n  min-width: 160px;\n  padding: 0 16px;\n  text-align: center;\n  cursor: pointer;\n  text-transform: uppercase;\n  color: #fff; }\n  .cfe-tabs_item-nav {\n    padding: 0; }\n  .cfe-tabs_item--link {\n    width: 100%;\n    padding: 0 16px; }\n  .cfe-tabs_item:not([disabled]):hover {\n    background-color: rgba(0, 0, 0, 0.12);\n    outline: none; }\n  .cfe-tabs_item[disabled], .cfe-tabs_item--disabled {\n    opacity: 0.5;\n    cursor: default;\n    pointer-events: none; }\n\n.cfe-tile {\n  display: flex;\n  align-items: center;\n  padding: 8px 0; }\n  .cfe-tile_content, .cfe-tile_add-on {\n    display: flex;\n    margin: 0 16px; }\n  .cfe-tile_content {\n    flex: 1; }\n  .cfe-tile--column {\n    flex-direction: column; }\n\n.cfe-toolbar {\n  height: 64px;\n  display: flex;\n  align-items: center;\n  background: #3f51b5;\n  color: #fff; }\n  .cfe-toolbar--fixed {\n    left: 0;\n    right: 0;\n    top: 0;\n    position: fixed;\n    z-index: 15; }\n\n.cfe-text-field {\n  position: relative;\n  padding-top: 16px;\n  font-size: 16px;\n  /*This is done in a separated rule as it breaks the feature on IE and Firefox*/ }\n  .cfe-text-field-group {\n    width: 100%; }\n  .cfe-text-field_help-message, .cfe-text-field_error {\n    color: rgba(0, 0, 0, 0.54);\n    margin-top: 8px;\n    font-size: 12px; }\n  .cfe-text-field_label {\n    position: absolute;\n    top: 20px;\n    left: 0;\n    bottom: 0;\n    width: 100%;\n    margin: 0;\n    font-weight: 300;\n    pointer-events: none;\n    user-select: none;\n    color: rgba(0, 0, 0, 0.54);\n    transition: 0.2s ease all; }\n    .cfe-text-field_label:after {\n      content: '';\n      position: absolute;\n      bottom: 0;\n      left: 45%;\n      height: 2px;\n      width: 10px;\n      visibility: hidden;\n      background-color: #3f51b5;\n      transition: 0.2s ease all; }\n  .cfe-text-field_prefix, .cfe-text-field_suffix {\n    position: absolute;\n    top: 19px;\n    color: rgba(0, 0, 0, 0.54); }\n  .cfe-text-field_suffix {\n    right: 0; }\n  .cfe-text-field_prefix ~ .cfe-text-field_label {\n    padding-left: 24px; }\n  .cfe-text-field_control {\n    position: relative;\n    color: inherit;\n    background: transparent;\n    display: block;\n    height: 30px;\n    width: 100%;\n    padding: 3px 0 8px;\n    border-radius: 0;\n    border: none;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.43);\n    font-size: 16px;\n    font-family: inherit; }\n    .cfe-text-field_control::placeholder {\n      color: inherit;\n      opacity: 0.54; }\n    .cfe-text-field_control:not(.cfe-text-field_control--disabled):focus ~ .cfe-text-field_label {\n      color: #3f51b5;\n      font-size: 12px;\n      padding-left: 0;\n      top: 0; }\n      .cfe-text-field_control:not(.cfe-text-field_control--disabled):focus ~ .cfe-text-field_label:after {\n        visibility: visible;\n        width: 100%;\n        left: 0; }\n    .cfe-text-field_control:not(.cfe-text-field_control--disabled):focus ~ .cfe-text-field_prefix,\n    .cfe-text-field_control:not(.cfe-text-field_control--disabled):focus ~ .cfe-text-field_suffix {\n      color: #3f51b5; }\n    .cfe-text-field_control:focus {\n      outline: none;\n      box-shadow: none; }\n    .cfe-text-field_control--prefix {\n      padding-left: 24px; }\n    .cfe-text-field_control--suffix {\n      padding-right: 24px; }\n  .cfe-text-field_control:-webkit-autofill ~ .cfe-text-field_label {\n    font-size: 12px;\n    padding: 0;\n    top: 0; }\n  .cfe-text-field_control--dirty ~ .cfe-text-field_label, .cfe-text-field_control--placeholder ~ .cfe-text-field_label {\n    font-size: 12px;\n    padding: 0;\n    top: 0; }\n  .cfe-text-field_control--disabled {\n    color: rgba(0, 0, 0, 0.38);\n    border-bottom-style: dotted;\n    background: transparent; }\n    .cfe-text-field_control--disabled ~ .cfe-text-field_label,\n    .cfe-text-field_control--disabled ~ .cfe-text-field_prefix,\n    .cfe-text-field_control--disabled ~ .cfe-text-field_suffix {\n      color: rgba(0, 0, 0, 0.38);\n      pointer-events: none; }\n  .cfe-text-field--has-errors .cfe-text-field_label,\n  .cfe-text-field--has-errors .cfe-text-field_icon,\n  .cfe-text-field--has-errors .cfe-text-field_error {\n    color: rgba(183, 28, 28, 0.54); }\n  .cfe-text-field--has-errors .cfe-text-field_control {\n    border-bottom-width: 2px;\n    border-bottom-color: rgba(183, 28, 28, 0.43); }\n    .cfe-text-field--has-errors .cfe-text-field_control:focus ~ .cfe-text-field_label {\n      color: #b71c1c; }\n      .cfe-text-field--has-errors .cfe-text-field_control:focus ~ .cfe-text-field_label:after {\n        background-color: #b71c1c; }\n    .cfe-text-field--has-errors .cfe-text-field_control:focus ~ .cfe-text-field_icon {\n      color: #b71c1c; }\n  .cfe-text-field--has-errors .cfe-select_arrow {\n    color: #b71c1c; }\n  .cfe-text-field_error {\n    color: #b71c1c; }\n  .cfe-text-field.cfe-text-field--no-label {\n    padding-top: 5px; }\n    .cfe-text-field.cfe-text-field--no-label .cfe-text-field_prefix,\n    .cfe-text-field.cfe-text-field--no-label .cfe-text-field_suffix {\n      top: 8px; }\n  .cfe-text-field textarea.cfe-text-field_control {\n    overflow: hidden;\n    resize: none;\n    height: auto; }\n\n.cfe-table {\n  border-collapse: collapse;\n  border-spacing: 0;\n  width: 100%;\n  overflow: hidden;\n  background-color: #fff; }\n  .cfe-table--small .cfe-table_header .cfe-table_row {\n    height: 28px; }\n    .cfe-table--small .cfe-table_header .cfe-table_row .cfe-table_column {\n      font-size: 12px; }\n  .cfe-table--small .cfe-table_body .cfe-table_row {\n    height: 20px; }\n    .cfe-table--small .cfe-table_body .cfe-table_row .cfe-table_column {\n      font-size: 12px; }\n  .cfe-table--large .cfe-table_header .cfe-table_row {\n    height: 72px; }\n    .cfe-table--large .cfe-table_header .cfe-table_row .cfe-table_column {\n      font-size: 20px; }\n  .cfe-table--large .cfe-table_body .cfe-table_row {\n    height: 72px; }\n    .cfe-table--large .cfe-table_body .cfe-table_row .cfe-table_column {\n      font-size: 20px; }\n  .cfe-table_row {\n    border-bottom: 1px solid #e0e0e0; }\n  .cfe-table_column {\n    text-align: left;\n    text-overflow: ellipsis;\n    padding: 0 56px 0 0;\n    font-size: 14px;\n    font-weight: 500; }\n    .cfe-table_column:first-child {\n      padding: 0 56px 0 24px; }\n    .cfe-table_column:last-child {\n      padding: 0 24px 0 0; }\n    .cfe-table_column--grow {\n      width: 100%; }\n  .cfe-table_header {\n    background-color: #eee; }\n    .cfe-table_header .cfe-table_row {\n      height: 56px;\n      padding: 0 24px; }\n      .cfe-table_header .cfe-table_row .cfe-table_column {\n        vertical-align: middle;\n        color: rgba(0, 0, 0, 0.54);\n        font-size: 14px; }\n  .cfe-table_body .cfe-table_row {\n    height: 48px; }\n    .cfe-table_body .cfe-table_row:hover {\n      background: #eee; }\n    .cfe-table_body .cfe-table_row .cfe-table_column {\n      color: rgba(0, 0, 0, 0.87); }\n      .cfe-table_body .cfe-table_row .cfe-table_column--align-right {\n        display: flex;\n        align-items: center;\n        justify-content: flex-end;\n        height: inherit;\n        padding: 0; }\n\n.cfe-toggle-container {\n  display: inline-flex;\n  flex-direction: row;\n  justify-content: center;\n  align-items: center; }\n  .cfe-toggle-container .cfe-toggle-label--text {\n    cursor: pointer;\n    user-select: none;\n    font-size: 14px;\n    padding: 4px 0 4px 12px; }\n    .cfe-toggle-container .cfe-toggle-label--text--disabled {\n      cursor: default;\n      color: #000;\n      opacity: 0.26; }\n  .cfe-toggle-container--reverse {\n    flex-direction: row-reverse; }\n    .cfe-toggle-container--reverse .cfe-toggle-label--text {\n      cursor: pointer;\n      user-select: none;\n      font-size: 14px;\n      padding: 4px 12px 4px 0; }\n\n.cfe-checkbox-container {\n  position: relative;\n  display: flex;\n  margin: 0;\n  padding: 0;\n  outline: none; }\n\n.cfe-checkbox-label {\n  cursor: pointer; }\n  .cfe-checkbox-label:before, .cfe-checkbox-label:after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    top: 0; }\n  .cfe-checkbox-label:before {\n    width: 18px;\n    height: 18px;\n    border-radius: 2px;\n    border: 2px solid #000;\n    opacity: 0.54; }\n\n.cfe-checkbox-input {\n  outline: 0;\n  visibility: hidden; }\n  .cfe-checkbox-input--active + .cfe-checkbox-label:before {\n    background: #3f51b5;\n    border: none;\n    opacity: 1; }\n  .cfe-checkbox-input--active + .cfe-checkbox-label:after {\n    top: 4.7px;\n    left: 4px;\n    width: 10px;\n    height: 5px;\n    border: 2px solid #fff;\n    border-top-style: none;\n    border-right-style: none;\n    transform: rotate(-45deg); }\n  .cfe-checkbox-input--disabled {\n    visibility: hidden; }\n    .cfe-checkbox-input--disabled + .cfe-checkbox-label:before {\n      cursor: default;\n      background: transparent;\n      border: 2px solid #000;\n      opacity: 0.26; }\n    .cfe-checkbox-input--disabled + .cfe-checkbox-label:after {\n      cursor: default; }\n  .cfe-checkbox-input--active.cfe-checkbox-input--disabled {\n    visibility: hidden; }\n    .cfe-checkbox-input--active.cfe-checkbox-input--disabled + .cfe-checkbox-label:before {\n      cursor: default;\n      border: none;\n      background: #000;\n      opacity: 0.26; }\n    .cfe-checkbox-input--active.cfe-checkbox-input--disabled + .cfe-checkbox-label:after {\n      cursor: default; }\n\n.cfe-switch-container {\n  position: relative;\n  display: flex;\n  margin: 0;\n  padding: 0;\n  outline: none;\n  min-width: 30px; }\n\n.cfe-switch-label {\n  cursor: pointer; }\n  .cfe-switch-label:before, .cfe-switch-label:after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    top: 4px;\n    -webkit-transition: all 0.3s ease;\n    transition: all 0.3s ease; }\n  .cfe-switch-label:before {\n    left: 1px;\n    width: 34px;\n    height: 14px;\n    background: #000;\n    opacity: 0.38;\n    border-radius: 8px; }\n  .cfe-switch-label:after {\n    left: 0;\n    top: 0;\n    width: 20px;\n    height: 20px;\n    background-color: #fafafa;\n    opacity: 1;\n    border-radius: 50%;\n    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }\n\n.cfe-switch-input {\n  outline: 0;\n  visibility: hidden; }\n  .cfe-switch-input--active {\n    cursor: pointer; }\n    .cfe-switch-input--active + .cfe-switch-label:before {\n      background-color: #3f51b5;\n      opacity: 0.5; }\n    .cfe-switch-input--active + .cfe-switch-label:after {\n      background-color: #3f51b5;\n      transform: translate(80%); }\n  .cfe-switch-input--disabled {\n    visibility: hidden; }\n    .cfe-switch-input--disabled + .cfe-switch-label {\n      cursor: default; }\n      .cfe-switch-input--disabled + .cfe-switch-label:before {\n        background-color: #000;\n        opacity: 0.12; }\n      .cfe-switch-input--disabled + .cfe-switch-label:after {\n        background-color: #bdbdbd; }\n  .cfe-switch-input.cfe-switch-input--active.cfe-switch-input--disabled {\n    visibility: hidden; }\n    .cfe-switch-input.cfe-switch-input--active.cfe-switch-input--disabled + .cfe-switch-label:before {\n      background-color: #3f51b5; }\n    .cfe-switch-input.cfe-switch-input--active.cfe-switch-input--disabled + .cfe-switch-label:after {\n      background-color: #3f51b5;\n      opacity: 0.5; }\n\n.cfe-radio-container {\n  position: relative;\n  display: flex;\n  margin: 0;\n  padding: 0;\n  outline: none; }\n\n.cfe-radio-label {\n  cursor: pointer; }\n  .cfe-radio-label:before, .cfe-radio-label:after {\n    content: \"\";\n    position: absolute;\n    left: 0;\n    top: -2px; }\n  .cfe-radio-label:before {\n    width: 20px;\n    height: 20px;\n    border: 2px solid #000;\n    opacity: 0.54;\n    border-radius: 50%; }\n\n.cfe-radio-input {\n  outline: 0;\n  visibility: hidden; }\n  .cfe-radio-input--active + .cfe-radio-label:before {\n    border: 2px solid #3f51b5;\n    opacity: 1;\n    border-radius: 50%; }\n  .cfe-radio-input--active + .cfe-radio-label:after {\n    top: 4px;\n    left: 6px;\n    border-radius: 50%;\n    border: 4px solid #3f51b5; }\n  .cfe-radio-input--disabled {\n    visibility: hidden; }\n    .cfe-radio-input--disabled + .cfe-radio-label:before {\n      cursor: default;\n      background: transparent;\n      border: 2px solid #000;\n      opacity: 0.26; }\n    .cfe-radio-input--disabled + .cfe-radio-label:after {\n      cursor: default; }\n\n.cfe-notifications {\n  position: fixed;\n  z-index: 1;\n  width: 340px;\n  padding: 0 16px; }\n  .cfe-notifications--top-right {\n    right: 0;\n    top: 0; }\n    .cfe-notifications--top-right .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateX(100%) translateX(16px); }\n  .cfe-notifications--bottom-right {\n    bottom: 0;\n    right: 0; }\n    .cfe-notifications--bottom-right .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateX(100%) translateX(16px); }\n  .cfe-notifications--top-left {\n    left: 0;\n    top: 0; }\n    .cfe-notifications--top-left .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateX(-100%) translateX(-16px); }\n  .cfe-notifications--bottom-left {\n    left: 0;\n    bottom: 0; }\n    .cfe-notifications--bottom-left .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateX(-100%) translateX(-16px); }\n  .cfe-notifications--top-center {\n    top: 0;\n    left: calc(50% - 186px); }\n    .cfe-notifications--top-center .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateY(-100%) translateY(-128px); }\n  .cfe-notifications--bottom-center {\n    bottom: 0;\n    left: calc(50% - 186px); }\n    .cfe-notifications--bottom-center .cfe-notification {\n      transition: transform 0.5s, width 0.5s;\n      transform: translateY(100%) translateY(128px); }\n\n.cfe-notification {\n  display: flex;\n  flex-direction: column;\n  border-radius: 4px;\n  padding: 16px;\n  color: #fff; }\n  .cfe-notification:not(:last-child) {\n    margin: 0 0 16px; }\n  .cfe-notification_header {\n    display: flex;\n    justify-content: space-between; }\n  .cfe-notification_title {\n    margin: 0 16px 0 0;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    font-size: 1rem; }\n  .cfe-notification_close {\n    display: flex;\n    justify-content: center;\n    cursor: pointer; }\n  .cfe-notification_body {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: row wrap;\n    font-size: 0.75rem;\n    padding-top: 8px;\n    color: #fff; }\n  .cfe-notification--success {\n    background-color: #43a047; }\n  .cfe-notification--warning {\n    background-color: #fbc02d; }\n  .cfe-notification--info {\n    background-color: #03a9f4; }\n  .cfe-notification--error {\n    background-color: #e53935; }\n\n.cfe-notifications .cfe-notification--active {\n  transform: translate(0, 0); }\n\n.cfe-file-input_trigger {\n  display: none; }\n\n.cfe-select {\n  cursor: pointer;\n  display: flex;\n  align-items: center; }\n  .cfe-select--disabled {\n    cursor: default; }\n  .cfe-select_dropdown.cfe-dropdown {\n    width: 100%; }\n    .cfe-select_dropdown.cfe-dropdown .md-layover .cfe-dropdown_layover {\n      width: 100%;\n      min-width: 0;\n      max-height: 264px;\n      position: absolute;\n      top: 46px;\n      overflow: auto; }\n  .cfe-select_placeholder {\n    color: inherit;\n    opacity: 0.54; }\n  .cfe-select_arrow {\n    position: absolute;\n    top: 0;\n    right: 0;\n    cursor: pointer; }\n    .cfe-select_arrow:before {\n      font-size: 10px;\n      margin-right: 4px; }\n  .cfe-select_arrow--down:before {\n    content: \"\\25BC\"; }\n\n.cfe-select_list.cfe-list {\n  width: auto;\n  overflow: hidden;\n  float: left;\n  min-width: 100%; }\n\n.cfe-select_list-item.cfe-list-item {\n  white-space: nowrap;\n  min-height: 40px; }\n\n.cfe-pagination {\n  display: flex;\n  align-items: center;\n  justify-content: flex-end;\n  height: 48px;\n  font-size: 12px;\n  color: rgba(0, 0, 0, 0.54);\n  background-color: #fff; }\n  .cfe-pagination_select-arrow {\n    padding-left: 20px; }\n    .cfe-pagination_select-arrow:before {\n      content: \"\\25BC\";\n      font-size: 12px; }\n  .cfe-pagination_count {\n    padding-right: 10px; }\n  .cfe-pagination_actions {\n    padding-right: 15px; }\n  .cfe-pagination_dec-button {\n    font-family: monospace;\n    font-size: 25px; }\n    .cfe-pagination_dec-button--disabled {\n      cursor: default;\n      color: #CFD8DC; }\n    .cfe-pagination_dec-button:before {\n      content: \"\\2190\"; }\n  .cfe-pagination_inc-button {\n    font-family: monospace;\n    font-size: 25px; }\n    .cfe-pagination_inc-button--disabled {\n      cursor: default;\n      color: #CFD8DC; }\n    .cfe-pagination_inc-button:before {\n      content: \"\\2192\"; }\n\n.cfe-pagination_select.cfe-button {\n  font-size: 12px; }\n  .cfe-pagination_select.cfe-button:hover {\n    background-color: transparent; }\n\n.cfe-tooltip {\n  position: absolute;\n  z-index: 1070;\n  display: block;\n  font-family: Roboto, Arial, sans-serif;\n  font-style: normal;\n  font-weight: normal;\n  letter-spacing: normal;\n  line-break: auto;\n  line-height: 1.42857143;\n  text-align: left;\n  text-decoration: none;\n  text-shadow: none;\n  text-transform: none;\n  white-space: normal;\n  word-break: normal;\n  word-spacing: normal;\n  word-wrap: normal;\n  font-size: 12px; }\n  .cfe-tooltip.cfe-tooltip--top {\n    margin-top: -3px;\n    padding: 5px 0; }\n  .cfe-tooltip.cfe-tooltip--right {\n    margin-left: 3px;\n    padding: 0 5px; }\n  .cfe-tooltip.cfe-tooltip--bottom {\n    margin-top: 3px;\n    padding: 5px 0; }\n  .cfe-tooltip.cfe-tooltip--left {\n    margin-left: -3px;\n    padding: 0 5px; }\n  .cfe-tooltip-inner {\n    background-color: #616161;\n    color: #fff;\n    max-width: 200px;\n    padding: 3px 8px;\n    border-radius: 4px;\n    text-align: center; }\n  .cfe-tooltip-arrow {\n    position: absolute;\n    width: 0;\n    height: 0;\n    border: 0 solid transparent; }\n  .cfe-tooltip.cfe-tooltip--top .cfe-tooltip-arrow {\n    left: 50%;\n    bottom: 0;\n    margin-left: -5px;\n    border-width: 5px 5px 0;\n    border-top-color: #616161; }\n  .cfe-tooltip.cfe-tooltip--right .cfe-tooltip-arrow {\n    top: 50%;\n    left: 0;\n    margin-top: -5px;\n    border-width: 5px 5px 5px 0;\n    border-right-color: #616161; }\n  .cfe-tooltip.cfe-tooltip--left .cfe-tooltip-arrow {\n    top: 50%;\n    right: 0;\n    margin-top: -5px;\n    border-width: 5px 0 5px 5px;\n    border-left-color: #616161; }\n  .cfe-tooltip.cfe-tooltip--bottom .cfe-tooltip-arrow {\n    left: 50%;\n    top: 0;\n    margin-left: -5px;\n    border-width: 0 5px 5px;\n    border-bottom-color: #616161; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss":
+/*!******************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss ***!
+  \******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_headerBar {\n  display: flex;\n  background-color: inherit;\n  flex-grow: 1;\n  height: 40px;\n  margin: 25px; }\n\n.qrp_headerBar_pathContainer {\n  display: flex;\n  flex-direction: row;\n  margin: 2px; }\n\n.qrp_headerBar_pathElement {\n  display: flex;\n  flex-direction: row;\n  margin: 8px 15px; }\n\n.qrp_headerBar_pathElement_icon {\n  display: inline-block;\n  background-repeat: 'no-repeat';\n  background-position: 'center';\n  background-size: '80%';\n  cursor: pointer;\n  width: 100%;\n  height: 100%; }\n\n.qrp_headerBar_pathElement_Separator {\n  font-weight: 800;\n  margin-left: 15px;\n  cursor: default; }\n\n.qrp_headerBar_pathElement_text {\n  cursor: pointer;\n  white-space: nowrap; }\n\n.qrp_headerBar_search_pathElement_closeBtn {\n  height: 70%;\n  width: 70%;\n  margin: 4px 0 0 20px;\n  cursor: pointer; }\n", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css":
 /*!**************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/body-landing-page/style.css ***!
@@ -384,25 +2935,6 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".qrp_navigation-container{\r\n  max-width: 383px;\r\n  -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  -moz-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  z-index: 2;\r\n  background-color: #F2F2F2;\r\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css":
-/*!************************************************************************!*\
-  !*** ./node_modules/css-loader!./public/src/path-navigation/style.css ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 40px;\r\n  margin: 25px;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 2px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 8px 15px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: 'no-repeat';\r\n  background-position: 'center';\r\n  background-size: '80%';\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer;}", ""]);
 
 // exports
 
@@ -1689,6 +4221,4709 @@ function isPlainObject(value) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (isPlainObject);
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_DataView.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_DataView.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView');
+
+module.exports = DataView;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Hash.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_Hash.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var hashClear = __webpack_require__(/*! ./_hashClear */ "./node_modules/lodash/_hashClear.js"),
+    hashDelete = __webpack_require__(/*! ./_hashDelete */ "./node_modules/lodash/_hashDelete.js"),
+    hashGet = __webpack_require__(/*! ./_hashGet */ "./node_modules/lodash/_hashGet.js"),
+    hashHas = __webpack_require__(/*! ./_hashHas */ "./node_modules/lodash/_hashHas.js"),
+    hashSet = __webpack_require__(/*! ./_hashSet */ "./node_modules/lodash/_hashSet.js");
+
+/**
+ * Creates a hash object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Hash(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `Hash`.
+Hash.prototype.clear = hashClear;
+Hash.prototype['delete'] = hashDelete;
+Hash.prototype.get = hashGet;
+Hash.prototype.has = hashHas;
+Hash.prototype.set = hashSet;
+
+module.exports = Hash;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_ListCache.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_ListCache.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var listCacheClear = __webpack_require__(/*! ./_listCacheClear */ "./node_modules/lodash/_listCacheClear.js"),
+    listCacheDelete = __webpack_require__(/*! ./_listCacheDelete */ "./node_modules/lodash/_listCacheDelete.js"),
+    listCacheGet = __webpack_require__(/*! ./_listCacheGet */ "./node_modules/lodash/_listCacheGet.js"),
+    listCacheHas = __webpack_require__(/*! ./_listCacheHas */ "./node_modules/lodash/_listCacheHas.js"),
+    listCacheSet = __webpack_require__(/*! ./_listCacheSet */ "./node_modules/lodash/_listCacheSet.js");
+
+/**
+ * Creates an list cache object.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function ListCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `ListCache`.
+ListCache.prototype.clear = listCacheClear;
+ListCache.prototype['delete'] = listCacheDelete;
+ListCache.prototype.get = listCacheGet;
+ListCache.prototype.has = listCacheHas;
+ListCache.prototype.set = listCacheSet;
+
+module.exports = ListCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Map.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Map.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_MapCache.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_MapCache.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var mapCacheClear = __webpack_require__(/*! ./_mapCacheClear */ "./node_modules/lodash/_mapCacheClear.js"),
+    mapCacheDelete = __webpack_require__(/*! ./_mapCacheDelete */ "./node_modules/lodash/_mapCacheDelete.js"),
+    mapCacheGet = __webpack_require__(/*! ./_mapCacheGet */ "./node_modules/lodash/_mapCacheGet.js"),
+    mapCacheHas = __webpack_require__(/*! ./_mapCacheHas */ "./node_modules/lodash/_mapCacheHas.js"),
+    mapCacheSet = __webpack_require__(/*! ./_mapCacheSet */ "./node_modules/lodash/_mapCacheSet.js");
+
+/**
+ * Creates a map cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function MapCache(entries) {
+  var index = -1,
+      length = entries == null ? 0 : entries.length;
+
+  this.clear();
+  while (++index < length) {
+    var entry = entries[index];
+    this.set(entry[0], entry[1]);
+  }
+}
+
+// Add methods to `MapCache`.
+MapCache.prototype.clear = mapCacheClear;
+MapCache.prototype['delete'] = mapCacheDelete;
+MapCache.prototype.get = mapCacheGet;
+MapCache.prototype.has = mapCacheHas;
+MapCache.prototype.set = mapCacheSet;
+
+module.exports = MapCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Promise.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_Promise.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Promise = getNative(root, 'Promise');
+
+module.exports = Promise;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Set.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/_Set.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var Set = getNative(root, 'Set');
+
+module.exports = Set;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_SetCache.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_SetCache.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js"),
+    setCacheAdd = __webpack_require__(/*! ./_setCacheAdd */ "./node_modules/lodash/_setCacheAdd.js"),
+    setCacheHas = __webpack_require__(/*! ./_setCacheHas */ "./node_modules/lodash/_setCacheHas.js");
+
+/**
+ *
+ * Creates an array cache object to store unique values.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [values] The values to cache.
+ */
+function SetCache(values) {
+  var index = -1,
+      length = values == null ? 0 : values.length;
+
+  this.__data__ = new MapCache;
+  while (++index < length) {
+    this.add(values[index]);
+  }
+}
+
+// Add methods to `SetCache`.
+SetCache.prototype.add = SetCache.prototype.push = setCacheAdd;
+SetCache.prototype.has = setCacheHas;
+
+module.exports = SetCache;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Stack.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_Stack.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    stackClear = __webpack_require__(/*! ./_stackClear */ "./node_modules/lodash/_stackClear.js"),
+    stackDelete = __webpack_require__(/*! ./_stackDelete */ "./node_modules/lodash/_stackDelete.js"),
+    stackGet = __webpack_require__(/*! ./_stackGet */ "./node_modules/lodash/_stackGet.js"),
+    stackHas = __webpack_require__(/*! ./_stackHas */ "./node_modules/lodash/_stackHas.js"),
+    stackSet = __webpack_require__(/*! ./_stackSet */ "./node_modules/lodash/_stackSet.js");
+
+/**
+ * Creates a stack cache object to store key-value pairs.
+ *
+ * @private
+ * @constructor
+ * @param {Array} [entries] The key-value pairs to cache.
+ */
+function Stack(entries) {
+  var data = this.__data__ = new ListCache(entries);
+  this.size = data.size;
+}
+
+// Add methods to `Stack`.
+Stack.prototype.clear = stackClear;
+Stack.prototype['delete'] = stackDelete;
+Stack.prototype.get = stackGet;
+Stack.prototype.has = stackHas;
+Stack.prototype.set = stackSet;
+
+module.exports = Stack;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Symbol.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_Symbol.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Symbol = root.Symbol;
+
+module.exports = Symbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_Uint8Array.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_Uint8Array.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Built-in value references. */
+var Uint8Array = root.Uint8Array;
+
+module.exports = Uint8Array;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_WeakMap.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_WeakMap.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js"),
+    root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = getNative(root, 'WeakMap');
+
+module.exports = WeakMap;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayFilter.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_arrayFilter.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.filter` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {Array} Returns the new filtered array.
+ */
+function arrayFilter(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      resIndex = 0,
+      result = [];
+
+  while (++index < length) {
+    var value = array[index];
+    if (predicate(value, index, array)) {
+      result[resIndex++] = value;
+    }
+  }
+  return result;
+}
+
+module.exports = arrayFilter;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayLikeKeys.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_arrayLikeKeys.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseTimes = __webpack_require__(/*! ./_baseTimes */ "./node_modules/lodash/_baseTimes.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isBuffer = __webpack_require__(/*! ./isBuffer */ "./node_modules/lodash/isBuffer.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isTypedArray = __webpack_require__(/*! ./isTypedArray */ "./node_modules/lodash/isTypedArray.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Creates an array of the enumerable property names of the array-like `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @param {boolean} inherited Specify returning inherited property names.
+ * @returns {Array} Returns the array of property names.
+ */
+function arrayLikeKeys(value, inherited) {
+  var isArr = isArray(value),
+      isArg = !isArr && isArguments(value),
+      isBuff = !isArr && !isArg && isBuffer(value),
+      isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+      skipIndexes = isArr || isArg || isBuff || isType,
+      result = skipIndexes ? baseTimes(value.length, String) : [],
+      length = result.length;
+
+  for (var key in value) {
+    if ((inherited || hasOwnProperty.call(value, key)) &&
+        !(skipIndexes && (
+           // Safari 9 has enumerable `arguments.length` in strict mode.
+           key == 'length' ||
+           // Node.js 0.10 has enumerable non-index properties on buffers.
+           (isBuff && (key == 'offset' || key == 'parent')) ||
+           // PhantomJS 2 has enumerable non-index properties on typed arrays.
+           (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+           // Skip index properties.
+           isIndex(key, length)
+        ))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = arrayLikeKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayMap.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_arrayMap.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayPush.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arrayPush.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Appends the elements of `values` to `array`.
+ *
+ * @private
+ * @param {Array} array The array to modify.
+ * @param {Array} values The values to append.
+ * @returns {Array} Returns `array`.
+ */
+function arrayPush(array, values) {
+  var index = -1,
+      length = values.length,
+      offset = array.length;
+
+  while (++index < length) {
+    array[offset + index] = values[index];
+  }
+  return array;
+}
+
+module.exports = arrayPush;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arrayReduce.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_arrayReduce.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.reduce` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @param {boolean} [initAccum] Specify using the first element of `array` as
+ *  the initial value.
+ * @returns {*} Returns the accumulated value.
+ */
+function arrayReduce(array, iteratee, accumulator, initAccum) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  if (initAccum && length) {
+    accumulator = array[++index];
+  }
+  while (++index < length) {
+    accumulator = iteratee(accumulator, array[index], index, array);
+  }
+  return accumulator;
+}
+
+module.exports = arrayReduce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_arraySome.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_arraySome.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.some` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} predicate The function invoked per iteration.
+ * @returns {boolean} Returns `true` if any element passes the predicate check,
+ *  else `false`.
+ */
+function arraySome(array, predicate) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  while (++index < length) {
+    if (predicate(array[index], index, array)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+module.exports = arraySome;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_assocIndexOf.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_assocIndexOf.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js");
+
+/**
+ * Gets the index at which the `key` is found in `array` of key-value pairs.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {*} key The key to search for.
+ * @returns {number} Returns the index of the matched value, else `-1`.
+ */
+function assocIndexOf(array, key) {
+  var length = array.length;
+  while (length--) {
+    if (eq(array[length][0], key)) {
+      return length;
+    }
+  }
+  return -1;
+}
+
+module.exports = assocIndexOf;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseEach.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseEach.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseForOwn = __webpack_require__(/*! ./_baseForOwn */ "./node_modules/lodash/_baseForOwn.js"),
+    createBaseEach = __webpack_require__(/*! ./_createBaseEach */ "./node_modules/lodash/_createBaseEach.js");
+
+/**
+ * The base implementation of `_.forEach` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array|Object} Returns `collection`.
+ */
+var baseEach = createBaseEach(baseForOwn);
+
+module.exports = baseEach;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseFor.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseFor.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var createBaseFor = __webpack_require__(/*! ./_createBaseFor */ "./node_modules/lodash/_createBaseFor.js");
+
+/**
+ * The base implementation of `baseForOwn` which iterates over `object`
+ * properties returned by `keysFunc` and invokes `iteratee` for each property.
+ * Iteratee functions may exit iteration early by explicitly returning `false`.
+ *
+ * @private
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @returns {Object} Returns `object`.
+ */
+var baseFor = createBaseFor();
+
+module.exports = baseFor;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseForOwn.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseForOwn.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseFor = __webpack_require__(/*! ./_baseFor */ "./node_modules/lodash/_baseFor.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * The base implementation of `_.forOwn` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Object} Returns `object`.
+ */
+function baseForOwn(object, iteratee) {
+  return object && baseFor(object, iteratee, keys);
+}
+
+module.exports = baseForOwn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_baseGet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castPath = __webpack_require__(/*! ./_castPath */ "./node_modules/lodash/_castPath.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * The base implementation of `_.get` without support for default values.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @returns {*} Returns the resolved value.
+ */
+function baseGet(object, path) {
+  path = castPath(path, object);
+
+  var index = 0,
+      length = path.length;
+
+  while (object != null && index < length) {
+    object = object[toKey(path[index++])];
+  }
+  return (index && index == length) ? object : undefined;
+}
+
+module.exports = baseGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetAllKeys.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_baseGetAllKeys.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayPush = __webpack_require__(/*! ./_arrayPush */ "./node_modules/lodash/_arrayPush.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * The base implementation of `getAllKeys` and `getAllKeysIn` which uses
+ * `keysFunc` and `symbolsFunc` to get the enumerable property names and
+ * symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Function} keysFunc The function to get the keys of `object`.
+ * @param {Function} symbolsFunc The function to get the symbols of `object`.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function baseGetAllKeys(object, keysFunc, symbolsFunc) {
+  var result = keysFunc(object);
+  return isArray(object) ? result : arrayPush(result, symbolsFunc(object));
+}
+
+module.exports = baseGetAllKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseGetTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseGetTag.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    getRawTag = __webpack_require__(/*! ./_getRawTag */ "./node_modules/lodash/_getRawTag.js"),
+    objectToString = __webpack_require__(/*! ./_objectToString */ "./node_modules/lodash/_objectToString.js");
+
+/** `Object#toString` result references. */
+var nullTag = '[object Null]',
+    undefinedTag = '[object Undefined]';
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * The base implementation of `getTag` without fallbacks for buggy environments.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return (symToStringTag && symToStringTag in Object(value))
+    ? getRawTag(value)
+    : objectToString(value);
+}
+
+module.exports = baseGetTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseHasIn.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseHasIn.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.hasIn` without support for deep paths.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {Array|string} key The key to check.
+ * @returns {boolean} Returns `true` if `key` exists, else `false`.
+ */
+function baseHasIn(object, key) {
+  return object != null && key in Object(object);
+}
+
+module.exports = baseHasIn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsArguments.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsArguments.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]';
+
+/**
+ * The base implementation of `_.isArguments`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ */
+function baseIsArguments(value) {
+  return isObjectLike(value) && baseGetTag(value) == argsTag;
+}
+
+module.exports = baseIsArguments;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsEqual.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqual.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsEqualDeep = __webpack_require__(/*! ./_baseIsEqualDeep */ "./node_modules/lodash/_baseIsEqualDeep.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/**
+ * The base implementation of `_.isEqual` which supports partial comparisons
+ * and tracks traversed objects.
+ *
+ * @private
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @param {boolean} bitmask The bitmask flags.
+ *  1 - Unordered comparison
+ *  2 - Partial comparison
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @param {Object} [stack] Tracks traversed `value` and `other` objects.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ */
+function baseIsEqual(value, other, bitmask, customizer, stack) {
+  if (value === other) {
+    return true;
+  }
+  if (value == null || other == null || (!isObjectLike(value) && !isObjectLike(other))) {
+    return value !== value && other !== other;
+  }
+  return baseIsEqualDeep(value, other, bitmask, customizer, baseIsEqual, stack);
+}
+
+module.exports = baseIsEqual;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsEqualDeep.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_baseIsEqualDeep.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Stack = __webpack_require__(/*! ./_Stack */ "./node_modules/lodash/_Stack.js"),
+    equalArrays = __webpack_require__(/*! ./_equalArrays */ "./node_modules/lodash/_equalArrays.js"),
+    equalByTag = __webpack_require__(/*! ./_equalByTag */ "./node_modules/lodash/_equalByTag.js"),
+    equalObjects = __webpack_require__(/*! ./_equalObjects */ "./node_modules/lodash/_equalObjects.js"),
+    getTag = __webpack_require__(/*! ./_getTag */ "./node_modules/lodash/_getTag.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isBuffer = __webpack_require__(/*! ./isBuffer */ "./node_modules/lodash/isBuffer.js"),
+    isTypedArray = __webpack_require__(/*! ./isTypedArray */ "./node_modules/lodash/isTypedArray.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1;
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    objectTag = '[object Object]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * A specialized version of `baseIsEqual` for arrays and objects which performs
+ * deep comparisons and tracks traversed objects enabling objects with circular
+ * references to be compared.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} [stack] Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
+  var objIsArr = isArray(object),
+      othIsArr = isArray(other),
+      objTag = objIsArr ? arrayTag : getTag(object),
+      othTag = othIsArr ? arrayTag : getTag(other);
+
+  objTag = objTag == argsTag ? objectTag : objTag;
+  othTag = othTag == argsTag ? objectTag : othTag;
+
+  var objIsObj = objTag == objectTag,
+      othIsObj = othTag == objectTag,
+      isSameTag = objTag == othTag;
+
+  if (isSameTag && isBuffer(object)) {
+    if (!isBuffer(other)) {
+      return false;
+    }
+    objIsArr = true;
+    objIsObj = false;
+  }
+  if (isSameTag && !objIsObj) {
+    stack || (stack = new Stack);
+    return (objIsArr || isTypedArray(object))
+      ? equalArrays(object, other, bitmask, customizer, equalFunc, stack)
+      : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
+  }
+  if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
+    var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__'),
+        othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
+
+    if (objIsWrapped || othIsWrapped) {
+      var objUnwrapped = objIsWrapped ? object.value() : object,
+          othUnwrapped = othIsWrapped ? other.value() : other;
+
+      stack || (stack = new Stack);
+      return equalFunc(objUnwrapped, othUnwrapped, bitmask, customizer, stack);
+    }
+  }
+  if (!isSameTag) {
+    return false;
+  }
+  stack || (stack = new Stack);
+  return equalObjects(object, other, bitmask, customizer, equalFunc, stack);
+}
+
+module.exports = baseIsEqualDeep;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsMatch.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseIsMatch.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Stack = __webpack_require__(/*! ./_Stack */ "./node_modules/lodash/_Stack.js"),
+    baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/lodash/_baseIsEqual.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * The base implementation of `_.isMatch` without support for iteratee shorthands.
+ *
+ * @private
+ * @param {Object} object The object to inspect.
+ * @param {Object} source The object of property values to match.
+ * @param {Array} matchData The property names, values, and compare flags to match.
+ * @param {Function} [customizer] The function to customize comparisons.
+ * @returns {boolean} Returns `true` if `object` is a match, else `false`.
+ */
+function baseIsMatch(object, source, matchData, customizer) {
+  var index = matchData.length,
+      length = index,
+      noCustomizer = !customizer;
+
+  if (object == null) {
+    return !length;
+  }
+  object = Object(object);
+  while (index--) {
+    var data = matchData[index];
+    if ((noCustomizer && data[2])
+          ? data[1] !== object[data[0]]
+          : !(data[0] in object)
+        ) {
+      return false;
+    }
+  }
+  while (++index < length) {
+    data = matchData[index];
+    var key = data[0],
+        objValue = object[key],
+        srcValue = data[1];
+
+    if (noCustomizer && data[2]) {
+      if (objValue === undefined && !(key in object)) {
+        return false;
+      }
+    } else {
+      var stack = new Stack;
+      if (customizer) {
+        var result = customizer(objValue, srcValue, key, object, source, stack);
+      }
+      if (!(result === undefined
+            ? baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG, customizer, stack)
+            : result
+          )) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+module.exports = baseIsMatch;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsNative.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIsNative.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isFunction = __webpack_require__(/*! ./isFunction */ "./node_modules/lodash/isFunction.js"),
+    isMasked = __webpack_require__(/*! ./_isMasked */ "./node_modules/lodash/_isMasked.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js"),
+    toSource = __webpack_require__(/*! ./_toSource */ "./node_modules/lodash/_toSource.js");
+
+/**
+ * Used to match `RegExp`
+ * [syntax characters](http://ecma-international.org/ecma-262/7.0/#sec-patterns).
+ */
+var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
+
+/** Used to detect host constructors (Safari). */
+var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype,
+    objectProto = Object.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Used to detect if a method is native. */
+var reIsNative = RegExp('^' +
+  funcToString.call(hasOwnProperty).replace(reRegExpChar, '\\$&')
+  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+);
+
+/**
+ * The base implementation of `_.isNative` without bad shim checks.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a native function,
+ *  else `false`.
+ */
+function baseIsNative(value) {
+  if (!isObject(value) || isMasked(value)) {
+    return false;
+  }
+  var pattern = isFunction(value) ? reIsNative : reIsHostCtor;
+  return pattern.test(toSource(value));
+}
+
+module.exports = baseIsNative;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIsTypedArray.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_baseIsTypedArray.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var argsTag = '[object Arguments]',
+    arrayTag = '[object Array]',
+    boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    funcTag = '[object Function]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    objectTag = '[object Object]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    weakMapTag = '[object WeakMap]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]',
+    float32Tag = '[object Float32Array]',
+    float64Tag = '[object Float64Array]',
+    int8Tag = '[object Int8Array]',
+    int16Tag = '[object Int16Array]',
+    int32Tag = '[object Int32Array]',
+    uint8Tag = '[object Uint8Array]',
+    uint8ClampedTag = '[object Uint8ClampedArray]',
+    uint16Tag = '[object Uint16Array]',
+    uint32Tag = '[object Uint32Array]';
+
+/** Used to identify `toStringTag` values of typed arrays. */
+var typedArrayTags = {};
+typedArrayTags[float32Tag] = typedArrayTags[float64Tag] =
+typedArrayTags[int8Tag] = typedArrayTags[int16Tag] =
+typedArrayTags[int32Tag] = typedArrayTags[uint8Tag] =
+typedArrayTags[uint8ClampedTag] = typedArrayTags[uint16Tag] =
+typedArrayTags[uint32Tag] = true;
+typedArrayTags[argsTag] = typedArrayTags[arrayTag] =
+typedArrayTags[arrayBufferTag] = typedArrayTags[boolTag] =
+typedArrayTags[dataViewTag] = typedArrayTags[dateTag] =
+typedArrayTags[errorTag] = typedArrayTags[funcTag] =
+typedArrayTags[mapTag] = typedArrayTags[numberTag] =
+typedArrayTags[objectTag] = typedArrayTags[regexpTag] =
+typedArrayTags[setTag] = typedArrayTags[stringTag] =
+typedArrayTags[weakMapTag] = false;
+
+/**
+ * The base implementation of `_.isTypedArray` without Node.js optimizations.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ */
+function baseIsTypedArray(value) {
+  return isObjectLike(value) &&
+    isLength(value.length) && !!typedArrayTags[baseGetTag(value)];
+}
+
+module.exports = baseIsTypedArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseIteratee.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseIteratee.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseMatches = __webpack_require__(/*! ./_baseMatches */ "./node_modules/lodash/_baseMatches.js"),
+    baseMatchesProperty = __webpack_require__(/*! ./_baseMatchesProperty */ "./node_modules/lodash/_baseMatchesProperty.js"),
+    identity = __webpack_require__(/*! ./identity */ "./node_modules/lodash/identity.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    property = __webpack_require__(/*! ./property */ "./node_modules/lodash/property.js");
+
+/**
+ * The base implementation of `_.iteratee`.
+ *
+ * @private
+ * @param {*} [value=_.identity] The value to convert to an iteratee.
+ * @returns {Function} Returns the iteratee.
+ */
+function baseIteratee(value) {
+  // Don't store the `typeof` result in a variable to avoid a JIT bug in Safari 9.
+  // See https://bugs.webkit.org/show_bug.cgi?id=156034 for more details.
+  if (typeof value == 'function') {
+    return value;
+  }
+  if (value == null) {
+    return identity;
+  }
+  if (typeof value == 'object') {
+    return isArray(value)
+      ? baseMatchesProperty(value[0], value[1])
+      : baseMatches(value);
+  }
+  return property(value);
+}
+
+module.exports = baseIteratee;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseKeys.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_baseKeys.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isPrototype = __webpack_require__(/*! ./_isPrototype */ "./node_modules/lodash/_isPrototype.js"),
+    nativeKeys = __webpack_require__(/*! ./_nativeKeys */ "./node_modules/lodash/_nativeKeys.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ */
+function baseKeys(object) {
+  if (!isPrototype(object)) {
+    return nativeKeys(object);
+  }
+  var result = [];
+  for (var key in Object(object)) {
+    if (hasOwnProperty.call(object, key) && key != 'constructor') {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseMatches.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_baseMatches.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsMatch = __webpack_require__(/*! ./_baseIsMatch */ "./node_modules/lodash/_baseIsMatch.js"),
+    getMatchData = __webpack_require__(/*! ./_getMatchData */ "./node_modules/lodash/_getMatchData.js"),
+    matchesStrictComparable = __webpack_require__(/*! ./_matchesStrictComparable */ "./node_modules/lodash/_matchesStrictComparable.js");
+
+/**
+ * The base implementation of `_.matches` which doesn't clone `source`.
+ *
+ * @private
+ * @param {Object} source The object of property values to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatches(source) {
+  var matchData = getMatchData(source);
+  if (matchData.length == 1 && matchData[0][2]) {
+    return matchesStrictComparable(matchData[0][0], matchData[0][1]);
+  }
+  return function(object) {
+    return object === source || baseIsMatch(object, source, matchData);
+  };
+}
+
+module.exports = baseMatches;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseMatchesProperty.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/lodash/_baseMatchesProperty.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsEqual = __webpack_require__(/*! ./_baseIsEqual */ "./node_modules/lodash/_baseIsEqual.js"),
+    get = __webpack_require__(/*! ./get */ "./node_modules/lodash/get.js"),
+    hasIn = __webpack_require__(/*! ./hasIn */ "./node_modules/lodash/hasIn.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    isStrictComparable = __webpack_require__(/*! ./_isStrictComparable */ "./node_modules/lodash/_isStrictComparable.js"),
+    matchesStrictComparable = __webpack_require__(/*! ./_matchesStrictComparable */ "./node_modules/lodash/_matchesStrictComparable.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * The base implementation of `_.matchesProperty` which doesn't clone `srcValue`.
+ *
+ * @private
+ * @param {string} path The path of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function baseMatchesProperty(path, srcValue) {
+  if (isKey(path) && isStrictComparable(srcValue)) {
+    return matchesStrictComparable(toKey(path), srcValue);
+  }
+  return function(object) {
+    var objValue = get(object, path);
+    return (objValue === undefined && objValue === srcValue)
+      ? hasIn(object, path)
+      : baseIsEqual(srcValue, objValue, COMPARE_PARTIAL_FLAG | COMPARE_UNORDERED_FLAG);
+  };
+}
+
+module.exports = baseMatchesProperty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseProperty.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseProperty.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.property` without support for deep paths.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function baseProperty(key) {
+  return function(object) {
+    return object == null ? undefined : object[key];
+  };
+}
+
+module.exports = baseProperty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_basePropertyDeep.js":
+/*!**************************************************!*\
+  !*** ./node_modules/lodash/_basePropertyDeep.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_baseGet.js");
+
+/**
+ * A specialized version of `baseProperty` which supports deep paths.
+ *
+ * @private
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ */
+function basePropertyDeep(path) {
+  return function(object) {
+    return baseGet(object, path);
+  };
+}
+
+module.exports = basePropertyDeep;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseReduce.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_baseReduce.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.reduce` and `_.reduceRight`, without support
+ * for iteratee shorthands, which iterates over `collection` using `eachFunc`.
+ *
+ * @private
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} accumulator The initial value.
+ * @param {boolean} initAccum Specify using the first or last element of
+ *  `collection` as the initial value.
+ * @param {Function} eachFunc The function to iterate over `collection`.
+ * @returns {*} Returns the accumulated value.
+ */
+function baseReduce(collection, iteratee, accumulator, initAccum, eachFunc) {
+  eachFunc(collection, function(value, index, collection) {
+    accumulator = initAccum
+      ? (initAccum = false, value)
+      : iteratee(accumulator, value, index, collection);
+  });
+  return accumulator;
+}
+
+module.exports = baseReduce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseTimes.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseTimes.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.times` without support for iteratee shorthands
+ * or max array length checks.
+ *
+ * @private
+ * @param {number} n The number of times to invoke `iteratee`.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the array of results.
+ */
+function baseTimes(n, iteratee) {
+  var index = -1,
+      result = Array(n);
+
+  while (++index < n) {
+    result[index] = iteratee(index);
+  }
+  return result;
+}
+
+module.exports = baseTimes;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseToString.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_baseToString.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    arrayMap = __webpack_require__(/*! ./_arrayMap */ "./node_modules/lodash/_arrayMap.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = baseToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_baseUnary.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_baseUnary.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.unary` without support for storing metadata.
+ *
+ * @private
+ * @param {Function} func The function to cap arguments for.
+ * @returns {Function} Returns the new capped function.
+ */
+function baseUnary(func) {
+  return function(value) {
+    return func(value);
+  };
+}
+
+module.exports = baseUnary;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_cacheHas.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_cacheHas.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if a `cache` value for `key` exists.
+ *
+ * @private
+ * @param {Object} cache The cache to query.
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function cacheHas(cache, key) {
+  return cache.has(key);
+}
+
+module.exports = cacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_castPath.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_castPath.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    stringToPath = __webpack_require__(/*! ./_stringToPath */ "./node_modules/lodash/_stringToPath.js"),
+    toString = __webpack_require__(/*! ./toString */ "./node_modules/lodash/toString.js");
+
+/**
+ * Casts `value` to a path array if it's not one.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {Array} Returns the cast property path array.
+ */
+function castPath(value, object) {
+  if (isArray(value)) {
+    return value;
+  }
+  return isKey(value, object) ? [value] : stringToPath(toString(value));
+}
+
+module.exports = castPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_coreJsData.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_coreJsData.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js");
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_createBaseEach.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_createBaseEach.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * Creates a `baseEach` or `baseEachRight` function.
+ *
+ * @private
+ * @param {Function} eachFunc The function to iterate over a collection.
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {Function} Returns the new base function.
+ */
+function createBaseEach(eachFunc, fromRight) {
+  return function(collection, iteratee) {
+    if (collection == null) {
+      return collection;
+    }
+    if (!isArrayLike(collection)) {
+      return eachFunc(collection, iteratee);
+    }
+    var length = collection.length,
+        index = fromRight ? length : -1,
+        iterable = Object(collection);
+
+    while ((fromRight ? index-- : ++index < length)) {
+      if (iteratee(iterable[index], index, iterable) === false) {
+        break;
+      }
+    }
+    return collection;
+  };
+}
+
+module.exports = createBaseEach;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_createBaseFor.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_createBaseFor.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Creates a base function for methods like `_.forIn` and `_.forOwn`.
+ *
+ * @private
+ * @param {boolean} [fromRight] Specify iterating from right to left.
+ * @returns {Function} Returns the new base function.
+ */
+function createBaseFor(fromRight) {
+  return function(object, iteratee, keysFunc) {
+    var index = -1,
+        iterable = Object(object),
+        props = keysFunc(object),
+        length = props.length;
+
+    while (length--) {
+      var key = props[fromRight ? length : ++index];
+      if (iteratee(iterable[key], key, iterable) === false) {
+        break;
+      }
+    }
+    return object;
+  };
+}
+
+module.exports = createBaseFor;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalArrays.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_equalArrays.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var SetCache = __webpack_require__(/*! ./_SetCache */ "./node_modules/lodash/_SetCache.js"),
+    arraySome = __webpack_require__(/*! ./_arraySome */ "./node_modules/lodash/_arraySome.js"),
+    cacheHas = __webpack_require__(/*! ./_cacheHas */ "./node_modules/lodash/_cacheHas.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for arrays with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Array} array The array to compare.
+ * @param {Array} other The other array to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `array` and `other` objects.
+ * @returns {boolean} Returns `true` if the arrays are equivalent, else `false`.
+ */
+function equalArrays(array, other, bitmask, customizer, equalFunc, stack) {
+  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+      arrLength = array.length,
+      othLength = other.length;
+
+  if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
+    return false;
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(array);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var index = -1,
+      result = true,
+      seen = (bitmask & COMPARE_UNORDERED_FLAG) ? new SetCache : undefined;
+
+  stack.set(array, other);
+  stack.set(other, array);
+
+  // Ignore non-index properties.
+  while (++index < arrLength) {
+    var arrValue = array[index],
+        othValue = other[index];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, arrValue, index, other, array, stack)
+        : customizer(arrValue, othValue, index, array, other, stack);
+    }
+    if (compared !== undefined) {
+      if (compared) {
+        continue;
+      }
+      result = false;
+      break;
+    }
+    // Recursively compare arrays (susceptible to call stack limits).
+    if (seen) {
+      if (!arraySome(other, function(othValue, othIndex) {
+            if (!cacheHas(seen, othIndex) &&
+                (arrValue === othValue || equalFunc(arrValue, othValue, bitmask, customizer, stack))) {
+              return seen.push(othIndex);
+            }
+          })) {
+        result = false;
+        break;
+      }
+    } else if (!(
+          arrValue === othValue ||
+            equalFunc(arrValue, othValue, bitmask, customizer, stack)
+        )) {
+      result = false;
+      break;
+    }
+  }
+  stack['delete'](array);
+  stack['delete'](other);
+  return result;
+}
+
+module.exports = equalArrays;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalByTag.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_equalByTag.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js"),
+    Uint8Array = __webpack_require__(/*! ./_Uint8Array */ "./node_modules/lodash/_Uint8Array.js"),
+    eq = __webpack_require__(/*! ./eq */ "./node_modules/lodash/eq.js"),
+    equalArrays = __webpack_require__(/*! ./_equalArrays */ "./node_modules/lodash/_equalArrays.js"),
+    mapToArray = __webpack_require__(/*! ./_mapToArray */ "./node_modules/lodash/_mapToArray.js"),
+    setToArray = __webpack_require__(/*! ./_setToArray */ "./node_modules/lodash/_setToArray.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1,
+    COMPARE_UNORDERED_FLAG = 2;
+
+/** `Object#toString` result references. */
+var boolTag = '[object Boolean]',
+    dateTag = '[object Date]',
+    errorTag = '[object Error]',
+    mapTag = '[object Map]',
+    numberTag = '[object Number]',
+    regexpTag = '[object RegExp]',
+    setTag = '[object Set]',
+    stringTag = '[object String]',
+    symbolTag = '[object Symbol]';
+
+var arrayBufferTag = '[object ArrayBuffer]',
+    dataViewTag = '[object DataView]';
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolValueOf = symbolProto ? symbolProto.valueOf : undefined;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for comparing objects of
+ * the same `toStringTag`.
+ *
+ * **Note:** This function only supports comparing values with tags of
+ * `Boolean`, `Date`, `Error`, `Number`, `RegExp`, or `String`.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {string} tag The `toStringTag` of the objects to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
+  switch (tag) {
+    case dataViewTag:
+      if ((object.byteLength != other.byteLength) ||
+          (object.byteOffset != other.byteOffset)) {
+        return false;
+      }
+      object = object.buffer;
+      other = other.buffer;
+
+    case arrayBufferTag:
+      if ((object.byteLength != other.byteLength) ||
+          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+        return false;
+      }
+      return true;
+
+    case boolTag:
+    case dateTag:
+    case numberTag:
+      // Coerce booleans to `1` or `0` and dates to milliseconds.
+      // Invalid dates are coerced to `NaN`.
+      return eq(+object, +other);
+
+    case errorTag:
+      return object.name == other.name && object.message == other.message;
+
+    case regexpTag:
+    case stringTag:
+      // Coerce regexes to strings and treat strings, primitives and objects,
+      // as equal. See http://www.ecma-international.org/ecma-262/7.0/#sec-regexp.prototype.tostring
+      // for more details.
+      return object == (other + '');
+
+    case mapTag:
+      var convert = mapToArray;
+
+    case setTag:
+      var isPartial = bitmask & COMPARE_PARTIAL_FLAG;
+      convert || (convert = setToArray);
+
+      if (object.size != other.size && !isPartial) {
+        return false;
+      }
+      // Assume cyclic values are equal.
+      var stacked = stack.get(object);
+      if (stacked) {
+        return stacked == other;
+      }
+      bitmask |= COMPARE_UNORDERED_FLAG;
+
+      // Recursively compare objects (susceptible to call stack limits).
+      stack.set(object, other);
+      var result = equalArrays(convert(object), convert(other), bitmask, customizer, equalFunc, stack);
+      stack['delete'](object);
+      return result;
+
+    case symbolTag:
+      if (symbolValueOf) {
+        return symbolValueOf.call(object) == symbolValueOf.call(other);
+      }
+  }
+  return false;
+}
+
+module.exports = equalByTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_equalObjects.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_equalObjects.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getAllKeys = __webpack_require__(/*! ./_getAllKeys */ "./node_modules/lodash/_getAllKeys.js");
+
+/** Used to compose bitmasks for value comparisons. */
+var COMPARE_PARTIAL_FLAG = 1;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * A specialized version of `baseIsEqualDeep` for objects with support for
+ * partial deep comparisons.
+ *
+ * @private
+ * @param {Object} object The object to compare.
+ * @param {Object} other The other object to compare.
+ * @param {number} bitmask The bitmask flags. See `baseIsEqual` for more details.
+ * @param {Function} customizer The function to customize comparisons.
+ * @param {Function} equalFunc The function to determine equivalents of values.
+ * @param {Object} stack Tracks traversed `object` and `other` objects.
+ * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
+ */
+function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
+  var isPartial = bitmask & COMPARE_PARTIAL_FLAG,
+      objProps = getAllKeys(object),
+      objLength = objProps.length,
+      othProps = getAllKeys(other),
+      othLength = othProps.length;
+
+  if (objLength != othLength && !isPartial) {
+    return false;
+  }
+  var index = objLength;
+  while (index--) {
+    var key = objProps[index];
+    if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
+      return false;
+    }
+  }
+  // Assume cyclic values are equal.
+  var stacked = stack.get(object);
+  if (stacked && stack.get(other)) {
+    return stacked == other;
+  }
+  var result = true;
+  stack.set(object, other);
+  stack.set(other, object);
+
+  var skipCtor = isPartial;
+  while (++index < objLength) {
+    key = objProps[index];
+    var objValue = object[key],
+        othValue = other[key];
+
+    if (customizer) {
+      var compared = isPartial
+        ? customizer(othValue, objValue, key, other, object, stack)
+        : customizer(objValue, othValue, key, object, other, stack);
+    }
+    // Recursively compare objects (susceptible to call stack limits).
+    if (!(compared === undefined
+          ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
+          : compared
+        )) {
+      result = false;
+      break;
+    }
+    skipCtor || (skipCtor = key == 'constructor');
+  }
+  if (result && !skipCtor) {
+    var objCtor = object.constructor,
+        othCtor = other.constructor;
+
+    // Non `Object` object instances with different constructors are not equal.
+    if (objCtor != othCtor &&
+        ('constructor' in object && 'constructor' in other) &&
+        !(typeof objCtor == 'function' && objCtor instanceof objCtor &&
+          typeof othCtor == 'function' && othCtor instanceof othCtor)) {
+      result = false;
+    }
+  }
+  stack['delete'](object);
+  stack['delete'](other);
+  return result;
+}
+
+module.exports = equalObjects;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_freeGlobal.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_freeGlobal.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getAllKeys.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getAllKeys.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetAllKeys = __webpack_require__(/*! ./_baseGetAllKeys */ "./node_modules/lodash/_baseGetAllKeys.js"),
+    getSymbols = __webpack_require__(/*! ./_getSymbols */ "./node_modules/lodash/_getSymbols.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * Creates an array of own enumerable property names and symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names and symbols.
+ */
+function getAllKeys(object) {
+  return baseGetAllKeys(object, keys, getSymbols);
+}
+
+module.exports = getAllKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getMapData.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getMapData.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isKeyable = __webpack_require__(/*! ./_isKeyable */ "./node_modules/lodash/_isKeyable.js");
+
+/**
+ * Gets the data for `map`.
+ *
+ * @private
+ * @param {Object} map The map to query.
+ * @param {string} key The reference key.
+ * @returns {*} Returns the map data.
+ */
+function getMapData(map, key) {
+  var data = map.__data__;
+  return isKeyable(key)
+    ? data[typeof key == 'string' ? 'string' : 'hash']
+    : data.map;
+}
+
+module.exports = getMapData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getMatchData.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_getMatchData.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isStrictComparable = __webpack_require__(/*! ./_isStrictComparable */ "./node_modules/lodash/_isStrictComparable.js"),
+    keys = __webpack_require__(/*! ./keys */ "./node_modules/lodash/keys.js");
+
+/**
+ * Gets the property names, values, and compare flags of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the match data of `object`.
+ */
+function getMatchData(object) {
+  var result = keys(object),
+      length = result.length;
+
+  while (length--) {
+    var key = result[length],
+        value = object[key];
+
+    result[length] = [key, value, isStrictComparable(value)];
+  }
+  return result;
+}
+
+module.exports = getMatchData;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getNative.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getNative.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(/*! ./_baseIsNative */ "./node_modules/lodash/_baseIsNative.js"),
+    getValue = __webpack_require__(/*! ./_getValue */ "./node_modules/lodash/_getValue.js");
+
+/**
+ * Gets the native function at `key` of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {string} key The key of the method to get.
+ * @returns {*} Returns the function if it's native, else `undefined`.
+ */
+function getNative(object, key) {
+  var value = getValue(object, key);
+  return baseIsNative(value) ? value : undefined;
+}
+
+module.exports = getNative;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getRawTag.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_getRawTag.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(/*! ./_Symbol */ "./node_modules/lodash/_Symbol.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/** Built-in value references. */
+var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
+
+/**
+ * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the raw `toStringTag`.
+ */
+function getRawTag(value) {
+  var isOwn = hasOwnProperty.call(value, symToStringTag),
+      tag = value[symToStringTag];
+
+  try {
+    value[symToStringTag] = undefined;
+    var unmasked = true;
+  } catch (e) {}
+
+  var result = nativeObjectToString.call(value);
+  if (unmasked) {
+    if (isOwn) {
+      value[symToStringTag] = tag;
+    } else {
+      delete value[symToStringTag];
+    }
+  }
+  return result;
+}
+
+module.exports = getRawTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getSymbols.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_getSymbols.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayFilter = __webpack_require__(/*! ./_arrayFilter */ "./node_modules/lodash/_arrayFilter.js"),
+    stubArray = __webpack_require__(/*! ./stubArray */ "./node_modules/lodash/stubArray.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeGetSymbols = Object.getOwnPropertySymbols;
+
+/**
+ * Creates an array of the own enumerable symbols of `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of symbols.
+ */
+var getSymbols = !nativeGetSymbols ? stubArray : function(object) {
+  if (object == null) {
+    return [];
+  }
+  object = Object(object);
+  return arrayFilter(nativeGetSymbols(object), function(symbol) {
+    return propertyIsEnumerable.call(object, symbol);
+  });
+};
+
+module.exports = getSymbols;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getTag.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/_getTag.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DataView = __webpack_require__(/*! ./_DataView */ "./node_modules/lodash/_DataView.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js"),
+    Promise = __webpack_require__(/*! ./_Promise */ "./node_modules/lodash/_Promise.js"),
+    Set = __webpack_require__(/*! ./_Set */ "./node_modules/lodash/_Set.js"),
+    WeakMap = __webpack_require__(/*! ./_WeakMap */ "./node_modules/lodash/_WeakMap.js"),
+    baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    toSource = __webpack_require__(/*! ./_toSource */ "./node_modules/lodash/_toSource.js");
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = baseGetTag;
+
+// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = baseGetTag(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : '';
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_getValue.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_getValue.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Gets the value at `key` of `object`.
+ *
+ * @private
+ * @param {Object} [object] The object to query.
+ * @param {string} key The key of the property to get.
+ * @returns {*} Returns the property value.
+ */
+function getValue(object, key) {
+  return object == null ? undefined : object[key];
+}
+
+module.exports = getValue;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hasPath.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hasPath.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castPath = __webpack_require__(/*! ./_castPath */ "./node_modules/lodash/_castPath.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isIndex = __webpack_require__(/*! ./_isIndex */ "./node_modules/lodash/_isIndex.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * Checks if `path` exists on `object`.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @param {Function} hasFunc The function to check properties.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ */
+function hasPath(object, path, hasFunc) {
+  path = castPath(path, object);
+
+  var index = -1,
+      length = path.length,
+      result = false;
+
+  while (++index < length) {
+    var key = toKey(path[index]);
+    if (!(result = object != null && hasFunc(object, key))) {
+      break;
+    }
+    object = object[key];
+  }
+  if (result || ++index != length) {
+    return result;
+  }
+  length = object == null ? 0 : object.length;
+  return !!length && isLength(length) && isIndex(key, length) &&
+    (isArray(object) || isArguments(object));
+}
+
+module.exports = hasPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashClear.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_hashClear.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/**
+ * Removes all key-value entries from the hash.
+ *
+ * @private
+ * @name clear
+ * @memberOf Hash
+ */
+function hashClear() {
+  this.__data__ = nativeCreate ? nativeCreate(null) : {};
+  this.size = 0;
+}
+
+module.exports = hashClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashDelete.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_hashDelete.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes `key` and its value from the hash.
+ *
+ * @private
+ * @name delete
+ * @memberOf Hash
+ * @param {Object} hash The hash to modify.
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function hashDelete(key) {
+  var result = this.has(key) && delete this.__data__[key];
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = hashDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashGet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashGet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Gets the hash value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Hash
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function hashGet(key) {
+  var data = this.__data__;
+  if (nativeCreate) {
+    var result = data[key];
+    return result === HASH_UNDEFINED ? undefined : result;
+  }
+  return hasOwnProperty.call(data, key) ? data[key] : undefined;
+}
+
+module.exports = hashGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashHas.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashHas.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if a hash value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Hash
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function hashHas(key) {
+  var data = this.__data__;
+  return nativeCreate ? (data[key] !== undefined) : hasOwnProperty.call(data, key);
+}
+
+module.exports = hashHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_hashSet.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_hashSet.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var nativeCreate = __webpack_require__(/*! ./_nativeCreate */ "./node_modules/lodash/_nativeCreate.js");
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Sets the hash `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Hash
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the hash instance.
+ */
+function hashSet(key, value) {
+  var data = this.__data__;
+  this.size += this.has(key) ? 0 : 1;
+  data[key] = (nativeCreate && value === undefined) ? HASH_UNDEFINED : value;
+  return this;
+}
+
+module.exports = hashSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isIndex.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_isIndex.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/** Used to detect unsigned integer values. */
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+/**
+ * Checks if `value` is a valid array-like index.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {number} [length=MAX_SAFE_INTEGER] The upper bounds of a valid index.
+ * @returns {boolean} Returns `true` if `value` is a valid index, else `false`.
+ */
+function isIndex(value, length) {
+  var type = typeof value;
+  length = length == null ? MAX_SAFE_INTEGER : length;
+
+  return !!length &&
+    (type == 'number' ||
+      (type != 'symbol' && reIsUint.test(value))) &&
+        (value > -1 && value % 1 == 0 && value < length);
+}
+
+module.exports = isIndex;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isKey.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_isKey.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used to match property names within property paths. */
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/,
+    reIsPlainProp = /^\w*$/;
+
+/**
+ * Checks if `value` is a property name and not a property path.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @param {Object} [object] The object to query keys on.
+ * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
+ */
+function isKey(value, object) {
+  if (isArray(value)) {
+    return false;
+  }
+  var type = typeof value;
+  if (type == 'number' || type == 'symbol' || type == 'boolean' ||
+      value == null || isSymbol(value)) {
+    return true;
+  }
+  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+    (object != null && value in Object(object));
+}
+
+module.exports = isKey;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isKeyable.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/_isKeyable.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is suitable for use as unique object key.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is suitable, else `false`.
+ */
+function isKeyable(value) {
+  var type = typeof value;
+  return (type == 'string' || type == 'number' || type == 'symbol' || type == 'boolean')
+    ? (value !== '__proto__')
+    : (value === null);
+}
+
+module.exports = isKeyable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isMasked.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_isMasked.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var coreJsData = __webpack_require__(/*! ./_coreJsData */ "./node_modules/lodash/_coreJsData.js");
+
+/** Used to detect methods masquerading as native. */
+var maskSrcKey = (function() {
+  var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+  return uid ? ('Symbol(src)_1.' + uid) : '';
+}());
+
+/**
+ * Checks if `func` has its source masked.
+ *
+ * @private
+ * @param {Function} func The function to check.
+ * @returns {boolean} Returns `true` if `func` is masked, else `false`.
+ */
+function isMasked(func) {
+  return !!maskSrcKey && (maskSrcKey in func);
+}
+
+module.exports = isMasked;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isPrototype.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_isPrototype.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Checks if `value` is likely a prototype object.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a prototype, else `false`.
+ */
+function isPrototype(value) {
+  var Ctor = value && value.constructor,
+      proto = (typeof Ctor == 'function' && Ctor.prototype) || objectProto;
+
+  return value === proto;
+}
+
+module.exports = isPrototype;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_isStrictComparable.js":
+/*!****************************************************!*\
+  !*** ./node_modules/lodash/_isStrictComparable.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/**
+ * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` if suitable for strict
+ *  equality comparisons, else `false`.
+ */
+function isStrictComparable(value) {
+  return value === value && !isObject(value);
+}
+
+module.exports = isStrictComparable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheClear.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_listCacheClear.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes all key-value entries from the list cache.
+ *
+ * @private
+ * @name clear
+ * @memberOf ListCache
+ */
+function listCacheClear() {
+  this.__data__ = [];
+  this.size = 0;
+}
+
+module.exports = listCacheClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheDelete.js":
+/*!*************************************************!*\
+  !*** ./node_modules/lodash/_listCacheDelete.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
+
+/**
+ * Removes `key` and its value from the list cache.
+ *
+ * @private
+ * @name delete
+ * @memberOf ListCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function listCacheDelete(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    return false;
+  }
+  var lastIndex = data.length - 1;
+  if (index == lastIndex) {
+    data.pop();
+  } else {
+    splice.call(data, index, 1);
+  }
+  --this.size;
+  return true;
+}
+
+module.exports = listCacheDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheGet.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheGet.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Gets the list cache value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf ListCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function listCacheGet(key) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  return index < 0 ? undefined : data[index][1];
+}
+
+module.exports = listCacheGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheHas.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheHas.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Checks if a list cache value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf ListCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function listCacheHas(key) {
+  return assocIndexOf(this.__data__, key) > -1;
+}
+
+module.exports = listCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_listCacheSet.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_listCacheSet.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var assocIndexOf = __webpack_require__(/*! ./_assocIndexOf */ "./node_modules/lodash/_assocIndexOf.js");
+
+/**
+ * Sets the list cache `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf ListCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the list cache instance.
+ */
+function listCacheSet(key, value) {
+  var data = this.__data__,
+      index = assocIndexOf(data, key);
+
+  if (index < 0) {
+    ++this.size;
+    data.push([key, value]);
+  } else {
+    data[index][1] = value;
+  }
+  return this;
+}
+
+module.exports = listCacheSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheClear.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheClear.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Hash = __webpack_require__(/*! ./_Hash */ "./node_modules/lodash/_Hash.js"),
+    ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js");
+
+/**
+ * Removes all key-value entries from the map.
+ *
+ * @private
+ * @name clear
+ * @memberOf MapCache
+ */
+function mapCacheClear() {
+  this.size = 0;
+  this.__data__ = {
+    'hash': new Hash,
+    'map': new (Map || ListCache),
+    'string': new Hash
+  };
+}
+
+module.exports = mapCacheClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheDelete.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_mapCacheDelete.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Removes `key` and its value from the map.
+ *
+ * @private
+ * @name delete
+ * @memberOf MapCache
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function mapCacheDelete(key) {
+  var result = getMapData(this, key)['delete'](key);
+  this.size -= result ? 1 : 0;
+  return result;
+}
+
+module.exports = mapCacheDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheGet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheGet.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Gets the map value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf MapCache
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function mapCacheGet(key) {
+  return getMapData(this, key).get(key);
+}
+
+module.exports = mapCacheGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheHas.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheHas.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Checks if a map value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf MapCache
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function mapCacheHas(key) {
+  return getMapData(this, key).has(key);
+}
+
+module.exports = mapCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapCacheSet.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_mapCacheSet.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getMapData = __webpack_require__(/*! ./_getMapData */ "./node_modules/lodash/_getMapData.js");
+
+/**
+ * Sets the map `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf MapCache
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the map cache instance.
+ */
+function mapCacheSet(key, value) {
+  var data = getMapData(this, key),
+      size = data.size;
+
+  data.set(key, value);
+  this.size += data.size == size ? 0 : 1;
+  return this;
+}
+
+module.exports = mapCacheSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_mapToArray.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_mapToArray.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Converts `map` to its key-value pairs.
+ *
+ * @private
+ * @param {Object} map The map to convert.
+ * @returns {Array} Returns the key-value pairs.
+ */
+function mapToArray(map) {
+  var index = -1,
+      result = Array(map.size);
+
+  map.forEach(function(value, key) {
+    result[++index] = [key, value];
+  });
+  return result;
+}
+
+module.exports = mapToArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_matchesStrictComparable.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/lodash/_matchesStrictComparable.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `matchesProperty` for source values suitable
+ * for strict equality comparisons, i.e. `===`.
+ *
+ * @private
+ * @param {string} key The key of the property to get.
+ * @param {*} srcValue The value to match.
+ * @returns {Function} Returns the new spec function.
+ */
+function matchesStrictComparable(key, srcValue) {
+  return function(object) {
+    if (object == null) {
+      return false;
+    }
+    return object[key] === srcValue &&
+      (srcValue !== undefined || (key in Object(object)));
+  };
+}
+
+module.exports = matchesStrictComparable;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_memoizeCapped.js":
+/*!***********************************************!*\
+  !*** ./node_modules/lodash/_memoizeCapped.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoize = __webpack_require__(/*! ./memoize */ "./node_modules/lodash/memoize.js");
+
+/** Used as the maximum memoize cache size. */
+var MAX_MEMOIZE_SIZE = 500;
+
+/**
+ * A specialized version of `_.memoize` which clears the memoized function's
+ * cache when it exceeds `MAX_MEMOIZE_SIZE`.
+ *
+ * @private
+ * @param {Function} func The function to have its output memoized.
+ * @returns {Function} Returns the new memoized function.
+ */
+function memoizeCapped(func) {
+  var result = memoize(func, function(key) {
+    if (cache.size === MAX_MEMOIZE_SIZE) {
+      cache.clear();
+    }
+    return key;
+  });
+
+  var cache = result.cache;
+  return result;
+}
+
+module.exports = memoizeCapped;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nativeCreate.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_nativeCreate.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(/*! ./_getNative */ "./node_modules/lodash/_getNative.js");
+
+/* Built-in method references that are verified to be native. */
+var nativeCreate = getNative(Object, 'create');
+
+module.exports = nativeCreate;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nativeKeys.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_nativeKeys.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var overArg = __webpack_require__(/*! ./_overArg */ "./node_modules/lodash/_overArg.js");
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object);
+
+module.exports = nativeKeys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_nodeUtil.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_nodeUtil.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Detect free variable `process` from Node.js. */
+var freeProcess = moduleExports && freeGlobal.process;
+
+/** Used to access faster Node.js helpers. */
+var nodeUtil = (function() {
+  try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
+    return freeProcess && freeProcess.binding && freeProcess.binding('util');
+  } catch (e) {}
+}());
+
+module.exports = nodeUtil;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_objectToString.js":
+/*!************************************************!*\
+  !*** ./node_modules/lodash/_objectToString.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/**
+ * Used to resolve the
+ * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+ * of values.
+ */
+var nativeObjectToString = objectProto.toString;
+
+/**
+ * Converts `value` to a string using `Object.prototype.toString`.
+ *
+ * @private
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ */
+function objectToString(value) {
+  return nativeObjectToString.call(value);
+}
+
+module.exports = objectToString;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_overArg.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/_overArg.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Creates a unary function that invokes `func` with its argument transformed.
+ *
+ * @private
+ * @param {Function} func The function to wrap.
+ * @param {Function} transform The argument transform.
+ * @returns {Function} Returns the new function.
+ */
+function overArg(func, transform) {
+  return function(arg) {
+    return func(transform(arg));
+  };
+}
+
+module.exports = overArg;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_root.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/_root.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var freeGlobal = __webpack_require__(/*! ./_freeGlobal */ "./node_modules/lodash/_freeGlobal.js");
+
+/** Detect free variable `self`. */
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+/** Used as a reference to the global object. */
+var root = freeGlobal || freeSelf || Function('return this')();
+
+module.exports = root;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setCacheAdd.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheAdd.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used to stand-in for `undefined` hash values. */
+var HASH_UNDEFINED = '__lodash_hash_undefined__';
+
+/**
+ * Adds `value` to the array cache.
+ *
+ * @private
+ * @name add
+ * @memberOf SetCache
+ * @alias push
+ * @param {*} value The value to cache.
+ * @returns {Object} Returns the cache instance.
+ */
+function setCacheAdd(value) {
+  this.__data__.set(value, HASH_UNDEFINED);
+  return this;
+}
+
+module.exports = setCacheAdd;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setCacheHas.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_setCacheHas.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is in the array cache.
+ *
+ * @private
+ * @name has
+ * @memberOf SetCache
+ * @param {*} value The value to search for.
+ * @returns {number} Returns `true` if `value` is found, else `false`.
+ */
+function setCacheHas(value) {
+  return this.__data__.has(value);
+}
+
+module.exports = setCacheHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_setToArray.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_setToArray.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Converts `set` to an array of its values.
+ *
+ * @private
+ * @param {Object} set The set to convert.
+ * @returns {Array} Returns the values.
+ */
+function setToArray(set) {
+  var index = -1,
+      result = Array(set.size);
+
+  set.forEach(function(value) {
+    result[++index] = value;
+  });
+  return result;
+}
+
+module.exports = setToArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackClear.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/_stackClear.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js");
+
+/**
+ * Removes all key-value entries from the stack.
+ *
+ * @private
+ * @name clear
+ * @memberOf Stack
+ */
+function stackClear() {
+  this.__data__ = new ListCache;
+  this.size = 0;
+}
+
+module.exports = stackClear;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackDelete.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/_stackDelete.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Removes `key` and its value from the stack.
+ *
+ * @private
+ * @name delete
+ * @memberOf Stack
+ * @param {string} key The key of the value to remove.
+ * @returns {boolean} Returns `true` if the entry was removed, else `false`.
+ */
+function stackDelete(key) {
+  var data = this.__data__,
+      result = data['delete'](key);
+
+  this.size = data.size;
+  return result;
+}
+
+module.exports = stackDelete;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackGet.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackGet.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Gets the stack value for `key`.
+ *
+ * @private
+ * @name get
+ * @memberOf Stack
+ * @param {string} key The key of the value to get.
+ * @returns {*} Returns the entry value.
+ */
+function stackGet(key) {
+  return this.__data__.get(key);
+}
+
+module.exports = stackGet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackHas.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackHas.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if a stack value for `key` exists.
+ *
+ * @private
+ * @name has
+ * @memberOf Stack
+ * @param {string} key The key of the entry to check.
+ * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
+ */
+function stackHas(key) {
+  return this.__data__.has(key);
+}
+
+module.exports = stackHas;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stackSet.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_stackSet.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var ListCache = __webpack_require__(/*! ./_ListCache */ "./node_modules/lodash/_ListCache.js"),
+    Map = __webpack_require__(/*! ./_Map */ "./node_modules/lodash/_Map.js"),
+    MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js");
+
+/** Used as the size to enable large array optimizations. */
+var LARGE_ARRAY_SIZE = 200;
+
+/**
+ * Sets the stack `key` to `value`.
+ *
+ * @private
+ * @name set
+ * @memberOf Stack
+ * @param {string} key The key of the value to set.
+ * @param {*} value The value to set.
+ * @returns {Object} Returns the stack cache instance.
+ */
+function stackSet(key, value) {
+  var data = this.__data__;
+  if (data instanceof ListCache) {
+    var pairs = data.__data__;
+    if (!Map || (pairs.length < LARGE_ARRAY_SIZE - 1)) {
+      pairs.push([key, value]);
+      this.size = ++data.size;
+      return this;
+    }
+    data = this.__data__ = new MapCache(pairs);
+  }
+  data.set(key, value);
+  this.size = data.size;
+  return this;
+}
+
+module.exports = stackSet;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_stringToPath.js":
+/*!**********************************************!*\
+  !*** ./node_modules/lodash/_stringToPath.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var memoizeCapped = __webpack_require__(/*! ./_memoizeCapped */ "./node_modules/lodash/_memoizeCapped.js");
+
+/** Used to match property names within property paths. */
+var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/** Used to match backslashes in property paths. */
+var reEscapeChar = /\\(\\)?/g;
+
+/**
+ * Converts `string` to a property path array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the property path array.
+ */
+var stringToPath = memoizeCapped(function(string) {
+  var result = [];
+  if (string.charCodeAt(0) === 46 /* . */) {
+    result.push('');
+  }
+  string.replace(rePropName, function(match, number, quote, subString) {
+    result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
+  });
+  return result;
+});
+
+module.exports = stringToPath;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_toKey.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/_toKey.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSymbol = __webpack_require__(/*! ./isSymbol */ "./node_modules/lodash/isSymbol.js");
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || isSymbol(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = toKey;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/_toSource.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/_toSource.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used for built-in method references. */
+var funcProto = Function.prototype;
+
+/** Used to resolve the decompiled source of functions. */
+var funcToString = funcProto.toString;
+
+/**
+ * Converts `func` to its source code.
+ *
+ * @private
+ * @param {Function} func The function to convert.
+ * @returns {string} Returns the source code.
+ */
+function toSource(func) {
+  if (func != null) {
+    try {
+      return funcToString.call(func);
+    } catch (e) {}
+    try {
+      return (func + '');
+    } catch (e) {}
+  }
+  return '';
+}
+
+module.exports = toSource;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/eq.js":
+/*!***********************************!*\
+  !*** ./node_modules/lodash/eq.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+module.exports = eq;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/get.js":
+/*!************************************!*\
+  !*** ./node_modules/lodash/get.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGet = __webpack_require__(/*! ./_baseGet */ "./node_modules/lodash/_baseGet.js");
+
+/**
+ * Gets the value at `path` of `object`. If the resolved value is
+ * `undefined`, the `defaultValue` is returned in its place.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.7.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path of the property to get.
+ * @param {*} [defaultValue] The value returned for `undefined` resolved values.
+ * @returns {*} Returns the resolved value.
+ * @example
+ *
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
+ *
+ * _.get(object, 'a[0].b.c');
+ * // => 3
+ *
+ * _.get(object, ['a', '0', 'b', 'c']);
+ * // => 3
+ *
+ * _.get(object, 'a.b.c', 'default');
+ * // => 'default'
+ */
+function get(object, path, defaultValue) {
+  var result = object == null ? undefined : baseGet(object, path);
+  return result === undefined ? defaultValue : result;
+}
+
+module.exports = get;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/hasIn.js":
+/*!**************************************!*\
+  !*** ./node_modules/lodash/hasIn.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseHasIn = __webpack_require__(/*! ./_baseHasIn */ "./node_modules/lodash/_baseHasIn.js"),
+    hasPath = __webpack_require__(/*! ./_hasPath */ "./node_modules/lodash/_hasPath.js");
+
+/**
+ * Checks if `path` is a direct or inherited property of `object`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Object
+ * @param {Object} object The object to query.
+ * @param {Array|string} path The path to check.
+ * @returns {boolean} Returns `true` if `path` exists, else `false`.
+ * @example
+ *
+ * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+ *
+ * _.hasIn(object, 'a');
+ * // => true
+ *
+ * _.hasIn(object, 'a.b');
+ * // => true
+ *
+ * _.hasIn(object, ['a', 'b']);
+ * // => true
+ *
+ * _.hasIn(object, 'b');
+ * // => false
+ */
+function hasIn(object, path) {
+  return object != null && hasPath(object, path, baseHasIn);
+}
+
+module.exports = hasIn;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/identity.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/identity.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns the first argument it receives.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Util
+ * @param {*} value Any value.
+ * @returns {*} Returns `value`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ *
+ * console.log(_.identity(object) === object);
+ * // => true
+ */
+function identity(value) {
+  return value;
+}
+
+module.exports = identity;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArguments.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArguments.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsArguments = __webpack_require__(/*! ./_baseIsArguments */ "./node_modules/lodash/_baseIsArguments.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/** Built-in value references. */
+var propertyIsEnumerable = objectProto.propertyIsEnumerable;
+
+/**
+ * Checks if `value` is likely an `arguments` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an `arguments` object,
+ *  else `false`.
+ * @example
+ *
+ * _.isArguments(function() { return arguments; }());
+ * // => true
+ *
+ * _.isArguments([1, 2, 3]);
+ * // => false
+ */
+var isArguments = baseIsArguments(function() { return arguments; }()) ? baseIsArguments : function(value) {
+  return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
+    !propertyIsEnumerable.call(value, 'callee');
+};
+
+module.exports = isArguments;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArray.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isArray.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is classified as an `Array` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an array, else `false`.
+ * @example
+ *
+ * _.isArray([1, 2, 3]);
+ * // => true
+ *
+ * _.isArray(document.body.children);
+ * // => false
+ *
+ * _.isArray('abc');
+ * // => false
+ *
+ * _.isArray(_.noop);
+ * // => false
+ */
+var isArray = Array.isArray;
+
+module.exports = isArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isArrayLike.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isArrayLike.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isFunction = __webpack_require__(/*! ./isFunction */ "./node_modules/lodash/isFunction.js"),
+    isLength = __webpack_require__(/*! ./isLength */ "./node_modules/lodash/isLength.js");
+
+/**
+ * Checks if `value` is array-like. A value is considered array-like if it's
+ * not a function and has a `value.length` that's an integer greater than or
+ * equal to `0` and less than or equal to `Number.MAX_SAFE_INTEGER`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+ * @example
+ *
+ * _.isArrayLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isArrayLike(document.body.children);
+ * // => true
+ *
+ * _.isArrayLike('abc');
+ * // => true
+ *
+ * _.isArrayLike(_.noop);
+ * // => false
+ */
+function isArrayLike(value) {
+  return value != null && isLength(value.length) && !isFunction(value);
+}
+
+module.exports = isArrayLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isBuffer.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isBuffer.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(/*! ./_root */ "./node_modules/lodash/_root.js"),
+    stubFalse = __webpack_require__(/*! ./stubFalse */ "./node_modules/lodash/stubFalse.js");
+
+/** Detect free variable `exports`. */
+var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+
+/** Detect free variable `module`. */
+var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+
+/** Detect the popular CommonJS extension `module.exports`. */
+var moduleExports = freeModule && freeModule.exports === freeExports;
+
+/** Built-in value references. */
+var Buffer = moduleExports ? root.Buffer : undefined;
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
+
+/**
+ * Checks if `value` is a buffer.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.3.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
+ * @example
+ *
+ * _.isBuffer(new Buffer(2));
+ * // => true
+ *
+ * _.isBuffer(new Uint8Array(2));
+ * // => false
+ */
+var isBuffer = nativeIsBuffer || stubFalse;
+
+module.exports = isBuffer;
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isEmpty.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/isEmpty.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseKeys = __webpack_require__(/*! ./_baseKeys */ "./node_modules/lodash/_baseKeys.js"),
+    getTag = __webpack_require__(/*! ./_getTag */ "./node_modules/lodash/_getTag.js"),
+    isArguments = __webpack_require__(/*! ./isArguments */ "./node_modules/lodash/isArguments.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js"),
+    isBuffer = __webpack_require__(/*! ./isBuffer */ "./node_modules/lodash/isBuffer.js"),
+    isPrototype = __webpack_require__(/*! ./_isPrototype */ "./node_modules/lodash/_isPrototype.js"),
+    isTypedArray = __webpack_require__(/*! ./isTypedArray */ "./node_modules/lodash/isTypedArray.js");
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    setTag = '[object Set]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if `value` is an empty object, collection, map, or set.
+ *
+ * Objects are considered empty if they have no own enumerable string keyed
+ * properties.
+ *
+ * Array-like values such as `arguments` objects, arrays, buffers, strings, or
+ * jQuery-like collections are considered empty if they have a `length` of `0`.
+ * Similarly, maps and sets are considered empty if they have a `size` of `0`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is empty, else `false`.
+ * @example
+ *
+ * _.isEmpty(null);
+ * // => true
+ *
+ * _.isEmpty(true);
+ * // => true
+ *
+ * _.isEmpty(1);
+ * // => true
+ *
+ * _.isEmpty([1, 2, 3]);
+ * // => false
+ *
+ * _.isEmpty({ 'a': 1 });
+ * // => false
+ */
+function isEmpty(value) {
+  if (value == null) {
+    return true;
+  }
+  if (isArrayLike(value) &&
+      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
+        isBuffer(value) || isTypedArray(value) || isArguments(value))) {
+    return !value.length;
+  }
+  var tag = getTag(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
+  }
+  if (isPrototype(value)) {
+    return !baseKeys(value).length;
+  }
+  for (var key in value) {
+    if (hasOwnProperty.call(value, key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+module.exports = isEmpty;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isFunction.js":
+/*!*******************************************!*\
+  !*** ./node_modules/lodash/isFunction.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObject = __webpack_require__(/*! ./isObject */ "./node_modules/lodash/isObject.js");
+
+/** `Object#toString` result references. */
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+/**
+ * Checks if `value` is classified as a `Function` object.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a function, else `false`.
+ * @example
+ *
+ * _.isFunction(_);
+ * // => true
+ *
+ * _.isFunction(/abc/);
+ * // => false
+ */
+function isFunction(value) {
+  if (!isObject(value)) {
+    return false;
+  }
+  // The use of `Object#toString` avoids issues with the `typeof` operator
+  // in Safari 9 which returns 'object' for typed arrays and other constructors.
+  var tag = baseGetTag(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+module.exports = isFunction;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isLength.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isLength.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/** Used as references for various `Number` constants. */
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+/**
+ * Checks if `value` is a valid array-like length.
+ *
+ * **Note:** This method is loosely based on
+ * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+ * @example
+ *
+ * _.isLength(3);
+ * // => true
+ *
+ * _.isLength(Number.MIN_VALUE);
+ * // => false
+ *
+ * _.isLength(Infinity);
+ * // => false
+ *
+ * _.isLength('3');
+ * // => false
+ */
+function isLength(value) {
+  return typeof value == 'number' &&
+    value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObject.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isObject.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is the
+ * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+ * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+ * @example
+ *
+ * _.isObject({});
+ * // => true
+ *
+ * _.isObject([1, 2, 3]);
+ * // => true
+ *
+ * _.isObject(_.noop);
+ * // => true
+ *
+ * _.isObject(null);
+ * // => false
+ */
+function isObject(value) {
+  var type = typeof value;
+  return value != null && (type == 'object' || type == 'function');
+}
+
+module.exports = isObject;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isObjectLike.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isObjectLike.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is object-like. A value is object-like if it's not `null`
+ * and has a `typeof` result of "object".
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+ * @example
+ *
+ * _.isObjectLike({});
+ * // => true
+ *
+ * _.isObjectLike([1, 2, 3]);
+ * // => true
+ *
+ * _.isObjectLike(_.noop);
+ * // => false
+ *
+ * _.isObjectLike(null);
+ * // => false
+ */
+function isObjectLike(value) {
+  return value != null && typeof value == 'object';
+}
+
+module.exports = isObjectLike;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isSymbol.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/isSymbol.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(/*! ./_baseGetTag */ "./node_modules/lodash/_baseGetTag.js"),
+    isObjectLike = __webpack_require__(/*! ./isObjectLike */ "./node_modules/lodash/isObjectLike.js");
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isTypedArray.js":
+/*!*********************************************!*\
+  !*** ./node_modules/lodash/isTypedArray.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsTypedArray = __webpack_require__(/*! ./_baseIsTypedArray */ "./node_modules/lodash/_baseIsTypedArray.js"),
+    baseUnary = __webpack_require__(/*! ./_baseUnary */ "./node_modules/lodash/_baseUnary.js"),
+    nodeUtil = __webpack_require__(/*! ./_nodeUtil */ "./node_modules/lodash/_nodeUtil.js");
+
+/* Node.js helper references. */
+var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
+
+/**
+ * Checks if `value` is classified as a typed array.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
+ * @example
+ *
+ * _.isTypedArray(new Uint8Array);
+ * // => true
+ *
+ * _.isTypedArray([]);
+ * // => false
+ */
+var isTypedArray = nodeIsTypedArray ? baseUnary(nodeIsTypedArray) : baseIsTypedArray;
+
+module.exports = isTypedArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/isUndefined.js":
+/*!********************************************!*\
+  !*** ./node_modules/lodash/isUndefined.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is `undefined`.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+ * @example
+ *
+ * _.isUndefined(void 0);
+ * // => true
+ *
+ * _.isUndefined(null);
+ * // => false
+ */
+function isUndefined(value) {
+  return value === undefined;
+}
+
+module.exports = isUndefined;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/keys.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/keys.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayLikeKeys = __webpack_require__(/*! ./_arrayLikeKeys */ "./node_modules/lodash/_arrayLikeKeys.js"),
+    baseKeys = __webpack_require__(/*! ./_baseKeys */ "./node_modules/lodash/_baseKeys.js"),
+    isArrayLike = __webpack_require__(/*! ./isArrayLike */ "./node_modules/lodash/isArrayLike.js");
+
+/**
+ * Creates an array of the own enumerable property names of `object`.
+ *
+ * **Note:** Non-object values are coerced to objects. See the
+ * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
+ * for more details.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Object
+ * @param {Object} object The object to query.
+ * @returns {Array} Returns the array of property names.
+ * @example
+ *
+ * function Foo() {
+ *   this.a = 1;
+ *   this.b = 2;
+ * }
+ *
+ * Foo.prototype.c = 3;
+ *
+ * _.keys(new Foo);
+ * // => ['a', 'b'] (iteration order is not guaranteed)
+ *
+ * _.keys('hi');
+ * // => ['0', '1']
+ */
+function keys(object) {
+  return isArrayLike(object) ? arrayLikeKeys(object) : baseKeys(object);
+}
+
+module.exports = keys;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/memoize.js":
+/*!****************************************!*\
+  !*** ./node_modules/lodash/memoize.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var MapCache = __webpack_require__(/*! ./_MapCache */ "./node_modules/lodash/_MapCache.js");
+
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
+
+/**
+ * Creates a function that memoizes the result of `func`. If `resolver` is
+ * provided, it determines the cache key for storing the result based on the
+ * arguments provided to the memoized function. By default, the first argument
+ * provided to the memoized function is used as the map cache key. The `func`
+ * is invoked with the `this` binding of the memoized function.
+ *
+ * **Note:** The cache is exposed as the `cache` property on the memoized
+ * function. Its creation may be customized by replacing the `_.memoize.Cache`
+ * constructor with one whose instances implement the
+ * [`Map`](http://ecma-international.org/ecma-262/7.0/#sec-properties-of-the-map-prototype-object)
+ * method interface of `clear`, `delete`, `get`, `has`, and `set`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Function
+ * @param {Function} func The function to have its output memoized.
+ * @param {Function} [resolver] The function to resolve the cache key.
+ * @returns {Function} Returns the new memoized function.
+ * @example
+ *
+ * var object = { 'a': 1, 'b': 2 };
+ * var other = { 'c': 3, 'd': 4 };
+ *
+ * var values = _.memoize(_.values);
+ * values(object);
+ * // => [1, 2]
+ *
+ * values(other);
+ * // => [3, 4]
+ *
+ * object.a = 2;
+ * values(object);
+ * // => [1, 2]
+ *
+ * // Modify the result cache.
+ * values.cache.set(object, ['a', 'b']);
+ * values(object);
+ * // => ['a', 'b']
+ *
+ * // Replace `_.memoize.Cache`.
+ * _.memoize.Cache = WeakMap;
+ */
+function memoize(func, resolver) {
+  if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {
+    throw new TypeError(FUNC_ERROR_TEXT);
+  }
+  var memoized = function() {
+    var args = arguments,
+        key = resolver ? resolver.apply(this, args) : args[0],
+        cache = memoized.cache;
+
+    if (cache.has(key)) {
+      return cache.get(key);
+    }
+    var result = func.apply(this, args);
+    memoized.cache = cache.set(key, result) || cache;
+    return result;
+  };
+  memoized.cache = new (memoize.Cache || MapCache);
+  return memoized;
+}
+
+// Expose `MapCache`.
+memoize.Cache = MapCache;
+
+module.exports = memoize;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/noop.js":
+/*!*************************************!*\
+  !*** ./node_modules/lodash/noop.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns `undefined`.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.3.0
+ * @category Util
+ * @example
+ *
+ * _.times(2, _.noop);
+ * // => [undefined, undefined]
+ */
+function noop() {
+  // No operation performed.
+}
+
+module.exports = noop;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/property.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/property.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseProperty = __webpack_require__(/*! ./_baseProperty */ "./node_modules/lodash/_baseProperty.js"),
+    basePropertyDeep = __webpack_require__(/*! ./_basePropertyDeep */ "./node_modules/lodash/_basePropertyDeep.js"),
+    isKey = __webpack_require__(/*! ./_isKey */ "./node_modules/lodash/_isKey.js"),
+    toKey = __webpack_require__(/*! ./_toKey */ "./node_modules/lodash/_toKey.js");
+
+/**
+ * Creates a function that returns the value at `path` of a given object.
+ *
+ * @static
+ * @memberOf _
+ * @since 2.4.0
+ * @category Util
+ * @param {Array|string} path The path of the property to get.
+ * @returns {Function} Returns the new accessor function.
+ * @example
+ *
+ * var objects = [
+ *   { 'a': { 'b': 2 } },
+ *   { 'a': { 'b': 1 } }
+ * ];
+ *
+ * _.map(objects, _.property('a.b'));
+ * // => [2, 1]
+ *
+ * _.map(_.sortBy(objects, _.property(['a', 'b'])), 'a.b');
+ * // => [1, 2]
+ */
+function property(path) {
+  return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);
+}
+
+module.exports = property;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/reduce.js":
+/*!***************************************!*\
+  !*** ./node_modules/lodash/reduce.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayReduce = __webpack_require__(/*! ./_arrayReduce */ "./node_modules/lodash/_arrayReduce.js"),
+    baseEach = __webpack_require__(/*! ./_baseEach */ "./node_modules/lodash/_baseEach.js"),
+    baseIteratee = __webpack_require__(/*! ./_baseIteratee */ "./node_modules/lodash/_baseIteratee.js"),
+    baseReduce = __webpack_require__(/*! ./_baseReduce */ "./node_modules/lodash/_baseReduce.js"),
+    isArray = __webpack_require__(/*! ./isArray */ "./node_modules/lodash/isArray.js");
+
+/**
+ * Reduces `collection` to a value which is the accumulated result of running
+ * each element in `collection` thru `iteratee`, where each successive
+ * invocation is supplied the return value of the previous. If `accumulator`
+ * is not given, the first element of `collection` is used as the initial
+ * value. The iteratee is invoked with four arguments:
+ * (accumulator, value, index|key, collection).
+ *
+ * Many lodash methods are guarded to work as iteratees for methods like
+ * `_.reduce`, `_.reduceRight`, and `_.transform`.
+ *
+ * The guarded methods are:
+ * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
+ * and `sortBy`
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Collection
+ * @param {Array|Object} collection The collection to iterate over.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @returns {*} Returns the accumulated value.
+ * @see _.reduceRight
+ * @example
+ *
+ * _.reduce([1, 2], function(sum, n) {
+ *   return sum + n;
+ * }, 0);
+ * // => 3
+ *
+ * _.reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
+ *   (result[value] || (result[value] = [])).push(key);
+ *   return result;
+ * }, {});
+ * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+ */
+function reduce(collection, iteratee, accumulator) {
+  var func = isArray(collection) ? arrayReduce : baseReduce,
+      initAccum = arguments.length < 3;
+
+  return func(collection, baseIteratee(iteratee, 4), accumulator, initAccum, baseEach);
+}
+
+module.exports = reduce;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/stubArray.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubArray.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns a new empty array.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {Array} Returns the new empty array.
+ * @example
+ *
+ * var arrays = _.times(2, _.stubArray);
+ *
+ * console.log(arrays);
+ * // => [[], []]
+ *
+ * console.log(arrays[0] === arrays[1]);
+ * // => false
+ */
+function stubArray() {
+  return [];
+}
+
+module.exports = stubArray;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/stubFalse.js":
+/*!******************************************!*\
+  !*** ./node_modules/lodash/stubFalse.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * This method returns `false`.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.13.0
+ * @category Util
+ * @returns {boolean} Returns `false`.
+ * @example
+ *
+ * _.times(2, _.stubFalse);
+ * // => [false, false]
+ */
+function stubFalse() {
+  return false;
+}
+
+module.exports = stubFalse;
+
+
+/***/ }),
+
+/***/ "./node_modules/lodash/toString.js":
+/*!*****************************************!*\
+  !*** ./node_modules/lodash/toString.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseToString = __webpack_require__(/*! ./_baseToString */ "./node_modules/lodash/_baseToString.js");
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+module.exports = toString;
 
 
 /***/ }),
@@ -20012,6 +27247,3513 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js ***!
+  \****************************************************************************/
+/*! exports provided: polyfill */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "polyfill", function() { return polyfill; });
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+function componentWillMount() {
+  // Call this.constructor.gDSFP to support sub-classes.
+  var state = this.constructor.getDerivedStateFromProps(this.props, this.state);
+  if (state !== null && state !== undefined) {
+    this.setState(state);
+  }
+}
+
+function componentWillReceiveProps(nextProps) {
+  // Call this.constructor.gDSFP to support sub-classes.
+  // Use the setState() updater to ensure state isn't stale in certain edge cases.
+  function updater(prevState) {
+    var state = this.constructor.getDerivedStateFromProps(nextProps, prevState);
+    return state !== null && state !== undefined ? state : null;
+  }
+  // Binding "this" is important for shallow renderer support.
+  this.setState(updater.bind(this));
+}
+
+function componentWillUpdate(nextProps, nextState) {
+  try {
+    var prevProps = this.props;
+    var prevState = this.state;
+    this.props = nextProps;
+    this.state = nextState;
+    this.__reactInternalSnapshotFlag = true;
+    this.__reactInternalSnapshot = this.getSnapshotBeforeUpdate(
+      prevProps,
+      prevState
+    );
+  } finally {
+    this.props = prevProps;
+    this.state = prevState;
+  }
+}
+
+// React may warn about cWM/cWRP/cWU methods being deprecated.
+// Add a flag to suppress these warnings for this special case.
+componentWillMount.__suppressDeprecationWarning = true;
+componentWillReceiveProps.__suppressDeprecationWarning = true;
+componentWillUpdate.__suppressDeprecationWarning = true;
+
+function polyfill(Component) {
+  var prototype = Component.prototype;
+
+  if (!prototype || !prototype.isReactComponent) {
+    throw new Error('Can only polyfill class components');
+  }
+
+  if (
+    typeof Component.getDerivedStateFromProps !== 'function' &&
+    typeof prototype.getSnapshotBeforeUpdate !== 'function'
+  ) {
+    return Component;
+  }
+
+  // If new component APIs are defined, "unsafe" lifecycles won't be called.
+  // Error if any of these lifecycles are present,
+  // Because they would work differently between older and newer (16.3+) versions of React.
+  var foundWillMountName = null;
+  var foundWillReceivePropsName = null;
+  var foundWillUpdateName = null;
+  if (typeof prototype.componentWillMount === 'function') {
+    foundWillMountName = 'componentWillMount';
+  } else if (typeof prototype.UNSAFE_componentWillMount === 'function') {
+    foundWillMountName = 'UNSAFE_componentWillMount';
+  }
+  if (typeof prototype.componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'componentWillReceiveProps';
+  } else if (typeof prototype.UNSAFE_componentWillReceiveProps === 'function') {
+    foundWillReceivePropsName = 'UNSAFE_componentWillReceiveProps';
+  }
+  if (typeof prototype.componentWillUpdate === 'function') {
+    foundWillUpdateName = 'componentWillUpdate';
+  } else if (typeof prototype.UNSAFE_componentWillUpdate === 'function') {
+    foundWillUpdateName = 'UNSAFE_componentWillUpdate';
+  }
+  if (
+    foundWillMountName !== null ||
+    foundWillReceivePropsName !== null ||
+    foundWillUpdateName !== null
+  ) {
+    var componentName = Component.displayName || Component.name;
+    var newApiName =
+      typeof Component.getDerivedStateFromProps === 'function'
+        ? 'getDerivedStateFromProps()'
+        : 'getSnapshotBeforeUpdate()';
+
+    throw Error(
+      'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' +
+        componentName +
+        ' uses ' +
+        newApiName +
+        ' but also contains the following legacy lifecycles:' +
+        (foundWillMountName !== null ? '\n  ' + foundWillMountName : '') +
+        (foundWillReceivePropsName !== null
+          ? '\n  ' + foundWillReceivePropsName
+          : '') +
+        (foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '') +
+        '\n\nThe above lifecycles should be removed. Learn more about this warning here:\n' +
+        'https://fb.me/react-async-component-lifecycle-hooks'
+    );
+  }
+
+  // React <= 16.2 does not support static getDerivedStateFromProps.
+  // As a workaround, use cWM and cWRP to invoke the new static lifecycle.
+  // Newer versions of React will ignore these lifecycles if gDSFP exists.
+  if (typeof Component.getDerivedStateFromProps === 'function') {
+    prototype.componentWillMount = componentWillMount;
+    prototype.componentWillReceiveProps = componentWillReceiveProps;
+  }
+
+  // React <= 16.2 does not support getSnapshotBeforeUpdate.
+  // As a workaround, use cWU to invoke the new lifecycle.
+  // Newer versions of React will ignore that lifecycle if gSBU exists.
+  if (typeof prototype.getSnapshotBeforeUpdate === 'function') {
+    if (typeof prototype.componentDidUpdate !== 'function') {
+      throw new Error(
+        'Cannot polyfill getSnapshotBeforeUpdate() for components that do not define componentDidUpdate() on the prototype'
+      );
+    }
+
+    prototype.componentWillUpdate = componentWillUpdate;
+
+    var componentDidUpdate = prototype.componentDidUpdate;
+
+    prototype.componentDidUpdate = function componentDidUpdatePolyfill(
+      prevProps,
+      prevState,
+      maybeSnapshot
+    ) {
+      // 16.3+ will not execute our will-update method;
+      // It will pass a snapshot value to did-update though.
+      // Older versions will require our polyfilled will-update value.
+      // We need to handle both cases, but can't just check for the presence of "maybeSnapshot",
+      // Because for <= 15.x versions this might be a "prevContext" object.
+      // We also can't just check "__reactInternalSnapshot",
+      // Because get-snapshot might return a falsy value.
+      // So check for the explicit __reactInternalSnapshotFlag flag to determine behavior.
+      var snapshot = this.__reactInternalSnapshotFlag
+        ? this.__reactInternalSnapshot
+        : maybeSnapshot;
+
+      componentDidUpdate.call(this, prevProps, prevState, snapshot);
+    };
+  }
+
+  return Component;
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/HorizontalAnchors.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/HorizontalAnchors.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/** @module Helpers/HorizontalAnchors */
+
+/**
+ * An enum for all the different types of horizontal anchors on a layover.
+ *
+ * @readonly
+ * @enum {string}
+ */
+var HorizontalAnchors = {
+  /**
+   * Positions the layover to the outside left on the toggle component
+   * so that it does not overlap.
+   */
+  LEFT: 'left',
+
+  /**
+   * Positions the layover to the inner left of the toggle component so
+   * that it will overlap.
+   */
+  INNER_LEFT: 'inner left',
+
+  /**
+   * Positions the layover so that it overlaps the toggle component
+   * by positioning itself in the cetner of the toggle component's width.
+   */
+  CENTER: 'center',
+
+  /**
+   * Positions the layover to the outside right on the toggle component
+   * so that it does not overlap.
+   */
+  RIGHT: 'right',
+
+  /**
+   * Positions the layover to the outside right on the toggle component
+   * so that it will overlap.
+   */
+  INNER_RIGHT: 'inner right'
+};
+
+exports.default = HorizontalAnchors;
+//# sourceMappingURL=HorizontalAnchors.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/Layover.js":
+/*!******************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/Layover.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _CSSTransitionGroup = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module 'react-transition-group/CSSTransitionGroup'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _CSSTransitionGroup2 = _interopRequireDefault(_CSSTransitionGroup);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _handleWindowClickListeners = __webpack_require__(/*! ../utils/EventUtils/handleWindowClickListeners */ "./node_modules/react-md/lib/utils/EventUtils/handleWindowClickListeners.js");
+
+var _handleWindowClickListeners2 = _interopRequireDefault(_handleWindowClickListeners);
+
+var _getSelectedTextPosition = __webpack_require__(/*! ../utils/Positioning/getSelectedTextPosition */ "./node_modules/react-md/lib/utils/Positioning/getSelectedTextPosition.js");
+
+var _getSelectedTextPosition2 = _interopRequireDefault(_getSelectedTextPosition);
+
+var _getScroll = __webpack_require__(/*! ../utils/Positioning/getScroll */ "./node_modules/react-md/lib/utils/Positioning/getScroll.js");
+
+var _getScroll2 = _interopRequireDefault(_getScroll);
+
+var _viewport = __webpack_require__(/*! ../utils/Positioning/viewport */ "./node_modules/react-md/lib/utils/Positioning/viewport.js");
+
+var _viewport2 = _interopRequireDefault(_viewport);
+
+var _isOutOfBounds = __webpack_require__(/*! ../utils/Positioning/isOutOfBounds */ "./node_modules/react-md/lib/utils/Positioning/isOutOfBounds.js");
+
+var _isOutOfBounds2 = _interopRequireDefault(_isOutOfBounds);
+
+var _anchorShape = __webpack_require__(/*! ./anchorShape */ "./node_modules/react-md/lib/Helpers/anchorShape.js");
+
+var _anchorShape2 = _interopRequireDefault(_anchorShape);
+
+var _fixedToShape = __webpack_require__(/*! ./fixedToShape */ "./node_modules/react-md/lib/Helpers/fixedToShape.js");
+
+var _fixedToShape2 = _interopRequireDefault(_fixedToShape);
+
+var _positionShape = __webpack_require__(/*! ./positionShape */ "./node_modules/react-md/lib/Helpers/positionShape.js");
+
+var _positionShape2 = _interopRequireDefault(_positionShape);
+
+var _HorizontalAnchors = __webpack_require__(/*! ./HorizontalAnchors */ "./node_modules/react-md/lib/Helpers/HorizontalAnchors.js");
+
+var _HorizontalAnchors2 = _interopRequireDefault(_HorizontalAnchors);
+
+var _VerticalAnchors = __webpack_require__(/*! ./VerticalAnchors */ "./node_modules/react-md/lib/Helpers/VerticalAnchors.js");
+
+var _VerticalAnchors2 = _interopRequireDefault(_VerticalAnchors);
+
+var _Positions = __webpack_require__(/*! ./Positions */ "./node_modules/react-md/lib/Helpers/Positions.js");
+
+var _Positions2 = _interopRequireDefault(_Positions);
+
+var _ResizeObserver = __webpack_require__(/*! ./ResizeObserver */ "./node_modules/react-md/lib/Helpers/ResizeObserver.js");
+
+var _ResizeObserver2 = _interopRequireDefault(_ResizeObserver);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * The Layover component is used to keep a component fixed to another component
+ * while the page is scrolling or a container is scrolling. When the fixed component
+ * is considered out of view, it will be closed.
+ *
+ * > NOTE: Don't look at source code. Plz.
+ */
+var Layover = function (_PureComponent) {
+  _inherits(Layover, _PureComponent);
+
+  function Layover(props) {
+    _classCallCheck(this, Layover);
+
+    var _this = _possibleConstructorReturn(this, (Layover.__proto__ || Object.getPrototypeOf(Layover)).call(this));
+
+    _initialiseProps.call(_this);
+
+    var child = _react2.default.Children.only(props.children);
+    _this.state = {
+      below: false,
+      right: false,
+      styles: child.props.style
+    };
+
+    _this._lastXFix = null;
+    _this._lastYFix = null;
+    _this._initialX = null;
+    _this._initialY = null;
+    _this._initialTop = null;
+    _this._initialLeft = null;
+    _this._child = null;
+    _this._toggle = null;
+    return _this;
+  }
+
+  _createClass(Layover, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      if (true) {
+        window.addEventListener('load', function () {
+          _this2._setContainer(_this2._container);
+        });
+      }
+
+      var _props = this.props,
+          visible = _props.visible,
+          fixedTo = _props.fixedTo,
+          sameWidth = _props.sameWidth,
+          centered = _props.centered,
+          simplified = _props.simplified;
+
+      var anchor = this._getAnchor(this.props);
+      if (visible) {
+        (0, _handleWindowClickListeners2.default)(this._handleOutsideClick, true);
+
+        // Don't worry about any of the other logic for a "simple" layover
+        if (simplified) {
+          return;
+        }
+
+        var rect = this._contextRect || this._toggle.getBoundingClientRect();
+        if (this._dialog) {
+          this._manageFixedToListener(this._dialog, true);
+        } else if (!this._inFixed) {
+          this._manageFixedToListener(fixedTo, true);
+        }
+
+        this._init(fixedTo, anchor, sameWidth, centered, rect);
+      }
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var fixedTo = nextProps.fixedTo,
+          visible = nextProps.visible,
+          children = nextProps.children,
+          sameWidth = nextProps.sameWidth,
+          centered = nextProps.centered,
+          simplified = nextProps.simplified;
+
+      if (simplified) {
+        if (this.props.simplified !== simplified) {
+          this._reset();
+        }
+        return;
+      }
+
+      var anchor = this._getAnchor(nextProps);
+      var visibileDiff = visible !== this.props.visible;
+      var childStyle = _react2.default.Children.only(children).props.style;
+
+      if (visibileDiff) {
+        if (!visible) {
+          this._reset();
+        } else {
+          // Initialize the layover logic
+          var rect = this._contextRect || this._toggle.getBoundingClientRect();
+          if (this._dialog) {
+            this._manageFixedToListener(this._dialog, true);
+          } else if (!this._inFixed) {
+            this._manageFixedToListener(fixedTo, true);
+          }
+
+          this._init(fixedTo, anchor, sameWidth, centered, rect);
+        }
+      } else if (fixedTo !== this.props.fixedTo && visible) {
+        // swap the fixedTo listeners
+        this._manageFixedToListener(this.props.fixedTo, false);
+        this._manageFixedToListener(fixedTo, true);
+      } else if (childStyle !== _react2.default.Children.only(this.props.children).props.style) {
+        // Re-merge styles... This is only required if all the others fail since all the other
+        // logic always merges styles with the children styles
+        this.setState({ styles: _extends({}, this.state.styles, childStyle) });
+      }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate(prevProps) {
+      var _this3 = this;
+
+      var _props2 = this.props,
+          visible = _props2.visible,
+          closeOnOutsideClick = _props2.closeOnOutsideClick;
+
+      var enabled = visible && closeOnOutsideClick;
+      var prevEnabled = prevProps.visible && prevProps.closeOnOutsideClick;
+      if (enabled !== prevEnabled) {
+        if (this._clickTimeout) {
+          clearTimeout(this._clickTimeout);
+          this._clickTimeout = null;
+        }
+
+        // This is really an arbitrary timeout time, but firefox needs to have a timeout
+        // so the context menu doesn't close automatically due to an "outside click" being
+        // triggered
+        this._clickTimeout = setTimeout(function () {
+          _this3._clickTimeout = null;
+          (0, _handleWindowClickListeners2.default)(_this3._handleOutsideClick, enabled);
+        }, enabled ? 300 : 0);
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._clickTimeout) {
+        clearTimeout(this._clickTimeout);
+        this._clickTimeout = null;
+      }
+      (0, _handleWindowClickListeners2.default)(this._handleOutsideClick, false);
+
+      if (!this.props.simplified) {
+        this._manageFixedToListener(this.props.fixedTo, false);
+        this._manageWindowResizeListener(false);
+      }
+    }
+  }, {
+    key: '_getAnchor',
+    value: function _getAnchor(_ref) {
+      var anchor = _ref.anchor,
+          belowAnchor = _ref.belowAnchor,
+          animationPosition = _ref.animationPosition;
+
+      return animationPosition === Layover.Positions.BELOW && belowAnchor || anchor;
+    }
+
+    /**
+     * Whew. Ok. So since the fixedTo prop can either be two elements or a single item,
+     * this utility function is used to add/remove the scrolling event listeners for
+     * this prop.
+     *
+     * When the fixedTo prop has a horizontal and/or vertical attribute, the `window`
+     * will be the fallback option. If both the horizontal and vertical attributes are
+     * defined, the `window` still needs to have a scroll listener to make sure it
+     * doesn't go off screen.
+     */
+
+
+    /**
+     * This is just a simple utility function to merge the existing state styles,
+     * any new styles, and the children's styles (with most precedence).
+     */
+
+
+    /**
+     * This initializes the popover with the default styles, and the initial bookkeeping
+     * variables to update while it is open.
+     */
+
+
+    /**
+     * Attempts to fix the child by setting it's location ONLY for the entire
+     * page viewport. I didn't bother attempting to fix it for additional fixedTo
+     * stuff.
+     */
+
+
+    /**
+     * When the child is initially mounted, it will update the styles for centering
+     * the element (if enabled) and then attempt to fix any viewport issues.
+     */
+
+
+    /**
+     * This is the meat of the stuff. Do lots of viewport / container checks to make sure
+     * the element should still be visible. If it is still visible, it will update its
+     * x and y position for the new scroll position.
+     */
+
+
+    /**
+     * Attempts to fix a viewport problem by swapping the positioning. This only does
+     * vertical switching right now.
+     *
+     * @param {Object} vp - The result of the viewport function
+     * @return {boolean} true if the fix was able to be done and successful.
+     */
+
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props3 = this.props,
+          className = _props3.className,
+          block = _props3.block,
+          toggle = _props3.toggle,
+          visible = _props3.visible,
+          children = _props3.children,
+          fullWidth = _props3.fullWidth,
+          animationPosition = _props3.animationPosition,
+          simplified = _props3.simplified,
+          fillViewportWidth = _props3.fillViewportWidth,
+          fillViewportHeight = _props3.fillViewportHeight,
+          anchor = _props3.anchor,
+          belowAnchor = _props3.belowAnchor,
+          onClose = _props3.onClose,
+          repositionOnScroll = _props3.repositionOnScroll,
+          repositionOnResize = _props3.repositionOnResize,
+          sameWidth = _props3.sameWidth,
+          centered = _props3.centered,
+          fixedTo = _props3.fixedTo,
+          toggleQuery = _props3.toggleQuery,
+          yThreshold = _props3.yThreshold,
+          xThreshold = _props3.xThreshold,
+          onContextMenu = _props3.onContextMenu,
+          preventContextMenu = _props3.preventContextMenu,
+          closeOnOutsideClick = _props3.closeOnOutsideClick,
+          minLeft = _props3.minLeft,
+          minRight = _props3.minRight,
+          minBottom = _props3.minBottom,
+          props = _objectWithoutProperties(_props3, ['className', 'block', 'toggle', 'visible', 'children', 'fullWidth', 'animationPosition', 'simplified', 'fillViewportWidth', 'fillViewportHeight', 'anchor', 'belowAnchor', 'onClose', 'repositionOnScroll', 'repositionOnResize', 'sameWidth', 'centered', 'fixedTo', 'toggleQuery', 'yThreshold', 'xThreshold', 'onContextMenu', 'preventContextMenu', 'closeOnOutsideClick', 'minLeft', 'minRight', 'minBottom']);
+
+      var child = void 0;
+      var childId = void 0;
+      if (visible) {
+        child = _react2.default.Children.only(children);
+        if (child.props.id) {
+          childId = child.props.id;
+        } else if (props.id) {
+          childId = props.id + '-layover';
+        }
+
+        child = _react2.default.cloneElement(children, {
+          ref: this._fixateChild,
+          id: childId,
+          style: simplified ? child.props.style : this.state.styles,
+          className: (0, _classnames2.default)('md-layover-child md-layover-child--' + animationPosition, {
+            'md-layover-child--simplified': simplified
+          }, child.props.className)
+        });
+      }
+
+      var observer = null;
+      if (!simplified && !fillViewportWidth && !fillViewportHeight) {
+        observer = _react2.default.createElement(_ResizeObserver2.default, {
+          watchWidth: !fillViewportWidth,
+          watchHeight: !fillViewportHeight,
+          target: this._child,
+          onResize: this._handleResize
+        });
+      }
+
+      return _react2.default.createElement(
+        _CSSTransitionGroup2.default,
+        _extends({}, props, {
+          className: (0, _classnames2.default)('md-layover', {
+            'md-layover--simplified': simplified,
+            'md-inline-block': !block && !fullWidth,
+            'md-full-width': fullWidth
+          }, className),
+          ref: this._setContainer,
+          'aria-haspopup': true,
+          'aria-owns': childId,
+          'aria-expanded': visible,
+          transitionEnter: props.transitionEnterTimeout !== 0,
+          transitionLeave: props.transitionLeaveTimeout !== 0,
+          onContextMenu: this._handleContextMenu
+        }),
+        observer,
+        toggle,
+        child
+      );
+    }
+  }]);
+
+  return Layover;
+}(_react.PureComponent);
+
+Layover.HorizontalAnchors = _HorizontalAnchors2.default;
+Layover.VerticalAnchors = _VerticalAnchors2.default;
+Layover.Positions = _Positions2.default;
+Layover.propTypes = {
+  /**
+   * A id to give the layover itself. This is generally recommended for accessibility. If the
+   * child does not have an id, the child will automatically be updated to be `${id}-layover`.
+   */
+  id: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+
+  /**
+   * An optional style to apply to the layover.
+   */
+  style: _propTypes2.default.object,
+
+  /**
+   * An optional className to apply to the layover.
+   */
+  className: _propTypes2.default.string,
+
+  /**
+   * Boolean if the layover's child is currently visible.
+   */
+  visible: _propTypes2.default.bool.isRequired,
+
+  /**
+   * This should either be a single element or two elements that the layover recalculates
+   * its fixed position when scrolling for horizontal and vertical.
+   *
+   * When it is a single element, it will recalculate for both horizontal and vertical
+   * scrolling. Otherwise, you can specify the element for horizontal scrolling and a
+   * separate element for vertical scrolling. If one is omitted, it will default to `window`.
+   *
+   * If the component is no longer considered to be in view after scrolling, the `onClose`
+   * prop will be called.
+   */
+  fixedTo: _fixedToShape2.default.isRequired,
+
+  /**
+   * The renderable item that causes the Layover to become visible. This _should_
+   * most likely be an `element` or `arrayOf(element)`, but anything is allowed.
+   */
+  toggle: _propTypes2.default.node,
+
+  /**
+   * Since the `toggle` prop can be anything, I need a way to be able to find an
+   * element to base all the calculations on. This can either be a string that
+   * gets passed to `layover.querySelector`, a DOM Element, or a function that
+   * returns a DOM Element.
+   */
+  toggleQuery: _propTypes2.default.oneOfType([_propTypes2.default.func, _propTypes2.default.object, _propTypes2.default.string]).isRequired,
+
+  /**
+   * A single child that should be fixed to the toggle element.
+   */
+  children: _propTypes2.default.element.isRequired,
+
+  /**
+   * Boolean if the Layover should be displayed as a block instead of as an inline block.
+   */
+  block: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the `children` should be centered horizontally and vertically while keeping
+   * its height in mind as well. This is *only* valid if both the x and y `anchor` targets
+   * are `CENTER`.
+   */
+  centered: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the layover should gain the `md-full-width` class name.
+   */
+  fullWidth: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the width of the children should be updated automatically to be the width
+   * of the toggle element.
+   */
+  sameWidth: _propTypes2.default.bool,
+
+  /**
+   * The minimum value the `left` style can be for the child component. This is really just used
+   * to make sure it doesn't scroll off the left of the page. It can also be used to make
+   * full screen layovers on devices when when the `fillViewportWidth` prop is enabled.
+   *
+   * This can either be a number of pixels or a string for percentages. If this value is a string
+   * **it will always be used over the calculated values** so it is preferred to use a number.
+   *
+   * @see {@link #minRight}
+   * @see {@link #fillViewportWidth}
+   */
+  minLeft: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]).isRequired,
+
+  /**
+   * The minimum value the `right` style can be for the child component. This is really just used
+   * to make sure it doesn't scroll off the right of the page when the `fillViewportWidth` prop is
+   * enabled.
+   *
+   * This can either be a number of pixels or a string for percentages. If this value is a string
+   * **it will always be used over the calculated values** so it is preferred to use a number.
+   *
+   * @see {@link #minLeft}
+   * @see {@link #fillViewportWidth}
+   */
+  minRight: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]).isRequired,
+
+  /**
+   * The minimum value that can be used for the `bottom` prop when the `fillViewportHeight` prop is enabled.
+   * It is generally recommended to keep this value at `0` to keep it stretched to the bottom of the viewport
+   * or setting it to a small positive number to add some padding.
+   *
+   * This can either be a number of pixels or a string for percentages. If this value is a string
+   * **it will always be used over the calculated values** so it is preferred to use a number.
+   *
+   * @see {@link #fillViewportHeight}
+   */
+  minBottom: _propTypes2.default.number.isRequired,
+
+  /**
+   * Boolean if the layover should make the child fill the entire viewport's width. This will just
+   * style the child element with:
+   *
+   * ```js
+   * childStyle = {
+   *   left: this.props.minLeft,
+   *   right: this.props.minRight,
+   * };
+   * ```
+   *
+   * If you add any additional constraints such as `width` or `max-width`, it will not span the entire viewport's
+   * width. This prop should generally really only be used on mobile devices. Using this prop along with
+   * `fillViewportHeight` for Autocompletes can create great Android mobile searches. See the `fillViewportHeight`
+   * for more information about why it is *only Android*.
+   *
+   * @see {@link #minLeft}
+   * @see {@link #minRight}
+   * @see {@link #fillViewportHeight}
+   */
+  fillViewportWidth: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the layover should fill the height of the viewport from the current calculated `top`. This will just
+   * style the child element with:
+   *
+   * ```js
+   * childStyle = {
+   *   top: currentCalculatedTop,
+   *   bottom: this.props.minBottom,
+   *   maxHeight: 'none',
+   * };
+   * ```
+   *
+   * This is *super* nice on Android devices since it will allow you to create nice toolbar search autocompletes
+   * in your app and the list of items will grow until it reaches the soft keyboard. It isn't as nice on iOS since
+   * iOS does not subtract the soft keyboard from the viewport's size so the list will still extend to the bottom
+   * of the page.
+   *
+   * @see {@link #minBottom}
+   * @see {@link #fillViewportWidth}
+   */
+  fillViewportHeight: _propTypes2.default.bool,
+
+  /**
+   * A function used to hide the visibility of the children when the children are no longer
+   * visible or an element outside of the layover is clicked.
+   */
+  onClose: _propTypes2.default.func.isRequired,
+
+  /**
+   * The component to render the Layover as.
+   */
+  component: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.func]).isRequired,
+
+  /**
+   * The transition name to use for the children appearing/disappearing.
+   */
+  transitionName: _propTypes2.default.string.isRequired,
+
+  /**
+   * The transition duration for the enter animation. The animation can be disabled by setting
+   * this value to 0.
+   */
+  transitionEnterTimeout: _propTypes2.default.number.isRequired,
+
+  /**
+   * The transition duration for the leave animation. The animation can be disabled by setting
+   * this value to 0.
+   */
+  transitionLeaveTimeout: _propTypes2.default.number.isRequired,
+
+  /**
+   * This is a threshold that is used to calculate if the `children` is still in
+   * view by applying this multiplier to the `children`'s width.
+   */
+  xThreshold: _propTypes2.default.number.isRequired,
+
+  /**
+   * This is a threshold that is used to calculate if the `children` is still in
+   * view by applying this multiplier to the `toggle`'s height.
+   */
+  yThreshold: _propTypes2.default.number.isRequired,
+
+  /**
+   * Boolean if the `children` should be hidden when an element outside
+   * of the `Layout` component has been clicked.
+   */
+  closeOnOutsideClick: _propTypes2.default.bool.isRequired,
+
+  /**
+   * This is how the children get "anchored" to the `toggle` element and how the
+   * auto-fix attempts will be made. Right now, the auto fixes will only be handled
+   * on viewport boundaries instead of `fixedTo` boundaries. It was too hard for
+   * first attempt.
+   *
+   * The general behavior will be that an equal-opposite of an anchor will be chosen
+   * when that direction is out of viewport. So for example, the children are out
+   * of viewport for the right of the screen, and the `anchor.x` value is
+   * `Layover.HorizontalPositions.RIGHT`, the children will be swapped to be the `LEFT`
+   * of the `toggle` component now.
+   *
+   * So a full list:
+   * - `LEFT` / `RIGHT`
+   * - `INNER_LEFT` / `INNER_RIGHT`
+   * - `TOP` / `BOTTOM`
+   *
+   * The `CENTER` and `OVERLAP` positions can not be automatically adjusted.
+   *
+   * > To be safe, you should use the enum values for the `x` and `y` values.
+   * @see {@link #VerticalAnchors}
+   * @see {@link #HorizontalAnchors}
+   */
+  anchor: _anchorShape2.default.isRequired,
+
+  /**
+   * This is how the children get "anchored" when the `animationPositions` is set to `Layover.Positions.BELOW`.
+   * Set this to `null` to continue using the base `anchor` prop instead of switching to this anchor.
+   *
+   * @see {@link #anchor}
+   */
+  belowAnchor: _anchorShape2.default,
+
+  /**
+   * This is the position that the children should animate from. It directly ties into
+   * the `$md-layover-child-positions` Sass variable.
+   */
+  animationPosition: _positionShape2.default.isRequired,
+
+  /**
+   * If you would like the layover to interact as a context menu, provide this prop. It will
+   * make the children appear relative to the context menu origin automatically.
+   *
+   * @see {@link #preventContextMenu}
+   */
+  onContextMenu: _propTypes2.default.func,
+
+  /**
+   * Boolean if the default behavior of the context menu should be prevented when using the
+   * `onContextMenu` prop.
+   *
+   * @see {@link #onContextMenu}
+   */
+  preventContextMenu: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the layover should attempt to automatically adjust the position of the element to
+   * keep it within the viewport. If this value is set to `false`, the `onClose` prop will be called
+   * instead.
+   */
+  repositionOnScroll: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the layover should attempt to automatically adjust the position of the element to
+   * keep it within the viewport. If this value is set to `false`, the `onClose` prop will be called
+   * instead.
+   */
+  repositionOnResize: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the layover should become "simplified". This basically disables all the logic for
+   * keeping the child within the viewport and allows you to manage all the positioning via CSS.
+   *
+   * When this is enabled, it updates the `Layover` to have `position: relative` while the child will
+   * have `position: absolute` which will allow for simple `top`, `right`, `bottom`, and/or `left` CSS
+   * to position as wanted.
+   *
+   * This is really only helpful in cases where the layover can't calculate things correctly due to
+   * being in fixed containers somewhere in the page or some other weird stuff. Hopefully this won't
+   * really need to be used much.
+   */
+  simplified: _propTypes2.default.bool
+};
+Layover.defaultProps = {
+  anchor: {
+    x: Layover.HorizontalAnchors.INNER_LEFT,
+    y: Layover.VerticalAnchors.OVERLAP
+  },
+  belowAnchor: {
+    x: Layover.HorizontalAnchors.CENTER,
+    y: Layover.VerticalAnchors.BOTTOM
+  },
+  animationPosition: Layover.Positions.BELOW,
+  repositionOnScroll: true,
+  repositionOnResize: false,
+  component: 'div',
+  fixedTo: typeof window !== 'undefined' ? window : {},
+  toggleQuery: '.md-text-field-container,button,*[role="button"],*[role="listbox"]',
+  transitionName: 'md-layover',
+  transitionEnterTimeout: 200,
+  transitionLeaveTimeout: 200,
+  yThreshold: 0.38,
+  xThreshold: 0.38,
+  closeOnOutsideClick: true,
+  preventContextMenu: true,
+  simplified: false,
+  minLeft: 0,
+  minRight: 0,
+  minBottom: 0,
+  fillViewportWidth: false,
+  fillViewportHeight: false
+};
+
+var _initialiseProps = function _initialiseProps() {
+  var _this4 = this;
+
+  this._isCenteredDialog = function () {
+    return _this4._dialog && _this4._dialog.classList.contains('md-dialog--centered');
+  };
+
+  this._createStyles = function (anchor, centered, child, rect) {
+    var x = anchor.x,
+        y = anchor.y;
+    var offsetWidth = child.offsetWidth,
+        offsetHeight = child.offsetHeight;
+
+
+    var left = void 0;
+    var top = void 0;
+    if (x === _HorizontalAnchors2.default.CENTER) {
+      left = rect.left + rect.width / 2 - offsetWidth / 2;
+    } else if (x === _HorizontalAnchors2.default.INNER_RIGHT) {
+      left = rect.right - offsetWidth;
+    } else if (x === _HorizontalAnchors2.default.LEFT) {
+      left = rect.left - offsetWidth;
+    } else if (x === _HorizontalAnchors2.default.RIGHT) {
+      left = rect.right;
+    }
+
+    if (centered && x === _HorizontalAnchors2.default.CENTER && y === _VerticalAnchors2.default.CENTER) {
+      top = rect.top - offsetHeight / 2 + rect.height / 2;
+    } else if (y === _VerticalAnchors2.default.TOP) {
+      top = rect.top - offsetHeight;
+    } else if (y === _VerticalAnchors2.default.CENTER) {
+      top = rect.top + rect.height / 2;
+    } else if (y === _VerticalAnchors2.default.BOTTOM) {
+      top = rect.bottom;
+    }
+
+    if (_this4._isCenteredDialog()) {
+      var dialogRect = _this4._dialog.getBoundingClientRect();
+      left -= dialogRect.left;
+      top -= dialogRect.top;
+    }
+
+    var style = {};
+    if (top) {
+      style.top = top;
+    }
+
+    if (left) {
+      style.left = left;
+    }
+
+    return style;
+  };
+
+  this._manageFixedToListener = function (fixedTo, add) {
+    var listener = (add ? 'add' : 'remove') + 'EventListener';
+    if (fixedTo !== window && (fixedTo.x || fixedTo.y)) {
+      var x = fixedTo.x,
+          y = fixedTo.y;
+
+      if (x) {
+        x[listener]('scroll', _this4._handleScroll);
+      } else {
+        window[listener]('scroll', _this4._handleScroll);
+      }
+
+      if (y) {
+        y[listener]('scroll', _this4._handleScroll);
+      } else if (!x) {
+        // Only add the window event listener once
+        window[listener]('scroll', _this4._handleScroll);
+      }
+
+      if (y && y !== window && x && x !== window) {
+        window[listener]('scroll', _this4._handleScroll);
+      }
+    } else {
+      fixedTo[listener]('scroll', _this4._handleScroll);
+
+      if (fixedTo !== window) {
+        window[listener]('scroll', _this4._handleScroll);
+      }
+    }
+  };
+
+  this._manageWindowResizeListener = function (enabled) {
+    if (_this4._windowResizeTimeout) {
+      clearTimeout(_this4._windowResizeTimeout);
+      _this4._windowResizeTimeout = null;
+    }
+
+    if (enabled) {
+      // add a 2 second delay before watching resize events since Android soft keyboards trigger a resize event.
+      _this4._windowResizeTimeout = setTimeout(function () {
+        _this4._windowResizeTimeout = null;
+        window.addEventListener('resize', _this4._handleWindowResize);
+      }, 2000);
+    } else {
+      window.removeEventListener('resize', _this4._handleWindowResize);
+    }
+  };
+
+  this._mergeStyles = function (style) {
+    var _props4 = _this4.props,
+        minLeft = _props4.minLeft,
+        minRight = _props4.minRight,
+        minBottom = _props4.minBottom,
+        fillViewportWidth = _props4.fillViewportWidth,
+        fillViewportHeight = _props4.fillViewportHeight;
+
+    if (fillViewportWidth) {
+      style.left = minLeft;
+      style.right = minRight;
+    } else {
+      if (style.left) {
+        style.left = Math.max(minLeft, style.left);
+      }
+
+      if (style.right) {
+        style.right = Math.max(minRight, style.right);
+      }
+    }
+
+    if (fillViewportHeight) {
+      style.bottom = minBottom;
+      style.maxHeight = 'none';
+    } else {
+      // These styles are only created when filling the viewport height, so clear
+      // them out again
+      style.bottom = null;
+      style.maxHeight = null;
+    }
+
+    return _extends({}, _this4.state.styles, style, _react2.default.Children.only(_this4.props.children).props.style);
+  };
+
+  this._init = function (fixedTo, anchor, sameWidth, centered, rect) {
+    if (_this4._child) {
+      // The init function can be called again if the user quickly toggles the layover. If that
+      // is the case, we want the styles that were set after the _positionChild _attemptFix.
+      return;
+    }
+
+    var height = rect.height,
+        width = rect.width;
+    var top = rect.top,
+        left = rect.left,
+        right = rect.right;
+
+    var x = void 0;
+    var y = void 0;
+    if (_this4._dialog) {
+      var scroll = (0, _getScroll2.default)(_this4._dialog);
+      x = scroll.x;
+      y = scroll.y;
+
+      if (_this4._isCenteredDialog()) {
+        var dialogRect = _this4._dialog.getBoundingClientRect();
+        left -= dialogRect.left;
+        top -= dialogRect.top;
+        right -= dialogRect.right;
+      }
+    } else if (fixedTo !== window && (fixedTo.y || fixedTo.x)) {
+      x = (0, _getScroll2.default)(fixedTo.x || window).x;
+      y = (0, _getScroll2.default)(fixedTo.y || window).y;
+    } else {
+      var _scroll = (0, _getScroll2.default)(fixedTo);
+      x = _scroll.x;
+      y = _scroll.y;
+    }
+
+    _this4._initialX = x;
+    _this4._initialY = y;
+    _this4._initialLeft = left;
+    _this4._initialTop = top;
+
+    if (anchor.x === _HorizontalAnchors2.default.INNER_RIGHT) {
+      _this4._initialLeft = left + width;
+    } else if (anchor.x === _HorizontalAnchors2.default.RIGHT) {
+      _this4._initialLeft = right;
+    }
+
+    if (!centered) {
+      _this4._lastYFix = anchor.y === _VerticalAnchors2.default.TOP ? 'bottom' : 'top';
+    } else {
+      // Centered is not fixable
+      _this4._lastYFix = null;
+    }
+    if (anchor.x === _HorizontalAnchors2.default.LEFT || anchor.x === _HorizontalAnchors2.default.INNER_LEFT) {
+      _this4._lastXFix = 'right';
+    } else if (anchor.x === _HorizontalAnchors2.default.RIGHT || anchor.x === _HorizontalAnchors2.default.INNER_RIGHT) {
+      _this4._lastXFix = 'left';
+    } else {
+      // Can't fix others
+      _this4._lastXFix = null;
+    }
+
+    if (anchor.y === _VerticalAnchors2.default.BOTTOM) {
+      _this4._initialTop = top + height;
+    }
+
+    if (fixedTo !== window && !fixedTo.y && !fixedTo.x) {
+      var _scroll2 = (0, _getScroll2.default)(window);
+      _this4._initialWinX = _scroll2.x;
+      _this4._initialWinY = _scroll2.y;
+    }
+
+    var styles = _this4._mergeStyles({
+      left: _this4._initialLeft,
+      top: _this4._initialTop,
+      transformOrigin: undefined,
+      width: sameWidth ? width : undefined
+    });
+
+    _this4.setState({ styles: styles });
+  };
+
+  this._reset = function () {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _this4.props,
+        fixedTo = _ref2.fixedTo;
+
+    // Reset all the bookkeeping variables for a fresh start on re-visible
+    _this4._lastXFix = null;
+    _this4._lastYFix = null;
+    _this4._initialX = null;
+    _this4._initialY = null;
+    _this4._initialTop = null;
+    _this4._initialLeft = null;
+
+    if (!_this4._inFixed) {
+      if (_this4._dialog) {
+        _this4._manageFixedToListener(_this4._dialog, false);
+      }
+
+      _this4._manageFixedToListener(fixedTo, false);
+    }
+  };
+
+  this._setContainer = function (container) {
+    _this4._container = (0, _reactDom.findDOMNode)(container);
+    _this4._toggle = null;
+    if (!_this4._container) {
+      return;
+    }
+
+    var _props5 = _this4.props,
+        toggleQuery = _props5.toggleQuery,
+        onContextMenu = _props5.onContextMenu;
+
+    if (typeof toggleQuery === 'function') {
+      _this4._toggle = toggleQuery();
+    } else if (typeof toggleQuery === 'string') {
+      _this4._toggle = _this4._container.querySelector(toggleQuery);
+    } else {
+      _this4._toggle = toggleQuery;
+    }
+
+    if (!_this4._toggle && !onContextMenu && "development" !== 'production') {
+      var error = new Error('Unable to find a toggle component with the provided `toggleQuery` and `toggle` element. \n' + ('`toggleQuery`: `' + toggleQuery + '`'));
+      error.toggleQuery = toggleQuery;
+      error.toggle = _this4.props.toggle;
+
+      throw error;
+    }
+
+    var node = _this4._container;
+    while (node) {
+      var fixed = window.getComputedStyle(node).position === 'fixed';
+      if (fixed && node.className.match(/md-dialog--(full-page|centered)/)) {
+        _this4._dialog = node;
+        return;
+      } else if (fixed && !node.classList.contains('md-layover-child')) {
+        _this4._inFixed = true;
+        return;
+      }
+
+      node = node.offsetParent;
+    }
+  };
+
+  this._initialFix = function () {
+    // Need to make a clone that disables any transitions to calculate positioning stuff
+    var clone = _this4._child.cloneNode(true);
+    clone.style.webkitTransform = 'none';
+    clone.style.transfrom = 'none';
+    clone.style.webkitTransition = 'none';
+    clone.style.transition = 'none';
+
+    _this4._child.parentNode.appendChild(clone);
+    var vp = (0, _viewport2.default)(clone);
+    var childHeight = clone.offsetHeight,
+        childWidth = clone.offsetWidth;
+
+    _this4._child.parentNode.removeChild(clone);
+
+    if (vp === true || !_this4._toggle || !_this4._child) {
+      return;
+    }
+
+    var _getAnchor2 = _this4._getAnchor(_this4.props),
+        x = _getAnchor2.x,
+        y = _getAnchor2.y;
+
+    var toggleHeight = void 0;
+    var toggleWidth = void 0;
+    if (_this4._contextRect) {
+      toggleHeight = _this4._contextRect.height;
+      toggleWidth = _this4._contextRect.width;
+    } else {
+      toggleHeight = _this4._toggle.offsetHeight;
+      toggleWidth = _this4._toggle.offsetWidth;
+    }
+
+    var addToTop = 0;
+    var addToLeft = 0;
+
+    // Android devices will never get this far because they consider the keyboard as part
+    // of the viewport, iOS will and cause it to be a giant negative number. *sigh*
+    // Prevent any additional vertical positioning for iOS
+    if (!_this4.props.fillViewportHeight && (!vp.top || !vp.bottom)) {
+      var multiplier = vp.top ? -1 : 1;
+      if (!vp.bottom && y === _VerticalAnchors2.default.OVERLAP) {
+        addToTop += toggleHeight;
+      } else if (y === _VerticalAnchors2.default.TOP || y === _VerticalAnchors2.default.BOTTOM) {
+        addToTop += multiplier * toggleHeight;
+      }
+
+      addToTop += multiplier * childHeight;
+
+      _this4._lastYFix = vp.top ? 'bottom' : 'top';
+    }
+
+    if (!_this4.props.fillViewportWidth && x !== _HorizontalAnchors2.default.CENTER && (!vp.left || !vp.right)) {
+      if (!vp.left && x === _HorizontalAnchors2.default.LEFT) {
+        addToLeft += toggleWidth + childWidth;
+        _this4._lastXFix = 'left';
+      } else if (!vp.left && x === _HorizontalAnchors2.default.INNER_LEFT) {
+        addToLeft += toggleWidth;
+        _this4._lastXFix = 'left';
+      } else if (!vp.right && x === _HorizontalAnchors2.default.RIGHT) {
+        addToLeft -= toggleWidth + childWidth;
+        _this4._lastXFix = 'right';
+      } else if (!vp.right && x === _HorizontalAnchors2.default.INNER_RIGHT) {
+        addToLeft -= toggleWidth;
+        _this4._lastXFix = 'right';
+      }
+    }
+
+    if (addToTop !== 0 || addToLeft !== 0) {
+      _this4._initialTop += addToTop;
+      _this4._initialLeft += addToLeft;
+
+      _this4.setState({ styles: _this4._mergeStyles({ top: _this4._initialTop, left: _this4._initialLeft }) });
+    }
+  };
+
+  this._fixateChild = function (child) {
+    _this4._child = (0, _reactDom.findDOMNode)(child);
+
+    if (_this4._child !== null) {
+      _this4._childComponent = _react2.default.Children.only(_this4.props.children);
+
+      // If child also has a ref callback, simulate the same thing
+      if (typeof _this4._childComponent.ref === 'function') {
+        _this4._childComponent.ref(child);
+      }
+
+      if (_this4.props.simplified || !_this4._child || !_this4._toggle && !_this4._contextRect) {
+        return;
+      }
+
+      if (_this4._dialog && _this4._dialog.classList.contains('md-dialog--centered')) {
+        return;
+      }
+
+      _this4._manageWindowResizeListener(true);
+      _this4._positionChild();
+    } else if (_this4._childComponent && typeof _this4._childComponent.ref === 'function') {
+      _this4._childComponent.ref(child);
+    }
+  };
+
+  this._positionChild = function () {
+    var centered = _this4.props.centered;
+
+    var anchor = _this4._getAnchor(_this4.props);
+    var rect = _this4._contextRect || _this4._toggle.getBoundingClientRect();
+    _this4._height = rect.height;
+    _this4._width = rect.width;
+    var styles = _this4._createStyles(anchor, centered, _this4._child, rect);
+    if (styles.top || styles.left) {
+      _this4._initialLeft = styles.left || _this4._initialLeft;
+      _this4._initialTop = styles.top || _this4._initialTop;
+      _this4.setState({ styles: _this4._mergeStyles(styles) }, _this4._initialFix);
+    } else {
+      _this4._initialFix();
+    }
+  };
+
+  this._handleResize = function () {
+    if (_this4.props.visible) {
+      _this4._positionChild();
+    }
+  };
+
+  this._handleScroll = function (e) {
+    if (!_this4.props.repositionOnScroll) {
+      _this4._manageFixedToListener(_this4.props.fixedTo, false);
+      _this4.props.onClose(e);
+    }
+
+    if (!_this4._ticking) {
+      requestAnimationFrame(function () {
+        return _this4._handleTick(e);
+      });
+    }
+
+    _this4._ticking = true;
+  };
+
+  this._handleTick = function (e) {
+    var _props6 = _this4.props,
+        fixedTo = _props6.fixedTo,
+        xThreshold = _props6.xThreshold,
+        yThreshold = _props6.yThreshold;
+
+    var vp = (0, _viewport2.default)(_this4._child);
+    if (vp !== true && vp.left && vp.right) {
+      var fixed = !_this4._contextRect && _this4._attemptFix(vp);
+      if (!fixed) {
+        _this4.props.onClose(e);
+        _this4._ticking = false;
+      }
+
+      return;
+    } else if ((0, _isOutOfBounds2.default)(fixedTo, _this4._child, _this4._toggle, yThreshold, xThreshold)) {
+      _this4.props.onClose(e);
+      _this4._ticking = false;
+      return;
+    }
+
+    var x = void 0;
+    var y = void 0;
+    if (_this4._dialog) {
+      var scroll = (0, _getScroll2.default)(_this4._dialog);
+      x = scroll.x;
+      y = scroll.y;
+    } else if (fixedTo !== window && (fixedTo.x || fixedTo.y)) {
+      x = (0, _getScroll2.default)(fixedTo.x || window).x;
+      y = (0, _getScroll2.default)(fixedTo.y || window).y;
+    } else {
+      var _scroll3 = (0, _getScroll2.default)(fixedTo);
+      x = _scroll3.x;
+      y = _scroll3.y;
+    }
+
+    var winX = void 0;
+    var winY = void 0;
+    // When using the additional fixedTo stuff, need to also keep track of the entire
+    // window's scrolling..
+    if (fixedTo !== window && !fixedTo.x && !fixedTo.y) {
+      var _scroll4 = (0, _getScroll2.default)(window);
+      winX = _scroll4.x;
+      winY = _scroll4.y;
+    }
+
+    var styles = _this4.state.styles;
+    var left = styles.left,
+        top = styles.top;
+
+    if (_this4._initialX !== x) {
+      left = _this4._initialX - x + _this4._initialLeft;
+    }
+
+    if (winX && _this4._initialWinX !== winX) {
+      left = _this4._initialWinX - winX + _this4._initialX;
+    }
+
+    if (_this4._initialY !== y) {
+      top = _this4._initialY - y + _this4._initialTop;
+    }
+
+    if (winY && _this4._initialWinY !== winY) {
+      top = _this4._initialWinY - winY + _this4._initialTop + (_this4._initialY - y);
+    }
+
+    if (styles.top !== top || styles.left !== left) {
+      _this4.setState({ styles: _this4._mergeStyles({ left: left, top: top }) }, function () {
+        _this4._ticking = false;
+      });
+    } else {
+      _this4._ticking = false;
+    }
+  };
+
+  this._handleOutsideClick = function (e) {
+    if (_this4._contextRect && _this4._child && !_this4._child.contains(e.target) || _this4._container && !_this4._container.contains(e.target)) {
+      _this4.props.onClose(e);
+    }
+  };
+
+  this._handleWindowResize = function (e) {
+    var _props7 = _this4.props,
+        onClose = _props7.onClose,
+        repositionOnResize = _props7.repositionOnResize;
+
+    if (repositionOnResize) {
+      _this4._handleResize();
+    } else {
+      onClose(e);
+      _this4._manageWindowResizeListener(false);
+    }
+  };
+
+  this._attemptFix = function (vp) {
+    var _getAnchor3 = _this4._getAnchor(_this4.props),
+        x = _getAnchor3.x,
+        y = _getAnchor3.y;
+
+    var centered = x === _HorizontalAnchors2.default.CENTER && y === _VerticalAnchors2.default.CENTER && _this4.props.centered;
+    if (centered || _this4._lastYFix === 'top' && !vp.top || _this4._lastYFix === 'bottom' && !vp.bottom) {
+      return false;
+    }
+
+    var toggleTop = _this4._toggle.getBoundingClientRect().top;
+    var toggleHeight = _this4._toggle.offsetHeight;
+    var childHeight = _this4._child.offsetHeight;
+
+    // Can;t fix if the child can't fit on the page based on the toggle's position
+
+    if (toggleTop + toggleHeight + childHeight > window.innerHeight) {
+      return false;
+    }
+
+    var _child$getBoundingCli = _this4._child.getBoundingClientRect(),
+        top = _child$getBoundingCli.top;
+
+    var newTop = _this4._initialTop;
+    var addToTop = childHeight * (vp.top ? -1 : 1);
+    if (y === _VerticalAnchors2.default.OVERLAP) {
+      addToTop += (vp.top ? 1 : -1) * toggleHeight;
+    } else if (y === _VerticalAnchors2.default.TOP || y === _VerticalAnchors2.default.BOTTOM) {
+      addToTop += (_this4._lastYFix === 'top' ? -1 : 1) * toggleHeight;
+    }
+
+    if (addToTop !== 0) {
+      newTop = top + addToTop;
+      _this4._lastYFix = vp.top ? 'bottom' : 'top';
+    }
+
+    if (newTop !== _this4._initialTop) {
+      _this4._initialTop = newTop;
+      var fixedTo = _this4.props.fixedTo;
+
+      var scrollEl = fixedTo;
+      if (fixedTo !== window && (fixedTo.y || fixedTo.x)) {
+        scrollEl = fixedTo.y || window;
+      }
+
+      _this4._initialY = (0, _getScroll2.default)(scrollEl).y;
+
+      _this4.setState({ styles: _this4._mergeStyles({ top: _this4._initialTop }) }, function () {
+        _this4._ticking = false;
+      });
+      return true;
+    }
+
+    return false;
+  };
+
+  this._handleContextMenu = function (e) {
+    var anchor = _this4._getAnchor(_this4.props);
+    var _props8 = _this4.props,
+        onContextMenu = _props8.onContextMenu,
+        preventContextMenu = _props8.preventContextMenu,
+        fixedTo = _props8.fixedTo,
+        sameWidth = _props8.sameWidth,
+        centered = _props8.centered,
+        visible = _props8.visible;
+
+    if (!onContextMenu) {
+      return;
+    }
+
+    _this4._contextRect = (0, _getSelectedTextPosition2.default)(e);
+    if (preventContextMenu && (!_this4._child || !_this4._child.contains(e.target))) {
+      e.preventDefault();
+    }
+
+    onContextMenu(e);
+    if (visible) {
+      _this4._init(fixedTo, anchor, sameWidth, centered, _this4._contextRect);
+    }
+  };
+};
+
+exports.default = Layover;
+//# sourceMappingURL=Layover.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/Positions.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/Positions.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/** @module Helpers/Positions */
+
+/**
+ * An enum for all the animation positions for a layover appearing.
+ *
+ * @readonly
+ * @enum {string}
+ */
+var Positions = {
+  /**
+   * The layover will appear by transitioning from the top left and expand
+   * down right.
+   */
+  TOP_LEFT: 'tl',
+
+  /**
+   * The layover will appear by transitioning from the top right and expand
+   * down left.
+   */
+  TOP_RIGHT: 'tr',
+
+  /**
+   * The layover will appear by transitioning from the bottom left and expand
+   * top right.
+   */
+  BOTTOM_LEFT: 'bl',
+
+  /**
+   * The layover will appear by transitioning from the bottom right and expand
+   * top left.
+   */
+  BOTTOM_RIGHT: 'br',
+
+  /**
+   * The layover will appear by just transitioning downwards from the bottom
+   * of the toggle component.
+   */
+  BELOW: 'below'
+};
+
+exports.default = Positions;
+//# sourceMappingURL=Positions.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/ResizeObserver.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/ResizeObserver.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _resizeObserverPolyfill = __webpack_require__(/*! resize-observer-polyfill */ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js");
+
+var _resizeObserverPolyfill2 = _interopRequireDefault(_resizeObserverPolyfill);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * The `ResizeObserver` component is a component hook for the
+ * [ResizeObserver](http://rawgit.com/WICG/ResizeObserver/master/index.html)
+ * using the [resize-observer-polyfill](https://github.com/que-etc/resize-observer-polyfill)
+ * for browsers that don't support it yet.
+ *
+ * This component displays an empty `span` with `aria-hidden` to allow access to the DOM. By
+ * default it will attempt to watch changes on its parent component, but it can be configured
+ * to watch any element by using the `target` prop.
+ */
+var ResizeObserver = function (_PureComponent) {
+  _inherits(ResizeObserver, _PureComponent);
+
+  function ResizeObserver() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, ResizeObserver);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ResizeObserver.__proto__ || Object.getPrototypeOf(ResizeObserver)).call.apply(_ref, [this].concat(args))), _this), _this._container = null, _this._target = null, _this._observer = null, _this._height = null, _this._width = null, _this._scrollHeight = null, _this._scrollWidth = null, _this._measure = function (entries) {
+      if (!_this._observer || !_this._target) {
+        return;
+      }
+
+      var _iteratorNormalCompletion = true;
+      var _didIteratorError = false;
+      var _iteratorError = undefined;
+
+      try {
+        for (var _iterator = entries[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+          var entry = _step.value;
+
+          if (!entry) {
+            return;
+          }
+
+          var _entry$contentRect = entry.contentRect,
+              height = _entry$contentRect.height,
+              width = _entry$contentRect.width;
+          var _entry$target = entry.target,
+              scrollHeight = _entry$target.scrollHeight,
+              scrollWidth = _entry$target.scrollWidth;
+
+          if (_this._isHeightChange(height, scrollHeight) || _this._isWidthChange(width, scrollWidth)) {
+            _this._height = height;
+            _this._width = width;
+            _this._scrollHeight = scrollHeight;
+            _this._scrollWidth = scrollWidth;
+            _this.props.onResize({ height: height, width: width, scrollHeight: scrollHeight, scrollWidth: scrollWidth, el: entry.target });
+          }
+        }
+      } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+          }
+        } finally {
+          if (_didIteratorError) {
+            throw _iteratorError;
+          }
+        }
+      }
+    }, _this._isHeightChange = function (height, scrollHeight) {
+      return _this.props.watchHeight && (height !== _this._height || scrollHeight !== _this._scrollHeight);
+    }, _this._isWidthChange = function (width, scrollWidth) {
+      return _this.props.watchWidth && (width !== _this._width || scrollWidth !== _this._scrollWidth);
+    }, _this._handleRef = function (container) {
+      if (container) {
+        _this._container = container;
+        _this._target = _this._getTarget(container, _this.props.target);
+        _this._observer = new _resizeObserverPolyfill2.default(_this._measure);
+
+        if (_this._target) {
+          _this._observer.observe(_this._target);
+        }
+      } else {
+        if (_this._observer) {
+          _this._observer.disconnect();
+        }
+
+        _this._container = null;
+        _this._target = null;
+        _this._observer = null;
+        _this._height = null;
+        _this._width = null;
+        _this._scrollHeight = null;
+        _this._scrollWidth = null;
+      }
+
+      if (_this.props.elRef) {
+        _this.props.elRef(_this._target);
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(ResizeObserver, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var target = this.props.target;
+
+      var nextTarget = nextProps.target;
+      if (target === nextTarget) {
+        return;
+      } else if (nextTarget) {
+        if (this._target) {
+          this._observer.unobserve(this._target);
+        }
+        this._target = this._getTarget(this._container, nextTarget);
+        this._observer.observe(this._target);
+      }
+    }
+  }, {
+    key: '_getTarget',
+    value: function _getTarget(container, target) {
+      if (target === null || target && typeof target !== 'string') {
+        return target;
+      }
+
+      var t = null;
+      if (target) {
+        t = document.getElementById(target) || document.querySelector(target);
+      } else {
+        t = container.parentNode;
+      }
+
+      if (!t) {
+        throw new Error('An HTMLDOMNode is required as the `ResizeObserver`\'s watch target but none were provided/found. ' + ('Please update the target prop to find a valid node since the provided target is invalid. `' + target + '`.'));
+      }
+
+      return t;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var Component = this.props.component;
+
+      return _react2.default.createElement(Component, { ref: this._handleRef, 'aria-hidden': true });
+    }
+  }]);
+
+  return ResizeObserver;
+}(_react.PureComponent);
+
+ResizeObserver.propTypes = {
+  /**
+   * Boolean if the height should be watched for the resize target.
+   */
+  watchHeight: _propTypes2.default.bool,
+
+  /**
+   * Boolean if the width should be watched for the resize target.
+   */
+  watchWidth: _propTypes2.default.bool,
+
+  /**
+   * An optional target that should be used for detecting resize events. This can either
+   * be a HTMLDOMNode or a string to use with `document.getElementById` or `document.querySelector`.
+   *
+   * If this prop is not provided and not null, it will default to the parent node of this component.
+   * If the provided `target={null}`, the observer will not begin until the `target` is `undefined` or
+   * it has been correctly passed a target string or object.
+   */
+  target: _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.string]),
+
+  /**
+   * The component to be rendered as. This should normally just be the default `span`, but there are cases
+   * where the component should be switched to something else for valid html.
+   */
+  component: _propTypes2.default.string,
+
+  /**
+   * A function to call when the height or width has been changed and that attribute is being watched.
+   * The callback will include the current height, width, scrollHeight and scrollWidth of the target.
+   *
+   * ```js
+   * onResize({
+   *   height: nextHeight,
+   *   width: nextWidth,
+   *   scrollHeight: nextScrollHeight,
+   *   scrollWidth: nextScrollWidth,
+   *   el: resizeTarget,
+   * });
+   * ```
+   */
+  onResize: _propTypes2.default.func.isRequired,
+
+  /**
+   * An optional ref callback that will include the `target` or the parent node of the resize observer. Just
+   * like other refs, this will provide null when it unmounts.
+   *
+   * This is really only helpful if you'd like the DOM node for a parent Component without needing to use
+   * `ReactDOM.findDOMNode(this)`.
+   */
+  elRef: _propTypes2.default.func
+};
+ResizeObserver.defaultProps = {
+  watchHeight: false,
+  watchWidth: false,
+  component: 'span'
+};
+exports.default = ResizeObserver;
+//# sourceMappingURL=ResizeObserver.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/VerticalAnchors.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/VerticalAnchors.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/** @module Helpers/VerticalAnchors */
+
+/**
+ * An enum for all the different types of horizontal anchors on a layover.
+ *
+ * @readonly
+ * @enum {string}
+ */
+var VerticalAnchors = {
+  /**
+   * Positions the layover to be placed over the toggle component so that
+   * it will never overlay the toggle component.
+   */
+  TOP: 'top',
+
+  /**
+   * Positions the layover so that it will be centered over the toggle component
+   * based on the layover's height.
+   */
+  CENTER: 'center',
+
+  /**
+   * Positions the layover so that it will overlap the toggle component by
+   * fixing to the top of the toggle.
+   */
+  OVERLAP: 'overlap',
+
+  /**
+   * Positions the layover to be placed below the toggle component so that
+   * it will never overlay the toggle component.
+   */
+  BOTTOM: 'bottom'
+};
+
+exports.default = VerticalAnchors;
+//# sourceMappingURL=VerticalAnchors.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/anchorShape.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/anchorShape.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _HorizontalAnchors = __webpack_require__(/*! ./HorizontalAnchors */ "./node_modules/react-md/lib/Helpers/HorizontalAnchors.js");
+
+var _HorizontalAnchors2 = _interopRequireDefault(_HorizontalAnchors);
+
+var _VerticalAnchors = __webpack_require__(/*! ./VerticalAnchors */ "./node_modules/react-md/lib/Helpers/VerticalAnchors.js");
+
+var _VerticalAnchors2 = _interopRequireDefault(_VerticalAnchors);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _propTypes2.default.shape({
+  x: _propTypes2.default.oneOf([_HorizontalAnchors2.default.LEFT, _HorizontalAnchors2.default.INNER_LEFT, _HorizontalAnchors2.default.CENTER, _HorizontalAnchors2.default.RIGHT, _HorizontalAnchors2.default.INNER_RIGHT]).isRequired,
+  y: _propTypes2.default.oneOf([_VerticalAnchors2.default.TOP, _VerticalAnchors2.default.CENTER, _VerticalAnchors2.default.OVERLAP, _VerticalAnchors2.default.BOTTOM]).isRequired
+});
+//# sourceMappingURL=anchorShape.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/fixedToShape.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/fixedToShape.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _propTypes2.default.oneOfType([_propTypes2.default.object, _propTypes2.default.shape({
+  x: _propTypes2.default.object,
+  y: _propTypes2.default.object
+})]);
+//# sourceMappingURL=fixedToShape.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Helpers/positionShape.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-md/lib/Helpers/positionShape.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _Positions = __webpack_require__(/*! ./Positions */ "./node_modules/react-md/lib/Helpers/Positions.js");
+
+var _Positions2 = _interopRequireDefault(_Positions);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _propTypes2.default.oneOfType([_propTypes2.default.oneOf([_Positions2.default.TOP_LEFT, _Positions2.default.TOP_RIGHT, _Positions2.default.BOTTOM_LEFT, _Positions2.default.BOTTOM_RIGHT, _Positions2.default.BELOW]), _propTypes2.default.string]);
+//# sourceMappingURL=positionShape.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Inks/Ink.js":
+/*!***********************************************!*\
+  !*** ./node_modules/react-md/lib/Inks/Ink.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _CSSTransitionGroupTick = __webpack_require__(/*! ../constants/CSSTransitionGroupTick */ "./node_modules/react-md/lib/constants/CSSTransitionGroupTick.js");
+
+var _CSSTransitionGroupTick2 = _interopRequireDefault(_CSSTransitionGroupTick);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Ink = function (_PureComponent) {
+  _inherits(Ink, _PureComponent);
+
+  function Ink(props) {
+    _classCallCheck(this, Ink);
+
+    var _this = _possibleConstructorReturn(this, (Ink.__proto__ || Object.getPrototypeOf(Ink)).call(this, props));
+
+    _this.state = {
+      active: false,
+      expanded: false,
+      pulsing: false,
+      leaving: false
+    };
+    return _this;
+  }
+
+  _createClass(Ink, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (!this.props.aborted && nextProps.aborted) {
+        if (this._timeout) {
+          clearTimeout(this._timeout);
+        }
+
+        if (this._abort) {
+          this._abort();
+        }
+
+        this.setState({ active: false, expanding: false, pulsing: false, leaving: false });
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._timeout) {
+        clearTimeout(this._timeout);
+      }
+    }
+  }, {
+    key: 'componentWillEnter',
+    value: function componentWillEnter(cb) {
+      var _this2 = this;
+
+      if (this.props.aborted) {
+        cb();
+        return;
+      }
+
+      var _props = this.props,
+          transitionOverlap = _props.transitionOverlap,
+          transitionEnterTimeout = _props.transitionEnterTimeout;
+
+      this._abort = cb;
+
+      this._timeout = setTimeout(function () {
+        _this2._timeout = setTimeout(function () {
+          _this2._timeout = null;
+          _this2._abort = null;
+
+          cb();
+        }, transitionEnterTimeout - transitionOverlap);
+
+        _this2.setState({ expanded: true });
+      }, _CSSTransitionGroupTick2.default);
+
+      this.setState({ active: true });
+    }
+  }, {
+    key: 'componentDidEnter',
+    value: function componentDidEnter() {
+      var _this3 = this;
+
+      if (this.props.pulse) {
+        this._timeout = setTimeout(function () {
+          _this3._timeout = null;
+
+          _this3.setState({ pulsing: true });
+        }, this.props.transitionEnterTimeout);
+      }
+    }
+  }, {
+    key: 'componentWillLeave',
+    value: function componentWillLeave(cb) {
+      var _this4 = this;
+
+      if (this.props.aborted) {
+        cb();
+        return;
+      }
+
+      if (this._timeout) {
+        clearTimeout(this._timeout);
+      }
+
+      this._abort = cb;
+      this._timeout = setTimeout(function () {
+        _this4._timeout = null;
+
+        cb();
+      }, this.props.transitionLeaveTimeout);
+
+      this.setState({ pulsing: false, leaving: true });
+    }
+  }, {
+    key: 'componentDidLeave',
+    value: function componentDidLeave() {
+      if (!this.props.aborted && this.props.onRemove) {
+        this.props.onRemove();
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props2 = this.props,
+          style = _props2.style,
+          className = _props2.className,
+          left = _props2.left,
+          top = _props2.top,
+          size = _props2.size;
+      var _state = this.state,
+          active = _state.active,
+          expanded = _state.expanded,
+          pulsing = _state.pulsing,
+          leaving = _state.leaving;
+
+
+      return _react2.default.createElement('span', {
+        style: Object.assign({}, style, {
+          left: left,
+          top: top,
+          height: size,
+          width: size
+        }),
+        className: (0, _classnames2.default)('md-ink', {
+          'md-ink--active': active,
+          'md-ink--expanded': expanded,
+          'md-ink--pulsing': pulsing,
+          'md-ink--leaving': leaving
+        }, className)
+      });
+    }
+  }]);
+
+  return Ink;
+}(_react.PureComponent);
+
+Ink.propTypes = {
+  style: _propTypes2.default.object,
+  className: _propTypes2.default.string,
+  aborted: _propTypes2.default.bool,
+  onRemove: _propTypes2.default.func,
+  left: _propTypes2.default.number.isRequired,
+  top: _propTypes2.default.number.isRequired,
+  size: _propTypes2.default.number.isRequired,
+  transitionOverlap: _propTypes2.default.number.isRequired,
+  transitionEnterTimeout: _propTypes2.default.number.isRequired,
+  transitionLeaveTimeout: _propTypes2.default.number.isRequired,
+  pulse: _propTypes2.default.bool
+};
+exports.default = Ink;
+//# sourceMappingURL=Ink.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/Inks/InkContainer.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-md/lib/Inks/InkContainer.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _TransitionGroup = __webpack_require__(/*! react-transition-group/TransitionGroup */ "./node_modules/react-transition-group/TransitionGroup.js");
+
+var _TransitionGroup2 = _interopRequireDefault(_TransitionGroup);
+
+var _classnames = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+
+var _classnames2 = _interopRequireDefault(_classnames);
+
+var _keyCodes = __webpack_require__(/*! ../constants/keyCodes */ "./node_modules/react-md/lib/constants/keyCodes.js");
+
+var _isFormPartRole = __webpack_require__(/*! ../utils/isFormPartRole */ "./node_modules/react-md/lib/utils/isFormPartRole.js");
+
+var _isFormPartRole2 = _interopRequireDefault(_isFormPartRole);
+
+var _calcPageOffset = __webpack_require__(/*! ../utils/Positioning/calcPageOffset */ "./node_modules/react-md/lib/utils/Positioning/calcPageOffset.js");
+
+var _calcPageOffset2 = _interopRequireDefault(_calcPageOffset);
+
+var _isValidClick = __webpack_require__(/*! ../utils/EventUtils/isValidClick */ "./node_modules/react-md/lib/utils/EventUtils/isValidClick.js");
+
+var _isValidClick2 = _interopRequireDefault(_isValidClick);
+
+var _touches = __webpack_require__(/*! ../utils/EventUtils/touches */ "./node_modules/react-md/lib/utils/EventUtils/touches.js");
+
+var _captureNextEvent = __webpack_require__(/*! ../utils/EventUtils/captureNextEvent */ "./node_modules/react-md/lib/utils/EventUtils/captureNextEvent.js");
+
+var _captureNextEvent2 = _interopRequireDefault(_captureNextEvent);
+
+var _calculateHypotenuse = __webpack_require__(/*! ../utils/NumberUtils/calculateHypotenuse */ "./node_modules/react-md/lib/utils/NumberUtils/calculateHypotenuse.js");
+
+var _calculateHypotenuse2 = _interopRequireDefault(_calculateHypotenuse);
+
+var _Ink = __webpack_require__(/*! ./Ink */ "./node_modules/react-md/lib/Inks/Ink.js");
+
+var _Ink2 = _interopRequireDefault(_Ink);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+/**
+ * The `InkContainer` is used for holding the list of inks that get created by touch,
+ * click, or keyboard focus.
+ *
+ * If the container element has the `type="submit"` attribute, the ink will also be
+ * triggered when the user presses enter anywhere in the form.
+ */
+var InkContainer = function (_PureComponent) {
+  _inherits(InkContainer, _PureComponent);
+
+  function InkContainer() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, InkContainer);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = InkContainer.__proto__ || Object.getPrototypeOf(InkContainer)).call.apply(_ref, [this].concat(args))), _this), _this.state = { inks: [] }, _this.createInk = function (pageX, pageY) {
+      _this._createInk(pageX, pageY);
+      _this._removeTimeout = setTimeout(function () {
+        _this._removeTimeout = null;
+        _this._removeInk();
+      }, _this.props.transitionOverlap);
+    }, _this.focus = function () {
+      _this._getKeyboardContainer().focus();
+    }, _this._createInk = function (pageX, pageY) {
+      var _this$_inkContainer = _this._inkContainer,
+          offsetWidth = _this$_inkContainer.offsetWidth,
+          offsetHeight = _this$_inkContainer.offsetHeight;
+
+
+      var x = void 0;
+      var y = void 0;
+      if (typeof pageX !== 'undefined' && typeof pageY !== 'undefined') {
+        var pageOffset = (0, _calcPageOffset2.default)(_this._inkContainer);
+
+        x = pageX - pageOffset.left;
+        y = pageY - pageOffset.top;
+      } else {
+        x = offsetWidth / 2;
+        y = offsetHeight / 2;
+      }
+
+      var r = Math.max((0, _calculateHypotenuse2.default)(x, y), (0, _calculateHypotenuse2.default)(offsetWidth - x, y), (0, _calculateHypotenuse2.default)(offsetWidth - x, offsetHeight - y), (0, _calculateHypotenuse2.default)(x, offsetHeight - y));
+
+      var ink = {
+        left: x - r,
+        top: y - r,
+        size: r * 2,
+        key: Date.now()
+      };
+
+      var inks = _this.state.inks.slice();
+      inks.push(ink);
+      _this.setState({ inks: inks });
+    }, _this._removeInk = function () {
+      var inks = _this.state.inks.slice();
+      inks.pop();
+
+      _this.setState({ inks: inks });
+    }, _this._getKeyboardContainer = function () {
+      if (_this._container.classList.contains('md-text-field-container')) {
+        return _this._container.querySelector('.md-text-field');
+      }
+
+      return _this._container;
+    }, _this._setContainers = function (group) {
+      if (group !== null) {
+        _this._inkContainer = (0, _reactDom.findDOMNode)(group);
+        _this._container = _this._inkContainer.parentElement;
+
+        if (_this._container) {
+          _this._initOrRemoveEvents(_this.props);
+        }
+      }
+    }, _this._initOrRemoveEvents = function (props) {
+      var keyboardDiff = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      var mouseDiff = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+      var touchDiff = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : true;
+
+      var mouseDisabled = _this._isListenerDisabled('mouse', props.disabledInteractions);
+      var touchDisabled = _this._isListenerDisabled('touch', props.disabledInteractions);
+      var keyboardDisabled = _this._isListenerDisabled('keyboard', props.disabledInteractions);
+
+      if (keyboardDiff) {
+        var fn = (keyboardDisabled ? 'remove' : 'add') + 'EventListener';
+        _this._getKeyboardContainer()[fn]('focus', _this._handleFocus);
+        _this._getKeyboardContainer()[fn]('keydown', _this._handleKeyDown);
+
+        if (_this._container.getAttribute('type') === 'submit') {
+          window[fn]('submit', _this._handleSubmit);
+        }
+
+        if (mouseDiff) {
+          _this._container[(!mouseDisabled ? 'add' : 'remove') + 'EventListener']('mousedown', _this._stopPropagationToFocus);
+        }
+
+        if (touchDiff) {
+          (0, _touches.setTouchEvent)(!touchDisabled, _this._container, 'start', _this._stopPropagationToFocus);
+        }
+      }
+
+      if (mouseDiff) {
+        var _fn = (mouseDisabled ? 'remove' : 'add') + 'EventListener';
+        _this._container[_fn]('mousedown', _this._handleMouseDown);
+        _this._container[_fn]('mouseup', _this._handleMouseUp);
+      }
+
+      if (touchDiff) {
+        (0, _touches.setTouchEvent)(!touchDisabled, _this._container, 'start', _this._handleTouchStart);
+        (0, _touches.setTouchEvent)(!touchDisabled, _this._container, 'end', _this._handleTouchEnd);
+      }
+    }, _this._maybeDelayClick = function () {
+      if (!_this.props.waitForInkTransition) {
+        return;
+      }
+
+      (0, _captureNextEvent2.default)('click', _this._container);
+    }, _this._handleRemove = function () {
+      if (_this._clicked && _this.props.waitForInkTransition) {
+        // For some reason if the click event will make the ink unmount, it will no longer
+        // have a debug id in the TransitionGroup and it displays a warning. Adding a 1ms timeout
+        // fixes that issue... It only happens on an actual click instead of an enter click.
+        setTimeout(function () {
+          _this._container.click();
+        }, 1);
+      }
+
+      _this._clicked = false;
+    }, _this._handleKeyDown = function (e) {
+      var key = e.which || e.keyCode;
+      var enter = key === _keyCodes.ENTER;
+      var space = key === _keyCodes.SPACE;
+      // Don't trigger ink when enter key is pressed and the target has an input inside of it (SelectField)
+      if (space || enter && !(0, _isFormPartRole2.default)(e.target) && !e.target.querySelector('input')) {
+        _this._clicked = true;
+        _this.createInk();
+        _this._maybeDelayClick();
+      }
+    }, _this._handleFocus = function () {
+      if (_this._clicked) {
+        return;
+      }
+
+      _this._createInk();
+      _this._getKeyboardContainer().addEventListener('blur', _this._handleBlur);
+    }, _this._handleBlur = function () {
+      _this._getKeyboardContainer().removeEventListener('blur', _this._handleBlur);
+      _this._removeInk();
+    }, _this._handleMouseDown = function (e) {
+      _this._clicked = true;
+      if (!(0, _isValidClick2.default)(e) || _this._skipNextMouse) {
+        _this._skipNextMouse = false;
+        return;
+      }
+
+      _this._mouseLeave = false;
+      _this._container.addEventListener('mouseleave', _this._handleMouseLeave);
+      _this._createInk(e.pageX, e.pageY);
+    }, _this._handleMouseLeave = function () {
+      _this._container.removeEventListener('mouseleave', _this._handleMouseLeave);
+      _this._mouseLeave = true;
+      _this._removeInk();
+    }, _this._handleMouseUp = function () {
+      if (_this._mouseLeave) {
+        return;
+      }
+
+      _this._maybeDelayClick();
+      _this._container.removeEventListener('mouseleave', _this._handleMouseLeave);
+      _this._removeInk();
+    }, _this._handleTouchStart = function (e) {
+      _this._aborted = false;
+      _this._clicked = true;
+      _this._skipNextMouse = true;
+      (0, _touches.addTouchEvent)(window, 'move', _this._handleTouchMove);
+
+      var _e$changedTouches$ = e.changedTouches[0],
+          pageX = _e$changedTouches$.pageX,
+          pageY = _e$changedTouches$.pageY;
+
+      _this._createInk(pageX, pageY);
+    }, _this._handleTouchMove = function () {
+      (0, _touches.removeTouchEvent)(window, 'move', _this._handleTouchMove);
+      var lastInk = _this.state.inks[_this.state.inks.length - 1];
+      if (!lastInk || Date.now() > lastInk.key + 200) {
+        _this._aborted = false;
+        return;
+      }
+
+      var inks = _this.state.inks.slice();
+      var index = inks.length - 1;
+
+      var abortedInk = Object.assign({}, lastInk, { aborted: true });
+      inks.splice(index, 1, abortedInk);
+
+      _this._aborted = true;
+      _this.setState({ inks: inks }, _this._removeInk);
+    }, _this._handleTouchEnd = function () {
+      _this._skipNextMouse = true;
+
+      if (_this._aborted) {
+        return;
+      } else {
+        (0, _touches.removeTouchEvent)(window, 'move', _this._handleTouchMove);
+      }
+
+      _this._removeInk();
+    }, _this._handleSubmit = function (e) {
+      if (document.activeElement === _this._container || !e.target.contains(_this._container)) {
+        return;
+      }
+
+      _this._maybeDelayClick();
+      _this.createInk();
+    }, _this._stopPropagationToFocus = function (e) {
+      switch (e.type) {
+        case 'touchstart':
+          (0, _touches.addTouchEvent)(window, 'end', _this._stopPropagationToFocus, { capture: true });
+          break;
+        case 'touchend':
+          (0, _touches.removeTouchEvent)(window, 'end', _this._stopPropagationToFocus, { capture: true });
+          break;
+        case 'mousedown':
+          window.addEventListener('mouseup', _this._stopPropagationToFocus, true);
+          break;
+        case 'mouseup':
+          window.removeEventListener('mouseup', _this._stopPropagationToFocus, true);
+          break;
+        default:
+      }
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(InkContainer, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      var di = this.props.disabledInteractions;
+      var ndi = nextProps.disabledInteractions;
+
+      if (di === ndi || !this._container) {
+        return;
+      }
+
+      var mouseDisabledDiff = this._isListenerDisabledDiff('mouse', di, ndi);
+      var touchDisabledDiff = this._isListenerDisabledDiff('touch', di, ndi);
+      var keyboardDisabledDiff = this._isListenerDisabledDiff('keyboard', di, ndi);
+      this._initOrRemoveEvents(nextProps, keyboardDisabledDiff, mouseDisabledDiff, touchDisabledDiff);
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      if (this._removeTimeout) {
+        clearTimeout(this._removeTimeout);
+      }
+
+      if (this._container) {
+        this._initOrRemoveEvents({ disabledInteractions: ['keyboard', 'mouse', 'touch'] });
+        this._getKeyboardContainer().removeEventListener('blur', this._handleBlur);
+      }
+    }
+
+    /**
+     * Creates an ink from pageX and pageY coordinates. These values should either come
+     * from the `changedTouches` or just the base event (if clicked). These coordinates
+     * are used to position the ink correctly in the container from touch/click point.
+     * If either value is undefined, an ink will be created from the center of the
+     * container.
+     *
+     * It will also automatically remove the ink.
+     *
+     * @param {number} pageX - The page x coordinate of the click or touch event.
+     * @param {number} pageY - The page y coordinate of the click or touch event.
+     */
+
+
+    /**
+     * Focuses the main element.
+     */
+
+  }, {
+    key: '_isListenerDisabledDiff',
+    value: function _isListenerDisabledDiff(interaction, disabledInteractions, nextDisabledInteractions) {
+      var i = disabledInteractions.indexOf(interaction);
+      var ni = nextDisabledInteractions.indexOf(interaction);
+
+      return i < 0 && ni >= 0 || i >= 0 && ni < 0;
+    }
+  }, {
+    key: '_isListenerDisabled',
+    value: function _isListenerDisabled(interaction, disabledInteractions) {
+      return disabledInteractions && disabledInteractions.indexOf(interaction) !== -1;
+    }
+
+    /**
+     * Creates an ink from pageX and pageY coordinates. These values should either come
+     * from the `changedTouches` or just the base event (if clicked). These coordinates
+     * are used to position the ink correctly in the container from touch/click point.
+     * If either value is undefined, an ink will be created from the center of the
+     * container.
+     *
+     * @param {number} pageX - The page x coordinate of the click or touch event.
+     * @param {number} pageY - The page y coordinate of the click or touch event.
+     */
+
+
+    /**
+     * Removes an ink from the container.
+     */
+
+
+    /**
+     * Gets the container for any keyboard events. This will almost always be the main element,
+     * but text fields will need to be the input itself.
+     */
+
+
+    /**
+     * Sets the ink container and the main container from the ref callback. When the component
+     * is mounting, the keyboard, mouse, and keyboard events will be initialized.
+     */
+
+
+    /**
+     * This function will either add or remove the event listeners for creating inks.
+     *
+     * @param {Object} props - The current props to use for figuring out if the events should
+     *    be added or removed.
+     * @param {bool=} keyboardDiff - Boolean if there was a difference between the current props and either
+     *    the previous or next props for the keyboard interactions being disabled.
+     * @param {bool=} mouseDiff - Boolean if there was a difference between the current props and either
+     *    the previous or next props for the mouse interactions being disabled.
+     * @param {bool=} touchDiff - Boolean if there was a difference between the current props and either
+     *    the previous or next props for the touch interactions being disabled.
+     */
+
+
+    /**
+     * If a form was submitted that contains the container of the ink and the current focus element
+     * is not the container, trigger an ink effect.
+     *
+     * The current focus check is added so that two inks are not created.
+     */
+
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          style = _props.style,
+          className = _props.className,
+          inkStyle = _props.inkStyle,
+          inkClassName = _props.inkClassName,
+          transitionOverlap = _props.transitionOverlap,
+          transitionEnterTimeout = _props.transitionEnterTimeout,
+          transitionLeaveTimeout = _props.transitionLeaveTimeout,
+          pulse = _props.pulse;
+
+      var inks = this.state.inks.map(function (props) {
+        return _react2.default.createElement(_Ink2.default, _extends({}, props, {
+          pulse: pulse,
+          style: inkStyle,
+          className: inkClassName,
+          onRemove: _this2._handleRemove,
+          transitionOverlap: transitionOverlap,
+          transitionEnterTimeout: transitionEnterTimeout,
+          transitionLeaveTimeout: transitionLeaveTimeout
+        }));
+      });
+
+      return _react2.default.createElement(
+        _TransitionGroup2.default,
+        {
+          component: 'div',
+          style: style,
+          className: (0, _classnames2.default)('md-ink-container', className),
+          ref: this._setContainers
+        },
+        inks
+      );
+    }
+  }]);
+
+  return InkContainer;
+}(_react.PureComponent);
+
+InkContainer.propTypes = {
+  style: _propTypes2.default.object,
+  className: _propTypes2.default.string,
+  inkStyle: _propTypes2.default.object,
+  inkClassName: _propTypes2.default.string,
+  waitForInkTransition: _propTypes2.default.bool,
+  disabledInteractions: _propTypes2.default.arrayOf(_propTypes2.default.oneOf(['keyboard', 'mouse', 'touch'])),
+  transitionOverlap: _propTypes2.default.number.isRequired,
+  transitionEnterTimeout: _propTypes2.default.number.isRequired,
+  transitionLeaveTimeout: _propTypes2.default.number.isRequired,
+  pulse: _propTypes2.default.bool
+};
+InkContainer.defaultProps = {
+  transitionOverlap: 150,
+  transitionEnterTimeout: 450,
+  transitionLeaveTimeout: 300
+};
+exports.default = InkContainer;
+//# sourceMappingURL=InkContainer.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/constants/CSSTransitionGroupTick.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-md/lib/constants/CSSTransitionGroupTick.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// This will need to keep in sync with the `ReactCSSTransitionGroupChild` `TICK` const.
+// https://github.com/facebook/react/blob/master/src/addons/transitions/ReactCSSTransitionGroupChild.js#L22
+
+exports.default = 17;
+//# sourceMappingURL=CSSTransitionGroupTick.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/constants/keyCodes.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/react-md/lib/constants/keyCodes.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var LEFT_MOUSE = exports.LEFT_MOUSE = 0;
+var RIGHT_MOUSE = exports.RIGHT_MOUSE = 2;
+
+var TAB = exports.TAB = 9;
+var ENTER = exports.ENTER = 13;
+var ESC = exports.ESC = 27;
+var SPACE = exports.SPACE = 32;
+var PAGE_UP = exports.PAGE_UP = 33;
+var PAGE_DOWN = exports.PAGE_DOWN = 34;
+var END = exports.END = 35;
+var HOME = exports.HOME = 36;
+var LEFT = exports.LEFT = 37;
+var UP = exports.UP = 38;
+var RIGHT = exports.RIGHT = 39;
+var DOWN = exports.DOWN = 40;
+
+var ZERO = exports.ZERO = 48;
+var NINE = exports.NINE = 57;
+var KEYPAD_ZERO = exports.KEYPAD_ZERO = 96;
+var KEYPAD_NINE = exports.KEYPAD_NINE = 105;
+//# sourceMappingURL=keyCodes.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/EventUtils/captureNextEvent.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/EventUtils/captureNextEvent.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = captureNextEvent;
+/** @module utils/EventUtils/captureNextEvent */
+
+/**
+ * This function will capture the next event and stop propagation during the
+ * bubbling cycle of events. This is really only useful if you want to stop
+ * the default behavior of chained events.
+ *
+ * @param {String} type - The event type to capture.
+ * @param {Object|func=} target - Either the DOM node to target, a callback function
+ *      to call once the event has been captured, or undefined. If this is undefined,
+ *      the event will be captured on the window.
+ * @param {func=} callback - An optional callback function to call once the event
+ *      has been captured.
+ */
+function captureNextEvent(type, target, callback) {
+  var el = typeof target !== 'function' && target ? target : window;
+  var cb = typeof target === 'function' ? target : callback;
+
+  var capture = function capture(e) {
+    e.stopPropagation();
+    if (cb) {
+      cb(e);
+    }
+
+    el.removeEventListener(type, capture, true);
+  };
+
+  el.addEventListener(type, capture, true);
+}
+//# sourceMappingURL=captureNextEvent.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/EventUtils/handleWindowClickListeners.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/EventUtils/handleWindowClickListeners.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = handleWindowClickListeners;
+/** @module utils/EventUtils/handleWindowClickListeners */
+var mobileSafari = void 0;
+
+/**
+ * Since mobile safari doesn't delegate click events to the window (it only does touch events),
+ * this utility function will hack a fix to allow the delegation by updaging the body's cursor
+ * to be a pointer.
+ *
+ * Hopefully this can be removed one day....
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+ * @param {function} cb - the callback function to use for a window click event.
+ * @param {boolean} enabled - boolean if the click event is enabled.
+ */
+function handleWindowClickListeners(cb) {
+  var enabled = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+  if (typeof mobileSafari === 'undefined' && typeof window !== 'undefined') {
+    var ua = window.navigator.userAgent;
+    var iOS = ua.match(/iP(ad|hone)/i);
+    var webkit = ua.match(/WebKit/i);
+    mobileSafari = iOS && webkit && !ua.match(/CriOS/i);
+
+    if (mobileSafari) {
+      document.body.style.cursor = 'pointer';
+    }
+  }
+
+  var listener = window[(enabled ? 'add' : 'remove') + 'EventListener'];
+  listener('click', cb);
+}
+//# sourceMappingURL=handleWindowClickListeners.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/EventUtils/isValidClick.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/EventUtils/isValidClick.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isValidClick;
+
+var _keyCodes = __webpack_require__(/*! ../../constants/keyCodes */ "./node_modules/react-md/lib/constants/keyCodes.js");
+
+/**
+ * Checks if an event is a valid click event by ignoring
+ * any clisk that are not the left mouse button and not
+ * clicks that involve the shift key.
+ *
+ * @param {Object} e - the event to check
+ * @return {Boolean} true if the event is valid.
+ */
+function isValidClick(e) {
+  return e.button === _keyCodes.LEFT_MOUSE && !e.shiftKey;
+} /** @module utils/EventUtils/isValidClick */
+//# sourceMappingURL=isValidClick.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/EventUtils/touches.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/EventUtils/touches.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+exports.setTouchEvent = setTouchEvent;
+exports.addTouchEvent = addTouchEvent;
+exports.removeTouchEvent = removeTouchEvent;
+// https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md
+var supportsPassive = void 0;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function get() {
+      supportsPassive = true;
+    }
+  });
+  window.addEventListener('test', null, opts);
+} catch (e) {
+  supportsPassive = false;
+}
+
+/**
+ * A helper function for manually setting touch events on elements with the passive
+ * option (when it is supported).
+ *
+ * @param {boolean} add - Boolean if the event listener should be added or removed.
+ * @param {HTMLElement} el - The element to add the listener to.
+ * @param {String} type - the event type to set. This should be 'start', 'move', or 'end'
+ * @param {function} callback - The event listener callback function.
+ * @param {Object=} options - any additional options to apply.
+ */
+function setTouchEvent(add, el, eventType, callback, options) {
+  return el[(add ? 'add' : 'remove') + 'EventListener']('touch' + eventType, callback, supportsPassive ? _extends({ passive: true }, options) : false);
+}
+
+/**
+ * A helper function for manually adding touch events on elements with the passive
+ * option (when it is supported).
+ *
+ * @param {HTMLElement} el - The element to add the listener to.
+ * @param {String} type - the event type to set. This should be 'start', 'move', or 'end'
+ * @param {function} callback - The event listener callback function.
+ * @param {Object=} options - any additional options to apply.
+ */
+function addTouchEvent(el, type, callback, options) {
+  return setTouchEvent(true, el, type, callback, options);
+}
+
+/**
+ * A helper function for manually removing touch events on elements with the passive
+ * option (when it is supported).
+ *
+ * @param {HTMLElement} el - The element to add the listener to.
+ * @param {String} type - the event type to set. This should be 'start', 'move', or 'end'
+ * @param {function} callback - The event listener callback function.
+ * @param {Object=} options - any additional options to apply.
+ */
+function removeTouchEvent(el, type, callback, options) {
+  return setTouchEvent(false, el, type, callback, options);
+}
+//# sourceMappingURL=touches.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/NumberUtils/calculateHypotenuse.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/NumberUtils/calculateHypotenuse.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = calculateHypotenuse;
+/** @module utils/NumberUtils/calculateHypotenuse */
+
+/**
+ * Calculates the hypotenuse using the x and y coordinates given.
+ *
+ * @param {number} a the x coordinate
+ * @param {number} b the y coordinate
+ * @return {number} the hypotenuse length for the given x and y coordinates.
+ */
+function calculateHypotenuse(a, b) {
+  return Math.sqrt(a * a + b * b);
+}
+//# sourceMappingURL=calculateHypotenuse.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/calcPageOffset.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/calcPageOffset.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = calcPageOffset;
+
+var _getPagePosition = __webpack_require__(/*! ./getPagePosition */ "./node_modules/react-md/lib/utils/Positioning/getPagePosition.js");
+
+var _getPagePosition2 = _interopRequireDefault(_getPagePosition);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Calculates the page offset of an element. If the element
+ * is false-ish, an empty object will be returned.
+ *
+ * This is really only used for calculating an ink position.
+ *
+ * @param {Node} el - An html node to find a page offset for.
+ * @return {Object} an object with a left and top attribute for the page
+ *    offset.
+ */
+function calcPageOffset(el) {
+  if (!el) {
+    return { left: null, right: null };
+  }
+
+  var rect = el.getBoundingClientRect();
+  return {
+    left: rect.left + (0, _getPagePosition2.default)('x'),
+    top: rect.top + (0, _getPagePosition2.default)('y')
+  };
+} /** @module utils/Positioning/calcPageOffset */
+//# sourceMappingURL=calcPageOffset.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/getPagePosition.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/getPagePosition.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getPagePosition;
+/** @module utils/Positioning/getPagePosition */
+
+/**
+ * Gets the current page position.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollY
+ * @param {String} direction - The direction that should be retrieved. This
+ *    should be either 'x' or 'y'.
+ * @return {number} the position of the direction on the page.
+ */
+function getPagePosition(direction) {
+  var scroll = 'scroll' + (direction === 'x' ? 'Left' : 'Top');
+  if (typeof window.pageXOffset !== 'undefined') {
+    return window['page' + direction.toUpperCase() + 'Offset'];
+  } else if ((document.compatMode || '') === 'CSS1Compat') {
+    return document.documentElement[scroll];
+  } else {
+    return document.body[scroll];
+  }
+}
+//# sourceMappingURL=getPagePosition.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/getScreenSize.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/getScreenSize.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getScreenSize;
+/** @module utils/Positioning/getScreenSize */
+
+/**
+ * A utility function to get the height or width of the of the browser with
+ * a fallback for older browsers.
+ *
+ * @param {String} position - the position to get the screen size for
+ * @return {number} the screen size for the provided position.
+ */
+function getScreenSize(position) {
+  if (position !== 'Height' && position !== 'Width' && "development" !== 'production') {
+    throw new Error('The \'getScreenSize\' function requires either a position of \'Height\' or \'Width\' ' + ('but received `' + position + '`'));
+  }
+
+  return window['inner' + position] || document.documentElement['client' + position];
+}
+//# sourceMappingURL=getScreenSize.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/getScroll.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/getScroll.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getScroll;
+/** @module utils/Positioning/getScroll */
+
+/**
+ * A utility function to just get an element's scroll x and y
+ * values. This is really just needed because `window` uses
+ * different attributes.
+ *
+ * @param {Object} el - The element to get a scroll value from.
+ * @return {Object} an object containing the scrollX and scrollY of the element.
+ */
+function getScroll(el) {
+  if (typeof el.scrollX !== 'undefined' && typeof el.scrollY !== 'undefined') {
+    return { x: el.scrollX, y: el.scrollY };
+  } else if (typeof el.scrollLeft !== 'undefined' && typeof el.scrollTop !== 'undefined') {
+    return { x: el.scrollLeft, y: el.scrollTop };
+  }
+
+  return { x: 0, y: 0 };
+}
+//# sourceMappingURL=getScroll.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/getSelectedTextPosition.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/getSelectedTextPosition.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getSelectedTextPosition;
+
+var _getSelectedText = __webpack_require__(/*! ../getSelectedText */ "./node_modules/react-md/lib/utils/getSelectedText.js");
+
+var _getSelectedText2 = _interopRequireDefault(_getSelectedText);
+
+var _getTextWidth = __webpack_require__(/*! ./getTextWidth */ "./node_modules/react-md/lib/utils/Positioning/getTextWidth.js");
+
+var _getTextWidth2 = _interopRequireDefault(_getTextWidth);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/** @module utils/Positoning/getSelectedTextPosition */
+var ZERO_WIDTH_CHARACTER = '\u200B';
+
+/**
+ * A utility function to attempt to get the current highlighted text position.
+ *
+ * When a context menu is opened, this function attempts to find the bounding client rect
+ * for the highlighted text. However, if the text is in the text field, some weird stuff
+ * happens and it is unable to get it correctly.
+ */
+function getSelectedTextPosition(e) {
+  var height = void 0;
+  var target = e.target,
+      clientX = e.clientX,
+      clientY = e.clientY;
+
+  var text = (0, _getSelectedText2.default)();
+  var width = Math.round((0, _getTextWidth2.default)(text, target) || 0);
+  if (!text || target.classList.contains('md-text-field')) {
+    height = parseInt(window.getComputedStyle(target).fontSize, 10);
+    return {
+      width: width,
+      height: height,
+      left: clientX - width,
+      top: clientY
+    };
+  }
+
+  // All browsers I am supporting have window.getSelection, but better safe than sorry
+  if (window.getSelection) {
+    var selection = window.getSelection();
+    if (selection.rangeCount) {
+      var range = selection.getRangeAt(0).cloneRange();
+      var rect = null;
+      if (range.getClientRects) {
+        var rects = range.getClientRects();
+        if (rects.length > 0) {
+          rect = rects[0];
+        }
+      }
+
+      if (!rect) {
+        var span = document.createElement('span');
+        span.appendChild(document.createTextNode(ZERO_WIDTH_CHARACTER));
+        range.insertNode(span);
+        rect = span.getBoundingClientRect();
+
+        var spanParent = span.parentNode;
+        spanParent.removeChild(span);
+        spanParent.normalize();
+      }
+
+      return rect;
+    }
+  }
+
+  return null;
+}
+//# sourceMappingURL=getSelectedTextPosition.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/getTextWidth.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/getTextWidth.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getTextWidth;
+/** @module utils/Positioning/getTextWidth */
+
+var cachedCanvas = void 0;
+
+/**
+ * A utility function to measure the width (in px) of any text. It will require a canvas
+ * and an element to use to determine the current fonts to apply since different fonts will
+ * have different widths.
+ *
+ * This isn't fully accurate since some browsers handle the calculations a bit differently so
+ * they are off by a 0-3px
+ *
+ * @param {String} text - The text to measure the width
+ * @param {HTMLElement} el - The element to use to determine the current font for the text.
+ * @param {HTMLElement=} canvas - An optional canvas to use for doing the calculations. If this
+ *    is omitted, it will just use the locally created canvas to do the calculations.
+ * @return {number} this will either return null if there is a problem calculating the width or
+ *    the length (in px) of the text.
+ */
+function getTextWidth(text, el, canvas) {
+  if (!el) {
+    return null;
+  }
+
+  if (!canvas) {
+    if (!cachedCanvas) {
+      cachedCanvas = document.createElement('canvas');
+    }
+
+    canvas = cachedCanvas;
+  }
+
+  var context = canvas.getContext('2d');
+  if (!context) {
+    // context doesn't exist in testing without complicated mocks
+    return null;
+  }
+
+  var styles = window.getComputedStyle(el);
+  var font = styles.font;
+  // Some browsers do not actually supply the font style since they are on an older version of CSSProperties,
+  // so the font string needs to be made manually.
+  if (!font) {
+    // font-style font-variant font-weight font-size/line-height font-family
+    var sizing = styles.fontSize + ' / ' + styles.lineHeight + ' ' + styles.fontFamily;
+    font = styles.fontStyle + ' ' + styles.fontVariant + ' ' + styles.fontWeight + ' ' + sizing;
+  }
+
+  context.font = font;
+  return context.measureText(text).width;
+}
+//# sourceMappingURL=getTextWidth.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/isOutOfBounds.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/isOutOfBounds.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isOutOfBounds;
+
+var _getScreenSize = __webpack_require__(/*! ./getScreenSize */ "./node_modules/react-md/lib/utils/Positioning/getScreenSize.js");
+
+var _getScreenSize2 = _interopRequireDefault(_getScreenSize);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function isOutHorizontally(fixedTo, child, threshold) {
+  var _fixedTo$getBoundingC = fixedTo.getBoundingClientRect(),
+      fixedLeft = _fixedTo$getBoundingC.left,
+      fixedRight = _fixedTo$getBoundingC.right;
+
+  var _child$getBoundingCli = child.getBoundingClientRect(),
+      childLeft = _child$getBoundingCli.left,
+      childRight = _child$getBoundingCli.right;
+
+  var offset = child.offsetWidth * threshold;
+
+  var left = childLeft + offset;
+  var right = childRight - offset;
+
+  var screenEdge = childLeft === 0 || (0, _getScreenSize2.default)('Width') === childRight;
+  return fixedLeft > left || fixedRight < right || screenEdge;
+} /** @module utils/Positioning/isOutOfBounds */
+
+function isOutVertically(fixedTo, child, toggle, threshold) {
+  var _fixedTo$getBoundingC2 = fixedTo.getBoundingClientRect(),
+      fixedTop = _fixedTo$getBoundingC2.top,
+      fixedBottom = _fixedTo$getBoundingC2.bottom;
+
+  var _child$getBoundingCli2 = child.getBoundingClientRect(),
+      childTop = _child$getBoundingCli2.top,
+      childBottom = _child$getBoundingCli2.bottom;
+
+  var offset = toggle.offsetHeight * threshold;
+
+  var screenEdge = childTop === 0 || (0, _getScreenSize2.default)('Height') === childBottom;
+  return fixedTop > childTop + offset || fixedBottom < childTop - offset || screenEdge;
+}
+
+/**
+ * Checks if the fixedTo object for the Layover component is considered
+ * out of bounds relative to the container.
+ *
+ * @param {Object} fixedTo - The Layover's `fixedTo` prop.
+ * @param {Object} child - The Layover's `children` prop as a DOM element.
+ * @param {Object} toggle - The Layover's `toggle` prop as a DOM element.
+ * @param {number} verticalThreshold - The vertical threshold multiplier to apply.
+ * @param {number} horizontalThreshold - The horizontal threshold multiplier to apply.
+ * @return {boolean} true if the Layover's `fixedTo` prop is considered out of bounds.
+ */
+function isOutOfBounds(fixedTo, child, toggle, verticalThreshold, horizontalThreshold) {
+  if (fixedTo === window) {
+    return false;
+  } else if (fixedTo.x || fixedTo.y) {
+    var x = fixedTo.x,
+        y = fixedTo.y;
+
+    return !!y && isOutVertically(y, child, toggle, verticalThreshold) || !!x && isOutHorizontally(x, child, horizontalThreshold);
+  }
+
+  return isOutVertically(fixedTo, child, toggle, verticalThreshold) || isOutHorizontally(fixedTo, child, horizontalThreshold);
+}
+//# sourceMappingURL=isOutOfBounds.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/Positioning/viewport.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/Positioning/viewport.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = viewport;
+
+var _getScreenSize = __webpack_require__(/*! ./getScreenSize */ "./node_modules/react-md/lib/utils/Positioning/getScreenSize.js");
+
+var _getScreenSize2 = _interopRequireDefault(_getScreenSize);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Determines if an element is still in the viewport. If it is,
+ * it will return a `true` boolean. If it is not, it will return
+ * an object containing booleans for top, right, bottom, and left
+ * where a `false` value will mean it is out of the viewport for that
+ * position.
+ *
+ * @param {Object} el - The element to test.
+ * @return {boolean|Object} the results.
+ */
+function viewport(el) {
+  if (!el) {
+    return {};
+  }
+
+  var rect = el.getBoundingClientRect();
+  var top = rect.top >= 0;
+  var right = rect.right <= (0, _getScreenSize2.default)('Width');
+  var bottom = rect.bottom <= (0, _getScreenSize2.default)('Height');
+  var left = rect.left >= 0;
+
+  return top && right && bottom && left || { top: top, right: right, bottom: bottom, left: left };
+} /** @module utils/Positioning/viewport */
+//# sourceMappingURL=viewport.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/getSelectedText.js":
+/*!************************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/getSelectedText.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = getSelectedText;
+/** @module utils/getSelectedText */
+
+/**
+ * A utility function that gets the current selected text in the document. I think
+ * that all the browsers I support have `window.getSelection`, but it falls back to
+ * support others.
+ *
+ * @return {String} the current selection on the page
+ */
+function getSelectedText() {
+  if (typeof window.getSelection !== 'undefined') {
+    return window.getSelection().toString();
+  } else if (typeof document.selection !== 'undefined' && document.selection.type === 'Text') {
+    return document.selection.createRange().text;
+  }
+
+  return '';
+}
+//# sourceMappingURL=getSelectedText.js.map
+
+/***/ }),
+
+/***/ "./node_modules/react-md/lib/utils/isFormPartRole.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/react-md/lib/utils/isFormPartRole.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = isFormPartRole;
+/** @module utils/isFormPartRole */
+
+/**
+ * A simple utility function to determine if an element has a role that should
+ * be used as a form part. This is mostly used for changing the behavior of keyboard
+ * events.
+ *
+ * A form part role is one of the following:
+ * - checkbox
+ * - radio
+ * - listbox
+ * - input
+ *
+ * @param {HTMLElement} el - the element to check.
+ * @return {boolean} true if the element is considered an element part of a form.
+ */
+function isFormPartRole(el) {
+  if (!el) {
+    return false;
+  } else if (el.nodeName === 'INPUT') {
+    return true;
+  }
+
+  var role = el.getAttribute('role');
+  return role === 'checkbox' || role === 'radio' || role === 'listbox';
+}
+//# sourceMappingURL=isFormPartRole.js.map
+
+/***/ }),
+
 /***/ "./node_modules/react-redux/es/components/Provider.js":
 /*!************************************************************!*\
   !*** ./node_modules/react-redux/es/components/Provider.js ***!
@@ -21153,6 +31895,380 @@ function warning(message) {
     /* eslint-disable no-empty */
   } catch (e) {}
   /* eslint-enable no-empty */
+}
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/TransitionGroup.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/react-transition-group/TransitionGroup.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactLifecyclesCompat = __webpack_require__(/*! react-lifecycles-compat */ "./node_modules/react-lifecycles-compat/react-lifecycles-compat.es.js");
+
+var _ChildMapping = __webpack_require__(/*! ./utils/ChildMapping */ "./node_modules/react-transition-group/utils/ChildMapping.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var values = Object.values || function (obj) {
+  return Object.keys(obj).map(function (k) {
+    return obj[k];
+  });
+};
+
+var propTypes = {
+  /**
+   * `<TransitionGroup>` renders a `<div>` by default. You can change this
+   * behavior by providing a `component` prop.
+   * If you use React v16+ and would like to avoid a wrapping `<div>` element
+   * you can pass in `component={null}`. This is useful if the wrapping div
+   * borks your css styles.
+   */
+  component: _propTypes2.default.any,
+  /**
+   * A set of `<Transition>` components, that are toggled `in` and out as they
+   * leave. the `<TransitionGroup>` will inject specific transition props, so
+   * remember to spread them through if you are wrapping the `<Transition>` as
+   * with our `<Fade>` example.
+   */
+  children: _propTypes2.default.node,
+
+  /**
+   * A convenience prop that enables or disables appear animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  appear: _propTypes2.default.bool,
+  /**
+   * A convenience prop that enables or disables enter animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  enter: _propTypes2.default.bool,
+  /**
+   * A convenience prop that enables or disables exit animations
+   * for all children. Note that specifying this will override any defaults set
+   * on individual children Transitions.
+   */
+  exit: _propTypes2.default.bool,
+
+  /**
+   * You may need to apply reactive updates to a child as it is exiting.
+   * This is generally done by using `cloneElement` however in the case of an exiting
+   * child the element has already been removed and not accessible to the consumer.
+   *
+   * If you do need to update a child as it leaves you can provide a `childFactory`
+   * to wrap every child, even the ones that are leaving.
+   *
+   * @type Function(child: ReactElement) -> ReactElement
+   */
+  childFactory: _propTypes2.default.func
+};
+
+var defaultProps = {
+  component: 'div',
+  childFactory: function childFactory(child) {
+    return child;
+  }
+
+  /**
+   * The `<TransitionGroup>` component manages a set of `<Transition>` components
+   * in a list. Like with the `<Transition>` component, `<TransitionGroup>`, is a
+   * state machine for managing the mounting and unmounting of components over
+   * time.
+   *
+   * Consider the example below using the `Fade` CSS transition from before.
+   * As items are removed or added to the TodoList the `in` prop is toggled
+   * automatically by the `<TransitionGroup>`. You can use _any_ `<Transition>`
+   * component in a `<TransitionGroup>`, not just css.
+   *
+   * ## Example
+   *
+   * <iframe src="https://codesandbox.io/embed/00rqyo26kn?fontsize=14" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+   *
+   * Note that `<TransitionGroup>`  does not define any animation behavior!
+   * Exactly _how_ a list item animates is up to the individual `<Transition>`
+   * components. This means you can mix and match animations across different
+   * list items.
+   */
+};
+var TransitionGroup = function (_React$Component) {
+  _inherits(TransitionGroup, _React$Component);
+
+  function TransitionGroup(props, context) {
+    _classCallCheck(this, TransitionGroup);
+
+    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props, context));
+
+    var handleExited = _this.handleExited.bind(_this);
+
+    // Initial children should all be entering, dependent on appear
+    _this.state = {
+      handleExited: handleExited,
+      firstRender: true
+    };
+    return _this;
+  }
+
+  TransitionGroup.prototype.getChildContext = function getChildContext() {
+    return {
+      transitionGroup: { isMounting: !this.appeared }
+    };
+  };
+
+  TransitionGroup.prototype.componentDidMount = function componentDidMount() {
+    this.appeared = true;
+  };
+
+  TransitionGroup.getDerivedStateFromProps = function getDerivedStateFromProps(nextProps, _ref) {
+    var prevChildMapping = _ref.children,
+        handleExited = _ref.handleExited,
+        firstRender = _ref.firstRender;
+
+    return {
+      children: firstRender ? (0, _ChildMapping.getInitialChildMapping)(nextProps, handleExited) : (0, _ChildMapping.getNextChildMapping)(nextProps, prevChildMapping, handleExited),
+      firstRender: false
+    };
+  };
+
+  TransitionGroup.prototype.handleExited = function handleExited(child, node) {
+    var currentChildMapping = (0, _ChildMapping.getChildMapping)(this.props.children);
+
+    if (child.key in currentChildMapping) return;
+
+    if (child.props.onExited) {
+      child.props.onExited(node);
+    }
+
+    this.setState(function (state) {
+      var children = _extends({}, state.children);
+
+      delete children[child.key];
+      return { children: children };
+    });
+  };
+
+  TransitionGroup.prototype.render = function render() {
+    var _props = this.props,
+        Component = _props.component,
+        childFactory = _props.childFactory,
+        props = _objectWithoutProperties(_props, ['component', 'childFactory']);
+
+    var children = values(this.state.children).map(childFactory);
+
+    delete props.appear;
+    delete props.enter;
+    delete props.exit;
+
+    if (Component === null) {
+      return children;
+    }
+    return _react2.default.createElement(
+      Component,
+      props,
+      children
+    );
+  };
+
+  return TransitionGroup;
+}(_react2.default.Component);
+
+TransitionGroup.childContextTypes = {
+  transitionGroup: _propTypes2.default.object.isRequired
+};
+
+
+TransitionGroup.propTypes =  true ? propTypes : undefined;
+TransitionGroup.defaultProps = defaultProps;
+
+exports.default = (0, _reactLifecyclesCompat.polyfill)(TransitionGroup);
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "./node_modules/react-transition-group/utils/ChildMapping.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/react-transition-group/utils/ChildMapping.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+exports.getChildMapping = getChildMapping;
+exports.mergeChildMappings = mergeChildMappings;
+exports.getInitialChildMapping = getInitialChildMapping;
+exports.getNextChildMapping = getNextChildMapping;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+/**
+ * Given `this.props.children`, return an object mapping key to child.
+ *
+ * @param {*} children `this.props.children`
+ * @return {object} Mapping of key to child
+ */
+function getChildMapping(children, mapFn) {
+  var mapper = function mapper(child) {
+    return mapFn && (0, _react.isValidElement)(child) ? mapFn(child) : child;
+  };
+
+  var result = Object.create(null);
+  if (children) _react.Children.map(children, function (c) {
+    return c;
+  }).forEach(function (child) {
+    // run the map function here instead so that the key is the computed one
+    result[child.key] = mapper(child);
+  });
+  return result;
+}
+
+/**
+ * When you're adding or removing children some may be added or removed in the
+ * same render pass. We want to show *both* since we want to simultaneously
+ * animate elements in and out. This function takes a previous set of keys
+ * and a new set of keys and merges them with its best guess of the correct
+ * ordering. In the future we may expose some of the utilities in
+ * ReactMultiChild to make this easy, but for now React itself does not
+ * directly have this concept of the union of prevChildren and nextChildren
+ * so we implement it here.
+ *
+ * @param {object} prev prev children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @param {object} next next children as returned from
+ * `ReactTransitionChildMapping.getChildMapping()`.
+ * @return {object} a key set that contains all keys in `prev` and all keys
+ * in `next` in a reasonable order.
+ */
+function mergeChildMappings(prev, next) {
+  prev = prev || {};
+  next = next || {};
+
+  function getValueForKey(key) {
+    return key in next ? next[key] : prev[key];
+  }
+
+  // For each key of `next`, the list of keys to insert before that key in
+  // the combined list
+  var nextKeysPending = Object.create(null);
+
+  var pendingKeys = [];
+  for (var prevKey in prev) {
+    if (prevKey in next) {
+      if (pendingKeys.length) {
+        nextKeysPending[prevKey] = pendingKeys;
+        pendingKeys = [];
+      }
+    } else {
+      pendingKeys.push(prevKey);
+    }
+  }
+
+  var i = void 0;
+  var childMapping = {};
+  for (var nextKey in next) {
+    if (nextKeysPending[nextKey]) {
+      for (i = 0; i < nextKeysPending[nextKey].length; i++) {
+        var pendingNextKey = nextKeysPending[nextKey][i];
+        childMapping[nextKeysPending[nextKey][i]] = getValueForKey(pendingNextKey);
+      }
+    }
+    childMapping[nextKey] = getValueForKey(nextKey);
+  }
+
+  // Finally, add the keys which didn't appear before any key in `next`
+  for (i = 0; i < pendingKeys.length; i++) {
+    childMapping[pendingKeys[i]] = getValueForKey(pendingKeys[i]);
+  }
+
+  return childMapping;
+}
+
+function getProp(child, prop, props) {
+  return props[prop] != null ? props[prop] : child.props[prop];
+}
+
+function getInitialChildMapping(props, onExited) {
+  return getChildMapping(props.children, function (child) {
+    return (0, _react.cloneElement)(child, {
+      onExited: onExited.bind(null, child),
+      in: true,
+      appear: getProp(child, 'appear', props),
+      enter: getProp(child, 'enter', props),
+      exit: getProp(child, 'exit', props)
+    });
+  });
+}
+
+function getNextChildMapping(nextProps, prevChildMapping, onExited) {
+  var nextChildMapping = getChildMapping(nextProps.children);
+  var children = mergeChildMappings(prevChildMapping, nextChildMapping);
+
+  Object.keys(children).forEach(function (key) {
+    var child = children[key];
+
+    if (!(0, _react.isValidElement)(child)) return;
+
+    var hasPrev = key in prevChildMapping;
+    var hasNext = key in nextChildMapping;
+
+    var prevChild = prevChildMapping[key];
+    var isLeaving = (0, _react.isValidElement)(prevChild) && !prevChild.props.in;
+
+    // item is new (entering)
+    if (hasNext && (!hasPrev || isLeaving)) {
+      // console.log('entering', key)
+      children[key] = (0, _react.cloneElement)(child, {
+        onExited: onExited.bind(null, child),
+        in: true,
+        exit: getProp(child, 'exit', nextProps),
+        enter: getProp(child, 'enter', nextProps)
+      });
+    } else if (!hasNext && hasPrev && !isLeaving) {
+      // item is old (exiting)
+      // console.log('leaving', key)
+      children[key] = (0, _react.cloneElement)(child, { in: false });
+    } else if (hasNext && hasPrev && (0, _react.isValidElement)(prevChild)) {
+      // item hasn't changed transition states
+      // copy over the last transition props;
+      // console.log('unchanged', key)
+      children[key] = (0, _react.cloneElement)(child, {
+        onExited: onExited.bind(null, child),
+        in: prevChild.props.in,
+        exit: getProp(child, 'exit', nextProps),
+        enter: getProp(child, 'enter', nextProps)
+      });
+    }
+  });
+
+  return children;
 }
 
 /***/ }),
@@ -23312,6 +34428,1044 @@ if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCr
 
 /***/ }),
 
+/***/ "./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/resize-observer-polyfill/dist/ResizeObserver.es.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * A collection of shims that provide minimal functionality of the ES6 collections.
+ *
+ * These implementations are not meant to be used outside of the ResizeObserver
+ * modules as they cover only a limited range of use cases.
+ */
+/* eslint-disable require-jsdoc, valid-jsdoc */
+var MapShim = (function () {
+    if (typeof Map !== 'undefined') {
+        return Map;
+    }
+
+    /**
+     * Returns index in provided array that matches the specified key.
+     *
+     * @param {Array<Array>} arr
+     * @param {*} key
+     * @returns {number}
+     */
+    function getIndex(arr, key) {
+        var result = -1;
+
+        arr.some(function (entry, index) {
+            if (entry[0] === key) {
+                result = index;
+
+                return true;
+            }
+
+            return false;
+        });
+
+        return result;
+    }
+
+    return (function () {
+        function anonymous() {
+            this.__entries__ = [];
+        }
+
+        var prototypeAccessors = { size: { configurable: true } };
+
+        /**
+         * @returns {boolean}
+         */
+        prototypeAccessors.size.get = function () {
+            return this.__entries__.length;
+        };
+
+        /**
+         * @param {*} key
+         * @returns {*}
+         */
+        anonymous.prototype.get = function (key) {
+            var index = getIndex(this.__entries__, key);
+            var entry = this.__entries__[index];
+
+            return entry && entry[1];
+        };
+
+        /**
+         * @param {*} key
+         * @param {*} value
+         * @returns {void}
+         */
+        anonymous.prototype.set = function (key, value) {
+            var index = getIndex(this.__entries__, key);
+
+            if (~index) {
+                this.__entries__[index][1] = value;
+            } else {
+                this.__entries__.push([key, value]);
+            }
+        };
+
+        /**
+         * @param {*} key
+         * @returns {void}
+         */
+        anonymous.prototype.delete = function (key) {
+            var entries = this.__entries__;
+            var index = getIndex(entries, key);
+
+            if (~index) {
+                entries.splice(index, 1);
+            }
+        };
+
+        /**
+         * @param {*} key
+         * @returns {void}
+         */
+        anonymous.prototype.has = function (key) {
+            return !!~getIndex(this.__entries__, key);
+        };
+
+        /**
+         * @returns {void}
+         */
+        anonymous.prototype.clear = function () {
+            this.__entries__.splice(0);
+        };
+
+        /**
+         * @param {Function} callback
+         * @param {*} [ctx=null]
+         * @returns {void}
+         */
+        anonymous.prototype.forEach = function (callback, ctx) {
+            var this$1 = this;
+            if ( ctx === void 0 ) ctx = null;
+
+            for (var i = 0, list = this$1.__entries__; i < list.length; i += 1) {
+                var entry = list[i];
+
+                callback.call(ctx, entry[1], entry[0]);
+            }
+        };
+
+        Object.defineProperties( anonymous.prototype, prototypeAccessors );
+
+        return anonymous;
+    }());
+})();
+
+/**
+ * Detects whether window and document objects are available in current environment.
+ */
+var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined' && window.document === document;
+
+// Returns global object of a current environment.
+var global$1 = (function () {
+    if (typeof global !== 'undefined' && global.Math === Math) {
+        return global;
+    }
+
+    if (typeof self !== 'undefined' && self.Math === Math) {
+        return self;
+    }
+
+    if (typeof window !== 'undefined' && window.Math === Math) {
+        return window;
+    }
+
+    // eslint-disable-next-line no-new-func
+    return Function('return this')();
+})();
+
+/**
+ * A shim for the requestAnimationFrame which falls back to the setTimeout if
+ * first one is not supported.
+ *
+ * @returns {number} Requests' identifier.
+ */
+var requestAnimationFrame$1 = (function () {
+    if (typeof requestAnimationFrame === 'function') {
+        // It's required to use a bounded function because IE sometimes throws
+        // an "Invalid calling object" error if rAF is invoked without the global
+        // object on the left hand side.
+        return requestAnimationFrame.bind(global$1);
+    }
+
+    return function (callback) { return setTimeout(function () { return callback(Date.now()); }, 1000 / 60); };
+})();
+
+// Defines minimum timeout before adding a trailing call.
+var trailingTimeout = 2;
+
+/**
+ * Creates a wrapper function which ensures that provided callback will be
+ * invoked only once during the specified delay period.
+ *
+ * @param {Function} callback - Function to be invoked after the delay period.
+ * @param {number} delay - Delay after which to invoke callback.
+ * @returns {Function}
+ */
+var throttle = function (callback, delay) {
+    var leadingCall = false,
+        trailingCall = false,
+        lastCallTime = 0;
+
+    /**
+     * Invokes the original callback function and schedules new invocation if
+     * the "proxy" was called during current request.
+     *
+     * @returns {void}
+     */
+    function resolvePending() {
+        if (leadingCall) {
+            leadingCall = false;
+
+            callback();
+        }
+
+        if (trailingCall) {
+            proxy();
+        }
+    }
+
+    /**
+     * Callback invoked after the specified delay. It will further postpone
+     * invocation of the original function delegating it to the
+     * requestAnimationFrame.
+     *
+     * @returns {void}
+     */
+    function timeoutCallback() {
+        requestAnimationFrame$1(resolvePending);
+    }
+
+    /**
+     * Schedules invocation of the original function.
+     *
+     * @returns {void}
+     */
+    function proxy() {
+        var timeStamp = Date.now();
+
+        if (leadingCall) {
+            // Reject immediately following calls.
+            if (timeStamp - lastCallTime < trailingTimeout) {
+                return;
+            }
+
+            // Schedule new call to be in invoked when the pending one is resolved.
+            // This is important for "transitions" which never actually start
+            // immediately so there is a chance that we might miss one if change
+            // happens amids the pending invocation.
+            trailingCall = true;
+        } else {
+            leadingCall = true;
+            trailingCall = false;
+
+            setTimeout(timeoutCallback, delay);
+        }
+
+        lastCallTime = timeStamp;
+    }
+
+    return proxy;
+};
+
+// Minimum delay before invoking the update of observers.
+var REFRESH_DELAY = 20;
+
+// A list of substrings of CSS properties used to find transition events that
+// might affect dimensions of observed elements.
+var transitionKeys = ['top', 'right', 'bottom', 'left', 'width', 'height', 'size', 'weight'];
+
+// Check if MutationObserver is available.
+var mutationObserverSupported = typeof MutationObserver !== 'undefined';
+
+/**
+ * Singleton controller class which handles updates of ResizeObserver instances.
+ */
+var ResizeObserverController = function() {
+    this.connected_ = false;
+    this.mutationEventsAdded_ = false;
+    this.mutationsObserver_ = null;
+    this.observers_ = [];
+
+    this.onTransitionEnd_ = this.onTransitionEnd_.bind(this);
+    this.refresh = throttle(this.refresh.bind(this), REFRESH_DELAY);
+};
+
+/**
+ * Adds observer to observers list.
+ *
+ * @param {ResizeObserverSPI} observer - Observer to be added.
+ * @returns {void}
+ */
+
+
+/**
+ * Holds reference to the controller's instance.
+ *
+ * @private {ResizeObserverController}
+ */
+
+
+/**
+ * Keeps reference to the instance of MutationObserver.
+ *
+ * @private {MutationObserver}
+ */
+
+/**
+ * Indicates whether DOM listeners have been added.
+ *
+ * @private {boolean}
+ */
+ResizeObserverController.prototype.addObserver = function (observer) {
+    if (!~this.observers_.indexOf(observer)) {
+        this.observers_.push(observer);
+    }
+
+    // Add listeners if they haven't been added yet.
+    if (!this.connected_) {
+        this.connect_();
+    }
+};
+
+/**
+ * Removes observer from observers list.
+ *
+ * @param {ResizeObserverSPI} observer - Observer to be removed.
+ * @returns {void}
+ */
+ResizeObserverController.prototype.removeObserver = function (observer) {
+    var observers = this.observers_;
+    var index = observers.indexOf(observer);
+
+    // Remove observer if it's present in registry.
+    if (~index) {
+        observers.splice(index, 1);
+    }
+
+    // Remove listeners if controller has no connected observers.
+    if (!observers.length && this.connected_) {
+        this.disconnect_();
+    }
+};
+
+/**
+ * Invokes the update of observers. It will continue running updates insofar
+ * it detects changes.
+ *
+ * @returns {void}
+ */
+ResizeObserverController.prototype.refresh = function () {
+    var changesDetected = this.updateObservers_();
+
+    // Continue running updates if changes have been detected as there might
+    // be future ones caused by CSS transitions.
+    if (changesDetected) {
+        this.refresh();
+    }
+};
+
+/**
+ * Updates every observer from observers list and notifies them of queued
+ * entries.
+ *
+ * @private
+ * @returns {boolean} Returns "true" if any observer has detected changes in
+ *  dimensions of it's elements.
+ */
+ResizeObserverController.prototype.updateObservers_ = function () {
+    // Collect observers that have active observations.
+    var activeObservers = this.observers_.filter(function (observer) {
+        return observer.gatherActive(), observer.hasActive();
+    });
+
+    // Deliver notifications in a separate cycle in order to avoid any
+    // collisions between observers, e.g. when multiple instances of
+    // ResizeObserver are tracking the same element and the callback of one
+    // of them changes content dimensions of the observed target. Sometimes
+    // this may result in notifications being blocked for the rest of observers.
+    activeObservers.forEach(function (observer) { return observer.broadcastActive(); });
+
+    return activeObservers.length > 0;
+};
+
+/**
+ * Initializes DOM listeners.
+ *
+ * @private
+ * @returns {void}
+ */
+ResizeObserverController.prototype.connect_ = function () {
+    // Do nothing if running in a non-browser environment or if listeners
+    // have been already added.
+    if (!isBrowser || this.connected_) {
+        return;
+    }
+
+    // Subscription to the "Transitionend" event is used as a workaround for
+    // delayed transitions. This way it's possible to capture at least the
+    // final state of an element.
+    document.addEventListener('transitionend', this.onTransitionEnd_);
+
+    window.addEventListener('resize', this.refresh);
+
+    if (mutationObserverSupported) {
+        this.mutationsObserver_ = new MutationObserver(this.refresh);
+
+        this.mutationsObserver_.observe(document, {
+            attributes: true,
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+    } else {
+        document.addEventListener('DOMSubtreeModified', this.refresh);
+
+        this.mutationEventsAdded_ = true;
+    }
+
+    this.connected_ = true;
+};
+
+/**
+ * Removes DOM listeners.
+ *
+ * @private
+ * @returns {void}
+ */
+ResizeObserverController.prototype.disconnect_ = function () {
+    // Do nothing if running in a non-browser environment or if listeners
+    // have been already removed.
+    if (!isBrowser || !this.connected_) {
+        return;
+    }
+
+    document.removeEventListener('transitionend', this.onTransitionEnd_);
+    window.removeEventListener('resize', this.refresh);
+
+    if (this.mutationsObserver_) {
+        this.mutationsObserver_.disconnect();
+    }
+
+    if (this.mutationEventsAdded_) {
+        document.removeEventListener('DOMSubtreeModified', this.refresh);
+    }
+
+    this.mutationsObserver_ = null;
+    this.mutationEventsAdded_ = false;
+    this.connected_ = false;
+};
+
+/**
+ * "Transitionend" event handler.
+ *
+ * @private
+ * @param {TransitionEvent} event
+ * @returns {void}
+ */
+ResizeObserverController.prototype.onTransitionEnd_ = function (ref) {
+        var propertyName = ref.propertyName; if ( propertyName === void 0 ) propertyName = '';
+
+    // Detect whether transition may affect dimensions of an element.
+    var isReflowProperty = transitionKeys.some(function (key) {
+        return !!~propertyName.indexOf(key);
+    });
+
+    if (isReflowProperty) {
+        this.refresh();
+    }
+};
+
+/**
+ * Returns instance of the ResizeObserverController.
+ *
+ * @returns {ResizeObserverController}
+ */
+ResizeObserverController.getInstance = function () {
+    if (!this.instance_) {
+        this.instance_ = new ResizeObserverController();
+    }
+
+    return this.instance_;
+};
+
+ResizeObserverController.instance_ = null;
+
+/**
+ * Defines non-writable/enumerable properties of the provided target object.
+ *
+ * @param {Object} target - Object for which to define properties.
+ * @param {Object} props - Properties to be defined.
+ * @returns {Object} Target object.
+ */
+var defineConfigurable = (function (target, props) {
+    for (var i = 0, list = Object.keys(props); i < list.length; i += 1) {
+        var key = list[i];
+
+        Object.defineProperty(target, key, {
+            value: props[key],
+            enumerable: false,
+            writable: false,
+            configurable: true
+        });
+    }
+
+    return target;
+});
+
+/**
+ * Returns the global object associated with provided element.
+ *
+ * @param {Object} target
+ * @returns {Object}
+ */
+var getWindowOf = (function (target) {
+    // Assume that the element is an instance of Node, which means that it
+    // has the "ownerDocument" property from which we can retrieve a
+    // corresponding global object.
+    var ownerGlobal = target && target.ownerDocument && target.ownerDocument.defaultView;
+
+    // Return the local global object if it's not possible extract one from
+    // provided element.
+    return ownerGlobal || global$1;
+});
+
+// Placeholder of an empty content rectangle.
+var emptyRect = createRectInit(0, 0, 0, 0);
+
+/**
+ * Converts provided string to a number.
+ *
+ * @param {number|string} value
+ * @returns {number}
+ */
+function toFloat(value) {
+    return parseFloat(value) || 0;
+}
+
+/**
+ * Extracts borders size from provided styles.
+ *
+ * @param {CSSStyleDeclaration} styles
+ * @param {...string} positions - Borders positions (top, right, ...)
+ * @returns {number}
+ */
+function getBordersSize(styles) {
+    var positions = [], len = arguments.length - 1;
+    while ( len-- > 0 ) positions[ len ] = arguments[ len + 1 ];
+
+    return positions.reduce(function (size, position) {
+        var value = styles['border-' + position + '-width'];
+
+        return size + toFloat(value);
+    }, 0);
+}
+
+/**
+ * Extracts paddings sizes from provided styles.
+ *
+ * @param {CSSStyleDeclaration} styles
+ * @returns {Object} Paddings box.
+ */
+function getPaddings(styles) {
+    var positions = ['top', 'right', 'bottom', 'left'];
+    var paddings = {};
+
+    for (var i = 0, list = positions; i < list.length; i += 1) {
+        var position = list[i];
+
+        var value = styles['padding-' + position];
+
+        paddings[position] = toFloat(value);
+    }
+
+    return paddings;
+}
+
+/**
+ * Calculates content rectangle of provided SVG element.
+ *
+ * @param {SVGGraphicsElement} target - Element content rectangle of which needs
+ *      to be calculated.
+ * @returns {DOMRectInit}
+ */
+function getSVGContentRect(target) {
+    var bbox = target.getBBox();
+
+    return createRectInit(0, 0, bbox.width, bbox.height);
+}
+
+/**
+ * Calculates content rectangle of provided HTMLElement.
+ *
+ * @param {HTMLElement} target - Element for which to calculate the content rectangle.
+ * @returns {DOMRectInit}
+ */
+function getHTMLElementContentRect(target) {
+    // Client width & height properties can't be
+    // used exclusively as they provide rounded values.
+    var clientWidth = target.clientWidth;
+    var clientHeight = target.clientHeight;
+
+    // By this condition we can catch all non-replaced inline, hidden and
+    // detached elements. Though elements with width & height properties less
+    // than 0.5 will be discarded as well.
+    //
+    // Without it we would need to implement separate methods for each of
+    // those cases and it's not possible to perform a precise and performance
+    // effective test for hidden elements. E.g. even jQuery's ':visible' filter
+    // gives wrong results for elements with width & height less than 0.5.
+    if (!clientWidth && !clientHeight) {
+        return emptyRect;
+    }
+
+    var styles = getWindowOf(target).getComputedStyle(target);
+    var paddings = getPaddings(styles);
+    var horizPad = paddings.left + paddings.right;
+    var vertPad = paddings.top + paddings.bottom;
+
+    // Computed styles of width & height are being used because they are the
+    // only dimensions available to JS that contain non-rounded values. It could
+    // be possible to utilize the getBoundingClientRect if only it's data wasn't
+    // affected by CSS transformations let alone paddings, borders and scroll bars.
+    var width = toFloat(styles.width),
+        height = toFloat(styles.height);
+
+    // Width & height include paddings and borders when the 'border-box' box
+    // model is applied (except for IE).
+    if (styles.boxSizing === 'border-box') {
+        // Following conditions are required to handle Internet Explorer which
+        // doesn't include paddings and borders to computed CSS dimensions.
+        //
+        // We can say that if CSS dimensions + paddings are equal to the "client"
+        // properties then it's either IE, and thus we don't need to subtract
+        // anything, or an element merely doesn't have paddings/borders styles.
+        if (Math.round(width + horizPad) !== clientWidth) {
+            width -= getBordersSize(styles, 'left', 'right') + horizPad;
+        }
+
+        if (Math.round(height + vertPad) !== clientHeight) {
+            height -= getBordersSize(styles, 'top', 'bottom') + vertPad;
+        }
+    }
+
+    // Following steps can't be applied to the document's root element as its
+    // client[Width/Height] properties represent viewport area of the window.
+    // Besides, it's as well not necessary as the <html> itself neither has
+    // rendered scroll bars nor it can be clipped.
+    if (!isDocumentElement(target)) {
+        // In some browsers (only in Firefox, actually) CSS width & height
+        // include scroll bars size which can be removed at this step as scroll
+        // bars are the only difference between rounded dimensions + paddings
+        // and "client" properties, though that is not always true in Chrome.
+        var vertScrollbar = Math.round(width + horizPad) - clientWidth;
+        var horizScrollbar = Math.round(height + vertPad) - clientHeight;
+
+        // Chrome has a rather weird rounding of "client" properties.
+        // E.g. for an element with content width of 314.2px it sometimes gives
+        // the client width of 315px and for the width of 314.7px it may give
+        // 314px. And it doesn't happen all the time. So just ignore this delta
+        // as a non-relevant.
+        if (Math.abs(vertScrollbar) !== 1) {
+            width -= vertScrollbar;
+        }
+
+        if (Math.abs(horizScrollbar) !== 1) {
+            height -= horizScrollbar;
+        }
+    }
+
+    return createRectInit(paddings.left, paddings.top, width, height);
+}
+
+/**
+ * Checks whether provided element is an instance of the SVGGraphicsElement.
+ *
+ * @param {Element} target - Element to be checked.
+ * @returns {boolean}
+ */
+var isSVGGraphicsElement = (function () {
+    // Some browsers, namely IE and Edge, don't have the SVGGraphicsElement
+    // interface.
+    if (typeof SVGGraphicsElement !== 'undefined') {
+        return function (target) { return target instanceof getWindowOf(target).SVGGraphicsElement; };
+    }
+
+    // If it's so, then check that element is at least an instance of the
+    // SVGElement and that it has the "getBBox" method.
+    // eslint-disable-next-line no-extra-parens
+    return function (target) { return target instanceof getWindowOf(target).SVGElement && typeof target.getBBox === 'function'; };
+})();
+
+/**
+ * Checks whether provided element is a document element (<html>).
+ *
+ * @param {Element} target - Element to be checked.
+ * @returns {boolean}
+ */
+function isDocumentElement(target) {
+    return target === getWindowOf(target).document.documentElement;
+}
+
+/**
+ * Calculates an appropriate content rectangle for provided html or svg element.
+ *
+ * @param {Element} target - Element content rectangle of which needs to be calculated.
+ * @returns {DOMRectInit}
+ */
+function getContentRect(target) {
+    if (!isBrowser) {
+        return emptyRect;
+    }
+
+    if (isSVGGraphicsElement(target)) {
+        return getSVGContentRect(target);
+    }
+
+    return getHTMLElementContentRect(target);
+}
+
+/**
+ * Creates rectangle with an interface of the DOMRectReadOnly.
+ * Spec: https://drafts.fxtf.org/geometry/#domrectreadonly
+ *
+ * @param {DOMRectInit} rectInit - Object with rectangle's x/y coordinates and dimensions.
+ * @returns {DOMRectReadOnly}
+ */
+function createReadOnlyRect(ref) {
+    var x = ref.x;
+    var y = ref.y;
+    var width = ref.width;
+    var height = ref.height;
+
+    // If DOMRectReadOnly is available use it as a prototype for the rectangle.
+    var Constr = typeof DOMRectReadOnly !== 'undefined' ? DOMRectReadOnly : Object;
+    var rect = Object.create(Constr.prototype);
+
+    // Rectangle's properties are not writable and non-enumerable.
+    defineConfigurable(rect, {
+        x: x, y: y, width: width, height: height,
+        top: y,
+        right: x + width,
+        bottom: height + y,
+        left: x
+    });
+
+    return rect;
+}
+
+/**
+ * Creates DOMRectInit object based on the provided dimensions and the x/y coordinates.
+ * Spec: https://drafts.fxtf.org/geometry/#dictdef-domrectinit
+ *
+ * @param {number} x - X coordinate.
+ * @param {number} y - Y coordinate.
+ * @param {number} width - Rectangle's width.
+ * @param {number} height - Rectangle's height.
+ * @returns {DOMRectInit}
+ */
+function createRectInit(x, y, width, height) {
+    return { x: x, y: y, width: width, height: height };
+}
+
+/**
+ * Class that is responsible for computations of the content rectangle of
+ * provided DOM element and for keeping track of it's changes.
+ */
+var ResizeObservation = function(target) {
+    this.broadcastWidth = 0;
+    this.broadcastHeight = 0;
+    this.contentRect_ = createRectInit(0, 0, 0, 0);
+
+    this.target = target;
+};
+
+/**
+ * Updates content rectangle and tells whether it's width or height properties
+ * have changed since the last broadcast.
+ *
+ * @returns {boolean}
+ */
+
+
+/**
+ * Reference to the last observed content rectangle.
+ *
+ * @private {DOMRectInit}
+ */
+
+
+/**
+ * Broadcasted width of content rectangle.
+ *
+ * @type {number}
+ */
+ResizeObservation.prototype.isActive = function () {
+    var rect = getContentRect(this.target);
+
+    this.contentRect_ = rect;
+
+    return rect.width !== this.broadcastWidth || rect.height !== this.broadcastHeight;
+};
+
+/**
+ * Updates 'broadcastWidth' and 'broadcastHeight' properties with a data
+ * from the corresponding properties of the last observed content rectangle.
+ *
+ * @returns {DOMRectInit} Last observed content rectangle.
+ */
+ResizeObservation.prototype.broadcastRect = function () {
+    var rect = this.contentRect_;
+
+    this.broadcastWidth = rect.width;
+    this.broadcastHeight = rect.height;
+
+    return rect;
+};
+
+var ResizeObserverEntry = function(target, rectInit) {
+    var contentRect = createReadOnlyRect(rectInit);
+
+    // According to the specification following properties are not writable
+    // and are also not enumerable in the native implementation.
+    //
+    // Property accessors are not being used as they'd require to define a
+    // private WeakMap storage which may cause memory leaks in browsers that
+    // don't support this type of collections.
+    defineConfigurable(this, { target: target, contentRect: contentRect });
+};
+
+var ResizeObserverSPI = function(callback, controller, callbackCtx) {
+    this.activeObservations_ = [];
+    this.observations_ = new MapShim();
+
+    if (typeof callback !== 'function') {
+        throw new TypeError('The callback provided as parameter 1 is not a function.');
+    }
+
+    this.callback_ = callback;
+    this.controller_ = controller;
+    this.callbackCtx_ = callbackCtx;
+};
+
+/**
+ * Starts observing provided element.
+ *
+ * @param {Element} target - Element to be observed.
+ * @returns {void}
+ */
+
+
+/**
+ * Registry of the ResizeObservation instances.
+ *
+ * @private {Map<Element, ResizeObservation>}
+ */
+
+
+/**
+ * Public ResizeObserver instance which will be passed to the callback
+ * function and used as a value of it's "this" binding.
+ *
+ * @private {ResizeObserver}
+ */
+
+/**
+ * Collection of resize observations that have detected changes in dimensions
+ * of elements.
+ *
+ * @private {Array<ResizeObservation>}
+ */
+ResizeObserverSPI.prototype.observe = function (target) {
+    if (!arguments.length) {
+        throw new TypeError('1 argument required, but only 0 present.');
+    }
+
+    // Do nothing if current environment doesn't have the Element interface.
+    if (typeof Element === 'undefined' || !(Element instanceof Object)) {
+        return;
+    }
+
+    if (!(target instanceof getWindowOf(target).Element)) {
+        throw new TypeError('parameter 1 is not of type "Element".');
+    }
+
+    var observations = this.observations_;
+
+    // Do nothing if element is already being observed.
+    if (observations.has(target)) {
+        return;
+    }
+
+    observations.set(target, new ResizeObservation(target));
+
+    this.controller_.addObserver(this);
+
+    // Force the update of observations.
+    this.controller_.refresh();
+};
+
+/**
+ * Stops observing provided element.
+ *
+ * @param {Element} target - Element to stop observing.
+ * @returns {void}
+ */
+ResizeObserverSPI.prototype.unobserve = function (target) {
+    if (!arguments.length) {
+        throw new TypeError('1 argument required, but only 0 present.');
+    }
+
+    // Do nothing if current environment doesn't have the Element interface.
+    if (typeof Element === 'undefined' || !(Element instanceof Object)) {
+        return;
+    }
+
+    if (!(target instanceof getWindowOf(target).Element)) {
+        throw new TypeError('parameter 1 is not of type "Element".');
+    }
+
+    var observations = this.observations_;
+
+    // Do nothing if element is not being observed.
+    if (!observations.has(target)) {
+        return;
+    }
+
+    observations.delete(target);
+
+    if (!observations.size) {
+        this.controller_.removeObserver(this);
+    }
+};
+
+/**
+ * Stops observing all elements.
+ *
+ * @returns {void}
+ */
+ResizeObserverSPI.prototype.disconnect = function () {
+    this.clearActive();
+    this.observations_.clear();
+    this.controller_.removeObserver(this);
+};
+
+/**
+ * Collects observation instances the associated element of which has changed
+ * it's content rectangle.
+ *
+ * @returns {void}
+ */
+ResizeObserverSPI.prototype.gatherActive = function () {
+        var this$1 = this;
+
+    this.clearActive();
+
+    this.observations_.forEach(function (observation) {
+        if (observation.isActive()) {
+            this$1.activeObservations_.push(observation);
+        }
+    });
+};
+
+/**
+ * Invokes initial callback function with a list of ResizeObserverEntry
+ * instances collected from active resize observations.
+ *
+ * @returns {void}
+ */
+ResizeObserverSPI.prototype.broadcastActive = function () {
+    // Do nothing if observer doesn't have active observations.
+    if (!this.hasActive()) {
+        return;
+    }
+
+    var ctx = this.callbackCtx_;
+
+    // Create ResizeObserverEntry instance for every active observation.
+    var entries = this.activeObservations_.map(function (observation) {
+        return new ResizeObserverEntry(observation.target, observation.broadcastRect());
+    });
+
+    this.callback_.call(ctx, entries, ctx);
+    this.clearActive();
+};
+
+/**
+ * Clears the collection of active observations.
+ *
+ * @returns {void}
+ */
+ResizeObserverSPI.prototype.clearActive = function () {
+    this.activeObservations_.splice(0);
+};
+
+/**
+ * Tells whether observer has active observations.
+ *
+ * @returns {boolean}
+ */
+ResizeObserverSPI.prototype.hasActive = function () {
+    return this.activeObservations_.length > 0;
+};
+
+// Registry of internal observers. If WeakMap is not available use current shim
+// for the Map collection as it has all required methods and because WeakMap
+// can't be fully polyfilled anyway.
+var observers = typeof WeakMap !== 'undefined' ? new WeakMap() : new MapShim();
+
+/**
+ * ResizeObserver API. Encapsulates the ResizeObserver SPI implementation
+ * exposing only those methods and properties that are defined in the spec.
+ */
+var ResizeObserver = function(callback) {
+    if (!(this instanceof ResizeObserver)) {
+        throw new TypeError('Cannot call a class as a function.');
+    }
+    if (!arguments.length) {
+        throw new TypeError('1 argument required, but only 0 present.');
+    }
+
+    var controller = ResizeObserverController.getInstance();
+    var observer = new ResizeObserverSPI(callback, controller, this);
+
+    observers.set(this, observer);
+};
+
+// Expose public methods of ResizeObserver.
+['observe', 'unobserve', 'disconnect'].forEach(function (method) {
+    ResizeObserver.prototype[method] = function () {
+        return (ref = observers.get(this))[method].apply(ref, arguments);
+        var ref;
+    };
+});
+
+var index = (function () {
+    // Export existing implementation if available.
+    if (typeof global$1.ResizeObserver !== 'undefined') {
+        return global$1.ResizeObserver;
+    }
+
+    return ResizeObserver;
+})();
+
+/* harmony default export */ __webpack_exports__["default"] = (index);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -23923,6 +36077,39 @@ module.exports = function(originalModule) {
 		});
 		Object.defineProperty(module, "exports", {
 			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
 		});
 		module.webpackPolyfill = 1;
 	}
@@ -27812,6 +39999,8 @@ __webpack_require__(/*! common/style.css */ "./public/src/common/style.css");
 
 __webpack_require__(/*! common/keyframes.css */ "./public/src/common/keyframes.css");
 
+__webpack_require__(/*! ./index.scss */ "./public/src/index.scss");
+
 var _bnActions = __webpack_require__(/*! ./body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
 var actions = _interopRequireWildcard(_bnActions);
@@ -27834,6 +40023,36 @@ _reactDom2.default.render(_react2.default.createElement(
   { store: _store2.default },
   _react2.default.createElement(_app2.default, null)
 ), document.getElementById('react-root'));
+
+/***/ }),
+
+/***/ "./public/src/index.scss":
+/*!*******************************!*\
+  !*** ./public/src/index.scss ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./index.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -28870,7 +41089,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  navWrapper: 'qrp_navigation-container'
+  navWrapper: 'qrp_navigation-container',
+  container: 'qrp_navigation-static-container'
 };
 
 /***/ }),
@@ -28922,7 +41142,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var NavWrapper = function NavWrapper(props) {
   return _react2.default.createElement(
     'div',
-    { className: (0, _common.createClassName)(props.viewType === _vnConstants.VIEW_TYPES.MENU_VIEW ? _nConstants.CLASSES.navWrapper : undefined, props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _common.COMMON_CLASSES.flexRow : _common.COMMON_CLASSES.flexCol, _common.COMMON_CLASSES.txtCenter) },
+    { className: (0, _common.createClassName)(props.viewType === _vnConstants.VIEW_TYPES.MENU_VIEW ? _nConstants.CLASSES.navWrapper : undefined, props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _common.COMMON_CLASSES.flexRow : _common.COMMON_CLASSES.flexCol, _common.COMMON_CLASSES.txtCenter, _nConstants.CLASSES.container) },
     _react2.default.createElement(_viewNavigation2.default, null),
     _react2.default.createElement(_pathNavigation2.default, null),
     _react2.default.createElement(_globalSearch2.default, null),
@@ -28990,7 +41210,7 @@ var _nvModel = __webpack_require__(/*! ./nv-model */ "./public/src/path-navigati
 
 var _nvModel2 = _interopRequireDefault(_nvModel);
 
-var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/body/body-actions.js");
+var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src/body/body-actions.js");
 
 var _bnActions = __webpack_require__(/*! body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
@@ -29014,7 +41234,15 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         return e.selected === true;
       }) : undefined;
       dispatch((0, _gsActions.hideSearchResults)());
-      if (lastViewedRuleBeforeSearch) dispatch((0, _dsActions.fetchDetailsData)(lastViewedRuleBeforeSearch.href));else dispatch((0, _dsActions.clearDetailsData)());
+      if (props.path.length > 0) {
+        if (/\/quality-rules/i.test(props.path[props.path.length - 1].href) === false && props.path.length < 3) {
+          dispatch((0, _bodyActions.showNavigationView)());
+        } else {
+          if (lastViewedRuleBeforeSearch) dispatch((0, _dsActions.fetchDetailsData)(lastViewedRuleBeforeSearch.href));else dispatch((0, _dsActions.clearDetailsData)());
+        }
+      } else if (props.path.length === 0) {
+        dispatch((0, _bodyActions.showLandingPage)());
+      }
     }
   };
 };
@@ -29024,13 +41252,15 @@ var mapStateToProps = function mapStateToProps(state) {
     path: state.path.path,
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
-    rules: state.rulesList.data
+    rules: state.rulesList.data,
+    searchQuery: state.search.query
   };
 };
 
 _nvModel2.default.propTypes = {
   path: _propTypes2.default.arrayOf(_propTypes2.default.object),
-  searchVisible: _propTypes2.default.bool.isRequired
+  searchVisible: _propTypes2.default.bool.isRequired,
+  searchQuery: _propTypes2.default.string
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_nvModel2.default);
@@ -29128,7 +41358,11 @@ var CLASSES = exports.CLASSES = {
   pathElement: 'qrp_headerBar_pathElement',
   pathElementIcon: 'qrp_headerBar_pathElement_icon',
   pathElementText: 'qrp_headerBar_pathElement_text',
-  pathSeparator: 'qrp_headerBar_pathElement_Separator'
+  pathSeparator: 'qrp_headerBar_pathElement_Separator',
+  closeBtn: 'qrp_headerBar_search_pathElement_closeBtn',
+  selector: 'qrp_headerBar_pathElement_Selector',
+  selectorTextBox: 'qrp_headerBar_pathElement_Selector_txtBox',
+  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown'
 };
 
 var TYPES = exports.TYPES = {
@@ -29137,6 +41371,106 @@ var TYPES = exports.TYPES = {
 };
 
 var SEARCHFOR = exports.SEARCHFOR = 'Search Results for : ';
+var CLOSEBTNURL = exports.CLOSEBTNURL = '/img/cross.svg';
+
+/***/ }),
+
+/***/ "./public/src/path-navigation/nv-lib.js":
+/*!**********************************************!*\
+  !*** ./public/src/path-navigation/nv-lib.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.SelectorElement = exports.PathElement = undefined;
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-navigation/nv-constants.js");
+
+var _dropdown = __webpack_require__(/*! cfe-components/lib/dropdown */ "./node_modules/cfe-components/lib/dropdown/index.js");
+
+__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PathElement = exports.PathElement = function PathElement(props) {
+  return _react2.default.createElement(
+    'span',
+    { className: _nvConstants.CLASSES.pathElement },
+    props.icon ? _react2.default.createElement('div', { className: _nvConstants.CLASSES.pathElementIcon,
+      style: { backgroundImage: 'url(' + props.icon + ')' } }) : undefined,
+    _react2.default.createElement(
+      'div',
+      { className: _nvConstants.CLASSES.pathElementText, onClick: function onClick() {
+          return props.gotoLocation ? props.gotoLocation(props) : undefined;
+        } },
+      props.name
+    ),
+    props.closeBtn ? _react2.default.createElement('img', { src: _nvConstants.CLOSEBTNURL, className: _nvConstants.CLASSES.closeBtn, onClick: function onClick() {
+        return props.onCloseBtnClick(props);
+      } }) : undefined,
+    props.separator ? _react2.default.createElement(
+      'div',
+      { className: _nvConstants.CLASSES.pathSeparator },
+      ' > '
+    ) : undefined
+  );
+};
+
+var SelectorElement = exports.SelectorElement = function SelectorElement(props) {
+  return _react2.default.createElement(
+    'span',
+    { className: _nvConstants.CLASSES.selector },
+    _react2.default.createElement(_dropdown.DropdownSelector, {
+      optionsClassName: 'mydropdown-selector',
+      triggerClassName: 'my-selector-dropdown-trigger',
+      value: '123',
+      options: [{
+        label: 'Application Name is APP 1',
+        value: '123',
+        hasDivider: true
+      }, {
+        label: _react2.default.createElement(
+          'a',
+          { href: '' },
+          'Application Name is APP 2'
+        ),
+        isLink: true,
+        value: '456',
+        hasDivider: true
+      }, {
+        label: 'Application Name is APP 3',
+        value: '789',
+        hasDivider: true
+      }, {
+        label: 'Application Name is APP 4',
+        value: '103'
+      }] })
+  );
+};
+
+PathElement.propTypes = {
+  type: _propTypes2.default.string,
+  name: _propTypes2.default.string.isRequired,
+  href: _propTypes2.default.string,
+  icon: _propTypes2.default.string,
+  index: _propTypes2.default.number.isRequired,
+  gotoLocation: _propTypes2.default.func,
+  onCloseBtnClick: _propTypes2.default.func
+};
 
 /***/ }),
 
@@ -29162,13 +41496,11 @@ var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
 
-var _nvPathItem = __webpack_require__(/*! ./nv-pathItem */ "./public/src/path-navigation/nv-pathItem.js");
-
-var _nvPathItem2 = _interopRequireDefault(_nvPathItem);
+var _nvLib = __webpack_require__(/*! ./nv-lib */ "./public/src/path-navigation/nv-lib.js");
 
 var _vnConstants = __webpack_require__(/*! view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
 
-__webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css");
+__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29180,83 +41512,16 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.searchVisible ? _react2.default.createElement(_nvPathItem2.default, { rules: props.rules, separator: false, index: 0, name: _nvConstants.SEARCHFOR, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
+      props.searchVisible ? _react2.default.createElement(_nvLib.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (e.type === _nvConstants.TYPES.selector) {
           return;
-        } else return _react2.default.createElement(_nvPathItem2.default, { key: index, separator: index !== pl - 1, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
+        } else return _react2.default.createElement(_nvLib.PathElement, { key: index, separator: index !== pl - 1, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
       })
     )
   );
 };
 
 exports.default = NavHeader;
-
-/***/ }),
-
-/***/ "./public/src/path-navigation/nv-pathItem.js":
-/*!***************************************************!*\
-  !*** ./public/src/path-navigation/nv-pathItem.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-navigation/nv-constants.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var HeaderPathElement = function HeaderPathElement(props) {
-  return _react2.default.createElement(
-    'span',
-    { className: _nvConstants.CLASSES.pathElement },
-    props.icon ? _react2.default.createElement('div', { className: _nvConstants.CLASSES.pathElementIcon,
-      style: { backgroundImage: 'url(' + props.icon + ')' } }) : undefined,
-    _react2.default.createElement(
-      'div',
-      { className: _nvConstants.CLASSES.pathElementText, onClick: function onClick() {
-          return props.gotoLocation ? props.gotoLocation(props) : undefined;
-        } },
-      props.name
-    ),
-    props.closeBtn ? _react2.default.createElement(
-      'div',
-      { className: _nvConstants.CLASSES.closeBtn, onClick: function onClick() {
-          return props.onCloseBtnClick(props);
-        } },
-      ' x '
-    ) : undefined,
-    props.separator ? _react2.default.createElement(
-      'div',
-      { className: _nvConstants.CLASSES.pathSeparator },
-      ' > '
-    ) : undefined
-  );
-};
-
-HeaderPathElement.propTypes = {
-  name: _propTypes2.default.string,
-  href: _propTypes2.default.string,
-  icon: _propTypes2.default.string,
-  index: _propTypes2.default.number,
-  gotoLocation: _propTypes2.default.func,
-  onCloseBtnClick: _propTypes2.default.func
-};
-
-exports.default = HeaderPathElement;
 
 /***/ }),
 
@@ -29314,15 +41579,15 @@ exports.default = navHeaderReducer;
 
 /***/ }),
 
-/***/ "./public/src/path-navigation/style.css":
-/*!**********************************************!*\
-  !*** ./public/src/path-navigation/style.css ***!
-  \**********************************************/
+/***/ "./public/src/path-navigation/style.scss":
+/*!***********************************************!*\
+  !*** ./public/src/path-navigation/style.scss ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
