@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CLASSES, CLOSEBTNURL } from './nv-constants';
-import './style.scss';
+import DropDown from '../components/dropdown';
 
 export const PathElement = ( props ) => {
   return (
@@ -18,7 +18,13 @@ export const PathElement = ( props ) => {
 export const SelectorElement = ( props ) => {
   return (
     <span className={CLASSES.selector}>
-      <div className={CLASSES.selectorOverlay} onClick></div>
+      <DropDown>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+        <span>1</span>
+      </DropDown>
     </span>
   );
 };

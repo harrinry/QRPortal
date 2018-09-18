@@ -86,44 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss":
-/*!**************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss":
-/*!******************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss ***!
-  \******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".qrp_headerBar {\n  display: flex;\n  background-color: inherit;\n  flex-grow: 1;\n  height: 40px;\n  margin: 25px; }\n\n.qrp_headerBar_pathContainer {\n  display: flex;\n  flex-direction: row;\n  margin: 2px; }\n\n.qrp_headerBar_pathElement {\n  display: flex;\n  flex-direction: row;\n  margin: 8px 15px; }\n\n.qrp_headerBar_pathElement_icon {\n  display: inline-block;\n  background-repeat: 'no-repeat';\n  background-position: 'center';\n  background-size: '80%';\n  cursor: pointer;\n  width: 100%;\n  height: 100%; }\n\n.qrp_headerBar_pathElement_Separator {\n  font-weight: 800;\n  margin-left: 15px;\n  cursor: default; }\n\n.qrp_headerBar_pathElement_text {\n  cursor: pointer;\n  white-space: nowrap; }\n\n.qrp_headerBar_search_pathElement_closeBtn {\n  height: 70%;\n  width: 70%;\n  margin: 4px 0 0 20px;\n  cursor: pointer; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css":
 /*!**************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/body-landing-page/style.css ***!
@@ -295,6 +257,25 @@ exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 10
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./public/src/components/dropdown/style.css":
+/*!****************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/components/dropdown/style.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_clkovl{ position: fixed; background: none; background-color: transparent; z-index: 20; top: 0px; left: 0px; width: 100%; height: 100%; }\r\n.qrp_Ctrn_drpd{ display: block; }\r\n.qrp_drde_menu{ z-index: 25; width: 100%; display: block;}\r\n.qrp_drde_menu.qrp_drde_closed{ display: none; }", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/components/loading-spinner/style.css":
 /*!***********************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/components/loading-spinner/style.css ***!
@@ -422,6 +403,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, ".qrp_navigation-container{\r\n  max-width: 383px;\r\n  -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  -moz-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  z-index: 2;\r\n  background-color: #F2F2F2;\r\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css":
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/path-navigation/style.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 40px;\r\n  margin: 25px;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 2px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 8px 15px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: 80%;\r\n  cursor: pointer;\r\n  width: 100%;\r\n  height: 100%;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer; white-space: nowrap;}\r\n\r\n.qrp_headerBar_search_pathElement_closeBtn{ height: 70%; width: 70%; margin: 4px 0 0 20px; cursor: pointer; }", ""]);
 
 // exports
 
@@ -26574,6 +26574,151 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./public/src/components/dropdown/constants.js":
+/*!*****************************************************!*\
+  !*** ./public/src/components/dropdown/constants.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CLASSES = exports.CLASSES = {
+  container: 'qrp_Ctrn_drpd',
+  dropdownOverlay: 'qrp_clkovl',
+  dropDownElementContainer: 'qrp_drde_Ctrn',
+  trigger: 'qrp_drde_trg',
+  dropDownMenu: 'qrp_drde_menu',
+  closed: 'qrp_drde_closed'
+};
+
+/***/ }),
+
+/***/ "./public/src/components/dropdown/index.js":
+/*!*************************************************!*\
+  !*** ./public/src/components/dropdown/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _constants = __webpack_require__(/*! ./constants */ "./public/src/components/dropdown/constants.js");
+
+var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+__webpack_require__(/*! ./style.css */ "./public/src/components/dropdown/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SelectorElement = function (_React$PureComponent) {
+  _inherits(SelectorElement, _React$PureComponent);
+
+  function SelectorElement(props) {
+    _classCallCheck(this, SelectorElement);
+
+    var _this = _possibleConstructorReturn(this, (SelectorElement.__proto__ || Object.getPrototypeOf(SelectorElement)).call(this, props));
+
+    _this.state = {
+      isOpen: false
+    };
+    return _this;
+  }
+
+  _createClass(SelectorElement, [{
+    key: 'closeDropDown',
+    value: function closeDropDown() {
+      if (this.state.isOpen) this.setState({ isOpen: false });
+    }
+  }, {
+    key: 'toggleDropDown',
+    value: function toggleDropDown() {
+      this.setState({ isOpen: !this.state.isOpen });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'span',
+        { className: _constants.CLASSES.container },
+        _react2.default.createElement('div', { className: _constants.CLASSES.dropdownOverlay, onClick: this.closeDropDown }),
+        _react2.default.createElement(
+          'div',
+          { className: _constants.CLASSES.dropDownElementContainer },
+          _react2.default.createElement('div', { className: (0, _common.createClassName)(_constants.CLASSES.trigger, _constants.CLASSES.closed), onClick: this.toggleDropDown }),
+          _react2.default.createElement(
+            'div',
+            { className: _constants.CLASSES.dropDownMenu },
+            this.props.children
+          )
+        )
+      );
+    }
+  }]);
+
+  return SelectorElement;
+}(_react2.default.PureComponent);
+
+exports.default = SelectorElement;
+
+/***/ }),
+
+/***/ "./public/src/components/dropdown/style.css":
+/*!**************************************************!*\
+  !*** ./public/src/components/dropdown/style.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/components/dropdown/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./public/src/components/index.js":
 /*!****************************************!*\
   !*** ./public/src/components/index.js ***!
@@ -27831,8 +27976,6 @@ __webpack_require__(/*! common/style.css */ "./public/src/common/style.css");
 
 __webpack_require__(/*! common/keyframes.css */ "./public/src/common/keyframes.css");
 
-__webpack_require__(/*! ./index.scss */ "./public/src/index.scss");
-
 var _bnActions = __webpack_require__(/*! ./body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
 var actions = _interopRequireWildcard(_bnActions);
@@ -27855,36 +27998,6 @@ _reactDom2.default.render(_react2.default.createElement(
   { store: _store2.default },
   _react2.default.createElement(_app2.default, null)
 ), document.getElementById('react-root'));
-
-/***/ }),
-
-/***/ "./public/src/index.scss":
-/*!*******************************!*\
-  !*** ./public/src/index.scss ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../node_modules/css-loader!../../node_modules/sass-loader/lib/loader.js!./index.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/index.scss");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
 
 /***/ }),
 
@@ -29194,7 +29307,8 @@ var CLASSES = exports.CLASSES = {
   closeBtn: 'qrp_headerBar_search_pathElement_closeBtn',
   selector: 'qrp_headerBar_pathElement_Selector',
   selectorTextBox: 'qrp_headerBar_pathElement_Selector_txtBox',
-  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown'
+  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown',
+  selectorOverlay: 'qrp_clkovl'
 };
 
 var TYPES = exports.TYPES = {
@@ -29232,7 +29346,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-navigation/nv-constants.js");
 
-__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
+var _dropdown = __webpack_require__(/*! ../components/dropdown */ "./public/src/components/dropdown/index.js");
+
+var _dropdown2 = _interopRequireDefault(_dropdown);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29261,7 +29377,39 @@ var PathElement = exports.PathElement = function PathElement(props) {
 };
 
 var SelectorElement = exports.SelectorElement = function SelectorElement(props) {
-  return _react2.default.createElement('span', { className: _nvConstants.CLASSES.selector });
+  return _react2.default.createElement(
+    'span',
+    { className: _nvConstants.CLASSES.selector },
+    _react2.default.createElement(
+      _dropdown2.default,
+      null,
+      _react2.default.createElement(
+        'span',
+        null,
+        '1'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        '1'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        '1'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        '1'
+      ),
+      _react2.default.createElement(
+        'span',
+        null,
+        '1'
+      )
+    )
+  );
 };
 
 PathElement.propTypes = {
@@ -29302,7 +29450,7 @@ var _nvLib = __webpack_require__(/*! ./nv-lib */ "./public/src/path-navigation/n
 
 var _vnConstants = __webpack_require__(/*! view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
 
-__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
+__webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29314,6 +29462,7 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
+      _react2.default.createElement(_nvLib.SelectorElement, null),
       props.searchVisible ? _react2.default.createElement(_nvLib.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (e.type === _nvConstants.TYPES.selector) {
           return;
@@ -29381,15 +29530,15 @@ exports.default = navHeaderReducer;
 
 /***/ }),
 
-/***/ "./public/src/path-navigation/style.scss":
-/*!***********************************************!*\
-  !*** ./public/src/path-navigation/style.scss ***!
-  \***********************************************/
+/***/ "./public/src/path-navigation/style.css":
+/*!**********************************************!*\
+  !*** ./public/src/path-navigation/style.css ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
