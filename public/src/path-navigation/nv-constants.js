@@ -8,7 +8,8 @@ export const CLASSES = {
   closeBtn: 'qrp_headerBar_search_pathElement_closeBtn',
   selector: 'qrp_headerBar_pathElement_Selector',
   selectorTextBox: 'qrp_headerBar_pathElement_Selector_txtBox',
-  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown'
+  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown',
+  selectorOverlay: 'qrp_clkovl'
 };
 
 export const TYPES = {

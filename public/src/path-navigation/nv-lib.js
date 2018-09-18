@@ -18,7 +18,8 @@ export const PathElement = ( props ) => {
 export const SelectorElement = ( props ) => {
   return (
     <span className={CLASSES.selector}>
-      </span>
+      <div className={CLASSES.selectorOverlay} onClick></div>
+    </span>
   );
 };
 
