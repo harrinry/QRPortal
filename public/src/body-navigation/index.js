@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import BodyNavigation from './bn-model';
 import { fetchNavigationData } from './bn-actions';
 import { setListCount, showContentView } from '../body/body-actions';
-import { fetchWebData, fetchApiData } from '../body-rules-list/brl-actions';
+import { fetchWebData, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
+import { clearDetailsData } from '../details-section/ds-actions';
 import { fetchStandardsListData } from '../body-standards-list/bsl-actions';
 import { appendToHeaderPath } from '../path-navigation/nv-actions';
 import { SECTIONS } from './bn-constants';
@@ -42,6 +43,8 @@ const mapDispatchToProps = (dispatch) => {
         break;
       }
       dispatch(appendToHeaderPath(link));
+      dispatch(clearDetailsData());
+      dispatch(clearListData());
     }
   };
 };

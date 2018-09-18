@@ -6,13 +6,14 @@ module.exports = {
     {
       name: 'static',
       dir: 'static',
-      url: '/default.html',
+      use: false,
+      url: 'default.html',
       PATH: path.resolve(__dirname, '..', '..', 'static')
     },
     {
       name: 'swagger-ui',
-      dir: 'swagger-ui',
-      url: '/swagger.html',
+      use: true,
+      url: '/swagger-ui/',
       PATH: path.resolve(__dirname, '..', '..', 'swagger-ui')
     }
   ]

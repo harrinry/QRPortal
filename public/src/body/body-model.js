@@ -19,7 +19,7 @@ const ContentBody = ( props ) => {
         </div>) : 
         (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>
-            { props.listCount === 2 ? <StandardsList/> : undefined}
+            { props.listCount === 2 && !props.searchVisible ? <StandardsList/> : undefined}
             <BodyRulesList/>
           </div>
           <div className={CLASSES.detailsArea}>

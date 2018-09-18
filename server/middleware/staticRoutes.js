@@ -5,10 +5,15 @@ function initiateStaticRoutes( expressApp ){
 
   for (let i = 0; i < staticRoutes.length; i++) {
     const route = staticRoutes[i];
-    expressApp.use( express.static( route.name ) );
-    expressApp.get( route.url, ( req, res ) => {
-      res.sendFile( route.PATH );
-    });
+    if( route.use ){
+      expressApp.use( route.url, express.static( route.PATH ) );
+    } else {
+      expressApp.use( express.static( route.name ) );
+      expressApp.get( route.url, ( req, res ) => {
+        res.sendFile( route.PATH );
+      });
+    }
+    console.log('Static Route : ' + route.name + ' initialized on route: ' + route.url);
   }
 }
 

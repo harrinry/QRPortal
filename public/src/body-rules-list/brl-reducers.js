@@ -11,8 +11,8 @@ const RulesListReducers = (state = initialState, action) => {
   switch (action.type) {
   case FETCH_LIST_DATA:
     return {
-      data: [],
-      query: action.payload.query,
+      data: state.data,
+      query: action.payload.query ? action.payload.query : state.query,
       loading: true
     };
   case SET_LIST_DATA: 

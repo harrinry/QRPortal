@@ -13,7 +13,7 @@ const NavWrapper = ( props ) => {
     <div className={createClassName( 
       (props.viewType === VIEW_TYPES.MENU_VIEW ? CLASSES.navWrapper : undefined),
       (props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.flexRow : COMMON_CLASSES.flexCol), 
-      COMMON_CLASSES.txtCenter )}>
+      COMMON_CLASSES.txtCenter, CLASSES.container )}>
       <ViewNavigation/>
       <NavigationHeader/>
       <GlobalSearch/>
