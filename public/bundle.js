@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=47)}([function(e,t,n){"use strict";e.exports=n(48)},function(e,t,n){e.exports=n(53)()},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(26);Object.defineProperty(t,"ConstructArray",{enumerable:!0,get:function(){return r.ConstructArray}}),Object.defineProperty(t,"createClassName",{enumerable:!0,get:function(){return r.createClassName}}),Object.defineProperty(t,"Struct",{enumerable:!0,get:function(){return r.Struct}}),Object.defineProperty(t,"restQuery",{enumerable:!0,get:function(){return r.restQuery}}),Object.defineProperty(t,"readLocalStorage",{enumerable:!0,get:function(){return r.readLocalStorage}}),Object.defineProperty(t,"setLocalStorage",{enumerable:!0,get:function(){return r.setLocalStorage}});var o=n(14);Object.defineProperty(t,"COMMON_CLASSES",{enumerable:!0,get:function(){return o.COMMON_CLASSES}}),Object.defineProperty(t,"LOCALSTORAGEKEY",{enumerable:!0,get:function(){return o.LOCALSTORAGEKEY}});var a=n(76);Object.defineProperty(t,"apiFetch",{enumerable:!0,get:function(){return a.apiFetch}}),Object.defineProperty(t,"webFetch",{enumerable:!0,get:function(){return a.webFetch}})},function(e,t){e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var n=function(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var o=function(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}(r),a=r.sources.map(function(e){return"/*# sourceURL="+r.sourceRoot+e+" */"});return[n].concat(a).concat([o]).join("\n")}return[n].join("\n")}(t,e);return t[2]?"@media "+t[2]+"{"+n+"}":n}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var a=this[o][0];"number"==typeof a&&(r[a]=!0)}for(o=0;o<e.length;o++){var i=e[o];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),t.push(i))}},t}},function(e,t,n){var r={},o=function(e){var t;return function(){return void 0===t&&(t=e.apply(this,arguments)),t}}(function(){return window&&document&&document.all&&!window.atob}),a=function(e){var t={};return function(e){if("function"==typeof e)return e();if(void 0===t[e]){var n=function(e){return document.querySelector(e)}.call(this,e);if(window.HTMLIFrameElement&&n instanceof window.HTMLIFrameElement)try{n=n.contentDocument.head}catch(e){n=null}t[e]=n}return t[e]}}(),i=null,l=0,u=[],c=n(84);function s(e,t){for(var n=0;n<e.length;n++){var o=e[n],a=r[o.id];if(a){a.refs++;for(var i=0;i<a.parts.length;i++)a.parts[i](o.parts[i]);for(;i<o.parts.length;i++)a.parts.push(v(o.parts[i],t))}else{var l=[];for(i=0;i<o.parts.length;i++)l.push(v(o.parts[i],t));r[o.id]={id:o.id,refs:1,parts:l}}}}function f(e,t){for(var n=[],r={},o=0;o<e.length;o++){var a=e[o],i=t.base?a[0]+t.base:a[0],l={css:a[1],media:a[2],sourceMap:a[3]};r[i]?r[i].parts.push(l):n.push(r[i]={id:i,parts:[l]})}return n}function d(e,t){var n=a(e.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=u[u.length-1];if("top"===e.insertAt)r?r.nextSibling?n.insertBefore(t,r.nextSibling):n.appendChild(t):n.insertBefore(t,n.firstChild),u.push(t);else if("bottom"===e.insertAt)n.appendChild(t);else{if("object"!=typeof e.insertAt||!e.insertAt.before)throw new Error("[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n");var o=a(e.insertInto+" "+e.insertAt.before);n.insertBefore(t,o)}}function p(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e);var t=u.indexOf(e);t>=0&&u.splice(t,1)}function h(e){var t=document.createElement("style");return void 0===e.attrs.type&&(e.attrs.type="text/css"),m(t,e.attrs),d(e,t),t}function m(e,t){Object.keys(t).forEach(function(n){e.setAttribute(n,t[n])})}function v(e,t){var n,r,o,a;if(t.transform&&e.css){if(!(a=t.transform(e.css)))return function(){};e.css=a}if(t.singleton){var u=l++;n=i||(i=h(t)),r=g.bind(null,n,u,!1),o=g.bind(null,n,u,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(e){var t=document.createElement("link");return void 0===e.attrs.type&&(e.attrs.type="text/css"),e.attrs.rel="stylesheet",m(t,e.attrs),d(e,t),t}(t),r=function(e,t,n){var r=n.css,o=n.sourceMap,a=void 0===t.convertToAbsoluteUrls&&o;(t.convertToAbsoluteUrls||a)&&(r=c(r));o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var i=new Blob([r],{type:"text/css"}),l=e.href;e.href=URL.createObjectURL(i),l&&URL.revokeObjectURL(l)}.bind(null,n,t),o=function(){p(n),n.href&&URL.revokeObjectURL(n.href)}):(n=h(t),r=function(e,t){var n=t.css,r=t.media;r&&e.setAttribute("media",r);if(e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}.bind(null,n),o=function(){p(n)});return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else o()}}e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(t=t||{}).attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||"boolean"==typeof t.singleton||(t.singleton=o()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var n=f(e,t);return s(n,t),function(e){for(var o=[],a=0;a<n.length;a++){var i=n[a];(l=r[i.id]).refs--,o.push(l)}e&&s(f(e,t),t);for(a=0;a<o.length;a++){var l;if(0===(l=o[a]).refs){for(var u=0;u<l.parts.length;u++)l.parts[u]();delete r[l.id]}}}};var y=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}();function g(e,t,n,r){var o=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=y(t,o);else{var a=document.createTextNode(o),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(a,i[t]):e.appendChild(a)}}},function(e,t,n){"use strict";n.r(t);var r=n(0),o=n(1),a=n.n(o),i=a.a.shape({trySubscribe:a.a.func.isRequired,tryUnsubscribe:a.a.func.isRequired,notifyNestedSubs:a.a.func.isRequired,isSubscribed:a.a.func.isRequired}),l=a.a.shape({subscribe:a.a.func.isRequired,dispatch:a.a.func.isRequired,getState:a.a.func.isRequired});function u(){var e,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"store",n=arguments[1]||t+"Subscription",o=function(e){function o(n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,o);var a=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,e.call(this,n,r));return a[t]=n.store,a}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(o,e),o.prototype.getChildContext=function(){var e;return(e={})[t]=this[t],e[n]=null,e},o.prototype.render=function(){return r.Children.only(this.props.children)},o}(r.Component);return o.propTypes={store:l.isRequired,children:a.a.element.isRequired},o.childContextTypes=((e={})[t]=l.isRequired,e[n]=i,e),o}var c=u(),s=n(44),f=n.n(s),d=n(13),p=n.n(d);var h=null,m={notify:function(){}};var v=function(){function e(t,n,r){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.store=t,this.parentSub=n,this.onStateChange=r,this.unsubscribe=null,this.listeners=m}return e.prototype.addNestedSub=function(e){return this.trySubscribe(),this.listeners.subscribe(e)},e.prototype.notifyNestedSubs=function(){this.listeners.notify()},e.prototype.isSubscribed=function(){return Boolean(this.unsubscribe)},e.prototype.trySubscribe=function(){this.unsubscribe||(this.unsubscribe=this.parentSub?this.parentSub.addNestedSub(this.onStateChange):this.store.subscribe(this.onStateChange),this.listeners=function(){var e=[],t=[];return{clear:function(){t=h,e=h},notify:function(){for(var n=e=t,r=0;r<n.length;r++)n[r]()},get:function(){return t},subscribe:function(n){var r=!0;return t===e&&(t=e.slice()),t.push(n),function(){r&&e!==h&&(r=!1,t===e&&(t=e.slice()),t.splice(t.indexOf(n),1))}}}}())},e.prototype.tryUnsubscribe=function(){this.unsubscribe&&(this.unsubscribe(),this.unsubscribe=null,this.listeners.clear(),this.listeners=m)},e}(),y=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};var g=0,E={};function S(){}function _(e){var t,n,o=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},a=o.getDisplayName,u=void 0===a?function(e){return"ConnectAdvanced("+e+")"}:a,c=o.methodName,s=void 0===c?"connectAdvanced":c,d=o.renderCountProp,h=void 0===d?void 0:d,m=o.shouldHandleStateChanges,_=void 0===m||m,b=o.storeKey,T=void 0===b?"store":b,C=o.withRef,w=void 0!==C&&C,O=function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(o,["getDisplayName","methodName","renderCountProp","shouldHandleStateChanges","storeKey","withRef"]),x=T+"Subscription",N=g++,A=((t={})[T]=l,t[x]=i,t),I=((n={})[x]=i,n);return function(t){p()("function"==typeof t,"You must pass a component to the function returned by "+s+". Instead received "+JSON.stringify(t));var n=t.displayName||t.name||"Component",o=u(n),a=y({},O,{getDisplayName:u,methodName:s,renderCountProp:h,shouldHandleStateChanges:_,storeKey:T,withRef:w,displayName:o,wrappedComponentName:n,WrappedComponent:t}),i=function(n){function i(e,t){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,i);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,n.call(this,e,t));return r.version=N,r.state={},r.renderCount=0,r.store=e[T]||t[T],r.propsMode=Boolean(e[T]),r.setWrappedInstance=r.setWrappedInstance.bind(r),p()(r.store,'Could not find "'+T+'" in either the context or props of "'+o+'". Either wrap the root component in a <Provider>, or explicitly pass "'+T+'" as a prop to "'+o+'".'),r.initSelector(),r.initSubscription(),r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(i,n),i.prototype.getChildContext=function(){var e,t=this.propsMode?null:this.subscription;return(e={})[x]=t||this.context[x],e},i.prototype.componentDidMount=function(){_&&(this.subscription.trySubscribe(),this.selector.run(this.props),this.selector.shouldComponentUpdate&&this.forceUpdate())},i.prototype.componentWillReceiveProps=function(e){this.selector.run(e)},i.prototype.shouldComponentUpdate=function(){return this.selector.shouldComponentUpdate},i.prototype.componentWillUnmount=function(){this.subscription&&this.subscription.tryUnsubscribe(),this.subscription=null,this.notifyNestedSubs=S,this.store=null,this.selector.run=S,this.selector.shouldComponentUpdate=!1},i.prototype.getWrappedInstance=function(){return p()(w,"To access the wrapped instance, you need to specify { withRef: true } in the options argument of the "+s+"() call."),this.wrappedInstance},i.prototype.setWrappedInstance=function(e){this.wrappedInstance=e},i.prototype.initSelector=function(){var t=e(this.store.dispatch,a);this.selector=function(e,t){var n={run:function(r){try{var o=e(t.getState(),r);(o!==n.props||n.error)&&(n.shouldComponentUpdate=!0,n.props=o,n.error=null)}catch(e){n.shouldComponentUpdate=!0,n.error=e}}};return n}(t,this.store),this.selector.run(this.props)},i.prototype.initSubscription=function(){if(_){var e=(this.propsMode?this.props:this.context)[x];this.subscription=new v(this.store,e,this.onStateChange.bind(this)),this.notifyNestedSubs=this.subscription.notifyNestedSubs.bind(this.subscription)}},i.prototype.onStateChange=function(){this.selector.run(this.props),this.selector.shouldComponentUpdate?(this.componentDidUpdate=this.notifyNestedSubsOnComponentDidUpdate,this.setState(E)):this.notifyNestedSubs()},i.prototype.notifyNestedSubsOnComponentDidUpdate=function(){this.componentDidUpdate=void 0,this.notifyNestedSubs()},i.prototype.isSubscribed=function(){return Boolean(this.subscription)&&this.subscription.isSubscribed()},i.prototype.addExtraProps=function(e){if(!(w||h||this.propsMode&&this.subscription))return e;var t=y({},e);return w&&(t.ref=this.setWrappedInstance),h&&(t[h]=this.renderCount++),this.propsMode&&this.subscription&&(t[x]=this.subscription),t},i.prototype.render=function(){var e=this.selector;if(e.shouldComponentUpdate=!1,e.error)throw e.error;return Object(r.createElement)(t,this.addExtraProps(e.props))},i}(r.Component);return i.WrappedComponent=t,i.displayName=o,i.childContextTypes=I,i.contextTypes=A,i.propTypes=A,f()(i,t)}}var b=Object.prototype.hasOwnProperty;function T(e,t){return e===t?0!==e||0!==t||1/e==1/t:e!=e&&t!=t}function C(e,t){if(T(e,t))return!0;if("object"!=typeof e||null===e||"object"!=typeof t||null===t)return!1;var n=Object.keys(e),r=Object.keys(t);if(n.length!==r.length)return!1;for(var o=0;o<n.length;o++)if(!b.call(t,n[o])||!T(e[n[o]],t[n[o]]))return!1;return!0}var w=n(12),O=n(45),x="object"==typeof self&&self&&self.Object===Object&&self,N=(O.a||x||Function("return this")()).Symbol,A=Object.prototype;A.hasOwnProperty,A.toString,N&&N.toStringTag;Object.prototype.toString;N&&N.toStringTag;Object.getPrototypeOf,Object;var I=Function.prototype,P=Object.prototype,k=I.toString;P.hasOwnProperty,k.call(Object);function R(e){return function(t,n){var r=e(t,n);function o(){return r}return o.dependsOnOwnProps=!1,o}}function L(e){return null!==e.dependsOnOwnProps&&void 0!==e.dependsOnOwnProps?Boolean(e.dependsOnOwnProps):1!==e.length}function M(e,t){return function(t,n){n.displayName;var r=function(e,t){return r.dependsOnOwnProps?r.mapToProps(e,t):r.mapToProps(e)};return r.dependsOnOwnProps=!0,r.mapToProps=function(t,n){r.mapToProps=e,r.dependsOnOwnProps=L(e);var o=r(t,n);return"function"==typeof o&&(r.mapToProps=o,r.dependsOnOwnProps=L(o),o=r(t,n)),o},r}}var D=[function(e){return"function"==typeof e?M(e):void 0},function(e){return e?void 0:R(function(e){return{dispatch:e}})},function(e){return e&&"object"==typeof e?R(function(t){return Object(w.bindActionCreators)(e,t)}):void 0}];var j=[function(e){return"function"==typeof e?M(e):void 0},function(e){return e?void 0:R(function(){return{}})}],F=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};function U(e,t,n){return F({},n,e,t)}var q=[function(e){return"function"==typeof e?function(e){return function(t,n){n.displayName;var r=n.pure,o=n.areMergedPropsEqual,a=!1,i=void 0;return function(t,n,l){var u=e(t,n,l);return a?r&&o(u,i)||(i=u):(a=!0,i=u),i}}}(e):void 0},function(e){return e?void 0:function(){return U}}];function H(e,t,n,r){return function(o,a){return n(e(o,a),t(r,a),a)}}function V(e,t,n,r,o){var a=o.areStatesEqual,i=o.areOwnPropsEqual,l=o.areStatePropsEqual,u=!1,c=void 0,s=void 0,f=void 0,d=void 0,p=void 0;function h(o,u){var h=!i(u,s),m=!a(o,c);return c=o,s=u,h&&m?(f=e(c,s),t.dependsOnOwnProps&&(d=t(r,s)),p=n(f,d,s)):h?(e.dependsOnOwnProps&&(f=e(c,s)),t.dependsOnOwnProps&&(d=t(r,s)),p=n(f,d,s)):m?function(){var t=e(c,s),r=!l(t,f);return f=t,r&&(p=n(f,d,s)),p}():p}return function(o,a){return u?h(o,a):function(o,a){return f=e(c=o,s=a),d=t(r,s),p=n(f,d,s),u=!0,p}(o,a)}}function W(e,t){var n=t.initMapStateToProps,r=t.initMapDispatchToProps,o=t.initMergeProps,a=function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(t,["initMapStateToProps","initMapDispatchToProps","initMergeProps"]),i=n(e,a),l=r(e,a),u=o(e,a);return(a.pure?V:H)(i,l,u,e,a)}var z=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};function B(e,t,n){for(var r=t.length-1;r>=0;r--){var o=t[r](e);if(o)return o}return function(t,r){throw new Error("Invalid value of type "+typeof e+" for "+n+" argument when connecting component "+r.wrappedComponentName+".")}}function G(e,t){return e===t}var Q=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=e.connectHOC,n=void 0===t?_:t,r=e.mapStateToPropsFactories,o=void 0===r?j:r,a=e.mapDispatchToPropsFactories,i=void 0===a?D:a,l=e.mergePropsFactories,u=void 0===l?q:l,c=e.selectorFactory,s=void 0===c?W:c;return function(e,t,r){var a=arguments.length>3&&void 0!==arguments[3]?arguments[3]:{},l=a.pure,c=void 0===l||l,f=a.areStatesEqual,d=void 0===f?G:f,p=a.areOwnPropsEqual,h=void 0===p?C:p,m=a.areStatePropsEqual,v=void 0===m?C:m,y=a.areMergedPropsEqual,g=void 0===y?C:y,E=function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(a,["pure","areStatesEqual","areOwnPropsEqual","areStatePropsEqual","areMergedPropsEqual"]),S=B(e,o,"mapStateToProps"),_=B(t,i,"mapDispatchToProps"),b=B(r,u,"mergeProps");return n(s,z({methodName:"connect",getDisplayName:function(e){return"Connect("+e+")"},shouldHandleStateChanges:Boolean(e),initMapStateToProps:S,initMapDispatchToProps:_,initMergeProps:b,pure:c,areStatesEqual:d,areOwnPropsEqual:h,areStatePropsEqual:v,areMergedPropsEqual:g},E))}}();n.d(t,"Provider",function(){return c}),n.d(t,"createProvider",function(){return u}),n.d(t,"connectAdvanced",function(){return _}),n.d(t,"connect",function(){return Q})},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.VIEW_TYPES={TILES_VIEW:"TILES_VIEW",MENU_VIEW:"MENU_VIEW",key:"VIEW_TYPE"},t.CLASSES={navBarHeader:"qrp_navBar_header",navIcon:"qrp_navBar_Icon",fixed:"qrp_fixed",imgIcon:"qrp_navBar_img_icon",expanded:"qrp_expandedNav",navTitle:"qrp_navBar_title",extraRightMargin:"qrp_xmrgl_10"},t.Imgs={logo:{default:"img/LogoStructuralRules.svg"},tiles:{black:"img/tiles.svg",grey:"img/tiles_grey.png"},menu:{black:"img/list.svg",grey:"img/list_grey.png"}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.goToLandingPage=t.setHeaderPath=t.navigateTo=t.appendToHeaderPath=void 0;var r=n(27);t.appendToHeaderPath=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return{type:r.APPEND_PATH_TO_HEADER,payload:t}},t.navigateTo=function(e){return{type:r.GOTO_POINT_IN_HEADER_PATH,payload:e}},t.setHeaderPath=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return{type:r.SET_PATH_TO_HEADER,payload:t}},t.goToLandingPage=function(){return{type:r.RETURN_TO_LANDING_PAGE}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.setListCount=t.showLandingPage=t.showNavigationView=t.showContentView=void 0;var r=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(31));t.showContentView=function(){return{type:r.SHOW_CONTENT_VIEW}},t.showNavigationView=function(){return{type:r.SHOW_NAVIGATION_VIEW}},t.showLandingPage=function(){return{type:r.SHOW_LANDING_PAGE}},t.setListCount=function(e){return{type:r.SET_LIST_COUNT,payload:{count:e}}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.fetchWebData=t.fetchApiData=t.fetchListData=t.clearListData=t.setSelected=t.setFetchingState=void 0;var r=a(n(34)),o=a(n(95));function a(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}var i=t.setFetchingState=function(e){return{type:r.FETCH_LIST_DATA,payload:{query:e}}},l=(t.setSelected=function(e){return{type:r.SET_SELECTED_RULE_LIST_ITEM,payload:{itemRef:e}}},t.clearListData=function(){return{type:r.CLEAR_LIST_DATA}},t.fetchListData=function(e,t){return function(n){return n(i(e)),t(e).then(function(t){return n(function(e,t){return{type:r.SET_LIST_DATA,payload:{query:e,data:t}}}(e,t))},function(t){return n(function(e,t){return{type:r.FAILED_TO_FETCH_LIST_DATA,payload:{query:e,err:t}}}(e,t))})}});t.fetchApiData=function(e){return l(e,o.fetchData)},t.fetchWebData=function(e){return l(e,o.fetchWebData)}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.fetchNavigationData=t.clearNavigationData=void 0;var r=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(35)),o=n(2);t.clearNavigationData=function(){return{type:r.CLEAR_NAVIGATION_DATA}},t.fetchNavigationData=function(e,t,n){return function(a){return a(function(e,t,n){return{type:r.FETCH_NAVIGATION_DATA,payload:{title:e,query:n,icon:t}}}(e,n,t)),(0,o.webFetch)(t).then(function(e){return a(function(e){return{type:r.SET_NAVIGATION_DATA,payload:{data:e}}}(e))},function(e){return a(function(e){return{type:r.FAILED_TO_FETCH_NAVIGATION_DATA,payload:{err:e}}}(e))})}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.clearDetailsData=t.fetchDetailsData=void 0;var r=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(32)),o=n(2);t.fetchDetailsData=function(e){return function(t){return t({type:r.FETCHING_DETAILS_CONTENT_FROM_API}),(0,o.webFetch)(e).then(function(n){return t(function(e,t){return{type:r.SET_CONTENT_DETAILS,payload:{data:e,query:t}}}(n,e))},function(n){return t(function(e,t){return{type:r.ERROR_ON_DETAILS_FETCH,payload:{err:e,query:t}}}(n,e))})}},t.clearDetailsData=function(){return{type:r.CLEAR_CONTENT_DETAILS}}},function(e,t,n){"use strict";n.r(t),n.d(t,"createStore",function(){return u}),n.d(t,"combineReducers",function(){return s}),n.d(t,"bindActionCreators",function(){return d}),n.d(t,"applyMiddleware",function(){return h}),n.d(t,"compose",function(){return p}),n.d(t,"__DO_NOT_USE__ActionTypes",function(){return o});var r=n(21),o={INIT:"@@redux/INIT"+Math.random().toString(36).substring(7).split("").join("."),REPLACE:"@@redux/REPLACE"+Math.random().toString(36).substring(7).split("").join(".")},a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};function l(e){if("object"!==(void 0===e?"undefined":a(e))||null===e)return!1;for(var t=e;null!==Object.getPrototypeOf(t);)t=Object.getPrototypeOf(t);return Object.getPrototypeOf(e)===t}function u(e,t,n){var i;if("function"==typeof t&&void 0===n&&(n=t,t=void 0),void 0!==n){if("function"!=typeof n)throw new Error("Expected the enhancer to be a function.");return n(u)(e,t)}if("function"!=typeof e)throw new Error("Expected the reducer to be a function.");var c=e,s=t,f=[],d=f,p=!1;function h(){d===f&&(d=f.slice())}function m(){if(p)throw new Error("You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store.");return s}function v(e){if("function"!=typeof e)throw new Error("Expected the listener to be a function.");if(p)throw new Error("You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api-reference/store#subscribe(listener) for more details.");var t=!0;return h(),d.push(e),function(){if(t){if(p)throw new Error("You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api-reference/store#subscribe(listener) for more details.");t=!1,h();var n=d.indexOf(e);d.splice(n,1)}}}function y(e){if(!l(e))throw new Error("Actions must be plain objects. Use custom middleware for async actions.");if(void 0===e.type)throw new Error('Actions may not have an undefined "type" property. Have you misspelled a constant?');if(p)throw new Error("Reducers may not dispatch actions.");try{p=!0,s=c(s,e)}finally{p=!1}for(var t=f=d,n=0;n<t.length;n++){(0,t[n])()}return e}return y({type:o.INIT}),(i={dispatch:y,subscribe:v,getState:m,replaceReducer:function(e){if("function"!=typeof e)throw new Error("Expected the nextReducer to be a function.");c=e,y({type:o.REPLACE})}})[r.a]=function(){var e,t=v;return(e={subscribe:function(e){if("object"!==(void 0===e?"undefined":a(e))||null===e)throw new TypeError("Expected the observer to be an object.");function n(){e.next&&e.next(m())}return n(),{unsubscribe:t(n)}}})[r.a]=function(){return this},e},i}function c(e,t){var n=t&&t.type;return"Given "+(n&&'action "'+String(n)+'"'||"an action")+', reducer "'+e+'" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.'}function s(e){for(var t=Object.keys(e),n={},r=0;r<t.length;r++){var a=t[r];0,"function"==typeof e[a]&&(n[a]=e[a])}var i=Object.keys(n);var l=void 0;try{!function(e){Object.keys(e).forEach(function(t){var n=e[t];if(void 0===n(void 0,{type:o.INIT}))throw new Error('Reducer "'+t+"\" returned undefined during initialization. If the state passed to the reducer is undefined, you must explicitly return the initial state. The initial state may not be undefined. If you don't want to set a value for this reducer, you can use null instead of undefined.");if(void 0===n(void 0,{type:"@@redux/PROBE_UNKNOWN_ACTION_"+Math.random().toString(36).substring(7).split("").join(".")}))throw new Error('Reducer "'+t+"\" returned undefined when probed with a random type. Don't try to handle "+o.INIT+' or other actions in "redux/*" namespace. They are considered private. Instead, you must return the current state for any unknown actions, unless it is undefined, in which case you must return the initial state, regardless of the action type. The initial state may not be undefined, but can be null.')})}(n)}catch(e){l=e}return function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=arguments[1];if(l)throw l;for(var r=!1,o={},a=0;a<i.length;a++){var u=i[a],s=n[u],f=e[u],d=s(f,t);if(void 0===d){var p=c(u,t);throw new Error(p)}o[u]=d,r=r||d!==f}return r?o:e}}function f(e,t){return function(){return t(e.apply(this,arguments))}}function d(e,t){if("function"==typeof e)return f(e,t);if("object"!==(void 0===e?"undefined":a(e))||null===e)throw new Error("bindActionCreators expected an object or a function, instead received "+(null===e?"null":void 0===e?"undefined":a(e))+'. Did you write "import ActionCreators from" instead of "import * as ActionCreators from"?');for(var n=Object.keys(e),r={},o=0;o<n.length;o++){var i=n[o],l=e[i];"function"==typeof l&&(r[i]=f(l,t))}return r}function p(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return 0===t.length?function(e){return e}:1===t.length?t[0]:t.reduce(function(e,t){return function(){return e(t.apply(void 0,arguments))}})}function h(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return function(e){return function(){for(var n=arguments.length,r=Array(n),o=0;o<n;o++)r[o]=arguments[o];var a=e.apply(void 0,r),l=function(){throw new Error("Dispatching while constructing your middleware is not allowed. Other middleware would not be applied to this dispatch.")},u={getState:a.getState,dispatch:function(){return l.apply(void 0,arguments)}},c=t.map(function(e){return e(u)});return l=p.apply(void 0,c)(a.dispatch),i({},a,{dispatch:l})}}}},function(e,t,n){"use strict";e.exports=function(e,t,n,r,o,a,i,l){if(!e){var u;if(void 0===t)u=new Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var c=[n,r,o,a,i,l],s=0;(u=new Error(t.replace(/%s/g,function(){return c[s++]}))).name="Invariant Violation"}throw u.framesToPop=1,u}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.COMMON_CLASSES={hidden:"hidden",flexRow:"flxr",flexCol:"flxc",txtCenter:"txtcenter",floatRight:"fright",floatLeft:"fleft",flexGrow1:"flxGrw1",defaultBackgroundColor:"std-bgc",detailsArea_mktContent:"qrp_details_mkt_zone",selected:"selected",marginAuto:"marginAuto",vh100:"vh100",overflowY:"ovfy",fontWeightHeavy:"qrp_fw800",fontWeight400:"qrp_fw400",width100pc:"qrp_w100",critical:"qrp_critical",arraySelected:"qrp_lselected",arrayChildElement:"qrp_arrlci",searchIcon:"qrp_srico"},t.API_REQUEST="rest?q=",t.LOCALSTORAGEKEY="CAST_SP"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.ERROR_PREFIX="Error: Failed to get ",t.CLASSES={bodyContainer:"qrp_bn-container",titleContainer:"qrp_bnt-container",title:"qrp_bnt",childContainer:"qrp_bnch-container",iconContainer:"qrp_bnico-container"},t.SECTIONS={technologies:"technologies",extensions:"sources",standards:"standards",cisq:"cisq",owasp:"owasp",cast:"cast"},t.defaultIconURL="url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.clearSearchResults=t.displaySearchResults=t.hideSearchResults=t.fetchSearchResults=t.setSelectedSearchResult=void 0;var r=n(94),o=n(28),a=n(9);t.setSelectedSearchResult=function(e){return{type:o.SET_SELECTED_SEARCH_RESULT,payload:{itemRef:e}}},t.fetchSearchResults=function(e){return function(t){return t((0,a.setFetchingState)()),(0,r.FETCHSEARCHRESULTS)(e).then(function(n){return t(function(e,t){return{type:o.SET_QUALITY_RULES_SEARCH_RESULTS,payload:{results:e,query:t}}}(n,e))},function(n){return t(function(e,t){return{type:o.ERROR_WHILE_FETCHING_SEARCH_RESULTS,payload:{error:e,query:t}}}(n,e))})}},t.hideSearchResults=function(){return{type:o.HIDE_QUALITY_RULES_SEARCH_RESULTS}},t.displaySearchResults=function(){return{type:o.DISPLAY_QUALITY_RULES_SEARCH_RESULTS}},t.clearSearchResults=function(){return{type:o.CLEAR_SEARCH_RESULTS}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(e){return e&&e.__esModule?e:{default:e}}(n(0)),o=n(104),a=n(2);n(105);t.default=function(){return r.default.createElement("div",{className:(0,a.createClassName)(o.spinner,a.COMMON_CLASSES.marginAuto)})}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={menu:"qrp_menu-navigation"};var r=t.ITEMS={TECHNOLOGIES:"Technologies",EXTENSIONS:"Sources",BUSINESSCRITERIA:"CAST",OWASP:"OWASP",CISQ:"CISQ",STANDARDS:"Standards"},o=(t.AIP_VERSIONS_EXT={title:"CAST AIP",href:"AIP/versions.json",versions:[],loading:!1},"AIP/business-criteria"),a="AIP/quality-standards/CISQ/categories",i="AIP/quality-standards/OWASP/categories",l="aip/technologies",u="aip/extensions",c="AIP/quality-standards";t.PATHS={standard:{name:r.STANDARDS,href:c,icon:"img/castsoftware.svg"},cisq:{name:r.CISQ,href:a,icon:"img/"+r.CISQ+".svg"},owasp:{name:r.OWASP,href:i,icon:"img/"+r.OWASP+".svg"},businessCriteria:{name:r.BUSINESSCRITERIA,href:o,icon:"img/castsoftware.svg"},technologies:{name:r.TECHNOLOGIES,href:l,icon:"img/castsoftware.svg"},extensions:{name:r.EXTENSIONS,href:u,icon:"img/castsoftware.svg"}},t.qualityRules_post="/quality-rules",t.EXTENTION_QUERY_PREFIX="rules/extensions?q="},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.fetchStandardsListData=t.setSelected=void 0;var r=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(33)),o=n(2);t.setSelected=function(e){return{type:r.SET_SELECTED_STANDARDS_ITEM,payload:{itemRef:e}}},t.fetchStandardsListData=function(e){return function(t){return t(function(e){return{type:r.FETCH_STANDRADS_LIST_DATA,payload:{query:e}}}(e)),(0,o.webFetch)(e).then(function(n){return t(function(e,t){return{type:r.SET_STANDRADS_LIST_DATA,payload:{query:e,data:t}}}(e,n))},function(n){return t(function(e,t){return{type:r.FAILED_TO_FETCH_STANDRADS_LIST_DATA,payload:{err:t,query:e}}}(e,n))})}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),a=u(n(1)),i=n(2),l=n(118);function u(e){return e&&e.__esModule?e:{default:e}}n(119);var c=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={filterValue:""},n.onfilterChange=n.onfilterChange.bind(n),n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.PureComponent),r(t,[{key:"onfilterChange",value:function(e){this.setState({filterValue:e.target.value})}},{key:"filterChildren",value:function(){var e=this;return this.props.children.filter(function(t){return""===e.state.filterValue?t:e.props.compare?e.props.compare(e.state.filterValue,t)?t:void 0:t})}},{key:"render",value:function(){var e=this,t=this.props,n=t.headers,r=t.childConstructor,a=t.itemCountTitle,u=t.filterPlaceholder,c=this.filterChildren(),s=JSON.stringify(n);return o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.verticalArray,i.COMMON_CLASSES.flexCol)},o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.headerContainer,i.COMMON_CLASSES.flexRow)},o.default.createElement("div",{className:l.CLASSES.itemCounter},c.length+" "+a),o.default.createElement("div",{className:l.CLASSES.internalFilter},o.default.createElement("input",{ref:s,value:this.state.filterValue,placeholder:u,onChange:this.onfilterChange}),o.default.createElement("span",{className:i.COMMON_CLASSES.searchIcon,onClick:function(){return e.refs[s].focus()}}))),o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.tableContainer,i.COMMON_CLASSES.flexCol)},o.default.createElement("table",null,o.default.createElement("thead",null,o.default.createElement("tr",null,n.map(function(e,t){return o.default.createElement("th",{key:t,className:e.className},e.name)}))),o.default.createElement("tbody",{className:(0,i.createClassName)(l.CLASSES.tbody,i.COMMON_CLASSES.overflowY)},0!==c.length?c.map(function(e,t){return r(e,t)}):o.default.createElement("tr",null,o.default.createElement("td",{colSpan:n.length},this.props.onEmpty))))))}}]),t}();c.propTypes={headers:a.default.array.isRequired,itemCountTitle:a.default.string.isRequired,filterPlaceholder:a.default.string.isRequired,children:a.default.array,childConstructor:a.default.func.isRequired},t.default=c},function(e,t,n){"use strict";(function(e,r){var o,a=n(46);o="undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==e?e:r;var i=Object(a.a)(o);t.a=i}).call(this,n(23),n(55)(e))},function(e,t,n){"use strict";
-=======
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -108,25 +105,6 @@ exports.push([module.i, "", ""]);
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss":
-/*!******************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss ***!
-  \******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".qrp_headerBar {\n  display: flex;\n  background-color: inherit;\n  flex-grow: 1;\n  height: 40px;\n  margin: 25px; }\n\n.qrp_headerBar_pathContainer {\n  display: flex;\n  flex-direction: row;\n  margin: 2px; }\n\n.qrp_headerBar_pathElement {\n  display: flex;\n  flex-direction: row;\n  margin: 8px 15px; }\n\n.qrp_headerBar_pathElement_icon {\n  display: inline-block;\n  background-repeat: 'no-repeat';\n  background-position: 'center';\n  background-size: '80%';\n  cursor: pointer;\n  width: 100%;\n  height: 100%; }\n\n.qrp_headerBar_pathElement_Separator {\n  font-weight: 800;\n  margin-left: 15px;\n  cursor: default; }\n\n.qrp_headerBar_pathElement_text {\n  cursor: pointer;\n  white-space: nowrap; }\n\n.qrp_headerBar_search_pathElement_closeBtn {\n  height: 70%;\n  width: 70%;\n  margin: 4px 0 0 20px;\n  cursor: pointer; }\n", ""]);
-
-// exports
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css":
 /*!**************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/body-landing-page/style.css ***!
@@ -139,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; };", ""]);
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 175px auto 75px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px;}\r\n.qrp_lpnav{ font-size: 31px; margin-top: 30px; line-height: 31px;}\r\n", ""]);
 
 // exports
 
@@ -158,7 +136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_bnico-container{ height: 200px; width: 200px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 40px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto;}", ""]);
+exports.push([module.i, ".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto;}\r\n.qrp_bnt-container{margin-top: 80px;}\r\n", ""]);
 
 // exports
 
@@ -177,7 +155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_arrRlsHid{ min-width: 81px; padding-left: 8px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 60px;}\r\n\r\n\r\n.test-rules-list-row1{ min-width: 81px; color: blue ;}\r\n.test-rules-list-row2{ color: blue ;}", ""]);
+exports.push([module.i, ".qrp_arrRlsHid{ min-width: 81px; padding-left: 20px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 70px; margin-right: 16px;}\r\n\r\n.test-rules-list-row1{ min-width: 73px;padding-left: 20px;}\r\n.test-rules-list-row2{width:100%}\r\n", ""]);
 
 // exports
 
@@ -196,7 +174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_arrStdHri{ font-weight: 400; }", ""]);
+exports.push([module.i, ".qrp_arrStdHri{ font-weight: 500; }\r\n", ""]);
 
 // exports
 
@@ -215,7 +193,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_list_area{ width: 60%; display: flex; max-height: 100vh; overflow-x: hidden;overflow-y: hidden; flex-direction: row;}\r\n.qrp_details_area{ display: block; width: 40%; max-height: 100vh; overflow-x: hidden; overflow-y: auto}\r\n.qrp_contentSpace{ width: 100%; height: 100%; }\r\n.qrp_menuNav_height{ max-height: 100vh }\r\n.qrp_maxtileNav_height{ max-height: calc(100vh - 60px)}\r\n.qrp_bcontentCntr{ display: flex; }\r\n\r\n", ""]);
+exports.push([module.i, ".qrp_list_area{ width: 60%; display: flex; max-height: 100vh; overflow-x: hidden;overflow-y: hidden; flex-direction: row; -webkit-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);-moz-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);}\r\n.qrp_details_area{ display: block; width: 40%; max-height: 100vh; overflow-x: hidden; overflow-y: auto}\r\n.qrp_contentSpace{ width: 100%; height: 100%; }\r\n.qrp_menuNav_height{ max-height: 100vh }\r\n.qrp_maxtileNav_height{ max-height: calc(100vh - 60px)}\r\n.qrp_bcontentCntr{ display: flex; }\r\n", ""]);
 
 // exports
 
@@ -253,7 +231,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n.ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; }\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{padding: 8px; background: url(\"/img/criticalrule.png\") no-repeat center center; background-size: 16px}\r\n.qrp_arrlci{ cursor: pointer; }\r\n.qrp_srico{ cursor: pointer; color: black; padding: 8px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px}", ""]);
+exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n/* .ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; } */\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{height: 16px; width: 16px; border-radius: 16px; background-color:  #CB7474; background-size: 16px; display: block !important; margin-top: 16px; margin-right: 16px; padding: 0;}\r\n.qrp_arrlci{ cursor: pointer; padding-left: 10px;}\r\n.qrp_arrlci:hover{ background-color: rgba(0,0,0,0.05);}\r\n.qrp_srico{ cursor: pointer; color: black; padding-right: 15px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px; height:48px; display: inline-block; float: right; margin-right: 15px;}\r\n", ""]);
 
 // exports
 
@@ -272,7 +250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_varr{width: 100% }\r\n.qrp_hCtr{height: 64px; padding: 0; margin: 0;}\r\n.qrp_iCtr{flex: 4 0 0; margin-left: 20px; font-weight: 600; line-height: 64px;}\r\n.qrp_varrintflt{flex: 1 0 0; margin: 0; margin-right: 20px; display: flex; flex-direction: row;}\r\n.qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}\r\n.qrp_varrintflt > span.qrp_srico {margin-left: -20px;}\r\ntd { padding: 6px }\r\ntable{ text-align: left; width: 100%}\r\n.qrp_lselected{ font-weight: 800 }\r\n/* th { padding: 6px; } */\r\n/* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */\r\ntable thead, table tbody { display: block; }\r\n.qrp_tbodymxh{ max-height: calc(100vh - 88px) }", ""]);
+exports.push([module.i, ".qrp_varr{width: 100% }\r\n.qrp_hCtr{height: 64px; padding: 0; margin: 0; z-index: 3; background-color: #fff; display: block !important;}\r\n.qrp_iCtr{margin-left: 20px; font-weight: 600; line-height: 64px; display: inline-block; float: left;}\r\n.qrp_varrintflt{margin: 0; margin-right: 20px; display: inline-block; float: right;}\r\n.qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}\r\n.qrp_varrintflt > span.qrp_srico {margin-left: -35px; width: 20px;}\r\ntd { padding: 6px }\r\ntable{ text-align: left; width: 100%; border-collapse: collapse;}\r\n.qrp_lselected{ font-weight: 700; color: #fff; background-image: linear-gradient(to right bottom, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);}\r\n/* th { padding: 6px; } */\r\n/* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */\r\ntable thead, table tbody { display: block;}\r\ntable tbody{border-right: 1px solid rgba(0,0,0,0.2); border-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0)) 1 100%;}\r\ntable thead{height:48px; line-height:48px; border-bottom: 1px solid rgba(0,0,0,0.2)}\r\ntbody tr {height:48px}\r\n.qrp_tbodymxh{ max-height: calc(100vh - 88px); font-size: 14px;}\r\n.qrp_tCtr{z-index: 1;}\r\n", ""]);
 
 // exports
 
@@ -291,7 +269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 100px;\r\n  margin-left: -50px;\r\n  margin-top: 107px;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; border:1px solid #EBE9E9; padding: 0 10px ; margin: 16px 16px 32px 16px; user-select: none;\r\n  -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}", ""]);
+exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 150px;\r\n  margin-left: -75px;\r\n  margin-top: 173px;\r\n  font-weight: 500;\r\n  font-size: 16px;\r\n  color: #333;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n  line-height: 16px;\r\n  text-align: center;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; padding: 0; margin: 16px 16px 64px 16px; user-select: none; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; border-radius:4px;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}\r\n", ""]);
 
 // exports
 
@@ -329,7 +307,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_menuItem{ display: block; cursor: pointer;}\r\n.qrp_menuItem.selected{font-weight: 800; cursor: default}\r\n.qrp_menuItem:hover{background-color: rgba(0,0,0,0.03); cursor: pointer;}\r\n.qrp_menuItem > .qrp_menuItem-title{ line-height: 30px; margin-left: 15px;}", ""]);
+exports.push([module.i, ".qrp_menuItem{ display: block; cursor: pointer;}\r\n.qrp_menuItem.selected{font-weight: 800; cursor: default}\r\n.qrp_menuItem:hover{background-color: rgba(0,0,0,0.05); cursor: pointer;}\r\n.qrp_menuItem > .qrp_menuItem-title{ line-height: 50px; padding-left: 60px; height: 50px;}\r\n\r\n.selected > .qrp_menuItem-title::before{width: 0; height: 0; border-style: solid; border-width: 5px 0 5px 10px; border-color: transparent transparent transparent #000; content: \"\"; display: inline-block; margin-right: 10px; }\r\n", ""]);
 
 // exports
 
@@ -348,7 +326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_submenu{ position: relative; text-align: left; cursor: pointer; min-height: 50px;}\r\n.qrp_submenu-title{ line-height: 50px; margin-left: 0px; font-size: 22px; font-weight: 600;}\r\n.qrp_dropdown{ display: none; position: relative; margin-left: 10px; cursor: pointer}\r\n", ""]);
+exports.push([module.i, ".qrp_submenu{ position: relative; text-align: left; cursor: pointer; min-height: 50px;}\r\n.qrp_submenu-title{ line-height: 50px; margin-left: 0px; font-size: 22px; font-weight: 400; padding-left: 30px; height: 50px;}\r\n.qrp_submenu-title:hover{background-color: rgba(0,0,0,0.05); cursor: pointer;}\r\n.qrp_dropdown{ display: none; position: relative; cursor: pointer}\r\n\r\n.qrp_dropdown > .qrp_submenu > .qrp_submenu-title {padding-left: 40px;}\r\n", ""]);
 
 // exports
 
@@ -386,7 +364,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #ffffff; border-radius: 2px; max-width: 287px;}\r\n.qrp_gSearch_input{border: none; height: 50px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 10px 0 !important; padding: 0 20px 0 0 !important;}\r\n.qrp_gSearch.fright > .qrp_srico{ margin-left: -20px !important;}\r\n", ""]);
+exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #fff; border-radius: 2px; width: calc(100% - 60px);display: block; height: 48px;}\r\n.qrp_gSearch_input{border: none; height: 48px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 0 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 20px 0 !important; background-color: #F2F2F2; color: #808080; max-width: 290px; z-index: 3;}\r\n.qrp_gSearch.fright > input{background-color: transparent;}\r\n.qrp_gSearch.fright > .qrp_srico{margin-left: auto;}\r\n", ""]);
 
 // exports
 
@@ -405,7 +383,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_menu-navigation{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n  max-height: calc(100vh - 63px);\r\n  margin: 15px 30px 0 30px;\r\n}\r\n\r\n/* .qrp_stdsm{ color: blueviolet} */", ""]);
+exports.push([module.i, ".qrp_menu-navigation{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n  max-height: calc(100vh - 63px);\r\n  user-select: none;\r\n  margin-top: 15px;\r\n}\r\n\r\n/* .qrp_stdsm{ color: blueviolet} */\r\n", ""]);
 
 // exports
 
@@ -424,7 +402,26 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_navigation-container{\r\n  max-width: 383px;\r\n  -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  -moz-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  z-index: 2;\r\n  background-color: #F2F2F2;\r\n}\r\n", ""]);
+exports.push([module.i, ".qrp_navigation-container{max-width: 383px;-webkit-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.05);-moz-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.05);box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.05); z-index: 4;  background-color: #F2F2F2 !important; border-right: 1px rgba(0,0,0,0.05) solid;}\r\n.qrp_navigation-static-container{background-color: #fff; z-index: 5;}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css":
+/*!************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/path-navigation/style.css ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 90px;\r\n  z-index: 3;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  line-height: 90px;\r\n  font-size: 20px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: 70%;\r\n  cursor: pointer;\r\n  width: 80px;\r\n  height: 90px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer; white-space: nowrap;}\r\n.qrp_headerBar_search_pathElement_closeBtn{ height: 70%; width: 70%; margin: 4px 0 0 20px; cursor: pointer; }\r\n", ""]);
 
 // exports
 
@@ -443,7 +440,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_navBar_header{\r\n  top:0;\r\n  left:0;\r\n  /* width: 100%; */\r\n  height: 25px;\r\n  padding-top: 32.5px;\r\n  padding-bottom: 32.5px;\r\n  padding-left: 30px;\r\n  padding-right: 25px;\r\n}\r\n\r\n.qrp_navBar_title{ text-align: center; line-height: 25px; float: left; font-weight: 800; margin-right: 15px; font-size: 24px;}\r\n\r\n.qrp_expandedNav{\r\n  width: 292px !important;\r\n}\r\n.qrp_xmrgl_10{ margin-right: 15px !important; }\r\n.qrp_navBar_Icon{\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  height: 25px;\r\n  width: 25px;\r\n  float: left;\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_navBar_Icon:last-child{\r\n  margin-left: 10px;\r\n}\r\n\r\n.qrp_navBar_img_icon{\r\n  position: relative;\r\n}\r\n", ""]);
+exports.push([module.i, ".qrp_navBar_header{\r\n  top:0;\r\n  left:0;\r\n  /* width: 100%; */\r\n  height: 25px;\r\n  padding-top: 32.5px;\r\n  padding-bottom: 32.5px;\r\n  padding-left: 30px;\r\n  padding-right: 30px;\r\n}\r\n\r\n.qrp_navBar_title{ text-align: center; line-height: 25px; float: left; font-weight: 800; margin-right: 15px; font-size: 24px;}\r\n\r\n.qrp_expandedNav{\r\n  width: 300px !important;\r\n}\r\n.qrp_xmrgl_10{ margin-right: 15px !important; }\r\n.qrp_navBar_Icon{\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  height: 25px;\r\n  width: 25px;\r\n  float: left;\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_navBar_Icon:last-child{\r\n  margin-left: 10px;\r\n}\r\n\r\n.qrp_navBar_img_icon{\r\n  position: relative;\r\n}\r\n", ""]);
 
 // exports
 
@@ -534,675 +531,6 @@ function toComment(sourceMap) {
 	return '/*# ' + data + ' */';
 }
 
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/ExecutionEnvironment.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/fbjs/lib/ExecutionEnvironment.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-
-/**
- * Simple, lightweight module assisting with the detection and context of
- * Worker. Helps avoid circular dependencies and allows code to reason about
- * whether or not they are in a Worker, even if they never include the main
- * `ReactWorker` dependency.
- */
-var ExecutionEnvironment = {
-
-  canUseDOM: canUseDOM,
-
-  canUseWorkers: typeof Worker !== 'undefined',
-
-  canUseEventListeners: canUseDOM && !!(window.addEventListener || window.attachEvent),
-
-  canUseViewport: canUseDOM && !!window.screen,
-
-  isInWorker: !canUseDOM // For now, this is true - might change in the future.
-
-};
-
-module.exports = ExecutionEnvironment;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/camelize.js":
-/*!*******************************************!*\
-  !*** ./node_modules/fbjs/lib/camelize.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-var _hyphenPattern = /-(.)/g;
-
-/**
- * Camelcases a hyphenated string, for example:
- *
- *   > camelize('background-color')
- *   < "backgroundColor"
- *
- * @param {string} string
- * @return {string}
- */
-function camelize(string) {
-  return string.replace(_hyphenPattern, function (_, character) {
-    return character.toUpperCase();
-  });
-}
-
-module.exports = camelize;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/camelizeStyleName.js":
-/*!****************************************************!*\
-  !*** ./node_modules/fbjs/lib/camelizeStyleName.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-var camelize = __webpack_require__(/*! ./camelize */ "./node_modules/fbjs/lib/camelize.js");
-
-var msPattern = /^-ms-/;
-
-/**
- * Camelcases a hyphenated CSS property name, for example:
- *
- *   > camelizeStyleName('background-color')
- *   < "backgroundColor"
- *   > camelizeStyleName('-moz-transition')
- *   < "MozTransition"
- *   > camelizeStyleName('-ms-transition')
- *   < "msTransition"
- *
- * As Andi Smith suggests
- * (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
- * is converted to lowercase `ms`.
- *
- * @param {string} string
- * @return {string}
- */
-function camelizeStyleName(string) {
-  return camelize(string.replace(msPattern, 'ms-'));
-}
-
-module.exports = camelizeStyleName;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/containsNode.js":
-/*!***********************************************!*\
-  !*** ./node_modules/fbjs/lib/containsNode.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-var isTextNode = __webpack_require__(/*! ./isTextNode */ "./node_modules/fbjs/lib/isTextNode.js");
-
-/*eslint-disable no-bitwise */
-
-/**
- * Checks if a given DOM node contains or is another DOM node.
- */
-function containsNode(outerNode, innerNode) {
-  if (!outerNode || !innerNode) {
-    return false;
-  } else if (outerNode === innerNode) {
-    return true;
-  } else if (isTextNode(outerNode)) {
-    return false;
-  } else if (isTextNode(innerNode)) {
-    return containsNode(outerNode, innerNode.parentNode);
-  } else if ('contains' in outerNode) {
-    return outerNode.contains(innerNode);
-  } else if (outerNode.compareDocumentPosition) {
-    return !!(outerNode.compareDocumentPosition(innerNode) & 16);
-  } else {
-    return false;
-  }
-}
-
-module.exports = containsNode;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/emptyFunction.js":
-/*!************************************************!*\
-  !*** ./node_modules/fbjs/lib/emptyFunction.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-function makeEmptyFunction(arg) {
-  return function () {
-    return arg;
-  };
-}
-
-/**
- * This function accepts and discards inputs; it has no side effects. This is
- * primarily useful idiomatically for overridable function endpoints which
- * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
- */
-var emptyFunction = function emptyFunction() {};
-
-emptyFunction.thatReturns = makeEmptyFunction;
-emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
-emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
-emptyFunction.thatReturnsNull = makeEmptyFunction(null);
-emptyFunction.thatReturnsThis = function () {
-  return this;
-};
-emptyFunction.thatReturnsArgument = function (arg) {
-  return arg;
-};
-
-module.exports = emptyFunction;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/emptyObject.js":
-/*!**********************************************!*\
-  !*** ./node_modules/fbjs/lib/emptyObject.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var emptyObject = {};
-
-if (true) {
-  Object.freeze(emptyObject);
-}
-
-module.exports = emptyObject;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/getActiveElement.js":
-/*!***************************************************!*\
-  !*** ./node_modules/fbjs/lib/getActiveElement.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- *
- * @param {?DOMDocument} doc Defaults to current document.
- * @return {?DOMElement}
- */
-function getActiveElement(doc) /*?DOMElement*/{
-  doc = doc || (typeof document !== 'undefined' ? document : undefined);
-  if (typeof doc === 'undefined') {
-    return null;
-  }
-  try {
-    return doc.activeElement || doc.body;
-  } catch (e) {
-    return doc.body;
-  }
-}
-
-module.exports = getActiveElement;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/hyphenate.js":
-/*!********************************************!*\
-  !*** ./node_modules/fbjs/lib/hyphenate.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-var _uppercasePattern = /([A-Z])/g;
-
-/**
- * Hyphenates a camelcased string, for example:
- *
- *   > hyphenate('backgroundColor')
- *   < "background-color"
- *
- * For CSS style names, use `hyphenateStyleName` instead which works properly
- * with all vendor prefixes, including `ms`.
- *
- * @param {string} string
- * @return {string}
- */
-function hyphenate(string) {
-  return string.replace(_uppercasePattern, '-$1').toLowerCase();
-}
-
-module.exports = hyphenate;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/hyphenateStyleName.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/fbjs/lib/hyphenateStyleName.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-var hyphenate = __webpack_require__(/*! ./hyphenate */ "./node_modules/fbjs/lib/hyphenate.js");
-
-var msPattern = /^ms-/;
-
-/**
- * Hyphenates a camelcased CSS property name, for example:
- *
- *   > hyphenateStyleName('backgroundColor')
- *   < "background-color"
- *   > hyphenateStyleName('MozTransition')
- *   < "-moz-transition"
- *   > hyphenateStyleName('msTransition')
- *   < "-ms-transition"
- *
- * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
- * is converted to `-ms-`.
- *
- * @param {string} string
- * @return {string}
- */
-function hyphenateStyleName(string) {
-  return hyphenate(string).replace(msPattern, '-ms-');
-}
-
-module.exports = hyphenateStyleName;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/invariant.js":
-/*!********************************************!*\
-  !*** ./node_modules/fbjs/lib/invariant.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
-var validateFormat = function validateFormat(format) {};
-
-if (true) {
-  validateFormat = function validateFormat(format) {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  };
-}
-
-function invariant(condition, format, a, b, c, d, e, f) {
-  validateFormat(format);
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error(format.replace(/%s/g, function () {
-        return args[argIndex++];
-      }));
-      error.name = 'Invariant Violation';
-    }
-
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
-}
-
-module.exports = invariant;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/isNode.js":
-/*!*****************************************!*\
-  !*** ./node_modules/fbjs/lib/isNode.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
-function isNode(object) {
-  var doc = object ? object.ownerDocument || object : document;
-  var defaultView = doc.defaultView || window;
-  return !!(object && (typeof defaultView.Node === 'function' ? object instanceof defaultView.Node : typeof object === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string'));
-}
-
-module.exports = isNode;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/isTextNode.js":
-/*!*********************************************!*\
-  !*** ./node_modules/fbjs/lib/isTextNode.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-var isNode = __webpack_require__(/*! ./isNode */ "./node_modules/fbjs/lib/isNode.js");
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM text node.
- */
-function isTextNode(object) {
-  return isNode(object) && object.nodeType == 3;
-}
-
-module.exports = isTextNode;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/shallowEqual.js":
-/*!***********************************************!*\
-  !*** ./node_modules/fbjs/lib/shallowEqual.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- * 
- */
-
-/*eslint-disable no-self-compare */
-
-
-
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-/**
- * inlined Object.is polyfill to avoid requiring consumers ship their own
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
- */
-function is(x, y) {
-  // SameValue algorithm
-  if (x === y) {
-    // Steps 1-5, 7-10
-    // Steps 6.b-6.e: +0 != -0
-    // Added the nonzero y check to make Flow happy, but it is redundant
-    return x !== 0 || y !== 0 || 1 / x === 1 / y;
-  } else {
-    // Step 6.a: NaN == NaN
-    return x !== x && y !== y;
-  }
-}
-
-/**
- * Performs equality by iterating through keys on an object and returning false
- * when any key has values which are not strictly equal between the arguments.
- * Returns true when the values of all keys are strictly equal.
- */
-function shallowEqual(objA, objB) {
-  if (is(objA, objB)) {
-    return true;
-  }
-
-  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
-    return false;
-  }
-
-  var keysA = Object.keys(objA);
-  var keysB = Object.keys(objB);
-
-  if (keysA.length !== keysB.length) {
-    return false;
-  }
-
-  // Test for A's keys different from B.
-  for (var i = 0; i < keysA.length; i++) {
-    if (!hasOwnProperty.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-module.exports = shallowEqual;
-
-/***/ }),
-
-/***/ "./node_modules/fbjs/lib/warning.js":
-/*!******************************************!*\
-  !*** ./node_modules/fbjs/lib/warning.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
-
-
-var emptyFunction = __webpack_require__(/*! ./emptyFunction */ "./node_modules/fbjs/lib/emptyFunction.js");
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var warning = emptyFunction;
-
-if (true) {
-  var printWarning = function printWarning(format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-      args[_key - 1] = arguments[_key];
-    }
-
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-      return args[argIndex++];
-    });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  };
-
-  warning = function warning(condition, format) {
-    if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
-    }
-
-    if (format.indexOf('Failed Composite propType: ') === 0) {
-      return; // Ignore CompositeComponent proptype check.
-    }
-
-    if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-        args[_key2 - 2] = arguments[_key2];
-      }
-
-      printWarning.apply(undefined, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
 
 /***/ }),
 
@@ -1723,38 +1051,844 @@ function isPlainObject(value) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
->>>>>>> design_dev
 /*
 object-assign
 (c) Sindre Sorhus
 @license MIT
-*/var r=Object.getOwnPropertySymbols,o=Object.prototype.hasOwnProperty,a=Object.prototype.propertyIsEnumerable;e.exports=function(){try{if(!Object.assign)return!1;var e=new String("abc");if(e[5]="de","5"===Object.getOwnPropertyNames(e)[0])return!1;for(var t={},n=0;n<10;n++)t["_"+String.fromCharCode(n)]=n;if("0123456789"!==Object.getOwnPropertyNames(t).map(function(e){return t[e]}).join(""))return!1;var r={};return"abcdefghijklmnopqrst".split("").forEach(function(e){r[e]=e}),"abcdefghijklmnopqrst"===Object.keys(Object.assign({},r)).join("")}catch(e){return!1}}()?Object.assign:function(e,t){for(var n,i,l=function(e){if(null===e||void 0===e)throw new TypeError("Object.assign cannot be called with null or undefined");return Object(e)}(e),u=1;u<arguments.length;u++){for(var c in n=Object(arguments[u]))o.call(n,c)&&(l[c]=n[c]);if(r){i=r(n);for(var s=0;s<i.length;s++)a.call(n,i[s])&&(l[i[s]]=n[i[s]])}}return l}},function(e,t){var n;n=function(){return this}();try{n=n||Function("return this")()||(0,eval)("this")}catch(e){"object"==typeof window&&(n=window)}e.exports=n},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SET_VIEW_TO_TILES="SET_VIEW_TO_TILES",t.SET_VIEW_TO_MENU="SET_VIEW_TO_MENU"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.defaultToMenu=function(){a(o.VIEW_TYPES.MENU_VIEW)},t.defaultToTiles=function(){a(o.VIEW_TYPES.TILES_VIEW)},t.getDefaultViewType=function(){return(0,r.readLocalStorage)(o.VIEW_TYPES.key)};var r=n(26),o=n(6);function a(e){(0,r.setLocalStorage)(o.VIEW_TYPES.key,e)}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};t.createClassName=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return t.filter(function(e){return void 0!==e&&null!==e}).join(" ")},t.Struct=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];var r=t,o=r.length;return function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];for(var a=0;a<o;a++)this[r[a]]=t[a];return this}},t.voidlessArray=function(){for(var e=arguments.length,t=Array(e),n=0;n<e;n++)t[n]=arguments[n];return t.filter(function(e){if(void 0!==e&&null!==e)return e})},t.setLocalStorage=function(e,t){var n=r({},JSON.parse(localStorage.getItem(o.LOCALSTORAGEKEY)),function(e,t,n){t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n;return e}({},e,t));localStorage.setItem(o.LOCALSTORAGEKEY,JSON.stringify(n))},t.readLocalStorage=function(e){var t=localStorage.getItem(o.LOCALSTORAGEKEY),n=t?JSON.parse(t):void 0;return n?n[e]:void 0};var o=n(14)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.APPEND_PATH_TO_HEADER="APPEND_PATH_TO_HEADER",t.SET_PATH_TO_HEADER="SET_PATH_TO_HEADER",t.GOTO_POINT_IN_HEADER_PATH="GOTO_POINT_IN_HEADER_PATH",t.RETURN_TO_LANDING_PAGE="RETURN_TO_LANDING_PAGE"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.GET_QUALITY_RULES_SEARCH_RESULTS="GET_QUALITY_RULES_SEARCH_RESULTS",t.SET_QUALITY_RULES_SEARCH_RESULTS="SET_QUALITY_RULES_SEARCH_RESULTS",t.DISPLAY_QUALITY_RULES_SEARCH_RESULTS="DISPLAY_QUALITY_RULES_SEARCH_RESULTS",t.HIDE_QUALITY_RULES_SEARCH_RESULTS="HIDE_QUALITY_RULES_SEARCH_RESULTS",t.ERROR_WHILE_FETCHING_SEARCH_RESULTS="ERROR_WHILE_FETCHING_SEARCH_RESULTS",t.SET_SELECTED_SEARCH_RESULT="SET_SELECTED_SEARCH_RESULT",t.CLEAR_SEARCH_RESULTS="CLEAR_SEARCH_RESULTS"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.FETCHTECHNOLOGIES="FETCHTECHNOLOGIES",t.FETCHBUSINESSCRITERIA="FETCHBUSINESSCRITERIA",t.FETCHEXTENSIONS="FETCHEXTENSIONS",t.FETCHOWASP="FETCHOWASP",t.FETCHCISQ="FETCHCISQ",t.FETCH_EXTENSION_VERSION="FETCH_EXTENSION_VERSION",t.SETTECHNOLOGIES="SETTECHNOLOGIES",t.SETBUSINESSCRITERIA="SETBUSINESSCRITERIA",t.SETEXTENSIONS="SETEXTENSIONS",t.SET_EXTENSION_VERSION="SET_EXTENSION_VERSION",t.SETOWASP="SETOWASP",t.SETCISQ="SETCISQ",t.FAILEDTOFETCHSERVERDATA="FAILEDTOFETCHSERVERDATA",t.SETSELECTEDITEM="SETSELECTEDITEM",t.CLEARSELECTED="CLEARSELECTED"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={contentBody:"qrp_contentBody",listArea:"qrp_list_area",detailsArea:"qrp_details_area",contentSpace:"qrp_contentSpace",maxNavHeight:"qrp_menuNav_height",maxTileHeight:"qrp_maxtileNav_height",contentBodyChild:"qrp_bcontentCntr"},t.ERROR_OCCURRED="Sorry An Error Occurred",t.CONTENT_VIEW="CONTENT_VIEW",t.NAVIGATION_VIEW="NAVIGATION_VIEW",t.LANDING_PAGE="LANDING_PAGE",t.TECHNOLOGIES="TECHNOLOGIES",t.EXTENSIONS="SOURCES"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SHOW_CONTENT_VIEW="SHOW_CONTENT_VIEW",t.SHOW_NAVIGATION_VIEW="SHOW_NAVIGATION_VIEW",t.SHOW_LANDING_PAGE="SHOW_LANDING_PAGE",t.SET_LIST_COUNT="SET_LIST_COUNT"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SHOW_CONTENT_DETAILS="SHOW_CONTENT_DETAILS",t.CLEAR_CONTENT_DETAILS="CLEAR_CONTENT_DETAILS",t.FETCH_CONTENT_DETAILS="FETCH_CONTENT_DETAILS",t.SET_CONTENT_DETAILS="SET_CONTENT_DETAILS",t.ERROR_ON_DETAILS_FETCH="ERROR_ON_DETAILS_FETCH",t.FETCHING_DETAILS_CONTENT_FROM_API="FETCHING_DETAILS_CONTENT_FROM_API"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.FETCH_STANDRADS_LIST_DATA="FETCH_STANDRADS_LIST_DATA",t.SET_STANDRADS_LIST_DATA="SET_STANDRADS_LIST_DATA",t.FAILED_TO_FETCH_STANDRADS_LIST_DATA="FAILED_TO_FETCH_STANDRADS_LIST_DATA",t.SET_SELECTED_STANDARDS_ITEM="SET_SELECTED_STANDARDS_ITEM"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.FETCH_LIST_DATA="FETCH_LIST_DATA",t.SET_LIST_DATA="SET_LIST_DATA",t.FAILED_TO_FETCH_LIST_DATA="FAILED_TO_FETCH_LIST_DATA",t.CLEAR_LIST_DATA="CLEAR_LIST_DATA",t.SET_SELECTED_RULE_LIST_ITEM="SET_SELECTED_RULE_LIST_ITEM"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.FETCH_NAVIGATION_DATA="FETCH_NAVIGATION_DATA",t.SET_NAVIGATION_DATA="SET_NAVIGATION_DATA",t.FAILED_TO_FETCH_NAVIGATION_DATA="FAILED_TO_FETCH_NAVIGATION_DATA",t.CLEAR_NAVIGATION_DATA="CLEAR_NAVIGATION_DATA"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={headerMain:"qrp_headerBar",pathContainer:"qrp_headerBar_pathContainer",pathElement:"qrp_headerBar_pathElement",pathElementIcon:"qrp_headerBar_pathElement_icon",pathElementText:"qrp_headerBar_pathElement_text",pathSeparator:"qrp_headerBar_pathElement_Separator"},t.TYPES={item:"item",selector:"selector"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SEARCHAPI="search/qualityrules/?q=",t.CLASSES={container:"qrp_gSearch",inputBox:"qrp_gSearch_input"},t.TEXTINPUT="text",t.INPUTREF="gs-searchInput",t.ENTER="Enter"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=u(n(0)),a=u(n(1)),i=n(2),l=n(98);function u(e){return e&&e.__esModule?e:{default:e}}n(99);var c=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={isOpen:!1,exeCount:0},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.PureComponent),r(t,[{key:"toggleMenu",value:function(e){e.stopPropagation(),this.setState(function(e){return{isOpen:!e.isOpen}}),this.props.onClick&&(this.props.onClick(this.state.exeCount),this.setState(function(e){return{isOpen:e.isOpen,exeCount:e.exeCount+1}}))}},{key:"render",value:function(){var e=this.props,t=e.title,n=e.children,r=this.state.isOpen;return o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.subMenu,i.COMMON_CLASSES.flexCol),onClick:this.toggleMenu.bind(this)},o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.title,r?i.COMMON_CLASSES.fontWeightHeavy:void 0)},t),o.default.createElement("div",{className:(0,i.createClassName)(l.CLASSES.dropdown,r?i.COMMON_CLASSES.flexCol:void 0)},n))}}]),t}();c.propTypes={title:a.default.string.isRequired},t.default=c},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=l(n(0)),o=l(n(1)),a=n(2),i=n(101);function l(e){return e&&e.__esModule?e:{default:e}}n(102);var u=function(e){var t=e.selected,n=e.title,o=e.href,l=e.onClick;return r.default.createElement("div",{className:(0,a.createClassName)(i.CLASSES.menuItem,t?a.COMMON_CLASSES.selected:void 0),onClick:function(e){return e.stopPropagation(),l(o,n)}},r.default.createElement("span",{className:i.CLASSES.title},n))};u.propTypes={selected:o.default.bool.isRequired,onClick:o.default.func.isRequired,href:o.default.string.isRequired,title:o.default.string.isRequired},t.default=u},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.childConstructor=t.compareFunction=void 0;var r=function(e){return e&&e.__esModule?e:{default:e}}(n(0)),o=n(41),a=n(2);t.compareFunction=function(e,t){var n=void 0;try{n=new RegExp(e,"i")}catch(e){return[]}return!!(n.test(t[o.compareValueKeys.id])||n.test(t[o.compareValueKeys.name])||e.toLowerCase()===o.compareValueKeys.critical&&t.critical)},t.childConstructor=function(e,t,n){return r.default.createElement("tr",{key:t,onClick:n,className:(0,a.createClassName)(a.COMMON_CLASSES.arrayChildElement,e.selected?a.COMMON_CLASSES.arraySelected:void 0)},r.default.createElement("td",{className:"test-rules-list-row1"},e.id),r.default.createElement("td",{className:"test-rules-list-row2"},e.name),r.default.createElement("td",{className:(0,a.createClassName)("test-rules-list-row3",e.critical?a.COMMON_CLASSES.critical:void 0)}," "))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.compareValueKeys={id:"id",name:"name",critical:"critical"},t.HEADERS={id:{name:"Id",className:"qrp_arrRlsHid"},name:{name:"Name",className:"qrp_arrRlsHname"},critical:{name:"Critical",className:"qrp_arrRlsHcrit"}},t.NORULES="No Rules",t.RULES="Rules",t.FILTERPLACEHOLDER="Filter Rules",t.RESOURCES={technologies:"rules/technologies.json",sources:"rules/extensions.json",ext_rules:"/quality-rules"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.childConstructor=t.compareFunction=void 0;var r=function(e){return e&&e.__esModule?e:{default:e}}(n(0)),o=n(43),a=n(2);t.compareFunction=function(e,t){var n=void 0;try{n=new RegExp(e,"i")}catch(e){return[]}return!(!n.test(t[o.compareValueKeys.id])&&!n.test(t[o.compareValueKeys.name]))},t.childConstructor=function(e,t,n){return r.default.createElement("tr",{key:t,onClick:n,className:(0,a.createClassName)(a.COMMON_CLASSES.arrayChildElement,e.selected?a.COMMON_CLASSES.arraySelected:void 0)},r.default.createElement("td",{className:"test-std-list-row1"},e.id+" - "+e.name))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.HEADER={name:"Standards Name",className:"qrp_arrStdHri"},t.NOSTANDARDS="No Standards found",t.FILTERPLACEHOLDER="Filter Standards",t.STANDARDS="Standards",t.compareValueKeys={name:"name",id:"id"}},function(e,t,n){"use strict";var r={childContextTypes:!0,contextTypes:!0,defaultProps:!0,displayName:!0,getDefaultProps:!0,getDerivedStateFromProps:!0,mixins:!0,propTypes:!0,type:!0},o={name:!0,length:!0,prototype:!0,caller:!0,callee:!0,arguments:!0,arity:!0},a=Object.defineProperty,i=Object.getOwnPropertyNames,l=Object.getOwnPropertySymbols,u=Object.getOwnPropertyDescriptor,c=Object.getPrototypeOf,s=c&&c(Object);e.exports=function e(t,n,f){if("string"!=typeof n){if(s){var d=c(n);d&&d!==s&&e(t,d,f)}var p=i(n);l&&(p=p.concat(l(n)));for(var h=0;h<p.length;++h){var m=p[h];if(!(r[m]||o[m]||f&&f[m])){var v=u(n,m);try{a(t,m,v)}catch(e){}}}return t}return t}},function(e,t,n){"use strict";(function(e){var n="object"==typeof e&&e&&e.Object===Object&&e;t.a=n}).call(this,n(23))},function(e,t,n){"use strict";function r(e){var t,n=e.Symbol;return"function"==typeof n?n.observable?t=n.observable:(t=n("observable"),n.observable=t):t="@@observable",t}n.d(t,"a",function(){return r})},function(e,t,n){"use strict";var r=c(n(0)),o=c(n(49)),a=n(5),i=c(n(56)),l=c(n(74));n(148),n(150);var u=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(10));function c(e){return e&&e.__esModule?e:{default:e}}window.STORE=i.default,window.actions=u,window.urlGen=function(){var e=i.default.getState();return"std="+e.standards.query+"&rls="+e.rulesList.query+"&rdts="+e.ruleDetails.query+"&p="+encodeURI(btoa(JSON.stringify(e.path)))+"&lstc="+e.contentBody.listCount},o.default.render(r.default.createElement(a.Provider,{store:i.default},r.default.createElement(l.default,null)),document.getElementById("react-root"))},function(e,t,n){"use strict";
+*/
+
+
+/* eslint-disable no-unused-vars */
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+
+function toObject(val) {
+	if (val === null || val === undefined) {
+		throw new TypeError('Object.assign cannot be called with null or undefined');
+	}
+
+	return Object(val);
+}
+
+function shouldUseNative() {
+	try {
+		if (!Object.assign) {
+			return false;
+		}
+
+		// Detect buggy property enumeration order in older V8 versions.
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=4118
+		var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
+		test1[5] = 'de';
+		if (Object.getOwnPropertyNames(test1)[0] === '5') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test2 = {};
+		for (var i = 0; i < 10; i++) {
+			test2['_' + String.fromCharCode(i)] = i;
+		}
+		var order2 = Object.getOwnPropertyNames(test2).map(function (n) {
+			return test2[n];
+		});
+		if (order2.join('') !== '0123456789') {
+			return false;
+		}
+
+		// https://bugs.chromium.org/p/v8/issues/detail?id=3056
+		var test3 = {};
+		'abcdefghijklmnopqrst'.split('').forEach(function (letter) {
+			test3[letter] = letter;
+		});
+		if (Object.keys(Object.assign({}, test3)).join('') !==
+				'abcdefghijklmnopqrst') {
+			return false;
+		}
+
+		return true;
+	} catch (err) {
+		// We don't expect any of the above to throw, but better to be safe.
+		return false;
+	}
+}
+
+module.exports = shouldUseNative() ? Object.assign : function (target, source) {
+	var from;
+	var to = toObject(target);
+	var symbols;
+
+	for (var s = 1; s < arguments.length; s++) {
+		from = Object(arguments[s]);
+
+		for (var key in from) {
+			if (hasOwnProperty.call(from, key)) {
+				to[key] = from[key];
+			}
+		}
+
+		if (getOwnPropertySymbols) {
+			symbols = getOwnPropertySymbols(from);
+			for (var i = 0; i < symbols.length; i++) {
+				if (propIsEnumerable.call(from, symbols[i])) {
+					to[symbols[i]] = from[symbols[i]];
+				}
+			}
+		}
+	}
+
+	return to;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/checkPropTypes.js":
+/*!***************************************************!*\
+  !*** ./node_modules/prop-types/checkPropTypes.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var printWarning = function() {};
+
+if (true) {
+  var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+  var loggedTypeFailures = {};
+
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */
+function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+  if (true) {
+    for (var typeSpecName in typeSpecs) {
+      if (typeSpecs.hasOwnProperty(typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+          // This is intentionally an invariant that gets caught. It's the same
+          // behavior as without this statement except with a better message.
+          if (typeof typeSpecs[typeSpecName] !== 'function') {
+            var err = Error(
+              (componentName || 'React class') + ': ' + location + ' type `' + typeSpecName + '` is invalid; ' +
+              'it must be a function, usually from the `prop-types` package, but received `' + typeof typeSpecs[typeSpecName] + '`.'
+            );
+            err.name = 'Invariant Violation';
+            throw err;
+          }
+          error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+          error = ex;
+        }
+        if (error && !(error instanceof Error)) {
+          printWarning(
+            (componentName || 'React class') + ': type specification of ' +
+            location + ' `' + typeSpecName + '` is invalid; the type checker ' +
+            'function must return `null` or an `Error` but returned a ' + typeof error + '. ' +
+            'You may have forgotten to pass an argument to the type checker ' +
+            'creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and ' +
+            'shape all require an argument).'
+          )
+
+        }
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+          // Only monitor this failure once because there tends to be a lot of the
+          // same error.
+          loggedTypeFailures[error.message] = true;
+
+          var stack = getStack ? getStack() : '';
+
+          printWarning(
+            'Failed ' + location + ' type: ' + error.message + (stack != null ? stack : '')
+          );
+        }
+      }
+    }
+  }
+}
+
+module.exports = checkPropTypes;
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/factoryWithTypeCheckers.js":
+/*!************************************************************!*\
+  !*** ./node_modules/prop-types/factoryWithTypeCheckers.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
+
+var ReactPropTypesSecret = __webpack_require__(/*! ./lib/ReactPropTypesSecret */ "./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+var checkPropTypes = __webpack_require__(/*! ./checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
+
+var printWarning = function() {};
+
+if (true) {
+  printWarning = function(text) {
+    var message = 'Warning: ' + text;
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+function emptyFunctionThatReturnsNull() {
+  return null;
+}
+
+module.exports = function(isValidElement, throwOnDirectAccess) {
+  /* global Symbol */
+  var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+  var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+
+  /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */
+  function getIteratorFn(maybeIterable) {
+    var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+    if (typeof iteratorFn === 'function') {
+      return iteratorFn;
+    }
+  }
+
+  /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */
+
+  var ANONYMOUS = '<<anonymous>>';
+
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+  var ReactPropTypes = {
+    array: createPrimitiveTypeChecker('array'),
+    bool: createPrimitiveTypeChecker('boolean'),
+    func: createPrimitiveTypeChecker('function'),
+    number: createPrimitiveTypeChecker('number'),
+    object: createPrimitiveTypeChecker('object'),
+    string: createPrimitiveTypeChecker('string'),
+    symbol: createPrimitiveTypeChecker('symbol'),
+
+    any: createAnyTypeChecker(),
+    arrayOf: createArrayOfTypeChecker,
+    element: createElementTypeChecker(),
+    instanceOf: createInstanceTypeChecker,
+    node: createNodeChecker(),
+    objectOf: createObjectOfTypeChecker,
+    oneOf: createEnumTypeChecker,
+    oneOfType: createUnionTypeChecker,
+    shape: createShapeTypeChecker,
+    exact: createStrictShapeTypeChecker,
+  };
+
+  /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */
+  /*eslint-disable no-self-compare*/
+  function is(x, y) {
+    // SameValue algorithm
+    if (x === y) {
+      // Steps 1-5, 7-10
+      // Steps 6.b-6.e: +0 != -0
+      return x !== 0 || 1 / x === 1 / y;
+    } else {
+      // Step 6.a: NaN == NaN
+      return x !== x && y !== y;
+    }
+  }
+  /*eslint-enable no-self-compare*/
+
+  /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */
+  function PropTypeError(message) {
+    this.message = message;
+    this.stack = '';
+  }
+  // Make `instanceof Error` still work for returned errors.
+  PropTypeError.prototype = Error.prototype;
+
+  function createChainableTypeChecker(validate) {
+    if (true) {
+      var manualPropTypeCallCache = {};
+      var manualPropTypeWarningCount = 0;
+    }
+    function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+      componentName = componentName || ANONYMOUS;
+      propFullName = propFullName || propName;
+
+      if (secret !== ReactPropTypesSecret) {
+        if (throwOnDirectAccess) {
+          // New behavior only for users of `prop-types` package
+          var err = new Error(
+            'Calling PropTypes validators directly is not supported by the `prop-types` package. ' +
+            'Use `PropTypes.checkPropTypes()` to call them. ' +
+            'Read more at http://fb.me/use-check-prop-types'
+          );
+          err.name = 'Invariant Violation';
+          throw err;
+        } else if ("development" !== 'production' && typeof console !== 'undefined') {
+          // Old behavior for people using React.PropTypes
+          var cacheKey = componentName + ':' + propName;
+          if (
+            !manualPropTypeCallCache[cacheKey] &&
+            // Avoid spamming the console because they are often not actionable except for lib authors
+            manualPropTypeWarningCount < 3
+          ) {
+            printWarning(
+              'You are manually calling a React.PropTypes validation ' +
+              'function for the `' + propFullName + '` prop on `' + componentName  + '`. This is deprecated ' +
+              'and will throw in the standalone `prop-types` package. ' +
+              'You may be seeing this warning due to a third-party PropTypes ' +
+              'library. See https://fb.me/react-warning-dont-call-proptypes ' + 'for details.'
+            );
+            manualPropTypeCallCache[cacheKey] = true;
+            manualPropTypeWarningCount++;
+          }
+        }
+      }
+      if (props[propName] == null) {
+        if (isRequired) {
+          if (props[propName] === null) {
+            return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required ' + ('in `' + componentName + '`, but its value is `null`.'));
+          }
+          return new PropTypeError('The ' + location + ' `' + propFullName + '` is marked as required in ' + ('`' + componentName + '`, but its value is `undefined`.'));
+        }
+        return null;
+      } else {
+        return validate(props, propName, componentName, location, propFullName);
+      }
+    }
+
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+
+    return chainedCheckType;
+  }
+
+  function createPrimitiveTypeChecker(expectedType) {
+    function validate(props, propName, componentName, location, propFullName, secret) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== expectedType) {
+        // `propValue` being instance of, say, date/regexp, pass the 'object'
+        // check, but we can offer a more precise error message here rather than
+        // 'of type `object`'.
+        var preciseType = getPreciseType(propValue);
+
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + preciseType + '` supplied to `' + componentName + '`, expected ') + ('`' + expectedType + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createAnyTypeChecker() {
+    return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+  }
+
+  function createArrayOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside arrayOf.');
+      }
+      var propValue = props[propName];
+      if (!Array.isArray(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an array.'));
+      }
+      for (var i = 0; i < propValue.length; i++) {
+        var error = typeChecker(propValue, i, componentName, location, propFullName + '[' + i + ']', ReactPropTypesSecret);
+        if (error instanceof Error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createElementTypeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      if (!isValidElement(propValue)) {
+        var propType = getPropType(propValue);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected a single ReactElement.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createInstanceTypeChecker(expectedClass) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!(props[propName] instanceof expectedClass)) {
+        var expectedClassName = expectedClass.name || ANONYMOUS;
+        var actualClassName = getClassName(props[propName]);
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + actualClassName + '` supplied to `' + componentName + '`, expected ') + ('instance of `' + expectedClassName + '`.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createEnumTypeChecker(expectedValues) {
+    if (!Array.isArray(expectedValues)) {
+       true ? printWarning('Invalid argument supplied to oneOf, expected an instance of array.') : undefined;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      for (var i = 0; i < expectedValues.length; i++) {
+        if (is(propValue, expectedValues[i])) {
+          return null;
+        }
+      }
+
+      var valuesString = JSON.stringify(expectedValues);
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of value `' + propValue + '` ' + ('supplied to `' + componentName + '`, expected one of ' + valuesString + '.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createObjectOfTypeChecker(typeChecker) {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (typeof typeChecker !== 'function') {
+        return new PropTypeError('Property `' + propFullName + '` of component `' + componentName + '` has invalid PropType notation inside objectOf.');
+      }
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type ' + ('`' + propType + '` supplied to `' + componentName + '`, expected an object.'));
+      }
+      for (var key in propValue) {
+        if (propValue.hasOwnProperty(key)) {
+          var error = typeChecker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+          if (error instanceof Error) {
+            return error;
+          }
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createUnionTypeChecker(arrayOfTypeCheckers) {
+    if (!Array.isArray(arrayOfTypeCheckers)) {
+       true ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : undefined;
+      return emptyFunctionThatReturnsNull;
+    }
+
+    for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+      var checker = arrayOfTypeCheckers[i];
+      if (typeof checker !== 'function') {
+        printWarning(
+          'Invalid argument supplied to oneOfType. Expected an array of check functions, but ' +
+          'received ' + getPostfixForTypeWarning(checker) + ' at index ' + i + '.'
+        );
+        return emptyFunctionThatReturnsNull;
+      }
+    }
+
+    function validate(props, propName, componentName, location, propFullName) {
+      for (var i = 0; i < arrayOfTypeCheckers.length; i++) {
+        var checker = arrayOfTypeCheckers[i];
+        if (checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret) == null) {
+          return null;
+        }
+      }
+
+      return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`.'));
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createNodeChecker() {
+    function validate(props, propName, componentName, location, propFullName) {
+      if (!isNode(props[propName])) {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` supplied to ' + ('`' + componentName + '`, expected a ReactNode.'));
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      for (var key in shapeTypes) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          continue;
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+    return createChainableTypeChecker(validate);
+  }
+
+  function createStrictShapeTypeChecker(shapeTypes) {
+    function validate(props, propName, componentName, location, propFullName) {
+      var propValue = props[propName];
+      var propType = getPropType(propValue);
+      if (propType !== 'object') {
+        return new PropTypeError('Invalid ' + location + ' `' + propFullName + '` of type `' + propType + '` ' + ('supplied to `' + componentName + '`, expected `object`.'));
+      }
+      // We need to check all keys in case some are required but missing from
+      // props.
+      var allKeys = assign({}, props[propName], shapeTypes);
+      for (var key in allKeys) {
+        var checker = shapeTypes[key];
+        if (!checker) {
+          return new PropTypeError(
+            'Invalid ' + location + ' `' + propFullName + '` key `' + key + '` supplied to `' + componentName + '`.' +
+            '\nBad object: ' + JSON.stringify(props[propName], null, '  ') +
+            '\nValid keys: ' +  JSON.stringify(Object.keys(shapeTypes), null, '  ')
+          );
+        }
+        var error = checker(propValue, key, componentName, location, propFullName + '.' + key, ReactPropTypesSecret);
+        if (error) {
+          return error;
+        }
+      }
+      return null;
+    }
+
+    return createChainableTypeChecker(validate);
+  }
+
+  function isNode(propValue) {
+    switch (typeof propValue) {
+      case 'number':
+      case 'string':
+      case 'undefined':
+        return true;
+      case 'boolean':
+        return !propValue;
+      case 'object':
+        if (Array.isArray(propValue)) {
+          return propValue.every(isNode);
+        }
+        if (propValue === null || isValidElement(propValue)) {
+          return true;
+        }
+
+        var iteratorFn = getIteratorFn(propValue);
+        if (iteratorFn) {
+          var iterator = iteratorFn.call(propValue);
+          var step;
+          if (iteratorFn !== propValue.entries) {
+            while (!(step = iterator.next()).done) {
+              if (!isNode(step.value)) {
+                return false;
+              }
+            }
+          } else {
+            // Iterator will provide entry [k,v] tuples rather than values.
+            while (!(step = iterator.next()).done) {
+              var entry = step.value;
+              if (entry) {
+                if (!isNode(entry[1])) {
+                  return false;
+                }
+              }
+            }
+          }
+        } else {
+          return false;
+        }
+
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  function isSymbol(propType, propValue) {
+    // Native Symbol.
+    if (propType === 'symbol') {
+      return true;
+    }
+
+    // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+    if (propValue['@@toStringTag'] === 'Symbol') {
+      return true;
+    }
+
+    // Fallback for non-spec compliant Symbols which are polyfilled.
+    if (typeof Symbol === 'function' && propValue instanceof Symbol) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Equivalent of `typeof` but with special handling for array and regexp.
+  function getPropType(propValue) {
+    var propType = typeof propValue;
+    if (Array.isArray(propValue)) {
+      return 'array';
+    }
+    if (propValue instanceof RegExp) {
+      // Old webkits (at least until Android 4.0) return 'function' rather than
+      // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+      // passes PropTypes.object.
+      return 'object';
+    }
+    if (isSymbol(propType, propValue)) {
+      return 'symbol';
+    }
+    return propType;
+  }
+
+  // This handles more types than `getPropType`. Only used for error messages.
+  // See `createPrimitiveTypeChecker`.
+  function getPreciseType(propValue) {
+    if (typeof propValue === 'undefined' || propValue === null) {
+      return '' + propValue;
+    }
+    var propType = getPropType(propValue);
+    if (propType === 'object') {
+      if (propValue instanceof Date) {
+        return 'date';
+      } else if (propValue instanceof RegExp) {
+        return 'regexp';
+      }
+    }
+    return propType;
+  }
+
+  // Returns a string that is postfixed to a warning about an invalid type.
+  // For example, "undefined" or "of type array"
+  function getPostfixForTypeWarning(value) {
+    var type = getPreciseType(value);
+    switch (type) {
+      case 'array':
+      case 'object':
+        return 'an ' + type;
+      case 'boolean':
+      case 'date':
+      case 'regexp':
+        return 'a ' + type;
+      default:
+        return type;
+    }
+  }
+
+  // Returns class name of the object, if any.
+  function getClassName(propValue) {
+    if (!propValue.constructor || !propValue.constructor.name) {
+      return ANONYMOUS;
+    }
+    return propValue.constructor.name;
+  }
+
+  ReactPropTypes.checkPropTypes = checkPropTypes;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/index.js":
+/*!******************************************!*\
+  !*** ./node_modules/prop-types/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+if (true) {
+  var REACT_ELEMENT_TYPE = (typeof Symbol === 'function' &&
+    Symbol.for &&
+    Symbol.for('react.element')) ||
+    0xeac7;
+
+  var isValidElement = function(object) {
+    return typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = __webpack_require__(/*! ./factoryWithTypeCheckers */ "./node_modules/prop-types/factoryWithTypeCheckers.js")(isValidElement, throwOnDirectAccess);
+} else {}
+
+
+/***/ }),
+
+/***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/prop-types/lib/ReactPropTypesSecret.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+
+/***/ }),
+
+/***/ "./node_modules/react-dom/cjs/react-dom.development.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/react-dom/cjs/react-dom.development.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /** @license React v16.5.0
- * react.production.min.js
+ * react-dom.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */var r=n(22),o="function"==typeof Symbol&&Symbol.for,a=o?Symbol.for("react.element"):60103,i=o?Symbol.for("react.portal"):60106,l=o?Symbol.for("react.fragment"):60107,u=o?Symbol.for("react.strict_mode"):60108,c=o?Symbol.for("react.profiler"):60114,s=o?Symbol.for("react.provider"):60109,f=o?Symbol.for("react.context"):60110,d=o?Symbol.for("react.async_mode"):60111,p=o?Symbol.for("react.forward_ref"):60112;o&&Symbol.for("react.placeholder");var h="function"==typeof Symbol&&Symbol.iterator;function m(e){for(var t=arguments.length-1,n="https://reactjs.org/docs/error-decoder.html?invariant="+e,r=0;r<t;r++)n+="&args[]="+encodeURIComponent(arguments[r+1]);!function(e,t,n,r,o,a,i,l){if(!e){if(e=void 0,void 0===t)e=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var u=[n,r,o,a,i,l],c=0;(e=Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation"}throw e.framesToPop=1,e}}(!1,"Minified React error #"+e+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",n)}var v={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},y={};function g(e,t,n){this.props=e,this.context=t,this.refs=y,this.updater=n||v}function E(){}function S(e,t,n){this.props=e,this.context=t,this.refs=y,this.updater=n||v}g.prototype.isReactComponent={},g.prototype.setState=function(e,t){"object"!=typeof e&&"function"!=typeof e&&null!=e&&m("85"),this.updater.enqueueSetState(this,e,t,"setState")},g.prototype.forceUpdate=function(e){this.updater.enqueueForceUpdate(this,e,"forceUpdate")},E.prototype=g.prototype;var _=S.prototype=new E;_.constructor=S,r(_,g.prototype),_.isPureReactComponent=!0;var b={current:null,currentDispatcher:null},T=Object.prototype.hasOwnProperty,C={key:!0,ref:!0,__self:!0,__source:!0};function w(e,t,n){var r=void 0,o={},i=null,l=null;if(null!=t)for(r in void 0!==t.ref&&(l=t.ref),void 0!==t.key&&(i=""+t.key),t)T.call(t,r)&&!C.hasOwnProperty(r)&&(o[r]=t[r]);var u=arguments.length-2;if(1===u)o.children=n;else if(1<u){for(var c=Array(u),s=0;s<u;s++)c[s]=arguments[s+2];o.children=c}if(e&&e.defaultProps)for(r in u=e.defaultProps)void 0===o[r]&&(o[r]=u[r]);return{$$typeof:a,type:e,key:i,ref:l,props:o,_owner:b.current}}function O(e){return"object"==typeof e&&null!==e&&e.$$typeof===a}var x=/\/+/g,N=[];function A(e,t,n,r){if(N.length){var o=N.pop();return o.result=e,o.keyPrefix=t,o.func=n,o.context=r,o.count=0,o}return{result:e,keyPrefix:t,func:n,context:r,count:0}}function I(e){e.result=null,e.keyPrefix=null,e.func=null,e.context=null,e.count=0,10>N.length&&N.push(e)}function P(e,t,n){return null==e?0:function e(t,n,r,o){var l=typeof t;"undefined"!==l&&"boolean"!==l||(t=null);var u=!1;if(null===t)u=!0;else switch(l){case"string":case"number":u=!0;break;case"object":switch(t.$$typeof){case a:case i:u=!0}}if(u)return r(o,t,""===n?"."+k(t,0):n),1;if(u=0,n=""===n?".":n+":",Array.isArray(t))for(var c=0;c<t.length;c++){var s=n+k(l=t[c],c);u+=e(l,s,r,o)}else if(s=null===t||"object"!=typeof t?null:"function"==typeof(s=h&&t[h]||t["@@iterator"])?s:null,"function"==typeof s)for(t=s.call(t),c=0;!(l=t.next()).done;)u+=e(l=l.value,s=n+k(l,c++),r,o);else"object"===l&&m("31","[object Object]"==(r=""+t)?"object with keys {"+Object.keys(t).join(", ")+"}":r,"");return u}(e,"",t,n)}function k(e,t){return"object"==typeof e&&null!==e&&null!=e.key?function(e){var t={"=":"=0",":":"=2"};return"$"+(""+e).replace(/[=:]/g,function(e){return t[e]})}(e.key):t.toString(36)}function R(e,t){e.func.call(e.context,t,e.count++)}function L(e,t,n){var r=e.result,o=e.keyPrefix;e=e.func.call(e.context,t,e.count++),Array.isArray(e)?M(e,r,n,function(e){return e}):null!=e&&(O(e)&&(e=function(e,t){return{$$typeof:a,type:e.type,key:t,ref:e.ref,props:e.props,_owner:e._owner}}(e,o+(!e.key||t&&t.key===e.key?"":(""+e.key).replace(x,"$&/")+"/")+n)),r.push(e))}function M(e,t,n,r,o){var a="";null!=n&&(a=(""+n).replace(x,"$&/")+"/"),P(e,L,t=A(t,a,r,o)),I(t)}var D={Children:{map:function(e,t,n){if(null==e)return e;var r=[];return M(e,r,null,t,n),r},forEach:function(e,t,n){if(null==e)return e;P(e,R,t=A(null,null,t,n)),I(t)},count:function(e){return P(e,function(){return null},null)},toArray:function(e){var t=[];return M(e,t,null,function(e){return e}),t},only:function(e){return O(e)||m("143"),e}},createRef:function(){return{current:null}},Component:g,PureComponent:S,createContext:function(e,t){return void 0===t&&(t=null),(e={$$typeof:f,_calculateChangedBits:t,_currentValue:e,_currentValue2:e,Provider:null,Consumer:null,unstable_read:null}).Provider={$$typeof:s,_context:e},e.Consumer=e,e.unstable_read=function(e,t){var n=b.currentDispatcher;return null===n&&m("277"),n.readContext(e,t)}.bind(null,e),e},forwardRef:function(e){return{$$typeof:p,render:e}},Fragment:l,StrictMode:u,unstable_AsyncMode:d,unstable_Profiler:c,createElement:w,cloneElement:function(e,t,n){(null===e||void 0===e)&&m("267",e);var o=void 0,i=r({},e.props),l=e.key,u=e.ref,c=e._owner;if(null!=t){void 0!==t.ref&&(u=t.ref,c=b.current),void 0!==t.key&&(l=""+t.key);var s=void 0;for(o in e.type&&e.type.defaultProps&&(s=e.type.defaultProps),t)T.call(t,o)&&!C.hasOwnProperty(o)&&(i[o]=void 0===t[o]&&void 0!==s?s[o]:t[o])}if(1===(o=arguments.length-2))i.children=n;else if(1<o){s=Array(o);for(var f=0;f<o;f++)s[f]=arguments[f+2];i.children=s}return{$$typeof:a,type:e.type,key:l,ref:u,props:i,_owner:c}},createFactory:function(e){var t=w.bind(null,e);return t.type=e,t},isValidElement:O,version:"16.5.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:b,assign:r}},j={default:D},F=j&&D||j;e.exports=F.default||F},function(e,t,n){"use strict";!function e(){if("undefined"!=typeof __REACT_DEVTOOLS_GLOBAL_HOOK__&&"function"==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE)try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(e)}catch(e){console.error(e)}}(),e.exports=n(50)},function(e,t,n){"use strict";
-/** @license React v16.5.0
- * react-dom.production.min.js
- *
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */var r=n(0),o=n(22),a=n(51);function i(e){for(var t=arguments.length-1,n="https://reactjs.org/docs/error-decoder.html?invariant="+e,r=0;r<t;r++)n+="&args[]="+encodeURIComponent(arguments[r+1]);!function(e,t,n,r,o,a,i,l){if(!e){if(e=void 0,void 0===t)e=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var u=[n,r,o,a,i,l],c=0;(e=Error(t.replace(/%s/g,function(){return u[c++]}))).name="Invariant Violation"}throw e.framesToPop=1,e}}(!1,"Minified React error #"+e+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",n)}r||i("227");var l=!1,u=null,c=!1,s=null,f={onError:function(e){l=!0,u=e}};function d(e,t,n,r,o,a,i,c,s){l=!1,u=null,function(e,t,n,r,o,a,i,l,u){var c=Array.prototype.slice.call(arguments,3);try{t.apply(n,c)}catch(e){this.onError(e)}}.apply(f,arguments)}var p=null,h={};function m(){if(p)for(var e in h){var t=h[e],n=p.indexOf(e);if(-1<n||i("96",e),!y[n])for(var r in t.extractEvents||i("97",e),y[n]=t,n=t.eventTypes){var o=void 0,a=n[r],l=t,u=r;g.hasOwnProperty(u)&&i("99",u),g[u]=a;var c=a.phasedRegistrationNames;if(c){for(o in c)c.hasOwnProperty(o)&&v(c[o],l,u);o=!0}else a.registrationName?(v(a.registrationName,l,u),o=!0):o=!1;o||i("98",r,e)}}}function v(e,t,n){E[e]&&i("100",e),E[e]=t,S[e]=t.eventTypes[n].dependencies}var y=[],g={},E={},S={},_=null,b=null,T=null;function C(e,t,n,r){t=e.type||"unknown-event",e.currentTarget=T(r),function(e,t,n,r,o,a,f,p,h){if(d.apply(this,arguments),l){if(l){var m=u;l=!1,u=null}else i("198"),m=void 0;c||(c=!0,s=m)}}(t,n,void 0,e),e.currentTarget=null}function w(e,t){return null==t&&i("30"),null==e?t:Array.isArray(e)?Array.isArray(t)?(e.push.apply(e,t),e):(e.push(t),e):Array.isArray(t)?[e].concat(t):[e,t]}function O(e,t,n){Array.isArray(e)?e.forEach(t,n):e&&t.call(n,e)}var x=null;function N(e,t){if(e){var n=e._dispatchListeners,r=e._dispatchInstances;if(Array.isArray(n))for(var o=0;o<n.length&&!e.isPropagationStopped();o++)C(e,t,n[o],r[o]);else n&&C(e,t,n,r);e._dispatchListeners=null,e._dispatchInstances=null,e.isPersistent()||e.constructor.release(e)}}function A(e){return N(e,!0)}function I(e){return N(e,!1)}var P=function(e){p&&i("101"),p=Array.prototype.slice.call(e),m()},k=function(e){var t,n=!1;for(t in e)if(e.hasOwnProperty(t)){var r=e[t];h.hasOwnProperty(t)&&h[t]===r||(h[t]&&i("102",t),h[t]=r,n=!0)}n&&m()};function R(e,t){var n=e.stateNode;if(!n)return null;var r=_(n);if(!r)return null;n=r[t];e:switch(t){case"onClick":case"onClickCapture":case"onDoubleClick":case"onDoubleClickCapture":case"onMouseDown":case"onMouseDownCapture":case"onMouseMove":case"onMouseMoveCapture":case"onMouseUp":case"onMouseUpCapture":(r=!r.disabled)||(r=!("button"===(e=e.type)||"input"===e||"select"===e||"textarea"===e)),e=!r;break e;default:e=!1}return e?null:(n&&"function"!=typeof n&&i("231",t,typeof n),n)}function L(e,t){if(null!==e&&(x=w(x,e)),e=x,x=null,e&&(O(e,t?A:I),x&&i("95"),c))throw t=s,c=!1,s=null,t}var M=Math.random().toString(36).slice(2),D="__reactInternalInstance$"+M,j="__reactEventHandlers$"+M;function F(e){if(e[D])return e[D];for(;!e[D];){if(!e.parentNode)return null;e=e.parentNode}return 7===(e=e[D]).tag||8===e.tag?e:null}function U(e){return!(e=e[D])||7!==e.tag&&8!==e.tag?null:e}function q(e){if(7===e.tag||8===e.tag)return e.stateNode;i("33")}function H(e){return e[j]||null}function V(e){do{e=e.return}while(e&&7!==e.tag);return e||null}function W(e,t,n){(t=R(e,n.dispatchConfig.phasedRegistrationNames[t]))&&(n._dispatchListeners=w(n._dispatchListeners,t),n._dispatchInstances=w(n._dispatchInstances,e))}function z(e){if(e&&e.dispatchConfig.phasedRegistrationNames){for(var t=e._targetInst,n=[];t;)n.push(t),t=V(t);for(t=n.length;0<t--;)W(n[t],"captured",e);for(t=0;t<n.length;t++)W(n[t],"bubbled",e)}}function B(e,t,n){e&&n&&n.dispatchConfig.registrationName&&(t=R(e,n.dispatchConfig.registrationName))&&(n._dispatchListeners=w(n._dispatchListeners,t),n._dispatchInstances=w(n._dispatchInstances,e))}function G(e){e&&e.dispatchConfig.registrationName&&B(e._targetInst,null,e)}function Q(e){O(e,z)}var Y=!("undefined"==typeof window||!window.document||!window.document.createElement);function X(e,t){var n={};return n[e.toLowerCase()]=t.toLowerCase(),n["Webkit"+e]="webkit"+t,n["Moz"+e]="moz"+t,n}var K={animationend:X("Animation","AnimationEnd"),animationiteration:X("Animation","AnimationIteration"),animationstart:X("Animation","AnimationStart"),transitionend:X("Transition","TransitionEnd")},$={},J={};function Z(e){if($[e])return $[e];if(!K[e])return e;var t,n=K[e];for(t in n)if(n.hasOwnProperty(t)&&t in J)return $[e]=n[t];return e}Y&&(J=document.createElement("div").style,"AnimationEvent"in window||(delete K.animationend.animation,delete K.animationiteration.animation,delete K.animationstart.animation),"TransitionEvent"in window||delete K.transitionend.transition);var ee=Z("animationend"),te=Z("animationiteration"),ne=Z("animationstart"),re=Z("transitionend"),oe="abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange seeked seeking stalled suspend timeupdate volumechange waiting".split(" "),ae=null,ie=null,le=null;function ue(){if(le)return le;var e,t,n=ie,r=n.length,o="value"in ae?ae.value:ae.textContent,a=o.length;for(e=0;e<r&&n[e]===o[e];e++);var i=r-e;for(t=1;t<=i&&n[r-t]===o[a-t];t++);return le=o.slice(e,1<t?1-t:void 0)}function ce(){return!0}function se(){return!1}function fe(e,t,n,r){for(var o in this.dispatchConfig=e,this._targetInst=t,this.nativeEvent=n,e=this.constructor.Interface)e.hasOwnProperty(o)&&((t=e[o])?this[o]=t(n):"target"===o?this.target=r:this[o]=n[o]);return this.isDefaultPrevented=(null!=n.defaultPrevented?n.defaultPrevented:!1===n.returnValue)?ce:se,this.isPropagationStopped=se,this}function de(e,t,n,r){if(this.eventPool.length){var o=this.eventPool.pop();return this.call(o,e,t,n,r),o}return new this(e,t,n,r)}function pe(e){e instanceof this||i("279"),e.destructor(),10>this.eventPool.length&&this.eventPool.push(e)}function he(e){e.eventPool=[],e.getPooled=de,e.release=pe}o(fe.prototype,{preventDefault:function(){this.defaultPrevented=!0;var e=this.nativeEvent;e&&(e.preventDefault?e.preventDefault():"unknown"!=typeof e.returnValue&&(e.returnValue=!1),this.isDefaultPrevented=ce)},stopPropagation:function(){var e=this.nativeEvent;e&&(e.stopPropagation?e.stopPropagation():"unknown"!=typeof e.cancelBubble&&(e.cancelBubble=!0),this.isPropagationStopped=ce)},persist:function(){this.isPersistent=ce},isPersistent:se,destructor:function(){var e,t=this.constructor.Interface;for(e in t)this[e]=null;this.nativeEvent=this._targetInst=this.dispatchConfig=null,this.isPropagationStopped=this.isDefaultPrevented=se,this._dispatchInstances=this._dispatchListeners=null}}),fe.Interface={type:null,target:null,currentTarget:function(){return null},eventPhase:null,bubbles:null,cancelable:null,timeStamp:function(e){return e.timeStamp||Date.now()},defaultPrevented:null,isTrusted:null},fe.extend=function(e){function t(){}function n(){return r.apply(this,arguments)}var r=this;t.prototype=r.prototype;var a=new t;return o(a,n.prototype),n.prototype=a,n.prototype.constructor=n,n.Interface=o({},r.Interface,e),n.extend=r.extend,he(n),n},he(fe);var me=fe.extend({data:null}),ve=fe.extend({data:null}),ye=[9,13,27,32],ge=Y&&"CompositionEvent"in window,Ee=null;Y&&"documentMode"in document&&(Ee=document.documentMode);var Se=Y&&"TextEvent"in window&&!Ee,_e=Y&&(!ge||Ee&&8<Ee&&11>=Ee),be=String.fromCharCode(32),Te={beforeInput:{phasedRegistrationNames:{bubbled:"onBeforeInput",captured:"onBeforeInputCapture"},dependencies:["compositionend","keypress","textInput","paste"]},compositionEnd:{phasedRegistrationNames:{bubbled:"onCompositionEnd",captured:"onCompositionEndCapture"},dependencies:"blur compositionend keydown keypress keyup mousedown".split(" ")},compositionStart:{phasedRegistrationNames:{bubbled:"onCompositionStart",captured:"onCompositionStartCapture"},dependencies:"blur compositionstart keydown keypress keyup mousedown".split(" ")},compositionUpdate:{phasedRegistrationNames:{bubbled:"onCompositionUpdate",captured:"onCompositionUpdateCapture"},dependencies:"blur compositionupdate keydown keypress keyup mousedown".split(" ")}},Ce=!1;function we(e,t){switch(e){case"keyup":return-1!==ye.indexOf(t.keyCode);case"keydown":return 229!==t.keyCode;case"keypress":case"mousedown":case"blur":return!0;default:return!1}}function Oe(e){return"object"==typeof(e=e.detail)&&"data"in e?e.data:null}var xe=!1;var Ne={eventTypes:Te,extractEvents:function(e,t,n,r){var o=void 0,a=void 0;if(ge)e:{switch(e){case"compositionstart":o=Te.compositionStart;break e;case"compositionend":o=Te.compositionEnd;break e;case"compositionupdate":o=Te.compositionUpdate;break e}o=void 0}else xe?we(e,n)&&(o=Te.compositionEnd):"keydown"===e&&229===n.keyCode&&(o=Te.compositionStart);return o?(_e&&"ko"!==n.locale&&(xe||o!==Te.compositionStart?o===Te.compositionEnd&&xe&&(a=ue()):(ie="value"in(ae=r)?ae.value:ae.textContent,xe=!0)),o=me.getPooled(o,t,n,r),a?o.data=a:null!==(a=Oe(n))&&(o.data=a),Q(o),a=o):a=null,(e=Se?function(e,t){switch(e){case"compositionend":return Oe(t);case"keypress":return 32!==t.which?null:(Ce=!0,be);case"textInput":return(e=t.data)===be&&Ce?null:e;default:return null}}(e,n):function(e,t){if(xe)return"compositionend"===e||!ge&&we(e,t)?(e=ue(),le=ie=ae=null,xe=!1,e):null;switch(e){case"paste":return null;case"keypress":if(!(t.ctrlKey||t.altKey||t.metaKey)||t.ctrlKey&&t.altKey){if(t.char&&1<t.char.length)return t.char;if(t.which)return String.fromCharCode(t.which)}return null;case"compositionend":return _e&&"ko"!==t.locale?null:t.data;default:return null}}(e,n))?((t=ve.getPooled(Te.beforeInput,t,n,r)).data=e,Q(t)):t=null,null===a?t:null===t?a:[a,t]}},Ae=null,Ie=null,Pe=null;function ke(e){if(e=b(e)){"function"!=typeof Ae&&i("280");var t=_(e.stateNode);Ae(e.stateNode,e.type,t)}}function Re(e){Ie?Pe?Pe.push(e):Pe=[e]:Ie=e}function Le(){if(Ie){var e=Ie,t=Pe;if(Pe=Ie=null,ke(e),t)for(e=0;e<t.length;e++)ke(t[e])}}function Me(e,t){return e(t)}function De(e,t,n){return e(t,n)}function je(){}var Fe=!1;function Ue(e,t){if(Fe)return e(t);Fe=!0;try{return Me(e,t)}finally{Fe=!1,(null!==Ie||null!==Pe)&&(je(),Le())}}var qe={color:!0,date:!0,datetime:!0,"datetime-local":!0,email:!0,month:!0,number:!0,password:!0,range:!0,search:!0,tel:!0,text:!0,time:!0,url:!0,week:!0};function He(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return"input"===t?!!qe[e.type]:"textarea"===t}function Ve(e){return(e=e.target||e.srcElement||window).correspondingUseElement&&(e=e.correspondingUseElement),3===e.nodeType?e.parentNode:e}function We(e){if(!Y)return!1;var t=(e="on"+e)in document;return t||((t=document.createElement("div")).setAttribute(e,"return;"),t="function"==typeof t[e]),t}function ze(e){var t=e.type;return(e=e.nodeName)&&"input"===e.toLowerCase()&&("checkbox"===t||"radio"===t)}function Be(e){e._valueTracker||(e._valueTracker=function(e){var t=ze(e)?"checked":"value",n=Object.getOwnPropertyDescriptor(e.constructor.prototype,t),r=""+e[t];if(!e.hasOwnProperty(t)&&void 0!==n&&"function"==typeof n.get&&"function"==typeof n.set){var o=n.get,a=n.set;return Object.defineProperty(e,t,{configurable:!0,get:function(){return o.call(this)},set:function(e){r=""+e,a.call(this,e)}}),Object.defineProperty(e,t,{enumerable:n.enumerable}),{getValue:function(){return r},setValue:function(e){r=""+e},stopTracking:function(){e._valueTracker=null,delete e[t]}}}}(e))}function Ge(e){if(!e)return!1;var t=e._valueTracker;if(!t)return!0;var n=t.getValue(),r="";return e&&(r=ze(e)?e.checked?"true":"false":e.value),(e=r)!==n&&(t.setValue(e),!0)}var Qe=r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,Ye=/^(.*)[\\\/]/,Xe="function"==typeof Symbol&&Symbol.for,Ke=Xe?Symbol.for("react.element"):60103,$e=Xe?Symbol.for("react.portal"):60106,Je=Xe?Symbol.for("react.fragment"):60107,Ze=Xe?Symbol.for("react.strict_mode"):60108,et=Xe?Symbol.for("react.profiler"):60114,tt=Xe?Symbol.for("react.provider"):60109,nt=Xe?Symbol.for("react.context"):60110,rt=Xe?Symbol.for("react.async_mode"):60111,ot=Xe?Symbol.for("react.forward_ref"):60112,at=Xe?Symbol.for("react.placeholder"):60113,it="function"==typeof Symbol&&Symbol.iterator;function lt(e){return null===e||"object"!=typeof e?null:"function"==typeof(e=it&&e[it]||e["@@iterator"])?e:null}function ut(e){if(null==e)return null;if("function"==typeof e)return e.displayName||e.name||null;if("string"==typeof e)return e;switch(e){case rt:return"AsyncMode";case Je:return"Fragment";case $e:return"Portal";case et:return"Profiler";case Ze:return"StrictMode";case at:return"Placeholder"}if("object"==typeof e){switch(e.$$typeof){case nt:return"Context.Consumer";case tt:return"Context.Provider";case ot:return""!==(e=(e=e.render).displayName||e.name||"")?"ForwardRef("+e+")":"ForwardRef"}if("function"==typeof e.then&&(e=1===e._reactStatus?e._reactResult:null))return ut(e)}return null}function ct(e){var t="";do{e:switch(e.tag){case 4:case 0:case 1:case 2:case 3:case 7:case 10:var n=e._debugOwner,r=e._debugSource,o=ut(e.type),a=null;n&&(a=ut(n.type)),n=o,o="",r?o=" (at "+r.fileName.replace(Ye,"")+":"+r.lineNumber+")":a&&(o=" (created by "+a+")"),a="\n    in "+(n||"Unknown")+o;break e;default:a=""}t+=a,e=e.return}while(e);return t}var st=/^[:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD][:A-Z_a-z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD\-.0-9\u00B7\u0300-\u036F\u203F-\u2040]*$/,ft=Object.prototype.hasOwnProperty,dt={},pt={};function ht(e,t,n,r,o){this.acceptsBooleans=2===t||3===t||4===t,this.attributeName=r,this.attributeNamespace=o,this.mustUseProperty=n,this.propertyName=e,this.type=t}var mt={};"children dangerouslySetInnerHTML defaultValue defaultChecked innerHTML suppressContentEditableWarning suppressHydrationWarning style".split(" ").forEach(function(e){mt[e]=new ht(e,0,!1,e,null)}),[["acceptCharset","accept-charset"],["className","class"],["htmlFor","for"],["httpEquiv","http-equiv"]].forEach(function(e){var t=e[0];mt[t]=new ht(t,1,!1,e[1],null)}),["contentEditable","draggable","spellCheck","value"].forEach(function(e){mt[e]=new ht(e,2,!1,e.toLowerCase(),null)}),["autoReverse","externalResourcesRequired","focusable","preserveAlpha"].forEach(function(e){mt[e]=new ht(e,2,!1,e,null)}),"allowFullScreen async autoFocus autoPlay controls default defer disabled formNoValidate hidden loop noModule noValidate open playsInline readOnly required reversed scoped seamless itemScope".split(" ").forEach(function(e){mt[e]=new ht(e,3,!1,e.toLowerCase(),null)}),["checked","multiple","muted","selected"].forEach(function(e){mt[e]=new ht(e,3,!0,e,null)}),["capture","download"].forEach(function(e){mt[e]=new ht(e,4,!1,e,null)}),["cols","rows","size","span"].forEach(function(e){mt[e]=new ht(e,6,!1,e,null)}),["rowSpan","start"].forEach(function(e){mt[e]=new ht(e,5,!1,e.toLowerCase(),null)});var vt=/[\-:]([a-z])/g;function yt(e){return e[1].toUpperCase()}function gt(e,t,n,r){var o=mt.hasOwnProperty(t)?mt[t]:null;(null!==o?0===o.type:!r&&(2<t.length&&("o"===t[0]||"O"===t[0])&&("n"===t[1]||"N"===t[1])))||(function(e,t,n,r){if(null===t||void 0===t||function(e,t,n,r){if(null!==n&&0===n.type)return!1;switch(typeof t){case"function":case"symbol":return!0;case"boolean":return!r&&(null!==n?!n.acceptsBooleans:"data-"!==(e=e.toLowerCase().slice(0,5))&&"aria-"!==e);default:return!1}}(e,t,n,r))return!0;if(r)return!1;if(null!==n)switch(n.type){case 3:return!t;case 4:return!1===t;case 5:return isNaN(t);case 6:return isNaN(t)||1>t}return!1}(t,n,o,r)&&(n=null),r||null===o?function(e){return!!ft.call(pt,e)||!ft.call(dt,e)&&(st.test(e)?pt[e]=!0:(dt[e]=!0,!1))}(t)&&(null===n?e.removeAttribute(t):e.setAttribute(t,""+n)):o.mustUseProperty?e[o.propertyName]=null===n?3!==o.type&&"":n:(t=o.attributeName,r=o.attributeNamespace,null===n?e.removeAttribute(t):(n=3===(o=o.type)||4===o&&!0===n?"":""+n,r?e.setAttributeNS(r,t,n):e.setAttribute(t,n))))}function Et(e){switch(typeof e){case"boolean":case"number":case"object":case"string":case"undefined":return e;default:return""}}function St(e,t){var n=t.checked;return o({},t,{defaultChecked:void 0,defaultValue:void 0,value:void 0,checked:null!=n?n:e._wrapperState.initialChecked})}function _t(e,t){var n=null==t.defaultValue?"":t.defaultValue,r=null!=t.checked?t.checked:t.defaultChecked;n=Et(null!=t.value?t.value:n),e._wrapperState={initialChecked:r,initialValue:n,controlled:"checkbox"===t.type||"radio"===t.type?null!=t.checked:null!=t.value}}function bt(e,t){null!=(t=t.checked)&&gt(e,"checked",t,!1)}function Tt(e,t){bt(e,t);var n=Et(t.value),r=t.type;if(null!=n)"number"===r?(0===n&&""===e.value||e.value!=n)&&(e.value=""+n):e.value!==""+n&&(e.value=""+n);else if("submit"===r||"reset"===r)return void e.removeAttribute("value");t.hasOwnProperty("value")?wt(e,t.type,n):t.hasOwnProperty("defaultValue")&&wt(e,t.type,Et(t.defaultValue)),null==t.checked&&null!=t.defaultChecked&&(e.defaultChecked=!!t.defaultChecked)}function Ct(e,t,n){if(t.hasOwnProperty("value")||t.hasOwnProperty("defaultValue")){var r=t.type;if(!("submit"!==r&&"reset"!==r||void 0!==t.value&&null!==t.value))return;t=""+e._wrapperState.initialValue,r=e.value,n||t===r||(e.value=t),e.defaultValue=t}""!==(n=e.name)&&(e.name=""),e.defaultChecked=!e.defaultChecked,e.defaultChecked=!!e._wrapperState.initialChecked,""!==n&&(e.name=n)}function wt(e,t,n){"number"===t&&e.ownerDocument.activeElement===e||(null==n?e.defaultValue=""+e._wrapperState.initialValue:e.defaultValue!==""+n&&(e.defaultValue=""+n))}"accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height".split(" ").forEach(function(e){var t=e.replace(vt,yt);mt[t]=new ht(t,1,!1,e,null)}),"xlink:actuate xlink:arcrole xlink:href xlink:role xlink:show xlink:title xlink:type".split(" ").forEach(function(e){var t=e.replace(vt,yt);mt[t]=new ht(t,1,!1,e,"http://www.w3.org/1999/xlink")}),["xml:base","xml:lang","xml:space"].forEach(function(e){var t=e.replace(vt,yt);mt[t]=new ht(t,1,!1,e,"http://www.w3.org/XML/1998/namespace")}),mt.tabIndex=new ht("tabIndex",1,!1,"tabindex",null);var Ot={change:{phasedRegistrationNames:{bubbled:"onChange",captured:"onChangeCapture"},dependencies:"blur change click focus input keydown keyup selectionchange".split(" ")}};function xt(e,t,n){return(e=fe.getPooled(Ot.change,e,t,n)).type="change",Re(n),Q(e),e}var Nt=null,At=null;function It(e){L(e,!1)}function Pt(e){if(Ge(q(e)))return e}function kt(e,t){if("change"===e)return t}var Rt=!1;function Lt(){Nt&&(Nt.detachEvent("onpropertychange",Mt),At=Nt=null)}function Mt(e){"value"===e.propertyName&&Pt(At)&&Ue(It,e=xt(At,e,Ve(e)))}function Dt(e,t,n){"focus"===e?(Lt(),At=n,(Nt=t).attachEvent("onpropertychange",Mt)):"blur"===e&&Lt()}function jt(e){if("selectionchange"===e||"keyup"===e||"keydown"===e)return Pt(At)}function Ft(e,t){if("click"===e)return Pt(t)}function Ut(e,t){if("input"===e||"change"===e)return Pt(t)}Y&&(Rt=We("input")&&(!document.documentMode||9<document.documentMode));var qt={eventTypes:Ot,_isInputEventSupported:Rt,extractEvents:function(e,t,n,r){var o=t?q(t):window,a=void 0,i=void 0,l=o.nodeName&&o.nodeName.toLowerCase();if("select"===l||"input"===l&&"file"===o.type?a=kt:He(o)?Rt?a=Ut:(a=jt,i=Dt):(l=o.nodeName)&&"input"===l.toLowerCase()&&("checkbox"===o.type||"radio"===o.type)&&(a=Ft),a&&(a=a(e,t)))return xt(a,n,r);i&&i(e,o,t),"blur"===e&&(e=o._wrapperState)&&e.controlled&&"number"===o.type&&wt(o,"number",o.value)}},Ht=fe.extend({view:null,detail:null}),Vt={Alt:"altKey",Control:"ctrlKey",Meta:"metaKey",Shift:"shiftKey"};function Wt(e){var t=this.nativeEvent;return t.getModifierState?t.getModifierState(e):!!(e=Vt[e])&&!!t[e]}function zt(){return Wt}var Bt=0,Gt=0,Qt=!1,Yt=!1,Xt=Ht.extend({screenX:null,screenY:null,clientX:null,clientY:null,pageX:null,pageY:null,ctrlKey:null,shiftKey:null,altKey:null,metaKey:null,getModifierState:zt,button:null,buttons:null,relatedTarget:function(e){return e.relatedTarget||(e.fromElement===e.srcElement?e.toElement:e.fromElement)},movementX:function(e){if("movementX"in e)return e.movementX;var t=Bt;return Bt=e.screenX,Qt?"mousemove"===e.type?e.screenX-t:0:(Qt=!0,0)},movementY:function(e){if("movementY"in e)return e.movementY;var t=Gt;return Gt=e.screenY,Yt?"mousemove"===e.type?e.screenY-t:0:(Yt=!0,0)}}),Kt=Xt.extend({pointerId:null,width:null,height:null,pressure:null,tangentialPressure:null,tiltX:null,tiltY:null,twist:null,pointerType:null,isPrimary:null}),$t={mouseEnter:{registrationName:"onMouseEnter",dependencies:["mouseout","mouseover"]},mouseLeave:{registrationName:"onMouseLeave",dependencies:["mouseout","mouseover"]},pointerEnter:{registrationName:"onPointerEnter",dependencies:["pointerout","pointerover"]},pointerLeave:{registrationName:"onPointerLeave",dependencies:["pointerout","pointerover"]}},Jt={eventTypes:$t,extractEvents:function(e,t,n,r){var o="mouseover"===e||"pointerover"===e,a="mouseout"===e||"pointerout"===e;if(o&&(n.relatedTarget||n.fromElement)||!a&&!o)return null;if(o=r.window===r?r:(o=r.ownerDocument)?o.defaultView||o.parentWindow:window,a?(a=t,t=(t=n.relatedTarget||n.toElement)?F(t):null):a=null,a===t)return null;var i=void 0,l=void 0,u=void 0,c=void 0;"mouseout"===e||"mouseover"===e?(i=Xt,l=$t.mouseLeave,u=$t.mouseEnter,c="mouse"):"pointerout"!==e&&"pointerover"!==e||(i=Kt,l=$t.pointerLeave,u=$t.pointerEnter,c="pointer");var s=null==a?o:q(a);if(o=null==t?o:q(t),(e=i.getPooled(l,a,n,r)).type=c+"leave",e.target=s,e.relatedTarget=o,(n=i.getPooled(u,t,n,r)).type=c+"enter",n.target=o,n.relatedTarget=s,r=t,a&&r)e:{for(o=r,c=0,i=t=a;i;i=V(i))c++;for(i=0,u=o;u;u=V(u))i++;for(;0<c-i;)t=V(t),c--;for(;0<i-c;)o=V(o),i--;for(;c--;){if(t===o||t===o.alternate)break e;t=V(t),o=V(o)}t=null}else t=null;for(o=t,t=[];a&&a!==o&&(null===(c=a.alternate)||c!==o);)t.push(a),a=V(a);for(a=[];r&&r!==o&&(null===(c=r.alternate)||c!==o);)a.push(r),r=V(r);for(r=0;r<t.length;r++)B(t[r],"bubbled",e);for(r=a.length;0<r--;)B(a[r],"captured",n);return[e,n]}},Zt=Object.prototype.hasOwnProperty;function en(e,t){return e===t?0!==e||0!==t||1/e==1/t:e!=e&&t!=t}function tn(e,t){if(en(e,t))return!0;if("object"!=typeof e||null===e||"object"!=typeof t||null===t)return!1;var n=Object.keys(e),r=Object.keys(t);if(n.length!==r.length)return!1;for(r=0;r<n.length;r++)if(!Zt.call(t,n[r])||!en(e[n[r]],t[n[r]]))return!1;return!0}function nn(e){var t=e;if(e.alternate)for(;t.return;)t=t.return;else{if(0!=(2&t.effectTag))return 1;for(;t.return;)if(0!=(2&(t=t.return).effectTag))return 1}return 5===t.tag?2:3}function rn(e){2!==nn(e)&&i("188")}function on(e){if(!(e=function(e){var t=e.alternate;if(!t)return 3===(t=nn(e))&&i("188"),1===t?null:e;for(var n=e,r=t;;){var o=n.return,a=o?o.alternate:null;if(!o||!a)break;if(o.child===a.child){for(var l=o.child;l;){if(l===n)return rn(o),e;if(l===r)return rn(o),t;l=l.sibling}i("188")}if(n.return!==r.return)n=o,r=a;else{l=!1;for(var u=o.child;u;){if(u===n){l=!0,n=o,r=a;break}if(u===r){l=!0,r=o,n=a;break}u=u.sibling}if(!l){for(u=a.child;u;){if(u===n){l=!0,n=a,r=o;break}if(u===r){l=!0,r=a,n=o;break}u=u.sibling}l||i("189")}}n.alternate!==r&&i("190")}return 5!==n.tag&&i("188"),n.stateNode.current===n?e:t}(e)))return null;for(var t=e;;){if(7===t.tag||8===t.tag)return t;if(t.child)t.child.return=t,t=t.child;else{if(t===e)break;for(;!t.sibling;){if(!t.return||t.return===e)return null;t=t.return}t.sibling.return=t.return,t=t.sibling}}return null}var an=fe.extend({animationName:null,elapsedTime:null,pseudoElement:null}),ln=fe.extend({clipboardData:function(e){return"clipboardData"in e?e.clipboardData:window.clipboardData}}),un=Ht.extend({relatedTarget:null});function cn(e){var t=e.keyCode;return"charCode"in e?0===(e=e.charCode)&&13===t&&(e=13):e=t,10===e&&(e=13),32<=e||13===e?e:0}var sn={Esc:"Escape",Spacebar:" ",Left:"ArrowLeft",Up:"ArrowUp",Right:"ArrowRight",Down:"ArrowDown",Del:"Delete",Win:"OS",Menu:"ContextMenu",Apps:"ContextMenu",Scroll:"ScrollLock",MozPrintableKey:"Unidentified"},fn={8:"Backspace",9:"Tab",12:"Clear",13:"Enter",16:"Shift",17:"Control",18:"Alt",19:"Pause",20:"CapsLock",27:"Escape",32:" ",33:"PageUp",34:"PageDown",35:"End",36:"Home",37:"ArrowLeft",38:"ArrowUp",39:"ArrowRight",40:"ArrowDown",45:"Insert",46:"Delete",112:"F1",113:"F2",114:"F3",115:"F4",116:"F5",117:"F6",118:"F7",119:"F8",120:"F9",121:"F10",122:"F11",123:"F12",144:"NumLock",145:"ScrollLock",224:"Meta"},dn=Ht.extend({key:function(e){if(e.key){var t=sn[e.key]||e.key;if("Unidentified"!==t)return t}return"keypress"===e.type?13===(e=cn(e))?"Enter":String.fromCharCode(e):"keydown"===e.type||"keyup"===e.type?fn[e.keyCode]||"Unidentified":""},location:null,ctrlKey:null,shiftKey:null,altKey:null,metaKey:null,repeat:null,locale:null,getModifierState:zt,charCode:function(e){return"keypress"===e.type?cn(e):0},keyCode:function(e){return"keydown"===e.type||"keyup"===e.type?e.keyCode:0},which:function(e){return"keypress"===e.type?cn(e):"keydown"===e.type||"keyup"===e.type?e.keyCode:0}}),pn=Xt.extend({dataTransfer:null}),hn=Ht.extend({touches:null,targetTouches:null,changedTouches:null,altKey:null,metaKey:null,ctrlKey:null,shiftKey:null,getModifierState:zt}),mn=fe.extend({propertyName:null,elapsedTime:null,pseudoElement:null}),vn=Xt.extend({deltaX:function(e){return"deltaX"in e?e.deltaX:"wheelDeltaX"in e?-e.wheelDeltaX:0},deltaY:function(e){return"deltaY"in e?e.deltaY:"wheelDeltaY"in e?-e.wheelDeltaY:"wheelDelta"in e?-e.wheelDelta:0},deltaZ:null,deltaMode:null}),yn=[["abort","abort"],[ee,"animationEnd"],[te,"animationIteration"],[ne,"animationStart"],["canplay","canPlay"],["canplaythrough","canPlayThrough"],["drag","drag"],["dragenter","dragEnter"],["dragexit","dragExit"],["dragleave","dragLeave"],["dragover","dragOver"],["durationchange","durationChange"],["emptied","emptied"],["encrypted","encrypted"],["ended","ended"],["error","error"],["gotpointercapture","gotPointerCapture"],["load","load"],["loadeddata","loadedData"],["loadedmetadata","loadedMetadata"],["loadstart","loadStart"],["lostpointercapture","lostPointerCapture"],["mousemove","mouseMove"],["mouseout","mouseOut"],["mouseover","mouseOver"],["playing","playing"],["pointermove","pointerMove"],["pointerout","pointerOut"],["pointerover","pointerOver"],["progress","progress"],["scroll","scroll"],["seeking","seeking"],["stalled","stalled"],["suspend","suspend"],["timeupdate","timeUpdate"],["toggle","toggle"],["touchmove","touchMove"],[re,"transitionEnd"],["waiting","waiting"],["wheel","wheel"]],gn={},En={};function Sn(e,t){var n=e[0],r="on"+((e=e[1])[0].toUpperCase()+e.slice(1));t={phasedRegistrationNames:{bubbled:r,captured:r+"Capture"},dependencies:[n],isInteractive:t},gn[e]=t,En[n]=t}[["blur","blur"],["cancel","cancel"],["click","click"],["close","close"],["contextmenu","contextMenu"],["copy","copy"],["cut","cut"],["auxclick","auxClick"],["dblclick","doubleClick"],["dragend","dragEnd"],["dragstart","dragStart"],["drop","drop"],["focus","focus"],["input","input"],["invalid","invalid"],["keydown","keyDown"],["keypress","keyPress"],["keyup","keyUp"],["mousedown","mouseDown"],["mouseup","mouseUp"],["paste","paste"],["pause","pause"],["play","play"],["pointercancel","pointerCancel"],["pointerdown","pointerDown"],["pointerup","pointerUp"],["ratechange","rateChange"],["reset","reset"],["seeked","seeked"],["submit","submit"],["touchcancel","touchCancel"],["touchend","touchEnd"],["touchstart","touchStart"],["volumechange","volumeChange"]].forEach(function(e){Sn(e,!0)}),yn.forEach(function(e){Sn(e,!1)});var _n={eventTypes:gn,isInteractiveTopLevelEventType:function(e){return void 0!==(e=En[e])&&!0===e.isInteractive},extractEvents:function(e,t,n,r){var o=En[e];if(!o)return null;switch(e){case"keypress":if(0===cn(n))return null;case"keydown":case"keyup":e=dn;break;case"blur":case"focus":e=un;break;case"click":if(2===n.button)return null;case"auxclick":case"dblclick":case"mousedown":case"mousemove":case"mouseup":case"mouseout":case"mouseover":case"contextmenu":e=Xt;break;case"drag":case"dragend":case"dragenter":case"dragexit":case"dragleave":case"dragover":case"dragstart":case"drop":e=pn;break;case"touchcancel":case"touchend":case"touchmove":case"touchstart":e=hn;break;case ee:case te:case ne:e=an;break;case re:e=mn;break;case"scroll":e=Ht;break;case"wheel":e=vn;break;case"copy":case"cut":case"paste":e=ln;break;case"gotpointercapture":case"lostpointercapture":case"pointercancel":case"pointerdown":case"pointermove":case"pointerout":case"pointerover":case"pointerup":e=Kt;break;default:e=fe}return Q(t=e.getPooled(o,t,n,r)),t}},bn=_n.isInteractiveTopLevelEventType,Tn=[];function Cn(e){var t=e.targetInst,n=t;do{if(!n){e.ancestors.push(n);break}var r;for(r=n;r.return;)r=r.return;if(!(r=5!==r.tag?null:r.stateNode.containerInfo))break;e.ancestors.push(n),n=F(r)}while(n);for(n=0;n<e.ancestors.length;n++){t=e.ancestors[n];var o=Ve(e.nativeEvent);r=e.topLevelType;for(var a=e.nativeEvent,i=null,l=0;l<y.length;l++){var u=y[l];u&&(u=u.extractEvents(r,t,a,o))&&(i=w(i,u))}L(i,!1)}}var wn=!0;function On(e,t){if(!t)return null;var n=(bn(e)?Nn:An).bind(null,e);t.addEventListener(e,n,!1)}function xn(e,t){if(!t)return null;var n=(bn(e)?Nn:An).bind(null,e);t.addEventListener(e,n,!0)}function Nn(e,t){De(An,e,t)}function An(e,t){if(wn){var n=Ve(t);if(null===(n=F(n))||"number"!=typeof n.tag||2===nn(n)||(n=null),Tn.length){var r=Tn.pop();r.topLevelType=e,r.nativeEvent=t,r.targetInst=n,e=r}else e={topLevelType:e,nativeEvent:t,targetInst:n,ancestors:[]};try{Ue(Cn,e)}finally{e.topLevelType=null,e.nativeEvent=null,e.targetInst=null,e.ancestors.length=0,10>Tn.length&&Tn.push(e)}}}var In={},Pn=0,kn="_reactListenersID"+(""+Math.random()).slice(2);function Rn(e){return Object.prototype.hasOwnProperty.call(e,kn)||(e[kn]=Pn++,In[e[kn]]={}),In[e[kn]]}function Ln(e){if(void 0===(e=e||("undefined"!=typeof document?document:void 0)))return null;try{return e.activeElement||e.body}catch(t){return e.body}}function Mn(e){for(;e&&e.firstChild;)e=e.firstChild;return e}function Dn(e,t){var n,r=Mn(e);for(e=0;r;){if(3===r.nodeType){if(n=e+r.textContent.length,e<=t&&n>=t)return{node:r,offset:t-e};e=n}e:{for(;r;){if(r.nextSibling){r=r.nextSibling;break e}r=r.parentNode}r=void 0}r=Mn(r)}}function jn(){for(var e=window,t=Ln();t instanceof e.HTMLIFrameElement;){try{e=t.contentDocument.defaultView}catch(e){break}t=Ln(e.document)}return t}function Fn(e){var t=e&&e.nodeName&&e.nodeName.toLowerCase();return t&&("input"===t&&("text"===e.type||"search"===e.type||"tel"===e.type||"url"===e.type||"password"===e.type)||"textarea"===t||"true"===e.contentEditable)}var Un=Y&&"documentMode"in document&&11>=document.documentMode,qn={select:{phasedRegistrationNames:{bubbled:"onSelect",captured:"onSelectCapture"},dependencies:"blur contextmenu dragend focus keydown keyup mousedown mouseup selectionchange".split(" ")}},Hn=null,Vn=null,Wn=null,zn=!1;function Bn(e,t){var n=t.window===t?t.document:9===t.nodeType?t:t.ownerDocument;return zn||null==Hn||Hn!==Ln(n)?null:("selectionStart"in(n=Hn)&&Fn(n)?n={start:n.selectionStart,end:n.selectionEnd}:n={anchorNode:(n=(n.ownerDocument&&n.ownerDocument.defaultView||window).getSelection()).anchorNode,anchorOffset:n.anchorOffset,focusNode:n.focusNode,focusOffset:n.focusOffset},Wn&&tn(Wn,n)?null:(Wn=n,(e=fe.getPooled(qn.select,Vn,e,t)).type="select",e.target=Hn,Q(e),e))}var Gn={eventTypes:qn,extractEvents:function(e,t,n,r){var o,a=r.window===r?r.document:9===r.nodeType?r:r.ownerDocument;if(!(o=!a)){e:{a=Rn(a),o=S.onSelect;for(var i=0;i<o.length;i++){var l=o[i];if(!a.hasOwnProperty(l)||!a[l]){a=!1;break e}}a=!0}o=!a}if(o)return null;switch(a=t?q(t):window,e){case"focus":(He(a)||"true"===a.contentEditable)&&(Hn=a,Vn=t,Wn=null);break;case"blur":Wn=Vn=Hn=null;break;case"mousedown":zn=!0;break;case"contextmenu":case"mouseup":case"dragend":return zn=!1,Bn(n,r);case"selectionchange":if(Un)break;case"keydown":case"keyup":return Bn(n,r)}return null}};function Qn(e,t){return e=o({children:void 0},t),(t=function(e){var t="";return r.Children.forEach(e,function(e){null!=e&&(t+=e)}),t}(t.children))&&(e.children=t),e}function Yn(e,t,n,r){if(e=e.options,t){t={};for(var o=0;o<n.length;o++)t["$"+n[o]]=!0;for(n=0;n<e.length;n++)o=t.hasOwnProperty("$"+e[n].value),e[n].selected!==o&&(e[n].selected=o),o&&r&&(e[n].defaultSelected=!0)}else{for(n=""+Et(n),t=null,o=0;o<e.length;o++){if(e[o].value===n)return e[o].selected=!0,void(r&&(e[o].defaultSelected=!0));null!==t||e[o].disabled||(t=e[o])}null!==t&&(t.selected=!0)}}function Xn(e,t){return null!=t.dangerouslySetInnerHTML&&i("91"),o({},t,{value:void 0,defaultValue:void 0,children:""+e._wrapperState.initialValue})}function Kn(e,t){var n=t.value;null==n&&(n=t.defaultValue,null!=(t=t.children)&&(null!=n&&i("92"),Array.isArray(t)&&(1>=t.length||i("93"),t=t[0]),n=t),null==n&&(n="")),e._wrapperState={initialValue:Et(n)}}function $n(e,t){var n=Et(t.value);null!=n&&((n=""+n)!==e.value&&(e.value=n),null==t.defaultValue&&(e.defaultValue=n)),null!=t.defaultValue&&(e.defaultValue=""+Et(t.defaultValue))}function Jn(e){var t=e.textContent;t===e._wrapperState.initialValue&&(e.value=t)}P("ResponderEventPlugin SimpleEventPlugin TapEventPlugin EnterLeaveEventPlugin ChangeEventPlugin SelectEventPlugin BeforeInputEventPlugin".split(" ")),_=H,b=U,T=q,k({SimpleEventPlugin:_n,EnterLeaveEventPlugin:Jt,ChangeEventPlugin:qt,SelectEventPlugin:Gn,BeforeInputEventPlugin:Ne});var Zn={html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"};function er(e){switch(e){case"svg":return"http://www.w3.org/2000/svg";case"math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}function tr(e,t){return null==e||"http://www.w3.org/1999/xhtml"===e?er(t):"http://www.w3.org/2000/svg"===e&&"foreignObject"===t?"http://www.w3.org/1999/xhtml":e}var nr=void 0,rr=function(e){return"undefined"!=typeof MSApp&&MSApp.execUnsafeLocalFunction?function(t,n,r,o){MSApp.execUnsafeLocalFunction(function(){return e(t,n)})}:e}(function(e,t){if(e.namespaceURI!==Zn.svg||"innerHTML"in e)e.innerHTML=t;else{for((nr=nr||document.createElement("div")).innerHTML="<svg>"+t+"</svg>",t=nr.firstChild;e.firstChild;)e.removeChild(e.firstChild);for(;t.firstChild;)e.appendChild(t.firstChild)}});function or(e,t){if(t){var n=e.firstChild;if(n&&n===e.lastChild&&3===n.nodeType)return void(n.nodeValue=t)}e.textContent=t}var ar={animationIterationCount:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0},ir=["Webkit","ms","Moz","O"];function lr(e,t){for(var n in e=e.style,t)if(t.hasOwnProperty(n)){var r=0===n.indexOf("--"),o=n,a=t[n];o=null==a||"boolean"==typeof a||""===a?"":r||"number"!=typeof a||0===a||ar.hasOwnProperty(o)&&ar[o]?(""+a).trim():a+"px","float"===n&&(n="cssFloat"),r?e.setProperty(n,o):e[n]=o}}Object.keys(ar).forEach(function(e){ir.forEach(function(t){t=t+e.charAt(0).toUpperCase()+e.substring(1),ar[t]=ar[e]})});var ur=o({menuitem:!0},{area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0});function cr(e,t){t&&(ur[e]&&(null!=t.children||null!=t.dangerouslySetInnerHTML)&&i("137",e,""),null!=t.dangerouslySetInnerHTML&&(null!=t.children&&i("60"),"object"==typeof t.dangerouslySetInnerHTML&&"__html"in t.dangerouslySetInnerHTML||i("61")),null!=t.style&&"object"!=typeof t.style&&i("62",""))}function sr(e,t){if(-1===e.indexOf("-"))return"string"==typeof t.is;switch(e){case"annotation-xml":case"color-profile":case"font-face":case"font-face-src":case"font-face-uri":case"font-face-format":case"font-face-name":case"missing-glyph":return!1;default:return!0}}function fr(e,t){var n=Rn(e=9===e.nodeType||11===e.nodeType?e:e.ownerDocument);t=S[t];for(var r=0;r<t.length;r++){var o=t[r];if(!n.hasOwnProperty(o)||!n[o]){switch(o){case"scroll":xn("scroll",e);break;case"focus":case"blur":xn("focus",e),xn("blur",e),n.blur=!0,n.focus=!0;break;case"cancel":case"close":We(o)&&xn(o,e);break;case"invalid":case"submit":case"reset":break;default:-1===oe.indexOf(o)&&On(o,e)}n[o]=!0}}}function dr(){}var pr=null,hr=null;function mr(e,t){switch(e){case"button":case"input":case"select":case"textarea":return!!t.autoFocus}return!1}function vr(e,t){return"textarea"===e||"option"===e||"noscript"===e||"string"==typeof t.children||"number"==typeof t.children||"object"==typeof t.dangerouslySetInnerHTML&&null!==t.dangerouslySetInnerHTML&&null!=t.dangerouslySetInnerHTML.__html}function yr(e){for(e=e.nextSibling;e&&1!==e.nodeType&&3!==e.nodeType;)e=e.nextSibling;return e}function gr(e){for(e=e.firstChild;e&&1!==e.nodeType&&3!==e.nodeType;)e=e.nextSibling;return e}new Set;var Er=[],Sr=-1;function _r(e){0>Sr||(e.current=Er[Sr],Er[Sr]=null,Sr--)}function br(e,t){Er[++Sr]=e.current,e.current=t}var Tr={},Cr={current:Tr},wr={current:!1},Or=Tr;function xr(e,t){var n=e.type.contextTypes;if(!n)return Tr;var r=e.stateNode;if(r&&r.__reactInternalMemoizedUnmaskedChildContext===t)return r.__reactInternalMemoizedMaskedChildContext;var o,a={};for(o in n)a[o]=t[o];return r&&((e=e.stateNode).__reactInternalMemoizedUnmaskedChildContext=t,e.__reactInternalMemoizedMaskedChildContext=a),a}function Nr(e){return null!==(e=e.childContextTypes)&&void 0!==e}function Ar(e){_r(wr),_r(Cr)}function Ir(e){_r(wr),_r(Cr)}function Pr(e,t,n){Cr.current!==Tr&&i("168"),br(Cr,t),br(wr,n)}function kr(e,t,n){var r=e.stateNode;if(e=t.childContextTypes,"function"!=typeof r.getChildContext)return n;for(var a in r=r.getChildContext())a in e||i("108",ut(t)||"Unknown",a);return o({},n,r)}function Rr(e){var t=e.stateNode;return t=t&&t.__reactInternalMemoizedMergedChildContext||Tr,Or=Cr.current,br(Cr,t),br(wr,wr.current),!0}function Lr(e,t,n){var r=e.stateNode;r||i("169"),n?(t=kr(e,t,Or),r.__reactInternalMemoizedMergedChildContext=t,_r(wr),_r(Cr),br(Cr,t)):_r(wr),br(wr,n)}var Mr=null,Dr=null;function jr(e){return function(t){try{return e(t)}catch(e){}}}function Fr(e,t,n,r){this.tag=e,this.key=n,this.sibling=this.child=this.return=this.stateNode=this.type=null,this.index=0,this.ref=null,this.pendingProps=t,this.firstContextDependency=this.memoizedState=this.updateQueue=this.memoizedProps=null,this.mode=r,this.effectTag=0,this.lastEffect=this.firstEffect=this.nextEffect=null,this.childExpirationTime=this.expirationTime=0,this.alternate=null}function Ur(e){return"object"==typeof(e=e.prototype)&&null!==e&&"object"==typeof e.isReactComponent&&null!==e.isReactComponent}function qr(e,t,n){var r=e.alternate;return null===r?((r=new Fr(e.tag,t,e.key,e.mode)).type=e.type,r.stateNode=e.stateNode,r.alternate=e,e.alternate=r):(r.pendingProps=t,r.effectTag=0,r.nextEffect=null,r.firstEffect=null,r.lastEffect=null),r.childExpirationTime=e.childExpirationTime,r.expirationTime=t!==e.pendingProps?n:e.expirationTime,r.child=e.child,r.memoizedProps=e.memoizedProps,r.memoizedState=e.memoizedState,r.updateQueue=e.updateQueue,r.firstContextDependency=e.firstContextDependency,r.sibling=e.sibling,r.index=e.index,r.ref=e.ref,r}function Hr(e,t,n){var r=e.type,o=e.key;e=e.props;var a=void 0;if("function"==typeof r)a=Ur(r)?2:4;else if("string"==typeof r)a=7;else e:switch(r){case Je:return Vr(e.children,t,n,o);case rt:a=10,t|=3;break;case Ze:a=10,t|=2;break;case et:return(r=new Fr(15,e,o,4|t)).type=et,r.expirationTime=n,r;case at:a=16;break;default:if("object"==typeof r&&null!==r)switch(r.$$typeof){case tt:a=12;break e;case nt:a=11;break e;case ot:a=13;break e;default:if("function"==typeof r.then){a=4;break e}}i("130",null==r?r:typeof r,"")}return(t=new Fr(a,e,o,t)).type=r,t.expirationTime=n,t}function Vr(e,t,n,r){return(e=new Fr(9,e,r,t)).expirationTime=n,e}function Wr(e,t,n){return(e=new Fr(8,e,null,t)).expirationTime=n,e}function zr(e,t,n){return(t=new Fr(6,null!==e.children?e.children:[],e.key,t)).expirationTime=n,t.stateNode={containerInfo:e.containerInfo,pendingChildren:null,implementation:e.implementation},t}function Br(e,t){e.didError=!1;var n=e.earliestPendingTime;0===n?e.earliestPendingTime=e.latestPendingTime=t:n>t?e.earliestPendingTime=t:e.latestPendingTime<t&&(e.latestPendingTime=t),Gr(t,e)}function Gr(e,t){var n=t.earliestSuspendedTime,r=t.latestSuspendedTime,o=t.earliestPendingTime,a=t.latestPingedTime;0===(o=0!==o?o:a)&&(0===e||r>e)&&(o=r),0!==(e=o)&&0!==n&&n<e&&(e=n),t.nextExpirationTimeToWorkOn=o,t.expirationTime=e}var Qr=!1;function Yr(e){return{baseState:e,firstUpdate:null,lastUpdate:null,firstCapturedUpdate:null,lastCapturedUpdate:null,firstEffect:null,lastEffect:null,firstCapturedEffect:null,lastCapturedEffect:null}}function Xr(e){return{baseState:e.baseState,firstUpdate:e.firstUpdate,lastUpdate:e.lastUpdate,firstCapturedUpdate:null,lastCapturedUpdate:null,firstEffect:null,lastEffect:null,firstCapturedEffect:null,lastCapturedEffect:null}}function Kr(e){return{expirationTime:e,tag:0,payload:null,callback:null,next:null,nextEffect:null}}function $r(e,t){null===e.lastUpdate?e.firstUpdate=e.lastUpdate=t:(e.lastUpdate.next=t,e.lastUpdate=t)}function Jr(e,t){var n=e.alternate;if(null===n){var r=e.updateQueue,o=null;null===r&&(r=e.updateQueue=Yr(e.memoizedState))}else r=e.updateQueue,o=n.updateQueue,null===r?null===o?(r=e.updateQueue=Yr(e.memoizedState),o=n.updateQueue=Yr(n.memoizedState)):r=e.updateQueue=Xr(o):null===o&&(o=n.updateQueue=Xr(r));null===o||r===o?$r(r,t):null===r.lastUpdate||null===o.lastUpdate?($r(r,t),$r(o,t)):($r(r,t),o.lastUpdate=t)}function Zr(e,t){var n=e.updateQueue;null===(n=null===n?e.updateQueue=Yr(e.memoizedState):eo(e,n)).lastCapturedUpdate?n.firstCapturedUpdate=n.lastCapturedUpdate=t:(n.lastCapturedUpdate.next=t,n.lastCapturedUpdate=t)}function eo(e,t){var n=e.alternate;return null!==n&&t===n.updateQueue&&(t=e.updateQueue=Xr(t)),t}function to(e,t,n,r,a,i){switch(n.tag){case 1:return"function"==typeof(e=n.payload)?e.call(i,r,a):e;case 3:e.effectTag=-1025&e.effectTag|64;case 0:if(null===(a="function"==typeof(e=n.payload)?e.call(i,r,a):e)||void 0===a)break;return o({},r,a);case 2:Qr=!0}return r}function no(e,t,n,r,o){Qr=!1;for(var a=(t=eo(e,t)).baseState,i=null,l=0,u=t.firstUpdate,c=a;null!==u;){var s=u.expirationTime;s>o?(null===i&&(i=u,a=c),(0===l||l>s)&&(l=s)):(c=to(e,0,u,c,n,r),null!==u.callback&&(e.effectTag|=32,u.nextEffect=null,null===t.lastEffect?t.firstEffect=t.lastEffect=u:(t.lastEffect.nextEffect=u,t.lastEffect=u))),u=u.next}for(s=null,u=t.firstCapturedUpdate;null!==u;){var f=u.expirationTime;f>o?(null===s&&(s=u,null===i&&(a=c)),(0===l||l>f)&&(l=f)):(c=to(e,0,u,c,n,r),null!==u.callback&&(e.effectTag|=32,u.nextEffect=null,null===t.lastCapturedEffect?t.firstCapturedEffect=t.lastCapturedEffect=u:(t.lastCapturedEffect.nextEffect=u,t.lastCapturedEffect=u))),u=u.next}null===i&&(t.lastUpdate=null),null===s?t.lastCapturedUpdate=null:e.effectTag|=32,null===i&&null===s&&(a=c),t.baseState=a,t.firstUpdate=i,t.firstCapturedUpdate=s,e.expirationTime=l,e.memoizedState=c}function ro(e,t,n){null!==t.firstCapturedUpdate&&(null!==t.lastUpdate&&(t.lastUpdate.next=t.firstCapturedUpdate,t.lastUpdate=t.lastCapturedUpdate),t.firstCapturedUpdate=t.lastCapturedUpdate=null),oo(t.firstEffect,n),t.firstEffect=t.lastEffect=null,oo(t.firstCapturedEffect,n),t.firstCapturedEffect=t.lastCapturedEffect=null}function oo(e,t){for(;null!==e;){var n=e.callback;if(null!==n){e.callback=null;var r=t;"function"!=typeof n&&i("191",n),n.call(r)}e=e.nextEffect}}function ao(e,t){return{value:e,source:t,stack:ct(t)}}var io={current:null},lo=null,uo=null,co=null;function so(e,t){var n=e.type._context;br(io,n._currentValue),n._currentValue=t}function fo(e){var t=io.current;_r(io),e.type._context._currentValue=t}function po(e){lo=e,co=uo=null,e.firstContextDependency=null}function ho(e,t){return co!==e&&!1!==t&&0!==t&&("number"==typeof t&&1073741823!==t||(co=e,t=1073741823),t={context:e,observedBits:t,next:null},null===uo?(null===lo&&i("277"),lo.firstContextDependency=uo=t):uo=uo.next=t),e._currentValue}var mo={},vo={current:mo},yo={current:mo},go={current:mo};function Eo(e){return e===mo&&i("174"),e}function So(e,t){br(go,t),br(yo,e),br(vo,mo);var n=t.nodeType;switch(n){case 9:case 11:t=(t=t.documentElement)?t.namespaceURI:tr(null,"");break;default:t=tr(t=(n=8===n?t.parentNode:t).namespaceURI||null,n=n.tagName)}_r(vo),br(vo,t)}function _o(e){_r(vo),_r(yo),_r(go)}function bo(e){Eo(go.current);var t=Eo(vo.current),n=tr(t,e.type);t!==n&&(br(yo,e),br(vo,n))}function To(e){yo.current===e&&(_r(vo),_r(yo))}var Co=(new r.Component).refs;function wo(e,t,n,r){n=null===(n=n(r,t=e.memoizedState))||void 0===n?t:o({},t,n),e.memoizedState=n,null!==(r=e.updateQueue)&&0===e.expirationTime&&(r.baseState=n)}var Oo={isMounted:function(e){return!!(e=e._reactInternalFiber)&&2===nn(e)},enqueueSetState:function(e,t,n){e=e._reactInternalFiber;var r=li(),o=Kr(r=Ra(r,e));o.payload=t,void 0!==n&&null!==n&&(o.callback=n),Jr(e,o),La(e,r)},enqueueReplaceState:function(e,t,n){e=e._reactInternalFiber;var r=li(),o=Kr(r=Ra(r,e));o.tag=1,o.payload=t,void 0!==n&&null!==n&&(o.callback=n),Jr(e,o),La(e,r)},enqueueForceUpdate:function(e,t){e=e._reactInternalFiber;var n=li(),r=Kr(n=Ra(n,e));r.tag=2,void 0!==t&&null!==t&&(r.callback=t),Jr(e,r),La(e,n)}};function xo(e,t,n,r,o,a,i){return"function"==typeof(e=e.stateNode).shouldComponentUpdate?e.shouldComponentUpdate(r,a,i):!t.prototype||!t.prototype.isPureReactComponent||(!tn(n,r)||!tn(o,a))}function No(e,t,n,r){e=t.state,"function"==typeof t.componentWillReceiveProps&&t.componentWillReceiveProps(n,r),"function"==typeof t.UNSAFE_componentWillReceiveProps&&t.UNSAFE_componentWillReceiveProps(n,r),t.state!==e&&Oo.enqueueReplaceState(t,t.state,null)}function Ao(e,t,n,r){var o=e.stateNode,a=Nr(t)?Or:Cr.current;o.props=n,o.state=e.memoizedState,o.refs=Co,o.context=xr(e,a),null!==(a=e.updateQueue)&&(no(e,a,n,o,r),o.state=e.memoizedState),"function"==typeof(a=t.getDerivedStateFromProps)&&(wo(e,t,a,n),o.state=e.memoizedState),"function"==typeof t.getDerivedStateFromProps||"function"==typeof o.getSnapshotBeforeUpdate||"function"!=typeof o.UNSAFE_componentWillMount&&"function"!=typeof o.componentWillMount||(t=o.state,"function"==typeof o.componentWillMount&&o.componentWillMount(),"function"==typeof o.UNSAFE_componentWillMount&&o.UNSAFE_componentWillMount(),t!==o.state&&Oo.enqueueReplaceState(o,o.state,null),null!==(a=e.updateQueue)&&(no(e,a,n,o,r),o.state=e.memoizedState)),"function"==typeof o.componentDidMount&&(e.effectTag|=4)}var Io=Array.isArray;function Po(e,t,n){if(null!==(e=n.ref)&&"function"!=typeof e&&"object"!=typeof e){if(n._owner){var r=void 0;(n=n._owner)&&(2!==n.tag&&3!==n.tag&&i("110"),r=n.stateNode),r||i("147",e);var o=""+e;return null!==t&&null!==t.ref&&"function"==typeof t.ref&&t.ref._stringRef===o?t.ref:((t=function(e){var t=r.refs;t===Co&&(t=r.refs={}),null===e?delete t[o]:t[o]=e})._stringRef=o,t)}"string"!=typeof e&&i("284"),n._owner||i("254",e)}return e}function ko(e,t){"textarea"!==e.type&&i("31","[object Object]"===Object.prototype.toString.call(t)?"object with keys {"+Object.keys(t).join(", ")+"}":t,"")}function Ro(e){function t(t,n){if(e){var r=t.lastEffect;null!==r?(r.nextEffect=n,t.lastEffect=n):t.firstEffect=t.lastEffect=n,n.nextEffect=null,n.effectTag=8}}function n(n,r){if(!e)return null;for(;null!==r;)t(n,r),r=r.sibling;return null}function r(e,t){for(e=new Map;null!==t;)null!==t.key?e.set(t.key,t):e.set(t.index,t),t=t.sibling;return e}function o(e,t,n){return(e=qr(e,t,n)).index=0,e.sibling=null,e}function a(t,n,r){return t.index=r,e?null!==(r=t.alternate)?(r=r.index)<n?(t.effectTag=2,n):r:(t.effectTag=2,n):n}function l(t){return e&&null===t.alternate&&(t.effectTag=2),t}function u(e,t,n,r){return null===t||8!==t.tag?((t=Wr(n,e.mode,r)).return=e,t):((t=o(t,n,r)).return=e,t)}function c(e,t,n,r){return null!==t&&t.type===n.type?((r=o(t,n.props,r)).ref=Po(e,t,n),r.return=e,r):((r=Hr(n,e.mode,r)).ref=Po(e,t,n),r.return=e,r)}function s(e,t,n,r){return null===t||6!==t.tag||t.stateNode.containerInfo!==n.containerInfo||t.stateNode.implementation!==n.implementation?((t=zr(n,e.mode,r)).return=e,t):((t=o(t,n.children||[],r)).return=e,t)}function f(e,t,n,r,a){return null===t||9!==t.tag?((t=Vr(n,e.mode,r,a)).return=e,t):((t=o(t,n,r)).return=e,t)}function d(e,t,n){if("string"==typeof t||"number"==typeof t)return(t=Wr(""+t,e.mode,n)).return=e,t;if("object"==typeof t&&null!==t){switch(t.$$typeof){case Ke:return(n=Hr(t,e.mode,n)).ref=Po(e,null,t),n.return=e,n;case $e:return(t=zr(t,e.mode,n)).return=e,t}if(Io(t)||lt(t))return(t=Vr(t,e.mode,n,null)).return=e,t;ko(e,t)}return null}function p(e,t,n,r){var o=null!==t?t.key:null;if("string"==typeof n||"number"==typeof n)return null!==o?null:u(e,t,""+n,r);if("object"==typeof n&&null!==n){switch(n.$$typeof){case Ke:return n.key===o?n.type===Je?f(e,t,n.props.children,r,o):c(e,t,n,r):null;case $e:return n.key===o?s(e,t,n,r):null}if(Io(n)||lt(n))return null!==o?null:f(e,t,n,r,null);ko(e,n)}return null}function h(e,t,n,r,o){if("string"==typeof r||"number"==typeof r)return u(t,e=e.get(n)||null,""+r,o);if("object"==typeof r&&null!==r){switch(r.$$typeof){case Ke:return e=e.get(null===r.key?n:r.key)||null,r.type===Je?f(t,e,r.props.children,o,r.key):c(t,e,r,o);case $e:return s(t,e=e.get(null===r.key?n:r.key)||null,r,o)}if(Io(r)||lt(r))return f(t,e=e.get(n)||null,r,o,null);ko(t,r)}return null}function m(o,i,l,u){for(var c=null,s=null,f=i,m=i=0,v=null;null!==f&&m<l.length;m++){f.index>m?(v=f,f=null):v=f.sibling;var y=p(o,f,l[m],u);if(null===y){null===f&&(f=v);break}e&&f&&null===y.alternate&&t(o,f),i=a(y,i,m),null===s?c=y:s.sibling=y,s=y,f=v}if(m===l.length)return n(o,f),c;if(null===f){for(;m<l.length;m++)(f=d(o,l[m],u))&&(i=a(f,i,m),null===s?c=f:s.sibling=f,s=f);return c}for(f=r(o,f);m<l.length;m++)(v=h(f,o,m,l[m],u))&&(e&&null!==v.alternate&&f.delete(null===v.key?m:v.key),i=a(v,i,m),null===s?c=v:s.sibling=v,s=v);return e&&f.forEach(function(e){return t(o,e)}),c}function v(o,l,u,c){var s=lt(u);"function"!=typeof s&&i("150"),null==(u=s.call(u))&&i("151");for(var f=s=null,m=l,v=l=0,y=null,g=u.next();null!==m&&!g.done;v++,g=u.next()){m.index>v?(y=m,m=null):y=m.sibling;var E=p(o,m,g.value,c);if(null===E){m||(m=y);break}e&&m&&null===E.alternate&&t(o,m),l=a(E,l,v),null===f?s=E:f.sibling=E,f=E,m=y}if(g.done)return n(o,m),s;if(null===m){for(;!g.done;v++,g=u.next())null!==(g=d(o,g.value,c))&&(l=a(g,l,v),null===f?s=g:f.sibling=g,f=g);return s}for(m=r(o,m);!g.done;v++,g=u.next())null!==(g=h(m,o,v,g.value,c))&&(e&&null!==g.alternate&&m.delete(null===g.key?v:g.key),l=a(g,l,v),null===f?s=g:f.sibling=g,f=g);return e&&m.forEach(function(e){return t(o,e)}),s}return function(e,r,a,u){var c="object"==typeof a&&null!==a&&a.type===Je&&null===a.key;c&&(a=a.props.children);var s="object"==typeof a&&null!==a;if(s)switch(a.$$typeof){case Ke:e:{for(s=a.key,c=r;null!==c;){if(c.key===s){if(9===c.tag?a.type===Je:c.type===a.type){n(e,c.sibling),(r=o(c,a.type===Je?a.props.children:a.props,u)).ref=Po(e,c,a),r.return=e,e=r;break e}n(e,c);break}t(e,c),c=c.sibling}a.type===Je?((r=Vr(a.props.children,e.mode,u,a.key)).return=e,e=r):((u=Hr(a,e.mode,u)).ref=Po(e,r,a),u.return=e,e=u)}return l(e);case $e:e:{for(c=a.key;null!==r;){if(r.key===c){if(6===r.tag&&r.stateNode.containerInfo===a.containerInfo&&r.stateNode.implementation===a.implementation){n(e,r.sibling),(r=o(r,a.children||[],u)).return=e,e=r;break e}n(e,r);break}t(e,r),r=r.sibling}(r=zr(a,e.mode,u)).return=e,e=r}return l(e)}if("string"==typeof a||"number"==typeof a)return a=""+a,null!==r&&8===r.tag?(n(e,r.sibling),(r=o(r,a,u)).return=e,e=r):(n(e,r),(r=Wr(a,e.mode,u)).return=e,e=r),l(e);if(Io(a))return m(e,r,a,u);if(lt(a))return v(e,r,a,u);if(s&&ko(e,a),void 0===a&&!c)switch(e.tag){case 2:case 3:case 0:i("152",(u=e.type).displayName||u.name||"Component")}return n(e,r)}}var Lo=Ro(!0),Mo=Ro(!1),Do=null,jo=null,Fo=!1;function Uo(e,t){var n=new Fr(7,null,null,0);n.type="DELETED",n.stateNode=t,n.return=e,n.effectTag=8,null!==e.lastEffect?(e.lastEffect.nextEffect=n,e.lastEffect=n):e.firstEffect=e.lastEffect=n}function qo(e,t){switch(e.tag){case 7:var n=e.type;return null!==(t=1!==t.nodeType||n.toLowerCase()!==t.nodeName.toLowerCase()?null:t)&&(e.stateNode=t,!0);case 8:return null!==(t=""===e.pendingProps||3!==t.nodeType?null:t)&&(e.stateNode=t,!0);default:return!1}}function Ho(e){if(Fo){var t=jo;if(t){var n=t;if(!qo(e,t)){if(!(t=yr(n))||!qo(e,t))return e.effectTag|=2,Fo=!1,void(Do=e);Uo(Do,n)}Do=e,jo=gr(t)}else e.effectTag|=2,Fo=!1,Do=e}}function Vo(e){for(e=e.return;null!==e&&7!==e.tag&&5!==e.tag;)e=e.return;Do=e}function Wo(e){if(e!==Do)return!1;if(!Fo)return Vo(e),Fo=!0,!1;var t=e.type;if(7!==e.tag||"head"!==t&&"body"!==t&&!vr(t,e.memoizedProps))for(t=jo;t;)Uo(e,t),t=yr(t);return Vo(e),jo=Do?yr(e.stateNode):null,!0}function zo(){jo=Do=null,Fo=!1}var Bo=Qe.ReactCurrentOwner;function Go(e,t,n,r){t.child=null===e?Mo(t,null,n,r):Lo(t,e.child,n,r)}function Qo(e,t,n,r,o){n=n.render;var a=t.ref;return wr.current||t.memoizedProps!==r||a!==(null!==e?e.ref:null)?(Go(e,t,n=n(r,a),o),t.memoizedProps=r,t.child):ea(e,t,o)}function Yo(e,t){var n=t.ref;(null===e&&null!==n||null!==e&&e.ref!==n)&&(t.effectTag|=128)}function Xo(e,t,n,r,o){var a=Nr(n)?Or:Cr.current;return a=xr(t,a),po(t),n=n(r,a),t.effectTag|=1,Go(e,t,n,o),t.memoizedProps=r,t.child}function Ko(e,t,n,r,o){if(Nr(n)){var a=!0;Rr(t)}else a=!1;if(po(t),null===e)if(null===t.stateNode){var i=Nr(n)?Or:Cr.current,l=n.contextTypes,u=null!==l&&void 0!==l,c=new n(r,l=u?xr(t,i):Tr);t.memoizedState=null!==c.state&&void 0!==c.state?c.state:null,c.updater=Oo,t.stateNode=c,c._reactInternalFiber=t,u&&((u=t.stateNode).__reactInternalMemoizedUnmaskedChildContext=i,u.__reactInternalMemoizedMaskedChildContext=l),Ao(t,n,r,o),r=!0}else{i=t.stateNode,l=t.memoizedProps,i.props=l;var s=i.context;u=xr(t,u=Nr(n)?Or:Cr.current);var f=n.getDerivedStateFromProps;(c="function"==typeof f||"function"==typeof i.getSnapshotBeforeUpdate)||"function"!=typeof i.UNSAFE_componentWillReceiveProps&&"function"!=typeof i.componentWillReceiveProps||(l!==r||s!==u)&&No(t,i,r,u),Qr=!1;var d=t.memoizedState;s=i.state=d;var p=t.updateQueue;null!==p&&(no(t,p,r,i,o),s=t.memoizedState),l!==r||d!==s||wr.current||Qr?("function"==typeof f&&(wo(t,n,f,r),s=t.memoizedState),(l=Qr||xo(t,n,l,r,d,s,u))?(c||"function"!=typeof i.UNSAFE_componentWillMount&&"function"!=typeof i.componentWillMount||("function"==typeof i.componentWillMount&&i.componentWillMount(),"function"==typeof i.UNSAFE_componentWillMount&&i.UNSAFE_componentWillMount()),"function"==typeof i.componentDidMount&&(t.effectTag|=4)):("function"==typeof i.componentDidMount&&(t.effectTag|=4),t.memoizedProps=r,t.memoizedState=s),i.props=r,i.state=s,i.context=u,r=l):("function"==typeof i.componentDidMount&&(t.effectTag|=4),r=!1)}else i=t.stateNode,l=t.memoizedProps,i.props=l,s=i.context,u=xr(t,u=Nr(n)?Or:Cr.current),(c="function"==typeof(f=n.getDerivedStateFromProps)||"function"==typeof i.getSnapshotBeforeUpdate)||"function"!=typeof i.UNSAFE_componentWillReceiveProps&&"function"!=typeof i.componentWillReceiveProps||(l!==r||s!==u)&&No(t,i,r,u),Qr=!1,s=t.memoizedState,d=i.state=s,null!==(p=t.updateQueue)&&(no(t,p,r,i,o),d=t.memoizedState),l!==r||s!==d||wr.current||Qr?("function"==typeof f&&(wo(t,n,f,r),d=t.memoizedState),(f=Qr||xo(t,n,l,r,s,d,u))?(c||"function"!=typeof i.UNSAFE_componentWillUpdate&&"function"!=typeof i.componentWillUpdate||("function"==typeof i.componentWillUpdate&&i.componentWillUpdate(r,d,u),"function"==typeof i.UNSAFE_componentWillUpdate&&i.UNSAFE_componentWillUpdate(r,d,u)),"function"==typeof i.componentDidUpdate&&(t.effectTag|=4),"function"==typeof i.getSnapshotBeforeUpdate&&(t.effectTag|=256)):("function"!=typeof i.componentDidUpdate||l===e.memoizedProps&&s===e.memoizedState||(t.effectTag|=4),"function"!=typeof i.getSnapshotBeforeUpdate||l===e.memoizedProps&&s===e.memoizedState||(t.effectTag|=256),t.memoizedProps=r,t.memoizedState=d),i.props=r,i.state=d,i.context=u,r=f):("function"!=typeof i.componentDidUpdate||l===e.memoizedProps&&s===e.memoizedState||(t.effectTag|=4),"function"!=typeof i.getSnapshotBeforeUpdate||l===e.memoizedProps&&s===e.memoizedState||(t.effectTag|=256),r=!1);return $o(e,t,n,r,a,o)}function $o(e,t,n,r,o,a){Yo(e,t);var i=0!=(64&t.effectTag);if(!r&&!i)return o&&Lr(t,n,!1),ea(e,t,a);r=t.stateNode,Bo.current=t;var l=i?null:r.render();return t.effectTag|=1,null!==e&&i&&(Go(e,t,null,a),t.child=null),Go(e,t,l,a),t.memoizedState=r.state,t.memoizedProps=r.props,o&&Lr(t,n,!0),t.child}function Jo(e){var t=e.stateNode;t.pendingContext?Pr(0,t.pendingContext,t.pendingContext!==t.context):t.context&&Pr(0,t.context,!1),So(e,t.containerInfo)}function Zo(e,t){if(e&&e.defaultProps)for(var n in t=o({},t),e=e.defaultProps)void 0===t[n]&&(t[n]=e[n]);return t}function ea(e,t,n){null!==e&&(t.firstContextDependency=e.firstContextDependency);var r=t.childExpirationTime;if(0===r||r>n)return null;if(null!==e&&t.child!==e.child&&i("153"),null!==t.child){for(n=qr(e=t.child,e.pendingProps,e.expirationTime),t.child=n,n.return=t;null!==e.sibling;)e=e.sibling,(n=n.sibling=qr(e,e.pendingProps,e.expirationTime)).return=t;n.sibling=null}return t.child}function ta(e,t,n){var r=t.expirationTime;if(!wr.current&&(0===r||r>n)){switch(t.tag){case 5:Jo(t),zo();break;case 7:bo(t);break;case 2:Nr(t.type)&&Rr(t);break;case 3:Nr(t.type._reactResult)&&Rr(t);break;case 6:So(t,t.stateNode.containerInfo);break;case 12:so(t,t.memoizedProps.value)}return ea(e,t,n)}switch(t.expirationTime=0,t.tag){case 4:return function(e,t,n,r){null!==e&&i("155");var o=t.pendingProps;if("object"==typeof n&&null!==n&&"function"==typeof n.then){var a=n=function(e){switch(e._reactStatus){case 1:return e._reactResult;case 2:throw e._reactResult;case 0:throw e;default:throw e._reactStatus=0,e.then(function(t){if(0===e._reactStatus){if(e._reactStatus=1,"object"==typeof t&&null!==t){var n=t.default;t=void 0!==n&&null!==n?n:t}e._reactResult=t}},function(t){0===e._reactStatus&&(e._reactStatus=2,e._reactResult=t)}),e}}(n);a="function"==typeof a?Ur(a)?3:1:void 0!==a&&null!==a&&a.$$typeof?14:4,a=t.tag=a;var l=Zo(n,o);switch(a){case 1:return Xo(e,t,n,l,r);case 3:return Ko(e,t,n,l,r);case 14:return Qo(e,t,n,l,r);default:i("283",n)}}if(a=xr(t,Cr.current),po(t),a=n(o,a),t.effectTag|=1,"object"==typeof a&&null!==a&&"function"==typeof a.render&&void 0===a.$$typeof){t.tag=2,Nr(n)?(l=!0,Rr(t)):l=!1,t.memoizedState=null!==a.state&&void 0!==a.state?a.state:null;var u=n.getDerivedStateFromProps;return"function"==typeof u&&wo(t,n,u,o),a.updater=Oo,t.stateNode=a,a._reactInternalFiber=t,Ao(t,n,o,r),$o(e,t,n,!0,l,r)}return t.tag=0,Go(e,t,a,r),t.memoizedProps=o,t.child}(e,t,t.type,n);case 0:return Xo(e,t,t.type,t.pendingProps,n);case 1:var o=t.type._reactResult;return e=Xo(e,t,o,Zo(o,r=t.pendingProps),n),t.memoizedProps=r,e;case 2:return Ko(e,t,t.type,t.pendingProps,n);case 3:return e=Ko(e,t,o=t.type._reactResult,Zo(o,r=t.pendingProps),n),t.memoizedProps=r,e;case 5:return Jo(t),null===(r=t.updateQueue)&&i("282"),o=null!==(o=t.memoizedState)?o.element:null,no(t,r,t.pendingProps,null,n),(r=t.memoizedState.element)===o?(zo(),t=ea(e,t,n)):(o=t.stateNode,(o=(null===e||null===e.child)&&o.hydrate)&&(jo=gr(t.stateNode.containerInfo),Do=t,o=Fo=!0),o?(t.effectTag|=2,t.child=Mo(t,null,r,n)):(Go(e,t,r,n),zo()),t=t.child),t;case 7:bo(t),null===e&&Ho(t),r=t.type,o=t.pendingProps;var a=null!==e?e.memoizedProps:null,l=o.children;return vr(r,o)?l=null:null!==a&&vr(r,a)&&(t.effectTag|=16),Yo(e,t),1073741823!==n&&1&t.mode&&o.hidden?(t.expirationTime=1073741823,t.memoizedProps=o,t=null):(Go(e,t,l,n),t.memoizedProps=o,t=t.child),t;case 8:return null===e&&Ho(t),t.memoizedProps=t.pendingProps,null;case 16:return null;case 6:return So(t,t.stateNode.containerInfo),r=t.pendingProps,null===e?t.child=Lo(t,null,r,n):Go(e,t,r,n),t.memoizedProps=r,t.child;case 13:return Qo(e,t,t.type,t.pendingProps,n);case 14:return e=Qo(e,t,o=t.type._reactResult,Zo(o,r=t.pendingProps),n),t.memoizedProps=r,e;case 9:return Go(e,t,r=t.pendingProps,n),t.memoizedProps=r,t.child;case 10:return Go(e,t,r=t.pendingProps.children,n),t.memoizedProps=r,t.child;case 15:return Go(e,t,(r=t.pendingProps).children,n),t.memoizedProps=r,t.child;case 12:e:{if(r=t.type._context,o=t.pendingProps,l=t.memoizedProps,a=o.value,t.memoizedProps=o,so(t,a),null!==l){var u=l.value;if(0===(a=u===a&&(0!==u||1/u==1/a)||u!=u&&a!=a?0:0|("function"==typeof r._calculateChangedBits?r._calculateChangedBits(u,a):1073741823))){if(l.children===o.children&&!wr.current){t=ea(e,t,n);break e}}else for(null!==(l=t.child)&&(l.return=t);null!==l;){if(null!==(u=l.firstContextDependency))do{if(u.context===r&&0!=(u.observedBits&a)){if(2===l.tag||3===l.tag){var c=Kr(n);c.tag=2,Jr(l,c)}(0===l.expirationTime||l.expirationTime>n)&&(l.expirationTime=n),null!==(c=l.alternate)&&(0===c.expirationTime||c.expirationTime>n)&&(c.expirationTime=n);for(var s=l.return;null!==s;){if(c=s.alternate,0===s.childExpirationTime||s.childExpirationTime>n)s.childExpirationTime=n,null!==c&&(0===c.childExpirationTime||c.childExpirationTime>n)&&(c.childExpirationTime=n);else{if(null===c||!(0===c.childExpirationTime||c.childExpirationTime>n))break;c.childExpirationTime=n}s=s.return}}c=l.child,u=u.next}while(null!==u);else c=12===l.tag&&l.type===t.type?null:l.child;if(null!==c)c.return=l;else for(c=l;null!==c;){if(c===t){c=null;break}if(null!==(l=c.sibling)){l.return=c.return,c=l;break}c=c.return}l=c}}Go(e,t,o.children,n),t=t.child}return t;case 11:return a=t.type,o=(r=t.pendingProps).children,po(t),o=o(a=ho(a,r.unstable_observedBits)),t.effectTag|=1,Go(e,t,o,n),t.memoizedProps=r,t.child;default:i("156")}}function na(e){e.effectTag|=4}var ra=void 0,oa=void 0,aa=void 0;function ia(e,t){var n=t.source,r=t.stack;null===r&&null!==n&&(r=ct(n)),null!==n&&ut(n.type),t=t.value,null!==e&&2===e.tag&&ut(e.type);try{console.error(t)}catch(e){setTimeout(function(){throw e})}}function la(e){var t=e.ref;if(null!==t)if("function"==typeof t)try{t(null)}catch(t){ka(e,t)}else t.current=null}function ua(e){switch("function"==typeof Dr&&Dr(e),e.tag){case 2:case 3:la(e);var t=e.stateNode;if("function"==typeof t.componentWillUnmount)try{t.props=e.memoizedProps,t.state=e.memoizedState,t.componentWillUnmount()}catch(t){ka(e,t)}break;case 7:la(e);break;case 6:fa(e)}}function ca(e){return 7===e.tag||5===e.tag||6===e.tag}function sa(e){e:{for(var t=e.return;null!==t;){if(ca(t)){var n=t;break e}t=t.return}i("160"),n=void 0}var r=t=void 0;switch(n.tag){case 7:t=n.stateNode,r=!1;break;case 5:case 6:t=n.stateNode.containerInfo,r=!0;break;default:i("161")}16&n.effectTag&&(or(t,""),n.effectTag&=-17);e:t:for(n=e;;){for(;null===n.sibling;){if(null===n.return||ca(n.return)){n=null;break e}n=n.return}for(n.sibling.return=n.return,n=n.sibling;7!==n.tag&&8!==n.tag;){if(2&n.effectTag)continue t;if(null===n.child||6===n.tag)continue t;n.child.return=n,n=n.child}if(!(2&n.effectTag)){n=n.stateNode;break e}}for(var o=e;;){if(7===o.tag||8===o.tag)if(n)if(r){var a=t,l=o.stateNode,u=n;8===a.nodeType?a.parentNode.insertBefore(l,u):a.insertBefore(l,u)}else t.insertBefore(o.stateNode,n);else r?(a=t,l=o.stateNode,8===a.nodeType?(u=a.parentNode).insertBefore(l,a):(u=a).appendChild(l),null===u.onclick&&(u.onclick=dr)):t.appendChild(o.stateNode);else if(6!==o.tag&&null!==o.child){o.child.return=o,o=o.child;continue}if(o===e)break;for(;null===o.sibling;){if(null===o.return||o.return===e)return;o=o.return}o.sibling.return=o.return,o=o.sibling}}function fa(e){for(var t=e,n=!1,r=void 0,o=void 0;;){if(!n){n=t.return;e:for(;;){switch(null===n&&i("160"),n.tag){case 7:r=n.stateNode,o=!1;break e;case 5:case 6:r=n.stateNode.containerInfo,o=!0;break e}n=n.return}n=!0}if(7===t.tag||8===t.tag){e:for(var a=t,l=a;;)if(ua(l),null!==l.child&&6!==l.tag)l.child.return=l,l=l.child;else{if(l===a)break;for(;null===l.sibling;){if(null===l.return||l.return===a)break e;l=l.return}l.sibling.return=l.return,l=l.sibling}o?(a=r,l=t.stateNode,8===a.nodeType?a.parentNode.removeChild(l):a.removeChild(l)):r.removeChild(t.stateNode)}else if(6===t.tag?(r=t.stateNode.containerInfo,o=!0):ua(t),null!==t.child){t.child.return=t,t=t.child;continue}if(t===e)break;for(;null===t.sibling;){if(null===t.return||t.return===e)return;6===(t=t.return).tag&&(n=!1)}t.sibling.return=t.return,t=t.sibling}}function da(e,t){switch(t.tag){case 2:case 3:break;case 7:var n=t.stateNode;if(null!=n){var r=t.memoizedProps,o=null!==e?e.memoizedProps:r;e=t.type;var a=t.updateQueue;if(t.updateQueue=null,null!==a){for(n[j]=r,"input"===e&&"radio"===r.type&&null!=r.name&&bt(n,r),sr(e,o),t=sr(e,r),o=0;o<a.length;o+=2){var l=a[o],u=a[o+1];"style"===l?lr(n,u):"dangerouslySetInnerHTML"===l?rr(n,u):"children"===l?or(n,u):gt(n,l,u,t)}switch(e){case"input":Tt(n,r);break;case"textarea":$n(n,r);break;case"select":e=n._wrapperState.wasMultiple,n._wrapperState.wasMultiple=!!r.multiple,null!=(a=r.value)?Yn(n,!!r.multiple,a,!1):e!==!!r.multiple&&(null!=r.defaultValue?Yn(n,!!r.multiple,r.defaultValue,!0):Yn(n,!!r.multiple,r.multiple?[]:"",!1))}}}break;case 8:null===t.stateNode&&i("162"),t.stateNode.nodeValue=t.memoizedProps;break;case 5:case 15:case 16:break;default:i("163")}}function pa(e,t,n){(n=Kr(n)).tag=3,n.payload={element:null};var r=t.value;return n.callback=function(){hi(r),ia(e,t)},n}function ha(e,t,n){(n=Kr(n)).tag=3;var r=e.stateNode;return null!==r&&"function"==typeof r.componentDidCatch&&(n.callback=function(){null===xa?xa=new Set([this]):xa.add(this);var n=t.value,r=t.stack;ia(e,t),this.componentDidCatch(n,{componentStack:null!==r?r:""})}),n}function ma(e){switch(e.tag){case 2:Nr(e.type)&&Ar();var t=e.effectTag;return 1024&t?(e.effectTag=-1025&t|64,e):null;case 3:return Nr(e.type._reactResult)&&Ar(),1024&(t=e.effectTag)?(e.effectTag=-1025&t|64,e):null;case 5:return _o(),Ir(),0!=(64&(t=e.effectTag))&&i("285"),e.effectTag=-1025&t|64,e;case 7:return To(e),null;case 16:return 1024&(t=e.effectTag)?(e.effectTag=-1025&t|64,e):null;case 6:return _o(),null;case 12:return fo(e),null;default:return null}}ra=function(){},oa=function(e,t,n){(t.updateQueue=n)&&na(t)},aa=function(e,t,n,r){n!==r&&na(t)};var va={readContext:ho},ya=Qe.ReactCurrentOwner,ga=0,Ea=0,Sa=!1,_a=null,ba=null,Ta=0,Ca=!1,wa=null,Oa=!1,xa=null;function Na(){if(null!==_a)for(var e=_a.return;null!==e;){var t=e;switch(t.tag){case 2:var n=t.type.childContextTypes;null!==n&&void 0!==n&&Ar();break;case 3:null!==(n=t.type._reactResult.childContextTypes)&&void 0!==n&&Ar();break;case 5:_o(),Ir();break;case 7:To(t);break;case 6:_o();break;case 12:fo(t)}e=e.return}ba=null,Ta=0,Ca=!1,_a=null}function Aa(e){for(;;){var t=e.alternate,n=e.return,r=e.sibling;if(0==(512&e.effectTag)){var a=t,l=(t=e).pendingProps;switch(t.tag){case 0:case 1:break;case 2:Nr(t.type)&&Ar();break;case 3:Nr(t.type._reactResult)&&Ar();break;case 5:_o(),Ir(),(l=t.stateNode).pendingContext&&(l.context=l.pendingContext,l.pendingContext=null),null!==a&&null!==a.child||(Wo(t),t.effectTag&=-3),ra(t);break;case 7:To(t);var u=Eo(go.current),c=t.type;if(null!==a&&null!=t.stateNode){var s=a.memoizedProps;if(s!==l){var f=t.stateNode,d=Eo(vo.current),p=f,h=c,m=s,v=l;f=u;var y=null;switch(h){case"input":m=St(p,m),v=St(p,v),y=[];break;case"option":m=Qn(p,m),v=Qn(p,v),y=[];break;case"select":m=o({},m,{value:void 0}),v=o({},v,{value:void 0}),y=[];break;case"textarea":m=Xn(p,m),v=Xn(p,v),y=[];break;default:"function"!=typeof m.onClick&&"function"==typeof v.onClick&&(p.onclick=dr)}cr(h,v),h=p=void 0;var g=null;for(p in m)if(!v.hasOwnProperty(p)&&m.hasOwnProperty(p)&&null!=m[p])if("style"===p){var S=m[p];for(h in S)S.hasOwnProperty(h)&&(g||(g={}),g[h]="")}else"dangerouslySetInnerHTML"!==p&&"children"!==p&&"suppressContentEditableWarning"!==p&&"suppressHydrationWarning"!==p&&"autoFocus"!==p&&(E.hasOwnProperty(p)?y||(y=[]):(y=y||[]).push(p,null));for(p in v){var _=v[p];if(S=null!=m?m[p]:void 0,v.hasOwnProperty(p)&&_!==S&&(null!=_||null!=S))if("style"===p)if(S){for(h in S)!S.hasOwnProperty(h)||_&&_.hasOwnProperty(h)||(g||(g={}),g[h]="");for(h in _)_.hasOwnProperty(h)&&S[h]!==_[h]&&(g||(g={}),g[h]=_[h])}else g||(y||(y=[]),y.push(p,g)),g=_;else"dangerouslySetInnerHTML"===p?(_=_?_.__html:void 0,S=S?S.__html:void 0,null!=_&&S!==_&&(y=y||[]).push(p,""+_)):"children"===p?S===_||"string"!=typeof _&&"number"!=typeof _||(y=y||[]).push(p,""+_):"suppressContentEditableWarning"!==p&&"suppressHydrationWarning"!==p&&(E.hasOwnProperty(p)?(null!=_&&fr(f,p),y||S===_||(y=[])):(y=y||[]).push(p,_))}g&&(y=y||[]).push("style",g),oa(a,t,y,c,s,l,u,d)}a.ref!==t.ref&&(t.effectTag|=128)}else if(l){if(y=Eo(vo.current),Wo(t)){switch(f=(l=t).stateNode,a=l.type,s=l.memoizedProps,d=u,f[D]=l,f[j]=s,c=void 0,u=f,a){case"iframe":case"object":On("load",u);break;case"video":case"audio":for(f=0;f<oe.length;f++)On(oe[f],u);break;case"source":On("error",u);break;case"img":case"image":case"link":On("error",u),On("load",u);break;case"form":On("reset",u),On("submit",u);break;case"details":On("toggle",u);break;case"input":_t(u,s),On("invalid",u),fr(d,"onChange");break;case"select":u._wrapperState={wasMultiple:!!s.multiple},On("invalid",u),fr(d,"onChange");break;case"textarea":Kn(u,s),On("invalid",u),fr(d,"onChange")}for(c in cr(a,s),f=null,s)s.hasOwnProperty(c)&&(y=s[c],"children"===c?"string"==typeof y?u.textContent!==y&&(f=["children",y]):"number"==typeof y&&u.textContent!==""+y&&(f=["children",""+y]):E.hasOwnProperty(c)&&null!=y&&fr(d,c));switch(a){case"input":Be(u),Ct(u,s,!0);break;case"textarea":Be(u),Jn(u);break;case"select":case"option":break;default:"function"==typeof s.onClick&&(u.onclick=dr)}c=f,l.updateQueue=c,(l=null!==c)&&na(t)}else{s=t,a=c,d=l,f=9===u.nodeType?u:u.ownerDocument,y===Zn.html&&(y=er(a)),y===Zn.html?"script"===a?((a=f.createElement("div")).innerHTML="<script><\/script>",f=a.removeChild(a.firstChild)):"string"==typeof d.is?f=f.createElement(a,{is:d.is}):(f=f.createElement(a),"select"===a&&d.multiple&&(f.multiple=!0)):f=f.createElementNS(y,a),(a=f)[D]=s,a[j]=l;e:for(s=a,d=t,f=d.child;null!==f;){if(7===f.tag||8===f.tag)s.appendChild(f.stateNode);else if(6!==f.tag&&null!==f.child){f.child.return=f,f=f.child;continue}if(f===d)break;for(;null===f.sibling;){if(null===f.return||f.return===d)break e;f=f.return}f.sibling.return=f.return,f=f.sibling}switch(d=a,p=u,g=sr(f=c,s=l),f){case"iframe":case"object":On("load",d),u=s;break;case"video":case"audio":for(u=0;u<oe.length;u++)On(oe[u],d);u=s;break;case"source":On("error",d),u=s;break;case"img":case"image":case"link":On("error",d),On("load",d),u=s;break;case"form":On("reset",d),On("submit",d),u=s;break;case"details":On("toggle",d),u=s;break;case"input":_t(d,s),u=St(d,s),On("invalid",d),fr(p,"onChange");break;case"option":u=Qn(d,s);break;case"select":d._wrapperState={wasMultiple:!!s.multiple},u=o({},s,{value:void 0}),On("invalid",d),fr(p,"onChange");break;case"textarea":Kn(d,s),u=Xn(d,s),On("invalid",d),fr(p,"onChange");break;default:u=s}for(y in cr(f,u),y=void 0,m=f,v=d,h=u)h.hasOwnProperty(y)&&(S=h[y],"style"===y?lr(v,S):"dangerouslySetInnerHTML"===y?null!=(S=S?S.__html:void 0)&&rr(v,S):"children"===y?"string"==typeof S?("textarea"!==m||""!==S)&&or(v,S):"number"==typeof S&&or(v,""+S):"suppressContentEditableWarning"!==y&&"suppressHydrationWarning"!==y&&"autoFocus"!==y&&(E.hasOwnProperty(y)?null!=S&&fr(p,y):null!=S&&gt(v,y,S,g)));switch(f){case"input":Be(d),Ct(d,s,!1);break;case"textarea":Be(d),Jn(d);break;case"option":null!=s.value&&d.setAttribute("value",""+Et(s.value));break;case"select":(u=d).multiple=!!s.multiple,null!=(d=s.value)?Yn(u,!!s.multiple,d,!1):null!=s.defaultValue&&Yn(u,!!s.multiple,s.defaultValue,!0);break;default:"function"==typeof u.onClick&&(d.onclick=dr)}(l=mr(c,l))&&na(t),t.stateNode=a}null!==t.ref&&(t.effectTag|=128)}else null===t.stateNode&&i("166");break;case 8:a&&null!=t.stateNode?aa(a,t,a.memoizedProps,l):("string"!=typeof l&&(null===t.stateNode&&i("166")),u=Eo(go.current),Eo(vo.current),Wo(t)?(c=(l=t).stateNode,u=l.memoizedProps,c[D]=l,(l=c.nodeValue!==u)&&na(t)):(c=t,(l=(9===u.nodeType?u:u.ownerDocument).createTextNode(l))[D]=c,t.stateNode=l));break;case 13:case 14:case 16:case 9:case 10:case 15:break;case 6:_o(),ra(t);break;case 12:fo(t);break;case 11:break;case 4:i("167");default:i("156")}if(t=_a=null,l=e,1073741823===Ta||1073741823!==l.childExpirationTime){for(c=0,u=l.child;null!==u;)a=u.expirationTime,s=u.childExpirationTime,(0===c||0!==a&&a<c)&&(c=a),(0===c||0!==s&&s<c)&&(c=s),u=u.sibling;l.childExpirationTime=c}if(null!==t)return t;null!==n&&0==(512&n.effectTag)&&(null===n.firstEffect&&(n.firstEffect=e.firstEffect),null!==e.lastEffect&&(null!==n.lastEffect&&(n.lastEffect.nextEffect=e.firstEffect),n.lastEffect=e.lastEffect),1<e.effectTag&&(null!==n.lastEffect?n.lastEffect.nextEffect=e:n.firstEffect=e,n.lastEffect=e))}else{if(null!==(e=ma(e)))return e.effectTag&=511,e;null!==n&&(n.firstEffect=n.lastEffect=null,n.effectTag|=512)}if(null!==r)return r;if(null===n)break;e=n}return null}function Ia(e){var t=ta(e.alternate,e,Ta);return null===t&&(t=Aa(e)),ya.current=null,t}function Pa(e,t,n){Sa&&i("243"),Sa=!0,ya.currentDispatcher=va;var r=e.nextExpirationTimeToWorkOn;r===Ta&&e===ba&&null!==_a||(Na(),Ta=r,_a=qr((ba=e).current,null,Ta),e.pendingCommitExpirationTime=0);for(var o=!1;;){try{if(t)for(;null!==_a&&!pi();)_a=Ia(_a);else for(;null!==_a;)_a=Ia(_a)}catch(e){if(null===_a)o=!0,hi(e);else{null===_a&&i("271");var a=_a,l=a.return;if(null!==l){e:{var u=l,c=a,s=e;l=Ta,c.effectTag|=512,c.firstEffect=c.lastEffect=null,Ca=!0,s=ao(s,c);do{switch(u.tag){case 5:u.effectTag|=1024,u.expirationTime=l,Zr(u,l=pa(u,s,l));break e;case 2:case 3:c=s;var f=u.stateNode;if(0==(64&u.effectTag)&&null!==f&&"function"==typeof f.componentDidCatch&&(null===xa||!xa.has(f))){u.effectTag|=1024,u.expirationTime=l,Zr(u,l=ha(u,c,l));break e}}u=u.return}while(null!==u)}_a=Aa(a);continue}o=!0,hi(e)}}break}if(Sa=!1,co=uo=lo=ya.currentDispatcher=null,o)ba=null,e.finishedWork=null;else if(null!==_a)e.finishedWork=null;else{if(null===(t=e.current.alternate)&&i("281"),ba=null,Ca){if(o=e.latestPendingTime,a=e.latestSuspendedTime,l=e.latestPingedTime,0!==o&&o>r||0!==a&&a>r||0!==l&&l>r)return e.didError=!1,0!==(n=e.latestPingedTime)&&n<=r&&(e.latestPingedTime=0),n=e.earliestPendingTime,t=e.latestPendingTime,n===r?e.earliestPendingTime=t===r?e.latestPendingTime=0:t:t===r&&(e.latestPendingTime=n),n=e.earliestSuspendedTime,t=e.latestSuspendedTime,0===n?e.earliestSuspendedTime=e.latestSuspendedTime=r:n>r?e.earliestSuspendedTime=r:t<r&&(e.latestSuspendedTime=r),Gr(r,e),void(e.expirationTime=e.expirationTime);if(!e.didError&&!n)return e.didError=!0,e.nextExpirationTimeToWorkOn=r,r=e.expirationTime=1,void(e.expirationTime=r)}e.pendingCommitExpirationTime=r,e.finishedWork=t}}function ka(e,t){var n;e:{for(Sa&&!Oa&&i("263"),n=e.return;null!==n;){switch(n.tag){case 2:case 3:var r=n.stateNode;if("function"==typeof n.type.getDerivedStateFromCatch||"function"==typeof r.componentDidCatch&&(null===xa||!xa.has(r))){Jr(n,e=ha(n,e=ao(t,e),1)),La(n,1),n=void 0;break e}break;case 5:Jr(n,e=pa(n,e=ao(t,e),1)),La(n,1),n=void 0;break e}n=n.return}5===e.tag&&(Jr(e,n=pa(e,n=ao(t,e),1)),La(e,1)),n=void 0}return n}function Ra(e,t){return 0!==Ea?e=Ea:Sa?e=Oa?1:Ta:1&t.mode?(e=Ka?2+10*(1+((e-2+15)/10|0)):2+25*(1+((e-2+500)/25|0)),null!==ba&&e===Ta&&(e+=1)):e=1,Ka&&(0===Wa||e>Wa)&&(Wa=e),e}function La(e,t){e:{(0===e.expirationTime||e.expirationTime>t)&&(e.expirationTime=t);var n=e.alternate;null!==n&&(0===n.expirationTime||n.expirationTime>t)&&(n.expirationTime=t);var r=e.return;if(null===r&&5===e.tag)e=e.stateNode;else{for(;null!==r;){if(n=r.alternate,(0===r.childExpirationTime||r.childExpirationTime>t)&&(r.childExpirationTime=t),null!==n&&(0===n.childExpirationTime||n.childExpirationTime>t)&&(n.childExpirationTime=t),null===r.return&&5===r.tag){e=r.stateNode;break e}r=r.return}e=null}}null!==e&&(!Sa&&0!==Ta&&t<Ta&&Na(),Br(e,t),Sa&&!Oa&&ba===e||(t=e,e=e.expirationTime,null===t.nextScheduledRoot?(t.expirationTime=e,null===ja?(Da=ja=t,t.nextScheduledRoot=t):(ja=ja.nextScheduledRoot=t).nextScheduledRoot=Da):(0===(n=t.expirationTime)||e<n)&&(t.expirationTime=e),qa||(Ya?Xa&&(Ha=t,Va=1,fi(t,1,!0)):1===e?si(1,null):ii(t,e))),ni>ti&&(ni=0,i("185")))}function Ma(e,t,n,r,o){var a=Ea;Ea=1;try{return e(t,n,r,o)}finally{Ea=a}}var Da=null,ja=null,Fa=0,Ua=void 0,qa=!1,Ha=null,Va=0,Wa=0,za=!1,Ba=!1,Ga=null,Qa=null,Ya=!1,Xa=!1,Ka=!1,$a=null,Ja=a.unstable_now(),Za=2+(Ja/10|0),ei=Za,ti=50,ni=0,ri=null,oi=1;function ai(){Za=2+((a.unstable_now()-Ja)/10|0)}function ii(e,t){if(0!==Fa){if(t>Fa)return;null!==Ua&&a.unstable_cancelScheduledWork(Ua)}Fa=t,e=a.unstable_now()-Ja,Ua=a.unstable_scheduleWork(ci,{timeout:10*(t-2)-e})}function li(){return qa?ei:(ui(),0!==Va&&1073741823!==Va||(ai(),ei=Za),ei)}function ui(){var e=0,t=null;if(null!==ja)for(var n=ja,r=Da;null!==r;){var o=r.expirationTime;if(0===o){if((null===n||null===ja)&&i("244"),r===r.nextScheduledRoot){Da=ja=r.nextScheduledRoot=null;break}if(r===Da)Da=o=r.nextScheduledRoot,ja.nextScheduledRoot=o,r.nextScheduledRoot=null;else{if(r===ja){(ja=n).nextScheduledRoot=Da,r.nextScheduledRoot=null;break}n.nextScheduledRoot=r.nextScheduledRoot,r.nextScheduledRoot=null}r=n.nextScheduledRoot}else{if((0===e||o<e)&&(e=o,t=r),r===ja)break;if(1===e)break;n=r,r=r.nextScheduledRoot}}Ha=t,Va=e}function ci(e){if(e.didTimeout&&null!==Da){ai();var t=Da;do{var n=t.expirationTime;0!==n&&Za>=n&&(t.nextExpirationTimeToWorkOn=Za),t=t.nextScheduledRoot}while(t!==Da)}si(0,e)}function si(e,t){if(Qa=t,ui(),null!==Qa)for(ai(),ei=Za;null!==Ha&&0!==Va&&(0===e||e>=Va)&&(!za||Za>=Va);)fi(Ha,Va,Za>=Va),ui(),ai(),ei=Za;else for(;null!==Ha&&0!==Va&&(0===e||e>=Va);)fi(Ha,Va,!0),ui();if(null!==Qa&&(Fa=0,Ua=null),0!==Va&&ii(Ha,Va),Qa=null,za=!1,ni=0,ri=null,null!==$a)for(e=$a,$a=null,t=0;t<e.length;t++){var n=e[t];try{n._onComplete()}catch(e){Ba||(Ba=!0,Ga=e)}}if(Ba)throw e=Ga,Ga=null,Ba=!1,e}function fi(e,t,n){if(qa&&i("245"),qa=!0,null===Qa||n){var r=e.finishedWork;null!==r?di(e,r,t):(e.finishedWork=null,Pa(e,!1,n),null!==(r=e.finishedWork)&&di(e,r,t))}else null!==(r=e.finishedWork)?di(e,r,t):(e.finishedWork=null,Pa(e,!0,n),null!==(r=e.finishedWork)&&(pi()?e.finishedWork=r:di(e,r,t)));qa=!1}function di(e,t,n){var r=e.firstBatch;if(null!==r&&r._expirationTime<=n&&(null===$a?$a=[r]:$a.push(r),r._defer))return e.finishedWork=t,void(e.expirationTime=0);e.finishedWork=null,e===ri?ni++:(ri=e,ni=0),Oa=Sa=!0,e.current===t&&i("177"),0===(n=e.pendingCommitExpirationTime)&&i("261"),e.pendingCommitExpirationTime=0,r=t.expirationTime;var o=t.childExpirationTime;if(r=0===r||0!==o&&o<r?o:r,e.didError=!1,0===r?(e.earliestPendingTime=0,e.latestPendingTime=0,e.earliestSuspendedTime=0,e.latestSuspendedTime=0,e.latestPingedTime=0):(0!==(o=e.latestPendingTime)&&(o<r?e.earliestPendingTime=e.latestPendingTime=0:e.earliestPendingTime<r&&(e.earliestPendingTime=e.latestPendingTime)),0===(o=e.earliestSuspendedTime)?Br(e,r):r>e.latestSuspendedTime?(e.earliestSuspendedTime=0,e.latestSuspendedTime=0,e.latestPingedTime=0,Br(e,r)):r<o&&Br(e,r)),Gr(0,e),ya.current=null,1<t.effectTag?null!==t.lastEffect?(t.lastEffect.nextEffect=t,r=t.firstEffect):r=t:r=t.firstEffect,pr=wn,Fn(o=jn())){if("selectionStart"in o)var a={start:o.selectionStart,end:o.selectionEnd};else e:{var l=(a=(a=o.ownerDocument)&&a.defaultView||window).getSelection&&a.getSelection();if(l&&0!==l.rangeCount){a=l.anchorNode;var u=l.anchorOffset,c=l.focusNode;l=l.focusOffset;try{a.nodeType,c.nodeType}catch(e){a=null;break e}var s=0,f=-1,d=-1,p=0,h=0,m=o,v=null;t:for(;;){for(var y;m!==a||0!==u&&3!==m.nodeType||(f=s+u),m!==c||0!==l&&3!==m.nodeType||(d=s+l),3===m.nodeType&&(s+=m.nodeValue.length),null!==(y=m.firstChild);)v=m,m=y;for(;;){if(m===o)break t;if(v===a&&++p===u&&(f=s),v===c&&++h===l&&(d=s),null!==(y=m.nextSibling))break;v=(m=v).parentNode}m=y}a=-1===f||-1===d?null:{start:f,end:d}}else a=null}a=a||{start:0,end:0}}else a=null;for(hr={focusedElem:o,selectionRange:a},wn=!1,wa=r;null!==wa;){o=!1,a=void 0;try{for(;null!==wa;){if(256&wa.effectTag){var g=wa.alternate;e:switch(u=wa,u.tag){case 2:case 3:if(256&u.effectTag&&null!==g){var E=g.memoizedProps,S=g.memoizedState,_=u.stateNode;_.props=u.memoizedProps,_.state=u.memoizedState;var b=_.getSnapshotBeforeUpdate(E,S);_.__reactInternalSnapshotBeforeUpdate=b}break e;case 5:case 7:case 8:case 6:break e;default:i("163")}}wa=wa.nextEffect}}catch(e){o=!0,a=e}o&&(null===wa&&i("178"),ka(wa,a),null!==wa&&(wa=wa.nextEffect))}for(wa=r;null!==wa;){g=!1,E=void 0;try{for(;null!==wa;){var T=wa.effectTag;if(16&T&&or(wa.stateNode,""),128&T){var C=wa.alternate;if(null!==C){var w=C.ref;null!==w&&("function"==typeof w?w(null):w.current=null)}}switch(14&T){case 2:sa(wa),wa.effectTag&=-3;break;case 6:sa(wa),wa.effectTag&=-3,da(wa.alternate,wa);break;case 4:da(wa.alternate,wa);break;case 8:fa(S=wa),S.return=null,S.child=null,S.alternate&&(S.alternate.child=null,S.alternate.return=null)}wa=wa.nextEffect}}catch(e){g=!0,E=e}g&&(null===wa&&i("178"),ka(wa,E),null!==wa&&(wa=wa.nextEffect))}if(w=hr,C=jn(),T=w.focusedElem,E=w.selectionRange,C!==T&&T&&T.ownerDocument&&function e(t,n){return!(!t||!n)&&(t===n||(!t||3!==t.nodeType)&&(n&&3===n.nodeType?e(t,n.parentNode):"contains"in t?t.contains(n):!!t.compareDocumentPosition&&!!(16&t.compareDocumentPosition(n))))}(T.ownerDocument.documentElement,T)){null!==E&&Fn(T)&&(C=E.start,void 0===(w=E.end)&&(w=C),"selectionStart"in T?(T.selectionStart=C,T.selectionEnd=Math.min(w,T.value.length)):(C=((g=T.ownerDocument||document)?g.defaultView:window).getSelection(),S=T.textContent.length,w=Math.min(E.start,S),E=void 0===E.end?w:Math.min(E.end,S),!C.extend&&w>E&&(S=E,E=w,w=S),S=Dn(T,w),_=Dn(T,E),S&&_&&(1!==C.rangeCount||C.anchorNode!==S.node||C.anchorOffset!==S.offset||C.focusNode!==_.node||C.focusOffset!==_.offset)&&((g=g.createRange()).setStart(S.node,S.offset),C.removeAllRanges(),w>E?(C.addRange(g),C.extend(_.node,_.offset)):(g.setEnd(_.node,_.offset),C.addRange(g))))),C=[];for(w=T;w=w.parentNode;)1===w.nodeType&&C.push({element:w,left:w.scrollLeft,top:w.scrollTop});for("function"==typeof T.focus&&T.focus(),T=0;T<C.length;T++)(w=C[T]).element.scrollLeft=w.left,w.element.scrollTop=w.top}for(hr=null,wn=!!pr,pr=null,e.current=t,wa=r;null!==wa;){r=!1,T=void 0;try{for(C=n;null!==wa;){var O=wa.effectTag;if(36&O){var x=wa.alternate;switch(g=C,(w=wa).tag){case 2:case 3:var N=w.stateNode;if(4&w.effectTag)if(null===x)N.props=w.memoizedProps,N.state=w.memoizedState,N.componentDidMount();else{var A=x.memoizedProps,I=x.memoizedState;N.props=w.memoizedProps,N.state=w.memoizedState,N.componentDidUpdate(A,I,N.__reactInternalSnapshotBeforeUpdate)}var P=w.updateQueue;null!==P&&(N.props=w.memoizedProps,N.state=w.memoizedState,ro(0,P,N));break;case 5:var k=w.updateQueue;if(null!==k){if(E=null,null!==w.child)switch(w.child.tag){case 7:E=w.child.stateNode;break;case 2:case 3:E=w.child.stateNode}ro(0,k,E)}break;case 7:var R=w.stateNode;null===x&&4&w.effectTag&&mr(w.type,w.memoizedProps)&&R.focus();break;case 8:case 6:case 15:case 16:break;default:i("163")}}if(128&O){var L=wa.ref;if(null!==L){var M=wa.stateNode;switch(wa.tag){case 7:var D=M;break;default:D=M}"function"==typeof L?L(D):L.current=D}}var j=wa.nextEffect;wa.nextEffect=null,wa=j}}catch(e){r=!0,T=e}r&&(null===wa&&i("178"),ka(wa,T),null!==wa&&(wa=wa.nextEffect))}Sa=Oa=!1,"function"==typeof Mr&&Mr(t.stateNode),O=t.expirationTime,t=t.childExpirationTime,0===(t=0===O||0!==t&&t<O?t:O)&&(xa=null),e.expirationTime=t,e.finishedWork=null}function pi(){return!!za||!(null===Qa||Qa.timeRemaining()>oi)&&(za=!0)}function hi(e){null===Ha&&i("246"),Ha.expirationTime=0,Ba||(Ba=!0,Ga=e)}function mi(e,t){var n=Ya;Ya=!0;try{return e(t)}finally{(Ya=n)||qa||si(1,null)}}function vi(e,t){if(Ya&&!Xa){Xa=!0;try{return e(t)}finally{Xa=!1}}return e(t)}function yi(e,t,n){if(Ka)return e(t,n);Ya||qa||0===Wa||(si(Wa,null),Wa=0);var r=Ka,o=Ya;Ya=Ka=!0;try{return e(t,n)}finally{Ka=r,(Ya=o)||qa||si(1,null)}}function gi(e,t,n,r,o){var a=t.current;return n=function(e){if(!e)return Tr;e=e._reactInternalFiber;e:{(2!==nn(e)||2!==e.tag&&3!==e.tag)&&i("170");var t=e;do{switch(t.tag){case 5:t=t.stateNode.context;break e;case 2:if(Nr(t.type)){t=t.stateNode.__reactInternalMemoizedMergedChildContext;break e}break;case 3:if(Nr(t.type._reactResult)){t=t.stateNode.__reactInternalMemoizedMergedChildContext;break e}}t=t.return}while(null!==t);i("171"),t=void 0}if(2===e.tag){var n=e.type;if(Nr(n))return kr(e,n,t)}else if(3===e.tag&&Nr(n=e.type._reactResult))return kr(e,n,t);return t}(n),null===t.context?t.context=n:t.pendingContext=n,t=o,(o=Kr(r)).payload={element:e},null!==(t=void 0===t?null:t)&&(o.callback=t),Jr(a,o),La(a,r),r}function Ei(e,t,n,r){var o=t.current;return gi(e,t,n,o=Ra(li(),o),r)}function Si(e){if(!(e=e.current).child)return null;switch(e.child.tag){case 7:default:return e.child.stateNode}}function _i(e){var t=2+25*(1+((li()-2+500)/25|0));t<=ga&&(t=ga+1),this._expirationTime=ga=t,this._root=e,this._callbacks=this._next=null,this._hasChildren=this._didComplete=!1,this._children=null,this._defer=!0}function bi(){this._callbacks=null,this._didCommit=!1,this._onCommit=this._onCommit.bind(this)}function Ti(e,t,n){e={current:t=new Fr(5,null,null,t?3:0),containerInfo:e,pendingChildren:null,earliestPendingTime:0,latestPendingTime:0,earliestSuspendedTime:0,latestSuspendedTime:0,latestPingedTime:0,didError:!1,pendingCommitExpirationTime:0,finishedWork:null,timeoutHandle:-1,context:null,pendingContext:null,hydrate:n,nextExpirationTimeToWorkOn:0,expirationTime:0,firstBatch:null,nextScheduledRoot:null},this._internalRoot=t.stateNode=e}function Ci(e){return!(!e||1!==e.nodeType&&9!==e.nodeType&&11!==e.nodeType&&(8!==e.nodeType||" react-mount-point-unstable "!==e.nodeValue))}function wi(e,t,n,r,o){Ci(n)||i("200");var a=n._reactRootContainer;if(a){if("function"==typeof o){var l=o;o=function(){var e=Si(a._internalRoot);l.call(e)}}null!=e?a.legacy_renderSubtreeIntoContainer(e,t,o):a.render(t,o)}else{if(a=n._reactRootContainer=function(e,t){if(t||(t=!(!(t=e?9===e.nodeType?e.documentElement:e.firstChild:null)||1!==t.nodeType||!t.hasAttribute("data-reactroot"))),!t)for(var n;n=e.lastChild;)e.removeChild(n);return new Ti(e,!1,t)}(n,r),"function"==typeof o){var u=o;o=function(){var e=Si(a._internalRoot);u.call(e)}}vi(function(){null!=e?a.legacy_renderSubtreeIntoContainer(e,t,o):a.render(t,o)})}return Si(a._internalRoot)}function Oi(e,t){var n=2<arguments.length&&void 0!==arguments[2]?arguments[2]:null;return Ci(t)||i("200"),function(e,t,n){var r=3<arguments.length&&void 0!==arguments[3]?arguments[3]:null;return{$$typeof:$e,key:null==r?null:""+r,children:e,containerInfo:t,implementation:n}}(e,t,null,n)}Ae=function(e,t,n){switch(t){case"input":if(Tt(e,n),t=n.name,"radio"===n.type&&null!=t){for(n=e;n.parentNode;)n=n.parentNode;for(n=n.querySelectorAll("input[name="+JSON.stringify(""+t)+'][type="radio"]'),t=0;t<n.length;t++){var r=n[t];if(r!==e&&r.form===e.form){var o=H(r);o||i("90"),Ge(r),Tt(r,o)}}}break;case"textarea":$n(e,n);break;case"select":null!=(t=n.value)&&Yn(e,!!n.multiple,t,!1)}},_i.prototype.render=function(e){this._defer||i("250"),this._hasChildren=!0,this._children=e;var t=this._root._internalRoot,n=this._expirationTime,r=new bi;return gi(e,t,null,n,r._onCommit),r},_i.prototype.then=function(e){if(this._didComplete)e();else{var t=this._callbacks;null===t&&(t=this._callbacks=[]),t.push(e)}},_i.prototype.commit=function(){var e=this._root._internalRoot,t=e.firstBatch;if(this._defer&&null!==t||i("251"),this._hasChildren){var n=this._expirationTime;if(t!==this){this._hasChildren&&(n=this._expirationTime=t._expirationTime,this.render(this._children));for(var r=null,o=t;o!==this;)r=o,o=o._next;null===r&&i("251"),r._next=o._next,this._next=t,e.firstBatch=this}this._defer=!1,t=n,qa&&i("253"),Ha=e,Va=t,fi(e,t,!0),si(1,null),t=this._next,this._next=null,null!==(t=e.firstBatch=t)&&t._hasChildren&&t.render(t._children)}else this._next=null,this._defer=!1},_i.prototype._onComplete=function(){if(!this._didComplete){this._didComplete=!0;var e=this._callbacks;if(null!==e)for(var t=0;t<e.length;t++)(0,e[t])()}},bi.prototype.then=function(e){if(this._didCommit)e();else{var t=this._callbacks;null===t&&(t=this._callbacks=[]),t.push(e)}},bi.prototype._onCommit=function(){if(!this._didCommit){this._didCommit=!0;var e=this._callbacks;if(null!==e)for(var t=0;t<e.length;t++){var n=e[t];"function"!=typeof n&&i("191",n),n()}}},Ti.prototype.render=function(e,t){var n=this._internalRoot,r=new bi;return null!==(t=void 0===t?null:t)&&r.then(t),Ei(e,n,null,r._onCommit),r},Ti.prototype.unmount=function(e){var t=this._internalRoot,n=new bi;return null!==(e=void 0===e?null:e)&&n.then(e),Ei(null,t,null,n._onCommit),n},Ti.prototype.legacy_renderSubtreeIntoContainer=function(e,t,n){var r=this._internalRoot,o=new bi;return null!==(n=void 0===n?null:n)&&o.then(n),Ei(t,r,e,o._onCommit),o},Ti.prototype.createBatch=function(){var e=new _i(this),t=e._expirationTime,n=this._internalRoot,r=n.firstBatch;if(null===r)n.firstBatch=e,e._next=null;else{for(n=null;null!==r&&r._expirationTime<=t;)n=r,r=r._next;e._next=r,null!==n&&(n._next=e)}return e},Me=mi,De=yi,je=function(){qa||0===Wa||(si(Wa,null),Wa=0)};var xi={createPortal:Oi,findDOMNode:function(e){if(null==e)return null;if(1===e.nodeType)return e;var t=e._reactInternalFiber;return void 0===t&&("function"==typeof e.render?i("188"):i("268",Object.keys(e))),e=null===(e=on(t))?null:e.stateNode},hydrate:function(e,t,n){return wi(null,e,t,!0,n)},render:function(e,t,n){return wi(null,e,t,!1,n)},unstable_renderSubtreeIntoContainer:function(e,t,n,r){return(null==e||void 0===e._reactInternalFiber)&&i("38"),wi(e,t,n,!1,r)},unmountComponentAtNode:function(e){return Ci(e)||i("40"),!!e._reactRootContainer&&(vi(function(){wi(null,null,e,!1,function(){e._reactRootContainer=null})}),!0)},unstable_createPortal:function(){return Oi.apply(void 0,arguments)},unstable_batchedUpdates:mi,unstable_interactiveUpdates:yi,flushSync:function(e,t){qa&&i("187");var n=Ya;Ya=!0;try{return Ma(e,t)}finally{Ya=n,si(1,null)}},unstable_flushControlled:function(e){var t=Ya;Ya=!0;try{Ma(e)}finally{(Ya=t)||qa||si(1,null)}},__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{Events:[U,q,H,g,Q,function(e){O(e,G)},Re,Le,An,L]},unstable_createRoot:function(e,t){return Ci(e)||i("278"),new Ti(e,!0,null!=t&&!0===t.hydrate)}};!function(e){var t=e.findFiberByHostInstance;(function(e){if("undefined"==typeof __REACT_DEVTOOLS_GLOBAL_HOOK__)return!1;var t=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(t.isDisabled||!t.supportsFiber)return!0;try{var n=t.inject(e);Mr=jr(function(e){return t.onCommitFiberRoot(n,e)}),Dr=jr(function(e){return t.onCommitFiberUnmount(n,e)})}catch(e){}})(o({},e,{findHostInstanceByFiber:function(e){return null===(e=on(e))?null:e.stateNode},findFiberByHostInstance:function(e){return t?t(e):null}}))}({findFiberByHostInstance:F,bundleType:0,version:"16.5.0",rendererPackageName:"react-dom"});var Ni={default:xi},Ai=Ni&&xi||Ni;e.exports=Ai.default||Ai},function(e,t,n){"use strict";e.exports=n(52)},function(e,t,n){"use strict";
-/** @license React v16.5.0
- * schedule.production.min.js
- *
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
-<<<<<<< HEAD
- */Object.defineProperty(t,"__esModule",{value:!0});var r=!("undefined"==typeof window||!window.document||!window.document.createElement),o=Date,a="function"==typeof setTimeout?setTimeout:void 0,i="function"==typeof clearTimeout?clearTimeout:void 0,l="function"==typeof requestAnimationFrame?requestAnimationFrame:void 0,u="function"==typeof cancelAnimationFrame?cancelAnimationFrame:void 0,c="object"==typeof performance&&"function"==typeof performance.now;if(t.unstable_now=void 0,c){var s=performance;t.unstable_now=function(){return s.now()}}else t.unstable_now=function(){return o.now()};if(t.unstable_scheduleWork=void 0,t.unstable_cancelScheduledWork=void 0,r){var f=null,d=null,p=-1,h=!1,m=!1,v=void 0,y=void 0,g=function(e){v=l(function(t){i(y),e(t)}),y=a(function(){u(v),e(t.unstable_now())},100)},E=0,S=33,_=33,b={didTimeout:!1,timeRemaining:function(){var e=E-t.unstable_now();return 0<e?e:0}},T=function(e,n){var r=e.scheduledCallback,o=!1;try{r(n),o=!0}finally{t.unstable_cancelScheduledWork(e),o||(h=!0,window.postMessage(C,"*"))}},C="__reactIdleCallback$"+Math.random().toString(36).slice(2);window.addEventListener("message",function(e){if(e.source===window&&e.data===C&&(h=!1,null!==f)){if(null!==f){var n=t.unstable_now();if(!(-1===p||p>n)){e=-1;for(var r=[],o=f;null!==o;){var a=o.timeoutTime;-1!==a&&a<=n?r.push(o):-1!==a&&(-1===e||a<e)&&(e=a),o=o.next}if(0<r.length)for(b.didTimeout=!0,n=0,o=r.length;n<o;n++)T(r[n],b);p=e}}for(e=t.unstable_now();0<E-e&&null!==f;)e=f,b.didTimeout=!1,T(e,b),e=t.unstable_now();null===f||m||(m=!0,g(w))}},!1);var w=function(e){m=!1;var t=e-E+_;t<_&&S<_?(8>t&&(t=8),_=t<S?S:t):S=t,E=e+_,h||(h=!0,window.postMessage(C,"*"))};t.unstable_scheduleWork=function(e,n){var r=-1;return null!=n&&"number"==typeof n.timeout&&(r=t.unstable_now()+n.timeout),(-1===p||-1!==r&&r<p)&&(p=r),e={scheduledCallback:e,timeoutTime:r,prev:null,next:null},null===f?f=e:null!==(n=e.prev=d)&&(n.next=e),d=e,m||(m=!0,g(w)),e},t.unstable_cancelScheduledWork=function(e){if(null!==e.prev||f===e){var t=e.next,n=e.prev;e.next=null,e.prev=null,null!==t?null!==n?(n.next=t,t.prev=n):(t.prev=null,f=t):null!==n?(n.next=null,d=n):d=f=null}}}else{var O=new Map;t.unstable_scheduleWork=function(e){var t={scheduledCallback:e,timeoutTime:0,next:null,prev:null},n=a(function(){e({timeRemaining:function(){return 1/0},didTimeout:!1})});return O.set(e,n),t},t.unstable_cancelScheduledWork=function(e){var t=O.get(e.scheduledCallback);O.delete(e),i(t)}}},function(e,t,n){"use strict";var r=n(54);function o(){}e.exports=function(){function e(e,t,n,o,a,i){if(i!==r){var l=new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use PropTypes.checkPropTypes() to call them. Read more at http://fb.me/use-check-prop-types");throw l.name="Invariant Violation",l}}function t(){return e}e.isRequired=e;var n={array:e,bool:e,func:e,number:e,object:e,string:e,symbol:e,any:e,arrayOf:t,element:e,instanceOf:t,node:e,objectOf:t,oneOf:t,oneOfType:t,shape:t,exact:t};return n.checkPropTypes=o,n.PropTypes=n,n}},function(e,t,n){"use strict";e.exports="SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED"},function(e,t){e.exports=function(e){if(!e.webpackPolyfill){var t=Object.create(e);t.children||(t.children=[]),Object.defineProperty(t,"loaded",{enumerable:!0,get:function(){return t.l}}),Object.defineProperty(t,"id",{enumerable:!0,get:function(){return t.i}}),Object.defineProperty(t,"exports",{enumerable:!0}),t.webpackPolyfill=1}return t}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(12),o=i(n(57)),a=i(n(58));function i(e){return e&&e.__esModule?e:{default:e}}var l=(0,r.createStore)(a.default,(0,r.applyMiddleware)(o.default));t.default=l},function(e,t,n){"use strict";function r(e){return function(t){var n=t.dispatch,r=t.getState;return function(t){return function(o){return"function"==typeof o?o(n,r,e):t(o)}}}}n.r(t);var o=r();o.withExtraArgument=r,t.default=o},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(12),o=m(n(59)),a=m(n(60)),i=m(n(62)),l=m(n(63)),u=m(n(66)),c=m(n(67)),s=m(n(69)),f=m(n(70)),d=m(n(71)),p=m(n(72)),h=m(n(73));function m(e){return e&&e.__esModule?e:{default:e}}var v=(0,r.combineReducers)({viewType:o.default,marketing:a.default,path:i.default,language:l.default,search:u.default,navMenu:c.default,contentBody:s.default,ruleDetails:f.default,standards:d.default,rulesList:p.default,navTile:h.default});t.default=v},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(24),o=n(6),a={viewType:(0,n(25).getDefaultViewType)()||o.VIEW_TYPES.TILES_VIEW};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a;switch(arguments[1].type){case r.SET_VIEW_TO_MENU:return{viewType:o.VIEW_TYPES.MENU_VIEW};case r.SET_VIEW_TO_TILES:return{viewType:o.VIEW_TYPES.TILES_VIEW};default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(61),o={};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:o,t=arguments[1];switch(t.type){case r.SET_MARKETING_RESOURCE_POINTER:return{resource:t.payload};default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SET_MARKETING_RESOURCE_POINTER="SET_MARKETING_RESOURCE_POINTER"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(27);function a(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var i={path:[]};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:i,t=arguments[1];switch(t.type){case o.APPEND_PATH_TO_HEADER:return r({},e,{path:[].concat(a(e.path),a(t.payload))});case o.SET_PATH_TO_HEADER:return r({},e,{path:[].concat(a(t.payload))});case o.GOTO_POINT_IN_HEADER_PATH:return r({},e,{path:e.path.slice(0,t.payload.index+1)});case o.RETURN_TO_LANDING_PAGE:return{path:[]};default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(64),o=n(65),a={language:r.EN};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a,t=arguments[1];switch(t.type){case o.SETLANGUAGE:return{language:t.payload};default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.EN={language:"EN",title:"Structural Rules",menu:"Menu",tiles:"Tiles",logo:"Logo",search:"Search Rules"},t.LANGUAGES={EN:"EN"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.SETLANGUAGE="SET_LANGUAGE"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(28),a={resultsVisible:!1,results:[],query:null};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a,t=arguments[1];switch(t.type){case o.SET_QUALITY_RULES_SEARCH_RESULTS:return r({},e,{results:t.payload.results,query:t.payload.query});case o.DISPLAY_QUALITY_RULES_SEARCH_RESULTS:return r({},e,{resultsVisible:!0});case o.HIDE_QUALITY_RULES_SEARCH_RESULTS:return r({},e,{resultsVisible:!1});case o.CLEAR_SEARCH_RESULTS:return r({},e,{results:[],query:null});case o.SET_SELECTED_SEARCH_RESULT:return r({},e,{results:e.results.map(function(e){return e.id===t.payload.itemRef?r({},e,{selected:!0}):r({},e,{selected:!1})})});default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(29)),a=n(68);var i={std_cast:{data:void 0,loading:!1},std_cisq:{data:void 0,loading:!1},std_owasp:{data:void 0,loading:!1},technologies:{data:void 0,loading:!1},extensions:{data:[],loading:!1},selected:void 0};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:i,t=arguments[1];switch(t.type){case o.SETBUSINESSCRITERIA:return r({},e,{std_cast:{data:t.payload.data,loading:!1}});case o.SETCISQ:return r({},e,{std_cisq:{data:t.payload.data,loading:!1}});case o.SETOWASP:return r({},e,{std_owasp:{data:t.payload.data,loading:!1}});case o.SETTECHNOLOGIES:return r({},e,{technologies:{data:t.payload.data,loading:!1}});case o.SETEXTENSIONS:return r({},e,{extensions:{data:[].concat(function(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}(t.payload.data)).map(function(e,t){return r({},e,{index:t})}),loading:!1}});case o.SET_EXTENSION_VERSION:return r({},e,{extensions:{data:(0,a.updateExtensionVersionArray)(e.extensions.data,t.payload),loading:!1}});case o.FETCH_EXTENSION_VERSION:return r({},e,{extensions:{data:(0,a.setLoadingState)(e.extensions.data,t.payload),loading:!1}});case o.FETCHBUSINESSCRITERIA:return r({},e,{std_cast:{data:void 0,loading:!0}});case o.FETCHCISQ:return r({},e,{std_cisq:{data:void 0,loading:!0}});case o.FETCHOWASP:return r({},e,{std_owasp:{data:void 0,loading:!0}});case o.FETCHEXTENSIONS:return r({},e,{extensions:{data:void 0,loading:!0}});case o.FETCHTECHNOLOGIES:return r({},e,{technologies:{data:void 0,loading:!0}});case o.SETSELECTEDITEM:return r({},e,{selected:t.payload.data});default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e};t.updateExtensionVersionArray=function(e,t){return e.map(function(e,n){return n!==t.index?e:r({},e,{versions:t.versions,loading:!1})})},t.setLoadingState=function(e,t){return e.map(function(e,n){return n!==t.index?e:r({},e,{loading:!0})})};t.PrettyPrintExtentionName=function(e){for(var t=[" technology"," Linker","Angular/","for ","for Java","Techonology Extension For","Technology Extension For "," Framework","Support of "],n=t.length,r=e,o=0;o<n;o++){var a=t[o];r=r.replace(a,"")}return r.includes("Analyzer")||-1!==["System Level Rules","Web Services","CAST AIP"].indexOf(r)?r:r+" Analyzer"}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(30),a=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(31));var i={view:o.LANDING_PAGE,listCount:0};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:i,t=arguments[1];switch(t.type){case a.SHOW_LANDING_PAGE:return r({},e,{view:o.LANDING_PAGE,nav:{data:[],title:void 0,loading:!1}});case a.SHOW_NAVIGATION_VIEW:return r({},e,{view:o.NAVIGATION_VIEW});case a.SHOW_CONTENT_VIEW:return r({},e,{view:o.CONTENT_VIEW});case a.SET_LIST_COUNT:return r({},e,{listCount:t.payload.count});default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(32));var a={query:null,visible:!0,data:void 0,loading:!1};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a,t=arguments[1];switch(t.type){case o.CLEAR_CONTENT_DETAILS:return r({},e,{query:null,data:void 0});case o.ERROR_ON_DETAILS_FETCH:return r({},e,{query:t.payload.query,data:r({},t.payload.err)});case o.FETCHING_DETAILS_CONTENT_FROM_API:return r({},e,{query:null,data:void 0,loading:!0});case o.SET_CONTENT_DETAILS:return r({},e,{query:t.payload.query,data:r({},t.payload.data),loading:!1});default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(33),a={data:[],query:null,loading:!1};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a,t=arguments[1];switch(t.type){case o.FETCH_STANDRADS_LIST_DATA:return{data:[],query:t.payload.query,loading:!0};case o.SET_STANDRADS_LIST_DATA:return{data:t.payload.data,query:t.payload.query,loading:!1};case o.FAILED_TO_FETCH_STANDRADS_LIST_DATA:return{data:[r({},t.payload.err)],query:t.payload.query,loading:!1};case o.SET_SELECTED_STANDARDS_ITEM:return r({},e,{data:e.data.map(function(e){return e.id===t.payload.itemRef?r({},e,{selected:!0}):r({},e,{selected:!1})})});default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=n(34),a={data:[],query:null,loading:!1};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:a,t=arguments[1];switch(t.type){case o.FETCH_LIST_DATA:return{data:[],query:t.payload.query,loading:!0};case o.SET_LIST_DATA:return{data:t.payload.data,query:t.payload.query,loading:!1};case o.FAILED_TO_FETCH_LIST_DATA:return{data:[{name:t.payload.err}],query:t.payload.query,loading:!1};case o.SET_SELECTED_RULE_LIST_ITEM:return r({},e,{data:e.data.map(function(e){return e.id===t.payload.itemRef?r({},e,{selected:!0}):r({},e,{selected:!1})})});case o.CLEAR_LIST_DATA:return r({},a);default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(35)),a=n(15);var i={data:[],query:null,title:null,icon:null,loading:!1};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:i,t=arguments[1];switch(t.type){case o.FETCH_NAVIGATION_DATA:return{query:t.payload.query,data:[],title:t.payload.title,icon:t.payload.icon,loading:!0};case o.SET_NAVIGATION_DATA:return r({},e,{data:t.payload.data,loading:!1});case o.FAILED_TO_FETCH_NAVIGATION_DATA:return r({},e,{title:a.ERROR_PREFIX+e.title,error:t.payload.err,loading:!1});case o.CLEAR_NAVIGATION_DATA:return r({},i);default:return e}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(75));t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=n(2),a=n(6),i=u(n(77)),l=u(n(114));function u(e){return e&&e.__esModule?e:{default:e}}t.default=function(e){return r.default.createElement("div",{className:e.viewType===a.VIEW_TYPES.TILES_VIEW?(0,o.createClassName)(o.COMMON_CLASSES.flexCol,o.COMMON_CLASSES.vh100):(0,o.createClassName)(o.COMMON_CLASSES.flexRow,o.COMMON_CLASSES.vh100)},r.default.createElement(i.default,null),r.default.createElement(l.default,null))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.webFetch=t.apiFetch=void 0;var r=n(14);t.apiFetch=function(e){return fetch(r.API_REQUEST+e).then(function(e){return e.json()})},t.webFetch=function(e){return fetch(e).then(function(e){return e.json()})}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=i(n(1)),a=i(n(78));function i(e){return e&&e.__esModule?e:{default:e}}a.default.propTypes={viewType:o.default.string},t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType}})(a.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=f(n(0)),o=f(n(79)),a=f(n(85)),i=f(n(90)),l=f(n(96)),u=n(2),c=n(111),s=n(6);function f(e){return e&&e.__esModule?e:{default:e}}n(112);t.default=function(e){return r.default.createElement("div",{className:(0,u.createClassName)(e.viewType===s.VIEW_TYPES.MENU_VIEW?c.CLASSES.navWrapper:void 0,e.viewType===s.VIEW_TYPES.TILES_VIEW?u.COMMON_CLASSES.flexRow:u.COMMON_CLASSES.flexCol,u.COMMON_CLASSES.txtCenter)},r.default.createElement(o.default,null),r.default.createElement(a.default,null),r.default.createElement(i.default,null),r.default.createElement(l.default,null))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=s(n(1)),a=n(80),i=s(n(81)),l=n(25),u=n(7),c=n(8);function s(e){return e&&e.__esModule?e:{default:e}}i.default.propTypes={viewType:o.default.string,language:o.default.object.isRequired},t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType,language:e.language.language}},function(e){return{setTilesView:function(){(0,l.defaultToTiles)(),e((0,a.setTilesView)())},setMenuView:function(){(0,l.defaultToMenu)(),e((0,a.setMenuView)())},goToLandingPage:function(){e((0,u.goToLandingPage)()),e((0,c.showLandingPage)())}}})(i.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.setTilesView=t.setMenuView=void 0;var r=n(24);t.setMenuView=function(){return{type:r.SET_VIEW_TO_MENU}},t.setTilesView=function(){return{type:r.SET_VIEW_TO_TILES}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(e){return e&&e.__esModule?e:{default:e}}(n(0)),o=n(2),a=n(6);n(82);t.default=function(e){var t=e.viewType===a.VIEW_TYPES.MENU_VIEW;return r.default.createElement("div",{className:(0,o.createClassName)(a.CLASSES.navBarHeader,a.CLASSES.fixed,t?a.CLASSES.expanded:void 0)},r.default.createElement("div",{className:(0,o.createClassName)(a.CLASSES.navIcon,a.CLASSES.extraRightMargin),onClick:e.goToLandingPage},r.default.createElement("img",{src:a.Imgs.logo.default,className:a.CLASSES.imgIcon,alt:e.language.logo})),t?r.default.createElement("div",{className:a.CLASSES.navTitle},e.language.title):void 0,r.default.createElement("div",{className:a.CLASSES.navIcon,onClick:e.setTilesView},r.default.createElement("img",{src:t?a.Imgs.tiles.grey:a.Imgs.tiles.black,className:a.CLASSES.imgIcon,alt:e.language.tiles})),r.default.createElement("div",{className:a.CLASSES.navIcon,onClick:e.setMenuView},r.default.createElement("img",{src:t?a.Imgs.menu.black:a.Imgs.menu.grey,className:a.CLASSES.imgIcon,alt:e.language.menu})))}},function(e,t,n){var r=n(83);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_navBar_header{\r\n  top:0;\r\n  left:0;\r\n  /* width: 100%; */\r\n  height: 25px;\r\n  padding-top: 32.5px;\r\n  padding-bottom: 32.5px;\r\n  padding-left: 30px;\r\n  padding-right: 30px;\r\n}\r\n\r\n.qrp_navBar_title{ text-align: center; line-height: 25px; float: left; font-weight: 800; margin-right: 15px; font-size: 24px;}\r\n\r\n.qrp_expandedNav{\r\n  width: 300px !important;\r\n}\r\n.qrp_xmrgl_10{ margin-right: 15px !important; }\r\n.qrp_navBar_Icon{\r\n  margin: 0;\r\n  padding: 0;\r\n  border: 0;\r\n  height: 25px;\r\n  width: 25px;\r\n  float: left;\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_navBar_Icon:last-child{\r\n  margin-left: 10px;\r\n}\r\n\r\n.qrp_navBar_img_icon{\r\n  position: relative;\r\n}\r\n",""])},function(e,t){e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var n=t.protocol+"//"+t.host,r=n+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,function(e,t){var o,a=t.trim().replace(/^"(.*)"$/,function(e,t){return t}).replace(/^'(.*)'$/,function(e,t){return t});return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(a)?e:(o=0===a.indexOf("//")?a:0===a.indexOf("/")?n+a:r+a.replace(/^\.\//,""),"url("+JSON.stringify(o)+")")})}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=c(n(1)),a=n(7),i=c(n(86)),l=n(8),u=n(10);function c(e){return e&&e.__esModule?e:{default:e}}i.default.propTypes={path:o.default.array},t.default=(0,r.connect)(function(e){return{path:e.path.path,viewType:e.viewType.viewType}},function(e){return{gotoLocation:function(t){t.separator&&(e((0,a.navigateTo)(t,t.index)),e((0,l.showNavigationView)()),e((0,u.fetchNavigationData)(t.name,t.href,t.icon)))}}})(i.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=n(36),a=n(2),i=u(n(87)),l=n(6);function u(e){return e&&e.__esModule?e:{default:e}}n(88);t.default=function(e){var t=e.path?e.path.length:void 0;return r.default.createElement("div",{className:(0,a.createClassName)(o.CLASSES.headerMain,e.viewType===l.VIEW_TYPES.MENU_VIEW?a.COMMON_CLASSES.hidden:void 0)},r.default.createElement("div",{className:o.CLASSES.pathContainer},e.path.map(function(n,a){return n.type===o.TYPES.selector?void 0:r.default.createElement(i.default,{key:a,separator:a!==t-1,index:a,gotoLocation:e.gotoLocation,name:n.name,href:n.href,icon:n.icon})})))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=i(n(0)),o=i(n(1)),a=n(36);function i(e){return e&&e.__esModule?e:{default:e}}var l=function(e){return r.default.createElement("span",{className:a.CLASSES.pathElement},e.icon?r.default.createElement("div",{className:a.CLASSES.pathElementIcon,style:{backgroundImage:"url("+e.icon+")"}}):void 0,r.default.createElement("div",{className:a.CLASSES.pathElementText,onClick:function(){return e.gotoLocation(e)}},e.name),e.separator?r.default.createElement("div",{className:a.CLASSES.pathSeparator}," > "):void 0)};l.propTypes={name:o.default.string,href:o.default.string,icon:o.default.string,index:o.default.number,gotoLocation:o.default.func},t.default=l},function(e,t,n){var r=n(89);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 40px;\r\n  margin: 25px;\r\n  z-index: 3;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 2px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n  margin: 8px 15px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: 'no-repeat';\r\n  background-position: 'center';\r\n  background-size: '80%';\r\n  cursor: pointer;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer;}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(91)),a=c(n(16)),i=c(n(8)),l=n(7),u=n(11);function c(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType,language:e.language.language}},function(e){return{fetchSearchResults:function(t){e(i.setListCount(1)),e(i.showContentView()),e(a.fetchSearchResults(t)),e(a.displaySearchResults()),e((0,u.clearDetailsData)()),e((0,l.setHeaderPath)({name:"Search Results: "+t}))}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=function(e){return e&&e.__esModule?e:{default:e}}(n(0)),a=n(2),i=n(37),l=n(6);n(92);var u=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,o.default.PureComponent),r(t,[{key:"render",value:function(){var e=this,t=this.props;return o.default.createElement("div",{className:(0,a.createClassName)(i.CLASSES.container,t.viewType===l.VIEW_TYPES.TILES_VIEW?a.COMMON_CLASSES.floatRight:void 0)},o.default.createElement("input",{type:i.TEXTINPUT,ref:i.INPUTREF,className:i.CLASSES.inputBox,placeholder:t.language.search,onKeyPress:function(n){n.key===i.ENTER&&(t.fetchSearchResults(e.refs[i.INPUTREF].value),e.refs[i.INPUTREF].value="")}}),o.default.createElement("span",{className:a.COMMON_CLASSES.searchIcon,onClick:function(){return e.refs[i.INPUTREF].focus()}}))}}]),t}();t.default=u},function(e,t,n){var r=n(93);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #ffffff; border-radius: 2px; width: calc(100% - 60px);display: block;}\r\n.qrp_gSearch_input{border: none; height: 50px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 0 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 20px 0 !important; padding: 0 20px 0 0 !important; background-color: #F2F2F2; color: #808080; max-width: 290px; z-index: 3;}\r\n.qrp_gSearch.fright > input{background-color: transparent;}\r\n.qrp_gSearch.fright > .qrp_srico{margin-left: auto;}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.FETCHSEARCHRESULTS=void 0;var r=n(37);t.FETCHSEARCHRESULTS=function(e){return fetch(r.SEARCHAPI+e).then(function(e){return e.json()})}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.fetchData=t.fetchWebData=void 0;var r=n(2);t.fetchWebData=function(e){return(0,r.webFetch)(e)},t.fetchData=function(e){return(0,r.apiFetch)(e)}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=h(n(1)),a=h(n(97)),i=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(109)),l=n(8),u=n(19),c=n(9),s=n(7),f=n(18),d=n(16),p=n(11);function h(e){return e&&e.__esModule?e:{default:e}}a.default.propTypes={viewType:o.default.string.isRequired},t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType,technologies:e.navMenu.technologies,extensions:e.navMenu.extensions,selected:e.navMenu.selected,std_bc:e.navMenu.std_cast,std_cisq:e.navMenu.std_cisq,std_owasp:e.navMenu.std_owasp}},function(e){return{populateStd_bc:function(t){0===t&&e(i.fetchBusinessCriteria())},populateStd_cisq:function(t){0===t&&e(i.fetchCisq())},populateStd_owasp:function(t){0===t&&e(i.fetchOwasp())},populateTechnologies:function(t){0===t&&e(i.fetchTechnologies())},populateExtensions:function(t){0===t&&e(i.fetchExtensions())},onCisqClick:function(t,n){e((0,d.hideSearchResults)()),e((0,p.clearDetailsData)()),e((0,c.clearListData)()),e((0,l.setListCount)(2)),e((0,l.showContentView)()),e((0,u.fetchStandardsListData)(n)),e((0,s.setHeaderPath)(f.PATHS.standard,f.PATHS.cisq,{name:t}))},onOwaspClick:function(t,n){e((0,d.hideSearchResults)()),e((0,p.clearDetailsData)()),e((0,c.clearListData)()),e((0,l.setListCount)(2)),e((0,l.showContentView)()),e((0,u.fetchStandardsListData)(n)),e((0,s.setHeaderPath)(f.PATHS.standard,f.PATHS.owasp,{name:t}))},onBusinessCriteriaClick:function(t,n){e((0,d.hideSearchResults)()),e((0,p.clearDetailsData)()),e((0,c.clearListData)()),e((0,l.setListCount)(1)),e((0,l.showContentView)()),e((0,c.fetchWebData)(n)),e((0,s.setHeaderPath)(f.PATHS.standard,f.PATHS.businessCriteria,{name:t}))},onTechnologyClick:function(t,n){e((0,d.hideSearchResults)()),e((0,p.clearDetailsData)()),e((0,c.clearListData)()),e((0,l.setListCount)(1)),e((0,l.showContentView)()),e((0,c.fetchApiData)(n)),e((0,s.setHeaderPath)(f.PATHS.technologies,{name:t}))},setSelected:function(t){e(i.setSelectedItem(t))},onExtensionsClick:function(t,n){e((0,d.hideSearchResults)()),e((0,p.clearDetailsData)()),e((0,c.clearListData)()),e((0,l.setListCount)(1)),e((0,l.showContentView)()),e((0,c.fetchWebData)(n.href)),e((0,s.setHeaderPath)(f.PATHS.extensions,{name:t.name,href:t.href,icon:t.icon},n))},fetchVersion:function(t,n){0===t&&e(i.fetchExtensionVersion(n))}}})(a.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=f(n(0)),o=f(n(1)),a=f(n(38)),i=f(n(39)),l=f(n(17)),u=n(2),c=n(6),s=n(18);function f(e){return e&&e.__esModule?e:{default:e}}n(107);var d=function(e){return r.default.createElement("div",{className:(0,u.createClassName)(s.CLASSES.menu,e.viewType===c.VIEW_TYPES.TILES_VIEW?u.COMMON_CLASSES.hidden:void 0)},r.default.createElement(a.default,{title:s.ITEMS.STANDARDS},r.default.createElement(a.default,{title:s.ITEMS.BUSINESSCRITERIA,onClick:e.populateStd_bc,cssClass:(0,u.createClassName)(u.COMMON_CLASSES.fontWeight400,s.CLASSES.standardsSubMenu)},e.std_bc.data?e.std_bc.data.map(function(t,n){return r.default.createElement(i.default,{key:n,selected:e.selected===JSON.stringify(t),title:t.name,href:t.href,onClick:function(){e.setSelected(JSON.stringify(t)),e.onBusinessCriteriaClick(t.name,t.href)}})}):e.std_bc.loading?r.default.createElement(l.default,null):void 0),r.default.createElement(a.default,{title:s.ITEMS.CISQ,onClick:e.populateStd_cisq,cssClass:(0,u.createClassName)(u.COMMON_CLASSES.fontWeight400,s.CLASSES.standardsSubMenu)},e.std_cisq.data?e.std_cisq.data.map(function(t,n){return r.default.createElement(i.default,{key:n,selected:e.selected===JSON.stringify(t),title:t.name,href:t.href,onClick:function(){e.setSelected(JSON.stringify(t)),e.onCisqClick(t.name,t.href)}})}):e.std_cisq.loading?r.default.createElement(l.default,null):void 0),r.default.createElement(a.default,{title:s.ITEMS.OWASP,onClick:e.populateStd_owasp,cssClass:(0,u.createClassName)(u.COMMON_CLASSES.fontWeight400,s.CLASSES.standardsSubMenu)},e.std_owasp.data?e.std_owasp.data.map(function(t,n){return r.default.createElement(i.default,{key:n,selected:e.selected===JSON.stringify(t),title:t.name,href:t.href,onClick:function(){e.setSelected(JSON.stringify(t)),e.onOwaspClick(t.name,t.href)}})}):e.std_owasp.loading?r.default.createElement(l.default,null):void 0)),r.default.createElement(a.default,{title:s.ITEMS.TECHNOLOGIES,onClick:e.populateTechnologies},e.technologies.data?e.technologies.data.map(function(t,n){return r.default.createElement(i.default,{key:n,selected:e.selected===JSON.stringify(t),title:t.name,href:t.href,onClick:function(){e.setSelected(JSON.stringify(t)),e.onTechnologyClick(t.name,t.href)}})}):e.technologies.loading?r.default.createElement(l.default,null):void 0),r.default.createElement(a.default,{title:s.ITEMS.EXTENSIONS,onClick:e.populateExtensions},e.extensions.data?e.extensions.data.map(function(t,n){return r.default.createElement(a.default,{key:n,title:t.name,onClick:function(n){return e.fetchVersion(n,t)}},t.versions?t.versions.map(function(n,o){return r.default.createElement(i.default,{key:o,selected:e.selected===JSON.stringify(n),title:n.name,href:n.href,onClick:function(){e.setSelected(JSON.stringify(n)),e.onExtensionsClick(t,n)}})}):t.loading?r.default.createElement(l.default,null):void 0)}):e.extensions.loading?r.default.createElement(l.default,null):void 0))};d.propTypes={viewType:o.default.string.isRequired,onExtensionsClick:o.default.func.isRequired,onElementClick:o.default.func.isRequired,onQualityStandardClick:o.default.func.isRequired},t.default=d},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={subMenu:"qrp_submenu",dropdown:"qrp_dropdown",title:"qrp_submenu-title"}},function(e,t,n){var r=n(100);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_submenu{ position: relative; text-align: left; cursor: pointer; min-height: 50px;}\r\n.qrp_submenu-title{ line-height: 50px; margin-left: 0px; font-size: 22px; font-weight: 600;}\r\n.qrp_dropdown{ display: none; position: relative; margin-left: 10px; cursor: pointer}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={menuItem:"qrp_menuItem",title:"qrp_menuItem-title"}},function(e,t,n){var r=n(103);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_menuItem{ display: block; cursor: pointer;}\r\n.qrp_menuItem.selected{font-weight: 800; cursor: default}\r\n.qrp_menuItem:hover{background-color: rgba(0,0,0,0.03); cursor: pointer;}\r\n.qrp_menuItem > .qrp_menuItem-title{ line-height: 30px; margin-left: 15px;}",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.spinner="lds-dual-ring"},function(e,t,n){var r=n(106);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,'.lds-dual-ring {\r\n  display: inline-block;\r\n  width: 64px;\r\n  height: 64px;\r\n}\r\n\r\n.lds-dual-ring:after {\r\n  content: " ";\r\n  display: block;\r\n  width: 46px;\r\n  height: 46px;\r\n  margin: 1px;\r\n  border-radius: 50%;\r\n  border: 5px solid rgb(83, 76, 76); /* edit color here */\r\n  border-color: rgb(83, 76, 76) transparent rgb(83, 76, 76) transparent; /* edit color here */\r\n  animation: lds-dual-ring 1.2s linear infinite;\r\n}\r\n\r\n@keyframes lds-dual-ring {\r\n  0% {\r\n    transform: rotate(0deg);\r\n  }\r\n  100% {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n',""])},function(e,t,n){var r=n(108);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_menu-navigation{\r\n  overflow-x: hidden;\r\n  overflow-y: auto;\r\n  max-height: calc(100vh - 63px);\r\n  margin: 15px 30px 0 30px;\r\n}\r\n\r\n/* .qrp_stdsm{ color: blueviolet} */",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.setSelectedItem=t.fetchOwasp=t.fetchCisq=t.fetchBusinessCriteria=t.fetchTechnologies=t.fetchAIPVersions=t.fetchExtensionVersion=t.fetchExtensions=void 0;var r=n(110),o=function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&(t[n]=e[n]);return t.default=e,t}(n(29));var a=function(e,t){return{type:o.FAILEDTOFETCHSERVERDATA,payload:{query:t,error:e}}},i=function(e){return{type:o.SETTECHNOLOGIES,payload:{data:e}}},l=function(e){return{type:o.SETEXTENSIONS,payload:{data:e}}},u=function(e,t){return{type:o.SET_EXTENSION_VERSION,payload:{index:e,versions:t}}},c=function(e){return{type:o.SETBUSINESSCRITERIA,payload:{data:e}}},s=function(e){return{type:o.SETCISQ,payload:{data:e}}},f=function(e){return{type:o.SETOWASP,payload:{data:e}}},d=function(e){return{type:o.FETCH_EXTENSION_VERSION,payload:{index:e}}},p=function(e,t,n,r){return function(o){return o(function(e){return{type:e}}(r)),e().then(function(e){return o(t(e))},function(e){return o(n(e))})}};t.fetchExtensions=function(){return p(r.FETCHEXTENSIONS,l,function(e){return a(e,r.QUERIES.extensions)},o.FETCHEXTENSIONS)},t.fetchExtensionVersion=function(e){return function(t){return t(d(e.index)),(0,r.fetchExtensionVersions)(e.href).then(function(n){return t(u(e.index,n))},function(n){return t(a(n,e.href))})}},t.fetchAIPVersions=function(){return function(e){return e(d(0)),(0,r.fetchCastAIPVersions)().then(function(t){return e(u(0,t))},function(t){return e(a(t,0))})}},t.fetchTechnologies=function(){return p(r.FETCHTECHNOLOGIES,i,function(e){return a(e,r.QUERIES.technologies)},o.FETCHTECHNOLOGIES)},t.fetchBusinessCriteria=function(){return p(r.FETCHBUSINESSCRITERIA,c,function(e){return a(e,r.QUERIES.businessCriteria)},o.FETCHBUSINESSCRITERIA)},t.fetchCisq=function(){return p(r.FETCHCISQDATA,s,function(e){return a(e,r.QUERIES.cisq)},o.FETCHCISQ)},t.fetchOwasp=function(){return p(r.FETCHOWASPDATA,f,function(e){return a(e,r.QUERIES.owasp)},o.FETCHOWASP)},t.setSelectedItem=function(e){return{type:o.SETSELECTEDITEM,payload:{data:e}}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.FETCHOWASPDATA=t.FETCHCISQDATA=t.FETCHBUSINESSCRITERIA=t.fetchCastAIPVersions=t.fetchExtensionVersions=t.FETCHEXTENSIONS=t.FETCHTECHNOLOGIES=t.QUERIES=void 0;var r=n(2),o=n(18),a=t.QUERIES={businessCriteria:"AIP/business-criteria",cisq:"AIP/quality-standards/CISQ/categories",owasp:"AIP/quality-standards/OWASP/categories",technologies:"aip/technologies",extensions:"aip/extensions",standards:"AIP/quality-standards"};t.FETCHTECHNOLOGIES=function(){return(0,r.webFetch)(a.technologies)},t.FETCHEXTENSIONS=function(){return(0,r.webFetch)(a.extensions)},t.fetchExtensionVersions=function(e){return(0,r.webFetch)(e)},t.fetchCastAIPVersions=function(){return(0,r.webFetch)(o.AIP_VERSIONS_EXT.href)},t.FETCHBUSINESSCRITERIA=function(){return(0,r.webFetch)(a.businessCriteria)},t.FETCHCISQDATA=function(){return(0,r.webFetch)(a.cisq)},t.FETCHOWASPDATA=function(){return(0,r.webFetch)(a.owasp)}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={navWrapper:"qrp_navigation-container"}},function(e,t,n){var r=n(113);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_navigation-container{\r\n  max-width: 383px;\r\n  -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  -moz-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);\r\n  z-index: 4;\r\n  background-color: #F2F2F2;\r\n}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(115));t.default=(0,r.connect)(function(e){return{view:e.contentBody.view,navigation:e.contentBody.nav,listCount:e.contentBody.listCount,viewType:e.viewType.viewType,searchVisible:e.search.resultsVisible,searchResults:e.search.results}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=d(n(0)),o=n(2),a=n(30),i=n(6),l=d(n(116)),u=d(n(123)),c=d(n(128)),s=d(n(132)),f=d(n(141));function d(e){return e&&e.__esModule?e:{default:e}}n(146);t.default=function(e){var t=e.viewType===i.VIEW_TYPES.MENU_VIEW?a.CLASSES.maxNavHeight:a.CLASSES.maxTileHeight;return r.default.createElement("div",{className:(0,o.createClassName)(a.CLASSES.contentBody,o.COMMON_CLASSES.flexRow,o.COMMON_CLASSES.defaultBackgroundColor,o.COMMON_CLASSES.flexGrow1,t)},e.view===a.NAVIGATION_VIEW||e.view===a.LANDING_PAGE?r.default.createElement("div",{className:a.CLASSES.contentSpace},e.view===a.LANDING_PAGE?r.default.createElement(f.default,null):r.default.createElement(s.default,null)):r.default.createElement("div",{className:(0,o.createClassName)(o.COMMON_CLASSES.width100pc,a.CLASSES.contentBodyChild)},r.default.createElement("div",{className:a.CLASSES.listArea},2===e.listCount?r.default.createElement(c.default,null):void 0,r.default.createElement(l.default,null)),r.default.createElement("div",{className:a.CLASSES.detailsArea},r.default.createElement(u.default,null))))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(117)),a=n(40),i=n(11),l=n(9),u=n(16);n(121);t.default=(0,r.connect)(function(e){return{data:e.rulesList.data,searchVisible:e.search.resultsVisible,searchResults:e.search.results}},function(e){return{arrayChildConstructor:function(t,n){return(0,a.childConstructor)(t,n,function(){t.searchid?e((0,u.setSelectedSearchResult)(t.id)):e((0,l.setSelected)(t.id)),e((0,i.fetchDetailsData)(t.href))})}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=u(n(1)),a=u(n(20)),i=n(40),l=n(41);function u(e){return e&&e.__esModule?e:{default:e}}var c=function(e){return r.default.createElement(a.default,{childConstructor:e.arrayChildConstructor,filterPlaceholder:l.FILTERPLACEHOLDER,itemCountTitle:l.RULES,onEmpty:l.NORULES,headers:[l.HEADERS.id,l.HEADERS.name,l.HEADERS.critical],compare:i.compareFunction},e.searchVisible?0===e.searchResults.length?[]:e.searchResults:e.data)};c.propTypes={searchVisible:o.default.bool.isRequired,searchResults:o.default.array.isRequired,data:o.default.array.isRequired,arrayChildConstructor:o.default.func.isRequired},t.default=c},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={verticalArray:"qrp_varr",itemCounter:"qrp_iCtr",internalFilter:"qrp_varrintflt",headerContainer:"qrp_hCtr",tableContainer:"qrp_tCtr",tableBodyContainer:"qrp_tbCtr",tbody:"qrp_tbodymxh"}},function(e,t,n){var r=n(120);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_varr{width: 100% }\r\n.qrp_hCtr{height: 64px; padding: 0; margin: 0; z-index: 3; background-color: #fff; display: block !important;}\r\n.qrp_iCtr{margin-left: 20px; font-weight: 600; line-height: 64px; display: inline-block; float: left;}\r\n.qrp_varrintflt{margin: 0; margin-right: 20px; display: inline-block; float: right;}\r\n.qrp_varrintflt > input{border: none; margin: 12px 0; height: 40px; font-size: 20px; line-height: 40px; color: #808080;  padding: 0 16px; outline: none; background-color: #F2F2F2;}\r\n.qrp_varrintflt > span.qrp_srico {margin-left: -35px; width: 20px;}\r\ntd { padding: 6px }\r\ntable{ text-align: left; width: 100%}\r\n.qrp_lselected{ font-weight: 800 }\r\n/* th { padding: 6px; } */\r\n/* .qrp_tbCtr{ overflow-x: hidden; overflow-y: auto; max-height: 300px;} */\r\ntable thead, table tbody { display: block; padding-left: 10px;}\r\ntable tbody{border-right: 1px solid rgba(0,0,0,0.2); border-image:linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0, 0, 0, 0)) 1 100%;}\r\ntable thead{height:48px; line-height:48px; border-bottom: 1px solid rgba(0,0,0,0.2)}\r\n.qrp_tbodymxh{ max-height: calc(100vh - 88px); font-size: 14px;}\r\n.qrp_tCtr{z-index: 1;}\r\n",""])},function(e,t,n){var r=n(122);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_arrRlsHid{ min-width: 81px; padding-left: 8px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 60px;}\r\n\r\n\r\n.test-rules-list-row1{ min-width: 73px;}\r\n.test-rules-list-row2{}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(124));t.default=(0,r.connect)(function(e){return{data:e.ruleDetails.data,loading:e.ruleDetails.loading}},function(e){return{onTagClick:function(e){return console.log(e)}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=u(n(1));n(125);var a=n(2),i=n(127),l=u(n(17));function u(e){return e&&e.__esModule?e:{default:e}}var c=function(e){var t=e.data,n=e.loading,o=e.onTagClick;return r.default.createElement("div",{className:(0,a.createClassName)(a.COMMON_CLASSES.flexCol,i.CLASSES.detailsContainer)},n?r.default.createElement(l.default,null):t?r.default.createElement("div",{className:"details-container"},t.critical?r.default.createElement("div",{className:"critical-container"}," "):void 0,r.default.createElement("div",{className:"weight-container"},t.maxWeight),r.default.createElement("h2",{className:"ruleTitle"},t.name),r.default.createElement("div",{className:"tags-container"},t.qualityStandards.length>0?r.default.createElement("ul",{className:"details-tag"},t.qualityStandards.map(function(e){return r.default.createElement("li",{key:e.id,className:"detail-tag",onClick:function(){return o(e)}},e.id)})):void 0),r.default.createElement("div",{className:"description-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Description"),r.default.createElement("p",null,t.description)),r.default.createElement("div",{className:"rationale-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Rationale"),r.default.createElement("p",null,t.rationale)),r.default.createElement("div",{className:"remediation-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Remediation"),r.default.createElement("p",null,t.remediation)),r.default.createElement("div",{className:"sample-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Sample"),r.default.createElement("pre",null,r.default.createElement("code",null,t.sample))),r.default.createElement("div",{className:"remediationsample-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Remediation Sample"),r.default.createElement("pre",null,r.default.createElement("code",null,t.remediationSample))),r.default.createElement("div",{className:"reference-container detailssection"},r.default.createElement("p",{className:"rulesection"},"Reference"),r.default.createElement("p",{className:"textrule"},t.reference))):r.default.createElement("div",{className:a.COMMON_CLASSES.txtCenter},i.NORULESSELECTED))};c.propTypes={data:o.default.object,loading:o.default.bool.isRequired,onTagClick:o.default.func.isRequired},t.default=c},function(e,t,n){var r=n(126);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"pre{ white-space: pre-wrap;}",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={detailsContainer:"qrp_bdetcntr"},t.NORULESSELECTED="No Rule Selected"},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(129)),a=n(42),i=n(9),l=n(11),u=n(19);t.default=(0,r.connect)(function(e){return{data:e.standards.data}},function(e){return{arrayChildConstructor:function(t,n){return(0,a.childConstructor)(t,n,function(){t.selected||e((0,u.setSelected)(t.id)),t.count>0?e((0,i.fetchWebData)(t.href)):e((0,i.clearListData)()),e((0,l.clearDetailsData)())})}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=u(n(1)),a=u(n(20)),i=n(42),l=n(43);function u(e){return e&&e.__esModule?e:{default:e}}n(130);var c=function(e){return r.default.createElement(a.default,{childConstructor:e.arrayChildConstructor,filterPlaceholder:l.FILTERPLACEHOLDER,itemCountTitle:l.STANDARDS,onEmpty:l.NOSTANDARDS,headers:[l.HEADER],compare:i.compareFunction},e.data)};c.propTypes={data:o.default.array.isRequired,arrayChildConstructor:o.default.func.isRequired},t.default=c},function(e,t,n){var r=n(131);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_arrStdHri{ font-weight: 500; }\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(133)),a=n(10),i=n(8),l=n(9),u=n(19),c=n(7),s=n(15);t.default=(0,r.connect)(function(e){return{loading:e.navTile.loading,title:e.navTile.title,navContent:e.navTile.data,icon:e.navTile.icon}},function(e){return{tileClick:function(t,n){switch(n.toLowerCase()){case s.SECTIONS.technologies:e((0,i.setListCount)(1)),e((0,i.showContentView)()),e((0,l.fetchApiData)(t.href));break;case s.SECTIONS.standards:e((0,a.fetchNavigationData)(t.name,t.href,t.icon));break;case s.SECTIONS.cisq:case s.SECTIONS.owasp:e((0,i.setListCount)(2)),e((0,i.showContentView)()),e((0,u.fetchStandardsListData)(t.href));break;case s.SECTIONS.extensions:fetch(t.href).then(function(e){return e.json()}).then(function(t){e((0,i.setListCount)(1)),e((0,i.showContentView)()),e((0,l.fetchWebData)(t[0].href)),e((0,c.appendToHeaderPath)(t[0]))});break;default:e((0,i.setListCount)(1)),e((0,i.showContentView)()),e((0,l.fetchWebData)(t.href))}e((0,c.appendToHeaderPath)(t))}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=u(n(0)),o=u(n(1)),a=n(134),i=n(15),l=n(2);function u(e){return e&&e.__esModule?e:{default:e}}n(139);var c=function(e){return r.default.createElement("div",{className:i.CLASSES.bodyContainer},r.default.createElement("div",{className:(0,l.createClassName)(i.CLASSES.titleContainer,l.COMMON_CLASSES.flexCol)},r.default.createElement("div",{className:i.CLASSES.iconContainer,style:function(e){return{backgroundImage:e?"url("+e+")":i.defaultIconURL,backgroundRepeat:"no-repeat",backgroundPosition:"center",backgroundSize:"80%"}}(e.icon)}),r.default.createElement("div",{className:i.CLASSES.title},e.title)),r.default.createElement("div",{className:i.CLASSES.childContainer},e.loading?r.default.createElement(a.LoadingSpinner,null):e.navContent.map(function(t,n){return r.default.createElement(a.Tile,{key:n,icon:t.icon,click:function(){return e.tileClick(t,e.title,e.icon)}},t.name)})))};c.propTypes={navContent:o.default.array,title:o.default.string,loading:o.default.bool,icon:o.default.string},t.default=c},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(20);Object.defineProperty(t,"VerticalArray",{enumerable:!0,get:function(){return u(r).default}});var o=n(17);Object.defineProperty(t,"LoadingSpinner",{enumerable:!0,get:function(){return u(o).default}});var a=n(39);Object.defineProperty(t,"MenuItem",{enumerable:!0,get:function(){return u(a).default}});var i=n(38);Object.defineProperty(t,"SubMenu",{enumerable:!0,get:function(){return u(i).default}});var l=n(135);function u(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(t,"Tile",{enumerable:!0,get:function(){return u(l).default}})},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=l(n(0)),o=l(n(1)),a=n(2),i=n(136);function l(e){return e&&e.__esModule?e:{default:e}}n(137);var u=function(e){return r.default.createElement("div",{className:(0,a.createClassName)(a.COMMON_CLASSES.txtCenter,i.CLASSES.tile,e.className),style:function(e){return{backgroundImage:e?"url("+e+")":i.defaultIconURL,backgroundRepeat:"no-repeat",backgroundPosition:"center",backgroundSize:"80%"}}(e.icon),onMouseDown:e.click},r.default.createElement("span",{className:i.CLASSES.nameFloatOnHover},e.children))};u.propTypes={click:o.default.func.isRequired,icon:o.default.string},t.default=u},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});t.CLASSES={nameFloatOnHover:"qrp_tile_nfoh",tile:"qrp_tile"},t.defaultIconURL="url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)"},function(e,t,n){var r=n(138);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 150px;\r\n  margin-left: -75px;\r\n  margin-top: 173px;\r\n  font-weight: 500;\r\n  font-size: 16px;\r\n  color: #333;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n  line-height: 16px;\r\n  text-align: center;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; padding: 0; margin: 16px 16px 64px 16px; user-select: none; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; border-radius:4px;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}\r\n",""])},function(e,t,n){var r=n(140);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto;}\r\n.qrp_bnt-container{margin-top: 80px;}\r\n",""])},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=n(5),o=function(e){return e&&e.__esModule?e:{default:e}}(n(142)),a=n(8),i=n(7),l=n(10);t.default=(0,r.connect)(function(e){return{viewType:e.viewType.viewType}},function(e){return{loadSection:function(t){e((0,a.showNavigationView)()),e((0,l.fetchNavigationData)(t.name,t.href,t.icon)),e((0,i.appendToHeaderPath)(t))}}})(o.default)},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),a=n(0),i=f(a),l=f(n(1)),u=n(2),c=n(143),s=n(6);function f(e){return e&&e.__esModule?e:{default:e}}n(144);var d=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={sections:[]},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,a.PureComponent),o(t,[{key:"componentDidMount",value:function(){var e=this;(0,u.webFetch)(c.SECTIONSQUERY).then(function(t){return e.setState({sections:t})},function(t){return e.setState({sections:[r({},c.QUERYFAILED,{err:t})]})})}},{key:"render",value:function(){var e=this;return i.default.createElement("div",{className:c.CLASSES.container},i.default.createElement("div",{className:c.CLASSES.iconContainer,style:c._oIconStyle}),i.default.createElement("div",{className:c.CLASSES.welcomeText},c.WELCOMETEXT),this.props.viewType===s.VIEW_TYPES.TILES_VIEW?i.default.createElement("div",{className:c.CLASSES.navigation},i.default.createElement("span",null,this.state.sections.map(function(t,n,r){return i.default.createElement("span",{key:n},i.default.createElement("a",{href:"#",className:c.CLASSES.link,onClick:function(){return e.props.loadSection(t)}},t.name),n!==r.length-1?i.default.createElement("span",{className:c.CLASSES.separator}," - "):void 0)}))):void 0)}}]),t}();t.default=d,d.propTypes={loadSection:l.default.func.isRequired,viewType:l.default.string.isRequired}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.WELCOMETEXT=t._oIconStyle=t.CLASSES=t.QUERYFAILED=t.SECTIONSQUERY=void 0;var r=n(6);t.SECTIONSQUERY="aip/web-navigation",t.QUERYFAILED={value:"ERROR: Failed to retrieve navigation data, please try again later.",href:"#"},t.CLASSES={container:"qrp_lpCntr",iconContainer:"qrp_lpiCntr",welcomeText:"qrp_lpwtxtCntr",navigation:"qrp_lpnav",link:"qrp_lpslink",separator:"qrp_lpSsep"},t._oIconStyle={backgroundImage:"url("+r.Imgs.logo.default+")",backgroundRepeat:"no-repeat",backgroundPosition:"center",backgroundSize:"80%"},t.WELCOMETEXT="Welcome to the CAST Structural Rules Portal, let's start browsing or searching the rules"},function(e,t,n){var r=n(145);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 250px auto 75px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px;}\r\n.qrp_lpnav{ font-size: 31px;}\r\n",""])},function(e,t,n){var r=n(147);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,".qrp_list_area{ width: 60%; display: flex; max-height: 100vh; overflow-x: hidden;overflow-y: hidden; flex-direction: row; -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);-moz-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);}\r\n.qrp_details_area{ display: block; width: 40%; max-height: 100vh; overflow-x: hidden; overflow-y: auto}\r\n.qrp_contentSpace{ width: 100%; height: 100%; }\r\n.qrp_menuNav_height{ max-height: 100vh }\r\n.qrp_maxtileNav_height{ max-height: calc(100vh - 60px)}\r\n.qrp_bcontentCntr{ display: flex; }\r\n",""])},function(e,t,n){var r=n(149);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,'body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: \'Open Sans\', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n.ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; }\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{padding: 8px 30px; background: url("/img/criticalrule.png") no-repeat center center; background-size: 16px;}\r\n.qrp_arrlci{ cursor: pointer; }\r\n.qrp_srico{ cursor: pointer; color: black; padding: 8px; background: url("/img/search.svg") no-repeat center center; background-size: 16px}\r\n',""])},function(e,t,n){var r=n(151);"string"==typeof r&&(r=[[e.i,r,""]]);var o={hmr:!0,transform:void 0,insertInto:void 0};n(4)(r,o);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(3)(!1)).push([e.i,"@keyframes slidein {\r\n  from {\r\n    width: 85px;\r\n  }\r\n\r\n  to {\r\n    width: 365px;\r\n  }\r\n}\r\n\r\n@keyframes slideout {\r\n  from {\r\n    width: 365px;\r\n  }\r\n\r\n  to {\r\n    width: 85px;\r\n  }\r\n}\r\n\r\n@keyframes fadein {\r\n  from {\r\n    opacity: 0;\r\n  }\r\n  50%{\r\n    opacity: 0;\r\n  }\r\n  to {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n@keyframes menuexpand{\r\n  from {\r\n    height: 0px;\r\n  }\r\n  to{\r\n    height: auto;\r\n  }\r\n}",""])}]);
-=======
  */
 
 
@@ -1765,34 +1899,65 @@ if (true) {
   (function() {
 'use strict';
 
-var invariant = __webpack_require__(/*! fbjs/lib/invariant */ "./node_modules/fbjs/lib/invariant.js");
 var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-var warning = __webpack_require__(/*! fbjs/lib/warning */ "./node_modules/fbjs/lib/warning.js");
-var ExecutionEnvironment = __webpack_require__(/*! fbjs/lib/ExecutionEnvironment */ "./node_modules/fbjs/lib/ExecutionEnvironment.js");
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
-var emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ "./node_modules/fbjs/lib/emptyFunction.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
-var getActiveElement = __webpack_require__(/*! fbjs/lib/getActiveElement */ "./node_modules/fbjs/lib/getActiveElement.js");
-var shallowEqual = __webpack_require__(/*! fbjs/lib/shallowEqual */ "./node_modules/fbjs/lib/shallowEqual.js");
-var containsNode = __webpack_require__(/*! fbjs/lib/containsNode */ "./node_modules/fbjs/lib/containsNode.js");
-var emptyObject = __webpack_require__(/*! fbjs/lib/emptyObject */ "./node_modules/fbjs/lib/emptyObject.js");
-var hyphenateStyleName = __webpack_require__(/*! fbjs/lib/hyphenateStyleName */ "./node_modules/fbjs/lib/hyphenateStyleName.js");
-var camelizeStyleName = __webpack_require__(/*! fbjs/lib/camelizeStyleName */ "./node_modules/fbjs/lib/camelizeStyleName.js");
+var schedule = __webpack_require__(/*! schedule */ "./node_modules/schedule/index.js");
+var tracking = __webpack_require__(/*! schedule/tracking */ "./node_modules/schedule/tracking.js");
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function () {};
+
+{
+  validateFormat = function (format) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  };
+}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error = void 0;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
 
 // Relying on the `invariant()` implementation lets us
-// have preserve the format and params in the www builds.
+// preserve the format and params in the www builds.
 
 !React ? invariant(false, 'ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.') : void 0;
 
-var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
-  this._hasCaughtError = false;
-  this._caughtError = null;
+var invokeGuardedCallbackImpl = function (name, func, context, a, b, c, d, e, f) {
   var funcArgs = Array.prototype.slice.call(arguments, 3);
   try {
     func.apply(context, funcArgs);
   } catch (error) {
-    this._caughtError = error;
-    this._hasCaughtError = true;
+    this.onError(error);
   }
 };
 
@@ -1837,6 +2002,11 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
       // the error event at all.
       var didError = true;
 
+      // Keeps track of the value of window.event so that we can reset it
+      // during the callback to let user code access window.event in the
+      // browsers that support it.
+      var windowEvent = window.event;
+
       // Create an event handler for our fake event. We will synchronously
       // dispatch our fake event using `dispatchEvent`. Inside the handler, we
       // call the user-provided callback.
@@ -1847,6 +2017,15 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
         // nested call would trigger the fake event handlers of any call higher
         // in the stack.
         fakeNode.removeEventListener(evtType, callCallback, false);
+
+        // We check for window.hasOwnProperty('event') to prevent the
+        // window.event assignment in both IE <= 10 as they throw an error
+        // "Member not found" in strict mode, and in Firefox which does not
+        // support window.event.
+        if (typeof window.event !== 'undefined' && window.hasOwnProperty('event')) {
+          window.event = windowEvent;
+        }
+
         func.apply(context, funcArgs);
         didError = false;
       }
@@ -1867,11 +2046,23 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
       var didSetError = false;
       var isCrossOriginError = false;
 
-      function onError(event) {
+      function handleWindowError(event) {
         error = event.error;
         didSetError = true;
         if (error === null && event.colno === 0 && event.lineno === 0) {
           isCrossOriginError = true;
+        }
+        if (event.defaultPrevented) {
+          // Some other error handler has prevented default.
+          // Browsers silence the error report if this happens.
+          // We'll remember this to later decide whether to log it or not.
+          if (error != null && typeof error === 'object') {
+            try {
+              error._suppressLogging = true;
+            } catch (inner) {
+              // Ignore.
+            }
+          }
         }
       }
 
@@ -1879,7 +2070,7 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
       var evtType = 'react-' + (name ? name : 'invokeguardedcallback');
 
       // Attach our event handlers
-      window.addEventListener('error', onError);
+      window.addEventListener('error', handleWindowError);
       fakeNode.addEventListener(evtType, callCallback, false);
 
       // Synchronously dispatch our fake event. If the user-provided function
@@ -1894,102 +2085,101 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
         } else if (isCrossOriginError) {
           error = new Error("A cross-origin error was thrown. React doesn't have access to " + 'the actual error object in development. ' + 'See https://fb.me/react-crossorigin-error for more information.');
         }
-        this._hasCaughtError = true;
-        this._caughtError = error;
-      } else {
-        this._hasCaughtError = false;
-        this._caughtError = null;
+        this.onError(error);
       }
 
       // Remove our event listeners
-      window.removeEventListener('error', onError);
+      window.removeEventListener('error', handleWindowError);
     };
 
-    invokeGuardedCallback = invokeGuardedCallbackDev;
+    invokeGuardedCallbackImpl = invokeGuardedCallbackDev;
   }
 }
 
-var invokeGuardedCallback$1 = invokeGuardedCallback;
+var invokeGuardedCallbackImpl$1 = invokeGuardedCallbackImpl;
 
-var ReactErrorUtils = {
-  // Used by Fiber to simulate a try-catch.
-  _caughtError: null,
-  _hasCaughtError: false,
+// Used by Fiber to simulate a try-catch.
+var hasError = false;
+var caughtError = null;
 
-  // Used by event system to capture/rethrow the first error.
-  _rethrowError: null,
-  _hasRethrowError: false,
+// Used by event system to capture/rethrow the first error.
+var hasRethrowError = false;
+var rethrowError = null;
 
-  /**
-   * Call a function while guarding against errors that happens within it.
-   * Returns an error if it throws, otherwise null.
-   *
-   * In production, this is implemented using a try-catch. The reason we don't
-   * use a try-catch directly is so that we can swap out a different
-   * implementation in DEV mode.
-   *
-   * @param {String} name of the guard to use for logging or debugging
-   * @param {Function} func The function to invoke
-   * @param {*} context The context to use when calling the function
-   * @param {...*} args Arguments for function
-   */
-  invokeGuardedCallback: function (name, func, context, a, b, c, d, e, f) {
-    invokeGuardedCallback$1.apply(ReactErrorUtils, arguments);
-  },
-
-  /**
-   * Same as invokeGuardedCallback, but instead of returning an error, it stores
-   * it in a global so it can be rethrown by `rethrowCaughtError` later.
-   * TODO: See if _caughtError and _rethrowError can be unified.
-   *
-   * @param {String} name of the guard to use for logging or debugging
-   * @param {Function} func The function to invoke
-   * @param {*} context The context to use when calling the function
-   * @param {...*} args Arguments for function
-   */
-  invokeGuardedCallbackAndCatchFirstError: function (name, func, context, a, b, c, d, e, f) {
-    ReactErrorUtils.invokeGuardedCallback.apply(this, arguments);
-    if (ReactErrorUtils.hasCaughtError()) {
-      var error = ReactErrorUtils.clearCaughtError();
-      if (!ReactErrorUtils._hasRethrowError) {
-        ReactErrorUtils._hasRethrowError = true;
-        ReactErrorUtils._rethrowError = error;
-      }
-    }
-  },
-
-  /**
-   * During execution of guarded functions we will capture the first error which
-   * we will rethrow to be handled by the top level error handler.
-   */
-  rethrowCaughtError: function () {
-    return rethrowCaughtError.apply(ReactErrorUtils, arguments);
-  },
-
-  hasCaughtError: function () {
-    return ReactErrorUtils._hasCaughtError;
-  },
-
-  clearCaughtError: function () {
-    if (ReactErrorUtils._hasCaughtError) {
-      var error = ReactErrorUtils._caughtError;
-      ReactErrorUtils._caughtError = null;
-      ReactErrorUtils._hasCaughtError = false;
-      return error;
-    } else {
-      invariant(false, 'clearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue.');
-    }
+var reporter = {
+  onError: function (error) {
+    hasError = true;
+    caughtError = error;
   }
 };
 
-var rethrowCaughtError = function () {
-  if (ReactErrorUtils._hasRethrowError) {
-    var error = ReactErrorUtils._rethrowError;
-    ReactErrorUtils._rethrowError = null;
-    ReactErrorUtils._hasRethrowError = false;
+/**
+ * Call a function while guarding against errors that happens within it.
+ * Returns an error if it throws, otherwise null.
+ *
+ * In production, this is implemented using a try-catch. The reason we don't
+ * use a try-catch directly is so that we can swap out a different
+ * implementation in DEV mode.
+ *
+ * @param {String} name of the guard to use for logging or debugging
+ * @param {Function} func The function to invoke
+ * @param {*} context The context to use when calling the function
+ * @param {...*} args Arguments for function
+ */
+function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+  hasError = false;
+  caughtError = null;
+  invokeGuardedCallbackImpl$1.apply(reporter, arguments);
+}
+
+/**
+ * Same as invokeGuardedCallback, but instead of returning an error, it stores
+ * it in a global so it can be rethrown by `rethrowCaughtError` later.
+ * TODO: See if caughtError and rethrowError can be unified.
+ *
+ * @param {String} name of the guard to use for logging or debugging
+ * @param {Function} func The function to invoke
+ * @param {*} context The context to use when calling the function
+ * @param {...*} args Arguments for function
+ */
+function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+  invokeGuardedCallback.apply(this, arguments);
+  if (hasError) {
+    var error = clearCaughtError();
+    if (!hasRethrowError) {
+      hasRethrowError = true;
+      rethrowError = error;
+    }
+  }
+}
+
+/**
+ * During execution of guarded functions we will capture the first error which
+ * we will rethrow to be handled by the top level error handler.
+ */
+function rethrowCaughtError() {
+  if (hasRethrowError) {
+    var error = rethrowError;
+    hasRethrowError = false;
+    rethrowError = null;
     throw error;
   }
-};
+}
+
+function hasCaughtError() {
+  return hasError;
+}
+
+function clearCaughtError() {
+  if (hasError) {
+    var error = caughtError;
+    hasError = false;
+    caughtError = null;
+    return error;
+  } else {
+    invariant(false, 'clearCaughtError was called but no error was captured. This error is likely caused by a bug in React. Please file an issue.');
+  }
+}
 
 /**
  * Injectable ordering of event plugins.
@@ -2156,31 +2346,62 @@ function injectEventPluginsByName(injectedNamesToPlugins) {
   }
 }
 
-var EventPluginRegistry = Object.freeze({
-	plugins: plugins,
-	eventNameDispatchConfigs: eventNameDispatchConfigs,
-	registrationNameModules: registrationNameModules,
-	registrationNameDependencies: registrationNameDependencies,
-	possibleRegistrationNames: possibleRegistrationNames,
-	injectEventPluginOrder: injectEventPluginOrder,
-	injectEventPluginsByName: injectEventPluginsByName
-});
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warningWithoutStack = function () {};
+
+{
+  warningWithoutStack = function (condition, format) {
+    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    if (format === undefined) {
+      throw new Error('`warningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+    if (condition) {
+      return;
+    }
+    if (typeof console !== 'undefined') {
+      var _console;
+
+      var stringArgs = args.map(function (item) {
+        return '' + item;
+      });
+      (_console = console).error.apply(_console, ['Warning: ' + format].concat(stringArgs));
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      var argIndex = 0;
+      var message = 'Warning: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      });
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+var warningWithoutStack$1 = warningWithoutStack;
 
 var getFiberCurrentPropsFromNode = null;
 var getInstanceFromNode = null;
 var getNodeFromInstance = null;
 
-var injection$1 = {
-  injectComponentTree: function (Injected) {
-    getFiberCurrentPropsFromNode = Injected.getFiberCurrentPropsFromNode;
-    getInstanceFromNode = Injected.getInstanceFromNode;
-    getNodeFromInstance = Injected.getNodeFromInstance;
-
-    {
-      !(getNodeFromInstance && getInstanceFromNode) ? warning(false, 'EventPluginUtils.injection.injectComponentTree(...): Injected ' + 'module is missing getNodeFromInstance or getInstanceFromNode.') : void 0;
-    }
+function setComponentTree(getFiberCurrentPropsFromNodeImpl, getInstanceFromNodeImpl, getNodeFromInstanceImpl) {
+  getFiberCurrentPropsFromNode = getFiberCurrentPropsFromNodeImpl;
+  getInstanceFromNode = getInstanceFromNodeImpl;
+  getNodeFromInstance = getNodeFromInstanceImpl;
+  {
+    !(getNodeFromInstance && getInstanceFromNode) ? warningWithoutStack$1(false, 'EventPluginUtils.setComponentTree(...): Injected ' + 'module is missing getNodeFromInstance or getInstanceFromNode.') : void 0;
   }
-};
+}
 
 var validateEventDispatches = void 0;
 {
@@ -2194,7 +2415,7 @@ var validateEventDispatches = void 0;
     var instancesIsArr = Array.isArray(dispatchInstances);
     var instancesLen = instancesIsArr ? dispatchInstances.length : dispatchInstances ? 1 : 0;
 
-    !(instancesIsArr === listenersIsArr && instancesLen === listenersLen) ? warning(false, 'EventPluginUtils: Invalid `event`.') : void 0;
+    !(instancesIsArr === listenersIsArr && instancesLen === listenersLen) ? warningWithoutStack$1(false, 'EventPluginUtils: Invalid `event`.') : void 0;
   };
 }
 
@@ -2208,7 +2429,7 @@ var validateEventDispatches = void 0;
 function executeDispatch(event, simulated, listener, inst) {
   var type = event.type || 'unknown-event';
   event.currentTarget = getNodeFromInstance(inst);
-  ReactErrorUtils.invokeGuardedCallbackAndCatchFirstError(type, listener, undefined, event);
+  invokeGuardedCallbackAndCatchFirstError(type, listener, undefined, event);
   event.currentTarget = null;
 }
 
@@ -2474,7 +2695,7 @@ function runEventsInBatch(events, simulated) {
   }
   !!eventQueue ? invariant(false, 'processEventQueue(): Additional events were enqueued while processing an event queue. Support for this has not yet been implemented.') : void 0;
   // This would be a good time to rethrow if any of the event handlers threw.
-  ReactErrorUtils.rethrowCaughtError();
+  rethrowCaughtError();
 }
 
 function runExtractedEventsInBatch(topLevelType, targetInst, nativeEvent, nativeEventTarget) {
@@ -2482,30 +2703,23 @@ function runExtractedEventsInBatch(topLevelType, targetInst, nativeEvent, native
   runEventsInBatch(events, false);
 }
 
-var EventPluginHub = Object.freeze({
-	injection: injection,
-	getListener: getListener,
-	runEventsInBatch: runEventsInBatch,
-	runExtractedEventsInBatch: runExtractedEventsInBatch
-});
-
-var IndeterminateComponent = 0; // Before we know whether it is functional or class
-var FunctionalComponent = 1;
+var FunctionalComponent = 0;
+var FunctionalComponentLazy = 1;
 var ClassComponent = 2;
-var HostRoot = 3; // Root of a host tree. Could be nested inside another node.
-var HostPortal = 4; // A subtree. Could be an entry point to a different renderer.
-var HostComponent = 5;
-var HostText = 6;
-
-
-
-var Fragment = 10;
-var Mode = 11;
-var ContextConsumer = 12;
-var ContextProvider = 13;
-var ForwardRef = 14;
+var ClassComponentLazy = 3;
+var IndeterminateComponent = 4; // Before we know whether it is functional or class
+var HostRoot = 5; // Root of a host tree. Could be nested inside another node.
+var HostPortal = 6; // A subtree. Could be an entry point to a different renderer.
+var HostComponent = 7;
+var HostText = 8;
+var Fragment = 9;
+var Mode = 10;
+var ContextConsumer = 11;
+var ContextProvider = 12;
+var ForwardRef = 13;
+var ForwardRefLazy = 14;
 var Profiler = 15;
-var TimeoutComponent = 16;
+var PlaceholderComponent = 16;
 
 var randomKey = Math.random().toString(36).slice(2);
 var internalInstanceKey = '__reactInternalInstance$' + randomKey;
@@ -2583,15 +2797,6 @@ function updateFiberProps(node, props) {
   node[internalEventHandlersKey] = props;
 }
 
-var ReactDOMComponentTree = Object.freeze({
-	precacheFiberNode: precacheFiberNode,
-	getClosestInstanceFromNode: getClosestInstanceFromNode,
-	getInstanceFromNode: getInstanceFromNode$1,
-	getNodeFromInstance: getNodeFromInstance$1,
-	getFiberCurrentPropsFromNode: getFiberCurrentPropsFromNode$1,
-	updateFiberProps: updateFiberProps
-});
-
 function getParent(inst) {
   do {
     inst = inst.return;
@@ -2653,9 +2858,7 @@ function getLowestCommonAncestor(instA, instB) {
 /**
  * Return the parent instance of the passed-in instance.
  */
-function getParentInstance(inst) {
-  return getParent(inst);
-}
+
 
 /**
  * Simulates the traversal of a two-phase, capture/bubble event dispatch.
@@ -2749,7 +2952,7 @@ function listenerAtPhase(inst, event, propagationPhase) {
  */
 function accumulateDirectionalDispatches(inst, phase, event) {
   {
-    !inst ? warning(false, 'Dispatching inst must not be null') : void 0;
+    !inst ? warningWithoutStack$1(false, 'Dispatching inst must not be null') : void 0;
   }
   var listener = listenerAtPhase(inst, event, phase);
   if (listener) {
@@ -2768,17 +2971,6 @@ function accumulateDirectionalDispatches(inst, phase, event) {
 function accumulateTwoPhaseDispatchesSingle(event) {
   if (event && event.dispatchConfig.phasedRegistrationNames) {
     traverseTwoPhase(event._targetInst, accumulateDirectionalDispatches, event);
-  }
-}
-
-/**
- * Same as `accumulateTwoPhaseDispatchesSingle`, but skips over the targetID.
- */
-function accumulateTwoPhaseDispatchesSingleSkipTarget(event) {
-  if (event && event.dispatchConfig.phasedRegistrationNames) {
-    var targetInst = event._targetInst;
-    var parentInst = targetInst ? getParentInstance(targetInst) : null;
-    traverseTwoPhase(parentInst, accumulateDirectionalDispatches, event);
   }
 }
 
@@ -2813,9 +3005,7 @@ function accumulateTwoPhaseDispatches(events) {
   forEachAccumulated(events, accumulateTwoPhaseDispatchesSingle);
 }
 
-function accumulateTwoPhaseDispatchesSkipTarget(events) {
-  forEachAccumulated(events, accumulateTwoPhaseDispatchesSingleSkipTarget);
-}
+
 
 function accumulateEnterLeaveDispatches(leave, enter, from, to) {
   traverseEnterLeave(from, to, accumulateDispatches, leave, enter);
@@ -2825,12 +3015,7 @@ function accumulateDirectDispatches(events) {
   forEachAccumulated(events, accumulateDirectDispatchesSingle);
 }
 
-var EventPropagators = Object.freeze({
-	accumulateTwoPhaseDispatches: accumulateTwoPhaseDispatches,
-	accumulateTwoPhaseDispatchesSkipTarget: accumulateTwoPhaseDispatchesSkipTarget,
-	accumulateEnterLeaveDispatches: accumulateEnterLeaveDispatches,
-	accumulateDirectDispatches: accumulateDirectDispatches
-});
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 // Do not uses the below two methods directly!
 // Instead use constants exported from DOMTopLevelEventTypes in ReactDOM.
@@ -2857,8 +3042,6 @@ function makePrefixMap(styleProp, eventName) {
   prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
   prefixes['Webkit' + styleProp] = 'webkit' + eventName;
   prefixes['Moz' + styleProp] = 'moz' + eventName;
-  prefixes['ms' + styleProp] = 'MS' + eventName;
-  prefixes['O' + styleProp] = 'o' + eventName.toLowerCase();
 
   return prefixes;
 }
@@ -2886,7 +3069,7 @@ var style = {};
 /**
  * Bootstrap if a DOM exists.
  */
-if (ExecutionEnvironment.canUseDOM) {
+if (canUseDOM) {
   style = document.createElement('div').style;
 
   // On some platforms, in particular some releases of Android 4.x,
@@ -2954,6 +3137,7 @@ var TOP_CONTEXT_MENU = unsafeCastStringToDOMTopLevelType('contextmenu');
 var TOP_COPY = unsafeCastStringToDOMTopLevelType('copy');
 var TOP_CUT = unsafeCastStringToDOMTopLevelType('cut');
 var TOP_DOUBLE_CLICK = unsafeCastStringToDOMTopLevelType('dblclick');
+var TOP_AUX_CLICK = unsafeCastStringToDOMTopLevelType('auxclick');
 var TOP_DRAG = unsafeCastStringToDOMTopLevelType('drag');
 var TOP_DRAG_END = unsafeCastStringToDOMTopLevelType('dragend');
 var TOP_DRAG_ENTER = unsafeCastStringToDOMTopLevelType('dragenter');
@@ -3027,25 +3211,8 @@ function getRawEventName(topLevelType) {
   return unsafeCastDOMTopLevelTypeToString(topLevelType);
 }
 
-var contentKey = null;
-
 /**
- * Gets the key used to access text content on a DOM node.
- *
- * @return {?string} Key used to access text content.
- * @internal
- */
-function getTextContentAccessor() {
-  if (!contentKey && ExecutionEnvironment.canUseDOM) {
-    // Prefer textContent to innerText because many browsers support both but
-    // SVG <text> elements don't support innerText even when <div> does.
-    contentKey = 'textContent' in document.documentElement ? 'textContent' : 'innerText';
-  }
-  return contentKey;
-}
-
-/**
- * This helper object stores information about text content of a target node,
+ * These variables store information about text content of a target node,
  * allowing comparison of content before and after a given event.
  *
  * Identify the node where selection currently begins, then observe
@@ -3055,31 +3222,30 @@ function getTextContentAccessor() {
  *
  *
  */
-var compositionState = {
-  _root: null,
-  _startText: null,
-  _fallbackText: null
-};
+
+var root = null;
+var startText = null;
+var fallbackText = null;
 
 function initialize(nativeEventTarget) {
-  compositionState._root = nativeEventTarget;
-  compositionState._startText = getText();
+  root = nativeEventTarget;
+  startText = getText();
   return true;
 }
 
 function reset() {
-  compositionState._root = null;
-  compositionState._startText = null;
-  compositionState._fallbackText = null;
+  root = null;
+  startText = null;
+  fallbackText = null;
 }
 
 function getData() {
-  if (compositionState._fallbackText) {
-    return compositionState._fallbackText;
+  if (fallbackText) {
+    return fallbackText;
   }
 
   var start = void 0;
-  var startValue = compositionState._startText;
+  var startValue = startText;
   var startLength = startValue.length;
   var end = void 0;
   var endValue = getText();
@@ -3099,23 +3265,20 @@ function getData() {
   }
 
   var sliceTail = end > 1 ? 1 - end : undefined;
-  compositionState._fallbackText = endValue.slice(start, sliceTail);
-  return compositionState._fallbackText;
+  fallbackText = endValue.slice(start, sliceTail);
+  return fallbackText;
 }
 
 function getText() {
-  if ('value' in compositionState._root) {
-    return compositionState._root.value;
+  if ('value' in root) {
+    return root.value;
   }
-  return compositionState._root[getTextContentAccessor()];
+  return root.textContent;
 }
 
 /* eslint valid-typeof: 0 */
 
-var didWarnForAddedNewProperty = false;
 var EVENT_POOL_SIZE = 10;
-
-var shouldBeReleasedProperties = ['dispatchConfig', '_targetInst', 'nativeEvent', 'isDefaultPrevented', 'isPropagationStopped', '_dispatchListeners', '_dispatchInstances'];
 
 /**
  * @interface Event
@@ -3125,7 +3288,9 @@ var EventInterface = {
   type: null,
   target: null,
   // currentTarget is set when dispatching; no use in copying it here
-  currentTarget: emptyFunction.thatReturnsNull,
+  currentTarget: function () {
+    return null;
+  },
   eventPhase: null,
   bubbles: null,
   cancelable: null,
@@ -3135,6 +3300,14 @@ var EventInterface = {
   defaultPrevented: null,
   isTrusted: null
 };
+
+function functionThatReturnsTrue() {
+  return true;
+}
+
+function functionThatReturnsFalse() {
+  return false;
+}
 
 /**
  * Synthetic events are dispatched by event plugins, typically in response to a
@@ -3160,6 +3333,8 @@ function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarg
     delete this.nativeEvent;
     delete this.preventDefault;
     delete this.stopPropagation;
+    delete this.isDefaultPrevented;
+    delete this.isPropagationStopped;
   }
 
   this.dispatchConfig = dispatchConfig;
@@ -3188,11 +3363,11 @@ function SyntheticEvent(dispatchConfig, targetInst, nativeEvent, nativeEventTarg
 
   var defaultPrevented = nativeEvent.defaultPrevented != null ? nativeEvent.defaultPrevented : nativeEvent.returnValue === false;
   if (defaultPrevented) {
-    this.isDefaultPrevented = emptyFunction.thatReturnsTrue;
+    this.isDefaultPrevented = functionThatReturnsTrue;
   } else {
-    this.isDefaultPrevented = emptyFunction.thatReturnsFalse;
+    this.isDefaultPrevented = functionThatReturnsFalse;
   }
-  this.isPropagationStopped = emptyFunction.thatReturnsFalse;
+  this.isPropagationStopped = functionThatReturnsFalse;
   return this;
 }
 
@@ -3209,7 +3384,7 @@ _assign(SyntheticEvent.prototype, {
     } else if (typeof event.returnValue !== 'unknown') {
       event.returnValue = false;
     }
-    this.isDefaultPrevented = emptyFunction.thatReturnsTrue;
+    this.isDefaultPrevented = functionThatReturnsTrue;
   },
 
   stopPropagation: function () {
@@ -3229,7 +3404,7 @@ _assign(SyntheticEvent.prototype, {
       event.cancelBubble = true;
     }
 
-    this.isPropagationStopped = emptyFunction.thatReturnsTrue;
+    this.isPropagationStopped = functionThatReturnsTrue;
   },
 
   /**
@@ -3238,7 +3413,7 @@ _assign(SyntheticEvent.prototype, {
    * won't be added back into the pool.
    */
   persist: function () {
-    this.isPersistent = emptyFunction.thatReturnsTrue;
+    this.isPersistent = functionThatReturnsTrue;
   },
 
   /**
@@ -3246,7 +3421,7 @@ _assign(SyntheticEvent.prototype, {
    *
    * @return {boolean} True if this should not be released, false otherwise.
    */
-  isPersistent: emptyFunction.thatReturnsFalse,
+  isPersistent: functionThatReturnsFalse,
 
   /**
    * `PooledClass` looks for `destructor` on each instance it releases.
@@ -3258,13 +3433,19 @@ _assign(SyntheticEvent.prototype, {
         Object.defineProperty(this, propName, getPooledWarningPropertyDefinition(propName, Interface[propName]));
       }
     }
-    for (var i = 0; i < shouldBeReleasedProperties.length; i++) {
-      this[shouldBeReleasedProperties[i]] = null;
-    }
+    this.dispatchConfig = null;
+    this._targetInst = null;
+    this.nativeEvent = null;
+    this.isDefaultPrevented = functionThatReturnsFalse;
+    this.isPropagationStopped = functionThatReturnsFalse;
+    this._dispatchListeners = null;
+    this._dispatchInstances = null;
     {
       Object.defineProperty(this, 'nativeEvent', getPooledWarningPropertyDefinition('nativeEvent', null));
-      Object.defineProperty(this, 'preventDefault', getPooledWarningPropertyDefinition('preventDefault', emptyFunction));
-      Object.defineProperty(this, 'stopPropagation', getPooledWarningPropertyDefinition('stopPropagation', emptyFunction));
+      Object.defineProperty(this, 'isDefaultPrevented', getPooledWarningPropertyDefinition('isDefaultPrevented', functionThatReturnsFalse));
+      Object.defineProperty(this, 'isPropagationStopped', getPooledWarningPropertyDefinition('isPropagationStopped', functionThatReturnsFalse));
+      Object.defineProperty(this, 'preventDefault', getPooledWarningPropertyDefinition('preventDefault', function () {}));
+      Object.defineProperty(this, 'stopPropagation', getPooledWarningPropertyDefinition('stopPropagation', function () {}));
     }
   }
 });
@@ -3294,38 +3475,6 @@ SyntheticEvent.extend = function (Interface) {
 
   return Class;
 };
-
-/** Proxying after everything set on SyntheticEvent
- * to resolve Proxy issue on some WebKit browsers
- * in which some Event properties are set to undefined (GH#10010)
- */
-{
-  var isProxySupported = typeof Proxy === 'function' &&
-  // https://github.com/facebook/react/issues/12011
-  !Object.isSealed(new Proxy({}, {}));
-
-  if (isProxySupported) {
-    /*eslint-disable no-func-assign */
-    SyntheticEvent = new Proxy(SyntheticEvent, {
-      construct: function (target, args) {
-        return this.apply(target, Object.create(target.prototype), args);
-      },
-      apply: function (constructor, that, args) {
-        return new Proxy(constructor.apply(that, args), {
-          set: function (target, prop, value) {
-            if (prop !== 'isPersistent' && !target.constructor.Interface.hasOwnProperty(prop) && shouldBeReleasedProperties.indexOf(prop) === -1) {
-              !(didWarnForAddedNewProperty || target.isPersistent()) ? warning(false, "This synthetic event is reused for performance reasons. If you're " + "seeing this, you're adding a new property in the synthetic event object. " + 'The property is never released. See ' + 'https://fb.me/react-event-pooling for more information.') : void 0;
-              didWarnForAddedNewProperty = true;
-            }
-            target[prop] = value;
-            return true;
-          }
-        });
-      }
-    });
-    /*eslint-enable no-func-assign */
-  }
-}
 
 addEventPoolingTo(SyntheticEvent);
 
@@ -3359,7 +3508,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
 
   function warn(action, result) {
     var warningCondition = false;
-    !warningCondition ? warning(false, "This synthetic event is reused for performance reasons. If you're seeing this, " + "you're %s `%s` on a released/nullified synthetic event. %s. " + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
+    !warningCondition ? warningWithoutStack$1(false, "This synthetic event is reused for performance reasons. If you're seeing this, " + "you're %s `%s` on a released/nullified synthetic event. %s. " + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
   }
 }
 
@@ -3375,7 +3524,7 @@ function getPooledEvent(dispatchConfig, targetInst, nativeEvent, nativeInst) {
 
 function releasePooledEvent(event) {
   var EventConstructor = this;
-  !(event instanceof EventConstructor) ? invariant(false, 'Trying to release an event instance  into a pool of a different type.') : void 0;
+  !(event instanceof EventConstructor) ? invariant(false, 'Trying to release an event instance into a pool of a different type.') : void 0;
   event.destructor();
   if (EventConstructor.eventPool.length < EVENT_POOL_SIZE) {
     EventConstructor.eventPool.push(event);
@@ -3388,13 +3537,11 @@ function addEventPoolingTo(EventConstructor) {
   EventConstructor.release = releasePooledEvent;
 }
 
-var SyntheticEvent$1 = SyntheticEvent;
-
 /**
  * @interface Event
  * @see http://www.w3.org/TR/DOM-Level-3-Events/#events-compositionevents
  */
-var SyntheticCompositionEvent = SyntheticEvent$1.extend({
+var SyntheticCompositionEvent = SyntheticEvent.extend({
   data: null
 });
 
@@ -3403,29 +3550,29 @@ var SyntheticCompositionEvent = SyntheticEvent$1.extend({
  * @see http://www.w3.org/TR/2013/WD-DOM-Level-3-Events-20131105
  *      /#events-inputevents
  */
-var SyntheticInputEvent = SyntheticEvent$1.extend({
+var SyntheticInputEvent = SyntheticEvent.extend({
   data: null
 });
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
 
-var canUseCompositionEvent = ExecutionEnvironment.canUseDOM && 'CompositionEvent' in window;
+var canUseCompositionEvent = canUseDOM && 'CompositionEvent' in window;
 
 var documentMode = null;
-if (ExecutionEnvironment.canUseDOM && 'documentMode' in document) {
+if (canUseDOM && 'documentMode' in document) {
   documentMode = document.documentMode;
 }
 
 // Webkit offers a very useful `textInput` event that can be used to
 // directly represent `beforeInput`. The IE `textinput` event is not as
 // useful, so we don't use it.
-var canUseTextInputEvent = ExecutionEnvironment.canUseDOM && 'TextEvent' in window && !documentMode;
+var canUseTextInputEvent = canUseDOM && 'TextEvent' in window && !documentMode;
 
 // In IE9+, we have access to composition events, but the data supplied
 // by the native compositionend event may be incorrect. Japanese ideographic
 // spaces, for instance (\u3000) are not recorded correctly.
-var useFallbackCompositionData = ExecutionEnvironment.canUseDOM && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
+var useFallbackCompositionData = canUseDOM && (!canUseCompositionEvent || documentMode && documentMode > 8 && documentMode <= 11);
 
 var SPACEBAR_CODE = 32;
 var SPACEBAR_CHAR = String.fromCharCode(SPACEBAR_CODE);
@@ -3548,6 +3695,20 @@ function getDataFromCustomEvent(nativeEvent) {
   return null;
 }
 
+/**
+ * Check if a composition event was triggered by Korean IME.
+ * Our fallback mode does not work well with IE's Korean IME,
+ * so just use native composition events when Korean IME is used.
+ * Although CompositionEvent.locale property is deprecated,
+ * it is available in IE, where our fallback mode is enabled.
+ *
+ * @param {object} nativeEvent
+ * @return {boolean}
+ */
+function isUsingKoreanIME(nativeEvent) {
+  return nativeEvent.locale === 'ko';
+}
+
 // Track the current IME composition status, if any.
 var isComposing = false;
 
@@ -3572,7 +3733,7 @@ function extractCompositionEvent(topLevelType, targetInst, nativeEvent, nativeEv
     return null;
   }
 
-  if (useFallbackCompositionData) {
+  if (useFallbackCompositionData && !isUsingKoreanIME(nativeEvent)) {
     // The current composition is stored statically and must not be
     // overwritten while composition continues.
     if (!isComposing && eventType === eventTypes.compositionStart) {
@@ -3712,7 +3873,7 @@ function getFallbackBeforeInputChars(topLevelType, nativeEvent) {
       }
       return null;
     case TOP_COMPOSITION_END:
-      return useFallbackCompositionData ? null : nativeEvent.data;
+      return useFallbackCompositionData && !isUsingKoreanIME(nativeEvent) ? null : nativeEvent.data;
     default:
       return null;
   }
@@ -3786,16 +3947,7 @@ var BeforeInputEventPlugin = {
 
 // Use to restore controlled state after a change event has fired.
 
-var fiberHostComponent = null;
-
-var ReactControlledComponentInjection = {
-  injectFiberControlledHostComponent: function (hostComponentImpl) {
-    // The fiber implementation doesn't use dynamic dispatch so we need to
-    // inject the implementation.
-    fiberHostComponent = hostComponentImpl;
-  }
-};
-
+var restoreImpl = null;
 var restoreTarget = null;
 var restoreQueue = null;
 
@@ -3807,12 +3959,14 @@ function restoreStateOfTarget(target) {
     // Unmounted
     return;
   }
-  !(fiberHostComponent && typeof fiberHostComponent.restoreControlledState === 'function') ? invariant(false, 'Fiber needs to be injected to handle a fiber target for controlled events. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+  !(typeof restoreImpl === 'function') ? invariant(false, 'setRestoreImplementation() needs to be called to handle a target for controlled events. This error is likely caused by a bug in React. Please file an issue.') : void 0;
   var props = getFiberCurrentPropsFromNode(internalInstance.stateNode);
-  fiberHostComponent.restoreControlledState(internalInstance.stateNode, internalInstance.type, props);
+  restoreImpl(internalInstance.stateNode, internalInstance.type, props);
 }
 
-var injection$2 = ReactControlledComponentInjection;
+function setRestoreImplementation(impl) {
+  restoreImpl = impl;
+}
 
 function enqueueStateRestore(target) {
   if (restoreTarget) {
@@ -3847,13 +4001,6 @@ function restoreStateIfNeeded() {
   }
 }
 
-var ReactControlledComponent = Object.freeze({
-	injection: injection$2,
-	enqueueStateRestore: enqueueStateRestore,
-	needsStateRestore: needsStateRestore,
-	restoreStateIfNeeded: restoreStateIfNeeded
-});
-
 // Used as a way to call batchedUpdates when we don't have a reference to
 // the renderer. Such as when we're dispatching events or if third party
 // libraries need to call batchedUpdates. Eventually, this API will go away when
@@ -3861,13 +4008,13 @@ var ReactControlledComponent = Object.freeze({
 // scheduled work and instead do synchronous work.
 
 // Defaults
-var _batchedUpdates = function (fn, bookkeeping) {
+var _batchedUpdatesImpl = function (fn, bookkeeping) {
   return fn(bookkeeping);
 };
-var _interactiveUpdates = function (fn, a, b) {
+var _interactiveUpdatesImpl = function (fn, a, b) {
   return fn(a, b);
 };
-var _flushInteractiveUpdates = function () {};
+var _flushInteractiveUpdatesImpl = function () {};
 
 var isBatching = false;
 function batchedUpdates(fn, bookkeeping) {
@@ -3878,7 +4025,7 @@ function batchedUpdates(fn, bookkeeping) {
   }
   isBatching = true;
   try {
-    return _batchedUpdates(fn, bookkeeping);
+    return _batchedUpdatesImpl(fn, bookkeeping);
   } finally {
     // Here we wait until all updates have propagated, which is important
     // when using controlled components within layers:
@@ -3890,25 +4037,23 @@ function batchedUpdates(fn, bookkeeping) {
       // If a controlled event was fired, we may need to restore the state of
       // the DOM node back to the controlled value. This is necessary when React
       // bails out of the update without touching the DOM.
-      _flushInteractiveUpdates();
+      _flushInteractiveUpdatesImpl();
       restoreStateIfNeeded();
     }
   }
 }
 
 function interactiveUpdates(fn, a, b) {
-  return _interactiveUpdates(fn, a, b);
+  return _interactiveUpdatesImpl(fn, a, b);
 }
 
 
 
-var injection$3 = {
-  injectRenderer: function (renderer) {
-    _batchedUpdates = renderer.batchedUpdates;
-    _interactiveUpdates = renderer.interactiveUpdates;
-    _flushInteractiveUpdates = renderer.flushInteractiveUpdates;
-  }
-};
+function setBatchingImplementation(batchedUpdatesImpl, interactiveUpdatesImpl, flushInteractiveUpdatesImpl) {
+  _batchedUpdatesImpl = batchedUpdatesImpl;
+  _interactiveUpdatesImpl = interactiveUpdatesImpl;
+  _flushInteractiveUpdatesImpl = flushInteractiveUpdatesImpl;
+}
 
 /**
  * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/the-input-element.html#input-type-attr-summary
@@ -3986,13 +4131,12 @@ function getEventTarget(nativeEvent) {
  * Borrows from Modernizr.
  *
  * @param {string} eventNameSuffix Event name, e.g. "click".
- * @param {?boolean} capture Check if the capture phase is supported.
  * @return {boolean} True if the event is supported.
  * @internal
  * @license Modernizr 3.0.0pre (Custom Build) | MIT
  */
-function isEventSupported(eventNameSuffix, capture) {
-  if (!ExecutionEnvironment.canUseDOM || capture && !('addEventListener' in document)) {
+function isEventSupported(eventNameSuffix) {
+  if (!canUseDOM) {
     return false;
   }
 
@@ -4116,13 +4260,34 @@ function updateValueIfChanged(node) {
   return false;
 }
 
-var ReactInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
-var ReactCurrentOwner = ReactInternals.ReactCurrentOwner;
-var ReactDebugCurrentFrame = ReactInternals.ReactDebugCurrentFrame;
+var BEFORE_SLASH_RE = /^(.*)[\\\/]/;
 
 var describeComponentFrame = function (name, source, ownerName) {
-  return '\n    in ' + (name || 'Unknown') + (source ? ' (at ' + source.fileName.replace(/^.*[\\\/]/, '') + ':' + source.lineNumber + ')' : ownerName ? ' (created by ' + ownerName + ')' : '');
+  var sourceInfo = '';
+  if (source) {
+    var path = source.fileName;
+    var fileName = path.replace(BEFORE_SLASH_RE, '');
+    {
+      // In DEV, include code for a common special case:
+      // prefer "folder/index.js" instead of just "index.js".
+      if (/^index\./.test(fileName)) {
+        var match = path.match(BEFORE_SLASH_RE);
+        if (match) {
+          var pathBeforeSlash = match[1];
+          if (pathBeforeSlash) {
+            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');
+            fileName = folderName + '/' + fileName;
+          }
+        }
+      }
+    }
+    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';
+  } else if (ownerName) {
+    sourceInfo = ' (created by ' + ownerName + ')';
+  }
+  return '\n    in ' + (name || 'Unknown') + sourceInfo;
 };
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
@@ -4138,13 +4303,13 @@ var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
 var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_TIMEOUT_TYPE = hasSymbol ? Symbol.for('react.timeout') : 0xead1;
+var REACT_PLACEHOLDER_TYPE = hasSymbol ? Symbol.for('react.placeholder') : 0xead1;
 
 var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator';
 
 function getIteratorFn(maybeIterable) {
-  if (maybeIterable === null || typeof maybeIterable === 'undefined') {
+  if (maybeIterable === null || typeof maybeIterable !== 'object') {
     return null;
   }
   var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
@@ -4154,11 +4319,30 @@ function getIteratorFn(maybeIterable) {
   return null;
 }
 
-function getComponentName(fiber) {
-  var type = fiber.type;
+var Pending = 0;
+var Resolved = 1;
+var Rejected = 2;
 
+function getResultFromResolvedThenable(thenable) {
+  return thenable._reactResult;
+}
+
+function refineResolvedThenable(thenable) {
+  return thenable._reactStatus === Resolved ? thenable._reactResult : null;
+}
+
+function getComponentName(type) {
+  if (type == null) {
+    // Host root, text node or just invalid type.
+    return null;
+  }
+  {
+    if (typeof type.tag === 'number') {
+      warningWithoutStack$1(false, 'Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
+    }
+  }
   if (typeof type === 'function') {
-    return type.displayName || type.name;
+    return type.displayName || type.name || null;
   }
   if (typeof type === 'string') {
     return type;
@@ -4166,43 +4350,56 @@ function getComponentName(fiber) {
   switch (type) {
     case REACT_ASYNC_MODE_TYPE:
       return 'AsyncMode';
-    case REACT_CONTEXT_TYPE:
-      return 'Context.Consumer';
     case REACT_FRAGMENT_TYPE:
-      return 'ReactFragment';
+      return 'Fragment';
     case REACT_PORTAL_TYPE:
-      return 'ReactPortal';
+      return 'Portal';
     case REACT_PROFILER_TYPE:
-      return 'Profiler(' + fiber.pendingProps.id + ')';
-    case REACT_PROVIDER_TYPE:
-      return 'Context.Provider';
+      return 'Profiler';
     case REACT_STRICT_MODE_TYPE:
       return 'StrictMode';
-    case REACT_TIMEOUT_TYPE:
-      return 'Timeout';
+    case REACT_PLACEHOLDER_TYPE:
+      return 'Placeholder';
   }
-  if (typeof type === 'object' && type !== null) {
+  if (typeof type === 'object') {
     switch (type.$$typeof) {
+      case REACT_CONTEXT_TYPE:
+        return 'Context.Consumer';
+      case REACT_PROVIDER_TYPE:
+        return 'Context.Provider';
       case REACT_FORWARD_REF_TYPE:
-        var functionName = type.render.displayName || type.render.name || '';
+        var renderFn = type.render;
+        var functionName = renderFn.displayName || renderFn.name || '';
         return functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
+    }
+    if (typeof type.then === 'function') {
+      var thenable = type;
+      var resolvedThenable = refineResolvedThenable(thenable);
+      if (resolvedThenable) {
+        return getComponentName(resolvedThenable);
+      }
     }
   }
   return null;
 }
 
+var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+
 function describeFiber(fiber) {
   switch (fiber.tag) {
     case IndeterminateComponent:
     case FunctionalComponent:
+    case FunctionalComponentLazy:
     case ClassComponent:
+    case ClassComponentLazy:
     case HostComponent:
+    case Mode:
       var owner = fiber._debugOwner;
       var source = fiber._debugSource;
-      var name = getComponentName(fiber);
+      var name = getComponentName(fiber.type);
       var ownerName = null;
       if (owner) {
-        ownerName = getComponentName(owner);
+        ownerName = getComponentName(owner.type);
       }
       return describeComponentFrame(name, source, ownerName);
     default:
@@ -4210,72 +4407,93 @@ function describeFiber(fiber) {
   }
 }
 
-// This function can only be called with a work-in-progress fiber and
-// only during begin or complete phase. Do not call it under any other
-// circumstances.
-function getStackAddendumByWorkInProgressFiber(workInProgress) {
+function getStackByFiberInDevAndProd(workInProgress) {
   var info = '';
   var node = workInProgress;
   do {
     info += describeFiber(node);
-    // Otherwise this return pointer might point to the wrong tree:
     node = node.return;
   } while (node);
   return info;
 }
 
-function getCurrentFiberOwnerName$1() {
+var current = null;
+var phase = null;
+
+function getCurrentFiberOwnerNameInDevOrNull() {
   {
-    var fiber = ReactDebugCurrentFiber.current;
-    if (fiber === null) {
+    if (current === null) {
       return null;
     }
-    var owner = fiber._debugOwner;
+    var owner = current._debugOwner;
     if (owner !== null && typeof owner !== 'undefined') {
-      return getComponentName(owner);
+      return getComponentName(owner.type);
     }
   }
   return null;
 }
 
-function getCurrentFiberStackAddendum$1() {
+function getCurrentFiberStackInDev() {
   {
-    var fiber = ReactDebugCurrentFiber.current;
-    if (fiber === null) {
-      return null;
+    if (current === null) {
+      return '';
     }
     // Safe because if current fiber exists, we are reconciling,
     // and it is guaranteed to be the work-in-progress version.
-    return getStackAddendumByWorkInProgressFiber(fiber);
+    return getStackByFiberInDevAndProd(current);
   }
-  return null;
+  return '';
 }
 
 function resetCurrentFiber() {
-  ReactDebugCurrentFrame.getCurrentStack = null;
-  ReactDebugCurrentFiber.current = null;
-  ReactDebugCurrentFiber.phase = null;
+  {
+    ReactDebugCurrentFrame.getCurrentStack = null;
+    current = null;
+    phase = null;
+  }
 }
 
 function setCurrentFiber(fiber) {
-  ReactDebugCurrentFrame.getCurrentStack = getCurrentFiberStackAddendum$1;
-  ReactDebugCurrentFiber.current = fiber;
-  ReactDebugCurrentFiber.phase = null;
+  {
+    ReactDebugCurrentFrame.getCurrentStack = getCurrentFiberStackInDev;
+    current = fiber;
+    phase = null;
+  }
 }
 
-function setCurrentPhase(phase) {
-  ReactDebugCurrentFiber.phase = phase;
+function setCurrentPhase(lifeCyclePhase) {
+  {
+    phase = lifeCyclePhase;
+  }
 }
 
-var ReactDebugCurrentFiber = {
-  current: null,
-  phase: null,
-  resetCurrentFiber: resetCurrentFiber,
-  setCurrentFiber: setCurrentFiber,
-  setCurrentPhase: setCurrentPhase,
-  getCurrentFiberOwnerName: getCurrentFiberOwnerName$1,
-  getCurrentFiberStackAddendum: getCurrentFiberStackAddendum$1
-};
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = warningWithoutStack$1;
+
+{
+  warning = function (condition, format) {
+    if (condition) {
+      return;
+    }
+    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+    var stack = ReactDebugCurrentFrame.getStackAddendum();
+    // eslint-disable-next-line react-internal/warning-and-invariant-args
+
+    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    warningWithoutStack$1.apply(undefined, [false, format + '%s'].concat(args, [stack]));
+  };
+}
+
+var warning$1 = warning;
 
 // A reserved attribute.
 // It is handled by React separately and shouldn't be written to the DOM.
@@ -4336,7 +4554,7 @@ function isAttributeNameSafe(attributeName) {
   }
   illegalAttributeNameCache[attributeName] = true;
   {
-    warning(false, 'Invalid attribute name: `%s`', attributeName);
+    warning$1(false, 'Invalid attribute name: `%s`', attributeName);
   }
   return false;
 }
@@ -4462,7 +4680,7 @@ var properties = {};
 // In React, we let users pass `true` and `false` even though technically
 // these aren't boolean attributes (they are coerced to strings).
 // Since these are SVG attributes, their attribute names are case-sensitive.
-['autoReverse', 'externalResourcesRequired', 'preserveAlpha'].forEach(function (name) {
+['autoReverse', 'externalResourcesRequired', 'focusable', 'preserveAlpha'].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, BOOLEANISH_STRING, false, // mustUseProperty
   name, // attributeName
   null);
@@ -4489,7 +4707,7 @@ var properties = {};
 // disabled with `removeAttribute`. We have special logic for handling this.
 'multiple', 'muted', 'selected'].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, BOOLEAN, true, // mustUseProperty
-  name.toLowerCase(), // attributeName
+  name, // attributeName
   null);
 } // attributeNamespace
 );
@@ -4498,7 +4716,7 @@ var properties = {};
 // booleans, but can also accept a string value.
 ['capture', 'download'].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, OVERLOADED_BOOLEAN, false, // mustUseProperty
-  name.toLowerCase(), // attributeName
+  name, // attributeName
   null);
 } // attributeNamespace
 );
@@ -4506,7 +4724,7 @@ var properties = {};
 // These are HTML attributes that must be positive numbers.
 ['cols', 'rows', 'size', 'span'].forEach(function (name) {
   properties[name] = new PropertyInfoRecord(name, POSITIVE_NUMERIC, false, // mustUseProperty
-  name.toLowerCase(), // attributeName
+  name, // attributeName
   null);
 } // attributeNamespace
 );
@@ -4705,11 +4923,36 @@ function setValueForProperty(node, name, value, isCustomComponentTag) {
   }
 }
 
+// Flow does not allow string concatenation of most non-string types. To work
+// around this limitation, we use an opaque type that can only be obtained by
+// passing the value through getToStringValue first.
+function toString(value) {
+  return '' + value;
+}
+
+function getToStringValue(value) {
+  switch (typeof value) {
+    case 'boolean':
+    case 'number':
+    case 'object':
+    case 'string':
+    case 'undefined':
+      return value;
+    default:
+      // function, symbol are assigned as empty strings
+      return '';
+  }
+}
+
+var ReactDebugCurrentFrame$1 = null;
+
 var ReactControlledValuePropTypes = {
   checkPropTypes: null
 };
 
 {
+  ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
+
   var hasReadOnlyValue = {
     button: true,
     checkbox: true,
@@ -4722,13 +4965,13 @@ var ReactControlledValuePropTypes = {
 
   var propTypes = {
     value: function (props, propName, componentName) {
-      if (!props[propName] || hasReadOnlyValue[props.type] || props.onChange || props.readOnly || props.disabled) {
+      if (hasReadOnlyValue[props.type] || props.onChange || props.readOnly || props.disabled || props[propName] == null) {
         return null;
       }
       return new Error('You provided a `value` prop to a form field without an ' + '`onChange` handler. This will render a read-only field. If ' + 'the field should be mutable use `defaultValue`. Otherwise, ' + 'set either `onChange` or `readOnly`.');
     },
     checked: function (props, propName, componentName) {
-      if (!props[propName] || props.onChange || props.readOnly || props.disabled) {
+      if (props.onChange || props.readOnly || props.disabled || props[propName] == null) {
         return null;
       }
       return new Error('You provided a `checked` prop to a form field without an ' + '`onChange` handler. This will render a read-only field. If ' + 'the field should be mutable use `defaultChecked`. Otherwise, ' + 'set either `onChange` or `readOnly`.');
@@ -4739,15 +4982,12 @@ var ReactControlledValuePropTypes = {
    * Provide a linked `value` attribute for controlled forms. You should not use
    * this outside of the ReactDOM controlled form components.
    */
-  ReactControlledValuePropTypes.checkPropTypes = function (tagName, props, getStack) {
-    checkPropTypes(propTypes, props, 'prop', tagName, getStack);
+  ReactControlledValuePropTypes.checkPropTypes = function (tagName, props) {
+    checkPropTypes(propTypes, props, 'prop', tagName, ReactDebugCurrentFrame$1.getStackAddendum);
   };
 }
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-var getCurrentFiberOwnerName = ReactDebugCurrentFiber.getCurrentFiberOwnerName;
-var getCurrentFiberStackAddendum = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
-
 var didWarnValueDefaultValue = false;
 var didWarnCheckedDefaultChecked = false;
 var didWarnControlledToUncontrolled = false;
@@ -4791,14 +5031,14 @@ function getHostProps(element, props) {
 
 function initWrapperState(element, props) {
   {
-    ReactControlledValuePropTypes.checkPropTypes('input', props, getCurrentFiberStackAddendum);
+    ReactControlledValuePropTypes.checkPropTypes('input', props);
 
     if (props.checked !== undefined && props.defaultChecked !== undefined && !didWarnCheckedDefaultChecked) {
-      warning(false, '%s contains an input of type %s with both checked and defaultChecked props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the checked prop, or the defaultChecked prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components', getCurrentFiberOwnerName() || 'A component', props.type);
+      warning$1(false, '%s contains an input of type %s with both checked and defaultChecked props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the checked prop, or the defaultChecked prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
       didWarnCheckedDefaultChecked = true;
     }
     if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValueDefaultValue) {
-      warning(false, '%s contains an input of type %s with both value and defaultValue props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components', getCurrentFiberOwnerName() || 'A component', props.type);
+      warning$1(false, '%s contains an input of type %s with both value and defaultValue props. ' + 'Input elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled input ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component', props.type);
       didWarnValueDefaultValue = true;
     }
   }
@@ -4808,7 +5048,7 @@ function initWrapperState(element, props) {
 
   node._wrapperState = {
     initialChecked: props.checked != null ? props.checked : props.defaultChecked,
-    initialValue: getSafeValue(props.value != null ? props.value : defaultValue),
+    initialValue: getToStringValue(props.value != null ? props.value : defaultValue),
     controlled: isControlled(props)
   };
 }
@@ -4827,35 +5067,42 @@ function updateWrapper(element, props) {
     var _controlled = isControlled(props);
 
     if (!node._wrapperState.controlled && _controlled && !didWarnUncontrolledToControlled) {
-      warning(false, 'A component is changing an uncontrolled input of type %s to be controlled. ' + 'Input elements should not switch from uncontrolled to controlled (or vice versa). ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://fb.me/react-controlled-components%s', props.type, getCurrentFiberStackAddendum());
+      warning$1(false, 'A component is changing an uncontrolled input of type %s to be controlled. ' + 'Input elements should not switch from uncontrolled to controlled (or vice versa). ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://fb.me/react-controlled-components', props.type);
       didWarnUncontrolledToControlled = true;
     }
     if (node._wrapperState.controlled && !_controlled && !didWarnControlledToUncontrolled) {
-      warning(false, 'A component is changing a controlled input of type %s to be uncontrolled. ' + 'Input elements should not switch from controlled to uncontrolled (or vice versa). ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://fb.me/react-controlled-components%s', props.type, getCurrentFiberStackAddendum());
+      warning$1(false, 'A component is changing a controlled input of type %s to be uncontrolled. ' + 'Input elements should not switch from controlled to uncontrolled (or vice versa). ' + 'Decide between using a controlled or uncontrolled input ' + 'element for the lifetime of the component. More info: https://fb.me/react-controlled-components', props.type);
       didWarnControlledToUncontrolled = true;
     }
   }
 
   updateChecked(element, props);
 
-  var value = getSafeValue(props.value);
+  var value = getToStringValue(props.value);
+  var type = props.type;
 
   if (value != null) {
-    if (props.type === 'number') {
+    if (type === 'number') {
       if (value === 0 && node.value === '' ||
+      // We explicitly want to coerce to number here if possible.
       // eslint-disable-next-line
       node.value != value) {
-        node.value = '' + value;
+        node.value = toString(value);
       }
-    } else if (node.value !== '' + value) {
-      node.value = '' + value;
+    } else if (node.value !== toString(value)) {
+      node.value = toString(value);
     }
+  } else if (type === 'submit' || type === 'reset') {
+    // Submit/reset inputs need the attribute removed completely to avoid
+    // blank-text buttons.
+    node.removeAttribute('value');
+    return;
   }
 
   if (props.hasOwnProperty('value')) {
     setDefaultValue(node, props.type, value);
   } else if (props.hasOwnProperty('defaultValue')) {
-    setDefaultValue(node, props.type, getSafeValue(props.defaultValue));
+    setDefaultValue(node, props.type, getToStringValue(props.defaultValue));
   }
 
   if (props.checked == null && props.defaultChecked != null) {
@@ -4867,7 +5114,14 @@ function postMountWrapper(element, props, isHydrating) {
   var node = element;
 
   if (props.hasOwnProperty('value') || props.hasOwnProperty('defaultValue')) {
-    var _initialValue = '' + node._wrapperState.initialValue;
+    // Avoid setting value attribute on submit/reset inputs as it overrides the
+    // default value provided by the browser. See: #12872
+    var type = props.type;
+    if ((type === 'submit' || type === 'reset') && (props.value === undefined || props.value === null)) {
+      return;
+    }
+
+    var _initialValue = toString(node._wrapperState.initialValue);
     var currentValue = node.value;
 
     // Do not assign value if it is already set. This prevents user text input
@@ -4897,7 +5151,7 @@ function postMountWrapper(element, props, isHydrating) {
     node.name = '';
   }
   node.defaultChecked = !node.defaultChecked;
-  node.defaultChecked = !node.defaultChecked;
+  node.defaultChecked = !!node._wrapperState.initialChecked;
   if (name !== '') {
     node.name = name;
   }
@@ -4964,24 +5218,10 @@ function setDefaultValue(node, type, value) {
   // Focused number inputs synchronize on blur. See ChangeEventPlugin.js
   type !== 'number' || node.ownerDocument.activeElement !== node) {
     if (value == null) {
-      node.defaultValue = '' + node._wrapperState.initialValue;
-    } else if (node.defaultValue !== '' + value) {
-      node.defaultValue = '' + value;
+      node.defaultValue = toString(node._wrapperState.initialValue);
+    } else if (node.defaultValue !== toString(value)) {
+      node.defaultValue = toString(value);
     }
-  }
-}
-
-function getSafeValue(value) {
-  switch (typeof value) {
-    case 'boolean':
-    case 'number':
-    case 'object':
-    case 'string':
-    case 'undefined':
-      return value;
-    default:
-      // function, symbol are assigned as empty strings
-      return '';
   }
 }
 
@@ -4996,7 +5236,7 @@ var eventTypes$1 = {
 };
 
 function createAndAccumulateChangeEvent(inst, nativeEvent, target) {
-  var event = SyntheticEvent$1.getPooled(eventTypes$1.change, inst, nativeEvent, target);
+  var event = SyntheticEvent.getPooled(eventTypes$1.change, inst, nativeEvent, target);
   event.type = 'change';
   // Flag this event loop as needing state restore.
   enqueueStateRestore(target);
@@ -5055,7 +5295,7 @@ function getTargetInstForChangeEvent(topLevelType, targetInst) {
  * SECTION: handle `input` event
  */
 var isInputEventSupported = false;
-if (ExecutionEnvironment.canUseDOM) {
+if (canUseDOM) {
   // IE9 claims to support the input event but fails to trigger it when
   // deleting text, so we ignore its input events.
   isInputEventSupported = isEventSupported('input') && (!document.documentMode || document.documentMode > 9);
@@ -5231,7 +5471,7 @@ var ChangeEventPlugin = {
  */
 var DOMEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
-var SyntheticUIEvent = SyntheticEvent$1.extend({
+var SyntheticUIEvent = SyntheticEvent.extend({
   view: null,
   detail: null
 });
@@ -5265,6 +5505,12 @@ function getEventModifierState(nativeEvent) {
   return modifierStateGetter;
 }
 
+var previousScreenX = 0;
+var previousScreenY = 0;
+// Use flags to signal movementX/Y has already been set
+var isMovementXSet = false;
+var isMovementYSet = false;
+
 /**
  * @interface MouseEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
@@ -5285,6 +5531,36 @@ var SyntheticMouseEvent = SyntheticUIEvent.extend({
   buttons: null,
   relatedTarget: function (event) {
     return event.relatedTarget || (event.fromElement === event.srcElement ? event.toElement : event.fromElement);
+  },
+  movementX: function (event) {
+    if ('movementX' in event) {
+      return event.movementX;
+    }
+
+    var screenX = previousScreenX;
+    previousScreenX = event.screenX;
+
+    if (!isMovementXSet) {
+      isMovementXSet = true;
+      return 0;
+    }
+
+    return event.type === 'mousemove' ? event.screenX - screenX : 0;
+  },
+  movementY: function (event) {
+    if ('movementY' in event) {
+      return event.movementY;
+    }
+
+    var screenY = previousScreenY;
+    previousScreenY = event.screenY;
+
+    if (!isMovementYSet) {
+      isMovementYSet = true;
+      return 0;
+    }
+
+    return event.type === 'mousemove' ? event.screenY - screenY : 0;
   }
 });
 
@@ -5297,8 +5573,10 @@ var SyntheticPointerEvent = SyntheticMouseEvent.extend({
   width: null,
   height: null,
   pressure: null,
+  tangentialPressure: null,
   tiltX: null,
   tiltY: null,
+  twist: null,
   pointerType: null,
   isPrimary: null
 });
@@ -5412,6 +5690,58 @@ var EnterLeaveEventPlugin = {
   }
 };
 
+/*eslint-disable no-self-compare */
+
+var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+
+/**
+ * inlined Object.is polyfill to avoid requiring consumers ship their own
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+ */
+function is(x, y) {
+  // SameValue algorithm
+  if (x === y) {
+    // Steps 1-5, 7-10
+    // Steps 6.b-6.e: +0 != -0
+    // Added the nonzero y check to make Flow happy, but it is redundant
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+  } else {
+    // Step 6.a: NaN == NaN
+    return x !== x && y !== y;
+  }
+}
+
+/**
+ * Performs equality by iterating through keys on an object and returning false
+ * when any key has values which are not strictly equal between the arguments.
+ * Returns true when the values of all keys are strictly equal.
+ */
+function shallowEqual(objA, objB) {
+  if (is(objA, objB)) {
+    return true;
+  }
+
+  if (typeof objA !== 'object' || objA === null || typeof objB !== 'object' || objB === null) {
+    return false;
+  }
+
+  var keysA = Object.keys(objA);
+  var keysB = Object.keys(objB);
+
+  if (keysA.length !== keysB.length) {
+    return false;
+  }
+
+  // Test for A's keys different from B.
+  for (var i = 0; i < keysA.length; i++) {
+    if (!hasOwnProperty$1.call(objB, keysA[i]) || !is(objA[keysA[i]], objB[keysA[i]])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
 /**
  * `ReactInstanceMap` maintains a mapping from a public facing stateful
  * instance (key) and the internal representation (value). This allows public
@@ -5456,11 +5786,16 @@ var DidCapture = /*            */64;
 var Ref = /*                   */128;
 var Snapshot = /*              */256;
 
+// Update & Callback & Ref & Snapshot
+var LifecycleEffectMask = /*   */420;
+
 // Union of all host effects
 var HostEffectMask = /*        */511;
 
 var Incomplete = /*            */512;
 var ShouldCapture = /*         */1024;
+
+var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
 
 var MOUNTING = 1;
 var MOUNTED = 2;
@@ -5501,11 +5836,11 @@ function isFiberMounted(fiber) {
 
 function isMounted(component) {
   {
-    var owner = ReactCurrentOwner.current;
-    if (owner !== null && owner.tag === ClassComponent) {
+    var owner = ReactCurrentOwner$1.current;
+    if (owner !== null && (owner.tag === ClassComponent || owner.tag === ClassComponentLazy)) {
       var ownerFiber = owner;
       var instance = ownerFiber.stateNode;
-      !instance._warnedAboutRefsInRender ? warning(false, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(ownerFiber) || 'A component') : void 0;
+      !instance._warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing isMounted inside its render() function. ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(ownerFiber.type) || 'A component') : void 0;
       instance._warnedAboutRefsInRender = true;
     }
   }
@@ -5712,7 +6047,7 @@ function addEventCaptureListener(element, eventType, listener) {
  * @see http://www.w3.org/TR/css3-animations/#AnimationEvent-interface
  * @see https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
  */
-var SyntheticAnimationEvent = SyntheticEvent$1.extend({
+var SyntheticAnimationEvent = SyntheticEvent.extend({
   animationName: null,
   elapsedTime: null,
   pseudoElement: null
@@ -5722,7 +6057,7 @@ var SyntheticAnimationEvent = SyntheticEvent$1.extend({
  * @interface Event
  * @see http://www.w3.org/TR/clipboard-apis/
  */
-var SyntheticClipboardEvent = SyntheticEvent$1.extend({
+var SyntheticClipboardEvent = SyntheticEvent.extend({
   clipboardData: function (event) {
     return 'clipboardData' in event ? event.clipboardData : window.clipboardData;
   }
@@ -5953,7 +6288,7 @@ var SyntheticTouchEvent = SyntheticUIEvent.extend({
  * @see http://www.w3.org/TR/2009/WD-css3-transitions-20090320/#transition-events-
  * @see https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent
  */
-var SyntheticTransitionEvent = SyntheticEvent$1.extend({
+var SyntheticTransitionEvent = SyntheticEvent.extend({
   propertyName: null,
   elapsedTime: null,
   pseudoElement: null
@@ -6002,7 +6337,7 @@ var SyntheticWheelEvent = SyntheticMouseEvent.extend({
  * ]);
  */
 
-var interactiveEventTypeNames = [[TOP_BLUR, 'blur'], [TOP_CANCEL, 'cancel'], [TOP_CLICK, 'click'], [TOP_CLOSE, 'close'], [TOP_CONTEXT_MENU, 'contextMenu'], [TOP_COPY, 'copy'], [TOP_CUT, 'cut'], [TOP_DOUBLE_CLICK, 'doubleClick'], [TOP_DRAG_END, 'dragEnd'], [TOP_DRAG_START, 'dragStart'], [TOP_DROP, 'drop'], [TOP_FOCUS, 'focus'], [TOP_INPUT, 'input'], [TOP_INVALID, 'invalid'], [TOP_KEY_DOWN, 'keyDown'], [TOP_KEY_PRESS, 'keyPress'], [TOP_KEY_UP, 'keyUp'], [TOP_MOUSE_DOWN, 'mouseDown'], [TOP_MOUSE_UP, 'mouseUp'], [TOP_PASTE, 'paste'], [TOP_PAUSE, 'pause'], [TOP_PLAY, 'play'], [TOP_POINTER_CANCEL, 'pointerCancel'], [TOP_POINTER_DOWN, 'pointerDown'], [TOP_POINTER_UP, 'pointerUp'], [TOP_RATE_CHANGE, 'rateChange'], [TOP_RESET, 'reset'], [TOP_SEEKED, 'seeked'], [TOP_SUBMIT, 'submit'], [TOP_TOUCH_CANCEL, 'touchCancel'], [TOP_TOUCH_END, 'touchEnd'], [TOP_TOUCH_START, 'touchStart'], [TOP_VOLUME_CHANGE, 'volumeChange']];
+var interactiveEventTypeNames = [[TOP_BLUR, 'blur'], [TOP_CANCEL, 'cancel'], [TOP_CLICK, 'click'], [TOP_CLOSE, 'close'], [TOP_CONTEXT_MENU, 'contextMenu'], [TOP_COPY, 'copy'], [TOP_CUT, 'cut'], [TOP_AUX_CLICK, 'auxClick'], [TOP_DOUBLE_CLICK, 'doubleClick'], [TOP_DRAG_END, 'dragEnd'], [TOP_DRAG_START, 'dragStart'], [TOP_DROP, 'drop'], [TOP_FOCUS, 'focus'], [TOP_INPUT, 'input'], [TOP_INVALID, 'invalid'], [TOP_KEY_DOWN, 'keyDown'], [TOP_KEY_PRESS, 'keyPress'], [TOP_KEY_UP, 'keyUp'], [TOP_MOUSE_DOWN, 'mouseDown'], [TOP_MOUSE_UP, 'mouseUp'], [TOP_PASTE, 'paste'], [TOP_PAUSE, 'pause'], [TOP_PLAY, 'play'], [TOP_POINTER_CANCEL, 'pointerCancel'], [TOP_POINTER_DOWN, 'pointerDown'], [TOP_POINTER_UP, 'pointerUp'], [TOP_RATE_CHANGE, 'rateChange'], [TOP_RESET, 'reset'], [TOP_SEEKED, 'seeked'], [TOP_SUBMIT, 'submit'], [TOP_TOUCH_CANCEL, 'touchCancel'], [TOP_TOUCH_END, 'touchEnd'], [TOP_TOUCH_START, 'touchStart'], [TOP_VOLUME_CHANGE, 'volumeChange']];
 var nonInteractiveEventTypeNames = [[TOP_ABORT, 'abort'], [TOP_ANIMATION_END, 'animationEnd'], [TOP_ANIMATION_ITERATION, 'animationIteration'], [TOP_ANIMATION_START, 'animationStart'], [TOP_CAN_PLAY, 'canPlay'], [TOP_CAN_PLAY_THROUGH, 'canPlayThrough'], [TOP_DRAG, 'drag'], [TOP_DRAG_ENTER, 'dragEnter'], [TOP_DRAG_EXIT, 'dragExit'], [TOP_DRAG_LEAVE, 'dragLeave'], [TOP_DRAG_OVER, 'dragOver'], [TOP_DURATION_CHANGE, 'durationChange'], [TOP_EMPTIED, 'emptied'], [TOP_ENCRYPTED, 'encrypted'], [TOP_ENDED, 'ended'], [TOP_ERROR, 'error'], [TOP_GOT_POINTER_CAPTURE, 'gotPointerCapture'], [TOP_LOAD, 'load'], [TOP_LOADED_DATA, 'loadedData'], [TOP_LOADED_METADATA, 'loadedMetadata'], [TOP_LOAD_START, 'loadStart'], [TOP_LOST_POINTER_CAPTURE, 'lostPointerCapture'], [TOP_MOUSE_MOVE, 'mouseMove'], [TOP_MOUSE_OUT, 'mouseOut'], [TOP_MOUSE_OVER, 'mouseOver'], [TOP_PLAYING, 'playing'], [TOP_POINTER_MOVE, 'pointerMove'], [TOP_POINTER_OUT, 'pointerOut'], [TOP_POINTER_OVER, 'pointerOver'], [TOP_PROGRESS, 'progress'], [TOP_SCROLL, 'scroll'], [TOP_SEEKING, 'seeking'], [TOP_STALLED, 'stalled'], [TOP_SUSPEND, 'suspend'], [TOP_TIME_UPDATE, 'timeUpdate'], [TOP_TOGGLE, 'toggle'], [TOP_TOUCH_MOVE, 'touchMove'], [TOP_TRANSITION_END, 'transitionEnd'], [TOP_WAITING, 'waiting'], [TOP_WHEEL, 'wheel']];
 
 var eventTypes$4 = {};
@@ -6076,6 +6411,7 @@ var SimpleEventPlugin = {
           return null;
         }
       /* falls through */
+      case TOP_AUX_CLICK:
       case TOP_DOUBLE_CLICK:
       case TOP_MOUSE_DOWN:
       case TOP_MOUSE_MOVE:
@@ -6135,12 +6471,12 @@ var SimpleEventPlugin = {
       default:
         {
           if (knownHTMLTopLevelTypes.indexOf(topLevelType) === -1) {
-            warning(false, 'SimpleEventPlugin: Unhandled event type, `%s`. This warning ' + 'is likely caused by a bug in React. Please file an issue.', topLevelType);
+            warningWithoutStack$1(false, 'SimpleEventPlugin: Unhandled event type, `%s`. This warning ' + 'is likely caused by a bug in React. Please file an issue.', topLevelType);
           }
         }
         // HTML Events
         // @see http://www.w3.org/TR/html5/index.html#events-0
-        EventConstructor = SyntheticEvent$1;
+        EventConstructor = SyntheticEvent;
         break;
     }
     var event = EventConstructor.getPooled(dispatchConfig, targetInst, nativeEvent, nativeEventTarget);
@@ -6309,15 +6645,6 @@ function dispatchEvent(topLevelType, nativeEvent) {
   }
 }
 
-var ReactDOMEventListener = Object.freeze({
-	get _enabled () { return _enabled; },
-	setEnabled: setEnabled,
-	isEnabled: isEnabled,
-	trapBubbledEvent: trapBubbledEvent,
-	trapCapturedEvent: trapCapturedEvent,
-	dispatchEvent: dispatchEvent
-});
-
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:
  *
@@ -6435,7 +6762,7 @@ function listenTo(registrationName, mountAt) {
           break;
         case TOP_CANCEL:
         case TOP_CLOSE:
-          if (isEventSupported(getRawEventName(dependency), true)) {
+          if (isEventSupported(getRawEventName(dependency))) {
             trapCapturedEvent(dependency, mountAt);
           }
           break;
@@ -6469,6 +6796,18 @@ function isListeningToAllDependencies(registrationName, mountAt) {
     }
   }
   return true;
+}
+
+function getActiveElement(doc) {
+  doc = doc || (typeof document !== 'undefined' ? document : undefined);
+  if (typeof doc === 'undefined') {
+    return null;
+  }
+  try {
+    return doc.activeElement || doc.body;
+  } catch (e) {
+    return doc.body;
+  }
 }
 
 /**
@@ -6535,7 +6874,10 @@ function getNodeForCharacterOffset(root, offset) {
  * @return {?object}
  */
 function getOffsets(outerNode) {
-  var selection = window.getSelection && window.getSelection();
+  var ownerDocument = outerNode.ownerDocument;
+
+  var win = ownerDocument && ownerDocument.defaultView || window;
+  var selection = win.getSelection && win.getSelection();
 
   if (!selection || selection.rangeCount === 0) {
     return null;
@@ -6657,12 +6999,10 @@ function getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNo
  * @param {object} offsets
  */
 function setOffsets(node, offsets) {
-  if (!window.getSelection) {
-    return;
-  }
-
-  var selection = window.getSelection();
-  var length = node[getTextContentAccessor()].length;
+  var doc = node.ownerDocument || document;
+  var win = doc ? doc.defaultView : window;
+  var selection = win.getSelection();
+  var length = node.textContent.length;
   var start = Math.min(offsets.start, length);
   var end = offsets.end === undefined ? start : Math.min(offsets.end, length);
 
@@ -6681,7 +7021,7 @@ function setOffsets(node, offsets) {
     if (selection.rangeCount === 1 && selection.anchorNode === startMarker.node && selection.anchorOffset === startMarker.offset && selection.focusNode === endMarker.node && selection.focusOffset === endMarker.offset) {
       return;
     }
-    var range = document.createRange();
+    var range = doc.createRange();
     range.setStart(startMarker.node, startMarker.offset);
     selection.removeAllRanges();
 
@@ -6695,8 +7035,46 @@ function setOffsets(node, offsets) {
   }
 }
 
+function isTextNode(node) {
+  return node && node.nodeType === TEXT_NODE;
+}
+
+function containsNode(outerNode, innerNode) {
+  if (!outerNode || !innerNode) {
+    return false;
+  } else if (outerNode === innerNode) {
+    return true;
+  } else if (isTextNode(outerNode)) {
+    return false;
+  } else if (isTextNode(innerNode)) {
+    return containsNode(outerNode, innerNode.parentNode);
+  } else if ('contains' in outerNode) {
+    return outerNode.contains(innerNode);
+  } else if (outerNode.compareDocumentPosition) {
+    return !!(outerNode.compareDocumentPosition(innerNode) & 16);
+  } else {
+    return false;
+  }
+}
+
 function isInDocument(node) {
-  return containsNode(document.documentElement, node);
+  return node && node.ownerDocument && containsNode(node.ownerDocument.documentElement, node);
+}
+
+function getActiveElementDeep() {
+  var win = window;
+  var element = getActiveElement();
+  while (element instanceof win.HTMLIFrameElement) {
+    // Accessing the contentDocument of a HTMLIframeElement can cause the browser
+    // to throw, e.g. if it has a cross-origin src attribute
+    try {
+      win = element.contentDocument.defaultView;
+    } catch (e) {
+      return element;
+    }
+    element = getActiveElement(win.document);
+  }
+  return element;
 }
 
 /**
@@ -6717,7 +7095,7 @@ function hasSelectionCapabilities(elem) {
 }
 
 function getSelectionInformation() {
-  var focusedElem = getActiveElement();
+  var focusedElem = getActiveElementDeep();
   return {
     focusedElem: focusedElem,
     selectionRange: hasSelectionCapabilities(focusedElem) ? getSelection$1(focusedElem) : null
@@ -6730,7 +7108,7 @@ function getSelectionInformation() {
  * nodes and place them back in, resulting in focus being lost.
  */
 function restoreSelection(priorSelectionInformation) {
-  var curFocusedElem = getActiveElement();
+  var curFocusedElem = getActiveElementDeep();
   var priorFocusedElem = priorSelectionInformation.focusedElem;
   var priorSelectionRange = priorSelectionInformation.selectionRange;
   if (curFocusedElem !== priorFocusedElem && isInDocument(priorFocusedElem)) {
@@ -6808,7 +7186,7 @@ function setSelection(input, offsets) {
   }
 }
 
-var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
+var skipSelectionChangeEvent = canUseDOM && 'documentMode' in document && document.documentMode <= 11;
 
 var eventTypes$3 = {
   select: {
@@ -6816,7 +7194,7 @@ var eventTypes$3 = {
       bubbled: 'onSelect',
       captured: 'onSelectCapture'
     },
-    dependencies: [TOP_BLUR, TOP_CONTEXT_MENU, TOP_FOCUS, TOP_KEY_DOWN, TOP_KEY_UP, TOP_MOUSE_DOWN, TOP_MOUSE_UP, TOP_SELECTION_CHANGE]
+    dependencies: [TOP_BLUR, TOP_CONTEXT_MENU, TOP_DRAG_END, TOP_FOCUS, TOP_KEY_DOWN, TOP_KEY_UP, TOP_MOUSE_DOWN, TOP_MOUSE_UP, TOP_SELECTION_CHANGE]
   }
 };
 
@@ -6840,8 +7218,9 @@ function getSelection(node) {
       start: node.selectionStart,
       end: node.selectionEnd
     };
-  } else if (window.getSelection) {
-    var selection = window.getSelection();
+  } else {
+    var win = node.ownerDocument && node.ownerDocument.defaultView || window;
+    var selection = win.getSelection();
     return {
       anchorNode: selection.anchorNode,
       anchorOffset: selection.anchorOffset,
@@ -6852,9 +7231,20 @@ function getSelection(node) {
 }
 
 /**
+ * Get document associated with the event target.
+ *
+ * @param {object} nativeEventTarget
+ * @return {Document}
+ */
+function getEventTargetDocument(eventTarget) {
+  return eventTarget.window === eventTarget ? eventTarget.document : eventTarget.nodeType === DOCUMENT_NODE ? eventTarget : eventTarget.ownerDocument;
+}
+
+/**
  * Poll selection to see whether it's changed.
  *
  * @param {object} nativeEvent
+ * @param {object} nativeEventTarget
  * @return {?SyntheticEvent}
  */
 function constructSelectEvent(nativeEvent, nativeEventTarget) {
@@ -6862,7 +7252,9 @@ function constructSelectEvent(nativeEvent, nativeEventTarget) {
   // selection (this matches native `select` event behavior). In HTML5, select
   // fires only on input and textarea thus if there's no focused element we
   // won't dispatch.
-  if (mouseDown || activeElement$1 == null || activeElement$1 !== getActiveElement()) {
+  var doc = getEventTargetDocument(nativeEventTarget);
+
+  if (mouseDown || activeElement$1 == null || activeElement$1 !== getActiveElement(doc)) {
     return null;
   }
 
@@ -6871,7 +7263,7 @@ function constructSelectEvent(nativeEvent, nativeEventTarget) {
   if (!lastSelection || !shallowEqual(lastSelection, currentSelection)) {
     lastSelection = currentSelection;
 
-    var syntheticEvent = SyntheticEvent$1.getPooled(eventTypes$3.select, activeElementInst$1, nativeEvent, nativeEventTarget);
+    var syntheticEvent = SyntheticEvent.getPooled(eventTypes$3.select, activeElementInst$1, nativeEvent, nativeEventTarget);
 
     syntheticEvent.type = 'select';
     syntheticEvent.target = activeElement$1;
@@ -6902,7 +7294,7 @@ var SelectEventPlugin = {
   eventTypes: eventTypes$3,
 
   extractEvents: function (topLevelType, targetInst, nativeEvent, nativeEventTarget) {
-    var doc = nativeEventTarget.window === nativeEventTarget ? nativeEventTarget.document : nativeEventTarget.nodeType === DOCUMENT_NODE ? nativeEventTarget : nativeEventTarget.ownerDocument;
+    var doc = getEventTargetDocument(nativeEventTarget);
     // Track whether all listeners exists for this plugin. If none exist, we do
     // not extract events. See #3639.
     if (!doc || !isListeningToAllDependencies('onSelect', doc)) {
@@ -6932,6 +7324,7 @@ var SelectEventPlugin = {
         break;
       case TOP_CONTEXT_MENU:
       case TOP_MOUSE_UP:
+      case TOP_DRAG_END:
         mouseDown = false;
         return constructSelectEvent(nativeEvent, nativeEventTarget);
       // Chrome and IE fire non-standard event when selection is changed (and
@@ -6961,7 +7354,7 @@ var SelectEventPlugin = {
  * Inject modules for resolving DOM hierarchy and plugin ordering.
  */
 injection.injectEventPluginOrder(DOMEventPluginOrder);
-injection$1.injectComponentTree(ReactDOMComponentTree);
+setComponentTree(getFiberCurrentPropsFromNode$1, getInstanceFromNode$1, getNodeFromInstance$1);
 
 /**
  * Some important event plugins included by default (without having to require
@@ -6975,388 +7368,25 @@ injection.injectEventPluginsByName({
   BeforeInputEventPlugin: BeforeInputEventPlugin
 });
 
-// We capture a local reference to any global, in case it gets polyfilled after
-// this module is initially evaluated.
-// We want to be using a consistent implementation.
-
-var localRequestAnimationFrame$1 = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : undefined;
-
-/**
- * A scheduling library to allow scheduling work with more granular priority and
- * control than requestAnimationFrame and requestIdleCallback.
- * Current TODO items:
- * X- Pull out the scheduleWork polyfill built into React
- * X- Initial test coverage
- * X- Support for multiple callbacks
- * - Support for two priorities; serial and deferred
- * - Better test coverage
- * - Better docblock
- * - Polish documentation, API
- */
-
-// This is a built-in polyfill for requestIdleCallback. It works by scheduling
-// a requestAnimationFrame, storing the time for the start of the frame, then
-// scheduling a postMessage which gets scheduled after paint. Within the
-// postMessage handler do as much work as possible until time + frame rate.
-// By separating the idle call into a separate event tick we ensure that
-// layout, paint and other browser work is counted against the available time.
-// The frame rate is dynamically adjusted.
-
-// We capture a local reference to any global, in case it gets polyfilled after
-// this module is initially evaluated.
-// We want to be using a consistent implementation.
-var localDate = Date;
-var localSetTimeout = setTimeout;
-var localClearTimeout = clearTimeout;
-
-var hasNativePerformanceNow = typeof performance === 'object' && typeof performance.now === 'function';
-
-var now$1 = void 0;
-if (hasNativePerformanceNow) {
-  var Performance = performance;
-  now$1 = function () {
-    return Performance.now();
-  };
-} else {
-  now$1 = function () {
-    return localDate.now();
-  };
-}
-
-var scheduleWork = void 0;
-var cancelScheduledWork = void 0;
-
-if (!ExecutionEnvironment.canUseDOM) {
-  var timeoutIds = new Map();
-
-  scheduleWork = function (callback, options) {
-    // keeping return type consistent
-    var callbackConfig = {
-      scheduledCallback: callback,
-      timeoutTime: 0,
-      next: null,
-      prev: null
-    };
-    var timeoutId = localSetTimeout(function () {
-      callback({
-        timeRemaining: function () {
-          return Infinity;
-        },
-
-        didTimeout: false
-      });
-    });
-    timeoutIds.set(callback, timeoutId);
-    return callbackConfig;
-  };
-  cancelScheduledWork = function (callbackId) {
-    var callback = callbackId.scheduledCallback;
-    var timeoutId = timeoutIds.get(callback);
-    timeoutIds.delete(callbackId);
-    localClearTimeout(timeoutId);
-  };
-} else {
-  {
-    if (typeof localRequestAnimationFrame$1 !== 'function') {
-      warning(false, 'React depends on requestAnimationFrame. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
-    }
-  }
-
-  var localRequestAnimationFrame = typeof localRequestAnimationFrame$1 === 'function' ? localRequestAnimationFrame$1 : function (callback) {
-    invariant(false, 'React depends on requestAnimationFrame. Make sure that you load a polyfill in older browsers. https://fb.me/react-polyfills');
-  };
-
-  var headOfPendingCallbacksLinkedList = null;
-  var tailOfPendingCallbacksLinkedList = null;
-
-  // We track what the next soonest timeoutTime is, to be able to quickly tell
-  // if none of the scheduled callbacks have timed out.
-  var nextSoonestTimeoutTime = -1;
-
-  var isIdleScheduled = false;
-  var isAnimationFrameScheduled = false;
-
-  var frameDeadline = 0;
-  // We start out assuming that we run at 30fps but then the heuristic tracking
-  // will adjust this value to a faster fps if we get more frequent animation
-  // frames.
-  var previousFrameTime = 33;
-  var activeFrameTime = 33;
-
-  var frameDeadlineObject = {
-    didTimeout: false,
-    timeRemaining: function () {
-      var remaining = frameDeadline - now$1();
-      return remaining > 0 ? remaining : 0;
-    }
-  };
-
-  /**
-   * Handles the case where a callback errors:
-   * - don't catch the error, because this changes debugging behavior
-   * - do start a new postMessage callback, to call any remaining callbacks,
-   * - but only if there is an error, so there is not extra overhead.
-   */
-  var callUnsafely = function (callbackConfig, arg) {
-    var callback = callbackConfig.scheduledCallback;
-    var finishedCalling = false;
-    try {
-      callback(arg);
-      finishedCalling = true;
-    } finally {
-      // always remove it from linked list
-      cancelScheduledWork(callbackConfig);
-
-      if (!finishedCalling) {
-        // an error must have been thrown
-        isIdleScheduled = true;
-        window.postMessage(messageKey, '*');
-      }
-    }
-  };
-
-  /**
-   * Checks for timed out callbacks, runs them, and then checks again to see if
-   * any more have timed out.
-   * Keeps doing this until there are none which have currently timed out.
-   */
-  var callTimedOutCallbacks = function () {
-    if (headOfPendingCallbacksLinkedList === null) {
-      return;
-    }
-
-    var currentTime = now$1();
-    // TODO: this would be more efficient if deferred callbacks are stored in
-    // min heap.
-    // Or in a linked list with links for both timeoutTime order and insertion
-    // order.
-    // For now an easy compromise is the current approach:
-    // Keep a pointer to the soonest timeoutTime, and check that first.
-    // If it has not expired, we can skip traversing the whole list.
-    // If it has expired, then we step through all the callbacks.
-    if (nextSoonestTimeoutTime === -1 || nextSoonestTimeoutTime > currentTime) {
-      // We know that none of them have timed out yet.
-      return;
-    }
-    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
-    // after successfully calling any timed out callbacks.
-    // If a timed out callback throws an error, we could get stuck in a state
-    // where the nextSoonestTimeoutTime was set wrong.
-    var updatedNextSoonestTimeoutTime = -1; // we will update nextSoonestTimeoutTime below
-    var timedOutCallbacks = [];
-
-    // iterate once to find timed out callbacks and find nextSoonestTimeoutTime
-    var currentCallbackConfig = headOfPendingCallbacksLinkedList;
-    while (currentCallbackConfig !== null) {
-      var _timeoutTime = currentCallbackConfig.timeoutTime;
-      if (_timeoutTime !== -1 && _timeoutTime <= currentTime) {
-        // it has timed out!
-        timedOutCallbacks.push(currentCallbackConfig);
-      } else {
-        if (_timeoutTime !== -1 && (updatedNextSoonestTimeoutTime === -1 || _timeoutTime < updatedNextSoonestTimeoutTime)) {
-          updatedNextSoonestTimeoutTime = _timeoutTime;
-        }
-      }
-      currentCallbackConfig = currentCallbackConfig.next;
-    }
-
-    if (timedOutCallbacks.length > 0) {
-      frameDeadlineObject.didTimeout = true;
-      for (var i = 0, len = timedOutCallbacks.length; i < len; i++) {
-        callUnsafely(timedOutCallbacks[i], frameDeadlineObject);
-      }
-    }
-
-    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
-    // after successfully calling any timed out callbacks.
-    nextSoonestTimeoutTime = updatedNextSoonestTimeoutTime;
-  };
-
-  // We use the postMessage trick to defer idle work until after the repaint.
-  var messageKey = '__reactIdleCallback$' + Math.random().toString(36).slice(2);
-  var idleTick = function (event) {
-    if (event.source !== window || event.data !== messageKey) {
-      return;
-    }
-    isIdleScheduled = false;
-
-    if (headOfPendingCallbacksLinkedList === null) {
-      return;
-    }
-
-    // First call anything which has timed out, until we have caught up.
-    callTimedOutCallbacks();
-
-    var currentTime = now$1();
-    // Next, as long as we have idle time, try calling more callbacks.
-    while (frameDeadline - currentTime > 0 && headOfPendingCallbacksLinkedList !== null) {
-      var latestCallbackConfig = headOfPendingCallbacksLinkedList;
-      frameDeadlineObject.didTimeout = false;
-      // callUnsafely will remove it from the head of the linked list
-      callUnsafely(latestCallbackConfig, frameDeadlineObject);
-      currentTime = now$1();
-    }
-    if (headOfPendingCallbacksLinkedList !== null) {
-      if (!isAnimationFrameScheduled) {
-        // Schedule another animation callback so we retry later.
-        isAnimationFrameScheduled = true;
-        localRequestAnimationFrame(animationTick);
-      }
-    }
-  };
-  // Assumes that we have addEventListener in this environment. Might need
-  // something better for old IE.
-  window.addEventListener('message', idleTick, false);
-
-  var animationTick = function (rafTime) {
-    isAnimationFrameScheduled = false;
-    var nextFrameTime = rafTime - frameDeadline + activeFrameTime;
-    if (nextFrameTime < activeFrameTime && previousFrameTime < activeFrameTime) {
-      if (nextFrameTime < 8) {
-        // Defensive coding. We don't support higher frame rates than 120hz.
-        // If we get lower than that, it is probably a bug.
-        nextFrameTime = 8;
-      }
-      // If one frame goes long, then the next one can be short to catch up.
-      // If two frames are short in a row, then that's an indication that we
-      // actually have a higher frame rate than what we're currently optimizing.
-      // We adjust our heuristic dynamically accordingly. For example, if we're
-      // running on 120hz display or 90hz VR display.
-      // Take the max of the two in case one of them was an anomaly due to
-      // missed frame deadlines.
-      activeFrameTime = nextFrameTime < previousFrameTime ? previousFrameTime : nextFrameTime;
-    } else {
-      previousFrameTime = nextFrameTime;
-    }
-    frameDeadline = rafTime + activeFrameTime;
-    if (!isIdleScheduled) {
-      isIdleScheduled = true;
-      window.postMessage(messageKey, '*');
-    }
-  };
-
-  scheduleWork = function (callback, options) /* CallbackConfigType */{
-    var timeoutTime = -1;
-    if (options != null && typeof options.timeout === 'number') {
-      timeoutTime = now$1() + options.timeout;
-    }
-    if (nextSoonestTimeoutTime === -1 || timeoutTime !== -1 && timeoutTime < nextSoonestTimeoutTime) {
-      nextSoonestTimeoutTime = timeoutTime;
-    }
-
-    var scheduledCallbackConfig = {
-      scheduledCallback: callback,
-      timeoutTime: timeoutTime,
-      prev: null,
-      next: null
-    };
-    if (headOfPendingCallbacksLinkedList === null) {
-      // Make this callback the head and tail of our list
-      headOfPendingCallbacksLinkedList = scheduledCallbackConfig;
-      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
-    } else {
-      // Add latest callback as the new tail of the list
-      scheduledCallbackConfig.prev = tailOfPendingCallbacksLinkedList;
-      // renaming for clarity
-      var oldTailOfPendingCallbacksLinkedList = tailOfPendingCallbacksLinkedList;
-      if (oldTailOfPendingCallbacksLinkedList !== null) {
-        oldTailOfPendingCallbacksLinkedList.next = scheduledCallbackConfig;
-      }
-      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
-    }
-
-    if (!isAnimationFrameScheduled) {
-      // If rAF didn't already schedule one, we need to schedule a frame.
-      // TODO: If this rAF doesn't materialize because the browser throttles, we
-      // might want to still have setTimeout trigger scheduleWork as a backup to ensure
-      // that we keep performing work.
-      isAnimationFrameScheduled = true;
-      localRequestAnimationFrame(animationTick);
-    }
-    return scheduledCallbackConfig;
-  };
-
-  cancelScheduledWork = function (callbackConfig /* CallbackConfigType */
-  ) {
-    if (callbackConfig.prev === null && headOfPendingCallbacksLinkedList !== callbackConfig) {
-      // this callbackConfig has already been cancelled.
-      // cancelScheduledWork should be idempotent, a no-op after first call.
-      return;
-    }
-
-    /**
-     * There are four possible cases:
-     * - Head/nodeToRemove/Tail -> null
-     *   In this case we set Head and Tail to null.
-     * - Head -> ... middle nodes... -> Tail/nodeToRemove
-     *   In this case we point the middle.next to null and put middle as the new
-     *   Tail.
-     * - Head/nodeToRemove -> ...middle nodes... -> Tail
-     *   In this case we point the middle.prev at null and move the Head to
-     *   middle.
-     * - Head -> ... ?some nodes ... -> nodeToRemove -> ... ?some nodes ... -> Tail
-     *   In this case we point the Head.next to the Tail and the Tail.prev to
-     *   the Head.
-     */
-    var next = callbackConfig.next;
-    var prev = callbackConfig.prev;
-    callbackConfig.next = null;
-    callbackConfig.prev = null;
-    if (next !== null) {
-      // we have a next
-
-      if (prev !== null) {
-        // we have a prev
-
-        // callbackConfig is somewhere in the middle of a list of 3 or more nodes.
-        prev.next = next;
-        next.prev = prev;
-        return;
-      } else {
-        // there is a next but not a previous one;
-        // callbackConfig is the head of a list of 2 or more other nodes.
-        next.prev = null;
-        headOfPendingCallbacksLinkedList = next;
-        return;
-      }
-    } else {
-      // there is no next callback config; this must the tail of the list
-
-      if (prev !== null) {
-        // we have a prev
-
-        // callbackConfig is the tail of a list of 2 or more other nodes.
-        prev.next = null;
-        tailOfPendingCallbacksLinkedList = prev;
-        return;
-      } else {
-        // there is no previous callback config;
-        // callbackConfig is the only thing in the linked list,
-        // so both head and tail point to it.
-        headOfPendingCallbacksLinkedList = null;
-        tailOfPendingCallbacksLinkedList = null;
-        return;
-      }
-    }
-  };
-}
-
 var didWarnSelectedSetOnOption = false;
+var didWarnInvalidChild = false;
 
 function flattenChildren(children) {
   var content = '';
 
-  // Flatten children and warn if they aren't strings or numbers;
-  // invalid types are ignored.
-  // We can silently skip them because invalid DOM nesting warning
-  // catches these cases in Fiber.
+  // Flatten children. We'll warn if they are invalid
+  // during validateProps() which runs for hydration too.
+  // Note that this would throw on non-element objects.
+  // Elements are stringified (which is normally irrelevant
+  // but matters for <fbt>).
   React.Children.forEach(children, function (child) {
     if (child == null) {
       return;
     }
-    if (typeof child === 'string' || typeof child === 'number') {
-      content += child;
-    }
+    content += child;
+    // Note: we don't warn about invalid children here.
+    // Instead, this is done separately below so that
+    // it happens during the hydration codepath too.
   });
 
   return content;
@@ -7367,10 +7397,32 @@ function flattenChildren(children) {
  */
 
 function validateProps(element, props) {
-  // TODO (yungsters): Remove support for `selected` in <option>.
   {
+    // This mirrors the codepath above, but runs for hydration too.
+    // Warn about invalid children here so that client and hydration are consistent.
+    // TODO: this seems like it could cause a DEV-only throw for hydration
+    // if children contains a non-element object. We should try to avoid that.
+    if (typeof props.children === 'object' && props.children !== null) {
+      React.Children.forEach(props.children, function (child) {
+        if (child == null) {
+          return;
+        }
+        if (typeof child === 'string' || typeof child === 'number') {
+          return;
+        }
+        if (typeof child.type !== 'string') {
+          return;
+        }
+        if (!didWarnInvalidChild) {
+          didWarnInvalidChild = true;
+          warning$1(false, 'Only strings and numbers are supported as <option> children.');
+        }
+      });
+    }
+
+    // TODO: Remove support for `selected` in <option>.
     if (props.selected != null && !didWarnSelectedSetOnOption) {
-      warning(false, 'Use the `defaultValue` or `value` props on <select> instead of ' + 'setting `selected` on <option>.');
+      warning$1(false, 'Use the `defaultValue` or `value` props on <select> instead of ' + 'setting `selected` on <option>.');
       didWarnSelectedSetOnOption = true;
     }
   }
@@ -7379,7 +7431,7 @@ function validateProps(element, props) {
 function postMountWrapper$1(element, props) {
   // value="" should make a value attribute (#6219)
   if (props.value != null) {
-    element.setAttribute('value', props.value);
+    element.setAttribute('value', toString(getToStringValue(props.value)));
   }
 }
 
@@ -7395,10 +7447,6 @@ function getHostProps$1(element, props) {
 }
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-var getCurrentFiberOwnerName$3 = ReactDebugCurrentFiber.getCurrentFiberOwnerName;
-var getCurrentFiberStackAddendum$3 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
-
-
 var didWarnValueDefaultValue$1 = void 0;
 
 {
@@ -7406,7 +7454,7 @@ var didWarnValueDefaultValue$1 = void 0;
 }
 
 function getDeclarationErrorAddendum() {
-  var ownerName = getCurrentFiberOwnerName$3();
+  var ownerName = getCurrentFiberOwnerNameInDevOrNull();
   if (ownerName) {
     return '\n\nCheck the render method of `' + ownerName + '`.';
   }
@@ -7419,7 +7467,7 @@ var valuePropNames = ['value', 'defaultValue'];
  * Validation function for `value` and `defaultValue`.
  */
 function checkSelectPropTypes(props) {
-  ReactControlledValuePropTypes.checkPropTypes('select', props, getCurrentFiberStackAddendum$3);
+  ReactControlledValuePropTypes.checkPropTypes('select', props);
 
   for (var i = 0; i < valuePropNames.length; i++) {
     var propName = valuePropNames[i];
@@ -7428,9 +7476,9 @@ function checkSelectPropTypes(props) {
     }
     var isArray = Array.isArray(props[propName]);
     if (props.multiple && !isArray) {
-      warning(false, 'The `%s` prop supplied to <select> must be an array if ' + '`multiple` is true.%s', propName, getDeclarationErrorAddendum());
+      warning$1(false, 'The `%s` prop supplied to <select> must be an array if ' + '`multiple` is true.%s', propName, getDeclarationErrorAddendum());
     } else if (!props.multiple && isArray) {
-      warning(false, 'The `%s` prop supplied to <select> must be a scalar ' + 'value if `multiple` is false.%s', propName, getDeclarationErrorAddendum());
+      warning$1(false, 'The `%s` prop supplied to <select> must be a scalar ' + 'value if `multiple` is false.%s', propName, getDeclarationErrorAddendum());
     }
   }
 }
@@ -7457,7 +7505,7 @@ function updateOptions(node, multiple, propValue, setDefaultSelected) {
   } else {
     // Do not set `select.value` as exact behavior isn't consistent across all
     // browsers for all cases.
-    var _selectedValue = '' + propValue;
+    var _selectedValue = toString(getToStringValue(propValue));
     var defaultSelected = null;
     for (var _i2 = 0; _i2 < options.length; _i2++) {
       if (options[_i2].value === _selectedValue) {
@@ -7505,15 +7553,13 @@ function initWrapperState$1(element, props) {
     checkSelectPropTypes(props);
   }
 
-  var value = props.value;
   node._wrapperState = {
-    initialValue: value != null ? value : props.defaultValue,
     wasMultiple: !!props.multiple
   };
 
   {
     if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValueDefaultValue$1) {
-      warning(false, 'Select elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled select ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components');
+      warning$1(false, 'Select elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled select ' + 'element and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components');
       didWarnValueDefaultValue$1 = true;
     }
   }
@@ -7532,10 +7578,6 @@ function postMountWrapper$2(element, props) {
 
 function postUpdateWrapper(element, props) {
   var node = element;
-  // After the initial mount, we control selected-ness manually so don't pass
-  // this value down
-  node._wrapperState.initialValue = undefined;
-
   var wasMultiple = node._wrapperState.wasMultiple;
   node._wrapperState.wasMultiple = !!props.multiple;
 
@@ -7561,9 +7603,6 @@ function restoreControlledState$2(element, props) {
     updateOptions(node, !!props.multiple, value, false);
   }
 }
-
-// TODO: direct imports like some-package/src/* are bad. Fix me.
-var getCurrentFiberStackAddendum$4 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
 
 var didWarnValDefaultVal = false;
 
@@ -7596,7 +7635,7 @@ function getHostProps$3(element, props) {
   var hostProps = _assign({}, props, {
     value: undefined,
     defaultValue: undefined,
-    children: '' + node._wrapperState.initialValue
+    children: toString(node._wrapperState.initialValue)
   });
 
   return hostProps;
@@ -7605,9 +7644,9 @@ function getHostProps$3(element, props) {
 function initWrapperState$2(element, props) {
   var node = element;
   {
-    ReactControlledValuePropTypes.checkPropTypes('textarea', props, getCurrentFiberStackAddendum$4);
+    ReactControlledValuePropTypes.checkPropTypes('textarea', props);
     if (props.value !== undefined && props.defaultValue !== undefined && !didWarnValDefaultVal) {
-      warning(false, 'Textarea elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled textarea ' + 'and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components');
+      warning$1(false, '%s contains a textarea with both value and defaultValue props. ' + 'Textarea elements must be either controlled or uncontrolled ' + '(specify either the value prop, or the defaultValue prop, but not ' + 'both). Decide between using a controlled or uncontrolled textarea ' + 'and remove one of these props. More info: ' + 'https://fb.me/react-controlled-components', getCurrentFiberOwnerNameInDevOrNull() || 'A component');
       didWarnValDefaultVal = true;
     }
   }
@@ -7621,7 +7660,7 @@ function initWrapperState$2(element, props) {
     var children = props.children;
     if (children != null) {
       {
-        warning(false, 'Use the `defaultValue` or `value` props instead of setting ' + 'children on <textarea>.');
+        warning$1(false, 'Use the `defaultValue` or `value` props instead of setting ' + 'children on <textarea>.');
       }
       !(defaultValue == null) ? invariant(false, 'If you supply `defaultValue` on a <textarea>, do not pass children.') : void 0;
       if (Array.isArray(children)) {
@@ -7629,7 +7668,7 @@ function initWrapperState$2(element, props) {
         children = children[0];
       }
 
-      defaultValue = '' + children;
+      defaultValue = children;
     }
     if (defaultValue == null) {
       defaultValue = '';
@@ -7638,18 +7677,17 @@ function initWrapperState$2(element, props) {
   }
 
   node._wrapperState = {
-    initialValue: '' + initialValue
+    initialValue: getToStringValue(initialValue)
   };
 }
 
 function updateWrapper$1(element, props) {
   var node = element;
-  var value = props.value;
+  var value = getToStringValue(props.value);
   if (value != null) {
     // Cast `value` to a string to ensure the value is set correctly. While
     // browsers typically do this as necessary, jsdom doesn't.
-    var newValue = '' + value;
-
+    var newValue = toString(value);
     // To avoid side effects (such as losing text selection), only set value if changed
     if (newValue !== node.value) {
       node.value = newValue;
@@ -7659,7 +7697,7 @@ function updateWrapper$1(element, props) {
     }
   }
   if (props.defaultValue != null) {
-    node.defaultValue = props.defaultValue;
+    node.defaultValue = toString(getToStringValue(props.defaultValue));
   }
 }
 
@@ -7805,6 +7843,7 @@ var isUnitlessNumber = {
   flexShrink: true,
   flexNegative: true,
   flexOrder: true,
+  gridArea: true,
   gridRow: true,
   gridRowEnd: true,
   gridRowSpan: true,
@@ -7891,11 +7930,33 @@ function dangerousStyleValue(name, value, isCustomProperty) {
   return ('' + value).trim();
 }
 
-var warnValidStyle = emptyFunction;
+var uppercasePattern = /([A-Z])/g;
+var msPattern = /^ms-/;
+
+/**
+ * Hyphenates a camelcased CSS property name, for example:
+ *
+ *   > hyphenateStyleName('backgroundColor')
+ *   < "background-color"
+ *   > hyphenateStyleName('MozTransition')
+ *   < "-moz-transition"
+ *   > hyphenateStyleName('msTransition')
+ *   < "-ms-transition"
+ *
+ * As Modernizr suggests (http://modernizr.com/docs/#prefixed), an `ms` prefix
+ * is converted to `-ms-`.
+ */
+function hyphenateStyleName(name) {
+  return name.replace(uppercasePattern, '-$1').toLowerCase().replace(msPattern, '-ms-');
+}
+
+var warnValidStyle = function () {};
 
 {
   // 'msTransform' is correct, but the other prefixes should be capitalized
   var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
+  var msPattern$1 = /^-ms-/;
+  var hyphenPattern = /-(.)/g;
 
   // style values shouldn't contain a semicolon
   var badStyleValueWithSemicolonPattern = /;\s*$/;
@@ -7905,65 +7966,75 @@ var warnValidStyle = emptyFunction;
   var warnedForNaNValue = false;
   var warnedForInfinityValue = false;
 
-  var warnHyphenatedStyleName = function (name, getStack) {
+  var camelize = function (string) {
+    return string.replace(hyphenPattern, function (_, character) {
+      return character.toUpperCase();
+    });
+  };
+
+  var warnHyphenatedStyleName = function (name) {
     if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
       return;
     }
 
     warnedStyleNames[name] = true;
-    warning(false, 'Unsupported style property %s. Did you mean %s?%s', name, camelizeStyleName(name), getStack());
+    warning$1(false, 'Unsupported style property %s. Did you mean %s?', name,
+    // As Andi Smith suggests
+    // (http://www.andismith.com/blog/2012/02/modernizr-prefixed/), an `-ms` prefix
+    // is converted to lowercase `ms`.
+    camelize(name.replace(msPattern$1, 'ms-')));
   };
 
-  var warnBadVendoredStyleName = function (name, getStack) {
+  var warnBadVendoredStyleName = function (name) {
     if (warnedStyleNames.hasOwnProperty(name) && warnedStyleNames[name]) {
       return;
     }
 
     warnedStyleNames[name] = true;
-    warning(false, 'Unsupported vendor-prefixed style property %s. Did you mean %s?%s', name, name.charAt(0).toUpperCase() + name.slice(1), getStack());
+    warning$1(false, 'Unsupported vendor-prefixed style property %s. Did you mean %s?', name, name.charAt(0).toUpperCase() + name.slice(1));
   };
 
-  var warnStyleValueWithSemicolon = function (name, value, getStack) {
+  var warnStyleValueWithSemicolon = function (name, value) {
     if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) {
       return;
     }
 
     warnedStyleValues[value] = true;
-    warning(false, "Style property values shouldn't contain a semicolon. " + 'Try "%s: %s" instead.%s', name, value.replace(badStyleValueWithSemicolonPattern, ''), getStack());
+    warning$1(false, "Style property values shouldn't contain a semicolon. " + 'Try "%s: %s" instead.', name, value.replace(badStyleValueWithSemicolonPattern, ''));
   };
 
-  var warnStyleValueIsNaN = function (name, value, getStack) {
+  var warnStyleValueIsNaN = function (name, value) {
     if (warnedForNaNValue) {
       return;
     }
 
     warnedForNaNValue = true;
-    warning(false, '`NaN` is an invalid value for the `%s` css style property.%s', name, getStack());
+    warning$1(false, '`NaN` is an invalid value for the `%s` css style property.', name);
   };
 
-  var warnStyleValueIsInfinity = function (name, value, getStack) {
+  var warnStyleValueIsInfinity = function (name, value) {
     if (warnedForInfinityValue) {
       return;
     }
 
     warnedForInfinityValue = true;
-    warning(false, '`Infinity` is an invalid value for the `%s` css style property.%s', name, getStack());
+    warning$1(false, '`Infinity` is an invalid value for the `%s` css style property.', name);
   };
 
-  warnValidStyle = function (name, value, getStack) {
+  warnValidStyle = function (name, value) {
     if (name.indexOf('-') > -1) {
-      warnHyphenatedStyleName(name, getStack);
+      warnHyphenatedStyleName(name);
     } else if (badVendoredStyleNamePattern.test(name)) {
-      warnBadVendoredStyleName(name, getStack);
+      warnBadVendoredStyleName(name);
     } else if (badStyleValueWithSemicolonPattern.test(value)) {
-      warnStyleValueWithSemicolon(name, value, getStack);
+      warnStyleValueWithSemicolon(name, value);
     }
 
     if (typeof value === 'number') {
       if (isNaN(value)) {
-        warnStyleValueIsNaN(name, value, getStack);
+        warnStyleValueIsNaN(name, value);
       } else if (!isFinite(value)) {
-        warnStyleValueIsInfinity(name, value, getStack);
+        warnStyleValueIsInfinity(name, value);
       }
     }
   };
@@ -8009,7 +8080,7 @@ function createDangerousStringForStyles(styles) {
  * @param {DOMElement} node
  * @param {object} styles
  */
-function setValueForStyles(node, styles, getStack) {
+function setValueForStyles(node, styles) {
   var style = node.style;
   for (var styleName in styles) {
     if (!styles.hasOwnProperty(styleName)) {
@@ -8018,7 +8089,7 @@ function setValueForStyles(node, styles, getStack) {
     var isCustomProperty = styleName.indexOf('--') === 0;
     {
       if (!isCustomProperty) {
-        warnValidStyle$1(styleName, styles[styleName], getStack);
+        warnValidStyle$1(styleName, styles[styleName]);
       }
     }
     var styleValue = dangerousStyleValue(styleName, styles[styleName], isCustomProperty);
@@ -8062,24 +8133,31 @@ var voidElementTags = _assign({
   menuitem: true
 }, omittedCloseTags);
 
+// TODO: We can remove this if we add invariantWithStack()
+// or add stack by default to invariants where possible.
 var HTML$1 = '__html';
 
-function assertValidProps(tag, props, getStack) {
+var ReactDebugCurrentFrame$2 = null;
+{
+  ReactDebugCurrentFrame$2 = ReactSharedInternals.ReactDebugCurrentFrame;
+}
+
+function assertValidProps(tag, props) {
   if (!props) {
     return;
   }
   // Note the use of `==` which checks for null or undefined.
   if (voidElementTags[tag]) {
-    !(props.children == null && props.dangerouslySetInnerHTML == null) ? invariant(false, '%s is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.%s', tag, getStack()) : void 0;
+    !(props.children == null && props.dangerouslySetInnerHTML == null) ? invariant(false, '%s is a void element tag and must neither have `children` nor use `dangerouslySetInnerHTML`.%s', tag, ReactDebugCurrentFrame$2.getStackAddendum()) : void 0;
   }
   if (props.dangerouslySetInnerHTML != null) {
     !(props.children == null) ? invariant(false, 'Can only set one of `children` or `props.dangerouslySetInnerHTML`.') : void 0;
     !(typeof props.dangerouslySetInnerHTML === 'object' && HTML$1 in props.dangerouslySetInnerHTML) ? invariant(false, '`props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. Please visit https://fb.me/react-invariant-dangerously-set-inner-html for more information.') : void 0;
   }
   {
-    !(props.suppressContentEditableWarning || !props.contentEditable || props.children == null) ? warning(false, 'A component is `contentEditable` and contains `children` managed by ' + 'React. It is now your responsibility to guarantee that none of ' + 'those nodes are unexpectedly modified or duplicated. This is ' + 'probably not intentional.%s', getStack()) : void 0;
+    !(props.suppressContentEditableWarning || !props.contentEditable || props.children == null) ? warning$1(false, 'A component is `contentEditable` and contains `children` managed by ' + 'React. It is now your responsibility to guarantee that none of ' + 'those nodes are unexpectedly modified or duplicated. This is ' + 'probably not intentional.') : void 0;
   }
-  !(props.style == null || typeof props.style === 'object') ? invariant(false, 'The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + \'em\'}} when using JSX.%s', getStack()) : void 0;
+  !(props.style == null || typeof props.style === 'object') ? invariant(false, 'The `style` prop expects a mapping from style properties to values, not a string. For example, style={{marginRight: spacing + \'em\'}} when using JSX.%s', ReactDebugCurrentFrame$2.getStackAddendum()) : void 0;
 }
 
 function isCustomComponent(tagName, props) {
@@ -8653,15 +8731,10 @@ var warnedProperties = {};
 var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
 var rARIACamel = new RegExp('^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$');
 
-var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
-
-function getStackAddendum() {
-  var stack = ReactDebugCurrentFrame.getStackAddendum();
-  return stack != null ? stack : '';
-}
+var hasOwnProperty$2 = Object.prototype.hasOwnProperty;
 
 function validateProperty(tagName, name) {
-  if (hasOwnProperty$1.call(warnedProperties, name) && warnedProperties[name]) {
+  if (hasOwnProperty$2.call(warnedProperties, name) && warnedProperties[name]) {
     return true;
   }
 
@@ -8672,13 +8745,13 @@ function validateProperty(tagName, name) {
     // If this is an aria-* attribute, but is not listed in the known DOM
     // DOM properties, then it is an invalid aria-* attribute.
     if (correctName == null) {
-      warning(false, 'Invalid ARIA attribute `%s`. ARIA attributes follow the pattern aria-* and must be lowercase.%s', name, getStackAddendum());
+      warning$1(false, 'Invalid ARIA attribute `%s`. ARIA attributes follow the pattern aria-* and must be lowercase.', name);
       warnedProperties[name] = true;
       return true;
     }
     // aria-* attributes should be lowercase; suggest the lowercase version.
     if (name !== correctName) {
-      warning(false, 'Invalid ARIA attribute `%s`. Did you mean `%s`?%s', name, correctName, getStackAddendum());
+      warning$1(false, 'Invalid ARIA attribute `%s`. Did you mean `%s`?', name, correctName);
       warnedProperties[name] = true;
       return true;
     }
@@ -8696,7 +8769,7 @@ function validateProperty(tagName, name) {
     }
     // aria-* attributes should be lowercase; suggest the lowercase version.
     if (name !== standardName) {
-      warning(false, 'Unknown ARIA attribute `%s`. Did you mean `%s`?%s', name, standardName, getStackAddendum());
+      warning$1(false, 'Unknown ARIA attribute `%s`. Did you mean `%s`?', name, standardName);
       warnedProperties[name] = true;
       return true;
     }
@@ -8720,9 +8793,9 @@ function warnInvalidARIAProps(type, props) {
   }).join(', ');
 
   if (invalidProps.length === 1) {
-    warning(false, 'Invalid aria prop %s on <%s> tag. ' + 'For details, see https://fb.me/invalid-aria-prop%s', unknownPropString, type, getStackAddendum());
+    warning$1(false, 'Invalid aria prop %s on <%s> tag. ' + 'For details, see https://fb.me/invalid-aria-prop', unknownPropString, type);
   } else if (invalidProps.length > 1) {
-    warning(false, 'Invalid aria props %s on <%s> tag. ' + 'For details, see https://fb.me/invalid-aria-prop%s', unknownPropString, type, getStackAddendum());
+    warning$1(false, 'Invalid aria props %s on <%s> tag. ' + 'For details, see https://fb.me/invalid-aria-prop', unknownPropString, type);
   }
 }
 
@@ -8735,11 +8808,6 @@ function validateProperties(type, props) {
 
 var didWarnValueNull = false;
 
-function getStackAddendum$1() {
-  var stack = ReactDebugCurrentFrame.getStackAddendum();
-  return stack != null ? stack : '';
-}
-
 function validateProperties$1(type, props) {
   if (type !== 'input' && type !== 'textarea' && type !== 'select') {
     return;
@@ -8748,16 +8816,11 @@ function validateProperties$1(type, props) {
   if (props != null && props.value === null && !didWarnValueNull) {
     didWarnValueNull = true;
     if (type === 'select' && props.multiple) {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled components.%s', type, getStackAddendum$1());
+      warning$1(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled components.', type);
     } else {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled components.%s', type, getStackAddendum$1());
+      warning$1(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled components.', type);
     }
   }
-}
-
-function getStackAddendum$2() {
-  var stack = ReactDebugCurrentFrame.getStackAddendum();
-  return stack != null ? stack : '';
 }
 
 var validateProperty$1 = function () {};
@@ -8777,7 +8840,7 @@ var validateProperty$1 = function () {};
 
     var lowerCasedName = name.toLowerCase();
     if (lowerCasedName === 'onfocusin' || lowerCasedName === 'onfocusout') {
-      warning(false, 'React uses onFocus and onBlur instead of onFocusIn and onFocusOut. ' + 'All React events are normalized to bubble, so onFocusIn and onFocusOut ' + 'are not needed/supported by React.');
+      warning$1(false, 'React uses onFocus and onBlur instead of onFocusIn and onFocusOut. ' + 'All React events are normalized to bubble, so onFocusIn and onFocusOut ' + 'are not needed/supported by React.');
       warnedProperties$1[name] = true;
       return true;
     }
@@ -8789,12 +8852,12 @@ var validateProperty$1 = function () {};
       }
       var registrationName = possibleRegistrationNames.hasOwnProperty(lowerCasedName) ? possibleRegistrationNames[lowerCasedName] : null;
       if (registrationName != null) {
-        warning(false, 'Invalid event handler property `%s`. Did you mean `%s`?%s', name, registrationName, getStackAddendum$2());
+        warning$1(false, 'Invalid event handler property `%s`. Did you mean `%s`?', name, registrationName);
         warnedProperties$1[name] = true;
         return true;
       }
       if (EVENT_NAME_REGEX.test(name)) {
-        warning(false, 'Unknown event handler property `%s`. It will be ignored.%s', name, getStackAddendum$2());
+        warning$1(false, 'Unknown event handler property `%s`. It will be ignored.', name);
         warnedProperties$1[name] = true;
         return true;
       }
@@ -8803,7 +8866,7 @@ var validateProperty$1 = function () {};
       // So we can't tell if the event name is correct for sure, but we can filter
       // out known bad ones like `onclick`. We can't suggest a specific replacement though.
       if (INVALID_EVENT_NAME_REGEX.test(name)) {
-        warning(false, 'Invalid event handler property `%s`. ' + 'React events use the camelCase naming convention, for example `onClick`.%s', name, getStackAddendum$2());
+        warning$1(false, 'Invalid event handler property `%s`. ' + 'React events use the camelCase naming convention, for example `onClick`.', name);
       }
       warnedProperties$1[name] = true;
       return true;
@@ -8815,25 +8878,25 @@ var validateProperty$1 = function () {};
     }
 
     if (lowerCasedName === 'innerhtml') {
-      warning(false, 'Directly setting property `innerHTML` is not permitted. ' + 'For more information, lookup documentation on `dangerouslySetInnerHTML`.');
+      warning$1(false, 'Directly setting property `innerHTML` is not permitted. ' + 'For more information, lookup documentation on `dangerouslySetInnerHTML`.');
       warnedProperties$1[name] = true;
       return true;
     }
 
     if (lowerCasedName === 'aria') {
-      warning(false, 'The `aria` attribute is reserved for future use in React. ' + 'Pass individual `aria-` attributes instead.');
+      warning$1(false, 'The `aria` attribute is reserved for future use in React. ' + 'Pass individual `aria-` attributes instead.');
       warnedProperties$1[name] = true;
       return true;
     }
 
     if (lowerCasedName === 'is' && value !== null && value !== undefined && typeof value !== 'string') {
-      warning(false, 'Received a `%s` for a string attribute `is`. If this is expected, cast ' + 'the value to a string.%s', typeof value, getStackAddendum$2());
+      warning$1(false, 'Received a `%s` for a string attribute `is`. If this is expected, cast ' + 'the value to a string.', typeof value);
       warnedProperties$1[name] = true;
       return true;
     }
 
     if (typeof value === 'number' && isNaN(value)) {
-      warning(false, 'Received NaN for the `%s` attribute. If this is expected, cast ' + 'the value to a string.%s', name, getStackAddendum$2());
+      warning$1(false, 'Received NaN for the `%s` attribute. If this is expected, cast ' + 'the value to a string.', name);
       warnedProperties$1[name] = true;
       return true;
     }
@@ -8845,23 +8908,23 @@ var validateProperty$1 = function () {};
     if (possibleStandardNames.hasOwnProperty(lowerCasedName)) {
       var standardName = possibleStandardNames[lowerCasedName];
       if (standardName !== name) {
-        warning(false, 'Invalid DOM property `%s`. Did you mean `%s`?%s', name, standardName, getStackAddendum$2());
+        warning$1(false, 'Invalid DOM property `%s`. Did you mean `%s`?', name, standardName);
         warnedProperties$1[name] = true;
         return true;
       }
     } else if (!isReserved && name !== lowerCasedName) {
       // Unknown attributes should have lowercase casing since that's how they
       // will be cased anyway with server rendering.
-      warning(false, 'React does not recognize the `%s` prop on a DOM element. If you ' + 'intentionally want it to appear in the DOM as a custom ' + 'attribute, spell it as lowercase `%s` instead. ' + 'If you accidentally passed it from a parent component, remove ' + 'it from the DOM element.%s', name, lowerCasedName, getStackAddendum$2());
+      warning$1(false, 'React does not recognize the `%s` prop on a DOM element. If you ' + 'intentionally want it to appear in the DOM as a custom ' + 'attribute, spell it as lowercase `%s` instead. ' + 'If you accidentally passed it from a parent component, remove ' + 'it from the DOM element.', name, lowerCasedName);
       warnedProperties$1[name] = true;
       return true;
     }
 
     if (typeof value === 'boolean' && shouldRemoveAttributeWithWarning(name, value, propertyInfo, false)) {
       if (value) {
-        warning(false, 'Received `%s` for a non-boolean attribute `%s`.\n\n' + 'If you want to write it to the DOM, pass a string instead: ' + '%s="%s" or %s={value.toString()}.%s', value, name, name, value, name, getStackAddendum$2());
+        warning$1(false, 'Received `%s` for a non-boolean attribute `%s`.\n\n' + 'If you want to write it to the DOM, pass a string instead: ' + '%s="%s" or %s={value.toString()}.', value, name, name, value, name);
       } else {
-        warning(false, 'Received `%s` for a non-boolean attribute `%s`.\n\n' + 'If you want to write it to the DOM, pass a string instead: ' + '%s="%s" or %s={value.toString()}.\n\n' + 'If you used to conditionally omit it with %s={condition && value}, ' + 'pass %s={condition ? value : undefined} instead.%s', value, name, name, value, name, name, name, getStackAddendum$2());
+        warning$1(false, 'Received `%s` for a non-boolean attribute `%s`.\n\n' + 'If you want to write it to the DOM, pass a string instead: ' + '%s="%s" or %s={value.toString()}.\n\n' + 'If you used to conditionally omit it with %s={condition && value}, ' + 'pass %s={condition ? value : undefined} instead.', value, name, name, value, name, name, name);
       }
       warnedProperties$1[name] = true;
       return true;
@@ -8877,6 +8940,13 @@ var validateProperty$1 = function () {};
     if (shouldRemoveAttributeWithWarning(name, value, propertyInfo, false)) {
       warnedProperties$1[name] = true;
       return false;
+    }
+
+    // Warn when passing the strings 'false' or 'true' into a boolean prop
+    if ((value === 'false' || value === 'true') && propertyInfo !== null && propertyInfo.type === BOOLEAN) {
+      warning$1(false, 'Received the string `%s` for the boolean attribute `%s`. ' + '%s ' + 'Did you mean %s={%s}?', value, name, value === 'false' ? 'The browser will interpret it as a truthy value.' : 'Although this works, it will not work as expected if you pass the string "false".', name, value);
+      warnedProperties$1[name] = true;
+      return true;
     }
 
     return true;
@@ -8896,9 +8966,9 @@ var warnUnknownProperties = function (type, props, canUseEventSystem) {
     return '`' + prop + '`';
   }).join(', ');
   if (unknownProps.length === 1) {
-    warning(false, 'Invalid value for prop %s on <%s> tag. Either remove it from the element, ' + 'or pass a string or number value to keep it in the DOM. ' + 'For details, see https://fb.me/react-attribute-behavior%s', unknownPropString, type, getStackAddendum$2());
+    warning$1(false, 'Invalid value for prop %s on <%s> tag. Either remove it from the element, ' + 'or pass a string or number value to keep it in the DOM. ' + 'For details, see https://fb.me/react-attribute-behavior', unknownPropString, type);
   } else if (unknownProps.length > 1) {
-    warning(false, 'Invalid values for props %s on <%s> tag. Either remove them from the element, ' + 'or pass a string or number value to keep them in the DOM. ' + 'For details, see https://fb.me/react-attribute-behavior%s', unknownPropString, type, getStackAddendum$2());
+    warning$1(false, 'Invalid values for props %s on <%s> tag. Either remove them from the element, ' + 'or pass a string or number value to keep them in the DOM. ' + 'For details, see https://fb.me/react-attribute-behavior', unknownPropString, type);
   }
 };
 
@@ -8910,9 +8980,6 @@ function validateProperties$2(type, props, canUseEventSystem) {
 }
 
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-var getCurrentFiberOwnerName$2 = ReactDebugCurrentFiber.getCurrentFiberOwnerName;
-var getCurrentFiberStackAddendum$2 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
-
 var didWarnInvalidHydration = false;
 var didWarnShadyDOM = false;
 
@@ -8927,8 +8994,6 @@ var HTML = '__html';
 var HTML_NAMESPACE = Namespaces.html;
 
 
-var getStack = emptyFunction.thatReturns('');
-
 var warnedUnknownTags = void 0;
 var suppressHydrationWarning = void 0;
 
@@ -8937,13 +9002,12 @@ var warnForTextDifference = void 0;
 var warnForPropDifference = void 0;
 var warnForExtraAttributes = void 0;
 var warnForInvalidEventListener = void 0;
+var canDiffStyleForHydrationWarning = void 0;
 
 var normalizeMarkupForTextOrAttribute = void 0;
 var normalizeHTML = void 0;
 
 {
-  getStack = getCurrentFiberStackAddendum$2;
-
   warnedUnknownTags = {
     // Chrome is the only major browser not shipping <time>. But as of July
     // 2017 it intends to ship it due to widespread usage. We intentionally
@@ -8951,7 +9015,13 @@ var normalizeHTML = void 0;
     // it soon will be, and many apps have been using it anyway.
     time: true,
     // There are working polyfills for <dialog>. Let people use it.
-    dialog: true
+    dialog: true,
+    // Electron ships a custom <webview> tag to display external web content in
+    // an isolated frame and process.
+    // This tag is not present in non Electron environments such as JSDom which
+    // is often used for testing purposes.
+    // @see https://electronjs.org/docs/api/webview-tag
+    webview: true
   };
 
   validatePropertiesInDevelopment = function (type, props) {
@@ -8959,6 +9029,16 @@ var normalizeHTML = void 0;
     validateProperties$1(type, props);
     validateProperties$2(type, props, /* canUseEventSystem */true);
   };
+
+  // IE 11 parses & normalizes the style attribute as opposed to other
+  // browsers. It adds spaces and sorts the properties in some
+  // non-alphabetical order. Handling that would require sorting CSS
+  // properties in the client & server versions or applying
+  // `expectedStyle` to a temporary DOM node to read its `style` attribute
+  // normalized. Since it only affects IE, we're skipping style warnings
+  // in that browser completely in favor of doing all that work.
+  // See https://github.com/facebook/react/issues/11807
+  canDiffStyleForHydrationWarning = canUseDOM && !document.documentMode;
 
   // HTML parsing normalizes CR and CRLF to LF.
   // It also can turn \u0000 into \uFFFD inside attributes.
@@ -8983,7 +9063,7 @@ var normalizeHTML = void 0;
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Text content did not match. Server: "%s" Client: "%s"', normalizedServerText, normalizedClientText);
+    warningWithoutStack$1(false, 'Text content did not match. Server: "%s" Client: "%s"', normalizedServerText, normalizedClientText);
   };
 
   warnForPropDifference = function (propName, serverValue, clientValue) {
@@ -8996,7 +9076,7 @@ var normalizeHTML = void 0;
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Prop `%s` did not match. Server: %s Client: %s', propName, JSON.stringify(normalizedServerValue), JSON.stringify(normalizedClientValue));
+    warningWithoutStack$1(false, 'Prop `%s` did not match. Server: %s Client: %s', propName, JSON.stringify(normalizedServerValue), JSON.stringify(normalizedClientValue));
   };
 
   warnForExtraAttributes = function (attributeNames) {
@@ -9008,14 +9088,14 @@ var normalizeHTML = void 0;
     attributeNames.forEach(function (name) {
       names.push(name);
     });
-    warning(false, 'Extra attributes from the server: %s', names);
+    warningWithoutStack$1(false, 'Extra attributes from the server: %s', names);
   };
 
   warnForInvalidEventListener = function (registrationName, listener) {
     if (listener === false) {
-      warning(false, 'Expected `%s` listener to be a function, instead got `false`.\n\n' + 'If you used to conditionally omit it with %s={condition && value}, ' + 'pass %s={condition ? value : undefined} instead.%s', registrationName, registrationName, registrationName, getCurrentFiberStackAddendum$2());
+      warning$1(false, 'Expected `%s` listener to be a function, instead got `false`.\n\n' + 'If you used to conditionally omit it with %s={condition && value}, ' + 'pass %s={condition ? value : undefined} instead.', registrationName, registrationName, registrationName);
     } else {
-      warning(false, 'Expected `%s` listener to be a function, instead got a value of `%s` type.%s', registrationName, typeof listener, getCurrentFiberStackAddendum$2());
+      warning$1(false, 'Expected `%s` listener to be a function, instead got a value of `%s` type.', registrationName, typeof listener);
     }
   };
 
@@ -9042,6 +9122,8 @@ function getOwnerDocumentFromRootContainer(rootContainerElement) {
   return rootContainerElement.nodeType === DOCUMENT_NODE ? rootContainerElement : rootContainerElement.ownerDocument;
 }
 
+function noop() {}
+
 function trapClickOnNonInteractiveElement(node) {
   // Mobile Safari does not fire properly bubble click events on
   // non-interactive elements, which means delegated click listeners do not
@@ -9052,7 +9134,7 @@ function trapClickOnNonInteractiveElement(node) {
   // bookkeeping for it. Not sure if we need to clear it when the listener is
   // removed.
   // TODO: Only do this for the relevant Safaris maybe?
-  node.onclick = emptyFunction;
+  node.onclick = noop;
 }
 
 function setInitialDOMProperties(tag, domElement, rootContainerElement, nextProps, isCustomComponentTag) {
@@ -9070,7 +9152,7 @@ function setInitialDOMProperties(tag, domElement, rootContainerElement, nextProp
         }
       }
       // Relies on `updateStylesByID` not mutating `styleUpdates`.
-      setValueForStyles(domElement, nextProp, getStack);
+      setValueForStyles(domElement, nextProp);
     } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
       var nextHtml = nextProp ? nextProp[HTML] : undefined;
       if (nextHtml != null) {
@@ -9113,7 +9195,7 @@ function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, i
     var propKey = updatePayload[i];
     var propValue = updatePayload[i + 1];
     if (propKey === STYLE) {
-      setValueForStyles(domElement, propValue, getStack);
+      setValueForStyles(domElement, propValue);
     } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
       setInnerHTML(domElement, propValue);
     } else if (propKey === CHILDREN) {
@@ -9124,7 +9206,7 @@ function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, i
   }
 }
 
-function createElement$1(type, props, rootContainerElement, parentNamespace) {
+function createElement(type, props, rootContainerElement, parentNamespace) {
   var isCustomComponentTag = void 0;
 
   // We create tags in the namespace of their parent container, except HTML
@@ -9140,7 +9222,7 @@ function createElement$1(type, props, rootContainerElement, parentNamespace) {
       isCustomComponentTag = isCustomComponent(type, props);
       // Should this check be gated by parent namespace? Not sure we want to
       // allow <SVG> or <mATH>.
-      !(isCustomComponentTag || type === type.toLowerCase()) ? warning(false, '<%s /> is using incorrect casing. ' + 'Use PascalCase for React components, ' + 'or lowercase for HTML elements.', type) : void 0;
+      !(isCustomComponentTag || type === type.toLowerCase()) ? warning$1(false, '<%s /> is using incorrect casing. ' + 'Use PascalCase for React components, ' + 'or lowercase for HTML elements.', type) : void 0;
     }
 
     if (type === 'script') {
@@ -9159,6 +9241,15 @@ function createElement$1(type, props, rootContainerElement, parentNamespace) {
       // See discussion in https://github.com/facebook/react/pull/6896
       // and discussion in https://bugzilla.mozilla.org/show_bug.cgi?id=1276240
       domElement = ownerDocument.createElement(type);
+      // Normally attributes are assigned in `setInitialDOMProperties`, however the `multiple`
+      // attribute on `select`s needs to be added before `option`s are inserted. This prevents
+      // a bug where the `select` does not scroll to the correct option because singular
+      // `select` elements automatically pick the first item.
+      // See https://github.com/facebook/react/issues/13222
+      if (type === 'select' && props.multiple) {
+        var node = domElement;
+        node.multiple = true;
+      }
     }
   } else {
     domElement = ownerDocument.createElementNS(namespaceURI, type);
@@ -9168,7 +9259,7 @@ function createElement$1(type, props, rootContainerElement, parentNamespace) {
     if (namespaceURI === HTML_NAMESPACE) {
       if (!isCustomComponentTag && Object.prototype.toString.call(domElement) === '[object HTMLUnknownElement]' && !Object.prototype.hasOwnProperty.call(warnedUnknownTags, type)) {
         warnedUnknownTags[type] = true;
-        warning(false, 'The tag <%s> is unrecognized in this browser. ' + 'If you meant to render a React component, start its name with ' + 'an uppercase letter.', type);
+        warning$1(false, 'The tag <%s> is unrecognized in this browser. ' + 'If you meant to render a React component, start its name with ' + 'an uppercase letter.', type);
       }
     }
   }
@@ -9176,16 +9267,16 @@ function createElement$1(type, props, rootContainerElement, parentNamespace) {
   return domElement;
 }
 
-function createTextNode$1(text, rootContainerElement) {
+function createTextNode(text, rootContainerElement) {
   return getOwnerDocumentFromRootContainer(rootContainerElement).createTextNode(text);
 }
 
-function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement) {
+function setInitialProperties(domElement, tag, rawProps, rootContainerElement) {
   var isCustomComponentTag = isCustomComponent(tag, rawProps);
   {
     validatePropertiesInDevelopment(tag, rawProps);
     if (isCustomComponentTag && !didWarnShadyDOM && domElement.shadyRoot) {
-      warning(false, '%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerName$2() || 'A component');
+      warning$1(false, '%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerNameInDevOrNull() || 'A component');
       didWarnShadyDOM = true;
     }
   }
@@ -9258,7 +9349,7 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
       props = rawProps;
   }
 
-  assertValidProps(tag, props, getStack);
+  assertValidProps(tag, props);
 
   setInitialDOMProperties(tag, domElement, rootContainerElement, props, isCustomComponentTag);
 
@@ -9291,7 +9382,7 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
 }
 
 // Calculate the diff between the two objects.
-function diffProperties$1(domElement, tag, lastRawProps, nextRawProps, rootContainerElement) {
+function diffProperties(domElement, tag, lastRawProps, nextRawProps, rootContainerElement) {
   {
     validatePropertiesInDevelopment(tag, nextRawProps);
   }
@@ -9331,7 +9422,7 @@ function diffProperties$1(domElement, tag, lastRawProps, nextRawProps, rootConta
       break;
   }
 
-  assertValidProps(tag, nextProps, getStack);
+  assertValidProps(tag, nextProps);
 
   var propKey = void 0;
   var styleName = void 0;
@@ -9456,7 +9547,7 @@ function diffProperties$1(domElement, tag, lastRawProps, nextRawProps, rootConta
 }
 
 // Apply the diff.
-function updateProperties$1(domElement, updatePayload, tag, lastRawProps, nextRawProps) {
+function updateProperties(domElement, updatePayload, tag, lastRawProps, nextRawProps) {
   // Update checked *before* name.
   // In the middle of an update, it is possible to have multiple checked.
   // When a checked radio tries to change name, browser makes another radio's checked false.
@@ -9500,7 +9591,7 @@ function getPossibleStandardName(propName) {
   return null;
 }
 
-function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, rootContainerElement) {
+function diffHydratedProperties(domElement, tag, rawProps, parentNamespace, rootContainerElement) {
   var isCustomComponentTag = void 0;
   var extraAttributeNames = void 0;
 
@@ -9509,7 +9600,7 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
     isCustomComponentTag = isCustomComponent(tag, rawProps);
     validatePropertiesInDevelopment(tag, rawProps);
     if (isCustomComponentTag && !didWarnShadyDOM && domElement.shadyRoot) {
-      warning(false, '%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerName$2() || 'A component');
+      warning$1(false, '%s is using shady DOM. Using shady DOM with React can ' + 'cause things to break subtly.', getCurrentFiberOwnerNameInDevOrNull() || 'A component');
       didWarnShadyDOM = true;
     }
   }
@@ -9569,7 +9660,7 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
       break;
   }
 
-  assertValidProps(tag, rawProps, getStack);
+  assertValidProps(tag, rawProps);
 
   {
     extraAttributeNames = new Set();
@@ -9648,19 +9739,22 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
       propKey === 'value' || propKey === 'checked' || propKey === 'selected') {
         // Noop
       } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
-        var rawHtml = nextProp ? nextProp[HTML] || '' : '';
         var serverHTML = domElement.innerHTML;
-        var expectedHTML = normalizeHTML(domElement, rawHtml);
+        var nextHtml = nextProp ? nextProp[HTML] : undefined;
+        var expectedHTML = normalizeHTML(domElement, nextHtml != null ? nextHtml : '');
         if (expectedHTML !== serverHTML) {
           warnForPropDifference(propKey, serverHTML, expectedHTML);
         }
       } else if (propKey === STYLE) {
         // $FlowFixMe - Should be inferred as not undefined.
         extraAttributeNames.delete(propKey);
-        var expectedStyle = createDangerousStringForStyles(nextProp);
-        serverValue = domElement.getAttribute('style');
-        if (expectedStyle !== serverValue) {
-          warnForPropDifference(propKey, serverValue, expectedStyle);
+
+        if (canDiffStyleForHydrationWarning) {
+          var expectedStyle = createDangerousStringForStyles(nextProp);
+          serverValue = domElement.getAttribute('style');
+          if (expectedStyle !== serverValue) {
+            warnForPropDifference(propKey, serverValue, expectedStyle);
+          }
         }
       } else if (isCustomComponentTag) {
         // $FlowFixMe - Should be inferred as not undefined.
@@ -9749,48 +9843,48 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
   return updatePayload;
 }
 
-function diffHydratedText$1(textNode, text) {
+function diffHydratedText(textNode, text) {
   var isDifferent = textNode.nodeValue !== text;
   return isDifferent;
 }
 
-function warnForUnmatchedText$1(textNode, text) {
+function warnForUnmatchedText(textNode, text) {
   {
     warnForTextDifference(textNode.nodeValue, text);
   }
 }
 
-function warnForDeletedHydratableElement$1(parentNode, child) {
+function warnForDeletedHydratableElement(parentNode, child) {
   {
     if (didWarnInvalidHydration) {
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Did not expect server HTML to contain a <%s> in <%s>.', child.nodeName.toLowerCase(), parentNode.nodeName.toLowerCase());
+    warningWithoutStack$1(false, 'Did not expect server HTML to contain a <%s> in <%s>.', child.nodeName.toLowerCase(), parentNode.nodeName.toLowerCase());
   }
 }
 
-function warnForDeletedHydratableText$1(parentNode, child) {
+function warnForDeletedHydratableText(parentNode, child) {
   {
     if (didWarnInvalidHydration) {
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Did not expect server HTML to contain the text node "%s" in <%s>.', child.nodeValue, parentNode.nodeName.toLowerCase());
+    warningWithoutStack$1(false, 'Did not expect server HTML to contain the text node "%s" in <%s>.', child.nodeValue, parentNode.nodeName.toLowerCase());
   }
 }
 
-function warnForInsertedHydratedElement$1(parentNode, tag, props) {
+function warnForInsertedHydratedElement(parentNode, tag, props) {
   {
     if (didWarnInvalidHydration) {
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Expected server HTML to contain a matching <%s> in <%s>.', tag, parentNode.nodeName.toLowerCase());
+    warningWithoutStack$1(false, 'Expected server HTML to contain a matching <%s> in <%s>.', tag, parentNode.nodeName.toLowerCase());
   }
 }
 
-function warnForInsertedHydratedText$1(parentNode, text) {
+function warnForInsertedHydratedText(parentNode, text) {
   {
     if (text === '') {
       // We expect to insert empty text nodes since they're not represented in
@@ -9803,7 +9897,7 @@ function warnForInsertedHydratedText$1(parentNode, text) {
       return;
     }
     didWarnInvalidHydration = true;
-    warning(false, 'Expected server HTML to contain a matching text node for "%s" in <%s>.', text, parentNode.nodeName.toLowerCase());
+    warningWithoutStack$1(false, 'Expected server HTML to contain a matching text node for "%s" in <%s>.', text, parentNode.nodeName.toLowerCase());
   }
 }
 
@@ -9821,26 +9915,9 @@ function restoreControlledState$1(domElement, tag, props) {
   }
 }
 
-var ReactDOMFiberComponent = Object.freeze({
-	createElement: createElement$1,
-	createTextNode: createTextNode$1,
-	setInitialProperties: setInitialProperties$1,
-	diffProperties: diffProperties$1,
-	updateProperties: updateProperties$1,
-	diffHydratedProperties: diffHydratedProperties$1,
-	diffHydratedText: diffHydratedText$1,
-	warnForUnmatchedText: warnForUnmatchedText$1,
-	warnForDeletedHydratableElement: warnForDeletedHydratableElement$1,
-	warnForDeletedHydratableText: warnForDeletedHydratableText$1,
-	warnForInsertedHydratedElement: warnForInsertedHydratedElement$1,
-	warnForInsertedHydratedText: warnForInsertedHydratedText$1,
-	restoreControlledState: restoreControlledState$1
-});
-
 // TODO: direct imports like some-package/src/* are bad. Fix me.
-var getCurrentFiberStackAddendum$5 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
-
-var validateDOMNesting = emptyFunction;
+var validateDOMNesting = function () {};
+var updatedAncestorInfo = function () {};
 
 {
   // This validation code was written based on the HTML5 parsing spec:
@@ -9884,9 +9961,9 @@ var validateDOMNesting = emptyFunction;
     dlItemTagAutoclosing: null
   };
 
-  var updatedAncestorInfo$1 = function (oldInfo, tag, instance) {
+  updatedAncestorInfo = function (oldInfo, tag) {
     var ancestorInfo = _assign({}, oldInfo || emptyAncestorInfo);
-    var info = { tag: tag, instance: instance };
+    var info = { tag: tag };
 
     if (inScopeTags.indexOf(tag) !== -1) {
       ancestorInfo.aTagInScope = null;
@@ -10089,7 +10166,7 @@ var validateDOMNesting = emptyFunction;
     var parentTag = parentInfo && parentInfo.tag;
 
     if (childText != null) {
-      !(childTag == null) ? warning(false, 'validateDOMNesting: when childText is passed, childTag should be null') : void 0;
+      !(childTag == null) ? warningWithoutStack$1(false, 'validateDOMNesting: when childText is passed, childTag should be null') : void 0;
       childTag = '#text';
     }
 
@@ -10101,7 +10178,7 @@ var validateDOMNesting = emptyFunction;
     }
 
     var ancestorTag = invalidParentOrAncestor.tag;
-    var addendum = getCurrentFiberStackAddendum$5();
+    var addendum = getCurrentFiberStackInDev();
 
     var warnKey = !!invalidParent + '|' + childTag + '|' + ancestorTag + '|' + addendum;
     if (didWarn[warnKey]) {
@@ -10127,17 +10204,12 @@ var validateDOMNesting = emptyFunction;
       if (ancestorTag === 'table' && childTag === 'tr') {
         info += ' Add a <tbody> to your code to match the DOM tree generated by ' + 'the browser.';
       }
-      warning(false, 'validateDOMNesting(...): %s cannot appear as a child of <%s>.%s%s%s', tagDisplayName, ancestorTag, whitespaceInfo, info, addendum);
+      warningWithoutStack$1(false, 'validateDOMNesting(...): %s cannot appear as a child of <%s>.%s%s%s', tagDisplayName, ancestorTag, whitespaceInfo, info, addendum);
     } else {
-      warning(false, 'validateDOMNesting(...): %s cannot appear as a descendant of ' + '<%s>.%s', tagDisplayName, ancestorTag, addendum);
+      warningWithoutStack$1(false, 'validateDOMNesting(...): %s cannot appear as a descendant of ' + '<%s>.%s', tagDisplayName, ancestorTag, addendum);
     }
   };
-
-  // TODO: turn this into a named export
-  validateDOMNesting.updatedAncestorInfo = updatedAncestorInfo$1;
 }
-
-var validateDOMNesting$1 = validateDOMNesting;
 
 // Renderers that don't support persistence
 // can re-export everything from this module.
@@ -10153,25 +10225,6 @@ var createContainerChildSet = shim;
 var appendChildToContainerChildSet = shim;
 var finalizeContainerChildren = shim;
 var replaceContainerChildren = shim;
-
-// Unused
-
-var createElement = createElement$1;
-var createTextNode = createTextNode$1;
-var setInitialProperties = setInitialProperties$1;
-var diffProperties = diffProperties$1;
-var updateProperties = updateProperties$1;
-var diffHydratedProperties = diffHydratedProperties$1;
-var diffHydratedText = diffHydratedText$1;
-var warnForUnmatchedText = warnForUnmatchedText$1;
-var warnForDeletedHydratableElement = warnForDeletedHydratableElement$1;
-var warnForDeletedHydratableText = warnForDeletedHydratableText$1;
-var warnForInsertedHydratedElement = warnForInsertedHydratedElement$1;
-var warnForInsertedHydratedText = warnForInsertedHydratedText$1;
-var updatedAncestorInfo = validateDOMNesting$1.updatedAncestorInfo;
-var precacheFiberNode$1 = precacheFiberNode;
-var updateFiberProps$1 = updateFiberProps;
-
 
 var SUPPRESS_HYDRATION_WARNING = void 0;
 {
@@ -10216,7 +10269,7 @@ function getRootHostContext(rootContainerInstance) {
   }
   {
     var validatedTag = type.toLowerCase();
-    var _ancestorInfo = updatedAncestorInfo(null, validatedTag, null);
+    var _ancestorInfo = updatedAncestorInfo(null, validatedTag);
     return { namespace: namespace, ancestorInfo: _ancestorInfo };
   }
   return namespace;
@@ -10226,7 +10279,7 @@ function getChildHostContext(parentHostContext, type, rootContainerInstance) {
   {
     var parentHostContextDev = parentHostContext;
     var _namespace = getChildNamespace(parentHostContextDev.namespace, type);
-    var _ancestorInfo2 = updatedAncestorInfo(parentHostContextDev.ancestorInfo, type, null);
+    var _ancestorInfo2 = updatedAncestorInfo(parentHostContextDev.ancestorInfo, type);
     return { namespace: _namespace, ancestorInfo: _ancestorInfo2 };
   }
   var parentNamespace = parentHostContext;
@@ -10255,17 +10308,17 @@ function createInstance(type, props, rootContainerInstance, hostContext, interna
   {
     // TODO: take namespace into account when validating.
     var hostContextDev = hostContext;
-    validateDOMNesting$1(type, null, hostContextDev.ancestorInfo);
+    validateDOMNesting(type, null, hostContextDev.ancestorInfo);
     if (typeof props.children === 'string' || typeof props.children === 'number') {
       var string = '' + props.children;
-      var ownAncestorInfo = updatedAncestorInfo(hostContextDev.ancestorInfo, type, null);
-      validateDOMNesting$1(null, string, ownAncestorInfo);
+      var ownAncestorInfo = updatedAncestorInfo(hostContextDev.ancestorInfo, type);
+      validateDOMNesting(null, string, ownAncestorInfo);
     }
     parentNamespace = hostContextDev.namespace;
   }
   var domElement = createElement(type, props, rootContainerInstance, parentNamespace);
-  precacheFiberNode$1(internalInstanceHandle, domElement);
-  updateFiberProps$1(domElement, props);
+  precacheFiberNode(internalInstanceHandle, domElement);
+  updateFiberProps(domElement, props);
   return domElement;
 }
 
@@ -10283,15 +10336,15 @@ function prepareUpdate(domElement, type, oldProps, newProps, rootContainerInstan
     var hostContextDev = hostContext;
     if (typeof newProps.children !== typeof oldProps.children && (typeof newProps.children === 'string' || typeof newProps.children === 'number')) {
       var string = '' + newProps.children;
-      var ownAncestorInfo = updatedAncestorInfo(hostContextDev.ancestorInfo, type, null);
-      validateDOMNesting$1(null, string, ownAncestorInfo);
+      var ownAncestorInfo = updatedAncestorInfo(hostContextDev.ancestorInfo, type);
+      validateDOMNesting(null, string, ownAncestorInfo);
     }
   }
   return diffProperties(domElement, type, oldProps, newProps, rootContainerInstance);
 }
 
 function shouldSetTextContent(type, props) {
-  return type === 'textarea' || typeof props.children === 'string' || typeof props.children === 'number' || typeof props.dangerouslySetInnerHTML === 'object' && props.dangerouslySetInnerHTML !== null && typeof props.dangerouslySetInnerHTML.__html === 'string';
+  return type === 'textarea' || type === 'option' || type === 'noscript' || typeof props.children === 'string' || typeof props.children === 'number' || typeof props.dangerouslySetInnerHTML === 'object' && props.dangerouslySetInnerHTML !== null && props.dangerouslySetInnerHTML.__html != null;
 }
 
 function shouldDeprioritizeSubtree(type, props) {
@@ -10301,17 +10354,17 @@ function shouldDeprioritizeSubtree(type, props) {
 function createTextInstance(text, rootContainerInstance, hostContext, internalInstanceHandle) {
   {
     var hostContextDev = hostContext;
-    validateDOMNesting$1(null, text, hostContextDev.ancestorInfo);
+    validateDOMNesting(null, text, hostContextDev.ancestorInfo);
   }
   var textNode = createTextNode(text, rootContainerInstance);
-  precacheFiberNode$1(internalInstanceHandle, textNode);
+  precacheFiberNode(internalInstanceHandle, textNode);
   return textNode;
 }
 
-var now = now$1;
 var isPrimaryRenderer = true;
-var scheduleDeferredCallback = scheduleWork;
-var cancelDeferredCallback = cancelScheduledWork;
+var scheduleTimeout = setTimeout;
+var cancelTimeout = clearTimeout;
+var noTimeout = -1;
 
 // -------------------
 //     Mutation
@@ -10334,7 +10387,7 @@ function commitMount(domElement, type, newProps, internalInstanceHandle) {
 function commitUpdate(domElement, updatePayload, type, oldProps, newProps, internalInstanceHandle) {
   // Update the props handle so that we know which props are the ones with
   // with current event handlers.
-  updateFiberProps$1(domElement, newProps);
+  updateFiberProps(domElement, newProps);
   // Apply the diff to the DOM node.
   updateProperties(domElement, updatePayload, type, oldProps, newProps);
 }
@@ -10352,10 +10405,24 @@ function appendChild(parentInstance, child) {
 }
 
 function appendChildToContainer(container, child) {
+  var parentNode = void 0;
   if (container.nodeType === COMMENT_NODE) {
-    container.parentNode.insertBefore(child, container);
+    parentNode = container.parentNode;
+    parentNode.insertBefore(child, container);
   } else {
-    container.appendChild(child);
+    parentNode = container;
+    parentNode.appendChild(child);
+  }
+  // This container might be used for a portal.
+  // If something inside a portal is clicked, that click should bubble
+  // through the React tree. However, on Mobile Safari the click would
+  // never bubble through the *DOM* tree unless an ancestor with onclick
+  // event exists. So we wouldn't see it and dispatch it.
+  // This is why we ensure that containers have inline onclick defined.
+  // https://github.com/facebook/react/issues/11918
+  if (parentNode.onclick === null) {
+    // TODO: This cast may not be sound for SVG, MathML or custom elements.
+    trapClickOnNonInteractiveElement(parentNode);
   }
 }
 
@@ -10425,10 +10492,10 @@ function getFirstHydratableChild(parentInstance) {
 }
 
 function hydrateInstance(instance, type, props, rootContainerInstance, hostContext, internalInstanceHandle) {
-  precacheFiberNode$1(internalInstanceHandle, instance);
+  precacheFiberNode(internalInstanceHandle, instance);
   // TODO: Possibly defer this until the commit phase where all the events
   // get attached.
-  updateFiberProps$1(instance, props);
+  updateFiberProps(instance, props);
   var parentNamespace = void 0;
   {
     var hostContextDev = hostContext;
@@ -10438,7 +10505,7 @@ function hydrateInstance(instance, type, props, rootContainerInstance, hostConte
 }
 
 function hydrateTextInstance(textInstance, text, internalInstanceHandle) {
-  precacheFiberNode$1(internalInstanceHandle, textInstance);
+  precacheFiberNode(internalInstanceHandle, textInstance);
   return diffHydratedText(textInstance, text);
 }
 
@@ -10456,7 +10523,7 @@ function didNotMatchHydratedTextInstance(parentType, parentProps, parentInstance
 
 function didNotHydrateContainerInstance(parentContainer, instance) {
   {
-    if (instance.nodeType === 1) {
+    if (instance.nodeType === ELEMENT_NODE) {
       warnForDeletedHydratableElement(parentContainer, instance);
     } else {
       warnForDeletedHydratableText(parentContainer, instance);
@@ -10466,7 +10533,7 @@ function didNotHydrateContainerInstance(parentContainer, instance) {
 
 function didNotHydrateInstance(parentType, parentProps, parentInstance, instance) {
   if (true && parentProps[SUPPRESS_HYDRATION_WARNING] !== true) {
-    if (instance.nodeType === 1) {
+    if (instance.nodeType === ELEMENT_NODE) {
       warnForDeletedHydratableElement(parentInstance, instance);
     } else {
       warnForDeletedHydratableText(parentInstance, instance);
@@ -10528,6 +10595,12 @@ var warnAboutLegacyContextAPI = false;
 // Gather advanced timing metrics for Profiler subtrees.
 var enableProfilerTimer = true;
 
+// Track which interactions trigger each commit.
+var enableSchedulerTracking = true;
+
+// Only used in www builds.
+
+
 // Only used in www builds.
 
 // Prefix measurements so that it's possible to filter them.
@@ -10562,9 +10635,9 @@ var formatMarkName = function (markName) {
   return reactEmoji + ' ' + markName;
 };
 
-var formatLabel = function (label, warning$$1) {
-  var prefix = warning$$1 ? warningEmoji + ' ' : reactEmoji + ' ';
-  var suffix = warning$$1 ? ' Warning: ' + warning$$1 : '';
+var formatLabel = function (label, warning) {
+  var prefix = warning ? warningEmoji + ' ' : reactEmoji + ' ';
+  var suffix = warning ? ' Warning: ' + warning : '';
   return '' + prefix + label + suffix;
 };
 
@@ -10576,9 +10649,9 @@ var clearMark = function (markName) {
   performance.clearMarks(formatMarkName(markName));
 };
 
-var endMark = function (label, markName, warning$$1) {
+var endMark = function (label, markName, warning) {
   var formattedMarkName = formatMarkName(markName);
-  var formattedLabel = formatLabel(label, warning$$1);
+  var formattedLabel = formatLabel(label, warning);
   try {
     performance.measure(formattedLabel, formattedMarkName);
   } catch (err) {}
@@ -10606,7 +10679,7 @@ var getFiberLabel = function (componentName, isMounted, phase) {
 };
 
 var beginFiberMark = function (fiber, phase) {
-  var componentName = getComponentName(fiber) || 'Unknown';
+  var componentName = getComponentName(fiber.type) || 'Unknown';
   var debugID = fiber._debugID;
   var isMounted = fiber.alternate !== null;
   var label = getFiberLabel(componentName, isMounted, phase);
@@ -10625,7 +10698,7 @@ var beginFiberMark = function (fiber, phase) {
 };
 
 var clearFiberMark = function (fiber, phase) {
-  var componentName = getComponentName(fiber) || 'Unknown';
+  var componentName = getComponentName(fiber.type) || 'Unknown';
   var debugID = fiber._debugID;
   var isMounted = fiber.alternate !== null;
   var label = getFiberLabel(componentName, isMounted, phase);
@@ -10633,13 +10706,13 @@ var clearFiberMark = function (fiber, phase) {
   clearMark(markName);
 };
 
-var endFiberMark = function (fiber, phase, warning$$1) {
-  var componentName = getComponentName(fiber) || 'Unknown';
+var endFiberMark = function (fiber, phase, warning) {
+  var componentName = getComponentName(fiber.type) || 'Unknown';
   var debugID = fiber._debugID;
   var isMounted = fiber.alternate !== null;
   var label = getFiberLabel(componentName, isMounted, phase);
   var markName = getFiberMarkName(label, debugID);
-  endMark(label, markName, warning$$1);
+  endMark(label, markName, warning);
 };
 
 var shouldIgnoreFiber = function (fiber) {
@@ -10727,8 +10800,8 @@ function stopRequestCallbackTimer(didExpire, expirationTime) {
   if (enableUserTimingAPI) {
     if (supportsUserTiming) {
       isWaitingForCallback = false;
-      var warning$$1 = didExpire ? 'React was blocked by main thread' : null;
-      endMark('(Waiting for async callback... will force flush in ' + expirationTime + ' ms)', '(Waiting for async callback...)', warning$$1);
+      var warning = didExpire ? 'React was blocked by main thread' : null;
+      endMark('(Waiting for async callback... will force flush in ' + expirationTime + ' ms)', '(Waiting for async callback...)', warning);
     }
   }
 }
@@ -10785,8 +10858,8 @@ function stopFailedWorkTimer(fiber) {
       return;
     }
     fiber._debugIsCurrentlyTiming = false;
-    var warning$$1 = 'An error was thrown inside this error boundary';
-    endFiberMark(fiber, null, warning$$1);
+    var warning = 'An error was thrown inside this error boundary';
+    endFiberMark(fiber, null, warning);
   }
 }
 
@@ -10810,8 +10883,8 @@ function stopPhaseTimer() {
       return;
     }
     if (currentPhase !== null && currentPhaseFiber !== null) {
-      var warning$$1 = hasScheduledUpdateInCurrentPhase ? 'Scheduled a cascading update' : null;
-      endFiberMark(currentPhaseFiber, currentPhase, warning$$1);
+      var warning = hasScheduledUpdateInCurrentPhase ? 'Scheduled a cascading update' : null;
+      endFiberMark(currentPhaseFiber, currentPhase, warning);
     }
     currentPhase = null;
     currentPhaseFiber = null;
@@ -10838,22 +10911,22 @@ function stopWorkLoopTimer(interruptedBy, didCompleteRoot) {
     if (!supportsUserTiming) {
       return;
     }
-    var warning$$1 = null;
+    var warning = null;
     if (interruptedBy !== null) {
       if (interruptedBy.tag === HostRoot) {
-        warning$$1 = 'A top-level update interrupted the previous render';
+        warning = 'A top-level update interrupted the previous render';
       } else {
-        var componentName = getComponentName(interruptedBy) || 'Unknown';
-        warning$$1 = 'An update to ' + componentName + ' interrupted the previous render';
+        var componentName = getComponentName(interruptedBy.type) || 'Unknown';
+        warning = 'An update to ' + componentName + ' interrupted the previous render';
       }
     } else if (commitCountInCurrentWorkLoop > 1) {
-      warning$$1 = 'There were cascading updates';
+      warning = 'There were cascading updates';
     }
     commitCountInCurrentWorkLoop = 0;
     var label = didCompleteRoot ? '(React Tree Reconciliation: Completed Root)' : '(React Tree Reconciliation: Yielded)';
     // Pause any measurements until the next loop.
     pauseTimers();
-    endMark(label, '(React Tree Reconciliation)', warning$$1);
+    endMark(label, '(React Tree Reconciliation)', warning);
   }
 }
 
@@ -10875,18 +10948,18 @@ function stopCommitTimer() {
       return;
     }
 
-    var warning$$1 = null;
+    var warning = null;
     if (hasScheduledUpdateInCurrentCommit) {
-      warning$$1 = 'Lifecycle hook scheduled a cascading update';
+      warning = 'Lifecycle hook scheduled a cascading update';
     } else if (commitCountInCurrentWorkLoop > 0) {
-      warning$$1 = 'Caused by a cascading update in earlier commit';
+      warning = 'Caused by a cascading update in earlier commit';
     }
     hasScheduledUpdateInCurrentCommit = false;
     commitCountInCurrentWorkLoop++;
     isCommitting = false;
     labelsInCurrentCommit.clear();
 
-    endMark('(Committing Changes)', '(Committing Changes)', warning$$1);
+    endMark('(Committing Changes)', '(Committing Changes)', warning);
   }
 }
 
@@ -10972,14 +11045,14 @@ function createCursor(defaultValue) {
 function pop(cursor, fiber) {
   if (index < 0) {
     {
-      warning(false, 'Unexpected pop.');
+      warningWithoutStack$1(false, 'Unexpected pop.');
     }
     return;
   }
 
   {
     if (fiber !== fiberStack[index]) {
-      warning(false, 'Unexpected Fiber popped.');
+      warningWithoutStack$1(false, 'Unexpected Fiber popped.');
     }
   }
 
@@ -11009,7 +11082,7 @@ function push(cursor, value, fiber) {
 function checkThatStackIsEmpty() {
   {
     if (index !== -1) {
-      warning(false, 'Expected an empty stack. Something was not reset properly.');
+      warningWithoutStack$1(false, 'Expected an empty stack. Something was not reset properly.');
     }
   }
 }
@@ -11028,20 +11101,24 @@ var warnedAboutMissingGetChildContext = void 0;
   warnedAboutMissingGetChildContext = {};
 }
 
+var emptyContextObject = {};
+{
+  Object.freeze(emptyContextObject);
+}
+
 // A cursor to the current merged context object on the stack.
-var contextStackCursor = createCursor(emptyObject);
+var contextStackCursor = createCursor(emptyContextObject);
 // A cursor to a boolean indicating whether the context has changed.
 var didPerformWorkStackCursor = createCursor(false);
 // Keep track of the previous context object that was on the stack.
 // We use this to get access to the parent context after we have already
 // pushed the next context provider, and now need to merge their contexts.
-var previousContext = emptyObject;
+var previousContext = emptyContextObject;
 
-function getUnmaskedContext(workInProgress) {
-  var hasOwnContext = isContextProvider(workInProgress);
-  if (hasOwnContext) {
+function getUnmaskedContext(workInProgress, Component, didPushOwnContextIfProvider) {
+  if (didPushOwnContextIfProvider && isContextProvider(Component)) {
     // If the fiber is a context provider itself, when we read its context
-    // we have already pushed its own child context on the stack. A context
+    // we may have already pushed its own child context on the stack. A context
     // provider should not "see" its own child context. Therefore we read the
     // previous (parent) context instead for a context provider.
     return previousContext;
@@ -11059,7 +11136,7 @@ function getMaskedContext(workInProgress, unmaskedContext) {
   var type = workInProgress.type;
   var contextTypes = type.contextTypes;
   if (!contextTypes) {
-    return emptyObject;
+    return emptyContextObject;
   }
 
   // Avoid recreating masked context unless unmasked context has changed.
@@ -11076,8 +11153,8 @@ function getMaskedContext(workInProgress, unmaskedContext) {
   }
 
   {
-    var name = getComponentName(workInProgress) || 'Unknown';
-    checkPropTypes(contextTypes, context, 'context', name, ReactDebugCurrentFiber.getCurrentFiberStackAddendum);
+    var name = getComponentName(type) || 'Unknown';
+    checkPropTypes(contextTypes, context, 'context', name, getCurrentFiberStackInDev);
   }
 
   // Cache unmasked context so we can avoid recreating masked context unless necessary.
@@ -11093,19 +11170,12 @@ function hasContextChanged() {
   return didPerformWorkStackCursor.current;
 }
 
-function isContextConsumer(fiber) {
-  return fiber.tag === ClassComponent && fiber.type.contextTypes != null;
+function isContextProvider(type) {
+  var childContextTypes = type.childContextTypes;
+  return childContextTypes !== null && childContextTypes !== undefined;
 }
 
-function isContextProvider(fiber) {
-  return fiber.tag === ClassComponent && fiber.type.childContextTypes != null;
-}
-
-function popContextProvider(fiber) {
-  if (!isContextProvider(fiber)) {
-    return;
-  }
-
+function popContext(fiber) {
   pop(didPerformWorkStackCursor, fiber);
   pop(contextStackCursor, fiber);
 }
@@ -11116,25 +11186,25 @@ function popTopLevelContextObject(fiber) {
 }
 
 function pushTopLevelContextObject(fiber, context, didChange) {
-  !(contextStackCursor.current === emptyObject) ? invariant(false, 'Unexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+  !(contextStackCursor.current === emptyContextObject) ? invariant(false, 'Unexpected context found on stack. This error is likely caused by a bug in React. Please file an issue.') : void 0;
 
   push(contextStackCursor, context, fiber);
   push(didPerformWorkStackCursor, didChange, fiber);
 }
 
-function processChildContext(fiber, parentContext) {
+function processChildContext(fiber, type, parentContext) {
   var instance = fiber.stateNode;
-  var childContextTypes = fiber.type.childContextTypes;
+  var childContextTypes = type.childContextTypes;
 
   // TODO (bvaughn) Replace this behavior with an invariant() in the future.
   // It has only been added in Fiber to match the (unintentional) behavior in Stack.
   if (typeof instance.getChildContext !== 'function') {
     {
-      var componentName = getComponentName(fiber) || 'Unknown';
+      var componentName = getComponentName(type) || 'Unknown';
 
       if (!warnedAboutMissingGetChildContext[componentName]) {
         warnedAboutMissingGetChildContext[componentName] = true;
-        warning(false, '%s.childContextTypes is specified but there is no getChildContext() method ' + 'on the instance. You can either define getChildContext() on %s or remove ' + 'childContextTypes from it.', componentName, componentName);
+        warningWithoutStack$1(false, '%s.childContextTypes is specified but there is no getChildContext() method ' + 'on the instance. You can either define getChildContext() on %s or remove ' + 'childContextTypes from it.', componentName, componentName);
       }
     }
     return parentContext;
@@ -11142,41 +11212,37 @@ function processChildContext(fiber, parentContext) {
 
   var childContext = void 0;
   {
-    ReactDebugCurrentFiber.setCurrentPhase('getChildContext');
+    setCurrentPhase('getChildContext');
   }
   startPhaseTimer(fiber, 'getChildContext');
   childContext = instance.getChildContext();
   stopPhaseTimer();
   {
-    ReactDebugCurrentFiber.setCurrentPhase(null);
+    setCurrentPhase(null);
   }
   for (var contextKey in childContext) {
-    !(contextKey in childContextTypes) ? invariant(false, '%s.getChildContext(): key "%s" is not defined in childContextTypes.', getComponentName(fiber) || 'Unknown', contextKey) : void 0;
+    !(contextKey in childContextTypes) ? invariant(false, '%s.getChildContext(): key "%s" is not defined in childContextTypes.', getComponentName(type) || 'Unknown', contextKey) : void 0;
   }
   {
-    var name = getComponentName(fiber) || 'Unknown';
+    var name = getComponentName(type) || 'Unknown';
     checkPropTypes(childContextTypes, childContext, 'child context', name,
     // In practice, there is one case in which we won't get a stack. It's when
     // somebody calls unstable_renderSubtreeIntoContainer() and we process
     // context from the parent component instance. The stack will be missing
     // because it's outside of the reconciliation, and so the pointer has not
     // been set. This is rare and doesn't matter. We'll also remove that API.
-    ReactDebugCurrentFiber.getCurrentFiberStackAddendum);
+    getCurrentFiberStackInDev);
   }
 
   return _assign({}, parentContext, childContext);
 }
 
 function pushContextProvider(workInProgress) {
-  if (!isContextProvider(workInProgress)) {
-    return false;
-  }
-
   var instance = workInProgress.stateNode;
   // We push the context as early as possible to ensure stack integrity.
   // If the instance does not exist yet, we will push null at first,
   // and replace it on the stack later when invalidating the context.
-  var memoizedMergedChildContext = instance && instance.__reactInternalMemoizedMergedChildContext || emptyObject;
+  var memoizedMergedChildContext = instance && instance.__reactInternalMemoizedMergedChildContext || emptyContextObject;
 
   // Remember the parent context so we can merge with it later.
   // Inherit the parent's did-perform-work value to avoid inadvertently blocking updates.
@@ -11187,7 +11253,7 @@ function pushContextProvider(workInProgress) {
   return true;
 }
 
-function invalidateContextProvider(workInProgress, didChange) {
+function invalidateContextProvider(workInProgress, type, didChange) {
   var instance = workInProgress.stateNode;
   !instance ? invariant(false, 'Expected to have an instance by this point. This error is likely caused by a bug in React. Please file an issue.') : void 0;
 
@@ -11195,7 +11261,7 @@ function invalidateContextProvider(workInProgress, didChange) {
     // Merge parent and own context.
     // Skip this if we're not updating due to sCU.
     // This avoids unnecessarily recomputing memoized values.
-    var mergedContext = processChildContext(workInProgress, previousContext);
+    var mergedContext = processChildContext(workInProgress, type, previousContext);
     instance.__reactInternalMemoizedMergedChildContext = mergedContext;
 
     // Replace the old (or empty) context with the new one.
@@ -11214,31 +11280,112 @@ function invalidateContextProvider(workInProgress, didChange) {
 function findCurrentUnmaskedContext(fiber) {
   // Currently this is only used with renderSubtreeIntoContainer; not sure if it
   // makes sense elsewhere
-  !(isFiberMounted(fiber) && fiber.tag === ClassComponent) ? invariant(false, 'Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+  !(isFiberMounted(fiber) && (fiber.tag === ClassComponent || fiber.tag === ClassComponentLazy)) ? invariant(false, 'Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue.') : void 0;
 
   var node = fiber;
-  while (node.tag !== HostRoot) {
-    if (isContextProvider(node)) {
-      return node.stateNode.__reactInternalMemoizedMergedChildContext;
+  do {
+    switch (node.tag) {
+      case HostRoot:
+        return node.stateNode.context;
+      case ClassComponent:
+        {
+          var Component = node.type;
+          if (isContextProvider(Component)) {
+            return node.stateNode.__reactInternalMemoizedMergedChildContext;
+          }
+          break;
+        }
+      case ClassComponentLazy:
+        {
+          var _Component = getResultFromResolvedThenable(node.type);
+          if (isContextProvider(_Component)) {
+            return node.stateNode.__reactInternalMemoizedMergedChildContext;
+          }
+          break;
+        }
     }
-    var parent = node.return;
-    !parent ? invariant(false, 'Found unexpected detached subtree parent. This error is likely caused by a bug in React. Please file an issue.') : void 0;
-    node = parent;
+    node = node.return;
+  } while (node !== null);
+  invariant(false, 'Found unexpected detached subtree parent. This error is likely caused by a bug in React. Please file an issue.');
+}
+
+var onCommitFiberRoot = null;
+var onCommitFiberUnmount = null;
+var hasLoggedError = false;
+
+function catchErrors(fn) {
+  return function (arg) {
+    try {
+      return fn(arg);
+    } catch (err) {
+      if (true && !hasLoggedError) {
+        hasLoggedError = true;
+        warningWithoutStack$1(false, 'React DevTools encountered an error: %s', err);
+      }
+    }
+  };
+}
+
+var isDevToolsPresent = typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined';
+
+function injectInternals(internals) {
+  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
+    // No DevTools
+    return false;
   }
-  return node.stateNode.context;
+  var hook = __REACT_DEVTOOLS_GLOBAL_HOOK__;
+  if (hook.isDisabled) {
+    // This isn't a real property on the hook, but it can be set to opt out
+    // of DevTools integration and associated warnings and logs.
+    // https://github.com/facebook/react/issues/3877
+    return true;
+  }
+  if (!hook.supportsFiber) {
+    {
+      warningWithoutStack$1(false, 'The installed version of React DevTools is too old and will not work ' + 'with the current version of React. Please update React DevTools. ' + 'https://fb.me/react-devtools');
+    }
+    // DevTools exists, even though it doesn't support Fiber.
+    return true;
+  }
+  try {
+    var rendererID = hook.inject(internals);
+    // We have successfully injected, so now it is safe to set up hooks.
+    onCommitFiberRoot = catchErrors(function (root) {
+      return hook.onCommitFiberRoot(rendererID, root);
+    });
+    onCommitFiberUnmount = catchErrors(function (fiber) {
+      return hook.onCommitFiberUnmount(rendererID, fiber);
+    });
+  } catch (err) {
+    // Catch all errors because it is unsafe to throw during initialization.
+    {
+      warningWithoutStack$1(false, 'React DevTools encountered an error: %s.', err);
+    }
+  }
+  // DevTools exists
+  return true;
+}
+
+function onCommitRoot(root) {
+  if (typeof onCommitFiberRoot === 'function') {
+    onCommitFiberRoot(root);
+  }
+}
+
+function onCommitUnmount(fiber) {
+  if (typeof onCommitFiberUnmount === 'function') {
+    onCommitFiberUnmount(fiber);
+  }
 }
 
 // Max 31 bit integer. The max integer size in V8 for 32-bit systems.
 // Math.pow(2, 30) - 1
 // 0b111111111111111111111111111111
-var MAX_SIGNED_31_BIT_INT = 1073741823;
-
-// TODO: Use an opaque type once ESLint et al support the syntax
-
+var maxSigned31BitInt = 1073741823;
 
 var NoWork = 0;
 var Sync = 1;
-var Never = MAX_SIGNED_31_BIT_INT;
+var Never = maxSigned31BitInt;
 
 var UNIT_SIZE = 10;
 var MAGIC_NUMBER_OFFSET = 2;
@@ -11259,6 +11406,31 @@ function ceiling(num, precision) {
 
 function computeExpirationBucket(currentTime, expirationInMs, bucketSizeMs) {
   return MAGIC_NUMBER_OFFSET + ceiling(currentTime - MAGIC_NUMBER_OFFSET + expirationInMs / UNIT_SIZE, bucketSizeMs / UNIT_SIZE);
+}
+
+var LOW_PRIORITY_EXPIRATION = 5000;
+var LOW_PRIORITY_BATCH_SIZE = 250;
+
+function computeAsyncExpiration(currentTime) {
+  return computeExpirationBucket(currentTime, LOW_PRIORITY_EXPIRATION, LOW_PRIORITY_BATCH_SIZE);
+}
+
+// We intentionally set a higher expiration time for interactive updates in
+// dev than in production.
+//
+// If the main thread is being blocked so long that you hit the expiration,
+// it's a problem that could be solved with better scheduling.
+//
+// People will be more likely to notice this and fix it with the long
+// expiration time in development.
+//
+// In production we opt for better UX at the risk of masking scheduling
+// problems, by expiring fast.
+var HIGH_PRIORITY_EXPIRATION = 500;
+var HIGH_PRIORITY_BATCH_SIZE = 100;
+
+function computeInteractiveExpiration(currentTime) {
+  return computeExpirationBucket(currentTime, HIGH_PRIORITY_EXPIRATION, HIGH_PRIORITY_BATCH_SIZE);
 }
 
 var NoContext = 0;
@@ -11314,6 +11486,7 @@ function FiberNode(tag, pendingProps, key, mode) {
   this.memoizedProps = null;
   this.updateQueue = null;
   this.memoizedState = null;
+  this.firstContextDependency = null;
 
   this.mode = mode;
 
@@ -11325,14 +11498,15 @@ function FiberNode(tag, pendingProps, key, mode) {
   this.lastEffect = null;
 
   this.expirationTime = NoWork;
+  this.childExpirationTime = NoWork;
 
   this.alternate = null;
 
   if (enableProfilerTimer) {
     this.actualDuration = 0;
-    this.actualStartTime = 0;
-    this.selfBaseTime = 0;
-    this.treeBaseTime = 0;
+    this.actualStartTime = -1;
+    this.selfBaseDuration = 0;
+    this.treeBaseDuration = 0;
   }
 
   {
@@ -11365,7 +11539,17 @@ var createFiber = function (tag, pendingProps, key, mode) {
 };
 
 function shouldConstruct(Component) {
-  return !!(Component.prototype && Component.prototype.isReactComponent);
+  var prototype = Component.prototype;
+  return typeof prototype === 'object' && prototype !== null && typeof prototype.isReactComponent === 'object' && prototype.isReactComponent !== null;
+}
+
+function resolveLazyComponentTag(fiber, Component) {
+  if (typeof Component === 'function') {
+    return shouldConstruct(Component) ? ClassComponentLazy : FunctionalComponentLazy;
+  } else if (Component !== undefined && Component !== null && Component.$$typeof) {
+    return ForwardRefLazy;
+  }
+  return IndeterminateComponent;
 }
 
 // This is used to create an alternate fiber to do work on.
@@ -11408,16 +11592,25 @@ function createWorkInProgress(current, pendingProps, expirationTime) {
       // This has the downside of resetting values for different priority renders,
       // But works for yielding (the common case) and should support resuming.
       workInProgress.actualDuration = 0;
-      workInProgress.actualStartTime = 0;
+      workInProgress.actualStartTime = -1;
     }
   }
 
-  workInProgress.expirationTime = expirationTime;
+  // Don't touching the subtree's expiration time, which has not changed.
+  workInProgress.childExpirationTime = current.childExpirationTime;
+  if (pendingProps !== current.pendingProps) {
+    // This fiber has new props.
+    workInProgress.expirationTime = expirationTime;
+  } else {
+    // This fiber's props have not changed.
+    workInProgress.expirationTime = current.expirationTime;
+  }
 
   workInProgress.child = current.child;
   workInProgress.memoizedProps = current.memoizedProps;
   workInProgress.memoizedState = current.memoizedState;
   workInProgress.updateQueue = current.updateQueue;
+  workInProgress.firstContextDependency = current.firstContextDependency;
 
   // These will be overridden during the parent's reconciliation
   workInProgress.sibling = current.sibling;
@@ -11425,8 +11618,8 @@ function createWorkInProgress(current, pendingProps, expirationTime) {
   workInProgress.ref = current.ref;
 
   if (enableProfilerTimer) {
-    workInProgress.selfBaseTime = current.selfBaseTime;
-    workInProgress.treeBaseTime = current.treeBaseTime;
+    workInProgress.selfBaseDuration = current.selfBaseDuration;
+    workInProgress.treeBaseDuration = current.treeBaseDuration;
   }
 
   return workInProgress;
@@ -11434,6 +11627,14 @@ function createWorkInProgress(current, pendingProps, expirationTime) {
 
 function createHostRootFiber(isAsync) {
   var mode = isAsync ? AsyncMode | StrictMode : NoContext;
+
+  if (enableProfilerTimer && isDevToolsPresent) {
+    // Always collect profile timings when DevTools are present.
+    // This enables DevTools to start capturing timing at any point–
+    // Without some nodes in the tree having empty base times.
+    mode |= ProfileMode;
+  }
+
   return createFiber(HostRoot, null, null, mode);
 }
 
@@ -11454,7 +11655,7 @@ function createFiberFromElement(element, mode, expirationTime) {
   } else if (typeof type === 'string') {
     fiberTag = HostComponent;
   } else {
-    switch (type) {
+    getTag: switch (type) {
       case REACT_FRAGMENT_TYPE:
         return createFiberFromFragment(pendingProps.children, mode, expirationTime, key);
       case REACT_ASYNC_MODE_TYPE:
@@ -11467,15 +11668,44 @@ function createFiberFromElement(element, mode, expirationTime) {
         break;
       case REACT_PROFILER_TYPE:
         return createFiberFromProfiler(pendingProps, mode, expirationTime, key);
-      case REACT_TIMEOUT_TYPE:
-        fiberTag = TimeoutComponent;
-        // Suspense does not require async, but its children should be strict
-        // mode compatible.
-        mode |= StrictMode;
+      case REACT_PLACEHOLDER_TYPE:
+        fiberTag = PlaceholderComponent;
         break;
       default:
-        fiberTag = getFiberTagFromObjectType(type, owner);
-        break;
+        {
+          if (typeof type === 'object' && type !== null) {
+            switch (type.$$typeof) {
+              case REACT_PROVIDER_TYPE:
+                fiberTag = ContextProvider;
+                break getTag;
+              case REACT_CONTEXT_TYPE:
+                // This is a consumer
+                fiberTag = ContextConsumer;
+                break getTag;
+              case REACT_FORWARD_REF_TYPE:
+                fiberTag = ForwardRef;
+                break getTag;
+              default:
+                {
+                  if (typeof type.then === 'function') {
+                    fiberTag = IndeterminateComponent;
+                    break getTag;
+                  }
+                }
+            }
+          }
+          var info = '';
+          {
+            if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {
+              info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default and " + 'named imports.';
+            }
+            var ownerName = owner ? getComponentName(owner.type) : null;
+            if (ownerName) {
+              info += '\n\nCheck the render method of `' + ownerName + '`.';
+            }
+          }
+          invariant(false, 'Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s', type == null ? type : typeof type, info);
+        }
     }
   }
 
@@ -11491,34 +11721,6 @@ function createFiberFromElement(element, mode, expirationTime) {
   return fiber;
 }
 
-function getFiberTagFromObjectType(type, owner) {
-  var $$typeof = typeof type === 'object' && type !== null ? type.$$typeof : null;
-
-  switch ($$typeof) {
-    case REACT_PROVIDER_TYPE:
-      return ContextProvider;
-    case REACT_CONTEXT_TYPE:
-      // This is a consumer
-      return ContextConsumer;
-    case REACT_FORWARD_REF_TYPE:
-      return ForwardRef;
-    default:
-      {
-        var info = '';
-        {
-          if (type === undefined || typeof type === 'object' && type !== null && Object.keys(type).length === 0) {
-            info += ' You likely forgot to export your component from the file ' + "it's defined in, or you might have mixed up default and " + 'named imports.';
-          }
-          var ownerName = owner ? getComponentName(owner) : null;
-          if (ownerName) {
-            info += '\n\nCheck the render method of `' + ownerName + '`.';
-          }
-        }
-        invariant(false, 'Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s', type == null ? type : typeof type, info);
-      }
-  }
-}
-
 function createFiberFromFragment(elements, mode, expirationTime, key) {
   var fiber = createFiber(Fragment, elements, key, mode);
   fiber.expirationTime = expirationTime;
@@ -11528,7 +11730,7 @@ function createFiberFromFragment(elements, mode, expirationTime, key) {
 function createFiberFromProfiler(pendingProps, mode, expirationTime, key) {
   {
     if (typeof pendingProps.id !== 'string' || typeof pendingProps.onRender !== 'function') {
-      invariant(false, 'Profiler must specify an "id" string and "onRender" function as props');
+      warningWithoutStack$1(false, 'Profiler must specify an "id" string and "onRender" function as props');
     }
   }
 
@@ -11590,18 +11792,20 @@ function assignFiberPropertiesInDEV(target, source) {
   target.memoizedProps = source.memoizedProps;
   target.updateQueue = source.updateQueue;
   target.memoizedState = source.memoizedState;
+  target.firstContextDependency = source.firstContextDependency;
   target.mode = source.mode;
   target.effectTag = source.effectTag;
   target.nextEffect = source.nextEffect;
   target.firstEffect = source.firstEffect;
   target.lastEffect = source.lastEffect;
   target.expirationTime = source.expirationTime;
+  target.childExpirationTime = source.childExpirationTime;
   target.alternate = source.alternate;
   if (enableProfilerTimer) {
     target.actualDuration = source.actualDuration;
     target.actualStartTime = source.actualStartTime;
-    target.selfBaseTime = source.selfBaseTime;
-    target.treeBaseTime = source.treeBaseTime;
+    target.selfBaseDuration = source.selfBaseDuration;
+    target.treeBaseDuration = source.treeBaseDuration;
   }
   target._debugID = source._debugID;
   target._debugSource = source._debugSource;
@@ -11613,99 +11817,88 @@ function assignFiberPropertiesInDEV(target, source) {
 // TODO: This should be lifted into the renderer.
 
 
+// The following attributes are only used by interaction tracking builds.
+// They enable interactions to be associated with their async work,
+// And expose interaction metadata to the React DevTools Profiler plugin.
+// Note that these attributes are only defined when the enableSchedulerTracking flag is enabled.
+
+
+// Exported FiberRoot type includes all properties,
+// To avoid requiring potentially error-prone :any casts throughout the project.
+// Profiling properties are only safe to access in profiling builds (when enableSchedulerTracking is true).
+// The types are defined separately within this file to ensure they stay in sync.
+// (We don't have to use an inline :any cast when enableSchedulerTracking is disabled.)
+
+
 function createFiberRoot(containerInfo, isAsync, hydrate) {
   // Cyclic construction. This cheats the type system right now because
   // stateNode is any.
   var uninitializedFiber = createHostRootFiber(isAsync);
-  var root = {
-    current: uninitializedFiber,
-    containerInfo: containerInfo,
-    pendingChildren: null,
 
-    earliestPendingTime: NoWork,
-    latestPendingTime: NoWork,
-    earliestSuspendedTime: NoWork,
-    latestSuspendedTime: NoWork,
-    latestPingedTime: NoWork,
+  var root = void 0;
+  if (enableSchedulerTracking) {
+    root = {
+      current: uninitializedFiber,
+      containerInfo: containerInfo,
+      pendingChildren: null,
 
-    pendingCommitExpirationTime: NoWork,
-    finishedWork: null,
-    context: null,
-    pendingContext: null,
-    hydrate: hydrate,
-    remainingExpirationTime: NoWork,
-    firstBatch: null,
-    nextScheduledRoot: null
-  };
+      earliestPendingTime: NoWork,
+      latestPendingTime: NoWork,
+      earliestSuspendedTime: NoWork,
+      latestSuspendedTime: NoWork,
+      latestPingedTime: NoWork,
+
+      didError: false,
+
+      pendingCommitExpirationTime: NoWork,
+      finishedWork: null,
+      timeoutHandle: noTimeout,
+      context: null,
+      pendingContext: null,
+      hydrate: hydrate,
+      nextExpirationTimeToWorkOn: NoWork,
+      expirationTime: NoWork,
+      firstBatch: null,
+      nextScheduledRoot: null,
+
+      interactionThreadID: tracking.unstable_getThreadID(),
+      memoizedInteractions: new Set(),
+      pendingInteractionMap: new Map()
+    };
+  } else {
+    root = {
+      current: uninitializedFiber,
+      containerInfo: containerInfo,
+      pendingChildren: null,
+
+      earliestPendingTime: NoWork,
+      latestPendingTime: NoWork,
+      earliestSuspendedTime: NoWork,
+      latestSuspendedTime: NoWork,
+      latestPingedTime: NoWork,
+
+      didError: false,
+
+      pendingCommitExpirationTime: NoWork,
+      finishedWork: null,
+      timeoutHandle: noTimeout,
+      context: null,
+      pendingContext: null,
+      hydrate: hydrate,
+      nextExpirationTimeToWorkOn: NoWork,
+      expirationTime: NoWork,
+      firstBatch: null,
+      nextScheduledRoot: null
+    };
+  }
+
   uninitializedFiber.stateNode = root;
+
+  // The reason for the way the Flow types are structured in this file,
+  // Is to avoid needing :any casts everywhere interaction tracking fields are used.
+  // Unfortunately that requires an :any cast for non-interaction tracking capable builds.
+  // $FlowFixMe Remove this :any cast and replace it with something better.
   return root;
-}
-
-var onCommitFiberRoot = null;
-var onCommitFiberUnmount = null;
-var hasLoggedError = false;
-
-function catchErrors(fn) {
-  return function (arg) {
-    try {
-      return fn(arg);
-    } catch (err) {
-      if (true && !hasLoggedError) {
-        hasLoggedError = true;
-        warning(false, 'React DevTools encountered an error: %s', err);
-      }
-    }
-  };
-}
-
-function injectInternals(internals) {
-  if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
-    // No DevTools
-    return false;
-  }
-  var hook = __REACT_DEVTOOLS_GLOBAL_HOOK__;
-  if (hook.isDisabled) {
-    // This isn't a real property on the hook, but it can be set to opt out
-    // of DevTools integration and associated warnings and logs.
-    // https://github.com/facebook/react/issues/3877
-    return true;
-  }
-  if (!hook.supportsFiber) {
-    {
-      warning(false, 'The installed version of React DevTools is too old and will not work ' + 'with the current version of React. Please update React DevTools. ' + 'https://fb.me/react-devtools');
-    }
-    // DevTools exists, even though it doesn't support Fiber.
-    return true;
-  }
-  try {
-    var rendererID = hook.inject(internals);
-    // We have successfully injected, so now it is safe to set up hooks.
-    onCommitFiberRoot = catchErrors(function (root) {
-      return hook.onCommitFiberRoot(rendererID, root);
-    });
-    onCommitFiberUnmount = catchErrors(function (fiber) {
-      return hook.onCommitFiberUnmount(rendererID, fiber);
-    });
-  } catch (err) {
-    // Catch all errors because it is unsafe to throw during initialization.
-    {
-      warning(false, 'React DevTools encountered an error: %s.', err);
-    }
-  }
-  // DevTools exists
-  return true;
-}
-
-function onCommitRoot(root) {
-  if (typeof onCommitFiberRoot === 'function') {
-    onCommitFiberRoot(root);
-  }
-}
-
-function onCommitUnmount(fiber) {
-  if (typeof onCommitFiberUnmount === 'function') {
-    onCommitFiberUnmount(fiber);
-  }
 }
 
 /**
@@ -11747,7 +11940,7 @@ var lowPriorityWarning = function () {};
 
   lowPriorityWarning = function (condition, format) {
     if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
     }
     if (!condition) {
       for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
@@ -11814,7 +12007,7 @@ var ReactStrictModeWarnings = {
         if (lifecycleWarnings.length > 0) {
           var componentNames = new Set();
           lifecycleWarnings.forEach(function (fiber) {
-            componentNames.add(getComponentName(fiber) || 'Component');
+            componentNames.add(getComponentName(fiber.type) || 'Component');
             didWarnAboutUnsafeLifecycles.add(fiber.type);
           });
 
@@ -11827,9 +12020,9 @@ var ReactStrictModeWarnings = {
       });
 
       if (lifecyclesWarningMesages.length > 0) {
-        var strictRootComponentStack = getStackAddendumByWorkInProgressFiber(strictRoot);
+        var strictRootComponentStack = getStackByFiberInDevAndProd(strictRoot);
 
-        warning(false, 'Unsafe lifecycle methods were found within a strict-mode tree:%s' + '\n\n%s' + '\n\nLearn more about this warning here:' + '\nhttps://fb.me/react-strict-mode-warnings', strictRootComponentStack, lifecyclesWarningMesages.join('\n\n'));
+        warningWithoutStack$1(false, 'Unsafe lifecycle methods were found within a strict-mode tree:%s' + '\n\n%s' + '\n\nLearn more about this warning here:' + '\nhttps://fb.me/react-strict-mode-warnings', strictRootComponentStack, lifecyclesWarningMesages.join('\n\n'));
       }
     });
 
@@ -11854,7 +12047,7 @@ var ReactStrictModeWarnings = {
     if (pendingComponentWillMountWarnings.length > 0) {
       var uniqueNames = new Set();
       pendingComponentWillMountWarnings.forEach(function (fiber) {
-        uniqueNames.add(getComponentName(fiber) || 'Component');
+        uniqueNames.add(getComponentName(fiber.type) || 'Component');
         didWarnAboutDeprecatedLifecycles.add(fiber.type);
       });
 
@@ -11868,7 +12061,7 @@ var ReactStrictModeWarnings = {
     if (pendingComponentWillReceivePropsWarnings.length > 0) {
       var _uniqueNames = new Set();
       pendingComponentWillReceivePropsWarnings.forEach(function (fiber) {
-        _uniqueNames.add(getComponentName(fiber) || 'Component');
+        _uniqueNames.add(getComponentName(fiber.type) || 'Component');
         didWarnAboutDeprecatedLifecycles.add(fiber.type);
       });
 
@@ -11882,7 +12075,7 @@ var ReactStrictModeWarnings = {
     if (pendingComponentWillUpdateWarnings.length > 0) {
       var _uniqueNames2 = new Set();
       pendingComponentWillUpdateWarnings.forEach(function (fiber) {
-        _uniqueNames2.add(getComponentName(fiber) || 'Component');
+        _uniqueNames2.add(getComponentName(fiber.type) || 'Component');
         didWarnAboutDeprecatedLifecycles.add(fiber.type);
       });
 
@@ -11915,7 +12108,7 @@ var ReactStrictModeWarnings = {
   ReactStrictModeWarnings.recordUnsafeLifecycleWarnings = function (fiber, instance) {
     var strictRoot = findStrictRoot(fiber);
     if (strictRoot === null) {
-      warning(false, 'Expected to find a StrictMode component in a strict mode tree. ' + 'This error is likely caused by a bug in React. Please file an issue.');
+      warningWithoutStack$1(false, 'Expected to find a StrictMode component in a strict mode tree. ' + 'This error is likely caused by a bug in React. Please file an issue.');
       return;
     }
 
@@ -11962,7 +12155,7 @@ var ReactStrictModeWarnings = {
   ReactStrictModeWarnings.recordLegacyContextWarning = function (fiber, instance) {
     var strictRoot = findStrictRoot(fiber);
     if (strictRoot === null) {
-      warning(false, 'Expected to find a StrictMode component in a strict mode tree. ' + 'This error is likely caused by a bug in React. Please file an issue.');
+      warningWithoutStack$1(false, 'Expected to find a StrictMode component in a strict mode tree. ' + 'This error is likely caused by a bug in React. Please file an issue.');
       return;
     }
 
@@ -11986,14 +12179,14 @@ var ReactStrictModeWarnings = {
     pendingLegacyContextWarning.forEach(function (fiberArray, strictRoot) {
       var uniqueNames = new Set();
       fiberArray.forEach(function (fiber) {
-        uniqueNames.add(getComponentName(fiber) || 'Component');
+        uniqueNames.add(getComponentName(fiber.type) || 'Component');
         didWarnAboutLegacyContext.add(fiber.type);
       });
 
       var sortedNames = setToSortedString(uniqueNames);
-      var strictRootComponentStack = getStackAddendumByWorkInProgressFiber(strictRoot);
+      var strictRootComponentStack = getStackByFiberInDevAndProd(strictRoot);
 
-      warning(false, 'Legacy context API has been detected within a strict-mode tree: %s' + '\n\nPlease update the following components: %s' + '\n\nLearn more about this warning here:' + '\nhttps://fb.me/react-strict-mode-warnings', strictRootComponentStack, sortedNames);
+      warningWithoutStack$1(false, 'Legacy context API has been detected within a strict-mode tree: %s' + '\n\nPlease update the following components: %s' + '\n\nLearn more about this warning here:' + '\nhttps://fb.me/react-strict-mode-warnings', strictRootComponentStack, sortedNames);
     });
   };
 }
@@ -12008,172 +12201,232 @@ var ReactFiberInstrumentation = {
 
 var ReactFiberInstrumentation_1 = ReactFiberInstrumentation;
 
-// TODO: Offscreen updates
+// TODO: Offscreen updates should never suspend. However, a promise that
+// suspended inside an offscreen subtree should be able to ping at the priority
+// of the outer render.
 
 function markPendingPriorityLevel(root, expirationTime) {
-  if (enableSuspense) {
-    // Update the latest and earliest pending times
-    var earliestPendingTime = root.earliestPendingTime;
-    if (earliestPendingTime === NoWork) {
-      // No other pending updates.
-      root.earliestPendingTime = root.latestPendingTime = expirationTime;
+  // If there's a gap between completing a failed root and retrying it,
+  // additional updates may be scheduled. Clear `didError`, in case the update
+  // is sufficient to fix the error.
+  root.didError = false;
+
+  // Update the latest and earliest pending times
+  var earliestPendingTime = root.earliestPendingTime;
+  if (earliestPendingTime === NoWork) {
+    // No other pending updates.
+    root.earliestPendingTime = root.latestPendingTime = expirationTime;
+  } else {
+    if (earliestPendingTime > expirationTime) {
+      // This is the earliest pending update.
+      root.earliestPendingTime = expirationTime;
     } else {
-      if (earliestPendingTime > expirationTime) {
-        // This is the earliest pending update.
-        root.earliestPendingTime = expirationTime;
-      } else {
-        var latestPendingTime = root.latestPendingTime;
-        if (latestPendingTime < expirationTime) {
-          // This is the latest pending update
-          root.latestPendingTime = expirationTime;
-        }
+      var latestPendingTime = root.latestPendingTime;
+      if (latestPendingTime < expirationTime) {
+        // This is the latest pending update
+        root.latestPendingTime = expirationTime;
       }
     }
   }
+  findNextExpirationTimeToWorkOn(expirationTime, root);
 }
 
-function markCommittedPriorityLevels(root, currentTime, earliestRemainingTime) {
-  if (enableSuspense) {
-    if (earliestRemainingTime === NoWork) {
-      // Fast path. There's no remaining work. Clear everything.
-      root.earliestPendingTime = NoWork;
-      root.latestPendingTime = NoWork;
-      root.earliestSuspendedTime = NoWork;
-      root.latestSuspendedTime = NoWork;
-      root.latestPingedTime = NoWork;
-      return;
-    }
+function markCommittedPriorityLevels(root, earliestRemainingTime) {
+  root.didError = false;
 
-    // Let's see if the previous latest known pending level was just flushed.
-    var latestPendingTime = root.latestPendingTime;
-    if (latestPendingTime !== NoWork) {
-      if (latestPendingTime < earliestRemainingTime) {
-        // We've flushed all the known pending levels.
-        root.earliestPendingTime = root.latestPendingTime = NoWork;
-      } else {
-        var earliestPendingTime = root.earliestPendingTime;
-        if (earliestPendingTime < earliestRemainingTime) {
-          // We've flushed the earliest known pending level. Set this to the
-          // latest pending time.
-          root.earliestPendingTime = root.latestPendingTime;
-        }
+  if (earliestRemainingTime === NoWork) {
+    // Fast path. There's no remaining work. Clear everything.
+    root.earliestPendingTime = NoWork;
+    root.latestPendingTime = NoWork;
+    root.earliestSuspendedTime = NoWork;
+    root.latestSuspendedTime = NoWork;
+    root.latestPingedTime = NoWork;
+    findNextExpirationTimeToWorkOn(NoWork, root);
+    return;
+  }
+
+  // Let's see if the previous latest known pending level was just flushed.
+  var latestPendingTime = root.latestPendingTime;
+  if (latestPendingTime !== NoWork) {
+    if (latestPendingTime < earliestRemainingTime) {
+      // We've flushed all the known pending levels.
+      root.earliestPendingTime = root.latestPendingTime = NoWork;
+    } else {
+      var earliestPendingTime = root.earliestPendingTime;
+      if (earliestPendingTime < earliestRemainingTime) {
+        // We've flushed the earliest known pending level. Set this to the
+        // latest pending time.
+        root.earliestPendingTime = root.latestPendingTime;
       }
     }
-
-    // Now let's handle the earliest remaining level in the whole tree. We need to
-    // decide whether to treat it as a pending level or as suspended. Check
-    // it falls within the range of known suspended levels.
-
-    var earliestSuspendedTime = root.earliestSuspendedTime;
-    if (earliestSuspendedTime === NoWork) {
-      // There's no suspended work. Treat the earliest remaining level as a
-      // pending level.
-      markPendingPriorityLevel(root, earliestRemainingTime);
-      return;
-    }
-
-    var latestSuspendedTime = root.latestSuspendedTime;
-    if (earliestRemainingTime > latestSuspendedTime) {
-      // The earliest remaining level is later than all the suspended work. That
-      // means we've flushed all the suspended work.
-      root.earliestSuspendedTime = NoWork;
-      root.latestSuspendedTime = NoWork;
-      root.latestPingedTime = NoWork;
-
-      // There's no suspended work. Treat the earliest remaining level as a
-      // pending level.
-      markPendingPriorityLevel(root, earliestRemainingTime);
-      return;
-    }
-
-    if (earliestRemainingTime < earliestSuspendedTime) {
-      // The earliest remaining time is earlier than all the suspended work.
-      // Treat it as a pending update.
-      markPendingPriorityLevel(root, earliestRemainingTime);
-      return;
-    }
-
-    // The earliest remaining time falls within the range of known suspended
-    // levels. We should treat this as suspended work.
   }
+
+  // Now let's handle the earliest remaining level in the whole tree. We need to
+  // decide whether to treat it as a pending level or as suspended. Check
+  // it falls within the range of known suspended levels.
+
+  var earliestSuspendedTime = root.earliestSuspendedTime;
+  if (earliestSuspendedTime === NoWork) {
+    // There's no suspended work. Treat the earliest remaining level as a
+    // pending level.
+    markPendingPriorityLevel(root, earliestRemainingTime);
+    findNextExpirationTimeToWorkOn(NoWork, root);
+    return;
+  }
+
+  var latestSuspendedTime = root.latestSuspendedTime;
+  if (earliestRemainingTime > latestSuspendedTime) {
+    // The earliest remaining level is later than all the suspended work. That
+    // means we've flushed all the suspended work.
+    root.earliestSuspendedTime = NoWork;
+    root.latestSuspendedTime = NoWork;
+    root.latestPingedTime = NoWork;
+
+    // There's no suspended work. Treat the earliest remaining level as a
+    // pending level.
+    markPendingPriorityLevel(root, earliestRemainingTime);
+    findNextExpirationTimeToWorkOn(NoWork, root);
+    return;
+  }
+
+  if (earliestRemainingTime < earliestSuspendedTime) {
+    // The earliest remaining time is earlier than all the suspended work.
+    // Treat it as a pending update.
+    markPendingPriorityLevel(root, earliestRemainingTime);
+    findNextExpirationTimeToWorkOn(NoWork, root);
+    return;
+  }
+
+  // The earliest remaining time falls within the range of known suspended
+  // levels. We should treat this as suspended work.
+  findNextExpirationTimeToWorkOn(NoWork, root);
+}
+
+function hasLowerPriorityWork(root, erroredExpirationTime) {
+  var latestPendingTime = root.latestPendingTime;
+  var latestSuspendedTime = root.latestSuspendedTime;
+  var latestPingedTime = root.latestPingedTime;
+  return latestPendingTime !== NoWork && latestPendingTime > erroredExpirationTime || latestSuspendedTime !== NoWork && latestSuspendedTime > erroredExpirationTime || latestPingedTime !== NoWork && latestPingedTime > erroredExpirationTime;
+}
+
+function isPriorityLevelSuspended(root, expirationTime) {
+  var earliestSuspendedTime = root.earliestSuspendedTime;
+  var latestSuspendedTime = root.latestSuspendedTime;
+  return earliestSuspendedTime !== NoWork && expirationTime >= earliestSuspendedTime && expirationTime <= latestSuspendedTime;
 }
 
 function markSuspendedPriorityLevel(root, suspendedTime) {
-  if (enableSuspense) {
-    // First, check the known pending levels and update them if needed.
-    var earliestPendingTime = root.earliestPendingTime;
-    var latestPendingTime = root.latestPendingTime;
-    if (earliestPendingTime === suspendedTime) {
-      if (latestPendingTime === suspendedTime) {
-        // Both known pending levels were suspended. Clear them.
-        root.earliestPendingTime = root.latestPendingTime = NoWork;
-      } else {
-        // The earliest pending level was suspended. Clear by setting it to the
-        // latest pending level.
-        root.earliestPendingTime = latestPendingTime;
-      }
-    } else if (latestPendingTime === suspendedTime) {
-      // The latest pending level was suspended. Clear by setting it to the
-      // latest pending level.
-      root.latestPendingTime = earliestPendingTime;
-    }
+  root.didError = false;
+  clearPing(root, suspendedTime);
 
-    // Next, if we're working on the lowest known suspended level, clear the ping.
-    // TODO: What if a promise suspends and pings before the root completes?
-    var latestSuspendedTime = root.latestSuspendedTime;
-    if (latestSuspendedTime === suspendedTime) {
-      root.latestPingedTime = NoWork;
-    }
-
-    // Finally, update the known suspended levels.
-    var earliestSuspendedTime = root.earliestSuspendedTime;
-    if (earliestSuspendedTime === NoWork) {
-      // No other suspended levels.
-      root.earliestSuspendedTime = root.latestSuspendedTime = suspendedTime;
+  // First, check the known pending levels and update them if needed.
+  var earliestPendingTime = root.earliestPendingTime;
+  var latestPendingTime = root.latestPendingTime;
+  if (earliestPendingTime === suspendedTime) {
+    if (latestPendingTime === suspendedTime) {
+      // Both known pending levels were suspended. Clear them.
+      root.earliestPendingTime = root.latestPendingTime = NoWork;
     } else {
-      if (earliestSuspendedTime > suspendedTime) {
-        // This is the earliest suspended level.
-        root.earliestSuspendedTime = suspendedTime;
-      } else if (latestSuspendedTime < suspendedTime) {
-        // This is the latest suspended level
-        root.latestSuspendedTime = suspendedTime;
-      }
+      // The earliest pending level was suspended. Clear by setting it to the
+      // latest pending level.
+      root.earliestPendingTime = latestPendingTime;
+    }
+  } else if (latestPendingTime === suspendedTime) {
+    // The latest pending level was suspended. Clear by setting it to the
+    // latest pending level.
+    root.latestPendingTime = earliestPendingTime;
+  }
+
+  // Finally, update the known suspended levels.
+  var earliestSuspendedTime = root.earliestSuspendedTime;
+  var latestSuspendedTime = root.latestSuspendedTime;
+  if (earliestSuspendedTime === NoWork) {
+    // No other suspended levels.
+    root.earliestSuspendedTime = root.latestSuspendedTime = suspendedTime;
+  } else {
+    if (earliestSuspendedTime > suspendedTime) {
+      // This is the earliest suspended level.
+      root.earliestSuspendedTime = suspendedTime;
+    } else if (latestSuspendedTime < suspendedTime) {
+      // This is the latest suspended level
+      root.latestSuspendedTime = suspendedTime;
     }
   }
+
+  findNextExpirationTimeToWorkOn(suspendedTime, root);
 }
 
 function markPingedPriorityLevel(root, pingedTime) {
-  if (enableSuspense) {
-    var latestSuspendedTime = root.latestSuspendedTime;
-    if (latestSuspendedTime !== NoWork && latestSuspendedTime <= pingedTime) {
-      var latestPingedTime = root.latestPingedTime;
-      if (latestPingedTime === NoWork || latestPingedTime < pingedTime) {
-        root.latestPingedTime = pingedTime;
-      }
-    }
+  root.didError = false;
+
+  // TODO: When we add back resuming, we need to ensure the progressed work
+  // is thrown out and not reused during the restarted render. One way to
+  // invalidate the progressed work is to restart at expirationTime + 1.
+  var latestPingedTime = root.latestPingedTime;
+  if (latestPingedTime === NoWork || latestPingedTime < pingedTime) {
+    root.latestPingedTime = pingedTime;
+  }
+  findNextExpirationTimeToWorkOn(pingedTime, root);
+}
+
+function clearPing(root, completedTime) {
+  // TODO: Track whether the root was pinged during the render phase. If so,
+  // we need to make sure we don't lose track of it.
+  var latestPingedTime = root.latestPingedTime;
+  if (latestPingedTime !== NoWork && latestPingedTime <= completedTime) {
+    root.latestPingedTime = NoWork;
   }
 }
 
-function findNextPendingPriorityLevel(root) {
-  if (enableSuspense) {
-    var earliestSuspendedTime = root.earliestSuspendedTime;
-    var earliestPendingTime = root.earliestPendingTime;
-    if (earliestSuspendedTime === NoWork) {
-      // Fast path. There's no suspended work.
-      return earliestPendingTime;
-    }
+function findEarliestOutstandingPriorityLevel(root, renderExpirationTime) {
+  var earliestExpirationTime = renderExpirationTime;
 
-    // First, check if there's known pending work.
-    if (earliestPendingTime !== NoWork) {
-      return earliestPendingTime;
-    }
-
-    // Finally, if a suspended level was pinged, work on that. Otherwise there's
-    // nothing to work on.
-    return root.latestPingedTime;
-  } else {
-    return root.current.expirationTime;
+  var earliestPendingTime = root.earliestPendingTime;
+  var earliestSuspendedTime = root.earliestSuspendedTime;
+  if (earliestExpirationTime === NoWork || earliestPendingTime !== NoWork && earliestPendingTime < earliestExpirationTime) {
+    earliestExpirationTime = earliestPendingTime;
   }
+  if (earliestExpirationTime === NoWork || earliestSuspendedTime !== NoWork && earliestSuspendedTime < earliestExpirationTime) {
+    earliestExpirationTime = earliestSuspendedTime;
+  }
+  return earliestExpirationTime;
+}
+
+function didExpireAtExpirationTime(root, currentTime) {
+  var expirationTime = root.expirationTime;
+  if (expirationTime !== NoWork && currentTime >= expirationTime) {
+    // The root has expired. Flush all work up to the current time.
+    root.nextExpirationTimeToWorkOn = currentTime;
+  }
+}
+
+function findNextExpirationTimeToWorkOn(completedExpirationTime, root) {
+  var earliestSuspendedTime = root.earliestSuspendedTime;
+  var latestSuspendedTime = root.latestSuspendedTime;
+  var earliestPendingTime = root.earliestPendingTime;
+  var latestPingedTime = root.latestPingedTime;
+
+  // Work on the earliest pending time. Failing that, work on the latest
+  // pinged time.
+  var nextExpirationTimeToWorkOn = earliestPendingTime !== NoWork ? earliestPendingTime : latestPingedTime;
+
+  // If there is no pending or pinged work, check if there's suspended work
+  // that's lower priority than what we just completed.
+  if (nextExpirationTimeToWorkOn === NoWork && (completedExpirationTime === NoWork || latestSuspendedTime > completedExpirationTime)) {
+    // The lowest priority suspended work is the work most likely to be
+    // committed next. Let's start rendering it again, so that if it times out,
+    // it's ready to commit.
+    nextExpirationTimeToWorkOn = latestSuspendedTime;
+  }
+
+  var expirationTime = nextExpirationTimeToWorkOn;
+  if (expirationTime !== NoWork && earliestSuspendedTime !== NoWork && earliestSuspendedTime < expirationTime) {
+    // Expire using the earliest known expiration time.
+    expirationTime = earliestSuspendedTime;
+  }
+
+  root.nextExpirationTimeToWorkOn = nextExpirationTimeToWorkOn;
+  root.expirationTime = expirationTime;
 }
 
 // UpdateQueue is a linked list of prioritized updates.
@@ -12276,7 +12529,6 @@ var resetCurrentlyProcessingQueue = void 0;
 
 function createUpdateQueue(baseState) {
   var queue = {
-    expirationTime: NoWork,
     baseState: baseState,
     firstUpdate: null,
     lastUpdate: null,
@@ -12292,7 +12544,6 @@ function createUpdateQueue(baseState) {
 
 function cloneUpdateQueue(currentQueue) {
   var queue = {
-    expirationTime: currentQueue.expirationTime,
     baseState: currentQueue.baseState,
     firstUpdate: currentQueue.firstUpdate,
     lastUpdate: currentQueue.lastUpdate,
@@ -12324,7 +12575,7 @@ function createUpdate(expirationTime) {
   };
 }
 
-function appendUpdateToQueue(queue, update, expirationTime) {
+function appendUpdateToQueue(queue, update) {
   // Append the update to the end of the list.
   if (queue.lastUpdate === null) {
     // Queue is empty
@@ -12333,14 +12584,9 @@ function appendUpdateToQueue(queue, update, expirationTime) {
     queue.lastUpdate.next = update;
     queue.lastUpdate = update;
   }
-  if (queue.expirationTime === NoWork || queue.expirationTime > expirationTime) {
-    // The incoming update has the earliest expiration of any update in the
-    // queue. Update the queue's expiration time.
-    queue.expirationTime = expirationTime;
-  }
 }
 
-function enqueueUpdate(fiber, update, expirationTime) {
+function enqueueUpdate(fiber, update) {
   // Update queues are created lazily.
   var alternate = fiber.alternate;
   var queue1 = void 0;
@@ -12376,33 +12622,33 @@ function enqueueUpdate(fiber, update, expirationTime) {
   }
   if (queue2 === null || queue1 === queue2) {
     // There's only a single queue.
-    appendUpdateToQueue(queue1, update, expirationTime);
+    appendUpdateToQueue(queue1, update);
   } else {
     // There are two queues. We need to append the update to both queues,
     // while accounting for the persistent structure of the list — we don't
     // want the same update to be added multiple times.
     if (queue1.lastUpdate === null || queue2.lastUpdate === null) {
       // One of the queues is not empty. We must add the update to both queues.
-      appendUpdateToQueue(queue1, update, expirationTime);
-      appendUpdateToQueue(queue2, update, expirationTime);
+      appendUpdateToQueue(queue1, update);
+      appendUpdateToQueue(queue2, update);
     } else {
       // Both queues are non-empty. The last update is the same in both lists,
       // because of structural sharing. So, only append to one of the lists.
-      appendUpdateToQueue(queue1, update, expirationTime);
+      appendUpdateToQueue(queue1, update);
       // But we still need to update the `lastUpdate` pointer of queue2.
       queue2.lastUpdate = update;
     }
   }
 
   {
-    if (fiber.tag === ClassComponent && (currentlyProcessingQueue === queue1 || queue2 !== null && currentlyProcessingQueue === queue2) && !didWarnUpdateInsideUpdate) {
-      warning(false, 'An update (setState, replaceState, or forceUpdate) was scheduled ' + 'from inside an update function. Update functions should be pure, ' + 'with zero side-effects. Consider using componentDidUpdate or a ' + 'callback.');
+    if ((fiber.tag === ClassComponent || fiber.tag === ClassComponentLazy) && (currentlyProcessingQueue === queue1 || queue2 !== null && currentlyProcessingQueue === queue2) && !didWarnUpdateInsideUpdate) {
+      warningWithoutStack$1(false, 'An update (setState, replaceState, or forceUpdate) was scheduled ' + 'from inside an update function. Update functions should be pure, ' + 'with zero side-effects. Consider using componentDidUpdate or a ' + 'callback.');
       didWarnUpdateInsideUpdate = true;
     }
   }
 }
 
-function enqueueCapturedUpdate(workInProgress, update, renderExpirationTime) {
+function enqueueCapturedUpdate(workInProgress, update) {
   // Captured updates go into a separate list, and only on the work-in-
   // progress queue.
   var workInProgressQueue = workInProgress.updateQueue;
@@ -12422,11 +12668,6 @@ function enqueueCapturedUpdate(workInProgress, update, renderExpirationTime) {
   } else {
     workInProgressQueue.lastCapturedUpdate.next = update;
     workInProgressQueue.lastCapturedUpdate = update;
-  }
-  if (workInProgressQueue.expirationTime === NoWork || workInProgressQueue.expirationTime > renderExpirationTime) {
-    // The incoming update has the earliest expiration of any update in the
-    // queue. Update the queue's expiration time.
-    workInProgressQueue.expirationTime = renderExpirationTime;
   }
 }
 
@@ -12498,11 +12739,6 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 
 function processUpdateQueue(workInProgress, queue, props, instance, renderExpirationTime) {
   hasForceUpdate = false;
-
-  if (queue.expirationTime === NoWork || queue.expirationTime > renderExpirationTime) {
-    // Insufficient priority. Bailout.
-    return;
-  }
 
   queue = ensureWorkInProgressQueueIsAClone(workInProgress, queue);
 
@@ -12615,8 +12851,15 @@ function processUpdateQueue(workInProgress, queue, props, instance, renderExpira
   queue.baseState = newBaseState;
   queue.firstUpdate = newFirstUpdate;
   queue.firstCapturedUpdate = newFirstCapturedUpdate;
-  queue.expirationTime = newExpirationTime;
 
+  // Set the remaining expiration time to be whatever is remaining in the queue.
+  // This should be fine because the only two other things that contribute to
+  // expiration time are props and context. We're already in the middle of the
+  // begin phase by the time we start processing the queue, so we've already
+  // dealt with the props. Context in components that specify
+  // shouldComponentUpdate is tricky; but we'll have to account for
+  // that regardless.
+  workInProgress.expirationTime = newExpirationTime;
   workInProgress.memoizedState = resultState;
 
   {
@@ -12653,24 +12896,19 @@ function commitUpdateQueue(finishedWork, finishedQueue, instance, renderExpirati
   }
 
   // Commit the effects
-  var effect = finishedQueue.firstEffect;
+  commitUpdateEffects(finishedQueue.firstEffect, instance);
   finishedQueue.firstEffect = finishedQueue.lastEffect = null;
+
+  commitUpdateEffects(finishedQueue.firstCapturedEffect, instance);
+  finishedQueue.firstCapturedEffect = finishedQueue.lastCapturedEffect = null;
+}
+
+function commitUpdateEffects(effect, instance) {
   while (effect !== null) {
     var _callback3 = effect.callback;
     if (_callback3 !== null) {
       effect.callback = null;
       callCallback(_callback3, instance);
-    }
-    effect = effect.nextEffect;
-  }
-
-  effect = finishedQueue.firstCapturedEffect;
-  finishedQueue.firstCapturedEffect = finishedQueue.lastCapturedEffect = null;
-  while (effect !== null) {
-    var _callback4 = effect.callback;
-    if (_callback4 !== null) {
-      effect.callback = null;
-      callCallback(_callback4, instance);
     }
     effect = effect.nextEffect;
   }
@@ -12682,13 +12920,11 @@ function createCapturedValue(value, source) {
   return {
     value: value,
     source: source,
-    stack: getStackAddendumByWorkInProgressFiber(source)
+    stack: getStackByFiberInDevAndProd(source)
   };
 }
 
-var providerCursor = createCursor(null);
 var valueCursor = createCursor(null);
-var changedBitsCursor = createCursor(0);
 
 var rendererSigil = void 0;
 {
@@ -12696,58 +12932,204 @@ var rendererSigil = void 0;
   rendererSigil = {};
 }
 
-function pushProvider(providerFiber) {
+var currentlyRenderingFiber = null;
+var lastContextDependency = null;
+var lastContextWithAllBitsObserved = null;
+
+function resetContextDependences() {
+  // This is called right before React yields execution, to ensure `readContext`
+  // cannot be called outside the render phase.
+  currentlyRenderingFiber = null;
+  lastContextDependency = null;
+  lastContextWithAllBitsObserved = null;
+}
+
+function pushProvider(providerFiber, nextValue) {
   var context = providerFiber.type._context;
 
   if (isPrimaryRenderer) {
-    push(changedBitsCursor, context._changedBits, providerFiber);
     push(valueCursor, context._currentValue, providerFiber);
-    push(providerCursor, providerFiber, providerFiber);
 
-    context._currentValue = providerFiber.pendingProps.value;
-    context._changedBits = providerFiber.stateNode;
+    context._currentValue = nextValue;
     {
-      !(context._currentRenderer === undefined || context._currentRenderer === null || context._currentRenderer === rendererSigil) ? warning(false, 'Detected multiple renderers concurrently rendering the ' + 'same context provider. This is currently unsupported.') : void 0;
+      !(context._currentRenderer === undefined || context._currentRenderer === null || context._currentRenderer === rendererSigil) ? warningWithoutStack$1(false, 'Detected multiple renderers concurrently rendering the ' + 'same context provider. This is currently unsupported.') : void 0;
       context._currentRenderer = rendererSigil;
     }
   } else {
-    push(changedBitsCursor, context._changedBits2, providerFiber);
     push(valueCursor, context._currentValue2, providerFiber);
-    push(providerCursor, providerFiber, providerFiber);
 
-    context._currentValue2 = providerFiber.pendingProps.value;
-    context._changedBits2 = providerFiber.stateNode;
+    context._currentValue2 = nextValue;
     {
-      !(context._currentRenderer2 === undefined || context._currentRenderer2 === null || context._currentRenderer2 === rendererSigil) ? warning(false, 'Detected multiple renderers concurrently rendering the ' + 'same context provider. This is currently unsupported.') : void 0;
+      !(context._currentRenderer2 === undefined || context._currentRenderer2 === null || context._currentRenderer2 === rendererSigil) ? warningWithoutStack$1(false, 'Detected multiple renderers concurrently rendering the ' + 'same context provider. This is currently unsupported.') : void 0;
       context._currentRenderer2 = rendererSigil;
     }
   }
 }
 
 function popProvider(providerFiber) {
-  var changedBits = changedBitsCursor.current;
   var currentValue = valueCursor.current;
 
-  pop(providerCursor, providerFiber);
   pop(valueCursor, providerFiber);
-  pop(changedBitsCursor, providerFiber);
 
   var context = providerFiber.type._context;
   if (isPrimaryRenderer) {
     context._currentValue = currentValue;
-    context._changedBits = changedBits;
   } else {
     context._currentValue2 = currentValue;
-    context._changedBits2 = changedBits;
   }
 }
 
-function getContextCurrentValue(context) {
-  return isPrimaryRenderer ? context._currentValue : context._currentValue2;
+function calculateChangedBits(context, newValue, oldValue) {
+  // Use Object.is to compare the new context value to the old value. Inlined
+  // Object.is polyfill.
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+  if (oldValue === newValue && (oldValue !== 0 || 1 / oldValue === 1 / newValue) || oldValue !== oldValue && newValue !== newValue // eslint-disable-line no-self-compare
+  ) {
+      // No change
+      return 0;
+    } else {
+    var changedBits = typeof context._calculateChangedBits === 'function' ? context._calculateChangedBits(oldValue, newValue) : maxSigned31BitInt;
+
+    {
+      !((changedBits & maxSigned31BitInt) === changedBits) ? warning$1(false, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: %s', changedBits) : void 0;
+    }
+    return changedBits | 0;
+  }
 }
 
-function getContextChangedBits(context) {
-  return isPrimaryRenderer ? context._changedBits : context._changedBits2;
+function propagateContextChange(workInProgress, context, changedBits, renderExpirationTime) {
+  var fiber = workInProgress.child;
+  if (fiber !== null) {
+    // Set the return pointer of the child to the work-in-progress fiber.
+    fiber.return = workInProgress;
+  }
+  while (fiber !== null) {
+    var nextFiber = void 0;
+
+    // Visit this fiber.
+    var dependency = fiber.firstContextDependency;
+    if (dependency !== null) {
+      do {
+        // Check if the context matches.
+        if (dependency.context === context && (dependency.observedBits & changedBits) !== 0) {
+          // Match! Schedule an update on this fiber.
+
+          if (fiber.tag === ClassComponent || fiber.tag === ClassComponentLazy) {
+            // Schedule a force update on the work-in-progress.
+            var update = createUpdate(renderExpirationTime);
+            update.tag = ForceUpdate;
+            // TODO: Because we don't have a work-in-progress, this will add the
+            // update to the current fiber, too, which means it will persist even if
+            // this render is thrown away. Since it's a race condition, not sure it's
+            // worth fixing.
+            enqueueUpdate(fiber, update);
+          }
+
+          if (fiber.expirationTime === NoWork || fiber.expirationTime > renderExpirationTime) {
+            fiber.expirationTime = renderExpirationTime;
+          }
+          var alternate = fiber.alternate;
+          if (alternate !== null && (alternate.expirationTime === NoWork || alternate.expirationTime > renderExpirationTime)) {
+            alternate.expirationTime = renderExpirationTime;
+          }
+          // Update the child expiration time of all the ancestors, including
+          // the alternates.
+          var node = fiber.return;
+          while (node !== null) {
+            alternate = node.alternate;
+            if (node.childExpirationTime === NoWork || node.childExpirationTime > renderExpirationTime) {
+              node.childExpirationTime = renderExpirationTime;
+              if (alternate !== null && (alternate.childExpirationTime === NoWork || alternate.childExpirationTime > renderExpirationTime)) {
+                alternate.childExpirationTime = renderExpirationTime;
+              }
+            } else if (alternate !== null && (alternate.childExpirationTime === NoWork || alternate.childExpirationTime > renderExpirationTime)) {
+              alternate.childExpirationTime = renderExpirationTime;
+            } else {
+              // Neither alternate was updated, which means the rest of the
+              // ancestor path already has sufficient priority.
+              break;
+            }
+            node = node.return;
+          }
+        }
+        nextFiber = fiber.child;
+        dependency = dependency.next;
+      } while (dependency !== null);
+    } else if (fiber.tag === ContextProvider) {
+      // Don't scan deeper if this is a matching provider
+      nextFiber = fiber.type === workInProgress.type ? null : fiber.child;
+    } else {
+      // Traverse down.
+      nextFiber = fiber.child;
+    }
+
+    if (nextFiber !== null) {
+      // Set the return pointer of the child to the work-in-progress fiber.
+      nextFiber.return = fiber;
+    } else {
+      // No child. Traverse to next sibling.
+      nextFiber = fiber;
+      while (nextFiber !== null) {
+        if (nextFiber === workInProgress) {
+          // We're back to the root of this subtree. Exit.
+          nextFiber = null;
+          break;
+        }
+        var sibling = nextFiber.sibling;
+        if (sibling !== null) {
+          // Set the return pointer of the sibling to the work-in-progress fiber.
+          sibling.return = nextFiber.return;
+          nextFiber = sibling;
+          break;
+        }
+        // No more siblings. Traverse up.
+        nextFiber = nextFiber.return;
+      }
+    }
+    fiber = nextFiber;
+  }
+}
+
+function prepareToReadContext(workInProgress, renderExpirationTime) {
+  currentlyRenderingFiber = workInProgress;
+  lastContextDependency = null;
+  lastContextWithAllBitsObserved = null;
+
+  // Reset the work-in-progress list
+  workInProgress.firstContextDependency = null;
+}
+
+function readContext(context, observedBits) {
+  if (lastContextWithAllBitsObserved === context) {
+    // Nothing to do. We already observe everything in this context.
+  } else if (observedBits === false || observedBits === 0) {
+    // Do not observe any updates.
+  } else {
+    var resolvedObservedBits = void 0; // Avoid deopting on observable arguments or heterogeneous types.
+    if (typeof observedBits !== 'number' || observedBits === maxSigned31BitInt) {
+      // Observe all updates.
+      lastContextWithAllBitsObserved = context;
+      resolvedObservedBits = maxSigned31BitInt;
+    } else {
+      resolvedObservedBits = observedBits;
+    }
+
+    var contextItem = {
+      context: context,
+      observedBits: resolvedObservedBits,
+      next: null
+    };
+
+    if (lastContextDependency === null) {
+      !(currentlyRenderingFiber !== null) ? invariant(false, 'Context.unstable_read(): Context can only be read while React is rendering, e.g. inside the render method or getDerivedStateFromProps.') : void 0;
+      // This is the first dependency in the list
+      currentlyRenderingFiber.firstContextDependency = lastContextDependency = contextItem;
+    } else {
+      // Append a new context item.
+      lastContextDependency = lastContextDependency.next = contextItem;
+    }
+  }
+  return isPrimaryRenderer ? context._currentValue : context._currentValue2;
 }
 
 var NO_CONTEXT = {};
@@ -12825,6 +13207,7 @@ function popHostContext(fiber) {
 }
 
 var commitTime = 0;
+var profilerStartTime = -1;
 
 function getCommitTime() {
   return commitTime;
@@ -12834,122 +13217,49 @@ function recordCommitTime() {
   if (!enableProfilerTimer) {
     return;
   }
-  commitTime = now();
+  commitTime = schedule.unstable_now();
 }
 
-/**
- * The "actual" render time is total time required to render the descendants of a Profiler component.
- * This time is stored as a stack, since Profilers can be nested.
- * This time is started during the "begin" phase and stopped during the "complete" phase.
- * It is paused (and accumulated) in the event of an interruption or an aborted render.
- */
-
-var fiberStack$1 = void 0;
-
-{
-  fiberStack$1 = [];
-}
-
-var timerPausedAt = 0;
-var totalElapsedPauseTime = 0;
-
-function checkActualRenderTimeStackEmpty() {
+function startProfilerTimer(fiber) {
   if (!enableProfilerTimer) {
     return;
   }
-  {
-    !(fiberStack$1.length === 0) ? warning(false, 'Expected an empty stack. Something was not reset properly.') : void 0;
+
+  profilerStartTime = schedule.unstable_now();
+
+  if (fiber.actualStartTime < 0) {
+    fiber.actualStartTime = schedule.unstable_now();
   }
 }
 
-function markActualRenderTimeStarted(fiber) {
+function stopProfilerTimerIfRunning(fiber) {
   if (!enableProfilerTimer) {
     return;
   }
-  {
-    fiberStack$1.push(fiber);
-  }
-
-  fiber.actualDuration = now() - fiber.actualDuration - totalElapsedPauseTime;
-  fiber.actualStartTime = now();
+  profilerStartTime = -1;
 }
 
-function pauseActualRenderTimerIfRunning() {
+function stopProfilerTimerIfRunningAndRecordDelta(fiber, overrideBaseTime) {
   if (!enableProfilerTimer) {
     return;
   }
-  if (timerPausedAt === 0) {
-    timerPausedAt = now();
-  }
-}
 
-function recordElapsedActualRenderTime(fiber) {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  {
-    !(fiber === fiberStack$1.pop()) ? warning(false, 'Unexpected Fiber (%s) popped.', getComponentName(fiber)) : void 0;
-  }
-
-  fiber.actualDuration = now() - totalElapsedPauseTime - fiber.actualDuration;
-}
-
-function resetActualRenderTimer() {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  totalElapsedPauseTime = 0;
-}
-
-function resumeActualRenderTimerIfPaused() {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  if (timerPausedAt > 0) {
-    totalElapsedPauseTime += now() - timerPausedAt;
-    timerPausedAt = 0;
-  }
-}
-
-/**
- * The "base" render time is the duration of the “begin” phase of work for a particular fiber.
- * This time is measured and stored on each fiber.
- * The time for all sibling fibers are accumulated and stored on their parent during the "complete" phase.
- * If a fiber bails out (sCU false) then its "base" timer is cancelled and the fiber is not updated.
- */
-
-var baseStartTime = -1;
-
-function recordElapsedBaseRenderTimeIfRunning(fiber) {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  if (baseStartTime !== -1) {
-    fiber.selfBaseTime = now() - baseStartTime;
-  }
-}
-
-function startBaseRenderTimer() {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  {
-    if (baseStartTime !== -1) {
-      warning(false, 'Cannot start base timer that is already running. ' + 'This error is likely caused by a bug in React. ' + 'Please file an issue.');
+  if (profilerStartTime >= 0) {
+    var elapsedTime = schedule.unstable_now() - profilerStartTime;
+    fiber.actualDuration += elapsedTime;
+    if (overrideBaseTime) {
+      fiber.selfBaseDuration = elapsedTime;
     }
+    profilerStartTime = -1;
   }
-  baseStartTime = now();
-}
-
-function stopBaseRenderTimerIfRunning() {
-  if (!enableProfilerTimer) {
-    return;
-  }
-  baseStartTime = -1;
 }
 
 var fakeInternalInstance = {};
 var isArray = Array.isArray;
+
+// React.Component uses a shared frozen object by default.
+// We'll use it to determine whether we need to initialize legacy refs.
+var emptyRefsObject = new React.Component().refs;
 
 var didWarnAboutStateAssignmentForComponent = void 0;
 var didWarnAboutUninitializedState = void 0;
@@ -12958,12 +13268,14 @@ var didWarnAboutLegacyLifecyclesAndDerivedState = void 0;
 var didWarnAboutUndefinedDerivedState = void 0;
 var warnOnUndefinedDerivedState = void 0;
 var warnOnInvalidCallback$1 = void 0;
+var didWarnAboutDirectlyAssigningPropsToState = void 0;
 
 {
   didWarnAboutStateAssignmentForComponent = new Set();
   didWarnAboutUninitializedState = new Set();
   didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = new Set();
   didWarnAboutLegacyLifecyclesAndDerivedState = new Set();
+  didWarnAboutDirectlyAssigningPropsToState = new Set();
   didWarnAboutUndefinedDerivedState = new Set();
 
   var didWarnOnInvalidCallback = new Set();
@@ -12975,16 +13287,16 @@ var warnOnInvalidCallback$1 = void 0;
     var key = callerName + '_' + callback;
     if (!didWarnOnInvalidCallback.has(key)) {
       didWarnOnInvalidCallback.add(key);
-      warning(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback);
+      warningWithoutStack$1(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback);
     }
   };
 
-  warnOnUndefinedDerivedState = function (workInProgress, partialState) {
+  warnOnUndefinedDerivedState = function (type, partialState) {
     if (partialState === undefined) {
-      var componentName = getComponentName(workInProgress) || 'Component';
+      var componentName = getComponentName(type) || 'Component';
       if (!didWarnAboutUndefinedDerivedState.has(componentName)) {
         didWarnAboutUndefinedDerivedState.add(componentName);
-        warning(false, '%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. ' + 'You have returned undefined.', componentName);
+        warningWithoutStack$1(false, '%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. ' + 'You have returned undefined.', componentName);
       }
     }
   };
@@ -13003,7 +13315,7 @@ var warnOnInvalidCallback$1 = void 0;
   Object.freeze(fakeInternalInstance);
 }
 
-function applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, nextProps) {
+function applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromProps, nextProps) {
   var prevState = workInProgress.memoizedState;
 
   {
@@ -13016,7 +13328,7 @@ function applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, ne
   var partialState = getDerivedStateFromProps(nextProps, prevState);
 
   {
-    warnOnUndefinedDerivedState(workInProgress, partialState);
+    warnOnUndefinedDerivedState(ctor, partialState);
   }
   // Merge the partial state and the previous state.
   var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({}, prevState, partialState);
@@ -13025,7 +13337,7 @@ function applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, ne
   // Once the update queue is empty, persist the derived state onto the
   // base state.
   var updateQueue = workInProgress.updateQueue;
-  if (updateQueue !== null && updateQueue.expirationTime === NoWork) {
+  if (updateQueue !== null && workInProgress.expirationTime === NoWork) {
     updateQueue.baseState = memoizedState;
   }
 }
@@ -13034,7 +13346,7 @@ var classComponentUpdater = {
   isMounted: isMounted,
   enqueueSetState: function (inst, payload, callback) {
     var fiber = get(inst);
-    var currentTime = recalculateCurrentTime();
+    var currentTime = requestCurrentTime();
     var expirationTime = computeExpirationForFiber(currentTime, fiber);
 
     var update = createUpdate(expirationTime);
@@ -13046,12 +13358,12 @@ var classComponentUpdater = {
       update.callback = callback;
     }
 
-    enqueueUpdate(fiber, update, expirationTime);
-    scheduleWork$1(fiber, expirationTime);
+    enqueueUpdate(fiber, update);
+    scheduleWork(fiber, expirationTime);
   },
   enqueueReplaceState: function (inst, payload, callback) {
     var fiber = get(inst);
-    var currentTime = recalculateCurrentTime();
+    var currentTime = requestCurrentTime();
     var expirationTime = computeExpirationForFiber(currentTime, fiber);
 
     var update = createUpdate(expirationTime);
@@ -13065,12 +13377,12 @@ var classComponentUpdater = {
       update.callback = callback;
     }
 
-    enqueueUpdate(fiber, update, expirationTime);
-    scheduleWork$1(fiber, expirationTime);
+    enqueueUpdate(fiber, update);
+    scheduleWork(fiber, expirationTime);
   },
   enqueueForceUpdate: function (inst, callback) {
     var fiber = get(inst);
-    var currentTime = recalculateCurrentTime();
+    var currentTime = requestCurrentTime();
     var expirationTime = computeExpirationForFiber(currentTime, fiber);
 
     var update = createUpdate(expirationTime);
@@ -13083,21 +13395,20 @@ var classComponentUpdater = {
       update.callback = callback;
     }
 
-    enqueueUpdate(fiber, update, expirationTime);
-    scheduleWork$1(fiber, expirationTime);
+    enqueueUpdate(fiber, update);
+    scheduleWork(fiber, expirationTime);
   }
 };
 
-function checkShouldComponentUpdate(workInProgress, oldProps, newProps, oldState, newState, newContext) {
+function checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, oldState, newState, nextLegacyContext) {
   var instance = workInProgress.stateNode;
-  var ctor = workInProgress.type;
   if (typeof instance.shouldComponentUpdate === 'function') {
     startPhaseTimer(workInProgress, 'shouldComponentUpdate');
-    var shouldUpdate = instance.shouldComponentUpdate(newProps, newState, newContext);
+    var shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextLegacyContext);
     stopPhaseTimer();
 
     {
-      !(shouldUpdate !== undefined) ? warning(false, '%s.shouldComponentUpdate(): Returned undefined instead of a ' + 'boolean value. Make sure to return true or false.', getComponentName(workInProgress) || 'Component') : void 0;
+      !(shouldUpdate !== undefined) ? warningWithoutStack$1(false, '%s.shouldComponentUpdate(): Returned undefined instead of a ' + 'boolean value. Make sure to return true or false.', getComponentName(ctor) || 'Component') : void 0;
     }
 
     return shouldUpdate;
@@ -13110,64 +13421,63 @@ function checkShouldComponentUpdate(workInProgress, oldProps, newProps, oldState
   return true;
 }
 
-function checkClassInstance(workInProgress) {
+function checkClassInstance(workInProgress, ctor, newProps) {
   var instance = workInProgress.stateNode;
-  var type = workInProgress.type;
   {
-    var name = getComponentName(workInProgress) || 'Component';
+    var name = getComponentName(ctor) || 'Component';
     var renderPresent = instance.render;
 
     if (!renderPresent) {
-      if (type.prototype && typeof type.prototype.render === 'function') {
-        warning(false, '%s(...): No `render` method found on the returned component ' + 'instance: did you accidentally return an object from the constructor?', name);
+      if (ctor.prototype && typeof ctor.prototype.render === 'function') {
+        warningWithoutStack$1(false, '%s(...): No `render` method found on the returned component ' + 'instance: did you accidentally return an object from the constructor?', name);
       } else {
-        warning(false, '%s(...): No `render` method found on the returned component ' + 'instance: you may have forgotten to define `render`.', name);
+        warningWithoutStack$1(false, '%s(...): No `render` method found on the returned component ' + 'instance: you may have forgotten to define `render`.', name);
       }
     }
 
     var noGetInitialStateOnES6 = !instance.getInitialState || instance.getInitialState.isReactClassApproved || instance.state;
-    !noGetInitialStateOnES6 ? warning(false, 'getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Did you mean to define a state property instead?', name) : void 0;
+    !noGetInitialStateOnES6 ? warningWithoutStack$1(false, 'getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Did you mean to define a state property instead?', name) : void 0;
     var noGetDefaultPropsOnES6 = !instance.getDefaultProps || instance.getDefaultProps.isReactClassApproved;
-    !noGetDefaultPropsOnES6 ? warning(false, 'getDefaultProps was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Use a static property to define defaultProps instead.', name) : void 0;
+    !noGetDefaultPropsOnES6 ? warningWithoutStack$1(false, 'getDefaultProps was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Use a static property to define defaultProps instead.', name) : void 0;
     var noInstancePropTypes = !instance.propTypes;
-    !noInstancePropTypes ? warning(false, 'propTypes was defined as an instance property on %s. Use a static ' + 'property to define propTypes instead.', name) : void 0;
+    !noInstancePropTypes ? warningWithoutStack$1(false, 'propTypes was defined as an instance property on %s. Use a static ' + 'property to define propTypes instead.', name) : void 0;
     var noInstanceContextTypes = !instance.contextTypes;
-    !noInstanceContextTypes ? warning(false, 'contextTypes was defined as an instance property on %s. Use a static ' + 'property to define contextTypes instead.', name) : void 0;
+    !noInstanceContextTypes ? warningWithoutStack$1(false, 'contextTypes was defined as an instance property on %s. Use a static ' + 'property to define contextTypes instead.', name) : void 0;
     var noComponentShouldUpdate = typeof instance.componentShouldUpdate !== 'function';
-    !noComponentShouldUpdate ? warning(false, '%s has a method called ' + 'componentShouldUpdate(). Did you mean shouldComponentUpdate()? ' + 'The name is phrased as a question because the function is ' + 'expected to return a value.', name) : void 0;
-    if (type.prototype && type.prototype.isPureReactComponent && typeof instance.shouldComponentUpdate !== 'undefined') {
-      warning(false, '%s has a method called shouldComponentUpdate(). ' + 'shouldComponentUpdate should not be used when extending React.PureComponent. ' + 'Please extend React.Component if shouldComponentUpdate is used.', getComponentName(workInProgress) || 'A pure component');
+    !noComponentShouldUpdate ? warningWithoutStack$1(false, '%s has a method called ' + 'componentShouldUpdate(). Did you mean shouldComponentUpdate()? ' + 'The name is phrased as a question because the function is ' + 'expected to return a value.', name) : void 0;
+    if (ctor.prototype && ctor.prototype.isPureReactComponent && typeof instance.shouldComponentUpdate !== 'undefined') {
+      warningWithoutStack$1(false, '%s has a method called shouldComponentUpdate(). ' + 'shouldComponentUpdate should not be used when extending React.PureComponent. ' + 'Please extend React.Component if shouldComponentUpdate is used.', getComponentName(ctor) || 'A pure component');
     }
     var noComponentDidUnmount = typeof instance.componentDidUnmount !== 'function';
-    !noComponentDidUnmount ? warning(false, '%s has a method called ' + 'componentDidUnmount(). But there is no such lifecycle method. ' + 'Did you mean componentWillUnmount()?', name) : void 0;
+    !noComponentDidUnmount ? warningWithoutStack$1(false, '%s has a method called ' + 'componentDidUnmount(). But there is no such lifecycle method. ' + 'Did you mean componentWillUnmount()?', name) : void 0;
     var noComponentDidReceiveProps = typeof instance.componentDidReceiveProps !== 'function';
-    !noComponentDidReceiveProps ? warning(false, '%s has a method called ' + 'componentDidReceiveProps(). But there is no such lifecycle method. ' + 'If you meant to update the state in response to changing props, ' + 'use componentWillReceiveProps(). If you meant to fetch data or ' + 'run side-effects or mutations after React has updated the UI, use componentDidUpdate().', name) : void 0;
+    !noComponentDidReceiveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'componentDidReceiveProps(). But there is no such lifecycle method. ' + 'If you meant to update the state in response to changing props, ' + 'use componentWillReceiveProps(). If you meant to fetch data or ' + 'run side-effects or mutations after React has updated the UI, use componentDidUpdate().', name) : void 0;
     var noComponentWillRecieveProps = typeof instance.componentWillRecieveProps !== 'function';
-    !noComponentWillRecieveProps ? warning(false, '%s has a method called ' + 'componentWillRecieveProps(). Did you mean componentWillReceiveProps()?', name) : void 0;
+    !noComponentWillRecieveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'componentWillRecieveProps(). Did you mean componentWillReceiveProps()?', name) : void 0;
     var noUnsafeComponentWillRecieveProps = typeof instance.UNSAFE_componentWillRecieveProps !== 'function';
-    !noUnsafeComponentWillRecieveProps ? warning(false, '%s has a method called ' + 'UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?', name) : void 0;
-    var hasMutatedProps = instance.props !== workInProgress.pendingProps;
-    !(instance.props === undefined || !hasMutatedProps) ? warning(false, '%s(...): When calling super() in `%s`, make sure to pass ' + "up the same props that your component's constructor was passed.", name, name) : void 0;
+    !noUnsafeComponentWillRecieveProps ? warningWithoutStack$1(false, '%s has a method called ' + 'UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?', name) : void 0;
+    var hasMutatedProps = instance.props !== newProps;
+    !(instance.props === undefined || !hasMutatedProps) ? warningWithoutStack$1(false, '%s(...): When calling super() in `%s`, make sure to pass ' + "up the same props that your component's constructor was passed.", name, name) : void 0;
     var noInstanceDefaultProps = !instance.defaultProps;
-    !noInstanceDefaultProps ? warning(false, 'Setting defaultProps as an instance property on %s is not supported and will be ignored.' + ' Instead, define defaultProps as a static property on %s.', name, name) : void 0;
+    !noInstanceDefaultProps ? warningWithoutStack$1(false, 'Setting defaultProps as an instance property on %s is not supported and will be ignored.' + ' Instead, define defaultProps as a static property on %s.', name, name) : void 0;
 
-    if (typeof instance.getSnapshotBeforeUpdate === 'function' && typeof instance.componentDidUpdate !== 'function' && !didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(type)) {
-      didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(type);
-      warning(false, '%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). ' + 'This component defines getSnapshotBeforeUpdate() only.', getComponentName(workInProgress));
+    if (typeof instance.getSnapshotBeforeUpdate === 'function' && typeof instance.componentDidUpdate !== 'function' && !didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(ctor)) {
+      didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(ctor);
+      warningWithoutStack$1(false, '%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). ' + 'This component defines getSnapshotBeforeUpdate() only.', getComponentName(ctor));
     }
 
     var noInstanceGetDerivedStateFromProps = typeof instance.getDerivedStateFromProps !== 'function';
-    !noInstanceGetDerivedStateFromProps ? warning(false, '%s: getDerivedStateFromProps() is defined as an instance method ' + 'and will be ignored. Instead, declare it as a static method.', name) : void 0;
+    !noInstanceGetDerivedStateFromProps ? warningWithoutStack$1(false, '%s: getDerivedStateFromProps() is defined as an instance method ' + 'and will be ignored. Instead, declare it as a static method.', name) : void 0;
     var noInstanceGetDerivedStateFromCatch = typeof instance.getDerivedStateFromCatch !== 'function';
-    !noInstanceGetDerivedStateFromCatch ? warning(false, '%s: getDerivedStateFromCatch() is defined as an instance method ' + 'and will be ignored. Instead, declare it as a static method.', name) : void 0;
-    var noStaticGetSnapshotBeforeUpdate = typeof type.getSnapshotBeforeUpdate !== 'function';
-    !noStaticGetSnapshotBeforeUpdate ? warning(false, '%s: getSnapshotBeforeUpdate() is defined as a static method ' + 'and will be ignored. Instead, declare it as an instance method.', name) : void 0;
+    !noInstanceGetDerivedStateFromCatch ? warningWithoutStack$1(false, '%s: getDerivedStateFromCatch() is defined as an instance method ' + 'and will be ignored. Instead, declare it as a static method.', name) : void 0;
+    var noStaticGetSnapshotBeforeUpdate = typeof ctor.getSnapshotBeforeUpdate !== 'function';
+    !noStaticGetSnapshotBeforeUpdate ? warningWithoutStack$1(false, '%s: getSnapshotBeforeUpdate() is defined as a static method ' + 'and will be ignored. Instead, declare it as an instance method.', name) : void 0;
     var _state = instance.state;
     if (_state && (typeof _state !== 'object' || isArray(_state))) {
-      warning(false, '%s.state: must be set to an object or null', name);
+      warningWithoutStack$1(false, '%s.state: must be set to an object or null', name);
     }
     if (typeof instance.getChildContext === 'function') {
-      !(typeof type.childContextTypes === 'object') ? warning(false, '%s.getChildContext(): childContextTypes must be defined in order to ' + 'use getChildContext().', name) : void 0;
+      !(typeof ctor.childContextTypes === 'object') ? warningWithoutStack$1(false, '%s.getChildContext(): childContextTypes must be defined in order to ' + 'use getChildContext().', name) : void 0;
     }
   }
 }
@@ -13182,11 +13492,11 @@ function adoptClassInstance(workInProgress, instance) {
   }
 }
 
-function constructClassInstance(workInProgress, props, renderExpirationTime) {
-  var ctor = workInProgress.type;
-  var unmaskedContext = getUnmaskedContext(workInProgress);
-  var needsContext = isContextConsumer(workInProgress);
-  var context = needsContext ? getMaskedContext(workInProgress, unmaskedContext) : emptyObject;
+function constructClassInstance(workInProgress, ctor, props, renderExpirationTime) {
+  var unmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
+  var contextTypes = ctor.contextTypes;
+  var isContextConsumer = contextTypes !== null && contextTypes !== undefined;
+  var context = isContextConsumer ? getMaskedContext(workInProgress, unmaskedContext) : emptyContextObject;
 
   // Instantiate twice to help detect side-effects.
   {
@@ -13201,10 +13511,10 @@ function constructClassInstance(workInProgress, props, renderExpirationTime) {
 
   {
     if (typeof ctor.getDerivedStateFromProps === 'function' && state === null) {
-      var componentName = getComponentName(workInProgress) || 'Component';
+      var componentName = getComponentName(ctor) || 'Component';
       if (!didWarnAboutUninitializedState.has(componentName)) {
         didWarnAboutUninitializedState.add(componentName);
-        warning(false, '%s: Did not properly initialize state during construction. ' + 'Expected state to be an object, but it was %s.', componentName, instance.state === null ? 'null' : 'undefined');
+        warningWithoutStack$1(false, '`%s` uses `getDerivedStateFromProps` but its initial state is ' + '%s. This is not recommended. Instead, define the initial state by ' + 'assigning an object to `this.state` in the constructor of `%s`. ' + 'This ensures that `getDerivedStateFromProps` arguments have a consistent shape.', componentName, instance.state === null ? 'null' : 'undefined', componentName);
       }
     }
 
@@ -13231,11 +13541,11 @@ function constructClassInstance(workInProgress, props, renderExpirationTime) {
         foundWillUpdateName = 'UNSAFE_componentWillUpdate';
       }
       if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
-        var _componentName = getComponentName(workInProgress) || 'Component';
+        var _componentName = getComponentName(ctor) || 'Component';
         var newApiName = typeof ctor.getDerivedStateFromProps === 'function' ? 'getDerivedStateFromProps()' : 'getSnapshotBeforeUpdate()';
         if (!didWarnAboutLegacyLifecyclesAndDerivedState.has(_componentName)) {
           didWarnAboutLegacyLifecyclesAndDerivedState.add(_componentName);
-          warning(false, 'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' + '%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\n' + 'The above lifecycles should be removed. Learn more about this warning here:\n' + 'https://fb.me/react-async-component-lifecycle-hooks', _componentName, newApiName, foundWillMountName !== null ? '\n  ' + foundWillMountName : '', foundWillReceivePropsName !== null ? '\n  ' + foundWillReceivePropsName : '', foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '');
+          warningWithoutStack$1(false, 'Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n' + '%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\n' + 'The above lifecycles should be removed. Learn more about this warning here:\n' + 'https://fb.me/react-async-component-lifecycle-hooks', _componentName, newApiName, foundWillMountName !== null ? '\n  ' + foundWillMountName : '', foundWillReceivePropsName !== null ? '\n  ' + foundWillReceivePropsName : '', foundWillUpdateName !== null ? '\n  ' + foundWillUpdateName : '');
         }
       }
     }
@@ -13243,7 +13553,7 @@ function constructClassInstance(workInProgress, props, renderExpirationTime) {
 
   // Cache unmasked context so we can avoid recreating masked context unless necessary.
   // ReactFiberContext usually updates this cache but can't for newly-created instances.
-  if (needsContext) {
+  if (isContextConsumer) {
     cacheContext(workInProgress, unmaskedContext, context);
   }
 
@@ -13265,29 +13575,29 @@ function callComponentWillMount(workInProgress, instance) {
 
   if (oldState !== instance.state) {
     {
-      warning(false, '%s.componentWillMount(): Assigning directly to this.state is ' + "deprecated (except inside a component's " + 'constructor). Use setState instead.', getComponentName(workInProgress) || 'Component');
+      warningWithoutStack$1(false, '%s.componentWillMount(): Assigning directly to this.state is ' + "deprecated (except inside a component's " + 'constructor). Use setState instead.', getComponentName(workInProgress.type) || 'Component');
     }
     classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
   }
 }
 
-function callComponentWillReceiveProps(workInProgress, instance, newProps, newContext) {
+function callComponentWillReceiveProps(workInProgress, instance, newProps, nextLegacyContext) {
   var oldState = instance.state;
   startPhaseTimer(workInProgress, 'componentWillReceiveProps');
   if (typeof instance.componentWillReceiveProps === 'function') {
-    instance.componentWillReceiveProps(newProps, newContext);
+    instance.componentWillReceiveProps(newProps, nextLegacyContext);
   }
   if (typeof instance.UNSAFE_componentWillReceiveProps === 'function') {
-    instance.UNSAFE_componentWillReceiveProps(newProps, newContext);
+    instance.UNSAFE_componentWillReceiveProps(newProps, nextLegacyContext);
   }
   stopPhaseTimer();
 
   if (instance.state !== oldState) {
     {
-      var componentName = getComponentName(workInProgress) || 'Component';
+      var componentName = getComponentName(workInProgress.type) || 'Component';
       if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
         didWarnAboutStateAssignmentForComponent.add(componentName);
-        warning(false, '%s.componentWillReceiveProps(): Assigning directly to ' + "this.state is deprecated (except inside a component's " + 'constructor). Use setState instead.', componentName);
+        warningWithoutStack$1(false, '%s.componentWillReceiveProps(): Assigning directly to ' + "this.state is deprecated (except inside a component's " + 'constructor). Use setState instead.', componentName);
       }
     }
     classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
@@ -13295,23 +13605,28 @@ function callComponentWillReceiveProps(workInProgress, instance, newProps, newCo
 }
 
 // Invokes the mount life-cycles on a previously never rendered instance.
-function mountClassInstance(workInProgress, renderExpirationTime) {
-  var ctor = workInProgress.type;
-
+function mountClassInstance(workInProgress, ctor, newProps, renderExpirationTime) {
   {
-    checkClassInstance(workInProgress);
+    checkClassInstance(workInProgress, ctor, newProps);
   }
 
   var instance = workInProgress.stateNode;
-  var props = workInProgress.pendingProps;
-  var unmaskedContext = getUnmaskedContext(workInProgress);
+  var unmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
 
-  instance.props = props;
+  instance.props = newProps;
   instance.state = workInProgress.memoizedState;
-  instance.refs = emptyObject;
+  instance.refs = emptyRefsObject;
   instance.context = getMaskedContext(workInProgress, unmaskedContext);
 
   {
+    if (instance.state === newProps) {
+      var componentName = getComponentName(ctor) || 'Component';
+      if (!didWarnAboutDirectlyAssigningPropsToState.has(componentName)) {
+        didWarnAboutDirectlyAssigningPropsToState.add(componentName);
+        warningWithoutStack$1(false, '%s: It is not recommended to assign props directly to state ' + "because updates to props won't be reflected in state. " + 'In most cases, it is better to use props directly.', componentName);
+      }
+    }
+
     if (workInProgress.mode & StrictMode) {
       ReactStrictModeWarnings.recordUnsafeLifecycleWarnings(workInProgress, instance);
 
@@ -13325,13 +13640,13 @@ function mountClassInstance(workInProgress, renderExpirationTime) {
 
   var updateQueue = workInProgress.updateQueue;
   if (updateQueue !== null) {
-    processUpdateQueue(workInProgress, updateQueue, props, instance, renderExpirationTime);
+    processUpdateQueue(workInProgress, updateQueue, newProps, instance, renderExpirationTime);
     instance.state = workInProgress.memoizedState;
   }
 
-  var getDerivedStateFromProps = workInProgress.type.getDerivedStateFromProps;
+  var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
   if (typeof getDerivedStateFromProps === 'function') {
-    applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, props);
+    applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromProps, newProps);
     instance.state = workInProgress.memoizedState;
   }
 
@@ -13343,7 +13658,7 @@ function mountClassInstance(workInProgress, renderExpirationTime) {
     // process them now.
     updateQueue = workInProgress.updateQueue;
     if (updateQueue !== null) {
-      processUpdateQueue(workInProgress, updateQueue, props, instance, renderExpirationTime);
+      processUpdateQueue(workInProgress, updateQueue, newProps, instance, renderExpirationTime);
       instance.state = workInProgress.memoizedState;
     }
   }
@@ -13353,17 +13668,15 @@ function mountClassInstance(workInProgress, renderExpirationTime) {
   }
 }
 
-function resumeMountClassInstance(workInProgress, renderExpirationTime) {
-  var ctor = workInProgress.type;
+function resumeMountClassInstance(workInProgress, ctor, newProps, renderExpirationTime) {
   var instance = workInProgress.stateNode;
 
   var oldProps = workInProgress.memoizedProps;
-  var newProps = workInProgress.pendingProps;
   instance.props = oldProps;
 
   var oldContext = instance.context;
-  var newUnmaskedContext = getUnmaskedContext(workInProgress);
-  var newContext = getMaskedContext(workInProgress, newUnmaskedContext);
+  var nextLegacyUnmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
+  var nextLegacyContext = getMaskedContext(workInProgress, nextLegacyUnmaskedContext);
 
   var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
   var hasNewLifecycles = typeof getDerivedStateFromProps === 'function' || typeof instance.getSnapshotBeforeUpdate === 'function';
@@ -13375,8 +13688,8 @@ function resumeMountClassInstance(workInProgress, renderExpirationTime) {
   // In order to support react-lifecycles-compat polyfilled components,
   // Unsafe lifecycles should not be invoked for components using the new APIs.
   if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === 'function' || typeof instance.componentWillReceiveProps === 'function')) {
-    if (oldProps !== newProps || oldContext !== newContext) {
-      callComponentWillReceiveProps(workInProgress, instance, newProps, newContext);
+    if (oldProps !== newProps || oldContext !== nextLegacyContext) {
+      callComponentWillReceiveProps(workInProgress, instance, newProps, nextLegacyContext);
     }
   }
 
@@ -13399,11 +13712,11 @@ function resumeMountClassInstance(workInProgress, renderExpirationTime) {
   }
 
   if (typeof getDerivedStateFromProps === 'function') {
-    applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, newProps);
+    applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromProps, newProps);
     newState = workInProgress.memoizedState;
   }
 
-  var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress, oldProps, newProps, oldState, newState, newContext);
+  var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, oldState, newState, nextLegacyContext);
 
   if (shouldUpdate) {
     // In order to support react-lifecycles-compat polyfilled components,
@@ -13438,23 +13751,21 @@ function resumeMountClassInstance(workInProgress, renderExpirationTime) {
   // if shouldComponentUpdate returns false.
   instance.props = newProps;
   instance.state = newState;
-  instance.context = newContext;
+  instance.context = nextLegacyContext;
 
   return shouldUpdate;
 }
 
 // Invokes the update life-cycles and returns false if it shouldn't rerender.
-function updateClassInstance(current, workInProgress, renderExpirationTime) {
-  var ctor = workInProgress.type;
+function updateClassInstance(current, workInProgress, ctor, newProps, renderExpirationTime) {
   var instance = workInProgress.stateNode;
 
   var oldProps = workInProgress.memoizedProps;
-  var newProps = workInProgress.pendingProps;
   instance.props = oldProps;
 
   var oldContext = instance.context;
-  var newUnmaskedContext = getUnmaskedContext(workInProgress);
-  var newContext = getMaskedContext(workInProgress, newUnmaskedContext);
+  var nextLegacyUnmaskedContext = getUnmaskedContext(workInProgress, ctor, true);
+  var nextLegacyContext = getMaskedContext(workInProgress, nextLegacyUnmaskedContext);
 
   var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
   var hasNewLifecycles = typeof getDerivedStateFromProps === 'function' || typeof instance.getSnapshotBeforeUpdate === 'function';
@@ -13466,8 +13777,8 @@ function updateClassInstance(current, workInProgress, renderExpirationTime) {
   // In order to support react-lifecycles-compat polyfilled components,
   // Unsafe lifecycles should not be invoked for components using the new APIs.
   if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === 'function' || typeof instance.componentWillReceiveProps === 'function')) {
-    if (oldProps !== newProps || oldContext !== newContext) {
-      callComponentWillReceiveProps(workInProgress, instance, newProps, newContext);
+    if (oldProps !== newProps || oldContext !== nextLegacyContext) {
+      callComponentWillReceiveProps(workInProgress, instance, newProps, nextLegacyContext);
     }
   }
 
@@ -13498,11 +13809,11 @@ function updateClassInstance(current, workInProgress, renderExpirationTime) {
   }
 
   if (typeof getDerivedStateFromProps === 'function') {
-    applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, newProps);
+    applyDerivedStateFromProps(workInProgress, ctor, getDerivedStateFromProps, newProps);
     newState = workInProgress.memoizedState;
   }
 
-  var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress, oldProps, newProps, oldState, newState, newContext);
+  var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, oldState, newState, nextLegacyContext);
 
   if (shouldUpdate) {
     // In order to support react-lifecycles-compat polyfilled components,
@@ -13510,10 +13821,10 @@ function updateClassInstance(current, workInProgress, renderExpirationTime) {
     if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillUpdate === 'function' || typeof instance.componentWillUpdate === 'function')) {
       startPhaseTimer(workInProgress, 'componentWillUpdate');
       if (typeof instance.componentWillUpdate === 'function') {
-        instance.componentWillUpdate(newProps, newState, newContext);
+        instance.componentWillUpdate(newProps, newState, nextLegacyContext);
       }
       if (typeof instance.UNSAFE_componentWillUpdate === 'function') {
-        instance.UNSAFE_componentWillUpdate(newProps, newState, newContext);
+        instance.UNSAFE_componentWillUpdate(newProps, newState, nextLegacyContext);
       }
       stopPhaseTimer();
     }
@@ -13547,15 +13858,13 @@ function updateClassInstance(current, workInProgress, renderExpirationTime) {
   // if shouldComponentUpdate returns false.
   instance.props = newProps;
   instance.state = newState;
-  instance.context = newContext;
+  instance.context = nextLegacyContext;
 
   return shouldUpdate;
 }
 
-var getCurrentFiberStackAddendum$7 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
-
-
 var didWarnAboutMaps = void 0;
+var didWarnAboutGenerators = void 0;
 var didWarnAboutStringRefInStrictMode = void 0;
 var ownerHasKeyUseWarning = void 0;
 var ownerHasFunctionTypeWarning = void 0;
@@ -13563,6 +13872,7 @@ var warnForMissingKey = function (child) {};
 
 {
   didWarnAboutMaps = false;
+  didWarnAboutGenerators = false;
   didWarnAboutStringRefInStrictMode = {};
 
   /**
@@ -13583,26 +13893,26 @@ var warnForMissingKey = function (child) {};
     !(typeof child._store === 'object') ? invariant(false, 'React Component in warnForMissingKey should have a _store. This error is likely caused by a bug in React. Please file an issue.') : void 0;
     child._store.validated = true;
 
-    var currentComponentErrorInfo = 'Each child in an array or iterator should have a unique ' + '"key" prop. See https://fb.me/react-warning-keys for ' + 'more information.' + (getCurrentFiberStackAddendum$7() || '');
+    var currentComponentErrorInfo = 'Each child in an array or iterator should have a unique ' + '"key" prop. See https://fb.me/react-warning-keys for ' + 'more information.' + getCurrentFiberStackInDev();
     if (ownerHasKeyUseWarning[currentComponentErrorInfo]) {
       return;
     }
     ownerHasKeyUseWarning[currentComponentErrorInfo] = true;
 
-    warning(false, 'Each child in an array or iterator should have a unique ' + '"key" prop. See https://fb.me/react-warning-keys for ' + 'more information.%s', getCurrentFiberStackAddendum$7());
+    warning$1(false, 'Each child in an array or iterator should have a unique ' + '"key" prop. See https://fb.me/react-warning-keys for ' + 'more information.');
   };
 }
 
 var isArray$1 = Array.isArray;
 
-function coerceRef(returnFiber, current, element) {
+function coerceRef(returnFiber, current$$1, element) {
   var mixedRef = element.ref;
   if (mixedRef !== null && typeof mixedRef !== 'function' && typeof mixedRef !== 'object') {
     {
       if (returnFiber.mode & StrictMode) {
-        var componentName = getComponentName(returnFiber) || 'Component';
+        var componentName = getComponentName(returnFiber.type) || 'Component';
         if (!didWarnAboutStringRefInStrictMode[componentName]) {
-          warning(false, 'A string ref, "%s", has been found within a strict mode tree. ' + 'String refs are a source of potential bugs and should be avoided. ' + 'We recommend using createRef() instead.' + '\n%s' + '\n\nLearn more about using refs safely here:' + '\nhttps://fb.me/react-strict-mode-string-ref', mixedRef, getStackAddendumByWorkInProgressFiber(returnFiber));
+          warningWithoutStack$1(false, 'A string ref, "%s", has been found within a strict mode tree. ' + 'String refs are a source of potential bugs and should be avoided. ' + 'We recommend using createRef() instead.' + '\n%s' + '\n\nLearn more about using refs safely here:' + '\nhttps://fb.me/react-strict-mode-string-ref', mixedRef, getStackByFiberInDevAndProd(returnFiber));
           didWarnAboutStringRefInStrictMode[componentName] = true;
         }
       }
@@ -13613,17 +13923,21 @@ function coerceRef(returnFiber, current, element) {
       var inst = void 0;
       if (owner) {
         var ownerFiber = owner;
-        !(ownerFiber.tag === ClassComponent) ? invariant(false, 'Stateless function components cannot have refs.') : void 0;
+        !(ownerFiber.tag === ClassComponent || ownerFiber.tag === ClassComponentLazy) ? invariant(false, 'Stateless function components cannot have refs.') : void 0;
         inst = ownerFiber.stateNode;
       }
       !inst ? invariant(false, 'Missing owner for string ref %s. This error is likely caused by a bug in React. Please file an issue.', mixedRef) : void 0;
       var stringRef = '' + mixedRef;
       // Check if previous string ref matches new string ref
-      if (current !== null && current.ref !== null && typeof current.ref === 'function' && current.ref._stringRef === stringRef) {
-        return current.ref;
+      if (current$$1 !== null && current$$1.ref !== null && typeof current$$1.ref === 'function' && current$$1.ref._stringRef === stringRef) {
+        return current$$1.ref;
       }
       var ref = function (value) {
-        var refs = inst.refs === emptyObject ? inst.refs = {} : inst.refs;
+        var refs = inst.refs;
+        if (refs === emptyRefsObject) {
+          // This is a lazy pooled frozen object, so we need to initialize.
+          refs = inst.refs = {};
+        }
         if (value === null) {
           delete refs[stringRef];
         } else {
@@ -13633,7 +13947,7 @@ function coerceRef(returnFiber, current, element) {
       ref._stringRef = stringRef;
       return ref;
     } else {
-      !(typeof mixedRef === 'string') ? invariant(false, 'Expected ref to be a function or a string.') : void 0;
+      !(typeof mixedRef === 'string') ? invariant(false, 'Expected ref to be a function, a string, an object returned by React.createRef(), or null.') : void 0;
       !element._owner ? invariant(false, 'Element ref was specified as a string (%s) but no owner was set. This could happen for one of the following reasons:\n1. You may be adding a ref to a functional component\n2. You may be adding a ref to a component that was not created inside a component\'s render method\n3. You have multiple copies of React loaded\nSee https://fb.me/react-refs-must-have-owner for more information.', mixedRef) : void 0;
     }
   }
@@ -13644,21 +13958,21 @@ function throwOnInvalidObjectType(returnFiber, newChild) {
   if (returnFiber.type !== 'textarea') {
     var addendum = '';
     {
-      addendum = ' If you meant to render a collection of children, use an array ' + 'instead.' + (getCurrentFiberStackAddendum$7() || '');
+      addendum = ' If you meant to render a collection of children, use an array ' + 'instead.' + getCurrentFiberStackInDev();
     }
     invariant(false, 'Objects are not valid as a React child (found: %s).%s', Object.prototype.toString.call(newChild) === '[object Object]' ? 'object with keys {' + Object.keys(newChild).join(', ') + '}' : newChild, addendum);
   }
 }
 
 function warnOnFunctionType() {
-  var currentComponentErrorInfo = 'Functions are not valid as a React child. This may happen if ' + 'you return a Component instead of <Component /> from render. ' + 'Or maybe you meant to call this function rather than return it.' + (getCurrentFiberStackAddendum$7() || '');
+  var currentComponentErrorInfo = 'Functions are not valid as a React child. This may happen if ' + 'you return a Component instead of <Component /> from render. ' + 'Or maybe you meant to call this function rather than return it.' + getCurrentFiberStackInDev();
 
   if (ownerHasFunctionTypeWarning[currentComponentErrorInfo]) {
     return;
   }
   ownerHasFunctionTypeWarning[currentComponentErrorInfo] = true;
 
-  warning(false, 'Functions are not valid as a React child. This may happen if ' + 'you return a Component instead of <Component /> from render. ' + 'Or maybe you meant to call this function rather than return it.%s', getCurrentFiberStackAddendum$7() || '');
+  warning$1(false, 'Functions are not valid as a React child. This may happen if ' + 'you return a Component instead of <Component /> from render. ' + 'Or maybe you meant to call this function rather than return it.');
 }
 
 // This wrapper function exists because I expect to clone the code in each path
@@ -13735,9 +14049,9 @@ function ChildReconciler(shouldTrackSideEffects) {
       // Noop.
       return lastPlacedIndex;
     }
-    var current = newFiber.alternate;
-    if (current !== null) {
-      var oldIndex = current.index;
+    var current$$1 = newFiber.alternate;
+    if (current$$1 !== null) {
+      var oldIndex = current$$1.index;
       if (oldIndex < lastPlacedIndex) {
         // This is a move.
         newFiber.effectTag = Placement;
@@ -13762,25 +14076,25 @@ function ChildReconciler(shouldTrackSideEffects) {
     return newFiber;
   }
 
-  function updateTextNode(returnFiber, current, textContent, expirationTime) {
-    if (current === null || current.tag !== HostText) {
+  function updateTextNode(returnFiber, current$$1, textContent, expirationTime) {
+    if (current$$1 === null || current$$1.tag !== HostText) {
       // Insert
       var created = createFiberFromText(textContent, returnFiber.mode, expirationTime);
       created.return = returnFiber;
       return created;
     } else {
       // Update
-      var existing = useFiber(current, textContent, expirationTime);
+      var existing = useFiber(current$$1, textContent, expirationTime);
       existing.return = returnFiber;
       return existing;
     }
   }
 
-  function updateElement(returnFiber, current, element, expirationTime) {
-    if (current !== null && current.type === element.type) {
+  function updateElement(returnFiber, current$$1, element, expirationTime) {
+    if (current$$1 !== null && current$$1.type === element.type) {
       // Move based on index
-      var existing = useFiber(current, element.props, expirationTime);
-      existing.ref = coerceRef(returnFiber, current, element);
+      var existing = useFiber(current$$1, element.props, expirationTime);
+      existing.ref = coerceRef(returnFiber, current$$1, element);
       existing.return = returnFiber;
       {
         existing._debugSource = element._source;
@@ -13790,35 +14104,35 @@ function ChildReconciler(shouldTrackSideEffects) {
     } else {
       // Insert
       var created = createFiberFromElement(element, returnFiber.mode, expirationTime);
-      created.ref = coerceRef(returnFiber, current, element);
+      created.ref = coerceRef(returnFiber, current$$1, element);
       created.return = returnFiber;
       return created;
     }
   }
 
-  function updatePortal(returnFiber, current, portal, expirationTime) {
-    if (current === null || current.tag !== HostPortal || current.stateNode.containerInfo !== portal.containerInfo || current.stateNode.implementation !== portal.implementation) {
+  function updatePortal(returnFiber, current$$1, portal, expirationTime) {
+    if (current$$1 === null || current$$1.tag !== HostPortal || current$$1.stateNode.containerInfo !== portal.containerInfo || current$$1.stateNode.implementation !== portal.implementation) {
       // Insert
       var created = createFiberFromPortal(portal, returnFiber.mode, expirationTime);
       created.return = returnFiber;
       return created;
     } else {
       // Update
-      var existing = useFiber(current, portal.children || [], expirationTime);
+      var existing = useFiber(current$$1, portal.children || [], expirationTime);
       existing.return = returnFiber;
       return existing;
     }
   }
 
-  function updateFragment(returnFiber, current, fragment, expirationTime, key) {
-    if (current === null || current.tag !== Fragment) {
+  function updateFragment(returnFiber, current$$1, fragment, expirationTime, key) {
+    if (current$$1 === null || current$$1.tag !== Fragment) {
       // Insert
       var created = createFiberFromFragment(fragment, returnFiber.mode, expirationTime, key);
       created.return = returnFiber;
       return created;
     } else {
       // Update
-      var existing = useFiber(current, fragment, expirationTime);
+      var existing = useFiber(current$$1, fragment, expirationTime);
       existing.return = returnFiber;
       return existing;
     }
@@ -13994,7 +14308,7 @@ function ChildReconciler(shouldTrackSideEffects) {
             knownKeys.add(key);
             break;
           }
-          warning(false, 'Encountered two children with the same key, `%s`. ' + 'Keys should be unique so that components maintain their identity ' + 'across updates. Non-unique keys may cause children to be ' + 'duplicated and/or omitted — the behavior is unsupported and ' + 'could change in a future version.%s', key, getCurrentFiberStackAddendum$7());
+          warning$1(false, 'Encountered two children with the same key, `%s`. ' + 'Keys should be unique so that components maintain their identity ' + 'across updates. Non-unique keys may cause children to be ' + 'duplicated and/or omitted — the behavior is unsupported and ' + 'could change in a future version.', key);
           break;
         default:
           break;
@@ -14150,9 +14464,18 @@ function ChildReconciler(shouldTrackSideEffects) {
     !(typeof iteratorFn === 'function') ? invariant(false, 'An object is not an iterable. This error is likely caused by a bug in React. Please file an issue.') : void 0;
 
     {
+      // We don't support rendering Generators because it's a mutation.
+      // See https://github.com/facebook/react/issues/12995
+      if (typeof Symbol === 'function' &&
+      // $FlowFixMe Flow doesn't know about toStringTag
+      newChildrenIterable[Symbol.toStringTag] === 'Generator') {
+        !didWarnAboutGenerators ? warning$1(false, 'Using Generators as children is unsupported and will likely yield ' + 'unexpected results because enumerating a generator mutates it. ' + 'You may convert it to an array with `Array.from()` or the ' + '`[...spread]` operator before rendering. Keep in mind ' + 'you might need to polyfill these features for older browsers.') : void 0;
+        didWarnAboutGenerators = true;
+      }
+
       // Warn about using Maps as children
       if (newChildrenIterable.entries === iteratorFn) {
-        !didWarnAboutMaps ? warning(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.%s', getCurrentFiberStackAddendum$7()) : void 0;
+        !didWarnAboutMaps ? warning$1(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.') : void 0;
         didWarnAboutMaps = true;
       }
 
@@ -14425,6 +14748,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       // we already threw above.
       switch (returnFiber.tag) {
         case ClassComponent:
+        case ClassComponentLazy:
           {
             {
               var instance = returnFiber.stateNode;
@@ -14455,8 +14779,8 @@ function ChildReconciler(shouldTrackSideEffects) {
 var reconcileChildFibers = ChildReconciler(true);
 var mountChildFibers = ChildReconciler(false);
 
-function cloneChildFibers(current, workInProgress) {
-  !(current === null || workInProgress.child === current.child) ? invariant(false, 'Resuming work not yet implemented.') : void 0;
+function cloneChildFibers(current$$1, workInProgress) {
+  !(current$$1 === null || workInProgress.child === current$$1.child) ? invariant(false, 'Resuming work not yet implemented.') : void 0;
 
   if (workInProgress.child === null) {
     return;
@@ -14739,8 +15063,45 @@ function resetHydrationState() {
   isHydrating = false;
 }
 
-var getCurrentFiberStackAddendum$6 = ReactDebugCurrentFiber.getCurrentFiberStackAddendum;
+function readLazyComponentType(thenable) {
+  var status = thenable._reactStatus;
+  switch (status) {
+    case Resolved:
+      var Component = thenable._reactResult;
+      return Component;
+    case Rejected:
+      throw thenable._reactResult;
+    case Pending:
+      throw thenable;
+    default:
+      {
+        thenable._reactStatus = Pending;
+        thenable.then(function (resolvedValue) {
+          if (thenable._reactStatus === Pending) {
+            thenable._reactStatus = Resolved;
+            if (typeof resolvedValue === 'object' && resolvedValue !== null) {
+              // If the `default` property is not empty, assume it's the result
+              // of an async import() and use that. Otherwise, use the
+              // resolved value itself.
+              var defaultExport = resolvedValue.default;
+              resolvedValue = defaultExport !== undefined && defaultExport !== null ? defaultExport : resolvedValue;
+            } else {
+              resolvedValue = resolvedValue;
+            }
+            thenable._reactResult = resolvedValue;
+          }
+        }, function (error) {
+          if (thenable._reactStatus === Pending) {
+            thenable._reactStatus = Rejected;
+            thenable._reactResult = error;
+          }
+        });
+        throw thenable;
+      }
+  }
+}
 
+var ReactCurrentOwner$3 = ReactSharedInternals.ReactCurrentOwner;
 
 var didWarnAboutBadClass = void 0;
 var didWarnAboutGetDerivedStateOnFunctionalComponent = void 0;
@@ -14752,13 +15113,8 @@ var didWarnAboutStatelessRefs = void 0;
   didWarnAboutStatelessRefs = {};
 }
 
-// TODO: Remove this and use reconcileChildrenAtExpirationTime directly.
-function reconcileChildren(current, workInProgress, nextChildren) {
-  reconcileChildrenAtExpirationTime(current, workInProgress, nextChildren, workInProgress.expirationTime);
-}
-
-function reconcileChildrenAtExpirationTime(current, workInProgress, nextChildren, renderExpirationTime) {
-  if (current === null) {
+function reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime) {
+  if (current$$1 === null) {
     // If this is a fresh new component that hasn't been rendered yet, we
     // won't update its child set by applying minimal side-effects. Instead,
     // we will add them all to the child before it gets rendered. That means
@@ -14771,163 +15127,140 @@ function reconcileChildrenAtExpirationTime(current, workInProgress, nextChildren
 
     // If we had any progressed work already, that is invalid at this point so
     // let's throw it out.
-    workInProgress.child = reconcileChildFibers(workInProgress, current.child, nextChildren, renderExpirationTime);
+    workInProgress.child = reconcileChildFibers(workInProgress, current$$1.child, nextChildren, renderExpirationTime);
   }
 }
 
-function updateForwardRef(current, workInProgress) {
-  var render = workInProgress.type.render;
-  var nextProps = workInProgress.pendingProps;
+function updateForwardRef(current$$1, workInProgress, type, nextProps, renderExpirationTime) {
+  var render = type.render;
   var ref = workInProgress.ref;
   if (hasContextChanged()) {
     // Normally we can bail out on props equality but if context has changed
     // we don't do the bailout and we have to reuse existing props instead.
   } else if (workInProgress.memoizedProps === nextProps) {
-    var currentRef = current !== null ? current.ref : null;
+    var currentRef = current$$1 !== null ? current$$1.ref : null;
     if (ref === currentRef) {
-      return bailoutOnAlreadyFinishedWork(current, workInProgress);
+      return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
     }
   }
 
   var nextChildren = void 0;
   {
-    ReactCurrentOwner.current = workInProgress;
-    ReactDebugCurrentFiber.setCurrentPhase('render');
+    ReactCurrentOwner$3.current = workInProgress;
+    setCurrentPhase('render');
     nextChildren = render(nextProps, ref);
-    ReactDebugCurrentFiber.setCurrentPhase(null);
+    setCurrentPhase(null);
   }
 
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextProps);
   return workInProgress.child;
 }
 
-function updateFragment(current, workInProgress) {
+function updateFragment(current$$1, workInProgress, renderExpirationTime) {
   var nextChildren = workInProgress.pendingProps;
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (workInProgress.memoizedProps === nextChildren) {
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextChildren);
   return workInProgress.child;
 }
 
-function updateMode(current, workInProgress) {
+function updateMode(current$$1, workInProgress, renderExpirationTime) {
   var nextChildren = workInProgress.pendingProps.children;
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (nextChildren === null || workInProgress.memoizedProps === nextChildren) {
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextChildren);
   return workInProgress.child;
 }
 
-function updateProfiler(current, workInProgress) {
-  var nextProps = workInProgress.pendingProps;
+function updateProfiler(current$$1, workInProgress, renderExpirationTime) {
   if (enableProfilerTimer) {
     workInProgress.effectTag |= Update;
   }
-  if (workInProgress.memoizedProps === nextProps) {
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
+  var nextProps = workInProgress.pendingProps;
   var nextChildren = nextProps.children;
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextProps);
   return workInProgress.child;
 }
 
-function markRef(current, workInProgress) {
+function markRef(current$$1, workInProgress) {
   var ref = workInProgress.ref;
-  if (current === null && ref !== null || current !== null && current.ref !== ref) {
+  if (current$$1 === null && ref !== null || current$$1 !== null && current$$1.ref !== ref) {
     // Schedule a Ref effect
     workInProgress.effectTag |= Ref;
   }
 }
 
-function updateFunctionalComponent(current, workInProgress) {
-  var fn = workInProgress.type;
-  var nextProps = workInProgress.pendingProps;
-
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else {
-    if (workInProgress.memoizedProps === nextProps) {
-      return bailoutOnAlreadyFinishedWork(current, workInProgress);
-    }
-    // TODO: consider bringing fn.shouldComponentUpdate() back.
-    // It used to be here.
-  }
-
-  var unmaskedContext = getUnmaskedContext(workInProgress);
+function updateFunctionalComponent(current$$1, workInProgress, Component, nextProps, renderExpirationTime) {
+  var unmaskedContext = getUnmaskedContext(workInProgress, Component, true);
   var context = getMaskedContext(workInProgress, unmaskedContext);
 
   var nextChildren = void 0;
-
+  prepareToReadContext(workInProgress, renderExpirationTime);
   {
-    ReactCurrentOwner.current = workInProgress;
-    ReactDebugCurrentFiber.setCurrentPhase('render');
-    nextChildren = fn(nextProps, context);
-    ReactDebugCurrentFiber.setCurrentPhase(null);
+    ReactCurrentOwner$3.current = workInProgress;
+    setCurrentPhase('render');
+    nextChildren = Component(nextProps, context);
+    setCurrentPhase(null);
   }
+
   // React DevTools reads this flag.
   workInProgress.effectTag |= PerformedWork;
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextProps);
   return workInProgress.child;
 }
 
-function updateClassComponent(current, workInProgress, renderExpirationTime) {
+function updateClassComponent(current$$1, workInProgress, Component, nextProps, renderExpirationTime) {
   // Push context providers early to prevent context stack mismatches.
   // During mounting we don't know the child context yet as the instance doesn't exist.
   // We will invalidate the child context in finishClassComponent() right after rendering.
-  var hasContext = pushContextProvider(workInProgress);
+  var hasContext = void 0;
+  if (isContextProvider(Component)) {
+    hasContext = true;
+    pushContextProvider(workInProgress);
+  } else {
+    hasContext = false;
+  }
+  prepareToReadContext(workInProgress, renderExpirationTime);
+
   var shouldUpdate = void 0;
-  if (current === null) {
+  if (current$$1 === null) {
     if (workInProgress.stateNode === null) {
       // In the initial pass we might need to construct the instance.
-      constructClassInstance(workInProgress, workInProgress.pendingProps, renderExpirationTime);
-      mountClassInstance(workInProgress, renderExpirationTime);
-
+      constructClassInstance(workInProgress, Component, nextProps, renderExpirationTime);
+      mountClassInstance(workInProgress, Component, nextProps, renderExpirationTime);
       shouldUpdate = true;
     } else {
       // In a resume, we'll already have an instance we can reuse.
-      shouldUpdate = resumeMountClassInstance(workInProgress, renderExpirationTime);
+      shouldUpdate = resumeMountClassInstance(workInProgress, Component, nextProps, renderExpirationTime);
     }
   } else {
-    shouldUpdate = updateClassInstance(current, workInProgress, renderExpirationTime);
+    shouldUpdate = updateClassInstance(current$$1, workInProgress, Component, nextProps, renderExpirationTime);
   }
-  return finishClassComponent(current, workInProgress, shouldUpdate, hasContext, renderExpirationTime);
+  return finishClassComponent(current$$1, workInProgress, Component, shouldUpdate, hasContext, renderExpirationTime);
 }
 
-function finishClassComponent(current, workInProgress, shouldUpdate, hasContext, renderExpirationTime) {
+function finishClassComponent(current$$1, workInProgress, Component, shouldUpdate, hasContext, renderExpirationTime) {
   // Refs should update even if shouldComponentUpdate returns false
-  markRef(current, workInProgress);
+  markRef(current$$1, workInProgress);
 
   var didCaptureError = (workInProgress.effectTag & DidCapture) !== NoEffect;
 
   if (!shouldUpdate && !didCaptureError) {
     // Context providers should defer to sCU for rendering
     if (hasContext) {
-      invalidateContextProvider(workInProgress, false);
+      invalidateContextProvider(workInProgress, Component, false);
     }
 
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
+    return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
   }
 
-  var ctor = workInProgress.type;
   var instance = workInProgress.stateNode;
 
   // Rerender
-  ReactCurrentOwner.current = workInProgress;
+  ReactCurrentOwner$3.current = workInProgress;
   var nextChildren = void 0;
-  if (didCaptureError && (!enableGetDerivedStateFromCatch || typeof ctor.getDerivedStateFromCatch !== 'function')) {
+  if (didCaptureError && (!enableGetDerivedStateFromCatch || typeof Component.getDerivedStateFromCatch !== 'function')) {
     // If we captured an error, but getDerivedStateFrom catch is not defined,
     // unmount all the children. componentDidCatch will schedule an update to
     // re-render a fallback. This is temporary until we migrate everyone to
@@ -14936,31 +15269,31 @@ function finishClassComponent(current, workInProgress, shouldUpdate, hasContext,
     nextChildren = null;
 
     if (enableProfilerTimer) {
-      stopBaseRenderTimerIfRunning();
+      stopProfilerTimerIfRunning(workInProgress);
     }
   } else {
     {
-      ReactDebugCurrentFiber.setCurrentPhase('render');
+      setCurrentPhase('render');
       nextChildren = instance.render();
       if (debugRenderPhaseSideEffects || debugRenderPhaseSideEffectsForStrictMode && workInProgress.mode & StrictMode) {
         instance.render();
       }
-      ReactDebugCurrentFiber.setCurrentPhase(null);
+      setCurrentPhase(null);
     }
   }
 
   // React DevTools reads this flag.
   workInProgress.effectTag |= PerformedWork;
-  if (didCaptureError) {
+  if (current$$1 !== null && didCaptureError) {
     // If we're recovering from an error, reconcile twice: first to delete
     // all the existing children.
-    reconcileChildrenAtExpirationTime(current, workInProgress, null, renderExpirationTime);
+    reconcileChildren(current$$1, workInProgress, null, renderExpirationTime);
     workInProgress.child = null;
     // Now we can continue reconciling like normal. This has the effect of
     // remounting all children regardless of whether their their
     // identity matches.
   }
-  reconcileChildrenAtExpirationTime(current, workInProgress, nextChildren, renderExpirationTime);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   // Memoize props and state using the values we just used to render.
   // TODO: Restructure so we never read values from the instance.
   memoizeState(workInProgress, instance.state);
@@ -14968,7 +15301,7 @@ function finishClassComponent(current, workInProgress, shouldUpdate, hasContext,
 
   // The context might have changed so we need to recalculate it.
   if (hasContext) {
-    invalidateContextProvider(workInProgress, true);
+    invalidateContextProvider(workInProgress, Component, true);
   }
 
   return workInProgress.child;
@@ -14985,82 +15318,60 @@ function pushHostRootContext(workInProgress) {
   pushHostContainer(workInProgress, root.containerInfo);
 }
 
-function updateHostRoot(current, workInProgress, renderExpirationTime) {
+function updateHostRoot(current$$1, workInProgress, renderExpirationTime) {
   pushHostRootContext(workInProgress);
   var updateQueue = workInProgress.updateQueue;
-  if (updateQueue !== null) {
-    var nextProps = workInProgress.pendingProps;
-    var prevState = workInProgress.memoizedState;
-    var prevChildren = prevState !== null ? prevState.element : null;
-    processUpdateQueue(workInProgress, updateQueue, nextProps, null, renderExpirationTime);
-    var nextState = workInProgress.memoizedState;
-    // Caution: React DevTools currently depends on this property
-    // being called "element".
-    var nextChildren = nextState.element;
-
-    if (nextChildren === prevChildren) {
-      // If the state is the same as before, that's a bailout because we had
-      // no work that expires at this time.
-      resetHydrationState();
-      return bailoutOnAlreadyFinishedWork(current, workInProgress);
-    }
-    var root = workInProgress.stateNode;
-    if ((current === null || current.child === null) && root.hydrate && enterHydrationState(workInProgress)) {
-      // If we don't have any current children this might be the first pass.
-      // We always try to hydrate. If this isn't a hydration pass there won't
-      // be any children to hydrate which is effectively the same thing as
-      // not hydrating.
-
-      // This is a bit of a hack. We track the host root as a placement to
-      // know that we're currently in a mounting state. That way isMounted
-      // works as expected. We must reset this before committing.
-      // TODO: Delete this when we delete isMounted and findDOMNode.
-      workInProgress.effectTag |= Placement;
-
-      // Ensure that children mount into this root without tracking
-      // side-effects. This ensures that we don't store Placement effects on
-      // nodes that will be hydrated.
-      workInProgress.child = mountChildFibers(workInProgress, null, nextChildren, renderExpirationTime);
-    } else {
-      // Otherwise reset hydration state in case we aborted and resumed another
-      // root.
-      resetHydrationState();
-      reconcileChildren(current, workInProgress, nextChildren);
-    }
-    return workInProgress.child;
+  !(updateQueue !== null) ? invariant(false, 'If the root does not have an updateQueue, we should have already bailed out. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+  var nextProps = workInProgress.pendingProps;
+  var prevState = workInProgress.memoizedState;
+  var prevChildren = prevState !== null ? prevState.element : null;
+  processUpdateQueue(workInProgress, updateQueue, nextProps, null, renderExpirationTime);
+  var nextState = workInProgress.memoizedState;
+  // Caution: React DevTools currently depends on this property
+  // being called "element".
+  var nextChildren = nextState.element;
+  if (nextChildren === prevChildren) {
+    // If the state is the same as before, that's a bailout because we had
+    // no work that expires at this time.
+    resetHydrationState();
+    return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
   }
-  resetHydrationState();
-  // If there is no update queue, that's a bailout because the root has no props.
-  return bailoutOnAlreadyFinishedWork(current, workInProgress);
+  var root = workInProgress.stateNode;
+  if ((current$$1 === null || current$$1.child === null) && root.hydrate && enterHydrationState(workInProgress)) {
+    // If we don't have any current children this might be the first pass.
+    // We always try to hydrate. If this isn't a hydration pass there won't
+    // be any children to hydrate which is effectively the same thing as
+    // not hydrating.
+
+    // This is a bit of a hack. We track the host root as a placement to
+    // know that we're currently in a mounting state. That way isMounted
+    // works as expected. We must reset this before committing.
+    // TODO: Delete this when we delete isMounted and findDOMNode.
+    workInProgress.effectTag |= Placement;
+
+    // Ensure that children mount into this root without tracking
+    // side-effects. This ensures that we don't store Placement effects on
+    // nodes that will be hydrated.
+    workInProgress.child = mountChildFibers(workInProgress, null, nextChildren, renderExpirationTime);
+  } else {
+    // Otherwise reset hydration state in case we aborted and resumed another
+    // root.
+    reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
+    resetHydrationState();
+  }
+  return workInProgress.child;
 }
 
-function updateHostComponent(current, workInProgress, renderExpirationTime) {
+function updateHostComponent(current$$1, workInProgress, renderExpirationTime) {
   pushHostContext(workInProgress);
 
-  if (current === null) {
+  if (current$$1 === null) {
     tryToClaimNextHydratableInstance(workInProgress);
   }
 
   var type = workInProgress.type;
-  var memoizedProps = workInProgress.memoizedProps;
   var nextProps = workInProgress.pendingProps;
-  var prevProps = current !== null ? current.memoizedProps : null;
-
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (memoizedProps === nextProps) {
-    var isHidden = workInProgress.mode & AsyncMode && shouldDeprioritizeSubtree(type, nextProps);
-    if (isHidden) {
-      // Before bailing out, make sure we've deprioritized a hidden component.
-      workInProgress.expirationTime = Never;
-    }
-    if (!isHidden || renderExpirationTime !== Never) {
-      return bailoutOnAlreadyFinishedWork(current, workInProgress);
-    }
-    // If we're rendering a hidden node at hidden priority, don't bailout. The
-    // parent is complete, but the children may not be.
-  }
+  var prevProps = current$$1 !== null ? current$$1.memoizedProps : null;
 
   var nextChildren = nextProps.children;
   var isDirectTextChild = shouldSetTextContent(type, nextProps);
@@ -15071,30 +15382,29 @@ function updateHostComponent(current, workInProgress, renderExpirationTime) {
     // this in the host environment that also have access to this prop. That
     // avoids allocating another HostText fiber and traversing it.
     nextChildren = null;
-  } else if (prevProps && shouldSetTextContent(type, prevProps)) {
+  } else if (prevProps !== null && shouldSetTextContent(type, prevProps)) {
     // If we're switching from a direct text child to a normal child, or to
     // empty, we need to schedule the text content to be reset.
     workInProgress.effectTag |= ContentReset;
   }
 
-  markRef(current, workInProgress);
+  markRef(current$$1, workInProgress);
 
   // Check the host config to see if the children are offscreen/hidden.
   if (renderExpirationTime !== Never && workInProgress.mode & AsyncMode && shouldDeprioritizeSubtree(type, nextProps)) {
-    // Down-prioritize the children.
+    // Schedule this fiber to re-render at offscreen priority. Then bailout.
     workInProgress.expirationTime = Never;
-    // Bailout and come back to this fiber later.
     workInProgress.memoizedProps = nextProps;
     return null;
   }
 
-  reconcileChildren(current, workInProgress, nextChildren);
+  reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
   memoizeProps(workInProgress, nextProps);
   return workInProgress.child;
 }
 
-function updateHostText(current, workInProgress) {
-  if (current === null) {
+function updateHostText(current$$1, workInProgress) {
+  if (current$$1 === null) {
     tryToClaimNextHydratableInstance(workInProgress);
   }
   var nextProps = workInProgress.pendingProps;
@@ -15104,21 +15414,64 @@ function updateHostText(current, workInProgress) {
   return null;
 }
 
-function mountIndeterminateComponent(current, workInProgress, renderExpirationTime) {
-  !(current === null) ? invariant(false, 'An indeterminate component should never have mounted. This error is likely caused by a bug in React. Please file an issue.') : void 0;
-  var fn = workInProgress.type;
+function resolveDefaultProps(Component, baseProps) {
+  if (Component && Component.defaultProps) {
+    // Resolve default props. Taken from ReactElement
+    var props = _assign({}, baseProps);
+    var defaultProps = Component.defaultProps;
+    for (var propName in defaultProps) {
+      if (props[propName] === undefined) {
+        props[propName] = defaultProps[propName];
+      }
+    }
+    return props;
+  }
+  return baseProps;
+}
+
+function mountIndeterminateComponent(current$$1, workInProgress, Component, renderExpirationTime) {
+  !(current$$1 === null) ? invariant(false, 'An indeterminate component should never have mounted. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+
   var props = workInProgress.pendingProps;
-  var unmaskedContext = getUnmaskedContext(workInProgress);
+  if (typeof Component === 'object' && Component !== null && typeof Component.then === 'function') {
+    Component = readLazyComponentType(Component);
+    var resolvedTag = workInProgress.tag = resolveLazyComponentTag(workInProgress, Component);
+    var resolvedProps = resolveDefaultProps(Component, props);
+    switch (resolvedTag) {
+      case FunctionalComponentLazy:
+        {
+          return updateFunctionalComponent(current$$1, workInProgress, Component, resolvedProps, renderExpirationTime);
+        }
+      case ClassComponentLazy:
+        {
+          return updateClassComponent(current$$1, workInProgress, Component, resolvedProps, renderExpirationTime);
+        }
+      case ForwardRefLazy:
+        {
+          return updateForwardRef(current$$1, workInProgress, Component, resolvedProps, renderExpirationTime);
+        }
+      default:
+        {
+          // This message intentionally doesn't metion ForwardRef because the
+          // fact that it's a separate type of work is an implementation detail.
+          invariant(false, 'Element type is invalid. Received a promise that resolves to: %s. Promise elements must resolve to a class or function.', Component);
+        }
+    }
+  }
+
+  var unmaskedContext = getUnmaskedContext(workInProgress, Component, false);
   var context = getMaskedContext(workInProgress, unmaskedContext);
+
+  prepareToReadContext(workInProgress, renderExpirationTime);
 
   var value = void 0;
 
   {
-    if (fn.prototype && typeof fn.prototype.render === 'function') {
-      var componentName = getComponentName(workInProgress) || 'Unknown';
+    if (Component.prototype && typeof Component.prototype.render === 'function') {
+      var componentName = getComponentName(Component) || 'Unknown';
 
       if (!didWarnAboutBadClass[componentName]) {
-        warning(false, "The <%s /> component appears to have a render method, but doesn't extend React.Component. " + 'This is likely to cause errors. Change %s to extend React.Component instead.', componentName, componentName);
+        warningWithoutStack$1(false, "The <%s /> component appears to have a render method, but doesn't extend React.Component. " + 'This is likely to cause errors. Change %s to extend React.Component instead.', componentName, componentName);
         didWarnAboutBadClass[componentName] = true;
       }
     }
@@ -15127,44 +15480,47 @@ function mountIndeterminateComponent(current, workInProgress, renderExpirationTi
       ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress, null);
     }
 
-    ReactCurrentOwner.current = workInProgress;
-    value = fn(props, context);
+    ReactCurrentOwner$3.current = workInProgress;
+    value = Component(props, context);
   }
   // React DevTools reads this flag.
   workInProgress.effectTag |= PerformedWork;
 
   if (typeof value === 'object' && value !== null && typeof value.render === 'function' && value.$$typeof === undefined) {
-    var Component = workInProgress.type;
-
     // Proceed under the assumption that this is a class instance
     workInProgress.tag = ClassComponent;
+
+    // Push context providers early to prevent context stack mismatches.
+    // During mounting we don't know the child context yet as the instance doesn't exist.
+    // We will invalidate the child context in finishClassComponent() right after rendering.
+    var hasContext = false;
+    if (isContextProvider(Component)) {
+      hasContext = true;
+      pushContextProvider(workInProgress);
+    } else {
+      hasContext = false;
+    }
 
     workInProgress.memoizedState = value.state !== null && value.state !== undefined ? value.state : null;
 
     var getDerivedStateFromProps = Component.getDerivedStateFromProps;
     if (typeof getDerivedStateFromProps === 'function') {
-      applyDerivedStateFromProps(workInProgress, getDerivedStateFromProps, props);
+      applyDerivedStateFromProps(workInProgress, Component, getDerivedStateFromProps, props);
     }
 
-    // Push context providers early to prevent context stack mismatches.
-    // During mounting we don't know the child context yet as the instance doesn't exist.
-    // We will invalidate the child context in finishClassComponent() right after rendering.
-    var hasContext = pushContextProvider(workInProgress);
     adoptClassInstance(workInProgress, value);
-    mountClassInstance(workInProgress, renderExpirationTime);
-    return finishClassComponent(current, workInProgress, true, hasContext, renderExpirationTime);
+    mountClassInstance(workInProgress, Component, props, renderExpirationTime);
+    return finishClassComponent(current$$1, workInProgress, Component, true, hasContext, renderExpirationTime);
   } else {
     // Proceed under the assumption that this is a functional component
     workInProgress.tag = FunctionalComponent;
     {
-      var _Component = workInProgress.type;
-
-      if (_Component) {
-        !!_Component.childContextTypes ? warning(false, '%s(...): childContextTypes cannot be defined on a functional component.', _Component.displayName || _Component.name || 'Component') : void 0;
+      if (Component) {
+        !!Component.childContextTypes ? warningWithoutStack$1(false, '%s(...): childContextTypes cannot be defined on a functional component.', Component.displayName || Component.name || 'Component') : void 0;
       }
       if (workInProgress.ref !== null) {
         var info = '';
-        var ownerName = ReactDebugCurrentFiber.getCurrentFiberOwnerName();
+        var ownerName = getCurrentFiberOwnerNameInDevOrNull();
         if (ownerName) {
           info += '\n\nCheck the render method of `' + ownerName + '`.';
         }
@@ -15176,66 +15532,85 @@ function mountIndeterminateComponent(current, workInProgress, renderExpirationTi
         }
         if (!didWarnAboutStatelessRefs[warningKey]) {
           didWarnAboutStatelessRefs[warningKey] = true;
-          warning(false, 'Stateless function components cannot be given refs. ' + 'Attempts to access this ref will fail.%s%s', info, ReactDebugCurrentFiber.getCurrentFiberStackAddendum());
+          warning$1(false, 'Stateless function components cannot be given refs. ' + 'Attempts to access this ref will fail.%s', info);
         }
       }
 
-      if (typeof fn.getDerivedStateFromProps === 'function') {
-        var _componentName = getComponentName(workInProgress) || 'Unknown';
+      if (typeof Component.getDerivedStateFromProps === 'function') {
+        var _componentName = getComponentName(Component) || 'Unknown';
 
         if (!didWarnAboutGetDerivedStateOnFunctionalComponent[_componentName]) {
-          warning(false, '%s: Stateless functional components do not support getDerivedStateFromProps.', _componentName);
+          warningWithoutStack$1(false, '%s: Stateless functional components do not support getDerivedStateFromProps.', _componentName);
           didWarnAboutGetDerivedStateOnFunctionalComponent[_componentName] = true;
         }
       }
     }
-    reconcileChildren(current, workInProgress, value);
+    reconcileChildren(current$$1, workInProgress, value, renderExpirationTime);
     memoizeProps(workInProgress, props);
     return workInProgress.child;
   }
 }
 
-function updateTimeoutComponent(current, workInProgress, renderExpirationTime) {
+function updatePlaceholderComponent(current$$1, workInProgress, renderExpirationTime) {
   if (enableSuspense) {
     var nextProps = workInProgress.pendingProps;
-    var prevProps = workInProgress.memoizedProps;
-
-    var prevDidTimeout = workInProgress.memoizedState;
 
     // Check if we already attempted to render the normal state. If we did,
     // and we timed out, render the placeholder state.
     var alreadyCaptured = (workInProgress.effectTag & DidCapture) === NoEffect;
-    var nextDidTimeout = !alreadyCaptured;
 
-    if (hasContextChanged()) {
-      // Normally we can bail out on props equality but if context has changed
-      // we don't do the bailout and we have to reuse existing props instead.
-    } else if (nextProps === prevProps && nextDidTimeout === prevDidTimeout) {
-      return bailoutOnAlreadyFinishedWork(current, workInProgress);
+    var nextDidTimeout = void 0;
+    if (current$$1 !== null && workInProgress.updateQueue !== null) {
+      // We're outside strict mode. Something inside this Placeholder boundary
+      // suspended during the last commit. Switch to the placholder.
+      workInProgress.updateQueue = null;
+      nextDidTimeout = true;
+      // If we're recovering from an error, reconcile twice: first to delete
+      // all the existing children.
+      reconcileChildren(current$$1, workInProgress, null, renderExpirationTime);
+      current$$1.child = null;
+      // Now we can continue reconciling like normal. This has the effect of
+      // remounting all children regardless of whether their their
+      // identity matches.
+    } else {
+      nextDidTimeout = !alreadyCaptured;
     }
 
-    var render = nextProps.children;
-    var nextChildren = render(nextDidTimeout);
+    if ((workInProgress.mode & StrictMode) !== NoEffect) {
+      if (nextDidTimeout) {
+        // If the timed-out view commits, schedule an update effect to record
+        // the committed time.
+        workInProgress.effectTag |= Update;
+      } else {
+        // The state node points to the time at which placeholder timed out.
+        // We can clear it once we switch back to the normal children.
+        workInProgress.stateNode = null;
+      }
+    }
+
+    // If the `children` prop is a function, treat it like a render prop.
+    // TODO: This is temporary until we finalize a lower level API.
+    var children = nextProps.children;
+    var nextChildren = void 0;
+    if (typeof children === 'function') {
+      nextChildren = children(nextDidTimeout);
+    } else {
+      nextChildren = nextDidTimeout ? nextProps.fallback : children;
+    }
+
     workInProgress.memoizedProps = nextProps;
     workInProgress.memoizedState = nextDidTimeout;
-    reconcileChildren(current, workInProgress, nextChildren);
+    reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
     return workInProgress.child;
   } else {
     return null;
   }
 }
 
-function updatePortalComponent(current, workInProgress, renderExpirationTime) {
+function updatePortalComponent(current$$1, workInProgress, renderExpirationTime) {
   pushHostContainer(workInProgress, workInProgress.stateNode.containerInfo);
   var nextChildren = workInProgress.pendingProps;
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (workInProgress.memoizedProps === nextChildren) {
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
-
-  if (current === null) {
+  if (current$$1 === null) {
     // Portals are special because we don't append the children during mount
     // but at commit. Therefore we need to track insertions which the normal
     // flow doesn't do during mount. This doesn't happen at the root because
@@ -15244,107 +15619,18 @@ function updatePortalComponent(current, workInProgress, renderExpirationTime) {
     workInProgress.child = reconcileChildFibers(workInProgress, null, nextChildren, renderExpirationTime);
     memoizeProps(workInProgress, nextChildren);
   } else {
-    reconcileChildren(current, workInProgress, nextChildren);
+    reconcileChildren(current$$1, workInProgress, nextChildren, renderExpirationTime);
     memoizeProps(workInProgress, nextChildren);
   }
   return workInProgress.child;
 }
 
-function propagateContextChange(workInProgress, context, changedBits, renderExpirationTime) {
-  var fiber = workInProgress.child;
-  if (fiber !== null) {
-    // Set the return pointer of the child to the work-in-progress fiber.
-    fiber.return = workInProgress;
-  }
-  while (fiber !== null) {
-    var nextFiber = void 0;
-    // Visit this fiber.
-    switch (fiber.tag) {
-      case ContextConsumer:
-        // Check if the context matches.
-        var observedBits = fiber.stateNode | 0;
-        if (fiber.type === context && (observedBits & changedBits) !== 0) {
-          // Update the expiration time of all the ancestors, including
-          // the alternates.
-          var node = fiber;
-          while (node !== null) {
-            var alternate = node.alternate;
-            if (node.expirationTime === NoWork || node.expirationTime > renderExpirationTime) {
-              node.expirationTime = renderExpirationTime;
-              if (alternate !== null && (alternate.expirationTime === NoWork || alternate.expirationTime > renderExpirationTime)) {
-                alternate.expirationTime = renderExpirationTime;
-              }
-            } else if (alternate !== null && (alternate.expirationTime === NoWork || alternate.expirationTime > renderExpirationTime)) {
-              alternate.expirationTime = renderExpirationTime;
-            } else {
-              // Neither alternate was updated, which means the rest of the
-              // ancestor path already has sufficient priority.
-              break;
-            }
-            node = node.return;
-          }
-          // Don't scan deeper than a matching consumer. When we render the
-          // consumer, we'll continue scanning from that point. This way the
-          // scanning work is time-sliced.
-          nextFiber = null;
-        } else {
-          // Traverse down.
-          nextFiber = fiber.child;
-        }
-        break;
-      case ContextProvider:
-        // Don't scan deeper if this is a matching provider
-        nextFiber = fiber.type === workInProgress.type ? null : fiber.child;
-        break;
-      default:
-        // Traverse down.
-        nextFiber = fiber.child;
-        break;
-    }
-    if (nextFiber !== null) {
-      // Set the return pointer of the child to the work-in-progress fiber.
-      nextFiber.return = fiber;
-    } else {
-      // No child. Traverse to next sibling.
-      nextFiber = fiber;
-      while (nextFiber !== null) {
-        if (nextFiber === workInProgress) {
-          // We're back to the root of this subtree. Exit.
-          nextFiber = null;
-          break;
-        }
-        var sibling = nextFiber.sibling;
-        if (sibling !== null) {
-          // Set the return pointer of the sibling to the work-in-progress fiber.
-          sibling.return = nextFiber.return;
-          nextFiber = sibling;
-          break;
-        }
-        // No more siblings. Traverse up.
-        nextFiber = nextFiber.return;
-      }
-    }
-    fiber = nextFiber;
-  }
-}
-
-function updateContextProvider(current, workInProgress, renderExpirationTime) {
+function updateContextProvider(current$$1, workInProgress, renderExpirationTime) {
   var providerType = workInProgress.type;
   var context = providerType._context;
 
   var newProps = workInProgress.pendingProps;
   var oldProps = workInProgress.memoizedProps;
-  var canBailOnProps = true;
-
-  if (hasContextChanged()) {
-    canBailOnProps = false;
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (oldProps === newProps) {
-    workInProgress.stateNode = 0;
-    pushProvider(workInProgress);
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
 
   var newValue = newProps.value;
   workInProgress.memoizedProps = newProps;
@@ -15353,120 +15639,55 @@ function updateContextProvider(current, workInProgress, renderExpirationTime) {
     var providerPropTypes = workInProgress.type.propTypes;
 
     if (providerPropTypes) {
-      checkPropTypes(providerPropTypes, newProps, 'prop', 'Context.Provider', getCurrentFiberStackAddendum$6);
+      checkPropTypes(providerPropTypes, newProps, 'prop', 'Context.Provider', getCurrentFiberStackInDev);
     }
   }
 
-  var changedBits = void 0;
-  if (oldProps === null) {
-    // Initial render
-    changedBits = MAX_SIGNED_31_BIT_INT;
-  } else {
-    if (oldProps.value === newProps.value) {
+  pushProvider(workInProgress, newValue);
+
+  if (oldProps !== null) {
+    var oldValue = oldProps.value;
+    var changedBits = calculateChangedBits(context, newValue, oldValue);
+    if (changedBits === 0) {
       // No change. Bailout early if children are the same.
-      if (oldProps.children === newProps.children && canBailOnProps) {
-        workInProgress.stateNode = 0;
-        pushProvider(workInProgress);
-        return bailoutOnAlreadyFinishedWork(current, workInProgress);
+      if (oldProps.children === newProps.children && !hasContextChanged()) {
+        return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
       }
-      changedBits = 0;
     } else {
-      var oldValue = oldProps.value;
-      // Use Object.is to compare the new context value to the old value.
-      // Inlined Object.is polyfill.
-      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-      if (oldValue === newValue && (oldValue !== 0 || 1 / oldValue === 1 / newValue) || oldValue !== oldValue && newValue !== newValue // eslint-disable-line no-self-compare
-      ) {
-          // No change. Bailout early if children are the same.
-          if (oldProps.children === newProps.children && canBailOnProps) {
-            workInProgress.stateNode = 0;
-            pushProvider(workInProgress);
-            return bailoutOnAlreadyFinishedWork(current, workInProgress);
-          }
-          changedBits = 0;
-        } else {
-        changedBits = typeof context._calculateChangedBits === 'function' ? context._calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-        {
-          !((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits) ? warning(false, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: %s', changedBits) : void 0;
-        }
-        changedBits |= 0;
-
-        if (changedBits === 0) {
-          // No change. Bailout early if children are the same.
-          if (oldProps.children === newProps.children && canBailOnProps) {
-            workInProgress.stateNode = 0;
-            pushProvider(workInProgress);
-            return bailoutOnAlreadyFinishedWork(current, workInProgress);
-          }
-        } else {
-          propagateContextChange(workInProgress, context, changedBits, renderExpirationTime);
-        }
-      }
+      // The context value changed. Search for matching consumers and schedule
+      // them to update.
+      propagateContextChange(workInProgress, context, changedBits, renderExpirationTime);
     }
   }
-
-  workInProgress.stateNode = changedBits;
-  pushProvider(workInProgress);
 
   var newChildren = newProps.children;
-  reconcileChildren(current, workInProgress, newChildren);
+  reconcileChildren(current$$1, workInProgress, newChildren, renderExpirationTime);
   return workInProgress.child;
 }
 
-function updateContextConsumer(current, workInProgress, renderExpirationTime) {
+function updateContextConsumer(current$$1, workInProgress, renderExpirationTime) {
   var context = workInProgress.type;
   var newProps = workInProgress.pendingProps;
-  var oldProps = workInProgress.memoizedProps;
-
-  var newValue = getContextCurrentValue(context);
-  var changedBits = getContextChangedBits(context);
-
-  if (hasContextChanged()) {
-    // Normally we can bail out on props equality but if context has changed
-    // we don't do the bailout and we have to reuse existing props instead.
-  } else if (changedBits === 0 && oldProps === newProps) {
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
-  workInProgress.memoizedProps = newProps;
-
-  var observedBits = newProps.unstable_observedBits;
-  if (observedBits === undefined || observedBits === null) {
-    // Subscribe to all changes by default
-    observedBits = MAX_SIGNED_31_BIT_INT;
-  }
-  // Store the observedBits on the fiber's stateNode for quick access.
-  workInProgress.stateNode = observedBits;
-
-  if ((changedBits & observedBits) !== 0) {
-    // Context change propagation stops at matching consumers, for time-
-    // slicing. Continue the propagation here.
-    propagateContextChange(workInProgress, context, changedBits, renderExpirationTime);
-  } else if (oldProps === newProps) {
-    // Skip over a memoized parent with a bitmask bailout even
-    // if we began working on it because of a deeper matching child.
-    return bailoutOnAlreadyFinishedWork(current, workInProgress);
-  }
-  // There is no bailout on `children` equality because we expect people
-  // to often pass a bound method as a child, but it may reference
-  // `this.state` or `this.props` (and thus needs to re-render on `setState`).
-
   var render = newProps.children;
 
   {
-    !(typeof render === 'function') ? warning(false, 'A context consumer was rendered with multiple children, or a child ' + "that isn't a function. A context consumer expects a single child " + 'that is a function. If you did pass a function, make sure there ' + 'is no trailing or leading whitespace around it.') : void 0;
+    !(typeof render === 'function') ? warningWithoutStack$1(false, 'A context consumer was rendered with multiple children, or a child ' + "that isn't a function. A context consumer expects a single child " + 'that is a function. If you did pass a function, make sure there ' + 'is no trailing or leading whitespace around it.') : void 0;
   }
 
+  prepareToReadContext(workInProgress, renderExpirationTime);
+  var newValue = readContext(context, newProps.unstable_observedBits);
   var newChildren = void 0;
   {
-    ReactCurrentOwner.current = workInProgress;
-    ReactDebugCurrentFiber.setCurrentPhase('render');
+    ReactCurrentOwner$3.current = workInProgress;
+    setCurrentPhase('render');
     newChildren = render(newValue);
-    ReactDebugCurrentFiber.setCurrentPhase(null);
+    setCurrentPhase(null);
   }
 
   // React DevTools reads this flag.
   workInProgress.effectTag |= PerformedWork;
-  reconcileChildren(current, workInProgress, newChildren);
+  reconcileChildren(current$$1, workInProgress, newChildren, renderExpirationTime);
+  workInProgress.memoizedProps = newProps;
   return workInProgress.child;
 }
 
@@ -15489,59 +15710,32 @@ function updateContextConsumer(current, workInProgress, renderExpirationTime) {
   }
   */
 
-function bailoutOnAlreadyFinishedWork(current, workInProgress) {
+function bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime) {
   cancelWorkTimer(workInProgress);
+
+  if (current$$1 !== null) {
+    // Reuse previous context list
+    workInProgress.firstContextDependency = current$$1.firstContextDependency;
+  }
 
   if (enableProfilerTimer) {
     // Don't update "base" render times for bailouts.
-    stopBaseRenderTimerIfRunning();
+    stopProfilerTimerIfRunning(workInProgress);
   }
 
-  // TODO: We should ideally be able to bail out early if the children have no
-  // more work to do. However, since we don't have a separation of this
-  // Fiber's priority and its children yet - we don't know without doing lots
-  // of the same work we do anyway. Once we have that separation we can just
-  // bail out here if the children has no more work at this priority level.
-  // if (workInProgress.priorityOfChildren <= priorityLevel) {
-  //   // If there are side-effects in these children that have not yet been
-  //   // committed we need to ensure that they get properly transferred up.
-  //   if (current && current.child !== workInProgress.child) {
-  //     reuseChildrenEffects(workInProgress, child);
-  //   }
-  //   return null;
-  // }
-
-  cloneChildFibers(current, workInProgress);
-  return workInProgress.child;
-}
-
-function bailoutOnLowPriority(current, workInProgress) {
-  cancelWorkTimer(workInProgress);
-
-  if (enableProfilerTimer) {
-    // Don't update "base" render times for bailouts.
-    stopBaseRenderTimerIfRunning();
+  // Check if the children have any pending work.
+  var childExpirationTime = workInProgress.childExpirationTime;
+  if (childExpirationTime === NoWork || childExpirationTime > renderExpirationTime) {
+    // The children don't have any work either. We can skip them.
+    // TODO: Once we add back resuming, we should check if the children are
+    // a work-in-progress set. If so, we need to transfer their effects.
+    return null;
+  } else {
+    // This fiber doesn't have work, but its subtree does. Clone the child
+    // fibers and continue.
+    cloneChildFibers(current$$1, workInProgress);
+    return workInProgress.child;
   }
-
-  // TODO: Handle HostComponent tags here as well and call pushHostContext()?
-  // See PR 8590 discussion for context
-  switch (workInProgress.tag) {
-    case HostRoot:
-      pushHostRootContext(workInProgress);
-      break;
-    case ClassComponent:
-      pushContextProvider(workInProgress);
-      break;
-    case HostPortal:
-      pushHostContainer(workInProgress, workInProgress.stateNode.containerInfo);
-      break;
-    case ContextProvider:
-      pushProvider(workInProgress);
-      break;
-  }
-  // TODO: What if this is currently in progress?
-  // How can that happen? How is this not being cloned?
-  return null;
 }
 
 // TODO: Delete memoizeProps/State and move to reconcile/bailout instead
@@ -15555,46 +15749,126 @@ function memoizeState(workInProgress, nextState) {
   // is handled by processUpdateQueue.
 }
 
-function beginWork(current, workInProgress, renderExpirationTime) {
-  if (enableProfilerTimer) {
-    if (workInProgress.mode & ProfileMode) {
-      markActualRenderTimeStarted(workInProgress);
+function beginWork(current$$1, workInProgress, renderExpirationTime) {
+  var updateExpirationTime = workInProgress.expirationTime;
+  if (!hasContextChanged() && (updateExpirationTime === NoWork || updateExpirationTime > renderExpirationTime)) {
+    // This fiber does not have any pending work. Bailout without entering
+    // the begin phase. There's still some bookkeeping we that needs to be done
+    // in this optimized path, mostly pushing stuff onto the stack.
+    switch (workInProgress.tag) {
+      case HostRoot:
+        pushHostRootContext(workInProgress);
+        resetHydrationState();
+        break;
+      case HostComponent:
+        pushHostContext(workInProgress);
+        break;
+      case ClassComponent:
+        {
+          var Component = workInProgress.type;
+          if (isContextProvider(Component)) {
+            pushContextProvider(workInProgress);
+          }
+          break;
+        }
+      case ClassComponentLazy:
+        {
+          var thenable = workInProgress.type;
+          var _Component = getResultFromResolvedThenable(thenable);
+          if (isContextProvider(_Component)) {
+            pushContextProvider(workInProgress);
+          }
+          break;
+        }
+      case HostPortal:
+        pushHostContainer(workInProgress, workInProgress.stateNode.containerInfo);
+        break;
+      case ContextProvider:
+        {
+          var newValue = workInProgress.memoizedProps.value;
+          pushProvider(workInProgress, newValue);
+          break;
+        }
+      case Profiler:
+        if (enableProfilerTimer) {
+          workInProgress.effectTag |= Update;
+        }
+        break;
     }
+    return bailoutOnAlreadyFinishedWork(current$$1, workInProgress, renderExpirationTime);
   }
 
-  if (workInProgress.expirationTime === NoWork || workInProgress.expirationTime > renderExpirationTime) {
-    return bailoutOnLowPriority(current, workInProgress);
-  }
+  // Before entering the begin phase, clear the expiration time.
+  workInProgress.expirationTime = NoWork;
 
   switch (workInProgress.tag) {
     case IndeterminateComponent:
-      return mountIndeterminateComponent(current, workInProgress, renderExpirationTime);
+      {
+        var _Component3 = workInProgress.type;
+        return mountIndeterminateComponent(current$$1, workInProgress, _Component3, renderExpirationTime);
+      }
     case FunctionalComponent:
-      return updateFunctionalComponent(current, workInProgress);
+      {
+        var _Component4 = workInProgress.type;
+        var _unresolvedProps = workInProgress.pendingProps;
+        return updateFunctionalComponent(current$$1, workInProgress, _Component4, _unresolvedProps, renderExpirationTime);
+      }
+    case FunctionalComponentLazy:
+      {
+        var _thenable2 = workInProgress.type;
+        var _Component5 = getResultFromResolvedThenable(_thenable2);
+        var _unresolvedProps2 = workInProgress.pendingProps;
+        var _child = updateFunctionalComponent(current$$1, workInProgress, _Component5, resolveDefaultProps(_Component5, _unresolvedProps2), renderExpirationTime);
+        workInProgress.memoizedProps = _unresolvedProps2;
+        return _child;
+      }
     case ClassComponent:
-      return updateClassComponent(current, workInProgress, renderExpirationTime);
+      {
+        var _Component6 = workInProgress.type;
+        var _unresolvedProps3 = workInProgress.pendingProps;
+        return updateClassComponent(current$$1, workInProgress, _Component6, _unresolvedProps3, renderExpirationTime);
+      }
+    case ClassComponentLazy:
+      {
+        var _thenable3 = workInProgress.type;
+        var _Component7 = getResultFromResolvedThenable(_thenable3);
+        var _unresolvedProps4 = workInProgress.pendingProps;
+        var _child2 = updateClassComponent(current$$1, workInProgress, _Component7, resolveDefaultProps(_Component7, _unresolvedProps4), renderExpirationTime);
+        workInProgress.memoizedProps = _unresolvedProps4;
+        return _child2;
+      }
     case HostRoot:
-      return updateHostRoot(current, workInProgress, renderExpirationTime);
+      return updateHostRoot(current$$1, workInProgress, renderExpirationTime);
     case HostComponent:
-      return updateHostComponent(current, workInProgress, renderExpirationTime);
+      return updateHostComponent(current$$1, workInProgress, renderExpirationTime);
     case HostText:
-      return updateHostText(current, workInProgress);
-    case TimeoutComponent:
-      return updateTimeoutComponent(current, workInProgress, renderExpirationTime);
+      return updateHostText(current$$1, workInProgress);
+    case PlaceholderComponent:
+      return updatePlaceholderComponent(current$$1, workInProgress, renderExpirationTime);
     case HostPortal:
-      return updatePortalComponent(current, workInProgress, renderExpirationTime);
+      return updatePortalComponent(current$$1, workInProgress, renderExpirationTime);
     case ForwardRef:
-      return updateForwardRef(current, workInProgress);
+      {
+        var type = workInProgress.type;
+        return updateForwardRef(current$$1, workInProgress, type, workInProgress.pendingProps, renderExpirationTime);
+      }
+    case ForwardRefLazy:
+      var _thenable = workInProgress.type;
+      var _Component2 = getResultFromResolvedThenable(_thenable);
+      var unresolvedProps = workInProgress.pendingProps;
+      var child = updateForwardRef(current$$1, workInProgress, _Component2, resolveDefaultProps(_Component2, unresolvedProps), renderExpirationTime);
+      workInProgress.memoizedProps = unresolvedProps;
+      return child;
     case Fragment:
-      return updateFragment(current, workInProgress);
+      return updateFragment(current$$1, workInProgress, renderExpirationTime);
     case Mode:
-      return updateMode(current, workInProgress);
+      return updateMode(current$$1, workInProgress, renderExpirationTime);
     case Profiler:
-      return updateProfiler(current, workInProgress);
+      return updateProfiler(current$$1, workInProgress, renderExpirationTime);
     case ContextProvider:
-      return updateContextProvider(current, workInProgress, renderExpirationTime);
+      return updateContextProvider(current$$1, workInProgress, renderExpirationTime);
     case ContextConsumer:
-      return updateContextConsumer(current, workInProgress, renderExpirationTime);
+      return updateContextConsumer(current$$1, workInProgress, renderExpirationTime);
     default:
       invariant(false, 'Unknown unit of work tag. This error is likely caused by a bug in React. Please file an issue.');
   }
@@ -15767,20 +16041,25 @@ if (supportsMutation) {
 function completeWork(current, workInProgress, renderExpirationTime) {
   var newProps = workInProgress.pendingProps;
 
-  if (enableProfilerTimer) {
-    if (workInProgress.mode & ProfileMode) {
-      recordElapsedActualRenderTime(workInProgress);
-    }
-  }
-
   switch (workInProgress.tag) {
     case FunctionalComponent:
-      return null;
+    case FunctionalComponentLazy:
+      break;
     case ClassComponent:
       {
-        // We are leaving this subtree, so pop context if any.
-        popContextProvider(workInProgress);
-        return null;
+        var Component = workInProgress.type;
+        if (isContextProvider(Component)) {
+          popContext(workInProgress);
+        }
+        break;
+      }
+    case ClassComponentLazy:
+      {
+        var _Component = getResultFromResolvedThenable(workInProgress.type);
+        if (isContextProvider(_Component)) {
+          popContext(workInProgress);
+        }
+        break;
       }
     case HostRoot:
       {
@@ -15800,7 +16079,7 @@ function completeWork(current, workInProgress, renderExpirationTime) {
           workInProgress.effectTag &= ~Placement;
         }
         updateHostContainer(workInProgress);
-        return null;
+        break;
       }
     case HostComponent:
       {
@@ -15811,18 +16090,19 @@ function completeWork(current, workInProgress, renderExpirationTime) {
           // If we have an alternate, that means this is an update and we need to
           // schedule a side-effect to do the updates.
           var oldProps = current.memoizedProps;
-          // If we get updated because one of our children updated, we don't
-          // have newProps so we'll have to reuse them.
-          // TODO: Split the update API as separate for the props vs. children.
-          // Even better would be if children weren't special cased at all tho.
-          var instance = workInProgress.stateNode;
-          var currentHostContext = getHostContext();
-          // TODO: Experiencing an error where oldProps is null. Suggests a host
-          // component is hitting the resume path. Figure out why. Possibly
-          // related to `hidden`.
-          var updatePayload = prepareUpdate(instance, type, oldProps, newProps, rootContainerInstance, currentHostContext);
+          if (oldProps !== newProps) {
+            // If we get updated because one of our children updated, we don't
+            // have newProps so we'll have to reuse them.
+            // TODO: Split the update API as separate for the props vs. children.
+            var instance = workInProgress.stateNode;
+            var currentHostContext = getHostContext();
+            // TODO: Experiencing an error where oldProps is null. Suggests a host
+            // component is hitting the resume path. Figure out why. Possibly
+            // related to `hidden`.
+            var updatePayload = prepareUpdate(instance, type, oldProps, newProps, rootContainerInstance, currentHostContext);
 
-          updateHostComponent$1(current, workInProgress, updatePayload, type, oldProps, newProps, rootContainerInstance, currentHostContext);
+            updateHostComponent$1(current, workInProgress, updatePayload, type, oldProps, newProps, rootContainerInstance, currentHostContext);
+          }
 
           if (current.ref !== workInProgress.ref) {
             markRef$1(workInProgress);
@@ -15831,7 +16111,7 @@ function completeWork(current, workInProgress, renderExpirationTime) {
           if (!newProps) {
             !(workInProgress.stateNode !== null) ? invariant(false, 'We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.') : void 0;
             // This can happen when we abort work.
-            return null;
+            break;
           }
 
           var _currentHostContext = getHostContext();
@@ -15867,7 +16147,7 @@ function completeWork(current, workInProgress, renderExpirationTime) {
             markRef$1(workInProgress);
           }
         }
-        return null;
+        break;
       }
     case HostText:
       {
@@ -15881,7 +16161,6 @@ function completeWork(current, workInProgress, renderExpirationTime) {
           if (typeof newText !== 'string') {
             !(workInProgress.stateNode !== null) ? invariant(false, 'We must have new props for new mounts. This error is likely caused by a bug in React. Please file an issue.') : void 0;
             // This can happen when we abort work.
-            return null;
           }
           var _rootContainerInstance = getRootHostContainer();
           var _currentHostContext2 = getHostContext();
@@ -15894,28 +16173,29 @@ function completeWork(current, workInProgress, renderExpirationTime) {
             workInProgress.stateNode = createTextInstance(newText, _rootContainerInstance, _currentHostContext2, workInProgress);
           }
         }
-        return null;
+        break;
       }
     case ForwardRef:
-      return null;
-    case TimeoutComponent:
-      return null;
+    case ForwardRefLazy:
+      break;
+    case PlaceholderComponent:
+      break;
     case Fragment:
-      return null;
+      break;
     case Mode:
-      return null;
+      break;
     case Profiler:
-      return null;
+      break;
     case HostPortal:
       popHostContainer(workInProgress);
       updateHostContainer(workInProgress);
-      return null;
+      break;
     case ContextProvider:
       // Pop provider fiber
       popProvider(workInProgress);
-      return null;
+      break;
     case ContextConsumer:
-      return null;
+      break;
     // Error cases
     case IndeterminateComponent:
       invariant(false, 'An indeterminate component should have become determinate before completing. This error is likely caused by a bug in React. Please file an issue.');
@@ -15923,6 +16203,8 @@ function completeWork(current, workInProgress, renderExpirationTime) {
     default:
       invariant(false, 'Unknown unit of work tag. This error is likely caused by a bug in React. Please file an issue.');
   }
+
+  return null;
 }
 
 // This module is forked in different environments.
@@ -15942,11 +16224,6 @@ function logCapturedError(capturedError) {
   }
 
   var error = capturedError.error;
-  var suppressLogging = error && error.suppressReactErrorLogging;
-  if (suppressLogging) {
-    return;
-  }
-
   {
     var componentName = capturedError.componentName,
         componentStack = capturedError.componentStack,
@@ -15954,6 +16231,25 @@ function logCapturedError(capturedError) {
         errorBoundaryFound = capturedError.errorBoundaryFound,
         willRetry = capturedError.willRetry;
 
+    // Browsers support silencing uncaught errors by calling
+    // `preventDefault()` in window `error` handler.
+    // We record this information as an expando on the error.
+
+    if (error != null && error._suppressLogging) {
+      if (errorBoundaryFound && willRetry) {
+        // The error is recoverable and was silenced.
+        // Ignore it and don't print the stack addendum.
+        // This is handy for testing error boundaries without noise.
+        return;
+      }
+      // The error is fatal. Since the silencing might have
+      // been accidental, we'll surface it anyway.
+      // However, the browser would have silenced the original error
+      // so we'll print it first, and then print the stack addendum.
+      console.error(error);
+      // For a more detailed description of this block, see:
+      // https://github.com/facebook/react/pull/13384
+    }
 
     var componentNameMessage = componentName ? 'The above error occurred in the <' + componentName + '> component:' : 'The above error occurred in one of your React components:';
 
@@ -15978,10 +16274,7 @@ function logCapturedError(capturedError) {
   }
 }
 
-var invokeGuardedCallback$3 = ReactErrorUtils.invokeGuardedCallback;
-var hasCaughtError$1 = ReactErrorUtils.hasCaughtError;
-var clearCaughtError$1 = ReactErrorUtils.clearCaughtError;
-
+var emptyObject = {};
 
 var didWarnAboutUndefinedSnapshotBeforeUpdate = null;
 {
@@ -15992,11 +16285,11 @@ function logError(boundary, errorInfo) {
   var source = errorInfo.source;
   var stack = errorInfo.stack;
   if (stack === null && source !== null) {
-    stack = getStackAddendumByWorkInProgressFiber(source);
+    stack = getStackByFiberInDevAndProd(source);
   }
 
   var capturedError = {
-    componentName: source !== null ? getComponentName(source) : null,
+    componentName: source !== null ? getComponentName(source.type) : null,
     componentStack: stack !== null ? stack : '',
     error: errorInfo.value,
     errorBoundary: null,
@@ -16007,7 +16300,7 @@ function logError(boundary, errorInfo) {
 
   if (boundary !== null && boundary.tag === ClassComponent) {
     capturedError.errorBoundary = boundary.stateNode;
-    capturedError.errorBoundaryName = getComponentName(boundary);
+    capturedError.errorBoundaryName = getComponentName(boundary.type);
     capturedError.errorBoundaryFound = true;
     capturedError.willRetry = true;
   }
@@ -16015,43 +16308,44 @@ function logError(boundary, errorInfo) {
   try {
     logCapturedError(capturedError);
   } catch (e) {
-    // Prevent cycle if logCapturedError() throws.
-    // A cycle may still occur if logCapturedError renders a component that throws.
-    var suppressLogging = e && e.suppressReactErrorLogging;
-    if (!suppressLogging) {
-      console.error(e);
-    }
+    // This method must not throw, or React internal state will get messed up.
+    // If console.error is overridden, or logCapturedError() shows a dialog that throws,
+    // we want to report this error outside of the normal stack as a last resort.
+    // https://github.com/facebook/react/issues/13188
+    setTimeout(function () {
+      throw e;
+    });
   }
 }
 
-var callComponentWillUnmountWithTimer = function (current, instance) {
-  startPhaseTimer(current, 'componentWillUnmount');
-  instance.props = current.memoizedProps;
-  instance.state = current.memoizedState;
+var callComponentWillUnmountWithTimer = function (current$$1, instance) {
+  startPhaseTimer(current$$1, 'componentWillUnmount');
+  instance.props = current$$1.memoizedProps;
+  instance.state = current$$1.memoizedState;
   instance.componentWillUnmount();
   stopPhaseTimer();
 };
 
 // Capture errors so they don't interrupt unmounting.
-function safelyCallComponentWillUnmount(current, instance) {
+function safelyCallComponentWillUnmount(current$$1, instance) {
   {
-    invokeGuardedCallback$3(null, callComponentWillUnmountWithTimer, null, current, instance);
-    if (hasCaughtError$1()) {
-      var unmountError = clearCaughtError$1();
-      captureCommitPhaseError(current, unmountError);
+    invokeGuardedCallback(null, callComponentWillUnmountWithTimer, null, current$$1, instance);
+    if (hasCaughtError()) {
+      var unmountError = clearCaughtError();
+      captureCommitPhaseError(current$$1, unmountError);
     }
   }
 }
 
-function safelyDetachRef(current) {
-  var ref = current.ref;
+function safelyDetachRef(current$$1) {
+  var ref = current$$1.ref;
   if (ref !== null) {
     if (typeof ref === 'function') {
       {
-        invokeGuardedCallback$3(null, ref, null, null);
-        if (hasCaughtError$1()) {
-          var refError = clearCaughtError$1();
-          captureCommitPhaseError(current, refError);
+        invokeGuardedCallback(null, ref, null, null);
+        if (hasCaughtError()) {
+          var refError = clearCaughtError();
+          captureCommitPhaseError(current$$1, refError);
         }
       }
     } else {
@@ -16060,14 +16354,15 @@ function safelyDetachRef(current) {
   }
 }
 
-function commitBeforeMutationLifeCycles(current, finishedWork) {
+function commitBeforeMutationLifeCycles(current$$1, finishedWork) {
   switch (finishedWork.tag) {
     case ClassComponent:
+    case ClassComponentLazy:
       {
         if (finishedWork.effectTag & Snapshot) {
-          if (current !== null) {
-            var prevProps = current.memoizedProps;
-            var prevState = current.memoizedState;
+          if (current$$1 !== null) {
+            var prevProps = current$$1.memoizedProps;
+            var prevState = current$$1.memoizedState;
             startPhaseTimer(finishedWork, 'getSnapshotBeforeUpdate');
             var instance = finishedWork.stateNode;
             instance.props = finishedWork.memoizedProps;
@@ -16077,7 +16372,7 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
               var didWarnSet = didWarnAboutUndefinedSnapshotBeforeUpdate;
               if (snapshot === undefined && !didWarnSet.has(finishedWork.type)) {
                 didWarnSet.add(finishedWork.type);
-                warning(false, '%s.getSnapshotBeforeUpdate(): A snapshot value (or null) ' + 'must be returned. You have returned undefined.', getComponentName(finishedWork));
+                warningWithoutStack$1(false, '%s.getSnapshotBeforeUpdate(): A snapshot value (or null) ' + 'must be returned. You have returned undefined.', getComponentName(finishedWork.type));
               }
             }
             instance.__reactInternalSnapshotBeforeUpdate = snapshot;
@@ -16099,21 +16394,22 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
   }
 }
 
-function commitLifeCycles(finishedRoot, current, finishedWork, currentTime, committedExpirationTime) {
+function commitLifeCycles(finishedRoot, current$$1, finishedWork, committedExpirationTime) {
   switch (finishedWork.tag) {
     case ClassComponent:
+    case ClassComponentLazy:
       {
         var instance = finishedWork.stateNode;
         if (finishedWork.effectTag & Update) {
-          if (current === null) {
+          if (current$$1 === null) {
             startPhaseTimer(finishedWork, 'componentDidMount');
             instance.props = finishedWork.memoizedProps;
             instance.state = finishedWork.memoizedState;
             instance.componentDidMount();
             stopPhaseTimer();
           } else {
-            var prevProps = current.memoizedProps;
-            var prevState = current.memoizedState;
+            var prevProps = current$$1.memoizedProps;
+            var prevState = current$$1.memoizedState;
             startPhaseTimer(finishedWork, 'componentDidUpdate');
             instance.props = finishedWork.memoizedProps;
             instance.state = finishedWork.memoizedState;
@@ -16140,6 +16436,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, currentTime, comm
                 _instance = getPublicInstance(finishedWork.child.stateNode);
                 break;
               case ClassComponent:
+              case ClassComponentLazy:
                 _instance = finishedWork.child.stateNode;
                 break;
             }
@@ -16156,7 +16453,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, currentTime, comm
         // (eg DOM renderer may schedule auto-focus for inputs and form controls).
         // These effects should only be committed when components are first mounted,
         // aka when there is no current/alternate.
-        if (current === null && finishedWork.effectTag & Update) {
+        if (current$$1 === null && finishedWork.effectTag & Update) {
           var type = finishedWork.type;
           var props = finishedWork.memoizedProps;
           commitMount(_instance2, type, props, finishedWork);
@@ -16176,12 +16473,35 @@ function commitLifeCycles(finishedRoot, current, finishedWork, currentTime, comm
       }
     case Profiler:
       {
-        // We have no life-cycles associated with Profiler.
+        if (enableProfilerTimer) {
+          var onRender = finishedWork.memoizedProps.onRender;
+
+          if (enableSchedulerTracking) {
+            onRender(finishedWork.memoizedProps.id, current$$1 === null ? 'mount' : 'update', finishedWork.actualDuration, finishedWork.treeBaseDuration, finishedWork.actualStartTime, getCommitTime(), finishedRoot.memoizedInteractions);
+          } else {
+            onRender(finishedWork.memoizedProps.id, current$$1 === null ? 'mount' : 'update', finishedWork.actualDuration, finishedWork.treeBaseDuration, finishedWork.actualStartTime, getCommitTime());
+          }
+        }
         return;
       }
-    case TimeoutComponent:
+    case PlaceholderComponent:
       {
-        // We have no life-cycles associated with Timeouts.
+        if (enableSuspense) {
+          if ((finishedWork.mode & StrictMode) === NoEffect) {
+            // In loose mode, a placeholder times out by scheduling a synchronous
+            // update in the commit phase. Use `updateQueue` field to signal that
+            // the Timeout needs to switch to the placeholder. We don't need an
+            // entire queue. Any non-null value works.
+            // $FlowFixMe - Intentionally using a value other than an UpdateQueue.
+            finishedWork.updateQueue = emptyObject;
+            scheduleWork(finishedWork, Sync);
+          } else {
+            // In strict mode, the Update effect is used to record the time at
+            // which the placeholder timed out.
+            var currentTime = requestCurrentTime();
+            finishedWork.stateNode = { timedOutAt: currentTime };
+          }
+        }
         return;
       }
     default:
@@ -16208,7 +16528,7 @@ function commitAttachRef(finishedWork) {
     } else {
       {
         if (!ref.hasOwnProperty('current')) {
-          warning(false, 'Unexpected ref object provided for %s. ' + 'Use either a ref-setter function or React.createRef().%s', getComponentName(finishedWork), getStackAddendumByWorkInProgressFiber(finishedWork));
+          warningWithoutStack$1(false, 'Unexpected ref object provided for %s. ' + 'Use either a ref-setter function or React.createRef().%s', getComponentName(finishedWork.type), getStackByFiberInDevAndProd(finishedWork));
         }
       }
 
@@ -16217,8 +16537,8 @@ function commitAttachRef(finishedWork) {
   }
 }
 
-function commitDetachRef(current) {
-  var currentRef = current.ref;
+function commitDetachRef(current$$1) {
+  var currentRef = current$$1.ref;
   if (currentRef !== null) {
     if (typeof currentRef === 'function') {
       currentRef(null);
@@ -16231,24 +16551,23 @@ function commitDetachRef(current) {
 // User-originating errors (lifecycles and refs) should not interrupt
 // deletion, so don't let them throw. Host-originating errors should
 // interrupt deletion, so it's okay
-function commitUnmount(current) {
-  if (typeof onCommitUnmount === 'function') {
-    onCommitUnmount(current);
-  }
+function commitUnmount(current$$1) {
+  onCommitUnmount(current$$1);
 
-  switch (current.tag) {
+  switch (current$$1.tag) {
     case ClassComponent:
+    case ClassComponentLazy:
       {
-        safelyDetachRef(current);
-        var instance = current.stateNode;
+        safelyDetachRef(current$$1);
+        var instance = current$$1.stateNode;
         if (typeof instance.componentWillUnmount === 'function') {
-          safelyCallComponentWillUnmount(current, instance);
+          safelyCallComponentWillUnmount(current$$1, instance);
         }
         return;
       }
     case HostComponent:
       {
-        safelyDetachRef(current);
+        safelyDetachRef(current$$1);
         return;
       }
     case HostPortal:
@@ -16257,9 +16576,9 @@ function commitUnmount(current) {
         // We are also not using this parent because
         // the portal will get pushed immediately.
         if (supportsMutation) {
-          unmountHostComponents(current);
+          unmountHostComponents(current$$1);
         } else if (supportsPersistence) {
-          emptyPortalContainer(current);
+          emptyPortalContainer(current$$1);
         }
         return;
       }
@@ -16298,26 +16617,26 @@ function commitNestedUnmounts(root) {
   }
 }
 
-function detachFiber(current) {
+function detachFiber(current$$1) {
   // Cut off the return pointers to disconnect it from the tree. Ideally, we
   // should clear the child pointer of the parent alternate to let this
   // get GC:ed but we don't know which for sure which parent is the current
   // one so we'll settle for GC:ing the subtree of this child. This child
   // itself will be GC:ed when the parent updates the next time.
-  current.return = null;
-  current.child = null;
-  if (current.alternate) {
-    current.alternate.child = null;
-    current.alternate.return = null;
+  current$$1.return = null;
+  current$$1.child = null;
+  if (current$$1.alternate) {
+    current$$1.alternate.child = null;
+    current$$1.alternate.return = null;
   }
 }
 
-function emptyPortalContainer(current) {
+function emptyPortalContainer(current$$1) {
   if (!supportsPersistence) {
     return;
   }
 
-  var portal = current.stateNode;
+  var portal = current$$1.stateNode;
   var containerInfo = portal.containerInfo;
 
   var emptyChildSet = createContainerChildSet(containerInfo);
@@ -16331,6 +16650,7 @@ function commitContainer(finishedWork) {
 
   switch (finishedWork.tag) {
     case ClassComponent:
+    case ClassComponentLazy:
       {
         return;
       }
@@ -16422,8 +16742,11 @@ function commitPlacement(finishedWork) {
 
   // Recursively insert all host nodes into the parent.
   var parentFiber = getHostParentFiber(finishedWork);
+
+  // Note: these two variables *must* always be updated together.
   var parent = void 0;
   var isContainer = void 0;
+
   switch (parentFiber.tag) {
     case HostComponent:
       parent = parentFiber.stateNode;
@@ -16489,13 +16812,15 @@ function commitPlacement(finishedWork) {
   }
 }
 
-function unmountHostComponents(current) {
-  // We only have the top Fiber that was inserted but we need recurse down its
-  var node = current;
+function unmountHostComponents(current$$1) {
+  // We only have the top Fiber that was deleted but we need recurse down its
+  var node = current$$1;
 
   // Each iteration, currentParent is populated with node's host parent if not
   // currentParentIsValid.
   var currentParentIsValid = false;
+
+  // Note: these two variables *must* always be updated together.
   var currentParent = void 0;
   var currentParentIsContainer = void 0;
 
@@ -16537,6 +16862,7 @@ function unmountHostComponents(current) {
       // When we go into a portal, it becomes the parent to remove from.
       // We will reassign it back when we pop the portal on the way up.
       currentParent = node.stateNode.containerInfo;
+      currentParentIsContainer = true;
       // Visit children because portals might contain host components.
       if (node.child !== null) {
         node.child.return = node;
@@ -16552,11 +16878,11 @@ function unmountHostComponents(current) {
         continue;
       }
     }
-    if (node === current) {
+    if (node === current$$1) {
       return;
     }
     while (node.sibling === null) {
-      if (node.return === null || node.return === current) {
+      if (node.return === null || node.return === current$$1) {
         return;
       }
       node = node.return;
@@ -16571,19 +16897,19 @@ function unmountHostComponents(current) {
   }
 }
 
-function commitDeletion(current) {
+function commitDeletion(current$$1) {
   if (supportsMutation) {
     // Recursively delete all host nodes from the parent.
     // Detach refs and call componentWillUnmount() on the whole subtree.
-    unmountHostComponents(current);
+    unmountHostComponents(current$$1);
   } else {
     // Detach refs and call componentWillUnmount() on the whole subtree.
-    commitNestedUnmounts(current);
+    commitNestedUnmounts(current$$1);
   }
-  detachFiber(current);
+  detachFiber(current$$1);
 }
 
-function commitWork(current, finishedWork) {
+function commitWork(current$$1, finishedWork) {
   if (!supportsMutation) {
     commitContainer(finishedWork);
     return;
@@ -16591,6 +16917,7 @@ function commitWork(current, finishedWork) {
 
   switch (finishedWork.tag) {
     case ClassComponent:
+    case ClassComponentLazy:
       {
         return;
       }
@@ -16603,7 +16930,7 @@ function commitWork(current, finishedWork) {
           // For hydration we reuse the update path but we treat the oldProps
           // as the newProps. The updatePayload will contain the real change in
           // this case.
-          var oldProps = current !== null ? current.memoizedProps : newProps;
+          var oldProps = current$$1 !== null ? current$$1.memoizedProps : newProps;
           var type = finishedWork.type;
           // TODO: Type the updateQueue to be specific to host components.
           var updatePayload = finishedWork.updateQueue;
@@ -16622,7 +16949,7 @@ function commitWork(current, finishedWork) {
         // For hydration we reuse the update path but we treat the oldProps
         // as the newProps. The updatePayload will contain the real change in
         // this case.
-        var oldText = current !== null ? current.memoizedProps : newText;
+        var oldText = current$$1 !== null ? current$$1.memoizedProps : newText;
         commitTextUpdate(textInstance, oldText, newText);
         return;
       }
@@ -16632,13 +16959,9 @@ function commitWork(current, finishedWork) {
       }
     case Profiler:
       {
-        if (enableProfilerTimer) {
-          var onRender = finishedWork.memoizedProps.onRender;
-          onRender(finishedWork.memoizedProps.id, current === null ? 'mount' : 'update', finishedWork.actualDuration, finishedWork.treeBaseTime, finishedWork.actualStartTime, getCommitTime());
-        }
         return;
       }
-    case TimeoutComponent:
+    case PlaceholderComponent:
       {
         return;
       }
@@ -16649,11 +16972,15 @@ function commitWork(current, finishedWork) {
   }
 }
 
-function commitResetTextContent(current) {
+function commitResetTextContent(current$$1) {
   if (!supportsMutation) {
     return;
   }
-  resetTextContent(current.stateNode);
+  resetTextContent(current$$1.stateNode);
+}
+
+function NoopComponent() {
+  return null;
 }
 
 function createRootErrorUpdate(fiber, errorInfo, expirationTime) {
@@ -16704,17 +17031,7 @@ function createClassErrorUpdate(fiber, errorInfo, expirationTime) {
   return update;
 }
 
-function schedulePing(finishedWork) {
-  // Once the promise resolves, we should try rendering the non-
-  // placeholder state again.
-  var currentTime = recalculateCurrentTime();
-  var expirationTime = computeExpirationForFiber(currentTime, finishedWork);
-  var recoveryUpdate = createUpdate(expirationTime);
-  enqueueUpdate(finishedWork, recoveryUpdate, expirationTime);
-  scheduleWork$1(finishedWork, expirationTime);
-}
-
-function throwException(root, returnFiber, sourceFiber, value, renderIsExpired, renderExpirationTime, currentTimeMs) {
+function throwException(root, returnFiber, sourceFiber, value, renderExpirationTime) {
   // The source fiber did not complete.
   sourceFiber.effectTag |= Incomplete;
   // Its effect list is no longer valid.
@@ -16724,90 +17041,148 @@ function throwException(root, returnFiber, sourceFiber, value, renderIsExpired, 
     // This is a thenable.
     var thenable = value;
 
-    var expirationTimeMs = expirationTimeToMs(renderExpirationTime);
-    var startTimeMs = expirationTimeMs - 5000;
-    var elapsedMs = currentTimeMs - startTimeMs;
-    if (elapsedMs < 0) {
-      elapsedMs = 0;
-    }
-    var remainingTimeMs = expirationTimeMs - currentTimeMs;
-
-    // Find the earliest timeout of all the timeouts in the ancestor path.
-    // TODO: Alternatively, we could store the earliest timeout on the context
-    // stack, rather than searching on every suspend.
+    // Find the earliest timeout threshold of all the placeholders in the
+    // ancestor path. We could avoid this traversal by storing the thresholds on
+    // the stack, but we choose not to because we only hit this path if we're
+    // IO-bound (i.e. if something suspends). Whereas the stack is used even in
+    // the non-IO- bound case.
     var _workInProgress = returnFiber;
     var earliestTimeoutMs = -1;
-    searchForEarliestTimeout: do {
-      if (_workInProgress.tag === TimeoutComponent) {
+    var startTimeMs = -1;
+    do {
+      if (_workInProgress.tag === PlaceholderComponent) {
         var current = _workInProgress.alternate;
-        if (current !== null && current.memoizedState === true) {
-          // A parent Timeout already committed in a placeholder state. We
-          // need to handle this promise immediately. In other words, we
-          // should never suspend inside a tree that already expired.
-          earliestTimeoutMs = 0;
-          break searchForEarliestTimeout;
+        if (current !== null && current.memoizedState === true && current.stateNode !== null) {
+          // Reached a placeholder that already timed out. Each timed out
+          // placeholder acts as the root of a new suspense boundary.
+
+          // Use the time at which the placeholder timed out as the start time
+          // for the current render.
+          var timedOutAt = current.stateNode.timedOutAt;
+          startTimeMs = expirationTimeToMs(timedOutAt);
+
+          // Do not search any further.
+          break;
         }
-        var timeoutPropMs = _workInProgress.pendingProps.ms;
+        var timeoutPropMs = _workInProgress.pendingProps.delayMs;
         if (typeof timeoutPropMs === 'number') {
           if (timeoutPropMs <= 0) {
             earliestTimeoutMs = 0;
-            break searchForEarliestTimeout;
           } else if (earliestTimeoutMs === -1 || timeoutPropMs < earliestTimeoutMs) {
             earliestTimeoutMs = timeoutPropMs;
           }
-        } else if (earliestTimeoutMs === -1) {
-          earliestTimeoutMs = remainingTimeMs;
         }
       }
       _workInProgress = _workInProgress.return;
     } while (_workInProgress !== null);
 
-    // Compute the remaining time until the timeout.
-    var msUntilTimeout = earliestTimeoutMs - elapsedMs;
+    // Schedule the nearest Placeholder to re-render the timed out view.
+    _workInProgress = returnFiber;
+    do {
+      if (_workInProgress.tag === PlaceholderComponent) {
+        var didTimeout = _workInProgress.memoizedState;
+        if (!didTimeout) {
+          // Found the nearest boundary.
 
-    if (renderExpirationTime === Never || msUntilTimeout > 0) {
-      // There's still time remaining.
-      suspendRoot(root, thenable, msUntilTimeout, renderExpirationTime);
-      var onResolveOrReject = function () {
-        retrySuspendedRoot(root, renderExpirationTime);
-      };
-      thenable.then(onResolveOrReject, onResolveOrReject);
-      return;
-    } else {
-      // No time remaining. Need to fallback to placeholder.
-      // Find the nearest timeout that can be retried.
-      _workInProgress = returnFiber;
-      do {
-        switch (_workInProgress.tag) {
-          case HostRoot:
-            {
-              // The root expired, but no fallback was provided. Throw a
-              // helpful error.
-              var message = renderExpirationTime === Sync ? 'A synchronous update was suspended, but no fallback UI ' + 'was provided.' : 'An update was suspended for longer than the timeout, ' + 'but no fallback UI was provided.';
-              value = new Error(message);
-              break;
+          // If the boundary is not in async mode, we should not suspend, and
+          // likewise, when the promise resolves, we should ping synchronously.
+          var pingTime = (_workInProgress.mode & AsyncMode) === NoEffect ? Sync : renderExpirationTime;
+
+          // Attach a listener to the promise to "ping" the root and retry.
+          var onResolveOrReject = retrySuspendedRoot.bind(null, root, _workInProgress, pingTime);
+          thenable.then(onResolveOrReject, onResolveOrReject);
+
+          // If the boundary is outside of strict mode, we should *not* suspend
+          // the commit. Pretend as if the suspended component rendered null and
+          // keep rendering. In the commit phase, we'll schedule a subsequent
+          // synchronous update to re-render the Placeholder.
+          //
+          // Note: It doesn't matter whether the component that suspended was
+          // inside a strict mode tree. If the Placeholder is outside of it, we
+          // should *not* suspend the commit.
+          if ((_workInProgress.mode & StrictMode) === NoEffect) {
+            _workInProgress.effectTag |= Update;
+
+            // Unmount the source fiber's children
+            var nextChildren = null;
+            reconcileChildren(sourceFiber.alternate, sourceFiber, nextChildren, renderExpirationTime);
+            sourceFiber.effectTag &= ~Incomplete;
+            if (sourceFiber.tag === IndeterminateComponent) {
+              // Let's just assume it's a functional component. This fiber will
+              // be unmounted in the immediate next commit, anyway.
+              sourceFiber.tag = FunctionalComponent;
             }
-          case TimeoutComponent:
-            {
-              if ((_workInProgress.effectTag & DidCapture) === NoEffect) {
-                _workInProgress.effectTag |= ShouldCapture;
-                var _onResolveOrReject = schedulePing.bind(null, _workInProgress);
-                thenable.then(_onResolveOrReject, _onResolveOrReject);
-                return;
+
+            if (sourceFiber.tag === ClassComponent || sourceFiber.tag === ClassComponentLazy) {
+              // We're going to commit this fiber even though it didn't
+              // complete. But we shouldn't call any lifecycle methods or
+              // callbacks. Remove all lifecycle effect tags.
+              sourceFiber.effectTag &= ~LifecycleEffectMask;
+              if (sourceFiber.alternate === null) {
+                // We're about to mount a class component that doesn't have an
+                // instance. Turn this into a dummy functional component instead,
+                // to prevent type errors. This is a bit weird but it's an edge
+                // case and we're about to synchronously delete this
+                // component, anyway.
+                sourceFiber.tag = FunctionalComponent;
+                sourceFiber.type = NoopComponent;
               }
-              // Already captured during this render. Continue to the next
-              // Timeout ancestor.
-              break;
             }
+
+            // Exit without suspending.
+            return;
+          }
+
+          // Confirmed that the boundary is in a strict mode tree. Continue with
+          // the normal suspend path.
+
+          var absoluteTimeoutMs = void 0;
+          if (earliestTimeoutMs === -1) {
+            // If no explicit threshold is given, default to an abitrarily large
+            // value. The actual size doesn't matter because the threshold for the
+            // whole tree will be clamped to the expiration time.
+            absoluteTimeoutMs = maxSigned31BitInt;
+          } else {
+            if (startTimeMs === -1) {
+              // This suspend happened outside of any already timed-out
+              // placeholders. We don't know exactly when the update was scheduled,
+              // but we can infer an approximate start time from the expiration
+              // time. First, find the earliest uncommitted expiration time in the
+              // tree, including work that is suspended. Then subtract the offset
+              // used to compute an async update's expiration time. This will cause
+              // high priority (interactive) work to expire earlier than necessary,
+              // but we can account for this by adjusting for the Just Noticeable
+              // Difference.
+              var earliestExpirationTime = findEarliestOutstandingPriorityLevel(root, renderExpirationTime);
+              var earliestExpirationTimeMs = expirationTimeToMs(earliestExpirationTime);
+              startTimeMs = earliestExpirationTimeMs - LOW_PRIORITY_EXPIRATION;
+            }
+            absoluteTimeoutMs = startTimeMs + earliestTimeoutMs;
+          }
+
+          // Mark the earliest timeout in the suspended fiber's ancestor path.
+          // After completing the root, we'll take the largest of all the
+          // suspended fiber's timeouts and use it to compute a timeout for the
+          // whole tree.
+          renderDidSuspend(root, absoluteTimeoutMs, renderExpirationTime);
+
+          _workInProgress.effectTag |= ShouldCapture;
+          _workInProgress.expirationTime = renderExpirationTime;
+          return;
         }
-        _workInProgress = _workInProgress.return;
-      } while (_workInProgress !== null);
-    }
+        // This boundary already captured during this render. Continue to the
+        // next boundary.
+      }
+      _workInProgress = _workInProgress.return;
+    } while (_workInProgress !== null);
+    // No boundary was found. Fallthrough to error mode.
+    value = new Error('An update was suspended, but no placeholder UI was provided.');
   }
 
   // We didn't find a boundary that could handle this type of exception. Start
   // over and traverse parent path again, this time treating the exception
   // as an error.
+  renderDidError();
   value = createCapturedValue(value, sourceFiber);
   var workInProgress = returnFiber;
   do {
@@ -16816,20 +17191,23 @@ function throwException(root, returnFiber, sourceFiber, value, renderIsExpired, 
         {
           var _errorInfo = value;
           workInProgress.effectTag |= ShouldCapture;
+          workInProgress.expirationTime = renderExpirationTime;
           var update = createRootErrorUpdate(workInProgress, _errorInfo, renderExpirationTime);
-          enqueueCapturedUpdate(workInProgress, update, renderExpirationTime);
+          enqueueCapturedUpdate(workInProgress, update);
           return;
         }
       case ClassComponent:
+      case ClassComponentLazy:
         // Capture and retry
         var errorInfo = value;
         var ctor = workInProgress.type;
         var instance = workInProgress.stateNode;
         if ((workInProgress.effectTag & DidCapture) === NoEffect && (typeof ctor.getDerivedStateFromCatch === 'function' && enableGetDerivedStateFromCatch || instance !== null && typeof instance.componentDidCatch === 'function' && !isAlreadyFailedLegacyErrorBoundary(instance))) {
           workInProgress.effectTag |= ShouldCapture;
+          workInProgress.expirationTime = renderExpirationTime;
           // Schedule the error boundary to re-render using updated state
           var _update = createClassErrorUpdate(workInProgress, errorInfo, renderExpirationTime);
-          enqueueCapturedUpdate(workInProgress, _update, renderExpirationTime);
+          enqueueCapturedUpdate(workInProgress, _update);
           return;
         }
         break;
@@ -16840,20 +17218,30 @@ function throwException(root, returnFiber, sourceFiber, value, renderIsExpired, 
   } while (workInProgress !== null);
 }
 
-function unwindWork(workInProgress, renderIsExpired, renderExpirationTime) {
-  if (enableProfilerTimer) {
-    if (workInProgress.mode & ProfileMode) {
-      recordElapsedActualRenderTime(workInProgress);
-    }
-  }
-
+function unwindWork(workInProgress, renderExpirationTime) {
   switch (workInProgress.tag) {
     case ClassComponent:
       {
-        popContextProvider(workInProgress);
+        var Component = workInProgress.type;
+        if (isContextProvider(Component)) {
+          popContext(workInProgress);
+        }
         var effectTag = workInProgress.effectTag;
         if (effectTag & ShouldCapture) {
           workInProgress.effectTag = effectTag & ~ShouldCapture | DidCapture;
+          return workInProgress;
+        }
+        return null;
+      }
+    case ClassComponentLazy:
+      {
+        var _Component = workInProgress.type._reactResult;
+        if (isContextProvider(_Component)) {
+          popContext(workInProgress);
+        }
+        var _effectTag = workInProgress.effectTag;
+        if (_effectTag & ShouldCapture) {
+          workInProgress.effectTag = _effectTag & ~ShouldCapture | DidCapture;
           return workInProgress;
         }
         return null;
@@ -16862,23 +17250,21 @@ function unwindWork(workInProgress, renderIsExpired, renderExpirationTime) {
       {
         popHostContainer(workInProgress);
         popTopLevelContextObject(workInProgress);
-        var _effectTag = workInProgress.effectTag;
-        if (_effectTag & ShouldCapture) {
-          workInProgress.effectTag = _effectTag & ~ShouldCapture | DidCapture;
-          return workInProgress;
-        }
-        return null;
+        var _effectTag2 = workInProgress.effectTag;
+        !((_effectTag2 & DidCapture) === NoEffect) ? invariant(false, 'The root failed to unmount after an error. This is likely a bug in React. Please file an issue.') : void 0;
+        workInProgress.effectTag = _effectTag2 & ~ShouldCapture | DidCapture;
+        return workInProgress;
       }
     case HostComponent:
       {
         popHostContext(workInProgress);
         return null;
       }
-    case TimeoutComponent:
+    case PlaceholderComponent:
       {
-        var _effectTag2 = workInProgress.effectTag;
-        if (_effectTag2 & ShouldCapture) {
-          workInProgress.effectTag = _effectTag2 & ~ShouldCapture | DidCapture;
+        var _effectTag3 = workInProgress.effectTag;
+        if (_effectTag3 & ShouldCapture) {
+          workInProgress.effectTag = _effectTag3 & ~ShouldCapture | DidCapture;
           return workInProgress;
         }
         return null;
@@ -16895,18 +17281,21 @@ function unwindWork(workInProgress, renderIsExpired, renderExpirationTime) {
 }
 
 function unwindInterruptedWork(interruptedWork) {
-  if (enableProfilerTimer) {
-    if (interruptedWork.mode & ProfileMode) {
-      // Resume in case we're picking up on work that was paused.
-      resumeActualRenderTimerIfPaused();
-      recordElapsedActualRenderTime(interruptedWork);
-    }
-  }
-
   switch (interruptedWork.tag) {
     case ClassComponent:
       {
-        popContextProvider(interruptedWork);
+        var childContextTypes = interruptedWork.type.childContextTypes;
+        if (childContextTypes !== null && childContextTypes !== undefined) {
+          popContext(interruptedWork);
+        }
+        break;
+      }
+    case ClassComponentLazy:
+      {
+        var _childContextTypes = interruptedWork.type._reactResult.childContextTypes;
+        if (_childContextTypes !== null && _childContextTypes !== undefined) {
+          popContext(interruptedWork);
+        }
         break;
       }
     case HostRoot:
@@ -16931,9 +17320,11 @@ function unwindInterruptedWork(interruptedWork) {
   }
 }
 
-var invokeGuardedCallback$2 = ReactErrorUtils.invokeGuardedCallback;
-var hasCaughtError = ReactErrorUtils.hasCaughtError;
-var clearCaughtError = ReactErrorUtils.clearCaughtError;
+var Dispatcher = {
+  readContext: readContext
+};
+
+var ReactCurrentOwner$2 = ReactSharedInternals.ReactCurrentOwner;
 
 
 var didWarnAboutStateTransition = void 0;
@@ -16949,40 +17340,35 @@ var warnAboutInvalidUpdates = void 0;
   warnAboutUpdateOnUnmounted = function (fiber) {
     // We show the whole stack but dedupe on the top component's name because
     // the problematic code almost always lies inside that component.
-    var componentName = getComponentName(fiber) || 'ReactClass';
+    var componentName = getComponentName(fiber.type) || 'ReactClass';
     if (didWarnStateUpdateForUnmountedComponent[componentName]) {
       return;
     }
-    warning(false, "Can't call setState (or forceUpdate) on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in the ' + 'componentWillUnmount method.%s', getStackAddendumByWorkInProgressFiber(fiber));
+    warningWithoutStack$1(false, "Can't call setState (or forceUpdate) on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in the ' + 'componentWillUnmount method.%s', getStackByFiberInDevAndProd(fiber));
     didWarnStateUpdateForUnmountedComponent[componentName] = true;
   };
 
   warnAboutInvalidUpdates = function (instance) {
-    switch (ReactDebugCurrentFiber.phase) {
+    switch (phase) {
       case 'getChildContext':
         if (didWarnSetStateChildContext) {
           return;
         }
-        warning(false, 'setState(...): Cannot call setState() inside getChildContext()');
+        warningWithoutStack$1(false, 'setState(...): Cannot call setState() inside getChildContext()');
         didWarnSetStateChildContext = true;
         break;
       case 'render':
         if (didWarnAboutStateTransition) {
           return;
         }
-        warning(false, 'Cannot update during an existing state transition (such as within ' + "`render` or another component's constructor). Render methods should " + 'be a pure function of props and state; constructor side-effects are ' + 'an anti-pattern, but can be moved to `componentWillMount`.');
+        warningWithoutStack$1(false, 'Cannot update during an existing state transition (such as within ' + '`render`). Render methods should be a pure function of props and state.');
         didWarnAboutStateTransition = true;
         break;
     }
   };
 }
 
-// Represents the current time in ms.
-var originalStartTimeMs = now();
-var mostRecentCurrentTime = msToExpirationTime(0);
-var mostRecentCurrentTimeMs = originalStartTimeMs;
-
-// Used to ensure computeUniqueAsyncExpiration is monotonically increases.
+// Used to ensure computeUniqueAsyncExpiration is monotonically increasing.
 var lastUniqueAsyncExpiration = 0;
 
 // Represents the expiration time that incoming updates should use. (If this
@@ -16997,20 +17383,22 @@ var nextUnitOfWork = null;
 var nextRoot = null;
 // The time at which we're currently rendering work.
 var nextRenderExpirationTime = NoWork;
-var nextLatestTimeoutMs = -1;
-var nextRenderIsExpired = false;
+var nextLatestAbsoluteTimeoutMs = -1;
+var nextRenderDidError = false;
 
 // The next fiber with an effect that we're currently committing.
 var nextEffect = null;
 
 var isCommitting$1 = false;
 
-var isRootReadyForCommit = false;
-
 var legacyErrorBoundariesThatAlreadyFailed = null;
 
 // Used for performance tracking.
 var interruptedBy = null;
+
+// Do not decrement interaction counts in the event of suspense timeouts.
+// This would lead to prematurely calling the interaction-complete hook.
+var suspenseDidTimeout = false;
 
 var stashedWorkInProgressProperties = void 0;
 var replayUnitOfWork = void 0;
@@ -17021,7 +17409,7 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
   stashedWorkInProgressProperties = null;
   isReplayingFailedUnitOfWork = false;
   originalReplayError = null;
-  replayUnitOfWork = function (failedUnitOfWork, thrownValue, isAsync) {
+  replayUnitOfWork = function (failedUnitOfWork, thrownValue, isYieldy) {
     if (thrownValue !== null && typeof thrownValue === 'object' && typeof thrownValue.then === 'function') {
       // Don't replay promises. Treat everything else like an error.
       // TODO: Need to figure out a different strategy if/when we add
@@ -17032,7 +17420,7 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
     // Restore the original state of the work-in-progress
     if (stashedWorkInProgressProperties === null) {
       // This should never happen. Don't throw because this code is DEV-only.
-      warning(false, 'Could not replay rendering after an error. This is likely a bug in React. ' + 'Please file an issue.');
+      warningWithoutStack$1(false, 'Could not replay rendering after an error. This is likely a bug in React. ' + 'Please file an issue.');
       return;
     }
     assignFiberPropertiesInDEV(failedUnitOfWork, stashedWorkInProgressProperties);
@@ -17046,8 +17434,21 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
         popHostContext(failedUnitOfWork);
         break;
       case ClassComponent:
-        popContextProvider(failedUnitOfWork);
-        break;
+        {
+          var Component = failedUnitOfWork.type;
+          if (isContextProvider(Component)) {
+            popContext(failedUnitOfWork);
+          }
+          break;
+        }
+      case ClassComponentLazy:
+        {
+          var _Component = getResultFromResolvedThenable(failedUnitOfWork.type);
+          if (isContextProvider(_Component)) {
+            popContext(failedUnitOfWork);
+          }
+          break;
+        }
       case HostPortal:
         popHostContainer(failedUnitOfWork);
         break;
@@ -17058,19 +17459,22 @@ if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
     // Replay the begin phase.
     isReplayingFailedUnitOfWork = true;
     originalReplayError = thrownValue;
-    invokeGuardedCallback$2(null, workLoop, null, isAsync);
+    invokeGuardedCallback(null, workLoop, null, isYieldy);
     isReplayingFailedUnitOfWork = false;
     originalReplayError = null;
     if (hasCaughtError()) {
-      clearCaughtError();
-
-      if (enableProfilerTimer) {
-        if (failedUnitOfWork.mode & ProfileMode) {
-          recordElapsedActualRenderTime(failedUnitOfWork);
+      var replayError = clearCaughtError();
+      if (replayError != null && thrownValue != null) {
+        try {
+          // Reading the expando property is intentionally
+          // inside `try` because it might be a getter or Proxy.
+          if (replayError._suppressLogging) {
+            // Also suppress logging for the original error.
+            thrownValue._suppressLogging = true;
+          }
+        } catch (inner) {
+          // Ignore.
         }
-
-        // Stop "base" render timer again (after the re-thrown error).
-        stopBaseRenderTimerIfRunning();
       }
     } else {
       // If the begin phase did not fail the second time, set this pointer
@@ -17099,17 +17503,15 @@ function resetStack() {
 
   nextRoot = null;
   nextRenderExpirationTime = NoWork;
-  nextLatestTimeoutMs = -1;
-  nextRenderIsExpired = false;
+  nextLatestAbsoluteTimeoutMs = -1;
+  nextRenderDidError = false;
   nextUnitOfWork = null;
-
-  isRootReadyForCommit = false;
 }
 
 function commitAllHostEffects() {
   while (nextEffect !== null) {
     {
-      ReactDebugCurrentFiber.setCurrentFiber(nextEffect);
+      setCurrentFiber(nextEffect);
     }
     recordEffect();
 
@@ -17120,9 +17522,9 @@ function commitAllHostEffects() {
     }
 
     if (effectTag & Ref) {
-      var current = nextEffect.alternate;
-      if (current !== null) {
-        commitDetachRef(current);
+      var current$$1 = nextEffect.alternate;
+      if (current$$1 !== null) {
+        commitDetachRef(current$$1);
       }
     }
 
@@ -17172,27 +17574,34 @@ function commitAllHostEffects() {
   }
 
   {
-    ReactDebugCurrentFiber.resetCurrentFiber();
+    resetCurrentFiber();
   }
 }
 
 function commitBeforeMutationLifecycles() {
   while (nextEffect !== null) {
-    var effectTag = nextEffect.effectTag;
+    {
+      setCurrentFiber(nextEffect);
+    }
 
+    var effectTag = nextEffect.effectTag;
     if (effectTag & Snapshot) {
       recordEffect();
-      var current = nextEffect.alternate;
-      commitBeforeMutationLifeCycles(current, nextEffect);
+      var current$$1 = nextEffect.alternate;
+      commitBeforeMutationLifeCycles(current$$1, nextEffect);
     }
 
     // Don't cleanup effects yet;
     // This will be done by commitAllLifeCycles()
     nextEffect = nextEffect.nextEffect;
   }
+
+  {
+    resetCurrentFiber();
+  }
 }
 
-function commitAllLifeCycles(finishedRoot, currentTime, committedExpirationTime) {
+function commitAllLifeCycles(finishedRoot, committedExpirationTime) {
   {
     ReactStrictModeWarnings.flushPendingUnsafeLifecycleWarnings();
 
@@ -17209,8 +17618,8 @@ function commitAllLifeCycles(finishedRoot, currentTime, committedExpirationTime)
 
     if (effectTag & (Update | Callback)) {
       recordEffect();
-      var current = nextEffect.alternate;
-      commitLifeCycles(finishedRoot, current, nextEffect, currentTime, committedExpirationTime);
+      var current$$1 = nextEffect.alternate;
+      commitLifeCycles(finishedRoot, current$$1, nextEffect, committedExpirationTime);
     }
 
     if (effectTag & Ref) {
@@ -17242,21 +17651,50 @@ function markLegacyErrorBoundaryAsFailed(instance) {
   }
 }
 
-function commitRoot(finishedWork) {
+function commitRoot(root, finishedWork) {
   isWorking = true;
   isCommitting$1 = true;
   startCommitTimer();
 
-  var root = finishedWork.stateNode;
   !(root.current !== finishedWork) ? invariant(false, 'Cannot commit the same tree as before. This is probably a bug related to the return field. This error is likely caused by a bug in React. Please file an issue.') : void 0;
   var committedExpirationTime = root.pendingCommitExpirationTime;
   !(committedExpirationTime !== NoWork) ? invariant(false, 'Cannot commit an incomplete root. This error is likely caused by a bug in React. Please file an issue.') : void 0;
   root.pendingCommitExpirationTime = NoWork;
 
-  var currentTime = recalculateCurrentTime();
+  // Update the pending priority levels to account for the work that we are
+  // about to commit. This needs to happen before calling the lifecycles, since
+  // they may schedule additional updates.
+  var updateExpirationTimeBeforeCommit = finishedWork.expirationTime;
+  var childExpirationTimeBeforeCommit = finishedWork.childExpirationTime;
+  var earliestRemainingTimeBeforeCommit = updateExpirationTimeBeforeCommit === NoWork || childExpirationTimeBeforeCommit !== NoWork && childExpirationTimeBeforeCommit < updateExpirationTimeBeforeCommit ? childExpirationTimeBeforeCommit : updateExpirationTimeBeforeCommit;
+  markCommittedPriorityLevels(root, earliestRemainingTimeBeforeCommit);
+
+  var prevInteractions = null;
+  var committedInteractions = enableSchedulerTracking ? [] : null;
+  if (enableSchedulerTracking) {
+    // Restore any pending interactions at this point,
+    // So that cascading work triggered during the render phase will be accounted for.
+    prevInteractions = tracking.__interactionsRef.current;
+    tracking.__interactionsRef.current = root.memoizedInteractions;
+
+    // We are potentially finished with the current batch of interactions.
+    // So we should clear them out of the pending interaction map.
+    // We do this at the start of commit in case cascading work is scheduled by commit phase lifecycles.
+    // In that event, interaction data may be added back into the pending map for a future commit.
+    // We also store the interactions we are about to commit so that we can notify subscribers after we're done.
+    // These are stored as an Array rather than a Set,
+    // Because the same interaction may be pending for multiple expiration times,
+    // In which case it's important that we decrement the count the right number of times after finishing.
+    root.pendingInteractionMap.forEach(function (scheduledInteractions, scheduledExpirationTime) {
+      if (scheduledExpirationTime <= committedExpirationTime) {
+        committedInteractions.push.apply(committedInteractions, Array.from(scheduledInteractions));
+        root.pendingInteractionMap.delete(scheduledExpirationTime);
+      }
+    });
+  }
 
   // Reset this to null before calling lifecycles
-  ReactCurrentOwner.current = null;
+  ReactCurrentOwner$2.current = null;
 
   var firstEffect = void 0;
   if (finishedWork.effectTag > PerformedWork) {
@@ -17284,7 +17722,7 @@ function commitRoot(finishedWork) {
     var didError = false;
     var error = void 0;
     {
-      invokeGuardedCallback$2(null, commitBeforeMutationLifecycles, null);
+      invokeGuardedCallback(null, commitBeforeMutationLifecycles, null);
       if (hasCaughtError()) {
         didError = true;
         error = clearCaughtError();
@@ -17316,7 +17754,7 @@ function commitRoot(finishedWork) {
     var _didError = false;
     var _error = void 0;
     {
-      invokeGuardedCallback$2(null, commitAllHostEffects, null);
+      invokeGuardedCallback(null, commitAllHostEffects, null);
       if (hasCaughtError()) {
         _didError = true;
         _error = clearCaughtError();
@@ -17351,7 +17789,7 @@ function commitRoot(finishedWork) {
     var _didError2 = false;
     var _error2 = void 0;
     {
-      invokeGuardedCallback$2(null, commitAllLifeCycles, null, root, currentTime, committedExpirationTime);
+      invokeGuardedCallback(null, commitAllLifeCycles, null, root, committedExpirationTime);
       if (hasCaughtError()) {
         _didError2 = true;
         _error2 = clearCaughtError();
@@ -17366,80 +17804,129 @@ function commitRoot(finishedWork) {
     }
   }
 
-  if (enableProfilerTimer) {
-    {
-      checkActualRenderTimeStackEmpty();
-    }
-    resetActualRenderTimer();
-  }
-
   isCommitting$1 = false;
   isWorking = false;
   stopCommitLifeCyclesTimer();
   stopCommitTimer();
-  if (typeof onCommitRoot === 'function') {
-    onCommitRoot(finishedWork.stateNode);
-  }
+  onCommitRoot(finishedWork.stateNode);
   if (true && ReactFiberInstrumentation_1.debugTool) {
     ReactFiberInstrumentation_1.debugTool.onCommitWork(finishedWork);
   }
 
-  markCommittedPriorityLevels(root, currentTime, root.current.expirationTime);
-  var remainingTime = findNextPendingPriorityLevel(root);
-  if (remainingTime === NoWork) {
+  var updateExpirationTimeAfterCommit = finishedWork.expirationTime;
+  var childExpirationTimeAfterCommit = finishedWork.childExpirationTime;
+  var earliestRemainingTimeAfterCommit = updateExpirationTimeAfterCommit === NoWork || childExpirationTimeAfterCommit !== NoWork && childExpirationTimeAfterCommit < updateExpirationTimeAfterCommit ? childExpirationTimeAfterCommit : updateExpirationTimeAfterCommit;
+  if (earliestRemainingTimeAfterCommit === NoWork) {
     // If there's no remaining work, we can clear the set of already failed
     // error boundaries.
     legacyErrorBoundariesThatAlreadyFailed = null;
   }
-  return remainingTime;
+  onCommit(root, earliestRemainingTimeAfterCommit);
+
+  if (enableSchedulerTracking) {
+    tracking.__interactionsRef.current = prevInteractions;
+
+    var subscriber = void 0;
+
+    try {
+      subscriber = tracking.__subscriberRef.current;
+      if (subscriber !== null && root.memoizedInteractions.size > 0) {
+        var threadID = computeThreadID(committedExpirationTime, root.interactionThreadID);
+        subscriber.onWorkStopped(root.memoizedInteractions, threadID);
+      }
+    } catch (error) {
+      // It's not safe for commitRoot() to throw.
+      // Store the error for now and we'll re-throw in finishRendering().
+      if (!hasUnhandledError) {
+        hasUnhandledError = true;
+        unhandledError = error;
+      }
+    } finally {
+      // Don't update interaction counts if we're frozen due to suspense.
+      // In this case, we can skip the completed-work check entirely.
+      if (!suspenseDidTimeout) {
+        // Now that we're done, check the completed batch of interactions.
+        // If no more work is outstanding for a given interaction,
+        // We need to notify the subscribers that it's finished.
+        committedInteractions.forEach(function (interaction) {
+          interaction.__count--;
+          if (subscriber !== null && interaction.__count === 0) {
+            try {
+              subscriber.onInteractionScheduledWorkCompleted(interaction);
+            } catch (error) {
+              // It's not safe for commitRoot() to throw.
+              // Store the error for now and we'll re-throw in finishRendering().
+              if (!hasUnhandledError) {
+                hasUnhandledError = true;
+                unhandledError = error;
+              }
+            }
+          }
+        });
+      }
+    }
+  }
 }
 
-function resetExpirationTime(workInProgress, renderTime) {
-  if (renderTime !== Never && workInProgress.expirationTime === Never) {
+function resetChildExpirationTime(workInProgress, renderTime) {
+  if (renderTime !== Never && workInProgress.childExpirationTime === Never) {
     // The children of this component are hidden. Don't bubble their
     // expiration times.
     return;
   }
 
-  // Check for pending updates.
-  var newExpirationTime = NoWork;
-  switch (workInProgress.tag) {
-    case HostRoot:
-    case ClassComponent:
-      {
-        var updateQueue = workInProgress.updateQueue;
-        if (updateQueue !== null) {
-          newExpirationTime = updateQueue.expirationTime;
-        }
-      }
-  }
-
-  // TODO: Calls need to visit stateNode
+  var newChildExpirationTime = NoWork;
 
   // Bubble up the earliest expiration time.
-  // (And "base" render timers if that feature flag is enabled)
   if (enableProfilerTimer && workInProgress.mode & ProfileMode) {
-    var treeBaseTime = workInProgress.selfBaseTime;
+    // We're in profiling mode.
+    // Let's use this same traversal to update the render durations.
+    var actualDuration = workInProgress.actualDuration;
+    var treeBaseDuration = workInProgress.selfBaseDuration;
+
+    // When a fiber is cloned, its actualDuration is reset to 0.
+    // This value will only be updated if work is done on the fiber (i.e. it doesn't bailout).
+    // When work is done, it should bubble to the parent's actualDuration.
+    // If the fiber has not been cloned though, (meaning no work was done),
+    // Then this value will reflect the amount of time spent working on a previous render.
+    // In that case it should not bubble.
+    // We determine whether it was cloned by comparing the child pointer.
+    var shouldBubbleActualDurations = workInProgress.alternate === null || workInProgress.child !== workInProgress.alternate.child;
+
     var child = workInProgress.child;
     while (child !== null) {
-      treeBaseTime += child.treeBaseTime;
-      if (child.expirationTime !== NoWork && (newExpirationTime === NoWork || newExpirationTime > child.expirationTime)) {
-        newExpirationTime = child.expirationTime;
+      var childUpdateExpirationTime = child.expirationTime;
+      var childChildExpirationTime = child.childExpirationTime;
+      if (newChildExpirationTime === NoWork || childUpdateExpirationTime !== NoWork && childUpdateExpirationTime < newChildExpirationTime) {
+        newChildExpirationTime = childUpdateExpirationTime;
       }
+      if (newChildExpirationTime === NoWork || childChildExpirationTime !== NoWork && childChildExpirationTime < newChildExpirationTime) {
+        newChildExpirationTime = childChildExpirationTime;
+      }
+      if (shouldBubbleActualDurations) {
+        actualDuration += child.actualDuration;
+      }
+      treeBaseDuration += child.treeBaseDuration;
       child = child.sibling;
     }
-    workInProgress.treeBaseTime = treeBaseTime;
+    workInProgress.actualDuration = actualDuration;
+    workInProgress.treeBaseDuration = treeBaseDuration;
   } else {
     var _child = workInProgress.child;
     while (_child !== null) {
-      if (_child.expirationTime !== NoWork && (newExpirationTime === NoWork || newExpirationTime > _child.expirationTime)) {
-        newExpirationTime = _child.expirationTime;
+      var _childUpdateExpirationTime = _child.expirationTime;
+      var _childChildExpirationTime = _child.childExpirationTime;
+      if (newChildExpirationTime === NoWork || _childUpdateExpirationTime !== NoWork && _childUpdateExpirationTime < newChildExpirationTime) {
+        newChildExpirationTime = _childUpdateExpirationTime;
+      }
+      if (newChildExpirationTime === NoWork || _childChildExpirationTime !== NoWork && _childChildExpirationTime < newChildExpirationTime) {
+        newChildExpirationTime = _childChildExpirationTime;
       }
       _child = _child.sibling;
     }
   }
 
-  workInProgress.expirationTime = newExpirationTime;
+  workInProgress.childExpirationTime = newChildExpirationTime;
 }
 
 function completeUnitOfWork(workInProgress) {
@@ -17451,9 +17938,9 @@ function completeUnitOfWork(workInProgress) {
     // Ideally nothing should rely on this, but relying on it here
     // means that we don't need an additional field on the work in
     // progress.
-    var current = workInProgress.alternate;
+    var current$$1 = workInProgress.alternate;
     {
-      ReactDebugCurrentFiber.setCurrentFiber(workInProgress);
+      setCurrentFiber(workInProgress);
     }
 
     var returnFiber = workInProgress.return;
@@ -17461,11 +17948,25 @@ function completeUnitOfWork(workInProgress) {
 
     if ((workInProgress.effectTag & Incomplete) === NoEffect) {
       // This fiber completed.
-      var next = completeWork(current, workInProgress, nextRenderExpirationTime);
+      if (enableProfilerTimer) {
+        if (workInProgress.mode & ProfileMode) {
+          startProfilerTimer(workInProgress);
+        }
+
+        nextUnitOfWork = completeWork(current$$1, workInProgress, nextRenderExpirationTime);
+
+        if (workInProgress.mode & ProfileMode) {
+          // Update render duration assuming we didn't error.
+          stopProfilerTimerIfRunningAndRecordDelta(workInProgress, false);
+        }
+      } else {
+        nextUnitOfWork = completeWork(current$$1, workInProgress, nextRenderExpirationTime);
+      }
+      var next = nextUnitOfWork;
       stopWorkTimer(workInProgress);
-      resetExpirationTime(workInProgress, nextRenderExpirationTime);
+      resetChildExpirationTime(workInProgress, nextRenderExpirationTime);
       {
-        ReactDebugCurrentFiber.resetCurrentFiber();
+        resetCurrentFiber();
       }
 
       if (next !== null) {
@@ -17526,14 +18027,18 @@ function completeUnitOfWork(workInProgress) {
         continue;
       } else {
         // We've reached the root.
-        isRootReadyForCommit = true;
         return null;
       }
     } else {
+      if (workInProgress.mode & ProfileMode) {
+        // Record the render duration for the fiber that errored.
+        stopProfilerTimerIfRunningAndRecordDelta(workInProgress, false);
+      }
+
       // This fiber did not complete because something threw. Pop values off
       // the stack without entering the complete phase. If this is a boundary,
       // capture values if possible.
-      var _next = unwindWork(workInProgress, nextRenderIsExpired, nextRenderExpirationTime);
+      var _next = unwindWork(workInProgress, nextRenderExpirationTime);
       // Because this fiber did not complete, don't reset its expiration time.
       if (workInProgress.effectTag & DidCapture) {
         // Restarting an error boundary
@@ -17543,7 +18048,7 @@ function completeUnitOfWork(workInProgress) {
       }
 
       {
-        ReactDebugCurrentFiber.resetCurrentFiber();
+        resetCurrentFiber();
       }
 
       if (_next !== null) {
@@ -17551,6 +18056,20 @@ function completeUnitOfWork(workInProgress) {
         if (true && ReactFiberInstrumentation_1.debugTool) {
           ReactFiberInstrumentation_1.debugTool.onCompleteWork(workInProgress);
         }
+
+        if (enableProfilerTimer) {
+          // Include the time spent working on failed children before continuing.
+          if (_next.mode & ProfileMode) {
+            var actualDuration = _next.actualDuration;
+            var child = _next.child;
+            while (child !== null) {
+              actualDuration += child.actualDuration;
+              child = child.sibling;
+            }
+            _next.actualDuration = actualDuration;
+          }
+        }
+
         // If completing this work spawned new work, do that next. We'll come
         // back here again.
         // Since we're restarting, remove anything that is not a host effect
@@ -17593,12 +18112,12 @@ function performUnitOfWork(workInProgress) {
   // Ideally nothing should rely on this, but relying on it here
   // means that we don't need an additional field on the work in
   // progress.
-  var current = workInProgress.alternate;
+  var current$$1 = workInProgress.alternate;
 
   // See if beginning this work spawns more work.
   startWorkTimer(workInProgress);
   {
-    ReactDebugCurrentFiber.setCurrentFiber(workInProgress);
+    setCurrentFiber(workInProgress);
   }
 
   if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
@@ -17608,22 +18127,21 @@ function performUnitOfWork(workInProgress) {
   var next = void 0;
   if (enableProfilerTimer) {
     if (workInProgress.mode & ProfileMode) {
-      startBaseRenderTimer();
+      startProfilerTimer(workInProgress);
     }
 
-    next = beginWork(current, workInProgress, nextRenderExpirationTime);
+    next = beginWork(current$$1, workInProgress, nextRenderExpirationTime);
 
     if (workInProgress.mode & ProfileMode) {
-      // Update "base" time if the render wasn't bailed out on.
-      recordElapsedBaseRenderTimeIfRunning(workInProgress);
-      stopBaseRenderTimerIfRunning();
+      // Record the render duration assuming we didn't bailout (or error).
+      stopProfilerTimerIfRunningAndRecordDelta(workInProgress, true);
     }
   } else {
-    next = beginWork(current, workInProgress, nextRenderExpirationTime);
+    next = beginWork(current$$1, workInProgress, nextRenderExpirationTime);
   }
 
   {
-    ReactDebugCurrentFiber.resetCurrentFiber();
+    resetCurrentFiber();
     if (isReplayingFailedUnitOfWork) {
       // Currently replaying a failed unit of work. This should be unreachable,
       // because the render phase is meant to be idempotent, and it should
@@ -17641,14 +18159,14 @@ function performUnitOfWork(workInProgress) {
     next = completeUnitOfWork(workInProgress);
   }
 
-  ReactCurrentOwner.current = null;
+  ReactCurrentOwner$2.current = null;
 
   return next;
 }
 
-function workLoop(isAsync) {
-  if (!isAsync) {
-    // Flush all expired work.
+function workLoop(isYieldy) {
+  if (!isYieldy) {
+    // Flush work without yielding
     while (nextUnitOfWork !== null) {
       nextUnitOfWork = performUnitOfWork(nextUnitOfWork);
     }
@@ -17657,18 +18175,23 @@ function workLoop(isAsync) {
     while (nextUnitOfWork !== null && !shouldYield()) {
       nextUnitOfWork = performUnitOfWork(nextUnitOfWork);
     }
-
-    if (enableProfilerTimer) {
-      // If we didn't finish, pause the "actual" render timer.
-      // We'll restart it when we resume work.
-      pauseActualRenderTimerIfRunning();
-    }
   }
 }
 
-function renderRoot(root, expirationTime, isAsync) {
+function renderRoot(root, isYieldy, isExpired) {
   !!isWorking ? invariant(false, 'renderRoot was called recursively. This error is likely caused by a bug in React. Please file an issue.') : void 0;
   isWorking = true;
+  ReactCurrentOwner$2.currentDispatcher = Dispatcher;
+
+  var expirationTime = root.nextExpirationTimeToWorkOn;
+
+  var prevInteractions = null;
+  if (enableSchedulerTracking) {
+    // We're about to start new tracked work.
+    // Restore pending interactions so cascading work triggered during the render phase will be accounted for.
+    prevInteractions = tracking.__interactionsRef.current;
+    tracking.__interactionsRef.current = root.memoizedInteractions;
+  }
 
   // Check if we're starting from a fresh stack, or if we're resuming from
   // previously yielded work.
@@ -17677,26 +18200,55 @@ function renderRoot(root, expirationTime, isAsync) {
     resetStack();
     nextRoot = root;
     nextRenderExpirationTime = expirationTime;
-    nextLatestTimeoutMs = -1;
     nextUnitOfWork = createWorkInProgress(nextRoot.current, null, nextRenderExpirationTime);
     root.pendingCommitExpirationTime = NoWork;
+
+    if (enableSchedulerTracking) {
+      // Determine which interactions this batch of work currently includes,
+      // So that we can accurately attribute time spent working on it,
+      var interactions = new Set();
+      root.pendingInteractionMap.forEach(function (scheduledInteractions, scheduledExpirationTime) {
+        if (scheduledExpirationTime <= expirationTime) {
+          scheduledInteractions.forEach(function (interaction) {
+            return interactions.add(interaction);
+          });
+        }
+      });
+
+      // Store the current set of interactions on the FiberRoot for a few reasons:
+      // We can re-use it in hot functions like renderRoot() without having to recalculate it.
+      // We will also use it in commitWork() to pass to any Profiler onRender() hooks.
+      // This also provides DevTools with a way to access it when the onCommitRoot() hook is called.
+      root.memoizedInteractions = interactions;
+
+      if (interactions.size > 0) {
+        var subscriber = tracking.__subscriberRef.current;
+        if (subscriber !== null) {
+          var threadID = computeThreadID(expirationTime, root.interactionThreadID);
+          try {
+            subscriber.onWorkStarted(interactions, threadID);
+          } catch (error) {
+            // Work thrown by an interaction tracking subscriber should be rethrown,
+            // But only once it's safe (to avoid leaveing the scheduler in an invalid state).
+            // Store the error for now and we'll re-throw in finishRendering().
+            if (!hasUnhandledError) {
+              hasUnhandledError = true;
+              unhandledError = error;
+            }
+          }
+        }
+      }
+    }
   }
 
   var didFatal = false;
-
-  nextRenderIsExpired = !isAsync || nextRenderExpirationTime <= mostRecentCurrentTime;
 
   startWorkLoopTimer(nextUnitOfWork);
 
   do {
     try {
-      workLoop(isAsync);
+      workLoop(isYieldy);
     } catch (thrownValue) {
-      if (enableProfilerTimer) {
-        // Stop "base" render timer in the event of an error.
-        stopBaseRenderTimerIfRunning();
-      }
-
       if (nextUnitOfWork === null) {
         // This is a fatal error.
         didFatal = true;
@@ -17710,7 +18262,7 @@ function renderRoot(root, expirationTime, isAsync) {
 
         var failedUnitOfWork = nextUnitOfWork;
         if (true && replayFailedUnitOfWorkWithInvokeGuardedCallback) {
-          replayUnitOfWork(failedUnitOfWork, thrownValue, isAsync);
+          replayUnitOfWork(failedUnitOfWork, thrownValue, isYieldy);
         }
 
         // TODO: we already know this isn't true in some cases.
@@ -17729,60 +18281,127 @@ function renderRoot(root, expirationTime, isAsync) {
           // for now.
           didFatal = true;
           onUncaughtError(thrownValue);
-          break;
+        } else {
+          throwException(root, returnFiber, sourceFiber, thrownValue, nextRenderExpirationTime);
+          nextUnitOfWork = completeUnitOfWork(sourceFiber);
+          continue;
         }
-        throwException(root, returnFiber, sourceFiber, thrownValue, nextRenderIsExpired, nextRenderExpirationTime, mostRecentCurrentTimeMs);
-        nextUnitOfWork = completeUnitOfWork(sourceFiber);
       }
     }
     break;
   } while (true);
 
+  if (enableSchedulerTracking) {
+    // Tracked work is done for now; restore the previous interactions.
+    tracking.__interactionsRef.current = prevInteractions;
+  }
+
   // We're done performing work. Time to clean up.
-  var didCompleteRoot = false;
   isWorking = false;
+  ReactCurrentOwner$2.currentDispatcher = null;
+  resetContextDependences();
 
   // Yield back to main thread.
   if (didFatal) {
-    stopWorkLoopTimer(interruptedBy, didCompleteRoot);
+    var _didCompleteRoot = false;
+    stopWorkLoopTimer(interruptedBy, _didCompleteRoot);
     interruptedBy = null;
     // There was a fatal error.
     {
       resetStackAfterFatalErrorInDev();
     }
-    return null;
-  } else if (nextUnitOfWork === null) {
-    // We reached the root.
-    if (isRootReadyForCommit) {
-      didCompleteRoot = true;
-      stopWorkLoopTimer(interruptedBy, didCompleteRoot);
-      interruptedBy = null;
-      // The root successfully completed. It's ready for commit.
-      root.pendingCommitExpirationTime = expirationTime;
-      var finishedWork = root.current.alternate;
-      return finishedWork;
-    } else {
-      // The root did not complete.
-      stopWorkLoopTimer(interruptedBy, didCompleteRoot);
-      interruptedBy = null;
-      !!nextRenderIsExpired ? invariant(false, 'Expired work should have completed. This error is likely caused by a bug in React. Please file an issue.') : void 0;
-      markSuspendedPriorityLevel(root, expirationTime);
-      if (nextLatestTimeoutMs >= 0) {
-        setTimeout(function () {
-          retrySuspendedRoot(root, expirationTime);
-        }, nextLatestTimeoutMs);
-      }
-      var firstUnblockedExpirationTime = findNextPendingPriorityLevel(root);
-      onBlock(firstUnblockedExpirationTime);
-      return null;
-    }
-  } else {
-    stopWorkLoopTimer(interruptedBy, didCompleteRoot);
-    interruptedBy = null;
-    // There's more work to do, but we ran out of time. Yield back to
-    // the renderer.
-    return null;
+    // `nextRoot` points to the in-progress root. A non-null value indicates
+    // that we're in the middle of an async render. Set it to null to indicate
+    // there's no more work to be done in the current batch.
+    nextRoot = null;
+    onFatal(root);
+    return;
   }
+
+  if (nextUnitOfWork !== null) {
+    // There's still remaining async work in this tree, but we ran out of time
+    // in the current frame. Yield back to the renderer. Unless we're
+    // interrupted by a higher priority update, we'll continue later from where
+    // we left off.
+    var _didCompleteRoot2 = false;
+    stopWorkLoopTimer(interruptedBy, _didCompleteRoot2);
+    interruptedBy = null;
+    onYield(root);
+    return;
+  }
+
+  // We completed the whole tree.
+  var didCompleteRoot = true;
+  stopWorkLoopTimer(interruptedBy, didCompleteRoot);
+  var rootWorkInProgress = root.current.alternate;
+  !(rootWorkInProgress !== null) ? invariant(false, 'Finished root should have a work-in-progress. This error is likely caused by a bug in React. Please file an issue.') : void 0;
+
+  // `nextRoot` points to the in-progress root. A non-null value indicates
+  // that we're in the middle of an async render. Set it to null to indicate
+  // there's no more work to be done in the current batch.
+  nextRoot = null;
+  interruptedBy = null;
+
+  if (nextRenderDidError) {
+    // There was an error
+    if (hasLowerPriorityWork(root, expirationTime)) {
+      // There's lower priority work. If so, it may have the effect of fixing
+      // the exception that was just thrown. Exit without committing. This is
+      // similar to a suspend, but without a timeout because we're not waiting
+      // for a promise to resolve. React will restart at the lower
+      // priority level.
+      markSuspendedPriorityLevel(root, expirationTime);
+      var suspendedExpirationTime = expirationTime;
+      var rootExpirationTime = root.expirationTime;
+      onSuspend(root, rootWorkInProgress, suspendedExpirationTime, rootExpirationTime, -1 // Indicates no timeout
+      );
+      return;
+    } else if (
+    // There's no lower priority work, but we're rendering asynchronously.
+    // Synchronsouly attempt to render the same level one more time. This is
+    // similar to a suspend, but without a timeout because we're not waiting
+    // for a promise to resolve.
+    !root.didError && !isExpired) {
+      root.didError = true;
+      var _suspendedExpirationTime = root.nextExpirationTimeToWorkOn = expirationTime;
+      var _rootExpirationTime = root.expirationTime = Sync;
+      onSuspend(root, rootWorkInProgress, _suspendedExpirationTime, _rootExpirationTime, -1 // Indicates no timeout
+      );
+      return;
+    }
+  }
+
+  if (enableSuspense && !isExpired && nextLatestAbsoluteTimeoutMs !== -1) {
+    // The tree was suspended.
+    var _suspendedExpirationTime2 = expirationTime;
+    markSuspendedPriorityLevel(root, _suspendedExpirationTime2);
+
+    // Find the earliest uncommitted expiration time in the tree, including
+    // work that is suspended. The timeout threshold cannot be longer than
+    // the overall expiration.
+    var earliestExpirationTime = findEarliestOutstandingPriorityLevel(root, expirationTime);
+    var earliestExpirationTimeMs = expirationTimeToMs(earliestExpirationTime);
+    if (earliestExpirationTimeMs < nextLatestAbsoluteTimeoutMs) {
+      nextLatestAbsoluteTimeoutMs = earliestExpirationTimeMs;
+    }
+
+    // Subtract the current time from the absolute timeout to get the number
+    // of milliseconds until the timeout. In other words, convert an absolute
+    // timestamp to a relative time. This is the value that is passed
+    // to `setTimeout`.
+    var currentTimeMs = expirationTimeToMs(requestCurrentTime());
+    var msUntilTimeout = nextLatestAbsoluteTimeoutMs - currentTimeMs;
+    msUntilTimeout = msUntilTimeout < 0 ? 0 : msUntilTimeout;
+
+    // TODO: Account for the Just Noticeable Difference
+
+    var _rootExpirationTime2 = root.expirationTime;
+    onSuspend(root, rootWorkInProgress, _suspendedExpirationTime2, _rootExpirationTime2, msUntilTimeout);
+    return;
+  }
+
+  // Ready to commit.
+  onComplete(root, rootWorkInProgress, expirationTime);
 }
 
 function dispatch(sourceFiber, value, expirationTime) {
@@ -17792,13 +18411,14 @@ function dispatch(sourceFiber, value, expirationTime) {
   while (fiber !== null) {
     switch (fiber.tag) {
       case ClassComponent:
+      case ClassComponentLazy:
         var ctor = fiber.type;
         var instance = fiber.stateNode;
         if (typeof ctor.getDerivedStateFromCatch === 'function' || typeof instance.componentDidCatch === 'function' && !isAlreadyFailedLegacyErrorBoundary(instance)) {
           var errorInfo = createCapturedValue(value, sourceFiber);
           var update = createClassErrorUpdate(fiber, errorInfo, expirationTime);
-          enqueueUpdate(fiber, update, expirationTime);
-          scheduleWork$1(fiber, expirationTime);
+          enqueueUpdate(fiber, update);
+          scheduleWork(fiber, expirationTime);
           return;
         }
         break;
@@ -17806,8 +18426,8 @@ function dispatch(sourceFiber, value, expirationTime) {
         {
           var _errorInfo = createCapturedValue(value, sourceFiber);
           var _update = createRootErrorUpdate(fiber, _errorInfo, expirationTime);
-          enqueueUpdate(fiber, _update, expirationTime);
-          scheduleWork$1(fiber, expirationTime);
+          enqueueUpdate(fiber, _update);
+          scheduleWork(fiber, expirationTime);
           return;
         }
     }
@@ -17820,8 +18440,8 @@ function dispatch(sourceFiber, value, expirationTime) {
     var rootFiber = sourceFiber;
     var _errorInfo2 = createCapturedValue(value, rootFiber);
     var _update2 = createRootErrorUpdate(rootFiber, _errorInfo2, expirationTime);
-    enqueueUpdate(rootFiber, _update2, expirationTime);
-    scheduleWork$1(rootFiber, expirationTime);
+    enqueueUpdate(rootFiber, _update2);
+    scheduleWork(rootFiber, expirationTime);
   }
 }
 
@@ -17829,36 +18449,14 @@ function captureCommitPhaseError(fiber, error) {
   return dispatch(fiber, error, Sync);
 }
 
-function computeAsyncExpiration(currentTime) {
-  // Given the current clock time, returns an expiration time. We use rounding
-  // to batch like updates together.
-  // Should complete within ~5000ms. 5250ms max.
-  var expirationMs = 5000;
-  var bucketSizeMs = 250;
-  return computeExpirationBucket(currentTime, expirationMs, bucketSizeMs);
-}
-
-function computeInteractiveExpiration(currentTime) {
-  var expirationMs = void 0;
-  // We intentionally set a higher expiration time for interactive updates in
-  // dev than in production.
-  // If the main thread is being blocked so long that you hit the expiration,
-  // it's a problem that could be solved with better scheduling.
-  // People will be more likely to notice this and fix it with the long
-  // expiration time in development.
-  // In production we opt for better UX at the risk of masking scheduling
-  // problems, by expiring fast.
-  {
-    // Should complete within ~500ms. 600ms max.
-    expirationMs = 500;
-  }
-  var bucketSizeMs = 100;
-  return computeExpirationBucket(currentTime, expirationMs, bucketSizeMs);
+function computeThreadID(expirationTime, interactionThreadID) {
+  // Interaction threads are unique per root and expiration time.
+  return expirationTime * 1000 + interactionThreadID;
 }
 
 // Creates a unique async expiration time.
 function computeUniqueAsyncExpiration() {
-  var currentTime = recalculateCurrentTime();
+  var currentTime = requestCurrentTime();
   var result = computeAsyncExpiration(currentTime);
   if (result <= lastUniqueAsyncExpiration) {
     // Since we assume the current time monotonically increases, we only hit
@@ -17896,6 +18494,11 @@ function computeExpirationForFiber(currentTime, fiber) {
         // This is an async update
         expirationTime = computeAsyncExpiration(currentTime);
       }
+      // If we're in the middle of rendering a tree, do not update at the same
+      // expiration time that is already rendering.
+      if (nextRoot !== null && expirationTime === nextRenderExpirationTime) {
+        expirationTime += 1;
+      }
     } else {
       // This is a sync update
       expirationTime = Sync;
@@ -17905,102 +18508,170 @@ function computeExpirationForFiber(currentTime, fiber) {
     // This is an interactive update. Keep track of the lowest pending
     // interactive expiration time. This allows us to synchronously flush
     // all interactive updates when needed.
-    if (lowestPendingInteractiveExpirationTime === NoWork || expirationTime > lowestPendingInteractiveExpirationTime) {
-      lowestPendingInteractiveExpirationTime = expirationTime;
+    if (lowestPriorityPendingInteractiveExpirationTime === NoWork || expirationTime > lowestPriorityPendingInteractiveExpirationTime) {
+      lowestPriorityPendingInteractiveExpirationTime = expirationTime;
     }
   }
   return expirationTime;
 }
 
-// TODO: Rename this to scheduleTimeout or something
-function suspendRoot(root, thenable, timeoutMs, suspendedTime) {
+function renderDidSuspend(root, absoluteTimeoutMs, suspendedTime) {
   // Schedule the timeout.
-  if (timeoutMs >= 0 && nextLatestTimeoutMs < timeoutMs) {
-    nextLatestTimeoutMs = timeoutMs;
+  if (absoluteTimeoutMs >= 0 && nextLatestAbsoluteTimeoutMs < absoluteTimeoutMs) {
+    nextLatestAbsoluteTimeoutMs = absoluteTimeoutMs;
   }
 }
 
-function retrySuspendedRoot(root, suspendedTime) {
-  markPingedPriorityLevel(root, suspendedTime);
-  var retryTime = findNextPendingPriorityLevel(root);
-  if (retryTime !== NoWork) {
-    requestRetry(root, retryTime);
+function renderDidError() {
+  nextRenderDidError = true;
+}
+
+function retrySuspendedRoot(root, fiber, suspendedTime) {
+  if (enableSuspense) {
+    var retryTime = void 0;
+
+    if (isPriorityLevelSuspended(root, suspendedTime)) {
+      // Ping at the original level
+      retryTime = suspendedTime;
+      markPingedPriorityLevel(root, retryTime);
+    } else {
+      // Placeholder already timed out. Compute a new expiration time
+      var currentTime = requestCurrentTime();
+      retryTime = computeExpirationForFiber(currentTime, fiber);
+      markPendingPriorityLevel(root, retryTime);
+    }
+
+    scheduleWorkToRoot(fiber, retryTime);
+    var rootExpirationTime = root.expirationTime;
+    if (rootExpirationTime !== NoWork) {
+      if (enableSchedulerTracking) {
+        // Restore previous interactions so that new work is associated with them.
+        var prevInteractions = tracking.__interactionsRef.current;
+        tracking.__interactionsRef.current = root.memoizedInteractions;
+        // Because suspense timeouts do not decrement the interaction count,
+        // Continued suspense work should also not increment the count.
+        storeInteractionsForExpirationTime(root, rootExpirationTime, false);
+        requestWork(root, rootExpirationTime);
+        tracking.__interactionsRef.current = prevInteractions;
+      } else {
+        requestWork(root, rootExpirationTime);
+      }
+    }
   }
 }
 
-function scheduleWork$1(fiber, expirationTime) {
+function scheduleWorkToRoot(fiber, expirationTime) {
+  // Update the source fiber's expiration time
+  if (fiber.expirationTime === NoWork || fiber.expirationTime > expirationTime) {
+    fiber.expirationTime = expirationTime;
+  }
+  var alternate = fiber.alternate;
+  if (alternate !== null && (alternate.expirationTime === NoWork || alternate.expirationTime > expirationTime)) {
+    alternate.expirationTime = expirationTime;
+  }
+  // Walk the parent path to the root and update the child expiration time.
+  var node = fiber.return;
+  if (node === null && fiber.tag === HostRoot) {
+    return fiber.stateNode;
+  }
+  while (node !== null) {
+    alternate = node.alternate;
+    if (node.childExpirationTime === NoWork || node.childExpirationTime > expirationTime) {
+      node.childExpirationTime = expirationTime;
+      if (alternate !== null && (alternate.childExpirationTime === NoWork || alternate.childExpirationTime > expirationTime)) {
+        alternate.childExpirationTime = expirationTime;
+      }
+    } else if (alternate !== null && (alternate.childExpirationTime === NoWork || alternate.childExpirationTime > expirationTime)) {
+      alternate.childExpirationTime = expirationTime;
+    }
+    if (node.return === null && node.tag === HostRoot) {
+      return node.stateNode;
+    }
+    node = node.return;
+  }
+  return null;
+}
+
+function storeInteractionsForExpirationTime(root, expirationTime, updateInteractionCounts) {
+  if (!enableSchedulerTracking) {
+    return;
+  }
+
+  var interactions = tracking.__interactionsRef.current;
+  if (interactions.size > 0) {
+    var pendingInteractions = root.pendingInteractionMap.get(expirationTime);
+    if (pendingInteractions != null) {
+      interactions.forEach(function (interaction) {
+        if (updateInteractionCounts && !pendingInteractions.has(interaction)) {
+          // Update the pending async work count for previously unscheduled interaction.
+          interaction.__count++;
+        }
+
+        pendingInteractions.add(interaction);
+      });
+    } else {
+      root.pendingInteractionMap.set(expirationTime, new Set(interactions));
+
+      // Update the pending async work count for the current interactions.
+      if (updateInteractionCounts) {
+        interactions.forEach(function (interaction) {
+          interaction.__count++;
+        });
+      }
+    }
+
+    var subscriber = tracking.__subscriberRef.current;
+    if (subscriber !== null) {
+      var threadID = computeThreadID(expirationTime, root.interactionThreadID);
+      subscriber.onWorkScheduled(interactions, threadID);
+    }
+  }
+}
+
+function scheduleWork(fiber, expirationTime) {
   recordScheduleUpdate();
 
   {
-    if (fiber.tag === ClassComponent) {
+    if (fiber.tag === ClassComponent || fiber.tag === ClassComponentLazy) {
       var instance = fiber.stateNode;
       warnAboutInvalidUpdates(instance);
     }
   }
 
-  var node = fiber;
-  while (node !== null) {
-    // Walk the parent path to the root and update each node's
-    // expiration time.
-    if (node.expirationTime === NoWork || node.expirationTime > expirationTime) {
-      node.expirationTime = expirationTime;
+  var root = scheduleWorkToRoot(fiber, expirationTime);
+  if (root === null) {
+    if (true && (fiber.tag === ClassComponent || fiber.tag === ClassComponentLazy)) {
+      warnAboutUpdateOnUnmounted(fiber);
     }
-    if (node.alternate !== null) {
-      if (node.alternate.expirationTime === NoWork || node.alternate.expirationTime > expirationTime) {
-        node.alternate.expirationTime = expirationTime;
-      }
-    }
-    if (node.return === null) {
-      if (node.tag === HostRoot) {
-        var root = node.stateNode;
-        if (!isWorking && nextRenderExpirationTime !== NoWork && expirationTime < nextRenderExpirationTime) {
-          // This is an interruption. (Used for performance tracking.)
-          interruptedBy = fiber;
-          resetStack();
-        }
-        markPendingPriorityLevel(root, expirationTime);
-        var nextExpirationTimeToWorkOn = findNextPendingPriorityLevel(root);
-        if (
-        // If we're in the render phase, we don't need to schedule this root
-        // for an update, because we'll do it before we exit...
-        !isWorking || isCommitting$1 ||
-        // ...unless this is a different root than the one we're rendering.
-        nextRoot !== root) {
-          requestWork(root, nextExpirationTimeToWorkOn);
-        }
-        if (nestedUpdateCount > NESTED_UPDATE_LIMIT) {
-          invariant(false, 'Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.');
-        }
-      } else {
-        {
-          if (fiber.tag === ClassComponent) {
-            warnAboutUpdateOnUnmounted(fiber);
-          }
-        }
-        return;
-      }
-    }
-    node = node.return;
+    return;
+  }
+
+  if (enableSchedulerTracking) {
+    storeInteractionsForExpirationTime(root, expirationTime, true);
+  }
+
+  if (!isWorking && nextRenderExpirationTime !== NoWork && expirationTime < nextRenderExpirationTime) {
+    // This is an interruption. (Used for performance tracking.)
+    interruptedBy = fiber;
+    resetStack();
+  }
+  markPendingPriorityLevel(root, expirationTime);
+  if (
+  // If we're in the render phase, we don't need to schedule this root
+  // for an update, because we'll do it before we exit...
+  !isWorking || isCommitting$1 ||
+  // ...unless this is a different root than the one we're rendering.
+  nextRoot !== root) {
+    var rootExpirationTime = root.expirationTime;
+    requestWork(root, rootExpirationTime);
+  }
+  if (nestedUpdateCount > NESTED_UPDATE_LIMIT) {
+    // Reset this back to zero so subsequent updates don't throw.
+    nestedUpdateCount = 0;
+    invariant(false, 'Maximum update depth exceeded. This can happen when a component repeatedly calls setState inside componentWillUpdate or componentDidUpdate. React limits the number of nested updates to prevent infinite loops.');
   }
 }
 
-function recalculateCurrentTime() {
-  // Subtract initial time so it fits inside 32bits
-  mostRecentCurrentTimeMs = now() - originalStartTimeMs;
-  mostRecentCurrentTime = msToExpirationTime(mostRecentCurrentTimeMs);
-  return mostRecentCurrentTime;
-}
-
-function deferredUpdates(fn) {
-  var previousExpirationContext = expirationContext;
-  var currentTime = recalculateCurrentTime();
-  expirationContext = computeAsyncExpiration(currentTime);
-  try {
-    return fn();
-  } finally {
-    expirationContext = previousExpirationContext;
-  }
-}
 function syncUpdates(fn, a, b, c, d) {
   var previousExpirationContext = expirationContext;
   expirationContext = Sync;
@@ -18023,7 +18694,7 @@ var callbackID = void 0;
 var isRendering = false;
 var nextFlushedRoot = null;
 var nextFlushedExpirationTime = NoWork;
-var lowestPendingInteractiveExpirationTime = NoWork;
+var lowestPriorityPendingInteractiveExpirationTime = NoWork;
 var deadlineDidExpire = false;
 var hasUnhandledError = false;
 var unhandledError = null;
@@ -18035,13 +18706,23 @@ var isBatchingInteractiveUpdates = false;
 
 var completedBatches = null;
 
+var originalStartTimeMs = schedule.unstable_now();
+var currentRendererTime = msToExpirationTime(originalStartTimeMs);
+var currentSchedulerTime = currentRendererTime;
+
 // Use these to prevent an infinite loop of nested updates
-var NESTED_UPDATE_LIMIT = 1000;
+var NESTED_UPDATE_LIMIT = 50;
 var nestedUpdateCount = 0;
+var lastCommittedRootDuringThisBatch = null;
 
 var timeHeuristicForUnitOfWork = 1;
 
-function scheduleCallbackWithExpiration(expirationTime) {
+function recomputeCurrentRendererTime() {
+  var currentTimeMs = schedule.unstable_now() - originalStartTimeMs;
+  currentRendererTime = msToExpirationTime(currentTimeMs);
+}
+
+function scheduleCallbackWithExpirationTime(root, expirationTime) {
   if (callbackExpirationTime !== NoWork) {
     // A callback is already scheduled. Check its expiration time (timeout).
     if (expirationTime > callbackExpirationTime) {
@@ -18051,7 +18732,7 @@ function scheduleCallbackWithExpiration(expirationTime) {
       if (callbackID !== null) {
         // Existing callback has insufficient timeout. Cancel and schedule a
         // new one.
-        cancelDeferredCallback(callbackID);
+        schedule.unstable_cancelScheduledWork(callbackID);
       }
     }
     // The request callback timer is already running. Don't start a new one.
@@ -18059,29 +18740,115 @@ function scheduleCallbackWithExpiration(expirationTime) {
     startRequestCallbackTimer();
   }
 
-  // Compute a timeout for the given expiration time.
-  var currentMs = now() - originalStartTimeMs;
-  var expirationMs = expirationTimeToMs(expirationTime);
-  var timeout = expirationMs - currentMs;
-
   callbackExpirationTime = expirationTime;
-  callbackID = scheduleDeferredCallback(performAsyncWork, { timeout: timeout });
+  var currentMs = schedule.unstable_now() - originalStartTimeMs;
+  var expirationTimeMs = expirationTimeToMs(expirationTime);
+  var timeout = expirationTimeMs - currentMs;
+  callbackID = schedule.unstable_scheduleWork(performAsyncWork, { timeout: timeout });
 }
 
-function requestRetry(root, expirationTime) {
-  if (root.remainingExpirationTime === NoWork || root.remainingExpirationTime < expirationTime) {
-    // For a retry, only update the remaining expiration time if it has a
-    // *lower priority* than the existing value. This is because, on a retry,
-    // we should attempt to coalesce as much as possible.
-    requestWork(root, expirationTime);
+// For every call to renderRoot, one of onFatal, onComplete, onSuspend, and
+// onYield is called upon exiting. We use these in lieu of returning a tuple.
+// I've also chosen not to inline them into renderRoot because these will
+// eventually be lifted into the renderer.
+function onFatal(root) {
+  root.finishedWork = null;
+}
+
+function onComplete(root, finishedWork, expirationTime) {
+  root.pendingCommitExpirationTime = expirationTime;
+  root.finishedWork = finishedWork;
+}
+
+function onSuspend(root, finishedWork, suspendedExpirationTime, rootExpirationTime, msUntilTimeout) {
+  root.expirationTime = rootExpirationTime;
+  if (enableSuspense && msUntilTimeout === 0 && !shouldYield()) {
+    // Don't wait an additional tick. Commit the tree immediately.
+    root.pendingCommitExpirationTime = suspendedExpirationTime;
+    root.finishedWork = finishedWork;
+  } else if (msUntilTimeout > 0) {
+    // Wait `msUntilTimeout` milliseconds before committing.
+    root.timeoutHandle = scheduleTimeout(onTimeout.bind(null, root, finishedWork, suspendedExpirationTime), msUntilTimeout);
   }
+}
+
+function onYield(root) {
+  root.finishedWork = null;
+}
+
+function onTimeout(root, finishedWork, suspendedExpirationTime) {
+  if (enableSuspense) {
+    // The root timed out. Commit it.
+    root.pendingCommitExpirationTime = suspendedExpirationTime;
+    root.finishedWork = finishedWork;
+    // Read the current time before entering the commit phase. We can be
+    // certain this won't cause tearing related to batching of event updates
+    // because we're at the top of a timer event.
+    recomputeCurrentRendererTime();
+    currentSchedulerTime = currentRendererTime;
+
+    if (enableSchedulerTracking) {
+      // Don't update pending interaction counts for suspense timeouts,
+      // Because we know we still need to do more work in this case.
+      suspenseDidTimeout = true;
+      flushRoot(root, suspendedExpirationTime);
+      suspenseDidTimeout = false;
+    } else {
+      flushRoot(root, suspendedExpirationTime);
+    }
+  }
+}
+
+function onCommit(root, expirationTime) {
+  root.expirationTime = expirationTime;
+  root.finishedWork = null;
+}
+
+function requestCurrentTime() {
+  // requestCurrentTime is called by the scheduler to compute an expiration
+  // time.
+  //
+  // Expiration times are computed by adding to the current time (the start
+  // time). However, if two updates are scheduled within the same event, we
+  // should treat their start times as simultaneous, even if the actual clock
+  // time has advanced between the first and second call.
+
+  // In other words, because expiration times determine how updates are batched,
+  // we want all updates of like priority that occur within the same event to
+  // receive the same expiration time. Otherwise we get tearing.
+  //
+  // We keep track of two separate times: the current "renderer" time and the
+  // current "scheduler" time. The renderer time can be updated whenever; it
+  // only exists to minimize the calls performance.now.
+  //
+  // But the scheduler time can only be updated if there's no pending work, or
+  // if we know for certain that we're not in the middle of an event.
+
+  if (isRendering) {
+    // We're already rendering. Return the most recently read time.
+    return currentSchedulerTime;
+  }
+  // Check if there's pending work.
+  findHighestPriorityRoot();
+  if (nextFlushedExpirationTime === NoWork || nextFlushedExpirationTime === Never) {
+    // If there's no pending work, or if the pending work is offscreen, we can
+    // read the current time without risk of tearing.
+    recomputeCurrentRendererTime();
+    currentSchedulerTime = currentRendererTime;
+    return currentSchedulerTime;
+  }
+  // There's already pending work. We might be in the middle of a browser
+  // event. If we were to read the current time, it could cause multiple updates
+  // within the same event to receive different expiration times, leading to
+  // tearing. Return the last read time. During the next idle callback, the
+  // time will be updated.
+  return currentSchedulerTime;
 }
 
 // requestWork is called by the scheduler whenever a root receives an update.
 // It's up to the renderer to call renderRoot at some point in the future.
 function requestWork(root, expirationTime) {
   addRootToSchedule(root, expirationTime);
-
   if (isRendering) {
     // Prevent reentrancy. Remaining work will be scheduled at the end of
     // the currently rendering batch.
@@ -18095,7 +18862,7 @@ function requestWork(root, expirationTime) {
       // flush it now.
       nextFlushedRoot = root;
       nextFlushedExpirationTime = Sync;
-      performWorkOnRoot(root, Sync, false);
+      performWorkOnRoot(root, Sync, true);
     }
     return;
   }
@@ -18104,7 +18871,7 @@ function requestWork(root, expirationTime) {
   if (expirationTime === Sync) {
     performSyncWork();
   } else {
-    scheduleCallbackWithExpiration(expirationTime);
+    scheduleCallbackWithExpirationTime(root, expirationTime);
   }
 }
 
@@ -18113,7 +18880,7 @@ function addRootToSchedule(root, expirationTime) {
   // Check if this root is already part of the schedule.
   if (root.nextScheduledRoot === null) {
     // This root is not already scheduled. Add it.
-    root.remainingExpirationTime = expirationTime;
+    root.expirationTime = expirationTime;
     if (lastScheduledRoot === null) {
       firstScheduledRoot = lastScheduledRoot = root;
       root.nextScheduledRoot = root;
@@ -18124,10 +18891,10 @@ function addRootToSchedule(root, expirationTime) {
     }
   } else {
     // This root is already scheduled, but its priority may have increased.
-    var remainingExpirationTime = root.remainingExpirationTime;
+    var remainingExpirationTime = root.expirationTime;
     if (remainingExpirationTime === NoWork || expirationTime < remainingExpirationTime) {
       // Update the priority.
-      root.remainingExpirationTime = expirationTime;
+      root.expirationTime = expirationTime;
     }
   }
 }
@@ -18139,7 +18906,7 @@ function findHighestPriorityRoot() {
     var previousScheduledRoot = lastScheduledRoot;
     var root = firstScheduledRoot;
     while (root !== null) {
-      var remainingExpirationTime = root.remainingExpirationTime;
+      var remainingExpirationTime = root.expirationTime;
       if (remainingExpirationTime === NoWork) {
         // This root no longer has work. Remove it from the scheduler.
 
@@ -18178,59 +18945,71 @@ function findHighestPriorityRoot() {
         if (root === lastScheduledRoot) {
           break;
         }
+        if (highestPriorityWork === Sync) {
+          // Sync is highest priority by definition so
+          // we can stop searching.
+          break;
+        }
         previousScheduledRoot = root;
         root = root.nextScheduledRoot;
       }
     }
   }
 
-  // If the next root is the same as the previous root, this is a nested
-  // update. To prevent an infinite loop, increment the nested update count.
-  var previousFlushedRoot = nextFlushedRoot;
-  if (previousFlushedRoot !== null && previousFlushedRoot === highestPriorityRoot && highestPriorityWork === Sync) {
-    nestedUpdateCount++;
-  } else {
-    // Reset whenever we switch roots.
-    nestedUpdateCount = 0;
-  }
   nextFlushedRoot = highestPriorityRoot;
   nextFlushedExpirationTime = highestPriorityWork;
 }
 
 function performAsyncWork(dl) {
-  performWork(NoWork, true, dl);
+  if (dl.didTimeout) {
+    // The callback timed out. That means at least one update has expired.
+    // Iterate through the root schedule. If they contain expired work, set
+    // the next render expiration time to the current time. This has the effect
+    // of flushing all expired work in a single batch, instead of flushing each
+    // level one at a time.
+    if (firstScheduledRoot !== null) {
+      recomputeCurrentRendererTime();
+      var root = firstScheduledRoot;
+      do {
+        didExpireAtExpirationTime(root, currentRendererTime);
+        // The root schedule is circular, so this is never null.
+        root = root.nextScheduledRoot;
+      } while (root !== firstScheduledRoot);
+    }
+  }
+  performWork(NoWork, dl);
 }
 
 function performSyncWork() {
-  performWork(Sync, false, null);
+  performWork(Sync, null);
 }
 
-function performWork(minExpirationTime, isAsync, dl) {
+function performWork(minExpirationTime, dl) {
   deadline = dl;
 
-  // Keep working on roots until there's no more work, or until the we reach
+  // Keep working on roots until there's no more work, or until we reach
   // the deadline.
   findHighestPriorityRoot();
 
-  if (enableProfilerTimer) {
-    resumeActualRenderTimerIfPaused();
-  }
+  if (deadline !== null) {
+    recomputeCurrentRendererTime();
+    currentSchedulerTime = currentRendererTime;
 
-  if (enableUserTimingAPI && deadline !== null) {
-    var didExpire = nextFlushedExpirationTime < recalculateCurrentTime();
-    var timeout = expirationTimeToMs(nextFlushedExpirationTime);
-    stopRequestCallbackTimer(didExpire, timeout);
-  }
+    if (enableUserTimingAPI) {
+      var didExpire = nextFlushedExpirationTime < currentRendererTime;
+      var timeout = expirationTimeToMs(nextFlushedExpirationTime);
+      stopRequestCallbackTimer(didExpire, timeout);
+    }
 
-  if (isAsync) {
-    while (nextFlushedRoot !== null && nextFlushedExpirationTime !== NoWork && (minExpirationTime === NoWork || minExpirationTime >= nextFlushedExpirationTime) && (!deadlineDidExpire || recalculateCurrentTime() >= nextFlushedExpirationTime)) {
-      recalculateCurrentTime();
-      performWorkOnRoot(nextFlushedRoot, nextFlushedExpirationTime, !deadlineDidExpire);
+    while (nextFlushedRoot !== null && nextFlushedExpirationTime !== NoWork && (minExpirationTime === NoWork || minExpirationTime >= nextFlushedExpirationTime) && (!deadlineDidExpire || currentRendererTime >= nextFlushedExpirationTime)) {
+      performWorkOnRoot(nextFlushedRoot, nextFlushedExpirationTime, currentRendererTime >= nextFlushedExpirationTime);
       findHighestPriorityRoot();
+      recomputeCurrentRendererTime();
+      currentSchedulerTime = currentRendererTime;
     }
   } else {
     while (nextFlushedRoot !== null && nextFlushedExpirationTime !== NoWork && (minExpirationTime === NoWork || minExpirationTime >= nextFlushedExpirationTime)) {
-      performWorkOnRoot(nextFlushedRoot, nextFlushedExpirationTime, false);
+      performWorkOnRoot(nextFlushedRoot, nextFlushedExpirationTime, true);
       findHighestPriorityRoot();
     }
   }
@@ -18245,7 +19024,7 @@ function performWork(minExpirationTime, isAsync, dl) {
   }
   // If there's work left over, schedule a new callback.
   if (nextFlushedExpirationTime !== NoWork) {
-    scheduleCallbackWithExpiration(nextFlushedExpirationTime);
+    scheduleCallbackWithExpirationTime(nextFlushedRoot, nextFlushedExpirationTime);
   }
 
   // Clean-up.
@@ -18262,14 +19041,14 @@ function flushRoot(root, expirationTime) {
   // including the given time.
   nextFlushedRoot = root;
   nextFlushedExpirationTime = expirationTime;
-  performWorkOnRoot(root, expirationTime, false);
+  performWorkOnRoot(root, expirationTime, true);
   // Flush any sync work that was scheduled by lifecycles
   performSyncWork();
-  finishRendering();
 }
 
 function finishRendering() {
   nestedUpdateCount = 0;
+  lastCommittedRootDuringThisBatch = null;
 
   if (completedBatches !== null) {
     var batches = completedBatches;
@@ -18295,20 +19074,35 @@ function finishRendering() {
   }
 }
 
-function performWorkOnRoot(root, expirationTime, isAsync) {
+function performWorkOnRoot(root, expirationTime, isExpired) {
   !!isRendering ? invariant(false, 'performWorkOnRoot was called recursively. This error is likely caused by a bug in React. Please file an issue.') : void 0;
 
   isRendering = true;
 
   // Check if this is async work or sync/expired work.
-  if (!isAsync) {
-    // Flush sync work.
+  if (deadline === null || isExpired) {
+    // Flush work without yielding.
+    // TODO: Non-yieldy work does not necessarily imply expired work. A renderer
+    // may want to perform some work without yielding, but also without
+    // requiring the root to complete (by triggering placeholders).
+
     var finishedWork = root.finishedWork;
     if (finishedWork !== null) {
       // This root is already complete. We can commit it.
       completeRoot(root, finishedWork, expirationTime);
     } else {
-      finishedWork = renderRoot(root, expirationTime, false);
+      root.finishedWork = null;
+      // If this root previously suspended, clear its existing timeout, since
+      // we're about to try rendering again.
+      var timeoutHandle = root.timeoutHandle;
+      if (enableSuspense && timeoutHandle !== noTimeout) {
+        root.timeoutHandle = noTimeout;
+        // $FlowFixMe Complains noTimeout is not a TimeoutID, despite the check above
+        cancelTimeout(timeoutHandle);
+      }
+      var isYieldy = false;
+      renderRoot(root, isYieldy, isExpired);
+      finishedWork = root.finishedWork;
       if (finishedWork !== null) {
         // We've completed the root. Commit it.
         completeRoot(root, finishedWork, expirationTime);
@@ -18321,7 +19115,18 @@ function performWorkOnRoot(root, expirationTime, isAsync) {
       // This root is already complete. We can commit it.
       completeRoot(root, _finishedWork, expirationTime);
     } else {
-      _finishedWork = renderRoot(root, expirationTime, true);
+      root.finishedWork = null;
+      // If this root previously suspended, clear its existing timeout, since
+      // we're about to try rendering again.
+      var _timeoutHandle = root.timeoutHandle;
+      if (enableSuspense && _timeoutHandle !== noTimeout) {
+        root.timeoutHandle = noTimeout;
+        // $FlowFixMe Complains noTimeout is not a TimeoutID, despite the check above
+        cancelTimeout(_timeoutHandle);
+      }
+      var _isYieldy = true;
+      renderRoot(root, _isYieldy, isExpired);
+      _finishedWork = root.finishedWork;
       if (_finishedWork !== null) {
         // We've completed the root. Check the deadline one more time
         // before committing.
@@ -18332,12 +19137,6 @@ function performWorkOnRoot(root, expirationTime, isAsync) {
           // There's no time left. Mark this root as complete. We'll come
           // back and commit it later.
           root.finishedWork = _finishedWork;
-
-          if (enableProfilerTimer) {
-            // If we didn't finish, pause the "actual" render timer.
-            // We'll restart it when we resume work.
-            pauseActualRenderTimerIfRunning();
-          }
         }
       }
     }
@@ -18359,23 +19158,35 @@ function completeRoot(root, finishedWork, expirationTime) {
       // This root is blocked from committing by a batch. Unschedule it until
       // we receive another update.
       root.finishedWork = finishedWork;
-      root.remainingExpirationTime = NoWork;
+      root.expirationTime = NoWork;
       return;
     }
   }
 
   // Commit the root.
   root.finishedWork = null;
-  root.remainingExpirationTime = commitRoot(finishedWork);
+
+  // Check if this is a nested update (a sync update scheduled during the
+  // commit phase).
+  if (root === lastCommittedRootDuringThisBatch) {
+    // If the next root is the same as the previous root, this is a nested
+    // update. To prevent an infinite loop, increment the nested update count.
+    nestedUpdateCount++;
+  } else {
+    // Reset whenever we switch roots.
+    lastCommittedRootDuringThisBatch = root;
+    nestedUpdateCount = 0;
+  }
+  commitRoot(root, finishedWork);
 }
 
 // When working on async work, the reconciler asks the renderer if it should
 // yield execution. For DOM, we implement this with requestIdleCallback.
 function shouldYield() {
-  if (deadline === null) {
-    return false;
+  if (deadlineDidExpire) {
+    return true;
   }
-  if (deadline.timeRemaining() > timeHeuristicForUnitOfWork) {
+  if (deadline === null || deadline.timeRemaining() > timeHeuristicForUnitOfWork) {
     // Disregard deadline.didTimeout. Only expired work should be flushed
     // during a timeout. This path is only hit for non-expired work.
     return false;
@@ -18388,17 +19199,11 @@ function onUncaughtError(error) {
   !(nextFlushedRoot !== null) ? invariant(false, 'Should be working on a root. This error is likely caused by a bug in React. Please file an issue.') : void 0;
   // Unschedule this root so we don't work on it again until there's
   // another update.
-  nextFlushedRoot.remainingExpirationTime = NoWork;
+  nextFlushedRoot.expirationTime = NoWork;
   if (!hasUnhandledError) {
     hasUnhandledError = true;
     unhandledError = error;
   }
-}
-
-function onBlock(remainingExpirationTime) {
-  !(nextFlushedRoot !== null) ? invariant(false, 'Should be working on a root. This error is likely caused by a bug in React. Please file an issue.') : void 0;
-  // This root was blocked. Unschedule it until there's another update.
-  nextFlushedRoot.remainingExpirationTime = remainingExpirationTime;
 }
 
 // TODO: Batching should be implemented at the renderer level, not inside
@@ -18452,10 +19257,10 @@ function interactiveUpdates$1(fn, a, b) {
   // This needs to happen before we read any handlers, because the effect of
   // the previous event may influence which handlers are called during
   // this event.
-  if (!isBatchingUpdates && !isRendering && lowestPendingInteractiveExpirationTime !== NoWork) {
+  if (!isBatchingUpdates && !isRendering && lowestPriorityPendingInteractiveExpirationTime !== NoWork) {
     // Synchronously flush pending interactive updates.
-    performWork(lowestPendingInteractiveExpirationTime, false, null);
-    lowestPendingInteractiveExpirationTime = NoWork;
+    performWork(lowestPriorityPendingInteractiveExpirationTime, null);
+    lowestPriorityPendingInteractiveExpirationTime = NoWork;
   }
   var previousIsBatchingInteractiveUpdates = isBatchingInteractiveUpdates;
   var previousIsBatchingUpdates = isBatchingUpdates;
@@ -18473,10 +19278,10 @@ function interactiveUpdates$1(fn, a, b) {
 }
 
 function flushInteractiveUpdates$1() {
-  if (!isRendering && lowestPendingInteractiveExpirationTime !== NoWork) {
+  if (!isRendering && lowestPriorityPendingInteractiveExpirationTime !== NoWork) {
     // Synchronously flush pending interactive updates.
-    performWork(lowestPendingInteractiveExpirationTime, false, null);
-    lowestPendingInteractiveExpirationTime = NoWork;
+    performWork(lowestPriorityPendingInteractiveExpirationTime, null);
+    lowestPriorityPendingInteractiveExpirationTime = NoWork;
   }
 }
 
@@ -18488,7 +19293,7 @@ function flushControlled(fn) {
   } finally {
     isBatchingUpdates = previousIsBatchingUpdates;
     if (!isBatchingUpdates && !isRendering) {
-      performWork(Sync, false, null);
+      performWork(Sync, null);
     }
   }
 }
@@ -18505,19 +19310,32 @@ var didWarnAboutNestedUpdates = void 0;
 
 function getContextForSubtree(parentComponent) {
   if (!parentComponent) {
-    return emptyObject;
+    return emptyContextObject;
   }
 
   var fiber = get(parentComponent);
   var parentContext = findCurrentUnmaskedContext(fiber);
-  return isContextProvider(fiber) ? processChildContext(fiber, parentContext) : parentContext;
+
+  if (fiber.tag === ClassComponent) {
+    var Component = fiber.type;
+    if (isContextProvider(Component)) {
+      return processChildContext(fiber, Component, parentContext);
+    }
+  } else if (fiber.tag === ClassComponentLazy) {
+    var _Component = getResultFromResolvedThenable(fiber.type);
+    if (isContextProvider(_Component)) {
+      return processChildContext(fiber, _Component, parentContext);
+    }
+  }
+
+  return parentContext;
 }
 
-function scheduleRootUpdate(current, element, expirationTime, callback) {
+function scheduleRootUpdate(current$$1, element, expirationTime, callback) {
   {
-    if (ReactDebugCurrentFiber.phase === 'render' && ReactDebugCurrentFiber.current !== null && !didWarnAboutNestedUpdates) {
+    if (phase === 'render' && current !== null && !didWarnAboutNestedUpdates) {
       didWarnAboutNestedUpdates = true;
-      warning(false, 'Render methods should be a pure function of props and state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(ReactDebugCurrentFiber.current) || 'Unknown');
+      warningWithoutStack$1(false, 'Render methods should be a pure function of props and state; ' + 'triggering nested component updates from render is not allowed. ' + 'If necessary, trigger nested updates in componentDidUpdate.\n\n' + 'Check the render method of %s.', getComponentName(current.type) || 'Unknown');
     }
   }
 
@@ -18528,22 +19346,22 @@ function scheduleRootUpdate(current, element, expirationTime, callback) {
 
   callback = callback === undefined ? null : callback;
   if (callback !== null) {
-    !(typeof callback === 'function') ? warning(false, 'render(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callback) : void 0;
+    !(typeof callback === 'function') ? warningWithoutStack$1(false, 'render(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callback) : void 0;
     update.callback = callback;
   }
-  enqueueUpdate(current, update, expirationTime);
+  enqueueUpdate(current$$1, update);
 
-  scheduleWork$1(current, expirationTime);
+  scheduleWork(current$$1, expirationTime);
   return expirationTime;
 }
 
 function updateContainerAtExpirationTime(element, container, parentComponent, expirationTime, callback) {
   // TODO: If this is a nested container, this won't be the root.
-  var current = container.current;
+  var current$$1 = container.current;
 
   {
     if (ReactFiberInstrumentation_1.debugTool) {
-      if (current.alternate === null) {
+      if (current$$1.alternate === null) {
         ReactFiberInstrumentation_1.debugTool.onMountContainer(container);
       } else if (element === null) {
         ReactFiberInstrumentation_1.debugTool.onUnmountContainer(container);
@@ -18560,7 +19378,7 @@ function updateContainerAtExpirationTime(element, container, parentComponent, ex
     container.pendingContext = context;
   }
 
-  return scheduleRootUpdate(current, element, expirationTime, callback);
+  return scheduleRootUpdate(current$$1, element, expirationTime, callback);
 }
 
 function findHostInstance(component) {
@@ -18584,9 +19402,9 @@ function createContainer(containerInfo, isAsync, hydrate) {
 }
 
 function updateContainer(element, container, parentComponent, callback) {
-  var current = container.current;
-  var currentTime = recalculateCurrentTime();
-  var expirationTime = computeExpirationForFiber(currentTime, current);
+  var current$$1 = container.current;
+  var currentTime = requestCurrentTime();
+  var expirationTime = computeExpirationForFiber(currentTime, current$$1);
   return updateContainerAtExpirationTime(element, container, parentComponent, expirationTime, callback);
 }
 
@@ -18635,29 +19453,6 @@ function injectIntoDevTools(devToolsConfig) {
 // This file intentionally does *not* have the Flow annotation.
 // Don't add it. See `./inline-typed.js` for an explanation.
 
-
-
-var DOMRenderer = Object.freeze({
-	updateContainerAtExpirationTime: updateContainerAtExpirationTime,
-	createContainer: createContainer,
-	updateContainer: updateContainer,
-	flushRoot: flushRoot,
-	requestWork: requestWork,
-	computeUniqueAsyncExpiration: computeUniqueAsyncExpiration,
-	batchedUpdates: batchedUpdates$1,
-	unbatchedUpdates: unbatchedUpdates,
-	deferredUpdates: deferredUpdates,
-	syncUpdates: syncUpdates,
-	interactiveUpdates: interactiveUpdates$1,
-	flushInteractiveUpdates: flushInteractiveUpdates$1,
-	flushControlled: flushControlled,
-	flushSync: flushSync,
-	getPublicRootInstance: getPublicRootInstance,
-	findHostInstance: findHostInstance,
-	findHostInstanceWithNoPortals: findHostInstanceWithNoPortals,
-	injectIntoDevTools: injectIntoDevTools
-});
-
 function createPortal$1(children, containerInfo,
 // TODO: figure out the API for cross-renderer implementation.
 implementation) {
@@ -18675,10 +19470,12 @@ implementation) {
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.4.2';
+var ReactVersion = '16.5.0';
 
 // TODO: This type is shared between the reconciler and ReactDOM, but will
 // eventually be lifted out to the renderer.
+var ReactCurrentOwner = ReactSharedInternals.ReactCurrentOwner;
+
 var topLevelUpdateWarnings = void 0;
 var warnOnInvalidCallback = void 0;
 var didWarnAboutUnstableCreatePortal = false;
@@ -18689,14 +19486,14 @@ var didWarnAboutUnstableCreatePortal = false;
   Map.prototype == null || typeof Map.prototype.forEach !== 'function' || typeof Set !== 'function' ||
   // $FlowIssue Flow incorrectly thinks Set has no prototype
   Set.prototype == null || typeof Set.prototype.clear !== 'function' || typeof Set.prototype.forEach !== 'function') {
-    warning(false, 'React depends on Map and Set built-in types. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+    warningWithoutStack$1(false, 'React depends on Map and Set built-in types. Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
   }
 
   topLevelUpdateWarnings = function (container) {
     if (container._reactRootContainer && container.nodeType !== COMMENT_NODE) {
       var hostInstance = findHostInstanceWithNoPortals(container._reactRootContainer._internalRoot.current);
       if (hostInstance) {
-        !(hostInstance.parentNode === container) ? warning(false, 'render(...): It looks like the React-rendered content of this ' + 'container was removed without using React. This is not ' + 'supported and will cause errors. Instead, call ' + 'ReactDOM.unmountComponentAtNode to empty a container.') : void 0;
+        !(hostInstance.parentNode === container) ? warningWithoutStack$1(false, 'render(...): It looks like the React-rendered content of this ' + 'container was removed without using React. This is not ' + 'supported and will cause errors. Instead, call ' + 'ReactDOM.unmountComponentAtNode to empty a container.') : void 0;
       }
     }
 
@@ -18704,17 +19501,17 @@ var didWarnAboutUnstableCreatePortal = false;
     var rootEl = getReactRootElementInContainer(container);
     var hasNonRootReactChild = !!(rootEl && getInstanceFromNode$1(rootEl));
 
-    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warning(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
+    !(!hasNonRootReactChild || isRootRenderedBySomeReact) ? warningWithoutStack$1(false, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.') : void 0;
 
-    !(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY') ? warning(false, 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
+    !(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY') ? warningWithoutStack$1(false, 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.') : void 0;
   };
 
   warnOnInvalidCallback = function (callback, callerName) {
-    !(callback === null || typeof callback === 'function') ? warning(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback) : void 0;
+    !(callback === null || typeof callback === 'function') ? warningWithoutStack$1(false, '%s(...): Expected the last optional `callback` argument to be a ' + 'function. Instead received: %s.', callerName, callback) : void 0;
   };
 }
 
-injection$2.injectFiberControlledHostComponent(ReactDOMFiberComponent);
+setRestoreImplementation(restoreControlledState$1);
 
 function ReactBatch(root) {
   var expirationTime = computeUniqueAsyncExpiration();
@@ -18953,7 +19750,7 @@ function shouldHydrateDueToLegacyHeuristic(container) {
   return !!(rootElement && rootElement.nodeType === ELEMENT_NODE && rootElement.hasAttribute(ROOT_ATTRIBUTE_NAME));
 }
 
-injection$3.injectRenderer(DOMRenderer);
+setBatchingImplementation(batchedUpdates$1, interactiveUpdates$1, flushInteractiveUpdates$1);
 
 var warnedAboutHydrateAPI = false;
 
@@ -18967,7 +19764,7 @@ function legacyCreateRootFromDOMContainer(container, forceHydrate) {
       {
         if (!warned && rootSibling.nodeType === ELEMENT_NODE && rootSibling.hasAttribute(ROOT_ATTRIBUTE_NAME)) {
           warned = true;
-          warning(false, 'render(): Target node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.');
+          warningWithoutStack$1(false, 'render(): Target node has markup rendered by React, but there ' + 'are unrelated nodes as well. This is most commonly caused by ' + 'white-space inserted around server-rendered markup.');
         }
       }
       container.removeChild(rootSibling);
@@ -19047,7 +19844,7 @@ var ReactDOM = {
       var owner = ReactCurrentOwner.current;
       if (owner !== null && owner.stateNode !== null) {
         var warnedAboutRefsInRender = owner.stateNode._warnedAboutRefsInRender;
-        !warnedAboutRefsInRender ? warning(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner) || 'A component') : void 0;
+        !warnedAboutRefsInRender ? warningWithoutStack$1(false, '%s is accessing findDOMNode inside its render(). ' + 'render() should be a pure function of props and state. It should ' + 'never access something that requires stale data from the previous ' + 'render, such as refs. Move this logic to componentDidMount and ' + 'componentDidUpdate instead.', getComponentName(owner.type) || 'A component') : void 0;
         owner.stateNode._warnedAboutRefsInRender = true;
       }
     }
@@ -19078,7 +19875,7 @@ var ReactDOM = {
       {
         var rootEl = getReactRootElementInContainer(container);
         var renderedByDifferentReact = rootEl && !getInstanceFromNode$1(rootEl);
-        !!renderedByDifferentReact ? warning(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
+        !!renderedByDifferentReact ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by another copy of React.') : void 0;
       }
 
       // Unmount should not be batched.
@@ -19096,9 +19893,9 @@ var ReactDOM = {
         var hasNonRootReactChild = !!(_rootEl && getInstanceFromNode$1(_rootEl));
 
         // Check if the container itself is a React root node.
-        var isContainerReactRoot = container.nodeType === 1 && isValidContainer(container.parentNode) && !!container.parentNode._reactRootContainer;
+        var isContainerReactRoot = container.nodeType === ELEMENT_NODE && isValidContainer(container.parentNode) && !!container.parentNode._reactRootContainer;
 
-        !!hasNonRootReactChild ? warning(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
+        !!hasNonRootReactChild ? warningWithoutStack$1(false, "unmountComponentAtNode(): The node you're attempting to unmount " + 'was rendered by React and is not a top-level container. %s', isContainerReactRoot ? 'You may have accidentally passed in a React root node instead ' + 'of its container.' : 'Instead, have the parent component update its state and ' + 'rerender in order to remove this component.') : void 0;
       }
 
       return false;
@@ -19119,8 +19916,6 @@ var ReactDOM = {
 
   unstable_batchedUpdates: batchedUpdates$1,
 
-  unstable_deferredUpdates: deferredUpdates,
-
   unstable_interactiveUpdates: interactiveUpdates$1,
 
   flushSync: flushSync,
@@ -19128,18 +19923,14 @@ var ReactDOM = {
   unstable_flushControlled: flushControlled,
 
   __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: {
-    // For TapEventPlugin which is popular in open source
-    EventPluginHub: EventPluginHub,
-    // Used by test-utils
-    EventPluginRegistry: EventPluginRegistry,
-    EventPropagators: EventPropagators,
-    ReactControlledComponent: ReactControlledComponent,
-    ReactDOMComponentTree: ReactDOMComponentTree,
-    ReactDOMEventListener: ReactDOMEventListener
+    // Keep in sync with ReactDOMUnstableNativeDependencies.js
+    // and ReactTestUtils.js. This is an array for better minification.
+    Events: [getInstanceFromNode$1, getNodeFromInstance$1, getFiberCurrentPropsFromNode$1, eventNameDispatchConfigs, accumulateTwoPhaseDispatches, accumulateDirectDispatches, enqueueStateRestore, restoreStateIfNeeded, dispatchEvent, runEventsInBatch]
   }
 };
 
 ReactDOM.unstable_createRoot = function createRoot(container, options) {
+  !isValidContainer(container) ? invariant(false, 'unstable_createRoot(...): Target container is not a DOM element.') : void 0;
   var hydrate = options != null && options.hydrate === true;
   return new ReactRoot(container, true, hydrate);
 };
@@ -19152,7 +19943,7 @@ var foundDevTools = injectIntoDevTools({
 });
 
 {
-  if (!foundDevTools && ExecutionEnvironment.canUseDOM && window.top === window.self) {
+  if (!foundDevTools && canUseDOM && window.top === window.self) {
     // If we're in Chrome or Firefox, provide a download link if not installed.
     if (navigator.userAgent.indexOf('Chrome') > -1 && navigator.userAgent.indexOf('Edge') === -1 || navigator.userAgent.indexOf('Firefox') > -1) {
       var protocol = window.location.protocol;
@@ -19174,7 +19965,7 @@ var ReactDOM$3 = ( ReactDOM$2 && ReactDOM ) || ReactDOM$2;
 
 // TODO: decide on the top-level export form.
 // This is hacky but makes it work with both Rollup and Jest.
-var reactDom = ReactDOM$3.default ? ReactDOM$3.default : ReactDOM$3;
+var reactDom = ReactDOM$3.default || ReactDOM$3;
 
 module.exports = reactDom;
   })();
@@ -20381,7 +21172,7 @@ function warning(message) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.4.2
+/** @license React v16.5.0
  * react.development.js
  *
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -20399,15 +21190,11 @@ if (true) {
 'use strict';
 
 var _assign = __webpack_require__(/*! object-assign */ "./node_modules/object-assign/index.js");
-var invariant = __webpack_require__(/*! fbjs/lib/invariant */ "./node_modules/fbjs/lib/invariant.js");
-var emptyObject = __webpack_require__(/*! fbjs/lib/emptyObject */ "./node_modules/fbjs/lib/emptyObject.js");
-var warning = __webpack_require__(/*! fbjs/lib/warning */ "./node_modules/fbjs/lib/warning.js");
-var emptyFunction = __webpack_require__(/*! fbjs/lib/emptyFunction */ "./node_modules/fbjs/lib/emptyFunction.js");
 var checkPropTypes = __webpack_require__(/*! prop-types/checkPropTypes */ "./node_modules/prop-types/checkPropTypes.js");
 
 // TODO: this is special because it gets imported during build.
 
-var ReactVersion = '16.4.2';
+var ReactVersion = '16.5.0';
 
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
@@ -20422,13 +21209,13 @@ var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
 var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
-var REACT_TIMEOUT_TYPE = hasSymbol ? Symbol.for('react.timeout') : 0xead1;
+var REACT_PLACEHOLDER_TYPE = hasSymbol ? Symbol.for('react.placeholder') : 0xead1;
 
 var MAYBE_ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
 var FAUX_ITERATOR_SYMBOL = '@@iterator';
 
 function getIteratorFn(maybeIterable) {
-  if (maybeIterable === null || typeof maybeIterable === 'undefined') {
+  if (maybeIterable === null || typeof maybeIterable !== 'object') {
     return null;
   }
   var maybeIterator = MAYBE_ITERATOR_SYMBOL && maybeIterable[MAYBE_ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL];
@@ -20438,8 +21225,50 @@ function getIteratorFn(maybeIterable) {
   return null;
 }
 
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function () {};
+
+{
+  validateFormat = function (format) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  };
+}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error = void 0;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
+
 // Relying on the `invariant()` implementation lets us
-// have preserve the format and params in the www builds.
+// preserve the format and params in the www builds.
 
 // Exports ReactDOM.createRoot
 
@@ -20469,6 +21298,12 @@ var enableSuspense = false;
 
 
 // Gather advanced timing metrics for Profiler subtrees.
+
+
+// Track which interactions trigger each commit.
+
+
+// Only used in www builds.
 
 
 // Only used in www builds.
@@ -20512,7 +21347,7 @@ var lowPriorityWarning = function () {};
 
   lowPriorityWarning = function (condition, format) {
     if (format === undefined) {
-      throw new Error('`warning(condition, format, ...args)` requires a warning ' + 'message argument');
+      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
     }
     if (!condition) {
       for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
@@ -20526,6 +21361,50 @@ var lowPriorityWarning = function () {};
 
 var lowPriorityWarning$1 = lowPriorityWarning;
 
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warningWithoutStack = function () {};
+
+{
+  warningWithoutStack = function (condition, format) {
+    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    if (format === undefined) {
+      throw new Error('`warningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
+    }
+    if (condition) {
+      return;
+    }
+    if (typeof console !== 'undefined') {
+      var _console;
+
+      var stringArgs = args.map(function (item) {
+        return '' + item;
+      });
+      (_console = console).error.apply(_console, ['Warning: ' + format].concat(stringArgs));
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      var argIndex = 0;
+      var message = 'Warning: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      });
+      throw new Error(message);
+    } catch (x) {}
+  };
+}
+
+var warningWithoutStack$1 = warningWithoutStack;
+
 var didWarnStateUpdateForUnmountedComponent = {};
 
 function warnNoop(publicInstance, callerName) {
@@ -20536,7 +21415,7 @@ function warnNoop(publicInstance, callerName) {
     if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
       return;
     }
-    warning(false, "Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);
+    warningWithoutStack$1(false, "Can't call %s on a component that is not yet mounted. " + 'This is a no-op, but it might indicate a bug in your application. ' + 'Instead, assign to `this.state` directly or define a `state = {};` ' + 'class property with the desired state in the %s component.', callerName, componentName);
     didWarnStateUpdateForUnmountedComponent[warningKey] = true;
   }
 }
@@ -20609,12 +21488,18 @@ var ReactNoopUpdateQueue = {
   }
 };
 
+var emptyObject = {};
+{
+  Object.freeze(emptyObject);
+}
+
 /**
  * Base class helpers for the updating state of a component.
  */
 function Component(props, context, updater) {
   this.props = props;
   this.context = context;
+  // If a component has string refs, we will assign a different object later.
   this.refs = emptyObject;
   // We initialize the default updater but the real one gets injected by the
   // renderer.
@@ -20705,6 +21590,7 @@ ComponentDummy.prototype = Component.prototype;
 function PureComponent(props, context, updater) {
   this.props = props;
   this.context = context;
+  // If a component has string refs, we will assign a different object later.
   this.refs = emptyObject;
   this.updater = updater || ReactNoopUpdateQueue;
 }
@@ -20737,8 +21623,176 @@ var ReactCurrentOwner = {
    * @internal
    * @type {ReactComponent}
    */
-  current: null
+  current: null,
+  currentDispatcher: null
 };
+
+var BEFORE_SLASH_RE = /^(.*)[\\\/]/;
+
+var describeComponentFrame = function (name, source, ownerName) {
+  var sourceInfo = '';
+  if (source) {
+    var path = source.fileName;
+    var fileName = path.replace(BEFORE_SLASH_RE, '');
+    {
+      // In DEV, include code for a common special case:
+      // prefer "folder/index.js" instead of just "index.js".
+      if (/^index\./.test(fileName)) {
+        var match = path.match(BEFORE_SLASH_RE);
+        if (match) {
+          var pathBeforeSlash = match[1];
+          if (pathBeforeSlash) {
+            var folderName = pathBeforeSlash.replace(BEFORE_SLASH_RE, '');
+            fileName = folderName + '/' + fileName;
+          }
+        }
+      }
+    }
+    sourceInfo = ' (at ' + fileName + ':' + source.lineNumber + ')';
+  } else if (ownerName) {
+    sourceInfo = ' (created by ' + ownerName + ')';
+  }
+  return '\n    in ' + (name || 'Unknown') + sourceInfo;
+};
+
+var Resolved = 1;
+
+
+
+
+function refineResolvedThenable(thenable) {
+  return thenable._reactStatus === Resolved ? thenable._reactResult : null;
+}
+
+function getComponentName(type) {
+  if (type == null) {
+    // Host root, text node or just invalid type.
+    return null;
+  }
+  {
+    if (typeof type.tag === 'number') {
+      warningWithoutStack$1(false, 'Received an unexpected object in getComponentName(). ' + 'This is likely a bug in React. Please file an issue.');
+    }
+  }
+  if (typeof type === 'function') {
+    return type.displayName || type.name || null;
+  }
+  if (typeof type === 'string') {
+    return type;
+  }
+  switch (type) {
+    case REACT_ASYNC_MODE_TYPE:
+      return 'AsyncMode';
+    case REACT_FRAGMENT_TYPE:
+      return 'Fragment';
+    case REACT_PORTAL_TYPE:
+      return 'Portal';
+    case REACT_PROFILER_TYPE:
+      return 'Profiler';
+    case REACT_STRICT_MODE_TYPE:
+      return 'StrictMode';
+    case REACT_PLACEHOLDER_TYPE:
+      return 'Placeholder';
+  }
+  if (typeof type === 'object') {
+    switch (type.$$typeof) {
+      case REACT_CONTEXT_TYPE:
+        return 'Context.Consumer';
+      case REACT_PROVIDER_TYPE:
+        return 'Context.Provider';
+      case REACT_FORWARD_REF_TYPE:
+        var renderFn = type.render;
+        var functionName = renderFn.displayName || renderFn.name || '';
+        return functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
+    }
+    if (typeof type.then === 'function') {
+      var thenable = type;
+      var resolvedThenable = refineResolvedThenable(thenable);
+      if (resolvedThenable) {
+        return getComponentName(resolvedThenable);
+      }
+    }
+  }
+  return null;
+}
+
+var ReactDebugCurrentFrame = {};
+
+var currentlyValidatingElement = null;
+
+function setCurrentlyValidatingElement(element) {
+  {
+    currentlyValidatingElement = element;
+  }
+}
+
+{
+  // Stack implementation injected by the current renderer.
+  ReactDebugCurrentFrame.getCurrentStack = null;
+
+  ReactDebugCurrentFrame.getStackAddendum = function () {
+    var stack = '';
+
+    // Add an extra top frame while an element is being validated
+    if (currentlyValidatingElement) {
+      var name = getComponentName(currentlyValidatingElement.type);
+      var owner = currentlyValidatingElement._owner;
+      stack += describeComponentFrame(name, currentlyValidatingElement._source, owner && getComponentName(owner.type));
+    }
+
+    // Delegate to the injected renderer-specific implementation
+    var impl = ReactDebugCurrentFrame.getCurrentStack;
+    if (impl) {
+      stack += impl() || '';
+    }
+
+    return stack;
+  };
+}
+
+var ReactSharedInternals = {
+  ReactCurrentOwner: ReactCurrentOwner,
+  // Used by renderers to avoid bundling object-assign twice in UMD bundles:
+  assign: _assign
+};
+
+{
+  _assign(ReactSharedInternals, {
+    // These should not be included in production.
+    ReactDebugCurrentFrame: ReactDebugCurrentFrame,
+    // Shim for React DOM 16.0.0 which still destructured (but not used) this.
+    // TODO: remove in React 17.0.
+    ReactComponentTreeHook: {}
+  });
+}
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var warning = warningWithoutStack$1;
+
+{
+  warning = function (condition, format) {
+    if (condition) {
+      return;
+    }
+    var ReactDebugCurrentFrame = ReactSharedInternals.ReactDebugCurrentFrame;
+    var stack = ReactDebugCurrentFrame.getStackAddendum();
+    // eslint-disable-next-line react-internal/warning-and-invariant-args
+
+    for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    warningWithoutStack$1.apply(undefined, [false, format + '%s'].concat(args, [stack]));
+  };
+}
+
+var warning$1 = warning;
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -20780,7 +21834,7 @@ function defineKeyPropWarningGetter(props, displayName) {
   var warnAboutAccessingKey = function () {
     if (!specialPropKeyWarningShown) {
       specialPropKeyWarningShown = true;
-      warning(false, '%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);
+      warningWithoutStack$1(false, '%s: `key` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);
     }
   };
   warnAboutAccessingKey.isReactWarning = true;
@@ -20794,7 +21848,7 @@ function defineRefPropWarningGetter(props, displayName) {
   var warnAboutAccessingRef = function () {
     if (!specialPropRefWarningShown) {
       specialPropRefWarningShown = true;
-      warning(false, '%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);
+      warningWithoutStack$1(false, '%s: `ref` is not a prop. Trying to access it will result ' + 'in `undefined` being returned. If you need to access the same ' + 'value within the child component, you should pass it as a different ' + 'prop. (https://fb.me/react-special-props)', displayName);
     }
   };
   warnAboutAccessingRef.isReactWarning = true;
@@ -20942,14 +21996,12 @@ function createElement(type, config, children) {
   }
   {
     if (key || ref) {
-      if (typeof props.$$typeof === 'undefined' || props.$$typeof !== REACT_ELEMENT_TYPE) {
-        var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
-        if (key) {
-          defineKeyPropWarningGetter(props, displayName);
-        }
-        if (ref) {
-          defineRefPropWarningGetter(props, displayName);
-        }
+      var displayName = typeof type === 'function' ? type.displayName || type.name || 'Unknown' : type;
+      if (key) {
+        defineKeyPropWarningGetter(props, displayName);
+      }
+      if (ref) {
+        defineRefPropWarningGetter(props, displayName);
       }
     }
   }
@@ -21040,26 +22092,11 @@ function cloneElement(element, config, children) {
  * Verifies the object is a ReactElement.
  * See https://reactjs.org/docs/react-api.html#isvalidelement
  * @param {?object} object
- * @return {boolean} True if `object` is a valid component.
+ * @return {boolean} True if `object` is a ReactElement.
  * @final
  */
 function isValidElement(object) {
   return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
-}
-
-var ReactDebugCurrentFrame = {};
-
-{
-  // Component that is being worked on
-  ReactDebugCurrentFrame.getCurrentStack = null;
-
-  ReactDebugCurrentFrame.getStackAddendum = function () {
-    var impl = ReactDebugCurrentFrame.getCurrentStack;
-    if (impl) {
-      return impl();
-    }
-    return null;
-  };
 }
 
 var SEPARATOR = '.';
@@ -21189,7 +22226,7 @@ function traverseAllChildrenImpl(children, nameSoFar, callback, traverseContext)
       {
         // Warn about using Maps as children
         if (iteratorFn === children.entries) {
-          !didWarnAboutMaps ? warning(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.%s', ReactDebugCurrentFrame.getStackAddendum()) : void 0;
+          !didWarnAboutMaps ? warning$1(false, 'Using Maps as children is unsupported and will likely yield ' + 'unexpected results. Convert it to a sequence/iterable of keyed ' + 'ReactElements instead.') : void 0;
           didWarnAboutMaps = true;
         }
       }
@@ -21294,7 +22331,9 @@ function mapSingleChildIntoContext(bookKeeping, child, childKey) {
 
   var mappedChild = func.call(context, child, bookKeeping.count++);
   if (Array.isArray(mappedChild)) {
-    mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, emptyFunction.thatReturnsArgument);
+    mapIntoWithKeyPrefixInternal(mappedChild, result, childKey, function (c) {
+      return c;
+    });
   } else if (mappedChild != null) {
     if (isValidElement(mappedChild)) {
       mappedChild = cloneAndReplaceKey(mappedChild,
@@ -21348,7 +22387,9 @@ function mapChildren(children, func, context) {
  * @return {number} The number of children.
  */
 function countChildren(children) {
-  return traverseAllChildren(children, emptyFunction.thatReturnsNull, null);
+  return traverseAllChildren(children, function () {
+    return null;
+  }, null);
 }
 
 /**
@@ -21359,7 +22400,9 @@ function countChildren(children) {
  */
 function toArray(children) {
   var result = [];
-  mapIntoWithKeyPrefixInternal(children, result, null, emptyFunction.thatReturnsArgument);
+  mapIntoWithKeyPrefixInternal(children, result, null, function (child) {
+    return child;
+  });
   return result;
 }
 
@@ -21382,31 +22425,35 @@ function onlyChild(children) {
   return children;
 }
 
+function readContext(context, observedBits) {
+  var dispatcher = ReactCurrentOwner.currentDispatcher;
+  !(dispatcher !== null) ? invariant(false, 'Context.unstable_read(): Context can only be read while React is rendering, e.g. inside the render method or getDerivedStateFromProps.') : void 0;
+  return dispatcher.readContext(context, observedBits);
+}
+
 function createContext(defaultValue, calculateChangedBits) {
   if (calculateChangedBits === undefined) {
     calculateChangedBits = null;
   } else {
     {
-      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warning(false, 'createContext: Expected the optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;
+      !(calculateChangedBits === null || typeof calculateChangedBits === 'function') ? warningWithoutStack$1(false, 'createContext: Expected the optional second argument to be a ' + 'function. Instead received: %s', calculateChangedBits) : void 0;
     }
   }
 
   var context = {
     $$typeof: REACT_CONTEXT_TYPE,
     _calculateChangedBits: calculateChangedBits,
-    _defaultValue: defaultValue,
-    _currentValue: defaultValue,
     // As a workaround to support multiple concurrent renderers, we categorize
     // some renderers as primary and others as secondary. We only expect
     // there to be two concurrent renderers at most: React Native (primary) and
     // Fabric (secondary); React DOM (primary) and React ART (secondary).
     // Secondary renderers store their context values on separate fields.
+    _currentValue: defaultValue,
     _currentValue2: defaultValue,
-    _changedBits: 0,
-    _changedBits2: 0,
     // These are circular
     Provider: null,
-    Consumer: null
+    Consumer: null,
+    unstable_read: null
   };
 
   context.Provider = {
@@ -21414,6 +22461,7 @@ function createContext(defaultValue, calculateChangedBits) {
     _context: context
   };
   context.Consumer = context;
+  context.unstable_read = readContext.bind(null, context);
 
   {
     context._currentRenderer = null;
@@ -21423,12 +22471,34 @@ function createContext(defaultValue, calculateChangedBits) {
   return context;
 }
 
+function lazy(ctor) {
+  var thenable = null;
+  return {
+    then: function (resolve, reject) {
+      if (thenable === null) {
+        // Lazily create thenable by wrapping in an extra thenable.
+        thenable = ctor();
+        ctor = null;
+      }
+      return thenable.then(resolve, reject);
+    },
+
+    // React uses these fields to store the result.
+    _reactStatus: -1,
+    _reactResult: null
+  };
+}
+
 function forwardRef(render) {
   {
-    !(typeof render === 'function') ? warning(false, 'forwardRef requires a render function but was given %s.', render === null ? 'null' : typeof render) : void 0;
+    if (typeof render !== 'function') {
+      warningWithoutStack$1(false, 'forwardRef requires a render function but was given %s.', render === null ? 'null' : typeof render);
+    } else {
+      !(render.length === 2) ? warningWithoutStack$1(false, 'forwardRef render functions accept two parameters: props and ref. ' + 'Did you forget to use the ref parameter?') : void 0;
+    }
 
     if (render != null) {
-      !(render.defaultProps == null && render.propTypes == null) ? warning(false, 'forwardRef render functions do not support propTypes or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;
+      !(render.defaultProps == null && render.propTypes == null) ? warningWithoutStack$1(false, 'forwardRef render functions do not support propTypes or defaultProps. ' + 'Did you accidentally pass a React component?') : void 0;
     }
   }
 
@@ -21438,51 +22508,10 @@ function forwardRef(render) {
   };
 }
 
-var describeComponentFrame = function (name, source, ownerName) {
-  return '\n    in ' + (name || 'Unknown') + (source ? ' (at ' + source.fileName.replace(/^.*[\\\/]/, '') + ':' + source.lineNumber + ')' : ownerName ? ' (created by ' + ownerName + ')' : '');
-};
-
 function isValidElementType(type) {
   return typeof type === 'string' || typeof type === 'function' ||
   // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_ASYNC_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_TIMEOUT_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
-}
-
-function getComponentName(fiber) {
-  var type = fiber.type;
-
-  if (typeof type === 'function') {
-    return type.displayName || type.name;
-  }
-  if (typeof type === 'string') {
-    return type;
-  }
-  switch (type) {
-    case REACT_ASYNC_MODE_TYPE:
-      return 'AsyncMode';
-    case REACT_CONTEXT_TYPE:
-      return 'Context.Consumer';
-    case REACT_FRAGMENT_TYPE:
-      return 'ReactFragment';
-    case REACT_PORTAL_TYPE:
-      return 'ReactPortal';
-    case REACT_PROFILER_TYPE:
-      return 'Profiler(' + fiber.pendingProps.id + ')';
-    case REACT_PROVIDER_TYPE:
-      return 'Context.Provider';
-    case REACT_STRICT_MODE_TYPE:
-      return 'StrictMode';
-    case REACT_TIMEOUT_TYPE:
-      return 'Timeout';
-  }
-  if (typeof type === 'object' && type !== null) {
-    switch (type.$$typeof) {
-      case REACT_FORWARD_REF_TYPE:
-        var functionName = type.render.displayName || type.render.name || '';
-        return functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
-    }
-  }
-  return null;
+  type === REACT_FRAGMENT_TYPE || type === REACT_ASYNC_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_PLACEHOLDER_TYPE || typeof type === 'object' && type !== null && (typeof type.then === 'function' || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE);
 }
 
 /**
@@ -21492,52 +22521,15 @@ function getComponentName(fiber) {
  * that support it.
  */
 
-var currentlyValidatingElement = void 0;
 var propTypesMisspellWarningShown = void 0;
 
-var getDisplayName = function () {};
-var getStackAddendum = function () {};
-
 {
-  currentlyValidatingElement = null;
-
   propTypesMisspellWarningShown = false;
-
-  getDisplayName = function (element) {
-    if (element == null) {
-      return '#empty';
-    } else if (typeof element === 'string' || typeof element === 'number') {
-      return '#text';
-    } else if (typeof element.type === 'string') {
-      return element.type;
-    }
-
-    var type = element.type;
-    if (type === REACT_FRAGMENT_TYPE) {
-      return 'React.Fragment';
-    } else if (typeof type === 'object' && type !== null && type.$$typeof === REACT_FORWARD_REF_TYPE) {
-      var functionName = type.render.displayName || type.render.name || '';
-      return functionName !== '' ? 'ForwardRef(' + functionName + ')' : 'ForwardRef';
-    } else {
-      return type.displayName || type.name || 'Unknown';
-    }
-  };
-
-  getStackAddendum = function () {
-    var stack = '';
-    if (currentlyValidatingElement) {
-      var name = getDisplayName(currentlyValidatingElement);
-      var owner = currentlyValidatingElement._owner;
-      stack += describeComponentFrame(name, currentlyValidatingElement._source, owner && getComponentName(owner));
-    }
-    stack += ReactDebugCurrentFrame.getStackAddendum() || '';
-    return stack;
-  };
 }
 
 function getDeclarationErrorAddendum() {
   if (ReactCurrentOwner.current) {
-    var name = getComponentName(ReactCurrentOwner.current);
+    var name = getComponentName(ReactCurrentOwner.current.type);
     if (name) {
       return '\n\nCheck the render method of `' + name + '`.';
     }
@@ -21603,14 +22595,14 @@ function validateExplicitKey(element, parentType) {
   var childOwner = '';
   if (element && element._owner && element._owner !== ReactCurrentOwner.current) {
     // Give the component that originally created this child.
-    childOwner = ' It was passed a child from ' + getComponentName(element._owner) + '.';
+    childOwner = ' It was passed a child from ' + getComponentName(element._owner.type) + '.';
   }
 
-  currentlyValidatingElement = element;
+  setCurrentlyValidatingElement(element);
   {
-    warning(false, 'Each child in an array or iterator should have a unique "key" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.%s', currentComponentErrorInfo, childOwner, getStackAddendum());
+    warning$1(false, 'Each child in an array or iterator should have a unique "key" prop.' + '%s%s See https://fb.me/react-warning-keys for more information.', currentComponentErrorInfo, childOwner);
   }
-  currentlyValidatingElement = null;
+  setCurrentlyValidatingElement(null);
 }
 
 /**
@@ -21679,15 +22671,15 @@ function validatePropTypes(element) {
     return;
   }
   if (propTypes) {
-    currentlyValidatingElement = element;
-    checkPropTypes(propTypes, element.props, 'prop', name, getStackAddendum);
-    currentlyValidatingElement = null;
+    setCurrentlyValidatingElement(element);
+    checkPropTypes(propTypes, element.props, 'prop', name, ReactDebugCurrentFrame.getStackAddendum);
+    setCurrentlyValidatingElement(null);
   } else if (type.PropTypes !== undefined && !propTypesMisspellWarningShown) {
     propTypesMisspellWarningShown = true;
-    warning(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');
+    warningWithoutStack$1(false, 'Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', name || 'Unknown');
   }
   if (typeof type.getDefaultProps === 'function') {
-    !type.getDefaultProps.isReactClassApproved ? warning(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;
+    !type.getDefaultProps.isReactClassApproved ? warningWithoutStack$1(false, 'getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.') : void 0;
   }
 }
 
@@ -21696,22 +22688,22 @@ function validatePropTypes(element) {
  * @param {ReactElement} fragment
  */
 function validateFragmentProps(fragment) {
-  currentlyValidatingElement = fragment;
+  setCurrentlyValidatingElement(fragment);
 
   var keys = Object.keys(fragment.props);
   for (var i = 0; i < keys.length; i++) {
     var key = keys[i];
     if (key !== 'children' && key !== 'key') {
-      warning(false, 'Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.%s', key, getStackAddendum());
+      warning$1(false, 'Invalid prop `%s` supplied to `React.Fragment`. ' + 'React.Fragment can only have `key` and `children` props.', key);
       break;
     }
   }
 
   if (fragment.ref !== null) {
-    warning(false, 'Invalid attribute `ref` supplied to `React.Fragment`.%s', getStackAddendum());
+    warning$1(false, 'Invalid attribute `ref` supplied to `React.Fragment`.');
   }
 
-  currentlyValidatingElement = null;
+  setCurrentlyValidatingElement(null);
 }
 
 function createElementWithValidation(type, props, children) {
@@ -21732,18 +22724,19 @@ function createElementWithValidation(type, props, children) {
       info += getDeclarationErrorAddendum();
     }
 
-    info += getStackAddendum() || '';
-
     var typeString = void 0;
     if (type === null) {
       typeString = 'null';
     } else if (Array.isArray(type)) {
       typeString = 'array';
+    } else if (type !== undefined && type.$$typeof === REACT_ELEMENT_TYPE) {
+      typeString = '<' + (getComponentName(type.type) || 'Unknown') + ' />';
+      info = ' Did you accidentally export a JSX literal instead of a component?';
     } else {
       typeString = typeof type;
     }
 
-    warning(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);
+    warning$1(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', typeString, info);
   }
 
   var element = createElement.apply(this, arguments);
@@ -21831,25 +22824,12 @@ var React = {
 
   version: ReactVersion,
 
-  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: {
-    ReactCurrentOwner: ReactCurrentOwner,
-    // Used by renderers to avoid bundling object-assign twice in UMD bundles:
-    assign: _assign
-  }
+  __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED: ReactSharedInternals
 };
 
 if (enableSuspense) {
-  React.Timeout = REACT_TIMEOUT_TYPE;
-}
-
-{
-  _assign(React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED, {
-    // These should not be included in production.
-    ReactDebugCurrentFrame: ReactDebugCurrentFrame,
-    // Shim for React DOM 16.0.0 which still destructured (but not used) this.
-    // TODO: remove in React 17.0.
-    ReactComponentTreeHook: {}
-  });
+  React.Placeholder = REACT_PLACEHOLDER_TYPE;
+  React.lazy = lazy;
 }
 
 
@@ -21862,7 +22842,7 @@ var React$3 = ( React$2 && React ) || React$2;
 
 // TODO: decide on the top-level export form.
 // This is hacky but makes it work with both Rollup and Jest.
-var react = React$3.default ? React$3.default : React$3;
+var react = React$3.default || React$3;
 
 module.exports = react;
   })();
@@ -22524,6 +23504,920 @@ if ("development" !== 'production' && typeof isCrushed.name === 'string' && isCr
 }
 
 
+
+
+/***/ }),
+
+/***/ "./node_modules/schedule/cjs/schedule-tracking.development.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/schedule/cjs/schedule-tracking.development.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v16.5.0
+ * schedule-tracking.development.js
+ *
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+{
+  
+}
+
+// Relying on the `invariant()` implementation lets us
+// preserve the format and params in the www builds.
+
+// Exports ReactDOM.createRoot
+
+
+// Experimental error-boundary API that can recover from errors within a single
+// render phase
+
+// Suspense
+
+// Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
+
+
+// In some cases, StrictMode should also double-render lifecycles.
+// This can be confusing for tests though,
+// And it can be bad for performance in production.
+// This feature flag can be used to control the behavior:
+
+
+// To preserve the "Pause on caught exceptions" behavior of the debugger, we
+// replay the begin phase of a failed component inside invokeGuardedCallback.
+
+
+// Warn about deprecated, async-unsafe lifecycles; relates to RFC #6:
+
+
+// Warn about legacy context API
+
+
+// Gather advanced timing metrics for Profiler subtrees.
+
+
+// Track which interactions trigger each commit.
+var enableSchedulerTracking = true;
+
+// Only used in www builds.
+
+
+// Only used in www builds.
+
+var DEFAULT_THREAD_ID = 0;
+
+// Counters used to generate unique IDs.
+var interactionIDCounter = 0;
+var threadIDCounter = 0;
+
+// Set of currently tracked interactions.
+// Interactions "stack"–
+// Meaning that newly tracked interactions are appended to the previously active set.
+// When an interaction goes out of scope, the previous set (if any) is restored.
+exports.__interactionsRef = null;
+
+// Listener(s) to notify when interactions begin and end.
+exports.__subscriberRef = null;
+
+if (enableSchedulerTracking) {
+  exports.__interactionsRef = {
+    current: new Set()
+  };
+  exports.__subscriberRef = {
+    current: null
+  };
+}
+
+function unstable_clear(callback) {
+  if (!enableSchedulerTracking) {
+    return callback();
+  }
+
+  var prevInteractions = exports.__interactionsRef.current;
+  exports.__interactionsRef.current = new Set();
+
+  try {
+    return callback();
+  } finally {
+    exports.__interactionsRef.current = prevInteractions;
+  }
+}
+
+function unstable_getCurrent() {
+  if (!enableSchedulerTracking) {
+    return null;
+  } else {
+    return exports.__interactionsRef.current;
+  }
+}
+
+function unstable_getThreadID() {
+  return ++threadIDCounter;
+}
+
+function unstable_track(name, timestamp, callback) {
+  var threadID = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : DEFAULT_THREAD_ID;
+
+  if (!enableSchedulerTracking) {
+    return callback();
+  }
+
+  var interaction = {
+    __count: 1,
+    id: interactionIDCounter++,
+    name: name,
+    timestamp: timestamp
+  };
+
+  var prevInteractions = exports.__interactionsRef.current;
+
+  // Tracked interactions should stack/accumulate.
+  // To do that, clone the current interactions.
+  // The previous set will be restored upon completion.
+  var interactions = new Set(prevInteractions);
+  interactions.add(interaction);
+  exports.__interactionsRef.current = interactions;
+
+  var subscriber = exports.__subscriberRef.current;
+  var returnValue = void 0;
+
+  try {
+    if (subscriber !== null) {
+      subscriber.onInteractionTracked(interaction);
+    }
+  } finally {
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkStarted(interactions, threadID);
+      }
+    } finally {
+      try {
+        returnValue = callback();
+      } finally {
+        exports.__interactionsRef.current = prevInteractions;
+
+        try {
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(interactions, threadID);
+          }
+        } finally {
+          interaction.__count--;
+
+          // If no async work was scheduled for this interaction,
+          // Notify subscribers that it's completed.
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        }
+      }
+    }
+  }
+
+  return returnValue;
+}
+
+function unstable_wrap(callback) {
+  var threadID = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DEFAULT_THREAD_ID;
+
+  if (!enableSchedulerTracking) {
+    return callback;
+  }
+
+  var wrappedInteractions = exports.__interactionsRef.current;
+
+  var subscriber = exports.__subscriberRef.current;
+  if (subscriber !== null) {
+    subscriber.onWorkScheduled(wrappedInteractions, threadID);
+  }
+
+  // Update the pending async work count for the current interactions.
+  // Update after calling subscribers in case of error.
+  wrappedInteractions.forEach(function (interaction) {
+    interaction.__count++;
+  });
+
+  var hasRun = false;
+
+  function wrapped() {
+    var prevInteractions = exports.__interactionsRef.current;
+    exports.__interactionsRef.current = wrappedInteractions;
+
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      var returnValue = void 0;
+
+      try {
+        if (subscriber !== null) {
+          subscriber.onWorkStarted(wrappedInteractions, threadID);
+        }
+      } finally {
+        try {
+          returnValue = callback.apply(undefined, arguments);
+        } finally {
+          exports.__interactionsRef.current = prevInteractions;
+
+          if (subscriber !== null) {
+            subscriber.onWorkStopped(wrappedInteractions, threadID);
+          }
+        }
+      }
+
+      return returnValue;
+    } finally {
+      if (!hasRun) {
+        // We only expect a wrapped function to be executed once,
+        // But in the event that it's executed more than once–
+        // Only decrement the outstanding interaction counts once.
+        hasRun = true;
+
+        // Update pending async counts for all wrapped interactions.
+        // If this was the last scheduled async work for any of them,
+        // Mark them as completed.
+        wrappedInteractions.forEach(function (interaction) {
+          interaction.__count--;
+
+          if (subscriber !== null && interaction.__count === 0) {
+            subscriber.onInteractionScheduledWorkCompleted(interaction);
+          }
+        });
+      }
+    }
+  }
+
+  wrapped.cancel = function cancel() {
+    subscriber = exports.__subscriberRef.current;
+
+    try {
+      if (subscriber !== null) {
+        subscriber.onWorkCanceled(wrappedInteractions, threadID);
+      }
+    } finally {
+      // Update pending async counts for all wrapped interactions.
+      // If this was the last scheduled async work for any of them,
+      // Mark them as completed.
+      wrappedInteractions.forEach(function (interaction) {
+        interaction.__count--;
+
+        if (subscriber && interaction.__count === 0) {
+          subscriber.onInteractionScheduledWorkCompleted(interaction);
+        }
+      });
+    }
+  };
+
+  return wrapped;
+}
+
+var subscribers = null;
+if (enableSchedulerTracking) {
+  subscribers = new Set();
+}
+
+function unstable_subscribe(subscriber) {
+  if (enableSchedulerTracking) {
+    subscribers.add(subscriber);
+
+    if (subscribers.size === 1) {
+      exports.__subscriberRef.current = {
+        onInteractionScheduledWorkCompleted: onInteractionScheduledWorkCompleted,
+        onInteractionTracked: onInteractionTracked,
+        onWorkCanceled: onWorkCanceled,
+        onWorkScheduled: onWorkScheduled,
+        onWorkStarted: onWorkStarted,
+        onWorkStopped: onWorkStopped
+      };
+    }
+  }
+}
+
+function unstable_unsubscribe(subscriber) {
+  if (enableSchedulerTracking) {
+    subscribers.delete(subscriber);
+
+    if (subscribers.size === 0) {
+      exports.__subscriberRef.current = null;
+    }
+  }
+}
+
+function onInteractionTracked(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionTracked(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onInteractionScheduledWorkCompleted(interaction) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onInteractionScheduledWorkCompleted(interaction);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkScheduled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkScheduled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStarted(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStarted(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkStopped(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkStopped(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+function onWorkCanceled(interactions, threadID) {
+  var didCatchError = false;
+  var caughtError = null;
+
+  subscribers.forEach(function (subscriber) {
+    try {
+      subscriber.onWorkCanceled(interactions, threadID);
+    } catch (error) {
+      if (!didCatchError) {
+        didCatchError = true;
+        caughtError = error;
+      }
+    }
+  });
+
+  if (didCatchError) {
+    throw caughtError;
+  }
+}
+
+exports.unstable_clear = unstable_clear;
+exports.unstable_getCurrent = unstable_getCurrent;
+exports.unstable_getThreadID = unstable_getThreadID;
+exports.unstable_track = unstable_track;
+exports.unstable_wrap = unstable_wrap;
+exports.unstable_subscribe = unstable_subscribe;
+exports.unstable_unsubscribe = unstable_unsubscribe;
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/schedule/cjs/schedule.development.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/schedule/cjs/schedule.development.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/** @license React v16.5.0
+ * schedule.development.js
+ *
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+
+
+if (true) {
+  (function() {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
+
+/**
+ * A scheduling library to allow scheduling work with more granular priority and
+ * control than requestAnimationFrame and requestIdleCallback.
+ * Current TODO items:
+ * X- Pull out the scheduleWork polyfill built into React
+ * X- Initial test coverage
+ * X- Support for multiple callbacks
+ * - Support for two priorities; serial and deferred
+ * - Better test coverage
+ * - Better docblock
+ * - Polish documentation, API
+ */
+
+// This is a built-in polyfill for requestIdleCallback. It works by scheduling
+// a requestAnimationFrame, storing the time for the start of the frame, then
+// scheduling a postMessage which gets scheduled after paint. Within the
+// postMessage handler do as much work as possible until time + frame rate.
+// By separating the idle call into a separate event tick we ensure that
+// layout, paint and other browser work is counted against the available time.
+// The frame rate is dynamically adjusted.
+
+// We capture a local reference to any global, in case it gets polyfilled after
+// this module is initially evaluated.
+// We want to be using a consistent implementation.
+var localDate = Date;
+
+// This initialization code may run even on server environments
+// if a component just imports ReactDOM (e.g. for findDOMNode).
+// Some environments might not have setTimeout or clearTimeout.
+// However, we always expect them to be defined on the client.
+// https://github.com/facebook/react/pull/13088
+var localSetTimeout = typeof setTimeout === 'function' ? setTimeout : undefined;
+var localClearTimeout = typeof clearTimeout === 'function' ? clearTimeout : undefined;
+
+// We don't expect either of these to necessarily be defined,
+// but we will error later if they are missing on the client.
+var localRequestAnimationFrame = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : undefined;
+var localCancelAnimationFrame = typeof cancelAnimationFrame === 'function' ? cancelAnimationFrame : undefined;
+
+var hasNativePerformanceNow = typeof performance === 'object' && typeof performance.now === 'function';
+
+exports.unstable_now = void 0;
+if (hasNativePerformanceNow) {
+  var Performance = performance;
+  exports.unstable_now = function () {
+    return Performance.now();
+  };
+} else {
+  exports.unstable_now = function () {
+    return localDate.now();
+  };
+}
+
+exports.unstable_scheduleWork = void 0;
+exports.unstable_cancelScheduledWork = void 0;
+
+if (!canUseDOM) {
+  var timeoutIds = new Map();
+
+  exports.unstable_scheduleWork = function (callback, options) {
+    // keeping return type consistent
+    var callbackConfig = {
+      scheduledCallback: callback,
+      timeoutTime: 0,
+      next: null,
+      prev: null
+    };
+    var timeoutId = localSetTimeout(function () {
+      callback({
+        timeRemaining: function () {
+          return Infinity;
+        },
+
+        didTimeout: false
+      });
+    });
+    timeoutIds.set(callback, timeoutId);
+    return callbackConfig;
+  };
+  exports.unstable_cancelScheduledWork = function (callbackId) {
+    var callback = callbackId.scheduledCallback;
+    var timeoutId = timeoutIds.get(callback);
+    timeoutIds.delete(callbackId);
+    localClearTimeout(timeoutId);
+  };
+} else {
+  {
+    if (typeof console !== 'undefined') {
+      if (typeof localRequestAnimationFrame !== 'function') {
+        console.error("This browser doesn't support requestAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+      }
+      if (typeof localCancelAnimationFrame !== 'function') {
+        console.error("This browser doesn't support cancelAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+      }
+    }
+  }
+
+  var headOfPendingCallbacksLinkedList = null;
+  var tailOfPendingCallbacksLinkedList = null;
+
+  // We track what the next soonest timeoutTime is, to be able to quickly tell
+  // if none of the scheduled callbacks have timed out.
+  var nextSoonestTimeoutTime = -1;
+
+  var isIdleScheduled = false;
+  var isAnimationFrameScheduled = false;
+
+  // requestAnimationFrame does not run when the tab is in the background.
+  // if we're backgrounded we prefer for that work to happen so that the page
+  // continues	to load in the background.
+  // so we also schedule a 'setTimeout' as a fallback.
+  var animationFrameTimeout = 100;
+  var rafID = void 0;
+  var timeoutID = void 0;
+  var scheduleAnimationFrameWithFallbackSupport = function (callback) {
+    // schedule rAF and also a setTimeout
+    rafID = localRequestAnimationFrame(function (timestamp) {
+      // cancel the setTimeout
+      localClearTimeout(timeoutID);
+      callback(timestamp);
+    });
+    timeoutID = localSetTimeout(function () {
+      // cancel the requestAnimationFrame
+      localCancelAnimationFrame(rafID);
+      callback(exports.unstable_now());
+    }, animationFrameTimeout);
+  };
+
+  var frameDeadline = 0;
+  // We start out assuming that we run at 30fps but then the heuristic tracking
+  // will adjust this value to a faster fps if we get more frequent animation
+  // frames.
+  var previousFrameTime = 33;
+  var activeFrameTime = 33;
+
+  var frameDeadlineObject = {
+    didTimeout: false,
+    timeRemaining: function () {
+      var remaining = frameDeadline - exports.unstable_now();
+      return remaining > 0 ? remaining : 0;
+    }
+  };
+
+  /**
+   * Handles the case where a callback errors:
+   * - don't catch the error, because this changes debugging behavior
+   * - do start a new postMessage callback, to call any remaining callbacks,
+   * - but only if there is an error, so there is not extra overhead.
+   */
+  var callUnsafely = function (callbackConfig, arg) {
+    var callback = callbackConfig.scheduledCallback;
+    var finishedCalling = false;
+    try {
+      callback(arg);
+      finishedCalling = true;
+    } finally {
+      // always remove it from linked list
+      exports.unstable_cancelScheduledWork(callbackConfig);
+
+      if (!finishedCalling) {
+        // an error must have been thrown
+        isIdleScheduled = true;
+        window.postMessage(messageKey, '*');
+      }
+    }
+  };
+
+  /**
+   * Checks for timed out callbacks, runs them, and then checks again to see if
+   * any more have timed out.
+   * Keeps doing this until there are none which have currently timed out.
+   */
+  var callTimedOutCallbacks = function () {
+    if (headOfPendingCallbacksLinkedList === null) {
+      return;
+    }
+
+    var currentTime = exports.unstable_now();
+    // TODO: this would be more efficient if deferred callbacks are stored in
+    // min heap.
+    // Or in a linked list with links for both timeoutTime order and insertion
+    // order.
+    // For now an easy compromise is the current approach:
+    // Keep a pointer to the soonest timeoutTime, and check that first.
+    // If it has not expired, we can skip traversing the whole list.
+    // If it has expired, then we step through all the callbacks.
+    if (nextSoonestTimeoutTime === -1 || nextSoonestTimeoutTime > currentTime) {
+      // We know that none of them have timed out yet.
+      return;
+    }
+    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
+    // after successfully calling any timed out callbacks.
+    // If a timed out callback throws an error, we could get stuck in a state
+    // where the nextSoonestTimeoutTime was set wrong.
+    var updatedNextSoonestTimeoutTime = -1; // we will update nextSoonestTimeoutTime below
+    var timedOutCallbacks = [];
+
+    // iterate once to find timed out callbacks and find nextSoonestTimeoutTime
+    var currentCallbackConfig = headOfPendingCallbacksLinkedList;
+    while (currentCallbackConfig !== null) {
+      var _timeoutTime = currentCallbackConfig.timeoutTime;
+      if (_timeoutTime !== -1 && _timeoutTime <= currentTime) {
+        // it has timed out!
+        timedOutCallbacks.push(currentCallbackConfig);
+      } else {
+        if (_timeoutTime !== -1 && (updatedNextSoonestTimeoutTime === -1 || _timeoutTime < updatedNextSoonestTimeoutTime)) {
+          updatedNextSoonestTimeoutTime = _timeoutTime;
+        }
+      }
+      currentCallbackConfig = currentCallbackConfig.next;
+    }
+
+    if (timedOutCallbacks.length > 0) {
+      frameDeadlineObject.didTimeout = true;
+      for (var i = 0, len = timedOutCallbacks.length; i < len; i++) {
+        callUnsafely(timedOutCallbacks[i], frameDeadlineObject);
+      }
+    }
+
+    // NOTE: we intentionally wait to update the nextSoonestTimeoutTime until
+    // after successfully calling any timed out callbacks.
+    nextSoonestTimeoutTime = updatedNextSoonestTimeoutTime;
+  };
+
+  // We use the postMessage trick to defer idle work until after the repaint.
+  var messageKey = '__reactIdleCallback$' + Math.random().toString(36).slice(2);
+  var idleTick = function (event) {
+    if (event.source !== window || event.data !== messageKey) {
+      return;
+    }
+    isIdleScheduled = false;
+
+    if (headOfPendingCallbacksLinkedList === null) {
+      return;
+    }
+
+    // First call anything which has timed out, until we have caught up.
+    callTimedOutCallbacks();
+
+    var currentTime = exports.unstable_now();
+    // Next, as long as we have idle time, try calling more callbacks.
+    while (frameDeadline - currentTime > 0 && headOfPendingCallbacksLinkedList !== null) {
+      var latestCallbackConfig = headOfPendingCallbacksLinkedList;
+      frameDeadlineObject.didTimeout = false;
+      // callUnsafely will remove it from the head of the linked list
+      callUnsafely(latestCallbackConfig, frameDeadlineObject);
+      currentTime = exports.unstable_now();
+    }
+    if (headOfPendingCallbacksLinkedList !== null) {
+      if (!isAnimationFrameScheduled) {
+        // Schedule another animation callback so we retry later.
+        isAnimationFrameScheduled = true;
+        scheduleAnimationFrameWithFallbackSupport(animationTick);
+      }
+    }
+  };
+  // Assumes that we have addEventListener in this environment. Might need
+  // something better for old IE.
+  window.addEventListener('message', idleTick, false);
+
+  var animationTick = function (rafTime) {
+    isAnimationFrameScheduled = false;
+    var nextFrameTime = rafTime - frameDeadline + activeFrameTime;
+    if (nextFrameTime < activeFrameTime && previousFrameTime < activeFrameTime) {
+      if (nextFrameTime < 8) {
+        // Defensive coding. We don't support higher frame rates than 120hz.
+        // If we get lower than that, it is probably a bug.
+        nextFrameTime = 8;
+      }
+      // If one frame goes long, then the next one can be short to catch up.
+      // If two frames are short in a row, then that's an indication that we
+      // actually have a higher frame rate than what we're currently optimizing.
+      // We adjust our heuristic dynamically accordingly. For example, if we're
+      // running on 120hz display or 90hz VR display.
+      // Take the max of the two in case one of them was an anomaly due to
+      // missed frame deadlines.
+      activeFrameTime = nextFrameTime < previousFrameTime ? previousFrameTime : nextFrameTime;
+    } else {
+      previousFrameTime = nextFrameTime;
+    }
+    frameDeadline = rafTime + activeFrameTime;
+    if (!isIdleScheduled) {
+      isIdleScheduled = true;
+      window.postMessage(messageKey, '*');
+    }
+  };
+
+  exports.unstable_scheduleWork = function (callback, options) /* CallbackConfigType */{
+    var timeoutTime = -1;
+    if (options != null && typeof options.timeout === 'number') {
+      timeoutTime = exports.unstable_now() + options.timeout;
+    }
+    if (nextSoonestTimeoutTime === -1 || timeoutTime !== -1 && timeoutTime < nextSoonestTimeoutTime) {
+      nextSoonestTimeoutTime = timeoutTime;
+    }
+
+    var scheduledCallbackConfig = {
+      scheduledCallback: callback,
+      timeoutTime: timeoutTime,
+      prev: null,
+      next: null
+    };
+    if (headOfPendingCallbacksLinkedList === null) {
+      // Make this callback the head and tail of our list
+      headOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+    } else {
+      // Add latest callback as the new tail of the list
+      scheduledCallbackConfig.prev = tailOfPendingCallbacksLinkedList;
+      // renaming for clarity
+      var oldTailOfPendingCallbacksLinkedList = tailOfPendingCallbacksLinkedList;
+      if (oldTailOfPendingCallbacksLinkedList !== null) {
+        oldTailOfPendingCallbacksLinkedList.next = scheduledCallbackConfig;
+      }
+      tailOfPendingCallbacksLinkedList = scheduledCallbackConfig;
+    }
+
+    if (!isAnimationFrameScheduled) {
+      // If rAF didn't already schedule one, we need to schedule a frame.
+      // TODO: If this rAF doesn't materialize because the browser throttles, we
+      // might want to still have setTimeout trigger scheduleWork as a backup to ensure
+      // that we keep performing work.
+      isAnimationFrameScheduled = true;
+      scheduleAnimationFrameWithFallbackSupport(animationTick);
+    }
+    return scheduledCallbackConfig;
+  };
+
+  exports.unstable_cancelScheduledWork = function (callbackConfig /* CallbackConfigType */
+  ) {
+    if (callbackConfig.prev === null && headOfPendingCallbacksLinkedList !== callbackConfig) {
+      // this callbackConfig has already been cancelled.
+      // cancelScheduledWork should be idempotent, a no-op after first call.
+      return;
+    }
+
+    /**
+     * There are four possible cases:
+     * - Head/nodeToRemove/Tail -> null
+     *   In this case we set Head and Tail to null.
+     * - Head -> ... middle nodes... -> Tail/nodeToRemove
+     *   In this case we point the middle.next to null and put middle as the new
+     *   Tail.
+     * - Head/nodeToRemove -> ...middle nodes... -> Tail
+     *   In this case we point the middle.prev at null and move the Head to
+     *   middle.
+     * - Head -> ... ?some nodes ... -> nodeToRemove -> ... ?some nodes ... -> Tail
+     *   In this case we point the Head.next to the Tail and the Tail.prev to
+     *   the Head.
+     */
+    var next = callbackConfig.next;
+    var prev = callbackConfig.prev;
+    callbackConfig.next = null;
+    callbackConfig.prev = null;
+    if (next !== null) {
+      // we have a next
+
+      if (prev !== null) {
+        // we have a prev
+
+        // callbackConfig is somewhere in the middle of a list of 3 or more nodes.
+        prev.next = next;
+        next.prev = prev;
+        return;
+      } else {
+        // there is a next but not a previous one;
+        // callbackConfig is the head of a list of 2 or more other nodes.
+        next.prev = null;
+        headOfPendingCallbacksLinkedList = next;
+        return;
+      }
+    } else {
+      // there is no next callback config; this must the tail of the list
+
+      if (prev !== null) {
+        // we have a prev
+
+        // callbackConfig is the tail of a list of 2 or more other nodes.
+        prev.next = null;
+        tailOfPendingCallbacksLinkedList = prev;
+        return;
+      } else {
+        // there is no previous callback config;
+        // callbackConfig is the only thing in the linked list,
+        // so both head and tail point to it.
+        headOfPendingCallbacksLinkedList = null;
+        tailOfPendingCallbacksLinkedList = null;
+        return;
+      }
+    }
+  };
+}
+  })();
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/schedule/index.js":
+/*!****************************************!*\
+  !*** ./node_modules/schedule/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/schedule.development.js */ "./node_modules/schedule/cjs/schedule.development.js");
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/schedule/tracking.js":
+/*!*******************************************!*\
+  !*** ./node_modules/schedule/tracking.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./cjs/schedule-tracking.development.js */ "./node_modules/schedule/cjs/schedule-tracking.development.js");
+}
 
 
 /***/ }),
@@ -24006,7 +25900,7 @@ var HEADERS = exports.HEADERS = {
 };
 
 var NORULES = exports.NORULES = 'No Rules';
-var RULES = exports.RULES = 'of Rules';
+var RULES = exports.RULES = 'Rules';
 var FILTERPLACEHOLDER = exports.FILTERPLACEHOLDER = 'Filter Rules';
 
 var RESOURCES = exports.RESOURCES = {
@@ -25506,11 +27400,6 @@ var VerticalArray = function (_React$PureComponent) {
   }
 
   _createClass(VerticalArray, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps() {
-      this.setState({ filterValue: '' });
-    }
-  }, {
     key: 'onfilterChange',
     value: function onfilterChange(event) {
       this.setState({ filterValue: event.target.value });
@@ -26121,12 +28010,11 @@ var SubMenu = function (_React$PureComponent) {
       var _props = this.props,
           title = _props.title,
           children = _props.children,
-          cssClass = _props.cssClass,
           isOpen = this.state.isOpen;
 
       return _react2.default.createElement(
         'div',
-        { className: (0, _index.createClassName)(_constants.CLASSES.subMenu, _index.COMMON_CLASSES.flexCol, cssClass), onClick: this.toggleMenu.bind(this) },
+        { className: (0, _index.createClassName)(_constants.CLASSES.subMenu, _index.COMMON_CLASSES.flexCol), onClick: this.toggleMenu.bind(this) },
         _react2.default.createElement(
           'div',
           { className: (0, _index.createClassName)(_constants.CLASSES.title, isOpen ? _index.COMMON_CLASSES.fontWeightHeavy : undefined) },
@@ -27038,7 +28926,11 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import { ConnectedRouter } from 'connected-react-router';
+//import { Route } from 'react-router';
 window.STORE = _store2.default;
+//import history from './history';
+
 window.actions = actions;
 
 window.urlGen = function () {
@@ -27597,8 +29489,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  menu: 'qrp_menu-navigation',
-  standardsSubMenu: 'qrp_stdsm'
+  menu: 'qrp_menu-navigation'
 };
 
 var ITEMS = exports.ITEMS = {
@@ -28391,7 +30282,8 @@ var CLASSES = exports.CLASSES = {
   closeBtn: 'qrp_headerBar_search_pathElement_closeBtn',
   selector: 'qrp_headerBar_pathElement_Selector',
   selectorTextBox: 'qrp_headerBar_pathElement_Selector_txtBox',
-  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown'
+  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown',
+  selectorOverlay: 'qrp_clkovl'
 };
 
 var TYPES = exports.TYPES = {
@@ -28429,8 +30321,6 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-navigation/nv-constants.js");
 
-__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var PathElement = exports.PathElement = function PathElement(props) {
@@ -28458,7 +30348,11 @@ var PathElement = exports.PathElement = function PathElement(props) {
 };
 
 var SelectorElement = exports.SelectorElement = function SelectorElement(props) {
-  return _react2.default.createElement('span', { className: _nvConstants.CLASSES.selector });
+  return _react2.default.createElement(
+    'span',
+    { className: _nvConstants.CLASSES.selector },
+    _react2.default.createElement('div', { className: _nvConstants.CLASSES.selectorOverlay, onClick: true })
+  );
 };
 
 PathElement.propTypes = {
@@ -28499,7 +30393,7 @@ var _nvLib = __webpack_require__(/*! ./nv-lib */ "./public/src/path-navigation/n
 
 var _vnConstants = __webpack_require__(/*! view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
 
-__webpack_require__(/*! ./style.scss */ "./public/src/path-navigation/style.scss");
+__webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28578,15 +30472,15 @@ exports.default = navHeaderReducer;
 
 /***/ }),
 
-/***/ "./public/src/path-navigation/style.scss":
-/*!***********************************************!*\
-  !*** ./public/src/path-navigation/style.scss ***!
-  \***********************************************/
+/***/ "./public/src/path-navigation/style.css":
+/*!**********************************************!*\
+  !*** ./public/src/path-navigation/style.css ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/sass-loader/lib/loader.js!./style.scss */ "./node_modules/css-loader/index.js!./node_modules/sass-loader/lib/loader.js!./public/src/path-navigation/style.scss");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/path-navigation/style.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -28714,6 +30608,8 @@ var _reducer2 = _interopRequireDefault(_reducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import { routerMiddleware, connectRouter } from 'connected-react-router';
+//import history from './history';
 var store = (0, _redux.createStore)(_reducer2.default, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 
 exports.default = store;
@@ -29051,5 +30947,4 @@ exports.default = viewNavigationReducer;
 /***/ })
 
 /******/ });
->>>>>>> design_dev
 //# sourceMappingURL=bundle.js.map

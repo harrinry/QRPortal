@@ -22,9 +22,9 @@ body {
 .jsb{ justify-content: space-between;}
 .minh50p{ min-height: 50px }
 .ovfy{ overflow-x: hidden; overflow-y: auto;}
-.ovfy::-webkit-scrollbar{ width: 5px}
+/* .ovfy::-webkit-scrollbar{ width: 5px}
 .ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}
-.ovfy::-webkit-scrollbar-track { background: #ddd; }
+.ovfy::-webkit-scrollbar-track { background: #ddd; } */
 .vh100{ height: 100vh; }
 .txtcenter{ text-align: center}
 .fright{ float: right;}
@@ -33,6 +33,7 @@ body {
 .qrp_fw800{ font-weight: 800;}
 .qrp_fw400{ font-weight: 400;}
 .qrp_w100{ width: 100% }
-.qrp_critical{padding: 8px 30px; background: url("/img/criticalrule.png") no-repeat center center; background-size: 16px;}
-.qrp_arrlci{ cursor: pointer; }
-.qrp_srico{ cursor: pointer; color: black; padding: 8px; background: url("/img/search.svg") no-repeat center center; background-size: 16px}
+.qrp_critical{height: 16px; width: 16px; border-radius: 16px; background-color:  #CB7474; background-size: 16px; display: block !important; margin-top: 16px; margin-right: 16px; padding: 0;}
+.qrp_arrlci{ cursor: pointer; padding-left: 10px;}
+.qrp_arrlci:hover{ background-color: rgba(0,0,0,0.05);}
+.qrp_srico{ cursor: pointer; color: black; padding-right: 15px; background: url("/img/search.svg") no-repeat center center; background-size: 16px; height:48px; display: inline-block; float: right; margin-right: 15px;}
