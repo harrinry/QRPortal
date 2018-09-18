@@ -22,7 +22,7 @@ function stylize( icon ){
 
 Tile.propTypes = {
   click: PropTypes.func.isRequired,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string
 };
-
+ 
 export default Tile;
