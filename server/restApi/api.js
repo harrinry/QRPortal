@@ -7,7 +7,7 @@ const QueryParser = require('../lib/queryParser');
 const StatLogger = require('../logger/restStats');
 const normalize = require('../lib/normalize');
 
-let apiRouter = express.Router();
+let apiRouter = express.Router({caseSensitive: false});
 
 apiRouter.get(main, ( req, res ) => {
   const queryKey = 'q', query = QueryParser(req.query, queryKey);
