@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CLASSES, COMPARE_IMG } from './constants';
-import { DropdownSelector } from '../../components/';
+import { CLASSES, COMPARE_IMG, COMPARE_IMG_COMPARING } from './constants';
+import { createClassName } from 'common/'
+import { DropdownSelector } from 'components/';
 import './style.css';
 
 export default class DropdownCompare extends React.PureComponent {
@@ -53,7 +54,7 @@ export default class DropdownCompare extends React.PureComponent {
     return (
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={0} onItemClick={this.firstListChanged}/>
-        <img src={COMPARE_IMG} onClick={this.toggleCompare}/>
+        <div className={createClassName(CLASSES.compareImgContainer, CLASSES.isComparing)}><img src={this.state.comparing ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
         { this.state.comparing ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
       </span>
     );
