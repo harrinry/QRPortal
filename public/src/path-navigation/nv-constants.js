@@ -13,8 +13,7 @@ export const CLASSES = {
 };
 
 export const TYPES = {
-  item: 'item',
-  selector: 'selector'
+  versionSelector: /\/(versions)\//i
 };
 
 export const SEARCHFOR = 'Search Results for : ';

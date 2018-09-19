@@ -4,7 +4,7 @@ import { CLASSES } from './constants';
 import { createClassName } from 'common/';
 import './style.css';
 
-export default class SelectorElement extends React.PureComponent{
+export default class Dropdown extends React.PureComponent{
   constructor(props){
     super(props);
 
@@ -26,13 +26,17 @@ export default class SelectorElement extends React.PureComponent{
 
   render(){
     return (
-      <span className={CLASSES.container}>
+      <span className={CLASSES.container} onClick={this.toggleDropDown}>
+        {this.state.isOpen ? <div className={CLASSES.dropdownOverlay}></div> : undefined}
         <div className={CLASSES.dropDownElementContainer}>
-          <div className={CLASSES.trigger} onClick={this.toggleDropDown}>{this.props.label}</div>
+          <div className={CLASSES.trigger}>{this.props.label}</div>
           <div className={createClassName(CLASSES.dropDownMenu, this.state.isOpen ? undefined : CLASSES.closed)}>{this.props.children}</div>
         </div>
-        {this.state.isOpen ? <div className={CLASSES.dropdownOverlay} onClick={this.closeDropDown}></div> : undefined}
       </span>
     );
   }
 }
+
+Dropdown.propTypes = { 
+  label: PropTypes.any,
+};

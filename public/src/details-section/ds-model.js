@@ -46,7 +46,7 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
               <p className={CLASSES.textAreaRule}>{data.reference}</p>
             </div>
           </div>
-          : <div className={COMMON_CLASSES.txtCenter}>{NORULESSELECTED}</div> )
+          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
       }
     </div>
   );
