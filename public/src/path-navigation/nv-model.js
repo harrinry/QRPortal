@@ -1,8 +1,10 @@
 import React from 'react';
-import { CLASSES, TYPES, SEARCHFOR} from './nv-constants';
+import PropTypes from 'prop-types';
+import { CLASSES, SEARCHFOR} from './nv-constants';
 import { createClassName, COMMON_CLASSES } from 'common/';
-import { PathElement, SelectorElement } from './nv-lib';
+import { PathElement } from './nv-lib';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
+import { DropdownSelector } from '../components';
 import './style.css';
 
 const NavHeader = ( props ) =>{
@@ -12,13 +14,19 @@ const NavHeader = ( props ) =>{
       <div className={CLASSES.pathContainer}>
         { props.searchVisible ? <PathElement rules={props.rules} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
           props.path.map((e, index) => {
-            if (e.type === TYPES.selector ) {
-              return ;
-            } else return (<PathElement key={index} separator={index !== pl - 1} index={index} gotoLocation={props.gotoLocation} name={e.name} href={e.href} icon={e.icon}/>);
+            if ( Array.isArray(e) ) {
+              return <DropdownSelector key={index} list={e} onItemClick={props.selectorChange}/> ;
+            } else return (<PathElement key={index} separator={index !== pl - 1 && index !== 0} showIcon={index === 0} index={index} gotoLocation={props.gotoLocation} name={e.name} href={e.href} icon={e.icon}/>);
           })}
       </div>
     </div>
   );
+};
+
+NavHeader.propTypes = {
+  path: PropTypes.arrayOf(PropTypes.any),
+  searchVisible: PropTypes.bool.isRequired,
+  searchQuery: PropTypes.string
 };
 
 export default NavHeader;

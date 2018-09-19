@@ -3,3 +3,7 @@ export { default as LoadingSpinner } from './loading-spinner';
 export { default as MenuItem } from './menu-item';
 export { default as SubMenu } from './menu-submenu';
 export { default as Tile } from './body-tile';
+export { default as List } from './list';
+export { default as Dropdown } from './dropdown';
+export { default as DropdownSelector } from './dropdown-selector';
+export { default as DropdownCompare } from './dropdown-compare';
