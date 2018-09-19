@@ -257,6 +257,25 @@ exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 15
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./public/src/components/dropdown-compare/style.css":
+/*!************************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/components/dropdown-compare/style.css ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_dd_cmp_Cntr{ display: flex; flex-direction: row;}", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/components/dropdown-selector/style.css":
 /*!*************************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/components/dropdown-selector/style.css ***!
@@ -26624,6 +26643,180 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./public/src/components/dropdown-compare/constants.js":
+/*!*************************************************************!*\
+  !*** ./public/src/components/dropdown-compare/constants.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CLASSES = exports.CLASSES = {
+  container: 'qrp_dd_cmp_Cntr'
+};
+
+var COMPARE_IMG = exports.COMPARE_IMG = '/img/compareblack.svg';
+
+/***/ }),
+
+/***/ "./public/src/components/dropdown-compare/index.js":
+/*!*********************************************************!*\
+  !*** ./public/src/components/dropdown-compare/index.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _constants = __webpack_require__(/*! ./constants */ "./public/src/components/dropdown-compare/constants.js");
+
+var _components = __webpack_require__(/*! ../../components/ */ "./public/src/components/index.js");
+
+__webpack_require__(/*! ./style.css */ "./public/src/components/dropdown-compare/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DropdownCompare = function (_React$PureComponent) {
+  _inherits(DropdownCompare, _React$PureComponent);
+
+  function DropdownCompare(props) {
+    _classCallCheck(this, DropdownCompare);
+
+    var _this = _possibleConstructorReturn(this, (DropdownCompare.__proto__ || Object.getPrototypeOf(DropdownCompare)).call(this, props));
+
+    _this.state = {
+      comparing: false,
+      first: undefined,
+      second: undefined
+    };
+
+    _this.handleDropdownChange = _this.handleDropdownChange.bind(_this);
+    _this.firstListChanged = _this.firstListChanged.bind(_this);
+    _this.toggleCompare = _this.toggleCompare.bind(_this);
+    _this.secondListChanged = _this.secondListChanged.bind(_this);
+    return _this;
+  }
+
+  _createClass(DropdownCompare, [{
+    key: 'toggleCompare',
+    value: function toggleCompare() {
+      var _this2 = this;
+
+      return this.setState(function (_state) {
+        return Object.assign({}, _state, { comparing: !_state.comparing, second: _state.second || _this2.props.list[1] });
+      });
+    }
+  }, {
+    key: 'handleDropdownChange',
+    value: function handleDropdownChange(item) {
+      if (this.state.comparing) this.props.onCompare(this.state.first, this.state.second);else this.props.onItemSelect(item);
+    }
+  }, {
+    key: 'firstListChanged',
+    value: function firstListChanged(item) {
+      this.setState(function (_state) {
+        return _extends({}, _state, {
+          first: item
+        });
+      });
+      this.handleDropdownChange(item);
+    }
+  }, {
+    key: 'secondListChanged',
+    value: function secondListChanged(item) {
+      this.setState(function (_state) {
+        return _extends({}, _state, {
+          second: item
+        });
+      });
+      this.handleDropdownChange(item);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'span',
+        { className: _constants.CLASSES.container },
+        _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 0, onItemClick: this.firstListChanged }),
+        _react2.default.createElement('img', { src: _constants.COMPARE_IMG, onClick: this.toggleCompare }),
+        this.state.comparing ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
+      );
+    }
+  }]);
+
+  return DropdownCompare;
+}(_react2.default.PureComponent);
+
+exports.default = DropdownCompare;
+
+
+DropdownCompare.propTypes = {
+  list: _propTypes2.default.arrayOf(_propTypes2.default.any).isRequired,
+  onItemSelect: _propTypes2.default.func.isRequired,
+  onCompare: _propTypes2.default.func.isRequired
+};
+
+/***/ }),
+
+/***/ "./public/src/components/dropdown-compare/style.css":
+/*!**********************************************************!*\
+  !*** ./public/src/components/dropdown-compare/style.css ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/components/dropdown-compare/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./public/src/components/dropdown-selector/constants.js":
 /*!**************************************************************!*\
   !*** ./public/src/components/dropdown-selector/constants.js ***!
@@ -26716,7 +26909,7 @@ var DropdownSelector = function (_React$PureComponent) {
   }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.onItemChange(0);
+      this.onItemChange(this.props.defaultIndex || 0);
     }
   }, {
     key: 'render',
@@ -27030,6 +27223,15 @@ Object.defineProperty(exports, 'DropdownSelector', {
   enumerable: true,
   get: function get() {
     return _interopRequireDefault(_dropdownSelector).default;
+  }
+});
+
+var _dropdownCompare = __webpack_require__(/*! ./dropdown-compare */ "./public/src/components/dropdown-compare/index.js");
+
+Object.defineProperty(exports, 'DropdownCompare', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_dropdownCompare).default;
   }
 });
 
@@ -29797,7 +29999,15 @@ var NavHeader = function NavHeader(props) {
       { className: _nvConstants.CLASSES.pathContainer },
       props.searchVisible ? _react2.default.createElement(_nvLib.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components.DropdownSelector, { key: index, list: e, onItemClick: props.selectorChange });
+          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
+              fetch('compare/extensions/' + props.path[index - 1].id + '/' + item1.name + '/' + item2.name).catch(function (err) {
+                return console.log(err);
+              }).then(function (res) {
+                return res.json();
+              }).then(function (data) {
+                return console.log(data);
+              });
+            } });
         } else return _react2.default.createElement(_nvLib.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
       })
     )
@@ -30040,7 +30250,9 @@ var _vnLib = __webpack_require__(/*! ./vn-lib */ "./public/src/view-navigation/v
 
 var _nvActions = __webpack_require__(/*! path-navigation/nv-actions */ "./public/src/path-navigation/nv-actions.js");
 
-var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src/body/body-actions.js");
+var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/body/body-actions.js");
+
+var _gsActions = __webpack_require__(/*! ../global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30057,6 +30269,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     goToLandingPage: function goToLandingPage() {
       dispatch((0, _nvActions.goToLandingPage)());
       dispatch((0, _bodyActions.showLandingPage)());
+      dispatch((0, _gsActions.hideSearchResults)());
     }
   };
 };
