@@ -1,6 +1,7 @@
 import React from 'react';
 import { compareValueKeys } from './bsl-constants';
 import { COMMON_CLASSES, createClassName } from 'common/';
+import { CLASSES } from './bsl-constants';
 
 export const compareFunction = ( textValue, obj ) =>{
   let reg;
@@ -15,7 +16,7 @@ export const compareFunction = ( textValue, obj ) =>{
 export const childConstructor = ( values, index, callback ) => {
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
-      <td className={'test-std-list-row1'}>{values.id + ' - ' + values.name}</td>
+      <td className={createClassName(CLASSES.standardsRow, values.count === 0 ? CLASSES.emptyContent : undefined)}>{values.id + ' - ' + values.name}</td>
     </tr>
   );
 };

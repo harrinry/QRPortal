@@ -13,7 +13,8 @@ export const CLASSES = {
   rationaleContainer: 'qrp_bdet_ratlCntr',
   descriptionContainer: 'qrp_bdet_descCntr',
   tag: 'qrp_bdet_tag',
-  tagContainer: 'qrp_bdet_tagCntr'
+  tagContainer: 'qrp_bdet_tagCntr',
+  noRules: 'qrp_bdet_nRls'
 };
 
 export const NORULESSELECTED = 'No Rule Selected';

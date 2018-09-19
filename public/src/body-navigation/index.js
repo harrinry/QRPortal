@@ -33,7 +33,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(setListCount(1));
             dispatch(showContentView());
             dispatch(fetchWebData(data[0].href));
-            dispatch(appendToHeaderPath(data[0]));
+            dispatch(appendToHeaderPath(data));
           });
         break;
       default:
