@@ -12,7 +12,8 @@ export const CLASSES = {
   welcomeText: 'qrp_lpwtxtCntr',
   navigation: 'qrp_lpnav',
   link: 'qrp_lpslink',
-  separator: 'qrp_lpSsep'
+  separator: 'qrp_lpSsep',
+  title: 'qrp_lptitleCntr'
 };
 
 export const _oIconStyle = {
@@ -23,3 +24,4 @@ export const _oIconStyle = {
 };
 
 export const WELCOMETEXT = "Welcome to the CAST Structural Rules Portal, let's start browsing or searching the rules";
+export const TITLE = 'Structural Portal';

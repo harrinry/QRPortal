@@ -10,41 +10,40 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
       { loading ? <LoadingSpinner/> : 
         ( data ? 
-          <div className='details-container'>
-            {data.critical ? <div className='critical-container'>{' '}</div> : undefined}
-            <div className='weight-container'>{data.maxWeight}</div>
-            <h2 className='ruleTitle'>{data.name}</h2>
-            <div className='tags-container'>
-              {data.qualityStandards.length > 0 ? 
-                <ul className='details-tag'>
-                  {data.qualityStandards.map(function(listValue){
-                    return <li key={listValue.id} className='detail-tag' onClick={() => onTagClick(listValue)}>{listValue.id}</li>;
-                  })}
-                </ul> : undefined }
+          <div className={CLASSES.subContainer}>
+            <div className={CLASSES.headerContainer}>
+              <h2 className={CLASSES.title}>{data.name}</h2>
+              <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : undefined)}>{data.maxWeight}</div>
             </div>
-            <div className='description-container detailssection'>
-              <p className='rulesection'>Description</p>
+            <div className={CLASSES.tagContainer}>
+              {data.qualityStandards.length > 0 ? 
+                data.qualityStandards.map(function(listValue){
+                  return <div key={listValue.id} className={CLASSES.tag} onClick={() => onTagClick(listValue)}>{listValue.id}</div>;
+                }) : undefined }
+            </div>
+            <div className={CLASSES.descriptionContainer}>
+              <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
             </div>
-            <div className='rationale-container detailssection'>
-              <p className='rulesection'>Rationale</p>
+            <div className={CLASSES.rationaleContainer}>
+              <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
             </div>
-            <div className='remediation-container detailssection'>
-              <p className='rulesection'>Remediation</p>
+            <div className={CLASSES.remediation}>
+              <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
             </div>
-            <div className='sample-container detailssection'>
-              <p className="rulesection">Sample</p>
+            <div className={CLASSES.sampleContainer}>
+              <p className={CLASSES.textArea}>Sample</p>
               <pre><code>{data.sample}</code></pre>
             </div>
-            <div className='remediationsample-container detailssection'>
-              <p className='rulesection'>Remediation Sample</p>
+            <div className={CLASSES.remediationSample}>
+              <p className={CLASSES.textArea}>Remediation Sample</p>
               <pre><code>{data.remediationSample}</code></pre>
             </div>
-            <div className='reference-container detailssection'>
-              <p className='rulesection'>Reference</p>
-              <p className='textrule'>{data.reference}</p>
+            <div className={CLASSES.refContainer}>
+              <p className={CLASSES.textArea}>Reference</p>
+              <p className={CLASSES.textAreaRule}>{data.reference}</p>
             </div>
           </div>
           : <div className={COMMON_CLASSES.txtCenter}>{NORULESSELECTED}</div> )

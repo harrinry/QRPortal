@@ -11,6 +11,9 @@ export default class SelectorElement extends React.PureComponent{
     this.state = {
       isOpen: false
     };
+
+    this.closeDropDown = this.closeDropDown.bind(this);
+    this.toggleDropDown = this.toggleDropDown.bind(this);
   }
 
   closeDropDown(){
@@ -24,11 +27,11 @@ export default class SelectorElement extends React.PureComponent{
   render(){
     return (
       <span className={CLASSES.container}>
-        <div className={CLASSES.dropdownOverlay} onClick={this.closeDropDown}></div>
         <div className={CLASSES.dropDownElementContainer}>
-          <div className={createClassName(CLASSES.trigger, CLASSES.closed)} onClick={this.toggleDropDown}></div>
-          <div className={CLASSES.dropDownMenu}>{this.props.children}</div>
+          <div className={CLASSES.trigger} onClick={this.toggleDropDown}>{this.props.label}</div>
+          <div className={createClassName(CLASSES.dropDownMenu, this.state.isOpen ? undefined : CLASSES.closed)}>{this.props.children}</div>
         </div>
+        {this.state.isOpen ? <div className={CLASSES.dropdownOverlay} onClick={this.closeDropDown}></div> : undefined}
       </span>
     );
   }
