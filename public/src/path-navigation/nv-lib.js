@@ -6,7 +6,7 @@ import DropDown from '../components/dropdown';
 export const PathElement = ( props ) => {
   return (
     <span className={CLASSES.pathElement}>
-      {props.icon ? <div className={CLASSES.pathElementIcon} 
+      {props.icon ? <div className={CLASSES.pathElementIcon}
         style={{backgroundImage: 'url('+ props.icon +')'}}></div> : undefined}
       <div className={CLASSES.pathElementText} onClick={() => props.gotoLocation ? props.gotoLocation(props) : undefined} >{props.name}</div>
       {props.closeBtn ? <img src={CLOSEBTNURL} className={CLASSES.closeBtn} onClick={ () => props.onCloseBtnClick(props) }/> : undefined }
