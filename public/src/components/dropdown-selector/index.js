@@ -26,7 +26,7 @@ export default class DropdownSelector extends React.PureComponent{
   } 
 
   componentDidMount(){
-    this.onItemChange(0);
+    this.onItemChange(this.props.defaultIndex || 0);
   }
 
   render(){
