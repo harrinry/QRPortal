@@ -13,25 +13,25 @@ const NavigationMenu = ( props ) => {
   return (
     <div className={createClassName(CLASSES.menu, (props.viewType === VIEW_TYPES.TILES_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <SubMenu title={ITEMS.STANDARDS}>
-        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc}>
+        <SubMenu title={ITEMS.BUSINESSCRITERIA} onClick={props.populateStd_bc} cssClass={CLASSES.standardsSubMenu}>
           {props.std_bc.data ? 
             props.std_bc.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
-              props.onItemClick(e.name, e.href);
+              props.onBusinessCriteriaClick(e.name, e.href);
             }}/>) : ( props.std_bc.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq}>
+        <SubMenu title={ITEMS.CISQ} onClick={props.populateStd_cisq} cssClass={CLASSES.standardsSubMenu}>
           {props.std_cisq.data ? 
             props.std_cisq.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
-              props.onItemClick(e.name, e.href);
+              props.onCisqClick(e.name, e.href);
             }}/>) : ( props.std_cisq.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
-        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp}>
+        <SubMenu title={ITEMS.OWASP} onClick={props.populateStd_owasp} cssClass={CLASSES.standardsSubMenu}>
           {props.std_owasp.data ? 
             props.std_owasp.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
               props.setSelected(JSON.stringify(e));
-              props.onItemClick(e.name, e.href);
+              props.onOwaspClick(e.name, e.href);
             }}/>) : ( props.std_owasp.loading ? <LoadingSpinner/> : undefined )}
         </SubMenu>
       </SubMenu>
@@ -39,15 +39,17 @@ const NavigationMenu = ( props ) => {
         {props.technologies.data ? 
           props.technologies.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={e.name} href={e.href} onClick={() => {
             props.setSelected(JSON.stringify(e));
-            props.onItemClick(e.name, e.href);
+            props.onTechnologyClick(e.name, e.href);
           }}/>) : ( props.technologies.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
       <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
         {props.extensions.data ? 
-          props.extensions.data.map( e => <MenuItem selected={props.selected === JSON.stringify(e) ? true : false} title={lib.PrettyPrintExtentionName(e.title)} href={e.href} onClick={() => {
-            props.setSelected(JSON.stringify(e));
-            props.onItemClick(lib.PrettyPrintExtentionName(e.title), e.href);
-          }}/>) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
+          props.extensions.data.map( e => (<SubMenu title={lib.PrettyPrintExtentionName(e.title)} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
+            {e.versions ? e.versions.map( ver => <MenuItem selected={props.selected === JSON.stringify(ver) ? true : false} title={ver.name} href={ver.href} onClick={() => {
+              props.setSelected(JSON.stringify(ver));
+              props.onExtensionsClick({...e,title: lib.PrettyPrintExtentionName(e.title)}, ver);
+            }}/> ) : ( e.loading ? <LoadingSpinner/> : undefined )}
+          </SubMenu>)) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
     </div>
   );
@@ -55,7 +57,9 @@ const NavigationMenu = ( props ) => {
 
 NavigationMenu.propTypes = {
   viewType: PropTypes.string.isRequired,
-  onItemClick: PropTypes.func.isRequired
+  onExtensionsClick: PropTypes.func.isRequired,
+  onElementClick: PropTypes.func.isRequired,
+  onQualityStandardClick: PropTypes.func.isRequired,
 };
 
 export default NavigationMenu;

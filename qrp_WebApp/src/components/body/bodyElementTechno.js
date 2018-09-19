@@ -13,7 +13,7 @@ export default class BodyElementTechno extends React.Component{
   stylize( key ){
     const iconURL = ICONURLS[key];
     return {
-      backgroundImage: iconURL ? 'url('+ iconURL +')' : undefined,
+      backgroundImage: iconURL ? 'url('+ iconURL +')' : 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       backgroundSize: '80%'

@@ -1,7 +1,12 @@
 function search ( search, arr, reducer ){
-  const sREG = new RegExp(search, 'i'),
-    res = [];
-
+  if(search === '') return[];
+  let sREG, res = [];
+  
+  try {
+    sREG = new RegExp(search, 'i');
+  } catch (error) {
+    return[];
+  }
   arr.forEach( e => {
     if ( !reducer ){
       if ( e.search(sREG) > -1) {

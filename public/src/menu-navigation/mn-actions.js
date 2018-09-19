@@ -1,4 +1,4 @@
-import {FETCHEXTENSIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES } from './mn-resources';
+import {FETCHEXTENSIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES, fetchCastAIPVersions, fetchExtensionVersions } from './mn-resources';
 import * as ACTIONTYPES from './mn-actions-type';
 
 const errorOnFetch = ( err, query ) => {
@@ -25,6 +25,16 @@ const setExtensions = ( data ) => {
     type: ACTIONTYPES.SETEXTENSIONS,
     payload: {
       data: data
+    }
+  };
+};
+
+const setExtensionVersion = ( index, versions ) => {
+  return {
+    type: ACTIONTYPES.SET_EXTENSION_VERSION,
+    payload: {
+      index,
+      versions
     }
   };
 };
@@ -62,6 +72,15 @@ const fetchingData = ( actionType ) => {
   };
 };
 
+const fetchingVersionData = ( index ) => {
+  return {
+    type: ACTIONTYPES.FETCH_EXTENSION_VERSION,
+    payload: {
+      index
+    }
+  };
+};
+
 const fetchApiData = ( fetchFunc, onSuccessAction, onFailAction, fetchActionType ) => {
   return function (dispatch) {
     dispatch(fetchingData(fetchActionType));
@@ -76,6 +95,27 @@ export const fetchExtensions = () => {
   return fetchApiData( FETCHEXTENSIONS, 
     setExtensions, 
     (err) => errorOnFetch(err, QUERIES.extensions), ACTIONTYPES.FETCHEXTENSIONS );
+};
+
+export const fetchExtensionVersion = ( extension ) => {
+  return (dispatch) => {
+    dispatch(fetchingVersionData(extension.index));
+    return fetchExtensionVersions( extension.href ).then(
+      data => dispatch(setExtensionVersion(extension.index, data)),
+      err => dispatch( errorOnFetch(err, extension.href))
+    );
+  };
+};
+
+export const fetchAIPVersions = () => {
+  const index = 0;
+  return (dispatch) => {
+    dispatch(fetchingVersionData(index));
+    return fetchCastAIPVersions().then(
+      data => dispatch(setExtensionVersion(index, data)),
+      err => dispatch( errorOnFetch(err, index))
+    );
+  };
 };
 
 export const fetchTechnologies = () => {

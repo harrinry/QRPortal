@@ -2,6 +2,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
+import { showContentView, setListCount} from 'body/body-actions';
+import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
+import { fetchBusinessCriteriaList, fetchApiData } from 'body-rules-list/brl-actions';
+import { setHeaderPath } from 'path-navigation/nv-actions';
+import { ITEMS } from './mn-constants';
+import { QUERIES } from './mn-resources';
+import { hideSearchResults } from 'global-search/gs-actions';
+import { clearDetailsData } from 'details-section/ds-actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,6 +21,15 @@ const mapStateToProps = (state) => {
     std_cisq: state.navMenu.std_cisq,
     std_owasp: state.navMenu.std_owasp
   };
+};
+
+const paths = {
+  standard: {name: ITEMS.STANDARDS, href: QUERIES.standards},
+  cisq: {name: ITEMS.CISQ, href: QUERIES.cisq},
+  owasp: {name: ITEMS.OWASP, href: QUERIES.owasp},
+  businessCriteria: {name: ITEMS.BUSINESSCRITERIA, href: QUERIES.businessCriteria},
+  technologies: {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies},
+  extensions: {name: ITEMS.EXTENSIONS, href: QUERIES.extensions}
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -37,11 +54,57 @@ const mapDispatchToProps = (dispatch) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchExtensions());
     },
-    onItemClick: (name, href) => {
-      console.log(name + ' - ' + href);
+    onCisqClick: ( name, href ) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(setListCount(2));
+      dispatch(showContentView());
+      dispatch(fetchStandardsListData( href ));
+      dispatch(setHeaderPath( paths.standard, paths.cisq, {name} ));
+    },
+    onOwaspClick: ( name, href ) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(setListCount(2));
+      dispatch(showContentView());
+      dispatch(fetchStandardsListData( href ));
+      dispatch(setHeaderPath( paths.standard, paths.owasp,  {name} ));
+    },
+    onBusinessCriteriaClick: (name, href) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchBusinessCriteriaList( href ));
+      dispatch(setHeaderPath(paths.standard, paths.businessCriteria, {name}));
+    },
+    onTechnologyClick: (name, href) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchApiData( href ));
+      dispatch(setHeaderPath( paths.technologies , {name}));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
+    },
+    onExtensionsClick: ( extension, version ) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchApiData( version.href ));
+      dispatch(setHeaderPath( paths.extensions, {name: extension.title, href: extension.href}, version));
+    },
+    fetchVersion: ( exeCount, extension ) =>{
+      if( exeCount !== 0 ) return;
+      if (extension.index !== 0) {
+        dispatch(ACTIONS.fetchExtensionVersion(extension));
+      } else {
+        dispatch(ACTIONS.fetchAIPVersions());
+      }
+      
     }
   };
 };
