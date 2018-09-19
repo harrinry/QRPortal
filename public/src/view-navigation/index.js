@@ -4,7 +4,8 @@ import { setMenuView, setTilesView } from './vn-actions';
 import ViewNavigation from './vn-model';
 import { defaultToTiles, defaultToMenu } from './vn-lib';
 import { goToLandingPage } from 'path-navigation/nv-actions';
-import { showLandingPage } from '../body/body-actions';
+import { showLandingPage } from 'body/body-actions';
+import { hideSearchResults } from '../global-search/gs-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     goToLandingPage: () => {
       dispatch(goToLandingPage());
       dispatch(showLandingPage());
+      dispatch(hideSearchResults());
     }
   };
 };
