@@ -1,7 +1,7 @@
 import React from 'react';
 import { CLASSES, TYPES, SEARCHFOR} from './nv-constants';
 import { createClassName, COMMON_CLASSES } from 'common/';
-import { PathElement } from './nv-lib';
+import { PathElement, SelectorElement } from './nv-lib';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import './style.css';
 

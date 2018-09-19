@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CLASSES, CLOSEBTNURL } from './nv-constants';
+import DropDown from '../components/dropdown';
 
 export const PathElement = ( props ) => {
   return (
@@ -17,7 +18,13 @@ export const PathElement = ( props ) => {
 export const SelectorElement = ( props ) => {
   return (
     <span className={CLASSES.selector}>
-      <div className={CLASSES.selectorOverlay} onClick></div>
+      <DropDown label={'click me'}>
+        <div onClick={()=> console.log(1)}>1</div>
+        <div onClick={()=> console.log(2)}>2</div>
+        <div onClick={()=> console.log(3)}>3</div>
+        <div onClick={()=> console.log(4)}>4</div>
+        <div onClick={()=> console.log(5)}>5</div>
+      </DropDown>
     </span>
   );
 };

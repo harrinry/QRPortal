@@ -8,7 +8,6 @@ import store from 'store';
 import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
-import './index.scss';
 
 import * as actions from './body-navigation/bn-actions';
 
