@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; };", ""]);
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px }\r\n.qrp_lpiCntr{ height: 300px; width: 300px; margin: 100px auto 0px auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; }\r\n.qrp_lptitleCntr{ font-size: 40px; line-height: 40px; font-weight: 800; }", ""]);
 
 // exports
 
@@ -269,7 +269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_clkovl{ position: fixed; background: none; background-color: transparent; z-index: 20; top: 0px; left: 0px; width: 100%; height: 100%; }\r\n.qrp_Ctrn_drpd{ display: block; }\r\n.qrp_drde_menu{ z-index: 25; width: 100%; display: block;}\r\n.qrp_drde_menu.qrp_drde_closed{ display: none; }", ""]);
+exports.push([module.i, ".qrp_clkovl{ position: fixed; z-index: 20; top: 0px; left: 0px; width: 100%; height: 100%; }\r\n.qrp_Ctrn_drpd{ display: block; z-index: 25; }\r\n.qrp_drde_menu{ position: absolute; z-index: 25; display: block;}\r\n.qrp_drde_menu.qrp_drde_closed{ display: none; }", ""]);
 
 // exports
 
@@ -24041,7 +24041,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps)(_appModel2.default);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.WELCOMETEXT = exports._oIconStyle = exports.CLASSES = exports.QUERYFAILED = exports.SECTIONSQUERY = undefined;
+exports.TITLE = exports.WELCOMETEXT = exports._oIconStyle = exports.CLASSES = exports.QUERYFAILED = exports.SECTIONSQUERY = undefined;
 
 var _vnConstants = __webpack_require__(/*! ../view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
 
@@ -24057,7 +24057,8 @@ var CLASSES = exports.CLASSES = {
   welcomeText: 'qrp_lpwtxtCntr',
   navigation: 'qrp_lpnav',
   link: 'qrp_lpslink',
-  separator: 'qrp_lpSsep'
+  separator: 'qrp_lpSsep',
+  title: 'qrp_lptitleCntr'
 };
 
 var _oIconStyle = exports._oIconStyle = {
@@ -24068,6 +24069,7 @@ var _oIconStyle = exports._oIconStyle = {
 };
 
 var WELCOMETEXT = exports.WELCOMETEXT = "Welcome to the CAST Structural Rules Portal, let's start browsing or searching the rules";
+var TITLE = exports.TITLE = 'Structural Portal';
 
 /***/ }),
 
@@ -24149,6 +24151,11 @@ var LandingPage = function (_PureComponent) {
         'div',
         { className: _blpConstants.CLASSES.container },
         _react2.default.createElement('div', { className: _blpConstants.CLASSES.iconContainer, style: _blpConstants._oIconStyle }),
+        _react2.default.createElement(
+          'div',
+          { className: _blpConstants.CLASSES.title },
+          _blpConstants.TITLE
+        ),
         _react2.default.createElement(
           'div',
           { className: _blpConstants.CLASSES.welcomeText },
@@ -26648,6 +26655,9 @@ var SelectorElement = function (_React$PureComponent) {
     _this.state = {
       isOpen: false
     };
+
+    _this.closeDropDown = _this.closeDropDown.bind(_this);
+    _this.toggleDropDown = _this.toggleDropDown.bind(_this);
     return _this;
   }
 
@@ -26667,17 +26677,21 @@ var SelectorElement = function (_React$PureComponent) {
       return _react2.default.createElement(
         'span',
         { className: _constants.CLASSES.container },
-        _react2.default.createElement('div', { className: _constants.CLASSES.dropdownOverlay, onClick: this.closeDropDown }),
         _react2.default.createElement(
           'div',
           { className: _constants.CLASSES.dropDownElementContainer },
-          _react2.default.createElement('div', { className: (0, _common.createClassName)(_constants.CLASSES.trigger, _constants.CLASSES.closed), onClick: this.toggleDropDown }),
           _react2.default.createElement(
             'div',
-            { className: _constants.CLASSES.dropDownMenu },
+            { className: _constants.CLASSES.trigger, onClick: this.toggleDropDown },
+            this.props.label
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: (0, _common.createClassName)(_constants.CLASSES.dropDownMenu, this.state.isOpen ? undefined : _constants.CLASSES.closed) },
             this.props.children
           )
-        )
+        ),
+        this.state.isOpen ? _react2.default.createElement('div', { className: _constants.CLASSES.dropdownOverlay, onClick: this.closeDropDown }) : undefined
       );
     }
   }]);
@@ -27236,7 +27250,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  detailsContainer: 'qrp_bdetcntr'
+  detailsContainer: 'qrp_bdetcntr',
+  subContainer: 'qrp_bdetContr_main',
+  headerContainer: 'qrp_bdet_hCntr',
+  title: 'qrp_bdet_title',
+  weightContainer: 'qrp_bdet_weightCntr',
+  textAreaRule: 'qrp_bdet_txtr',
+  textArea: 'qrp_bdet_txt',
+  refContainer: 'qrp_bdet_refCntr',
+  remediationSample: 'qrp_bdet_rsmplCntr',
+  sampleContainer: 'qrp_bdet_smplCntr',
+  remediation: 'qrp_bdet_remCntr',
+  rationaleContainer: 'qrp_bdet_ratlCntr',
+  descriptionContainer: 'qrp_bdet_descCntr',
+  tag: 'qrp_bdet_tag',
+  tagContainer: 'qrp_bdet_tagCntr'
 };
 
 var NORULESSELECTED = exports.NORULESSELECTED = 'No Rule Selected';
@@ -27287,45 +27315,40 @@ var RulesDetails = function RulesDetails(_ref) {
     { className: (0, _common.createClassName)(_common.COMMON_CLASSES.flexCol, _dsConstants.CLASSES.detailsContainer) },
     loading ? _react2.default.createElement(_loadingSpinner2.default, null) : data ? _react2.default.createElement(
       'div',
-      { className: 'details-container' },
-      data.critical ? _react2.default.createElement(
-        'div',
-        { className: 'critical-container' },
-        ' '
-      ) : undefined,
+      { className: _dsConstants.CLASSES.subContainer },
       _react2.default.createElement(
         'div',
-        { className: 'weight-container' },
-        data.maxWeight
-      ),
-      _react2.default.createElement(
-        'h2',
-        { className: 'ruleTitle' },
-        data.name
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'tags-container' },
-        data.qualityStandards.length > 0 ? _react2.default.createElement(
-          'ul',
-          { className: 'details-tag' },
-          data.qualityStandards.map(function (listValue) {
-            return _react2.default.createElement(
-              'li',
-              { key: listValue.id, className: 'detail-tag', onClick: function onClick() {
-                  return onTagClick(listValue);
-                } },
-              listValue.id
-            );
-          })
-        ) : undefined
+        { className: _dsConstants.CLASSES.headerContainer },
+        _react2.default.createElement(
+          'h2',
+          { className: _dsConstants.CLASSES.title },
+          data.name
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: (0, _common.createClassName)(_dsConstants.CLASSES.weightContainer, data.critical ? _common.COMMON_CLASSES.critical : undefined) },
+          data.maxWeight
+        )
       ),
       _react2.default.createElement(
         'div',
-        { className: 'description-container detailssection' },
+        { className: _dsConstants.CLASSES.tagContainer },
+        data.qualityStandards.length > 0 ? data.qualityStandards.map(function (listValue) {
+          return _react2.default.createElement(
+            'div',
+            { key: listValue.id, className: _dsConstants.CLASSES.tag, onClick: function onClick() {
+                return onTagClick(listValue);
+              } },
+            listValue.id
+          );
+        }) : undefined
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: _dsConstants.CLASSES.descriptionContainer },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Description'
         ),
         _react2.default.createElement(
@@ -27336,10 +27359,10 @@ var RulesDetails = function RulesDetails(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'rationale-container detailssection' },
+        { className: _dsConstants.CLASSES.rationaleContainer },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Rationale'
         ),
         _react2.default.createElement(
@@ -27350,10 +27373,10 @@ var RulesDetails = function RulesDetails(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'remediation-container detailssection' },
+        { className: _dsConstants.CLASSES.remediation },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Remediation'
         ),
         _react2.default.createElement(
@@ -27364,10 +27387,10 @@ var RulesDetails = function RulesDetails(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'sample-container detailssection' },
+        { className: _dsConstants.CLASSES.sampleContainer },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Sample'
         ),
         _react2.default.createElement(
@@ -27382,10 +27405,10 @@ var RulesDetails = function RulesDetails(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'remediationsample-container detailssection' },
+        { className: _dsConstants.CLASSES.remediationSample },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Remediation Sample'
         ),
         _react2.default.createElement(
@@ -27400,15 +27423,15 @@ var RulesDetails = function RulesDetails(_ref) {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'reference-container detailssection' },
+        { className: _dsConstants.CLASSES.refContainer },
         _react2.default.createElement(
           'p',
-          { className: 'rulesection' },
+          { className: _dsConstants.CLASSES.textArea },
           'Reference'
         ),
         _react2.default.createElement(
           'p',
-          { className: 'textrule' },
+          { className: _dsConstants.CLASSES.textAreaRule },
           data.reference
         )
       )
@@ -29382,31 +29405,41 @@ var SelectorElement = exports.SelectorElement = function SelectorElement(props) 
     { className: _nvConstants.CLASSES.selector },
     _react2.default.createElement(
       _dropdown2.default,
-      null,
+      { label: 'click me' },
       _react2.default.createElement(
-        'span',
-        null,
+        'div',
+        { onClick: function onClick() {
+            return console.log(1);
+          } },
         '1'
       ),
       _react2.default.createElement(
-        'span',
-        null,
-        '1'
+        'div',
+        { onClick: function onClick() {
+            return console.log(2);
+          } },
+        '2'
       ),
       _react2.default.createElement(
-        'span',
-        null,
-        '1'
+        'div',
+        { onClick: function onClick() {
+            return console.log(3);
+          } },
+        '3'
       ),
       _react2.default.createElement(
-        'span',
-        null,
-        '1'
+        'div',
+        { onClick: function onClick() {
+            return console.log(4);
+          } },
+        '4'
       ),
       _react2.default.createElement(
-        'span',
-        null,
-        '1'
+        'div',
+        { onClick: function onClick() {
+            return console.log(5);
+          } },
+        '5'
       )
     )
   );
@@ -29462,7 +29495,6 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      _react2.default.createElement(_nvLib.SelectorElement, null),
       props.searchVisible ? _react2.default.createElement(_nvLib.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (e.type === _nvConstants.TYPES.selector) {
           return;

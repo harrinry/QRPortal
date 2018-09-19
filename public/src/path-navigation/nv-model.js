@@ -10,7 +10,7 @@ const NavHeader = ( props ) =>{
   return (
     <div className={createClassName(CLASSES.headerMain, (props.viewType === VIEW_TYPES.MENU_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <div className={CLASSES.pathContainer}>
-        <SelectorElement></SelectorElement>
+        {/* <SelectorElement></SelectorElement> */}
         { props.searchVisible ? <PathElement rules={props.rules} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> : 
           props.path.map((e, index) => {
             if (e.type === TYPES.selector ) {

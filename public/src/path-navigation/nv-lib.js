@@ -18,12 +18,12 @@ export const PathElement = ( props ) => {
 export const SelectorElement = ( props ) => {
   return (
     <span className={CLASSES.selector}>
-      <DropDown>
-        <span>1</span>
-        <span>1</span>
-        <span>1</span>
-        <span>1</span>
-        <span>1</span>
+      <DropDown label={'click me'}>
+        <div onClick={()=> console.log(1)}>1</div>
+        <div onClick={()=> console.log(2)}>2</div>
+        <div onClick={()=> console.log(3)}>3</div>
+        <div onClick={()=> console.log(4)}>4</div>
+        <div onClick={()=> console.log(5)}>5</div>
       </DropDown>
     </span>
   );
