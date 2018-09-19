@@ -7,7 +7,7 @@ function getQualityStandardsMap ( response ){
       console.log(err);
     }
     const ret = JSON.parse(data).map( e => {
-      return Object.assign( {}, e, {icon: 'img/' + e.name.toLowerCase() + '.svg'} );
+      return Object.assign( {}, e, {icon: 'img/' + e.name.toLowerCase().replace(/\s/, '') + '.svg'} );
     });
 
     response.json(ret);
