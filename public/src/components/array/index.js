@@ -15,10 +15,6 @@ class VerticalArray extends React.PureComponent{
     this.onfilterChange = this.onfilterChange.bind(this);
   }
 
-  componentWillReceiveProps(){
-    this.setState({filterValue: ''});
-  }
-
   onfilterChange( event ){
     this.setState({filterValue: event.target.value});
   }
