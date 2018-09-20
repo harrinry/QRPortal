@@ -101,7 +101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 0 auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px; transform: translateY(-50%);margin-top: calc(50vh - 100px);}\r\n.qrp_lpnav{ font-size: 31px; margin-top: 30px; line-height: 31px;}\r\n.qrp_lptitleCntr{font-size: 50px; font-weight: 800; text-transform: uppercase;}\r\n", ""]);
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 0 auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px; transform: translateY(-50%);margin-top: calc(50vh - 100px);}\r\n.qrp_lpnav{ margin-top: 30px; display: flex; flex-direction: row; align-content: center; justify-content: center;}\r\n.qrp_lptitleCntr{font-size: 50px; font-weight: 800; text-transform: uppercase;}\r\n.qrp_lpslinkCntr{ height: 200px; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; }\r\n.qrp_lpslinkBlk{ width: 150px; height: 150px;}", ""]);
 
 // exports
 
@@ -23332,6 +23332,10 @@ var CLASSES = exports.CLASSES = {
   welcomeText: 'qrp_lpwtxtCntr',
   navigation: 'qrp_lpnav',
   link: 'qrp_lpslink',
+  linkBlock: 'qrp_lpslinkBlk',
+  linkContainer: 'qrp_lpslinkCntr',
+  linkBlockTitle: 'qrp_lpslinkBlkTlt',
+  linkIcon: 'qrp_lpslinkIcon',
   separator: 'qrp_lpSsep',
   title: 'qrp_lptitleCntr'
 };
@@ -23418,6 +23422,16 @@ var LandingPage = function (_PureComponent) {
       });
     }
   }, {
+    key: 'stylizeIcon',
+    value: function stylizeIcon(url) {
+      return {
+        backgroundImage: 'url(' + url + ')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: '80%'
+      };
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this3 = this;
@@ -23439,28 +23453,20 @@ var LandingPage = function (_PureComponent) {
         this.props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _react2.default.createElement(
           'div',
           { className: _blpConstants.CLASSES.navigation },
-          _react2.default.createElement(
-            'span',
-            null,
-            this.state.sections.map(function (e, i, arr) {
-              return _react2.default.createElement(
+          this.state.sections.map(function (e, i) {
+            return _react2.default.createElement(
+              'div',
+              { className: _blpConstants.CLASSES.linkContainer, key: i, onClick: function onClick() {
+                  return _this3.props.loadSection(e);
+                } },
+              _react2.default.createElement('div', { className: _blpConstants.CLASSES.linkBlock, style: _this3.stylizeIcon(e.icon) }),
+              _react2.default.createElement(
                 'span',
-                { key: i },
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', className: _blpConstants.CLASSES.link, onClick: function onClick() {
-                      return _this3.props.loadSection(e);
-                    } },
-                  e.name
-                ),
-                i !== arr.length - 1 ? _react2.default.createElement(
-                  'span',
-                  { className: _blpConstants.CLASSES.separator },
-                  ' - '
-                ) : undefined
-              );
-            })
-          )
+                { className: _blpConstants.CLASSES.linkBlockTitle },
+                e.name
+              )
+            );
+          })
         ) : undefined
       );
     }
@@ -25567,6 +25573,10 @@ var initialState = {
   loading: false,
   isVisible: false,
   isComparing: false,
+  error: {
+    status: false,
+    err: {}
+  },
   data: [],
   request: {
     query: undefined,
@@ -25609,7 +25619,23 @@ var compareReducers = function compareReducers() {
         isComparing: false
       });
     case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
-      return {};
+      return _extends({}, state, {
+        loading: false,
+        data: action.payload.data,
+        error: {
+          status: false,
+          err: {}
+        }
+      });
+    case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
+      return _extends({}, state, {
+        data: [],
+        loading: false,
+        error: {
+          status: true,
+          err: _extends({}, action.payload.err)
+        }
+      });
     default:
       return state;
   }

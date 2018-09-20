@@ -21,6 +21,15 @@ export default class LandingPage extends PureComponent{
       err => this.setState({sections: [{...QUERYFAILED, err}]})); 
   }
 
+  stylizeIcon( url ){
+    return {
+      backgroundImage: 'url(' + url + ')',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: '80%'
+    };
+  }
+
   render(){
     return (
       <div className={CLASSES.container}>
@@ -29,12 +38,13 @@ export default class LandingPage extends PureComponent{
         <div className={CLASSES.welcomeText}>{WELCOMETEXT}</div>
         { this.props.viewType === VIEW_TYPES.TILES_VIEW ? 
           <div className={CLASSES.navigation}>
-            <span>{this.state.sections.map( (e, i, arr) => {
-              return (<span key={i}>
-                <a href='#' className={CLASSES.link} onClick={() => this.props.loadSection(e)}>{e.name}</a>
-                { i !== (arr.length - 1) ? <span className={CLASSES.separator}> - </span> : undefined}
-              </span>);
-            })}</span>
+            {this.state.sections.map( (e, i) => {
+              return (
+                <div className={CLASSES.linkContainer} key={i} onClick={() => this.props.loadSection(e)}>
+                  <div className={CLASSES.linkBlock} style={ this.stylizeIcon(e.icon)}></div>
+                  <span className={CLASSES.linkBlockTitle}>{e.name}</span>
+                </div>);
+            })}
           </div> : undefined}
       </div>
     );

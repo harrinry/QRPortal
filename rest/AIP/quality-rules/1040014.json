@@ -1,0 +1,44 @@
+{
+    "id": 1040014,
+    "name": "CWE-439:Avoid using Spring Security's debug mode",
+    "href": "AIP/quality-rules/1040014",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Single Value",
+    "description": "Spring Security's debug mode is useful during development and debugging, but could expose sensitive information to attackers such as request parameters or headers and should not be included in production code.\nThis rule is compliant with CWE-489: Leftover Debug Code and Top 10-2017 A3-Sensitive Data Exposure. ",
+    "rationale": "A common development practice is to add \"back door\" code specifically designed for debugging or testing purposes that is not intended to be shipped or deployed with the application. These back door entry points create security risks because they are not considered during design or testing and fall outside of the expected operating conditions of the application.\n        ",
+    "reference": "http://cwe.mitre.org/data/definitions/489.html\nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure\n",
+    "remediationSample": "\n@Configuration\n@EnableWebSecurity(debug = false) // Violation Fixed\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n...\n}\n  ",
+    "sample": "\n@Configuration\n@EnableWebSecurity(debug = true) // Violation\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n...\n}\n ",
+    "total": "Number of Java Artifact",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
