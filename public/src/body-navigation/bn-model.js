@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Tile, LoadingSpinner } from 'components';
+import { Tile, LoadingSpinner } from 'components/';
 import { CLASSES, defaultIconURL } from './bn-constants';
-import { createClassName, COMMON_CLASSES} from '../common/';
+import { createClassName, COMMON_CLASSES} from 'common/';
 import './style.css';
 
 const BodyNavigation = ( props ) => {

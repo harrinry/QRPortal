@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./public/src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./public/src/setup/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -390,6 +390,25 @@ exports.push([module.i, ".qrp_submenu{ position: relative; text-align: left; cur
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/index.js!./public/src/components/path-element/style.css":
+/*!********************************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/components/path-element/style.css ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: 70%;\r\n  cursor: pointer;\r\n  width: 80px;\r\n  height: 90px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer; white-space: nowrap;}\r\n.qrp_headerBar_search_pathElement_closeBtn{ height: 90px; width: 17px; margin: 0px 0 0 10px; cursor: pointer; }", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/details-section/style.css":
 /*!************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/details-section/style.css ***!
@@ -478,7 +497,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 90px;\r\n  z-index: 3;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  line-height: 90px;\r\n  font-size: 20px;\r\n}\r\n\r\n.qrp_headerBar_pathElement{\r\n  display: flex;\r\n  flex-direction: row;\r\n}\r\n\r\n.qrp_headerBar_pathElement_icon{\r\n  display: inline-block;\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  background-size: 70%;\r\n  cursor: pointer;\r\n  width: 80px;\r\n  height: 90px;\r\n}\r\n\r\n.qrp_headerBar_pathElement_Separator{ font-weight: 800; margin-left: 15px; cursor: default;}\r\n.qrp_headerBar_pathElement_text{ cursor: pointer; white-space: nowrap;}\r\n.qrp_headerBar_search_pathElement_closeBtn{ height: 90px; width: 17px; margin: 0px 0 0 10px; cursor: pointer; }\r\n", ""]);
+exports.push([module.i, ".qrp_headerBar {\r\n  display: flex;\r\n  background-color: inherit;\r\n  flex-grow: 1;\r\n  height: 90px;\r\n  z-index: 3;\r\n}\r\n\r\n.qrp_headerBar_pathContainer{\r\n  display: flex;\r\n  flex-direction: row;\r\n  line-height: 90px;\r\n  font-size: 20px;\r\n}", ""]);
 
 // exports
 
@@ -24488,11 +24507,11 @@ var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-type
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _components = __webpack_require__(/*! components */ "./public/src/components/index.js");
+var _components = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
 
 var _bnConstants = __webpack_require__(/*! ./bn-constants */ "./public/src/body-navigation/bn-constants.js");
 
-var _common = __webpack_require__(/*! ../common/ */ "./public/src/common/index.js");
+var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
 
 __webpack_require__(/*! ./style.css */ "./public/src/body-navigation/style.css");
 
@@ -26657,10 +26676,14 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  container: 'qrp_dd_cmp_Cntr'
+  container: 'qrp_dd_cmp_Cntr',
+  compareImg: 'qrp_dd_cmp_ico',
+  compareImgContainer: 'qrp_dd_cmp_cntr',
+  isComparing: 'qrp_dd_cmp_ico_isCmp'
 };
 
 var COMPARE_IMG = exports.COMPARE_IMG = '/img/compareblack.svg';
+var COMPARE_IMG_COMPARING = exports.COMPARE_IMG_COMPARING = '/img/compare.svg';
 
 /***/ }),
 
@@ -26693,7 +26716,9 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _constants = __webpack_require__(/*! ./constants */ "./public/src/components/dropdown-compare/constants.js");
 
-var _components = __webpack_require__(/*! ../../components/ */ "./public/src/components/index.js");
+var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+var _components = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
 
 __webpack_require__(/*! ./style.css */ "./public/src/components/dropdown-compare/style.css");
 
@@ -26767,7 +26792,11 @@ var DropdownCompare = function (_React$PureComponent) {
         'span',
         { className: _constants.CLASSES.container },
         _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 0, onItemClick: this.firstListChanged }),
-        _react2.default.createElement('img', { src: _constants.COMPARE_IMG, onClick: this.toggleCompare }),
+        _react2.default.createElement(
+          'div',
+          { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, this.state.comparing ? _constants.CLASSES.isComparing : undefined) },
+          _react2.default.createElement('img', { src: this.state.comparing ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
+        ),
         this.state.comparing ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
       );
     }
@@ -27235,6 +27264,15 @@ Object.defineProperty(exports, 'DropdownCompare', {
   }
 });
 
+var _pathElement = __webpack_require__(/*! ./path-element */ "./public/src/components/path-element/index.js");
+
+Object.defineProperty(exports, 'PathElement', {
+  enumerable: true,
+  get: function get() {
+    return _interopRequireDefault(_pathElement).default;
+  }
+});
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
@@ -27671,6 +27709,134 @@ exports.default = SubMenu;
 
 
 var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/components/menu-submenu/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./public/src/components/path-element/constants.js":
+/*!*********************************************************!*\
+  !*** ./public/src/components/path-element/constants.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CLASSES = exports.CLASSES = {
+  pathElement: 'qrp_headerBar_pathElement',
+  pathElementIcon: 'qrp_headerBar_pathElement_icon',
+  pathElementText: 'qrp_headerBar_pathElement_text',
+  pathSeparator: 'qrp_headerBar_pathElement_Separator',
+  closeBtn: 'qrp_headerBar_search_pathElement_closeBtn'
+};
+
+var TYPES = exports.TYPES = {
+  versionSelector: /\/(versions)\//i
+};
+
+var SEARCHFOR = exports.SEARCHFOR = 'Search Results for : ';
+var CLOSEBTNURL = exports.CLOSEBTNURL = '/img/cross.svg';
+
+/***/ }),
+
+/***/ "./public/src/components/path-element/index.js":
+/*!*****************************************************!*\
+  !*** ./public/src/components/path-element/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _constants = __webpack_require__(/*! ./constants */ "./public/src/components/path-element/constants.js");
+
+__webpack_require__(/*! ./style.css */ "./public/src/components/path-element/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var PathElement = function PathElement(props) {
+  return _react2.default.createElement(
+    'span',
+    { className: _constants.CLASSES.pathElement, onClick: function onClick() {
+        return props.gotoLocation ? props.gotoLocation(props) : undefined;
+      } },
+    props.showIcon && props.icon ? _react2.default.createElement('div', { className: _constants.CLASSES.pathElementIcon,
+      style: { backgroundImage: 'url(' + props.icon + ')' } }) : undefined,
+    _react2.default.createElement(
+      'div',
+      { className: _constants.CLASSES.pathElementText },
+      props.name
+    ),
+    props.closeBtn ? _react2.default.createElement('img', { src: _constants.CLOSEBTNURL, className: _constants.CLASSES.closeBtn, onClick: function onClick() {
+        return props.onCloseBtnClick(props);
+      } }) : undefined,
+    props.separator ? _react2.default.createElement(
+      'div',
+      { className: _constants.CLASSES.pathSeparator },
+      ' > '
+    ) : undefined
+  );
+};
+
+PathElement.propTypes = {
+  type: _propTypes2.default.string,
+  name: _propTypes2.default.string.isRequired,
+  href: _propTypes2.default.string,
+  icon: _propTypes2.default.string,
+  separator: _propTypes2.default.bool.isRequired,
+  showIcon: _propTypes2.default.bool.isRequired,
+  index: _propTypes2.default.number.isRequired,
+  gotoLocation: _propTypes2.default.func,
+  onCloseBtnClick: _propTypes2.default.func
+};
+
+exports.default = PathElement;
+
+/***/ }),
+
+/***/ "./public/src/components/path-element/style.css":
+/*!******************************************************!*\
+  !*** ./public/src/components/path-element/style.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/components/path-element/style.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -28513,63 +28679,6 @@ var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addS
 if(content.locals) module.exports = content.locals;
 
 if(false) {}
-
-/***/ }),
-
-/***/ "./public/src/index.js":
-/*!*****************************!*\
-  !*** ./public/src/index.js ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-
-var _store = __webpack_require__(/*! store */ "./public/src/store.js");
-
-var _store2 = _interopRequireDefault(_store);
-
-var _app = __webpack_require__(/*! app/ */ "./public/src/app/index.js");
-
-var _app2 = _interopRequireDefault(_app);
-
-__webpack_require__(/*! common/style.css */ "./public/src/common/style.css");
-
-__webpack_require__(/*! common/keyframes.css */ "./public/src/common/keyframes.css");
-
-var _bnActions = __webpack_require__(/*! ./body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
-
-var actions = _interopRequireWildcard(_bnActions);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-window.STORE = _store2.default;
-window.actions = actions;
-
-window.urlGen = function () {
-  var state = _store2.default.getState();
-  var res = 'std=' + state.standards.query + '&rls=' + state.rulesList.query + '&rdts=' + state.ruleDetails.query + '&p=' + encodeURI(btoa(JSON.stringify(state.path))) + '&lstc=' + state.contentBody.listCount;
-  return res;
-};
-
-_reactDom2.default.render(_react2.default.createElement(
-  _reactRedux.Provider,
-  { store: _store2.default },
-  _react2.default.createElement(_app2.default, null)
-), document.getElementById('react-root'));
 
 /***/ }),
 
@@ -29867,89 +29976,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 var CLASSES = exports.CLASSES = {
   headerMain: 'qrp_headerBar',
-  pathContainer: 'qrp_headerBar_pathContainer',
-  pathElement: 'qrp_headerBar_pathElement',
-  pathElementIcon: 'qrp_headerBar_pathElement_icon',
-  pathElementText: 'qrp_headerBar_pathElement_text',
-  pathSeparator: 'qrp_headerBar_pathElement_Separator',
-  closeBtn: 'qrp_headerBar_search_pathElement_closeBtn',
-  selector: 'qrp_headerBar_pathElement_Selector',
-  selectorTextBox: 'qrp_headerBar_pathElement_Selector_txtBox',
-  selectorDropDown: 'qrp_headerBar_pathElement_Selector_dropdown',
-  selectorOverlay: 'qrp_clkovl'
-};
-
-var TYPES = exports.TYPES = {
-  versionSelector: /\/(versions)\//i
+  pathContainer: 'qrp_headerBar_pathContainer'
 };
 
 var SEARCHFOR = exports.SEARCHFOR = 'Search Results for : ';
-var CLOSEBTNURL = exports.CLOSEBTNURL = '/img/cross.svg';
-
-/***/ }),
-
-/***/ "./public/src/path-navigation/nv-lib.js":
-/*!**********************************************!*\
-  !*** ./public/src/path-navigation/nv-lib.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.PathElement = undefined;
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-navigation/nv-constants.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var PathElement = exports.PathElement = function PathElement(props) {
-  return _react2.default.createElement(
-    'span',
-    { className: _nvConstants.CLASSES.pathElement },
-    props.showIcon && props.icon ? _react2.default.createElement('div', { className: _nvConstants.CLASSES.pathElementIcon,
-      style: { backgroundImage: 'url(' + props.icon + ')' } }) : undefined,
-    _react2.default.createElement(
-      'div',
-      { className: _nvConstants.CLASSES.pathElementText, onClick: function onClick() {
-          return props.gotoLocation ? props.gotoLocation(props) : undefined;
-        } },
-      props.name
-    ),
-    props.closeBtn ? _react2.default.createElement('img', { src: _nvConstants.CLOSEBTNURL, className: _nvConstants.CLASSES.closeBtn, onClick: function onClick() {
-        return props.onCloseBtnClick(props);
-      } }) : undefined,
-    props.separator ? _react2.default.createElement(
-      'div',
-      { className: _nvConstants.CLASSES.pathSeparator },
-      ' > '
-    ) : undefined
-  );
-};
-
-PathElement.propTypes = {
-  type: _propTypes2.default.string,
-  name: _propTypes2.default.string.isRequired,
-  href: _propTypes2.default.string,
-  icon: _propTypes2.default.string,
-  separator: _propTypes2.default.bool.isRequired,
-  showIcon: _propTypes2.default.bool.isRequired,
-  index: _propTypes2.default.number.isRequired,
-  gotoLocation: _propTypes2.default.func,
-  onCloseBtnClick: _propTypes2.default.func
-};
 
 /***/ }),
 
@@ -29979,11 +30009,11 @@ var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
 
-var _nvLib = __webpack_require__(/*! ./nv-lib */ "./public/src/path-navigation/nv-lib.js");
+var _components = __webpack_require__(/*! ../components/ */ "./public/src/components/index.js");
 
 var _vnConstants = __webpack_require__(/*! view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
 
-var _components = __webpack_require__(/*! ../components */ "./public/src/components/index.js");
+var _components2 = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
 
 __webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css");
 
@@ -29998,9 +30028,9 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.searchVisible ? _react2.default.createElement(_nvLib.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
+      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
+          return _react2.default.createElement(_components2.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
               fetch('compare/extensions/' + props.path[index - 1].id + '/' + item1.name + '/' + item2.name).catch(function (err) {
                 return console.log(err);
               }).then(function (res) {
@@ -30009,7 +30039,7 @@ var NavHeader = function NavHeader(props) {
                 return console.log(data);
               });
             } });
-        } else return _react2.default.createElement(_nvLib.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
+        } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
       })
     )
   );
@@ -30109,10 +30139,67 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./public/src/reducer.js":
-/*!*******************************!*\
-  !*** ./public/src/reducer.js ***!
-  \*******************************/
+/***/ "./public/src/setup/index.js":
+/*!***********************************!*\
+  !*** ./public/src/setup/index.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _store = __webpack_require__(/*! ./store */ "./public/src/setup/store.js");
+
+var _store2 = _interopRequireDefault(_store);
+
+var _app = __webpack_require__(/*! app/ */ "./public/src/app/index.js");
+
+var _app2 = _interopRequireDefault(_app);
+
+__webpack_require__(/*! common/style.css */ "./public/src/common/style.css");
+
+__webpack_require__(/*! common/keyframes.css */ "./public/src/common/keyframes.css");
+
+var _bnActions = __webpack_require__(/*! body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
+
+var actions = _interopRequireWildcard(_bnActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.STORE = _store2.default;
+window.actions = actions;
+
+window.urlGen = function () {
+  var state = _store2.default.getState();
+  var res = 'std=' + state.standards.query + '&rls=' + state.rulesList.query + '&rdts=' + state.ruleDetails.query + '&p=' + encodeURI(btoa(JSON.stringify(state.path))) + '&lstc=' + state.contentBody.listCount;
+  return res;
+};
+
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRedux.Provider,
+  { store: _store2.default },
+  _react2.default.createElement(_app2.default, null)
+), document.getElementById('react-root'));
+
+/***/ }),
+
+/***/ "./public/src/setup/reducer.js":
+/*!*************************************!*\
+  !*** ./public/src/setup/reducer.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30189,10 +30276,10 @@ exports.default = rootReducer;
 
 /***/ }),
 
-/***/ "./public/src/store.js":
-/*!*****************************!*\
-  !*** ./public/src/store.js ***!
-  \*****************************/
+/***/ "./public/src/setup/store.js":
+/*!***********************************!*\
+  !*** ./public/src/setup/store.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30209,7 +30296,7 @@ var _reduxThunk = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-t
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reducer = __webpack_require__(/*! ./reducer */ "./public/src/reducer.js");
+var _reducer = __webpack_require__(/*! ./reducer */ "./public/src/setup/reducer.js");
 
 var _reducer2 = _interopRequireDefault(_reducer);
 

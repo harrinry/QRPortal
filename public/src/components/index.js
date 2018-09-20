@@ -7,3 +7,4 @@ export { default as List } from './list';
 export { default as Dropdown } from './dropdown';
 export { default as DropdownSelector } from './dropdown-selector';
 export { default as DropdownCompare } from './dropdown-compare';
+export { default as PathElement } from './path-element';
