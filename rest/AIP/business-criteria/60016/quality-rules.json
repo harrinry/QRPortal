@@ -995,7 +995,7 @@
     },
     {
         "id": 7648,
-        "name": "CWE-586: Explicit Call to Finalize()",
+        "name": "Avoid calling finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false
@@ -3802,7 +3802,7 @@
     },
     {
         "id": 1040002,
-        "name": "Spring Security CSRF Protection must not be disabled",
+        "name": "CWE-352:Spring Security CSRF Protection must not be disabled",
         "href": "AIP/quality-rules/1040002",
         "status": null,
         "critical": true
@@ -3816,7 +3816,7 @@
     },
     {
         "id": 1040006,
-        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "name": "CWE-1021:Ensure that Content-Security-Policy is set for Spring Application",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true
@@ -3839,6 +3839,27 @@
         "id": 1040012,
         "name": "Ensure that HTTP Session is invalidated during logout",
         "href": "AIP/quality-rules/1040012",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040014,
+        "name": "CWE-439:Avoid using Spring Security's debug mode",
+        "href": "AIP/quality-rules/1040014",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1040016,
+        "name": "PermitAll or user role should be specified to access URL(s) of the application",
+        "href": "AIP/quality-rules/1040016",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040018,
+        "name": "X-Frame-Option should be correctly set to avoid Clickjacking attack",
+        "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true
     },
@@ -4035,6 +4056,13 @@
         "id": 1050066,
         "name": "Avoid using unsecured cookie",
         "href": "AIP/quality-rules/1050066",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055000,
+        "name": "Avoid using unsecured cookie",
+        "href": "AIP/quality-rules/1055000",
         "status": null,
         "critical": true
     },
