@@ -14,7 +14,9 @@ export const CLASSES = {
   descriptionContainer: 'qrp_bdet_descCntr',
   tag: 'qrp_bdet_tag',
   tagContainer: 'qrp_bdet_tagCntr',
-  noRules: 'qrp_bdet_nRls'
+  noRules: 'qrp_bdet_nRls',
+  weightIcon: 'qrp_bdet_w8t_ico',
+  weight: 'qrp_bdet_w8t'
 };
 
 export const NORULESSELECTED = 'No Rule Selected';
