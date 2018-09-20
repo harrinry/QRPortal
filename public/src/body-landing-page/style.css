@@ -4,5 +4,8 @@
 .qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px; transform: translateY(-50%);margin-top: calc(50vh - 100px);}
 .qrp_lpnav{ margin-top: 30px; display: flex; flex-direction: row; align-content: center; justify-content: center;}
 .qrp_lptitleCntr{font-size: 50px; font-weight: 800; text-transform: uppercase;}
-.qrp_lpslinkCntr{ height: 200px; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer;}
-.qrp_lpslinkBlk{ width: 150px; height: 150px;}
+.qrp_lpslinkCntr{ height: 200px; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: rgba(0,0,0,0.5); transition: all 0.3s;}
+.qrp_lpslinkCntr:hover{color: rgba(0,0,0,1)}
+.qrp_lpslinkBlk{ width: 150px; height: 150px; opacity: 0.4; filter: grayscale(50%);transition: all 0.3s;}
+.qrp_lpslinkBlk:hover{opacity: 1; filter: grayscale(0%);}
+.qrp_lpslinkBlkTlt{font-weight: 600;}
