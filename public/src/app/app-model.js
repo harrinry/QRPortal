@@ -4,6 +4,7 @@ import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
 import { CLASSES } from './app-constants';
+import './style.css';
 
 const App  = (props) => {
   return (

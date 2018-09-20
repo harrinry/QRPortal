@@ -19,6 +19,6 @@ describe('getLatestVersion()', () => {
     const uid = 'com.castsoftware.systemlevelrules';
     const version = latestVersion( uid );
 
-    assert.equal( version, '1.0.0-alpha2' );
+    assert.equal( version, '1.0.0-beta1' );
   });
 });

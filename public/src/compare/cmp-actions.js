@@ -1,6 +1,6 @@
 import * as ACTIONTYPE from './cmp-actions-type';
 import { fetchCompareExtensionVersions } from './cmp-resources';
-import { cmpQueryBuilder } from './cmp-constants';
+import { cmpQueryBuilder } from './cmp-lib';
 
 export const isFetching = ( query ) => {
   return {

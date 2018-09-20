@@ -86,6 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/css-loader/index.js!./public/src/app/style.css":
+/*!************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/app/style.css ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js!./public/src/body-landing-page/style.css":
 /*!**************************************************************************!*\
   !*** ./node_modules/css-loader!./public/src/body-landing-page/style.css ***!
@@ -269,7 +288,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_dd_cmp_Cntr{ display: flex; flex-direction: row;}\r\n.qrp_dd_cmp_cntr{ width: 30px; height: 30px; margin-top: 5px;}\r\n", ""]);
+exports.push([module.i, ".qrp_dd_cmp_MainCntr{ display: flex; flex-direction: row;}\r\n.qrp_dd_cmp_cntr{ width: 30px; height: 30px; margin-top: 5px; cursor: pointer;}\r\n", ""]);
 
 // exports
 
@@ -24078,6 +24097,8 @@ var _body2 = _interopRequireDefault(_body);
 
 var _appConstants = __webpack_require__(/*! ./app-constants */ "./public/src/app/app-constants.js");
 
+__webpack_require__(/*! ./style.css */ "./public/src/app/style.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App(props) {
@@ -24123,6 +24144,36 @@ var mapStateToProps = function mapStateToProps(state) {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(_appModel2.default);
+
+/***/ }),
+
+/***/ "./public/src/app/style.css":
+/*!**********************************!*\
+  !*** ./public/src/app/style.css ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/app/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -24580,7 +24631,7 @@ var BodyNavigation = function BodyNavigation(props) {
           { key: i, icon: e.icon, click: function click() {
               return props.tileClick(e, props.title, props.icon);
             } },
-          e.name
+          e.label || e.name
         );
       })
     )
@@ -26403,7 +26454,7 @@ var ACTIONTYPE = _interopRequireWildcard(_cmpActionsType);
 
 var _cmpResources = __webpack_require__(/*! ./cmp-resources */ "./public/src/compare/cmp-resources.js");
 
-var _cmpConstants = __webpack_require__(/*! ./cmp-constants */ "./public/src/compare/cmp-constants.js");
+var _cmpLib = __webpack_require__(/*! ./cmp-lib */ "./public/src/compare/cmp-lib.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -26460,7 +26511,7 @@ var onCompareError = function onCompareError(err) {
 
 var fetchExtensionComparisonData = exports.fetchExtensionComparisonData = function fetchExtensionComparisonData(extensionName, version1, version2) {
   return function (dispatch) {
-    var query = (0, _cmpConstants.cmpQueryBuilder)(extensionName, version1, version2);
+    var query = (0, _cmpLib.cmpQueryBuilder)(extensionName, version1, version2);
     dispatch(isFetching(query));
     return (0, _cmpResources.fetchCompareExtensionVersions)(query).then(function (data) {
       return dispatch(setComparisonData(data));
@@ -26491,8 +26542,57 @@ var SECTIONS = exports.SECTIONS = {
   extensions: 'extensions'
 };
 
+var NORULES = exports.NORULES = 'No Rules';
+var RULES = exports.RULES = 'Rules';
+var FILTERPLACEHOLDER = exports.FILTERPLACEHOLDER = 'Filter Rules';
+
+var HEADERS = exports.HEADERS = {
+  id: { name: 'Id', className: 'qrp_arrClsHid' },
+  name: { name: 'Name', className: 'qrp_arrClsHname' },
+  version: { name: 'Version', className: 'qrp_arrClsHver' },
+  critical: { name: 'Critical', className: 'qrp_arrClsHcrit' }
+};
+
+var compareValueKeys = exports.compareValueKeys = {
+  id: 'id',
+  name: 'name',
+  version: 'parent',
+  critical: 'critical'
+};
+
+/***/ }),
+
+/***/ "./public/src/compare/cmp-lib.js":
+/*!***************************************!*\
+  !*** ./public/src/compare/cmp-lib.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.compareFunction = exports.arrayChildConstructor = exports.cmpQueryBuilder = undefined;
+
+var _cmpConstants = __webpack_require__(/*! ./cmp-constants */ "./public/src/compare/cmp-constants.js");
+
 var cmpQueryBuilder = exports.cmpQueryBuilder = function cmpQueryBuilder(extID, ver1, ver2) {
-  return '' + comparePrefix + SECTIONS.extensions + '/' + extID + '/' + ver1 + '/' + ver2;
+  return '' + _cmpConstants.comparePrefix + _cmpConstants.SECTIONS.extensions + '/' + extID + '/' + ver1 + '/' + ver2;
+};
+
+var arrayChildConstructor = exports.arrayChildConstructor = function arrayChildConstructor(config) {};
+
+var compareFunction = exports.compareFunction = function compareFunction(textValue, obj) {
+  var reg = void 0;
+  try {
+    reg = new RegExp(textValue, 'i');
+  } catch (error) {
+    return [];
+  }
+  return reg.test(obj[_cmpConstants.compareValueKeys.id]) || reg.test(obj[_cmpConstants.compareValueKeys.version]) || reg.test(obj[_cmpConstants.compareValueKeys.name]) || (textValue.toLowerCase() === _cmpConstants.compareValueKeys.critical ? obj.critical : false) ? true : false;
 };
 
 /***/ }),
@@ -26747,7 +26847,7 @@ var VerticalArray = function (_React$PureComponent) {
           _react2.default.createElement(
             'div',
             { className: _constants.CLASSES.itemCounter },
-            filteredChildren.length + ' ' + itemCountTitle
+            this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of ' + this.props.children.length + itemCountTitle
           ),
           _react2.default.createElement(
             'div',
@@ -26983,7 +27083,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  container: 'qrp_dd_cmp_Cntr',
+  container: 'qrp_dd_cmp_MainCntr',
   compareImg: 'qrp_dd_cmp_ico',
   compareImgContainer: 'qrp_dd_cmp_cntr',
   isComparing: 'qrp_dd_cmp_ico_isCmp'
@@ -28388,7 +28488,7 @@ var RulesDetails = function RulesDetails(_ref) {
           data.description
         )
       ) : undefined,
-      _react2.default.createElement(
+      data.rationale ? _react2.default.createElement(
         'div',
         { className: _dsConstants.CLASSES.rationaleContainer },
         _react2.default.createElement(
@@ -28401,7 +28501,7 @@ var RulesDetails = function RulesDetails(_ref) {
           null,
           data.rationale
         )
-      ),
+      ) : undefined,
       data.remediation ? _react2.default.createElement(
         'div',
         { className: _dsConstants.CLASSES.remediation },
@@ -30148,7 +30248,7 @@ var _nvModel = __webpack_require__(/*! ./nv-model */ "./public/src/path-navigati
 
 var _nvModel2 = _interopRequireDefault(_nvModel);
 
-var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src/body/body-actions.js");
+var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/body/body-actions.js");
 
 var _bnActions = __webpack_require__(/*! body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
@@ -30158,7 +30258,7 @@ var _gsActions = __webpack_require__(/*! global-search/gs-actions */ "./public/s
 
 var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
-var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
+var _cmpActions = __webpack_require__(/*! compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30196,9 +30296,13 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     onToggleCompare: function onToggleCompare(isComparing) {
       switch (isComparing) {
         case true:
-          return dispatch((0, _cmpActions.disableComparing)());
+          dispatch((0, _cmpActions.disableComparing)());
+          dispatch((0, _cmpActions.hideComparisonTable)());
+          break;
         case false:
-          return dispatch((0, _cmpActions.enableComparing)());
+          dispatch((0, _cmpActions.enableComparing)());
+          dispatch((0, _cmpActions.showComparisonTable)());
+          break;
       }
     }
   };
@@ -30361,7 +30465,7 @@ var NavHeader = function NavHeader(props) {
           return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, stateEnabled: false, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
               return props.onCompare(arr[1].id, v1.name, v2.name);
             } });
-        } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
+        } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.label || e.name, href: e.href, icon: e.icon });
       })
     )
   );

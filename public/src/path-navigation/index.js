@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import { navigateTo } from './nv-actions';
 import NavHeader from './nv-model';
-import { showNavigationView, showLandingPage} from '../body/body-actions';
+import { showNavigationView, showLandingPage} from 'body/body-actions';
 import { fetchNavigationData } from 'body-navigation/bn-actions';
 import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { fetchWebData } from 'body-rules-list/brl-actions';
-import { enableComparing, disableComparing, fetchExtensionComparisonData } from '../compare/cmp-actions';
+import { enableComparing, disableComparing, fetchExtensionComparisonData, showComparisonTable, hideComparisonTable } from 'compare/cmp-actions';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
@@ -41,9 +41,13 @@ const mapDispatchToProps = ( dispatch ) => {
     onToggleCompare: ( isComparing ) => {
       switch (isComparing) {
       case true:
-        return dispatch(disableComparing());
+        dispatch(disableComparing());
+        dispatch(hideComparisonTable());
+        break;
       case false:
-        return dispatch(enableComparing());      
+        dispatch(enableComparing());
+        dispatch(showComparisonTable());
+        break;
       }
     }
   };

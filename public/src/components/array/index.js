@@ -43,7 +43,7 @@ class VerticalArray extends React.PureComponent{
       ref = JSON.stringify(headers);
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
-        <div className={CLASSES.itemCounter}>{filteredChildren.length + ' ' + itemCountTitle}</div>
+        <div className={CLASSES.itemCounter}>{ this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of '+ this.props.children.length + itemCountTitle }</div>
         <div className={CLASSES.internalFilter}>
           <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
           <span className={CLASSES.filter} onClick={() => this.refs[ref].focus()}></span>
