@@ -10,7 +10,7 @@ import { fetchWebData } from '../body-rules-list/brl-actions';
 const mapDispatchToProps = ( dispatch ) => {
   return {
     gotoLocation: (props) => {
-      if(props.separator || props.index === 0){
+      if(props.separator || ( props.index === 0 )){
         dispatch(navigateTo(props, props.index));
         dispatch(showNavigationView());
         dispatch(fetchNavigationData(props.name, props.href, props.icon));
