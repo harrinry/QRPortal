@@ -1,0 +1,43 @@
+{
+    "id": 1040018,
+    "name": "X-Frame-Option should be correctly set to avoid Clickjacking attack",
+    "href": "AIP/quality-rules/1040018",
+    "critical": true,
+    "associatedValueName": "Single Value",
+    "description": "The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a frame or iframe. Sites can use this to avoid Clickjacking attacks, by ensuring that their content is not embedded into other sites. Set the X-Frame-Options header for all responses containing HTML content. The possible values are \"DENY\", \"SAMEORIGIN\", or \"ALLOW-FROM uri\".\nThere are three possible values for the X-Frame-Options header:\n\n1. DENY, which prevents any domain from framing the content. The \"DENY\" setting is recommended unless a specific need has been identified for framing.\n2. SAMEORIGIN, which only allows the current site to frame the content.\n3. ALLOW-FROM uri, which permits the specified 'uri' to frame this page. (e.g., ALLOW-FROM http://www.example.com) Check Limitations Below this will fail open if the browser does not support it. Other browsers support the new CSP frame-ancestors directive instead. A few support both.\nThis rule report violation when the value of \"X-Frame-Options\" is not specified or it's set to ALLOW.\n",
+    "rationale": "Clickjacking is when an attacker uses multiple transparent or opaque layers to trick a user into clicking on a button or link on another page when they were intending to click on the the top level page. Thus, the attacker is \"hijacking\" clicks meant for their page and routing them to another page, most likely owned by another application, domain, or both.\nUsing a similar technique, keystrokes can also be hijacked. With a carefully crafted combination of stylesheets, iframes, and text boxes, a user can be led to believe they are typing in the password to their email or bank account, but are instead typing into an invisible frame controlled by the attacker.\n        ",
+    "reference": " https://www.owasp.org/index.php/Clickjacking\nhttps://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet\n",
+    "remediationSample": "\nXML CONFIGURATION\n---------------------------------\nhttp\n\n  headers\n       frame-options\n       policy=\"SAMEORIGIN\"\n  headers\nhttp\n\nSimilarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                    .frameOptions()\n                            .sameOrigin();\n        }\n    }\n  ",
+    "sample": "\n\nXML CONFIGURATION\n---------------------------------\nhttp\n    headers\n       frame-options\n         policy=\"ALLOW-FORM\"\n    headers\nhttp\n\nSimilarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                        .frameOptions()\n                            .Allow-form();\n        }\n    }\n ",
+    "total": "Number of Java Artifact",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
