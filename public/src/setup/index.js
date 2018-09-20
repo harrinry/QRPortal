@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from 'store';
+import store from './store';
 import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
 
-import * as actions from './body-navigation/bn-actions';
+import * as actions from 'body-navigation/bn-actions';
 
 window.STORE = store;
 window.actions = actions;

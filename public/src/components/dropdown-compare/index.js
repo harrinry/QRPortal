@@ -54,7 +54,7 @@ export default class DropdownCompare extends React.PureComponent {
     return (
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={0} onItemClick={this.firstListChanged}/>
-        <div className={createClassName(CLASSES.compareImgContainer, CLASSES.isComparing)}><img src={this.state.comparing ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
+        <div className={createClassName(CLASSES.compareImgContainer, this.state.comparing ? CLASSES.isComparing : undefined)}><img src={this.state.comparing ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
         { this.state.comparing ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
       </span>
     );

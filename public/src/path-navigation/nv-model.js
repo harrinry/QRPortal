@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { CLASSES, SEARCHFOR} from './nv-constants';
 import { createClassName, COMMON_CLASSES } from 'common/';
-import { PathElement } from './nv-lib';
+import { PathElement } from 'components/';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
-import { DropdownCompare } from '../components';
+import { DropdownCompare } from 'components/';
 import './style.css';
 //!!!!!! CLEAN UP TEMPORARY FETCH FUNCTION !!!!!!!!!!!!!!!!!!!!!!! //
 const NavHeader = ( props ) =>{
