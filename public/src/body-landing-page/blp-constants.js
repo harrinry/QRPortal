@@ -18,6 +18,8 @@ export const CLASSES = {
   linkIcon: 'qrp_lpslinkIcon',
   separator: 'qrp_lpSsep',
   title: 'qrp_lptitleCntr',
+  logoContainer: 'qrp_lplogoCntr',
+  castLogo: 'qrp_lpcastlogo'
 };
 
 export const _oIconStyle = {
