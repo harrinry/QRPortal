@@ -5,5 +5,6 @@ export const CLASSES = {
   headerContainer: 'qrp_hCtr',
   tableContainer: 'qrp_tCtr',
   tableBodyContainer: 'qrp_tbCtr',
-  tbody: 'qrp_tbodymxh'
+  tbody: 'qrp_tbodymxh',
+  filter: 'qrp_hfltIcon'
 };

@@ -13,7 +13,9 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
           <div className={CLASSES.subContainer}>
             <div className={CLASSES.headerContainer}>
               <h2 className={CLASSES.title}>{data.name}</h2>
-              <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : undefined)}>{data.maxWeight}</div>
+              <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
+                <span className={CLASSES.weight}>{data.maxWeight}</span>
+              </div>
             </div>
             <div className={CLASSES.tagContainer}>
               {data.qualityStandards.length > 0 ? 
@@ -21,30 +23,30 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
                   return <div key={listValue.id} className={CLASSES.tag} onClick={() => onTagClick(listValue)}>{listValue.id}</div>;
                 }) : undefined }
             </div>
-            <div className={CLASSES.descriptionContainer}>
+            {data.description ? <div className={CLASSES.descriptionContainer}>
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
-            </div>
-            <div className={CLASSES.rationaleContainer}>
+            </div> : undefined}
+            {<div className={CLASSES.rationaleContainer}>
               <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
-            </div>
-            <div className={CLASSES.remediation}>
+            </div>}
+            {data.remediation ? <div className={CLASSES.remediation}>
               <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
-            </div>
-            <div className={CLASSES.sampleContainer}>
+            </div> : undefined}
+            {data.sample ? <div className={CLASSES.sampleContainer}>
               <p className={CLASSES.textArea}>Sample</p>
               <pre><code>{data.sample}</code></pre>
-            </div>
-            <div className={CLASSES.remediationSample}>
+            </div> : undefined}
+            {data.remediationSample ? <div className={CLASSES.remediationSample}>
               <p className={CLASSES.textArea}>Remediation Sample</p>
               <pre><code>{data.remediationSample}</code></pre>
-            </div>
-            <div className={CLASSES.refContainer}>
+            </div> : undefined}
+            {data.reference ? <div className={CLASSES.refContainer}>
               <p className={CLASSES.textArea}>Reference</p>
               <p className={CLASSES.textAreaRule}>{data.reference}</p>
-            </div>
+            </div> : undefined}
           </div>
           : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
       }

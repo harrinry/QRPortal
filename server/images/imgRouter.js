@@ -3,7 +3,7 @@ const { imagesRoute } = require('../routes/routes');
 const options = require('./options');
 const errHandler = require('../middleware/errorHandler');
 
-let imageRouter = express.Router();
+let imageRouter = express.Router({caseSensitive: false});
 
 imageRouter.get(imagesRoute, (req, res)=>{
   res.sendFile(req.params.imageName, options, (err)=>errHandler(err, res));

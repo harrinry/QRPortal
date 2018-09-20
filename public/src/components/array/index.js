@@ -46,7 +46,7 @@ class VerticalArray extends React.PureComponent{
         <div className={CLASSES.itemCounter}>{filteredChildren.length + ' ' + itemCountTitle}</div>
         <div className={CLASSES.internalFilter}>
           <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
-          <span className={COMMON_CLASSES.searchIcon} onClick={() => this.refs[ref].focus()}></span>
+          <span className={CLASSES.filter} onClick={() => this.refs[ref].focus()}></span>
         </div>
       </div>
       <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol)}>

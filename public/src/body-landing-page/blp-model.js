@@ -46,6 +46,9 @@ export default class LandingPage extends PureComponent{
                 </div>);
             })}
           </div> : undefined}
+        <div className={CLASSES.logoContainer}>
+          <div className={CLASSES.castLogo}></div>
+        </div>
       </div>
     );
   }
