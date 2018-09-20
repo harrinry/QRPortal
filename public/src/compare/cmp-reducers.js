@@ -59,14 +59,23 @@ const compareReducers = (state = initialState, action) => {
     return {
       ...state,
       loading: false,
-      data: action.payload.data
+      data: action.payload.data,
+      error: {
+        status: false,
+        err: {}
+      }
     };
   case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
     return {
       ...state,
       data: [],
       loading: false,
-      
+      error: {
+        status: true,
+        err: {
+          ...action.payload.err
+        }
+      }
     };
   default:
     return state;
