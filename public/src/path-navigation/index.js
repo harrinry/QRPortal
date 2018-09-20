@@ -3,9 +3,10 @@ import { navigateTo } from './nv-actions';
 import NavHeader from './nv-model';
 import { showNavigationView, showLandingPage} from '../body/body-actions';
 import { fetchNavigationData } from 'body-navigation/bn-actions';
-import { fetchDetailsData, clearDetailsData } from '../details-section/ds-actions';
-import { hideSearchResults } from '../global-search/gs-actions';
-import { fetchWebData } from '../body-rules-list/brl-actions';
+import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
+import { hideSearchResults } from 'global-search/gs-actions';
+import { fetchWebData } from 'body-rules-list/brl-actions';
+import { enableComparing, disableComparing, fetchExtensionComparisonData } from '../compare/cmp-actions';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
@@ -33,6 +34,17 @@ const mapDispatchToProps = ( dispatch ) => {
     selectorChange: ( item ) => {
       dispatch(fetchWebData(item.href));
       dispatch(clearDetailsData());
+    },
+    onCompare: (extId, ver1, ver2) => {
+      dispatch(fetchExtensionComparisonData(extId, ver1, ver2));
+    },
+    onToggleCompare: ( isComparing ) => {
+      switch (isComparing) {
+      case true:
+        return dispatch(disableComparing());
+      case false:
+        return dispatch(enableComparing());      
+      }
     }
   };
 };
@@ -43,7 +55,8 @@ const mapStateToProps = (state) => {
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
     rules: state.rulesList.data,
-    searchQuery: state.search.query
+    searchQuery: state.search.query,
+    compareEnabled: state.compare.isComparing,
   };
 };
 

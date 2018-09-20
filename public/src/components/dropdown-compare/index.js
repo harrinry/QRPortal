@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CLASSES, COMPARE_IMG, COMPARE_IMG_COMPARING } from './constants';
-import { createClassName } from 'common/'
+import { createClassName } from 'common/';
 import { DropdownSelector } from 'components/';
 import './style.css';
 
@@ -22,7 +22,8 @@ export default class DropdownCompare extends React.PureComponent {
   }
 
   toggleCompare(){
-    return this.setState(_state => Object.assign({}, _state, { comparing: !_state.comparing, second: _state.second || this.props.list[1] }));
+    this.setState(_state => Object.assign({}, _state, { comparing: !_state.comparing, second: _state.second || this.props.list[1] }));
+    if( !this.props.stateEnabled && this.props.toggleCompare ) this.props.toggleCompare(this.props.compareEnabled);
   }
 
   handleDropdownChange( item ){
@@ -51,11 +52,13 @@ export default class DropdownCompare extends React.PureComponent {
   }
 
   render(){
+    const stateEnabled = this.props.disableState ? false : true;
+    const isCompareEnabled = ((stateEnabled && this.state.comparing) || (!stateEnabled && this.props.compareEnabled)) ? true : false;
     return (
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={0} onItemClick={this.firstListChanged}/>
-        <div className={createClassName(CLASSES.compareImgContainer, this.state.comparing ? CLASSES.isComparing : undefined)}><img src={this.state.comparing ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
-        { this.state.comparing ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
+        <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)}><img src={isCompareEnabled ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
+        { (this.state.comparing && stateEnabled) || this.props.CompareEnabled  ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
       </span>
     );
   }

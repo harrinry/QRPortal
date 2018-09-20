@@ -13,14 +13,9 @@ const NavHeader = ( props ) =>{
     <div className={createClassName(CLASSES.headerMain, (props.viewType === VIEW_TYPES.MENU_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <div className={CLASSES.pathContainer}>
         { props.searchVisible ? <PathElement rules={props.rules} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
-          props.path.map((e, index) => {
+          props.path.map((e, index, arr) => {
             if ( Array.isArray(e) ) {
-              return <DropdownCompare key={index} list={e} onItemSelect={props.selectorChange} onCompare={(item1, item2) => {
-                fetch(`compare/extensions/${props.path[index - 1].id}/${item1.name}/${item2.name}`)
-                  .catch(err => console.log(err))
-                  .then(res => res.json())
-                  .then(data => console.log(data));
-              }}/> ;
+              return <DropdownCompare key={index} list={e} stateEnabled={false} compareEnabled={props.compareEnabled} onItemSelect={props.selectorChange} toggleCompare={props.onToggleCompare} onCompare={(v1, v2) => props.onCompare(arr[1].id, v1.name, v2.name)}/> ;
             } else return (<PathElement key={index} separator={index !== pl - 1 && index !== 0} showIcon={index === 0} index={index} gotoLocation={props.gotoLocation} name={e.name} href={e.href} icon={e.icon}/>);
           })}
       </div>
