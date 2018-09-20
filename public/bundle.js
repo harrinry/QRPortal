@@ -117,7 +117,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto;}\r\n.qrp_bnt-container{margin-top: 80px;}\r\n", ""]);
+exports.push([module.i, ".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto; align-items: center; justify-content: center;}\r\n.qrp_bnt-container{margin-top: 80px;}\r\n", ""]);
 
 // exports
 
@@ -174,7 +174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_list_area{ width: 60%; display: flex; max-height: 100vh; overflow-x: hidden;overflow-y: hidden; flex-direction: row; -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);-moz-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);}\r\n.qrp_details_area{ display: block; width: 40%; max-height: 100vh; overflow-x: hidden; overflow-y: auto; border-top: 1px solid rgba(0,0,0,0.05)}\r\n.qrp_contentSpace{ width: 100%; height: 100%; }\r\n.qrp_menuNav_height{ max-height: 100vh }\r\n.qrp_maxtileNav_height{ max-height: calc(100vh - 60px)}\r\n.qrp_bcontentCntr{ display: flex; }\r\n", ""]);
+exports.push([module.i, ".qrp_list_area{ width: 60%; display: flex; max-height: 100vh; overflow-x: hidden;overflow-y: hidden; flex-direction: row; -webkit-box-shadow: 6px 3px 75px 27px rgba(0,0,0,0.10);-moz-box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);box-shadow: 1px 4px 56px 5px rgba(0,0,0,0.10);}\r\n.qrp_details_area{ display: block; width: 40%; max-height: 100vh; overflow-x: hidden; overflow-y: auto; border-top: 1px solid rgba(0,0,0,0.05)}\r\n.qrp_contentSpace{ width: 100%; height: 100%; }\r\n.qrp_menuNav_height{ max-height: 100vh }\r\n.qrp_maxtileNav_height{ max-height: calc(100vh - 93px)}\r\n.qrp_bcontentCntr{ display: flex; }\r\n.qrp_contentBody{ overflow-x: hidden; overflow-y: auto; }", ""]);
 
 // exports
 
@@ -212,7 +212,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n/* .ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; } */\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{height: 16px; width: 16px; border-radius: 16px; background-color:  #CB7474; background-size: 16px; display: block !important; margin-top: 16px; margin-right: 16px; padding: 0;}\r\n.qrp_arrlci{ cursor: pointer; padding-left: 10px;}\r\n.qrp_arrlci:hover{ background-color: rgba(0,0,0,0.05);}\r\n.qrp_srico{ cursor: pointer; color: black; padding-right: 16px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px; height:48px; display: inline-block; float: right; margin-right: 15px;}\r\n", ""]);
+exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n/* .ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; } */\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{height: 16px; width: 16px; border-radius: 16px; background-color:  #CB7474; background-size: 16px; display: block !important; margin-top: 16px; margin-right: 16px; padding: 0;}\r\n.qrp_arrlci{ cursor: pointer; padding-left: 10px;}\r\n.qrp_arrlci:hover{ background-color: rgba(0,0,0,0.05);}\r\n.qrp_srico{ cursor: pointer; color: black; padding-right: 16px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px; height:48px; display: inline-block; float: right; margin-right: 15px;}\r\n", ""]);
 
 // exports
 
@@ -250,7 +250,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: absolute;\r\n  width: 150px;\r\n  margin-left: -75px;\r\n  margin-top: 173px;\r\n  font-weight: 500;\r\n  font-size: 16px;\r\n  color: #333;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n  line-height: 16px;\r\n  text-align: center;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; padding: 0; margin: 16px 16px 64px 16px; user-select: none; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; border-radius:4px;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}\r\n.qrp_bdet_txt{font-size: 24px !important; color: #1A1A1A; margin: 0 30px; padding: 0; font-weight: 800;}\r\n.qrp_bdetContr_main p {font-size: 18px; margin: 30px 30px;}\r\n", ""]);
+exports.push([module.i, ".qrp_tile_nfoh{\r\n  position: relative;\r\n  width: 150px;\r\n  font-weight: 500;\r\n  font-size: 16px;\r\n  color: #333;\r\n  opacity: 1;\r\n  transition: 0.1s ease-in;\r\n  line-height: 16px;\r\n  text-align: center;\r\n  top: 165px;\r\n}\r\n\r\n.qrp_tile{background: #FFFFFF; width:150px ;height:150px; font-size:14px; color: #888888; letter-spacing: 1px; text-align: center; padding: 0; margin: 16px 16px 64px 16px; user-select: none; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; cursor: pointer; border-radius:4px;}\r\n.qrp_tile:hover{background: #FFFFFF;box-shadow: 0 23px 18px 0 rgba(0,0,0,0.20);}\r\n.qrp_tile:active{background: #E8F5FC;box-shadow: 0 12px 9px 0 rgba(0,0,0,0.40);}\r\n.qrp_bdet_txt{font-size: 24px !important; color: #1A1A1A; margin: 0 30px; padding: 0; font-weight: 800;}\r\n.qrp_bdetContr_main p {font-size: 18px; margin: 30px 30px;}\r\n", ""]);
 
 // exports
 
@@ -421,7 +421,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "pre{ white-space: pre-wrap;}\r\n.qrp_bdet_hCntr{padding: 30px 30px; display: flex; flex-direction: row; align-items: center;}\r\n.qrp_bdet_hCntr h2{margin: 0; color: #1A1A1A; font-size: 24px; font-weight: 600; max-width: calc(100% - 50px);}\r\n.qrp_bdet_hCntr h2::after{width: 50px; height: 3px; content: \"\"; display: block; background-color: #1A1A1A;margin-top: 10px;}\r\n.qrp_bdet_weightCntr {color: #1A1A1A; line height: 24px; font-size: 20px; font-weight: 600; text-align: right; top: -30px; margin-left: auto; padding-right: 10px;}\r\n.qrp_bdet_tagCntr {width: 100%; margin: 0 30px; display: flex; flex-direction: row; align-items: center;}\r\n.qrp_bdet_tag{font-size: 20px; color: #fff; height: 40px; line-height: 40px; padding: 0 20px; background-color: #595959; border-radius: 2px;margin-right: 15px;}\r\n\r\n.qrp_bdet_hCntr > .qrp_critical{margin-top: 5px; margin-right: 0;}\r\npre{margin: 0 30px;}\r\n", ""]);
+exports.push([module.i, "pre{ white-space: pre-wrap;}\r\n.qrp_bdet_hCntr{padding: 30px 30px; display: flex; flex-direction: row; align-items: center;}\r\n.qrp_bdet_hCntr h2{margin: 0; color: #1A1A1A; font-size: 24px; font-weight: 600; max-width: calc(100% - 50px);}\r\n.qrp_bdet_hCntr h2::after{width: 50px; height: 3px; content: \"\"; display: block; background-color: #1A1A1A;margin-top: 10px;}\r\n.qrp_bdet_weightCntr {color: #1A1A1A; line-height: 24px; font-size: 20px; font-weight: 600; text-align: right; top: -30px; margin-left: auto; padding-right: 10px;}\r\n.qrp_bdet_tagCntr {margin: 0 30px; display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;}\r\n.qrp_bdet_tag{font-size: 20px; color: #fff; height: 40px; line-height: 40px; padding: 0 20px; background-color: #595959; border-radius: 2px;margin: 0 0px 3px 15px;}\r\n\r\n.qrp_bdet_hCntr > .qrp_critical{margin-top: 5px; margin-right: 0;}\r\npre{margin: 0 30px;}\r\n", ""]);
 
 // exports
 
@@ -26317,6 +26317,109 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./public/src/compare/cmp-actions-type.js":
+/*!************************************************!*\
+  !*** ./public/src/compare/cmp-actions-type.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var CMP_FETCH_COMPARISON_DATA = exports.CMP_FETCH_COMPARISON_DATA = 'CMP_FETCH_COMPARISON_DATA';
+var CMP_SET_COMPARISON_DATA = exports.CMP_SET_COMPARISON_DATA = 'CMP_SET_COMPARISON_DATA';
+var CMP_ERROR_ON_COMPARE = exports.CMP_ERROR_ON_COMPARE = 'CMP_ERROR_ON_COMPARE';
+
+var CMP_DISPLAY_COMPARISON_DATA = exports.CMP_DISPLAY_COMPARISON_DATA = 'CMP_DISPLAY_COMPARISON_DATA';
+var CMP_HIDE_COMPARISON_DATA = exports.CMP_HIDE_COMPARISON_DATA = 'CMP_HIDE_COMPARISON_DATA';
+
+var CMP_ENABLE_COMPARING = exports.CMP_ENABLE_COMPARING = 'CMP_ENABLE_COMPARING';
+var CMP_DISABLE_COMPARING = exports.CMP_DISABLE_COMPARING = 'CMP_DISABLE_COMPARING';
+
+/***/ }),
+
+/***/ "./public/src/compare/cmp-reducers.js":
+/*!********************************************!*\
+  !*** ./public/src/compare/cmp-reducers.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _cmpActionsType = __webpack_require__(/*! ./cmp-actions-type */ "./public/src/compare/cmp-actions-type.js");
+
+var ACTIONTYPES = _interopRequireWildcard(_cmpActionsType);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var initialState = {
+  loading: false,
+  isVisible: false,
+  isComparing: false,
+  data: [],
+  request: {
+    query: undefined,
+    type: undefined,
+    params: []
+  }
+};
+
+var compareReducers = function compareReducers() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case ACTIONTYPES.CMP_DISPLAY_COMPARISON_DATA:
+      return _extends({}, state, {
+        isVisible: true
+      });
+    case ACTIONTYPES.CMP_HIDE_COMPARISON_DATA:
+      return _extends({}, state, {
+        isVisible: false
+      });
+    case ACTIONTYPES.CMP_FETCH_COMPARISON_DATA:
+      {
+        var splt = action.payload.query.split(/\//ig);
+        return _extends({}, state, {
+          loading: true,
+          request: {
+            query: action.payload.query,
+            type: splt[1],
+            params: [splt[2], splt[3], splt[4]]
+          }
+        });
+      }
+    case ACTIONTYPES.CMP_ENABLE_COMPARING:
+      return _extends({}, state, {
+        isComparing: true
+      });
+    case ACTIONTYPES.CMP_DISABLE_COMPARING:
+      return _extends({}, state, {
+        isComparing: false
+      });
+    case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
+      return {};
+    default:
+      return state;
+  }
+};
+
+exports.default = compareReducers;
+
+/***/ }),
+
 /***/ "./public/src/components/array/constants.js":
 /*!**************************************************!*\
   !*** ./public/src/components/array/constants.js ***!
@@ -26558,7 +26661,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 var CLASSES = exports.CLASSES = {
   nameFloatOnHover: 'qrp_tile_nfoh',
-  tile: 'qrp_tile'
+  tile: 'qrp_tile',
+  tileContainer: 'qrp_tile_Cntr'
 };
 
 var defaultIconURL = exports.defaultIconURL = 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)';
@@ -26598,18 +26702,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Tile = function Tile(props) {
   return _react2.default.createElement(
     'div',
-    { className: (0, _common.createClassName)(_common.COMMON_CLASSES.txtCenter, _constants.CLASSES.tile, props.className), style: stylize(props.icon), onClick: function onClick(event) {
-        switch (event.button) {
-          case 0:
-            return props.click();
-          default:
-            return;
-        }
-      } },
+    { className: _constants.CLASSES.tileContainer },
     _react2.default.createElement(
-      'span',
-      { className: _constants.CLASSES.nameFloatOnHover },
-      props.children
+      'div',
+      { className: (0, _common.createClassName)(_common.COMMON_CLASSES.txtCenter, _constants.CLASSES.tile, props.className), style: stylize(props.icon), onClick: function onClick(event) {
+          switch (event.button) {
+            case 0:
+              return props.click();
+            default:
+              return;
+          }
+        } },
+      _react2.default.createElement(
+        'span',
+        { className: _constants.CLASSES.nameFloatOnHover },
+        props.children
+      )
     )
   );
 };
@@ -30009,11 +30117,9 @@ var _nvConstants = __webpack_require__(/*! ./nv-constants */ "./public/src/path-
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
 
-var _components = __webpack_require__(/*! ../components/ */ "./public/src/components/index.js");
+var _components = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
 
 var _vnConstants = __webpack_require__(/*! view-navigation/vn-constants */ "./public/src/view-navigation/vn-constants.js");
-
-var _components2 = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
 
 __webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css");
 
@@ -30030,7 +30136,7 @@ var NavHeader = function NavHeader(props) {
       { className: _nvConstants.CLASSES.pathContainer },
       props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components2.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
+          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
               fetch('compare/extensions/' + props.path[index - 1].id + '/' + item1.name + '/' + item2.name).catch(function (err) {
                 return console.log(err);
               }).then(function (res) {
@@ -30256,6 +30362,10 @@ var _bnReducers = __webpack_require__(/*! body-navigation/bn-reducers */ "./publ
 
 var _bnReducers2 = _interopRequireDefault(_bnReducers);
 
+var _cmpReducers = __webpack_require__(/*! compare/cmp-reducers */ "./public/src/compare/cmp-reducers.js");
+
+var _cmpReducers2 = _interopRequireDefault(_cmpReducers);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
@@ -30269,7 +30379,8 @@ var rootReducer = (0, _redux.combineReducers)({
   ruleDetails: _dsReducers2.default,
   standards: _bslReducers2.default,
   rulesList: _brlReducers2.default,
-  navTile: _bnReducers2.default
+  navTile: _bnReducers2.default,
+  compare: _cmpReducers2.default
 });
 
 exports.default = rootReducer;

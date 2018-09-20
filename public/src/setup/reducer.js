@@ -10,6 +10,7 @@ import ruleDetailsReducers from 'details-section/ds-reducers';
 import standardsListReducers from 'body-standards-list/bsl-reducers';
 import RulesListReducers from 'body-rules-list/brl-reducers';
 import TileNavigationReducers from 'body-navigation/bn-reducers';
+import CompareReducers from 'compare/cmp-reducers';
 
 const rootReducer = combineReducers({
   viewType: viewTypeReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
   ruleDetails: ruleDetailsReducers,
   standards: standardsListReducers,
   rulesList: RulesListReducers,
-  navTile: TileNavigationReducers
+  navTile: TileNavigationReducers,
+  compare: CompareReducers
 });
 
 export default rootReducer;
