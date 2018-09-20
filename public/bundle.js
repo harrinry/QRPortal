@@ -98,7 +98,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 0 auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px; transform: translateY(-50%);margin-top: calc(50vh - 100px);}\r\n.qrp_lpnav{ margin-top: 30px; display: flex; flex-direction: row; align-content: center; justify-content: center;}\r\n.qrp_lptitleCntr{font-size: 50px; font-weight: 800; text-transform: uppercase;}\r\n.qrp_lpslinkCntr{ height: 200px; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: rgba(0,0,0,0.5); transition: all 0.3s;}\r\n.qrp_lpslinkCntr:hover{color: rgba(0,0,0,1)}\r\n.qrp_lpslinkBlk{ width: 150px; height: 150px; opacity: 0.4; filter: grayscale(50%);transition: all 0.3s;}\r\n.qrp_lpslinkBlk:hover{opacity: 1; filter: grayscale(0%);}\r\n.qrp_lpslinkBlkTlt{font-weight: 600;}\r\n.qrp_lpcastlogo{ background-image: url(/img/castsoftware.svg); background-repeat: no-repeat; background-position: center; background-size: 80%; }\r\n.qrp_lplogoCntr{ width: 100px; height: 50px;}", ""]);
+exports.push([module.i, ".qrp_lpSsep{ font-weight: 800; cursor: default;}\r\n.qrp_lpslink{ font-weight: 800; padding: 0 10px;  color: #1A1A1A;}\r\n.qrp_lpiCntr{ height: 150px; width: 150px; margin: 0 auto}\r\n.qrp_lpCntr{ width: 100%; text-align: center; font-size: 20px; transform: translateY(-50%);margin-top: calc(50vh - 100px);}\r\n.qrp_lpnav{ margin-top: 30px; display: flex; flex-direction: row; align-content: center; justify-content: center;}\r\n.qrp_lptitleCntr{font-size: 50px; font-weight: 800; text-transform: uppercase;}\r\n.qrp_lpslinkCntr{ height: 200px; width: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; color: rgba(0,0,0,0.5); transition: all 0.3s;}\r\n.qrp_lpslinkCntr:hover{color: rgba(0,0,0,1)}\r\n.qrp_lpslinkBlk{ width: 150px; height: 150px; opacity: 0.4; filter: grayscale(50%);transition: all 0.3s;}\r\n.qrp_lpslinkBlk:hover{opacity: 1; filter: grayscale(0%);}\r\n.qrp_lpslinkBlkTlt{font-weight: 600;}\r\n.qrp_lpcastlogo{ background-image: url(/img/castsoftware.svg); background-repeat: no-repeat; background-position: center; background-size: 80%; width: 100px; height: 50px; }\r\n.qrp_lplogoCntr{}", ""]);
 
 // exports
 
@@ -440,7 +440,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #fff; border-radius: 2px; width: calc(100% - 60px);display: block; height: 48px;}\r\n.qrp_gSearch_input{border: none; height: 50px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 0 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 20px 0 !important; background-color: #F2F2F2; color: #808080; max-width: 290px; z-index: 3;}\r\n.qrp_gSearch.fright > input{background-color: transparent;}\r\n.qrp_gSearch.fright > .qrp_srico{margin-left: auto;}\r\n", ""]);
+exports.push([module.i, ".qrp_gSearch{ background: inherit; text-align: left; margin: 0 30px; background: #fff; border-radius: 2px; width: calc(100% - 60px);display: block; height: 48px;}\r\n.qrp_gSearch_input{border: none; height: 48px; font-size: 20px; line-height: 50px; color: #808080;  padding: 0 0 0 16px; outline: none;}\r\n.qrp_gSearch.fright{ margin: 20px 15px 20px 0 !important; background-color: #F2F2F2; color: #808080; max-width: 290px; z-index: 3;}\r\n.qrp_gSearch.fright > input{background-color: transparent;}\r\n.qrp_gSearch.fright > .qrp_srico{margin-left: auto;}\r\n", ""]);
 
 // exports
 
@@ -24151,6 +24151,7 @@ var QUERYFAILED = exports.QUERYFAILED = {
 
 var CLASSES = exports.CLASSES = {
   container: 'qrp_lpCntr',
+  SubContainer: 'qrp_lpSCntr',
   iconContainer: 'qrp_lpiCntr',
   welcomeText: 'qrp_lpwtxtCntr',
   navigation: 'qrp_lpnav',
@@ -24264,35 +24265,39 @@ var LandingPage = function (_PureComponent) {
       return _react2.default.createElement(
         'div',
         { className: _blpConstants.CLASSES.container },
-        _react2.default.createElement('div', { className: _blpConstants.CLASSES.iconContainer, style: _blpConstants._oIconStyle }),
         _react2.default.createElement(
           'div',
-          { className: _blpConstants.CLASSES.title },
-          _blpConstants.TITLE
+          { className: _blpConstants.CLASSES.SubContainer },
+          _react2.default.createElement('div', { className: _blpConstants.CLASSES.iconContainer, style: _blpConstants._oIconStyle }),
+          _react2.default.createElement(
+            'div',
+            { className: _blpConstants.CLASSES.title },
+            _blpConstants.TITLE
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: _blpConstants.CLASSES.welcomeText },
+            _blpConstants.WELCOMETEXT
+          ),
+          this.props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _react2.default.createElement(
+            'div',
+            { className: _blpConstants.CLASSES.navigation },
+            this.state.sections.map(function (e, i) {
+              return _react2.default.createElement(
+                'div',
+                { className: _blpConstants.CLASSES.linkContainer, key: i, onClick: function onClick() {
+                    return _this3.props.loadSection(e);
+                  } },
+                _react2.default.createElement('div', { className: _blpConstants.CLASSES.linkBlock, style: _this3.stylizeIcon(e.icon) }),
+                _react2.default.createElement(
+                  'span',
+                  { className: _blpConstants.CLASSES.linkBlockTitle },
+                  e.name
+                )
+              );
+            })
+          ) : undefined
         ),
-        _react2.default.createElement(
-          'div',
-          { className: _blpConstants.CLASSES.welcomeText },
-          _blpConstants.WELCOMETEXT
-        ),
-        this.props.viewType === _vnConstants.VIEW_TYPES.TILES_VIEW ? _react2.default.createElement(
-          'div',
-          { className: _blpConstants.CLASSES.navigation },
-          this.state.sections.map(function (e, i) {
-            return _react2.default.createElement(
-              'div',
-              { className: _blpConstants.CLASSES.linkContainer, key: i, onClick: function onClick() {
-                  return _this3.props.loadSection(e);
-                } },
-              _react2.default.createElement('div', { className: _blpConstants.CLASSES.linkBlock, style: _this3.stylizeIcon(e.icon) }),
-              _react2.default.createElement(
-                'span',
-                { className: _blpConstants.CLASSES.linkBlockTitle },
-                e.name
-              )
-            );
-          })
-        ) : undefined,
         _react2.default.createElement(
           'div',
           { className: _blpConstants.CLASSES.logoContainer },
@@ -26377,6 +26382,121 @@ var CMP_DISABLE_COMPARING = exports.CMP_DISABLE_COMPARING = 'CMP_DISABLE_COMPARI
 
 /***/ }),
 
+/***/ "./public/src/compare/cmp-actions.js":
+/*!*******************************************!*\
+  !*** ./public/src/compare/cmp-actions.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchExtensionComparisonData = exports.disableComparing = exports.enableComparing = exports.hideComparisonTable = exports.showComparisonTable = exports.isFetching = undefined;
+
+var _cmpActionsType = __webpack_require__(/*! ./cmp-actions-type */ "./public/src/compare/cmp-actions-type.js");
+
+var ACTIONTYPE = _interopRequireWildcard(_cmpActionsType);
+
+var _cmpResources = __webpack_require__(/*! ./cmp-resources */ "./public/src/compare/cmp-resources.js");
+
+var _cmpConstants = __webpack_require__(/*! ./cmp-constants */ "./public/src/compare/cmp-constants.js");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var isFetching = exports.isFetching = function isFetching(query) {
+  return {
+    type: ACTIONTYPE.CMP_FETCH_COMPARISON_DATA,
+    payload: {
+      query: query
+    }
+  };
+};
+
+var showComparisonTable = exports.showComparisonTable = function showComparisonTable() {
+  return {
+    type: ACTIONTYPE.CMP_DISPLAY_COMPARISON_DATA
+  };
+};
+
+var hideComparisonTable = exports.hideComparisonTable = function hideComparisonTable() {
+  return {
+    type: ACTIONTYPE.CMP_HIDE_COMPARISON_DATA
+  };
+};
+
+var enableComparing = exports.enableComparing = function enableComparing() {
+  return {
+    type: ACTIONTYPE.CMP_ENABLE_COMPARING
+  };
+};
+
+var disableComparing = exports.disableComparing = function disableComparing() {
+  return {
+    type: ACTIONTYPE.CMP_DISABLE_COMPARING
+  };
+};
+
+var setComparisonData = function setComparisonData(data) {
+  return {
+    type: ACTIONTYPE.CMP_SET_COMPARISON_DATA,
+    payload: {
+      data: data
+    }
+  };
+};
+
+var onCompareError = function onCompareError(err) {
+  return {
+    type: ACTIONTYPE.CMP_ERROR_ON_COMPARE,
+    payload: {
+      err: err
+    }
+  };
+};
+
+var fetchExtensionComparisonData = exports.fetchExtensionComparisonData = function fetchExtensionComparisonData(extensionName, version1, version2) {
+  return function (dispatch) {
+    var query = (0, _cmpConstants.cmpQueryBuilder)(extensionName, version1, version2);
+    dispatch(isFetching(query));
+    return (0, _cmpResources.fetchCompareExtensionVersions)(query).then(function (data) {
+      return dispatch(setComparisonData(data));
+    }, function (err) {
+      return dispatch(onCompareError(err));
+    });
+  };
+};
+
+/***/ }),
+
+/***/ "./public/src/compare/cmp-constants.js":
+/*!*********************************************!*\
+  !*** ./public/src/compare/cmp-constants.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var comparePrefix = exports.comparePrefix = 'compare/';
+
+var SECTIONS = exports.SECTIONS = {
+  extensions: 'extensions'
+};
+
+var cmpQueryBuilder = exports.cmpQueryBuilder = function cmpQueryBuilder(extID, ver1, ver2) {
+  return '' + comparePrefix + SECTIONS.extensions + '/' + extID + '/' + ver1 + '/' + ver2;
+};
+
+/***/ }),
+
 /***/ "./public/src/compare/cmp-reducers.js":
 /*!********************************************!*\
   !*** ./public/src/compare/cmp-reducers.js ***!
@@ -26472,6 +26592,29 @@ var compareReducers = function compareReducers() {
 };
 
 exports.default = compareReducers;
+
+/***/ }),
+
+/***/ "./public/src/compare/cmp-resources.js":
+/*!*********************************************!*\
+  !*** ./public/src/compare/cmp-resources.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchCompareExtensionVersions = undefined;
+
+var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+var fetchCompareExtensionVersions = exports.fetchCompareExtensionVersions = function fetchCompareExtensionVersions(query) {
+  return (0, _common.webFetch)(query);
+};
 
 /***/ }),
 
@@ -26920,9 +27063,10 @@ var DropdownCompare = function (_React$PureComponent) {
     value: function toggleCompare() {
       var _this2 = this;
 
-      return this.setState(function (_state) {
+      this.setState(function (_state) {
         return Object.assign({}, _state, { comparing: !_state.comparing, second: _state.second || _this2.props.list[1] });
       });
+      if (!this.props.stateEnabled && this.props.toggleCompare) this.props.toggleCompare(this.props.compareEnabled);
     }
   }, {
     key: 'handleDropdownChange',
@@ -26952,16 +27096,18 @@ var DropdownCompare = function (_React$PureComponent) {
   }, {
     key: 'render',
     value: function render() {
+      var stateEnabled = this.props.disableState ? false : true;
+      var isCompareEnabled = stateEnabled && this.state.comparing || !stateEnabled && this.props.compareEnabled ? true : false;
       return _react2.default.createElement(
         'span',
         { className: _constants.CLASSES.container },
         _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 0, onItemClick: this.firstListChanged }),
         _react2.default.createElement(
           'div',
-          { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, this.state.comparing ? _constants.CLASSES.isComparing : undefined) },
-          _react2.default.createElement('img', { src: this.state.comparing ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
+          { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, isCompareEnabled ? _constants.CLASSES.isComparing : undefined) },
+          _react2.default.createElement('img', { src: isCompareEnabled ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
         ),
-        this.state.comparing ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
+        this.state.comparing && stateEnabled || this.props.CompareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
       );
     }
   }]);
@@ -30006,11 +30152,13 @@ var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src
 
 var _bnActions = __webpack_require__(/*! body-navigation/bn-actions */ "./public/src/body-navigation/bn-actions.js");
 
-var _dsActions = __webpack_require__(/*! ../details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
+var _dsActions = __webpack_require__(/*! details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
 
-var _gsActions = __webpack_require__(/*! ../global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
+var _gsActions = __webpack_require__(/*! global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
 
-var _brlActions = __webpack_require__(/*! ../body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
+var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
+
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30041,6 +30189,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     selectorChange: function selectorChange(item) {
       dispatch((0, _brlActions.fetchWebData)(item.href));
       dispatch((0, _dsActions.clearDetailsData)());
+    },
+    onCompare: function onCompare(extId, ver1, ver2) {
+      dispatch((0, _cmpActions.fetchExtensionComparisonData)(extId, ver1, ver2));
+    },
+    onToggleCompare: function onToggleCompare(isComparing) {
+      switch (isComparing) {
+        case true:
+          return dispatch((0, _cmpActions.disableComparing)());
+        case false:
+          return dispatch((0, _cmpActions.enableComparing)());
+      }
     }
   };
 };
@@ -30051,7 +30210,8 @@ var mapStateToProps = function mapStateToProps(state) {
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
     rules: state.rulesList.data,
-    searchQuery: state.search.query
+    searchQuery: state.search.query,
+    compareEnabled: state.compare.isComparing
   };
 };
 
@@ -30196,16 +30356,10 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index) {
+      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, onItemSelect: props.selectorChange, onCompare: function onCompare(item1, item2) {
-              fetch('compare/extensions/' + props.path[index - 1].id + '/' + item1.name + '/' + item2.name).catch(function (err) {
-                return console.log(err);
-              }).then(function (res) {
-                return res.json();
-              }).then(function (data) {
-                return console.log(data);
-              });
+          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, stateEnabled: false, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
+              return props.onCompare(arr[1].id, v1.name, v2.name);
             } });
         } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.name, href: e.href, icon: e.icon });
       })

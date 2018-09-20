@@ -8,6 +8,7 @@ export const QUERYFAILED = {
 
 export const CLASSES = {
   container: 'qrp_lpCntr',
+  SubContainer: 'qrp_lpSCntr',
   iconContainer: 'qrp_lpiCntr',
   welcomeText: 'qrp_lpwtxtCntr',
   navigation: 'qrp_lpnav',
