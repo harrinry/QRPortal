@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>404 - Cast Structural rules</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-image: url(../images/img/404_background.png);
+        background-size: 100%;
+        background-color: #fff;
+        background-position: bottom;
+        height: 100vh;
+        width: 100%;
+        font-family: 'Open Sans', sans-serif;
+        overflow-y: hidden;
+        animation-name: fly;
+        animation-duration: 50s;
+        animation-timing-function: ease-out;
+      }
+      .Info {
+        width: 500px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: calc(50vh - 160px);
+        height: 320px;
+        position: fixed;
+        width: 100%;
+        opacity: 1;
+        animation-name: transition;
+        animation-duration: 0.7s;
+        animation-timing-function: ease-in-out;
+      }
+      .page404 {
+        background-image: url(../images/img/404.svg);
+        width: 420px;
+        height: 150px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+      }
+      .Info > h2 {
+        font-size: 32px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: 900;
+        margin-bottom: 20px;
+      }
+      .Info > p {
+        font-size: 26px;
+        text-align: center;
+        font-weight: 200;
+        margin:0 0 20px 0;
+      }
+      .button {
+        width: 120px;
+        margin: 0 auto;
+        height: 36px;
+        display: inline-block;
+        line-height: 36px;
+        font-size: 18px;
+        padding: 0 16px;
+        text-align: center;
+        text-decoration: none;
+      }
+      .Info a {
+        color: #ddd !important;
+        text-decoration: none;
+        margin: 0 auto;
+        border-radius: 2px;
+        background-image: -webkit-linear-gradient(top left, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+        background-image: -o-linear-gradient(top left, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+        background-image: linear-gradient(to bottom right, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+        transition: all 1s;
+      }
+      .Info a :hover {
+        color: #fff !important;
+        background-image: -webkit-linear-gradient(top left, #007aff, #5b77ff, #8672ff, #aa6bff, #ca62ff);
+        background-image: -o-linear-gradient(top left, #007aff, #5b77ff, #8672ff, #aa6bff, #ca62ff);
+        background-image: linear-gradient(to bottom right, #007aff, #5b77ff, #8672ff, #aa6bff, #ca62ff);
+        opacity: 0.8;
+      }
+      .logoCast{
+        background-image: url(../images/img/castsoftware.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 25px;
+        width: 200px;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+      }
+      @keyframes fly {
+        from {
+          background-position: top;
+          background-color: #333;
+        }
+
+        to {
+          background-position: bottom;
+          background-color: #fff;
+        }
+      }
+      @keyframes transition {
+        from {
+          top: -150px;
+          opacity: 0;
+        }
+
+        to {
+          top: 0px;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Info">
+      <div class="page404"></div>
+      <h2>Woooops !</h2>
+      <p>It looks like there is nothing to reach here</p>
+      <a href="#"><div class="button">Landing Page</div></a>
+    </div>
+    <div class="logoCast"></div>
+  </body>
+</html>
