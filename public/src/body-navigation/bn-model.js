@@ -13,7 +13,7 @@ const BodyNavigation = ( props ) => {
         <div className={CLASSES.title}>{props.title}</div>
       </div>
       <div className={CLASSES.childContainer}>
-        {props.loading ? <LoadingSpinner/> : props.navContent.map( (e, i) => <Tile key={i} icon={e.icon} click={() => props.tileClick(e, props.title, props.icon)}>{e.name}</Tile> )}
+        {props.loading ? <LoadingSpinner/> : props.navContent.map( (e, i) => <Tile key={i} icon={e.icon} click={() => props.tileClick(e, props.title, props.icon)}>{e.label || e.name}</Tile> )}
       </div>
     </div>
   );

@@ -9,13 +9,13 @@ describe('compare arrays functionality', () => {
       comparedArray = compareOnId( testArray1, testArray2, 'Array 1', 'Array 2' );
 
     assert.deepEqual(comparedArray, [
-      { name: 'test5', id: 6, randomValue: 45, parent: 'Array 1'}, 
-      { name: 'test6', id: 9, randomValue: 34, parent: 'Array 1'},
-      { name: 'test3', id: -3, randomValue: 22, parent: 'Both'}, 
-      { name: 'test7', id: 21,randomValue: 555, parent: 'Array 1'},
-      { name: 'test1', id: 1, randomValue: 45, parent: 'Array 2'}, 
-      { name: 'test2', id: 4, randomValue: 33, parent: 'Array 2'},
-      { name: 'test4', id: 2,randomValue: 15, parent: 'Array 2'}
+      { name: 'test5', id: 6, randomValue: 45, parent: 'Array 1', label: 'Array 1'}, 
+      { name: 'test6', id: 9, randomValue: 34, parent: 'Array 1',label: 'Array 1'},
+      { name: 'test3', id: -3, randomValue: 22, parent: 'Both', label: 'Both'}, 
+      { name: 'test7', id: 21,randomValue: 555, parent: 'Array 1',label: 'Array 1'},
+      { name: 'test1', id: 1, randomValue: 45, parent: 'Array 2',label: 'Array 2'}, 
+      { name: 'test2', id: 4, randomValue: 33, parent: 'Array 2',label: 'Array 2'},
+      { name: 'test4', id: 2,randomValue: 15, parent: 'Array 2',label: 'Array 2'}
     ]);
   });
 
@@ -25,13 +25,13 @@ describe('compare arrays functionality', () => {
       comparedArray = compareOnJSON( testArray1, testArray2, 'Array 1', 'Array 2' );
 
     assert.deepEqual(comparedArray, [
-      { name: 'test5', id: 6, randomValue: 45, parent: 'Both'}, 
-      { name: 'test6', id: 9, randomValue: 34, parent: 'Array 1'},
-      { name: 'test3', id: -3, randomValue: 22, parent: 'Both'}, 
-      { name: 'test7', id: 21,randomValue: 555, parent: 'Array 1'},
-      { name: 'test1', id: 1, randomValue: 45, parent: 'Array 2'}, 
-      { name: 'test2', id: 4, randomValue: 33, parent: 'Array 2'},
-      { name: 'test4', id: 2,randomValue: 15, parent: 'Array 2'},
+      { name: 'test5', id: 6, randomValue: 45, parent: 'Both', label: 'Both'}, 
+      { name: 'test6', id: 9, randomValue: 34, parent: 'Array 1',label: 'Array 1'},
+      { name: 'test3', id: -3, randomValue: 22, parent: 'Both', label: 'Both'}, 
+      { name: 'test7', id: 21,randomValue: 555, parent: 'Array 1',label: 'Array 1'},
+      { name: 'test1', id: 1, randomValue: 45, parent: 'Array 2',label: 'Array 2'},
+      { name: 'test2', id: 4, randomValue: 33, parent: 'Array 2',label: 'Array 2'},
+      { name: 'test4', id: 2,randomValue: 15, parent: 'Array 2',label: 'Array 2'}
     ]);
   });
 });

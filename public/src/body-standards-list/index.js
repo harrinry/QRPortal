@@ -21,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     data: state.standards.data,
+    loading: state.standards.loading
   };
 };
 

@@ -27,10 +27,10 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
             </div> : undefined}
-            {<div className={CLASSES.rationaleContainer}>
+            {data.rationale ? <div className={CLASSES.rationaleContainer}>
               <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
-            </div>}
+            </div> : undefined}
             {data.remediation ? <div className={CLASSES.remediation}>
               <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>

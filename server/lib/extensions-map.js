@@ -1,5 +1,6 @@
 const fs = require('fs');
 const root = require('app-root-path');
+const generateVersionLabel = require('./versionNamePP');
 
 const extensionExceptions = [ 
   {name:'com.castsoftware.cfamily', iconName: 'com.castsoftware.objective-c'},
@@ -22,8 +23,9 @@ function getValidExtensionMap(){
   const ext = extensions.map( ext => {
     const path =  root.resolve('rest/AIP/extensions/'+ ext.name +'.json'),
       extentionDetails = JSON.parse(fs.readFileSync(path)),
-      ei = getExceptionIndex( ext.name );
-    return Object.assign({}, ext, { title: extentionDetails.title, icon: ei === -1 ? getIconURL(ext.name) : getIconURL(extensionExceptions[ei].iconName) , id: ext.name, name: cleanExtentionName(extentionDetails.title) });
+      hasIcon = extentionDetails.iconUrl ? true : false,
+      icon = hasIcon ? extentionDetails.iconUrl : getExceptionIndex(extentionDetails.name) === -1 ? getIconURL(ext.name) : getIconURL(extensionExceptions[extentionDetails.name].iconName);
+    return Object.assign({}, ext, { title: extentionDetails.title, icon: icon, id: ext.name, name: cleanExtentionName(extentionDetails.title) });
   });
   return [castAIP, ...ext];
 }
@@ -59,7 +61,13 @@ function INIT (){
       const file = JSON.parse(fs.readFileSync( root.resolve( 'rest/'+ ver.href+'.json' )));
       if (file.qualityModel === true ) return ver;
     });
-    extVersionMap[ext.href] = versionsWithRules;
+    extVersionMap[ext.href] = versionsWithRules.map( e => {
+      return {
+        name: e.name,
+        href: e.href,
+        label: generateVersionLabel(e.name),
+      };
+    });
   }
   EXTMAP.write(JSON.stringify(extVersionMap, null, 2));
   EXTMAP.end(() => console.log('extensions-map created/updated'));

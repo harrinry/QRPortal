@@ -1,5 +1,5 @@
 export const CLASSES = {
-  container: 'qrp_dd_cmp_Cntr',
+  container: 'qrp_dd_cmp_MainCntr',
   compareImg: 'qrp_dd_cmp_ico',
   compareImgContainer: 'qrp_dd_cmp_cntr',
   isComparing: 'qrp_dd_cmp_ico_isCmp'

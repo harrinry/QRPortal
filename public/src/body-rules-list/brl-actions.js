@@ -10,6 +10,12 @@ export const setFetchingState = ( query ) => {
   };
 };
 
+export const endLoadingState = () => {
+  return {
+    type: ACTIONTYPES.STOP_LIST_LOADING_STATE
+  };
+};
+
 const fetchError = ( query, err ) =>{
   return {
     type: ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA,
