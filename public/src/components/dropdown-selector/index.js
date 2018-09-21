@@ -21,17 +21,23 @@ export default class DropdownSelector extends React.PureComponent{
   }
 
   onItemChange( index ){
-    this.setSelectedItem(index);
+    if(!this.props.stateDisabled){
+      this.setSelectedItem(index);
+    }
     if( this.props.onItemClick ) this.props.onItemClick( this.props.list[index], index, this.props.list );
-  } 
+  }
 
   componentDidMount(){
     this.onItemChange(this.props.defaultIndex || 0);
   }
 
   render(){
+    const stateDisabled = this.props.stateDisabled,
+      label = !stateDisabled ? 
+        ( typeof  this.state.selected === 'object' ? ( this.state.selected.label ||  this.state.selected.name ) :  this.state.selected ) : 
+        this.props.label;
     return (
-      <Dropdown label={<div className={CLASSES.label}>{( typeof  this.state.selected === 'object' ? ( this.state.selected.label ||  this.state.selected.name ) :  this.state.selected )}</div>}>
+      <Dropdown label={<div className={CLASSES.label}>{label}</div>}>
         <List vertical={true}>
           { this.props.list.map( ( e, i ) => {
             if( e === this.state.selected ) return;
@@ -47,4 +53,5 @@ export default class DropdownSelector extends React.PureComponent{
 
 DropdownSelector.propTypes = {
   onItemClick: PropTypes.func,
+  stateDisabled: PropTypes.bool,
 };

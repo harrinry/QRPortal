@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { COMMON_CLASSES, createClassName } from 'common/';
 import { CLASSES, NAVIGATION_VIEW, LANDING_PAGE } from './body-constants';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
@@ -7,6 +8,7 @@ import RuleDetails from 'details-section/';
 import StandardsList from 'body-standards-list';
 import TileNavigation from 'body-navigation';
 import LandingPage from 'body-landing-page';
+import CompareList from 'compare/';
 import './style.css';
 
 const ContentBody = ( props ) => {
@@ -20,13 +22,21 @@ const ContentBody = ( props ) => {
         (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>
             { props.listCount === 2 && !props.searchVisible ? <StandardsList/> : undefined}
-            <BodyRulesList/>
+            { props.isComparing && props.cmpIsVisible ? <CompareList/> : <BodyRulesList/>}
           </div>
           <div className={CLASSES.detailsArea}>
             <RuleDetails />
           </div>
         </div>)}
     </div>);
+};
+
+ContentBody.propTypes = {
+  view: PropTypes.string.isRequired,
+  listCount: PropTypes.number.isRequired,
+  viewType: PropTypes.string.isRequired,
+  searchVisible: PropTypes.bool.isRequired,
+  isComparing: PropTypes.bool.isRequired
 };
 
 export default ContentBody;

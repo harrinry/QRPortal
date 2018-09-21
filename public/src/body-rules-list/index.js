@@ -22,7 +22,8 @@ const mapStateToProps = (state) => {
   return {
     data: state.rulesList.data,
     searchVisible: state.search.resultsVisible,
-    searchResults: state.search.results
+    searchResults: state.search.results,
+    loading: state.rulesList.loading
   };
 };
 

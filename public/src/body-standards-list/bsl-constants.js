@@ -1,5 +1,5 @@
 export const CLASSES = {
-  standardsRow:'test-std-list-row1',
+  standardsRow:'qrp_std_list_row',
   emptyContent: 'qrp_std_list_empty',
   headerCls: 'qrp_arrStdHri'
 };
