@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createClassName, COMMON_CLASSES } from 'common/';
+import { LoadingSpinner } from '../../components'
 import { CLASSES } from './constants';
 import './style.css';
 
@@ -38,7 +39,7 @@ class VerticalArray extends React.PureComponent{
   }
 
   render(){
-    const { headers, childConstructor, itemCountTitle, filterPlaceholder } = this.props;
+    const { headers, childConstructor, itemCountTitle, filterPlaceholder, isLoading } = this.props;
     const filteredChildren = this.filterChildren(),
       ref = JSON.stringify(headers);
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
@@ -55,8 +56,8 @@ class VerticalArray extends React.PureComponent{
             <tr>{headers.map((h, i) => <th key={i} className={h.className}>{h.name}</th>)}</tr>
           </thead>
           <tbody className={createClassName(CLASSES.tbody ,COMMON_CLASSES.overflowY)}>
-            {filteredChildren.length !== 0 ? filteredChildren.map( (val, i) => childConstructor(val, i) ) : 
-              <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>}
+            { ( !isLoading ? (filteredChildren.length !== 0 ? filteredChildren.map( (val, i) => childConstructor(val, i) ) : 
+              <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>) : <tr><td colSpan={headers.length}><LoadingSpinner/></td></tr>) }
           </tbody>
         </table>
       </div>
@@ -69,6 +70,7 @@ VerticalArray.propTypes = {
   itemCountTitle: PropTypes.string.isRequired,
   filterPlaceholder: PropTypes.string.isRequired,
   children: PropTypes.array,
+  isLoading: PropTypes.bool.isRequired,
   childConstructor: PropTypes.func.isRequired
 };
 

@@ -2,7 +2,7 @@ import * as ACTIONTYPE from './cmp-actions-type';
 import { fetchCompareExtensionVersions } from './cmp-resources';
 import { cmpQueryBuilder } from './cmp-lib';
 
-export const isFetching = ( query ) => {
+const isFetching = ( query ) => {
   return {
     type: ACTIONTYPE.CMP_FETCH_COMPARISON_DATA,
     payload: {
@@ -44,6 +44,21 @@ const setComparisonData = ( data ) => {
   };
 };
 
+export const setSelected = ( itemRef ) => {
+  return {
+    type: ACTIONTYPE.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST,
+    payload: {
+      itemRef
+    }
+  };
+};
+
+export const clearCompareList = () => {
+  return {
+    type: ACTIONTYPE.CMP_CLEAR_COMPARE_LIST
+  };
+};
+
 const onCompareError = ( err ) => {
   return {
     type: ACTIONTYPE.CMP_ERROR_ON_COMPARE,
@@ -59,7 +74,6 @@ export const fetchExtensionComparisonData = ( extensionName, version1, version2 
     dispatch(isFetching(query));
     return fetchCompareExtensionVersions( query ).then(
       data => dispatch(setComparisonData(data)),
-      err => dispatch(onCompareError(err))
-    );
+      err => dispatch(onCompareError(err)));
   };
 };

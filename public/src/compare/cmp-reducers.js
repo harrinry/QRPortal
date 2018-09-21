@@ -65,6 +65,26 @@ const compareReducers = (state = initialState, action) => {
         err: {}
       }
     };
+  case ACTIONTYPES.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST:
+    return {
+      ...state,
+      data: state.data.map( i => {
+        if (i.id === action.payload.itemRef) {
+          return {
+            ...i,
+            selected: true
+          };
+        }
+        return {
+          ...i,
+          selected: false
+        };
+      })
+    };
+  case ACTIONTYPES.CMP_CLEAR_COMPARE_LIST:
+    return {
+      ...initialState
+    };
   case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
     return {
       ...state,

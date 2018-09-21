@@ -21,3 +21,10 @@ export const compareValueKeys = {
   version: 'parent',
   critical: 'critical'
 };
+
+export const CLASSES = {
+  idCell: 'qrp_cmptrCid',
+  nameCell: 'qrp_cmptrCname',
+  versionCell: 'qrp_cmptrCVersion',
+  critical: 'qrp_cmptrCCrit'
+};

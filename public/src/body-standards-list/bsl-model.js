@@ -7,14 +7,15 @@ import './style.css';
 
 const StandardsListArray = ( props ) => {
   return(
-    <VerticalArray childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={STANDARDS} onEmpty={NOSTANDARDS} headers={[HEADER]} compare={compareFunction}>
+    <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={STANDARDS} onEmpty={NOSTANDARDS} headers={[HEADER]} compare={compareFunction}>
       {props.data}
     </VerticalArray>);
 };
 
 StandardsListArray.propTypes = {
   data: PropTypes.array.isRequired,
-  arrayChildConstructor: PropTypes.func.isRequired
+  arrayChildConstructor: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 export default StandardsListArray;

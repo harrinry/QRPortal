@@ -6,13 +6,12 @@ import { PathElement } from 'components/';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import { DropdownCompare } from 'components/';
 import './style.css';
-//!!!!!! CLEAN UP TEMPORARY FETCH FUNCTION !!!!!!!!!!!!!!!!!!!!!!! //
 const NavHeader = ( props ) =>{
   const pl = props.path ? props.path.length : undefined;
   return (
     <div className={createClassName(CLASSES.headerMain, (props.viewType === VIEW_TYPES.MENU_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <div className={CLASSES.pathContainer}>
-        { props.searchVisible ? <PathElement rules={props.rules} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
+        { props.searchVisible ? <PathElement rules={props.rules} showIcon={false} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
           props.path.map((e, index, arr) => {
             if ( Array.isArray(e) ) {
               return <DropdownCompare key={index} list={e} stateEnabled={false} compareEnabled={props.compareEnabled} onItemSelect={props.selectorChange} toggleCompare={props.onToggleCompare} onCompare={(v1, v2) => props.onCompare(arr[1].id, v1.name, v2.name)}/> ;

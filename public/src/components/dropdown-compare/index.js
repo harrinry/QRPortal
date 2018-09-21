@@ -26,9 +26,9 @@ export default class DropdownCompare extends React.PureComponent {
     if( !this.props.stateEnabled && this.props.toggleCompare ) this.props.toggleCompare(this.props.compareEnabled);
   }
 
-  handleDropdownChange( item ){
-    if(this.state.comparing) this.props.onCompare(this.state.first, this.state.second);
-    else this.props.onItemSelect(item);
+  handleDropdownChange( first, second ){
+    if(this.state.comparing) this.props.onCompare(first, second);
+    else this.props.onItemSelect(first);
   }
 
   firstListChanged( item ){
@@ -38,7 +38,7 @@ export default class DropdownCompare extends React.PureComponent {
         first: item
       };
     });
-    this.handleDropdownChange(item);
+    this.handleDropdownChange(item, this.state.second);
   }
 
   secondListChanged( item ){
@@ -48,7 +48,7 @@ export default class DropdownCompare extends React.PureComponent {
         second: item
       };
     });
-    this.handleDropdownChange(item);
+    this.handleDropdownChange(this.state.first, item);
   }
 
   render(){

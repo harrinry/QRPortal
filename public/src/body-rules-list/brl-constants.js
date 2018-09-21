@@ -19,3 +19,9 @@ export const RESOURCES = {
   sources: 'rules/extensions.json',
   ext_rules: '/quality-rules'
 };
+
+export const CLASSES = {
+  idCell: 'qrp_brl_tbCrid',
+  nameCell: 'qrp_brl_tbCrname',
+  critical: 'qrp_brl_tbCrCriti'
+};

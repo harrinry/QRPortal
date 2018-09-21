@@ -155,7 +155,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_arrRlsHid{ min-width: 81px; padding-left: 20px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 70px; margin-right: 16px;}\r\n\r\n.test-rules-list-row1{ min-width: 73px;padding-left: 20px;}\r\n.test-rules-list-row2{width:100%}\r\n", ""]);
+exports.push([module.i, ".qrp_arrRlsHid{ min-width: 81px; padding-left: 20px;}\r\n.qrp_arrRlsHname{width: 100%;}\r\n.qrp_arrRlsHcrit{ min-width: 70px; margin-right: 16px;}\r\n\r\n.qrp_brl_tbCrid{ min-width: 73px;padding-left: 20px;}\r\n.qrp_brl_tbCrname{width:100%}\r\n", ""]);
 
 // exports
 
@@ -174,7 +174,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_arrStdHri{ font-weight: 600; padding-left: 20px;}\r\n.test-std-list-row1{padding-left: 20px;}\r\n.qrp_std_list_empty{color: #ddd !important;}\r\n", ""]);
+exports.push([module.i, ".qrp_arrStdHri{ font-weight: 600; padding-left: 20px;}\r\n.qrp_std_list_row{padding-left: 20px;}\r\n.qrp_std_list_empty{color: #ddd !important;}\r\n", ""]);
 
 // exports
 
@@ -232,6 +232,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "body {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  background-color: #fff;\r\n  width: 100%;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n}\r\n\r\n.hidden{display: none;}\r\n.blk{display: block;}\r\n.iln{display: inline;}\r\n.fixed{position: fixed;}\r\n\r\n.flxr{display: flex; flex-direction: row}\r\n.flxc{display: flex; flex-direction: column}\r\n.flxShnk1{ flex-shrink: 1}\r\n.flxShnk4{ flex-shrink: 4}\r\n.flxGrw1{ flex-grow: 1}\r\n\r\n.std-bgc{background-color: #fff;}\r\n.jsb{ justify-content: space-between;}\r\n.minh50p{ min-height: 50px }\r\n.ovfy{ overflow-x: hidden; overflow-y: auto;}\r\n/* .ovfy::-webkit-scrollbar{ width: 5px}\r\n.ovfy::-webkit-scrollbar-thumb{ border-radius: 10px; background: #666;}\r\n.ovfy::-webkit-scrollbar-track { background: #ddd; } */\r\n.vh100{ height: 100vh; }\r\n.txtcenter{ text-align: center}\r\n.fright{ float: right;}\r\n.fleft{ float: left;}\r\n.marginAuto{ margin: auto }\r\n.qrp_fw800{ font-weight: 800;}\r\n.qrp_fw400{ font-weight: 400;}\r\n.qrp_w100{ width: 100% }\r\n.qrp_critical{height: 16px; width: 16px; border-radius: 16px; background-color:  #CB7474; background-size: 16px; display: block !important; margin-top: 16px; margin-right: 16px; padding: 0;}\r\n.qrp_arrlci{ cursor: pointer; padding-left: 10px;}\r\n.qrp_arrlci:hover{ background-color: rgba(0,0,0,0.05);}\r\n.qrp_srico{ cursor: pointer; color: black; padding-right: 16px; background: url(\"/img/search.svg\") no-repeat center center; background-size: 16px; height:48px; display: inline-block; float: right; margin-right: 15px;}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./public/src/compare/style.css":
+/*!****************************************************************!*\
+  !*** ./node_modules/css-loader!./public/src/compare/style.css ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -24992,6 +25011,12 @@ var RESOURCES = exports.RESOURCES = {
   ext_rules: '/quality-rules'
 };
 
+var CLASSES = exports.CLASSES = {
+  idCell: 'qrp_brl_tbCrid',
+  nameCell: 'qrp_brl_tbCrname',
+  critical: 'qrp_brl_tbCrCriti'
+};
+
 /***/ }),
 
 /***/ "./public/src/body-rules-list/brl-lib.js":
@@ -25035,17 +25060,17 @@ var childConstructor = exports.childConstructor = function childConstructor(valu
     { key: index, onClick: callback, className: (0, _common.createClassName)(_common.COMMON_CLASSES.arrayChildElement, values.selected ? _common.COMMON_CLASSES.arraySelected : undefined) },
     _react2.default.createElement(
       'td',
-      { className: 'test-rules-list-row1' },
+      { className: _brlConstants.CLASSES.idCell },
       values.id
     ),
     _react2.default.createElement(
       'td',
-      { className: 'test-rules-list-row2' },
+      { className: _brlConstants.CLASSES.nameCell },
       values.name
     ),
     _react2.default.createElement(
       'td',
-      { className: (0, _common.createClassName)('test-rules-list-row3', values.critical ? _common.COMMON_CLASSES.critical : undefined) },
+      { className: (0, _common.createClassName)(_brlConstants.CLASSES.critical, values.critical ? _common.COMMON_CLASSES.critical : undefined) },
       ' '
     )
   );
@@ -25088,7 +25113,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var RulesListArray = function RulesListArray(props) {
   return _react2.default.createElement(
     _array2.default,
-    { childConstructor: props.arrayChildConstructor, filterPlaceholder: _brlConstants.FILTERPLACEHOLDER, itemCountTitle: _brlConstants.RULES, onEmpty: _brlConstants.NORULES, headers: [_brlConstants.HEADERS.id, _brlConstants.HEADERS.name, _brlConstants.HEADERS.critical], compare: _brlLib.compareFunction },
+    { isLoading: props.loading, childConstructor: props.arrayChildConstructor, filterPlaceholder: _brlConstants.FILTERPLACEHOLDER, itemCountTitle: _brlConstants.RULES, onEmpty: _brlConstants.NORULES, headers: [_brlConstants.HEADERS.id, _brlConstants.HEADERS.name, _brlConstants.HEADERS.critical], compare: _brlLib.compareFunction },
     props.searchVisible ? props.searchResults.length === 0 ? [] : props.searchResults : props.data
   );
 };
@@ -25097,7 +25122,8 @@ RulesListArray.propTypes = {
   searchVisible: _propTypes2.default.bool.isRequired,
   searchResults: _propTypes2.default.array.isRequired,
   data: _propTypes2.default.array.isRequired,
-  arrayChildConstructor: _propTypes2.default.func.isRequired
+  arrayChildConstructor: _propTypes2.default.func.isRequired,
+  loading: _propTypes2.default.bool.isRequired
 };
 
 exports.default = RulesListArray;
@@ -25257,7 +25283,8 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     data: state.rulesList.data,
     searchVisible: state.search.resultsVisible,
-    searchResults: state.search.results
+    searchResults: state.search.results,
+    loading: state.rulesList.loading
   };
 };
 
@@ -25403,7 +25430,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var CLASSES = exports.CLASSES = {
-  standardsRow: 'test-std-list-row1',
+  standardsRow: 'qrp_std_list_row',
   emptyContent: 'qrp_std_list_empty',
   headerCls: 'qrp_arrStdHri'
 };
@@ -25505,14 +25532,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var StandardsListArray = function StandardsListArray(props) {
   return _react2.default.createElement(
     _array2.default,
-    { childConstructor: props.arrayChildConstructor, filterPlaceholder: _bslConstants.FILTERPLACEHOLDER, itemCountTitle: _bslConstants.STANDARDS, onEmpty: _bslConstants.NOSTANDARDS, headers: [_bslConstants.HEADER], compare: _bslLib.compareFunction },
+    { isLoading: props.loading, childConstructor: props.arrayChildConstructor, filterPlaceholder: _bslConstants.FILTERPLACEHOLDER, itemCountTitle: _bslConstants.STANDARDS, onEmpty: _bslConstants.NOSTANDARDS, headers: [_bslConstants.HEADER], compare: _bslLib.compareFunction },
     props.data
   );
 };
 
 StandardsListArray.propTypes = {
   data: _propTypes2.default.array.isRequired,
-  arrayChildConstructor: _propTypes2.default.func.isRequired
+  arrayChildConstructor: _propTypes2.default.func.isRequired,
+  loading: _propTypes2.default.bool.isRequired
 };
 
 exports.default = StandardsListArray;
@@ -25632,7 +25660,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    data: state.standards.data
+    data: state.standards.data,
+    loading: state.standards.loading
   };
 };
 
@@ -25921,6 +25950,10 @@ var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
 
 var _bodyConstants = __webpack_require__(/*! ./body-constants */ "./public/src/body/body-constants.js");
@@ -25947,6 +25980,10 @@ var _bodyLandingPage = __webpack_require__(/*! body-landing-page */ "./public/sr
 
 var _bodyLandingPage2 = _interopRequireDefault(_bodyLandingPage);
 
+var _compare = __webpack_require__(/*! compare/ */ "./public/src/compare/index.js");
+
+var _compare2 = _interopRequireDefault(_compare);
+
 __webpack_require__(/*! ./style.css */ "./public/src/body/style.css");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25967,7 +26004,7 @@ var ContentBody = function ContentBody(props) {
         'div',
         { className: _bodyConstants.CLASSES.listArea },
         props.listCount === 2 && !props.searchVisible ? _react2.default.createElement(_bodyStandardsList2.default, null) : undefined,
-        _react2.default.createElement(_bodyRulesList2.default, null)
+        props.isComparing ? _react2.default.createElement(_compare2.default, null) : _react2.default.createElement(_bodyRulesList2.default, null)
       ),
       _react2.default.createElement(
         'div',
@@ -25976,6 +26013,14 @@ var ContentBody = function ContentBody(props) {
       )
     )
   );
+};
+
+ContentBody.propTypes = {
+  view: _propTypes2.default.string.isRequired,
+  listCount: _propTypes2.default.number.isRequired,
+  viewType: _propTypes2.default.string.isRequired,
+  searchVisible: _propTypes2.default.bool.isRequired,
+  isComparing: _propTypes2.default.bool.isRequired
 };
 
 exports.default = ContentBody;
@@ -26067,11 +26112,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     view: state.contentBody.view,
-    navigation: state.contentBody.nav,
     listCount: state.contentBody.listCount,
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
-    searchResults: state.search.results
+    isComparing: state.compare.isComparing
   };
 };
 
@@ -26431,6 +26475,9 @@ var CMP_HIDE_COMPARISON_DATA = exports.CMP_HIDE_COMPARISON_DATA = 'CMP_HIDE_COMP
 var CMP_ENABLE_COMPARING = exports.CMP_ENABLE_COMPARING = 'CMP_ENABLE_COMPARING';
 var CMP_DISABLE_COMPARING = exports.CMP_DISABLE_COMPARING = 'CMP_DISABLE_COMPARING';
 
+var CMP_SET_SELECTED_RULE_IN_COMPARE_LIST = exports.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST = 'CMP_SET_SELECTED_RULE_IN_COMPARE_LIST';
+var CMP_CLEAR_COMPARE_LIST = exports.CMP_CLEAR_COMPARE_LIST = 'CMP_CLEAR_COMPARE_LIST';
+
 /***/ }),
 
 /***/ "./public/src/compare/cmp-actions.js":
@@ -26446,7 +26493,7 @@ var CMP_DISABLE_COMPARING = exports.CMP_DISABLE_COMPARING = 'CMP_DISABLE_COMPARI
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchExtensionComparisonData = exports.disableComparing = exports.enableComparing = exports.hideComparisonTable = exports.showComparisonTable = exports.isFetching = undefined;
+exports.fetchExtensionComparisonData = exports.clearCompareList = exports.setSelected = exports.disableComparing = exports.enableComparing = exports.hideComparisonTable = exports.showComparisonTable = undefined;
 
 var _cmpActionsType = __webpack_require__(/*! ./cmp-actions-type */ "./public/src/compare/cmp-actions-type.js");
 
@@ -26458,7 +26505,7 @@ var _cmpLib = __webpack_require__(/*! ./cmp-lib */ "./public/src/compare/cmp-lib
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-var isFetching = exports.isFetching = function isFetching(query) {
+var isFetching = function isFetching(query) {
   return {
     type: ACTIONTYPE.CMP_FETCH_COMPARISON_DATA,
     payload: {
@@ -26497,6 +26544,21 @@ var setComparisonData = function setComparisonData(data) {
     payload: {
       data: data
     }
+  };
+};
+
+var setSelected = exports.setSelected = function setSelected(itemRef) {
+  return {
+    type: ACTIONTYPE.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST,
+    payload: {
+      itemRef: itemRef
+    }
+  };
+};
+
+var clearCompareList = exports.clearCompareList = function clearCompareList() {
+  return {
+    type: ACTIONTYPE.CMP_CLEAR_COMPARE_LIST
   };
 };
 
@@ -26560,6 +26622,13 @@ var compareValueKeys = exports.compareValueKeys = {
   critical: 'critical'
 };
 
+var CLASSES = exports.CLASSES = {
+  idCell: 'qrp_cmptrCid',
+  nameCell: 'qrp_cmptrCname',
+  versionCell: 'qrp_cmptrCVersion',
+  critical: 'qrp_cmptrCCrit'
+};
+
 /***/ }),
 
 /***/ "./public/src/compare/cmp-lib.js":
@@ -26577,13 +26646,46 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.compareFunction = exports.arrayChildConstructor = exports.cmpQueryBuilder = undefined;
 
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
 var _cmpConstants = __webpack_require__(/*! ./cmp-constants */ "./public/src/compare/cmp-constants.js");
+
+var _common = __webpack_require__(/*! common */ "./public/src/common/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var cmpQueryBuilder = exports.cmpQueryBuilder = function cmpQueryBuilder(extID, ver1, ver2) {
   return '' + _cmpConstants.comparePrefix + _cmpConstants.SECTIONS.extensions + '/' + extID + '/' + ver1 + '/' + ver2;
 };
 
-var arrayChildConstructor = exports.arrayChildConstructor = function arrayChildConstructor(config) {};
+var arrayChildConstructor = exports.arrayChildConstructor = function arrayChildConstructor(values, index, callback) {
+  return _react2.default.createElement(
+    'tr',
+    { key: index, onClick: callback, className: (0, _common.createClassName)(_common.COMMON_CLASSES.arrayChildElement, values.selected ? _common.COMMON_CLASSES.arraySelected : undefined) },
+    _react2.default.createElement(
+      'td',
+      { className: _cmpConstants.CLASSES.idCell },
+      values.id
+    ),
+    _react2.default.createElement(
+      'td',
+      { className: _cmpConstants.CLASSES.nameCell },
+      values.name
+    ),
+    _react2.default.createElement(
+      'td',
+      { className: _cmpConstants.CLASSES.versionCell },
+      values.label
+    ),
+    _react2.default.createElement(
+      'td',
+      { className: (0, _common.createClassName)(_cmpConstants.CLASSES.critical, values.critical ? _common.COMMON_CLASSES.critical : undefined) },
+      ' '
+    )
+  );
+};
 
 var compareFunction = exports.compareFunction = function compareFunction(textValue, obj) {
   var reg = void 0;
@@ -26594,6 +26696,56 @@ var compareFunction = exports.compareFunction = function compareFunction(textVal
   }
   return reg.test(obj[_cmpConstants.compareValueKeys.id]) || reg.test(obj[_cmpConstants.compareValueKeys.version]) || reg.test(obj[_cmpConstants.compareValueKeys.name]) || (textValue.toLowerCase() === _cmpConstants.compareValueKeys.critical ? obj.critical : false) ? true : false;
 };
+
+/***/ }),
+
+/***/ "./public/src/compare/cmp-model.js":
+/*!*****************************************!*\
+  !*** ./public/src/compare/cmp-model.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _components = __webpack_require__(/*! components/ */ "./public/src/components/index.js");
+
+var _cmpLib = __webpack_require__(/*! ./cmp-lib */ "./public/src/compare/cmp-lib.js");
+
+var _cmpConstants = __webpack_require__(/*! ./cmp-constants */ "./public/src/compare/cmp-constants.js");
+
+__webpack_require__(/*! ./style.css */ "./public/src/compare/style.css");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var CompareListArray = function CompareListArray(props) {
+  return _react2.default.createElement(
+    _components.VerticalArray,
+    { isLoading: props.loading, childConstructor: props.arrayChildConstructor, filterPlaceholder: _cmpConstants.FILTERPLACEHOLDER, itemCountTitle: _cmpConstants.RULES, onEmpty: _cmpConstants.NORULES, headers: [_cmpConstants.HEADERS.id, _cmpConstants.HEADERS.name, _cmpConstants.HEADERS.version, _cmpConstants.HEADERS.critical], compare: _cmpLib.compareFunction },
+    props.data
+  );
+};
+
+CompareListArray.propTypes = {
+  data: _propTypes2.default.array.isRequired,
+  arrayChildConstructor: _propTypes2.default.func.isRequired,
+  loading: _propTypes2.default.bool.isRequired
+};
+
+exports.default = CompareListArray;
 
 /***/ }),
 
@@ -26677,6 +26829,21 @@ var compareReducers = function compareReducers() {
           err: {}
         }
       });
+    case ACTIONTYPES.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST:
+      return _extends({}, state, {
+        data: state.data.map(function (i) {
+          if (i.id === action.payload.itemRef) {
+            return _extends({}, i, {
+              selected: true
+            });
+          }
+          return _extends({}, i, {
+            selected: false
+          });
+        })
+      });
+    case ACTIONTYPES.CMP_CLEAR_COMPARE_LIST:
+      return _extends({}, initialState);
     case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
       return _extends({}, state, {
         data: [],
@@ -26715,6 +26882,88 @@ var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js")
 var fetchCompareExtensionVersions = exports.fetchCompareExtensionVersions = function fetchCompareExtensionVersions(query) {
   return (0, _common.webFetch)(query);
 };
+
+/***/ }),
+
+/***/ "./public/src/compare/index.js":
+/*!*************************************!*\
+  !*** ./public/src/compare/index.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _cmpModel = __webpack_require__(/*! ./cmp-model */ "./public/src/compare/cmp-model.js");
+
+var _cmpModel2 = _interopRequireDefault(_cmpModel);
+
+var _cmpLib = __webpack_require__(/*! ./cmp-lib */ "./public/src/compare/cmp-lib.js");
+
+var _dsActions = __webpack_require__(/*! ../details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
+
+var _cmpActions = __webpack_require__(/*! ./cmp-actions */ "./public/src/compare/cmp-actions.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    loading: state.compare.loading,
+    data: state.compare.data
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    arrayChildConstructor: function arrayChildConstructor(values, index) {
+      return (0, _cmpLib.arrayChildConstructor)(values, index, function () {
+        if (!values.selected) {
+          dispatch((0, _cmpActions.setSelected)(values.id));
+          dispatch((0, _dsActions.fetchDetailsData)(values.href));
+        }
+      });
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_cmpModel2.default);
+
+/***/ }),
+
+/***/ "./public/src/compare/style.css":
+/*!**************************************!*\
+  !*** ./public/src/compare/style.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!./style.css */ "./node_modules/css-loader/index.js!./public/src/compare/style.css");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
@@ -26769,6 +27018,8 @@ var _propTypes = __webpack_require__(/*! prop-types */ "./node_modules/prop-type
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+var _components = __webpack_require__(/*! ../../components */ "./public/src/components/index.js");
 
 var _constants = __webpack_require__(/*! ./constants */ "./public/src/components/array/constants.js");
 
@@ -26834,7 +27085,8 @@ var VerticalArray = function (_React$PureComponent) {
           headers = _props.headers,
           childConstructor = _props.childConstructor,
           itemCountTitle = _props.itemCountTitle,
-          filterPlaceholder = _props.filterPlaceholder;
+          filterPlaceholder = _props.filterPlaceholder,
+          isLoading = _props.isLoading;
 
       var filteredChildren = this.filterChildren(),
           ref = JSON.stringify(headers);
@@ -26882,7 +27134,7 @@ var VerticalArray = function (_React$PureComponent) {
             _react2.default.createElement(
               'tbody',
               { className: (0, _common.createClassName)(_constants.CLASSES.tbody, _common.COMMON_CLASSES.overflowY) },
-              filteredChildren.length !== 0 ? filteredChildren.map(function (val, i) {
+              !isLoading ? filteredChildren.length !== 0 ? filteredChildren.map(function (val, i) {
                 return childConstructor(val, i);
               }) : _react2.default.createElement(
                 'tr',
@@ -26891,6 +27143,14 @@ var VerticalArray = function (_React$PureComponent) {
                   'td',
                   { colSpan: headers.length },
                   this.props.onEmpty
+                )
+              ) : _react2.default.createElement(
+                'tr',
+                null,
+                _react2.default.createElement(
+                  'td',
+                  { colSpan: headers.length },
+                  _react2.default.createElement(_components.LoadingSpinner, null)
                 )
               )
             )
@@ -26908,6 +27168,7 @@ VerticalArray.propTypes = {
   itemCountTitle: _propTypes2.default.string.isRequired,
   filterPlaceholder: _propTypes2.default.string.isRequired,
   children: _propTypes2.default.array,
+  isLoading: _propTypes2.default.bool.isRequired,
   childConstructor: _propTypes2.default.func.isRequired
 };
 
@@ -27170,8 +27431,8 @@ var DropdownCompare = function (_React$PureComponent) {
     }
   }, {
     key: 'handleDropdownChange',
-    value: function handleDropdownChange(item) {
-      if (this.state.comparing) this.props.onCompare(this.state.first, this.state.second);else this.props.onItemSelect(item);
+    value: function handleDropdownChange(first, second) {
+      if (this.state.comparing) this.props.onCompare(first, second);else this.props.onItemSelect(first);
     }
   }, {
     key: 'firstListChanged',
@@ -27181,7 +27442,7 @@ var DropdownCompare = function (_React$PureComponent) {
           first: item
         });
       });
-      this.handleDropdownChange(item);
+      this.handleDropdownChange(item, this.state.second);
     }
   }, {
     key: 'secondListChanged',
@@ -27191,7 +27452,7 @@ var DropdownCompare = function (_React$PureComponent) {
           second: item
         });
       });
-      this.handleDropdownChange(item);
+      this.handleDropdownChange(this.state.first, item);
     }
   }, {
     key: 'render',
@@ -28740,6 +29001,7 @@ var HIDE_QUALITY_RULES_SEARCH_RESULTS = exports.HIDE_QUALITY_RULES_SEARCH_RESULT
 var ERROR_WHILE_FETCHING_SEARCH_RESULTS = exports.ERROR_WHILE_FETCHING_SEARCH_RESULTS = 'ERROR_WHILE_FETCHING_SEARCH_RESULTS';
 var SET_SELECTED_SEARCH_RESULT = exports.SET_SELECTED_SEARCH_RESULT = 'SET_SELECTED_SEARCH_RESULT';
 var CLEAR_SEARCH_RESULTS = exports.CLEAR_SEARCH_RESULTS = 'CLEAR_SEARCH_RESULTS';
+var SET_QUERY_ON_SEARCH_INITIALIZATION = exports.SET_QUERY_ON_SEARCH_INITIALIZATION = 'SET_QUERY_ON_SEARCH_INITIALIZATION';
 
 /***/ }),
 
@@ -28764,6 +29026,15 @@ var _gsActionsType = __webpack_require__(/*! ./gs-actions-type */ "./public/src/
 
 var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
+var startFetching = function startFetching(query) {
+  return {
+    type: _gsActionsType.SET_QUERY_ON_SEARCH_INITIALIZATION,
+    payload: {
+      query: query
+    }
+  };
+};
+
 var setSelectedSearchResult = exports.setSelectedSearchResult = function setSelectedSearchResult(itemRef) {
   return {
     type: _gsActionsType.SET_SELECTED_SEARCH_RESULT,
@@ -28773,22 +29044,20 @@ var setSelectedSearchResult = exports.setSelectedSearchResult = function setSele
   };
 };
 
-var setSearchResults = function setSearchResults(data, query) {
+var setSearchResults = function setSearchResults(data) {
   return {
     type: _gsActionsType.SET_QUALITY_RULES_SEARCH_RESULTS,
     payload: {
-      results: data,
-      query: query
+      results: data
     }
   };
 };
 
-var errorHandler = function errorHandler(err, query) {
+var errorHandler = function errorHandler(err) {
   return {
     type: _gsActionsType.ERROR_WHILE_FETCHING_SEARCH_RESULTS,
     payload: {
-      error: err,
-      query: query
+      err: err
     }
   };
 };
@@ -28796,10 +29065,12 @@ var errorHandler = function errorHandler(err, query) {
 var fetchSearchResults = exports.fetchSearchResults = function fetchSearchResults(query) {
   return function (dispatch) {
     dispatch((0, _brlActions.setFetchingState)());
+    dispatch(startFetching(query));
+    dispatch(displaySearchResults());
     return (0, _gsResources.FETCHSEARCHRESULTS)(query).then(function (data) {
-      return dispatch(setSearchResults(data, query));
+      return dispatch(setSearchResults(data));
     }, function (err) {
-      return dispatch(errorHandler(err, query));
+      return dispatch(errorHandler(err));
     });
   };
 };
@@ -28839,6 +29110,11 @@ var CLASSES = exports.CLASSES = {
 var TEXTINPUT = exports.TEXTINPUT = 'text';
 var INPUTREF = exports.INPUTREF = 'gs-searchInput';
 var ENTER = exports.ENTER = 'Enter';
+
+var errorObject = exports.errorObject = {
+  name: 'An error has occured while attempting to fetch the search results, please try again.',
+  critical: true
+};
 
 /***/ }),
 
@@ -28936,6 +29212,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _gsActionsType = __webpack_require__(/*! ./gs-actions-type */ "./public/src/global-search/gs-actions-type.js");
 
+var _gsConstants = __webpack_require__(/*! ./gs-constants */ "./public/src/global-search/gs-constants.js");
+
 var initialState = {
   resultsVisible: false,
   results: [],
@@ -28947,10 +29225,13 @@ var globalSearchReducer = function globalSearchReducer() {
   var action = arguments[1];
 
   switch (action.type) {
+    case _gsActionsType.SET_QUERY_ON_SEARCH_INITIALIZATION:
+      return _extends({}, state, {
+        query: action.payload.query
+      });
     case _gsActionsType.SET_QUALITY_RULES_SEARCH_RESULTS:
       return _extends({}, state, {
-        results: action.payload.results,
-        query: action.payload.query
+        results: action.payload.results
       });
     case _gsActionsType.DISPLAY_QUALITY_RULES_SEARCH_RESULTS:
       return _extends({}, state, {
@@ -28977,6 +29258,13 @@ var globalSearchReducer = function globalSearchReducer() {
             selected: false
           });
         })
+      });
+    case _gsActionsType.ERROR_WHILE_FETCHING_SEARCH_RESULTS:
+      return _extends({}, state, {
+        loading: false,
+        results: [_extends({}, _gsConstants.errorObject, {
+          id: action.payload.err.statusCode
+        })]
       });
     default:
       return state;
@@ -29058,7 +29346,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchSearchResults: function fetchSearchResults(query) {
       dispatch(bodyActions.showContentView());
       dispatch(actions.fetchSearchResults(query));
-      dispatch(actions.displaySearchResults());
       dispatch((0, _dsActions.clearDetailsData)());
     }
   };
@@ -30451,7 +30738,6 @@ __webpack_require__(/*! ./style.css */ "./public/src/path-navigation/style.css")
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//!!!!!! CLEAN UP TEMPORARY FETCH FUNCTION !!!!!!!!!!!!!!!!!!!!!!! //
 var NavHeader = function NavHeader(props) {
   var pl = props.path ? props.path.length : undefined;
   return _react2.default.createElement(
@@ -30460,7 +30746,7 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
+      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, showIcon: false, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
         if (Array.isArray(e)) {
           return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, stateEnabled: false, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
               return props.onCompare(arr[1].id, v1.name, v2.name);

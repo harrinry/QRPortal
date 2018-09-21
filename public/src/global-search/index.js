@@ -16,7 +16,6 @@ const mapDispatchToProps = ( dispatch ) => {
     fetchSearchResults: ( query ) => {
       dispatch(bodyActions.showContentView());
       dispatch(actions.fetchSearchResults( query ));
-      dispatch(actions.displaySearchResults());
       dispatch(clearDetailsData());
     }
   };
