@@ -68,7 +68,8 @@ WebRouter.get('/quality-rules/:ruleID', ( req, res ) => {
 });
 
 WebRouter.get('/versions.json', (req, res) => {
-  res.sendFile(req.url, options, err => errorHandler(err, res));
+  if ( !extVersionMap ) extVersionMap = extensionsMap.readExtMap();
+  res.json( extVersionMap['AIP'] );
 });
 
 WebRouter.get('/versions/:aipVersion', (req, res) => {

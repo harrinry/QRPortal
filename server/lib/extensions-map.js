@@ -69,6 +69,15 @@ function INIT (){
       };
     });
   }
+  const AIPVersions = JSON.parse(fs.readFileSync(root.resolve('rest/AIP/versions.json')));
+  const mappedAipVersions = AIPVersions.map( v => {
+    return {
+      name: v.name,
+      href: v.href,
+      label: generateVersionLabel(v.name),
+    };
+  });
+  extVersionMap['AIP'] = mappedAipVersions;
   EXTMAP.write(JSON.stringify(extVersionMap, null, 2));
   EXTMAP.end(() => console.log('extensions-map created/updated'));
 }
