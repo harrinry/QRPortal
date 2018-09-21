@@ -6,17 +6,16 @@ import { PathElement } from 'components/';
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import { DropdownCompare } from 'components/';
 import './style.css';
-//!!!!!! CLEAN UP TEMPORARY FETCH FUNCTION !!!!!!!!!!!!!!!!!!!!!!! //
 const NavHeader = ( props ) =>{
   const pl = props.path ? props.path.length : undefined;
   return (
     <div className={createClassName(CLASSES.headerMain, (props.viewType === VIEW_TYPES.MENU_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
       <div className={CLASSES.pathContainer}>
-        { props.searchVisible ? <PathElement rules={props.rules} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
+        { props.searchVisible ? <PathElement rules={props.rules} cmpSelected={props.cmpSelected} isComparing={props.compareEnabled} showIcon={false} path={props.path} separator={false} index={0} name={SEARCHFOR + props.searchQuery} closeBtn={true} onCloseBtnClick={props.closeSearchResults}/> :
           props.path.map((e, index, arr) => {
             if ( Array.isArray(e) ) {
-              return <DropdownCompare key={index} list={e} stateEnabled={false} compareEnabled={props.compareEnabled} onItemSelect={props.selectorChange} toggleCompare={props.onToggleCompare} onCompare={(v1, v2) => props.onCompare(arr[1].id, v1.name, v2.name)}/> ;
-            } else return (<PathElement key={index} separator={index !== pl - 1 && index !== 0} showIcon={index === 0} index={index} gotoLocation={props.gotoLocation} name={e.name} href={e.href} icon={e.icon}/>);
+              return <DropdownCompare key={index} list={e} params={[props.cmpParams.vi, props.cmpParams.vtc]} disableState={true} compareEnabled={props.compareEnabled} onItemSelect={props.selectorChange} toggleCompare={props.onToggleCompare} onCompare={(v1, v2) => props.onCompare(arr[1].id, v1, v2)}/> ;
+            } else return (<PathElement key={index} separator={index !== pl - 1 && index !== 0} showIcon={index === 0} index={index} gotoLocation={props.gotoLocation} name={e.label || e.name} href={e.href} icon={e.icon}/>);
           })}
       </div>
     </div>
@@ -26,7 +25,10 @@ const NavHeader = ( props ) =>{
 NavHeader.propTypes = {
   path: PropTypes.arrayOf(PropTypes.any),
   searchVisible: PropTypes.bool.isRequired,
-  searchQuery: PropTypes.string
+  searchQuery: PropTypes.string,
+  cmpParams: PropTypes.object.isRequired,
+  compareEnabled: PropTypes.bool.isRequired,
+  cmpSelected: PropTypes.any
 };
 
 export default NavHeader;

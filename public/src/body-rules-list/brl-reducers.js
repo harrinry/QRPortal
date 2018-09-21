@@ -1,4 +1,4 @@
-import { SET_LIST_DATA, FETCH_LIST_DATA, CLEAR_LIST_DATA, FAILED_TO_FETCH_LIST_DATA, SET_SELECTED_RULE_LIST_ITEM } from './brl-actions-type';
+import { SET_LIST_DATA, FETCH_LIST_DATA, CLEAR_LIST_DATA, FAILED_TO_FETCH_LIST_DATA, SET_SELECTED_RULE_LIST_ITEM, STOP_LIST_LOADING_STATE } from './brl-actions-type';
 
 const initialState = {
   data: [],
@@ -14,6 +14,11 @@ const RulesListReducers = (state = initialState, action) => {
       data: state.data,
       query: action.payload.query ? action.payload.query : state.query,
       loading: true
+    };
+  case STOP_LIST_LOADING_STATE:
+    return {
+      ...state,
+      loading: false
     };
   case SET_LIST_DATA: 
     return {
