@@ -27511,7 +27511,7 @@ var DropdownCompare = function (_React$PureComponent) {
           { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, isCompareEnabled ? _constants.CLASSES.isComparing : undefined) },
           _react2.default.createElement('img', { src: isCompareEnabled ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
         ),
-        this.state.comparing && stateEnabled || this.props.compareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: defaultIndex2 !== -1 ? defaultIndex2 : 0, onItemClick: this.secondListChanged }) : undefined
+        this.state.comparing && stateEnabled || this.props.compareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: defaultIndex2 !== -1 ? defaultIndex2 : 1, onItemClick: this.secondListChanged }) : undefined
       );
     }
   }]);
