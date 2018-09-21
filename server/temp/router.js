@@ -7,8 +7,6 @@ const template = require('./template');
 let tempRouter = express.Router();
 
 tempRouter.get(main, (req, res) => {
-  // const index = fs.readFileSync(path.resolve(options.root, 'index.html')).toString('utf8');
-
   const query = JSON.stringify(req.query);
   const base = 'base64';
   const queryCrypt = Buffer.from(query).toString(base);

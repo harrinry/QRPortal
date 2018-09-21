@@ -1,4 +1,4 @@
-import { FETCHSEARCHRESULTS } from './gs-resources';
+import { FETCHSEARCHRESULTS, fetchStandardsByTag } from './gs-resources';
 import { SET_QUALITY_RULES_SEARCH_RESULTS, 
   ERROR_WHILE_FETCHING_SEARCH_RESULTS, 
   CLEAR_SEARCH_RESULTS, 
@@ -50,6 +50,18 @@ export const fetchSearchResults = ( query ) => {
     dispatch(startFetching(query));
     dispatch(displaySearchResults());
     return FETCHSEARCHRESULTS(query).then(
+      data => dispatch(setSearchResults(data)),
+      err => dispatch(errorHandler(err))
+    ).then( () => dispatch(endLoadingState()) );
+  };
+};
+
+export const fetchQualityStandardsByTag = ( query ) => {
+  return function (dispatch) {
+    dispatch(setFetchingState());
+    dispatch(startFetching(query));
+    dispatch(displaySearchResults());
+    return fetchStandardsByTag(query).then(
       data => dispatch(setSearchResults(data)),
       err => dispatch(errorHandler(err))
     ).then( () => dispatch(endLoadingState()) );

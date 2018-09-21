@@ -4,11 +4,12 @@ import NavigationMenu from './mn-model';
 import * as ACTIONS from './mn-actions';
 import { showContentView, setListCount} from 'body/body-actions';
 import { fetchStandardsListData } from 'body-standards-list/bsl-actions';
-import { fetchWebData, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
+import { fetchWebData, fetchApiData, clearListData } from 'body-rules-list/brl-actions';
 import { setHeaderPath } from 'path-navigation/nv-actions';
 import { PATHS } from './mn-constants';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearDetailsData } from 'details-section/ds-actions';
+import { setParams } from '../compare/cmp-actions';
 // import { push } from 'connected-react-router';
 
 const mapStateToProps = (state) => {
@@ -95,7 +96,8 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(setListCount(1));
       dispatch(showContentView());
       dispatch(fetchWebData( version.href ));
-      dispatch(setHeaderPath( PATHS.extensions, {name: extension.name, href: extension.href, icon: extension.icon}, version));
+      dispatch(setHeaderPath( PATHS.extensions, {name: extension.name, href: extension.href, icon: extension.icon}, extension.versions));
+      dispatch(setParams(version));
       // dispatch(push(`/temp/rules/${PATHS.extensions.name}/${extension.name}/${version.name}`));
     },
     fetchVersion: ( exeCount, extension ) =>{

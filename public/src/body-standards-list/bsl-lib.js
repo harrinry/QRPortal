@@ -16,7 +16,11 @@ export const compareFunction = ( textValue, obj ) =>{
 export const childConstructor = ( values, index, callback ) => {
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
-      <td className={createClassName(CLASSES.standardsRow, values.count === 0 ? CLASSES.emptyContent : undefined)}>{values.id + ' - ' + values.name}</td>
+      <td className={createClassName(CLASSES.standardsRow, values.count === 0 ? CLASSES.emptyContent : undefined)}>
+        <div className={CLASSES.cellContainer}>
+          <div className={CLASSES.idCell}>{values.id}</div>
+          <div className={CLASSES.nameCell}>{values.name}</div>
+        </div></td>
     </tr>
   );
 };

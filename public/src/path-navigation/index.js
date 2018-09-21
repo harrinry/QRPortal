@@ -30,7 +30,7 @@ const mapDispatchToProps = ( dispatch ) => {
             if(props.cmpSelected) dispatch(fetchDetailsData(props.cmpSelected.href));
           }
           if( lastViewedRuleBeforeSearch ) {
-            dispatch( fetchDetailsData( lastViewedRuleBeforeSearch.href ) );
+            dispatch(fetchDetailsData( lastViewedRuleBeforeSearch.href ) );
           } else {
             dispatch(clearDetailsData());
           }

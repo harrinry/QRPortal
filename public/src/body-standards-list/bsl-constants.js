@@ -1,7 +1,10 @@
 export const CLASSES = {
   standardsRow:'qrp_std_list_row',
   emptyContent: 'qrp_std_list_empty',
-  headerCls: 'qrp_arrStdHri'
+  headerCls: 'qrp_arrStdHri',
+  cellContainer: 'qrp_std_c_Cntr',
+  idCell: 'qrp_std_c_id',
+  nameCell: 'qrp_std_c_name'
 };
 export const HEADER = {name: 'Standards Name', className: CLASSES.headerCls};
 export const NOSTANDARDS = 'No Standards found';

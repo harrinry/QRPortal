@@ -7,6 +7,7 @@ import { clearDetailsData } from '../details-section/ds-actions';
 import { fetchStandardsListData } from '../body-standards-list/bsl-actions';
 import { appendToHeaderPath } from '../path-navigation/nv-actions';
 import { SECTIONS } from './bn-constants';
+import { setSelectedItem } from '../menu-navigation/mn-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -45,6 +46,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(appendToHeaderPath(link));
       dispatch(clearDetailsData());
       dispatch(clearListData());
+      dispatch(setSelectedItem());
     }
   };
 };

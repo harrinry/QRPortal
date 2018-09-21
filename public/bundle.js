@@ -136,7 +136,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto; align-items: center; justify-content: center;}\r\n.qrp_bnt-container{margin-top: 80px;}\r\n", ""]);
+exports.push([module.i, ".qrp_bnico-container{ height: 150px; width: 150px; margin: auto; }\r\n.qrp_bn-container{flex-direction: column; display: flex;}\r\n.qrp_bnt{text-align: center; font-size: 30px; line-height: 30px; font-weight: 600; margin-bottom: 50px; margin-top: 20px;}\r\n.qrp_bnch-container{display: flex; flex-flow: wrap; margin: auto; align-items: center; justify-content: center;}\r\n\r\n", ""]);
 
 // exports
 
@@ -326,7 +326,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".qrp_Ctrn_drpd{user-select: none; cursor: pointer;}\r\n.qrp_dd_sel_item{ background:white }\r\n.qrp_dd_sel_mItem{}\r\n.qrp_drde_trg{height: 50px; line-height: 50px; font-size: 20px; line-height: 50px; background-color: #F2F2F2; margin-top: 20px; border-radius: 2px;padding: 0 16px;}\r\n.qrp_drde_trg:hover{background-color: #E5E5E5}\r\n.qrp_dd_sel_mItem::after{content: \"\"; width: 0; height: 0;border-style: solid; border-width: 10px 5px 0 5px; border-color: #000000 transparent transparent transparent; display: inline-block; margin-left: 10px; vertical-align: middle;}\r\n.qrp_drde_menu{ background-color: #F2F2F2;-webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); max-height: calc(100vh - 90px); overflow-y:auto;}\r\n.qrp_dd_sel_item{height: 50px; line-height: 50px; font-size: 20px; padding: 0 20px 0 16px; text-align: left; background-color: #F2F2F2; white-space: -moz-pre-space;}\r\n.qrp_dd_sel_item:hover{background-color: #E5E5E5}\r\n", ""]);
+exports.push([module.i, ".qrp_Ctrn_drpd{user-select: none; cursor: pointer;}\r\n.qrp_dd_sel_item{ background:white }\r\n.qrp_dd_sel_mItem{}\r\n.qrp_drde_trg{height: 50px; line-height: 50px; font-size: 20px; line-height: 50px; background-color: #F2F2F2; margin-top: 20px; border-radius: 2px;padding: 0 16px;}\r\n.qrp_drde_trg:hover{background-color: #E5E5E5}\r\n.qrp_dd_sel_mItem::after{content: \"\"; width: 0; height: 0;border-style: solid; border-width: 10px 5px 0 5px; border-color: #000000 transparent transparent transparent; display: inline-block; margin-left: 10px; vertical-align: middle;}\r\n.qrp_drde_menu{ background-color: #F2F2F2;-webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3); max-height: calc(100vh - 90px); overflow-y:auto;}\r\n.qrp_dd_sel_item{height: 50px; line-height: 50px; font-size: 20px; padding: 0 28px 0 16px; text-align: left; background-color: #F2F2F2; white-space: -moz-pre-space;}\r\n.qrp_dd_sel_item:hover{background-color: #E5E5E5}\r\n", ""]);
 
 // exports
 
@@ -459,7 +459,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "pre{ white-space: pre-wrap;}\r\n.qrp_bdet_hCntr{padding: 30px 30px; display: flex; flex-direction: row; align-items: center;}\r\n.qrp_bdet_hCntr h2{margin: 0; color: #1A1A1A; font-size: 24px; font-weight: 600; max-width: calc(100% - 50px);}\r\n.qrp_bdet_hCntr h2::after{width: 50px; height: 3px; content: \"\"; display: block; background-color: #1A1A1A;margin-top: 10px;}\r\n.qrp_bdet_weightCntr {color: #1A1A1A; line-height: 24px; font-size: 20px; font-weight: 600; text-align: center; top: -30px; margin-left: auto; width: 60px; height: 60px}\r\n.qrp_bdet_tagCntr {margin: 0 30px; display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;}\r\n.qrp_bdet_tag{font-size: 20px; color: #fff; height: 40px; line-height: 40px; padding: 0 20px; background-color: #595959; border-radius: 2px;margin: 0 0px 3px 15px;}\r\n\r\n.qrp_bdet_hCntr > .qrp_critical{margin-top: 5px; margin-right: 0;}\r\npre{margin: 0 30px;}\r\n.qrp_bdetcntr{height: 100%;}\r\n.qrp_bdet_nRls{margin-top: 50%}\r\n.qrp_bdet_w8t_ico{ background-image: url(/img/weight.svg); background-repeat: no-repeat; background-position: center; background-size: cover;}\r\n.qrp_bdet_w8t { font-size: 26px; color: #fff; position: relative; top: 22px; left: -2px;}\r\n", ""]);
+exports.push([module.i, "pre{ white-space: pre-wrap;}\r\n.qrp_bdet_hCntr{padding: 30px 30px; display: flex; flex-direction: row; align-items: center;}\r\n.qrp_bdet_hCntr h2{margin: 0; color: #1A1A1A; font-size: 24px; font-weight: 600; max-width: calc(100% - 50px);}\r\n.qrp_bdet_hCntr h2::after{width: 50px; height: 3px; content: \"\"; display: block; background-color: #1A1A1A;margin-top: 10px;}\r\n.qrp_bdet_weightCntr {color: #1A1A1A; line-height: 24px; font-size: 20px; font-weight: 600; text-align: center; top: -30px; margin-left: auto; width: 60px; height: 60px}\r\n.qrp_bdet_tagCntr {margin: 0 30px; display: flex; flex-direction: row; align-items: center; flex-wrap: wrap;}\r\n.qrp_bdet_tag{font-size: 20px; cursor: pointer; color: #fff; height: 40px; line-height: 40px; padding: 0 20px; background-color: #595959; border-radius: 2px;margin: 0 0px 3px 15px;}\r\n\r\n.qrp_bdet_hCntr > .qrp_critical{margin-top: 5px; margin-right: 0;}\r\npre{margin: 0 30px;}\r\n.qrp_bdetcntr{height: 100%;}\r\n.qrp_bdet_nRls{margin-top: 50%}\r\n.qrp_bdet_w8t_ico{ background-image: url(/img/weight.svg); background-repeat: no-repeat; background-position: center; background-size: cover;}\r\n.qrp_bdet_w8t { font-size: 26px; color: #fff; position: relative; top: 22px; left: -2px;}\r\n", ""]);
 
 // exports
 
@@ -24778,6 +24778,8 @@ var _nvActions = __webpack_require__(/*! ../path-navigation/nv-actions */ "./pub
 
 var _bnConstants = __webpack_require__(/*! ./bn-constants */ "./public/src/body-navigation/bn-constants.js");
 
+var _mnActions = __webpack_require__(/*! ../menu-navigation/mn-actions */ "./public/src/menu-navigation/mn-actions.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
@@ -24817,6 +24819,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _nvActions.appendToHeaderPath)(link));
       dispatch((0, _dsActions.clearDetailsData)());
       dispatch((0, _brlActions.clearListData)());
+      dispatch((0, _mnActions.setSelectedItem)());
     }
   };
 };
@@ -25443,7 +25446,10 @@ Object.defineProperty(exports, "__esModule", {
 var CLASSES = exports.CLASSES = {
   standardsRow: 'qrp_std_list_row',
   emptyContent: 'qrp_std_list_empty',
-  headerCls: 'qrp_arrStdHri'
+  headerCls: 'qrp_arrStdHri',
+  cellContainer: 'qrp_std_c_Cntr',
+  idCell: 'qrp_std_c_id',
+  nameCell: 'qrp_std_c_name'
 };
 var HEADER = exports.HEADER = { name: 'Standards Name', className: CLASSES.headerCls };
 var NOSTANDARDS = exports.NOSTANDARDS = 'No Standards found';
@@ -25499,7 +25505,20 @@ var childConstructor = exports.childConstructor = function childConstructor(valu
     _react2.default.createElement(
       'td',
       { className: (0, _common.createClassName)(_bslConstants.CLASSES.standardsRow, values.count === 0 ? _bslConstants.CLASSES.emptyContent : undefined) },
-      values.id + ' - ' + values.name
+      _react2.default.createElement(
+        'div',
+        { className: _bslConstants.CLASSES.cellContainer },
+        _react2.default.createElement(
+          'div',
+          { className: _bslConstants.CLASSES.idCell },
+          values.id
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: _bslConstants.CLASSES.nameCell },
+          values.name
+        )
+      )
     )
   );
 };
@@ -27140,7 +27159,7 @@ var VerticalArray = function (_React$PureComponent) {
           _react2.default.createElement(
             'div',
             { className: _constants.CLASSES.itemCounter },
-            this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of ' + this.props.children.length + itemCountTitle
+            this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of ' + this.props.children.length + ' ' + itemCountTitle
           ),
           _react2.default.createElement(
             'div',
@@ -28617,13 +28636,15 @@ var FETCHING_DETAILS_CONTENT_FROM_API = exports.FETCHING_DETAILS_CONTENT_FROM_AP
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.clearDetailsData = exports.fetchDetailsData = undefined;
+exports.clearDetailsData = exports.fetchDetailsData = exports.fetchListDataFromTag = undefined;
 
 var _dsActionsType = __webpack_require__(/*! ./ds-actions-type */ "./public/src/details-section/ds-actions-type.js");
 
 var ACTIONTYPES = _interopRequireWildcard(_dsActionsType);
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
+
+var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -28651,6 +28672,10 @@ var errorOnDetailsFetch = function errorOnDetailsFetch(err, query) {
       query: query
     }
   };
+};
+
+var fetchListDataFromTag = exports.fetchListDataFromTag = function fetchListDataFromTag(standard, id) {
+  return (0, _brlActions.fetchListData)('rest/AIP/quality-standards/' + standard + '/items/' + id + '/quality-rules', _common.webFetch);
 };
 
 var fetchDetailsData = exports.fetchDetailsData = function fetchDetailsData(url) {
@@ -28747,7 +28772,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var RulesDetails = function RulesDetails(_ref) {
   var data = _ref.data,
       loading = _ref.loading,
-      onTagClick = _ref.onTagClick;
+      onTagClick = _ref.onTagClick,
+      searchVisible = _ref.searchVisible,
+      gsQuery = _ref.gsQuery;
 
   return _react2.default.createElement(
     'div',
@@ -28776,11 +28803,11 @@ var RulesDetails = function RulesDetails(_ref) {
       _react2.default.createElement(
         'div',
         { className: _dsConstants.CLASSES.tagContainer },
-        data.qualityStandards.length > 0 ? data.qualityStandards.map(function (listValue) {
+        data.qualityStandards.length > 0 ? data.qualityStandards.map(function (listValue, index) {
           return _react2.default.createElement(
             'div',
-            { key: listValue.id, className: _dsConstants.CLASSES.tag, onClick: function onClick() {
-                return onTagClick(listValue);
+            { key: index, className: _dsConstants.CLASSES.tag, onClick: function onClick() {
+                if (!searchVisible || gsQuery !== listValue.id) onTagClick(listValue);
               } },
             listValue.id
           );
@@ -28981,12 +29008,23 @@ var _dsModel = __webpack_require__(/*! ./ds-model */ "./public/src/details-secti
 
 var _dsModel2 = _interopRequireDefault(_dsModel);
 
+var _bodyActions = __webpack_require__(/*! ../body/body-actions */ "./public/src/body/body-actions.js");
+
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
+
+var _dsActions = __webpack_require__(/*! ./ds-actions */ "./public/src/details-section/ds-actions.js");
+
+var _gsActions = __webpack_require__(/*! ../global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     onTagClick: function onTagClick(val) {
-      return console.log(val);
+      dispatch((0, _cmpActions.hideComparisonTable)());
+      dispatch((0, _bodyActions.showContentView)());
+      dispatch((0, _gsActions.fetchQualityStandardsByTag)(val.id));
+      dispatch((0, _dsActions.clearDetailsData)());
     }
   };
 };
@@ -28994,7 +29032,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 var mapStateToProps = function mapStateToProps(state) {
   return {
     data: state.ruleDetails.data,
-    loading: state.ruleDetails.loading
+    loading: state.ruleDetails.loading,
+    searchVisible: state.search.resultsVisible,
+    gsQuery: state.search.query
   };
 };
 
@@ -29069,7 +29109,7 @@ var SET_QUERY_ON_SEARCH_INITIALIZATION = exports.SET_QUERY_ON_SEARCH_INITIALIZAT
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.clearSearchResults = exports.displaySearchResults = exports.hideSearchResults = exports.fetchSearchResults = exports.setSelectedSearchResult = undefined;
+exports.clearSearchResults = exports.displaySearchResults = exports.hideSearchResults = exports.fetchQualityStandardsByTag = exports.fetchSearchResults = exports.setSelectedSearchResult = undefined;
 
 var _gsResources = __webpack_require__(/*! ./gs-resources */ "./public/src/global-search/gs-resources.js");
 
@@ -29130,6 +29170,21 @@ var fetchSearchResults = exports.fetchSearchResults = function fetchSearchResult
   };
 };
 
+var fetchQualityStandardsByTag = exports.fetchQualityStandardsByTag = function fetchQualityStandardsByTag(query) {
+  return function (dispatch) {
+    dispatch((0, _brlActions.setFetchingState)());
+    dispatch(startFetching(query));
+    dispatch(displaySearchResults());
+    return (0, _gsResources.fetchStandardsByTag)(query).then(function (data) {
+      return dispatch(setSearchResults(data));
+    }, function (err) {
+      return dispatch(errorHandler(err));
+    }).then(function () {
+      return dispatch((0, _brlActions2.endLoadingState)());
+    });
+  };
+};
+
 var hideSearchResults = exports.hideSearchResults = function hideSearchResults() {
   return { type: _gsActionsType.HIDE_QUALITY_RULES_SEARCH_RESULTS };
 };
@@ -29158,6 +29213,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var SEARCHAPI = exports.SEARCHAPI = 'search/qualityrules/?q=';
+var SEARCHSTDTAGAPI = exports.SEARCHSTDTAGAPI = 'search/standards/?q=';
 var CLASSES = exports.CLASSES = {
   container: 'qrp_gSearch',
   inputBox: 'qrp_gSearch_input'
@@ -29343,12 +29399,18 @@ exports.default = globalSearchReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FETCHSEARCHRESULTS = undefined;
+exports.fetchStandardsByTag = exports.FETCHSEARCHRESULTS = undefined;
 
 var _gsConstants = __webpack_require__(/*! ./gs-constants */ "./public/src/global-search/gs-constants.js");
 
 var FETCHSEARCHRESULTS = exports.FETCHSEARCHRESULTS = function FETCHSEARCHRESULTS(query) {
   return fetch(_gsConstants.SEARCHAPI + query).then(function (res) {
+    return res.json();
+  });
+};
+
+var fetchStandardsByTag = exports.fetchStandardsByTag = function fetchStandardsByTag(query) {
+  return fetch(_gsConstants.SEARCHSTDTAGAPI + query).then(function (res) {
     return res.json();
   });
 };
@@ -29611,7 +29673,7 @@ var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/bo
 
 var _bslActions = __webpack_require__(/*! body-standards-list/bsl-actions */ "./public/src/body-standards-list/bsl-actions.js");
 
-var _brlActions = __webpack_require__(/*! ../body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
+var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
 var _nvActions = __webpack_require__(/*! path-navigation/nv-actions */ "./public/src/path-navigation/nv-actions.js");
 
@@ -29620,6 +29682,8 @@ var _mnConstants = __webpack_require__(/*! ./mn-constants */ "./public/src/menu-
 var _gsActions = __webpack_require__(/*! global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
 
 var _dsActions = __webpack_require__(/*! details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
+
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -29711,7 +29775,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _bodyActions.setListCount)(1));
       dispatch((0, _bodyActions.showContentView)());
       dispatch((0, _brlActions.fetchWebData)(version.href));
-      dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.extensions, { name: extension.name, href: extension.href, icon: extension.icon }, version));
+      dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.extensions, { name: extension.name, href: extension.href, icon: extension.icon }, extension.versions));
+      dispatch((0, _cmpActions.setParams)(version));
       // dispatch(push(`/temp/rules/${PATHS.extensions.name}/${extension.name}/${version.name}`));
     },
     fetchVersion: function fetchVersion(exeCount, extension) {

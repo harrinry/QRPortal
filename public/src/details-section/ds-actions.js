@@ -1,5 +1,6 @@
 import * as ACTIONTYPES from './ds-actions-type';
 import { webFetch } from 'common/';
+import { fetchListData } from 'body-rules-list/brl-actions';
 
 const fetchingDetailsData = () => {
   return {
@@ -25,6 +26,10 @@ const errorOnDetailsFetch = (err, query) => {
       query
     }
   };
+};
+
+export const fetchListDataFromTag = ( standard, id ) => {
+  return fetchListData('rest/AIP/quality-standards/' + standard + '/items/' + id + '/quality-rules', webFetch);
 };
 
 export const fetchDetailsData = ( url ) => {

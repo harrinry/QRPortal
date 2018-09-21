@@ -1,4 +1,5 @@
 export const SEARCHAPI ='search/qualityrules/?q=';
+export const SEARCHSTDTAGAPI = 'search/standards/?q=';
 export const CLASSES = {
   container: 'qrp_gSearch',
   inputBox: 'qrp_gSearch_input',

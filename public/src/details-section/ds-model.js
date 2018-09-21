@@ -5,7 +5,7 @@ import { createClassName, COMMON_CLASSES } from '../common/';
 import { CLASSES, NORULESSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
-const RulesDetails = ( { data, loading, onTagClick } ) => {
+const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) => {
   return (
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
       { loading ? <LoadingSpinner/> : 
@@ -19,8 +19,11 @@ const RulesDetails = ( { data, loading, onTagClick } ) => {
             </div>
             <div className={CLASSES.tagContainer}>
               {data.qualityStandards.length > 0 ? 
-                data.qualityStandards.map(function(listValue){
-                  return <div key={listValue.id} className={CLASSES.tag} onClick={() => onTagClick(listValue)}>{listValue.id}</div>;
+                data.qualityStandards.map(function(listValue, index){
+                  return <div key={index} className={CLASSES.tag} onClick={() => {
+                    if(!searchVisible || gsQuery !== listValue.id)
+                      onTagClick(listValue);
+                  }}>{listValue.id}</div>;
                 }) : undefined }
             </div>
             {data.description ? <div className={CLASSES.descriptionContainer}>
