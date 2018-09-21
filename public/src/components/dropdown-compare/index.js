@@ -11,8 +11,8 @@ export default class DropdownCompare extends React.PureComponent {
 
     this.state = {
       comparing: false,
-      first: undefined,
-      second: undefined
+      first: this.props.disableState ? this.props.params[0] : undefined,
+      second: this.props.disableState ? this.props.params[1] : undefined,
     };
 
     this.handleDropdownChange = this.handleDropdownChange.bind(this);
@@ -58,7 +58,7 @@ export default class DropdownCompare extends React.PureComponent {
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={0} onItemClick={this.firstListChanged}/>
         <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)}><img src={isCompareEnabled ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
-        { (this.state.comparing && stateEnabled) || this.props.CompareEnabled  ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
+        { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
       </span>
     );
   }
@@ -68,4 +68,7 @@ DropdownCompare.propTypes = {
   list: PropTypes.arrayOf(PropTypes.any).isRequired,
   onItemSelect: PropTypes.func.isRequired,
   onCompare: PropTypes.func.isRequired,
+  compareEnabled: PropTypes.bool,
+  disableState: PropTypes.bool,
+  params: PropTypes.arrayOf(PropTypes.any)
 };

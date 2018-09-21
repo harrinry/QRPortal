@@ -13,6 +13,10 @@ const initialState = {
     query: undefined,
     type: undefined,
     params: []
+  },
+  params: {
+    vi: undefined,
+    vtc: undefined
   }
 };
 
@@ -49,11 +53,13 @@ const compareReducers = (state = initialState, action) => {
     return {
       ...state,
       isComparing: true,
+      isVisible: true
     };
   case ACTIONTYPES.CMP_DISABLE_COMPARING:
     return {
       ...state,
-      isComparing: false
+      isComparing: false,
+      isVisible: false
     };
   case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
     return {
@@ -84,6 +90,14 @@ const compareReducers = (state = initialState, action) => {
   case ACTIONTYPES.CMP_CLEAR_COMPARE_LIST:
     return {
       ...initialState
+    };
+  case ACTIONTYPES.CMP_SET_PARAMS: 
+    return {
+      ...state,
+      params: {
+        vi: action.payload.vi,
+        vtc: action.payload.vtc
+      }
     };
   case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
     return {

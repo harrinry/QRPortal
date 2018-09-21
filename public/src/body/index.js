@@ -7,7 +7,8 @@ const mapStateToProps = (state) => {
     listCount: state.contentBody.listCount,
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
-    isComparing: state.compare.isComparing
+    isComparing: state.compare.isComparing,
+    cmpIsVisible: state.compare.isVisible
   };
 };
 

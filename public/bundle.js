@@ -24878,6 +24878,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FETCH_LIST_DATA = exports.FETCH_LIST_DATA = 'FETCH_LIST_DATA';
+var STOP_LIST_LOADING_STATE = exports.STOP_LIST_LOADING_STATE = 'STOP_LIST_LOADING_STATE';
 var SET_LIST_DATA = exports.SET_LIST_DATA = 'SET_RULES_LIST_DATA';
 var FAILED_TO_FETCH_LIST_DATA = exports.FAILED_TO_FETCH_LIST_DATA = 'FAILED_TO_FETCH_LIST_DATA';
 var CLEAR_LIST_DATA = exports.CLEAR_LIST_DATA = 'CLEAR_RULES_LIST_DATA';
@@ -24898,7 +24899,7 @@ var SET_SELECTED_RULE_LIST_ITEM = exports.SET_SELECTED_RULE_LIST_ITEM = 'SET_SEL
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchWebData = exports.fetchApiData = exports.fetchListData = exports.clearListData = exports.setSelected = exports.setFetchingState = undefined;
+exports.fetchWebData = exports.fetchApiData = exports.fetchListData = exports.clearListData = exports.setSelected = exports.endLoadingState = exports.setFetchingState = undefined;
 
 var _brlActionsType = __webpack_require__(/*! ./brl-actions-type */ "./public/src/body-rules-list/brl-actions-type.js");
 
@@ -24916,6 +24917,12 @@ var setFetchingState = exports.setFetchingState = function setFetchingState(quer
     payload: {
       query: query
     }
+  };
+};
+
+var endLoadingState = exports.endLoadingState = function endLoadingState() {
+  return {
+    type: ACTIONTYPES.STOP_LIST_LOADING_STATE
   };
 };
 
@@ -25165,6 +25172,10 @@ var RulesListReducers = function RulesListReducers() {
         query: action.payload.query ? action.payload.query : state.query,
         loading: true
       };
+    case _brlActionsType.STOP_LIST_LOADING_STATE:
+      return _extends({}, state, {
+        loading: false
+      });
     case _brlActionsType.SET_LIST_DATA:
       return {
         data: action.payload.data,
@@ -26004,7 +26015,7 @@ var ContentBody = function ContentBody(props) {
         'div',
         { className: _bodyConstants.CLASSES.listArea },
         props.listCount === 2 && !props.searchVisible ? _react2.default.createElement(_bodyStandardsList2.default, null) : undefined,
-        props.isComparing ? _react2.default.createElement(_compare2.default, null) : _react2.default.createElement(_bodyRulesList2.default, null)
+        props.isComparing && props.cmpIsVisible ? _react2.default.createElement(_compare2.default, null) : _react2.default.createElement(_bodyRulesList2.default, null)
       ),
       _react2.default.createElement(
         'div',
@@ -26115,7 +26126,8 @@ var mapStateToProps = function mapStateToProps(state) {
     listCount: state.contentBody.listCount,
     viewType: state.viewType.viewType,
     searchVisible: state.search.resultsVisible,
-    isComparing: state.compare.isComparing
+    isComparing: state.compare.isComparing,
+    cmpIsVisible: state.compare.isVisible
   };
 };
 
@@ -26478,6 +26490,8 @@ var CMP_DISABLE_COMPARING = exports.CMP_DISABLE_COMPARING = 'CMP_DISABLE_COMPARI
 var CMP_SET_SELECTED_RULE_IN_COMPARE_LIST = exports.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST = 'CMP_SET_SELECTED_RULE_IN_COMPARE_LIST';
 var CMP_CLEAR_COMPARE_LIST = exports.CMP_CLEAR_COMPARE_LIST = 'CMP_CLEAR_COMPARE_LIST';
 
+var CMP_SET_PARAMS = exports.CMP_SET_PARAMS = 'CMP_SET_PARAMS';
+
 /***/ }),
 
 /***/ "./public/src/compare/cmp-actions.js":
@@ -26493,7 +26507,7 @@ var CMP_CLEAR_COMPARE_LIST = exports.CMP_CLEAR_COMPARE_LIST = 'CMP_CLEAR_COMPARE
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.fetchExtensionComparisonData = exports.clearCompareList = exports.setSelected = exports.disableComparing = exports.enableComparing = exports.hideComparisonTable = exports.showComparisonTable = undefined;
+exports.fetchExtensionComparisonData = exports.clearCompareList = exports.setParams = exports.setSelected = exports.disableComparing = exports.enableComparing = exports.hideComparisonTable = exports.showComparisonTable = undefined;
 
 var _cmpActionsType = __webpack_require__(/*! ./cmp-actions-type */ "./public/src/compare/cmp-actions-type.js");
 
@@ -26552,6 +26566,16 @@ var setSelected = exports.setSelected = function setSelected(itemRef) {
     type: ACTIONTYPE.CMP_SET_SELECTED_RULE_IN_COMPARE_LIST,
     payload: {
       itemRef: itemRef
+    }
+  };
+};
+
+var setParams = exports.setParams = function setParams(param1, param2) {
+  return {
+    type: ACTIONTYPE.CMP_SET_PARAMS,
+    payload: {
+      vi: param1,
+      vtc: param2
     }
   };
 };
@@ -26784,6 +26808,10 @@ var initialState = {
     query: undefined,
     type: undefined,
     params: []
+  },
+  params: {
+    vi: undefined,
+    vtc: undefined
   }
 };
 
@@ -26814,11 +26842,13 @@ var compareReducers = function compareReducers() {
       }
     case ACTIONTYPES.CMP_ENABLE_COMPARING:
       return _extends({}, state, {
-        isComparing: true
+        isComparing: true,
+        isVisible: true
       });
     case ACTIONTYPES.CMP_DISABLE_COMPARING:
       return _extends({}, state, {
-        isComparing: false
+        isComparing: false,
+        isVisible: false
       });
     case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
       return _extends({}, state, {
@@ -26844,6 +26874,13 @@ var compareReducers = function compareReducers() {
       });
     case ACTIONTYPES.CMP_CLEAR_COMPARE_LIST:
       return _extends({}, initialState);
+    case ACTIONTYPES.CMP_SET_PARAMS:
+      return _extends({}, state, {
+        params: {
+          vi: action.payload.vi,
+          vtc: action.payload.vtc
+        }
+      });
     case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
       return _extends({}, state, {
         data: [],
@@ -27408,8 +27445,8 @@ var DropdownCompare = function (_React$PureComponent) {
 
     _this.state = {
       comparing: false,
-      first: undefined,
-      second: undefined
+      first: _this.props.disableState ? _this.props.params[0] : undefined,
+      second: _this.props.disableState ? _this.props.params[1] : undefined
     };
 
     _this.handleDropdownChange = _this.handleDropdownChange.bind(_this);
@@ -27468,7 +27505,7 @@ var DropdownCompare = function (_React$PureComponent) {
           { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, isCompareEnabled ? _constants.CLASSES.isComparing : undefined) },
           _react2.default.createElement('img', { src: isCompareEnabled ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
         ),
-        this.state.comparing && stateEnabled || this.props.CompareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
+        this.state.comparing && stateEnabled || this.props.compareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
       );
     }
   }]);
@@ -27482,7 +27519,10 @@ exports.default = DropdownCompare;
 DropdownCompare.propTypes = {
   list: _propTypes2.default.arrayOf(_propTypes2.default.any).isRequired,
   onItemSelect: _propTypes2.default.func.isRequired,
-  onCompare: _propTypes2.default.func.isRequired
+  onCompare: _propTypes2.default.func.isRequired,
+  compareEnabled: _propTypes2.default.bool,
+  disableState: _propTypes2.default.bool,
+  params: _propTypes2.default.arrayOf(_propTypes2.default.any)
 };
 
 /***/ }),
@@ -27603,7 +27643,9 @@ var DropdownSelector = function (_React$PureComponent) {
   }, {
     key: 'onItemChange',
     value: function onItemChange(index) {
-      this.setSelectedItem(index);
+      if (!this.props.stateDisabled) {
+        this.setSelectedItem(index);
+      }
       if (this.props.onItemClick) this.props.onItemClick(this.props.list[index], index, this.props.list);
     }
   }, {
@@ -27616,12 +27658,14 @@ var DropdownSelector = function (_React$PureComponent) {
     value: function render() {
       var _this2 = this;
 
+      var stateDisabled = this.props.stateDisabled,
+          label = !stateDisabled ? _typeof(this.state.selected) === 'object' ? this.state.selected.label || this.state.selected.name : this.state.selected : this.props.label;
       return _react2.default.createElement(
         _components.Dropdown,
         { label: _react2.default.createElement(
             'div',
             { className: _constants.CLASSES.label },
-            _typeof(this.state.selected) === 'object' ? this.state.selected.label || this.state.selected.name : this.state.selected
+            label
           ) },
         _react2.default.createElement(
           _components.List,
@@ -27648,7 +27692,8 @@ exports.default = DropdownSelector;
 
 
 DropdownSelector.propTypes = {
-  onItemClick: _propTypes2.default.func
+  onItemClick: _propTypes2.default.func,
+  stateDisabled: _propTypes2.default.bool
 };
 
 /***/ }),
@@ -29026,6 +29071,8 @@ var _gsActionsType = __webpack_require__(/*! ./gs-actions-type */ "./public/src/
 
 var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
+var _brlActions2 = __webpack_require__(/*! ../body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
+
 var startFetching = function startFetching(query) {
   return {
     type: _gsActionsType.SET_QUERY_ON_SEARCH_INITIALIZATION,
@@ -29071,6 +29118,8 @@ var fetchSearchResults = exports.fetchSearchResults = function fetchSearchResult
       return dispatch(setSearchResults(data));
     }, function (err) {
       return dispatch(errorHandler(err));
+    }).then(function () {
+      return dispatch((0, _brlActions2.endLoadingState)());
     });
   };
 };
@@ -29330,6 +29379,8 @@ var bodyActions = _interopRequireWildcard(_bodyActions);
 
 var _dsActions = __webpack_require__(/*! details-section/ds-actions */ "./public/src/details-section/ds-actions.js");
 
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -29344,6 +29395,7 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchSearchResults: function fetchSearchResults(query) {
+      dispatch((0, _cmpActions.hideComparisonTable)());
       dispatch(bodyActions.showContentView());
       dispatch(actions.fetchSearchResults(query));
       dispatch((0, _dsActions.clearDetailsData)());
@@ -30545,7 +30597,7 @@ var _gsActions = __webpack_require__(/*! global-search/gs-actions */ "./public/s
 
 var _brlActions = __webpack_require__(/*! body-rules-list/brl-actions */ "./public/src/body-rules-list/brl-actions.js");
 
-var _cmpActions = __webpack_require__(/*! compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30554,6 +30606,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     gotoLocation: function gotoLocation(props) {
       if (props.separator || props.index === 0) {
         dispatch((0, _nvActions.navigateTo)(props, props.index));
+        dispatch((0, _cmpActions.clearCompareList)());
         dispatch((0, _bodyActions.showNavigationView)());
         dispatch((0, _bnActions.fetchNavigationData)(props.name, props.href, props.icon));
       }
@@ -30584,11 +30637,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       switch (isComparing) {
         case true:
           dispatch((0, _cmpActions.disableComparing)());
-          dispatch((0, _cmpActions.hideComparisonTable)());
           break;
         case false:
           dispatch((0, _cmpActions.enableComparing)());
-          dispatch((0, _cmpActions.showComparisonTable)());
           break;
       }
     }
@@ -30602,7 +30653,8 @@ var mapStateToProps = function mapStateToProps(state) {
     searchVisible: state.search.resultsVisible,
     rules: state.rulesList.data,
     searchQuery: state.search.query,
-    compareEnabled: state.compare.isComparing
+    compareEnabled: state.compare.isComparing,
+    cmpParams: state.compare.params
   };
 };
 
@@ -30748,7 +30800,7 @@ var NavHeader = function NavHeader(props) {
       { className: _nvConstants.CLASSES.pathContainer },
       props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, showIcon: false, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, stateEnabled: false, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
+          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, params: [props.params.vi, props.params.vtc], disableState: true, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
               return props.onCompare(arr[1].id, v1.name, v2.name);
             } });
         } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.label || e.name, href: e.href, icon: e.icon });
@@ -31057,7 +31109,9 @@ var _nvActions = __webpack_require__(/*! path-navigation/nv-actions */ "./public
 
 var _bodyActions = __webpack_require__(/*! body/body-actions */ "./public/src/body/body-actions.js");
 
-var _gsActions = __webpack_require__(/*! ../global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
+var _gsActions = __webpack_require__(/*! global-search/gs-actions */ "./public/src/global-search/gs-actions.js");
+
+var _cmpActions = __webpack_require__(/*! ../compare/cmp-actions */ "./public/src/compare/cmp-actions.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31075,6 +31129,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _nvActions.goToLandingPage)());
       dispatch((0, _bodyActions.showLandingPage)());
       dispatch((0, _gsActions.hideSearchResults)());
+      dispatch((0, _cmpActions.clearCompareList)());
     }
   };
 };

@@ -6,13 +6,14 @@ import { fetchNavigationData } from 'body-navigation/bn-actions';
 import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { fetchWebData } from 'body-rules-list/brl-actions';
-import { enableComparing, disableComparing, fetchExtensionComparisonData, showComparisonTable, hideComparisonTable } from 'compare/cmp-actions';
+import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList } from '../compare/cmp-actions';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
     gotoLocation: (props) => {
       if(props.separator || ( props.index === 0 )){
         dispatch(navigateTo(props, props.index));
+        dispatch(clearCompareList());
         dispatch(showNavigationView());
         dispatch(fetchNavigationData(props.name, props.href, props.icon));
       }
@@ -42,11 +43,9 @@ const mapDispatchToProps = ( dispatch ) => {
       switch (isComparing) {
       case true:
         dispatch(disableComparing());
-        dispatch(hideComparisonTable());
         break;
       case false:
         dispatch(enableComparing());
-        dispatch(showComparisonTable());
         break;
       }
     }
@@ -61,6 +60,7 @@ const mapStateToProps = (state) => {
     rules: state.rulesList.data,
     searchQuery: state.search.query,
     compareEnabled: state.compare.isComparing,
+    cmpParams: state.compare.params
   };
 };
 

@@ -6,6 +6,7 @@ import { SET_QUALITY_RULES_SEARCH_RESULTS,
   HIDE_QUALITY_RULES_SEARCH_RESULTS, SET_SELECTED_SEARCH_RESULT, SET_QUERY_ON_SEARCH_INITIALIZATION} from './gs-actions-type';
 
 import { setFetchingState } from 'body-rules-list/brl-actions';
+import { endLoadingState } from '../body-rules-list/brl-actions';
 
 const startFetching = ( query ) => {
   return {
@@ -51,7 +52,7 @@ export const fetchSearchResults = ( query ) => {
     return FETCHSEARCHRESULTS(query).then(
       data => dispatch(setSearchResults(data)),
       err => dispatch(errorHandler(err))
-    );
+    ).then( () => dispatch(endLoadingState()) );
   };
 };
 

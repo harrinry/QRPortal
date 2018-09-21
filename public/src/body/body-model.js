@@ -8,7 +8,7 @@ import RuleDetails from 'details-section/';
 import StandardsList from 'body-standards-list';
 import TileNavigation from 'body-navigation';
 import LandingPage from 'body-landing-page';
-import CompareList from 'compare/'
+import CompareList from 'compare/';
 import './style.css';
 
 const ContentBody = ( props ) => {
@@ -22,7 +22,7 @@ const ContentBody = ( props ) => {
         (<div className={createClassName(COMMON_CLASSES.width100pc, CLASSES.contentBodyChild)}>
           <div className={CLASSES.listArea}>
             { props.listCount === 2 && !props.searchVisible ? <StandardsList/> : undefined}
-            { props.isComparing ? <CompareList/> : <BodyRulesList/>}
+            { props.isComparing && props.cmpIsVisible ? <CompareList/> : <BodyRulesList/>}
           </div>
           <div className={CLASSES.detailsArea}>
             <RuleDetails />

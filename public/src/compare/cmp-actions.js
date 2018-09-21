@@ -53,6 +53,16 @@ export const setSelected = ( itemRef ) => {
   };
 };
 
+export const setParams = ( param1, param2 ) => {
+  return {
+    type: ACTIONTYPE.CMP_SET_PARAMS,
+    payload: {
+      vi: param1,
+      vtc: param2
+    }
+  };
+};
+
 export const clearCompareList = () => {
   return {
     type: ACTIONTYPE.CMP_CLEAR_COMPARE_LIST

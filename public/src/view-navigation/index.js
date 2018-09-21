@@ -5,7 +5,8 @@ import ViewNavigation from './vn-model';
 import { defaultToTiles, defaultToMenu } from './vn-lib';
 import { goToLandingPage } from 'path-navigation/nv-actions';
 import { showLandingPage } from 'body/body-actions';
-import { hideSearchResults } from '../global-search/gs-actions';
+import { hideSearchResults } from 'global-search/gs-actions';
+import { clearCompareList } from '../compare/cmp-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -21,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(goToLandingPage());
       dispatch(showLandingPage());
       dispatch(hideSearchResults());
+      dispatch(clearCompareList());
     }
   };
 };
