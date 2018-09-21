@@ -12,6 +12,7 @@ let extVersionMap;
 let rulesRouter = express.Router();
 
 rulesRouter.get(main, (req, res) => {
+  console.log(req.query);
   res.sendFile('index.html', options, (err)=>{
     if ( err ) {
       errLogger.error( err );
@@ -22,15 +23,6 @@ rulesRouter.get(main, (req, res) => {
 
 rulesRouter.get('/QRPortal.js', (req, res)=> {
   res.sendFile('QRPortal.js', options, (err)=>{
-    if ( err ) {
-      errLogger.error( err );
-      res.status(500).send({error: 'a problem occured'});
-    }
-  });
-});
-
-rulesRouter.get('/QRPortal.js.map', (req, res)=> {
-  res.sendFile('QRPortal.js.map', options, (err)=>{
     if ( err ) {
       errLogger.error( err );
       res.status(500).send({error: 'a problem occured'});

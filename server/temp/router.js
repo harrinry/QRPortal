@@ -1,15 +1,19 @@
 const express = require('express');
 const options = require('./options');
 const { main } = require('../routes/routes');
+// const fs = require('fs');
+// const path = require('path');
+const template = require('./template');
 let tempRouter = express.Router();
 
 tempRouter.get(main, (req, res) => {
-  res.sendFile('index.html', options, (err)=>{
-    if ( err ) {
-      console.log( err ); // replace with error logger
-      res.status(500).send({error: 'a problem occured'});
-    }
-  });
+  // const index = fs.readFileSync(path.resolve(options.root, 'index.html')).toString('utf8');
+
+  const query = JSON.stringify(req.query);
+  const base = 'base64';
+  const queryCrypt = Buffer.from(query).toString(base);
+  res.type('html'); 
+  res.send(template(queryCrypt));
 });
 
 tempRouter.get('/querytest', (req, res) => {
