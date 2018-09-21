@@ -28,7 +28,7 @@ export default class DropdownCompare extends React.PureComponent {
 
   handleDropdownChange( first, second ){
     if(this.state.comparing) this.props.onCompare(first, second);
-    else this.props.onItemSelect(first);
+    else this.props.onItemSelect(first, this.props);
   }
 
   firstListChanged( item ){
@@ -54,11 +54,13 @@ export default class DropdownCompare extends React.PureComponent {
   render(){
     const stateEnabled = this.props.disableState ? false : true;
     const isCompareEnabled = ((stateEnabled && this.state.comparing) || (!stateEnabled && this.props.compareEnabled)) ? true : false;
+    const defaultIndex1 = this.props.list.indexOf(this.props.params[0]),
+      defaultIndex2 = this.props.list.indexOf(this.props.params[1]);
     return (
       <span className={CLASSES.container}>
-        <DropdownSelector list={this.props.list} defaultIndex={0} onItemClick={this.firstListChanged}/>
+        <DropdownSelector list={this.props.list} defaultIndex={ defaultIndex1 !== -1 ? defaultIndex1 : 0} onItemClick={this.firstListChanged}/>
         <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)}><img src={isCompareEnabled ? COMPARE_IMG_COMPARING : COMPARE_IMG} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
-        { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? <DropdownSelector list={this.props.list} defaultIndex={1} onItemClick={this.secondListChanged}/> : undefined }
+        { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? <DropdownSelector list={this.props.list} defaultIndex={defaultIndex2 !== -1 ? defaultIndex2 : 0} onItemClick={this.secondListChanged}/> : undefined }
       </span>
     );
   }

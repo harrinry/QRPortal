@@ -59,7 +59,11 @@ const compareReducers = (state = initialState, action) => {
     return {
       ...state,
       isComparing: false,
-      isVisible: false
+      isVisible: false,
+      params: {
+        vi: state.params.vi,
+        vtc: undefined
+      }
     };
   case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
     return {
@@ -96,7 +100,7 @@ const compareReducers = (state = initialState, action) => {
       ...state,
       params: {
         vi: action.payload.vi,
-        vtc: action.payload.vtc
+        vtc: action.payload.vtc || state.params.vtc
       }
     };
   case ACTIONTYPES.CMP_ERROR_ON_COMPARE:

@@ -26848,7 +26848,11 @@ var compareReducers = function compareReducers() {
     case ACTIONTYPES.CMP_DISABLE_COMPARING:
       return _extends({}, state, {
         isComparing: false,
-        isVisible: false
+        isVisible: false,
+        params: {
+          vi: state.params.vi,
+          vtc: undefined
+        }
       });
     case ACTIONTYPES.CMP_SET_COMPARISON_DATA:
       return _extends({}, state, {
@@ -26878,7 +26882,7 @@ var compareReducers = function compareReducers() {
       return _extends({}, state, {
         params: {
           vi: action.payload.vi,
-          vtc: action.payload.vtc
+          vtc: action.payload.vtc || state.params.vtc
         }
       });
     case ACTIONTYPES.CMP_ERROR_ON_COMPARE:
@@ -27469,7 +27473,7 @@ var DropdownCompare = function (_React$PureComponent) {
   }, {
     key: 'handleDropdownChange',
     value: function handleDropdownChange(first, second) {
-      if (this.state.comparing) this.props.onCompare(first, second);else this.props.onItemSelect(first);
+      if (this.state.comparing) this.props.onCompare(first, second);else this.props.onItemSelect(first, this.props);
     }
   }, {
     key: 'firstListChanged',
@@ -27496,16 +27500,18 @@ var DropdownCompare = function (_React$PureComponent) {
     value: function render() {
       var stateEnabled = this.props.disableState ? false : true;
       var isCompareEnabled = stateEnabled && this.state.comparing || !stateEnabled && this.props.compareEnabled ? true : false;
+      var defaultIndex1 = this.props.list.indexOf(this.props.params[0]),
+          defaultIndex2 = this.props.list.indexOf(this.props.params[1]);
       return _react2.default.createElement(
         'span',
         { className: _constants.CLASSES.container },
-        _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 0, onItemClick: this.firstListChanged }),
+        _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: defaultIndex1 !== -1 ? defaultIndex1 : 0, onItemClick: this.firstListChanged }),
         _react2.default.createElement(
           'div',
           { className: (0, _common.createClassName)(_constants.CLASSES.compareImgContainer, isCompareEnabled ? _constants.CLASSES.isComparing : undefined) },
           _react2.default.createElement('img', { src: isCompareEnabled ? _constants.COMPARE_IMG_COMPARING : _constants.COMPARE_IMG, className: _constants.CLASSES.compareImg, onClick: this.toggleCompare })
         ),
-        this.state.comparing && stateEnabled || this.props.compareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: 1, onItemClick: this.secondListChanged }) : undefined
+        this.state.comparing && stateEnabled || this.props.compareEnabled ? _react2.default.createElement(_components.DropdownSelector, { list: this.props.list, defaultIndex: defaultIndex2 !== -1 ? defaultIndex2 : 0, onItemClick: this.secondListChanged }) : undefined
       );
     }
   }]);
@@ -30620,26 +30626,40 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
         if (/\/quality-rules/i.test(props.path[props.path.length - 1].href) === false && props.path.length < 3) {
           dispatch((0, _bodyActions.showNavigationView)());
         } else {
-          if (lastViewedRuleBeforeSearch) dispatch((0, _dsActions.fetchDetailsData)(lastViewedRuleBeforeSearch.href));else dispatch((0, _dsActions.clearDetailsData)());
+          if (props.isComparing) {
+            dispatch((0, _cmpActions.showComparisonTable)());
+            if (props.cmpSelected) dispatch((0, _dsActions.fetchDetailsData)(props.cmpSelected.href));
+          }
+          if (lastViewedRuleBeforeSearch) {
+            dispatch((0, _dsActions.fetchDetailsData)(lastViewedRuleBeforeSearch.href));
+          } else {
+            dispatch((0, _dsActions.clearDetailsData)());
+          }
         }
       } else if (props.path.length === 0) {
         dispatch((0, _bodyActions.showLandingPage)());
       }
     },
-    selectorChange: function selectorChange(item) {
-      dispatch((0, _brlActions.fetchWebData)(item.href));
-      dispatch((0, _dsActions.clearDetailsData)());
+    selectorChange: function selectorChange(item, props) {
+      if (item !== props.params[0]) {
+        dispatch((0, _cmpActions.setParams)(item));
+        dispatch((0, _brlActions.fetchWebData)(item.href));
+        dispatch((0, _dsActions.clearDetailsData)());
+      }
     },
     onCompare: function onCompare(extId, ver1, ver2) {
-      dispatch((0, _cmpActions.fetchExtensionComparisonData)(extId, ver1, ver2));
+      dispatch((0, _cmpActions.setParams)(ver1, ver2));
+      dispatch((0, _cmpActions.fetchExtensionComparisonData)(extId, ver1.name, ver2.name));
     },
     onToggleCompare: function onToggleCompare(isComparing) {
       switch (isComparing) {
         case true:
           dispatch((0, _cmpActions.disableComparing)());
+          dispatch((0, _dsActions.clearDetailsData)());
           break;
         case false:
           dispatch((0, _cmpActions.enableComparing)());
+          dispatch((0, _dsActions.clearDetailsData)());
           break;
       }
     }
@@ -30654,7 +30674,10 @@ var mapStateToProps = function mapStateToProps(state) {
     rules: state.rulesList.data,
     searchQuery: state.search.query,
     compareEnabled: state.compare.isComparing,
-    cmpParams: state.compare.params
+    cmpParams: state.compare.params,
+    cmpSelected: state.compare.data.find(function (i) {
+      return i.selected;
+    })
   };
 };
 
@@ -30798,10 +30821,10 @@ var NavHeader = function NavHeader(props) {
     _react2.default.createElement(
       'div',
       { className: _nvConstants.CLASSES.pathContainer },
-      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, showIcon: false, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
+      props.searchVisible ? _react2.default.createElement(_components.PathElement, { rules: props.rules, cmpSelected: props.cmpSelected, isComparing: props.compareEnabled, showIcon: false, path: props.path, separator: false, index: 0, name: _nvConstants.SEARCHFOR + props.searchQuery, closeBtn: true, onCloseBtnClick: props.closeSearchResults }) : props.path.map(function (e, index, arr) {
         if (Array.isArray(e)) {
-          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, params: [props.params.vi, props.params.vtc], disableState: true, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
-              return props.onCompare(arr[1].id, v1.name, v2.name);
+          return _react2.default.createElement(_components.DropdownCompare, { key: index, list: e, params: [props.cmpParams.vi, props.cmpParams.vtc], disableState: true, compareEnabled: props.compareEnabled, onItemSelect: props.selectorChange, toggleCompare: props.onToggleCompare, onCompare: function onCompare(v1, v2) {
+              return props.onCompare(arr[1].id, v1, v2);
             } });
         } else return _react2.default.createElement(_components.PathElement, { key: index, separator: index !== pl - 1 && index !== 0, showIcon: index === 0, index: index, gotoLocation: props.gotoLocation, name: e.label || e.name, href: e.href, icon: e.icon });
       })
@@ -30812,7 +30835,10 @@ var NavHeader = function NavHeader(props) {
 NavHeader.propTypes = {
   path: _propTypes2.default.arrayOf(_propTypes2.default.any),
   searchVisible: _propTypes2.default.bool.isRequired,
-  searchQuery: _propTypes2.default.string
+  searchQuery: _propTypes2.default.string,
+  cmpParams: _propTypes2.default.object.isRequired,
+  compareEnabled: _propTypes2.default.bool.isRequired,
+  cmpSelected: _propTypes2.default.any
 };
 
 exports.default = NavHeader;

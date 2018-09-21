@@ -6,7 +6,7 @@ import { fetchNavigationData } from 'body-navigation/bn-actions';
 import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { fetchWebData } from 'body-rules-list/brl-actions';
-import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList } from '../compare/cmp-actions';
+import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList, showComparisonTable, setParams } from '../compare/cmp-actions';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
@@ -25,27 +25,40 @@ const mapDispatchToProps = ( dispatch ) => {
         if( /\/quality-rules/i.test(props.path[props.path.length -1].href) === false && props.path.length < 3 ){
           dispatch(showNavigationView());
         } else {
-          if( lastViewedRuleBeforeSearch ) dispatch( fetchDetailsData( lastViewedRuleBeforeSearch.href ) );
-          else dispatch(clearDetailsData());
+          if(props.isComparing){
+            dispatch(showComparisonTable());
+            if(props.cmpSelected) dispatch(fetchDetailsData(props.cmpSelected.href));
+          }
+          if( lastViewedRuleBeforeSearch ) {
+            dispatch( fetchDetailsData( lastViewedRuleBeforeSearch.href ) );
+          } else {
+            dispatch(clearDetailsData());
+          }
         }
       } else if ( props.path.length === 0 ){
         dispatch(showLandingPage());
       }
     },
-    selectorChange: ( item ) => {
-      dispatch(fetchWebData(item.href));
-      dispatch(clearDetailsData());
+    selectorChange: ( item, props ) => {
+      if( item !== props.params[0] ){
+        dispatch(setParams(item));
+        dispatch(fetchWebData(item.href));
+        dispatch(clearDetailsData());
+      }
     },
     onCompare: (extId, ver1, ver2) => {
-      dispatch(fetchExtensionComparisonData(extId, ver1, ver2));
+      dispatch(setParams(ver1, ver2));
+      dispatch(fetchExtensionComparisonData(extId, ver1.name, ver2.name));
     },
     onToggleCompare: ( isComparing ) => {
       switch (isComparing) {
       case true:
         dispatch(disableComparing());
+        dispatch(clearDetailsData());
         break;
       case false:
         dispatch(enableComparing());
+        dispatch(clearDetailsData());
         break;
       }
     }
@@ -60,7 +73,8 @@ const mapStateToProps = (state) => {
     rules: state.rulesList.data,
     searchQuery: state.search.query,
     compareEnabled: state.compare.isComparing,
-    cmpParams: state.compare.params
+    cmpParams: state.compare.params,
+    cmpSelected: state.compare.data.find( i => i.selected)
   };
 };
 
