@@ -3,10 +3,10 @@ const options = require('./options');
 const { main } = require('../routes/routes');
 // const fs = require('fs');
 // const path = require('path');
-const template = require('./template');
 let tempRouter = express.Router();
 
 tempRouter.get(main, (req, res) => {
+  const template = require('./template');
   const query = JSON.stringify(req.query);
   const base = 'base64';
   const queryCrypt = Buffer.from(query).toString(base);
