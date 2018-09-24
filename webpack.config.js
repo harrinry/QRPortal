@@ -47,6 +47,5 @@ module.exports = {
       path.resolve('./public/src')
     ],
     extensions: ['.json', '.js', '.jsx', '.css', '.scss']
-  },
-  devtool: 'source-map'
+  }
 };

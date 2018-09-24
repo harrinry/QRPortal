@@ -7,3 +7,4 @@ export const CLASSES = {
 
 export const COMPARE_IMG = '/img/compareblack.svg';
 export const COMPARE_IMG_COMPARING = '/img/compare.svg';
+export const COMPARE_WHITE = '/img/comparewhite.svg';

@@ -11,11 +11,22 @@ import { enableComparing, disableComparing, fetchExtensionComparisonData, clearC
 const mapDispatchToProps = ( dispatch ) => {
   return {
     gotoLocation: (props) => {
-      if(props.separator || ( props.index === 0 )){
+      if( !props.isExtension && (props.separator || ( props.index === 0 ))){
         dispatch(navigateTo(props, props.index));
         dispatch(clearCompareList());
         dispatch(showNavigationView());
         dispatch(fetchNavigationData(props.name, props.href, props.icon));
+      } else if ( props.isExtension ){
+        dispatch(setParams(props.ext[0],props.params.vtc));
+        switch (props.compareEnabled) {
+        case true:
+          dispatch(fetchExtensionComparisonData(props.id, props.ext[0].name, props.params.vtc.name));
+          break;
+        case false:
+          dispatch(fetchWebData(props.ext[0].href));
+          dispatch(clearDetailsData());
+          break;
+        }
       }
     },
     closeSearchResults: (props) => {

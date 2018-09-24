@@ -33,14 +33,15 @@ export default class DropdownSelector extends React.PureComponent{
 
   render(){
     const stateDisabled = this.props.stateDisabled,
+      selected = this.props.selected || this.state.selected,
       label = !stateDisabled ? 
-        ( typeof  this.state.selected === 'object' ? ( this.state.selected.label ||  this.state.selected.name ) :  this.state.selected ) : 
+        ( typeof  selected === 'object' ? ( selected.label || selected.name ) : selected ) : 
         this.props.label;
     return (
       <Dropdown label={<div className={CLASSES.label}>{label}</div>}>
         <List vertical={true}>
           { this.props.list.map( ( e, i ) => {
-            if( e === this.state.selected ) return;
+            if( e === selected ) return;
             return (
               <div key={i} className={CLASSES.selectorItem} onClick={() => this.onItemChange(i)}>{( typeof e === 'object' ? ( e.label || e.name ) : e )}</div>
             );

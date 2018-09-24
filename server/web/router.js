@@ -6,6 +6,8 @@ const extensionsMap = require('../lib/extensions-map');
 const getStandardsMap = require('../lib/standards-map');
 const businessCriteriaMap = require('../lib/business-criteria-map');
 const navigationData = require('../lib/navigation-map');
+const fs = require('fs');
+const root = require('app-root-path');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -43,7 +45,22 @@ WebRouter.get('/quality-standards', ( req, res ) => {
 });
 
 WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
-  res.sendFile(req.url + '.json', options, err => errorHandler(err, res));
+  fs.readFile( root.resolve('rest/AIP/' + req.url + '.json'), (err, data) => {
+    if (err) {
+      console.log(err);
+      return errorHandler(err, res);
+    }
+    const json = JSON.parse(data),
+      jsonMapped = json.map( e => {
+        return Object.assign({}, e, { 
+          icon: ( req.params.stdID.toLowerCase() === 'owasp' ? 
+            '/img/' + e.name.toLowerCase() + '.svg' : 
+            '/img/' + e.name.substring(req.params.stdID.length).replace(/-/ig,'').toLowerCase() + '.svg' ) 
+        });
+      });
+    res.send(jsonMapped);
+  });
+  // res.sendFile(req.url + '.json', options, err => errorHandler(err, res));
 });
 
 WebRouter.get('/quality-standards/:stdID/categories/:stdCatName', ( req, res ) => {

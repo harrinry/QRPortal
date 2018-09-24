@@ -2,39 +2,42 @@ const express = require('express');
 const options = require('./options');
 const { main } = require('../routes/routes');
 const template = require('./template');
-let tempRouter = express.Router();
+const logger = require('../logger/rules');
+let Router = express.Router();
 
-tempRouter.get(main, (req, res) => {
-  const query = JSON.stringify(req.query);
-  const base = 'base64';
-  const queryCrypt = Buffer.from(query).toString(base);
+Router.get(main, (req, res) => {
+  const keys = Object.keys(req.query);
+  for (let i = 0; i < keys.length; i++) {
+    const ref = req.query[keys[i]];
+    console.log(ref.split('_'));
+  }
   res.type('html'); 
-  res.send(template(queryCrypt));
+  res.send(template(''));
 });
 
-tempRouter.get('/querytest', (req, res) => {
+Router.get('/querytest', (req, res) => {
   const queryParams = req.query;
   console.log(queryParams);
 
   res.sendStatus(200);
 });
 
-tempRouter.get('/bundle.js', (req, res)=> {
+Router.get('/bundle.js', (req, res)=> {
   res.sendFile('bundle.js', options, (err)=>{
     if ( err ) {
-      console.log( err ); // replace with error logger
+      logger.error( err );
       res.status(500).send({error: 'a problem occured'});
     }
   });
 });
 
-tempRouter.get('/bundle.js.map', (req, res)=> {
-  res.sendFile('bundle.js.map', options, (err)=>{
-    if ( err ) {
-      console.log( err ); // replace with error logger
-      res.status(500).send({error: 'a problem occured'});
-    }
-  });
-});
+// Router.get('/bundle.js.map', (req, res)=> { // remove for production use
+//   res.sendFile('bundle.js.map', options, (err)=>{
+//     if ( err ) {
+//       console.log( err ); // replace with error logger
+//       res.status(500).send({error: 'a problem occured'});
+//     }
+//   });
+// });
 
-module.exports = tempRouter;
+module.exports = Router;

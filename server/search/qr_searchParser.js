@@ -17,12 +17,13 @@ let index = {
 
 function convertToSearchString ( dataObject, fileName ) {
   const technos = filter(dataObject.technologies);
+  const qsString = dataObject.qualityStandards.map( qs => qs.id ).join(' ');
   return {
     id: dataObject.id,
     name: dataObject.name,
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
-    searchid: `${dataObject.id} - ${dataObject.name}`,
+    searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
     technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
@@ -94,28 +95,35 @@ const QRinitializationTest = () =>{
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
-          count: e.count
+          count: e.count,
+          searchid: `${standards.cisq} - ${e.id}`
         };
       }),
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json')).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
-          count: e.count
+          count: e.count,
+          searchid: `${standards.owasp} - ${e.id}`
         };
       }),
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
-          count: e.count
+          count: e.count,
+          searchid: `${standards.cwe} - ${e.id}`
         };
       })],
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
-    const std = standardsList[i];
-    index.standards[std.id.toLowerCase()] = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href)));
+    const std = standardsList[i],
+      stdList = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href))),
+      stdListRemap = stdList.map( e => {
+        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id });
+      });
+    index.standards[std.id.toLowerCase()] = stdListRemap;
   }
   console.log('created Standards Index');
 }());

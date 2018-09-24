@@ -12,7 +12,6 @@ let extVersionMap;
 let rulesRouter = express.Router();
 
 rulesRouter.get(main, (req, res) => {
-  console.log(req.query);
   res.sendFile('index.html', options, (err)=>{
     if ( err ) {
       errLogger.error( err );

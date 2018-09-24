@@ -15,7 +15,7 @@ const NavHeader = ( props ) =>{
           props.path.map((e, index, arr) => {
             if ( Array.isArray(e) ) {
               return <DropdownCompare key={index} list={e} params={[props.cmpParams.vi, props.cmpParams.vtc]} disableState={true} compareEnabled={props.compareEnabled} onItemSelect={props.selectorChange} toggleCompare={props.onToggleCompare} onCompare={(v1, v2) => props.onCompare(arr[1].id, v1, v2)}/> ;
-            } else return (<PathElement key={index} separator={index !== pl - 1 && index !== 0} showIcon={index === 0} index={index} gotoLocation={props.gotoLocation} name={e.label || e.name} href={e.href} icon={e.icon}/>);
+            } else return (<PathElement key={index} id={e.id} ext={props.path[props.path.length - 1]} params={props.cmpParams} compareEnabled={props.compareEnabled} isExtension={/com.castsoftware./ig.test(e.id)} separator={index !== pl - 1 && index !== 0} showIcon={e.icon !== undefined} index={index} gotoLocation={props.gotoLocation} name={e.label || e.name} href={e.href} icon={e.icon}/>);
           })}
       </div>
     </div>
