@@ -2,9 +2,16 @@ const globSync = require('./lib/recursiveSyncGlob');
 const matchTemplate = require('./lib/identifier');
 const {getReporter, generateReports} = require('./lib/reporter');
 const methods = require('./lib/validationMethods');
+const logger = require('./lib/chkerLogger');
 
 globSync('rest', ( path, fileName, contents ) => {
-  const data = JSON.parse(contents);
+  logger.info('checking: ' + path + fileName);
+  let data;
+  try {
+    data = JSON.parse(contents);
+  } catch (error) {
+    logger.error(error);
+  }
   const template = matchTemplate(path);
   if( template ){
     const propsLength = template.itemProps ? template.itemProps.length : undefined;
