@@ -5,12 +5,11 @@ const methods = require('./lib/validationMethods');
 const logger = require('./lib/chkerLogger');
 
 globSync('rest', ( path, fileName, contents ) => {
-  logger.info('checking: ' + path + fileName);
   let data;
   try {
     data = JSON.parse(contents);
   } catch (error) {
-    logger.error(error);
+    logger.error('Error while parsing JSON of : ' + path + ' -- error : ' + error);
   }
   const template = matchTemplate(path);
   if( template ){
@@ -29,8 +28,9 @@ globSync('rest', ( path, fileName, contents ) => {
             if ( !item.hasOwnProperty(name) ) {
               R.report( path, {index: i, type: 'missing property', msg: `the property ${name} is missing from the item` });
             } else {
-              if ( type !== 'array' ? (typeof item[name] !== type) : Array.isArray(item[name]) ) {
-                R.report( path, {index: i, type: 'property type missmatch', msg: `the property ${name} does not match defined type` });
+              if ( type !== 'array' ? ( Array.isArray(type) ? type.indexOf(typeof item[name]) === -1 : typeof item[name] !== type) : Array.isArray(item[name]) ) {
+                R.report( path, {index: i, type: 'property type missmatch', msg: `the property ${name} does not match defined type - was expecting: ${type} - found: ${typeof item[name]}`,
+                  element : item });
               }
 
               if (method) {
@@ -38,7 +38,7 @@ globSync('rest', ( path, fileName, contents ) => {
                 const valid = _method( item[name] );
 
                 if (!valid) {
-                  R.report( path, {index: i, type: 'data validation', msg: `the property value of ${name} failed the validation check: ${method}` });
+                  R.report( path, {index: i, type: 'data validation', msg: `the property value of ${name} failed the validation check: ${method}`, element: item[name] });
                 }
               }
             }
