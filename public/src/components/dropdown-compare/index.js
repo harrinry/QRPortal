@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CLASSES, COMPARE_IMG, COMPARE_IMG_COMPARING, COMPARE_WHITE } from './constants';
+import { CLASSES, COMPARE_IMG, COMPARE_IMG_COMPARING, COMPARE_WHITE, COMPARE_TO } from './constants';
 import { createClassName } from 'common/';
 import { DropdownSelector } from 'components/';
 import './style.css';
@@ -70,8 +70,15 @@ export default class DropdownCompare extends React.PureComponent {
     return (
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={ defaultIndex1 !== -1 ? defaultIndex1 : 0} label={this.props.params[0] ? this.props.params[0].label : ''} stateDisabled={true} onItemClick={this.firstListChanged} selected={this.props.params[0]}/>
-        <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)}><img onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseExit} src={isCompareEnabled ? ( this.state.hover ?  COMPARE_IMG_COMPARING : COMPARE_WHITE ) : ( this.state.hover ? COMPARE_IMG_COMPARING : COMPARE_IMG)} className={CLASSES.compareImg} onClick={this.toggleCompare}/></div>
-        { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? <DropdownSelector label={this.props.params[1] ? this.props.params[1].label : ''} selected={this.props.params[0]} stateDisabled={true} list={this.props.list} defaultIndex={defaultIndex2 !== -1 ? defaultIndex2 : 1} onItemClick={this.secondListChanged}/> : undefined }
+        <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)} >
+          <img onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseExit} 
+            src={isCompareEnabled ? ( this.state.hover ?  COMPARE_IMG_COMPARING : COMPARE_WHITE ) : ( this.state.hover ? COMPARE_IMG_COMPARING : COMPARE_IMG)} 
+            className={CLASSES.compareImg} onClick={this.toggleCompare}/>
+          {/* <span className={createClassName(CLASSES.onHoverText, this.state.hover ? CLASSES.isHoverState : undefined)}>{COMPARE_TO}</span> */}
+        </div>
+        { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? 
+          <DropdownSelector label={this.props.params[1] ? this.props.params[1].label : ''} selected={this.props.params[0]} stateDisabled={true} list={this.props.list} defaultIndex={defaultIndex2 !== -1 ? defaultIndex2 : 1} onItemClick={this.secondListChanged}/> : 
+          undefined }
       </span>
     );
   }

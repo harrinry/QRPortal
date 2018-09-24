@@ -7,6 +7,7 @@ export const SECTIONS = {
 export const NORULES = 'No Rules';
 export const RULES = 'Rules';
 export const FILTERPLACEHOLDER = 'Filter Rules';
+export const BOTH = 'both';
 
 export const HEADERS = {
   id: {name: 'Id', className: 'qrp_arrClsHid'},

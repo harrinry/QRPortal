@@ -39,12 +39,15 @@ class VerticalArray extends React.PureComponent{
   }
 
   render(){
-    const { headers, childConstructor, itemCountTitle, filterPlaceholder, isLoading } = this.props;
+    const { headers, childConstructor, itemCountTitle, filterPlaceholder, isLoading, label } = this.props;
     const filteredChildren = this.filterChildren(),
-      ref = JSON.stringify(headers);
+      ref = JSON.stringify(headers),
+      labelIs = typeof label,
+      _label = label ? ( labelIs === 'function' ? label( filteredChildren, filteredChildren.length, this.props.children.length) : label ) : 
+        (this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of '+ this.props.children.length + ' ' + itemCountTitle );
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
-        <div className={CLASSES.itemCounter}>{ this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of '+ this.props.children.length + ' ' + itemCountTitle }</div>
+        <div className={CLASSES.itemCounter}>{_label}</div>
         <div className={CLASSES.internalFilter}>
           <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
           <span className={CLASSES.filter} onClick={() => this.refs[ref].focus()}></span>

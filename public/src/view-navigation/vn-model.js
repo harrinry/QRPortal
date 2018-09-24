@@ -10,13 +10,13 @@ const ViewNavigation = ( props ) => {
       <div className={createClassName(CLASSES.navIcon, CLASSES.extraRightMargin)} onClick={props.goToLandingPage}>
         <img src={Imgs.logo.default} className={CLASSES.imgIcon} alt={props.language.logo} />
       </div>
-      { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{props.language.title}</div> : undefined }
+      {/* { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{props.language.title}</div> : undefined }
       <div className={CLASSES.navIcon}  onClick={props.setTilesView}>
         <img src={viewTypeIsMenu ? Imgs.tiles.grey : Imgs.tiles.black} className={CLASSES.imgIcon} alt={props.language.tiles} />
       </div>
       <div className={CLASSES.navIcon}  onClick={props.setMenuView}>
         <img src={viewTypeIsMenu ? Imgs.menu.black : Imgs.menu.grey} className={CLASSES.imgIcon} alt={props.language.menu} />
-      </div>
+      </div> */}
     </div>
   );
 };
