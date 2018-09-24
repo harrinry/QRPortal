@@ -1,9 +1,9 @@
 module.exports = [
-  // {
-  //   name: 'rules',
-  //   route: '/rules',
-  //   router: 'rules'
-  // },
+  {
+    name: 'rules(depreciated)',
+    route: '/v1',
+    router: 'rules'
+  },
   {
     name: 'images',
     route: '/img',
@@ -40,7 +40,7 @@ module.exports = [
     router: 'router'
   },
   {
-    name: 'temp',
+    name: 'rules',
     route: '/rules',
     router: 'router'
   },
