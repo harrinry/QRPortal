@@ -25015,12 +25015,6 @@ var NORULES = exports.NORULES = 'No Rules';
 var RULES = exports.RULES = 'Rules';
 var FILTERPLACEHOLDER = exports.FILTERPLACEHOLDER = 'Filter Rules';
 
-var RESOURCES = exports.RESOURCES = {
-  technologies: 'rules/technologies.json',
-  sources: 'rules/extensions.json',
-  ext_rules: '/quality-rules'
-};
-
 var CLASSES = exports.CLASSES = {
   idCell: 'qrp_brl_tbCrid',
   nameCell: 'qrp_brl_tbCrname',
@@ -25231,14 +25225,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.fetchData = exports.fetchWebData = undefined;
 
 var _common = __webpack_require__(/*! common/ */ "./public/src/common/index.js");
-
-// export const fetchExtensionsList = () => {
-//   return fetch(RESOURCES.sources).then(res => res.json());
-// };
-
-// export const fetchTechnologiesList = () => {
-//   return fetch(RESOURCES.technologies).then(res => res.json());
-// };
 
 var fetchWebData = exports.fetchWebData = function fetchWebData(url) {
   return (0, _common.webFetch)(url);
@@ -25770,29 +25756,6 @@ var ACTIONTYPES = _interopRequireWildcard(_bodyActionsType);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
-// import { apiFetch } from 'common/';
-// import { STATIC_QUERIES, fetchExtensionsList, fetchTechnologiesList, fetchQualityStandardList, fetchBusinessCriteriaList } from './body-resources';
-// import { TECHNOLOGIES, EXTENSIONS } from './body-constants';
-
-// const errOnDataFetch = (err, actionType , query) => {
-//   return {
-//     type: actionType,
-//     payload: {
-//       err: err,
-//       query: query
-//     }
-//   };
-// };
-
-// const fetchingData = ( actionType, params ) => {
-//   return {
-//     type: actionType,
-//     payload: {
-//       ...params
-//     }
-//   };
-// };
-
 var showContentView = exports.showContentView = function showContentView() {
   return {
     type: ACTIONTYPES.SHOW_CONTENT_VIEW
@@ -25819,113 +25782,6 @@ var setListCount = exports.setListCount = function setListCount(count) {
     }
   };
 };
-
-// const setListData = ( data ) => {
-//   return {
-//     type: ACTIONTYPES.SET_LIST_DATA,
-//     payload: {
-//       data: data,
-//       loading: false
-//     }
-//   };
-// };
-
-// export const fetchListData = ( query ) =>{
-//   return ( dispatch ) => {
-//     dispatch(fetchingData(ACTIONTYPES.FETCH_LIST_DATA));
-//     return apiFetch(query).then(
-//       data => dispatch(setListData( data )),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA, query))
-//     );
-//   };
-// };
-
-// const setExpandedListData = ( data ) => {
-//   return {
-//     type: ACTIONTYPES.SET_EXPANDED_LIST_DATA,
-//     payload: {
-//       data: data,
-//       loading: false
-//     }
-//   };
-// };
-
-// export const fetchExpandedListData = ( query ) => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData(ACTIONTYPES.FETCH_EXPANDED_LIST_DATA));
-//     return fetchBusinessCriteriaList( query ).then(
-//       data => dispatch( setExpandedListData(data) ),
-//       err => dispatch( errOnDataFetch( err, ACTIONTYPES.FAILED_TO_FETCH_EXPANDED_LIST_DATA, query ))
-//     );
-//   };
-// };
-
-// const setNavigationData = ( title, data ) => {
-//   return {
-//     type: ACTIONTYPES.SET_NAVIGATION_DATA,
-//     payload: {
-//       data: data,
-//       title: title,
-//       loading: false
-//     }
-//   };
-// };
-
-// export const fetchNavigationData = ( query, title ) => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData( ACTIONTYPES.FETCH_NAVIGATION_DATA, {title} ));
-//     return apiFetch( query ).then(
-//       data => dispatch(setNavigationData(title, data)),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA, query))
-//     );
-//   };
-// };
-
-// export const fetchTechnologyNavigationData = () => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData( ACTIONTYPES.FETCH_NAVIGATION_DATA, {title: TECHNOLOGIES} ));
-//     return fetchTechnologiesList().then(
-//       data => dispatch(setNavigationData(TECHNOLOGIES, data)),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA, STATIC_QUERIES.technologies))
-//     );
-//   };
-// };
-
-// export const fetchExtensionsNavigationData = () => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData( ACTIONTYPES.FETCH_NAVIGATION_DATA, {title: EXTENSIONS} ));
-//     return fetchExtensionsList().then(
-//       data => dispatch(setNavigationData(EXTENSIONS, data)),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_NAVIGATION_DATA, STATIC_QUERIES.sources))
-//     );
-//   };
-// };
-
-// export const fetchQualityStandardsListData = ( url ) => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData(ACTIONTYPES.FETCH_LIST_DATA));
-//     return fetchQualityStandardList(url).then(
-//       data => dispatch(setExpandedListData( data )),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA, url))
-//     );
-//   };
-// };
-
-// export const fetchBusinessCriteriaListData = ( url ) => {
-//   return ( dispatch ) => {
-//     dispatch(fetchingData(ACTIONTYPES.FETCH_LIST_DATA));
-//     return fetchBusinessCriteriaList(url).then(
-//       data => dispatch(setListData( data )),
-//       err => dispatch(errOnDataFetch(err, ACTIONTYPES.FAILED_TO_FETCH_LIST_DATA, url))
-//     );
-//   };
-// };
-
-// export const clearListData = () =>{
-//   return {
-//     type: ACTIONTYPES.CLEAR_LIST_DATA
-//   };
-// };
 
 /***/ }),
 
@@ -29733,7 +29589,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _bodyActions.showContentView)());
       dispatch((0, _bslActions.fetchStandardsListData)(href));
       dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.standard, _mnConstants.PATHS.cisq, { name: name }));
-      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.cisq.name}/${name}`));
     },
     onOwaspClick: function onOwaspClick(name, href) {
       dispatch((0, _gsActions.hideSearchResults)());
@@ -29743,7 +29598,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _bodyActions.showContentView)());
       dispatch((0, _bslActions.fetchStandardsListData)(href));
       dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.standard, _mnConstants.PATHS.owasp, { name: name }));
-      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.owasp.name}/${name}`));
     },
     onBusinessCriteriaClick: function onBusinessCriteriaClick(name, href) {
       dispatch((0, _gsActions.hideSearchResults)());
@@ -29753,7 +29607,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _bodyActions.showContentView)());
       dispatch((0, _brlActions.fetchWebData)(href));
       dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.standard, _mnConstants.PATHS.businessCriteria, { name: name }));
-      // dispatch(push(`/temp/rules/${PATHS.standard.name}/${PATHS.businessCriteria.name}/${name}`));
     },
     onTechnologyClick: function onTechnologyClick(name, href) {
       dispatch((0, _gsActions.hideSearchResults)());
@@ -29763,7 +29616,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _bodyActions.showContentView)());
       dispatch((0, _brlActions.fetchApiData)(href));
       dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.technologies, { name: name }));
-      // dispatch(push(`/temp/rules/${PATHS.technologies.name}/${name}`));
     },
     setSelected: function setSelected(ref) {
       dispatch(ACTIONS.setSelectedItem(ref));
@@ -29777,7 +29629,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       dispatch((0, _brlActions.fetchWebData)(version.href));
       dispatch((0, _nvActions.setHeaderPath)(_mnConstants.PATHS.extensions, { name: extension.name, href: extension.href, icon: extension.icon }, extension.versions));
       dispatch((0, _cmpActions.setParams)(version));
-      // dispatch(push(`/temp/rules/${PATHS.extensions.name}/${extension.name}/${version.name}`));
     },
     fetchVersion: function fetchVersion(exeCount, extension) {
       if (exeCount !== 0) return;
@@ -30057,10 +29908,6 @@ var PATHS = exports.PATHS = {
   technologies: { name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies, icon: 'img/technologies.svg' },
   extensions: { name: ITEMS.EXTENSIONS, href: QUERIES.extensions, icon: 'img/sources.svg' }
 };
-
-var qualityRules_post = exports.qualityRules_post = '/quality-rules';
-
-var EXTENTION_QUERY_PREFIX = exports.EXTENTION_QUERY_PREFIX = 'rules/extensions?q=';
 
 /***/ }),
 

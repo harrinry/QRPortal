@@ -36,7 +36,3 @@ export const PATHS = {
   technologies: {name: ITEMS.TECHNOLOGIES, href: QUERIES.technologies, icon: 'img/technologies.svg'},
   extensions: {name: ITEMS.EXTENSIONS, href: QUERIES.extensions, icon: 'img/sources.svg'}
 };
-
-export const qualityRules_post = '/quality-rules';
-
-export const EXTENTION_QUERY_PREFIX = 'rules/extensions?q=';
