@@ -9,10 +9,7 @@ function splitOnUnderScore( str ){
 
 const hydrateObj = {
   // example query : ?REF=_501&SEC=T_-3 || ?SEC=STD_CISQ_CISQPERFORMANCE&REF=ASCPEM-PRF-2_7198
-  compare: {
-    isVisible: false /*=> default*/ || true,
-    params: []
-  },
+  cmp: ['versionObject', 'versionObject'],
   rules: {
     qs: null || {
       href: 'path to list',
@@ -20,7 +17,7 @@ const hydrateObj = {
     },
     rule: 'id of selected rule'
   },
-  path: [
+  path: [ // this part is done!!!
     {name: 'display name', icon: 'path to icon', href: 'path to rules list'}
   ],
   

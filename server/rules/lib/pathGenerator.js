@@ -57,13 +57,8 @@ function getDefPathFromDefinition( def, id ){
   }
 }
 
-function getEndPoint( def, ref, ext ){
-  if( !extVersions ) extVersions = extensionData.readExtMap();
-  if (def === defMap.std && ref) {
-    return getStdCategoryPath(ref);
-  } else if ( def ===  defMap.srs && extVersions.hasOwnProperty(ext.id)){
-    return extVersions[ext.id];
-  }
+function getEndPoint( def, ref ){
+  return (def === defMap.std && ref) ? getStdCategoryPath(ref) : undefined;
 }
 
 function getTechnologyPath( id ){
