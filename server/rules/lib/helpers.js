@@ -8,7 +8,8 @@ function splitOnUnderScore( str ){
 }
 
 const hydrateObj = {
-  // example query : ?REF=_501&SEC=T_-3 || ?SEC=STD_CISQ_CISQPERFORMANCE&REF=ASCPEM-PRF-2_7198
+  // conversion from old url standards to new urls completed
+  // example query : ?SEC=STD_CISQ_CISQPERFORMANCE&REF=ASCPEM-PRF-2_7198 || ?sec=srs_cpp&cmp=1.0.2~1.0.3&ref=_7168&
   cmp: ['versionObject', 'versionObject'],
   rules: {
     qs: null || {
@@ -20,7 +21,5 @@ const hydrateObj = {
   path: [ // this part is done!!!
     {name: 'display name', icon: 'path to icon', href: 'path to rules list'}
   ],
-  
+  search: 'search query string'
 };
-
-module.exports = {};

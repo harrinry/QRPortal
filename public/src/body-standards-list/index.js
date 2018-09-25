@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch) => {
         if( data.count > 0 ) dispatch(fetchWebData( data.href ) );
         else dispatch(clearListData());
         dispatch(clearDetailsData());
-      });
+      }, ()=> console.log(data));
     }
   };
 };

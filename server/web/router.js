@@ -47,7 +47,6 @@ WebRouter.get('/quality-standards', ( req, res ) => {
 WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
   fs.readFile( root.resolve('rest/AIP/' + req.url + '.json'), (err, data) => {
     if (err) {
-      console.log(err);
       return errorHandler(err, res);
     }
     const json = JSON.parse(data),
@@ -60,7 +59,6 @@ WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
       });
     res.send(jsonMapped);
   });
-  // res.sendFile(req.url + '.json', options, err => errorHandler(err, res));
 });
 
 WebRouter.get('/quality-standards/:stdID/categories/:stdCatName', ( req, res ) => {

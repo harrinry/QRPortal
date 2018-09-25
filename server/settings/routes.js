@@ -5,6 +5,11 @@ module.exports = [
     router: 'rules'
   },
   {
+    name: 'fonts',
+    route: '/fonts',
+    router: 'router'
+  },
+  {
     name: 'images',
     route: '/img',
     router: 'imgRouter'

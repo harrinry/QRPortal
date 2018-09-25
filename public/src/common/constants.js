@@ -18,7 +18,8 @@ export const COMMON_CLASSES = {
   critical: 'qrp_critical',
   arraySelected:'qrp_lselected',
   arrayChildElement : 'qrp_arrlci',
-  searchIcon: 'qrp_srico'
+  searchIcon: 'qrp_srico',
+  infoIcon: 'qrp_icon-info'
 };
 
 export const API_REQUEST = 'rest?q=';

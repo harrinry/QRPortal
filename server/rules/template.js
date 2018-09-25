@@ -7,6 +7,7 @@ module.exports = function ( hydrateData ) {
     <title>CAST Structural Rules</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/icons.css">
     <link rel="stylesheet" type="text/css" href="mkt/css/cta-styles">
   </head>
   <body>

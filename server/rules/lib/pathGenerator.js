@@ -4,8 +4,6 @@ const extensionData = require('../../lib/extensions-map');
 const standardsData = require('../../lib/sync-std-map');
 const catData = require('../../lib/std-cat-map');
 
-let extVersions;
-
 const defMap = {
   std: 'Standards',
   t: 'Technologies',
