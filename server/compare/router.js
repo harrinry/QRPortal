@@ -13,8 +13,8 @@ compareRouter.get('/extensions/:extID/:ver1/:ver2', (req, res) => {
       section: 'EXTENSIONS',
       isValid: null
     },
-    verPath = ( version ) => root.resolve(`rest/aip/extensions/${params.extID}/versions/${version}/quality-rules.json`),
-    toVerify = [ `rest/aip/extensions/${params.extID}/`, `rest/aip/extensions/${params.extID}/versions/${params.version1}/`, `rest/aip/extensions/${params.extID}/versions/${params.version2}/` ];
+    verPath = ( version ) => root.resolve(`rest/AIP/extensions/${params.extID}/versions/${version}/quality-rules.json`),
+    toVerify = [ `rest/AIP/extensions/${params.extID}/`, `rest/AIP/extensions/${params.extID}/versions/${params.version1}/`, `rest/AIP/extensions/${params.extID}/versions/${params.version2}/` ];
 
   if( params.extID !== 'com.castsoftware.aip' ){
     for (let i = 0; i < 3; i++) {
@@ -30,7 +30,7 @@ compareRouter.get('/extensions/:extID/:ver1/:ver2', (req, res) => {
     if( params.isValid ) res.json(compareOnId( require(verPath(params.version1)), require(verPath(params.version2)), params.version1, params.version2 ));
     else res.sendStatus(404);
   } else {
-    const AIPPath = ( version ) => root.resolve(`rest/aip/versions/${version}/quality-rules.json`);
+    const AIPPath = ( version ) => root.resolve(`rest/AIP/versions/${version}/quality-rules.json`);
     res.json(compareOnId( require(AIPPath(params.version1)), require(AIPPath(params.version2)), params.version1, params.version2 ));
   }
 });
