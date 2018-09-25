@@ -7,7 +7,7 @@ import './style.css';
 
 const generateLabel = ( data, fltLength, maxLength ) => {
   const _nRules = data.filter( e => e.parent.toLowerCase() !== BOTH ).length;
-  return ( fltLength === maxLength ? `+${_nRules} ${RULES} Of ${maxLength}` : `+${_nRules} ${RULES} from ${fltLength} Rules of ${maxLength}`);
+  return ( fltLength === maxLength ? `+${_nRules} Of ${maxLength} Rules` : `+${_nRules} from ${fltLength} of ${maxLength} Rules`);
 };
 
 const CompareListArray = ( props ) => {

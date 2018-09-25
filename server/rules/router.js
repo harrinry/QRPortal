@@ -3,6 +3,8 @@ const options = require('./options');
 const { main } = require('../routes/routes');
 const template = require('./template');
 const logger = require('../logger/rules');
+const pathGen = require('./lib/pathGenerator');
+const notFound = require('../middleware/notFound');
 let Router = express.Router();
 
 Router.get(main, (req, res) => {
@@ -18,8 +20,11 @@ Router.get(main, (req, res) => {
 Router.get('/querytest', (req, res) => {
   const queryParams = req.query;
   console.log(queryParams);
-
-  res.sendStatus(200);
+  if ( queryParams.ref && queryParams.sec ){
+    res.json(pathGen(req.query.sec));
+  } else {
+    notFound(req, res);
+  }
 });
 
 Router.get('/bundle.js', (req, res)=> {
