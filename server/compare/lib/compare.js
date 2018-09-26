@@ -16,16 +16,17 @@ function compareArrays( arr1, arr2, arr1Name, arr2Name, compareFunc ){
   });
 }
 
-function compareOnId( arr1, arr2, arr1Name, arr2Name ){
-  const compareValueConverter = ( item ) => item.id;
-
-  return compareArrays( arr1, arr2, arr1Name, arr2Name, compareValueConverter );
+function compareOnId( arr1, arr2, arr1Name, arr2Name, middleware ){
+  const compareValueConverter = ( item ) => item.id,
+    data = compareArrays( arr1, arr2, arr1Name, arr2Name, compareValueConverter );
+  return middleware ? middleware(data) : data ;
 }
 
-function compareOnJSON( arr1, arr2, arr1Name, arr2Name ){
-  const compareValueConverter = ( item ) => JSON.stringify(item);
+function compareOnJSON( arr1, arr2, arr1Name, arr2Name, middleware ){
+  const compareValueConverter = ( item ) => JSON.stringify(item),
+    data = compareArrays( arr1, arr2, arr1Name, arr2Name, compareValueConverter );
 
-  return compareArrays( arr1, arr2, arr1Name, arr2Name, compareValueConverter );
+  return middleware ? middleware(data) : data ;
 }
 
 module.exports = {

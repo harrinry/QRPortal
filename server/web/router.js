@@ -8,6 +8,7 @@ const businessCriteriaMap = require('../lib/business-criteria-map');
 const navigationData = require('../lib/navigation-map');
 const fs = require('fs');
 const root = require('app-root-path');
+const filterDeprecated = require('../lib/filterDeprecated');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -19,7 +20,8 @@ WebRouter.get('/technologies', (req, res) => {
 });
 
 WebRouter.get('/technologies/:technoID', (req, res) => {
-  res.sendFile(req.url + '/quality-rules.json', options, (err) => errorHandler(err, res));
+  filterDeprecated(req, res, errorHandler);
+  // res.sendFile(req.url + '/quality-rules.json', options, (err) => errorHandler(err, res));
 });
 
 WebRouter.get('/extensions', (req, res) => {
@@ -37,7 +39,7 @@ WebRouter.get('/extensions/:extID', ( req, res ) => {
 });
 
 WebRouter.get('/extensions/:extID/versions/:version', ( req, res ) => {
-  res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+  filterDeprecated(req, res, errorHandler);
 });
 
 WebRouter.get('/quality-standards', ( req, res ) => {
@@ -51,7 +53,7 @@ WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
     }
     const json = JSON.parse(data),
       jsonMapped = json.map( e => {
-        return Object.assign({}, e, { 
+        return Object.assign({}, e, {
           icon: ( req.params.stdID.toLowerCase() === 'owasp' ? 
             '/img/' + e.name.toLowerCase() + '.svg' : 
             '/img/' + e.name.substring(req.params.stdID.length).replace(/-/ig,'').toLowerCase() + '.svg' ) 
@@ -66,7 +68,8 @@ WebRouter.get('/quality-standards/:stdID/categories/:stdCatName', ( req, res ) =
 });
 
 WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
-  res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+  // res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+  filterDeprecated(req, res, errorHandler);
 });
 
 WebRouter.get('/business-criteria', (req, res) => {
@@ -74,7 +77,8 @@ WebRouter.get('/business-criteria', (req, res) => {
 });
 
 WebRouter.get('/business-criteria/:bcID', ( req, res ) => {
-  res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+  filterDeprecated(req, res, errorHandler);
+  // res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
 });
 
 WebRouter.get('/quality-rules/:ruleID', ( req, res ) => {
@@ -88,7 +92,8 @@ WebRouter.get('/versions.json', (req, res) => {
 });
 
 WebRouter.get('/versions/:aipVersion', (req, res) => {
-  res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
+  filterDeprecated(req, res, errorHandler);
+  // res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
 });
 
 WebRouter.get('/web-navigation', (req, res) => {

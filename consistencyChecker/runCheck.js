@@ -20,6 +20,7 @@ globSync('rest', ( path, fileName, contents ) => {
       switch (template.type) {
       case 'array': {
         const dl = data.length;
+        let ddArr = [];
         for (let i = 0; i < dl; i++) {
           const item = data[i];
           for (let x = 0; x < propsLength; x++) {
@@ -42,6 +43,12 @@ globSync('rest', ( path, fileName, contents ) => {
                 }
               }
             }
+          }
+          const jitm = JSON.stringify(item);
+          if( ddArr.indexOf(jitm) > -1 ){
+            R.report( path, {index: i, type: 'Duplicate', msg: 'Duplicate item found in data set', element: item });
+          } else {
+            ddArr.push(jitm);
           }
         }
         break;

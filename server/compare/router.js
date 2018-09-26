@@ -5,6 +5,8 @@ const logger = require('../logger/compare');
 const fs = require('fs');
 let compareRouter = express.Router();
 
+const removeDeprecated = ( data ) => data.filter( e => e.status !== 'deprecated' );
+
 compareRouter.get('/extensions/:extID/:ver1/:ver2', (req, res) => {
   const params = {
       extID: req.params.extID,
@@ -27,11 +29,11 @@ compareRouter.get('/extensions/:extID/:ver1/:ver2', (req, res) => {
     
     logger.info(params);
 
-    if( params.isValid ) res.json(compareOnId( require(verPath(params.version1)), require(verPath(params.version2)), params.version1, params.version2 ));
+    if( params.isValid ) res.json(compareOnId( JSON.parse(fs.readFileSync(verPath(params.version1))), JSON.parse(fs.readFileSync(verPath(params.version2))), params.version1, params.version2, removeDeprecated ));
     else res.sendStatus(404);
   } else {
     const AIPPath = ( version ) => root.resolve(`rest/AIP/versions/${version}/quality-rules.json`);
-    res.json(compareOnId( require(AIPPath(params.version1)), require(AIPPath(params.version2)), params.version1, params.version2 ));
+    res.json(compareOnId( JSON.parse(fs.readFileSync(AIPPath(params.version1))), JSON.parse(fs.readFileSync(AIPPath(params.version2))), params.version1, params.version2, removeDeprecated ));
   }
 });
 

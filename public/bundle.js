@@ -181,7 +181,7 @@ eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/c
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".qrp_arrClsHid{padding-left: 10px; min-width: 60px;}\\r\\n.qrp_arrClsHname{width: 100%;}\\r\\n.qrp_arrClsHcrit{padding-right: 20px;}\\r\\n.qrp_arrClsHver{min-width: 150px;}\\r\\n.qrp_cmptrCCrit{margin: 16px 30px !important;}\\r\\n.qrp_cmptrCname{width: 100%;}\\r\\n.qrp_cmptrCVersion{min-width: 125px;}\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./public/src/compare/style.css?./node_modules/css-loader");
+eval("exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ \"./node_modules/css-loader/lib/css-base.js\")(false);\n// imports\n\n\n// module\nexports.push([module.i, \".qrp_arrClsHid{padding-left: 20px; min-width: 81px;}\\r\\n.qrp_arrClsHname{width: 100%;}\\r\\n.qrp_arrClsHcrit{ min-width: 70px; margin-right: 16px;}\\r\\n.qrp_arrClsHver{min-width: 166px;}\\r\\n.qrp_cmptrCCrit.qrp_critical{margin: 16px 30px !important; padding: 0px !important;}\\r\\n.qrp_cmptrCCrit{ padding: 16px 38px; }\\r\\n.qrp_cmptrCname{width: 100%;}\\r\\n.qrp_cmptrCVersion{min-width: 125px;}\\r\\n.qrp_cmptrCid{ padding-left: 20px; min-width: 73px; }\\r\\n\", \"\"]);\n\n// exports\n\n\n//# sourceURL=webpack:///./public/src/compare/style.css?./node_modules/css-loader");
 
 /***/ }),
 
