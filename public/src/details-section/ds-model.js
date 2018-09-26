@@ -73,8 +73,7 @@ function parseLinks( text ){
     str.push(node, ahrefBlock);
     idxEnd = idxStart + url.length;
   }
-
-  return str;
+  return ml > 0 ? str : text;
 }
 
 RulesDetails.propTypes = {
