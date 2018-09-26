@@ -10,7 +10,9 @@ const StandardsListArray = ( props ) => {
   return(
     <span className={CLASSES.container}>
       <Overlay onMouseClickOut={props.hideOverlay} visible={props.info.visible}>
-        <div className={'test'}><a href={'/rest/' + props.info.query}>test url, click me</a></div>
+        <div className={CLASSES.overlayBody}>
+          <div className={CLASSES.overlayBodyTitle}><h2>{}</h2></div>
+        </div>
       </Overlay>
       <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={STANDARDS} onEmpty={NOSTANDARDS} headers={[HEADER]} compare={compareFunction}>
         {props.data}
