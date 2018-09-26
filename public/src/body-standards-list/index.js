@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import StandardsList from './bsl-model';
 import { childConstructor } from './bsl-lib';
-import { fetchWebData, clearListData } from '../body-rules-list/brl-actions';
+import { fetchWebData, clearListData } from 'body-rules-list/brl-actions';
 import { clearDetailsData } from 'details-section/ds-actions';
-import { setSelected } from './bsl-actions';
+import { setSelected, fetchStandardsInfoData, hideStandardsInfo } from './bsl-actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -13,7 +13,12 @@ const mapDispatchToProps = (dispatch) => {
         if( data.count > 0 ) dispatch(fetchWebData( data.href ) );
         else dispatch(clearListData());
         dispatch(clearDetailsData());
-      }, ()=> console.log(data));
+      }, () => {
+        dispatch(fetchStandardsInfoData(data.href));
+      });
+    },
+    hideOverlay: () => {
+      dispatch(hideStandardsInfo());
     }
   };
 };
@@ -21,7 +26,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     data: state.standards.data,
-    loading: state.standards.loading
+    loading: state.standards.loading,
+    info: state.standards.info
   };
 };
 

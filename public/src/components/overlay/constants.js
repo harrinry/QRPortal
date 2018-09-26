@@ -1,7 +1,4 @@
 export const CLASSES = {
-  overlayContainer: 'qrp_overlay',
-  overlayBodyContainer: 'qrp_ovlContainer',
-  overlayBody: 'qrp_ovl-body',
-  closeBtn: 'qrp_OverlayCloseBtn',
+  overlayContainer: 'qrp_ovl',
   visible: 'qrp_ovl_visible'
 };

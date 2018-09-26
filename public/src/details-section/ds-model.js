@@ -48,7 +48,7 @@ const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) =
             </div> : undefined}
             {data.reference ? <div className={CLASSES.refContainer}>
               <p className={CLASSES.textArea}>Reference</p>
-              <p className={CLASSES.textAreaRule}>{data.reference}</p>
+              <p className={CLASSES.textAreaRule}>{parseLinks(data.reference)}</p>
             </div> : undefined}
           </div>
           : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
@@ -56,6 +56,26 @@ const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) =
     </div>
   );
 };
+
+function parseLinks( text ){
+  if (!text) return text;
+  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+    matches = text.match(reg), ml = matches ? matches.length : 0;
+  let idxStart = 0, idxEnd = 0;
+
+  let str = [];
+  
+  for (let i = 0; i < ml; i++) {
+    const url = matches[i];    
+    idxStart = text.indexOf(url);
+    const node = (<span key={'node-'+i}>{text.substring(idxEnd, idxStart)}</span>),
+      ahrefBlock = (<a key={'anchor-'+i} href={url}>{url}</a>);
+    str.push(node, ahrefBlock);
+    idxEnd = idxStart + url.length;
+  }
+
+  return str;
+}
 
 RulesDetails.propTypes = {
   data: PropTypes.object,

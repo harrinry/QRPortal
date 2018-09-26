@@ -52,7 +52,7 @@ export const fetchStandardsListData = ( query ) => {
 
 const fetchStandardsInfo = ( query ) => {
   return {
-    type: ACTIONTYPES.FETCH_STANDRADS_LIST_DATA,
+    type: ACTIONTYPES.FETCH_STANDARDS_INFO_DATA,
     payload: {
       query
     }
@@ -74,6 +74,12 @@ const errorOnInfoFetch = ( err ) => {
     payload: {
       err
     }
+  };
+};
+
+export const hideStandardsInfo = () => {
+  return {
+    type: ACTIONTYPES.HIDE_STANDARDS_INFO_DATA
   };
 };
 

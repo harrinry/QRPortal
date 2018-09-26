@@ -6,7 +6,8 @@ export const CLASSES = {
   idCell: 'qrp_std_c_id',
   nameCell: 'qrp_std_c_name',
   infoCell: 'qrp_std_c_info',
-  infoContainer: 'qrp_std_c_info_cntr'
+  infoContainer: 'qrp_std_c_info_cntr',
+  container: 'qrp_std_g_cntr'
 };
 export const HEADER = {name: 'Standards Name', className: CLASSES.headerCls};
 export const NOSTANDARDS = 'No Standards found';

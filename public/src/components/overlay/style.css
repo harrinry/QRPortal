@@ -1,8 +1,9 @@
-.qrp_overlay {
+.qrp_ovl {
   position: fixed;
-  display: none;
-  width: 100vh;
-  height: 100vw;
+  display: block;
+  opacity: 0;
+  width: 0;
+  height: 0;
   top: 0;
   left: 0;
   right: 0;
@@ -12,13 +13,6 @@
   cursor: default;
 }
 
-.qrp_overlay.qrp_ovl_visible{ display: block;   transition: 0.5s ease-in;}
+.qrp_ovl.qrp_ovl_visible{ width: 100vw; height: 100vh; opacity: 1; transition: opacity 200ms ease-in; }
 .qrp_ovlContainer{position: absolute; max-height: 500px; min-height: 100px; width: 50%; border-radius: 10px; top: 50%; left: 50%; background-color: rgba(255,255,255,0.9); transform: translate(-50%, -50%); -ms-transform: translate(-50%,-50%); overflow-y: auto;}
 .qrp_ovl-body{margin: 15px; height: calc(100% - 30px); width: calc(100% - 30px);position: absolute}
-.qrp_layoutContainer{height: 100%; width: 100%}
-.qrp_layoutContainer span{padding: 6px; cursor: pointer;}
-.qrp_layout-column{display: block; float: left; width: 30%; text-align: left; margin-left:12px;}
-button.qrp_OverlayCloseBtn {width:32px; height:32px;background-color: transparent;background-size: 90%;background-image: url('/img/close-button.svg'); border:none; cursor:pointer;}
-.qrp_layoutTitle{font-size:120%; float: left;width: calc(100% - 72px);padding-left: 36px; margin-top: auto; text-align: center;}
-.qrp_layout-column div{padding:1px; color:black;}
-.qrp_layout-column div:hover{color:#1987FF;padding-left: 5px;}
