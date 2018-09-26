@@ -7,11 +7,15 @@ import { Overlay } from '../components';
 import './style.css';
 
 const StandardsListArray = ( props ) => {
+  const info = props.info.data;
   return(
     <span className={CLASSES.container}>
       <Overlay onMouseClickOut={props.hideOverlay} visible={props.info.visible}>
         <div className={CLASSES.overlayBody}>
-          <div className={CLASSES.overlayBodyTitle}><h2>{}</h2></div>
+          <div className={CLASSES.overlayBodyTitle}><h3>{info.id}</h3></div>
+          <div className={CLASSES.overlayBodyInfoName}><p>{info.name}</p></div>
+          <div className={CLASSES.overlayBodynRules}><p>Contains {info.count} Rules</p></div>
+          { props.info.url ? (<div className={CLASSES.overlayBodyExtLink}><span>Reference: </span><a href={info.url}>{info.url}</a></div>) : undefined }
         </div>
       </Overlay>
       <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={STANDARDS} onEmpty={NOSTANDARDS} headers={[HEADER]} compare={compareFunction}>
