@@ -1,27 +1,30 @@
 const express = require('express');
 const options = require('./options');
 const { main } = require('../routes/routes');
-const template = require('./template');
 const logger = require('../logger/rules');
 const pathGen = require('./lib/pathGenerator');
 const notFound = require('../middleware/notFound');
+const errHandler = require('../middleware/errorHandler');
 let Router = express.Router();
+
+
 
 Router.get(main, (req, res) => {
   const keys = Object.keys(req.query);
-  for (let i = 0; i < keys.length; i++) {
-    const ref = req.query[keys[i]];
-    console.log(ref.split('_'));
-  }
-  res.type('html'); 
-  res.send(template(''));
-});
+  let queryValid = true;
+  console.log(req.query);
+  if( keys.length > 0 ){
+    if(keys.indexOf('sec') === -1){
+      queryValid = false;
+    }
 
-Router.get('/querytest', (req, res) => {
-  const queryParams = req.query;
-  console.log(queryParams);
-  if ( queryParams.ref && queryParams.sec ){
-    res.json(pathGen(req.query.sec));
+    if( keys.indexOf('s') > -1 ){
+      queryValid = true;
+    }
+  }
+
+  if(queryValid) {
+    res.sendFile('index.html', options, (err) => errHandler(err, res));
   } else {
     notFound(req, res);
   }

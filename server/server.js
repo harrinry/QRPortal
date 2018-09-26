@@ -13,6 +13,9 @@ require('./settings/ensureLogDir')();
 // ---------------------- initiate Routers  ------------------------------ //
 require('./settings/routerConfig')(app);
 
+// ---------------------- initiate map to ensure to date state  ------------------------------ //
+require('./lib/extensions-map').INIT();
+
 // ---------------------- Google site identification ------------------------------ //
 app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../qrp_WebApp/googleda2a1d9b51c2edfd.html'));

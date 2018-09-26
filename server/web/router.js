@@ -29,7 +29,7 @@ WebRouter.get('/extensions', (req, res) => {
 });
 
 WebRouter.get('/extensions/:extID', ( req, res ) => {
-  const key = 'AIP' + req.url;
+  const key = req.params.extID;
   if ( !extVersionMap ) extVersionMap = extensionsMap.readExtMap();
   if( extVersionMap.hasOwnProperty( key ) ){
     res.json( extVersionMap[key] );
@@ -87,8 +87,7 @@ WebRouter.get('/quality-rules/:ruleID', ( req, res ) => {
 });
 
 WebRouter.get('/versions.json', (req, res) => {
-  if ( !extVersionMap ) extVersionMap = extensionsMap.readExtMap();
-  res.json( extVersionMap['AIP'] );
+  res.redirect('/AIP/extensions/com.castsoftware.aip');
 });
 
 WebRouter.get('/versions/:aipVersion', (req, res) => {

@@ -45,8 +45,7 @@ function convertedQuery( params ){
   }
   return {
     sec: is ? is + '_' + _cat : undefined,
-    ref: stdID + '_' + refRD,
-    cmp: _ver
+    ref: stdID + '|' + refRD + '|' + _ver,
   };
 }
 

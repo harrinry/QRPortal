@@ -6,7 +6,6 @@ const errLogger = require('../logger/error');
 const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
 const getStandardsMap = require('../lib/standards-map');
-extensionsMap.INIT();
 let extVersionMap;
 
 let rulesRouter = express.Router();

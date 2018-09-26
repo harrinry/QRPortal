@@ -1,25 +1,20 @@
-function isv1URL ( url ){
-  const reg = /rlDH|rlH|rlH2/ig;
-  return reg.test(url);
-}
+(function(){
 
-function splitOnUnderScore( str ){
-  return str.split('_');
-}
-
-const hydrateObj = {
-  // conversion from old url standards to new urls completed
-  // example query : ?SEC=STD_CISQ_CISQPERFORMANCE&REF=ASCPEM-PRF-2_7198 || ?sec=srs_cpp&cmp=1.0.2~1.0.3&ref=_7168&
-  cmp: ['versionObject', 'versionObject'],
-  rules: {
-    qs: null || {
-      href: 'path to list',
-      id: 'id of selected standard'
+  'use strict';
+  
+  const hydrateObj = {
+    // conversion from old url standards to new urls completed
+    // example query : ?SEC=STD_CISQ_CISQPERFORMANCE&REF=ASCPEM-PRF-2|7198| || ?sec=srs_cpp&ref=|7168|2.0.0
+    rules: {
+      qs:['full list of elements with the potentially selected selement of the list having property selected = true'],
+      rule: ['full list of elements with the potentially selected selement of the list having property selected = true']
     },
-    rule: 'id of selected rule'
-  },
-  path: [ // this part is done!!!
-    {name: 'display name', icon: 'path to icon', href: 'path to rules list'}
-  ],
-  search: 'search query string'
-};
+    path: [ // this part is done!!!
+      {name: 'display name', icon: 'path to icon', href: 'path to rules list'}
+    ],
+    cmp: 'version id',
+    search: 'search query string'
+  };
+  
+  console.log('Hello world');
+}());

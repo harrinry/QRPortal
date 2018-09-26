@@ -61,7 +61,7 @@ function INIT (){
       const file = JSON.parse(fs.readFileSync( root.resolve( 'rest/'+ ver.href+'.json' )));
       if (file.qualityModel === true ) return ver;
     });
-    extVersionMap[ext.href] = versionsWithRules.map( e => {
+    extVersionMap[ext.id] = versionsWithRules.map( e => {
       return {
         name: e.name,
         href: e.href,
@@ -77,7 +77,7 @@ function INIT (){
       label: generateVersionLabel(v.name),
     };
   });
-  extVersionMap['AIP'] = mappedAipVersions;
+  extVersionMap['com.castsoftware.aip'] = mappedAipVersions;
   EXTMAP.write(JSON.stringify(extVersionMap, null, 2));
   EXTMAP.end(() => console.log('extensions-map created/updated'));
 }

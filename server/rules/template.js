@@ -12,10 +12,6 @@ module.exports = function ( hydrateData ) {
   </head>
   <body>
     <div id="react-root"></div>
-  
-    <script type="text/javascript">
-      window.__CQRPHYDRATE__ = "${hydrateData}";
-    </script>
     <script type="text/javascript" src="rules/bundle.js" defer></script>
   </body>
   </html>`);
