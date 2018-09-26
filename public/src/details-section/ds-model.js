@@ -59,12 +59,12 @@ const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) =
 
 function parseLinks( text ){
   if (!text) return text;
-  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g,
     matches = text.match(reg), ml = matches ? matches.length : 0;
   let idxStart = 0, idxEnd = 0;
 
   let str = [];
-  
+
   for (let i = 0; i < ml; i++) {
     const url = matches[i];    
     idxStart = text.indexOf(url);
