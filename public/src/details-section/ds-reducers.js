@@ -1,4 +1,5 @@
 import * as ACTIONTYPES from './ds-actions-type';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   query: null,
@@ -9,6 +10,11 @@ const initialState = {
 
 const detailsReducers = (state = initialState, action) => {
   switch (action.type) {
+  case HYDRATE_STORE: 
+    return {
+      ...state,
+      data: action.payload.data.det ? action.payload.data.det : state.data
+    };
   case ACTIONTYPES.CLEAR_CONTENT_DETAILS:
     return {
       ...state,

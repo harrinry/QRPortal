@@ -1,5 +1,6 @@
 import { NAVIGATION_VIEW, CONTENT_VIEW, LANDING_PAGE } from './body-constants';
 import * as ACTIONTYPES from './body-actions-type';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   view: LANDING_PAGE,
@@ -28,6 +29,11 @@ const contentBodyReducer = (state = initialState, action) => {
     return {
       ...state,
       listCount: action.payload.count
+    };
+  case HYDRATE_STORE:
+    return {
+      listCount: action.payload.data.bsl ? 2 : 1,
+      view: action.payload.data.brl ? CONTENT_VIEW : state.view
     };
   default:
     return state;

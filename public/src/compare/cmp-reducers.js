@@ -1,4 +1,5 @@
 import * as ACTIONTYPES from './cmp-actions-type';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   loading: false,
@@ -23,6 +24,14 @@ const initialState = {
 
 const compareReducers = (state = initialState, action) => {
   switch (action.type) {
+  case HYDRATE_STORE:
+    return {
+      ...state,
+      params: {
+        ...state.params,
+        vi: action.payload.data.cmp ? action.payload.data.cmp : state.params.vi
+      }
+    };
   case ACTIONTYPES.CMP_DISPLAY_COMPARISON_DATA:
     return {
       ...state,

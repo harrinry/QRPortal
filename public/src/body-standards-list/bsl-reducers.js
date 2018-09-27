@@ -1,4 +1,5 @@
 import { FETCH_STANDRADS_LIST_DATA, SET_STANDRADS_LIST_DATA, FAILED_TO_FETCH_STANDRADS_LIST_DATA, SET_SELECTED_STANDARDS_ITEM, FETCH_STANDARDS_INFO_DATA, SET_STANDARDS_INFO_DATA, FAILED_TO_FETCH_STANDARDS_INFO_DATA, HIDE_STANDARDS_INFO_DATA } from './bsl-actions-type';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   data: [],
@@ -15,6 +16,11 @@ const initialState = {
 
 const standardsListReducers = (state = initialState, action) => {
   switch (action.type) {
+  case HYDRATE_STORE:
+    return {
+      ...state,
+      data: action.payload.data.bsl ? action.payload.data.bsl : state.data
+    };
   case HIDE_STANDARDS_INFO_DATA:
     return {
       ...state,

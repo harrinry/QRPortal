@@ -3,6 +3,7 @@ const options = require('./options');
 const { main } = require('../routes/routes');
 const logger = require('../logger/rules');
 const HydObj = require('./lib/hydrate');
+const pathGen = require('./lib/pathGenerator');
 const notFound = require('../middleware/notFound');
 const errHandler = require('../middleware/errorHandler');
 let Router = express.Router();
@@ -13,10 +14,29 @@ Router.get(main, (req, res) => {
   if( keys.length > 0 ){
     if(keys.indexOf('sec') === -1){
       queryValid = false;
+    } else {
+      const pathObj = pathGen(req.query.sec);
+      if(Array.isArray(pathObj[pathObj.length -1]) && keys.indexOf('ref') === -1){
+        queryValid = false;
+      } else {
+        queryValid = pathObj.indexOf(undefined) > 0 ? false : true;
+      }
     }
 
     if( keys.indexOf('s') > -1 ){
       queryValid = true;
+    }
+
+    if(keys.indexOf('ref') > 0){
+      const Hyj = HydObj(req.query),
+        _keys = Object.keys(Hyj.data);
+      for (let i = 0; i < _keys.length; i++) {
+        const val = Hyj.data[_keys[i]];
+        if(val === 'invalid') {
+          queryValid = false;
+          break;
+        }
+      }
     }
   }
 
