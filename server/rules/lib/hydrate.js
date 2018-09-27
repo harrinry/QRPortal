@@ -1,14 +1,20 @@
 const struct = require('../../lib/dataConstruct/struct');
 const generatePath = require('./pathGenerator');
-const Hbj = new struct( 'path', 'rules', 'cmp', 'search' );
+const generateRules = require('./rqGenerator');
+const standardize = require('./standardizeParams');
+const Hbj = new struct( 'path', 'data', 'search' );
 
 function createHydrate( queryParams ){
-  const { sec, ref, s, cmp } = queryParams;
-  
-  const PATH = generatePath(sec);
+  const params = standardize( queryParams );
+  const { sec, ref, s } = params;
+  let PATH, RULES;
 
+  if (!s) {
+    PATH = generatePath(sec),
+    RULES = generateRules(ref, PATH);
+  }
 
-  return new Hbj( PATH, '', '', s );
+  return new Hbj( PATH, RULES, s );
 }
 
 module.exports = createHydrate;

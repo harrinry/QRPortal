@@ -2,17 +2,14 @@ const express = require('express');
 const options = require('./options');
 const { main } = require('../routes/routes');
 const logger = require('../logger/rules');
-const pathGen = require('./lib/pathGenerator');
+const HydObj = require('./lib/hydrate');
 const notFound = require('../middleware/notFound');
 const errHandler = require('../middleware/errorHandler');
 let Router = express.Router();
 
-
-
 Router.get(main, (req, res) => {
   const keys = Object.keys(req.query);
   let queryValid = true;
-  console.log(req.query);
   if( keys.length > 0 ){
     if(keys.indexOf('sec') === -1){
       queryValid = false;
@@ -28,6 +25,10 @@ Router.get(main, (req, res) => {
   } else {
     notFound(req, res);
   }
+});
+
+Router.get('/hydrate', (req, res) => {
+  res.json(HydObj(req.query));
 });
 
 Router.get('/bundle.js', (req, res)=> {
