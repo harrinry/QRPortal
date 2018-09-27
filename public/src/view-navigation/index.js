@@ -7,6 +7,7 @@ import { goToLandingPage } from 'path-navigation/nv-actions';
 import { showLandingPage } from 'body/body-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearCompareList } from '../compare/cmp-actions';
+import { nullifyHistory } from '../common';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showLandingPage());
       dispatch(hideSearchResults());
       dispatch(clearCompareList());
+      nullifyHistory();
     }
   };
 };

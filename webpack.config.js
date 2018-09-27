@@ -47,5 +47,12 @@ module.exports = {
       path.resolve('./public/src')
     ],
     extensions: ['.json', '.js', '.jsx', '.css', '.scss']
+  },
+  devServer:{
+    compress: true,
+    port: 3000,
+    proxy:{
+      '/': 'http://localhost:8080/'
+    }
   }
 };

@@ -2,6 +2,7 @@ const techMap = require('../../lib/technologies-map');
 const categoryMap = require('../../lib/std-cat-map');
 
 function standardize( queryParams ){
+  if(!queryParams) return;
   const keys = Object.keys(queryParams),
     shouldTransform = keys.indexOf('rlH') > -1 || keys.indexOf('rlDH') > -1;
 
@@ -19,7 +20,7 @@ function convertedQuery( params ){
       (isExt ? 'srs' : (
         isQStd ? 'std' : undefined));
   
-  let _cat, _ver;
+  let _cat, _ver='';
   
   switch (is) {
   case 't':{

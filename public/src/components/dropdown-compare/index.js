@@ -65,8 +65,8 @@ export default class DropdownCompare extends React.PureComponent {
   render(){
     const stateEnabled = this.props.disableState ? false : true;
     const isCompareEnabled = ((stateEnabled && this.state.comparing) || (!stateEnabled && this.props.compareEnabled)) ? true : false;
-    const defaultIndex1 = this.props.list.indexOf(this.props.params[0]),
-      defaultIndex2 = this.props.list.indexOf(this.props.params[1]);
+    const defaultIndex1 = this.props.params[0] ? this.props.list.findIndex( e => e.name === this.props.params[0].name) : -1,
+      defaultIndex2 = this.props.params[1] ? this.props.list.findIndex(e => e.name === this.props.params[1].name) : -1;
     return (
       <span className={CLASSES.container}>
         <DropdownSelector list={this.props.list} defaultIndex={ defaultIndex1 !== -1 ? defaultIndex1 : 0} label={this.props.params[0] ? this.props.params[0].label : ''} stateDisabled={true} onItemClick={this.firstListChanged} selected={this.props.params[0]}/>

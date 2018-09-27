@@ -6,12 +6,14 @@ import { fetchNavigationData } from 'body-navigation/bn-actions';
 import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { fetchWebData } from 'body-rules-list/brl-actions';
-import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList, showComparisonTable, setParams } from '../compare/cmp-actions';
+import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList, showComparisonTable, setParams } from 'compare/cmp-actions';
+import { nullifyHistory } from '../common';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
     gotoLocation: (props) => {
       if( !props.isExtension && (props.separator || ( props.index === 0 ))){
+        nullifyHistory();
         dispatch(navigateTo(props, props.index));
         dispatch(clearCompareList());
         dispatch(showNavigationView());
@@ -48,6 +50,7 @@ const mapDispatchToProps = ( dispatch ) => {
         }
       } else if ( props.path.length === 0 ){
         dispatch(showLandingPage());
+        nullifyHistory();
       }
     },
     selectorChange: ( item, props ) => {

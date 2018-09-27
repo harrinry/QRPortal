@@ -3,7 +3,6 @@ const techData = require('../../lib/technologies-map');
 const extensionData = require('../../lib/extensions-map');
 const standardsData = require('../../lib/sync-std-map');
 const catData = require('../../lib/std-cat-map');
-const extMap = require('../../../temp/extensions-map.json');
 const defMap = {
   std: 'Standards',
   t: 'Technologies',
@@ -70,7 +69,8 @@ function getTechnologyPath( id ){
 
 function getExtensionPath( id ){
   const _id = 'com.castsoftware.' + id.toLowerCase();
-  return [extensionData.extensions.find( e => e.id === _id ), extMap[_id] ];
+  const eMap = extensionData.readExtMap();
+  return [extensionData.extensions.find( e => e.id === _id ), eMap[_id] ];
 }
 
 function getStandardsPath( stdName ){

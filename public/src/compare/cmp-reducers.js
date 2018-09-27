@@ -28,8 +28,7 @@ const compareReducers = (state = initialState, action) => {
     return {
       ...state,
       params: {
-        ...state.params,
-        vi: action.payload.data.cmp ? action.payload.data.cmp : state.params.vi
+        vi: action.payload.data.cmp
       }
     };
   case ACTIONTYPES.CMP_DISPLAY_COMPARISON_DATA:

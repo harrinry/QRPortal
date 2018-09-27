@@ -7,7 +7,7 @@ function generateRulesHydrate( params, path ){
   let out = {};
 
   if (_params[2] !== '') {
-    const versions = path[pl -1];
+    const versions = path[2];
     out.cmp = versions.find( v => v.name === _params[2] );
     const _path = out.cmp ? root.resolve('rest/' + out.cmp.href + '/quality-rules.json') : '';
     out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : 'invalid';
@@ -16,9 +16,9 @@ function generateRulesHydrate( params, path ){
   if (_params[0] !== '') {
     if (path.length > 0){
       const std = path[pl -1],
-        stdPath = root.resolve('rest/' + std.href + '/items.json'),
+        stdPath = std ? root.resolve('rest/' + std.href + '/items.json') : '',
         data = fs.existsSync(stdPath) ? JSON.parse(fs.readFileSync(stdPath)) : null,
-        sel = data.find( e => e.id === _params[0]),
+        sel = data ? data.find( e => e.id === _params[0]) : undefined,
         _path = sel ? root.resolve('rest/' + sel.href + '/quality-rules.json') : '';
       out.bsl = setSelected(_params[0], data);
       out.brl =  fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : 'invalid';
@@ -35,7 +35,7 @@ function generateRulesHydrate( params, path ){
 
 function setSelected( id, arr ){
   if(!Array.isArray(arr)) return 'invalid';
-  const _id = parseInt(id);
+  const _id = isNaN(parseInt(id)) ? id : parseInt(id);
   return arr.map( e => {
     return Object.assign({}, e, {
       selected: e.id === _id

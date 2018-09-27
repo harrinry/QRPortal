@@ -4,3 +4,4 @@ export const CLASSES = {
 };
 
 export const SEARCHFOR = 'Search Results for : ';
+export const Ref = 'qrp_header_main';
