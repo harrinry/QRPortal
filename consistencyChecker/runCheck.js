@@ -54,9 +54,9 @@ globSync('rest', ( path, fileName, contents ) => {
         break;
       }
       case 'object': {
-        for (let x = 0; x < propsLength; x++) {
+        const propLength = template.props.length;
+        for (let x = 0; x < propLength; x++) {
           const { name, type, method } = template.props[x];
-          console.log('testing');
           if (!data.hasOwnProperty(name) || data[name] === null ) {
             R.report( path, {index: null, type: 'missing property', msg: `the property ${name} is missing from object` });
           } else {
@@ -68,8 +68,14 @@ globSync('rest', ( path, fileName, contents ) => {
               const _method = methods[method];
               const valid = _method( data[name] );
 
+              const getType = {
+                hrefCheck: 'Invalid URL',
+                duplicateCheck: 'Duplicate',
+                statusCheck: 'Invalid Status'
+              };
+
               if (!valid) {
-                R.report( path, {index: null, type: 'data validation', msg: `the property value of ${name} failed the validation check: ${method}` });
+                R.report( path, {index: null, type: getType[method], msg: `Property: ${name}`, element: data[name] });
               }
             }
           }

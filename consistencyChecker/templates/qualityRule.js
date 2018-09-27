@@ -13,10 +13,10 @@ module.exports = {
     {name: 'output', type: 'string'},
     {name: 'rationale', type: 'string'},
     {name: 'remediation', type: 'string'},
-    {name: 'businessCriteria', type: 'array'},
-    {name: 'technicalCriteria', type: 'array'},
-    {name: 'technologies', type: 'array'},
-    {name: 'qualityStandards', type: 'array'},
+    {name: 'businessCriteria', type: 'array', method: 'duplicateCheck'},
+    {name: 'technicalCriteria', type: 'array', method: 'duplicateCheck'},
+    {name: 'technologies', type: 'array', method: 'duplicateCheck'},
+    {name: 'qualityStandards', type: 'array', method: 'duplicateCheck'},
   ],
   reportFile: 'rest-quality-rules'
 };
