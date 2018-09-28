@@ -15,3 +15,4 @@ export const MAILTO = 'mailto:g.rager@castsoftware.com?Subject=Structural%20Port
 export const versionKey = 'version';
 export { TITLE } from 'body-landing-page/blp-constants';
 export { LANDING_PAGE } from 'body/body-constants';
+export const aboutPortal = 'About Structural Portal';

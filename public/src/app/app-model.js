@@ -3,7 +3,7 @@ import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } fr
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
-import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE } from './app-constants';
+import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, aboutPortal } from './app-constants';
 import { Overlay } from 'components';
 import './style.css';
 
@@ -32,7 +32,7 @@ class App extends React.PureComponent{
           currentVersion: data.version, 
           loading: false, 
           info: data, 
-          infoVisible: /*data.version === lastViewedVersion ? false :*/ true });
+          infoVisible: data.version === lastViewedVersion ? false : true });
       })
       .catch( () => {
         setLocalStorage(versionKey, undefined);
@@ -67,7 +67,7 @@ class App extends React.PureComponent{
         <div className={CLASSES.floatingBETA}>BETA</div>
         {props.view === LANDING_PAGE ? 
           <div onClick={this.toggleOverlay} className={CLASSES.logoContainer}>
-            <div className={CLASSES.castLogo}></div>
+            <div className={CLASSES.castLogo} title={aboutPortal}></div>
           </div> 
           : undefined}
         <a href={this.state.MAILTO}><div className={CLASSES.floatingSendFeedback}></div></a>
