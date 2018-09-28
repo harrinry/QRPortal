@@ -14,7 +14,7 @@ function convertedQuery( params ){
   const isQStd = /(quality-standards)|(business-criteria)/ig.test(rlH),
     isTech = /(\/technologies\/)/ig.test(rlH),
     isExt = /(\/extensions\/)/ig.test(rlH),
-    refRD = rlDH.substring(rlDH.indexOf('/quality-rules/') + 15),
+    refRD = rlDH ? rlDH.substring(rlDH.indexOf('/quality-rules/') + 15) : '',
     stdID = rlH2 ? rlH2.substring(rlH2.indexOf('/items/') + 7, rlH2.indexOf('/quality-rules')) : '',
     is = isTech ? 't' : 
       (isExt ? 'srs' : (
