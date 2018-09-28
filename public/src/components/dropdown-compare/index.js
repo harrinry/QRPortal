@@ -67,7 +67,6 @@ export default class DropdownCompare extends React.PureComponent {
     const isCompareEnabled = ((stateEnabled && this.state.comparing) || (!stateEnabled && this.props.compareEnabled)) ? true : false;
     const defaultIndex1 = this.props.params[0] ? this.props.list.findIndex( e => e.name === this.props.params[0].name) : -1,
       defaultIndex2 = this.props.params[1] ? this.props.list.findIndex(e => e.name === this.props.params[1].name) : -1,
-      compareImg = this.state.hover ? COMPARE_IMG_COMPARING : COMPARE_WHITE,
       compareImgCmp = this.state.hover ? COMPARE_IMG_COMPARING : COMPARE_IMG;
     return (
       <span className={CLASSES.container}>
@@ -78,13 +77,14 @@ export default class DropdownCompare extends React.PureComponent {
           stateDisabled={true} 
           onItemClick={this.firstListChanged}
           selected={this.props.params[0]}/>
-        <div className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)} >
+        <div 
+          onClick={this.toggleCompare}
+          className={createClassName(CLASSES.compareImgContainer, isCompareEnabled ? CLASSES.isComparing : undefined)} >
           <img 
             onMouseEnter={this.mouseEnter} 
             onMouseLeave={this.mouseExit} 
-            src={isCompareEnabled ? compareImg : compareImgCmp} 
-            className={CLASSES.compareImg} 
-            onClick={this.toggleCompare}/>
+            src={isCompareEnabled ? COMPARE_WHITE : compareImgCmp} 
+            className={CLASSES.compareImg} />
           <div className={createClassName(CLASSES.onHoverText, this.state.hover ? CLASSES.isHoverState : undefined)}>{COMPARE_TO}</div>
         </div>
         { ((this.state.comparing && stateEnabled) || this.props.compareEnabled ) ? 
