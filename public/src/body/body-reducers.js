@@ -33,7 +33,7 @@ const contentBodyReducer = (state = initialState, action) => {
   case HYDRATE_STORE:
     return {
       listCount: action.payload.data.bsl ? 2 : 1,
-      view: action.payload.data.brl ? CONTENT_VIEW : state.view
+      view: CONTENT_VIEW
     };
   default:
     return state;

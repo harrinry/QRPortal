@@ -1,5 +1,5 @@
 import * as ACTIONTYPES from './bsl-actions-type';
-import { webFetch, apiFetch } from '../common/';
+import { webFetch, apiFetch, historyReplaceState } from '../common/';
 
 
 const setStandardsListData = ( query, data ) =>{
@@ -46,7 +46,7 @@ export const fetchStandardsListData = ( query ) => {
     return webFetch( query ).then(
       data => dispatch(setStandardsListData(query, data)),
       err => dispatch(failedToFetchStandards(query, err))
-    );
+    ).then(()=> historyReplaceState());
   };
 };
 

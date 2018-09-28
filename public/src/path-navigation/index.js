@@ -7,7 +7,7 @@ import { fetchDetailsData, clearDetailsData } from 'details-section/ds-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { fetchWebData } from 'body-rules-list/brl-actions';
 import { enableComparing, disableComparing, fetchExtensionComparisonData, clearCompareList, showComparisonTable, setParams } from 'compare/cmp-actions';
-import { nullifyHistory } from '../common';
+import { nullifyHistory, historyReplaceState } from '../common';
 
 const mapDispatchToProps = ( dispatch ) => {
   return {
@@ -35,6 +35,7 @@ const mapDispatchToProps = ( dispatch ) => {
       const lastViewedRuleBeforeSearch = props.rules ? props.rules.find( e => e.selected === true ) : undefined;
       dispatch(hideSearchResults());
       if ( props.path.length > 0 ){
+        historyReplaceState();
         if( /\/quality-rules/i.test(props.path[props.path.length -1].href) === false && props.path.length < 3 ){
           dispatch(showNavigationView());
         } else {
@@ -54,7 +55,7 @@ const mapDispatchToProps = ( dispatch ) => {
       }
     },
     selectorChange: ( item, props ) => {
-      if( item !== props.params[0] ){
+      if( JSON.stringify(item) !== JSON.stringify(props.params[0]) ){
         dispatch(setParams(item));
         dispatch(fetchWebData(item.href));
         dispatch(clearDetailsData());

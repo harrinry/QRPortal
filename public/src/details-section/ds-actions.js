@@ -1,6 +1,7 @@
 import * as ACTIONTYPES from './ds-actions-type';
 import { webFetch } from 'common/';
 import { fetchListData } from 'body-rules-list/brl-actions';
+import { historyReplaceState } from '../common';
 
 const fetchingDetailsData = () => {
   return {
@@ -38,7 +39,7 @@ export const fetchDetailsData = ( url ) => {
     return webFetch( url ).then(
       data => dispatch(setDetailsData(data, url)),
       err => dispatch(errorOnDetailsFetch(err, url))
-    );
+    ).then(()=> historyReplaceState());
   };
 };
 

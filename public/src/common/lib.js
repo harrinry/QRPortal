@@ -46,7 +46,7 @@ function buildHistoryObject(){
     path = state.path.path,
     stdRef = state.standards.data.find( e => e.selected === true ),
     ruleRef = state.rulesList.data.find( e => e.selected === true ),
-    versionRef = state.compare.params.vi.name || '',
+    versionRef = state.compare.params.vi ? state.compare.params.vi.name : '',
     isStd = path[0].name === 'Standards',
     isExt = path[0].name === 'Sources',
     ref = [

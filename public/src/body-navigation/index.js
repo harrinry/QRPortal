@@ -8,12 +8,14 @@ import { fetchStandardsListData } from '../body-standards-list/bsl-actions';
 import { appendToHeaderPath } from '../path-navigation/nv-actions';
 import { SECTIONS } from './bn-constants';
 import { setSelectedItem } from '../menu-navigation/mn-actions';
+import { historyPushState } from '../common';
 
 const mapDispatchToProps = (dispatch) => {
   return {
     tileClick: (link, currentTitle) => {
       switch (currentTitle.toLowerCase()) {
       case SECTIONS.technologies:
+        historyPushState();
         dispatch(setListCount(1));
         dispatch(showContentView());
         dispatch(fetchApiData(link.href));
@@ -23,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
         break;
       case SECTIONS.cisq:
       case SECTIONS.owasp:
+        historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
         dispatch(fetchStandardsListData(link.href));
@@ -31,6 +34,7 @@ const mapDispatchToProps = (dispatch) => {
         fetch(link.href)
           .then(res => res.json())
           .then(data => {
+            historyPushState();
             dispatch(setListCount(1));
             dispatch(showContentView());
             dispatch(fetchWebData(data[0].href));
@@ -38,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
           });
         break;
       default:
+        historyPushState();
         dispatch(setListCount(1));
         dispatch(showContentView());
         dispatch(fetchWebData(link.href));

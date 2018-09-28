@@ -10,7 +10,7 @@ function generateRulesHydrate( params, path ){
     const versions = path[2];
     out.cmp = versions.find( v => v.name === _params[2] );
     const _path = out.cmp ? root.resolve('rest/' + out.cmp.href + '/quality-rules.json') : '';
-    out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : 'invalid';
+    out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
   }
 
   if (_params[0] !== '') {
@@ -21,7 +21,24 @@ function generateRulesHydrate( params, path ){
         sel = data ? data.find( e => e.id === _params[0]) : undefined,
         _path = sel ? root.resolve('rest/' + sel.href + '/quality-rules.json') : '';
       out.bsl = setSelected(_params[0], data);
-      out.brl =  fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : 'invalid';
+      out.brl =  fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
+    }
+  }
+
+  if( _params[0] === '' && _params[2] === '' ){
+    switch (path[0].name) {
+    case 'Technologies':{
+      const _path = root.resolve('rest/'.concat(path[1].href, '.json'));
+      out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
+      break;
+    } 
+    case 'Standards':{
+      const isBC = path[1].name.toLowerCase() === 'cast' ? true : false,
+        dir = isBC ? 'brl' : 'bsl',
+        _path = isBC ? root.resolve('rest/'.concat(path[2].href, '/quality-rules.json')) : root.resolve('rest/'.concat(path[2].href, '/items.json'));
+      out[dir] = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
+      break;
+    }
     }
   }
 
@@ -34,7 +51,7 @@ function generateRulesHydrate( params, path ){
 }
 
 function setSelected( id, arr ){
-  if(!Array.isArray(arr)) return 'invalid';
+  if(!Array.isArray(arr)) return [];
   const _id = isNaN(parseInt(id)) ? id : parseInt(id);
   return arr.map( e => {
     return Object.assign({}, e, {
@@ -44,10 +61,10 @@ function setSelected( id, arr ){
 }
 
 function getDetails( id, arr ){
-  if(!Array.isArray(arr)) return 'invalid';
+  if(!Array.isArray(arr)) return [];
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
-  return _path ? JSON.parse(fs.readFileSync(root.resolve('rest/' + _path.href + '.json'))) : 'invalid';
+  return _path ? JSON.parse(fs.readFileSync(root.resolve('rest/' + _path.href + '.json'))) : {};
 }
 
 module.exports = generateRulesHydrate;

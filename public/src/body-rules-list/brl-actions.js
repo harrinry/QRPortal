@@ -1,5 +1,6 @@
 import * as ACTIONTYPES from './brl-actions-type';
 import * as resources from './brl-resources';
+import { historyReplaceState } from '../common';
 
 export const setFetchingState = ( query ) => {
   return {
@@ -57,7 +58,7 @@ export const fetchListData = ( query, fetchfunc ) => {
     return fetchfunc( query ).then(
       data => dispatch(setListData( query, data )),
       err => dispatch(fetchError(query, err))
-    );
+    ).then(()=>historyReplaceState());
   };
 };
 
