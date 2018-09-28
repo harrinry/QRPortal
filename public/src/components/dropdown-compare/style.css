@@ -3,5 +3,12 @@
 .qrp_dd_cmp_cntr > .qrp_dd_cmp_ico { background: transparent; border-radius: 40px; width: 40px; height: 40px; transition: all 200ms ease-in; }
 .qrp_dd_cmp_cntr > .qrp_dd_cmp_ico:hover { background:rgba(0, 0, 0, 0.1);transition: all 200ms ease-in; }
 .qrp_dd_cmp_cntr.qrp_dd_cmp_ico_isCmp > .qrp_dd_cmp_ico { background: #000; border-radius: 40px; width: 40px; height: 40px; transition: all 200ms ease-in; }
-.qrp_dd_cmp_ico_isHvr { opacity: 1; transition: all 200ms ease-in; }
-.qrp_dd_cmp_ico_onHvrTxt{position: absolute; opacity: 0;}
+
+.qrp_dd_cmp_ico_onHvrTxt{ position: absolute; opacity: 0; width: 175px; 
+  line-height: 0;
+  height: 20px;
+  transition: opacity 200ms ease-in; 
+  font-weight: 600px;
+  z-index: 6; cursor: default; font-size: 1rem; margin: -10px 0 0 -66px; pointer-events: none;}
+
+.qrp_dd_cmp_ico_onHvrTxt.qrp_dd_cmp_ico_isHvr { opacity: 1; transition: opacity 200ms ease-in;}

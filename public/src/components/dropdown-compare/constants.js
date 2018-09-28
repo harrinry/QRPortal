@@ -11,4 +11,4 @@ export const COMPARE_IMG = '/img/compareblack.svg';
 export const COMPARE_IMG_COMPARING = '/img/compare.svg';
 export const COMPARE_WHITE = '/img/comparewhite.svg';
 
-export const COMPARE_TO = 'Compare versions';
+export const COMPARE_TO = 'Compare with';
