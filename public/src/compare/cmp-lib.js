@@ -6,7 +6,11 @@ export const cmpQueryBuilder = ( extID, ver1, ver2 ) => `${comparePrefix}${SECTI
 
 export const arrayChildConstructor = ( values, index, callback ) => {
   return (
-    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+    <tr key={index} 
+      onClick={callback} 
+      className={createClassName( COMMON_CLASSES.arrayChildElement, 
+        values.selected ? COMMON_CLASSES.arraySelected : undefined,
+        values.label.toLowerCase() !== 'both' ? CLASSES.isNew : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
       <td className={CLASSES.nameCell}>{values.name}</td>
       <td className={CLASSES.versionCell}>{values.label}</td>

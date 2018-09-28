@@ -28,5 +28,6 @@ export const CLASSES = {
   nameCell: 'qrp_cmptrCname',
   versionCell: 'qrp_cmptrCVersion',
   critical: 'qrp_cmptrCCrit',
-  container: 'qrp_cmp_t_cntr'
+  container: 'qrp_cmp_t_cntr',
+  isNew: 'qrp_cmp_t_isN'
 };

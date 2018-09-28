@@ -5,16 +5,15 @@ import App from './app-model';
 
 const mapStateToProps = (state) => {
   return {
-    viewType: state.viewType.viewType
+    viewType: state.viewType.viewType,
+    view: state.contentBody.view
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleBack: (state) => {
-      const view = JSON.parse(state.state).view;
-      console.log(state);
-      console.log(view);
+      const view = state.state.view;
       switch (view) {
       case NAVIGATION_VIEW:
         dispatch(showNavigationView());

@@ -70,7 +70,7 @@ function buildHistoryObject(){
     }
   }).filter(e => e !== undefined);
   return {
-    state: JSON.stringify({view: view}), 
+    view: view, 
     title: query+ref.join(), 
     url: '?sec='.concat(query.join('_'), '&ref=' + ref.join('|') )
   };
@@ -86,12 +86,12 @@ function idFromPath( pathItem ){
 
 export function historyPushState(){
   const state = buildHistoryObject();
-  return window.history.pushState(state.state, state.title, state.url);
+  return window.history.pushState(state.view, state.title, state.url);
 }
 
 export function historyReplaceState(){
   const state = buildHistoryObject();
-  return window.history.replaceState(state.state, state.title, state.url);
+  return window.history.replaceState(state.view, state.title, state.url);
 }
 
 export function nullifyHistory(){
