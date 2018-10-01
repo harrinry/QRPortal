@@ -7,8 +7,6 @@ import App from 'app/';
 import 'common/style.css';
 import 'common/keyframes.css';
 
-window.STORE = store;
-
 ReactDOM.render(
   <Provider store={store}>
     <App />
