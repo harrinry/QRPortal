@@ -1,30 +1,31 @@
 const glob = require('../lib/glob');
 const path = require('path');
-//const rootMetricsDir  = path.resolve( __dirname, '..','..', 'rest','AIP');
+const fs = require('fs');
+const root = require('app-root-path');
 const rulesDir = path.resolve( __dirname, '..','..', 'rest','AIP', 'quality-rules');
 const search = require('./search');
 const filter = require('../lib/filters');
 //const QS = require('../../rest/AIP/quality-standards.json');
 const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
-
 //const readJsonFile = require('../lib/readFile');
 
 let index = {
   qualityrules: [],
-  qualitystandards: []
+  standards: []
 };
 
 function convertToSearchString ( dataObject, fileName ) {
   const technos = filter(dataObject.technologies);
+  const qsString = dataObject.qualityStandards.map( qs => qs.id ).join(' ');
   return {
     id: dataObject.id,
     name: dataObject.name,
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
-    searchid: `${dataObject.id} - ${dataObject.name}`,
+    searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
     technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
-    resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`)
+    resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
 }
 
@@ -41,8 +42,8 @@ function SearchIndex( query, indexDef ){
   switch (indexDef) {
   case 'qualityrules':
     return search( query, index[ indexDef ], ( e ) => e.searchid );
-  /*case 'qualitystandards':
-    return index.qualitystandards.find( el => el.id == query );*/
+  case 'standards':
+    return findQualityStandard( query.toLowerCase() );
   default:{
     const err = {
       module: 'search',
@@ -57,6 +58,10 @@ function SearchIndex( query, indexDef ){
   }
 }
 
+function findQualityStandard( standardID ){
+  return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
+}
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -67,13 +72,6 @@ const QRinitializationTest = () =>{
   console.log('testquery search : ' + test);
   console.log(SearchIndex(test, 'qualityrules'));
 }; 
-
-/*const QSinitializationTest = () => {
-  const testidx = getRandomInt(index.qualitystandards.length),
-    test = index.qualitystandards[testidx].id;
-  console.log('testquery search : ' + test);
-  console.log(SearchIndex(test, 'qualitystandards'));
-};*/
 
 /* initialization */
 (function (){
@@ -86,29 +84,48 @@ const QRinitializationTest = () =>{
     console.log('Quality Rules Search Index created');
     if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
-  /*let qsi = 0;
-  QS.forEach((std) => {
-    readJsonFile(path.join(rootMetricsDir, 'quality-standards', std.name, 'items.json'), ( name, content ) => {
-      content.forEach( fLink => {
-        if (fLink.count == 0) return;
-        readJsonFile( path.join(rootMetricsDir, 'quality-standards', std.name, 'items', fLink.id, 'quality-rules.json'), ( n, c ) => {
-          c.forEach( o => {
-            const indexObj = convertQsToSearchIndex( o, fLink );
-            index.qualitystandards[qsi++] = indexObj;
-          } );
-        }, undefined, ( e ) => {
-          errLogger.error( e );
-        });
-      });
-    }, undefined, ( e ) => {
-      errLogger.error( e );
-    });
-  });*/
-}());
 
-/*setTimeout(() => {
-  console.log('Quality Standards Search Index created');
-  if( process.env.NODE_ENV !== 'production' )QSinitializationTest();
-}, 1000);*/
+  const standards = {
+    cisq: 'CISQ',
+    owasp: 'OWASP',
+    cwe: 'CWE'
+  };
+  const standardsList = [
+      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
+        return {
+          id: e.id,
+          href: e.href + '/quality-rules.json',
+          count: e.count,
+          searchid: `${standards.cisq} - ${e.id}`
+        };
+      }),
+      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json')).map( e => {
+        return {
+          id: e.id,
+          href: e.href + '/quality-rules.json',
+          count: e.count,
+          searchid: `${standards.owasp} - ${e.id}`
+        };
+      }),
+      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
+        return {
+          id: e.id,
+          href: e.href + '/quality-rules.json',
+          count: e.count,
+          searchid: `${standards.cwe} - ${e.id}`
+        };
+      })],
+    SLL = standardsList.length;
+
+  for (let i = 0; i < SLL; i++) {
+    const std = standardsList[i],
+      stdList = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href))),
+      stdListRemap = stdList.map( e => {
+        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id });
+      });
+    index.standards[std.id.toLowerCase()] = stdListRemap;
+  }
+  console.log('created Standards Index');
+}());
 
 module.exports = SearchIndex;

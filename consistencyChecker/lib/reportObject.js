@@ -1,10 +1,10 @@
 const { writeFileSync } = require('fs');
 const root = require('app-root-path');
 const struct = require('../../server/lib/dataConstruct/struct');
-const ERROR = new struct('type', 'index', 'description');
+const ERROR = new struct('type', 'index', 'description', 'element');
 
-function newError( type, index = null, desc ){
-  return new ERROR( type, index, desc );
+function newError( type, index = null, desc, element ){
+  return new ERROR( type, index, desc, element );
 }
 
 function Reporter( outputFile ){
@@ -16,9 +16,9 @@ Reporter.prototype = {
   report: function( file, err ){
     const assigned = this.FILES.hasOwnProperty(file);
     let _file = assigned ? this.FILES[file] : {path: file, errors: [] };
-    const { type, index, msg } = err;
+    const { type, index, msg, element } = err;
 
-    _file.errors.push(newError(type, index, msg));
+    _file.errors.push(newError(type, index, msg, element));
     if( !assigned ) this.FILES[file] = _file;
   },
   generateReport: function (){

@@ -1,8 +1,8 @@
 const path = require('path');
-const { webappDir } = require('../routes/paths');
+const { publicPath } = require('../routes/paths');
 
 module.exports = {
-  root: path.resolve( ...webappDir ),
+  root: path.resolve( ...publicPath ),
   dotfiles: 'deny',
   headers: {
     'x-timestamp': Date.now(),

@@ -1,3 +1,3 @@
-export { ConstructArray, createClassName, Struct, restQuery, readLocalStorage, setLocalStorage } from './lib';
+export { ConstructArray, createClassName, Struct, restQuery, readLocalStorage, setLocalStorage, historyPushState, historyReplaceState, nullifyHistory } from './lib';
 export { COMMON_CLASSES, LOCALSTORAGEKEY } from './constants';
-export { apiFetch } from './resources';
+export { apiFetch, webFetch } from './resources';

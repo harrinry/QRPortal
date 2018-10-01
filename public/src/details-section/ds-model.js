@@ -5,53 +5,76 @@ import { createClassName, COMMON_CLASSES } from '../common/';
 import { CLASSES, NORULESSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
-const RulesDetails = ( { data, loading, onTagClick } ) => {
+const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) => {
   return (
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
       { loading ? <LoadingSpinner/> : 
         ( data ? 
-          <div className='details-container'>
-            {data.critical ? <div className='critical-container'>{' '}</div> : undefined}
-            <div className='weight-container'>{data.maxWeight}</div>
-            <h2 className='ruleTitle'>{data.name}</h2>
-            <div className='tags-container'>
+          <div className={CLASSES.subContainer}>
+            <div className={CLASSES.headerContainer}>
+              <h2 className={CLASSES.title}>{data.name}</h2>
+              <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
+                <span className={CLASSES.weight}>{data.maxWeight}</span>
+              </div>
+            </div>
+            <div className={CLASSES.tagContainer}>
               {data.qualityStandards.length > 0 ? 
-                <ul className='details-tag'>
-                  {data.qualityStandards.map(function(listValue){
-                    return <li key={listValue.id} className='detail-tag' onClick={() => onTagClick(listValue)}>{listValue.id}</li>;
-                  })}
-                </ul> : undefined }
+                data.qualityStandards.map(function(listValue, index){
+                  return <div key={index} className={CLASSES.tag} onClick={() => {
+                    if(!searchVisible || gsQuery !== listValue.id)
+                      onTagClick(listValue);
+                  }}>{listValue.id}</div>;
+                }) : undefined }
             </div>
-            <div className='description-container detailssection'>
-              <p className='rulesection'>Description</p>
+            {data.description ? <div className={CLASSES.descriptionContainer}>
+              <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
-            </div>
-            <div className='rationale-container detailssection'>
-              <p className='rulesection'>Rationale</p>
+            </div> : undefined}
+            {data.rationale ? <div className={CLASSES.rationaleContainer}>
+              <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
-            </div>
-            <div className='remediation-container detailssection'>
-              <p className='rulesection'>Remediation</p>
+            </div> : undefined}
+            {data.remediation ? <div className={CLASSES.remediation}>
+              <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
-            </div>
-            <div className='sample-container detailssection'>
-              <p className="rulesection">Sample</p>
+            </div> : undefined}
+            {data.sample ? <div className={CLASSES.sampleContainer}>
+              <p className={CLASSES.textArea}>Sample</p>
               <pre><code>{data.sample}</code></pre>
-            </div>
-            <div className='remediationsample-container detailssection'>
-              <p className='rulesection'>Remediation Sample</p>
+            </div> : undefined}
+            {data.remediationSample ? <div className={CLASSES.remediationSample}>
+              <p className={CLASSES.textArea}>Remediation Sample</p>
               <pre><code>{data.remediationSample}</code></pre>
-            </div>
-            <div className='reference-container detailssection'>
-              <p className='rulesection'>Reference</p>
-              <p className='textrule'>{data.reference}</p>
-            </div>
+            </div> : undefined}
+            {data.reference ? <div className={CLASSES.refContainer}>
+              <p className={CLASSES.textArea}>Reference</p>
+              <p className={CLASSES.textAreaRule}>{parseLinks(data.reference)}</p>
+            </div> : undefined}
           </div>
-          : <div className={COMMON_CLASSES.txtCenter}>{NORULESSELECTED}</div> )
+          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
       }
     </div>
   );
 };
+
+function parseLinks( text ){
+  if (!text) return text;
+  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g,
+    matches = text.match(reg), ml = matches ? matches.length : 0;
+  let idxStart = 0, idxEnd = 0;
+
+  let str = [];
+
+  for (let i = 0; i < ml; i++) {
+    const url = matches[i];    
+    idxStart = text.indexOf(url);
+    const node = (<span key={'node-'+i}>{text.substring(idxEnd, idxStart)}</span>),
+      ahrefBlock = (<a key={'anchor-'+i} href={url}>{url}</a>);
+    str.push(node, ahrefBlock);
+    idxEnd = idxStart + url.length;
+  }
+  return ml > 0 ? str : text;
+}
 
 RulesDetails.propTypes = {
   data: PropTypes.object,

@@ -1,11 +1,21 @@
-import { FETCHSEARCHRESULTS } from './gs-resources';
+import { FETCHSEARCHRESULTS, fetchStandardsByTag } from './gs-resources';
 import { SET_QUALITY_RULES_SEARCH_RESULTS, 
   ERROR_WHILE_FETCHING_SEARCH_RESULTS, 
   CLEAR_SEARCH_RESULTS, 
   DISPLAY_QUALITY_RULES_SEARCH_RESULTS, 
-  HIDE_QUALITY_RULES_SEARCH_RESULTS, SET_SELECTED_SEARCH_RESULT} from './gs-actions-type';
+  HIDE_QUALITY_RULES_SEARCH_RESULTS, SET_SELECTED_SEARCH_RESULT, SET_QUERY_ON_SEARCH_INITIALIZATION} from './gs-actions-type';
 
 import { setFetchingState } from 'body-rules-list/brl-actions';
+import { endLoadingState } from '../body-rules-list/brl-actions';
+
+const startFetching = ( query ) => {
+  return {
+    type: SET_QUERY_ON_SEARCH_INITIALIZATION,
+    payload: {
+      query
+    }
+  };
+};
 
 export const setSelectedSearchResult = ( itemRef ) => {
   return {
@@ -16,22 +26,20 @@ export const setSelectedSearchResult = ( itemRef ) => {
   };
 };
 
-const setSearchResults = ( data, query ) => {
+const setSearchResults = ( data ) => {
   return {
     type: SET_QUALITY_RULES_SEARCH_RESULTS,
     payload: {
-      results: data,
-      query: query
+      results: data
     }
   };
 };
 
-const errorHandler = ( err, query ) => {
+const errorHandler = ( err ) => {
   return {
     type: ERROR_WHILE_FETCHING_SEARCH_RESULTS,
     payload: {
-      error: err,
-      query: query
+      err,
     }
   };
 };
@@ -39,10 +47,24 @@ const errorHandler = ( err, query ) => {
 export const fetchSearchResults = ( query ) => {
   return function (dispatch) {
     dispatch(setFetchingState());
+    dispatch(startFetching(query));
+    dispatch(displaySearchResults());
     return FETCHSEARCHRESULTS(query).then(
-      data => dispatch(setSearchResults(data, query)),
-      err => dispatch(errorHandler(err, query))
-    );
+      data => dispatch(setSearchResults(data)),
+      err => dispatch(errorHandler(err))
+    ).then( () => dispatch(endLoadingState()) );
+  };
+};
+
+export const fetchQualityStandardsByTag = ( query ) => {
+  return function (dispatch) {
+    dispatch(setFetchingState());
+    dispatch(startFetching(query));
+    dispatch(displaySearchResults());
+    return fetchStandardsByTag(query).then(
+      data => dispatch(setSearchResults(data)),
+      err => dispatch(errorHandler(err))
+    ).then( () => dispatch(endLoadingState()) );
   };
 };
 

@@ -13,10 +13,13 @@ export const COMMON_CLASSES = {
   vh100: 'vh100',
   overflowY: 'ovfy',
   fontWeightHeavy: 'qrp_fw800',
+  fontWeight400: 'qrp_fw400',
   width100pc: 'qrp_w100',
   critical: 'qrp_critical',
   arraySelected:'qrp_lselected',
-  arrayChildElement : 'qrp_arrlci'
+  arrayChildElement : 'qrp_arrlci',
+  searchIcon: 'qrp_srico',
+  infoIcon: 'qrp_icon-info'
 };
 
 export const API_REQUEST = 'rest?q=';

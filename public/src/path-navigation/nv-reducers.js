@@ -1,4 +1,4 @@
-import { APPEND_PATH_TO_HEADER, SET_PATH_TO_HEADER, GOTO_POINT_IN_HEADER_PATH, RETURN_TO_LANDING_PAGE } from './nv-actions-type';
+import { APPEND_PATH_TO_HEADER, SET_PATH_TO_HEADER, GOTO_POINT_IN_HEADER_PATH, RETURN_TO_LANDING_PAGE, HYDRATE_STORE } from './nv-actions-type';
 
 const initialState = {
   path: [],
@@ -24,6 +24,10 @@ const navHeaderReducer = (state = initialState, action) => {
   case RETURN_TO_LANDING_PAGE:
     return {
       path: []
+    };
+  case HYDRATE_STORE:
+    return {
+      path: [ ...action.payload.path ]
     };
   default:
     return state;
