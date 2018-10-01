@@ -17,10 +17,10 @@ module.exports = {
       ],
       loader: 'babel-loader',
       query: {
-        presets: ['es2015','react'],
+        presets: ['@babel/preset-env','@babel/preset-react'],
         plugins: ['react-html-attrs',
           'transform-class-properties',
-          'transform-decorators-legacy',
+          ['@babel/plugin-proposal-decorators',{legacy: true}],
           'transform-react-jsx']
       }
     },
