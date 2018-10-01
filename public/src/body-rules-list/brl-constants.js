@@ -5,17 +5,17 @@ export const compareValueKeys = {
 };
 
 export const HEADERS = {
-  id: 'Id',
-  name: 'Name',
-  critical: 'Critical'
+  id: {name: 'Id', className: 'qrp_arrRlsHid'},
+  name: {name: 'Name', className: 'qrp_arrRlsHname'},
+  critical: {name: 'Critical', className: 'qrp_arrRlsHcrit'}
 };
 
 export const NORULES = 'No Rules';
-export const RULES = 'of Rules';
+export const RULES = 'Rules';
 export const FILTERPLACEHOLDER = 'Filter Rules';
 
-export const RESOURCES = {
-  technologies: 'rules/technologies.json',
-  sources: 'rules/extensions.json',
-  ext_rules: '/quality-rules'
+export const CLASSES = {
+  idCell: 'qrp_brl_tbCrid',
+  nameCell: 'qrp_brl_tbCrname',
+  critical: 'qrp_brl_tbCrCriti'
 };

@@ -3,7 +3,7 @@ const routes = {
   mainWild: '/*',
   searchRoute: '/:filter/',
   imagesRoute: '/:imageName',
-  download: '/download/:filename'
+  download: '/download/:filename',
 };
 
 module.exports = routes;

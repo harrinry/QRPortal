@@ -4,7 +4,10 @@ import { setMenuView, setTilesView } from './vn-actions';
 import ViewNavigation from './vn-model';
 import { defaultToTiles, defaultToMenu } from './vn-lib';
 import { goToLandingPage } from 'path-navigation/nv-actions';
-import { showLandingPage } from '../body/body-actions';
+import { showLandingPage } from 'body/body-actions';
+import { hideSearchResults } from 'global-search/gs-actions';
+import { clearCompareList } from '../compare/cmp-actions';
+import { nullifyHistory } from '../common';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -19,6 +22,9 @@ const mapDispatchToProps = (dispatch) => {
     goToLandingPage: () => {
       dispatch(goToLandingPage());
       dispatch(showLandingPage());
+      dispatch(hideSearchResults());
+      dispatch(clearCompareList());
+      nullifyHistory();
     }
   };
 };
@@ -32,7 +38,7 @@ const mapStateToProps = (state) => {
 
 ViewNavigation.propTypes = {
   viewType: PropTypes.string,
-  language: PropTypes.string
+  language: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ViewNavigation);

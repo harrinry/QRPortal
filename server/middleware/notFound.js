@@ -1,5 +1,5 @@
 const logger = require('../logger/error');
-
+const path = require('path');
 function notFound(req, res) {
   logger.warn(
     'Unhandled resource',
@@ -9,8 +9,8 @@ function notFound(req, res) {
       resource: req.originalUrl
     }
   );
-
-  return res.status(404).send('Not Found');
+  res.set('html');
+  return res.status(404).sendFile(path.resolve(__dirname, '..', '404', 'index.html'));
 }
 
 module.exports = notFound;

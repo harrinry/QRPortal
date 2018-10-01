@@ -1,5 +1,6 @@
 import * as ACTIONTYPES from './brl-actions-type';
 import * as resources from './brl-resources';
+import { historyReplaceState } from '../common';
 
 export const setFetchingState = ( query ) => {
   return {
@@ -7,6 +8,12 @@ export const setFetchingState = ( query ) => {
     payload: {
       query
     }
+  };
+};
+
+export const endLoadingState = () => {
+  return {
+    type: ACTIONTYPES.STOP_LIST_LOADING_STATE
   };
 };
 
@@ -51,11 +58,11 @@ export const fetchListData = ( query, fetchfunc ) => {
     return fetchfunc( query ).then(
       data => dispatch(setListData( query, data )),
       err => dispatch(fetchError(query, err))
-    );
+    ).then(()=>historyReplaceState());
   };
 };
 
 export const fetchApiData = ( query ) => fetchListData( query, resources.fetchData );
 // export const fetchTechnologiesData = ( query ) => fetchListData( query, resources.fetchTechnologiesList );
 // export const fetchExtensionsList = ( query ) => fetchListData( query, resources.fetchExtensionsList );
-export const fetchBusinessCriteriaList = ( query ) => fetchListData( query, resources.fetchBusinessCriteriaList );
+export const fetchWebData = ( query ) => fetchListData( query, resources.fetchWebData );

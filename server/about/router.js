@@ -5,7 +5,6 @@ const readJsonFile = require('../lib/readFile');
 const { infoDir, packagePath } = require('../routes/paths');
 const { main } = require('../routes/routes');
 const errLogger = require('../logger/error');
-const changeLog = require('../info/changelog.json');
 
 let aboutRouter = express.Router();
 
@@ -16,10 +15,17 @@ aboutRouter.get(main, (req,res)=>{
       res.status(500).send({error: 'a problem occured'});
     }
     readJsonFile(path.resolve(...packagePath), (fileName, jsonData ) =>{
-      res.json({
-        licence: fileContents, 
-        version: jsonData.version, 
-        news: changeLog[jsonData.version] || []
+      fs.readFile(path.resolve(__dirname, '..', 'info', 'changelog.json'), {encoding: 'utf8'}, (err, data) => {
+        if (err){
+          errLogger.error( err );
+          res.status(500).send({error: 'a problem occured'});
+        }
+        const changeLog = JSON.parse(data);
+        res.json({
+          licence: fileContents, 
+          version: jsonData.version, 
+          news: changeLog[jsonData.version] || []
+        });
       });
     }, undefined, (e) => {
       errLogger.error( e );

@@ -1,10 +1,10 @@
-import { NAVIGATION_VIEW, CONTENT_VIEW, ERROR_OCCURRED, LANDING_PAGE } from './body-constants';
+import { NAVIGATION_VIEW, CONTENT_VIEW, LANDING_PAGE } from './body-constants';
 import * as ACTIONTYPES from './body-actions-type';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
-  view: NAVIGATION_VIEW,
+  view: LANDING_PAGE,
   listCount: 0,
-  nav: { data: [], title: undefined, loading: false },
 };
 
 const contentBodyReducer = (state = initialState, action) => {
@@ -29,6 +29,11 @@ const contentBodyReducer = (state = initialState, action) => {
     return {
       ...state,
       listCount: action.payload.count
+    };
+  case HYDRATE_STORE:
+    return {
+      listCount: action.payload.data.bsl ? 2 : 1,
+      view: CONTENT_VIEW
     };
   default:
     return state;

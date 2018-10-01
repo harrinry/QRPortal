@@ -7,8 +7,14 @@ let app = express();
 require('./middleware/security')(app);
 require('./middleware/staticRoutes')(app);
 
+// ---------------------- Ensure Log directory  ------------------------------ //
+require('./settings/ensureLogDir')();
+
 // ---------------------- initiate Routers  ------------------------------ //
 require('./settings/routerConfig')(app);
+
+// ---------------------- initiate map to ensure to date state  ------------------------------ //
+require('./lib/extensions-map').INIT();
 
 // ---------------------- Google site identification ------------------------------ //
 app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
@@ -18,11 +24,11 @@ app.get('/googleda2a1d9b51c2edfd.html', (req, res) => {
 // -------------------------------- Fav ICON -------------------------------------- //
 app.get('/favicon.ico', (req, res)=> {
   //if (req.url.includes('rules')) {
-  res.sendFile(path.resolve(__dirname, '..', 'qrp_WebApp', 'favicon', 'favicon32.png'));
-  /*} else if ( req.url.includes('temp') ){
-    res.sendFile(path.resolve(__dirname, '..', 'public', 'favicon', 'LogoStructuralRules.png'));
-  }*/
+  //res.sendFile(path.resolve(__dirname, '..', 'qrp_WebApp', 'favicon', 'favicon32.png'));
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'favicon', 'LogoStructuralRules.png'));
 });
+
+// ------------------------------- Base redirect ---------------------------------- //
 
 app.get('/', (req, res)=>{
   res.redirect('/rules');
