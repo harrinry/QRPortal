@@ -24,13 +24,15 @@
   position: fixed; width: 200px; height: 50px; right: 30px; bottom: 30px;
   opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
 
-.qrp_whtsnew{width: 108px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px;}
-.qrp_contactus{width: 100px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
-.qrp_xplapi{width: 26px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
+.qrp_whtsnew{width: 108px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px;}
+.qrp_contactus{width: 100px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
+.qrp_xplapi{width: 26px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
 
 a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #333; text-decoration: none;}
 a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #333; text-decoration: none;}
+.qrp_lp_flt_foot > a:-webkit-any-link {text-decoration: none;}
 
-.qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff; background-color: #333;}
 
-.qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 100px; }
+.qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff !important; background-color: #333;}
+
+.qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 38px; margin-bottom: 35px;text-decoration: none !important;}
