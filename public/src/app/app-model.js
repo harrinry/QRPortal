@@ -3,7 +3,7 @@ import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } fr
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
-import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, swagger } from './app-constants';
+import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
 import { Overlay } from 'components';
 import './style.css';
 
@@ -64,14 +64,16 @@ class App extends React.PureComponent{
       <div className={props.viewType === VIEW_TYPES.TILES_VIEW ? createClassName(COMMON_CLASSES.flexCol, COMMON_CLASSES.vh100) : createClassName(COMMON_CLASSES.flexRow, COMMON_CLASSES.vh100) }>
         <NAV/>
         <ContentBody/>
-        <div className={CLASSES.floatingBETA}>BETA</div>
+        <div className={CLASSES.floatingBETA} onClick={props.goToLandingPage}>BETA</div>
         {props.view === LANDING_PAGE ? 
           <React.Fragment>
-            <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
-            <a href={this.state.MAILTO}><div className={CLASSES.contactus}>Contact Us</div></a>
-            <a href={swagger}><div className={CLASSES.api}>API</div></a>
+            <div className={CLASSES.floatingFooter}>
+              <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
+              <a href={swagger}><div className={CLASSES.api}>API</div></a>
+              <a href={this.state.MAILTO}><div className={CLASSES.contactus}>Contact Us</div></a>
+            </div>
             <div className={CLASSES.logoContainer}>
-              <div className={CLASSES.castLogo}></div>
+              <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>
             </div>
           </React.Fragment> 
           : undefined}
@@ -80,17 +82,21 @@ class App extends React.PureComponent{
           : <Overlay onMouseClickOut={this.toggleOverlay} visible={this.state.infoVisible}>
             <div className={CLASSES.overlayBody}>
               <div className={CLASSES.overlayBodyInner}>
-                <div className={CLASSES.overlayBodyTitle}><h1>{TITLE}</h1></div>
-                <div className={CLASSES.overlayBodyNews}>
-                  <h3>What's New?</h3>
-                  {info.news.map( (e, i) => <p key={i}>{e}</p>)}
+                <div className={CLASSES.titleContainer}>
+                  <div className={CLASSES.logoContainerOvl}></div><div className={CLASSES.overlayBodyTitle}><h1>{TITLE}</h1></div>
                 </div>
-                <div className={CLASSES.overlayBodylicence}>
-                  <h3>LICENCE</h3>
-                  <p>
-                    {info.licence}
-                  </p>
-                  <div className={CLASSES.overlayBodyVersion}><p>Version : {info.version}</p></div>
+                <div className={CLASSES.scrollArea}>
+                  <div className={CLASSES.overlayBodyNews}>
+                    <h3>What's New?</h3>
+                    {info.news.map( (e, i) => <p key={i}>{e}</p>)}
+                  </div>
+                  <div className={CLASSES.overlayBodylicence}>
+                    <h3>LICENCE</h3>
+                    <p>
+                      {info.licence}
+                    </p>
+                    <div className={CLASSES.overlayBodyVersion}><p>Version : {info.version}</p></div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@
   background: -webkit-linear-gradient(135deg, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  cursor: default;
+  cursor: pointer;
   opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
 .qrp_fltEnvfb{width: 50px; height: 50px; position: fixed; bottom: 30px; right:50px; z-index: 5; background-image: url(/img/message-icon.svg); opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
 .qrp_fltEnvfb:hover{opacity: 0.2; filter: grayscale(100%);}
@@ -15,17 +15,22 @@
 .qrp_i_body_inr{ overflow-x: hidden; overflow-y: auto; max-height: 60vh;}
 .qrp_ovl_visible .qrp_i_ovl_body{ display: block; }
 .qrp_i_ovl_body-title{ text-align: center;}
+.qrp_i_ovl_t_logo{ background-image: url(/img/LogoStructuralRules.svg); background-size: 80%; background-repeat: no-repeat; background-position: center center;
+  height: 50px; width: 50px; margin-top: 8px; display: block;}
+.qrp_i_ovl_t_cntr{ display: flex; flex-direction: row; justify-content: center;}
 
 .qrp_lpcastlogo{ background-image: url(/img/castsoftware.svg);
   background-repeat: no-repeat; background-position: center; background-size: 100%;
   position: fixed; width: 200px; height: 50px; right: 30px; bottom: 30px;
-  opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
 
-.qrp_whtsnew{width: 108px; height: 36px; line-height: 36px; margin-bottom: 30px; position: fixed; bottom: 15px; right:calc(50vw - 156px ); border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px;}
-.qrp_contactus{width: 100px; height: 36px; line-height: 36px; margin-bottom: 30px; position: fixed; bottom: 15px; right:calc(50vw + 60px ); border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
-.qrp_xplapi{width: 26px; height: 36px; line-height: 36px; margin-bottom: 30px; position: fixed; bottom: 15px; right:calc(50vw - 8px); border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
+.qrp_whtsnew{width: 108px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px;}
+.qrp_contactus{width: 100px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
+.qrp_xplapi{width: 26px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px;}
 
 a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #333; text-decoration: none;}
 a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #333; text-decoration: none;}
 
 .qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff; background-color: #333;}
+
+.qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 100px; }
