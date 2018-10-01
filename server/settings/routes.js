@@ -49,4 +49,14 @@ module.exports = [
     route: '/rules',
     router: 'router'
   },
+  // {
+  //   name: 'admin',
+  //   route: '/admin',
+  //   router: 'router'
+  // },
+  // {
+  //   name: 'marketing',
+  //   route: '/mkt',
+  //   router: 'router'
+  // }
 ];
