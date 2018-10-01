@@ -2,6 +2,7 @@ const standardize = require('./standardizeParams');
 
 function validate( params ){
   params = standardize(params);
+  console.log(params);
   if( !params || (!params.hasOwnProperty('ref') && !params.hasOwnProperty('sec')) ) return true;
   const { sec, ref = '||' } = params,
     refValid = ref.split('|').length === 3 ? true : false,

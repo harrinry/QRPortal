@@ -24,7 +24,8 @@ function convertedQuery( params ){
   
   switch (is) {
   case 't':{
-    const tech = techMap.find( e => e.href === rlH);
+    const rlh = rlH.replace(/\s/i,'+');
+    const tech = techMap.find( e => e.href === rlh);
     _cat = tech? tech.id : '';
     break;
   }

@@ -1,5 +1,9 @@
 const fs = require('fs');
 const root = require('path');
+const techMap = require('../../lib/technologies-map');
+const UNIQ = require('../../lib/uniq');
+const readJsonSync = require('../../lib/readJsonSync');
+const normalize = require('../../lib/normalize');
 
 function generateRulesHydrate( params, path ){
   const _params = params.split('|'),
@@ -28,8 +32,10 @@ function generateRulesHydrate( params, path ){
   if( _params[0] === '' && _params[2] === '' ){
     switch (path[0].name) {
     case 'Technologies':{
-      const _path = root.resolve('rest/'.concat(path[1].href, '.json'));
-      out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
+      const id = parseInt(path[1].id),
+        tech = techMap.find( e => e.id === id ),
+        isMultiQ = /\+/gi.test(tech.href);
+      out.brl = isMultiQ ? syncConcatQueries(...splitOnPlus(tech.href)) : readJsonSync(root.resolve('rest/' + normalize(tech.href)), () => []);
       break;
     } 
     case 'Standards':{
@@ -65,6 +71,24 @@ function getDetails( id, arr ){
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
   return _path ? JSON.parse(fs.readFileSync(root.resolve('rest/' + _path.href + '.json'))) : {};
+}
+
+function splitOnPlus(str){
+  return str.split(/\+/ig);
+}
+
+function syncConcatQueries( ...urls ){
+  let ret = [];
+  const ul = urls.length,
+    dirPre = 'rest/';
+
+  for (let i = 0; i < ul; i++) {
+    const url = normalize(urls[i]),
+      _path = root.resolve(dirPre + url);
+    ret.push(...readJsonSync(_path, () => []));
+  }
+
+  return UNIQ(ret, (val) => val.id);
 }
 
 module.exports = generateRulesHydrate;
