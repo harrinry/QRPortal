@@ -25,7 +25,7 @@ function stylize( icon, bgSize ){
     backgroundImage: icon ? 'url(' + icon + ')' : defaultIconURL,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: bgSize ? bgSize + '%' : '80%'
+    backgroundSize: bgSize ? bgSize : '80%'
   };
 }
 
