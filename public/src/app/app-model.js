@@ -3,7 +3,7 @@ import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } fr
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
-import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, aboutPortal } from './app-constants';
+import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, swagger } from './app-constants';
 import { Overlay } from 'components';
 import './style.css';
 
@@ -32,7 +32,7 @@ class App extends React.PureComponent{
           currentVersion: data.version, 
           loading: false, 
           info: data, 
-          infoVisible: data.version === lastViewedVersion ? false : true });
+          infoVisible: false });
       })
       .catch( () => {
         setLocalStorage(versionKey, undefined);
@@ -66,11 +66,15 @@ class App extends React.PureComponent{
         <ContentBody/>
         <div className={CLASSES.floatingBETA}>BETA</div>
         {props.view === LANDING_PAGE ? 
-          <div onClick={this.toggleOverlay} className={CLASSES.logoContainer}>
-            <div className={CLASSES.castLogo} title={aboutPortal}></div>
-          </div> 
+          <React.Fragment>
+            <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
+            <a href={this.state.MAILTO}><div className={CLASSES.contactus}>Contact Us</div></a>
+            <a href={swagger}><div className={CLASSES.api}>API</div></a>
+            <div className={CLASSES.logoContainer}>
+              <div className={CLASSES.castLogo}></div>
+            </div>
+          </React.Fragment> 
           : undefined}
-        <a href={this.state.MAILTO}><div className={CLASSES.floatingSendFeedback}></div></a>
         {this.state.loading ? 
           undefined
           : <Overlay onMouseClickOut={this.toggleOverlay} visible={this.state.infoVisible}>

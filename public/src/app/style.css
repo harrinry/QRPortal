@@ -18,7 +18,15 @@
 
 .qrp_lpcastlogo{ background-image: url(/img/castsoftware.svg); 
   background-repeat: no-repeat; background-position: center; background-size: 100%; 
-  position: fixed; width: 200px; height: 50px; right: 110px; bottom: 30px;
-  opacity: 1; filter: grayscale(0%); transition: all 0.3s;
-  cursor: pointer}
-.qrp_lpcastlogo:hover{opacity: 0.2; filter: grayscale(100%);}
+  position: fixed; width: 200px; height: 50px; right: 30px; bottom: 30px;
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+.qrp_whtsnew{width: 108px; height: 50px; position: fixed; bottom: 15px; right:calc(50vw - 156px ); 
+  z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer;}
+.qrp_contactus{width: 100px; height: 50px; position: fixed; bottom: 15px; right:calc(50vw + 60px ); 
+  z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer;}
+
+.qrp_xplapi{width: 26px; height: 50px; position: fixed; bottom: 15px; right:calc(50vw - 8px); 
+  z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer;}
+
+a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: black; text-decoration: none;}
+a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: black; text-decoration: none;}

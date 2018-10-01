@@ -15,6 +15,5 @@
     cmp: 'version id',
     search: 'search query string'
   };
-  
-  console.log('Hello world');
+
 }());

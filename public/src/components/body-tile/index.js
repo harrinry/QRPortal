@@ -7,7 +7,7 @@ import './style.css';
 const Tile = ( props ) => {
   return ( 
     <div className={CLASSES.tileContainer}>
-      <div className={createClassName(COMMON_CLASSES.txtCenter, CLASSES.tile, props.className)} style={stylize(props.icon)} onClick={(event) => {
+      <div className={createClassName(COMMON_CLASSES.txtCenter, CLASSES.tile, props.className)} style={stylize(props.icon, props.iconSize)} onClick={(event) => {
         switch (event.button) {
         case 0:
           return props.click();
@@ -20,12 +20,12 @@ const Tile = ( props ) => {
     </div>);
 };
 
-function stylize( icon ){
+function stylize( icon, bgSize ){
   return {
     backgroundImage: icon ? 'url(' + icon + ')' : defaultIconURL,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundSize: '80%'
+    backgroundSize: bgSize ? bgSize + '%' : '80%'
   };
 }
 

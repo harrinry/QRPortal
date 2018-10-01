@@ -8,7 +8,10 @@ export const CLASSES = {
   overlayBodyNews: 'qrp_i_ovl_body_nws',
   overlayBodyVersion: 'qrp_i_ovl_ver',
   logoContainer: 'qrp_lplogoCntr',
-  castLogo: 'qrp_lpcastlogo'
+  castLogo: 'qrp_lpcastlogo',
+  whatisnew: 'qrp_whtsnew',
+  contactus: 'qrp_contactus',
+  api: 'qrp_xplapi'
 };
 
 export const MAILTO = 'mailto:g.rager@castsoftware.com?Subject=Structural%20Portal%20Feedback%20-%20version:%20';
@@ -16,3 +19,4 @@ export const versionKey = 'version';
 export { TITLE } from 'body-landing-page/blp-constants';
 export { LANDING_PAGE } from 'body/body-constants';
 export const aboutPortal = 'About Structural Portal';
+export const swagger = '/swagger-ui';
