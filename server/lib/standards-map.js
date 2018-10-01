@@ -9,7 +9,7 @@ function getQualityStandardsMap ( response ){
     const businessCriteria = {
       name: 'CAST',
       href: 'AIP/business-criteria',
-      icon: 'img/castsoftware.svg'
+      icon: 'img/castsoftwareblackbg.svg'
     };
     const ret = JSON.parse(data).filter( e => e.name === 'CISQ' || e.name === 'OWASP').map( e => {
       return {
