@@ -11,7 +11,10 @@ export const CLASSES = {
   castLogo: 'qrp_lpcastlogo',
   whatisnew: 'qrp_whtsnew',
   contactus: 'qrp_contactus',
-  api: 'qrp_xplapi'
+  api: 'qrp_xplapi',
+  scrollArea: 'qrp_i_ovl_scra',
+  titleContainer: 'qrp_i_ovl_t_cntr',
+  logoContainerOvl: 'qrp_i_ovl_t_logo'
 };
 
 export const MAILTO = 'mailto:g.rager@castsoftware.com?Subject=Structural%20Portal%20Feedback%20-%20version:%20';
