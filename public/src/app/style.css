@@ -11,8 +11,9 @@
 .qrp_fltEnvfb{width: 50px; height: 50px; position: fixed; bottom: 30px; right:50px; z-index: 5; background-image: url(/img/message-icon.svg); opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
 .qrp_fltEnvfb:hover{opacity: 0.2; filter: grayscale(100%);}
 
-.qrp_i_ovl_body{ display: none; background-color: #fff; height: 60vh; width: 40vw; margin: 15vh auto; border-radius: 4px; padding: 25px; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);}
-.qrp_i_body_inr{ overflow-x: hidden; overflow-y: auto; max-height: 60vh;}
+.qrp_i_ovl_body{ display: none; background-color: #fff; width: 40vw; margin: 15vh auto; border-radius: 4px; padding: 25px; -webkit-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);-moz-box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);box-shadow: 0px 5px 8px 0px rgba(0,0,0,0.3);}
+.qrp_i_ovl_scra{ overflow-x: hidden; overflow-y: auto; max-height: 60vh;}
+
 .qrp_ovl_visible .qrp_i_ovl_body{ display: block; }
 .qrp_i_ovl_body-title{ text-align: center;}
 .qrp_i_ovl_t_logo{ background-image: url(/img/LogoStructuralRules.svg); background-size: 80%; background-repeat: no-repeat; background-position: center center;
@@ -24,15 +25,15 @@
   position: fixed; width: 200px; height: 50px; right: 30px; bottom: 30px;
   opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
 
-.qrp_whtsnew{width: 108px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px;}
-.qrp_contactus{width: 100px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
-.qrp_xplapi{width: 26px; height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
-
+.qrp_whtsnew{height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px;}
+.qrp_contactus{height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
+.qrp_xplapi{height: 36px; line-height: 36px; border: 1px solid #333; border-radius: 2px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;}
+ 
 a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #333; text-decoration: none;}
 a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #333; text-decoration: none;}
-.qrp_lp_flt_foot > a:-webkit-any-link {text-decoration: none;}
-
-
+div.qrp_lp_flt_foot > a:-webkit-any-link{text-decoration: none; text-decoration-line: none;}
+div.qrp_lp_flt_foot > a:-moz-any-link {text-decoration: none; text-decoration-line: none !important;}
+div.qrp_lp_flt_foot > a:any-link {text-decoration: none; text-decoration-line: none !important;}
 .qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff !important; background-color: #333;}
 
 .qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 38px; margin-bottom: 35px;text-decoration: none !important;}

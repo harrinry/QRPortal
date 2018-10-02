@@ -484,7 +484,6 @@
 
                 // User titles order to fill in attributes
                 var href = titles["href"];
-                console.log("titles", titles);
                 for (var j in titles) {
                     if (href && j == "name") continue;
                     if (href && j == "href") {
@@ -944,11 +943,8 @@
         Bookmarks.remove = function removeBookmark(id) 
         {
             var requests = this.requests;
-            console.log(requests.map);
 			delete requests.map[id];
-			console.log(requests.map);
             localStorage["favoritesRequests"] = JSON.stringify(requests);
-            console.log(localStorage["favoritesRequests"]);
             Bookmarks.refresh();
         }
         
