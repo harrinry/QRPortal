@@ -3,7 +3,7 @@ import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } fr
 import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
-import { CLASSES, MAILTO, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
+import { CLASSES, CONTACTUS, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
 import { Overlay } from 'components';
 import './style.css';
 
@@ -27,7 +27,7 @@ class App extends React.PureComponent{
       .then(data => {
         const lastViewedVersion = readLocalStorage(versionKey);
         setLocalStorage(versionKey, data.version);
-        this.setState({ MAILTO: MAILTO + data.version, 
+        this.setState({ 
           _version: lastViewedVersion, 
           currentVersion: data.version, 
           loading: false, 
@@ -36,7 +36,6 @@ class App extends React.PureComponent{
       })
       .catch( () => {
         setLocalStorage(versionKey, undefined);
-        this.setState({ MAILTO: MAILTO + 'unknown'});
       });
   }
 
@@ -70,7 +69,7 @@ class App extends React.PureComponent{
             <div className={CLASSES.floatingFooter}>
               <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
               <a href={swagger}><div className={CLASSES.api}>API</div></a>
-              <a href={this.state.MAILTO}><div className={CLASSES.contactus}>Contact Us</div></a>
+              <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
             </div>
             <div className={CLASSES.logoContainer}>
               <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>

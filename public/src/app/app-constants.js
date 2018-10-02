@@ -18,7 +18,7 @@ export const CLASSES = {
   floatingFooter: 'qrp_lp_flt_foot'
 };
 
-export const MAILTO = 'mailto:g.rager@castsoftware.com?Subject=Structural%20Portal%20Feedback%20-%20version:%20';
+export const CONTACTUS = 'https://help.castsoftware.com/hc/en-us';
 export const versionKey = 'version';
 export { TITLE } from 'body-landing-page/blp-constants';
 export { LANDING_PAGE } from 'body/body-constants';
