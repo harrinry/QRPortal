@@ -44,7 +44,10 @@ class VerticalArray extends React.PureComponent{
       ref = JSON.stringify(headers),
       labelIs = typeof label,
       _label = label ? ( labelIs === 'function' ? label( filteredChildren, filteredChildren.length, this.props.children.length) : label ) : 
-        (this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of '+ this.props.children.length + ' ' + itemCountTitle );
+        (this.state.filterValue === '' ? filteredChildren.length + ' ' + itemCountTitle : filteredChildren.length + ' Of '+ this.props.children.length + ' ' + itemCountTitle ),
+      children = filteredChildren.length !== 0 
+        ? filteredChildren.map( (val, i) => childConstructor(val, i) ) 
+        : <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>;
     return (<div className={createClassName(CLASSES.verticalArray, COMMON_CLASSES.flexCol)}>
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
         <div className={CLASSES.itemCounter}>{_label}</div>
@@ -59,8 +62,7 @@ class VerticalArray extends React.PureComponent{
             <tr>{headers.map((h, i) => <th key={i} className={h.className}>{h.name}</th>)}</tr>
           </thead>
           <tbody className={createClassName(CLASSES.tbody ,COMMON_CLASSES.overflowY)}>
-            { ( !isLoading ? (filteredChildren.length !== 0 ? filteredChildren.map( (val, i) => childConstructor(val, i) ) : 
-              <tr><td colSpan={headers.length}>{this.props.onEmpty}</td></tr>) : <tr><td colSpan={headers.length}><LoadingSpinner/></td></tr>) }
+            { isLoading === false ? children : <tr><td colSpan={headers.length}><LoadingSpinner/></td></tr> }
           </tbody>
         </table>
       </div>

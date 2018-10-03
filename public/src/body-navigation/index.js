@@ -29,6 +29,7 @@ const mapDispatchToProps = (dispatch) => {
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
+        dispatch(clearListData());
         dispatch(fetchStandardsListData(link.href));
         break;
       case SECTIONS.extensions:
@@ -51,7 +52,6 @@ const mapDispatchToProps = (dispatch) => {
       }
       dispatch(appendToHeaderPath(link));
       dispatch(clearDetailsData());
-      dispatch(clearListData());
       dispatch(setSelectedItem());
     }
   };

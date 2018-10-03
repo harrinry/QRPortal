@@ -5,6 +5,7 @@ import { compareFunction } from './brl-lib';
 import { HEADERS, NORULES, FILTERPLACEHOLDER, RULES } from './brl-constants';
 
 const RulesListArray = ( props ) => {
+  console.log(props.loading);
   return(
     <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={RULES} onEmpty={NORULES} headers={[HEADERS.id, HEADERS.name, HEADERS.critical]} compare={compareFunction}>
       { props.searchVisible ? (props.searchResults.length === 0 ? [] : props.searchResults) : props.data}
