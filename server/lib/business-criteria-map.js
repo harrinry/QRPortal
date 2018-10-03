@@ -6,7 +6,10 @@ function getQualityStandardsMap ( response, sync = false ){
     const file = fs.readFileSync(root.resolve('rest/AIP/business-criteria.json')),
       data = JSON.parse(file),
       map = data.map( e => {
-        return Object.assign( {}, e, {icon: 'img/' + e.name.toLowerCase().replace(/\s/, '') + '.svg'} );
+        return Object.assign( {}, e, {
+          standard: 'CAST',
+          icon: 'img/' + e.name.toLowerCase().replace(/\s/, '') + '.svg'
+        } );
       });
     return map;
   } 
@@ -15,7 +18,10 @@ function getQualityStandardsMap ( response, sync = false ){
       console.log(err);
     }
     const ret = JSON.parse(data).map( e => {
-      return Object.assign( {}, e, {icon: 'img/' + e.name.toLowerCase().replace(/\s/, '') + '.svg'} );
+      return Object.assign( {}, e, {
+        standard: 'CAST',
+        icon: 'img/' + e.name.toLowerCase().replace(/\s/, '') + '.svg'
+      } );
     });
 
     response.json(ret);

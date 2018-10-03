@@ -14,6 +14,10 @@ const initialState = {
     data: undefined,
     loading: false
   },
+  standards: {
+    data: [],
+    loading: false,
+  },
   technologies: {
     data: undefined,
     loading: false
@@ -27,6 +31,51 @@ const initialState = {
 
 const MenuNavigationReducer = (state = initialState, action) => {
   switch (action.type) {
+  case ACTIONS.FETCH_QUALITY_STANDARDS_FOR_MENU:
+    return {
+      ...state,
+      standards: {
+        data: state.data,
+        loading: true
+      }
+    };
+  case ACTIONS.SET_QUALITY_STANDARDS_FOR_MENU:
+    return {
+      ...state,
+      standards: {
+        data: action.payload.data.map( (e, i) => {
+          if (state.standards.data[i]) {
+            return {
+              ...state.standards.data[i],
+              content: state.standards.data[i].content ? state.standards.data[i].content : [],
+              loading: false
+            };
+          }
+          return {
+            ...e,
+            content: [],
+            loading: false
+          };
+        })
+      }
+    };
+  case ACTIONS['populateQualityStandard']:
+    return {
+      ...state,
+      standards: {
+        data: state.standards.data.map( e => {
+          const standard = action.payload.data[0].standard;
+          if (e.name.toLowerCase() === standard.toLowerCase()) {
+            return {
+              ...e,
+              content: action.payload.data,
+              loading: false
+            };
+          }
+        }),
+        loading: false
+      }
+    };
   case ACTIONS.SETBUSINESSCRITERIA:
     return {
       ...state,

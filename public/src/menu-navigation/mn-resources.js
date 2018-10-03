@@ -10,6 +10,10 @@ export const QUERIES = {
   standards: 'AIP/quality-standards',
 };
 
+export const fetchQualityStandards = () => {
+  return webFetch( QUERIES.standards );
+};
+
 export const FETCHTECHNOLOGIES = () => {
   return webFetch( QUERIES.technologies );
 };
