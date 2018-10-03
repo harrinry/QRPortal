@@ -42,17 +42,24 @@ const NavigationMenu = ( props ) => {
           }}/>) : ( props.technologies.loading ? <LoadingSpinner/> : undefined )}
       </SubMenu>
       <SubMenu title={ITEMS.EXTENSIONS} onClick={props.populateExtensions}>
-        {props.extensions.data ?
-          props.extensions.data.map( (e, i) => (<SubMenu key={i} title={e.name} onClick={(exeCount) => props.fetchVersion(exeCount, e)}>
-            {e.versions ? e.versions.map( (ver, vi) => <MenuItem key={vi} selected={props.selected === JSON.stringify(ver) ? true : false} title={ver.name} href={ver.href} onClick={() => {
-              props.setSelected(JSON.stringify(ver));
-              props.onExtensionsClick(e, ver);
-            }}/> ) : ( e.loading ? <LoadingSpinner/> : undefined )}
-          </SubMenu>)) : ( props.extensions.loading ? <LoadingSpinner/> : undefined )}
+        {props.extensions.loading ?
+          <LoadingSpinner/> : 
+          props.extensions.data.map( (e, i) => (
+            <MenuItem 
+              key={i} 
+              title={e.name}
+              href={e.href}
+              selected={props.selected === JSON.stringify(e) ? true : false}
+              onClick={() => {
+                props.setSelected(JSON.stringify(e));
+                props.onExtensionsClick(e);
+              }} />))}
       </SubMenu>
     </div>
   );
 };
+
+
 
 NavigationMenu.propTypes = {
   viewType: PropTypes.string.isRequired,

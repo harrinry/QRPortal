@@ -85,19 +85,18 @@ const mapDispatchToProps = (dispatch) => {
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));
     },
-    onExtensionsClick: ( extension, version ) => {
-      dispatch(hideSearchResults());
-      dispatch(clearDetailsData());
-      dispatch(clearListData());
-      dispatch(setListCount(1));
-      dispatch(showContentView());
-      dispatch(fetchWebData( version.href ));
-      dispatch(setHeaderPath( PATHS.extensions, {name: extension.name, href: extension.href, icon: extension.icon}, extension.versions));
-      dispatch(setParams(version));
-    },
-    fetchVersion: ( exeCount, extension ) =>{
-      if( exeCount !== 0 ) return;
-      dispatch(ACTIONS.fetchExtensionVersion(extension));
+    onExtensionsClick: ( extension ) => {
+      fetch(extension.href).then(res => res.json()).then( data => {
+        const version = data[0];
+        dispatch(hideSearchResults());
+        dispatch(clearDetailsData());
+        dispatch(clearListData());
+        dispatch(setListCount(1));
+        dispatch(showContentView());
+        dispatch(fetchWebData( version.href ));
+        dispatch(setHeaderPath( PATHS.extensions, extension, data));
+        dispatch(setParams(version));
+      }).catch( err => console.log(err) );
     }
   };
 };

@@ -25,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
         break;
       case SECTIONS.cisq:
       case SECTIONS.owasp:
+      case SECTIONS.cwe:
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
