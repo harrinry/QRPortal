@@ -1,10 +1,10 @@
 {
     "id": 1039008,
-    "name": "Avoid thrown Exceptions in servlet methods",
+    "name": "CWE-600: Avoid thrown Exceptions in servlet methods",
     "href": "AIP/quality-rules/1039008",
     "critical": true,
     "description": "Even though the signatures for methods in a servlet include throws IOException, ServletException, it's a bad idea to let such exceptions be thrown. \n\nThis rule report all exceptions in methods named \"do*\" ( doPost; doGet...) are explicitly handled in servlet classes. \n\nsee \n\nhttp://cwe.mitre.org/data/definitions/600.html \nOWASP Top 10 2017 Category A3 - Sensitive Data Exposure",
-    "output": "This report lists all artifacts with JAVA methods",
+    "output": "JAVA methods",
     "rationale": "When a Servlet throws an exception, the default error response the Servlet container sends back to the user typically includes debugging information. \n        This information is of great value to an attacker. For example, a stack trace might show the attacker a malformed SQL query string, the type of database being used, \n        and the version of the application container. This information enables the attacker to target known vulnerabilities in these components. ",
     "reference": "http://cwe.mitre.org/data/definitions/600.html \nOWASP Top 10 2017 Category A3 - Sensitive Data Exposure ",
     "remediation": "Use of try catch block is not recommended.",

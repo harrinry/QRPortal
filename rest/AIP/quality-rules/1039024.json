@@ -1,0 +1,44 @@
+{
+    "id": 1039024,
+    "name": "CWE-614 : Avoid using unsecured cookie (JEE)",
+    "href": "AIP/quality-rules/1039024",
+    "critical": true,
+    "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. \n        This is why all major browsers support the secure cookie property that prevents client-side scripts from accessing the cookie. \n        The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session. \n        This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
+    "output": "JAVA methods",
+    "rationale": "The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session. ",
+    "reference": "https://cwe.mitre.org/data/definitions/614.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+    "remediation": "Always setting secure option when creating a cookie.",
+    "remediationSample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); \nc.setSecure(true); // Compliant Code with secure cookies \nresponse.addCookie(c);",
+    "sample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); // Violation - cookie is not secure \nresponse.addCookie(c); ",
+    "total": "Number of Java Artifact",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
