@@ -44,11 +44,18 @@
             "description": null
         },
         {
+            "standard": "CWE",
+            "id": "CWE-327",
+            "name": "Use of a Broken or Risky Cryptographic Algorithm",
+            "url": "https://cwe.mitre.org/data/definitions/327.html",
+            "description": null
+        },
+        {
             "standard": "OWASP",
-            "id": "M5-2016",
-            "name": "Insufficient Cryptography",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M5-Insufficient_Cryptography",
-            "description": "In order to exploit this weakness, an adversary must successfully return encrypted code or sensitive data to its original unencrypted form due to weak encryption algorithms or flaws within the encryption process."
+            "id": "M3-2016",
+            "name": "Insecure Communication",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M3-Insecure_Communication",
+            "description": "Mobile applications frequently do not protect network traffic. They may use SSL/TLS during authentication but not elsewhere. This inconsistency leads to the risk of exposing data and session IDs to interception. The use of transport security does not mean the app has implemented it correctly. To detect basic flaws, observe the phone's network traffic. More subtle flaws require inspecting the design of the application and the applications configuration."
         }
     ]
 }
