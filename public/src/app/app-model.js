@@ -12,7 +12,8 @@ class App extends React.PureComponent{
 
     this.state = {
       loading: true,
-      infoVisible: false
+      infoVisible: false,
+      licenseVisible: false
     };
 
     this.toggleOverlay = this.toggleOverlay.bind(this);
@@ -31,7 +32,8 @@ class App extends React.PureComponent{
           currentVersion: data.version, 
           loading: false, 
           info: data, 
-          infoVisible: false });
+          infoVisible: false,
+          licenseVisible: false });
       })
       .catch( () => {
         setLocalStorage(versionKey, undefined);
@@ -42,6 +44,15 @@ class App extends React.PureComponent{
     window.removeEventListener('popstate', this.props.handleBack);
   }
 
+  toggleNewsLicense(){
+    this.setState(_state => {
+      return {
+        ..._state,
+        licenseVisible: !_state.licenseVisible
+      };
+    });
+  }
+
   toggleOverlay(){
     return this.setState(_state => { 
       return {
@@ -50,7 +61,8 @@ class App extends React.PureComponent{
         currentVersion: _state.currentVersion, 
         loading: false, 
         info: _state.info, 
-        infoVisible: !_state.infoVisible
+        infoVisible: !_state.infoVisible,
+        licenseVisible: false
       };
     });
   }
@@ -83,7 +95,9 @@ class App extends React.PureComponent{
             licence={info.licence}
             onMouseClickOut={this.toggleOverlay}
             isVisible={this.state.infoVisible}
-            news={info.news}/>}
+            news={info.news}
+            showLicense={this.state.licenseVisible}
+            onLicenceClick={this.toggleNewsLicense.bind(this)}/>}
       </div>
     );
   }
