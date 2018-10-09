@@ -9,18 +9,19 @@ import { setHeaderPath } from 'path-navigation/nv-actions';
 import { PATHS } from './mn-constants';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearDetailsData } from 'details-section/ds-actions';
-import { setParams } from '../compare/cmp-actions';
-// import { push } from 'connected-react-router';
+import { setParams } from 'compare/cmp-actions';
 
 const mapStateToProps = (state) => {
   return {
     viewType: state.viewType.viewType,
+    view: state.contentBody.view,
     technologies: state.navMenu.technologies,
     extensions: state.navMenu.extensions,
     selected: state.navMenu.selected,
     std_bc: state.navMenu.std_cast,
     std_cisq: state.navMenu.std_cisq,
-    std_owasp: state.navMenu.std_owasp
+    std_owasp: state.navMenu.std_owasp,
+    std_cwe: state.navMenu.std_cwe
   };
 };
 
@@ -29,6 +30,10 @@ const mapDispatchToProps = (dispatch) => {
     populateStd_bc: (exeCount) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchBusinessCriteria());
+    },
+    populateStd_cwe: (exeCount) => {
+      if( exeCount !== 0 ) return;
+      dispatch(ACTIONS.fetchCWE());
     },
     populateStd_cisq: (exeCount) => {
       if( exeCount !== 0 ) return;
@@ -46,41 +51,50 @@ const mapDispatchToProps = (dispatch) => {
       if( exeCount !== 0 ) return;
       dispatch(ACTIONS.fetchExtensions());
     },
-    onCisqClick: ( name, href ) => {
+    onCisqClick: ( item ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
       dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
-      dispatch(fetchStandardsListData( href ));
-      dispatch(setHeaderPath( PATHS.standard, PATHS.cisq, {name} ));
+      dispatch(fetchStandardsListData( item.href ));
+      dispatch(setHeaderPath( PATHS.standard, PATHS.cisq, item ));
     },
-    onOwaspClick: ( name, href ) => {
+    onOwaspClick: ( item ) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
       dispatch(clearListData());
       dispatch(setListCount(2));
       dispatch(showContentView());
-      dispatch(fetchStandardsListData( href ));
-      dispatch(setHeaderPath( PATHS.standard, PATHS.owasp,  {name} ));
+      dispatch(fetchStandardsListData( item.href ));
+      dispatch(setHeaderPath( PATHS.standard, PATHS.owasp,  item));
     },
-    onBusinessCriteriaClick: (name, href) => {
+    onCweClick: ( item ) => {
+      dispatch(hideSearchResults());
+      dispatch(clearDetailsData());
+      dispatch(clearListData());
+      dispatch(setListCount(2));
+      dispatch(showContentView());
+      dispatch(fetchStandardsListData( item.href ));
+      dispatch(setHeaderPath( PATHS.standard, PATHS.cwe, item ));
+    },
+    onBusinessCriteriaClick: (item) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
       dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchWebData( href ));
-      dispatch(setHeaderPath(PATHS.standard, PATHS.businessCriteria, {name}));
+      dispatch(fetchWebData( item.href ));
+      dispatch(setHeaderPath(PATHS.standard, PATHS.businessCriteria, item));
     },
-    onTechnologyClick: (name, href) => {
+    onTechnologyClick: (techno) => {
       dispatch(hideSearchResults());
       dispatch(clearDetailsData());
       dispatch(clearListData());
       dispatch(setListCount(1));
       dispatch(showContentView());
-      dispatch(fetchApiData( href ));
-      dispatch(setHeaderPath( PATHS.technologies , {name}));
+      dispatch(fetchApiData( techno.href ));
+      dispatch(setHeaderPath( PATHS.technologies , techno));
     },
     setSelected: (ref) => {
       dispatch(ACTIONS.setSelectedItem(ref));

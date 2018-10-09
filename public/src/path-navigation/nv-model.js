@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CLASSES, SEARCHFOR, Ref} from './nv-constants';
-import { createClassName, COMMON_CLASSES } from 'common/';
+import { createClassName } from 'common/';
 import { PathElement } from 'components/';
-import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import { DropdownCompare } from 'components/';
 import './style.css';
 
@@ -12,7 +11,7 @@ class NavHeader extends React.PureComponent{
     const props = this.props,
       pl = props.path ? props.path.length : undefined;
     return (
-      <div ref={Ref} className={createClassName(CLASSES.headerMain, (props.viewType === VIEW_TYPES.MENU_VIEW ? COMMON_CLASSES.hidden : undefined ))}>
+      <div ref={Ref} className={createClassName(CLASSES.headerMain)}>
         <div className={CLASSES.pathContainer}>
           { props.searchVisible
             ? <PathElement 
@@ -40,6 +39,7 @@ class NavHeader extends React.PureComponent{
                 <PathElement 
                   key={index} 
                   id={e.id} 
+                  viewType={props.viewType}
                   ext={props.path[props.path.length - 1]} 
                   params={props.cmpParams} 
                   compareEnabled={props.compareEnabled} 
@@ -63,7 +63,8 @@ NavHeader.propTypes = {
   searchQuery: PropTypes.string,
   cmpParams: PropTypes.object.isRequired,
   compareEnabled: PropTypes.bool.isRequired,
-  cmpSelected: PropTypes.any
+  cmpSelected: PropTypes.any,
+  viewType: PropTypes.string.isRequired
 };
 
 export default NavHeader;

@@ -14,6 +14,10 @@ const initialState = {
     data: undefined,
     loading: false
   },
+  std_cwe: {
+    data: undefined,
+    loading: false
+  },
   standards: {
     data: [],
     loading: false,
@@ -35,7 +39,8 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       standards: {
-        data: state.data,
+        data: state.standards.data,
+        query: action.payload.query,
         loading: true
       }
     };
@@ -43,29 +48,35 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       standards: {
-        data: action.payload.data.map( (e, i) => {
-          if (state.standards.data[i]) {
-            return {
-              ...state.standards.data[i],
-              content: state.standards.data[i].content ? state.standards.data[i].content : [],
-              loading: false
-            };
-          }
-          return {
-            ...e,
-            content: [],
-            loading: false
-          };
-        })
+        data: action.payload.data,
+        query: action.payload.query,
+        loading: false
       }
     };
-  case ACTIONS['populateQualityStandard']:
+  case ACTIONS.FETCHPOPULATATIONQUALITYSTANDARDITEMS:
     return {
       ...state,
       standards: {
         data: state.standards.data.map( e => {
-          const standard = action.payload.data[0].standard;
-          if (e.name.toLowerCase() === standard.toLowerCase()) {
+          if (e.href === action.payload.query) {
+            return {
+              ...e,
+              loading: true
+            };
+          } else return {
+            ...e,
+            loading: false
+          };
+        }),
+        loading: false
+      }
+    };
+  case ACTIONS.POPULATEQUALITYSTANDARDITEMS:
+    return {
+      ...state,
+      standards: {
+        data: state.standards.data.map( e => {
+          if (e.href === action.payload.query) {
             return {
               ...e,
               content: action.payload.data,
@@ -80,6 +91,14 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       std_cast: {
+        data: action.payload.data,
+        loading: false
+      }
+    };
+  case ACTIONS.SETCWE:
+    return {
+      ...state,
+      std_cwe: {
         data: action.payload.data,
         loading: false
       }
@@ -149,6 +168,14 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       std_cisq: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHCWE: 
+    return {
+      ...state,
+      std_cwe: {
         data: undefined,
         loading: true
       }

@@ -1,10 +1,9 @@
 import React from 'react';
 import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } from 'common/';
-import { VIEW_TYPES } from 'view-navigation/vn-constants';
 import NAV from 'nav/';
 import ContentBody from 'body/';
 import { CLASSES, CONTACTUS, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
-import { Overlay } from 'components';
+import About from 'about/';
 import './style.css';
 
 class App extends React.PureComponent{
@@ -60,7 +59,7 @@ class App extends React.PureComponent{
     const props = this.props;
     const info = this.state.info;
     return (
-      <div className={props.viewType === VIEW_TYPES.TILES_VIEW ? createClassName(COMMON_CLASSES.flexCol, COMMON_CLASSES.vh100) : createClassName(COMMON_CLASSES.flexRow, COMMON_CLASSES.vh100) }>
+      <div className={createClassName(COMMON_CLASSES.flexCol, COMMON_CLASSES.vh100)}>
         <NAV/>
         <ContentBody/>
         <div className={CLASSES.floatingBETA} onClick={props.goToLandingPage}>BETA</div>
@@ -78,28 +77,13 @@ class App extends React.PureComponent{
           : undefined}
         {this.state.loading ? 
           undefined
-          : <Overlay onMouseClickOut={this.toggleOverlay} visible={this.state.infoVisible}>
-            <div className={CLASSES.overlayBody}>
-              <div className={CLASSES.overlayBodyInner}>
-                <div className={CLASSES.titleContainer}>
-                  <div className={CLASSES.logoContainerOvl}></div><div className={CLASSES.overlayBodyTitle}><h1>{TITLE}</h1></div>
-                </div>
-                <div className={CLASSES.scrollArea}>
-                  <div className={CLASSES.overlayBodyNews}>
-                    <h3>What's New?</h3>
-                    {info.news.map( (e, i) => <p key={i}>{e}</p>)}
-                  </div>
-                  <div className={CLASSES.overlayBodylicence}>
-                    <h3>LICENCE</h3>
-                    <p>
-                      {info.licence}
-                    </p>
-                    <div className={CLASSES.overlayBodyVersion}><p>Version : {info.version}</p></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Overlay>}
+          : <About 
+            title={TITLE}
+            version={info.version}
+            licence={info.licence}
+            onMouseClickOut={this.toggleOverlay}
+            isVisible={this.state.infoVisible}
+            news={info.news}/>}
       </div>
     );
   }

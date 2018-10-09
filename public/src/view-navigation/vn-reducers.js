@@ -1,9 +1,9 @@
 import { SET_VIEW_TO_MENU, SET_VIEW_TO_TILES } from './vn-actions-type';
 import { VIEW_TYPES } from './vn-constants';
-// import { getDefaultViewType } from './vn-lib';
+import { getDefaultViewType } from './vn-lib';
 
 const initialState = {
-  viewType: /*getDefaultViewType() || */VIEW_TYPES.TILES_VIEW
+  viewType: getDefaultViewType() || VIEW_TYPES.TILES_VIEW
 };
 
 const viewNavigationReducer = (state = initialState, action) => {

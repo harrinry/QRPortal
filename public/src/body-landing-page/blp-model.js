@@ -37,16 +37,15 @@ export default class LandingPage extends PureComponent{
           <div className={CLASSES.iconContainer} style={_oIconStyle}></div>
           <div className={CLASSES.title}>{TITLE}</div>
           <div className={CLASSES.welcomeText}>{WELCOMETEXT}</div>
-          { this.props.viewType === VIEW_TYPES.TILES_VIEW ? 
-            <div className={CLASSES.navigation}>
-              {this.state.sections.map( (e, i) => {
-                return (
-                  <div className={CLASSES.linkContainer} key={i} onClick={() => this.props.loadSection(e)}>
-                    <div className={CLASSES.linkBlock} style={ this.stylizeIcon(e.icon)}></div>
-                    <span className={CLASSES.linkBlockTitle}>{e.name}</span>
-                  </div>);
-              })}
-            </div> : undefined}
+          <div className={CLASSES.navigation}>
+            {this.state.sections.map( (e, i) => {
+              return (
+                <div className={CLASSES.linkContainer} key={i} onClick={() => this.props.loadSection(e)}>
+                  <div className={CLASSES.linkBlock} style={ this.stylizeIcon(e.icon)}></div>
+                  <span className={CLASSES.linkBlockTitle}>{e.name}</span>
+                </div>);
+            })}
+          </div>
         </div>
       </div>
     );
