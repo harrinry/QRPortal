@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleBack: (state) => {
-      const view = state.state.view;
+      const view = state;
+      console.log(view);
       switch (view) {
       case NAVIGATION_VIEW:
         dispatch(showNavigationView());

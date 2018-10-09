@@ -5,9 +5,14 @@ export const QUERIES = {
   businessCriteria: 'AIP/business-criteria',
   cisq: 'AIP/quality-standards/CISQ/categories',
   owasp: 'AIP/quality-standards/OWASP/categories',
+  cwe: 'AIP/quality-standards/CWE/categories',
   technologies: 'aip/technologies',
   extensions: 'aip/extensions',
   standards: 'AIP/quality-standards',
+};
+
+export const fetchQualityStandards = () => {
+  return webFetch( QUERIES.standards );
 };
 
 export const FETCHTECHNOLOGIES = () => {
@@ -32,6 +37,10 @@ export const FETCHBUSINESSCRITERIA = () => {
 
 export const FETCHCISQDATA = () => {
   return webFetch( QUERIES.cisq );
+};
+
+export const FETCHCWEDATA = () => {
+  return webFetch( QUERIES.cwe );
 };
 
 export const FETCHOWASPDATA = () => {

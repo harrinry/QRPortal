@@ -1,5 +1,6 @@
 export const COMMON_CLASSES = {
   hidden: 'hidden',
+  fixed: 'fixed',
   flexRow: 'flxr',
   flexCol: 'flxc',
   txtCenter: 'txtcenter',
@@ -19,7 +20,8 @@ export const COMMON_CLASSES = {
   arraySelected:'qrp_lselected',
   arrayChildElement : 'qrp_arrlci',
   searchIcon: 'qrp_srico',
-  infoIcon: 'qrp_icon-info'
+  infoIcon: 'qrp_icon-info',
+  width100calc: 'qrp_w100calc'
 };
 
 export const API_REQUEST = 'rest?q=';

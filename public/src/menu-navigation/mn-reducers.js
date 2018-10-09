@@ -14,6 +14,14 @@ const initialState = {
     data: undefined,
     loading: false
   },
+  std_cwe: {
+    data: undefined,
+    loading: false
+  },
+  standards: {
+    data: [],
+    loading: false,
+  },
   technologies: {
     data: undefined,
     loading: false
@@ -27,10 +35,70 @@ const initialState = {
 
 const MenuNavigationReducer = (state = initialState, action) => {
   switch (action.type) {
+  case ACTIONS.FETCH_QUALITY_STANDARDS_FOR_MENU:
+    return {
+      ...state,
+      standards: {
+        data: state.standards.data,
+        query: action.payload.query,
+        loading: true
+      }
+    };
+  case ACTIONS.SET_QUALITY_STANDARDS_FOR_MENU:
+    return {
+      ...state,
+      standards: {
+        data: action.payload.data,
+        query: action.payload.query,
+        loading: false
+      }
+    };
+  case ACTIONS.FETCHPOPULATATIONQUALITYSTANDARDITEMS:
+    return {
+      ...state,
+      standards: {
+        data: state.standards.data.map( e => {
+          if (e.href === action.payload.query) {
+            return {
+              ...e,
+              loading: true
+            };
+          } else return {
+            ...e,
+            loading: false
+          };
+        }),
+        loading: false
+      }
+    };
+  case ACTIONS.POPULATEQUALITYSTANDARDITEMS:
+    return {
+      ...state,
+      standards: {
+        data: state.standards.data.map( e => {
+          if (e.href === action.payload.query) {
+            return {
+              ...e,
+              content: action.payload.data,
+              loading: false
+            };
+          }
+        }),
+        loading: false
+      }
+    };
   case ACTIONS.SETBUSINESSCRITERIA:
     return {
       ...state,
       std_cast: {
+        data: action.payload.data,
+        loading: false
+      }
+    };
+  case ACTIONS.SETCWE:
+    return {
+      ...state,
+      std_cwe: {
         data: action.payload.data,
         loading: false
       }
@@ -100,6 +168,14 @@ const MenuNavigationReducer = (state = initialState, action) => {
     return {
       ...state,
       std_cisq: {
+        data: undefined,
+        loading: true
+      }
+    };
+  case ACTIONS.FETCHCWE: 
+    return {
+      ...state,
+      std_cwe: {
         data: undefined,
         loading: true
       }

@@ -52,7 +52,9 @@ function validateStandard( params ){
     _sec = sec.split('_'),
     bMap = require('../../lib/std-cat-map'),
     id = _sec[2],
-    foundID = bMap.find( e => e.name.toLowerCase() === id.toLowerCase()) ? true : false;
+    foundID = id 
+      ? (bMap.find( e => e.name.toLowerCase() === id.toLowerCase()) ? true : false )
+      : undefined;
 
   return foundID;
 }

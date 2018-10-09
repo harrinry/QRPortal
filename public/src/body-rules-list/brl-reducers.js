@@ -17,7 +17,7 @@ const RulesListReducers = (state = initialState, action) => {
     };
   case FETCH_LIST_DATA:
     return {
-      data: state.data,
+      data: [],
       query: action.payload.query ? action.payload.query : state.query,
       loading: true
     };
@@ -34,7 +34,7 @@ const RulesListReducers = (state = initialState, action) => {
     };
   case FAILED_TO_FETCH_LIST_DATA:
     return {
-      data: [{name:action.payload.err}],
+      data: [{id: 'error',name:'Failed to fetch Requested Data', critical: true}],
       query: action.payload.query,
       loading: false
     };

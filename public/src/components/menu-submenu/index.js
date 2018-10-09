@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { createClassName, COMMON_CLASSES } from 'common/index';
-import { CLASSES } from './constants';
+import { CLASSES, defaultIconURL } from './constants';
 import './style.css';
 
 class SubMenu extends React.PureComponent{
@@ -23,11 +23,21 @@ class SubMenu extends React.PureComponent{
     }
   }
 
+  stylize( icon ){
+    return {
+      backgroundImage: icon ? 'url(' + icon + ')' : defaultIconURL,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundSize: '80%'
+    };
+  }
+
   render(){
-    const { title, children, cssClass } = this.props,
+    const { title, children, icon, cssClass } = this.props,
       isOpen = this.state.isOpen;
     return (
       <div className={createClassName(CLASSES.subMenu, COMMON_CLASSES.flexCol, cssClass)} onClick={this.toggleMenu.bind(this)} >
+        <span style={this.stylize(icon)} className={CLASSES.iconContainer}></span>
         <div className={createClassName(CLASSES.title, (isOpen ? COMMON_CLASSES.fontWeightHeavy : undefined))}>{title}</div>
         <div className={createClassName(CLASSES.dropdown, (isOpen ? COMMON_CLASSES.flexCol : undefined) )}>
           {children}

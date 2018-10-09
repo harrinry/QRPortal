@@ -6,8 +6,15 @@ import { defaultToTiles, defaultToMenu } from './vn-lib';
 import { goToLandingPage } from 'path-navigation/nv-actions';
 import { showLandingPage } from 'body/body-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
-import { clearCompareList } from '../compare/cmp-actions';
-import { nullifyHistory } from '../common';
+import { clearCompareList } from 'compare/cmp-actions';
+import { nullifyHistory } from 'common/';
+
+const mapStateToProps = (state) => {
+  return {
+    viewType: state.viewType.viewType,
+    language: state.language.language
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -29,12 +36,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const mapStateToProps = (state) => {
-  return {
-    viewType: state.viewType.viewType,
-    language: state.language.language
-  };
-};
 
 ViewNavigation.propTypes = {
   viewType: PropTypes.string,

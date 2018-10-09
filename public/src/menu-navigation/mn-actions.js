@@ -1,5 +1,7 @@
-import {FETCHEXTENSIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES, fetchCastAIPVersions, fetchExtensionVersions } from './mn-resources';
+import {FETCHEXTENSIONS, FETCHTECHNOLOGIES, FETCHBUSINESSCRITERIA, FETCHCISQDATA, FETCHOWASPDATA, QUERIES, fetchCastAIPVersions, fetchExtensionVersions, fetchQualityStandards, FETCHCWEDATA } from './mn-resources';
+import { webFetch } from 'common/';
 import * as ACTIONTYPES from './mn-actions-type';
+
 
 const errorOnFetch = ( err, query ) => {
   return {
@@ -11,9 +13,55 @@ const errorOnFetch = ( err, query ) => {
   };
 };
 
+const PopulateQualityStandardsItems = ( data, query ) => {
+  return {
+    type: ACTIONTYPES.FETCHPOPULATATIONQUALITYSTANDARDITEMS,
+    payload: {
+      data,
+      query
+    }
+  };
+};
+
+const fetchPopulationQualityStandardsItems = ( query ) => {
+  return {
+    type: ACTIONTYPES.FETCHPOPULATATIONQUALITYSTANDARDITEMS,
+    payload: {
+      query
+    }
+  };
+};
+
+const setQualityStandardsItem = ( data) => {
+  return {
+    type: ACTIONTYPES.SET_QUALITY_STANDARDS_FOR_MENU,
+    payload: {
+      data
+    }
+  };
+};
+
+const fetchQualityStandardsItem = ( query ) => {
+  return {
+    type: ACTIONTYPES.FETCH_QUALITY_STANDARDS_FOR_MENU,
+    payload: {
+      query
+    }
+  };
+};
+
 const setTechnologies = ( data ) => {
   return {
     type: ACTIONTYPES.SETTECHNOLOGIES,
+    payload: {
+      data: data
+    }
+  };
+};
+
+const setCWE = ( data ) => {
+  return {
+    type: ACTIONTYPES.SETCWE,
     payload: {
       data: data
     }
@@ -91,6 +139,26 @@ const fetchApiData = ( fetchFunc, onSuccessAction, onFailAction, fetchActionType
   };
 };
 
+export const fetchQualityStandardsData = () => {
+  return function (dispatch) {
+    dispatch(fetchQualityStandardsItem(QUERIES.standards));
+    return fetchQualityStandards().then(
+      data => dispatch(setQualityStandardsItem(data)),
+      err => dispatch(errorOnFetch(err, QUERIES.standards))
+    );
+  };
+};
+
+export const populateQualityStandardsCategories = ( query ) =>{
+  return function (dispatch) {
+    dispatch(fetchPopulationQualityStandardsItems( query ));
+    return webFetch().then(
+      data => dispatch(PopulateQualityStandardsItems(data, query)),
+      err => dispatch(errorOnFetch(err, query))
+    );
+  };
+};
+
 export const fetchExtensions = () => {
   return fetchApiData( FETCHEXTENSIONS, 
     setExtensions, 
@@ -140,6 +208,12 @@ export const fetchOwasp = () => {
   return fetchApiData( FETCHOWASPDATA, 
     setOwasp, 
     (err) => errorOnFetch(err, QUERIES.owasp), ACTIONTYPES.FETCHOWASP );
+};
+
+export const fetchCWE = () => {
+  return fetchApiData(FETCHCWEDATA, 
+    setCWE, 
+    (err) => errorOnFetch(err, QUERIES.cwe), ACTIONTYPES.FETCHCWE );
 };
 
 export const setSelectedItem = ( itemRef ) => {
