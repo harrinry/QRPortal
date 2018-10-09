@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { webFetch } from 'common/';
 import { SECTIONSQUERY, QUERYFAILED, CLASSES, _oIconStyle, WELCOMETEXT, TITLE } from './blp-constants';
-import { VIEW_TYPES } from '../view-navigation/vn-constants';
 import './style.css';
 
 export default class LandingPage extends PureComponent{
