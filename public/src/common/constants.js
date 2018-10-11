@@ -13,7 +13,7 @@ export const COMMON_CLASSES = {
   marginAuto: 'marginAuto',
   vh100: 'vh100',
   overflowY: 'ovfy',
-  fontWeightHeavy: 'qrp_fw800',
+  fontWeightHeavy: 'qrp_fw600',
   fontWeight400: 'qrp_fw400',
   width100pc: 'qrp_w100',
   critical: 'qrp_critical',

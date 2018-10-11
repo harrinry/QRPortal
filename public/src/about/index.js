@@ -6,38 +6,43 @@ import './style.css';
 const AboutOverlay = ( props ) => {
   return <Overlay onMouseClickOut={props.onMouseClickOut} visible={props.isVisible}>
     <div className={CLASSES.overlayBody}>
-      <div className={'panel-right'}>
-        <div className={'name-logo-version-zone'}>
-          <div className={CLASSES.titleContainer}>
+      <div className={CLASSES.panelLeft}>
+        <div className={CLASSES.logozone}>
             <div className={CLASSES.logoContainerOvl}></div>
             <div className={CLASSES.overlayBodyTitle}>
               {props.title}
             </div>
             <div className={CLASSES.overlayBodyVersion}>Version : {props.version}</div>
-          </div>
+        </div>
+        <div className={CLASSES.licence}>
           <div className={'licence-field'}>
-            <div className={'lic-info'} onClick={(ev) => {
+            <div className={CLASSES.licinfo} onClick={(ev) => {
               ev.stopPropagation();
               props.onLicenceClick();
             }}>
-              <span className={'lic-type'}>MIT License</span>
+              <span className={CLASSES.lictype}>MIT License</span><br></br>
               <span className={'copyright'}>Copyright(c) 2018 CAST Software</span>
             </div>
+            <div className={CLASSES.castlogowhite}></div>
           </div>
-          <div className={'castlogowhite'}></div>
         </div>
       </div>
-      <div className={'panel-left'}>
+      <div className={CLASSES.panelRight}>
+
         <div className={CLASSES.scrollArea}>
           { props.showLicense === true
             ? <div className={CLASSES.overlayBodylicence}>
               <h3>LICENCE</h3>
+              <div className={CLASSES.closingCross} onClick={(ev) => {
+                ev.stopPropagation();
+                return props.licenseCloseEvent();
+              }}></div>
               <p>
                 {props.licence}
               </p>
             </div>
             : <div className={CLASSES.overlayBodyNews}>
-              <h3>What's New?</h3>
+              <h3>{"What's New?"}</h3>
               {props.news.map( (e, i) => <p key={i}>{e}</p>)}
             </div> }
         </div>
