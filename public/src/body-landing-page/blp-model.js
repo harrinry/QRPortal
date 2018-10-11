@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import { webFetch } from 'common/';
+import { webFetch, createClassName, COMMON_CLASSES } from 'common/';
 import { SECTIONSQUERY, QUERYFAILED, CLASSES, _oIconStyle, WELCOMETEXT, TITLE } from './blp-constants';
 import './style.css';
 
@@ -9,7 +9,8 @@ export default class LandingPage extends PureComponent{
     super(props);
 
     this.state = {
-      sections: []
+      sections: [],
+      hover: undefined
     };
 
   }
@@ -18,6 +19,10 @@ export default class LandingPage extends PureComponent{
     webFetch(SECTIONSQUERY).then(
       data => this.setState({ sections: data}),
       err => this.setState({sections: [{...QUERYFAILED, err}]})); 
+  }
+
+  componentWillUnmount(){
+    this.setState({});
   }
 
   stylizeIcon( url ){
@@ -29,7 +34,14 @@ export default class LandingPage extends PureComponent{
     };
   }
 
+  showSectionInfo(index){
+    console.log('mouse is over section at index: ' + index);
+    this.setState({hover: index});
+  }
+
   render(){
+    const hasHoverState = this.state.hover !== undefined ? true : false,
+      sectionInfo = hasHoverState ? this.state.sections[this.state.hover].info : undefined;
     return (
       <div className={CLASSES.container}>
         <div className={CLASSES.SubContainer}>
@@ -39,11 +51,14 @@ export default class LandingPage extends PureComponent{
           <div className={CLASSES.navigation}>
             {this.state.sections.map( (e, i) => {
               return (
-                <div className={CLASSES.linkContainer} key={i} onClick={() => this.props.loadSection(e)}>
+                <div onMouseOver={() => this.showSectionInfo(i)} className={CLASSES.linkContainer} key={i} onClick={() => this.props.loadSection(e)}>
                   <div className={CLASSES.linkBlock} style={ this.stylizeIcon(e.icon)}></div>
                   <span className={CLASSES.linkBlockTitle}>{e.name}</span>
                 </div>);
             })}
+          </div>
+          <div className={CLASSES.extraInfoContainer}>
+            <div className={createClassName(CLASSES.sectionInfo, hasHoverState ? undefined : COMMON_CLASSES.hidden)}>{sectionInfo}</div>
           </div>
         </div>
       </div>

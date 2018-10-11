@@ -6,18 +6,18 @@ const readJsonSync = require('../../lib/readJsonSync');
 const normalize = require('../../lib/normalize');
 
 function generateRulesHydrate( params, path ){
-  const _params = params.split('|'),
+  const _params = params ? params.split('|') : [],
     pl = path.length;
   let out = {};
 
-  if (_params[2] !== '') {
+  if (_params.length > 0 && _params[2] !== '') {
     const versions = path[2];
     out.cmp = versions.find( v => v.name === _params[2] );
     const _path = out.cmp ? root.resolve('rest/' + out.cmp.href + '/quality-rules.json') : '';
     out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
   }
 
-  if (_params[0] !== '') {
+  if ( _params.length > 0 && _params[0] !== '') {
     if (path.length > 0){
       const std = path[pl -1],
         stdPath = std ? root.resolve('rest/' + std.href + '/items.json') : '',
@@ -29,7 +29,7 @@ function generateRulesHydrate( params, path ){
     }
   }
 
-  if( _params[0] === '' && _params[2] === '' ){
+  if( (_params[0] === '' && _params[2] === '') || _params.length === 0 ){
     switch (path[0].name) {
     case 'Technologies':{
       const id = parseInt(path[1].id),
@@ -48,7 +48,7 @@ function generateRulesHydrate( params, path ){
     }
   }
 
-  if ( _params[1] !== '' ){
+  if ( _params.length > 0 && _params[1] !== '' ){
     out.brl = setSelected(_params[1], out.brl);
     out.det = getDetails(_params[1], out.brl);
   }

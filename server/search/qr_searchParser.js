@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const root = require('app-root-path');
 const rulesDir = path.resolve( __dirname, '..','..', 'rest','AIP', 'quality-rules');
-const search = require('./search');
+const {search} = require('./search');
 const filter = require('../lib/filters');
 //const QS = require('../../rest/AIP/quality-standards.json');
 const technoMapping = require('../lib/technologies-map');
@@ -41,7 +41,7 @@ function convertToSearchString ( dataObject, fileName ) {
 function SearchIndex( query, indexDef ){
   switch (indexDef) {
   case 'qualityrules':
-    return search( query, index[ indexDef ], ( e ) => e.searchid );
+    return search( query, index[ indexDef ], ( e ) => e.searchid ).sort((a,b)=> a.id - b.id);
   case 'standards':
     return findQualityStandard( query.toLowerCase() );
   default:{

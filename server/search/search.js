@@ -22,4 +22,21 @@ function search ( search, arr, reducer ){
   return res;
 }
 
-module.exports = search;
+function searchBy( searchStr, arr, propKey, reducer ){
+  if( searchStr === '' ) return [];
+  let res = [];
+  const arrLength = arr.length;
+
+  for (let i = 0; i < arrLength; i++) {
+    const e = reducer ? reducer(arr[i]) : arr[i];
+    
+    if (!e.hasOwnProperty(propKey)) continue;
+
+    
+  }
+}
+
+module.exports = {
+  search,
+  searchBy
+};

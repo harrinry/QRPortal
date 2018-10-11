@@ -17,7 +17,7 @@ const RulesListReducers = (state = initialState, action) => {
     };
   case FETCH_LIST_DATA:
     return {
-      data: [],
+      data: state.data,
       query: action.payload.query ? action.payload.query : state.query,
       loading: true
     };

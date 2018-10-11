@@ -20,7 +20,9 @@ export const CLASSES = {
   separator: 'qrp_lpSsep',
   title: 'qrp_lptitleCntr',
   logoContainer: 'qrp_lplogoCntr',
-  castLogo: 'qrp_lpcastlogo'
+  castLogo: 'qrp_lpcastlogo',
+  extraInfoContainer: 'qrp_lpsecInfoCntr',
+  sectionInfo: 'qrp_lpsecInfo'
 };
 
 export const _oIconStyle = {
@@ -30,5 +32,5 @@ export const _oIconStyle = {
   backgroundSize: '80%'
 };
 
-export const WELCOMETEXT = "Welcome to the CAST Structural Rules Portal, let's start browsing or searching the rules";
+export const WELCOMETEXT = 'Welcome to the CAST Structural Rules Portal, let\'s start browsing or searching the rules';
 export const TITLE = 'Structural Portal';
