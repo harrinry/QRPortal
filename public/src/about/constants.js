@@ -8,4 +8,12 @@ export const CLASSES = {
   scrollArea: 'qrp_i_ovl_scra',
   titleContainer: 'qrp_i_ovl_t_cntr',
   logoContainerOvl: 'qrp_i_ovl_t_logo',
+  panelLeft: 'qrp_i_ovl_leftpanel',
+  panelRight: 'qrp_i_ovl_rightpanel',
+  logozone: 'qrp_i_ovl_logozone',
+  licence: 'qrp_i_ovl_licence',
+  lictype: 'qrp_i_ovl_lictype',
+  licinfo: 'qrp_i_ovl_licinfo',
+  closingCross: 'qrp_i_ovl_closingCross',
+  castlogowhite: 'qrp_i_ovl_castLogoWhite'
 };
