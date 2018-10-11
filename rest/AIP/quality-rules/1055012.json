@@ -3,10 +3,14 @@
     "name": "Avoid using deprecated SSL protocol (Swift)",
     "href": "AIP/quality-rules/1055012",
     "critical": true,
+    "associatedValueName": " ",
     "description": "The following SSL protocols options SSLProtocol.sslProtocol2, SSLProtocol.sslProtocol3Only, SSLProtocol.sslProtocol1Only, SSLProtocol.sslProtocolAll are deprecated and must not be used in an iOS application. This rule is compliant with OWASP M3 2016 and with CISQ-OMG ASCSM-CWE-327 recommendations.",
     "output": "This report lists all uses of SSLProtocol.sslProtocol2, SSLProtocol.sslProtocol3Only, SSLProtocol.sslProtocol1Only and SSLProtocol.sslProtocolAll options. \nIt provides the following information: \nObject full name, number of violations",
     "rationale": "Mobile apps that communicate over the Internet often fail to properly implement SSL/TLS, if they\nimplement it at all. These failures could leave users\u2019 communications open to interception and even\nsession hijacking. Using SSL/TLS properly involves careful checking of the server\u2019s certificate chain. Thus,\nan app or library that validates SSL/TLS certificates should do the following checks to ensure strong\nauthentication, confidentiality and integrity.",
     "reference": "https://developer.apple.com/security/",
+    "remediation": " ",
+    "remediationSample": " ",
+    "sample": " ",
     "total": "Swift method",
     "businessCriteria": [
         {

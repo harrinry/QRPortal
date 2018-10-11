@@ -1,0 +1,57 @@
+{
+    "id": 1055016,
+    "name": "Ensure that LAContext evaluatePolicy reply block success is checked (Swift)",
+    "href": "AIP/quality-rules/1055016",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": " ",
+    "description": "The Local Authentication framework provides facilities for requesting authentication from users with specified security policies. If you do not use properly the API, you can break the Touch ID security check. This rule is compliant with OWASP M1 2016 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Using LAContext evaluatePolicy: method provides a callback reply block reply:(void (^)(BOOL success, NSError *error))reply. The success returned value must be checked properly to avoid any misuse of the authentication check.",
+    "reference": "https://developer.apple.com/library/ios/documentation/LocalAuthentication/Reference/LocalAuthentication_Framework/",
+    "remediation": "Make sure you have implemented the check of success variable in the reply block callback",
+    "remediationSample": "let context = LAContext()\nvar authError: NSError?\n\nvar myLocalizedReasonString = \"String explaining why app needs authentication\"\n\nif myContext.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:&authError) {\n    myContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myReasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in\n\n        if success {\n            // User authenticated successfully\n        } else {\n            // Authenticate failed\n        }\n    })\n} else{\n    // Could not evaluate policy; check authError\n}",
+    "sample": "let context = LAContext()\nvar authError: NSError?\n\nvar myLocalizedReasonString = \"String explaining why app needs authentication\"\n\nif myContext.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:&authError) {\n    myContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myReasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in\n\n       println(\"the user seems to be connected\")\n\n    })\n} else{\n    // Could not evaluate policy; check authError\n}",
+    "total": " ",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1055000,
+            "name": "Swift",
+            "href": "AIP/technologies/1055000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M1-2016",
+            "name": "Improper Platform Usage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
+            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+        }
+    ]
+}
