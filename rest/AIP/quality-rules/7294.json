@@ -62,16 +62,16 @@
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-7",
-            "name": "Inter-Module Dependency Cycles",
+            "name": "Circular dependencies among modules",
             "url": null,
-            "description": null
+            "description": "Remove instances where a module has references that cycle back to itself (for example, in JAVA this pattern means cycles between packages)"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-RLB-13",
-            "name": "Inter-Module Dependency Cycles",
+            "name": "Cyclic dependencies",
             "url": null,
-            "description": null
+            "description": "Remove instances where a module has references that cycle back to itself, e.g., the existence of cycles between packages in JAVA"
         }
     ]
 }

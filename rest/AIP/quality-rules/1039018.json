@@ -40,6 +40,13 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-327",
+            "name": "Unvetted cryptographic algorithms",
+            "url": null,
+            "description": "Remove instances where the application uses a cryptographic list which is not part of the list of vetted cryptographic libraries. "
+        },
+        {
             "standard": "CWE",
             "id": "CWE-759",
             "name": "Use of a One-Way Hash without a Salt",
@@ -52,6 +59,13 @@
             "name": "Use of a One-Way Hash with a Predictable Salt",
             "url": "https://cwe.mitre.org/data/definitions/760.html",
             "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M5-2016",
+            "name": "Insufficient Cryptography",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M5-Insufficient_Cryptography",
+            "description": "In order to exploit this weakness, an adversary must successfully return encrypted code or sensitive data to its original unencrypted form due to weak encryption algorithms or flaws within the encryption process."
         }
     ]
 }

@@ -46,17 +46,10 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCMM-MNT-5",
-            "name": "Loop Value Update within the Loop",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
             "id": "ASCPEM-PRF-8",
-            "name": "Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "name": "Resource-consuming operation in loop",
             "url": null,
-            "description": null
+            "description": "Remove instances where an operation causing consumption of platform resource (messaging, lock, file, stream, directory, etc.) is directly or indirectly called within a loop body or within a loop condition"
         }
     ]
 }
