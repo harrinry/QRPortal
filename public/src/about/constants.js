@@ -15,5 +15,12 @@ export const CLASSES = {
   lictype: 'qrp_i_ovl_lictype',
   licinfo: 'qrp_i_ovl_licinfo',
   closingCross: 'qrp_i_ovl_closingCross',
-  castlogowhite: 'qrp_i_ovl_castLogoWhite'
+  castlogowhite: 'qrp_i_ovl_castLogoWhite',
+  licensefield: 'qrp_i_ovl_licence-field',
+  copyright: 'qrp_i_ovl_copyright',
 };
+
+export const WHATSNEW = 'What\'s New?';
+export const LICENSE = 'LICENSE';
+export const LICENSETYPE = 'MIT License';
+export const COPYRIGHTS = 'Copyright(c) 2018 CAST Software';
