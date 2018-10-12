@@ -13,7 +13,7 @@ const detailsReducers = (state = initialState, action) => {
   case HYDRATE_STORE: 
     return {
       ...state,
-      data: action.payload.data.det ? action.payload.data.det : state.data
+      data: action.payload.data.det ? action.payload.data.det : ( action.payload.search ? action.payload.search.det : state.data)
     };
   case ACTIONTYPES.CLEAR_CONTENT_DETAILS:
     return {

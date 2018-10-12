@@ -1,18 +1,28 @@
 import { SET_QUALITY_RULES_SEARCH_RESULTS, DISPLAY_QUALITY_RULES_SEARCH_RESULTS, CLEAR_SEARCH_RESULTS, HIDE_QUALITY_RULES_SEARCH_RESULTS, SET_SELECTED_SEARCH_RESULT, ERROR_WHILE_FETCHING_SEARCH_RESULTS, SET_QUERY_ON_SEARCH_INITIALIZATION } from './gs-actions-type';
 import { errorObject } from './gs-constants';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   resultsVisible: false,
   results: [],
-  query: null, 
+  query: null,
+  type: null
 };
 
 const globalSearchReducer = (state = initialState, action) => {
   switch (action.type) {
+  case HYDRATE_STORE:
+    return {
+      resultsVisible: action.payload.search ? true : false,
+      results: action.payload.search ? action.payload.search.data : [],
+      query: action.payload.search ? action.payload.search.query : null,
+      type: action.payload.search ? action.payload.search.type: null
+    };
   case SET_QUERY_ON_SEARCH_INITIALIZATION:
     return {
       ...state,
-      query: action.payload.query
+      query: action.payload.query,
+      type: action.payload.type
     };
   case SET_QUALITY_RULES_SEARCH_RESULTS: 
     return {
@@ -31,9 +41,7 @@ const globalSearchReducer = (state = initialState, action) => {
     };
   case CLEAR_SEARCH_RESULTS:
     return {
-      ...state,
-      results: [],
-      query: null
+      ...initialState 
     };
   case SET_SELECTED_SEARCH_RESULT:
     return {

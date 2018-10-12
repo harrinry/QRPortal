@@ -7,7 +7,7 @@ export const CLASSES = {
 
 export const ITEMS = {
   TECHNOLOGIES: 'Technologies',
-  EXTENSIONS: 'Sources',
+  EXTENSIONS: 'Packages',
   BUSINESSCRITERIA: 'CAST',
   OWASP: 'OWASP',
   CISQ: 'CISQ',

@@ -10,7 +10,8 @@ export default class LandingPage extends PureComponent{
 
     this.state = {
       sections: [],
-      hover: undefined
+      hover: undefined,
+      timer: undefined
     };
 
   }
@@ -22,6 +23,7 @@ export default class LandingPage extends PureComponent{
   }
 
   componentWillUnmount(){
+    clearTimeout(this.state.timer);
     this.setState({});
   }
 
@@ -35,8 +37,10 @@ export default class LandingPage extends PureComponent{
   }
 
   showSectionInfo(index){
-    console.log('mouse is over section at index: ' + index);
-    this.setState({hover: index});
+    this.setState({
+      hover: index,
+      timer: setTimeout( function(){ this.setState({hover:undefined});}.bind(this), 10000 )
+    });
   }
 
   render(){

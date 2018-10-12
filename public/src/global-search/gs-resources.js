@@ -1,7 +1,15 @@
-import { SEARCHAPI, SEARCHSTDTAGAPI } from './gs-constants';
+import { SEARCHAPI, SEARCHSTDTAGAPI, PrefixSelector, SEARCHBYAPI } from './gs-constants';
+import { getPrefix } from './gs-lib';
 
 export const FETCHSEARCHRESULTS = ( query ) => {
-  return fetch( SEARCHAPI + query ).then( res => res.json() );
+  const prefix = getPrefix(query),
+    key = prefix ? prefix.prefix : null;
+  switch (key) {
+  case PrefixSelector[0]:
+    return fetch( SEARCHBYAPI + prefix.searchVal ).then( res => res.json() );
+  default:
+    return fetch( SEARCHAPI + query ).then( res => res.json() );
+  }
 };
 
 export const fetchStandardsByTag = ( query ) => {

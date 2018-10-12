@@ -22,18 +22,21 @@ function search ( search, arr, reducer ){
   return res;
 }
 
-function searchBy( searchStr, arr, propKey, reducer ){
+function searchBy( searchStr, arr, propKey, middleware ){
   if( searchStr === '' ) return [];
   let res = [];
   const arrLength = arr.length;
 
   for (let i = 0; i < arrLength; i++) {
-    const e = reducer ? reducer(arr[i]) : arr[i];
+    const e = arr[i];
     
     if (!e.hasOwnProperty(propKey)) continue;
 
-    
+    if(e[propKey] == searchStr ) {
+      res.push(e);
+    }
   }
+  return middleware ? middleware(res) : res;
 }
 
 module.exports = {

@@ -16,10 +16,10 @@ const navData = [
     info: 'Technologies: ' + Lorem
   },
   {
-    name: 'Sources',
+    name: 'Packages',
     href: 'AIP/extensions',
     icon: '/img/sources.svg',
-    info: 'Sources: '+Lorem
+    info: 'Packages: '+Lorem
   }
 ];
 

@@ -10,7 +10,7 @@ export const CLASSES = {
 
 export const SECTIONS = {
   technologies: 'technologies',
-  extensions: 'sources',
+  extensions: 'packages',
   standards: 'standards',
   cisq: 'cisq',
   owasp: 'owasp',

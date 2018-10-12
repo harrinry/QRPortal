@@ -6,7 +6,7 @@ const catData = require('../../lib/std-cat-map');
 const defMap = {
   std: 'Standards',
   t: 'Technologies',
-  srs: 'Sources',
+  srs: 'Packages',
 };
 
 function generatePath( secRef ){
