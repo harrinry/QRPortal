@@ -22,7 +22,8 @@ export const CLASSES = {
   logoContainer: 'qrp_lplogoCntr',
   castLogo: 'qrp_lpcastlogo',
   extraInfoContainer: 'qrp_lpsecInfoCntr',
-  sectionInfo: 'qrp_lpsecInfo'
+  sectionInfo: 'qrp_lpsecInfo',
+  hideOpacity: 'qrp_lpOpa0'
 };
 
 export const _oIconStyle = {

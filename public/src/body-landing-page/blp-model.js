@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import { webFetch, createClassName, COMMON_CLASSES } from 'common/';
+import { webFetch, createClassName } from 'common/';
 import { SECTIONSQUERY, QUERYFAILED, CLASSES, _oIconStyle, WELCOMETEXT, TITLE } from './blp-constants';
 import './style.css';
 
@@ -11,7 +11,8 @@ export default class LandingPage extends PureComponent{
     this.state = {
       sections: [],
       hover: undefined,
-      timer: undefined
+      timer: undefined,
+      isHidden: true
     };
 
   }
@@ -37,9 +38,11 @@ export default class LandingPage extends PureComponent{
   }
 
   showSectionInfo(index){
+    clearTimeout(this.state.timer);
     this.setState({
       hover: index,
-      timer: setTimeout( function(){ this.setState({hover:undefined});}.bind(this), 10000 )
+      timer: setTimeout( function(){ this.setState({isHidden:true});}.bind(this), 5000 ),
+      isHidden: false
     });
   }
 
@@ -62,7 +65,7 @@ export default class LandingPage extends PureComponent{
             })}
           </div>
           <div className={CLASSES.extraInfoContainer}>
-            <div className={createClassName(CLASSES.sectionInfo, hasHoverState ? undefined : COMMON_CLASSES.hidden)}>{sectionInfo}</div>
+            <div className={createClassName(CLASSES.sectionInfo, this.state.isHidden ? CLASSES.hideOpacity : undefined)}>{sectionInfo}</div>
           </div>
         </div>
       </div>
