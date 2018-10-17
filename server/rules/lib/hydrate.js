@@ -3,8 +3,8 @@ const generatePath = require('./pathGenerator');
 const generateRules = require('./rqGenerator');
 const search = require('../../search/qr_searchParser');
 const standardize = require('./standardizeParams');
+const {getRulesDetailsFromFile} = require('../../lib/ruleDetailsStruct');
 const Hbj = new struct( 'path', 'data', 'search' );
-const fs = require('fs');
 const root = require('app-root-path');
 
 function createHydrate( queryParams ){
@@ -44,7 +44,7 @@ function getDetails( id, arr ){
   if(!Array.isArray(arr)) return [];
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
-  return _path ? JSON.parse(fs.readFileSync(root.resolve('rest/' + _path.href))) : {};
+  return _path ? getRulesDetailsFromFile(root.resolve('rest/' + _path.href)) : {};
 }
 
 module.exports = createHydrate;

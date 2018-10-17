@@ -5,9 +5,22 @@ import { compareFunction } from './brl-lib';
 import { HEADERS, NORULES, FILTERPLACEHOLDER, RULES } from './brl-constants';
 
 const RulesListArray = ( props ) => {
+  const hasSearchResults = props.searchResults ? true : false,
+    searchResultsLength = hasSearchResults ? props.searchResults.length : 0,
+    searchResults = searchResultsLength > 0 ? props.searchResults : [];
+
+  const childConstructor = props.searchVisible ? props.SearchArrayChildConstructor : props.arrayChildConstructor,
+    Headers = props.searchVisible ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
+
   return(
-    <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={RULES} onEmpty={NORULES} headers={[HEADERS.id, HEADERS.name, HEADERS.critical]} compare={compareFunction}>
-      { props.searchVisible ? (props.searchResults.length === 0 ? [] : props.searchResults) : props.data}
+    <VerticalArray isLoading={props.loading} 
+      childConstructor={childConstructor} 
+      filterPlaceholder={FILTERPLACEHOLDER} 
+      itemCountTitle={RULES} 
+      onEmpty={NORULES} 
+      headers={Headers} 
+      compare={compareFunction}>
+      { props.searchVisible ? searchResults : props.data}
     </VerticalArray>);
 };
 
@@ -16,6 +29,7 @@ RulesListArray.propTypes = {
   searchResults: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired,
   arrayChildConstructor: PropTypes.func.isRequired,
+  SearchArrayChildConstructor: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 };
 

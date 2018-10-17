@@ -4,7 +4,7 @@ const fs = require('fs');
 const root = require('app-root-path');
 const rulesDir = path.resolve( __dirname, '..','..', 'rest','AIP', 'quality-rules');
 const {search, searchBy} = require('./search');
-const filter = require('../lib/filters');
+const UniqueArray = require('../lib/uniq');
 //const QS = require('../../rest/AIP/quality-standards.json');
 const technoMapping = require('../lib/technologies-map');
 const errLogger = require('../logger/error');
@@ -15,8 +15,28 @@ let index = {
   standards: []
 };
 
+const MapTechnology = (technology) => {
+
+  const technologyIndexInMap = technoMapping.findIndex(t => t.name === technology),
+    tl = technoMapping.length;
+
+  if (technologyIndexInMap > -1) {
+    return technoMapping[technologyIndexInMap];
+  }
+
+  for (let i = 0; i < tl; i++) {
+    const _Technology = technoMapping[i];
+    if (_Technology.glob === null) continue;
+    const globIndex = _Technology.glob.findIndex( t => t.name === technology);
+    
+    if( globIndex > -1 ) return _Technology;
+  }
+
+  return null;
+};
+
 function convertToSearchString ( dataObject, fileName ) {
-  const technos = filter(dataObject.technologies);
+  const technos = dataObject.technologies;
   const qsString = dataObject.qualityStandards.map( qs => qs.id ).join(' ');
   return {
     id: dataObject.id,
@@ -24,7 +44,7 @@ function convertToSearchString ( dataObject, fileName ) {
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
-    technologies: technos.map( tech => technoMapping.find( tch => tech.name === tch.name)),
+    technologies: UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
 }
@@ -75,6 +95,10 @@ const QRinitializationTest = () =>{
   console.log(SearchIndex(test, 'qualityrules'));
 }; 
 
+const createUniqueTechnologiesArray = ( technologiesArray )=>{
+  return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
+};
+
 /* initialization */
 (function (){
   glob( rulesDir, ( fileName, contents, i ) => {
@@ -123,7 +147,9 @@ const QRinitializationTest = () =>{
     const std = standardsList[i],
       stdList = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href))),
       stdListRemap = stdList.map( e => {
-        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id });
+        const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json')),
+          rulesData = JSON.parse(rawRuleData);
+        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
       });
     index.standards[std.id.toLowerCase()] = stdListRemap;
   }

@@ -7,6 +7,7 @@ const getStandardsMap = require('../lib/standards-map');
 const businessCriteriaMap = require('../lib/business-criteria-map');
 const navigationData = require('../lib/navigation-map');
 const filterDeprecated = require('../lib/filterDeprecated');
+const {ProcessRuleDetailsRequest} = require('../lib/ruleDetailsStruct');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -69,8 +70,7 @@ WebRouter.get('/business-criteria/:bcID', ( req, res ) => {
 });
 
 WebRouter.get('/quality-rules/:ruleID', ( req, res ) => {
-  const jsonReg = /.json/i;
-  res.sendFile( jsonReg.test(req.url) ? req.url : req.url + '.json', options, err => errorHandler(err, res));
+  ProcessRuleDetailsRequest(req, res, errorHandler);
 });
 
 WebRouter.get('/versions.json', (req, res) => {

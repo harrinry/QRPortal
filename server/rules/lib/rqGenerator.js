@@ -4,6 +4,7 @@ const techMap = require('../../lib/technologies-map');
 const UNIQ = require('../../lib/uniq');
 const readJsonSync = require('../../lib/readJsonSync');
 const normalize = require('../../lib/normalize');
+const {getRulesDetailsFromFile} = require('../../lib/ruleDetailsStruct');
 
 function generateRulesHydrate( params, path ){
   const _params = params ? params.split('|') : [],
@@ -70,7 +71,7 @@ function getDetails( id, arr ){
   if(!Array.isArray(arr)) return [];
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
-  return _path ? JSON.parse(fs.readFileSync(root.resolve('rest/' + _path.href + '.json'))) : {};
+  return _path ? getRulesDetailsFromFile(root.resolve('rest/' + _path.href + '.json')) : {};
 }
 
 function splitOnPlus(str){
