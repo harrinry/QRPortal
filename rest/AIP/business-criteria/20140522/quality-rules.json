@@ -3444,6 +3444,20 @@
         "critical": false
     },
     {
+        "id": 1020814,
+        "name": "Avoid using web service calls inside a loop",
+        "href": "AIP/quality-rules/1020814",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020816,
+        "name": "Avoid using output of the function that does not return anything ",
+        "href": "AIP/quality-rules/1020816",
+        "status": null,
+        "critical": false
+    },
+    {
         "id": 1021002,
         "name": "Avoid using a web service with Python httplib HTTPConnection inside a loop",
         "href": "AIP/quality-rules/1021002",
@@ -3542,64 +3556,85 @@
         "critical": true
     },
     {
+        "id": 1024006,
+        "name": "Limit the accessibility of your app's Content Provider",
+        "href": "AIP/quality-rules/1024006",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1039002,
-        "name": "Avoid using Deprecated SSL protocols to secure connection",
+        "name": "CWE-319: Avoid using Deprecated SSL protocols to secure connection",
         "href": "AIP/quality-rules/1039002",
         "status": null,
         "critical": true
     },
     {
         "id": 1039004,
-        "name": "Avoid using HttpServletRequest.getRequestedSessionId()",
+        "name": "CWE-807: Avoid using HttpServletRequest.getRequestedSessionId()",
         "href": "AIP/quality-rules/1039004",
         "status": null,
         "critical": true
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "CWE-336: Avoid using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true
     },
     {
         "id": 1039008,
-        "name": "Avoid thrown Exceptions in servlet methods",
+        "name": "CWE-600: Avoid thrown Exceptions in servlet methods",
         "href": "AIP/quality-rules/1039008",
         "status": null,
         "critical": true
     },
     {
         "id": 1039010,
-        "name": "Avoid using risky cryptographic hash (JEE)",
+        "name": "CWE-327:Avoid using risky cryptographic hash (JEE)",
         "href": "AIP/quality-rules/1039010",
         "status": null,
         "critical": true
     },
     {
         "id": 1039014,
-        "name": "Avoid using Cipher with no HMAC to ensure data integrity",
+        "name": "CWE-353: Avoid using Cipher with no HMAC to ensure data integrity",
         "href": "AIP/quality-rules/1039014",
         "status": null,
         "critical": true
     },
     {
         "id": 1039018,
-        "name": "Avoid using cryptography hash with hardcoded salt",
+        "name": "CWE-759: Avoid using cryptography hash with hardcoded salt (JEE)",
         "href": "AIP/quality-rules/1039018",
         "status": null,
         "critical": true
     },
     {
         "id": 1039020,
-        "name": "Avoid using javax.crypto.NullCipher",
+        "name": "CWE-327: Avoid using javax.crypto.NullCipher",
         "href": "AIP/quality-rules/1039020",
         "status": null,
         "critical": true
     },
     {
+        "id": 1039022,
+        "name": "CWE-916:Cryptographic Hash:Avoid using Insecure PBE Iteration Count",
+        "href": "AIP/quality-rules/1039022",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1039024,
+        "name": "CWE-614 : Avoid using unsecured cookie (JEE)",
+        "href": "AIP/quality-rules/1039024",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1040004,
-        "name": "Ensure that any application request is authenticated with HTTP basic",
+        "name": "CWE-287:Ensure that any application request is authenticated with HTTP basic",
         "href": "AIP/quality-rules/1040004",
         "status": null,
         "critical": true
@@ -3664,6 +3699,34 @@
         "id": 1050062,
         "name": "Avoid empty catch blocks",
         "href": "AIP/quality-rules/1050062",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055002,
+        "name": "Avoid using the call of web service with iOS/Swift API inside a loop",
+        "href": "AIP/quality-rules/1055002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055014,
+        "name": "Ensure that LAContext evaluatePolicy reply block is not empty (Swift)",
+        "href": "AIP/quality-rules/1055014",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1055016,
+        "name": "Ensure that LAContext evaluatePolicy reply block success is checked (Swift)",
+        "href": "AIP/quality-rules/1055016",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1055018,
+        "name": "Always use LAContext canEvaluatePolicy before using evaluatePolicy (Swift)",
+        "href": "AIP/quality-rules/1055018",
         "status": null,
         "critical": true
     },

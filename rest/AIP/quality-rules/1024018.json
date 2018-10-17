@@ -1,0 +1,61 @@
+{
+    "id": 1024018,
+    "name": "A permission is required for securing Activities",
+    "href": "AIP/quality-rules/1024018",
+    "critical": true,
+    "description": "An Activity is an application component that provides a UI for users to interact with. A typical application will have multiple Activity screens that perform different functions, such as a main Activity screen and a separate settings Activity screen.\n\nA permission that clients must have to launch the activity or otherwise get it to respond to an intent. If a caller of startActivity() or startActivityForResult() has not been granted the specified permission, its intent will not be delivered to the activity.\n\nA violation reported when permission not set for exported Activity and application.\nThis rule is compliant with CWE-926",
+    "rationale": "The attacks and consequences of improperly exporting a component may depend on the exported component: \n\nIf access to an exported Activity is not restricted, any application will be able to launch the activity. This may allow a malicious application to gain access to sensitive information, modify the internal state of the application, or trick a user into interacting with the victim application while believing they are still interacting with the malicious application.",
+    "reference": "https://cwe.mitre.org/data/definitions/926.html",
+    "remediationSample": "1- Define permission in the top of the manifest file as following one \n\n<permission android:name=\"com.example.testapps.permission.ACTIVITY\" android:protectionLevel=\"signature\" /> \n\n\n2- Add the android:permission into service \n\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" \n package=\"com.example.testapps.test1\"> \n ... \n    <activity android:name=\".MailListenerService\" \n              android:permission= \n                 \"com.example.testapps.permission.ACTIVITY\" \n              android:enabled=\"true\" \n              android:exported=\"true\"> \n              <intent-filter></intent-filter> \n    </activity> \n  ... \n</manifest>",
+    "sample": "<activity \n    android:name=\"com.x8bit.bitwarden.PackageConfirmReceiver\" \n    android:enabled=\"true\" \n    android:exported=\"true\" > \n    <intent-filter> \n        <action android:name=\"android.action.intent.MY_PACKAGE_CONFIM\"/> \n        <category android:name=\"category\" /> \n    </intent-filter> \n</activity>",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-862",
+            "name": "Missing Authorization",
+            "url": "https://cwe.mitre.org/data/definitions/862.html",
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-926",
+            "name": "Improper Export of Android Application Components",
+            "url": "https://cwe.mitre.org/data/definitions/926.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M3-2016",
+            "name": "Insecure Communication",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M3-Insecure_Communication",
+            "description": "Mobile applications frequently do not protect network traffic. They may use SSL/TLS during authentication but not elsewhere. This inconsistency leads to the risk of exposing data and session IDs to interception. The use of transport security does not mean the app has implemented it correctly. To detect basic flaws, observe the phone's network traffic. More subtle flaws require inspecting the design of the application and the applications configuration."
+        }
+    ]
+}

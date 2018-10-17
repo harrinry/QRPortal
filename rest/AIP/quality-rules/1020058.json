@@ -41,8 +41,15 @@
         {
             "standard": "CISQ",
             "id": "ASCSM-CWE-78",
-            "name": "OS Command Injection Improper Input Neutralization",
+            "name": "OS command injection",
             "url": null,
+            "description": "Remove instances where a user input is ultimately used to execute an OS command, without any sanitization (based on a list of vetted sanitization functions, methods, procedures, stored procedures, sub-routines, etc.) of the user input value between the user input and the statement."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "url": "https://cwe.mitre.org/data/definitions/78.html",
             "description": null
         },
         {

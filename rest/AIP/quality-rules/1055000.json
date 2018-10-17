@@ -7,9 +7,10 @@
     "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. This is why all major browsers support the secure cookie property that prevents client-side scripts from accessing the cookie. When HttpOnly is not enabled, attackers may more easily access user cookies. This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure.",
     "output": "Line and column for each violation.\nAssociated value => number of violations found",
     "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. If write access is not properly restricted, then attackers can modify and possibly delete the data, causing incorrect results and possibly a denial of service.",
+    "reference": " ",
     "remediation": "Always setting secure option when creating a cookie.",
     "remediationSample": "let properties = [\n    NSHTTPCookieDomain: \"www.example.com\",\n    NSHTTPCookiePath: \"/service\",\n    NSHTTPCookieName: \"foo\",\n    NSHTTPCookieValue: \"bar\",\n    NSHTTPCookieSecure: \"TRUE\"\n]\nlet cookie : NSHTTPCookie? = NSHTTPCookie(properties:properties)",
-    "sample": "\nlet properties = [\n    NSHTTPCookieDomain: \"www.example.com\",\n    NSHTTPCookiePath: \"/service\",\n    NSHTTPCookieName: \"foo\",\n    NSHTTPCookieValue: \"bar\"\n]\nlet cookie : NSHTTPCookie? = NSHTTPCookie(properties:properties)",
+    "sample": "let properties = [\n    NSHTTPCookieDomain: \"www.example.com\",\n    NSHTTPCookiePath: \"/service\",\n    NSHTTPCookieName: \"foo\",\n    NSHTTPCookieValue: \"bar\"\n]\nlet cookie : NSHTTPCookie? = NSHTTPCookie(properties:properties)",
     "total": "swift functions",
     "businessCriteria": [
         {
@@ -39,6 +40,26 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-311",
+            "name": "Missing Encryption of Sensitive Data",
+            "url": "https://cwe.mitre.org/data/definitions/311.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
+            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+        }
     ]
 }

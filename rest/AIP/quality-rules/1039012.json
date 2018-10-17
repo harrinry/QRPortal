@@ -1,11 +1,10 @@
 {
     "id": 1039012,
-    "name": "Avoid using referer header field in HTTP request",
+    "name": "CWE-293: Avoid using referer header field in HTTP request",
     "href": "AIP/quality-rules/1039012",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "The fields in an HTTP request are putty in the hands of an attacker, and you cannot rely on them to tell you the truth about anything. While it may be safe to store such values after they have been neutralized, decisions should never be made based on their contents. \n\nThis rule reports a violation when a referer header field is used.",
-    "output": "This report lists all artifacts with JAVA methods",
+    "output": "JAVA methods",
     "rationale": "Developers may assume that inputs such as cookies, environment variables, and hidden form fields cannot be modified. However, an attacker could change these inputs using customized clients or other attacks. This change might not be detected. When security decisions such as authentication and authorization are made based on the values of these inputs, attackers can bypass the security of the software. \n\nWithout sufficient encryption, integrity checking, or other mechanism, any input that originates from an outsider cannot be trusted. \n\nThe referer field in HTTP requests can be easily modified and, as such, is not a valid means of message integrity checking.",
     "reference": "http://cwe.mitre.org/data/definitions/293 \nhttp://cwe.mitre.org/data/definitions/807 \nOWASP 2017 Category A2 - Broken Authentication",
     "remediation": "Use of referer in HTTP request header field is not recommended.",

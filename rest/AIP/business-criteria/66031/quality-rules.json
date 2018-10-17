@@ -6587,6 +6587,13 @@
         "critical": false
     },
     {
+        "id": 1020814,
+        "name": "Avoid using web service calls inside a loop",
+        "href": "AIP/quality-rules/1020814",
+        "status": null,
+        "critical": false
+    },
+    {
         "id": 1020950,
         "name": "Avoid providing password in Web Service URL",
         "href": "AIP/quality-rules/1020950",
@@ -6762,22 +6769,85 @@
         "critical": false
     },
     {
+        "id": 1024000,
+        "name": "Avoid using AbsoluteLayout",
+        "href": "AIP/quality-rules/1024000",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1024002,
+        "name": "A Read permission is required to read data of Content Provider",
+        "href": "AIP/quality-rules/1024002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024004,
+        "name": "A Writing permission is required to write data of Content Provider",
+        "href": "AIP/quality-rules/1024004",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024008,
+        "name": "Always use onActivityResult to pass the login results when using Facebook SDK",
+        "href": "AIP/quality-rules/1024008",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024010,
+        "name": "Apply signature-based permissions",
+        "href": "AIP/quality-rules/1024010",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024012,
+        "name": "Avoid setting android:grantUriPermissions as True",
+        "href": "AIP/quality-rules/1024012",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024014,
+        "name": "A permission is required for securing Receivers",
+        "href": "AIP/quality-rules/1024014",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024016,
+        "name": "A permission is required for securing Services",
+        "href": "AIP/quality-rules/1024016",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024018,
+        "name": "A permission is required for securing Activities",
+        "href": "AIP/quality-rules/1024018",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "CWE-336: Avoid using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true
     },
     {
         "id": 1039012,
-        "name": "Avoid using referer header field in HTTP request",
+        "name": "CWE-293: Avoid using referer header field in HTTP request",
         "href": "AIP/quality-rules/1039012",
         "status": null,
         "critical": true
     },
     {
         "id": 1039016,
-        "name": "Avoid Unvalidated Redirect",
+        "name": "CWE-601: Avoid Unvalidated Redirect",
         "href": "AIP/quality-rules/1039016",
         "status": null,
         "critical": true
@@ -6798,7 +6868,7 @@
     },
     {
         "id": 1040008,
-        "name": "Ensure that login form is declared after requesting authorization and authentication",
+        "name": "CWE-287:Ensure that login form is declared after requesting authorization and authentication",
         "href": "AIP/quality-rules/1040008",
         "status": null,
         "critical": true
@@ -6812,7 +6882,7 @@
     },
     {
         "id": 1040012,
-        "name": "Ensure that HTTP Session is invalidated during logout",
+        "name": "CWE-287:Ensure that HTTP Session is invalidated during logout",
         "href": "AIP/quality-rules/1040012",
         "status": null,
         "critical": true
@@ -7024,6 +7094,48 @@
         "id": 1055000,
         "name": "Avoid using unsecured cookie",
         "href": "AIP/quality-rules/1055000",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055002,
+        "name": "Avoid using the call of web service with iOS/Swift API inside a loop",
+        "href": "AIP/quality-rules/1055002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055004,
+        "name": "Avoid creating file without protection (Swift)",
+        "href": "AIP/quality-rules/1055004",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055006,
+        "name": "Avoid using risky cryptographic hash (Swift)",
+        "href": "AIP/quality-rules/1055006",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055008,
+        "name": "Avoid weak encryption providing sufficient key size (Swift)",
+        "href": "AIP/quality-rules/1055008",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055010,
+        "name": "Avoid synchronizing the credentials with iCloud (Swift)",
+        "href": "AIP/quality-rules/1055010",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1055012,
+        "name": "Avoid using deprecated SSL protocol (Swift)",
+        "href": "AIP/quality-rules/1055012",
         "status": null,
         "critical": true
     },
@@ -8058,7 +8170,7 @@
     },
     {
         "id": 1600572,
-        "name": "PeopleSoft: Ensure that \"Buid sequence N\u00a7\" is upper than \"Build sequence N\u00b0\" of all view used in is definition.",
+        "name": "PeopleSoft: Ensure that \"Buid sequence Number\" is upper than \"Build sequence Number\" of all view used in is definition.",
         "href": "AIP/quality-rules/1600572",
         "status": null,
         "critical": false
