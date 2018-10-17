@@ -1,25 +1,21 @@
-
-const Lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
-
 const navData = [
   {
     name: 'Standards',
     href: 'AIP/quality-standards',
     icon: '/img/standards.svg',
-    info: 'Standards: ' + Lorem
+    info: 'Browse structural rules provided by CAST according to the standard they meet: CAST, CISQ, OWASP, CWE'
   },
   {
     name: 'Technologies',
     href: 'AIP/technologies',
     icon: '/img/technologies.svg',
-    info: 'Technologies: ' + Lorem
+    info: 'Browse structural rules provided by CAST according to the technology they target.'
   },
   {
     name: 'Packages',
     href: 'AIP/extensions',
     icon: '/img/sources.svg',
-    info: 'Packages: '+Lorem
+    info: 'Browse structural rules provided by CAST according to the package (AIP or extension) they are delivered with.'
   }
 ];
 
