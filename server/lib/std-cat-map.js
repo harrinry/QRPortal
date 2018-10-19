@@ -12,14 +12,30 @@ for (let i = 0; i < stml; i++) {
   const std = stdMap[i];
   const categories = JSON.parse(fs.readFileSync(root.resolve('rest/' + std.href + '.json')));
   const catMap = categories.map( e => {
-    return Object.assign({}, e, { 
-      icon: ( std.name.toLowerCase() === 'owasp' ? 
-        '/img/' + e.name.toLowerCase() + '.svg' : 
-        '/img/' + e.name.substring(std.name.length).replace(/-/ig,'').toLowerCase() + '.svg' ) 
+    return Object.assign({}, e, {
+      standard: std.name,
+      icon: createIconString(e.name, std.name)
     });
   });
 
   map.push(...catMap);
+}
+
+function createIconString(name, standardName){
+  let _path;
+  switch (standardName.toLowerCase()) {
+  case 'owasp':
+    _path = '/img/' + name.toLowerCase() + '.svg';
+    break;
+  case 'cwe':
+    _path = '/img/' + name.toLowerCase().replace(/\.|-/gi,'') + '.svg';
+    break;
+  default:
+    _path = '/img/' + name.substring(standardName.length).replace(/-/ig,'').toLowerCase() + '.svg';
+    break;
+  }
+  const exists = fs.existsSync(root.resolve('server/images/'+ _path));
+  return exists ? _path : 'https://raw.githubusercontent.com/CAST-Extend/resources/master/0.png';
 }
 
 module.exports = map;

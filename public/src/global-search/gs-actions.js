@@ -6,13 +6,18 @@ import { SET_QUALITY_RULES_SEARCH_RESULTS,
   HIDE_QUALITY_RULES_SEARCH_RESULTS, SET_SELECTED_SEARCH_RESULT, SET_QUERY_ON_SEARCH_INITIALIZATION} from './gs-actions-type';
 
 import { setFetchingState } from 'body-rules-list/brl-actions';
-import { endLoadingState } from '../body-rules-list/brl-actions';
+import { endLoadingState } from 'body-rules-list/brl-actions';
+import { getPrefix } from './gs-lib';
+import { searchPrefixMap } from './gs-constants';
+import { historyPushState } from '../common';
 
 const startFetching = ( query ) => {
+  const _pre = getPrefix(query);
   return {
     type: SET_QUERY_ON_SEARCH_INITIALIZATION,
     payload: {
-      query
+      query: _pre ? _pre.searchVal : query,
+      type: _pre ? _pre.searchMethod : searchPrefixMap.default,
     }
   };
 };
@@ -52,7 +57,7 @@ export const fetchSearchResults = ( query ) => {
     return FETCHSEARCHRESULTS(query).then(
       data => dispatch(setSearchResults(data)),
       err => dispatch(errorHandler(err))
-    ).then( () => dispatch(endLoadingState()) );
+    ).then( () => dispatch(endLoadingState()) ).then(() => historyPushState());
   };
 };
 
@@ -64,7 +69,7 @@ export const fetchQualityStandardsByTag = ( query ) => {
     return fetchStandardsByTag(query).then(
       data => dispatch(setSearchResults(data)),
       err => dispatch(errorHandler(err))
-    ).then( () => dispatch(endLoadingState()) );
+    ).then( () => dispatch(endLoadingState()) ).then(() => historyPushState());
   };
 };
 

@@ -27,7 +27,7 @@ const navHeaderReducer = (state = initialState, action) => {
     };
   case HYDRATE_STORE:
     return {
-      path: [ ...action.payload.path ]
+      path: action.payload.path? [ ...action.payload.path ] : []
     };
   default:
     return state;

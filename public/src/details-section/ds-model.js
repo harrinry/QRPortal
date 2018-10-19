@@ -5,7 +5,26 @@ import { createClassName, COMMON_CLASSES } from '../common/';
 import { CLASSES, NORULESSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
-const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) => {
+const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
+  let qualityStandardsTags, technologiesTags, Tags;
+  if (data){
+    qualityStandardsTags = data.qualityStandards.length > 0 ? 
+      data.qualityStandards.map(function(listValue, index){
+        return <div key={index} className={CLASSES.tag} onClick={() => {
+          if(!searchVisible || gsQuery !== listValue.id)
+            onTagClick(listValue);
+        }}>{listValue.id}</div>;
+      }) : [];
+    technologiesTags = data.technologies.length > 0 ? 
+      data.technologies.map((t, i)=>{
+        return <div key={i+'techno'} className={CLASSES.tag} onClick={() => {
+          if(!searchVisible || gsQuery !== t.id)
+            onTechnologyTagClick(t);
+        }}>{t.name}</div>;
+      }) : [] ;
+    const tags = [].concat(qualityStandardsTags, technologiesTags);
+    Tags = tags.length > 0 ? tags : undefined;
+  }
   return (
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
       { loading ? <LoadingSpinner/> : 
@@ -18,13 +37,7 @@ const RulesDetails = ( { data, loading, onTagClick, searchVisible, gsQuery } ) =
               </div>
             </div>
             <div className={CLASSES.tagContainer}>
-              {data.qualityStandards.length > 0 ? 
-                data.qualityStandards.map(function(listValue, index){
-                  return <div key={index} className={CLASSES.tag} onClick={() => {
-                    if(!searchVisible || gsQuery !== listValue.id)
-                      onTagClick(listValue);
-                  }}>{listValue.id}</div>;
-                }) : undefined }
+              {Tags}
             </div>
             {data.description ? <div className={CLASSES.descriptionContainer}>
               <p className={CLASSES.textArea}>Description</p>

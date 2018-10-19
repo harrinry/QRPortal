@@ -3,7 +3,7 @@ import { VIEW_TYPES } from './vn-constants';
 // import { getDefaultViewType } from './vn-lib';
 
 const initialState = {
-  viewType: /*getDefaultViewType() || */VIEW_TYPES.TILES_VIEW
+  viewType: /*getDefaultViewType() ||*/ VIEW_TYPES.TILES_VIEW
 };
 
 const viewNavigationReducer = (state = initialState, action) => {
