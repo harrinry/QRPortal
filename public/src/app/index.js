@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
-import { showNavigationView, showLandingPage } from 'body/body-actions';
-import { NAVIGATION_VIEW, LANDING_PAGE } from 'body/body-constants';
+import { showLandingPage, } from 'body/body-actions';
 import { goToLandingPage } from 'path-navigation/nv-actions';
 import { hideSearchResults } from 'global-search/gs-actions';
 import { clearCompareList } from 'compare/cmp-actions';
-import { nullifyHistory } from 'common';
+import { historyPushState } from 'common';
 import App from './app-model';
 
 const mapStateToProps = (state) => {
@@ -14,25 +13,21 @@ const mapStateToProps = (state) => {
   };
 };
 
+const directToLandingPage = (dispatch) => {
+  dispatch(goToLandingPage());
+  dispatch(showLandingPage());
+  dispatch(hideSearchResults());
+  dispatch(clearCompareList());
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleBack: (state) => {
-      const view = state.state.view;
-      switch (view) {
-      case NAVIGATION_VIEW:
-        dispatch(showNavigationView());
-        break;
-      case LANDING_PAGE:
-        dispatch(showLandingPage());
-        break;
-      }
+    handleBack: () => {     
+      window.location.reload();
     },
     goToLandingPage: () => {
-      dispatch(goToLandingPage());
-      dispatch(showLandingPage());
-      dispatch(hideSearchResults());
-      dispatch(clearCompareList());
-      nullifyHistory();
+      directToLandingPage(dispatch);
+      historyPushState();
     }
   };
 };

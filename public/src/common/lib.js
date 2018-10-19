@@ -47,17 +47,21 @@ function buildHistoryObject(){
     stdRef = state.standards.data.find( e => e.selected === true ),
     ruleRef = state.rulesList.data.find( e => e.selected === true ),
     versionRef = state.compare.params.vi ? state.compare.params.vi.name : '',
-    isStd = path[0].name === 'Standards',
-    isExt = path[0].name === 'Sources',
+    isStd = path[0] ? path[0].name === 'Standards' : false,
+    isExt = path[0] ? path[0].name === 'Packages' : false,
     ref = [
       stdRef && isStd ? stdRef.id : '',
       ruleRef ? ruleRef.id : '',
       versionRef && isExt ? versionRef : ''
-    ];
+    ],
+    isSearch = state.search.resultsVisible,
+    search = state.search,
+    searchSelected = search.results.find( e => e.selected === true );
+
   const map = {
     standards: 'std',
     technologies: 't',
-    sources: 'srs'
+    packages: 'srs'
   };
   const query = path.map( (p, i, arr) => {
     switch (i) {
@@ -66,13 +70,17 @@ function buildHistoryObject(){
     case 1:
       return arr[0].name === 'Technologies' ? p.id : idFromPath(p);
     case 2: 
-      return arr[0].name === 'Sources' ? undefined : p.name.toLowerCase();
+      return arr[0].name === 'Packages' ? undefined : p.name.toLowerCase();
     }
   }).filter(e => e !== undefined);
-  return {
+  return !isSearch ? {
     view: view, 
     title: query+ref.join(), 
     url: '?sec='.concat(query.join('_'), '&ref=' + ref.join('|') )
+  } : {
+    view: view,
+    title: search.query,
+    url: '?s=' + [search.query, search.type, searchSelected ? searchSelected.id : ''].join('|')
   };
 }
 

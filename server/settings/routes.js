@@ -1,9 +1,9 @@
 module.exports = [
-  {
-    name: 'rules(depreciated)',
-    route: '/v1',
-    router: 'rules'
-  },
+  // {
+  //   name: 'rules(depreciated)',
+  //   route: '/v1',
+  //   router: 'rules'
+  // },
   {
     name: 'fonts',
     route: '/fonts',

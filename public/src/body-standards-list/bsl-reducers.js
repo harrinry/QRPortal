@@ -86,7 +86,7 @@ const standardsListReducers = (state = initialState, action) => {
     };
   case FAILED_TO_FETCH_STANDRADS_LIST_DATA:
     return {
-      data: [{...action.payload.err}],
+      data: [{id: 'Error', name: 'A problem occured, please try again.'}],
       query: action.payload.query,
       loading: false,
       info: {

@@ -7,7 +7,7 @@ const data = fs.readFileSync(root.resolve('rest/AIP/quality-standards.json')),
     href: 'AIP/business-criteria',
     icon: 'img/castsoftware.svg'
   },
-  ret = JSON.parse(data).filter( e => e.name === 'CISQ' || e.name === 'OWASP').map( e => {
+  ret = JSON.parse(data).filter( e => e.name !== 'AIP').map( e => {
     return {
       name: e.name,
       href: e.href + '/categories',

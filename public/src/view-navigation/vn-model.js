@@ -14,7 +14,7 @@ const ViewNavigation = ( props ) => {
       <div className={CLASSES.navIcon}  onClick={props.setTilesView}>
         <img src={viewTypeIsMenu ? Imgs.tiles.grey : Imgs.tiles.black} className={CLASSES.imgIcon} alt={props.language.tiles} />
       </div>
-      <div className={CLASSES.navIcon}  onClick={props.setMenuView}>
+      <div className={CLASSES.navIcon}  onClick={() => props.setMenuView(props.viewType)}>
         <img src={viewTypeIsMenu ? Imgs.menu.black : Imgs.menu.grey} className={CLASSES.imgIcon} alt={props.language.menu} />
       </div> */}
     </div>

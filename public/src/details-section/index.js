@@ -1,9 +1,14 @@
 import { connect } from 'react-redux';
 import RulesDetails from './ds-model';
-import { showContentView } from '../body/body-actions';
-import { hideComparisonTable } from '../compare/cmp-actions';
+import { showContentView, setListCount } from '../body/body-actions';
+import { hideComparisonTable } from 'compare/cmp-actions';
 import { clearDetailsData } from './ds-actions';
-import { fetchQualityStandardsByTag } from '../global-search/gs-actions';
+import { fetchQualityStandardsByTag } from 'global-search/gs-actions';
+import { fetchApiData } from '../body-rules-list/brl-actions';
+import { setHeaderPath } from 'path-navigation/nv-actions';
+import { PATHS } from 'menu-navigation/mn-constants';
+import { hideSearchResults } from '../global-search/gs-actions';
+import { historyPushState } from '../common';
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -12,6 +17,16 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(showContentView());
       dispatch(fetchQualityStandardsByTag( val.id ));
       dispatch(clearDetailsData());
+    },
+    onTechnologyTagClick: ( val ) => {
+      dispatch(hideComparisonTable());
+      dispatch(hideSearchResults());
+      dispatch(setListCount(1));
+      dispatch(showContentView());
+      dispatch(fetchApiData(val.href));
+      dispatch(setHeaderPath( PATHS.technologies, val ));
+      dispatch(clearDetailsData());
+      historyPushState();
     }
   };
 };

@@ -10,11 +10,12 @@ export const CLASSES = {
 
 export const SECTIONS = {
   technologies: 'technologies',
-  extensions: 'sources',
+  extensions: 'packages',
   standards: 'standards',
   cisq: 'cisq',
   owasp: 'owasp',
-  cast: 'cast'
+  cast: 'cast',
+  cwe: 'cwe'
 };
 
 export const defaultIconURL = 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)';
