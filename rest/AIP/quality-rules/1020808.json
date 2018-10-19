@@ -1,0 +1,71 @@
+{
+    "id": 1020808,
+    "name": "Avoid having code dynamically executed ",
+    "href": "AIP/quality-rules/1020808",
+    "critical": true,
+    "associatedValueName": "Single Value",
+    "description": "This rule lists all the artifacts having code dynamically executed. Dynamic evaluation of code is slow and a potential security risk. It also prevents most tools like IDE's that use static analysis from considering the code.",
+    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "rationale": "Executing code at run-time using eval or new Function() is considered to be very dangerous because it allows execution of an arbitrary code. It is recommended not to use these options unless no other approach is left. ",
+    "remediation": "Refactor the source code to avoid executing arbitrary source code.",
+    "remediationSample": "var obj_val = { a: 2, b: 3 };\nvar propName = getPropName();\nvar result = obj_val[ propName ]; \n",
+    "sample": "var obj_val = { a: 2, b: 3 };\nvar propName = getPropName();\neval( 'var result = obj_val.' + propName );\n",
+    "total": "Typescript artifacts dynamically executing the code.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-78",
+            "name": "OS command injection",
+            "url": null,
+            "description": "Remove instances where a user input is ultimately used to execute an OS command, without any sanitization (based on a list of vetted sanitization functions, methods, procedures, stored procedures, sub-routines, etc.) of the user input value between the user input and the statement."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "url": "https://cwe.mitre.org/data/definitions/78.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2017",
+            "name": "Injection",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
+            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+        }
+    ]
+}

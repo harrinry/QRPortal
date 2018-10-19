@@ -281,7 +281,7 @@
     },
     {
         "id": 4616,
-        "name": "CWE-568: finalize() Method Without super.finalize()",
+        "name": "Proper overriding of 'finalize()'",
         "href": "AIP/quality-rules/4616",
         "status": null,
         "critical": true
@@ -960,7 +960,7 @@
     },
     {
         "id": 7648,
-        "name": "CWE-586: Explicit Call to Finalize()",
+        "name": "Avoid calling finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false
@@ -1687,99 +1687,183 @@
         "critical": true
     },
     {
+        "id": 1024000,
+        "name": "Avoid using AbsoluteLayout",
+        "href": "AIP/quality-rules/1024000",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1024002,
+        "name": "A Read permission is required to read data of Content Provider",
+        "href": "AIP/quality-rules/1024002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024004,
+        "name": "A Writing permission is required to write data of Content Provider",
+        "href": "AIP/quality-rules/1024004",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024006,
+        "name": "Limit the accessibility of your app's Content Provider",
+        "href": "AIP/quality-rules/1024006",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024008,
+        "name": "Always use onActivityResult to pass the login results when using Facebook SDK",
+        "href": "AIP/quality-rules/1024008",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024010,
+        "name": "Apply signature-based permissions",
+        "href": "AIP/quality-rules/1024010",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024012,
+        "name": "Avoid setting android:grantUriPermissions as True",
+        "href": "AIP/quality-rules/1024012",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024014,
+        "name": "A permission is required for securing Receivers",
+        "href": "AIP/quality-rules/1024014",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024016,
+        "name": "A permission is required for securing Services",
+        "href": "AIP/quality-rules/1024016",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1024018,
+        "name": "A permission is required for securing Activities",
+        "href": "AIP/quality-rules/1024018",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1039002,
-        "name": "Avoid using Deprecated SSL protocols to secure connection",
+        "name": "CWE-319: Avoid using Deprecated SSL protocols to secure connection",
         "href": "AIP/quality-rules/1039002",
         "status": null,
         "critical": true
     },
     {
         "id": 1039004,
-        "name": "Avoid using HttpServletRequest.getRequestedSessionId()",
+        "name": "CWE-807: Avoid using HttpServletRequest.getRequestedSessionId()",
         "href": "AIP/quality-rules/1039004",
         "status": null,
         "critical": true
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "CWE-336: Avoid using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true
     },
     {
         "id": 1039008,
-        "name": "Avoid thrown Exceptions in servlet methods",
+        "name": "CWE-600: Avoid thrown Exceptions in servlet methods",
         "href": "AIP/quality-rules/1039008",
         "status": null,
         "critical": true
     },
     {
         "id": 1039010,
-        "name": "Avoid using risky cryptographic hash (JEE)",
+        "name": "CWE-327:Avoid using risky cryptographic hash (JEE)",
         "href": "AIP/quality-rules/1039010",
         "status": null,
         "critical": true
     },
     {
         "id": 1039012,
-        "name": "Avoid using referer header field in HTTP request",
+        "name": "CWE-293: Avoid using referer header field in HTTP request",
         "href": "AIP/quality-rules/1039012",
         "status": null,
         "critical": true
     },
     {
         "id": 1039014,
-        "name": "Avoid using Cipher with no HMAC to ensure data integrity",
+        "name": "CWE-353: Avoid using Cipher with no HMAC to ensure data integrity",
         "href": "AIP/quality-rules/1039014",
         "status": null,
         "critical": true
     },
     {
         "id": 1039016,
-        "name": "Avoid Unvalidated Redirect",
+        "name": "CWE-601: Avoid Unvalidated Redirect",
         "href": "AIP/quality-rules/1039016",
         "status": null,
         "critical": true
     },
     {
         "id": 1039018,
-        "name": "Avoid using cryptography hash with hardcoded salt",
+        "name": "CWE-759: Avoid using cryptography hash with hardcoded salt (JEE)",
         "href": "AIP/quality-rules/1039018",
         "status": null,
         "critical": true
     },
     {
         "id": 1039020,
-        "name": "Avoid using javax.crypto.NullCipher",
+        "name": "CWE-327: Avoid using javax.crypto.NullCipher",
         "href": "AIP/quality-rules/1039020",
         "status": null,
         "critical": true
     },
     {
+        "id": 1039022,
+        "name": "CWE-916:Cryptographic Hash:Avoid using Insecure PBE Iteration Count",
+        "href": "AIP/quality-rules/1039022",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1039024,
+        "name": "CWE-614 : Avoid using unsecured cookie (JEE)",
+        "href": "AIP/quality-rules/1039024",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1040002,
-        "name": "Spring Security CSRF Protection must not be disabled",
+        "name": "CWE-352:Spring Security CSRF Protection must not be disabled",
         "href": "AIP/quality-rules/1040002",
         "status": null,
         "critical": true
     },
     {
         "id": 1040004,
-        "name": "Ensure that any application request is authenticated with HTTP basic",
+        "name": "CWE-287:Ensure that any application request is authenticated with HTTP basic",
         "href": "AIP/quality-rules/1040004",
         "status": null,
         "critical": true
     },
     {
         "id": 1040006,
-        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "name": "CWE-1021:Ensure that Content-Security-Policy is set for Spring Application",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true
     },
     {
         "id": 1040008,
-        "name": "Ensure that login form is declared after requesting authorization and authentication",
+        "name": "CWE-287:Ensure that login form is declared after requesting authorization and authentication",
         "href": "AIP/quality-rules/1040008",
         "status": null,
         "critical": true
@@ -1793,8 +1877,29 @@
     },
     {
         "id": 1040012,
-        "name": "Ensure that HTTP Session is invalidated during logout",
+        "name": "CWE-287:Ensure that HTTP Session is invalidated during logout",
         "href": "AIP/quality-rules/1040012",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040014,
+        "name": "CWE-439:Avoid using Spring Security's debug mode",
+        "href": "AIP/quality-rules/1040014",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1040016,
+        "name": "PermitAll or user role should be specified to access URL(s) of the application",
+        "href": "AIP/quality-rules/1040016",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1040018,
+        "name": "X-Frame-Option should be correctly set to avoid Clickjacking attack",
+        "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true
     },
@@ -1846,61 +1951,5 @@
         "href": "AIP/quality-rules/1101918",
         "status": null,
         "critical": false
-    },
-    {
-        "id": 2026902,
-        "name": "Avoid Improper Restriction of XML External Entity Reference  (XXE) vulnerabilities (CWE-611)",
-        "href": "AIP/quality-rules/2026902",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2026904,
-        "name": "Avoid Use of Hard-coded Credentials (CWE-798)",
-        "href": "AIP/quality-rules/2026904",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2026906,
-        "name": "Avoid Use of Socket, ClassLoader or Thread Classes (CWE-246, CWE-578, CWE-362)",
-        "href": "AIP/quality-rules/2026906",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2026908,
-        "name": "Avoid Use of Weak Encryption Algorithms (CWE-326)",
-        "href": "AIP/quality-rules/2026908",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2666740,
-        "name": "Unicredit - Avoid Use of Socket, ClassLoader or Thread Classes (CWE-246, CWE-578, CWE-362)",
-        "href": "AIP/quality-rules/2666740",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2666742,
-        "name": "Unicredit - Avoid Use of Weak Encryption Algorithms (CWE-326)",
-        "href": "AIP/quality-rules/2666742",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2666744,
-        "name": "Unicredit - Avoid Use of Hard-coded Credentials (CWE-798)",
-        "href": "AIP/quality-rules/2666744",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2666746,
-        "name": "Unicredit - Avoid Improper Restriction of XML External Entity Reference  (XXE) vulnerabilities (CWE-611)",
-        "href": "AIP/quality-rules/2666746",
-        "status": null,
-        "critical": true
     }
 ]

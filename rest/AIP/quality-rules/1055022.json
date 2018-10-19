@@ -1,0 +1,61 @@
+{
+    "id": 1055022,
+    "name": "UIApplicationDelegate applicationDidEnterBackground must delete sensitive data (Swift)",
+    "href": "AIP/quality-rules/1055022",
+    "critical": true,
+    "associatedValueName": " ",
+    "description": "To avoid any sensitive data getting captured, use the UIApplicationDelegate applicationDidEnterBackground() to clean up the data before your application is going in background mode. This rule is compliant with OWASP M2 2016.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure your sensitive data are deleted in UIApplicationDelegate method applicationDidEnterBackground which is called when going to background mode",
+    "reference": "https://www.owasp.org/index.php/OWASP_Mobile_Security_Project#Top_Ten_Mobile_Risks",
+    "remediation": " ",
+    "remediationSample": " ",
+    "sample": " ",
+    "total": "Number of Swift artifacts",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1055000,
+            "name": "Swift",
+            "href": "AIP/technologies/1055000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M2-2016",
+            "name": "Insecure Data Storage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M2-Insecure_Data_Storage",
+            "description": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device. Filesystems are easily accessible. Organizations should expect a malicious user or malware to inspect sensitive data stores. Usage of poor encryption libraries is to be avoided. Rooting or jailbreaking a mobile device circumvents any encryption protections. When data is not protected properly, specialized tools are all that is needed to view application data."
+        }
+    ]
+}

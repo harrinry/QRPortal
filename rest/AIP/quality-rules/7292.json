@@ -51,16 +51,16 @@
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-7",
-            "name": "Inter-Module Dependency Cycles",
+            "name": "Circular dependencies among modules",
             "url": null,
-            "description": null
+            "description": "Remove instances where a module has references that cycle back to itself (for example, in JAVA this pattern means cycles between packages)"
         },
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-13",
-            "name": "Callable and Method Control Element Excessive Number of Parameters",
+            "name": "Excessive parameterization",
             "url": null,
-            "description": null
+            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. has too many parameters in its signature (default threshold value for the maximum number of parameters is 7)"
         }
     ]
 }

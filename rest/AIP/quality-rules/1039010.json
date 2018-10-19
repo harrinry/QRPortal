@@ -1,10 +1,10 @@
 {
     "id": 1039010,
-    "name": "Avoid using risky cryptographic hash (JEE)",
+    "name": "CWE-327:Avoid using risky cryptographic hash (JEE)",
     "href": "AIP/quality-rules/1039010",
     "critical": true,
     "description": "MD5/SHA1 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that's used as additional input to a one-way function. \n        Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. \n        As a consequence, somebody can break your encryption or log on to your website. \nMD2, MD4 are also considred as week hash functions and should not be used.",
-    "output": "This report lists all artifacts with JAVA methods",
+    "output": "JAVA methods",
     "rationale": "The use of a non-standard algorithm is dangerous because a determined attacker may be able to break the algorithm and compromise whatever data has been protected. \n        Well-known techniques may exist to break the algorithm.",
     "reference": "\nhttps://cwe.mitre.org/data/definitions/327.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure\n ",
     "remediation": "\nAvoid using MD5 or SHA1 hashes as input to cryptographic functions or to store passwords. The following hashing algorithms: SHA256, SHA384, and SHA512 are recommanded instead. \nMake sure you choose the most appropriate one, depending on your use case, security requirements and runtime constraints. \n\nSHA-256 is a 256-bit hash function intended to provide 128 bits of security against collision attacks, \nwhile SHA-512 is a 512-bit hash function intended to provide 256 bits of security. A 384-bit hash may be obtained by truncating the SHA-512 output",
@@ -39,6 +39,33 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-327",
+            "name": "Unvetted cryptographic algorithms",
+            "url": null,
+            "description": "Remove instances where the application uses a cryptographic list which is not part of the list of vetted cryptographic libraries. "
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-327",
+            "name": "Use of a Broken or Risky Cryptographic Algorithm",
+            "url": "https://cwe.mitre.org/data/definitions/327.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
+            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+        }
     ]
 }

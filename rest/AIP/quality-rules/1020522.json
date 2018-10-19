@@ -51,23 +51,23 @@
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-20",
-            "name": "Unreachable Named Callable or Method Control Element",
+            "name": "Dead code",
             "url": null,
-            "description": null
+            "description": "Number of instances where a function or method is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a function or method element)"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-252-data",
-            "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
+            "name": "Unchecked return parameter from data handling operations",
             "url": null,
-            "description": null
+            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. executes a CRUD SQL statement, yet the return code value of the action is not checked anywhere"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-704",
-            "name": "Incorrect Type Conversion or Cast",
+            "name": "Incompatible data type conversion",
             "url": null,
-            "description": null
+            "description": "Remove instances where a variable, field, member, etc. is declared with a data type, and then is updated with a value from a second data type that is incompatible with the first data type"
         }
     ]
 }

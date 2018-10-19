@@ -1,6 +1,6 @@
 {
     "id": 4616,
-    "name": "CWE-568: finalize() Method Without super.finalize()",
+    "name": "Proper overriding of 'finalize()'",
     "href": "AIP/quality-rules/4616",
     "critical": true,
     "associatedValueName": "Associated Value",
@@ -42,6 +42,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-586",
+            "name": "Explicit Call to Finalize()",
+            "url": "https://cwe.mitre.org/data/definitions/586.html",
+            "description": null
+        }
     ]
 }

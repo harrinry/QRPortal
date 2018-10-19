@@ -981,7 +981,7 @@
     },
     {
         "id": 7648,
-        "name": "CWE-586: Explicit Call to Finalize()",
+        "name": "Avoid calling finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false
@@ -3444,6 +3444,20 @@
         "critical": false
     },
     {
+        "id": 1020814,
+        "name": "Avoid using web service calls inside a loop",
+        "href": "AIP/quality-rules/1020814",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1020816,
+        "name": "Avoid using output of the function that does not return anything ",
+        "href": "AIP/quality-rules/1020816",
+        "status": null,
+        "critical": false
+    },
+    {
         "id": 1021002,
         "name": "Avoid using a web service with Python httplib HTTPConnection inside a loop",
         "href": "AIP/quality-rules/1021002",
@@ -3542,67 +3556,95 @@
         "critical": true
     },
     {
+        "id": 1024006,
+        "name": "Limit the accessibility of your app's Content Provider",
+        "href": "AIP/quality-rules/1024006",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1039002,
-        "name": "Avoid using Deprecated SSL protocols to secure connection",
+        "name": "CWE-319: Avoid using Deprecated SSL protocols to secure connection",
         "href": "AIP/quality-rules/1039002",
         "status": null,
         "critical": true
     },
     {
         "id": 1039004,
-        "name": "Avoid using HttpServletRequest.getRequestedSessionId()",
+        "name": "CWE-807: Avoid using HttpServletRequest.getRequestedSessionId()",
         "href": "AIP/quality-rules/1039004",
         "status": null,
         "critical": true
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "CWE-336: Avoid using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true
     },
     {
         "id": 1039008,
-        "name": "Avoid thrown Exceptions in servlet methods",
+        "name": "CWE-600: Avoid thrown Exceptions in servlet methods",
         "href": "AIP/quality-rules/1039008",
         "status": null,
         "critical": true
     },
     {
         "id": 1039010,
-        "name": "Avoid using risky cryptographic hash (JEE)",
+        "name": "CWE-327:Avoid using risky cryptographic hash (JEE)",
         "href": "AIP/quality-rules/1039010",
         "status": null,
         "critical": true
     },
     {
         "id": 1039014,
-        "name": "Avoid using Cipher with no HMAC to ensure data integrity",
+        "name": "CWE-353: Avoid using Cipher with no HMAC to ensure data integrity",
         "href": "AIP/quality-rules/1039014",
         "status": null,
         "critical": true
     },
     {
         "id": 1039018,
-        "name": "Avoid using cryptography hash with hardcoded salt",
+        "name": "CWE-759: Avoid using cryptography hash with hardcoded salt (JEE)",
         "href": "AIP/quality-rules/1039018",
         "status": null,
         "critical": true
     },
     {
         "id": 1039020,
-        "name": "Avoid using javax.crypto.NullCipher",
+        "name": "CWE-327: Avoid using javax.crypto.NullCipher",
         "href": "AIP/quality-rules/1039020",
         "status": null,
         "critical": true
     },
     {
+        "id": 1039022,
+        "name": "CWE-916:Cryptographic Hash:Avoid using Insecure PBE Iteration Count",
+        "href": "AIP/quality-rules/1039022",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1039024,
+        "name": "CWE-614 : Avoid using unsecured cookie (JEE)",
+        "href": "AIP/quality-rules/1039024",
+        "status": null,
+        "critical": true
+    },
+    {
         "id": 1040004,
-        "name": "Ensure that any application request is authenticated with HTTP basic",
+        "name": "CWE-287:Ensure that any application request is authenticated with HTTP basic",
         "href": "AIP/quality-rules/1040004",
         "status": null,
         "critical": true
+    },
+    {
+        "id": 1040014,
+        "name": "CWE-439:Avoid using Spring Security's debug mode",
+        "href": "AIP/quality-rules/1040014",
+        "status": null,
+        "critical": false
     },
     {
         "id": 1050000,
@@ -3657,6 +3699,34 @@
         "id": 1050062,
         "name": "Avoid empty catch blocks",
         "href": "AIP/quality-rules/1050062",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055002,
+        "name": "Avoid using the call of web service with iOS/Swift API inside a loop",
+        "href": "AIP/quality-rules/1055002",
+        "status": null,
+        "critical": true
+    },
+    {
+        "id": 1055014,
+        "name": "Ensure that LAContext evaluatePolicy reply block is not empty (Swift)",
+        "href": "AIP/quality-rules/1055014",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1055016,
+        "name": "Ensure that LAContext evaluatePolicy reply block success is checked (Swift)",
+        "href": "AIP/quality-rules/1055016",
+        "status": null,
+        "critical": false
+    },
+    {
+        "id": 1055018,
+        "name": "Always use LAContext canEvaluatePolicy before using evaluatePolicy (Swift)",
+        "href": "AIP/quality-rules/1055018",
         "status": null,
         "critical": true
     },
@@ -4350,615 +4420,6 @@
         "id": 1600736,
         "name": "PeopleSoft: All new process group must be into a permission list",
         "href": "AIP/quality-rules/1600736",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665116,
-        "name": "PowerCenter:Delete unnecessary links between transformation",
-        "href": "AIP/quality-rules/1665116",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665482,
-        "name": "PowerCenter:Set \"DTM Buffer size\" at \"Auto\" or at a consistent value on Sessions",
-        "href": "AIP/quality-rules/1665482",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665484,
-        "name": "PowerCenter:Avoid letting default memory size for complex transformations",
-        "href": "AIP/quality-rules/1665484",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665486,
-        "name": "PowerCenter:Avoid uncached lookup",
-        "href": "AIP/quality-rules/1665486",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 1665488,
-        "name": "PowerCenter:Avoid too many Fields in a transformation",
-        "href": "AIP/quality-rules/1665488",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665542,
-        "name": "PowerCenter:Avoid \"Sorted Input\" set to false for aggregators and joiners after a Sorter Transformation",
-        "href": "AIP/quality-rules/1665542",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 1665544,
-        "name": "PowerCenter:Use of \"Sorted Input\"",
-        "href": "AIP/quality-rules/1665544",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665554,
-        "name": "PowerCenter:Avoid using field-level stored procedure",
-        "href": "AIP/quality-rules/1665554",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665558,
-        "name": "PowerCenter:Place \"=\" first and \"!=\" or \"<>\" last in the list of conditions in Lookup table transformation",
-        "href": "AIP/quality-rules/1665558",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 1665580,
-        "name": "PowerCenter:Set \"Stop on errors\" to 1 on Sessions",
-        "href": "AIP/quality-rules/1665580",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665582,
-        "name": "PowerCenter:Historize the logs for session and workflow",
-        "href": "AIP/quality-rules/1665582",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665584,
-        "name": "PowerCenter:Set \"Fail parent if this task fails\" on tasks",
-        "href": "AIP/quality-rules/1665584",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665586,
-        "name": "PowerCenter:Avoid changing tracing level option other than normal",
-        "href": "AIP/quality-rules/1665586",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 1665588,
-        "name": "PowerCenter:Avoid Folder with high save log by timestamp/save log by run ratio",
-        "href": "AIP/quality-rules/1665588",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665760,
-        "name": "PowerCenter:Avoid implicit data conversion",
-        "href": "AIP/quality-rules/1665760",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665762,
-        "name": "PowerCenter:Never truncate data",
-        "href": "AIP/quality-rules/1665762",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665764,
-        "name": "PowerCenter:Avoid Unmapped between source and source qualifier",
-        "href": "AIP/quality-rules/1665764",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 1665766,
-        "name": "PowerCenter:Avoid unmapped target column",
-        "href": "AIP/quality-rules/1665766",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351460,
-        "name": "ColdFusion: Avoid using SQL queries inside a loop",
-        "href": "AIP/quality-rules/2351460",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2351462,
-        "name": "ColdFusion: Avoid instanciation in loop",
-        "href": "AIP/quality-rules/2351462",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2351482,
-        "name": "ColdFusion: Avoid using cffile for file access",
-        "href": "AIP/quality-rules/2351482",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2351484,
-        "name": "ColdFusion: Avoid using cfdump without IsDebugMode",
-        "href": "AIP/quality-rules/2351484",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2351486,
-        "name": "ColdFusion: Avoid using inline-IF (IIF)",
-        "href": "AIP/quality-rules/2351486",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2351540,
-        "name": "ColdFusion: Avoid Queries with COUNT(*) statement",
-        "href": "AIP/quality-rules/2351540",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351542,
-        "name": "ColdFusion: Avoid Queries using JOINS  on more than 4 Tables",
-        "href": "AIP/quality-rules/2351542",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351544,
-        "name": "ColdFusion: Avoid Queries using GROUP BY",
-        "href": "AIP/quality-rules/2351544",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351546,
-        "name": "ColdFusion: Avoid Queries with SELECT * statement",
-        "href": "AIP/quality-rules/2351546",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351548,
-        "name": "ColdFusion: Avoid Queries with Subqueries",
-        "href": "AIP/quality-rules/2351548",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351550,
-        "name": "ColdFusion: Avoid Queries using NOT EXISTS",
-        "href": "AIP/quality-rules/2351550",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351552,
-        "name": "ColdFusion: Prefer UNION ALL to UNION",
-        "href": "AIP/quality-rules/2351552",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351554,
-        "name": "ColdFusion: Avoid  Queries using NOT IN",
-        "href": "AIP/quality-rules/2351554",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2351760,
-        "name": "ColdFusion: Avoid missing cfdefaultcase in cfswitch construct",
-        "href": "AIP/quality-rules/2351760",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2352600,
-        "name": "Remedy: Avoid Workflows with COUNT(*) statement",
-        "href": "AIP/quality-rules/2352600",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2352602,
-        "name": "Remedy: Avoid Workflows With Queries using JOINS  on more than 4 Tables",
-        "href": "AIP/quality-rules/2352602",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 2352604,
-        "name": "Remedy: Avoid Workflows With Queries using GROUP BY",
-        "href": "AIP/quality-rules/2352604",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2352606,
-        "name": "Remedy: Avoid Workflows with SELECT * statement",
-        "href": "AIP/quality-rules/2352606",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2352608,
-        "name": "Remedy: Avoid Workflows with Subqueries",
-        "href": "AIP/quality-rules/2352608",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2352610,
-        "name": "Remedy: Avoid Workflows With Queries using NOT EXISTS",
-        "href": "AIP/quality-rules/2352610",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 2352612,
-        "name": "Remedy: Avoid Workflows With Queries using UNION ALL",
-        "href": "AIP/quality-rules/2352612",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000540,
-        "name": "Natural: Avoid Programs using WHERE statement in Read operation",
-        "href": "AIP/quality-rules/6000540",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000542,
-        "name": "Natural: Avoid Nested Programs using WHERE statement in Read operation",
-        "href": "AIP/quality-rules/6000542",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000544,
-        "name": "Natural: Avoid Batch Programs using WHERE statement in Read operation",
-        "href": "AIP/quality-rules/6000544",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000548,
-        "name": "Natural: Avoid using WITH LIMIT(xx) in Programs",
-        "href": "AIP/quality-rules/6000548",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000550,
-        "name": "Natural: Avoid using WITH LIMIT(xx) in Nested Programs",
-        "href": "AIP/quality-rules/6000550",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000552,
-        "name": "Natural: Avoid using WITH LIMIT(xx) in Batch Programs",
-        "href": "AIP/quality-rules/6000552",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000554,
-        "name": "Natural: Prefer Programs using Select operations on Natural view using a limit",
-        "href": "AIP/quality-rules/6000554",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000556,
-        "name": "Natural: Prefer Nested Programs using Select operations on Natural view using a limit",
-        "href": "AIP/quality-rules/6000556",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000558,
-        "name": "Natural: Prefer Batch Programs using Select operations on Natural view using a limit",
-        "href": "AIP/quality-rules/6000558",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000560,
-        "name": "Natural: Avoid Programs using plain UPDATE statement",
-        "href": "AIP/quality-rules/6000560",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000562,
-        "name": "Natural: Avoid Nested Programs using plain UPDATE statement",
-        "href": "AIP/quality-rules/6000562",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000564,
-        "name": "Natural: Avoid Batch Programs using plain UPDATE statement",
-        "href": "AIP/quality-rules/6000564",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000580,
-        "name": "Natural: Avoid Programs not declaring the ON ERROR clause",
-        "href": "AIP/quality-rules/6000580",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 6000584,
-        "name": "Natural: Avoid Batch Programs not declaring the ON ERROR clause",
-        "href": "AIP/quality-rules/6000584",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 6000592,
-        "name": "Natural: Avoid empty ON ERROR clauses in Programs",
-        "href": "AIP/quality-rules/6000592",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 6000596,
-        "name": "Natural: Avoid empty ON ERROR clauses in Batch Programs",
-        "href": "AIP/quality-rules/6000596",
-        "status": null,
-        "critical": true
-    },
-    {
-        "id": 6000598,
-        "name": "Natural: Avoid Programs using STOP and TERMINATE",
-        "href": "AIP/quality-rules/6000598",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000600,
-        "name": "Natural: Avoid Nested Programs using STOP and TERMINATE",
-        "href": "AIP/quality-rules/6000600",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 6000602,
-        "name": "Natural: Avoid Batch Programs using STOP and TERMINATE",
-        "href": "AIP/quality-rules/6000602",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000002,
-        "name": "Pacbase: Avoid Programs using INS statement",
-        "href": "AIP/quality-rules/9000002",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000004,
-        "name": "Pacbase: Avoid Programs using C statement",
-        "href": "AIP/quality-rules/9000004",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000020,
-        "name": "Pacbase: Avoid Programs using TRI operator",
-        "href": "AIP/quality-rules/9000020",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000040,
-        "name": "Pacbase: Avoid Online Programs using TRI statement",
-        "href": "AIP/quality-rules/9000040",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000044,
-        "name": "Pacbase: Avoid Online Programs using INS statement",
-        "href": "AIP/quality-rules/9000044",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000046,
-        "name": "Pacbase: Avoid Online Programs using C statement",
-        "href": "AIP/quality-rules/9000046",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000058,
-        "name": "Pacbase: Avoid PMS using TRI operator",
-        "href": "AIP/quality-rules/9000058",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000076,
-        "name": "Pacbase: Avoid PMS using INS statement",
-        "href": "AIP/quality-rules/9000076",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000078,
-        "name": "Pacbase: Avoid PMS using C statement",
-        "href": "AIP/quality-rules/9000078",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000124,
-        "name": "Pacbase: Avoid Programs using MES statement",
-        "href": "AIP/quality-rules/9000124",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000126,
-        "name": "Pacbase: Avoid Online Programs using MES statement",
-        "href": "AIP/quality-rules/9000126",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000128,
-        "name": "Pacbase: Avoid PMS using MES statement",
-        "href": "AIP/quality-rules/9000128",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000136,
-        "name": "Pacbase: Avoid using SELECT without WHERE clause in SQL queries",
-        "href": "AIP/quality-rules/9000136",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000138,
-        "name": "Pacbase : Avoid using \"LOOK TABLE\" statement",
-        "href": "AIP/quality-rules/9000138",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000140,
-        "name": "Pacbase : Avoid using Sub-Queries",
-        "href": "AIP/quality-rules/9000140",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000142,
-        "name": "Pacbase : Always close SQL cursor",
-        "href": "AIP/quality-rules/9000142",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000166,
-        "name": "Pacbase : Avoid using direct UPDATE statements",
-        "href": "AIP/quality-rules/9000166",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000178,
-        "name": "Pacbase: Avoid use of operators : OPE,CLO,R,W,RW,RN,STA,DEL",
-        "href": "AIP/quality-rules/9000178",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000180,
-        "name": "Pacbase: Avoid using EXC LINK outside PMS (TP)",
-        "href": "AIP/quality-rules/9000180",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000190,
-        "name": "Pacbase: Avoid include PMS into PMS",
-        "href": "AIP/quality-rules/9000190",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000196,
-        "name": "Pacbase: Batch - avoid use of TP operators X in Batch programs",
-        "href": "AIP/quality-rules/9000196",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000200,
-        "name": "Pacbase: Avoid use of operators : CLO outside PMS",
-        "href": "AIP/quality-rules/9000200",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000202,
-        "name": "Pacbase: Avoid use of operators : OPE outside PMS",
-        "href": "AIP/quality-rules/9000202",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000204,
-        "name": "Pacbase: Avoid use of operators : R outside PMS",
-        "href": "AIP/quality-rules/9000204",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000206,
-        "name": "Pacbase: Avoid use of operators : W outside PMS",
-        "href": "AIP/quality-rules/9000206",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000210,
-        "name": "Pacbase: Avoid using EXC outside PMS",
-        "href": "AIP/quality-rules/9000210",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000212,
-        "name": "Pacbase: Avoid using SCB, SCH outside PMS",
-        "href": "AIP/quality-rules/9000212",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000218,
-        "name": "Pacbase: Batch - Avoid use of operators : ADC, ADT",
-        "href": "AIP/quality-rules/9000218",
-        "status": null,
-        "critical": false
-    },
-    {
-        "id": 9000230,
-        "name": "Pacbase: Avoid call outside PMS",
-        "href": "AIP/quality-rules/9000230",
         "status": null,
         "critical": false
     }

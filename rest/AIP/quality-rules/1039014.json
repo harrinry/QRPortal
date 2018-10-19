@@ -1,11 +1,10 @@
 {
     "id": 1039014,
-    "name": "Avoid using Cipher with no HMAC to ensure data integrity",
+    "name": "CWE-353: Avoid using Cipher with no HMAC to ensure data integrity",
     "href": "AIP/quality-rules/1039014",
     "critical": true,
-    "associatedValueName": "Single Value",
     "description": "The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection. \n\nThe solution is to used a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. \nAs following modes don't provide a HMAC, a violation will be reported when one of them is used. \n- CBC \n- OFB \n- CTR \n- ECB ",
-    "output": "This report lists all artifacts with JAVA methods",
+    "output": "JAVA methods",
     "rationale": "If integrity check values or \"checksums\" are omitted from a protocol, there is no way of determining if data has been corrupted in transmission. The lack of checksum functionality in a protocol removes the first application-level check of data that can be used. The end-to-end philosophy of checks states that integrity checks should be performed at the lowest level that they can be completely implemented. \n\nSo using a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data will ensure data integrity. It is always recommended that you be able to verify the HMAC first, and only if the data is unmodified, do you then perform any cryptographic functions on the data.",
     "reference": "http://cwe.mitre.org/data/definitions/353.html",
     "remediation": "Only uses mode introduceing an HMAC into the resulting encrypted data, providing integrity of the result as GCM.",
@@ -40,6 +39,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-353",
+            "name": "Missing Support for Integrity Check",
+            "url": "https://cwe.mitre.org/data/definitions/353.html",
+            "description": null
+        }
     ]
 }

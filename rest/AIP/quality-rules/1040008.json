@@ -1,14 +1,14 @@
 {
     "id": 1040008,
-    "name": "Ensure that login form is declared after requesting authorization and authentication",
+    "name": "CWE-287:Ensure that login form is declared after requesting authorization and authentication",
     "href": "AIP/quality-rules/1040008",
     "critical": true,
     "associatedValueName": "Single Value",
-    "description": "Since Spring Security\u2019s default configuration does not explicitly set a URL for the login page, Spring Security generates one automatically, based on the features that are enabled and using standard values for the URL which processes the submitted login, the default target URL the user will be sent to after logging in and so on. \nWhile the automatically generated log in page is convenient to get up and running quickly, most applications will want to provide their own log in page. but this should be done after requesting authorization and authentication.\nThis rule reports violation when login form is set without requesting authorization and authentication. It is compliant with CWE-287: Improper Authentication and Top 10-2017 A5-Broken Access Control",
+    "description": "Since Spring Security\u2019s default configuration does not explicitly set a URL for the login page, Spring Security generates one automatically, based on the features that are enabled and using standard values for the URL which processes the submitted login, the default target URL the user will be sent to after logging in and so on.\nWhile the automatically generated log in page is convenient to get up and running quickly, most applications will want to provide their own log in page. but this should be done after requesting authorization and authentication.\nThis rule reports violation when login form is set without requesting authorization and authentication. It is compliant with CWE-287: Improper Authentication and Top 10-2017 A5-Broken Access Control",
     "rationale": "When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct. Based on \"authorizeRequests()\", we are allowing anonymous access on /login so that users can authenticate. We are also securing everything else.\n",
-    "reference": "https://cwe.mitre.org/data/definitions/287.html \nhttps://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication\n ",
-    "remediationSample": "\nprotected void configure(HttpSecurity http) throws Exception { \n    http \n         .authorizeRequests() \n                  .anyRequest().authenticated() \n                   .and() \n         .formLogin()    //Login form is declared after authentication and authorization\n                  .loginPage(\"/login\") \n                  .permitAll();\n} \n  ",
-    "sample": "\nprotected void configure(HttpSecurity http) throws Exception { \n    http \n        .formLogin()   //Login form is declared without authentication and authorization\n             .loginPage(\"/login\") \n             .permitAll();\n} \n ",
+    "reference": "https://cwe.mitre.org/data/definitions/287.html\nhttps://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication\n ",
+    "remediationSample": "\nprotected void configure(HttpSecurity http) throws Exception {\n    http\n         .authorizeRequests()\n                  .anyRequest().authenticated()\n                   .and()\n         .formLogin()    //Login form is declared after authentication and authorization\n                  .loginPage(\"/login\")\n                  .permitAll();\n}\n  ",
+    "sample": "\nprotected void configure(HttpSecurity http) throws Exception {\n    http\n        .formLogin()   //Login form is declared without authentication and authorization\n             .loginPage(\"/login\")\n             .permitAll();\n}\n ",
     "total": "Number of Java Artifact",
     "businessCriteria": [
         {
@@ -38,6 +38,26 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-287",
+            "name": "Improper Authentication",
+            "url": "https://cwe.mitre.org/data/definitions/287.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A4-2013",
+            "name": "Insecure Direct Object References",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References",
+            "description": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2017",
+            "name": "Broken Access Control",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
+            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+        }
     ]
 }

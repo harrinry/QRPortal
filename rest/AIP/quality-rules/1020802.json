@@ -5,12 +5,13 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Single Value",
-    "description": "Reports a list of all the errors that have been created but have not been thrown",
+    "description": "This rule lists all the errors that have been created but have not been thrown.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",
     "rationale": "When creating an error it is always better to throw the error. ",
+    "reference": "CISQ : ASCSM-CWE-396 ",
     "remediation": "For every error created, throw the error.",
-    "remediationSample": ">>> if (elem1!=elem2) {\n>>>     throw new Error (\"elem1 is not to be different from elem2\");\n>>>   }\n        ",
-    "sample": ">>> if (elem1!=elem2) {\n>>> new Error (\"elem1 is not to be different from elem2\");\n>>> }\n",
+    "remediationSample": " if (elem1!=elem2) {\n     throw new Error (\"elem1 is not to be different from elem2\");\n   }\n        ",
+    "sample": "if (elem1!=elem2) {\nnew Error (\"elem1 is not to be different from elem2\");\n}\n",
     "total": "Typescript artifacts handling exceptions",
     "businessCriteria": [
         {
@@ -50,6 +51,12 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-396",
+            "name": "Catch of overly broad exception types",
+            "url": null,
+            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. contains a catch of an exception whose type is part of a list of overly broad exception types"
+        }
     ]
 }
