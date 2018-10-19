@@ -3,7 +3,7 @@
     "name": "Avoid using risky cryptographic hash (Swift)",
     "href": "AIP/quality-rules/1055006",
     "critical": true,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation patterns",
     "description": "MD5/SHA1 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that's used as additional input to a one-way function. Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. As a consequence, somebody can break your encryption or log on to your website.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "The use of a non-standard algorithm is dangerous because a determined attacker may be able to break the algorithm and compromise whatever data has been protected. Well-known techniques may exist to break the algorithm.",

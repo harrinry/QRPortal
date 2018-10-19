@@ -1,0 +1,61 @@
+{
+    "id": 1055034,
+    "name": "Avoid empty generic catch blocks (Swift)",
+    "href": "AIP/quality-rules/1055034",
+    "critical": true,
+    "associatedValueName": "Associated Value",
+    "description": "In a Do-Catch statement, generic Catch blocks (catching any error type) should have code that avoids silently passing the errors.\nThis metric reports all Swift callables (functions, methods, or source codes) with at least one empty (or only containing comments) generic catch block.",
+    "output": "This report lists all Artifacts with an empty catch block.\nIt provides the following information:\n- Artifact full name\n- Number of empty catch blocks",
+    "rationale": "An empty catch block defeats the purpose of exceptions.\nWhen an exception occurs, nothing happens and the program fails for an unknown reason. The application can be in an unknown state that will affect subsequent processing.\nSince the reason for the issue (the exception type and potential embedded message) are ignored, it will require more time to fix the issue.",
+    "reference": "https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html\nhttp://cwe.mitre.org/data/definitions/391.html\nhttps://research.tue.nl/en/publications/how-swift-developers-handle-errors",
+    "remediation": "The exception must be handled correctly according to its type.",
+    "remediationSample": "// easy remediation\n\ndo {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch\n{\n   print(\"Unexpected error:\\(error).\")\n}\n\n// better remediation\n\ndo {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch SomethingError.invalidateError {\n   print(\"Invalid error\")\n}\ncatch {\n   print(\"Unexpected error:\\(error).\")\n}",
+    "sample": "do {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch {\n}",
+    "total": "This counts all artifacts.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1055000,
+            "name": "Swift",
+            "href": "AIP/technologies/1055000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty exception block",
+            "url": null,
+            "description": "Remove instances where an exception handling block (such as catch and finally blocks) of a function, method, procedure, stored procedure, sub-routine, etc. does not contain any instruction"
+        }
+    ]
+}
