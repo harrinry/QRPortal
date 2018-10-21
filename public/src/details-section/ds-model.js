@@ -6,24 +6,24 @@ import { CLASSES, NORULESSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
 const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
-  let qualityStandardsTags, technologiesTags, Tags;
+  let qualityStandardsTags, technologiesTags;
   if (data){
     qualityStandardsTags = data.qualityStandards.length > 0 ? 
-      data.qualityStandards.map(function(listValue, index){
-        return <div key={index} className={CLASSES.tag} onClick={() => {
-          if(!searchVisible || gsQuery !== listValue.id)
-            onTagClick(listValue);
-        }}>{listValue.id}</div>;
-      }) : [];
+      data.qualityStandards
+        .filter( e => e.standard.toLowerCase() !== 'cwe' && e.standard.toLowerCase() !== 'aip' ) // filter CWE tags
+        .map(function(listValue, index){
+          return <div key={index} className={CLASSES.tag} onClick={() => {
+            if(!searchVisible || gsQuery !== listValue.id)
+              onTagClick(listValue);
+          }}>{listValue.id}</div>;
+        }) : [];
     technologiesTags = data.technologies.length > 0 ? 
       data.technologies.map((t, i)=>{
-        return <div key={i+'techno'} className={CLASSES.tag} onClick={() => {
+        return <div key={i+'techno'} className={CLASSES.technoTag} onClick={() => {
           if(!searchVisible || gsQuery !== t.id)
             onTechnologyTagClick(t);
         }}>{t.name}</div>;
       }) : [] ;
-    const tags = [].concat(qualityStandardsTags, technologiesTags);
-    Tags = tags.length > 0 ? tags : undefined;
   }
   return (
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
@@ -37,7 +37,10 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               </div>
             </div>
             <div className={CLASSES.tagContainer}>
-              {Tags}
+              {qualityStandardsTags}
+            </div>
+            <div className={CLASSES.tagContainer}>
+              {technologiesTags}
             </div>
             {data.description ? <div className={CLASSES.descriptionContainer}>
               <p className={CLASSES.textArea}>Description</p>
