@@ -144,9 +144,18 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
         continue;
       } finally {
         const stdListRemap = JsonParsedData.map( e => {
-          const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json')),
-            rulesData = JSON.parse(rawRuleData);
-          return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+          if( fs.existsSync(root.resolve('rest/' + e.href + '.json')) ){
+            const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json'));
+            let rulesData, ret = {};
+            try {
+              rulesData = JSON.parse(rawRuleData);
+            } catch (error) {
+              return Object.assign({}, e);
+            } finally {
+              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+            }
+            return ret;
+          }
         });
         index.standards[std.id.toLowerCase()] = stdListRemap;
       }
