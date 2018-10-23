@@ -150,11 +150,14 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
             try {
               rulesData = JSON.parse(rawRuleData);
             } catch (error) {
+              console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
               return Object.assign({}, e);
             } finally {
               ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
             }
             return ret;
+          } else {
+            console.log('expected ' + 'rest/' + e.href + '.json to exsist');
           }
         });
         index.standards[std.id.toLowerCase()] = stdListRemap;
