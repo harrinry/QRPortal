@@ -157,7 +157,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
             }
             return ret;
           } else {
-            console.log('expected ' + 'rest/' + e.href + '.json to exsist');
+            console.log('expected ' + 'rest/' + e.href + '.json to exsist please review file indexes to not point to these files');
           }
         });
         index.standards[std.id.toLowerCase()] = stdListRemap;
