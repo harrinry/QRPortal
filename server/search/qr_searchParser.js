@@ -133,14 +133,24 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
-    const std = standardsList[i],
-      stdList = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href))),
-      stdListRemap = stdList.map( e => {
-        const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json')),
-          rulesData = JSON.parse(rawRuleData);
-        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
-      });
-    index.standards[std.id.toLowerCase()] = stdListRemap;
+    const std = standardsList[i];
+    if (fs.existsSync(root.resolve('rest/'+std.href))) {
+      const stdListRawData = fs.readFileSync(root.resolve('rest/'+std.href));
+      let JsonParsedData;
+      try{
+        JsonParsedData = JSON.parse(stdListRawData);
+      } catch(err){
+        console.error(err);
+        continue;
+      } finally {
+        const stdListRemap = JsonParsedData.map( e => {
+          const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json')),
+            rulesData = JSON.parse(rawRuleData);
+          return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+        });
+        index.standards[std.id.toLowerCase()] = stdListRemap;
+      }
+    }
   }
   console.log('created Standards Index');
 }());
