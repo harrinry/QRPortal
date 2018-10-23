@@ -84,17 +84,6 @@ function findQualityStandard( standardID ){
   return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-const QRinitializationTest = () =>{
-  const testidx = getRandomInt(index.qualityrules.length),
-    test = getRandomInt( 2 ) === 0 ? index.qualityrules[testidx].id : index.qualityrules[testidx].name.substring( /:/g, getRandomInt(index.qualityrules[testidx].name.length) );
-  console.log('testquery search : ' + test);
-  console.log(SearchIndex(test, 'qualityrules'));
-}; 
-
 const createUniqueTechnologiesArray = ( technologiesArray )=>{
   return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
 };
@@ -108,13 +97,13 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
     throw err;
   }, () => {
     console.log('Quality Rules Search Index created');
-    if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
+    //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
 
   const standards = {
     cisq: 'CISQ',
     owasp: 'OWASP',
-    cwe: 'CWE'
+    //cwe: 'CWE'
   };
   const standardsList = [
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
@@ -132,7 +121,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.owasp} - ${e.id}`
         };
-      }),
+      })/*,
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
         return {
           id: e.id,
@@ -140,7 +129,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.cwe} - ${e.id}`
         };
-      })],
+      })*/],
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
