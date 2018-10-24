@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1055010",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": " ",
+    "associatedValueName": "Number of violation pattern",
     "description": "When using the URLCredential class, you must pay attention to the persistence attribute. With URLCredential.Persistence.synchronizable attribute the distribution of the credential and its storage will be in the Apple's cloud environment. Depending upon the privacy requirements of the application, storing the credential in the Apple cloud environment may not be acceptable. This rule is compliant with OWASP M2 2016.",
     "output": "This report lists all uses of NSURLCredential class instances\nIt provides the following information:\nObject full name, number of violations",
     "rationale": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device or are cloud synced.",
@@ -12,7 +12,7 @@
     "remediation": "Other possible values are:\n- URLCredential.Persistence.none: Credential should not be stored.\n- URLCredentialPersistence.forSession: Credential should be stored only for this session.\n- URLCredentialPersistence.permanent: Credential should be stored in the Keychain.",
     "remediationSample": "let credential = URLCredential.init(user: user, password: password, persistence: URLCredential.Persistence.none)\nlet shared = URLCredentialStorage.shared\nlet protectionSpace = URLProtectionSpace.init()\nshared.setDefaultCredential(credential, for: protectionSpace)",
     "sample": "let credential = URLCredential.init(user: user, password: password, persistence: URLCredential.Persistence.synchronizable)\nlet shared = URLCredentialStorage.shared\nlet protectionSpace = URLProtectionSpace.init()\nshared.setDefaultCredential(credential, for: protectionSpace)",
-    "total": " ",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 66031,

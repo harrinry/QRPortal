@@ -3,7 +3,7 @@
     "name": "Avoid creating file without protection (Swift)",
     "href": "AIP/quality-rules/1055004",
     "critical": true,
-    "associatedValueName": " ",
+    "associatedValueName": "Number of violation patterns",
     "description": "When using FileManager createFile() function, you must provide file protection option. This rule is compliant with OWASP M2 2016 recommendation.",
     "output": "This report lists all uses of FileManager createFile() function with FileAttributeKey.protectionKey option.\n\nIt provides the following information:\nObject full name, number of violations",
     "rationale": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device. \nIf the program does not ensure that the user is only requesting private files, then the user might be able to access other files on the system.",
@@ -11,7 +11,7 @@
     "remediation": "Instead of using FileProtectionType.none or URLFileProtection.none options, please use one of the following option:\n\nFileProtection.complete\nFileProtection.completeUnlessOpen\nFileProtection.completeUntilFirstUserAuthentication\n\nURLFileProtection.complete\nURLFileProtection.completeUnlessOpen\nURLFileProtection.completeUntilFirstUserAuthentication",
     "remediationSample": "FileManager.default.createFile(atPath:PATH, contents:someData, attributes:[FileProtectionKey.protectionKey:FileProtection.complete])\n\nFileManager.default.createFile(atPath:PATH, contents:someData, attributes:[FileProtectionKey.protectionKey:URLFileProtection.complete])\n\n",
     "sample": "FileManager.default.createFile(atPath:PATH, contents:someData, attributes:[FileProtectionKey.protectionKey:FileProtection.none])\n\nFileManager.default.createFile(atPath:PATH, contents:someData, attributes:[FileProtectionKey.protectionKey:URLFileProtection.none])\n\n",
-    "total": " ",
+    "total": "Number of Function",
     "businessCriteria": [
         {
             "id": 66031,

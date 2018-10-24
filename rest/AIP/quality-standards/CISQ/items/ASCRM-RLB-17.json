@@ -1,7 +1,12 @@
 {
     "id": "ASCRM-RLB-17",
-    "name": "Child Class Element without Virtual Destructor unlike its Parent Class Element",
+    "name": "Child class missing virtual destructor",
     "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-17",
     "url": null,
-    "count": 0
+    "description": "Remove instances where, for languages in which custom destructors can be written, the child class does not have its own virtual destructor, while its parent class has a virtual destructor",
+    "count": 1,
+    "qualityRules": {
+        "name": "Quality Rules in numeric ID order",
+        "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-17/quality-rules"
+    }
 }
