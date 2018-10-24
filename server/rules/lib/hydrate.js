@@ -15,7 +15,7 @@ function createHydrate( queryParams ){
   if (sec && ref) {
     PATH = generatePath(sec),
     RULES = generateRules(ref, PATH);
-  } else if( s && s !== '' ){
+  } else if( s && isSearchFormatValid(s) ){
     PATH = [];
     RULES = {};
     const slt = s.split('|'),
@@ -45,6 +45,16 @@ function getDetails( id, arr ){
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
   return _path ? getRulesDetailsFromFile(root.resolve('rest/' + _path.href)) : {};
+}
+
+function isSearchFormatValid( searchParam ){
+  if(!searchParam) return false;
+  
+  const split = searchParam.split('|');
+  if (split.length === 3) {
+    return /(.+\|\w+\|\d?)/ig.test(searchParam) ? true : false;
+  }
+  return false;
 }
 
 module.exports = createHydrate;
