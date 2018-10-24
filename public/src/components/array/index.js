@@ -76,7 +76,8 @@ VerticalArray.propTypes = {
   filterPlaceholder: PropTypes.string.isRequired,
   children: PropTypes.array,
   isLoading: PropTypes.bool.isRequired,
-  childConstructor: PropTypes.func.isRequired
+  childConstructor: PropTypes.func.isRequired,
+  compare: PropTypes.func.isRequired
 };
 
 export default VerticalArray;

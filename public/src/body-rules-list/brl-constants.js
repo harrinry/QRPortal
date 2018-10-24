@@ -1,14 +1,17 @@
 export const compareValueKeys = {
   id: 'id',
   name: 'name',
-  critical: 'critical'
+  critical: 'critical',
+  technologies: 'technologies',
+  standards: 'standards'
 };
 
 export const HEADERS = {
   id: {name: 'Id', className: 'qrp_arrRlsHid'},
   name: {name: 'Name', className: 'qrp_arrRlsHname'},
   critical: {name: 'Critical', className: 'qrp_arrRlsHcrit'},
-  technologies: {name: 'Technologies', className: 'qrp_arrRlsHTechnos'}
+  technologies: {name: 'Technologies', className: 'qrp_arrRlsHTechnos'},
+  standards: {name: 'Standards', className: 'qrp_arrRlsHStds'},
 };
 
 export const NORULES = 'No Rules';

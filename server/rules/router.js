@@ -10,7 +10,7 @@ let Router = express.Router();
 
 Router.get(main, (req, res) => {
   const queryValid = ValidateQuery(req.query);
-
+  console.log(queryValid);
   if(queryValid) {
     res.sendFile('index.html', options, (err) => errHandler(err, res));
   } else {

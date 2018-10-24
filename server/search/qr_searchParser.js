@@ -49,15 +49,6 @@ function convertToSearchString ( dataObject, fileName ) {
   };
 }
 
-// function convertQsToSearchIndex( dataObject, par ){
-//   return {
-//     id: dataObject.id,
-//     searchid: dataObject.id,
-//     name: par.name,
-//     resHref: par.href
-//   };
-// }
-
 function SearchIndex( query, indexDef ){
   switch (indexDef) {
   case 'qualityrules':
@@ -84,17 +75,6 @@ function findQualityStandard( standardID ){
   return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
 }
 
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-const QRinitializationTest = () =>{
-  const testidx = getRandomInt(index.qualityrules.length),
-    test = getRandomInt( 2 ) === 0 ? index.qualityrules[testidx].id : index.qualityrules[testidx].name.substring( /:/g, getRandomInt(index.qualityrules[testidx].name.length) );
-  console.log('testquery search : ' + test);
-  console.log(SearchIndex(test, 'qualityrules'));
-}; 
-
 const createUniqueTechnologiesArray = ( technologiesArray )=>{
   return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
 };
@@ -108,13 +88,13 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
     throw err;
   }, () => {
     console.log('Quality Rules Search Index created');
-    if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
+    //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
 
   const standards = {
     cisq: 'CISQ',
     owasp: 'OWASP',
-    cwe: 'CWE'
+    //cwe: 'CWE'
   };
   const standardsList = [
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
@@ -132,7 +112,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.owasp} - ${e.id}`
         };
-      }),
+      })/*,
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
         return {
           id: e.id,
@@ -140,18 +120,40 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.cwe} - ${e.id}`
         };
-      })],
+      })*/],
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
-    const std = standardsList[i],
-      stdList = JSON.parse(fs.readFileSync(root.resolve('rest/'+std.href))),
-      stdListRemap = stdList.map( e => {
-        const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json')),
-          rulesData = JSON.parse(rawRuleData);
-        return Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
-      });
-    index.standards[std.id.toLowerCase()] = stdListRemap;
+    const std = standardsList[i];
+    if (fs.existsSync(root.resolve('rest/'+std.href))) {
+      const stdListRawData = fs.readFileSync(root.resolve('rest/'+std.href));
+      let JsonParsedData;
+      try{
+        JsonParsedData = JSON.parse(stdListRawData);
+      } catch(err){
+        console.error(err);
+        continue;
+      } finally {
+        const stdListRemap = JsonParsedData.map( e => {
+          if( fs.existsSync(root.resolve('rest/' + e.href + '.json')) ){
+            const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json'));
+            let rulesData, ret = {};
+            try {
+              rulesData = JSON.parse(rawRuleData);
+            } catch (error) {
+              console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
+              return Object.assign({}, e);
+            } finally {
+              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+            }
+            return ret;
+          } else {
+            console.log('expected ' + 'rest/' + e.href + '.json to exsist please review file indexes to not point to these files');
+          }
+        });
+        index.standards[std.id.toLowerCase()] = stdListRemap;
+      }
+    }
   }
   console.log('created Standards Index');
 }());

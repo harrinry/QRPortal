@@ -2,9 +2,16 @@ const standardize = require('./standardizeParams');
 
 function validate( params ){
   params = standardize(params);
-  if( !params || (!params.hasOwnProperty('ref') && !params.hasOwnProperty('sec')) ) return true;
-  const { sec, ref = '||' } = params,
-    refValid = ref.split('|').length === 3 ? true : false,
+
+  if( !params || (!params.hasOwnProperty('ref') && !params.hasOwnProperty('sec')) && !params.hasOwnProperty('s') ) return true;
+  const { sec, ref = '||', s } = params;
+
+  if (s !== undefined) {
+    const isValid = isSearchFormatValid(s);
+    return isValid;
+  } 
+
+  const refValid = ref.split('|').length === 3 ? true : false,
     _sec = sec.split('_');
   let secValid;
 
@@ -57,6 +64,16 @@ function validateStandard( params ){
       : undefined;
 
   return foundID;
+}
+
+function isSearchFormatValid( searchParam ){
+  if(!searchParam) return false;
+  
+  const split = searchParam.split('|');
+  if (split.length === 3) {
+    return /(.+\|\w+\|\d?)/ig.test(searchParam) ? true : false;
+  }
+  return false;
 }
 
 module.exports = validate;
