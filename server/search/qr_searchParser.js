@@ -49,15 +49,6 @@ function convertToSearchString ( dataObject, fileName ) {
   };
 }
 
-// function convertQsToSearchIndex( dataObject, par ){
-//   return {
-//     id: dataObject.id,
-//     searchid: dataObject.id,
-//     name: par.name,
-//     resHref: par.href
-//   };
-// }
-
 function SearchIndex( query, indexDef ){
   switch (indexDef) {
   case 'qualityrules':

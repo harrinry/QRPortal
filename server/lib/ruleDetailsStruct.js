@@ -52,7 +52,7 @@ const QualityRuleObject = (data) => {
     data.associatedValueName,
     data.description,
     data.output,
-    data.rational,
+    data.rationale,
     data.remediation,
     data.total,
     data.businessCriteria,
