@@ -2,14 +2,12 @@ const standardize = require('./standardizeParams');
 
 function validate( params ){
   params = standardize(params);
-  console.log('standardized');
-  console.log(params);
+
   if( !params || (!params.hasOwnProperty('ref') && !params.hasOwnProperty('sec')) && !params.hasOwnProperty('s') ) return true;
   const { sec, ref = '||', s } = params;
-  console.log(s);
+
   if (s !== undefined) {
     const isValid = isSearchFormatValid(s);
-    console.log(isValid);
     return isValid;
   } 
 
