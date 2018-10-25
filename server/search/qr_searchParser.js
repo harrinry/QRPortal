@@ -44,7 +44,7 @@ function convertToSearchString ( dataObject, fileName ) {
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
-    technologies: UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
+    technologies: technos,//UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
 }
@@ -144,7 +144,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
               console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
               return Object.assign({}, e);
             } finally {
-              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: rulesData.technologies/*createUniqueTechnologiesArray(rulesData.technologies)*/ });
             }
             return ret;
           } else {
