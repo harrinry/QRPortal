@@ -75,9 +75,9 @@ function findQualityStandard( standardID ){
   return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
 }
 
-const createUniqueTechnologiesArray = ( technologiesArray )=>{
-  return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
-};
+// const createUniqueTechnologiesArray = ( technologiesArray )=>{
+//   return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
+// };
 
 /* initialization */
 (function (){
@@ -94,7 +94,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
   const standards = {
     cisq: 'CISQ',
     owasp: 'OWASP',
-    //cwe: 'CWE'
+    cwe: 'CWE'
   };
   const standardsList = [
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
@@ -112,7 +112,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.owasp} - ${e.id}`
         };
-      })/*,
+      }),
       ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
         return {
           id: e.id,
@@ -120,7 +120,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           count: e.count,
           searchid: `${standards.cwe} - ${e.id}`
         };
-      })*/],
+      })],
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
