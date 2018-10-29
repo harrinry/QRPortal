@@ -92,12 +92,21 @@ function findQualityStandard( standardID ){
   });
 
   const standards = {
+    aip: 'AIP',
     cisq: 'CISQ',
     owasp: 'OWASP',
     cwe: 'CWE'
   };
   const standardsList = [
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.aip+'/items.json'))).map( e => {
+        return {
+          id: e.id,
+          href: e.href + '/quality-rules.json',
+          count: e.count,
+          searchid: `${standards.aip} - ${e.id}`
+        };
+      }),
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
@@ -105,7 +114,7 @@ function findQualityStandard( standardID ){
           searchid: `${standards.cisq} - ${e.id}`
         };
       }),
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json')).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
@@ -113,7 +122,7 @@ function findQualityStandard( standardID ){
           searchid: `${standards.owasp} - ${e.id}`
         };
       }),
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',

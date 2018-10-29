@@ -17,7 +17,7 @@ const RulesListArray = ( props ) => {
       childConstructor={childConstructor} 
       filterPlaceholder={FILTERPLACEHOLDER} 
       itemCountTitle={RULES} 
-      onEmpty={NORULES} 
+      onEmpty={props.customMessage || NORULES} 
       headers={Headers} 
       compare={compareFunction}>
       { props.searchVisible ? searchResults : props.data}
@@ -30,7 +30,8 @@ RulesListArray.propTypes = {
   data: PropTypes.array.isRequired,
   arrayChildConstructor: PropTypes.func.isRequired,
   SearchArrayChildConstructor: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired
+  loading: PropTypes.bool.isRequired,
+  customMessage: PropTypes.string
 };
 
 export default RulesListArray;

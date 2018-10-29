@@ -27,8 +27,11 @@ const searchBySpecificKey = (textValue, key, obj) => {
   }
 
   switch (key) {
-  case compareValueKeys.critical:{
+  case compareValueKeys.critical:
     return obj[key] === ToBool(textValue);
+  case compareValueKeys.technologies:{
+    obj.techSearch = obj.technologies.map( e => e.name).join(';');
+    return testRegex(reg, obj, compareValueKeys.techSearch);
   }
   default:
     return testRegex(reg, obj, key);

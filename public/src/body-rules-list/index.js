@@ -30,7 +30,8 @@ const mapStateToProps = (state) => {
     data: state.rulesList.data,
     searchVisible: state.search.resultsVisible,
     searchResults: state.search.results,
-    loading: state.rulesList.loading
+    loading: state.rulesList.loading,
+    customMessage: state.rulesList.customMessage
   };
 };
 

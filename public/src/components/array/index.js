@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { createClassName, COMMON_CLASSES } from 'common/';
-import { LoadingSpinner } from '../../components'
+import { LoadingSpinner } from 'components/';
 import { CLASSES } from './constants';
 import './style.css';
 

@@ -20,6 +20,7 @@ export const compareValueKeys = {
   id: 'id',
   name: 'name',
   version: 'parent',
+  _version: 'version',
   critical: 'critical'
 };
 

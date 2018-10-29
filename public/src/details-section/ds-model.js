@@ -10,7 +10,6 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
   if (data){
     qualityStandardsTags = data.qualityStandards.length > 0 ? 
       data.qualityStandards
-        .filter( e => e.standard.toLowerCase() !== 'aip' )
         .map(function(listValue, index){
           return <div key={index} className={CLASSES.tag} onClick={() => {
             if(!searchVisible || gsQuery !== listValue.id)
