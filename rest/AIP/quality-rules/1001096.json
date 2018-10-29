@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1001096",
     "critical": false,
     "maxWeight": 8,
-    "description": "This rule searches for all the PL1 Main Procedures (Programs) having a very low comment/code ratio. PLI programs should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "description": "This rule searches for all the PL1 Main Procedures (Programs) having a very low comment/code ratio. PLI programs should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will. The default parameter value is 5 percent. Undocumented artifacts are not considered for violation in this QR.",
     "output": "The report lists all the PL1 Main Procedures (Programs) having a very low comment/code ratio. \n\nIt provides following information: \n-  PLI  programs full name",
     "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
     "remediation": "Document your source code in order to keep a  satisfactory comment/code ratio.",

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1001100",
     "critical": false,
     "maxWeight": 8,
-    "description": "This rule searches for all the PLC Procedures or Functions having a very low comment/code ratio. PLC Procedures or Functions should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will.",
+    "description": "This rule searches for all the PLC Procedures or Functions having a very low comment/code ratio. PLC Procedures or Functions should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will. The default parameter value is 5 percent. Undocumented artifacts are not considered for violation in this QR.",
     "output": "The report lists all the PLC Procedures and Functions with a very low comment/code ratio.\n\nIt provides following information: \n-  PLC Copybooks full name",
     "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",
     "remediation": "Document your source code in order to keep a  satisfactory comment/code ratio.",

@@ -6,10 +6,10 @@
     "maxWeight": 7,
     "description": "This rule searches for all PL1 Functions and PL1 Procedures not using the REORDER option.",
     "output": "The report lists all the PL1 Functions and PL1 Procedures not using REORDER option.\n\nIt provides following information: \n-  PL1 Function and PL1 Procedure full name",
-    "rationale": "REORDER is one of the optimization options that are specified for a procedure or begin-block. The REORDER option allows the compiler to generate optimized code to produce the result specified by the source program when error-free execution takes place",
+    "rationale": "ORDER and REORDER are optimization options that are specified for a\nprocedure or begin-block.\nORDER indicates that only the most recently assigned values of variables\nmodified in the block are available for ON-units that are entered because of\ncomputational conditions raised during statement execution and expressions in\nthe block.\nThe REORDER option allows the compiler to generate optimized code to\nproduce the result specified by the source program when error-free execution\ntakes place.\nIf neither option is specified for the external procedure, the default is set by the\nDEFAULT compiler option. Internal blocks inherit ORDER or REORDER from\nthe containing block.",
     "remediation": "Always use the REORDER option for the procedures.",
-    "remediationSample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3) REORDER;",
-    "sample": "PROC CASTOPTIONS(MAIN) (TEST1,TEST2,TEST3);",
+    "remediationSample": "aprocedure: proc REORDER;\n\u2026\nend aprocedure;",
+    "sample": "aprocedure: proc ;\n\u2026\nend aprocedure;",
     "total": "Number of PL1 Functions and PL1 Procedures.",
     "businessCriteria": [
         {
