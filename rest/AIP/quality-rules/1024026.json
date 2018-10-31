@@ -1,0 +1,54 @@
+{
+    "id": 1024026,
+    "name": "Avoid using MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE",
+    "href": "AIP/quality-rules/1024026",
+    "critical": true,
+    "description": "MODE_WORLD_READABLE allow all other applications to have read access to the created file.\nMODE_WORLD_WRITEABLE allow all other applications to have write access to the created file.\n\nPlease note that MODE_WORLD_READABLE, MODE_WORLD_WRITEABLE have been deprecated in API level 17.\n\nStarting from Build.VERSION_CODES.N, attempting to use this mode throws a SecurityException.",
+    "rationale": "Creating world-readable/world-writable files is very dangerous, and likely to cause security holes in applications. It is strongly discouraged; instead, applications should use more formal mechanism for interactions such as ContentProvider, BroadcastReceiver, and Service. There are no guarantees that this access mode will remain on a file, such as when it goes through a backup and restore.",
+    "reference": "https://developer.android.com/training/articles/security-tips\nhttps://developer.android.com/reference/android/content/Context#MODE_WORLD_READABLE",
+    "remediation": "If your application needs to share private files with other apps, you should instead use a FileProvider with the FLAG_GRANT_READ_URI_PERMISSION. For more information, see Sharing Files : https://developer.android.com/training/secure-file-sharing/\n\nYou can also use more formal mechanism for interactions such as ContentProvider, BroadcastReceiver, and Service",
+    "sample": "Sample with MODE_WORLD_READABLE option \n---------------------------------------\n\n@Override\n   protected void onCreate(Bundle savedInstanceState) {\n      super.onCreate(savedInstanceState);\n      setContentView(R.layout.activity_main);\n\n      b1=(Button)findViewById(R.id.button);\n      b2=(Button)findViewById(R.id.button2);\n\n      ed1=(EditText)findViewById(R.id.editText);\n      tv=(TextView)findViewById(R.id.textView2);\n      b1.setOnClickListener(new View.OnClickListener() {\n         \n         @Override\n         public void onClick(View v) {\n            data=ed1.getText().toString();\n            try {\n               FileOutputStream fOut = openFileOutput(file,Context.MODE_WORLD_READABLE);\n               fOut.write(data.getBytes());\n               fOut.close();\n               Toast.makeText(getBaseContext(),\"file saved\",Toast.LENGTH_SHORT).show();\n            }\n            catch (Exception e) {\n               // TODO Auto-generated catch block\n               e.printStackTrace();\n            }\n         }\n      });",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M1-2016",
+            "name": "Improper Platform Usage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
+            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+        },
+        {
+            "standard": "OWASP",
+            "id": "M2-2016",
+            "name": "Insecure Data Storage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M2-Insecure_Data_Storage",
+            "description": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device. Filesystems are easily accessible. Organizations should expect a malicious user or malware to inspect sensitive data stores. Usage of poor encryption libraries is to be avoided. Rooting or jailbreaking a mobile device circumvents any encryption protections. When data is not protected properly, specialized tools are all that is needed to view application data."
+        }
+    ]
+}

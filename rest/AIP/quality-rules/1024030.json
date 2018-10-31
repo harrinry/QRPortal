@@ -1,0 +1,54 @@
+{
+    "id": 1024030,
+    "name": "Avoid using FingerprintManager as biometric API",
+    "href": "AIP/quality-rules/1024030",
+    "critical": true,
+    "description": "This class was deprecated in API level 28. instead, it's recommended to use BiometricPrompt which shows a system-provided dialog upon starting authentication. \nIn a world where devices may have different types of biometric authentication, it's much more realistic to have a system-provided authentication dialog since the method may vary by vendor/device.\n\nThis rule is compliant with OWASP M1, M4 2016 recommendations.",
+    "rationale": "Running an application which does not fail of/correctly use the platform capability is a mandatory step from development team. The defining characteristic of risks in this category of rules is that the platform (iOS, Android, Windows Phone, etc.) provides a feature or a capability that is documented and well understood.",
+    "reference": "https://developer.android.com/reference/android/hardware/fingerprint/FingerprintManager",
+    "remediation": "As of Android P (API 28) the FingerprintManager API was deprecated and Google suggests we should switch to BiometricPrompt API : https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt",
+    "sample": "FingerprintManager fingerprintManager = (FingerprintManager)\n        .getSystemService(Context.FINGERPRINT_SERVICE);\n\n-------------------------------\n\nif (initCipher()) {\ncancellationSignal = new CancellationSignal();\nfingerprintManager.authenticate(new FingerprintManager.CryptoObject(cipher),\n        cancellationSignal,\n        0,     // flags\n        this,  // authentication callback \n        null); // handler\n}",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M1-2016",
+            "name": "Improper Platform Usage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
+            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+        },
+        {
+            "standard": "OWASP",
+            "id": "M4-2016",
+            "name": "Insecure Authentication",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        }
+    ]
+}
