@@ -81,10 +81,20 @@ export const childConstructor = ( values, index, callback ) => {
   );
 };
 
-export const SearchChildConstructor = ( values, index, callback ) => {
+export const standardsChildConstructor = ( values, index, callback ) => {
+  const technos = values.hasOwnProperty(compareValueKeys.techName) ? values[compareValueKeys.techName] : [''];
 
-  const technoKey = values.hasOwnProperty(compareValueKeys.technologies) ? compareValueKeys.technologies : null ||
-    values.hasOwnProperty(compareValueKeys.technologies) ? compareValueKeys.technologies : null ||
+  return (
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <td className={CLASSES.idCell}>{values.id}</td>
+      <td className={CLASSES.nameCell}>{values.name}</td>
+      <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
+      <td className={createClassName(CLASSES.critical, values.critical ? COMMON_CLASSES.critical : undefined)}> </td>
+    </tr>
+  );
+};
+
+export const SearchChildConstructor = ( values, index, callback ) => {
   const technos = values.hasOwnProperty(compareValueKeys.technologies) ? values.technologies.map(t=>{
     if(t){
       return t.name;

@@ -8,6 +8,7 @@ const businessCriteriaMap = require('../lib/business-criteria-map');
 const navigationData = require('../lib/navigation-map');
 const filterDeprecated = require('../lib/filterDeprecated');
 const {ProcessRuleDetailsRequest} = require('../lib/ruleDetailsStruct');
+const StandardHandler = require('../lib/standardNotApplicable');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -52,7 +53,11 @@ WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
 });
 
 WebRouter.get('/quality-standards/:stdID/categories/:stdCatName', ( req, res ) => {
-  res.sendFile(req.url + '/items.json', options, err => errorHandler(err, res));
+  if (req.params.stdCatName === 'OWASP-2017') {
+    StandardHandler(req, res, errorHandler);
+  } else {
+    res.sendFile(req.url + '/items.json', options, err => errorHandler(err, res));
+  }
 });
 
 WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
