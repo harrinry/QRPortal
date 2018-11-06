@@ -82,6 +82,9 @@ export const childConstructor = ( values, index, callback ) => {
 };
 
 export const SearchChildConstructor = ( values, index, callback ) => {
+
+  const technoKey = values.hasOwnProperty(compareValueKeys.technologies) ? compareValueKeys.technologies : null ||
+    values.hasOwnProperty(compareValueKeys.technologies) ? compareValueKeys.technologies : null ||
   const technos = values.hasOwnProperty(compareValueKeys.technologies) ? values.technologies.map(t=>{
     if(t){
       return t.name;

@@ -74,7 +74,6 @@ class App extends React.PureComponent{
       <div className={createClassName(COMMON_CLASSES.flexCol, COMMON_CLASSES.vh100)}>
         <NAV/>
         <ContentBody/>
-        <div className={CLASSES.floatingBETA} onClick={props.goToLandingPage}>BETA</div>
         {props.view === LANDING_PAGE ? 
           <React.Fragment>
             <div className={CLASSES.floatingFooter}>

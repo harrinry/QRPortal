@@ -3,6 +3,7 @@ export const compareValueKeys = {
   name: 'name',
   critical: 'critical',
   technologies: 'technologies',
+  techName: '',
   standards: 'standards',
   techSearch: 'techSearch'
 };
