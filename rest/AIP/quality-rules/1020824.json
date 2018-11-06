@@ -1,0 +1,50 @@
+{
+    "id": 1020824,
+    "name": "Avoid super class knowing sub-class ",
+    "href": "AIP/quality-rules/1020824",
+    "critical": false,
+    "maxWeight": 9,
+    "associatedValueName": "Single Value",
+    "description": "A super class is not allowed to have knowledge of one of its sub-classes. A super class has knowledge of the sub-class if the super class directly calls a sub-class method, uses a sub-class attribute or refers to the name of the sub-class.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Referencing down the inheritance tree is against Object-Oriented coding practices. It is a way of having two-way inheritance between class and subclass. This is an indication of poor class design and class inheritance. Such practices increase the complexity of the application. ",
+    "reference": "CISQ : ASCRM-RLB-14",
+    "remediation": "Review the design of the Class hierarchy ",
+    "sample": "class Base { \nsomething() {\n var c = new MySubclass();\n } \n} \n\nclass MySubclass extends Base { \n}\n",
+    "total": "Number of Typescript Classes",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61003,
+            "name": "Programming Practices - OO Inheritance and Polymorphism",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
