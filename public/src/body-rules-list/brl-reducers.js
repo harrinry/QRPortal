@@ -1,15 +1,21 @@
-import { SET_LIST_DATA, FETCH_LIST_DATA, CLEAR_LIST_DATA, FAILED_TO_FETCH_LIST_DATA, SET_SELECTED_RULE_LIST_ITEM, STOP_LIST_LOADING_STATE } from './brl-actions-type';
+import { SET_LIST_DATA, FETCH_LIST_DATA, CLEAR_LIST_DATA, FAILED_TO_FETCH_LIST_DATA, SET_SELECTED_RULE_LIST_ITEM, STOP_LIST_LOADING_STATE, SET_CUSTOM_MESSAGE_RULES_LIST } from './brl-actions-type';
 import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
   data: [],
   query: null,
-  loading: false
+  loading: false,
+  customMessage: undefined
 };
 
 
 const RulesListReducers = (state = initialState, action) => {
   switch (action.type) {
+  case SET_CUSTOM_MESSAGE_RULES_LIST:
+    return {
+      ...state,
+      customMessage: action.payload.msg
+    };
   case HYDRATE_STORE: 
     return {
       ...state,

@@ -37,6 +37,15 @@ const setListData = ( query, data ) => {
   };
 };
 
+export const setCustomMessage = ( msg ) =>{
+  return {
+    type: ACTIONTYPES.SET_CUSTOM_MESSAGE_RULES_LIST,
+    payload: {
+      msg
+    }
+  };
+};
+
 export const setSelected = ( itemRef ) => {
   return {
     type: ACTIONTYPES.SET_SELECTED_RULE_LIST_ITEM,

@@ -20,11 +20,68 @@ export const arrayChildConstructor = ( values, index, callback ) => {
 };
 
 export const compareFunction = ( textValue, obj ) =>{
+
+  const hasPrefix = containesPrefix(textValue);
+  
+  if( hasPrefix ){
+    const split = textValue.split(':');
+    const prefix = split[0],
+      searchVal = split[1];
+
+    return searchBySpecificKey(searchVal, prefix, obj);
+  }
+
+  return searchByDefaultKeys(textValue, obj);
+};
+
+const searchBySpecificKey = (textValue, key, obj) => {
+  let reg;
+
+  try {
+    reg = new RegExp( textValue, 'i');
+  } catch (error){
+    return [];
+  }
+
+  switch (key) {
+  case compareValueKeys.critical:
+    return obj[key] === ToBool(textValue);
+  case compareValueKeys._version:
+    return testRegex(reg, obj, compareValueKeys.version);
+  default:
+    return testRegex(reg, obj, key);
+  }
+};
+
+const ToBool = ( text ) => {
+  switch (text) {
+  case 'true':
+    return true;
+  default:
+    return false;
+  }
+};
+
+const testRegex = ( regex, obj, key ) => {
+  if (obj.hasOwnProperty(key)) {
+    return regex.test( obj[key] ) ? true : false;
+  } 
+
+  return false;
+};
+
+const searchByDefaultKeys = (textValue, obj) => {
   let reg;
   try {
     reg = new RegExp( textValue, 'i' );
   } catch (error) {
     return [];
   }
-  return (reg.test(obj[compareValueKeys.id]) || reg.test(obj[compareValueKeys.version]) || reg.test(obj[compareValueKeys.name]) || (textValue.toLowerCase() === compareValueKeys.critical ? obj.critical : false) ) ? true : false;
+  
+  return (reg.test(obj[compareValueKeys.id]) || reg.test(obj[compareValueKeys.name]) || (textValue.toLowerCase() === compareValueKeys.critical ? obj.critical : false) ) ? true : false;
+};
+
+const containesPrefix = ( text ) => {
+  const hasColon = /:/gi;
+  return hasColon.test(text);
 };

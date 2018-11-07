@@ -44,7 +44,7 @@ function convertToSearchString ( dataObject, fileName ) {
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
     searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
-    technologies: UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
+    technologies: technos,//UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
 }
@@ -75,9 +75,9 @@ function findQualityStandard( standardID ){
   return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
 }
 
-const createUniqueTechnologiesArray = ( technologiesArray )=>{
-  return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
-};
+// const createUniqueTechnologiesArray = ( technologiesArray )=>{
+//   return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
+// };
 
 /* initialization */
 (function (){
@@ -92,12 +92,21 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
   });
 
   const standards = {
+    aip: 'AIP',
     cisq: 'CISQ',
     owasp: 'OWASP',
-    //cwe: 'CWE'
+    cwe: 'CWE'
   };
   const standardsList = [
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json')).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.aip+'/items.json'))).map( e => {
+        return {
+          id: e.id,
+          href: e.href + '/quality-rules.json',
+          count: e.count,
+          searchid: `${standards.aip} - ${e.id}`
+        };
+      }),
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
@@ -105,22 +114,22 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
           searchid: `${standards.cisq} - ${e.id}`
         };
       }),
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json')).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
           count: e.count,
           searchid: `${standards.owasp} - ${e.id}`
         };
-      })/*,
-      ...require(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json')).map( e => {
+      }),
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
           count: e.count,
           searchid: `${standards.cwe} - ${e.id}`
         };
-      })*/],
+      })],
     SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
@@ -144,7 +153,7 @@ const createUniqueTechnologiesArray = ( technologiesArray )=>{
               console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
               return Object.assign({}, e);
             } finally {
-              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: createUniqueTechnologiesArray(rulesData.technologies) });
+              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: rulesData.technologies/*createUniqueTechnologiesArray(rulesData.technologies)*/ });
             }
             return ret;
           } else {

@@ -16,8 +16,7 @@ for (let i = 0; i < stml; i++) {
       standard: std.name,
       icon: createIconString(e.name, std.name)
     });
-  });
-
+  }).filter(e => e.name !== 'CWE-3.1');
   map.push(...catMap);
 }
 
@@ -28,7 +27,7 @@ function createIconString(name, standardName){
     _path = '/img/' + name.toLowerCase() + '.svg';
     break;
   case 'cwe':
-    _path = '/img/' + name.toLowerCase().replace(/\.|-/gi,'') + '.svg';
+    _path = '/img/' + name.toLowerCase() + '.svg';
     break;
   default:
     _path = '/img/' + name.substring(standardName.length).replace(/-/ig,'').toLowerCase() + '.svg';

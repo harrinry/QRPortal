@@ -18,9 +18,9 @@ export const HEADER = {name: 'Standards Name', className: CLASSES.headerCls};
 export const NOSTANDARDS = 'No Standards found';
 export const FILTERPLACEHOLDER = 'Filter Standards';
 export const STANDARDS = 'Standards';
+export const NOTAPPLICABLE = 'Not Applicable';
 
 export const compareValueKeys = {
   name: 'name',
   id: 'id'
 };
-
