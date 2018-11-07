@@ -71,7 +71,7 @@ function getDetails( id, arr ){
   if(!Array.isArray(arr)) return [];
   const _id = parseInt(id);
   const _path = arr.find( e => e.id === _id);
-  return _path ? getRulesDetailsFromFile(root.resolve('rest/' + _path.href + '.json')) : {};
+  return _path ? getRulesDetailsFromFile(root.resolve('rest/' + _path.href + '.json')) : undefined;
 }
 
 function splitOnPlus(str){

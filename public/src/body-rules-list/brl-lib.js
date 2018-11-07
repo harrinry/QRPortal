@@ -27,8 +27,11 @@ const searchBySpecificKey = (textValue, key, obj) => {
   }
 
   switch (key) {
-  case compareValueKeys.critical:{
+  case compareValueKeys.critical:
     return obj[key] === ToBool(textValue);
+  case compareValueKeys.technologies:{
+    obj.techSearch = obj.technologies.map( e => e.name).join(';');
+    return testRegex(reg, obj, compareValueKeys.techSearch);
   }
   default:
     return testRegex(reg, obj, key);
@@ -73,6 +76,19 @@ export const childConstructor = ( values, index, callback ) => {
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
       <td className={CLASSES.nameCell}>{values.name}</td>
+      <td className={createClassName(CLASSES.critical, values.critical ? COMMON_CLASSES.critical : undefined)}> </td>
+    </tr>
+  );
+};
+
+export const standardsChildConstructor = ( values, index, callback ) => {
+  const technos = values.hasOwnProperty(compareValueKeys.techName) ? values[compareValueKeys.techName] : [''];
+
+  return (
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <td className={CLASSES.idCell}>{values.id}</td>
+      <td className={CLASSES.nameCell}>{values.name}</td>
+      <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
       <td className={createClassName(CLASSES.critical, values.critical ? COMMON_CLASSES.critical : undefined)}> </td>
     </tr>
   );

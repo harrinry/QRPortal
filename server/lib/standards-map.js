@@ -11,7 +11,7 @@ function getQualityStandardsMap ( response ){
       href: 'AIP/business-criteria',
       icon: 'img/castsoftwareblackbg.svg'
     };
-    const ret = JSON.parse(data).filter( e => e.name !== 'AIP' && e.name !== 'CWE').map( e => {
+    const ret = JSON.parse(data).filter( e => e.name !== 'AIP' /*&& e.name !== 'CWE'*/).map( e => {
       return {
         name: e.name,
         href: e.href + '/categories',

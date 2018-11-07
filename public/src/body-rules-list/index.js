@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import BodyRulesList from './brl-model';
-import { childConstructor, SearchChildConstructor } from './brl-lib';
+import { childConstructor, SearchChildConstructor, standardsChildConstructor } from './brl-lib';
 import { fetchDetailsData } from 'details-section/ds-actions';
 import { setSelected } from './brl-actions';
 import { setSelectedSearchResult } from 'global-search/gs-actions';
@@ -21,7 +21,14 @@ const mapDispatchToProps = (dispatch) => {
         else dispatch(setSelected(val.id));
         dispatch(fetchDetailsData(val.href));
       });
-    }
+    },
+    arrayChildConstructorFromStandards: (val, index) => {
+      return standardsChildConstructor(val, index, () => {
+        if(val.searchid) dispatch(setSelectedSearchResult(val.id));
+        else dispatch(setSelected(val.id));
+        dispatch(fetchDetailsData(val.href));
+      });
+    },
   };
 };
 
@@ -30,7 +37,9 @@ const mapStateToProps = (state) => {
     data: state.rulesList.data,
     searchVisible: state.search.resultsVisible,
     searchResults: state.search.results,
-    loading: state.rulesList.loading
+    loading: state.rulesList.loading,
+    customMessage: state.rulesList.customMessage,
+    listCount: state.contentBody.listCount,
   };
 };
 

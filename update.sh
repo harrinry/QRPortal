@@ -1,6 +1,9 @@
 #!/bin/bash
 forever stopall
 echo "Server stoped"
+git checkout -- .
+git clean HEAD -f
+echo "cleaned git head"
 BRANCH='backend_dev_msu'
 git pull origin "$BRANCH"
 echo "git pull on branch $BRANCH executed"
