@@ -688,26 +688,18 @@
                     $("#httpstatus").text(xhr.status + " " + xhr.statusText);
                     $("#time").text(elapsedTime);
                     
-                    switch (contentType) {
-
-                        case "application/json; charset=UTF-8":
-                            appendJsonAsHTML($("#htmlresponse"), data);
-                            $('#htmlresponse').find('table').tablesorter(); // add sorting ability
-                            var preElement = $("<pre/>").appendTo("#rawresponse");
-                            $("#response-size").text(JSON.stringify(data).length);                            
-                            preElement.text(stringify(data));
-                            break;
-
-                        default:
-                            var pElement = $("<p></p>").appendTo("#htmlresponse");
-                            var aElement = $("<a target='_blank'>Save to file</a>").appendTo(pElement);
-                            aElement.attr('href', encodedUrl);
-                            appendCsvAsHTML($("#htmlresponse"), data);
-                            $('#htmlresponse').find('table').tablesorter();
-                            var preElement = $("<pre/>").appendTo("#rawresponse");
-                            preElement.text(data);
-                            $("#response-size").text(data.length);                            
-                            break;
+                    if (contentType.startsWith("application/json")) {
+                        appendJsonAsHTML($("#htmlresponse"), data);
+                        $('#htmlresponse').find('table').tablesorter(); // add sorting ability
+                        var preElement = $("<pre/>").appendTo("#rawresponse");
+                        $("#response-size").text(JSON.stringify(data).length);                            
+                        preElement.text(stringify(data));
+                    }
+                    else {
+                        var pElement = $("<p></p>").appendTo("#htmlresponse");
+                        var aElement = $("<a target='_blank'>Download</a>").appendTo(pElement);
+                        aElement.attr('href', encodedUrl);
+                        $("#response-size").text(data.length);                            
                     }
                 },
                 error: function (xhr, statusText, error) {
