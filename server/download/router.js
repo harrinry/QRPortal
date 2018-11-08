@@ -5,13 +5,14 @@ const root = require('app-root-path');
 let downloadRouter = express.Router({caseSensitive: false});
 
 downloadRouter.post('/:extension/:fileName', (req, res) => {
+  const fileName = req.params.fileName + '.' + req.params.extension;
   res.set({
     'Content-Type': 'text/csv',
-    'Content-Disposition': 'attachment; filename=quality-cube.csv'
+    'Content-Disposition': 'attachment; filename=' + fileName
   });
-  res.attachment('Quaity-cube.csv');
+  res.attachment(fileName);
 
-  res.download(root.resolve('downloads/' + req.params.fileName + '.' + req.params.extension ), (err) => errHandler(err, res));
+  res.download(root.resolve('downloads/' + fileName ), (err) => errHandler(err, res));
 });
 
 module.exports = downloadRouter;
