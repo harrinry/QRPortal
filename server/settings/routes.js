@@ -49,6 +49,11 @@ module.exports = [
     route: '/rules',
     router: 'router'
   },
+  {
+    name: 'download',
+    route: '/download',
+    router: 'router'
+  }
   // {
   //   name: 'admin',
   //   route: '/admin',
