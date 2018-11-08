@@ -68,19 +68,17 @@ class App extends React.PureComponent{
   }
 
   downloadQualityCube(){
-
-    const request = new Request('download/csv/quality-cube', {
+    fetch('download/csv/quality-cube', {
       method: 'POST',
-      headers: new Headers({
+      headers: {
         'accept': 'text/csv',
-      })
-    });
-
-    fetch(request)
+      },
+      mode: 'same-origin'
+    })
       .then(res => res.blob())
       .then(blob => URL.createObjectURL(blob))
       .then(url => {
-        window.open( url, '_blank');
+        window.open( url, '_blank', 'quality-cube');
         URL.revokeObjectURL(url);
       })
       .catch(err => {
