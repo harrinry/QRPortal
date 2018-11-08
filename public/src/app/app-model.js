@@ -5,6 +5,7 @@ import ContentBody from 'body/';
 import { CLASSES, CONTACTUS, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
 import About from 'about/';
 import './style.css';
+import fileDownload from 'js-file-download';
 
 class App extends React.PureComponent{
   constructor(props){
@@ -67,6 +68,21 @@ class App extends React.PureComponent{
     });
   }
 
+  downloadQualityCube(){
+    fetch('download/csv/quality-cube', {
+      method: 'POST',
+      headers: {
+        'accept': 'text/csv',
+      },
+      mode: 'same-origin'
+    })
+      .then(res => res.blob())
+      .then(blob => fileDownload(blob, 'quality-cube.csv', 'text/csv'))
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render(){
     const props = this.props;
     const info = this.state.info;
@@ -79,6 +95,7 @@ class App extends React.PureComponent{
             <div className={CLASSES.floatingFooter}>
               <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
               <a href={swagger}><div className={CLASSES.api}>API</div></a>
+              <div onClick={this.downloadQualityCube} className={CLASSES.whatisnew}>Quality Cube</div>
               <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
             </div>
             <div className={CLASSES.logoContainer}>
