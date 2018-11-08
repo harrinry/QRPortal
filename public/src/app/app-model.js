@@ -5,6 +5,7 @@ import ContentBody from 'body/';
 import { CLASSES, CONTACTUS, versionKey, TITLE, LANDING_PAGE, swagger, CASTSOFTWARE } from './app-constants';
 import About from 'about/';
 import './style.css';
+import fileDownload from 'js-file-download';
 
 class App extends React.PureComponent{
   constructor(props){
@@ -76,11 +77,7 @@ class App extends React.PureComponent{
       mode: 'same-origin'
     })
       .then(res => res.blob())
-      .then(blob => URL.createObjectURL(blob))
-      .then(url => {
-        window.open( url, '_blank', 'quality-cube');
-        URL.revokeObjectURL(url);
-      })
+      .then(blob => fileDownload(blob, 'quality-cube.csv', 'text/csv'))
       .catch(err => {
         console.log(err);
       });

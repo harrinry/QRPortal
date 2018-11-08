@@ -7,7 +7,7 @@ let downloadRouter = express.Router({caseSensitive: false});
 downloadRouter.post('/:extension/:fileName', (req, res) => {
   res.set({
     'Content-Type': 'text/csv',
-    'Content-Disposition': 'attachment'
+    'Content-Disposition': 'attachment; filename=quality-cube.csv'
   });
   res.attachment('Quaity-cube.csv');
 
