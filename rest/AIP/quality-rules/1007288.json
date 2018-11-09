@@ -1,0 +1,47 @@
+{
+    "id": 1007288,
+    "name": "CWE-489: Avoid debug code in the production system (PHP)",
+    "href": "AIP/quality-rules/1007288",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Reasoning",
+    "description": "The usage of certain PHP features indicate leftover debug code. This code should be removed when using the application in production to avoid unintended information leakage or entry points for attackers.",
+    "output": "This report lists all artifacts that still has debug code. \nThis QR provides the following information:\nArtifact Full Name",
+    "reference": "https://cwe.mitre.org/data/definitions/489.html",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

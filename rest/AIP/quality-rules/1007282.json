@@ -1,0 +1,44 @@
+{
+    "id": 1007282,
+    "name": "CWE-614: Avoid Cookie Misconfiguration (secure flag) (PHP)",
+    "href": "AIP/quality-rules/1007282",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Reasoning",
+    "description": "secure flag prevents that the cookie is transmitted in cleartext and is only sent when HTTPS is used. This QR detects cases where secure flag is not used.",
+    "output": "This report lists all artifacts that cause cookie misconfiguration. \nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "ookies are often used to store a session identifier of the web application's state for a specific user. In order to harden against related attacks, such as session riding that can lead to the compromise of user data or the takeover of adminstrator sessions, a secure configuration of sensitive cookies is crucial. It has been detected that a new cookie is set insecure within the HTTP response header which can be improved by enabling additional flags.",
+    "reference": "https://cwe.mitre.org/data/definitions/614.html",
+    "remediation": "Use secure flag - secure flag can be set to TRUE in the 6th parameter.",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

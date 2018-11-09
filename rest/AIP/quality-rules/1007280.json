@@ -1,0 +1,44 @@
+{
+    "id": 1007280,
+    "name": "CWE-214: Avoid System Information Leakage (PHP)",
+    "href": "AIP/quality-rules/1007280",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Reasoning",
+    "description": "An information leakage vulnerability occurs when confidential information about the web server's setup is leaked to the application's user.",
+    "output": "This report lists all artifacts that cause system information leakage. \nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "Although information leakage might not be exploitable, it can help an attacker to prepare other attacks. The affected code leaks information about the system that allows an attacker to learn about used software versions or installation paths.",
+    "reference": "https://cwe.mitre.org/data/definitions/214.html",
+    "remediation": "Remove information leakage (typically phpinfo() function in PHP).",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}

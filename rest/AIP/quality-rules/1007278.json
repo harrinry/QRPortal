@@ -1,0 +1,44 @@
+{
+    "id": 1007278,
+    "name": "CWE-328: Avoid weak hash functions (PHP)",
+    "href": "AIP/quality-rules/1007278",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Reasoning",
+    "description": "This QR detects code that uses a hash function that is cryptographically insecure.",
+    "output": "This report lists all artifacts that use weak hash functions. \nThis QR provides the following information:\nArtifact Full Name",
+    "rationale": "Produced hashes through this function can be easily brute forced in order to find the original value or they may be vulnerable to collision attacks. This is dangerous if the hash is used in a security contexts.",
+    "reference": "https://cwe.mitre.org/data/definitions/328.html",
+    "remediation": "Use secure algorithm should instead.",
+    "total": "Number of Artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1017000,
+            "name": "PHP",
+            "href": "AIP/technologies/1017000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
