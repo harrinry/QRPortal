@@ -1,0 +1,58 @@
+{
+    "id": 1020818,
+    "name": "Avoid disabling xsrf check in HttpClientXsrfModule",
+    "href": "AIP/quality-rules/1020818",
+    "critical": true,
+    "associatedValueName": "Single Value",
+    "description": "In Angular, when using HttpClientXsrfModule module Cross-Site forgery protection is enabled by default. Disabling the protection will expose your application to security issue. This rule is compliant with OWASP 2013 A8 - Cross-Site Request Forgery (CSRF) recommendation",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "XSRF takes advantage the fact that most web apps allow attackers to predict all the details of a particular action. Because browsers send credentials like session cookies automatically, attackers can create malicious web pages which generate forged requests that are indistinguishable from legitimate ones.",
+    "reference": "https://angular.io/api/common/http/HttpClientXsrfModule\nhttps://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)\nhttp://cwe.mitre.org/data/definitions/352.html",
+    "remediation": "Ensure you have not disable XSRF module in Angular Http Module",
+    "remediationSample": "@NgModule({\n  declarations: [\n      AppComponent,\n      ArtistSearchComponent\n  ],\n  imports: [\n      BrowserModule,\n      FormsModule,\n      HttpClientModule,\n      HttpClientXsrfModule.withOptions({\n          cookieName: 'My-Xsrf-Cookie',\n          headerName: 'My-Xsrf-Header',\n      }),\n  ],\n  providers: [\n\n      HttpErrorHandler,\n      MessageService\n\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }",
+    "sample": "@NgModule({\n  declarations: [\n      AppComponent,\n      ArtistSearchComponent\n  ],\n  imports: [\n      BrowserModule,\n      FormsModule,\n      HttpClientModule,\n      HttpClientXsrfModule.disable(),\n      HttpClientXsrfModule.withOptions({\n          cookieName: 'My-Xsrf-Cookie',\n          headerName: 'My-Xsrf-Header',\n      }),\n  ],\n  providers: [\n\n      HttpErrorHandler,\n      MessageService\n\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }",
+    "total": "Number of typescript modules using HttpClientXsrfModule",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-352",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "url": "https://cwe.mitre.org/data/definitions/352.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A8-2013",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)",
+            "description": "A CSRF attack forces a logged-on victims' browser to send a forged HTTP request, including the victims' session cookie and any other automatically included authentication information, to a vulnerable web application. This allows the attacker to force the victims' browser to generate requests the vulnerable application thinks are legitimate requests from the victim."
+        }
+    ]
+}

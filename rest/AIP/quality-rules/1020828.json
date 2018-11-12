@@ -1,0 +1,49 @@
+{
+    "id": 1020828,
+    "name": "Avoid string concatenation in loops",
+    "href": "AIP/quality-rules/1020828",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Single Value",
+    "description": "All string objects using concatenation in loops (for, while, do while) will be reported.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "When placed in a loop, string concatenation in typescript us a costly operation. Strings are immutable, this creates unnecessary temporary object and results in quadratic rather than linear running time.",
+    "remediation": "It is recommended to avoid using the concatenation of the strings in a loop. ",
+    "sample": "var ls = ['India', 'China', 'France']\nfunction f1(limit : number) {\n    var i = 0;\n    while (i < limit ) {\n        console.log(a.concat(ls[i]));\n        i++;\n    }\n}\n",
+    "total": "Number of TypeScript artifacts",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66068,
+            "name": "Efficiency - Expensive Calls in Loops",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
