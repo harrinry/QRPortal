@@ -1,15 +1,15 @@
 {
     "id": 1020702,
-    "name": "Avoid using process.exit()",
+    "name": "Avoid using process.exit() without defining exitCode",
     "href": "AIP/quality-rules/1020702",
     "critical": false,
     "maxWeight": 7,
-    "description": "The process.exit() method in Node.js is used to immediately stop the Node.js process and exit. This is a dangerous operation because it can occur in any method at any point in time, potentially stopping a Node.js application completely when an error occurs. This rule is compliant with CISQ OMG ASCSM-CWE-396, ASCSM-CWE-397, ASCRM-RLB-01 recommendations.",
+    "description": "The process.exit() method in Node.js is used to immediately stop the Node.js process and exit. This is a dangerous operation because it can occur in any method at any point in time, potentially stopping a Node.js application completely when an error occurs. This rule is compliant ASCRM-RLB-01 recommendations.\n\nThe reason this is problematic is because writes to process.stdout in Node.js are non-blocking and may occur over multiple ticks of the Node.js event loop. Calling process.exit(), however, forces the process to exit before those additional writes to stdout can be performed.\n\nRather than calling process.exit() directly, the code should set the process.exitCode and allow the process to exit naturally by avoiding scheduling any additional work for the event loop",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that some critical method are properly implemented. The misuse of system methods could lead to production issues and will have a huge impact on the application reliability.",
     "reference": "CISQ OMG \nhttp://eslint.org/docs/rules/no-process-exit",
     "remediation": "Check that process.exit() is not used",
-    "remediationSample": "if (somethingBadHappened) { \n    throw new Error(\"Something bad happened!\"); \n}",
+    "remediationSample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exitCode = 1;\n    process.exit(); \n}",
     "sample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exit(1); \n}",
     "total": "Number of NodeJS artifacts (javascript functions inside NodeJS files)",
     "businessCriteria": [
