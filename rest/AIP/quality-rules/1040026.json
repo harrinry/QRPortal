@@ -1,0 +1,55 @@
+{
+    "id": 1040026,
+    "name": "\"Ensure To Specify Http Methods In RequestMapping",
+    "href": "AIP/quality-rules/1040026",
+    "critical": true,
+    "description": "A @RequestMapping method handles all matching requests by default. That means that a method you intended only to be POST-ed to could also be called by a GET, thereby allowing hackers to call the method inappropriately. For example a \"transferFunds\" method might be invoked like so: <img src=\"http://bank.com/actions/transferFunds?reciepientRouting=000000&receipientAccount=11111111&amount=200.00\" width=\"1\" height=\"1\"/>\n\nFor that reason, you should always explicitly list the single HTTP method with which you expect your @RequestMapping Java method to be called. \n\nThis rule is compliant with CWE-352 and OWASP Top 10 2017 Category A6 - Security Misconfiguration",
+    "rationale": "The web application does not, or can not, sufficiently verify whether a well-formed, valid, consistent request was intentionally provided by the user who submitted the request.",
+    "reference": "https://cwe.mitre.org/data/definitions/352.html",
+    "remediationSample": "@RequestMapping(\"/greet\", method = GET)\n  public String greet(String greetee) {",
+    "sample": "@RequestMapping(\"/greet\", )\n  public String greet(String greetee) ",
+    "total": "Number of Java methods having @RequestMapping",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-352",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "url": "https://cwe.mitre.org/data/definitions/352.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
+        }
+    ]
+}
