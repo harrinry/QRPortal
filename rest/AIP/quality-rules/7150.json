@@ -10,8 +10,8 @@
     "rationale": "There are two benefits to use PreparedStatement or CallableStatement over Statement:\n- Performance: PreparedStatement gives better performance when compared to Statement because it is pre-parsed. CallableStatement is even more efficient but as it uses a stored procedure in the database, it is less portable,\n- Security: to prevent SQL Injection Attacks.",
     "reference": "http://www.theserverside.com/tt/articles/article.tss?l=JavaOne2006Day4\nhttp://www.precisejava.com/javaperf/j2ee/JDBC.htm",
     "remediation": "use java.sql.Connection.prepareStatement() or java.sql.Connection.prepareCall() instead.",
-    "remediationSample": "PreparedStatement ps = connection.prepareStatement(\"select address from employee where name=Bob\"); // FIXED\n\nResultSet rs = ps.executeQuery();",
-    "sample": "Statement stmt = connection.createStatement(); // VIOLATION\n\nResultSet rs = stmt.executeQuery(\"select address from employee where name=Bob\");",
+    "remediationSample": "PreparedStatement stmt = connection.prepareStatement(\"SELECT * FROM users WHERE userid=? AND password=?\");\nstmt.setString(1, userid);\nstmt.setString(2, password);\nResultSet rs = stmt.executeQuery();",
+    "sample": "String query = \"SELECT * FROM users WHERE userid ='\"+ userid + \"'\" + \" AND password='\" + password + \"'\";\nStatement stmt = connection.createStatement();\nResultSet rs = stmt.executeQuery(query);",
     "total": "Number of methods that call java.sql.Connection.createStatement() or java.sql.Connection.prepareStatement() or java.sql.Connection.prepareCall()",
     "businessCriteria": [
         {
