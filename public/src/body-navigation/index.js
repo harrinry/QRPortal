@@ -26,6 +26,9 @@ const mapDispatchToProps = (dispatch) => {
       case SECTIONS.cisq:
       case SECTIONS.owasp:
       case SECTIONS.cwe:
+      case SECTIONS.pci:
+      case SECTIONS.stig:
+      case SECTIONS.nist:
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
