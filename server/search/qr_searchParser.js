@@ -91,46 +91,25 @@ function findQualityStandard( standardID ){
     //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
 
-  const standards = {
-    aip: 'AIP',
-    cisq: 'CISQ',
-    owasp: 'OWASP',
-    cwe: 'CWE'
-  };
-  const standardsList = [
-      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.aip+'/items.json'))).map( e => {
+  const standards = JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards.json')));
+
+  let standardsList = [];
+  
+  for (let i = 0; i < standards.length; i++) {
+    const _STD = standards[i].name;
+    standardsList.push(
+      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+_STD+'/items.json'))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
           count: e.count,
-          searchid: `${standards.aip} - ${e.id}`
+          searchid: `${_STD} - ${e.id}`
         };
-      }),
-      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cisq+'/items.json'))).map( e => {
-        return {
-          id: e.id,
-          href: e.href + '/quality-rules.json',
-          count: e.count,
-          searchid: `${standards.cisq} - ${e.id}`
-        };
-      }),
-      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.owasp+'/items.json'))).map( e => {
-        return {
-          id: e.id,
-          href: e.href + '/quality-rules.json',
-          count: e.count,
-          searchid: `${standards.owasp} - ${e.id}`
-        };
-      }),
-      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+standards.cwe+'/items.json'))).map( e => {
-        return {
-          id: e.id,
-          href: e.href + '/quality-rules.json',
-          count: e.count,
-          searchid: `${standards.cwe} - ${e.id}`
-        };
-      })],
-    SLL = standardsList.length;
+      })
+    );
+  }
+  
+  const SLL = standardsList.length;
 
   for (let i = 0; i < SLL; i++) {
     const std = standardsList[i];
