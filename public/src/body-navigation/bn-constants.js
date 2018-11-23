@@ -15,7 +15,10 @@ export const SECTIONS = {
   cisq: 'cisq',
   owasp: 'owasp',
   cast: 'cast',
-  cwe: 'cwe'
+  cwe: 'cwe',
+  nist: 'nist-sp-800-53r4',
+  pci: 'pci-dss-v3.1',
+  stig: 'stig-v4r8'
 };
 
 export const defaultIconURL = 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)';
