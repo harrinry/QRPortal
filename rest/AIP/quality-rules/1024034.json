@@ -1,0 +1,47 @@
+{
+    "id": 1024034,
+    "name": "Always check all the BiometricPrompt error options in the onAuthenticationError method",
+    "href": "AIP/quality-rules/1024034",
+    "critical": true,
+    "description": "The BiometricPrompt framework provides facilities for requesting authentication from users with specified security policies. If you do not use properly the API, you can break the authentication security check. Using BiometricPrompt AuthenticationCallback onAuthenticationError method cannot stay empty/partially used. This rule is compliant with OWASP M1 2016 recommendation.",
+    "rationale": "Running an application which does not fail of/correctly use the platform capability is a mandatory step from development team. The defining characteristic of risks in this category of rules is that the platform (iOS, Android, Windows Phone, etc.) provides a feature or a capability that is documented and well understood.",
+    "remediation": "Always manage the error options:\nBIOMETRIC_ERROR_CANCELED\nBIOMETRIC_ERROR_HW_NOT_PRESENT\nBIOMETRIC_ERROR_HW_UNAVAILABLE\nBIOMETRIC_ERROR_LOCKOUT\nBIOMETRIC_ERROR_LOCKOUT_PERMANENT\nBIOMETRIC_ERROR_NO_BIOMETRICS\nBIOMETRIC_ERROR_NO_SPACE\nBIOMETRIC_ERROR_TIMEOUT\nBIOMETRIC_ERROR_UNABLE_TO_PROCESS\nBIOMETRIC_ERROR_USER_CANCELED\nBIOMETRIC_ERROR_VENDOR",
+    "remediationSample": "private BiometricPrompt.AuthenticationCallback getAuthenticationCallback() {\n        // Callback for biometric authentication result\n        return new BiometricPrompt.AuthenticationCallback() {\n            @Override\n            public void onAuthenticationError(int errorCode, CharSequence errString) {\n                super.onAuthenticationError(errorCode, errString);\n\n                switch(errorCode) {\n                   \n                  case BIOMETRIC_ERROR_CANCELED:\n                  case BIOMETRIC_ERROR_HW_UNAVAILABLE:\n                     Log.i(\"The operation was canceled because the biometric sensor is unavailable\");\n                     break;\n                  case BIOMETRIC_ERROR_HW_NOT_PRESENT:\n                     Log.i(\"The device does not have a biometric sensor\");\n                     break;\n\n                  // etc...\n\n                }\n            }\n\n        };\n    }",
+    "sample": "private BiometricPrompt.AuthenticationCallback getAuthenticationCallback() {\n        // Callback for biometric authentication result\n        return new BiometricPrompt.AuthenticationCallback() {\n            @Override\n            public void onAuthenticationError(int errorCode, CharSequence errString) {\n                super.onAuthenticationError(errorCode, errString);\n            }\n\n        };\n    }",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "M1-2016",
+            "name": "Improper Platform Usage",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
+            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+        }
+    ]
+}
