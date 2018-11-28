@@ -8,6 +8,8 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Built-in remote addresses cause problems when the target is moved. Avoid hardcoded network resources (e.g., IP addresses, URLs, etc.)",
     "reference": "ASCRM 1.0, Automated Source Code Reliability Measure, Object Management Group.",
+    "remediation": "Utilize indirect access to network resources using underlaying operating system calls and relative paths. In case hardcoding is necessary, isolating hardcoded data to installation scripts or configuration files can limit its potential negative impact.",
+    "remediationSample": "//the url is loaded from somewhere else\nvar url = loadServerAddress()",
     "sample": "var a = '127.0.0.1' ;\n//Or \nlet a = 'fe80:0000:0000:0000:0204:61ff:fe9d:f156/0';",
     "total": "Number of TypeScript Functions",
     "businessCriteria": [
