@@ -14,8 +14,9 @@ export const errorObject = {
   critical: true
 };
 
-export const PrefixSelector = [':id:'];
+export const PrefixSelector = [':id:',':std:'];
 export const searchPrefixMap = {
+  ':std:': 'standards',
   ':id:': 'qualityrulesbyid',
   default: 'qualityrules'
 };
