@@ -7,6 +7,8 @@ export const FETCHSEARCHRESULTS = ( query ) => {
   switch (key) {
   case PrefixSelector[0]:
     return fetch( SEARCHBYAPI + prefix.searchVal ).then( res => res.json() );
+  case PrefixSelector[1]:
+    return fetch( SEARCHSTDTAGAPI + prefix.searchVal ).then( res => res.json() );
   default:
     return fetch( SEARCHAPI + query ).then( res => res.json() );
   }
