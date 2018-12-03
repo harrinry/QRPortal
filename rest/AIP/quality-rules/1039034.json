@@ -39,6 +39,19 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-611",
+            "name": "Improper Restriction of XML External Entity Reference ('XXE')",
+            "url": "https://cwe.mitre.org/data/definitions/611.html",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A4-2017",
+            "name": "XML External Entities (XXE)",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        }
     ]
 }
