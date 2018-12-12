@@ -1,0 +1,56 @@
+{
+    "id": 1020550,
+    "name": "Avoid using \"ng-repeat\" loop without \"track by\" option",
+    "href": "AIP/quality-rules/1020550",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "In AngularJS 1.2 a new \"track by\" clause was made to the syntax of \"ng-repeat\". It allows you to specify your own key for \"ng-repeat\" to identify objects by, instead of just generating unique IDs. ngRepeat will not recreate the DOM elements and reuse them. This rule is compliant with CISQ OMG ASCPEM-PRF-8 recommendation.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "Ensure your web application interactivity by accessing/manipulating the DOM tree with high performance queries/enumerators.",
+    "reference": "https://docs.angularjs.org/api/ng/directive/ngRepeat#tracking-and-duplicates\nOMG CISQ",
+    "remediation": "Ensure you have added \"track by\" syntax into your ngRepeat block",
+    "remediationSample": "<ul class=\"tasks\">\n    <li ng-repeat=\"task in tasks track by task.id\" ng-class=\"{done: task.done}\">\n        {{task.id}}: {{task.title}}\n    </li>\n</ul>",
+    "sample": "<ul class=\"tasks\">\n    <li ng-repeat=\"task in tasks\" ng-class=\"{done: task.done}\">\n        {{task.id}}: {{task.title}}\n    </li>\n</ul>",
+    "total": "Number of HTML5 source code using \"ng-repeat\"",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66068,
+            "name": "Efficiency - Expensive Calls in Loops",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-8",
+            "name": "Resource-consuming operation in loop",
+            "url": null,
+            "description": "Remove instances where an operation causing consumption of platform resource (messaging, lock, file, stream, directory, etc.) is directly or indirectly called within a loop body or within a loop condition"
+        }
+    ]
+}
