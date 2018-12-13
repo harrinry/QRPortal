@@ -16,8 +16,16 @@ class VerticalArray extends React.PureComponent{
     this.onfilterChange = this.onfilterChange.bind(this);
   }
 
-  componentWillReceiveProps(){
-    this.setState({filterValue: ''});
+  componentWillReceiveProps( nextprops ){
+    const currentIds = this.props.children.map( e => e.id );
+    const futurIds = nextprops.children.map(e => e.id);
+
+    if( currentIds.length !== futurIds.length ) return this.setState({filterValue: ''});
+
+    for (let i = 0; i < futurIds.length; i++) {
+      if( currentIds[i] !== futurIds[i] ) return this.setState({filterValue: ''});
+    }
+    
   }
 
   onfilterChange( event ){
