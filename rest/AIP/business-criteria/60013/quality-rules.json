@@ -179,7 +179,6 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            "DB2 Server",
             "Microsoft T-SQL",
             "PL/SQL",
             "SQL Server",
@@ -1547,7 +1546,6 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            "DB2 Server",
             "Microsoft T-SQL",
             "PL/SQL",
             "SQL Server",
@@ -2203,7 +2201,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "JavaScript",
@@ -2231,7 +2228,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "JavaScript",
@@ -2257,7 +2253,6 @@
             "C",
             "C#",
             "C++",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -2283,7 +2278,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "JavaScript",
@@ -2311,7 +2305,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "JavaScript",
@@ -2338,7 +2331,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -2368,7 +2360,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -2492,7 +2483,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -2510,7 +2500,6 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            "DB2 Server",
             "Microsoft T-SQL",
             "PL/SQL",
             "SQL Server",
@@ -2528,7 +2517,6 @@
             "C",
             "C#",
             "C++",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -2562,7 +2550,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -2621,7 +2608,6 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            "DB2 Server",
             "Microsoft T-SQL",
             "PL/SQL",
             "SQL Server",
@@ -7458,7 +7444,7 @@
     },
     {
         "id": 1020084,
-        "name": "Avoid unreferenced Functions",
+        "name": "Avoid unreferenced Functions (Javascript/HTML5)",
         "href": "AIP/quality-rules/1020084",
         "status": null,
         "critical": false,
@@ -7477,8 +7463,18 @@
         ]
     },
     {
+        "id": 1020102,
+        "name": "Always use JSON.parse & JSON.stringify with try/catch block (Javascript)",
+        "href": "AIP/quality-rules/1020102",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020304,
-        "name": "Implement success and error callbacks when using jquery web service call",
+        "name": "Implement success and error or complete callbacks when using jquery web service call before jQuery 3.0",
         "href": "AIP/quality-rules/1020304",
         "status": null,
         "critical": true,
@@ -7500,6 +7496,16 @@
         "id": 1020318,
         "name": "Avoid using jQuery deprecated methods",
         "href": "AIP/quality-rules/1020318",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020326,
+        "name": "Always implement done, fail and/or always callbacks for $.ajax calls when using jQuery 3.0 (and latest)",
+        "href": "AIP/quality-rules/1020326",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -7947,11 +7953,41 @@
         ]
     },
     {
+        "id": 1024038,
+        "name": "Avoid processing Google Sign In Client without catching error",
+        "href": "AIP/quality-rules/1024038",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039006,
         "name": "CWE-336: Avoid using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040030,
+        "name": "Avoid Using Generic Authentication Exception Class",
+        "href": "AIP/quality-rules/1040030",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040032,
+        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver Simultaneously",
+        "href": "AIP/quality-rules/1040032",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

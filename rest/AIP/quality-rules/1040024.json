@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1040024",
     "critical": true,
     "description": "Ensure to enable the Spring Boot Shutdown Actuator as it will allow users/attackers to shut down the application without authentication.",
-    "rationale": "This configuration flag Shutdown Actuator will allows authenticated users to shut down the application incidentally or intentionally or accidentally. \nBy default this feature is configured as a sensitive endpoint and therefore authentication is required to use this endpoint.",
+    "rationale": "This configuration flag Shutdown Actuator will allows authenticated users to shut down the application incidentally or intentionally or accidentally.\nBy default this feature is configured as a sensitive endpoint and therefore authentication is required to use this endpoint.",
     "reference": "https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html",
     "remediation": "endpoints.shutdown.enabled=true",
     "remediationSample": "endpoints.shutdown.enabled=true",

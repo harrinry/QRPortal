@@ -908,7 +908,6 @@
         "critical": false,
         "technologyNames": [
             "ABAP",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -1502,7 +1501,6 @@
         "critical": true,
         "technologyNames": [
             "ABAP",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -1518,7 +1516,6 @@
         "critical": true,
         "technologyNames": [
             "ABAP",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -1762,7 +1759,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -1785,7 +1781,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -1807,7 +1802,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -1826,7 +1820,6 @@
         "critical": false,
         "technologyNames": [
             "ABAP",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -1845,7 +1838,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -1880,7 +1872,6 @@
             "C",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "JEE",
             "Microsoft T-SQL",
@@ -2064,7 +2055,6 @@
         "technologyNames": [
             "ABAP",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "Microsoft T-SQL",
             "PL/SQL",
@@ -2081,7 +2071,6 @@
         "technologyNames": [
             "ABAP",
             "Cobol",
-            "DB2 Server",
             "Microsoft T-SQL",
             "PL/SQL",
             "SQL Server",
@@ -4920,6 +4909,16 @@
         ]
     },
     {
+        "id": 1020102,
+        "name": "Always use JSON.parse & JSON.stringify with try/catch block (Javascript)",
+        "href": "AIP/quality-rules/1020102",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020300,
         "name": "Avoid using the call of web service jQuery ajax inside a loop",
         "href": "AIP/quality-rules/1020300",
@@ -4941,7 +4940,7 @@
     },
     {
         "id": 1020304,
-        "name": "Implement success and error callbacks when using jquery web service call",
+        "name": "Implement success and error or complete callbacks when using jquery web service call before jQuery 3.0",
         "href": "AIP/quality-rules/1020304",
         "status": null,
         "critical": true,
@@ -5025,6 +5024,16 @@
         "href": "AIP/quality-rules/1020324",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020326,
+        "name": "Always implement done, fail and/or always callbacks for $.ajax calls when using jQuery 3.0 (and latest)",
+        "href": "AIP/quality-rules/1020326",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]
@@ -5130,6 +5139,16 @@
         ]
     },
     {
+        "id": 1020550,
+        "name": "Avoid using \"ng-repeat\" loop without \"track by\" option",
+        "href": "AIP/quality-rules/1020550",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020700,
         "name": "Avoid the lack of error handling in the Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
@@ -5215,6 +5234,16 @@
         "href": "AIP/quality-rules/1020748",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020750,
+        "name": "Avoid using the file path validation with Node.js 8.5.0",
+        "href": "AIP/quality-rules/1020750",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]
@@ -5480,6 +5509,36 @@
         ]
     },
     {
+        "id": 1024038,
+        "name": "Avoid processing Google Sign In Client without catching error",
+        "href": "AIP/quality-rules/1024038",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024040,
+        "name": "Always activate unlockedDeviceRequired to avoid data decryption when device is unlocked",
+        "href": "AIP/quality-rules/1024040",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024042,
+        "name": "CWE-327: Avoid using weak encryption algorithm (Android)",
+        "href": "AIP/quality-rules/1024042",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039002,
         "name": "CWE-319: Avoid using Deprecated SSL protocols to secure connection",
         "href": "AIP/quality-rules/1039002",
@@ -5580,6 +5639,16 @@
         ]
     },
     {
+        "id": 1039030,
+        "name": "Avoid using DefaultHttpClient constructor",
+        "href": "AIP/quality-rules/1039030",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1040004,
         "name": "CWE-287:Ensure that any application request is authenticated with HTTP basic",
         "href": "AIP/quality-rules/1040004",
@@ -5615,6 +5684,26 @@
         "href": "AIP/quality-rules/1040028",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040030,
+        "name": "Avoid Using Generic Authentication Exception Class",
+        "href": "AIP/quality-rules/1040030",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040032,
+        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver Simultaneously",
+        "href": "AIP/quality-rules/1040032",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

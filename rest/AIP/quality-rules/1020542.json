@@ -3,7 +3,7 @@
     "name": "Enable Content Security Policy when creating an AngularJS application",
     "href": "AIP/quality-rules/1020542",
     "critical": true,
-    "description": "In AngularJS, ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. This rule is compliant with CISQ OMG ASCSM-CWE-079 recommendation and OWASP 2013 A3 recommendation.",
+    "description": "In AngularJS, ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. This rule is compliant with CISQ OMG ASCSM-CWE-079, OWASP 2013 A3 , 2017 A7 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure that users cannot change the client-side templates. To do so, you must check that Content Security Policy (CSP) has been added. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.",
     "reference": "https://docs.angularjs.org/guide/security",

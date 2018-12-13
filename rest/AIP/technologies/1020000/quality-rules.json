@@ -13,7 +13,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -43,7 +42,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -86,7 +84,6 @@
             "C",
             "C#",
             "C++",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -147,7 +144,6 @@
             "C#",
             "C++",
             "Cobol",
-            "DB2 Server",
             "Forms",
             "HTML5",
             "JEE",
@@ -646,7 +642,7 @@
     },
     {
         "id": 1020084,
-        "name": "Avoid unreferenced Functions",
+        "name": "Avoid unreferenced Functions (Javascript/HTML5)",
         "href": "AIP/quality-rules/1020084",
         "status": null,
         "critical": false,
@@ -666,7 +662,7 @@
     },
     {
         "id": 1020088,
-        "name": "Avoid Artifacts with lines longer than X characters",
+        "name": "Avoid Artifacts with lines longer than X characters (Javascript/HTML5)",
         "href": "AIP/quality-rules/1020088",
         "status": null,
         "critical": false,
@@ -735,6 +731,16 @@
         ]
     },
     {
+        "id": 1020102,
+        "name": "Always use JSON.parse & JSON.stringify with try/catch block (Javascript)",
+        "href": "AIP/quality-rules/1020102",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020300,
         "name": "Avoid using the call of web service jQuery ajax inside a loop",
         "href": "AIP/quality-rules/1020300",
@@ -756,7 +762,7 @@
     },
     {
         "id": 1020304,
-        "name": "Implement success and error callbacks when using jquery web service call",
+        "name": "Implement success and error or complete callbacks when using jquery web service call before jQuery 3.0",
         "href": "AIP/quality-rules/1020304",
         "status": null,
         "critical": true,
@@ -865,6 +871,16 @@
         ]
     },
     {
+        "id": 1020326,
+        "name": "Always implement done, fail and/or always callbacks for $.ajax calls when using jQuery 3.0 (and latest)",
+        "href": "AIP/quality-rules/1020326",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020450,
         "name": "Ensure catching Javascript error in React components",
         "href": "AIP/quality-rules/1020450",
@@ -880,6 +896,26 @@
         "href": "AIP/quality-rules/1020452",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020454,
+        "name": "Avoid using React dangerouslySetInnerHTML",
+        "href": "AIP/quality-rules/1020454",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020456,
+        "name": "Avoid using \"<script>\" tag in HTML template used by React.js components",
+        "href": "AIP/quality-rules/1020456",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]
@@ -1135,6 +1171,26 @@
         ]
     },
     {
+        "id": 1020550,
+        "name": "Avoid using \"ng-repeat\" loop without \"track by\" option",
+        "href": "AIP/quality-rules/1020550",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020552,
+        "name": "Avoid enabling dangerous protocols in whitelist APIs",
+        "href": "AIP/quality-rules/1020552",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020700,
         "name": "Avoid the lack of error handling in the Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
@@ -1385,6 +1441,16 @@
         ]
     },
     {
+        "id": 1020750,
+        "name": "Avoid using the file path validation with Node.js 8.5.0",
+        "href": "AIP/quality-rules/1020750",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020800,
         "name": "Avoid jump statements in finally ",
         "href": "AIP/quality-rules/1020800",
@@ -1540,6 +1606,16 @@
         "href": "AIP/quality-rules/1020832",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020834,
+        "name": "Avoid using \"<script>\" tag into HTML template used by Angular Application",
+        "href": "AIP/quality-rules/1020834",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]

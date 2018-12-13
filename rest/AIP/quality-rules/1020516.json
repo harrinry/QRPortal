@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1020516",
     "critical": false,
     "maxWeight": 5,
-    "description": "You should use the angular.isArray method instead of the default JavaScript implementation (typeof [] === \"[object Array]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704, ASCMM-MNT-20 recommendations.",
+    "description": "You should use the angular.isArray method instead of the default JavaScript implementation (typeof [] === \"[object Array]\"). The rule is compliant with CISQ OMG ASCRM-CWE-252-data, ASCRM-CWE-704 recommendations.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Ensure you are using the official AngularJS API, you should use the angular.isArray",
     "remediationSample": "var myObject = []; \n\nif(angular.isArray(myObject)) { \n\n}",

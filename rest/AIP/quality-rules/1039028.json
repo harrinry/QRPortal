@@ -1,0 +1,44 @@
+{
+    "id": 1039028,
+    "name": "CWE-327 : Avoid weak encryption providing not sufficient key size (JEE)",
+    "href": "AIP/quality-rules/1039028",
+    "critical": true,
+    "description": "The current cryptography guidelines suggest that: \nFor asymmetric encryption ( RSA), the recommanded key size should be at least 2048 bits. \nFor Symmetric Algorithms, (AES), the recommanded key size should be at least 256 bits. \n\nThis rules will report violation when the used key size does not match the recommandations.",
+    "output": "This rules will report violation when the used key size does not match the recommandations. ",
+    "rationale": "The security level of an encryption scheme is directly proportional to the size of its key. \n        Key sizes should be long enough that brute force attacks become unfeasible, but short enough to keep computational feasibility in mind.  ",
+    "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M5-Insufficient_Cryptography \nhttps://cwe.mitre.org/data/definitions/327.html",
+    "remediation": "The current cryptography guidelines suggest that: \nFor asymmetric encryption ( RSA), the recommanded key size should be at least 2048 bits. \nFor Symmetric Algorithms, (AES), the recommanded key size should be at least 256 bits.",
+    "remediationSample": "Remediation for AES \n\nKeyGenerator keygen = KeyGenerator.getInstance(\"AES\") ; // key generator to be used with AES algorithm. \nkeygen.init(256) ; // Key size is specified here. \nbyte[] key = keygen.generateKey().getEncoded(); \nSecretKeySpec skeySpec = new SecretKeySpec(key, \"AES\"); \n_______________________________________________________________ \nRemediation for RSA \n\nKeyPairGenerator keyGen = KeyPairGenerator.getInstance(\"RSA\"); \nkeyGen.initialize(4096); // key size specified here. \nKeyPair pair = keyGen.generateKeyPair(); \n_______________________________________________________________ \nSample for PBKDF2 \n\n// Should be as long and as many special characters as possible \nString user_entered_password = sys.args[0] ; \n// salt value \nbyte[] salt = new byte[128] ; // Should be atleast 64 bits \nSecureRandom secRandom = new SecureRandom() ; \nsecRandom.nextBytes(salt) ; // self-seeded randomizer for salt \n// iteration count \nint iterCount = 12288 ; \nint derivedKeyLength = 256 ; // Should be atleast longer than 112 bits. Depends on Key size of algorithm. \nKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterCount, derivedKeyLength * 8); \nSecretKeyFactory f = SecretKeyFactory.getInstance(\"PBKDF2WithHmacSHA256\"); ",
+    "sample": "Sample with AES \n\nKeyGenerator keygen = KeyGenerator.getInstance(\"AES\") ; // key generator to be used with AES algorithm. \nkeygen.init(128) ; // Key size is specified here. \nbyte[] key = keygen.generateKey().getEncoded(); \nSecretKeySpec skeySpec = new SecretKeySpec(key, \"AES\"); \n___________________________________________________________ \nSample for RSA \n\nKeyPairGenerator keyGen = KeyPairGenerator.getInstance(\"RSA\"); \nkeyGen.initialize(1024); // key size specified here. \nKeyPair pair = keyGen.generateKeyPair(); \n___________________________________________________________ \nSample for PBKDF2 \n\n// Should be as long and as many special characters as possible \nString user_entered_password = sys.args[0] ; \n// salt value \nbyte[] salt = new byte[128] ; // Should be atleast 64 bits \nSecureRandom secRandom = new SecureRandom() ; \nsecRandom.nextBytes(salt) ; // self-seeded randomizer for salt \n// iteration count \nint iterCount = 12288 ; \nint derivedKeyLength = 128 ; // Should be atleast longer than 112 bits. Depends on Key size of algorithm. \nKeySpec spec = new PBEKeySpec(password.toCharArray(), salt, iterCount, derivedKeyLength * 8); \nSecretKeyFactory f = SecretKeyFactory.getInstance(\"PBKDF2WithHmacSHA256\");  ",
+    "total": "Number of Java Artifact",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
