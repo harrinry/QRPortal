@@ -9,7 +9,8 @@
     "output": "List all Artifacts containing quoted identifiers.\nThe following information is provided:\n- The number of violation patterns",
     "rationale": "Quoted identifiers are confusing, as they look similar to string literals.",
     "remediation": "Check the statement and if so, replace quoted identifiers with unquoted identifiers.",
-    "remediationSample": "The following statement should be reviewed:\nDECLARE\n  \"End\" NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||\"End\"||']');\nEND;\n/",
+    "remediationSample": "The following statement should be reviewed:\nDECLARE\n  L_End NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||L_End||']');\nEND;\n/",
+    "sample": "The following statement should be reviewed:\nDECLARE\n  \"End\" NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||\"End\"||']');\nEND;\n/",
     "total": "The total procedure counts Artifacts with SQL code.",
     "businessCriteria": [
         {

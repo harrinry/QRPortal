@@ -8,7 +8,8 @@
     "output": "This report lists all tables without a primary key defined. It provides the full name of each table without a primary key.",
     "rationale": "In relational database design, a candidate key is just a unique identifier. Next, a primary key is a candidate key that's been singled out  to uniquely identify each row in a table. \nA unique key or primary key comprises a single column or set of columns. No two distinct rows in a table can have the same value (or combination of values) in those columns. \n\nDepending on its design, a table may have arbitrarily have many unique keys but at most one primary key.",
     "remediation": "Check the statement and if so, add primary key.",
-    "remediationSample": "The following statement should be reviewed:\ncreate table SQLAMDA001_7_TBL1\n(category_name varchar2(10) not null ,\n  title        varchar2(50) null ,\n  title_id     varchar2(10) null ,\n  author_name  varchar2(30) null\n)\n/\nAdd a primary key:\nalter table SQLAMDA001_7_TBL1 add constraint SQLAMDA001_7_TBL1_PK primary key (category_name)\nusing index\n/",
+    "remediationSample": "Add a primary key:\nalter table SQLAMDA001_7_TBL1 add constraint SQLAMDA001_7_TBL1_PK primary key (category_name)\nusing index\n/",
+    "sample": "The following statement should be reviewed:\ncreate table SQLAMDA001_7_TBL1\n(category_name varchar2(10) not null ,\n  title        varchar2(50) null ,\n  title_id     varchar2(10) null ,\n  author_name  varchar2(30) null\n)\n/",
     "total": "The total procedure counts Tables.",
     "businessCriteria": [
         {
