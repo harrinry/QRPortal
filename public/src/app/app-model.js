@@ -95,7 +95,6 @@ class App extends React.PureComponent{
             <div className={CLASSES.floatingFooter}>
               <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
               <a href={swagger}><div className={CLASSES.api}>API</div></a>
-              <div onClick={this.downloadQualityCube} className={CLASSES.whatisnew}>Quality Cube</div>
               <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
             </div>
             <div className={CLASSES.logoContainer}>

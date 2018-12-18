@@ -1,6 +1,6 @@
 export const EN = {
   language: 'EN',
-  title: 'Structural Rules',
+  title: 'Best Practices',
   menu: 'Menu',
   tiles: 'Tiles',
   logo: 'Logo',

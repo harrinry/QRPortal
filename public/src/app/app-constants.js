@@ -13,6 +13,6 @@ export const CONTACTUS = 'https://help.castsoftware.com/hc/en-us';
 export const versionKey = 'version';
 export { TITLE } from 'body-landing-page/blp-constants';
 export { LANDING_PAGE } from 'body/body-constants';
-export const aboutPortal = 'About Structural Portal';
+export const aboutPortal = 'About Best-Practices Portal';
 export const swagger = '/swagger-ui';
 export const CASTSOFTWARE = 'https://www.castsoftware.com/';

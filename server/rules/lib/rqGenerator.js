@@ -40,7 +40,7 @@ function generateRulesHydrate( params, path ){
       break;
     } 
     case 'Standards':{
-      const isBC = path[1].name.toLowerCase() === 'cast' ? true : false,
+      const isBC = path[1].name.toLowerCase() === 'health factors' ? true : false,
         dir = isBC ? 'brl' : 'bsl',
         _path = isBC ? root.resolve('rest/'.concat(path[2].href, '/quality-rules.json')) : root.resolve('rest/'.concat(path[2].href, '/items.json'));
       out[dir] = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];

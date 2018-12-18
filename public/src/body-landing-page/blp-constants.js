@@ -33,5 +33,5 @@ export const _oIconStyle = {
   backgroundSize: '80%'
 };
 
-export const WELCOMETEXT = 'Welcome to the CAST Structural Rules Portal, let\'s start browsing or searching the rules';
-export const TITLE = 'Structural Portal';
+export const WELCOMETEXT = 'Welcome to the CAST Best Practices, let\'s start browsing or searching the rules';
+export const TITLE = 'Best Practices';

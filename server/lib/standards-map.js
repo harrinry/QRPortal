@@ -6,11 +6,11 @@ function getQualityStandardsMap ( response ){
     if (err) {
       console.log(err);
     }
-    const businessCriteria = {
-      name: 'CAST',
-      href: 'AIP/business-criteria',
-      icon: 'img/castsoftwareblackbg.svg'
-    };
+    // const businessCriteria = {
+    //   name: 'CAST',
+    //   href: 'AIP/business-criteria',
+    //   icon: 'img/castsoftwareblackbg.svg'
+    // };
     const ret = JSON.parse(data).filter( e => e.name !== 'AIP' /*&& e.name !== 'CWE'*/).map( e => {
       return {
         name: e.name,
@@ -19,7 +19,7 @@ function getQualityStandardsMap ( response ){
       };
     });
 
-    response.json([businessCriteria, ...ret]);
+    response.json(ret);
   });
 }
 

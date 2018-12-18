@@ -1,4 +1,4 @@
-import { FETCH_STANDRADS_LIST_DATA, SET_STANDRADS_LIST_DATA, FAILED_TO_FETCH_STANDRADS_LIST_DATA, SET_SELECTED_STANDARDS_ITEM, FETCH_STANDARDS_INFO_DATA, SET_STANDARDS_INFO_DATA, FAILED_TO_FETCH_STANDARDS_INFO_DATA, HIDE_STANDARDS_INFO_DATA } from './bsl-actions-type';
+import { FETCH_STANDRADS_LIST_DATA, SET_STANDRADS_LIST_DATA, FAILED_TO_FETCH_STANDRADS_LIST_DATA, SET_SELECTED_STANDARDS_ITEM, FETCH_STANDARDS_INFO_DATA, SET_STANDARDS_INFO_DATA, FAILED_TO_FETCH_STANDARDS_INFO_DATA, HIDE_STANDARDS_INFO_DATA, CLEAR_STANDARDS_LIST_DATA } from './bsl-actions-type';
 import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
 
 const initialState = {
@@ -38,6 +38,13 @@ const standardsListReducers = (state = initialState, action) => {
         loading: true,
         visible: true,
         query: action.payload.query
+      }
+    };
+  case CLEAR_STANDARDS_LIST_DATA: 
+    return {
+      ...initialState,
+      info: {
+        ...initialState.info
       }
     };
   case SET_STANDARDS_INFO_DATA:
