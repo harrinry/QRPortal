@@ -33,5 +33,5 @@ export const _oIconStyle = {
   backgroundSize: '80%'
 };
 
-export const WELCOMETEXT = 'Welcome to the CAST Best Practices, let\'s start browsing or searching the rules';
+export const WELCOMETEXT = 'Welcome to CAST Best Practices, start browsing or searching';
 export const TITLE = 'Best Practices';

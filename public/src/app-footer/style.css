@@ -1,0 +1,30 @@
+.qrp_fltbetaMrk{
+  position: fixed; top: 60px; left:34px; z-index: 5; /* replace left with 22px for menu display */
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+  background: -webkit-linear-gradient(135deg, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+.qrp_fltEnvfb{width: 50px; height: 50px; position: fixed; bottom: 30px; right:50px; z-index: 5; background-image: url(/img/message-icon.svg); opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+.qrp_fltEnvfb:hover{opacity: 0.2; filter: grayscale(100%);}
+
+.qrp_lpcastlogo{ background-image: url(/img/castsoftwarewhite.svg);
+  background-repeat: no-repeat; background-position: center; background-size: 100%;
+  position: fixed; width: 200px; height: 50px; right: 16px; bottom: 0px;
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
+
+.qrp_whtsnew{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 8px 10px; color: #fff;}
+.qrp_contactus{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 8px 10px;color: #fff;}
+.qrp_xplapi{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 8px 10px;color: #fff;}
+ 
+a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #fff; text-decoration: none;}
+a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #fff; text-decoration: none;}
+div.qrp_lp_flt_foot > a:-webkit-any-link{text-decoration: none; text-decoration-line: none;}
+div.qrp_lp_flt_foot > a:-moz-any-link {text-decoration: none; text-decoration-line: none !important; color: #fff}
+div.qrp_lp_flt_foot > a:any-link {text-decoration: none; text-decoration-line: none !important;}
+.qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff !important;}
+
+.qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 56px; margin-bottom: 0px;text-decoration: none !important; background-color: #333;}
