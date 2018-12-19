@@ -64,11 +64,11 @@ export default class AppFooter extends React.PureComponent{
     return (
       <React.Fragment>
         <div className={CLASSES.floatingFooter}>
-          <div className={createClassName(COMMON_CLASSES.flexRow)}>
+          <div className={createClassName(COMMON_CLASSES.flexRow, CLASSES.links)}>
             <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
-            <a href={swagger}><div className={CLASSES.api}>API</div></a>
-            <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
-            <a href={PRIVACYPOLICY}><div className={CLASSES.contactus}>Privacy policy</div></a>
+            <a href={swagger} className={CLASSES.contactus}>API</a>
+            <a href={CONTACTUS} className={CLASSES.contactus}>Contact Us</a>
+            <a href={PRIVACYPOLICY} className={CLASSES.contactus}>Privacy policy</a>
           </div>
           <div className={CLASSES.copyRight}>© 2018 - CAST All Rights Reserved</div>
           <div className={CLASSES.logoContainer}>
