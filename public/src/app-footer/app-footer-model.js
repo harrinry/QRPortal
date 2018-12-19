@@ -1,6 +1,6 @@
 import React from 'react';
-import { CLASSES, CONTACTUS, swagger, versionKey, TITLE, CASTSOFTWARE } from './app-footer-constants';
-import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } from 'common/';
+import { CLASSES, CONTACTUS, swagger, versionKey, TITLE, CASTSOFTWARE, PRIVACYPOLICY } from './app-footer-constants';
+import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } from '../common/';
 import About from 'about/';
 import './style.css';
 
@@ -64,12 +64,16 @@ export default class AppFooter extends React.PureComponent{
     return (
       <React.Fragment>
         <div className={CLASSES.floatingFooter}>
-          <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
-          <a href={swagger}><div className={CLASSES.api}>API</div></a>
-          <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
-        </div>
-        <div className={CLASSES.logoContainer}>
-          <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>
+          <div className={createClassName(COMMON_CLASSES.flexRow)}>
+            <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
+            <a href={swagger}><div className={CLASSES.api}>API</div></a>
+            <a href={CONTACTUS}><div className={CLASSES.contactus}>Contact Us</div></a>
+            <a href={PRIVACYPOLICY}><div className={CLASSES.contactus}>Privacy policy</div></a>
+          </div>
+          <div className={CLASSES.copyRight}>© 2018 - CAST All Rights Reserved</div>
+          <div className={CLASSES.logoContainer}>
+            <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>
+          </div>
         </div>
         {this.state.loading ? 
           undefined

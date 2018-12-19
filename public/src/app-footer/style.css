@@ -11,14 +11,15 @@
 .qrp_fltEnvfb{width: 50px; height: 50px; position: fixed; bottom: 30px; right:50px; z-index: 5; background-image: url(/img/message-icon.svg); opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
 .qrp_fltEnvfb:hover{opacity: 0.2; filter: grayscale(100%);}
 
-.qrp_lpcastlogo{ background-image: url(/img/castsoftwarewhite.svg);
+.qrp_lplogoCntr{ margin-left: auto; margin-right: 30px}
+.qrp_lpcastlogo{ background-image: url(/img/castWithTaglineWhite.svg);
   background-repeat: no-repeat; background-position: center; background-size: 100%;
-  position: fixed; width: 200px; height: 50px; right: 16px; bottom: 0px;
+  width: 200px; height: 56px;
   opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
 
-.qrp_whtsnew{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 10px 10px; color: #fff;}
-.qrp_contactus{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 10px 10px;color: #fff;}
-.qrp_xplapi{height: 36px; line-height: 36px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 10px 10px;color: #fff;}
+.qrp_whtsnew{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px; color: #fff;}
+.qrp_contactus{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;color: #fff;}
+.qrp_xplapi{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: none; cursor: pointer; padding:0 16px; margin: 0 10px;color: #fff;}
  
 a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #fff; text-decoration: none;}
 a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #fff; text-decoration: none;}
@@ -27,4 +28,6 @@ div.qrp_lp_flt_foot > a:-moz-any-link {text-decoration: none; text-decoration-li
 div.qrp_lp_flt_foot > a:any-link {text-decoration: none; text-decoration-line: none !important;}
 .qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #fff !important;}
 
-.qrp_lp_flt_foot{ display: flex; flex-direction: row; justify-content: center;  width: 100vw; height: 56px; margin-bottom: 0px;text-decoration: none !important; background-color: #333;}
+.qrp_lp_flt_foot{ display: flex; flex-direction: row; width: 100vw; min-height: 56px; margin-bottom: 0px;text-decoration: none !important; background-color: #333;}
+.qrp_lp_flt_cpr{color: #fff !important; height: 56px; line-height: 56px; position: absolute; text-align: center; width: 100%; 
+}

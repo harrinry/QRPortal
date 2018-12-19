@@ -2,7 +2,7 @@ const navData = [
   {
     name: 'Health Factors',
     href: 'AIP/business-criteria',
-    icon: 'img/castsoftwareblackbg.svg',
+    icon: 'img/castsoftware.svg',
     info: 'Browse best practices provided by CAST by health facotrs'
   },
   {

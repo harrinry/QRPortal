@@ -6,6 +6,7 @@ export const CLASSES = {
   whatisnew: 'qrp_whtsnew',
   contactus: 'qrp_contactus',
   api: 'qrp_xplapi',
+  copyRight: 'qrp_lp_flt_cpr',
   floatingFooter: 'qrp_lp_flt_foot'
 };
 
@@ -16,3 +17,4 @@ export { LANDING_PAGE } from 'body/body-constants';
 export const aboutPortal = 'About Best-Practices Portal';
 export const swagger = '/swagger-ui';
 export const CASTSOFTWARE = 'https://www.castsoftware.com/';
+export const PRIVACYPOLICY = 'https://www.castsoftware.com/privacy';
