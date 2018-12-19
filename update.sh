@@ -1,6 +1,4 @@
 #!/bin/bash
-forever stopall
-echo "Server stoped"
 git checkout -- .
 git clean HEAD -f
 echo "cleaned git head"
