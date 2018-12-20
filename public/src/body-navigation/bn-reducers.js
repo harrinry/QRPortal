@@ -1,5 +1,7 @@
 import * as ACTIONTYPES from './bn-actions-type';
 import { ERROR_PREFIX } from './bn-constants';
+import { HYDRATE_STORE } from '../path-navigation/nv-actions-type';
+
 const initialState = {
   data: [], 
   query: null,
@@ -36,6 +38,14 @@ const TileNavigationReducer = (state = initialState, action) => {
     return {
       ...initialState
     };
+  case HYDRATE_STORE:
+    return action.payload.nav ? {
+      ...initialState,
+      data: action.payload.nav.data,
+      title: action.payload.nav.title,
+      icon: action.payload.nav.icon,
+      query: action.payload.nav.query
+    } : { ...initialState };
   default:
     return state;
   }

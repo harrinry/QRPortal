@@ -41,7 +41,7 @@ function createHydrate( queryParams ){
 }
 
 function skimPath( path ){
-  if (path[1].name.toLowerCase() === 'health factors') return path.filter( (e, i) => i > 0);
+  if (path.length > 0 && path[1].name.toLowerCase() === 'health factors') return path.filter( (e, i) => i > 0);
   else return path;
 }
 
