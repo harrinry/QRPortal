@@ -1,6 +1,6 @@
 export const EN = {
   language: 'EN',
-  title: 'Structural Rules',
+  title: 'CAST Rules Documentation',
   menu: 'Menu',
   tiles: 'Tiles',
   logo: 'Logo',

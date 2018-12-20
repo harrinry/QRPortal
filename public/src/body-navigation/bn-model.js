@@ -10,10 +10,10 @@ const BodyNavigation = ( props ) => {
     iconSize = isStandards ? '100%' : undefined;
   return (
     <div className={CLASSES.bodyContainer}>
-      <div className={createClassName(CLASSES.titleContainer, COMMON_CLASSES.flexCol)}>
+      {/* <div className={createClassName(CLASSES.titleContainer, COMMON_CLASSES.flexCol)}>
         <div className={CLASSES.iconContainer} style={stylize(props.icon)}></div>
         <div className={CLASSES.title}>{props.title}</div>
-      </div>
+      </div> */}
       <div className={CLASSES.childContainer}>
         {props.loading ? <LoadingSpinner/> : props.navContent.map( (e, i) => <Tile key={i} iconSize={iconSize} icon={e.icon} click={() => props.tileClick(e, props.title, props.icon)}>{e.label || e.name}</Tile> )}
       </div>

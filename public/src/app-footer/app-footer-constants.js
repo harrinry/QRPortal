@@ -6,7 +6,9 @@ export const CLASSES = {
   whatisnew: 'qrp_whtsnew',
   contactus: 'qrp_contactus',
   api: 'qrp_xplapi',
-  floatingFooter: 'qrp_lp_flt_foot'
+  copyRight: 'qrp_lp_flt_cpr',
+  floatingFooter: 'qrp_lp_flt_foot',
+  links: 'qrp_lp_flt_lnkx'
 };
 
 export const CONTACTUS = 'https://help.castsoftware.com/hc/en-us';
@@ -16,3 +18,4 @@ export { LANDING_PAGE } from 'body/body-constants';
 export const aboutPortal = 'About Best-Practices Portal';
 export const swagger = '/swagger-ui';
 export const CASTSOFTWARE = 'https://www.castsoftware.com/';
+export const PRIVACYPOLICY = 'https://www.castsoftware.com/privacy';

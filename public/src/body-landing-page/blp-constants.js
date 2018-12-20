@@ -27,11 +27,11 @@ export const CLASSES = {
 };
 
 export const _oIconStyle = {
-  backgroundImage: 'url(' + Imgs.logo.default + ')',
+  backgroundImage: 'url(' + Imgs.logo.reflect + ')',
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
+  backgroundPosition: 'top center',
   backgroundSize: '80%'
 };
 
-export const WELCOMETEXT = 'Welcome to the CAST Structural Rules Portal, let\'s start browsing or searching the rules';
-export const TITLE = 'Structural Portal';
+export const WELCOMETEXT = 'Welcome to CAST Rules documentation, start browsing or searching';
+export const TITLE = 'CAST Rules Documentation';

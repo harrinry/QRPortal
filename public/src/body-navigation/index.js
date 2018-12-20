@@ -4,7 +4,7 @@ import { fetchNavigationData } from './bn-actions';
 import { setListCount, showContentView } from '../body/body-actions';
 import { fetchWebData, fetchApiData, clearListData } from '../body-rules-list/brl-actions';
 import { clearDetailsData } from '../details-section/ds-actions';
-import { fetchStandardsListData } from '../body-standards-list/bsl-actions';
+import { fetchStandardsListData, clearStandardsListData } from '../body-standards-list/bsl-actions';
 import { appendToHeaderPath } from '../path-navigation/nv-actions';
 import { SECTIONS } from './bn-constants';
 import { setSelectedItem } from '../menu-navigation/mn-actions';
@@ -48,6 +48,7 @@ const mapDispatchToProps = (dispatch) => {
         break;
       default:
         historyPushState();
+        dispatch(clearStandardsListData());
         dispatch(setListCount(1));
         dispatch(showContentView());
         dispatch(fetchWebData(link.href));

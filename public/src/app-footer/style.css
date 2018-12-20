@@ -1,0 +1,36 @@
+.qrp_fltbetaMrk{
+  position: fixed; top: 60px; left:34px; z-index: 5; /* replace left with 22px for menu display */
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+  background: -webkit-linear-gradient(135deg, #007aff, #3b6dff, #635dff, #8743ff, #a900ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+.qrp_fltEnvfb{width: 50px; height: 50px; position: fixed; bottom: 30px; right:50px; z-index: 5; background-image: url(/img/message-icon.svg); opacity: 1; filter: grayscale(0%); transition: all 0.3s;}
+.qrp_fltEnvfb:hover{opacity: 0.2; filter: grayscale(100%);}
+
+.qrp_lplogoCntr{ margin-left: auto; margin-right: 30px}
+.qrp_lpcastlogo{ background-image: url(/img/castWithTaglineWhite.svg);
+  background-repeat: no-repeat; background-position: center; background-size: 100%;
+  width: 200px; height: 56px;
+  opacity: 1; filter: grayscale(0%); transition: all 0.3s; cursor: pointer;}
+
+.qrp_whtsnew{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px; color: #778899;}
+.qrp_contactus{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px;color: #778899;}
+.qrp_xplapi{height: 56px; line-height: 56px; z-index: 5; font-weight: 700; text-transform: uppercase; cursor: pointer; padding:0 16px; margin: 0 10px;color: #778899;}
+ 
+a.qrp_contactus:link, a.qrp_contactus:active, a.qrp_contactus:visited{color: #778899; text-decoration: none;}
+a.qrp_xplapi:link, a.qrp_xplapi:active, a.qrp_xplapi:visited{color: #778899; text-decoration: none;}
+
+a:link > div.qrp_contactus, a:active > div.qrp_contactus, a:visited > div.qrp_contactus{color: #778899; text-decoration: none;}
+a:link > div.qrp_xplapi, a:active > div.qrp_xplapi, a:visited > div.qrp_xplapi{color: #778899; text-decoration: none;}
+div.qrp_lp_flt_foot > a:-webkit-any-link{text-decoration: none; }
+div.qrp_lp_flt_foot > a:-moz-any-link {text-decoration: none; color: #778899}
+div.qrp_lp_flt_foot > a:any-link {text-decoration: none;}
+.qrp_whtsnew:hover, a:hover > div.qrp_contactus, a:hover > div.qrp_xplapi {color: #778899;}
+
+.qrp_lp_flt_foot{ display: flex; flex-direction: row; width: 100vw; min-height: 56px; margin-bottom: 0px; text-decoration: none; background-color: #333; font-size: 13px; color: #778899;}
+.qrp_lp_flt_cpr{color: #778899 !important; height: 56px; line-height: 56px; position: absolute; text-align: center; width: 100%; }
+.qrp_lp_flt_lnkx{ z-index: 5; }

@@ -37,7 +37,12 @@ function createHydrate( queryParams ){
     };
   }
 
-  return new Hbj( PATH, RULES, SEARCH );
+  return new Hbj( skimPath(PATH), RULES, SEARCH );
+}
+
+function skimPath( path ){
+  if (path.length > 0 && path[1].name.toLowerCase() === 'health factors') return path.filter( (e, i) => i > 0);
+  else return path;
 }
 
 function getDetails( id, arr ){

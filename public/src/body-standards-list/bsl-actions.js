@@ -31,6 +31,12 @@ const failedToFetchStandards = ( query, err ) => {
   };
 };
 
+export const clearStandardsListData = () => {
+  return {
+    type: ACTIONTYPES.CLEAR_STANDARDS_LIST_DATA
+  };
+};
+
 export const setSelected = ( itemRef ) => {
   return {
     type: ACTIONTYPES.SET_SELECTED_STANDARDS_ITEM,
