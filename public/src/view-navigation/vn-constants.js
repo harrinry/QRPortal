@@ -16,7 +16,8 @@ export const CLASSES = {
 
 export const Imgs = {
   logo: {
-    default: 'img/LogoStructuralRules.svg'
+    default: 'img/LogoStructuralRules.svg',
+    reflect: 'img/LogoStructuralRulesReflect.svg'
   },
   tiles: {
     black: 'img/tiles.svg',

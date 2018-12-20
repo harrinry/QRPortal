@@ -4,6 +4,7 @@ const { main } = require('../routes/routes');
 const logger = require('../logger/rules');
 const HydObj = require('./lib/hydrate');
 const ValidateQuery = require('./lib/validateQuery');
+const extensionsMap = require('../lib/extensions-map');
 const notFound = require('../middleware/notFound');
 const errHandler = require('../middleware/errorHandler');
 let Router = express.Router();
@@ -17,7 +18,26 @@ Router.get(main, (req, res) => {
   }
 });
 
+Router.get('/packages', ( req, res ) => {
+  res.redirect('/rules?q=packages');
+});
+
+Router.get('/hydrate/packages', ( req, res ) => {
+  res.json({
+    path: [{ name: 'Packages', href: 'AIP/extensions', icon: '/img/sources.svg' }],
+    nav: {
+      data: extensionsMap.extensions,
+      title: 'Packages',
+      icon: '/img/sources.svg',
+      query: '/aip/extensions'
+    },
+    data: [],
+    navView: true
+  });
+});
+
 Router.get('/hydrate', (req, res) => {
+  if( req.query.q === 'packages' ) return res.redirect('/rules/hydrate/packages');
   res.json(HydObj(req.query));
 });
 

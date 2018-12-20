@@ -3,9 +3,9 @@ const root = require('app-root-path');
 
 const data = fs.readFileSync(root.resolve('rest/AIP/quality-standards.json')),   
   businessCriteria = {
-    name: 'CAST',
+    name: 'Health Factors',
     href: 'AIP/business-criteria',
-    icon: 'img/castsoftware.svg'
+    icon: 'img/castsoftwareblackbg.svg',
   },
   ret = JSON.parse(data).filter( e => e.name !== 'AIP').map( e => {
     return {

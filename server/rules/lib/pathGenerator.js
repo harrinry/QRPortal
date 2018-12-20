@@ -42,6 +42,7 @@ function getDefinition( secItem ){
 }
 
 function getNavPath( mapDef ){
+  if( mapDef === defMap.srs ) return { name: 'Packages', href: 'AIP/extensions', icon: '/img/sources.svg' };
   return navData.find( e => e.name === mapDef );
 }
 
@@ -74,7 +75,10 @@ function getExtensionPath( id ){
 }
 
 function getStandardsPath( stdName ){
-  return standardsData.find( e => e.name.toLowerCase() === stdName.toLowerCase() );
+  return standardsData.find( e => {
+    if( stdName.toLowerCase() === 'cast') return e.name.toLowerCase() === 'health factors';
+    else return e.name.toLowerCase() === stdName.toLowerCase();
+  });
 }
 
 function getStdCategoryPath( stdCat ){
