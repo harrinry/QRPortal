@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1020830",
     "critical": false,
     "maxWeight": 1,
-    "description": "The built-in browser DOM APIs don't automatically protect you from security vulnerabilities. Not only it poses security risk, but it also creates tight coupling between your application and rendering layers which makes is difficult to run an app on multiple platforms. This rule is compliant with OWASP A7 2017, A3 2013 recommendations.",
+    "description": "The built-in browser DOM APIs don't automatically protect you from security vulnerabilities. Not only it poses security risk, but it also creates tight coupling between your application and rendering layers which makes it difficult to run an app on multiple platforms. This rule is compliant with OWASP A7 2017, A3 2013 recommendations.",
     "output": "Line and column for each violation\nAssociated value => number of violations found",
     "rationale": "In DOM-based XSS, the client performs the injection of XSS into the page; in the other types, the server performs the injection. DOM-based XSS generally involves server-controlled, trusted script that is sent to the client, such as Javascript that performs sanity checks on a form before the user submits it. If the server-supplied script processes user-supplied data and then injects it back into the web page (such as with dynamic HTML), then DOM-based XSS is possible.",
     "reference": "https://angular.io/guide/security#avoid-direct-use-of-the-dom-apis\nhttps://angular.io/api/core/ElementRef",
