@@ -6,10 +6,10 @@
     "maxWeight": 5,
     "associatedValueName": "This metric lists SQL Artifacts using dynamic SQL.",
     "description": "Dynamic SQL could lead to some performance problems. The execution plan cannot be stored in memory and thus needs to be calculated each time.",
-    "output": "List all Artifacts using dynamic SQL.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.\n",
+    "output": "List all Artifacts using dynamic SQL.\nThe following information is provided:\n- The number of violation patterns\n- Artifact Name\n- Artifact Full Name.",
     "rationale": "Each repetition of the same dynamic SQL statement incurs a soft parse, which is a small overhead compared to a static statement, but still an overhead. The overhead of dynamic SQL is small, it can be in the thousandths of a second - however, it can add up if this is inside a loop / on a method called once per object.",
     "remediation": "Check the statement and if so, replace dynamic with static statement.",
-    "remediationSample": "The following procedure should be reviewed:\nCREATE PROCEDURE SEARCH (IN V_DYNAMICSQL VARCHAR(2000))\nBEGIN\n  EXECUTE IMMEDIATE V_DYNAMICSQL;\nEND;",
+    "sample": "The following procedure should be reviewed:\nCREATE PROCEDURE SEARCH (IN V_DYNAMICSQL VARCHAR(2000))\nBEGIN\n  EXECUTE IMMEDIATE V_DYNAMICSQL;\nEND;",
     "total": "The total procedure counts Artifacts with SQL code.",
     "businessCriteria": [
         {

@@ -7,9 +7,10 @@
     "associatedValueName": "Number of violation patterns",
     "description": "List all SQL Artifacts containing a query that has column numbers in ORDER BY clauses.",
     "output": "List all Artifacts containing column numbers in ORDER BY clauses.\nThe following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",
-    "rationale": "Improve readability by sorting on column names rather than column numbers. Improve maintainability by making the ORDER BY part independent. ",
+    "rationale": "Improve readability by sorting on column names rather than column numbers. Improve maintainability by making the ORDER BY part independent.",
     "remediation": "Check the statement and if so, replace column numbers with column names.",
-    "remediationSample": "The following example:\nSELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY 1, 2;\nshould be rewritten as:\nSELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY first_name, department_name;",
+    "remediationSample": "SELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY first_name, department_name;",
+    "sample": "SELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY 1, 2;",
     "total": "The total procedure counts Artifacts with SQL code.",
     "businessCriteria": [
         {
