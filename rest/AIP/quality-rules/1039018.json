@@ -1,6 +1,6 @@
 {
     "id": 1039018,
-    "name": "CWE-759: Avoid using cryptography hash with hardcoded salt (JEE)",
+    "name": "CWE-759: Avoid using cryptography hash with hardcoded salt ",
     "href": "AIP/quality-rules/1039018",
     "critical": true,
     "description": "When using some cryptography function, a hardcoded salt could compromise system security in a way that cannot be easily remedied. \nIt is never a good idea to hardcode a salt. Not only does a hardcoded salt allow all of the project's developers to view the salt, it also makes fixing the problem extremely difficult. Once the code is in production, the salt cannot be easily changed. If attackers know the value of the salt, they can compute \"rainbow tables\" for the application and more easily determine the hashed values. \n\n\nThis rule is compliant with OWASP M5 2016 and with CISQ-OMG ASCSM-CWE-327 recommendation.",

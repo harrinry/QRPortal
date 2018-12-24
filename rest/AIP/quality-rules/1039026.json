@@ -1,10 +1,10 @@
 {
     "id": 1039026,
-    "name": "CWE-1004 : Avoid creating cookie without setting httpOnly option (JEE)",
+    "name": "CWE-1004 : Avoid creating cookie without setting httpOnly option ",
     "href": "AIP/quality-rules/1039026",
     "critical": true,
     "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. \n        This is why all major browsers support the HttpOnly cookie property that prevents client-side scripts from accessing the cookie. \n        When HttpOnly is not enabled, attackers may more easily access user cookies. This rule is compliant with CWE-1004, OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
-    "output": "Line and column for each violation\n        Associated value => number of violations found ",
+    "output": "This report lists all artifacts with JAVA methods",
     "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. If write access is not properly restricted, \n        then attackers can modify and possibly delete the data, causing incorrect results and possibly a denial of service. ",
     "reference": "https://cwe.mitre.org/data/definitions/1004.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure\n",
     "remediation": "Always setting httpOnly option when creating a cookie",
@@ -13,9 +13,9 @@
     "total": "Number of Java Artifact",
     "businessCriteria": [
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "AIP/business-criteria/66031"
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
         },
         {
             "id": 60016,
@@ -25,8 +25,8 @@
     ],
     "technicalCriteria": [
         {
-            "id": 66066,
-            "name": "Secure Coding - Encapsulation",
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
             "weight": 8,
             "critical": true
         }

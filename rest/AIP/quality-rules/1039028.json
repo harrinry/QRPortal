@@ -1,6 +1,6 @@
 {
     "id": 1039028,
-    "name": "CWE-327 : Avoid weak encryption providing not sufficient key size (JEE)",
+    "name": "CWE-327 : Avoid weak encryption providing not sufficient key size ",
     "href": "AIP/quality-rules/1039028",
     "critical": true,
     "description": "The current cryptography guidelines suggest that: \nFor asymmetric encryption ( RSA), the recommanded key size should be at least 2048 bits. \nFor Symmetric Algorithms, (AES), the recommanded key size should be at least 256 bits. \n\nThis rules will report violation when the used key size does not match the recommandations.",
@@ -13,9 +13,9 @@
     "total": "Number of Java Artifact",
     "businessCriteria": [
         {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "AIP/business-criteria/66031"
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
         },
         {
             "id": 60016,
@@ -25,8 +25,8 @@
     ],
     "technicalCriteria": [
         {
-            "id": 66063,
-            "name": "Secure Coding - API Abuse",
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
             "weight": 8,
             "critical": true
         }
