@@ -7,7 +7,7 @@
     "output": "This report lists all CL400 programs using NOMAX.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "This attibute must be avoided. It can lead to situations in which programs put information into files without space constraints. As a consequence, all the available space can be used and the system can be destabilized.",
     "remediation": "Specify the value or threshold explicitely.",
-    "remediationSample": "Remediation for Sample source :\n   PGM \n   chgprtf qpsrodsp maxrcds(100000)\n   ENDPGM.",
+    "remediationSample": "\n   Remediation for Sample source :\n   PGM \n   chgprtf qpsrodsp maxrcds(100000)\n   ENDPGM.",
     "sample": "PGM \n   chgprtf qpsrodsp maxrcds(*nomax) //Quality Rule Violation\n   ENDPGM.",
     "total": "Number of CL400 Programs",
     "businessCriteria": [

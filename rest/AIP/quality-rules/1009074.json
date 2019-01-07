@@ -8,8 +8,8 @@
     "output": "This report lists RPG300 programs.\nIt provides the following information:\nRPG300 artifacts full name",
     "rationale": "The error handling subroutine needs to be specific to prevent the application from unhandled exceptions. These can lead to application halt or unvalidated results. No specifying this on the file declaration part (F-spec) can show that the exceptions are not handled properly.",
     "remediation": "Try to provide a specific error subroutine for File Exception Handling",
-    "remediationSample": "Use following syntax for specifying error subroutine:\n    INFSR(Subroutine_name) \n    Or\n    KINFSR Subroutine_name\n    Flog if e k disk infds(infds) \nD infds ds \nD recname 261 270 \nD input ds qualified \nD rec1 likerec(rec1) overlay(input) \nD rec2 likerec(rec2) overlay(input)",
-    "sample": "Flog if e k disk \nD infds ds \nD recname 261 270 \nD input ds qualified \nD rec1 likerec(rec1) overlay(input) \nD rec2 likerec(rec2) overlay(input)",
+    "remediationSample": "Use following syntax for specifying error subroutine:\n    INFSR(Subroutine_name) \n    Or\n    KINFSR Subroutine_name\n    Flog if e k disk infds(infds) \nD infds ds \nD recname 261 270 \nD input ds qualified \nD rec1 likerec(rec1) overlay(input) \nD rec2 likerec(rec2) overlay(input) ",
+    "sample": "    Flog if e k disk \nD infds ds \nD recname 261 270 \nD input ds qualified \nD rec1 likerec(rec1) overlay(input) \nD rec2 likerec(rec2) overlay(input) ",
     "total": "Total number of RPG300 artifacts",
     "businessCriteria": [
         {

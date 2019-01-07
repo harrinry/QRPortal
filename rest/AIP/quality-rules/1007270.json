@@ -8,7 +8,7 @@
     "description": "A SQL query is constructed dynamically by concatenation.",
     "output": "This report lists all artifacts that create SQL query dynamically by concatenation. \nThis QR provides the following information:\nArtifact Full Name",
     "rationale": "An SQL query constructed dynamically through string concatenation can lead to SQL injection attacks.",
-    "reference": "https://cwe.mitre.org/data/definitions/89.html",
+    "reference": "https://cwe.mitre.org/data/definitions/89.html\n",
     "remediation": "It is recommended to use prepared statements for all SQL queries. The prepared statement itself should only use placeholders for data and never concatenate data directly into the query.",
     "remediationSample": "<?php\n\nmysqli_query($GLOBALS[\"___mysqli_ston\"], \"USE \" . $_DVWA['db_database']);\n\n?>",
     "sample": "<?php\n\nTBD: Code would be big.\n\n?>",
