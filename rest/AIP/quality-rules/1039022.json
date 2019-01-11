@@ -39,6 +39,26 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-916",
+            "name": "Use of Password Hash With Insufficient Computational Effort",
+            "url": "https://cwe.mitre.org/data/definitions/916.html",
+            "description": "The software generates a hash for a password, but it uses a scheme that does not provide a sufficient level of computational effort that would make password cracking attacks infeasible or expensive."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
+            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+        }
     ]
 }
