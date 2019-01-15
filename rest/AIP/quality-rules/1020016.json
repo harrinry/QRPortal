@@ -47,10 +47,10 @@
     "qualityStandards": [
         {
             "standard": "CISQ",
-            "id": "ASCPEM-PRF-4",
-            "name": "Complex read/write access",
+            "id": "ASCPEM-PRF-8",
+            "name": "Resource-consuming operation in loop",
             "url": null,
-            "description": "Remove instances where a very large table, that is, whose number of rows exceeds a threshold value (default is 1,000,000 rows), is accessed by a SQL statement with too many joins (default threshold value for the maximum number of joins is 5), and too many sub-queries (default threshold value for the maximum number of sub-queries is 3)."
+            "description": "Remove instances where an operation causing consumption of platform resource (messaging, lock, file, stream, directory, etc.) is directly or indirectly called within a loop body or within a loop condition"
         }
     ]
 }

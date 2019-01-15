@@ -3,7 +3,7 @@
     "name": "Avoid empty catch blocks for methods with high fan-in",
     "href": "AIP/quality-rules/1060020",
     "critical": true,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of empty catch blocks",
     "description": "This metric reports all methods with at least one empty catch block (empty or only containing comments).\nIn a Try and Catch statement, Catch blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",
     "output": "This report lists Artifacts with high fan-in having an empty catch block.\nIt provides the following information:\n- Artifact full name\n- Number of empty catch blocks",
     "rationale": "An empty catch block defeats the purpose of exceptions.\nWhen an exception occurs, nothing happens and the program fails for an unknown reason. The application can be in an unknown state that will affect subsequent processing.\nSince the reason for the issue (the exception type and potential embedded message) are ignored, it will require more time to fix the issue.\nWhen the artifacts have a high fan-in the risk is highly increased.",
@@ -11,7 +11,7 @@
     "remediation": "The exception must be handled correctly according to its type.",
     "remediationSample": "C#\n\ntry { ,,, }\ncatch ( MyException e)\n{\n   DoSomething();\n}\n\nABAP\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n      TEXT = OREF->GET_TEXT( ).\n      cleanup.\n      clear RESULT.\nENDTRY.",
     "sample": "C#\n\ntry { ... }\ncatch ( MyException e)\n{\n   // DO NOTHING <= VIOLATION\n}\n\nABAP\n\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n* This CATCH block does not contain statements\n* and can be considered as not existing...\n* TEXT = OREF->GET_TEXT( ).\nENDTRY.",
-    "total": "This counts all artifacts with a hign fan-in",
+    "total": "Number of artifacts with a high fan-in",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -74,6 +74,13 @@
             "standard": "AIP",
             "id": "AIP-SYSTEM-LEVEL",
             "name": "System Level Rule",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "AIP",
+            "id": "AIP-TOP-PRIORITY",
+            "name": "Top Priority Rule",
             "url": null,
             "description": null
         },

@@ -3,12 +3,12 @@
     "name": "Avoid SQL queries that no index can support for artifacts with high fan-in",
     "href": "AIP/quality-rules/1060014",
     "critical": true,
-    "associatedValueName": "Number of violation patterns",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This metric retrieves the artifacts with high fan-in containing at least one SQL Query not using a table's indexes.\nAn SQL Query is using table's indexes if all the  following conditions are true:\n\n- At least one index is defined for each non XXS table participating in the from list\n- Queries must reference left-most columns of the index key\n- the column must not be used in a function call\n\nAn XXS table is a table containing an extremely low amount of data. Default is 10.",
-    "output": "Associated to each Artifact having violations, the Quality Rule provides:\n- The number of violation patterns.\n- Each violation pattern shows :\n- the query \n- each table not using index\n- the table's indexes",
+    "output": "Associated to each Artifact having violations, the Quality Rule provides:\n- The number of violation occurrences.\n- Each violation occurrence shows :\n- the query \n- each table not using index\n- the table's indexes",
     "rationale": "SQL Queries that do not use table indexes are extremely dangerous for the application's performance.\nIndeed, each execution of the query will result in a full table scan which is extremely time consuming.\nWhen the artifacts have a high fan-in the risk is highly increased.",
     "remediation": "Try to use indexed columns in WHERE and HAVING clauses. If it is not possible, then create a secondary index for these columns.",
-    "total": "The total procedure counts Artifacts with SQL code for non XXS tables and having a high fan-in.",
+    "total": "Number of artifacts with SQL code for non XXS tables and having a high fan-in.",
     "businessCriteria": [
         {
             "id": 60014,
@@ -52,6 +52,13 @@
             "standard": "AIP",
             "id": "AIP-SYSTEM-LEVEL",
             "name": "System Level Rule",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "AIP",
+            "id": "AIP-TOP-PRIORITY",
+            "name": "Top Priority Rule",
             "url": null,
             "description": null
         }
