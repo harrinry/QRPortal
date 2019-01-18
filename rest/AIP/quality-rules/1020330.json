@@ -1,0 +1,72 @@
+{
+    "id": 1020330,
+    "name": "Avoid using jQuery $(location.hash) before 1.6.3",
+    "href": "AIP/quality-rules/1020330",
+    "critical": true,
+    "associatedValueName": "Number of defects",
+    "description": "Cross-site scripting (XSS) vulnerability in jQuery before 1.6.3, when using location.hash to select elements, allows remote attackers to inject arbitrary web script or HTML via a crafted tag. This rule has been listed as CVE-2011-4969 in the CVE registry.",
+    "output": "Line and column for each violation",
+    "rationale": "While some known vulnerabilities lead to only minor impacts, some of the largest breaches to date have relied on exploiting known vulnerabilities in components. Depending on the assets you are protecting, perhaps this risk should be at the top of the list.",
+    "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4969",
+    "remediation": "Do not use jQuery $(location.hash)",
+    "remediationSample": "<script src=\"https://code.jquery.com/jquery-1.6.3.js\"></script> \n\n...\n$(location.hash) // XSS vulnerability blocked\n...",
+    "sample": "<script src=\"https://code.jquery.com/jquery-1.6.2.js\"></script> \n\n...\n$(location.hash) // XSS vulnerability\n...",
+    "total": "Number of JQuery artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "AIP",
+            "id": "AIP-SYSTEM-LEVEL",
+            "name": "System Level Rule",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "AIP",
+            "id": "AIP-TOP-PRIORITY",
+            "name": "Top Priority Rule",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        }
+    ]
+}
