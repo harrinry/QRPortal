@@ -1,10 +1,10 @@
 {
     "id": 1039022,
-    "name": "CWE-916:Cryptographic Hash:Avoid using Insecure PBE Iteration Count",
+    "name": "Cryptographic Hash:Avoid using Insecure PBE Iteration Count",
     "href": "AIP/quality-rules/1039022",
     "critical": true,
     "description": "The iteration count used by a password-based key derivation function should not be too low to decrease attack possibilities. \n\n\nThis rule is compliant with: \nCWE-916: Use of Password Hash With Insufficient Computational Effort \nOWASP Top 10 2013 A6 Sensitive Data Exposure \nOWASP Top 10 2017 A3 Sensitive Data Exposure",
-    "output": "JAVA methods",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "An iteration count has traditionally served the purpose of increasing the cost of producing keys from a password, \n        thereby also increasing the difficulty of attack. According to PKCS #5: Password-Based Cryptography Specification, \n        Version 2.0, a minimum of 1000 iterations is recommended. This will increase the cost of exhaustive search for passwords significantly, \n        without a noticeable impact in the cost of deriving individual keys. ",
     "reference": "https://cwe.mitre.org/data/definitions/916.html \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
     "remediation": "According to PKCS #5: Password-Based Cryptography Specification, Version 2.0, a minimum of 1000 iterations is recommended.",

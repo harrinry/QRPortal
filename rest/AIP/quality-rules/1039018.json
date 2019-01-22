@@ -1,10 +1,11 @@
 {
     "id": 1039018,
-    "name": "CWE-759: Avoid using cryptography hash with hardcoded salt ",
+    "name": "Avoid using cryptography hash with hardcoded salt",
     "href": "AIP/quality-rules/1039018",
     "critical": true,
+    "associatedValueName": "Number of Java Methods",
     "description": "When using some cryptography function, a hardcoded salt could compromise system security in a way that cannot be easily remedied. \nIt is never a good idea to hardcode a salt. Not only does a hardcoded salt allow all of the project's developers to view the salt, it also makes fixing the problem extremely difficult. Once the code is in production, the salt cannot be easily changed. If attackers know the value of the salt, they can compute \"rainbow tables\" for the application and more easily determine the hashed values. \n\n\nThis rule is compliant with OWASP M5 2016 and with CISQ-OMG ASCSM-CWE-327 recommendation.",
-    "output": "JAVA methods",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "This makes it easier for attackers to pre-compute the hash value using dictionary attack techniques such as rainbow tables, effectively disabling the protection that an unpredictable salt would provide. \n\nIt should be noted that, despite common perceptions, the use of a good salt with a hash does not sufficiently increase the effort for an attacker who is targeting an individual password, or who has a large amount of computing resources available, such as with cloud-based services or specialized, inexpensive hardware. Offline password cracking can still be effective if the hash function is not expensive to compute; many cryptographic functions are designed to be efficient and can be vulnerable to attacks using massive computing resources, even if the hash is cryptographically strong.",
     "reference": "http://cwe.mitre.org/data/definitions/760.html",
     "remediation": "Do not use Hardcoded Salt.",
