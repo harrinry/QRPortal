@@ -1,0 +1,47 @@
+{
+    "id": 1040034,
+    "name": "\"StrictHttpFirewall\" should be set default HttpFirewall",
+    "href": "AIP/quality-rules/1040034",
+    "critical": true,
+    "description": "Spring Security does not consider URL path parameters when processing security constraints. By adding a URL path parameter with special encodings, an attacker may be able to bypass a security constraint. The root cause of this issue is a lack of clarity regarding the handling of path parameters in the Servlet Specification (see below). Some Servlet containers include path parameters in the value returned for getPathInfo() and some do not. Spring Security uses the value returned by getPathInfo() as part of the process of mapping requests to security constraints. In this particular attack, different character encodings used in path parameters allows secured Spring MVC static resource URLs to be bypassed.\n\nAffected Versions\n\nSpring Security\n4.1.0 - 4.1.4\n4.2.0 - 4.2.3\n5.0.0\n\nSpring Framework\n5.0.0 - 5.0.2\n4.3.0 - 4.3.13\n\nSpring Security 5.0.1, 4.2.4, and 4.1.5 has been to address CVE-2018-1199: Security bypass with static resources Users are encouraged to update immediately. One of the changes introduced for this CVE was setting StrictHttpFirewall as the default HttpFirewall. \n\nIn this rule, we check if HttpFirewall correctly set 'StrictHttpFirewall'",
+    "rationale": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.",
+    "reference": "https://pivotal.io/security/cve-2018-1199\nhttps://spring.io/blog/2018/01/30/cve-2018-1199-spring-security-5-0-1-4-2-4-4-1-5-released",
+    "remediation": "By default the StrictHttpFirewall is used. This implementation rejects requests that appear to be malicious. If it is too strict for your needs, then you can customize what types of requests are rejected. However, it is important that you do so knowing that this can open your application up to attacks. For example, if you wish to leverage Spring MVC\u2019s Matrix Variables, the following configuration could be used in XML:\n\nb:bean id=\"httpFirewall\"\n      class=\"org.springframework.security.web.firewall.StrictHttpFirewall\"\n      p:allowSemicolon=\"true\"/;\n\n;http-firewall ref=\"httpFirewall\"/;\n\n\n\nThe same thing can be achieved with Java Configuration by exposing a StrictHttpFirewall bean.\n\n@Bean\npublic StrictHttpFirewall httpFirewall() {\n    StrictHttpFirewall firewall = new StrictHttpFirewall();\n    firewall.setAllowSemicolon(true);\n    return firewall;\n}",
+    "sample": "In the XML configutaion: \n \n;b:bean id=\"httpFirewall\"\n      class=\"org.springframework.security.web.firewall.DefaultHttpFirewall\"\n      p:allowSemicolon=\"true\"/;\n\n;http-firewall ref=\"httpFirewall\"/;\n\n\n\nThe same thing can be achieved with Java Configuration by exposing a bean.\n\n@Bean\npublic DefaultHttpFirewall httpFirewall() {\n    DefaultHttpFirewall firewall = new DefaultHttpFirewall();\n    firewall.setAllowSemicolon(true);\n    return firewall;\n}",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        }
+    ]
+}
