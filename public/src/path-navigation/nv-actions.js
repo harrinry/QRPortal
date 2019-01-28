@@ -35,7 +35,7 @@ const hydrateStore = ( data ) => {
   };
 };
 
-export const hydrate = () =>{
+export const hydrate = () => {
   return (dispatch) => {
     return getHydrateData().then(
       data => dispatch(hydrateStore(data)),
