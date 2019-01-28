@@ -1,5 +1,5 @@
 import React from 'react';
-import { CLASSES, CONTACTUS, swagger, versionKey, TITLE, CASTSOFTWARE, PRIVACYPOLICY } from './app-footer-constants';
+import { CLASSES, CONTACTUS, swagger, versionKey, TITLE, CASTSOFTWARE, PRIVACYPOLICY, COPY_RIGHT } from './app-footer-constants';
 import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } from '../common/';
 import About from 'about/';
 import './style.css';
@@ -70,7 +70,7 @@ export default class AppFooter extends React.PureComponent{
             <a href={CONTACTUS} className={CLASSES.contactus}>Contact Us</a>
             <a href={PRIVACYPOLICY} className={CLASSES.contactus}>Privacy policy</a>
           </div>
-          <div className={CLASSES.copyRight}>© 2018 - CAST All Rights Reserved</div>
+          <div className={CLASSES.copyRight}>{COPY_RIGHT}</div>
           <div className={CLASSES.logoContainer}>
             <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>
           </div>
