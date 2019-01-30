@@ -19,3 +19,4 @@ export const aboutPortal = 'About Best-Practices Portal';
 export const swagger = '/swagger-ui';
 export const CASTSOFTWARE = 'https://www.castsoftware.com/';
 export const PRIVACYPOLICY = 'https://www.castsoftware.com/privacy';
+export const COPY_RIGHT = '© ' + new Date(Date.now()).getFullYear() + ' - CAST All Rights Reserved';
