@@ -3,7 +3,7 @@ const navData = [
     name: 'Health Factors',
     href: 'AIP/business-criteria',
     icon: 'img/castsoftware.svg',
-    info: 'Browse rules provided by CAST by health facotrs'
+    info: 'Browse rules provided by CAST by health factors'
   },
   {
     name: 'Standards',
