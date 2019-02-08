@@ -4,14 +4,15 @@
     "href": "AIP/quality-rules/1020830",
     "critical": false,
     "maxWeight": 1,
-    "description": "The built-in browser DOM APIs don't automatically protect you from security vulnerabilities. Not only it poses security risk, but it also creates tight coupling between your application and rendering layers which makes it difficult to run an app on multiple platforms. This rule is compliant with OWASP A7 2017, A3 2013 recommendations.",
-    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The built-in browser DOM APIs don't automatically protect you from security vulnerabilities. Not only it poses security risk, but it also creates tight coupling between your application and rendering layers which makes it difficult to run an app on multiple platforms.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "In DOM-based XSS, the client performs the injection of XSS into the page; in the other types, the server performs the injection. DOM-based XSS generally involves server-controlled, trusted script that is sent to the client, such as Javascript that performs sanity checks on a form before the user submits it. If the server-supplied script processes user-supplied data and then injects it back into the web page (such as with dynamic HTML), then DOM-based XSS is possible.",
     "reference": "https://angular.io/guide/security#avoid-direct-use-of-the-dom-apis\nhttps://angular.io/api/core/ElementRef",
     "remediation": "Avoid directly interacting with the DOM and instead use Angular Renderer2 when possible. ElementRef accessed by the following function is considered as dangerous:\n- textContent\n- style\n- replaceChild\n- removeChild\n- removeAttribute\n- removeAttributeNode\n- parentNode\n- parentElement\n- insertAdjacentHTML\n- insertAdjacentElement",
     "remediationSample": "import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appHighlight]'\n})\nexport class HighlightDirective implements OnInit {\n\n  constructor(\n    private el: ElementRef,\n    private renderer: Renderer2\n  ) { }\n\n  ngOnInit() {\n    // this.el.nativeElement.style.color = 'blue';\n    this.renderer.setStyle(this.el.nativeElement, 'color', 'blue');\n  }\n\n}",
     "sample": "import { Directive, ElementRef, OnInit } from '@angular/core';\n\n@Directive({\n  selector: '[appHighlight]'\n})\nexport class HighlightDirective implements OnInit {\n\n  constructor(\n    private el: ElementRef\n  ) { }\n\n  ngOnInit() {\n    this.el.nativeElement.style.color = 'blue';\n  }\n\n}",
-    "total": "Number of typescript function using ElementRef accessed by setter function",
+    "total": "Number of TypeScript artifacts",
     "businessCriteria": [
         {
             "id": 66032,

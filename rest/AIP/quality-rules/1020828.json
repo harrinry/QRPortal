@@ -1,15 +1,14 @@
 {
     "id": 1020828,
-    "name": "Avoid string concatenation in loops",
+    "name": "Avoid String concatenation in loops",
     "href": "AIP/quality-rules/1020828",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Single Value",
-    "description": "All string objects using concatenation in loops (for, while, do while) will be reported.",
-    "output": "Line and column for each violation \nAssociated value => number of violations found",
-    "rationale": "When placed in a loop, string concatenation in typescript us a costly operation. Strings are immutable, this creates unnecessary temporary object and results in quadratic rather than linear running time.",
-    "remediation": "It is recommended to avoid using the concatenation of the strings in a loop. ",
-    "sample": "var ls = ['India', 'China', 'France']\nfunction f1(limit : number) {\n    var i = 0;\n    while (i < limit ) {\n        console.log(a.concat(ls[i]));\n        i++;\n    }\n}\n",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "All String objects that use concatenation in loops (for, while, do while) will be reported.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "When placed in a loop, String concatenation in typescript us a costly operation.",
+    "remediation": "It is recommended to avoid using the concatenation of the strings in a loop",
     "total": "Number of TypeScript artifacts",
     "businessCriteria": [
         {

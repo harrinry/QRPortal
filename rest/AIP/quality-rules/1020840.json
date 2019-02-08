@@ -4,14 +4,15 @@
     "href": "AIP/quality-rules/1020840",
     "critical": false,
     "maxWeight": 7,
-    "description": "Angular 2+ comes with track by clause for the syntax of ngFor. It allows you to specify your own key for ngFor to identify objects by, instead of just generating unique IDs. ngFor will know not to recreate the DOM elements and reuse them. This rule is compliant with CISQ OMG ASCPEM-PRF-8 recommendation.",
-    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Angular 2+ comes with track by clause for the syntax of ngFor. It allows you to specify your own key for ngFor to identify objects by, instead of just generating unique IDs. ngFor will know not to recreate the DOM elements and reuse them.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Ensure your web application interactivity by accessing/manipulating the DOM tree with high performance queries/enumerators.",
     "reference": "https://v2.angular.io/docs/ts/latest/api/common/index/NgFor-directive.html\nhttps://blog.angular-university.io/angular-2-ngfor/\nOMG CISQ",
     "remediation": "Ensure you have added \"track by\" syntax into your ngFor block",
     "remediationSample": "@Component({\n  selector: 'my-app',\n  template: `\n    <ul>\n      <li *ngFor=\"let item of collection;trackBy: trackByFn\">{{item.id}}</li>\n    </ul>\n    <button (click)=\"getItems()\">Refresh items</button>\n  `,\n})\nexport class App {\n\n  constructor() {\n    this.collection = [{id: 1}, {id: 2}, {id: 3}];\n  }\n  \n  getItems() {\n    this.collection = this.getItemsFromServer();\n  }\n  \n  getItemsFromServer() {\n    return [{id: 1}, {id: 2}, {id: 3}, {id: 4}];\n  }\n  \n  trackByFn(index, item) {\n    return item.id; \n  }\n}",
     "sample": "@Component({\n  selector: 'my-app',\n  template: `\n    <ul>\n      <li *ngFor=\"let item of collection;\">{{item.id}}</li>\n    </ul>\n    <button (click)=\"getItems()\">Refresh items</button>\n  `,\n})\nexport class App {\n\n  constructor() {\n    this.collection = [{id: 1}, {id: 2}, {id: 3}];\n  }\n  \n  getItems() {\n    this.collection = this.getItemsFromServer();\n  }\n  \n  getItemsFromServer() {\n    return [{id: 1}, {id: 2}, {id: 3}, {id: 4}];\n  }\n}",
-    "total": "Number of Angular Components",
+    "total": "Number of HTML template artifacts",
     "businessCriteria": [
         {
             "id": 60014,
