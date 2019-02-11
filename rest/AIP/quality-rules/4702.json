@@ -1,13 +1,16 @@
 {
     "id": 4702,
-    "name": "Avoid using 'Throwable.printStackTrace()' outside a try catch block",
+    "name": "Avoid using 'Throwable.printStackTrace()' with no argument",
     "href": "AIP/quality-rules/4702",
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Associated Value",
-    "description": "'Throwable.printStackTrace()' should not be used outside a try catch block.",
-    "output": "This report lists all Java artifacts using 'Throwable.printStackTrace()' outside a try catch block. It provides the following information:\n - Artifact full name",
-    "rationale": "Using 'Throwable.printStackTrace()' outside a catch block usually means that it is used to log the stack of errors, which has the risk of filling up the stdout or the log file.",
+    "description": "Throwable.printStackTrace(...) prints a Throwable and its stack trace to some stream. If no argument is used, the default stream System.Err will be used, which could inadvertently expose sensitive information.\n\n\nThis rule will report a violation when printStackTrace is used without arguments : when the stack trace is printed to the default stream.",
+    "output": "This report lists all Java artifacts using 'Throwable.printStackTrace()'. It provides the following information:\n - Artifact full name",
+    "rationale": "Using 'Throwable.printStackTrace()' usually means that it is used to log the stack of errors, which has the risk of filling up the stdout or the log file.",
+    "reference": "http://cwe.mitre.org/data/definitions/489.html\nOWASP Top 10 2017 Category A3 - Sensitive Data Exposure",
+    "remediation": "Loggers should be used instead to print Throwables, as they have many advantages:\n\nUsers are able to easily retrieve the logs.\nThe format of log messages is uniform and allow users to browse the logs easily.",
+    "sample": "public static void main(String[] args){\n    try {\n        test();\n    } catch (UnsupportedOperationException e) {\n        System.out.println(e);\n        e.printStackTrace();\n    }\n}",
     "total": "Number of non-abstract Java artifacts.",
     "businessCriteria": [
         {
