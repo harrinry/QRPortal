@@ -1,17 +1,17 @@
 {
     "id": 1055032,
-    "name": "Avoid using NSPredicate(format:)",
+    "name": "Avoid using NSPredicate(format:) (Swift)",
     "href": "AIP/quality-rules/1055032",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Single Value",
-    "description": "An attacker could access other user information thanks to string injection. Manipulating input, an attacker could fetch more data from the database than what was originally intended by the application.\nThe injection could be done in NSPredicate using the methods\nformat:,\nformat:arguments:\nThe injection point will be part of the format string as \"...%@...\". \nThis rule is compliant with CISQ OMG ASCSM-CWE-134 and ASCSM-CWE-89 recommendations and with OWASP 2016-M7 recommendation",
-    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "An attacker could access other user information thanks to string injection. Manipulating input, an attacker could fetch more data from the database than what was originally intended by the application.\nThe injection could be done in NSPredicate using the methods\nformat:,\nformat:arguments:\nThe injection point will be part of the format string as \"...%@...\".",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "An attacker could access other user information thanks to string injection through the format method. This is why it is highly recommended to avoid the usage of the API",
     "reference": "https://developer.apple.com/library/mac/documentation/Security/Conceptual/SecureCodingGuide/Articles/ValidatingInput.html#//apple_ref/doc/uid/TP40007246-SW3",
-    "remediation": "Don't use the NSPredicate format API, prefer using combination API",
+    "remediation": "Don't use the NSPredicate format API or only with string components of trusted origin. Otherwise prefer using component API.",
     "sample": "let resultPredicate = NSPredicate(format: \"name contains[c] %@\", searchText)",
-    "total": "Number of  Swift artifacts",
+    "total": "Number of Swift artifacts",
     "businessCriteria": [
         {
             "id": 66031,
