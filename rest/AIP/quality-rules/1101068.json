@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1101068",
     "critical": false,
     "maxWeight": 1,
-    "associatedValueName": "object",
+    "associatedValueName": "Synonym name",
     "description": "Synonyms and aliases should not have two definitions: one private and one public",
     "output": "This report lists all Synonyms with both private and public definition\nIt provides the following information: \nPublic Synonym Full Name, Private Synonym Name",
     "rationale": "Presence of a synonym and aliases with several definitions induces code complexity.",
@@ -12,7 +12,7 @@
     "remediation": "Reconsider the use of synonym with multiple definitions: one idea could be to rename one of them",
     "remediationSample": "CREATE PUBLIC SYNONYM emp FOR SCOTT.EMP;\n\nALTER SESSION SET CURRENT_SCHEMA = joe;\nCREATE SYNONYM joe_emp FOR SCOTT.EMP;",
     "sample": "CREATE PUBLIC SYNONYM emp FOR SCOTT.EMP;\n\nALTER SESSION SET CURRENT_SCHEMA = joe;\nCREATE SYNONYM emp FOR SCOTT.EMP;",
-    "total": "The total procedure counts Synonyms.",
+    "total": "Number of Synonyms.",
     "businessCriteria": [
         {
             "id": 60014,

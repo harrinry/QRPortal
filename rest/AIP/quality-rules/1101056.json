@@ -9,7 +9,7 @@
     "output": "This report lists all Tables with more than <%PARAM%> Columns\nIt provides the following information: \n\n- Table name\n- Table full name\n- Number of Columns",
     "rationale": "All tables should not have more than <%PARAM%> Columns.\n\nData redundancy is good for backups but not for table data. Each table should contain a unique data set that doesn\u2019t repeat data in other table locations.",
     "remediation": "Consider normalizing the table design.\n\nNormalization is a database design technique which organizes tables in a manner that reduces redundancy and dependency of data.\nIt divides larger tables to smaller tables and links them using relationships.",
-    "total": "The total procedure counts Tables.",
+    "total": "Number of Tables.",
     "businessCriteria": [
         {
             "id": 66031,
