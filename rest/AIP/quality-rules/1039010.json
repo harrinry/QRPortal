@@ -1,6 +1,6 @@
 {
     "id": 1039010,
-    "name": "CWE-327:Avoid using risky cryptographic hash(JEE) ",
+    "name": "Avoid using risky cryptographic hash(JEE) ",
     "href": "AIP/quality-rules/1039010",
     "critical": true,
     "description": "MD5/SHA1 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that's used as additional input to a one-way function. \n        Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. \n        As a consequence, somebody can break your encryption or log on to your website. \nMD2, MD4 are also considered as week hash functions and should not be used.",

@@ -1,6 +1,6 @@
 {
     "id": 1039008,
-    "name": "CWE-600: Avoid thrown Exceptions in servlet methods",
+    "name": "Avoid thrown Exceptions in servlet methods",
     "href": "AIP/quality-rules/1039008",
     "critical": true,
     "description": "Even though the signatures for methods in a servlet include throws IOException, ServletException, it's a bad idea to let such exceptions be thrown. \n\nThis rule report all exceptions in methods named \"do*\" ( doPost; doGet...) are explicitly handled in servlet classes. \n\n",

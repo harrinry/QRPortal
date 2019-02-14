@@ -10,7 +10,7 @@
     "reference": "http://cwe.mitre.org/data/definitions/293 \nhttp://cwe.mitre.org/data/definitions/807 \nOWASP 2017 Category A2 - Broken Authentication",
     "remediation": "Use of referer in HTTP request header field is not recommended",
     "remediationSample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(headerName); // VIOLATION FIXED\n    //...\n  } \n} ",
-    "sample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(\"referer\"); // VIOLATION \t\t\t\t\n    if(isTrustedReferer(referer)){ \n      //.. \n    } \n    //... \n  } \n}",
+    "sample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(\"referer\"); // VIOLATION\n    if(isTrustedReferer(referer)){ \n      //.. \n    } \n    //... \n  } \n}",
     "total": "Number of Java Artifact",
     "businessCriteria": [
         {
