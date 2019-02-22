@@ -1,14 +1,16 @@
 {
     "id": 1024042,
-    "name": "CWE-327: Avoid using weak encryption algorithm (Android)",
+    "name": "Avoid using weak encryption algorithm (Android)",
     "href": "AIP/quality-rules/1024042",
     "critical": true,
-    "description": "For Android application : When you have the freedom to choose which algorithm to use (such as) when you do not require compatibility with a third-party system), But it's more recommend using the following algorithms: \n\nCipher: AES in either CBC or GCM mode with 256-bit keys (such as AES/GCM/NoPadding) \nMessageDigest: SHA-2 family (eg, SHA-256) \nMac: SHA-2 family HMAC (eg, HMACSHA256) \nSignature:SHA-2 family with ECDSA (eg, SHA256withECDSA) \n\nThis rule is compliant with \nCWE-326 - Inadequate Encryption Strength \nCWE-327 - Use of a Broken or Risky Cryptographic Algorithm \nOWASP Top 10 2013 : A6 Sensitive Data Exposure \nOWASP Top 10 2017 : A3 Sensitive Data Exposure",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "For Android application : When you have the freedom to choose which algorithm to use (such as) when you do not require compatibility with a third-party system), But it's more recommend using the following algorithms: \n\nCipher: AES in either CBC or GCM mode with 256-bit keys (such as AES/GCM/NoPadding) \nMessageDigest: SHA-2 family (eg, SHA-256) \nMac: SHA-2 family HMAC (eg, HMACSHA256) \nSignature:SHA-2 family with ECDSA (eg, SHA256withECDSA)",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "When the software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required, an attacker may be able to decrypt the data using brute force attacks. \nA weak encryption scheme can be subjected to brute force attacks that have a reasonable chance of succeeding using current attack method ",
     "reference": "https://cwe.mitre.org/data/definitions/780.html \nhttps://cwe.mitre.org/data/definitions/327.html \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
     "remediation": "Example 1:\nAvoid using ECB block chain (which is applied by default unless specified otherwise) when using Symmetric AES ciphers for encryption. Use GCM or CBC block chaining methods instead:\n\nCipher.getInstance(\"AES/GCM/NOPADDING\");\n\nECB is insecure as it does not output unique encryptions when given duplicate data (See ECB Penguin for a visual explanation).\n\nExample 2:\nDon\u2019t use hard coded values for cipher initialization. Integrity of the cipher is compromised if it isn\u2019t given unique information for every operation. Provide a SecureRandom to the init method of ciphers as the default values may not be random for older versions:\n\nSecureRandom secureRandom = new SecureRandom();\nbyte[] iv = new byte[IV_LENGTH];    \nsecureRandom.nextBytes(iv);    \nmyCipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(iv));",
     "sample": "Example 1:\n\nCipher.getInstance(\"AES\");\n\nExample 2:\n\nmyCipher.init(Cipher.ENCRYPT_MODE, key);\nbyte[] iv = myCipher.getIV();",
-    "total": "Number of violation",
+    "total": "Number of Android artifacts",
     "businessCriteria": [
         {
             "id": 20140522,
