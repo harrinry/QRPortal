@@ -1,0 +1,64 @@
+{
+    "id": 1042010,
+    "name": "Avoid using ParametersInterceptor with 2.3.16 (and older)",
+    "href": "AIP/quality-rules/1042010",
+    "critical": true,
+    "associatedValueName": "Number of violation patterns",
+    "description": "Apache Struts 2 (2.3.16 and older) presnets a remote command injection vulnerability resulting from insufficient validation performed by the ParametersInterceptor, allowing access to the getClass() method through the class parameter. This could allow an attacker to manipulate the ClassLoader and execute arbitrary Java code using crafted action parameters.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",
+    "rationale": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.",
+    "reference": "https://tools.cisco.com/security/center/viewAlert.x?alertId=33237\nhttps://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0113\nhttps://struts.apache.org/core-developers/struts-default-xml.html",
+    "remediation": "If you cannot upgrade to version 2.3.16.2 immediately - which is strongly advised - you can apply below workarounds:\n\n\nReplace the previous class related pattern with '(.*\\.|^|.*|\\[('|\"))class(\\.|('|\")]|\\[).*' on the list of excludeParams as below\n\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">(.*\\.|^|.*|\\[('|\"))(c|C)lass(\\.|('|\")]|\\[).*,^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>\n\n\n\nPlease be aware that this workaround is not as complete as the corrections in Struts 2.3.16.2",
+    "sample": "<interceptors>\n  <interceptor-stack name=\"appDefault\">\n    <interceptor-ref name=\"defaultStack\">\n       <param name=\"exception.logEnabled\">true</param>\n       <param name=\"exception.logLevel\">ERROR</param>\n    </interceptor-ref>\n  </interceptor-stack>\n</interceptors>\n\n<default-interceptor-ref name=\"appDefault\" />",
+    "total": "Number interceptor param field in struts config XML file",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A4-2013",
+            "name": "Insecure Direct Object References",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References",
+            "description": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2017",
+            "name": "Broken Access Control",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
+            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A10-2017",
+            "name": "Insufficient Logging&Monitoring",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A10-Insufficient_Logging%26Monitoring",
+            "description": "Insufficient logging and monitoring, coupled with missing or ineffective integration with incident response, allows attackers to further attack systems, maintain persistence, pivot to more systems, and tamper, extract, or destroy data. Most breach studies show time to detect a breach is over 200 days, typically detected by external parties rather than internal processes or monitoring."
+        }
+    ]
+}

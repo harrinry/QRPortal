@@ -1,0 +1,65 @@
+{
+    "id": 1042008,
+    "name": "Avoid using  ActionForward with untrusted data source to prevent file path disclosure",
+    "href": "AIP/quality-rules/1042008",
+    "critical": true,
+    "associatedValueName": "Number of defects",
+    "description": "Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.\n\nA file disclosure occur when:\n1. Data enters a program from an untrusted source.\n2. The data is used to dynamically construct a path.\n\nExample 1: The following code takes untrusted data and uses it to build a path which is used in a server side forward.\n\n...\n    String returnURL = request.getParameter(\"returnURL\");\n    return new ActionForward(returnURL);\n\n\nIf an attacker provided a URL with the request parameter matching a sensitive file location, they would be able to view that file. For example, \"http://www.yourcorp.com/webApp/logic?returnURL=WEB-INF/applicationContext.xml\" would allow them to view the applicationContext.xml of the application.\nOnce the attacker had the applicationContext.xml, they could locate and download other configuration files referenced in the applicationContext.xml or even class or jar files. This would allow attackers to gain sensitive information about an application and target it for other types of attack.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",
+    "rationale": "Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.",
+    "reference": "https://cwe.mitre.org/data/definitions/552.html",
+    "remediation": "Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.",
+    "remediationSample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward NOT vulnerable code ******/\n        //returnURL moved from path to name (safe argument)       \n        ActionForward forward6 = new ActionForward(returnURL, \"path\", true); //NO VIOLATION",
+    "sample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward vulnerable code ******/\n        ActionForward forward = new ActionForward(returnURL); //VIOLATION \n        ActionForward forward2 = new ActionForward(returnURL, true); //VIOLATION \n        ActionForward forward3 = new ActionForward(\"name\", returnURL, true); //VIOLATION \n        ActionForward forward5 = new ActionForward();\n        forward5.setPath(returnURL); //VIOLATION  ",
+    "total": "Number of Java Servlet Method",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 1,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-552",
+            "name": "Files or Directories Accessible to External Parties",
+            "url": "https://cwe.mitre.org/data/definitions/552.html",
+            "description": "Files or directories are accessible in the environment that should not be."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A4-2013",
+            "name": "Insecure Direct Object References",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References",
+            "description": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2017",
+            "name": "Broken Access Control",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
+            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+        }
+    ]
+}
