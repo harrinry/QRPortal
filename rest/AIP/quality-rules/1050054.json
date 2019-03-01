@@ -4,14 +4,14 @@
     "href": "AIP/quality-rules/1050054",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Number of violation patterns",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for one-line blocks that are not surrounded by curly braces.",
-    "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- number of violation patterns\n- Bookmarks for violation patterns found in source code:\n  - block without curly braces",
-    "rationale": "If you have only one instruction in a block, putting curly braces around it is optional. However, this leads to fragile code, because you may later add another statement to the block, and forget the curly braces that become crucial at this point.\n\nIt's simpler to systematically add them to avoid any future issue\n",
+    "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- number of violation patterns\n- Bookmarks for violation occurrences found in source code:\n  - block without curly braces",
+    "rationale": "If you have only one instruction in a block, putting curly braces around it is optional. However, this leads to fragile code, because you may later add another statement to the block, and forget the curly braces that become crucial at this point.\n\nIt's simpler to systematically add them to avoid any future issue",
     "remediation": "Add curly braces, even for a one line block.",
     "remediationSample": "void f(bool cond)\n{\n    if(cond)\n    {\n        g();\n    }\n}",
     "sample": "void f(bool cond)\n{\n    if(cond)\n        g();\n}",
-    "total": "Number of C++ functions.",
+    "total": "Number of Objective-C artifacts",
     "businessCriteria": [
         {
             "id": 60012,

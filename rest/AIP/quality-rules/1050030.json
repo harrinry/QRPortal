@@ -3,12 +3,14 @@
     "name": "Ensure the Objective-C error condition check is not fragile",
     "href": "AIP/quality-rules/1050030",
     "critical": true,
-    "description": "When methods return an error parameter by reference, code MUST switch on the returned value and MUST NOT switch on the error variable. This rule is compliant with OMG CISQ ASCRM-RLB-01 recommendation.",
-    "output": "It provides the following information: \nObject full name, number of violations",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "When methods return an error parameter by reference, code MUST switch on the returned value and MUST NOT switch on the error variable.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Exceptions or errors can lead to erroneous program behavior if they are not properly handled.",
     "reference": "https://github.com/NYTimes/objective-c-style-guide#error-handling\nhttps://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ErrorHandlingCocoa/CreateCustomizeNSError/CreateCustomizeNSError.html#//apple_ref/doc/uid/TP40001806-CH204-SW1",
-    "remediationSample": "NSError *error; \nif (![self trySomethingWithError:&error]) { \n    // Handle Error \n}\n",
-    "sample": "NSError *error; \n[self trySomethingWithError:&error]; \nif (error) { \n    // Handle Error\n",
+    "remediationSample": "NSError *error; \nif (![self trySomethingWithError:&error]) { \n    // Handle Error \n}",
+    "sample": "NSError *error; \n[self trySomethingWithError:&error]; \nif (error) { \n    // Handle Error",
+    "total": "Number of Objective-C artifacts",
     "businessCriteria": [
         {
             "id": 20140522,
