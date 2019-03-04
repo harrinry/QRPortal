@@ -5,12 +5,12 @@
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
-    "description": "This report lists all artifacts without authentication activated. Accessing a database without proper authentication is not permitted. ",
+    "description": "This report lists all artifacts without authentication activated. Accessing a database without proper authentication is not permitted.",
     "output": "This report lists all artifacts without authentication activated .\nIt provides the following information:\nartifact full name",
-    "rationale": "Avoid having MongoDB databases access without authentication activated.Accessing a database without a proper authentication will harm security of data. One should set user authentication over a database. ",
+    "rationale": "Avoid having MongoDB databases access without authentication activated.Accessing a database without a proper authentication will harm security of data. One should set user authentication over a database.",
     "remediation": "Set authentication for database before accessing.",
-    "remediationSample": "    \n\t\t MongoClientURI connstr = new MongoClientURI(\"mongodb://admin:@localhost:27017\");\n    \t DB database = connstr.getDB(\"IndexingCheck\");\n\t\t \n\t\t MongoClientURI connstr = new MongoClientURI(\"mongodb://:password@localhost:27017\");\n    \t DB database = connstr.getDB(\"IndexingCheck\");\n\t\t \n\t\t MongoClient mongo = new MongoClient(\"localhost\", 27017);\n\t\t \n\t\t \n\t\t",
-    "sample": "\n\t\tMongoClientURI connstr = new MongoClientURI(\"mongodb://admin:password@localhost:27017\");\n    \tDB database = connstr.getDB(\"IndexingCheck\");\n\t\t\n\t\tor using springData\n\t\t \n\t\tApplicationContext ctx = new ClassPathXmlApplicationContext(\"web_configg.xml\");\n\t\t\n\t\tSpringMongoConfig1 mongoOperation1 = (SpringMongoConfig1) ctx.getBean(\"mongoURI\");\n\t\t\n\t\tMongoClient mongoClient = new MongoClient(mongoOperation1.uri);\t\n\t\t",
+    "remediationSample": "MongoClientURI connstr = new MongoClientURI(\"mongodb://admin:password@localhost:27017\");\nDB database = connstr.getDB(\"IndexingCheck\");\n        \n// or using springData\n         \nApplicationContext ctx = new ClassPathXmlApplicationContext(\"web_configg.xml\");\n        \nSpringMongoConfig1 mongoOperation1 = (SpringMongoConfig1) ctx.getBean(\"mongoURI\");\n        \nMongoClient mongoClient = new MongoClient(mongoOperation1.uri);",
+    "sample": "MongoClient mongo = new MongoClient(\"localhost\", 27017);",
     "total": "The total procedure counts MongoDB Access.",
     "businessCriteria": [
         {

@@ -1,0 +1,55 @@
+{
+    "id": 1101920,
+    "name": "Avoid using explain() in production code (JEE)",
+    "href": "AIP/quality-rules/1101920",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Number of violation patterns",
+    "description": "You can expose sensitive information, slowing down the browser or break workflow of websites if you let log statements in production code. \n        This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
+    "output": "This report lists all artifacts using db.collection.find().explain(). \nIt provides the following information: \nartifact full name",
+    "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. \nIf write access is not properly restricted, then attackers can modify and possibly delete the data, \ncausing incorrect results and possibly a denial of service.",
+    "remediation": "Do not use explain() in production code",
+    "remediationSample": "Do not use explain() in production code\n        ",
+    "sample": "Mongo mongo = new Mongo(...)\nDB db = mongo.getDB(\"db\");\nDBCollection collection = database.getCollection(\"document_name\");\n\nvar explanation = collection.find({document_name: {document_name.Name:\"name\"}}).explain();",
+    "total": "The total procedure counts MongoDB collection.",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ]
+}
