@@ -4,19 +4,24 @@
     "href": "AIP/quality-rules/1101920",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Number of violation patterns",
-    "description": "You can expose sensitive information, slowing down the browser or break workflow of websites if you let log statements in production code. \n        This rule is compliant with OWASP 2013 A6 and 2017 A3 - Sensitive Data Exposure",
-    "output": "This report lists all artifacts using db.collection.find().explain(). \nIt provides the following information: \nartifact full name",
-    "rationale": "If read access is not properly restricted, then attackers can steal the sensitive information. \nIf write access is not properly restricted, then attackers can modify and possibly delete the data, \ncausing incorrect results and possibly a denial of service.",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Explain() provides information on the query plan for the db.collection.find(). The explain() method returns a document with the query plan and, optionally, the execution statistics.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Having explain() in the production code can slow down the performance of the code and it is not required.",
     "remediation": "Do not use explain() in production code",
-    "remediationSample": "Do not use explain() in production code\n        ",
-    "sample": "Mongo mongo = new Mongo(...)\nDB db = mongo.getDB(\"db\");\nDBCollection collection = database.getCollection(\"document_name\");\n\nvar explanation = collection.find({document_name: {document_name.Name:\"name\"}}).explain();",
-    "total": "The total procedure counts MongoDB collection.",
+    "remediationSample": "// DBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject);\n\n//.explain() not to be used\n        ",
+    "sample": "Mongo mongo = new Mongo(...)\nDB db = mongo.getDB(\"db\");\nDBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject).explain();",
+    "total": "Number of MongoDB collection",
     "businessCriteria": [
         {
-            "id": 60012,
-            "name": "Changeability",
-            "href": "AIP/business-criteria/60012"
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
         },
         {
             "id": 66031,
@@ -24,20 +29,15 @@
             "href": "AIP/business-criteria/66031"
         },
         {
-            "id": 60013,
-            "name": "Robustness",
-            "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60011,
-            "name": "Transferability",
-            "href": "AIP/business-criteria/60011"
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
         }
     ],
     "technicalCriteria": [
         {
-            "id": 61024,
-            "name": "Programming Practices - Structuredness",
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
             "weight": 5,
             "critical": false
         }

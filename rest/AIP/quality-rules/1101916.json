@@ -4,14 +4,14 @@
     "href": "AIP/quality-rules/1101916",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Number of violation patterns",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This report lists all artifacts with compound indexes and having different index ordering in collection access.",
-    "output": "This report lists all artifacts with compound indexes and having different indexes.\nIt provides the following information:\nartifact full name",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "When using compound indexes, avoid having different indexes. Indeed, Mongo DB give the compound index, when we have index on more than two column, it is always good to have the indexes put the same way,it is highly recommended to have the indexes, either both positives(ascending) or either both negatives(descending).",
     "remediation": "Use instead indexes, either both positives(ascending) or either both negatives(descending)",
     "remediationSample": "MongoClient conn_str = new MongoClient(\"localhost\", 27017);\n        \n        DB db = conn_str.getDB(\"database\");\n        \n        DBCollection docColl = db.getCollection(\"document\");\n        \n        docColl.createIndex(new BasicDBObject(\"filed_1\",1), \n        \n        new BasicDBObject(\"_id\", 1), \n        \n        new BasicDBObject(\"filed_2\", 1));",
     "sample": "MongoClient conn_str = new MongoClient(\"localhost\", 27017);\n        \n        DB db = conn_str.getDB(\"database\");\n        \n        DBCollection docColl = db.getCollection(\"document\");\n        \n        docColl.createIndex(new BasicDBObject(\"filed_1\",1),\n        \n        new BasicDBObject(\"_id\", -1),\n        \n        new BasicDBObject(\"filed_2\", -1));",
-    "total": "The total procedure counts MongoDB Access.",
+    "total": "Number of MongoDB collection",
     "businessCriteria": [
         {
             "id": 60012,

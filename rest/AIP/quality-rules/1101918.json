@@ -4,14 +4,14 @@
     "href": "AIP/quality-rules/1101918",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Number of violation patterns",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This report lists all artifacts without authentication activated. Accessing a database without proper authentication is not permitted.",
-    "output": "This report lists all artifacts without authentication activated .\nIt provides the following information:\nartifact full name",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Avoid having MongoDB databases access without authentication activated.Accessing a database without a proper authentication will harm security of data. One should set user authentication over a database.",
     "remediation": "Set authentication for database before accessing.",
     "remediationSample": "MongoClientURI connstr = new MongoClientURI(\"mongodb://admin:password@localhost:27017\");\nDB database = connstr.getDB(\"IndexingCheck\");\n        \n// or using springData\n         \nApplicationContext ctx = new ClassPathXmlApplicationContext(\"web_configg.xml\");\n        \nSpringMongoConfig1 mongoOperation1 = (SpringMongoConfig1) ctx.getBean(\"mongoURI\");\n        \nMongoClient mongoClient = new MongoClient(mongoOperation1.uri);",
     "sample": "MongoClient mongo = new MongoClient(\"localhost\", 27017);",
-    "total": "The total procedure counts MongoDB Access.",
+    "total": "Number of MongoDB connection",
     "businessCriteria": [
         {
             "id": 60012,
