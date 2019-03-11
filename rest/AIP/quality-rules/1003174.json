@@ -4,9 +4,13 @@
     "href": "AIP/quality-rules/1003174",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.forbiddentypes.UseGenericTypeRule",
-    "rationale": "Reports fields that are not strongly typed",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports artifacts with variables that are not strongly typed.",
+    "output": "This QR reports artifacts with variables that are not strongly typed. It provides following information:\n- Artifact full name",
+    "rationale": "Strongly typed variables increases readability and maintainability of the code.",
+    "remediation": "Use strongly typed variables.",
+    "remediationSample": "package {\n   public class Foo\n   {\n\n      public function Foo() {\n         var bar : int; // violation removed\n      }\n   }\n}",
+    "sample": "package {\n   public class Foo\n   {\n\n      public function Foo() {\n         var bar : *; // VIOLATION      \n      }\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

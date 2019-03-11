@@ -1,13 +1,15 @@
 {
     "id": 1003150,
-    "name": "Avoid event dispatched in a constructor (Flex)",
+    "name": "Avoid event dispatched from a constructor (Flex)",
     "href": "AIP/quality-rules/1003150",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.event.ConstructorDispatchingEventRule",
-    "rationale": "This is pointless, since event listeners cannot be attached to an object before it has been constructed, so nothing can ever hear the event",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports constructors dispatching events.",
+    "output": "This QR reports constructors dispatching events. It provides following information:\n\n- Function full name",
+    "rationale": "Since event listeners cannot be attached to an object before it has been constructed, so nothing can ever hear the event.",
+    "remediation": "Do not use constructors to dispatch event.",
     "sample": "public class BigModel   \n{\n   public function BigModel()\n   {    \n      dispatchEvent( new Event( \"pointlessEvent\" ) );     \n   }\n}",
+    "total": "Number of functions",
     "businessCriteria": [
         {
             "id": 20140522,

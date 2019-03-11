@@ -1,12 +1,16 @@
 {
     "id": 1003166,
-    "name": "Avoid using Object class in variables (Flex)",
+    "name": "Avoid dynamic (Object) type variables (Flex)",
     "href": "AIP/quality-rules/1003166",
     "critical": false,
     "maxWeight": 5,
-    "description": "Reports fields based on Object class",
-    "rationale": "It is a bad practice to use the dynamic class Object. Prefer using strongly typed object, or marker interface in order to avoid silent compilation errors while refactoring",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports functions\\getters\\setters that have declaration for dynamic (Object) type variables.",
+    "output": "This QR reports functions\\getters\\setters that have declaration for dynamic (Object) type variables. It provides following information:\n- function\\getter\\setter full name",
+    "rationale": "It is a bad practice to use the dynamic class Object.",
+    "remediation": "Prefer using strongly typed object, or marker interface in order to avoid silent compilation errors while refactoring.",
+    "remediationSample": "public class Foo\n{\n   public function afunc() : void {\n      var bar : int; // violation removed\n      //...\n   }\n}",
+    "sample": "public class Foo\n{\n   public function afunc() : void {\n      var bar : Object; // VIOLATION      \n      //...\n   }\n}",
+    "total": "Number of functions\\getters\\setters",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -1,13 +1,16 @@
 {
     "id": 1003152,
-    "name": "Avoid DispatchEvent function not dispatching constant strings (Flex)",
+    "name": "Avoid dispatching events using hardcoded strings (Flex)",
     "href": "AIP/quality-rules/1003152",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.event.DispatchHardCodedEventNameRule",
-    "rationale": "You should not dispatch a plain string. If you rename this string, you need to replace the string listener as well. Use constants instead",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that dispatch events using hardcoded strings.",
+    "output": "This QR reports artifacts that dispatch events using hardcoded strings. It provides following information:\n\n- Artifact full name",
+    "rationale": "Events should not be dispatched using hardcoded strings for maintainability reasons.",
+    "remediation": "Use constant strings to dispatch events.",
     "sample": "public class Foo \n{\n   public function bar() : void\n   {\n      dispatch( new Event( \"myHardCodedEvent\" ) ); // VIOLATION\n   }\n}",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

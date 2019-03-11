@@ -1,12 +1,15 @@
 {
     "id": 1003120,
-    "name": "Avoid ModelLocator not only accessible from the main application file (Flex)",
+    "name": "Cairngorm: Avoid ModelLocator not only accessible from the main application file (Flex)",
     "href": "AIP/quality-rules/1003120",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.cairngorm.ReferenceModelLocatorOutsideTheMainApplicationRule",
-    "rationale": "The ModelLocator should be only accessible from the main application file. Then sub-models should be injected to the nested views.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that make model locator accessible outside application file.",
+    "output": "This QR reports artifacts that make model locator accessible outside application file. It provides following information:\n\n- Artifact full name",
+    "rationale": "As part of having  sub-models injected into the nested views, model locator should only be accessible from main application file.",
+    "remediation": "Make ModelLocator only accessible from the main application file.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

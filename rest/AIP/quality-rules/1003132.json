@@ -1,12 +1,15 @@
 {
     "id": 1003132,
-    "name": "Avoid switch statement with too few branches (Flex)",
+    "name": "Avoid switch statement with less than 3 cases (Flex)",
     "href": "AIP/quality-rules/1003132",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule reports methods with switch statements having less than 3 cases",
-    "rationale": "Switch statements are designed for complex branches, and allow branches to share treatment. Using a switch for only 2 branches is ill advised, as switches are not as easy to understand as if. In this case, it's most likely is a good idea to use a if statement",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "Rule reports artifacts with switch statements having less than 3 cases.",
+    "output": "Rule reports artifacts with switch statements having less than 3 cases. It provides following information:\n\n- Artifact full name",
+    "rationale": "Switch statements are designed for complex branches, and allow branches to share treatment. Using a switch for only 2 branches is ill advised, as switches are not as easy to understand as if. In this case, it's most likely is a good idea to use a if statement.",
+    "remediation": "Use if\\else statement for instead of switch statements with two cases.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

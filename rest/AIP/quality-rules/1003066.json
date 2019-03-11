@@ -1,12 +1,15 @@
 {
     "id": 1003066,
-    "name": "Avoid logger not correctly formatted (Flex)",
+    "name": "Avoid incorrectly formatted logger (Flex)",
     "href": "AIP/quality-rules/1003066",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.style.BadFormatLoggerRule",
-    "rationale": "Reports incorrectly formatted loggers",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts with incorrectly formatted logger.",
+    "output": "This QR reports artifacts with incorrectly formatted logger. It provides following information:\n\n- Artifact full name",
+    "rationale": "Incorrectly formatted logger would not be useful as intended.",
+    "remediation": "Have logger that is correctly formatted.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 66033,

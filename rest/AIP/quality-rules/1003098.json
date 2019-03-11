@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003098",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.NonStaticConstantFieldRule",
-    "rationale": "A constant field should be static.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that are non-static constant fields.",
+    "output": "This QR reports artifacts that are non-static constant fields. It provides following information:\n\n- Artifact full name",
+    "rationale": "A non-static constant field can always be made static.",
+    "remediation": "A constant field should be static.",
     "sample": "public class MyObject {\n   public static const MY_STATIC_CONSTANT : String = \"myStaticConstant\";\n   public const MY_NON_STATIC_CONSTANT : String = \"myStaticConstant\"; // VIOLATION\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

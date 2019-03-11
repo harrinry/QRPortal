@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003104",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.parsley.InaccessibleMetaDataRule",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that have inaccessible Parsley metadata.",
+    "output": "This QR reports artifacts that have inaccessible Parsley metadata. It provides following information:\n\n- Artifact full name",
     "rationale": "Parsley can only process metadata that is placed onto public members.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Make parsley metadata accessible.",
     "sample": "[MessageHandler]\nprivate function doSomething() : void // VIOLATION \n{      \n}",
+    "total": "Number of artifact",
     "businessCriteria": [
         {
             "id": 60012,

@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003092",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.css.UseCssInsteadOfEmbedMetaDataRule",
-    "rationale": "Detects classes with embed metadata in source code where a stylesheet may be cleaner",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports flex classes which use embedded metadata where CSS would be cleaner approach.",
+    "output": "This QR reports flex classes which use embedded metadata where CSS would be cleaner approach. It provides following information:\n\n- Flex class full name",
+    "rationale": "It is cleaner to have CSS than to embed metadata in source.",
+    "remediation": "Use css instead of embedding metadata in source.",
+    "total": "Number of Flex classes",
     "businessCriteria": [
         {
             "id": 66031,

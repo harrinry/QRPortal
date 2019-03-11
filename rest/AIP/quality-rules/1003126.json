@@ -1,12 +1,15 @@
 {
     "id": 1003126,
-    "name": "Avoid method with more than one exit point (Flex)",
+    "name": "Avoid more than one return path (Flex)",
     "href": "AIP/quality-rules/1003126",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.OnlyOneReturnRule",
-    "rationale": "A method should have only one exit point, and that should be the last statement in the method",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports functions\\getters or setters that have more than one return path.",
+    "output": "This QR reports functions\\getters or setters that have more than one return path. It provides following information:\n\n- Artifact full name",
+    "rationale": "A function, getter or setters should have only one return path, and that should be the last statement.",
+    "remediation": "Refactor the code to have only one return path.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

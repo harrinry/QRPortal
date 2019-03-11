@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003042",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.ClassAndExtensionAreIdenticalRule",
-    "rationale": "Detects classes extended from a class with same name",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports class which has same name as extension.",
+    "output": "This QR reports class which has same name as extension. It provides following information:\n\n- Class Full name",
+    "rationale": "Same named extension and class reduces readability of the code.",
+    "remediation": "Name class that is different from extension name.",
     "sample": "package com.MyCompany\n{\n   public class SomeClass extends mx.SomeClass // VIOLATION\n   {\n   }\n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

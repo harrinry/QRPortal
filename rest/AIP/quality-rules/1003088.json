@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003088",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.AlertShowRule",
-    "rationale": "You should not Alert.show() directly. If an error occurred in the system, you should probably use an ErrorManager to have a consistent way to manage those errors.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that has direct call to Alert.show.",
+    "output": "This QR reports artifacts that has direct call to Alert.show. It provides following information:\n\n- Artifact full name",
+    "rationale": "You should not Alert.show() directly. If an error occurs it would block application.",
+    "remediation": "Use ErrorManager to have a consistent way to manage errors.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

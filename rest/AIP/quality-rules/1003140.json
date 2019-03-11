@@ -1,13 +1,16 @@
 {
     "id": 1003140,
-    "name": "Avoid ChangeWatcher class that uses hard coded strings to specify the attribute name, to listen to. Prefer listening to events or setters (Flex)",
+    "name": "Avoid use of ChangeWatcher class (Flex)",
     "href": "AIP/quality-rules/1003140",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.binding.ChangeWatcherRule",
-    "rationale": "ChangeWatcher class uses hard coded strings to specify the attribute name, to listen to. Prefer listening to events or setters",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that use use of ChangeWatcher class.",
+    "output": "This QR reports artifacts that use use of ChangeWatcher class. It provides following information:\n\n- Artifact full name",
+    "rationale": "ChangeWatcher class uses hard coded strings to specify the attribute name, to listen to.",
+    "remediation": "Prefer listening to events or setters.",
     "sample": "public final class Title \n{\n private var watcher : ChangeWatcher; // VIOLATION\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

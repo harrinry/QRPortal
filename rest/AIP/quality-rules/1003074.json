@@ -1,13 +1,14 @@
 {
     "id": 1003074,
-    "name": "Avoid modelLocator that is Bindable at a class level (Flex)",
+    "name": "Cairngorm: Avoid modelLocator that is Bindable at a class level (Flex)",
     "href": "AIP/quality-rules/1003074",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.cairngorm.BindableModelLocatorRule",
+    "description": "This QR reports package with model locator that is bindable at class level.",
+    "output": "This QR reports package with model locator that is bindable at class level. It provides following information:\n\n- package full name",
     "rationale": "A bindable ModelLocator could leads to performance issues due to bindings",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
     "sample": "[Bindable]\npublic class BindableModelLocator // VIOLATION \n{      \n}",
+    "total": "Number of packages",
     "businessCriteria": [
         {
             "id": 60014,

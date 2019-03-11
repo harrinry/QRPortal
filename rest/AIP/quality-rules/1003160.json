@@ -1,14 +1,16 @@
 {
     "id": 1003160,
-    "name": "Avoid test containing a hard coded boolean value. (Flex)",
+    "name": "Avoid conditions with hardcoded boolean values (Flex)",
     "href": "AIP/quality-rules/1003160",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.TrueFalseConditionRule",
-    "rationale": "Reports functions with tests containing a hard coded boolean value.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
-    "remediation": "E.g. (EXPRESSION == true) can be replaced with (EXPRESSION)",
+    "associatedValueName": "no-value",
+    "description": "This QR reports tests with hardcoded boolean values.",
+    "output": "This QR reports tests with hardcoded boolean values. It provides following information:\n\n- Artifact full name",
+    "rationale": "Tests with hardecoded boolean values may negate the purpose of having the condition.",
+    "remediation": "Use expression instead of having tests with hardcoded boolean values.",
     "sample": "if ( true ) // VIOLATION\n{\n   if ( myCondition == false ) // VIOLATION\n   {\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

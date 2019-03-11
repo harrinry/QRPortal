@@ -4,9 +4,11 @@
     "href": "AIP/quality-rules/1003082",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.performance.AvoidInstanciationInLoopRule",
-    "rationale": "Instantiating a variable in a loop can be expensive",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports artifacts which instantiates a variable in loop.",
+    "output": "This QR reports artifacts which instantiates a variable in loop. It provides following information:\n\n- Artifact full name",
+    "rationale": "Instantiating a variable in a loop can be expensive.",
+    "remediation": "Do not instantiate variable in loop.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,

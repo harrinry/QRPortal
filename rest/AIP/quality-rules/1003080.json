@@ -1,12 +1,15 @@
 {
     "id": 1003080,
-    "name": "Avoid control statement in Constructor (must be as lightweight as possible) (Flex)",
+    "name": "Avoid complex constructor (Flex)",
     "href": "AIP/quality-rules/1003080",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.performance.HeavyConstructorRule",
+    "associatedValueName": "no-value",
+    "description": "This QR reports flex functions that are complex with control statements and are constructors.",
+    "output": "This QR reports flex functions that are complex with control statements and are constructors. It provides following information:\n\n- Flex function full name",
     "rationale": "The Just-In-Time compiler does not compile constructors. Make them as lightweight as possible, or move the complexity of the code to a method called by the constructor. Then the complexity will be compiled by the JIT.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Keep constructors lightweight.",
+    "total": "Number of Flex Functions",
     "businessCriteria": [
         {
             "id": 60014,

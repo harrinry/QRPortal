@@ -4,10 +4,12 @@
     "href": "AIP/quality-rules/1003004",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.architecture.ViewComponentReferencedInModelRule",
-    "rationale": "A view component should not be referenced in a model class",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports packages with view components referenced in a model class.",
+    "output": "This QR reports packages with view components referenced in a model class. It provides following information:\n\n- Package full name",
+    "rationale": "A view component should not be referenced in a model class.",
     "sample": "package adobe.ac\n{\n   import mx.controls.ComboBox; // VIOLATION\n   public class MyModelClass\n   {\n   }\n}",
+    "total": "Number of packages",
     "businessCriteria": [
         {
             "id": 66032,

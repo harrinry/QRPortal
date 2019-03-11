@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003108",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects scripts with more than 10 methods.",
-    "rationale": "A class with too many methods is probably a good suspect for refactoring, in order to reduce its complexity and find a way to have more fine grained objects.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports Flex scripts with more than 10 methods.",
+    "output": "This QR reports Flex scripts with more than 10 methods. It provides following information:\n\n- Flex script full name",
+    "rationale": "A flex script with too many methods is probably a good suspect for refactoring, in order to reduce its complexity and find a way to have more fine grained objects.",
+    "remediation": "Refactor flex script to reduce number of methods.",
+    "total": "Number of flex scripts",
     "businessCriteria": [
         {
             "id": 60012,

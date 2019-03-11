@@ -1,13 +1,16 @@
 {
     "id": 1003010,
-    "name": "Avoid class that imports an internal class from another function area (Flex)",
+    "name": "Avoid class that imports an internal class from another functional area (Flex)",
     "href": "AIP/quality-rules/1003010",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.architecture.UseInternalClassOutsideApiClass",
-    "rationale": "If you have different functionalities, you probably do not want every class of each to be accessible from any other functional areas. This rule makes sure that no restricted classes is accessed from outside its own function area.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports package with a class that imports an internal class from another functional area.",
+    "output": "This QR reports package with a class that imports an internal class from another functional area. It provides following information:\n\n- Package full name",
+    "rationale": "If you have different functionalities, you probably do not want every class of each to be accessible from any other functional areas. This rule makes sure that no restricted classes is accessed from outside its own functional area.",
+    "remediation": "Keep every functional area loosely coupled.",
     "sample": "package functional\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class FunctionClient\n {\n }\n}\npackage functional.func1.api\n\n{\n import functional.func1.restricted.Func1RestrictedClass; \n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1ExposedClass\n {\n }\n}\npackage functional.func1.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1RestrictedClass\n {\n }\n}\npackage functional.func2.api\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.restricted.Func2RestrictedClass;\n \n public class Func2ExposedClass\n {\n }\n}\npackage functional.func2.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n \n public class Func2RestrictedClass\n {\n }\n}",
+    "total": "Number of packages",
     "businessCriteria": [
         {
             "id": 66032,

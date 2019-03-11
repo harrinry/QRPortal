@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003090",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.css.StyleBlockInMxmlRule",
-    "rationale": "Detects classes with embedded metadata in source code where a stylesheet may be cleaner",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports Flex scripts which has style blocks instead of use of external CSS files.",
+    "output": "This QR reports Flex scripts which has style blocks instead of use of external CSS files. It provides following information:\n\n- Flex script full name",
+    "rationale": "It is not a good practice to embed style blocks inside the MXML component.",
+    "remediation": "Use external CSS files instead.",
+    "total": "Number of Flex Scripts",
     "businessCriteria": [
         {
             "id": 66031,

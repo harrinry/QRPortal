@@ -1,12 +1,15 @@
 {
     "id": 1003026,
-    "name": "Avoid too complex methods. (Flex)",
+    "name": "Avoid too complex methods (Flex)",
     "href": "AIP/quality-rules/1003026",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule reports methods with cyclomatic complexity over 10",
+    "associatedValueName": "no-value",
+    "description": "This QR reports methods (Flex function\\getter\\setter) with cyclomatic complexity over 10.",
+    "output": "This QR reports methods with cyclomatic complexity over 10. It provides following information:\n\n- Flex function\\getter\\setter full name",
     "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow.\nAnalyzability declines with increasing Cyclomatic Complexity.\nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations.\nChangeability declines with increasing Cyclomatic Complexity.\nComplete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations.\nTestability declines with increasing Cyclomatic Complexity.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Reduce cyclomatic complexity of the method by splitting method.",
+    "total": "Number of Flex Functions\\getters\\setters",
     "businessCriteria": [
         {
             "id": 66031,

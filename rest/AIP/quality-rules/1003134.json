@@ -1,12 +1,15 @@
 {
     "id": 1003134,
-    "name": "Avoid identical switch cases (Flex)",
+    "name": "Avoid identical cases in switch (Flex)",
     "href": "AIP/quality-rules/1003134",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.switchrules.IdenticalSwitchCasesRule",
-    "rationale": "Two switch cases should not be identical",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts with identical cases in switch.",
+    "output": "This QR reports artifacts with identical cases in switch. It provides following information:\n\n- Artifact full name",
+    "rationale": "Two cases in switch should not be identical.",
+    "remediation": "Identical cases in switch denotes oversight. Correct the condition or merge the changes in two cases.",
+    "total": "Number of Artifacts",
     "businessCriteria": [
         {
             "id": 60012,

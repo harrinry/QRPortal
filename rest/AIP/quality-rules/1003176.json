@@ -1,13 +1,16 @@
 {
     "id": 1003176,
-    "name": "Avoid ArrayElementType metadata not specified for the array-type field (Flex)",
+    "name": "Avoid array-type field without ArrayElementType metadata (Flex)",
     "href": "AIP/quality-rules/1003176",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.ArrayFieldWithNoArrayElementTypeRule",
-    "rationale": "Detects fields using array-type not specified in ArrayElementType metadata",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
-    "sample": "public class ArrayVO {\n   public var items:Array; //VIOLATION\n\n   [ArrayElementType(\"model.vo.MenuItemVO\")]\n   public var menuItems : Array;\n}",
+    "description": "This QR reports flex fields of type \"Array\" without ArrayElementType metadata.",
+    "output": "This QR reports classes with fields of type \"Array\" without ArrayElementType metadata. It provides following information:\n- Field Full name",
+    "rationale": "Not specifying ArrayElementType metadata for Array type field would make code confusing and less maintainable.",
+    "remediation": "Specify ArrayElementType metadata for fields with Array type.",
+    "remediationSample": "package {\n   public class ArrayFieldWithoutArrayElementTypeMetadata {\n      [ArrayElementType(\"model.vo.MenuItem\")]\n      public var items:Array; // violation removed\n   }\n}",
+    "sample": "package {\n   public class ArrayFieldWithoutArrayElementTypeMetadata {\n      public var items:Array; //VIOLATION\n   }\n}",
+    "total": "Number of fields",
     "businessCriteria": [
         {
             "id": 20140522,

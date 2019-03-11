@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003106",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects classes with more than 10 methods.",
+    "associatedValueName": "no-value",
+    "description": "This QR reports classes with more than 10 methods.",
+    "output": "This QR reports classes with more than 10 methods. It provides following information:\n\n- Flex class full name",
     "rationale": "A class with too many methods is probably a good suspect for refactoring, in order to reduce its complexity and find a way to have more fine grained objects.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Refactor class to have less than 10 methods.",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

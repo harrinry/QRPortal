@@ -1,13 +1,16 @@
 {
     "id": 1003020,
-    "name": "Avoid empty method (Flex)",
+    "name": "Avoid empty overriden method (Flex)",
     "href": "AIP/quality-rules/1003020",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.UselessOverridenFunctionRule",
-    "rationale": "Empty methods should be removed",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports overridden Flex function\\getter\\setter that are empty.",
+    "output": "This QR reports overridden Flex function\\getter\\setter that are empty. It provides following information:\n\n- Flex function\\getter\\setter full name",
+    "rationale": "Overridden empty methods leads to confusion and reduces maintainability.",
+    "remediation": "Remove empty overridden methods.",
     "sample": "override protected function createChildren() : void\n{\n   super.createChildren();\n}",
+    "total": "Number of Flex functions\\getters\\setters",
     "businessCriteria": [
         {
             "id": 60012,

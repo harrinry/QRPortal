@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003034",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.unused.UnusedPrivateMethodRule",
-    "rationale": "Reports unused private methods",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports private methods (flex function) that are unused.",
+    "output": "This QR reports private methods that are unused. It provides following information:\n\n- Flex function full name",
+    "rationale": "Unused methods reduces maintainability of the code.",
+    "remediation": "Remove unused private methods.",
+    "total": "Number of methods",
     "businessCriteria": [
         {
             "id": 60012,

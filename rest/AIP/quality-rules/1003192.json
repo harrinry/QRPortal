@@ -1,12 +1,16 @@
 {
     "id": 1003192,
-    "name": "Avoid globally bindable classes. (Flex)",
+    "name": "Avoid globally bindable classes (Flex)",
     "href": "AIP/quality-rules/1003192",
     "critical": false,
     "maxWeight": 5,
-    "description": "Reports packages containing globally bindable classes",
-    "rationale": "It can lead to unexpected behaviour, especially when you have a setter to a property, and hits the performance of the application",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports classes that are globally bindable.",
+    "output": "This QR reports classes that are globally bindable. It provides following information:\n- Class Full Name",
+    "rationale": "Globally bindable classes can lead to unexpected behaviour especially when you have a setter to a property, and hits the performance of the application.",
+    "remediation": "Make individual required items inside class that need to be bindable.",
+    "remediationSample": "package {\n\n    public class AvoidGloballyBindableClass \n    {\n        \n        public function AvoidGloballyBindableClass() \n        {\n            \n        }\n\n        [Bindable]\n        private var _avar : int = 10;\n\n        public function get avar() : int {\n           return _avar;\n        }\n        \n        public function set avar(avarin : int) : void {\n           _avar = avarin;\n        }\n    }\n}",
+    "sample": "package {\n\n    [Bindable]\n    public class AvoidGloballyBindableClass \n    {\n        \n        public function AvoidGloballyBindableClass() \n        {\n            \n        }\n\n\n        private var _avar : int = 10;\n\n        public function get avar() : int {\n           return _avar;\n        }\n        \n        public function set avar(avarin : int) : void {\n           _avar = avarin;\n        }\n\n\n    }\n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 20140522,

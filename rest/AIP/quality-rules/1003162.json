@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003162",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.DynamicClassRule",
-    "rationale": "When using dynamic classes, you cannot control how the developer will use your class. It makes refactoring really difficult",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports classes that are dynamic.",
+    "output": "This QR reports classes that are dynamic. It gives following information:\n- Class full name",
+    "rationale": "When using dynamic classes, you cannot control how the developer will use your class. It makes refactoring very difficult.",
+    "remediation": "Use non-dynamic class.",
+    "remediationSample": "public class DynamicObject // VIOLATION\n{\n}",
     "sample": "dynamic public class DynamicObject // VIOLATION\n{\n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 20140522,

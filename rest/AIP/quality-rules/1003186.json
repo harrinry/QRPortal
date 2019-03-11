@@ -1,13 +1,15 @@
 {
     "id": 1003186,
-    "name": "Avoid method metadata argument redundant with the handler name (Flex)",
+    "name": "Avoid redundant method metadata argument for handler (Flex)",
     "href": "AIP/quality-rules/1003186",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.parsley.RedundantMethodAttributeRule",
-    "rationale": "n/a",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
-    "sample": "[MessageHandler(method=\"doSomething\")] // VIOLATION\npublic function doSomething( message : MyMessage ) : void\n{\n   message.toString();\n}",
+    "description": "This QR reports classes with methods that have redundant metadata for message handler.",
+    "output": "This QR reports classes with methods that have redundant metadata for message handler. It provides following information:\n- Class Full Name",
+    "rationale": "Redundant metadata can cause confusion and make code less maintainable over time.",
+    "remediation": "Remove redundant metadata.",
+    "sample": "class ClassHavingMethodWithRedundantMetadata {\n   [MessageHandler(method=\"doSomething\")] // VIOLATION\n   public function doSomething( message : MyMessage ) : void\n   {\n      message.toString();\n   }\n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 20140522,

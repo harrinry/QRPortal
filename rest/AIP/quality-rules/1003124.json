@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003124",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.empty.EmptyIfStmtRule",
-    "rationale": "Finds IF statements where a condition is checked but nothing is done about it.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts which have empty if statements.",
+    "output": "This QR reports artifacts which have empty if statements. It provides following information:\n\n- Artifacts full name",
+    "rationale": "Having empty \"if\" statements are unnecessary.",
+    "remediation": "Remove empty if statements.",
     "sample": "public class Foo \n{\n   public function bar( x : int ) : void\n   {\n      if ( x == 0 ) \n      {\n         // VIOLATION\n      }\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

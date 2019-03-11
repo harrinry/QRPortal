@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003008",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.architecture.MonkeyPatchingRule",
-    "rationale": "Monkey patching can be a risky undertaking because it is not using intended extensibility points and thus may have unintended consequences or make migration to newer versions of the SDK more difficult",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports class that appears to be duplicate of SDK class - for example class name.",
+    "output": "This QR reports class that appears to be duplicate of SDK class - for example class name. It provides following information:\n\n- Class full name",
+    "rationale": "Monkey patching can be a risky undertaking because it is not using intended extensibility points and thus may have unintended consequences or make migration to newer versions of the SDK more difficult.",
+    "remediation": "Classes should not appear to be duplicate of SDK class.",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 66032,

@@ -1,13 +1,16 @@
 {
     "id": 1003044,
-    "name": "Avoid too short field name (Flex)",
+    "name": "Avoid field with name too short (Flex)",
     "href": "AIP/quality-rules/1003044",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.naming.TooShortVariableRule",
-    "rationale": "Detects when a field, local, or parameter has a very short name.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports fields with name too short.",
+    "output": "This QR reports fields with name too short. It provides following information:\n\n- Field full name",
+    "rationale": "Field with name too short reduces readability.",
+    "remediation": "Give meaningful names to fields.",
     "sample": "public class Something \n{\n   private var q : int = 15; // VIOLATION - Field\n\n   public function foo( as : String ) : void // VIOLATION - Formal \n   {\n      var r : int = 20 + q; // VIOLATION - Local\n   }\n}",
+    "total": "Number of fields",
     "businessCriteria": [
         {
             "id": 60012,

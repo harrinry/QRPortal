@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003030",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.unused.UnusedParameterRule",
-    "rationale": "Reports functions with unused parameters",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports Flex functions with unused parameters.",
+    "output": "This QR reports Flex functions with unused parameters. It provides following information:\n\n- Flex function full name",
+    "rationale": "Unused parameters reduce maintainability of the code.",
+    "remediation": "Remove unused parameter.",
     "sample": "public function foo( param1 : Number, param2 : Number, param3 : Number, param4 : Number, param5 : Number ) : void // 4 violations\n      {\n         var i : int = param1;\n      }",
+    "total": "Number of functions",
     "businessCriteria": [
         {
             "id": 60012,

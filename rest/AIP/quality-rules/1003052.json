@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003052",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.naming.VariableNameEndingWithNumericRule",
-    "rationale": "It does not help understanding the meaning of it.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that has variable with name that end in numbers.",
+    "output": "This QR reports artifacts that has variable with name that end in numbers. It provides following information:\n\n- Artifact full name",
+    "rationale": "Naming variables that end with number reduces readability.",
+    "remediation": "Give meaningful names to variables.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

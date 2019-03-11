@@ -1,12 +1,15 @@
 {
     "id": 1003096,
-    "name": "Avoid using public static fields (Flex)",
+    "name": "Avoid non-const public static fields (Flex)",
     "href": "AIP/quality-rules/1003096",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.AvoidUsingPublicStaticFieldRule",
-    "rationale": "If a field was meant to be a constant, make it constant. Otherwise, if it is used as a global variable, you may want to redesign the class",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports fields that are static and public but non-const.",
+    "output": "This QR reports fields that are static and public but non-const. It provides following information:\n\n- Flex field full name",
+    "rationale": "A static field that is public and non-const can change the behaviour of all objects of that class and sub\\inherited class.",
+    "remediation": "Make public static field const. If a global variable is needed use one of the design patterns such as Singleton.",
+    "total": "Number of fields",
     "businessCriteria": [
         {
             "id": 60012,

@@ -1,13 +1,14 @@
 {
     "id": 1003196,
-    "name": "Avoid switch statement without a default statement (Flex)",
+    "name": "Avoid switch statement without a default case (Flex)",
     "href": "AIP/quality-rules/1003196",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.switchrules.SwitchStatementsShouldHaveDefaultRule",
+    "description": "This QR reports artifacts with switch statements without default case.",
+    "output": "This QR reports artifacts with switch statements without default case. It provides following information:\n- Artifact full name",
     "rationale": "Switch statements should have a default label in order to detect corner cases.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
-    "sample": "public class Foo \n   {\n      public funciton bar() : void \n      {\n         var  x : int = 2;\n         switch (x) \n         {\n            case 2: var j : int = 8;\n         }\n      }\n   }",
+    "remediation": "Add default case to every switch statement.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

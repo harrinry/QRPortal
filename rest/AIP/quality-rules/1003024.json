@@ -1,12 +1,15 @@
 {
     "id": 1003024,
-    "name": "Avoid empty used private method (Flex)",
+    "name": "Avoid empty private method (Flex)",
     "href": "AIP/quality-rules/1003024",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.unused.EmptyPrivateMethodRule",
-    "rationale": "Detects empty private methods",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports private methods that are empty.",
+    "output": "This QR reports private methods that are empty. It provides following information:\n\n- Flex function\\getter\\setter full name",
+    "rationale": "Empty methods reduces maintainability of the code.",
+    "remediation": "Remove empty methods.",
+    "total": "Number of Flex functions\\getters\\setters",
     "businessCriteria": [
         {
             "id": 60012,

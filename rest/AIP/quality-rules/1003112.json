@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003112",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects classes with more than 10 public fields or functions.",
+    "associatedValueName": "no-value",
+    "description": "This QR reports classes with more than 10 public fields or functions.",
+    "output": "This QR reports classes with more than 10 public fields or functions. It provides following information:\n\n- Artifact full name",
     "rationale": "A large number of public methods and attributes declared in a class can indicate the class may need to be broken up as increased effort will be required to thoroughly test it.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Refactor the class to have less than 10 fields or functions.",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

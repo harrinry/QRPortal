@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003118",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects Value Objects with more than 3 fields.",
-    "rationale": "Value Objects should not have too many fields.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports Flex class which is value object and has more than 15 fields.",
+    "output": "This QR reports Flex class which is value object and has more than 15 fields. It gives following information:\n\n- Artifact full name",
+    "rationale": "Having large number of fields makes object less maintainable.",
+    "remediation": "Have value object with fields 15 or less.",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

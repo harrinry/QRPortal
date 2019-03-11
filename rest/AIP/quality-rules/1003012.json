@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003012",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.mxml.CodeBehindInMxmlRule",
-    "rationale": "Code behind files are tightly coupled with the view, not unit-testable, not easy to navigate the code base and not reusable. Try using presentation model pattern, or observer pattern",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports Flex scripts that use code behind files.",
+    "output": "This QR reports Flex scripts that use code behind files. It provides following information:\n\n- Flex script full name",
+    "rationale": "Code behind files are tightly coupled with the view, not unit-testable, not easy to navigate the code base and not reusable.",
+    "remediation": "Try using presentation model pattern, or observer pattern.",
+    "total": "Number of Flex scripts",
     "businessCriteria": [
         {
             "id": 66032,

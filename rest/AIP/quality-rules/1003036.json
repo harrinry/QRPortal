@@ -1,12 +1,15 @@
 {
     "id": 1003036,
-    "name": "Avoid unused private attribute (Flex)",
+    "name": "Avoid unused private field (Flex)",
     "href": "AIP/quality-rules/1003036",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.unused.UnusedFieldRule",
-    "rationale": "Reports unused private fields",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports private fields that are not used.",
+    "output": "This QR reports private fields that are not used. It provides following information:\n\n- Field full name",
+    "rationale": "Unused private fields reduces maintainability of the code.",
+    "remediation": "Remove unused private fields.",
+    "total": "Number of fields",
     "businessCriteria": [
         {
             "id": 60012,

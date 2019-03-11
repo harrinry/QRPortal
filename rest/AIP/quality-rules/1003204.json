@@ -1,12 +1,14 @@
 {
     "id": 1003204,
-    "name": "Avoid too long script block (Flex)",
+    "name": "Avoid script block that are too long (Flex)",
     "href": "AIP/quality-rules/1003204",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.mxml.TooLongScriptBlockRule",
-    "rationale": "Reports script blocks with more than 50 lines of code",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "description": "This QR reports scripts which are more than 50 lines long.",
+    "output": "This QR reports scripts that too long. It provides following information:\n- Script full name",
+    "rationale": "Scripts that are too long become less maintainable.",
+    "remediation": "Keep script length below 50.",
+    "total": "Number of scripts",
     "businessCriteria": [
         {
             "id": 66031,

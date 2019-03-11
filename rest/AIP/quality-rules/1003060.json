@@ -1,13 +1,16 @@
 {
     "id": 1003060,
-    "name": "Avoid variable incorrectly named. (Flex)",
+    "name": "Avoid variables with names that can reduce code readability (Flex)",
     "href": "AIP/quality-rules/1003060",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.naming.WronglyNamedVariableRule",
-    "rationale": "n/a",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts which have variable names that can reduce readability. Names of variables with prefix \"my\", \"tmp\", \"temp\" are considered as violations for this QR.",
+    "output": "This QR reports artifacts which have variable names that can reduce readability. It provides following information:\n\n- Artifact full name",
+    "rationale": "Having variables with prefixes \"my\", \"tmp\", \"temp\" reduces readability of the code.",
+    "remediation": "Give variables that would denote their intended use.",
     "sample": "public class SomeClass \n{\n   public var myField : int = 0; // VIOLATION - my prefix is forbidden\n   \n   public function tmpFoo() : void // VIOLATION - tmp prefix is forbidden\n   {\n    var tempFoo : int = 9; // VIOLATION - temp prefix is forbidden\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003086",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.empty.EmptyCatchStatementRule",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that have empty catch statement.",
+    "output": "This QR reports artifacts that have empty catch statement. It provides following information:\n\n- Artifact full name",
     "rationale": "Catch blocks should have code to handle the thrown exception. If they are empty or have only comments, the Exception will not be handled.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Handle exception caught in catch block.",
     "sample": "public class Foo \n{\n   public function bar( x : int ) : void\n   {\n      try\n      {\n      }\n      catch( e : Exception )         // VIOLATION\n      {\n      }\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

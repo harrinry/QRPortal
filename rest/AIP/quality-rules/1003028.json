@@ -4,9 +4,12 @@
     "href": "AIP/quality-rules/1003028",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule reports methods with more than 4 parameters",
-    "rationale": "Long parameter lists can indicate that a new object should be created to wrap the numerous parameters.  Basically, try to group the parameters together.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports methods (flex function) with more than 4 parameters.",
+    "output": "This QR reports methods (flex function) with more than 4 parameters. It provides following information:\n\n- Flex function full name",
+    "rationale": "Long parameter lists can indicate that a new object should be created to wrap the numerous parameters.",
+    "remediation": "Try to group the parameters together.",
+    "total": "Number of Flex Function",
     "businessCriteria": [
         {
             "id": 66031,

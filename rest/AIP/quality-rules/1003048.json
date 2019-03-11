@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003048",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.naming.PackageCaseRule",
-    "rationale": "Detects when a package definition contains upper case characters.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports packages that contain letters in capital case.",
+    "output": "This QR reports packages that contain letters in capital case. It provides following information:\n\n- Package full name",
+    "rationale": "Package naming standard is to have package name in small letter.",
+    "remediation": "Change package name so that it will not contain capital letters.",
     "sample": "package com.MyCompany  // VIOLATION - should be lower case name\n{\n   public class SomeClass \n   {\n   }\n}",
+    "total": "Number of packages",
     "businessCriteria": [
         {
             "id": 60012,

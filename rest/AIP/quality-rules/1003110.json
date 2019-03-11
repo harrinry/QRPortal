@@ -1,12 +1,14 @@
 {
     "id": 1003110,
-    "name": "Avoid function that are too long (Flex)",
+    "name": "Avoid functions that are too long (Flex)",
     "href": "AIP/quality-rules/1003110",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects methods with more than 20 lines,",
+    "description": "This QR reports functions\\getters\\setters with more than 20 lines.",
+    "output": "This QR reports functions\\getters\\setters with more than 20 lines. It provides following information:\n\n- function\\getter\\settter full name",
     "rationale": "Violations of this rule usually indicate that the method has too much responsibility. Try to reduce the method size by creating helper methods and removing any copy/pasted code.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Refactor function\\getter\\setter to have less than 20 lines of code.",
+    "total": "Number of functions\\getters\\settters",
     "businessCriteria": [
         {
             "id": 60012,

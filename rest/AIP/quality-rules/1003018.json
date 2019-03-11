@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003018",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.switchrules.NestedSwitchRule",
+    "associatedValueName": "no-value",
+    "description": "This QR reports artifacts that have nested switch statements.",
+    "output": "This QR reports artifacts that have nested switch statements. It provides following information:\n\n- Artifact full name",
     "rationale": "As a general practice, switch statement should not be used. Prefer using inheritance. It is even harder to read when switch statements are nested.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Remove nested switch statements.",
     "sample": "public function foo( a : Number, b : Number ) : void\n      {\n          switch( a )\n          {\n             case 1:\n                break;\n             case 2:                   \n                switch ( b ) \n                {\n                  case 3 :\n                     break;\n                  case 4 :\n                     break;\n                }\n                break;                     \n          }\n      }",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 66032,

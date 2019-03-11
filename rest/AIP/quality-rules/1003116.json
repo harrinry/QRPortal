@@ -1,12 +1,15 @@
 {
     "id": 1003116,
-    "name": "Avoid class (in script) with too many fields (Flex)",
+    "name": "Avoid Flex Script with too many fields (Flex)",
     "href": "AIP/quality-rules/1003116",
     "critical": false,
     "maxWeight": 5,
-    "description": "Rule detects scripts defining more than 5 fields.",
+    "associatedValueName": "no-value",
+    "description": "This QR detects Flex script defining more than 5 fields.",
+    "output": "This QR detects Flex script class defining more than 5 fields. It provides following information:\n\n- Flex script full name",
     "rationale": "Classes that have too many fields could be redesigned to have fewer fields, possibly  through some nested object grouping of some of the information.  For example, a class with  city/state/zipcode fields could instead have one Address field.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "remediation": "Refactor the class to have less number of fields.",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60012,

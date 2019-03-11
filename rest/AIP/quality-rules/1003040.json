@@ -1,13 +1,15 @@
 {
     "id": 1003040,
-    "name": "Avoid Event name not explicitly set (Flex)",
+    "name": "Avoid Event name not set explicitly (Flex)",
     "href": "AIP/quality-rules/1003040",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.event.DefaultEventNameRule",
-    "rationale": "Event name should be set explicitly",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports event that does not have name set explicitly.",
+    "output": "This QR reports event that does not have name set explicitly. It provides following information:\n\n- Class full name",
+    "rationale": "Using implicit name for event would reduce maintainability.",
     "sample": "public class DefaultNameEvent extends Event \n{\n public function DefaultNameEvent( type : String = \"\" )\n {\n  super( type );\n }\n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

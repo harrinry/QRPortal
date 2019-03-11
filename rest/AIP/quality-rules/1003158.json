@@ -1,13 +1,17 @@
 {
     "id": 1003158,
-    "name": "Avoid unspecified event type (Flex)",
+    "name": "Avoid event without type specified (Flex)",
     "href": "AIP/quality-rules/1003158",
     "critical": false,
     "maxWeight": 5,
-    "description": "Reports packages containing untyped event metadata",
-    "rationale": "Specifying a type will allow Flash builder and the class to have this event exposed in its API",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports event without type specified.",
+    "output": "This QR reports event without type specified. It provides following information:\n\n- Artifact full name",
+    "rationale": "Specifying a type allows Flash builder and the class to have this event exposed in its API",
+    "remediation": "Use known event type for event.",
+    "remediationSample": "[Event(name=\"myTypeEvent\", type=\"KnownEventType\")] // VIOLATION\npublic class UnTypedMetadata\n{\n}",
     "sample": "[Event(name=\"myTypeEvent\")] // VIOLATION\npublic class UnTypedMetadata\n{\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

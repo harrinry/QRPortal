@@ -4,10 +4,13 @@
     "href": "AIP/quality-rules/1003202",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.event.PublicVariableInCustomEventRule",
-    "rationale": "In order to improve encapsulation in your custom event, it is better not to have public variable in your event. Prefer having read-only attributes, set by the event constructor.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
-    "sample": "public class FirstCustomEvent   \n{\n   public var lala : String; // VIOLATION\n   \n   public function FirstCustomEvent()\n   {         \n   }\n}",
+    "description": "This QR reports Custom Event class that has public variable.",
+    "output": "This QR provides fields that are public in custom event class. It provide following information:\n- Flex Field Full Name",
+    "rationale": "In order to improve encapsulation in your custom event, it is better not to have public variable in your event.",
+    "remediation": "Prefer having non-public, read-only attributes, set by the event constructor.",
+    "remediationSample": "package {\n   import flash.events.Event;\n   public class CustomEvent extends Event\n   {\n      private var _field : String;\n      \n      public function CustomEvent()\n      {         \n      }\n      \n      public function get field() : String {\n         return _field;\n      }\n   }\n}",
+    "sample": "package {\n   import flash.events.Event;\n   public class CustomEvent extends Event\n   {\n      public var _field : String; // VIOLATION\n      \n      public function CustomEvent()\n      {         \n      }\n   }\n}",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 66031,

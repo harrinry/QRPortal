@@ -4,9 +4,10 @@
     "href": "AIP/quality-rules/1003002",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.maintanability.ExcessiveImportRule",
+    "description": "This QR reports artifact that has excessive number of imports.",
+    "output": "This QR reports artifacts that have excessive number of imports. It provides following information:\n- Artifact full name",
     "rationale": "A high number of imports can indicate a high degree of coupling within an object. Rule counts the number of unique imports and reports a violation if the count is above 15.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 66032,

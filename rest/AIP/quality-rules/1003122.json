@@ -1,13 +1,16 @@
 {
     "id": 1003122,
-    "name": "Avoid FrontController that adds all its commands within the Controller constructor (Flex)",
+    "name": "Cairngorm: Avoid FrontController that adds all its commands within the Controller constructor (Flex)",
     "href": "AIP/quality-rules/1003122",
     "critical": false,
     "maxWeight": 5,
-    "description": "adobe.ac.pmd.rules.cairngorm.FatControllerRule",
-    "rationale": "Try to split them into methods where you add commands depending on their functional area.",
-    "reference": "http://opensource.adobe.com/wiki/display/flexpmd/FlexPMD",
+    "associatedValueName": "no-value",
+    "description": "This QR reports front controller that adds all its commands in constructor.",
+    "output": "This QR reports front controller that adds all commands in constructor. It provides following information:\n\n- Artifact full name",
+    "rationale": "Adding all commands in constructor defeats the purpose of segregating them as per functional area.",
+    "remediation": "Try to split them into methods where you add commands depending on their functional area.",
     "sample": "package control\n{\n   import control.GetItems1Command;\n   import control.GetItems1Event;\n   import control.GetItems2Command;\n   import control.GetItems2Event;\n   // A lot of other imports\n   \n   public class MyFrontController // VIOLATION\n   {\n      public function MyFrontController()\n      {\n         addCommand( \n            GetItems1Event.EVENT_NAME,\n            GetItems1Command );\n\n         addCommand( \n            GetItems2Event.EVENT_NAME,\n            GetItems2Command );\n\n         // A lot of other addCommand\n      }\n   } \n}",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,
