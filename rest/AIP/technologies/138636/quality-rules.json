@@ -1,7 +1,7 @@
 [
     {
         "id": 1043006,
-        "name": "Always enable validation input when doing ASP.NET Http Post/Put Request",
+        "name": "Avoid disabling ValidateInput on ASP.NET Http Post/Put Request",
         "href": "AIP/quality-rules/1043006",
         "status": null,
         "critical": true,
@@ -23,7 +23,7 @@
     },
     {
         "id": 1043010,
-        "name": "Avoid creating cookies without enabling httponly attribute",
+        "name": "Ensure not to disable HttpOnly attribute while creating cookie (C#)",
         "href": "AIP/quality-rules/1043010",
         "status": null,
         "critical": true,
@@ -34,7 +34,7 @@
     },
     {
         "id": 1043012,
-        "name": "Always enable HttpOnly for cookies in Config file",
+        "name": "Always enable HttpOnly for cookies in Config file (ASP.NET)",
         "href": "AIP/quality-rules/1043012",
         "status": null,
         "critical": true,
@@ -56,7 +56,7 @@
     },
     {
         "id": 1043016,
-        "name": "Always enabled validateRequest in ASPX page",
+        "name": "Avoid disabling ValidateRequest in ASPX page",
         "href": "AIP/quality-rules/1043016",
         "status": null,
         "critical": true,
@@ -71,6 +71,105 @@
         "href": "AIP/quality-rules/1043018",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043020,
+        "name": "Avoid having applications with the debug mode activated",
+        "href": "AIP/quality-rules/1043020",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043022,
+        "name": "Ensure not to disable Secure attribute while creating cookie (C#)",
+        "href": "AIP/quality-rules/1043022",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043024,
+        "name": "Always enable RequireSSL attribute for cookies in Config file (ASP.NET)",
+        "href": "AIP/quality-rules/1043024",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043026,
+        "name": "Avoid disabling EnableViewStateMac in Config file",
+        "href": "AIP/quality-rules/1043026",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043028,
+        "name": "Avoid disabling EnableViewStateMac in ASPX page",
+        "href": "AIP/quality-rules/1043028",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043032,
+        "name": "Avoid having aspx pages with tracing activated",
+        "href": "AIP/quality-rules/1043032",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043034,
+        "name": "Avoid having applications with the tracing activated in the web config file",
+        "href": "AIP/quality-rules/1043034",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043036,
+        "name": "Avoid Impersonate Globally",
+        "href": "AIP/quality-rules/1043036",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043038,
+        "name": "Avoid having applications with the tracing activated in the source code",
+        "href": "AIP/quality-rules/1043038",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "ASP.NET",
             "C#"
