@@ -5,12 +5,12 @@
     "critical": false,
     "maxWeight": 5,
     "associatedValueName": "Number of violation patterns",
-    "description": "Enabling access control on a MongoDB deployment enforces authentication, requiring users to identify themselves. \n        When accessing a MongoDB deployment that has access control enabled, users can only perform actions as determined by their role.",
+    "description": "Enabling access control on a MongoDB deployment enforces authentication, requiring users to identify themselves. \nWhen accessing a MongoDB deployment that has access control enabled, users can only perform actions as determined by their role.",
     "output": "List all Artifacts with access without authentication to MongoDB databases.\nThe following information is provided: \n- The number of violation patterns\n- Bookmarks for violation patterns found in the source code",
-    "rationale": "MongoDB does not require authentication by default. Protect your database against unauthorized access by enabling database access control. \n        Enabling access control also allows you to limit actions that particular users can perform on the database.",
+    "rationale": "MongoDB does not require authentication by default. Protect your database against unauthorized access by enabling database access control. \nEnabling access control also allows you to limit actions that particular users can perform on the database.",
     "remediation": "Activate authentication to access the MongoDB database.",
-    "remediationSample": "var credential = MongoCredential.CreateMongoCRCredential(\"mongoDB\", \"USER\", \"PWD\");\n\n            var settings = new MongoClientSettings\n            {\n                Credentials = new[] { credential }\n            };\n\n            var mongoClient = new MongoClient(settings);\n            \n            or\n            MongoClient constr_OK = new MongoClient(\"mongodb://USER:PWD@localhost/mongoDB\");\n            or\n            var connectionString = \"mongodb://USER:PWD@localhost/mongoDB\";\n\n            MongoClient constr_KO = new MongoClient(connectionString);",
-    "sample": "var client = new MongoClient(\"mongodb://localhost\")\n        or\n        var client = new MongoClient(\"mongodb://localhost:27017\"\n        or\n        var client = new MongoClient(\"\")",
+    "remediationSample": "var credential = MongoCredential.CreateMongoCRCredential(\"mongoDB\", \"USER\", \"PWD\");\n\nvar settings = new MongoClientSettings\n{\n    Credentials = new[] { credential }\n};\n\n var mongoClient = new MongoClient(settings);\n            \n// or\n\nMongoClient connection_object_1 = new MongoClient(\"mongodb://USER:PWD@localhost/mongoDB\");\n\n// or\n\nvar connectionString = \"mongodb://USER:PWD@localhost/mongoDB\";\n\nMongoClient connection_object_2 = new MongoClient(connectionString);",
+    "sample": "var client = new MongoClient(\"mongodb://localhost\")\n\n// or\n\nvar client = new MongoClient(\"\")",
     "total": "The total procedure counts MongoDB Access.",
     "businessCriteria": [
         {
