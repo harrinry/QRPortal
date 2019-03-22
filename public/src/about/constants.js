@@ -23,4 +23,4 @@ export const CLASSES = {
 export const WHATSNEW = 'What\'s New?';
 export const LICENSE = 'LICENSE';
 export const LICENSETYPE = 'MIT License';
-export const COPYRIGHTS = 'Copyright(c) 2018 CAST Software';
+export const COPYRIGHTS = 'Copyright(c) ' + new Date(Date.now()).getFullYear() + ' CAST Software';
