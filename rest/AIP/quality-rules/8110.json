@@ -62,5 +62,27 @@
             "url": null,
             "description": "Remove instances where a client-side function, method, sub-routine, etc., contains too many data queries (default value for the maximum number of data queries is 2)."
         }
+    ],
+    "parameters": [
+        {
+            "name": "threshold",
+            "description": "A method is considered to call too many SQL functions if the number of calls is greater than this value",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        2
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

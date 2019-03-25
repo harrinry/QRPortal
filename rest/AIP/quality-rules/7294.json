@@ -73,5 +73,27 @@
             "url": null,
             "description": "Remove instances where a module has references that cycle back to itself, e.g., the existence of cycles between packages in JAVA"
         }
+    ],
+    "parameters": [
+        {
+            "name": "Max_LEVEL",
+            "description": null,
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        100
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

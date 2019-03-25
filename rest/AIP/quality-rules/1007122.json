@@ -56,5 +56,27 @@
             "url": null,
             "description": "Remove instances where an exception handling block (such as catch and finally blocks) of a function, method, procedure, stored procedure, sub-routine, etc. does not contain any instruction"
         }
+    ],
+    "parameters": [
+        {
+            "name": "RuleName",
+            "description": "External PHP Code scanner Rule Name",
+            "technologies": [
+                {
+                    "id": 1017000,
+                    "name": "PHP",
+                    "href": "AIP/technologies/1017000",
+                    "values": [
+                        "EmptyCatchComment"
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        95.0,
+        98.0,
+        99.0,
+        100.0
     ]
 }

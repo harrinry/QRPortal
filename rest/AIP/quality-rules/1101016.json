@@ -55,5 +55,27 @@
             "url": null,
             "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. has too many parameters in its signature (default threshold value for the maximum number of parameters is 7)"
         }
+    ],
+    "parameters": [
+        {
+            "name": "Maximum parameters",
+            "description": "Max parameters number",
+            "technologies": [
+                {
+                    "id": 1101000,
+                    "name": "SQLAnalyzer",
+                    "href": "AIP/technologies/1101000",
+                    "values": [
+                        9
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

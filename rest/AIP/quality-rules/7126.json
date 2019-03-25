@@ -45,5 +45,27 @@
             "url": null,
             "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. contains too much commented-out code (default threshold value for the maximum percentage of commented-out instructions is 2%)."
         }
+    ],
+    "parameters": [
+        {
+            "name": "Maximum % Commented-out / Code Ratio",
+            "description": null,
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        2.0
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

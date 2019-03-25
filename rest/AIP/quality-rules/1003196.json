@@ -56,5 +56,27 @@
             "url": "https://cwe.mitre.org/data/definitions/478.html",
             "description": "The code does not have a default case in a switch statement, which might lead to complex logical errors and resultant weaknesses."
         }
+    ],
+    "parameters": [
+        {
+            "name": "FlexMetricName",
+            "description": "FlexMetricName",
+            "technologies": [
+                {
+                    "id": 1007000,
+                    "name": "Flex",
+                    "href": "AIP/technologies/1007000",
+                    "values": [
+                        "adobe.ac.pmd.rules.switchrules.SwitchStatementsShouldHaveDefault"
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        95.0,
+        98.0,
+        99.0,
+        100.0
     ]
 }

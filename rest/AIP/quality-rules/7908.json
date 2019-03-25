@@ -86,5 +86,27 @@
             "url": null,
             "description": "Number of instances where a function or method is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a function or method element)"
         }
+    ],
+    "parameters": [
+        {
+            "name": "include_getter_setter",
+            "description": "Take in to account the getter and setter",
+            "technologies": [
+                {
+                    "id": 140029,
+                    "name": "JEE",
+                    "href": "AIP/technologies/140029",
+                    "values": [
+                        0
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

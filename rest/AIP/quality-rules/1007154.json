@@ -56,5 +56,27 @@
             "url": null,
             "description": "Remove instances where the control flow is transferred outside a switch statement (e.g., depending on the technology, by using 'go to', 'continue', or 'break' statements)"
         }
+    ],
+    "parameters": [
+        {
+            "name": "RuleName",
+            "description": "External PHP Code scanner Rule Name",
+            "technologies": [
+                {
+                    "id": 1017000,
+                    "name": "PHP",
+                    "href": "AIP/technologies/1017000",
+                    "values": [
+                        "GotoStatement"
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        95.0,
+        98.0,
+        99.0,
+        100.0
     ]
 }

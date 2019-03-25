@@ -51,5 +51,41 @@
     ],
     "qualityStandards": [
         
+    ],
+    "parameters": [
+        {
+            "name": "column_name_max_length",
+            "description": "maximum length authorized for column name",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        30
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "table_name_max_length",
+            "description": "maximum length authorized for the table name",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        30
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

@@ -49,5 +49,41 @@
             "url": null,
             "description": "Remove instances of copy-paste between functions, methods, procedures, stored procedures, sub-routines, etc."
         }
+    ],
+    "parameters": [
+        {
+            "name": "CODELINE",
+            "description": null,
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        10
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SIMILARITY",
+            "description": "This is a percentage.",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        90
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

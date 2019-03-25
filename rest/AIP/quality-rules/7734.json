@@ -52,5 +52,55 @@
     ],
     "qualityStandards": [
         
+    ],
+    "parameters": [
+        {
+            "name": "java.util.logging.Logger.finest",
+            "description": "full qualified debug method name",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        "java.util.logging.Logger.isLoggable"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "org.apache.commons.logging.Log.debug",
+            "description": "full qualified debug method name",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        "org.apache.commons.logging.Log.isDebugEnabled"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "org.apache.log4j.Category.debug",
+            "description": "full qualified debug method name",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        "org.apache.log4j.Category.isDebugEnabled"
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

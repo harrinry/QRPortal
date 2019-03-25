@@ -151,5 +151,27 @@
             "url": null,
             "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. has a Fan-Out value that is too large, that is, with too many references to other objects within the application. (default threshold value for the maximum number of references to other objects within the application is 5)"
         }
+    ],
+    "parameters": [
+        {
+            "name": "Maximum High Fan-Out",
+            "description": "Max High Fan-Out per method",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        5
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

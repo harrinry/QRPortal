@@ -85,5 +85,43 @@
             "url": null,
             "description": "Number of instances where a function or method is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a function or method element)"
         }
+    ],
+    "parameters": [
+        {
+            "name": "include_getter_setter",
+            "description": "Take in to account the getter and setter",
+            "technologies": [
+                {
+                    "id": 141901,
+                    "name": ".NET (Legacy Analyzer)",
+                    "href": "AIP/technologies/141901",
+                    "values": [
+                        0
+                    ]
+                },
+                {
+                    "id": 138383,
+                    "name": "C#",
+                    "href": "AIP/technologies/138383",
+                    "values": [
+                        0
+                    ]
+                },
+                {
+                    "id": 138385,
+                    "name": "VB.NET",
+                    "href": "AIP/technologies/138385",
+                    "values": [
+                        0
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

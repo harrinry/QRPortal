@@ -116,5 +116,115 @@
             "url": null,
             "description": "Remove instances where a file has too many lines of code (default threshold value for the maximum number of lines of code is 1000) "
         }
+    ],
+    "parameters": [
+        {
+            "name": "Maximum Line Count",
+            "description": "Maximum Line Count per artifact",
+            "technologies": [
+                {
+                    "id": 141901,
+                    "name": ".NET (Legacy Analyzer)",
+                    "href": "AIP/technologies/141901",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": -15,
+                    "name": "ABAP",
+                    "href": "AIP/technologies/-15",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": -2,
+                    "name": "C",
+                    "href": "AIP/technologies/-2",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": 138383,
+                    "name": "C#",
+                    "href": "AIP/technologies/138383",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": -3,
+                    "name": "C++",
+                    "href": "AIP/technologies/-3",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": -4,
+                    "name": "Cobol",
+                    "href": "AIP/technologies/-4",
+                    "values": [
+                        1000
+                    ]
+                },
+                {
+                    "id": 1020000,
+                    "name": "HTML5",
+                    "href": "AIP/technologies/1020000",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": 140029,
+                    "name": "JEE",
+                    "href": "AIP/technologies/140029",
+                    "values": [
+                        100
+                    ]
+                },
+                {
+                    "id": 139287,
+                    "name": "PL/SQL",
+                    "href": "AIP/technologies/139287",
+                    "values": [
+                        50
+                    ]
+                },
+                {
+                    "id": -13,
+                    "name": "SQL Server",
+                    "href": "AIP/technologies/-13",
+                    "values": [
+                        50
+                    ]
+                },
+                {
+                    "id": 1101000,
+                    "name": "SQLAnalyzer",
+                    "href": "AIP/technologies/1101000",
+                    "values": [
+                        50
+                    ]
+                },
+                {
+                    "id": 138385,
+                    "name": "VB.NET",
+                    "href": "AIP/technologies/138385",
+                    "values": [
+                        100
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

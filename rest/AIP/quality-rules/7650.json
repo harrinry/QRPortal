@@ -53,5 +53,14 @@
             "url": null,
             "description": "Remove instances where a serializable field, member, etc. has no serialization operation.\nNotes:\n* in the case of technologies with classes and interfaces, this means situations where the serializable field is from a class that implements a serializable interface but does not implement a serialization method as part of its list of methods\n* the serializable nature of an element is technology dependent, for example, serializable capabilities come from sources such as a serializable attribute in .NET and inheritance from the java.io.Serializable interface in Java"
         }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

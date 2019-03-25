@@ -46,5 +46,30 @@
     ],
     "qualityStandards": [
         
+    ],
+    "parameters": [
+        {
+            "name": "exclude_packages",
+            "description": "all packages to avoid",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        "javax.jms.",
+                        "javax.naming.",
+                        "java.sql.",
+                        "javax.sql."
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }

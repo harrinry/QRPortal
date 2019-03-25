@@ -52,5 +52,27 @@
             "url": "https://cwe.mitre.org/data/definitions/391.html",
             "description": "Ignoring exceptions and other error conditions may allow an attacker to induce unexpected behavior unnoticed."
         }
+    ],
+    "parameters": [
+        {
+            "name": "Error handling page",
+            "description": "Error handling page names",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        "error.asp"
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
     ]
 }
