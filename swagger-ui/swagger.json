@@ -40,6 +40,645 @@
       "description": "References of Quality Standards such as vulnerabilities, risks, etc. organized by sub categories"
     }
   ],
+  "paths": {
+    "/rest/AIP": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "REST API entry point",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIP"
+                }
+              },
+              "application/csv": {
+                "schema": {
+                  "$ref": "#/components/schemas/AIP"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/versions": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "All versions of CAST AIP since 8.0.0",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/VersionItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/versions/{AIPVER}": {
+      "get": {
+        "tags": [
+          "AIP"
+        ],
+        "description": "Describe a version of CAST AIP",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AIPVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Version"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/versions/{AIPVER}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality-rules of a CAST AIP Version",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/AIPVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItemByVersion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/business-criteria": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List Business Criteria",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "aplication/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BusinessCriterionItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/business-criteria/{BCID}": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "Describe a business criterion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/BCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessCriterion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/business-criteria/{BCID}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List quality rules contributing to a business criterion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/BCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": null,
+                  "$ref": "#/components/schemas/QualityRuleItem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-rules/{ID}": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityRule"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List quality standards",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityStandardItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "Describe a quality standard",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityStandard"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/items": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List all reference items of a quality standard",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityStandardReferenceItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/categories": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "A quality standard name such as 'CISQ-Maintainability'",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityStandardCategoryItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/categories/{CAT}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "Describe a quality standard sub-category",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          },
+          {
+            "$ref": "#/components/parameters/CAT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityStandardCategory"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/categories/{CAT}/items": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "List all reference items of a quality standard sub-category",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          },
+          {
+            "$ref": "#/components/parameters/CAT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityStandardReferenceItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/items/{TAG}": {
+      "get": {
+        "tags": [
+          "Quality Standards"
+        ],
+        "description": "A quality standard reference",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          },
+          {
+            "$ref": "#/components/parameters/TAG"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/QualityStandardReference"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/quality-standards/{STD}/items/{TAG}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List all quality rules attached to the quality standard reference",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/STD"
+          },
+          {
+            "$ref": "#/components/parameters/TAG"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/technologies": {
+      "get": {
+        "tags": [
+          "Technologies"
+        ],
+        "description": "List all technologies",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TechnologyItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/technologies/{TECHNO}": {
+      "get": {
+        "tags": [
+          "Technologies"
+        ],
+        "description": "A technology",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TECHNO"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Technology"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/technologies/{TECHNO}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality rules for a technology",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TECHNO"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/extensions": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "All extensions",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExtensionItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/extensions/{EXT}": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "An extension with properties imported from nuget servers",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EXT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Extension"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/extensions/{EXT}/versions": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "Versions ordered from the most recent one to the oldest one",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EXT"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExtensionVersionItem"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/extensions/{EXT}/versions/{EXTVER}": {
+      "get": {
+        "tags": [
+          "Extensions"
+        ],
+        "description": "A version with properties imported from nuget servers",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EXT"
+          },
+          {
+            "$ref": "#/components/parameters/EXTVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExtensionVersion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/extensions/{EXT}/versions/{EXTVER}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "All quality rules, ordered by ID, defined for a version of an extension",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/EXT"
+          },
+          {
+            "$ref": "#/components/parameters/EXTVER"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItemByVersion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },  
   "components": {
     "parameters": {
       "TECHNO": {
@@ -873,645 +1512,6 @@
           "href": {
             "type": "string",
             "example": "AIP/extensions/com.castsoftware.html5"
-          }
-        }
-      }
-    }
-  },
-  "paths": {
-    "/rest/AIP": {
-      "get": {
-        "tags": [
-          "AIP"
-        ],
-        "description": "REST API entry point",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AIP"
-                }
-              },
-              "application/csv": {
-                "schema": {
-                  "$ref": "#/components/schemas/AIP"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/versions": {
-      "get": {
-        "tags": [
-          "AIP"
-        ],
-        "description": "All versions of CAST AIP since 8.0.0",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/VersionItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/versions/{AIPVER}": {
-      "get": {
-        "tags": [
-          "AIP"
-        ],
-        "description": "Describe a version of CAST AIP",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/AIPVER"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Version"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/versions/{AIPVER}/quality-rules": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "All quality-rules of a CAST AIP Version",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/AIPVER"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityRuleItemByVersion"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/business-criteria": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "List Business Criteria",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "aplication/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/BusinessCriterionItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/business-criteria/{BCID}": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "Describe a business criterion",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/BCID"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/BusinessCriterion"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/business-criteria/{BCID}/quality-rules": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "List quality rules contributing to a business criterion",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/BCID"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": null,
-                  "$ref": "#/components/schemas/QualityRuleItem"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-rules/{ID}": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/ID"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QualityRule"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "List quality standards",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityStandardItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "Describe a quality standard",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QualityStandard"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/items": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "List all reference items of a quality standard",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityStandardReferenceItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/categories": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "A quality standard name such as 'CISQ-Maintainability'",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityStandardCategoryItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/categories/{CAT}": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "Describe a quality standard sub-category",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          },
-          {
-            "$ref": "#/components/parameters/CAT"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QualityStandardCategory"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/categories/{CAT}/items": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "List all reference items of a quality standard sub-category",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          },
-          {
-            "$ref": "#/components/parameters/CAT"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityStandardReferenceItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/items/{TAG}": {
-      "get": {
-        "tags": [
-          "Quality Standards"
-        ],
-        "description": "A quality standard reference",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          },
-          {
-            "$ref": "#/components/parameters/TAG"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/QualityStandardReference"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/quality-standards/{STD}/items/{TAG}/quality-rules": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "List all quality rules attached to the quality standard reference",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/STD"
-          },
-          {
-            "$ref": "#/components/parameters/TAG"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityRuleItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/technologies": {
-      "get": {
-        "tags": [
-          "Technologies"
-        ],
-        "description": "List all technologies",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/TechnologyItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/technologies/{TECHNO}": {
-      "get": {
-        "tags": [
-          "Technologies"
-        ],
-        "description": "A technology",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/TECHNO"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Technology"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/technologies/{TECHNO}/quality-rules": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "All quality rules for a technology",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/TECHNO"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityRuleItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/extensions": {
-      "get": {
-        "tags": [
-          "Extensions"
-        ],
-        "description": "All extensions",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ExtensionItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/extensions/{EXT}": {
-      "get": {
-        "tags": [
-          "Extensions"
-        ],
-        "description": "An extension with properties imported from nuget servers",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/EXT"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Extension"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/extensions/{EXT}/versions": {
-      "get": {
-        "tags": [
-          "Extensions"
-        ],
-        "description": "Versions ordered from the most recent one to the oldest one",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/EXT"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/ExtensionVersionItem"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/extensions/{EXT}/versions/{EXTVER}": {
-      "get": {
-        "tags": [
-          "Extensions"
-        ],
-        "description": "A version with properties imported from nuget servers",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/EXT"
-          },
-          {
-            "$ref": "#/components/parameters/EXTVER"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ExtensionVersion"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/rest/AIP/extensions/{EXT}/versions/{EXTVER}/quality-rules": {
-      "get": {
-        "tags": [
-          "Quality Model"
-        ],
-        "description": "All quality rules, ordered by ID, defined for a version of an extension",
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/EXT"
-          },
-          {
-            "$ref": "#/components/parameters/EXTVER"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/QualityRuleItemByVersion"
-                  }
-                }
-              }
-            }
           }
         }
       }
