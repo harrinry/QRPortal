@@ -3,14 +3,14 @@
     "name": "Avoid using React dangerouslySetInnerHTML",
     "href": "AIP/quality-rules/1020454",
     "critical": true,
-    "associatedValueName": "Single Value",
-    "description": "The function dangerouslySetInnerHTML is React\u2019s replacement for using innerHTML in the browser DOM. In general, setting HTML from code is risky because it\u2019s easy to inadvertently expose your users to a cross-site scripting (XSS) attack. That's why using these method can introduce a security risk. This rule is compliant with CISQ OMG ASCSM-CWE-79 recommendation and OWASP 2013 A3, 2017 A7 recommendations .",
-    "output": "Line and column for each violation\nAssociated value => number of violations found",
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The function dangerouslySetInnerHTML is React\u2019s replacement for using innerHTML in the browser DOM. In general, setting HTML from code is risky because it\u2019s easy to inadvertently expose your users to a cross-site scripting (XSS) attack. That's why using these method can introduce a security risk.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Ensure that users cannot add unchecked HTML string. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.",
     "reference": "https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml\nCISQ OMG ASCSM-CWE-79, OWASP 2013 A3, 2017 A7 recommendations",
     "remediation": "Avoid using the function dangerouslySetInnerHTML",
     "sample": "function createMarkup() {\n  return {__html: 'First &middot; Second'};\n}\n\nfunction MyComponent() {\n  return <div dangerouslySetInnerHTML={createMarkup()} />;\n}",
-    "total": "ReactJS components.",
+    "total": "Number of ReactJS components",
     "businessCriteria": [
         {
             "id": 66031,
