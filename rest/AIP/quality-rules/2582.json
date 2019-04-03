@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/2582",
     "critical": false,
     "maxWeight": 1,
-    "associatedValueName": "Associated Value",
     "description": "This metric retrieves all VB Modules and Frames not using the Option explicit.",
     "output": "This report lists all VB Modules and Frames not using the Option Explicit",
     "rationale": "Visual Basic has specific behavior that enable the developer to use variables even if these variables have not been previously declared and typed. However, it is possible to avoid this default behavior using the Option Explicit : in this case, all variables will require a declaration prior use.\nThis provides 2 main benefits.\nThe first benefit is a lower memory consumption improving other all application's performance. This is due to the fact that undeclared variables are automatically created as Variant (large memory consumption).\nThe second benefit is that this option helps the developer to detect typing errors when writing code.",

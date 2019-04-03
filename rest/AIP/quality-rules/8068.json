@@ -5,7 +5,7 @@
     "critical": true,
     "associatedValueName": "Pointer allocated in the function or method",
     "description": "This rule searches for functions where memory is allocated and the pointed-to data is returned from the function.",
-    "output": "Associated to each C function and C++ method with violations, the Quality Rule provides:\n- pointer allocated in the function or method\n- Bookmarks for violation patterns found in source code:\n  - pointer dynamic allocation",
+    "output": "Associated to each C function and C++ method with violations, the Quality Rule provides:\n- pointer allocated in the function or method\n- Bookmarks for violation occurrences found in source code:\n  - pointer dynamic allocation",
     "rationale": "If you allocate memory dynamically, at one time, you will have to deallocate it to avoid memory leaks. If you return the pointed-to data, it means you have not deallocated it within the function. And since you don't return the pointer itself, there will be no way for the function caller to deallocate the memory.",
     "reference": "High Integrity C++ Coding Standard Manual",
     "remediation": "You can correct this problem by using a smart pointer that will automatically reclaim the memory at the function end (replace 'unique_ptr' with another smart pointer, depending on what smart pointer is available to you)",

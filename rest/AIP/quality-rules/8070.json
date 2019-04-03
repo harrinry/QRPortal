@@ -6,7 +6,7 @@
     "maxWeight": 5,
     "associatedValueName": "Loop control variable",
     "description": "This rule searches for C functions, C++ methods, constructors, and destructors that contain 'for' bodies in which a control variable is altered.\nWe consider a variable as altered when we assign it a new value, or when it is passed as a non-const reference to a function (including calling a non-const member function on the variable if it is of class type).",
-    "output": "Associated to each C function, C++ method, constructor and destructor with violations, the Quality Rule provides:\n- loop control variable\n- Bookmarks for violation patterns found in source code:\n  - control variable alteration",
+    "output": "Associated to each C function, C++ method, constructor and destructor with violations, the Quality Rule provides:\n- loop control variable\n- Bookmarks for violation occurrences found in source code:\n  - control variable alteration",
     "rationale": "Updating the loop iterator in the 'for' body makes the logic difficult to understand, can decrease the maintainability, and then be error-prone practice.",
     "reference": "High Integrity C++ Coding Standard Manual",
     "remediation": "Review the logic of the loop management to avoid altering the iterator in the 'for' header and body.",

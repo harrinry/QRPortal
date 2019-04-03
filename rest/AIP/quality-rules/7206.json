@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7206",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "All methods that use InstanceOf inside a loop will be reported.",
     "output": "This report lists all methods with a call to instanceof inside a loop.\nIt provides the following information:\n  Method full name",
     "rationale": "The run-time type checking is a time expensive operation and as such should be avoided within loops.\nIn a more general matter, the use of InstanceOf operator, run-time type checking might indicate a misuse of Object Oriented programming. In deed, it is always recommended to design classes and interfaces so client code do not need to use InstanceOf operator and downcasting. The recommended way is to prefer polymorphism over InstanceOf operator and downcasting.",

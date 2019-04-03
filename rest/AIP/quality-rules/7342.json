@@ -6,7 +6,7 @@
     "maxWeight": 7,
     "associatedValueName": "Virtual overridden method",
     "description": "This rule searches for all functions overriding virtual functions without being explicitly declared as virtual.",
-    "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- Virtual overridden method\n- Bookmarks for violation patterns found in the source code:\n  - Non-virtual method\n  - Virtual method",
+    "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- Virtual overridden method\n- Bookmarks for violation occurrences found in the source code:\n  - Non-virtual method\n  - Virtual method",
     "rationale": "Functions overriding virtual functions are always virtual, even if not explicitly declared so. A missing 'virtual' keyword in front of a function overriding virtual functions will hide the polymorphic nature of the function from developers using the it. They may not know that at execution time other functions in the inheritance tree run instead of the function they are reading. \nA missing 'virtual' keyword may also be an indication that the author of the function ignored the fact that it needed to be virtual and thus was not aware that the function requires specific attention and specific coding. This usually results in unexpected behavior at runtime which can range from functional bugs to memory leaks and crashes.",
     "reference": "High Integrity C++, Rule 3.3.16",
     "remediation": "Add the virtual keyword in the function declaration, checks that the function is implemented as expected and matches the class hierarchy design requirements and documents the function for future extension of the class hierarchy and modification of the function.",

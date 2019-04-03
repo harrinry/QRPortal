@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/2232",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "When the web.xml file doesn't reference an error page through the <error-page> directive, this Quality Rule reports each page that does not reference an error page directive (<%@ page errorPage=\"error.jsp\" %>) except for the error page itself (page with the directive <%@ page isErrorPage=\"true\"%>)",
     "output": "This report lists all JSP pages not using error page (except the error pages themselves) and the web.xml file when no error-page is specified in the web.xml file.\nIt provides the following information: \n JSP page full file name",
     "rationale": "While a thrown exception's stack trace proves extremely useful for developers when debugging their code, it is rarely desirable to share an entire exception stack trace with the software's users. \nLengthy stack traces are not aesthetically pleasing and can increase security risks by exposing information that does not need to be released. JSPs allow developers to catch and handle exceptions in the code, resulting in more secure and aesthetically pleasing exception handling.",

@@ -3,7 +3,6 @@
     "name": "Avoid Fields in Servlet Classes that are not final static",
     "href": "AIP/quality-rules/7152",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Find all non final static fields that belong to Servlets.\nAll Classes that extend HttpServlet at any level are considered as Servlets.",
     "output": "This report lists all non final static fields that belong to Servlet classes.\nIt provides the following information:\n  - Field full name",
     "rationale": "Servlets must be programmed in a thread-safe manner, because the controller will share the same instance for multiple simultaneous requests. In addition to the servlet's threading model, if your intention is to store request-specific state and if your container provides clustering facilities, there's no guarantee that the same servlet instance will receive all the requests (from one user or all users) in a Web application.\n\nThe use of non static final fields within a Servlet creates a security breach as this object is shared among multiple sessions and thus can lead to confidential data leaks.",

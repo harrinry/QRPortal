@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7268",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "List all Dispose() methods that do not call GC.SuppressFinalize().\nThis applies only for Dispose() method defined in classes which implement the IDisposable interface.",
     "rationale": "Because the cleanup code executed at dispose-time is a superset of the code executed at the finalize-time, there is no need to call the finalize-time code during object finalization after the object has been disposed. Moreover, keeping objects that don't need to be finalized in the finalization queue has a cost associated with it. This is why the Dispose() method should call GC.SuppressFinalize, which removes the object from the finalization queue and thus prevents unnecessary finalization.",
     "reference": "Resource Management in .NET\nby Krzysztof Cwalina\nProgram Manager - Microsoft .NET Framework \nhttp://www.gotdotnet.com/team/libraries/whitepapers/resourcemanagement/resourcemanagement.aspx",

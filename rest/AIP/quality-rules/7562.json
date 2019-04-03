@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7562",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "Reports all static field defined as a class or interface that implements:\n\n* java.util.Collection or java.util.Collection<E>\n\n* or java.util.Map or java.util.Map<K,V> except when:\n   - it is the class or a subclass of java.util.WeakHashMap or java.util.WeakHashMap<K,V>\n   - the field is defined as an interface and is initialized with an instance of the class or a subclass of  java.util.WeakHashMap or java.util.WeakHashMap<K,V>.",
     "output": "This report lists all static field defined as collection (class or interface).\nIt provides the following information:\n  Field full name",
     "rationale": "In a production environment, memory leaks can force organizations to add more memory and hardware resources. They can even cause an application to crash unexpectedly. In theory, the garbage collector is responsible to manage memory and should avoid these issues.\n\nIn practice, static collection classes, such as HashMap and Vector can cause memory leak. Static collections are likely to cause memory leaks because static variables remain in memory as long as the application runs, regardless of its object creation and destruction. So because their life cycle is the application duration, the objects that they reference will be kept in memory until the application end.",

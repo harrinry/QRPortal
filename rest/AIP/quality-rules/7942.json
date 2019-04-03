@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7942",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
     "description": "All EJBs should not call methods 'wait()', 'notify()' and notifyAll() methods or define methods with the 'synchronized' qualifier. Note that for synchronized we only check that methods have not the keyword synchronized (we don't check the case where there is a block synchronized in the method)",
     "output": "This report lists all EJB artifact that use 'synchronized' keyword or call 'wait', 'notify' or 'notifyAll' methods.\nIt provides the following information:\n Artifact full name",
     "rationale": "Using 'synchronized' qualifier for EJB methods or calling 'wait', 'notify' and 'notifyAll' from EJB methods might corrupt the normal behavior of the application server",

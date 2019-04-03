@@ -1,10 +1,9 @@
 {
     "id": 7254,
-    "name": "Declare as Static all methods not using instance members",
+    "name": "Declare as Static all methods not using instance members (JEE)",
     "href": "AIP/quality-rules/7254",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "All methods that don't use instance fields and/or methods will be reported except if they have been extended in a subclass or inherit from their parents.",
     "output": "This report lists all non-static methods that don't use any instance fields.\nIt provides the following information:  Method Full Name",
     "rationale": "When an object is created:\n    * Memory is allocated to all the fields\n    * All super class fields are also allocated memory\n    * All sub class fields, super class fields are initialized .\n    * The constructor is invoked.\n\nUsing a static avoid to create an object that takes resources when it is unnecessary.",

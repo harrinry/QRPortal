@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7556",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "Reports all overridden java.lang.Object.equals(java.lang.Object) and implementations of java.lang.Comparable.compareTo(java.lang.Object) that reference instanceof.",
     "output": "List all equals and compareTo methods that reference instanceof. The rule provides the following information: Method Full Name",
     "rationale": "When checking the equality between two objects or comparing them, before comparing the attribute's value the type equality must be validated. Often the instanceof operator is used to perform this equality, however, the condition fails to return false if the argument is a subclass of the class that is compared. Thus, it might violate the symmetry requirement of the contract (x.equals(y) should return true if and only if y.equals(x) returns true). It is the same for compareTo since the recommended behavior is to use a natural ordering that is consistent with equals.\n\nAs a consequence you might have unexpected behavior where two objects are considered equals, greater or less than while they are not and moreover, the result depends on which object the method has invoked.",

@@ -4,13 +4,13 @@
     "href": "AIP/quality-rules/1588",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
     "description": "WHEN OTHERS must be present in exception management.",
     "output": "This report lists all functions, procedures and triggers not using WHEN OTHERS clauses to catch unexpected exceptions. It provides the following information: function, procedure or trigger Name; function, procedure or trigger Full Name.",
     "rationale": "If not handled, exceptions can lead to unwanted program behaviour.",
     "remediation": "Add a WHEN OTHERS clause in the exception trapping mechanism.",
     "remediationSample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\n    WHEN OTHERS THEN\n        raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);\n\nEND;",
     "sample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\nEND;",
+    "total": "Number of PLSQL compiled objects",
     "businessCriteria": [
         {
             "id": 20140522,

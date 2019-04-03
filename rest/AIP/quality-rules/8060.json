@@ -6,7 +6,7 @@
     "maxWeight": 9,
     "associatedValueName": "Pointer incorrectly casted",
     "description": "This rule searches for functions that do not use a 'dynamic_cast' to cast a pointer to a base class to a pointer to a derived class.",
-    "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- pointer incorrectly casted\n- Bookmarks for violation patterns found in source code:\n  - pointer cast\n  - source class\n  - target class",
+    "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- pointer incorrectly casted\n- Bookmarks for violation occurrences found in source code:\n  - pointer cast\n  - source class\n  - target class",
     "rationale": "You can cast from pointer to base to pointer to derived only if the pointed-to object really is of the derived type (or a type derived from the derived type). Using a 'static_cast' will always succeed, even when the pointed-to object is of the wrong type. Using 'dynamic_cast' will check the real type of this object before performing the cast and is safer to use.\n\nSee also rule \"Casting from pointer to base Class to pointer to derived Class should be done through 'dynamic_cast' or 'static_cast'\" (id 8078).\n\nAdditionally, casting from a base class to a derived class is often a sign of base design and should usually be avoided.",
     "reference": "MISRA C++\n\"C++ coding standard\":http://www.gotw.ca/publications/c++cs.htm (Sutter/Alexandrescu) Item 93",
     "remediation": "Use 'dynamic_cast' to cast pointers to base class to pointer to derived class.",

@@ -6,7 +6,7 @@
     "maxWeight": 7,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for derived classes which provide a destructor not explicitly declared as virtual and which inherit from a base class that provides a virtual destructor.",
-    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation patterns found in source code:\n  - Derived-class non-virtual destructor\n  - Base-class virtual destructor",
+    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation occurrences found in source code:\n  - Derived-class non-virtual destructor\n  - Base-class virtual destructor",
     "rationale": "A missing virtual keyword in front of a destructor \"overriding\" a virtual destructor will hide the polymorphic nature of the destructor from developers using the class. They may not know that at execution time other destructors in the inheritance tree will be executed. A missing virtual keyword may also be an indication that the author of the destructor ignored the fact that it needed to be virtual and thus was not aware that the destructor requires specific attention and specific coding.",
     "remediation": "Add the virtual keyword in the destructor declaration, checks that the destructor is implemented as expected and matches the class hierarchy design requirements, and documents the destructor for future extension of the class hierarchy and modification of the method.\n\nAlternatively, if the derived class destructor is empty, remove it.",
     "remediationSample": "class Car : public Vehicle\n{\npublic:\n    Car();\n    virtual ~Car();           // FIXED\nprotected:\n    int numberOfWheels;\n};",

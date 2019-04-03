@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7862",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
     "description": "The exception Exception should never be caught in a catch statement. Always Subclass Exception and use the Subclassed Classes.",
     "output": "This rule lists all Methods catching an exception of type Exception.\nIt provides the following information:\n- Method full name",
     "rationale": "Catching the Exception class directly means that the try/catch will process all the exceptions in the same way: RuntimeException will be processed in the same way as application specific exceptions such BankingException or CredentialException. This will prevent the application from carrying out the specific recovery process that is needed and as a consequence will threaten both application robustness and security. For example, each exception related to resource allocation whose catch does not explicitly release the resource might create a resource leak. When such a leak occurs on a limited set of available resources, such as the database connection, the application can then become unusable because resources cannot be allocated any more. The application also becomes difficult to support and run in production as root-cause analysis is made more difficult. The support teams might not even be aware that something went wrong (by catching Exceptions, RuntimeException might not be visible any more).",

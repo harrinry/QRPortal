@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7378",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "JavaScript Files must be referenced through the HTML tag SCRIPT",
     "output": "This report lists all JSP pages that include a JavaScript file.",
     "rationale": "JavaScript includes are sent by the server each time the page that include it is loaded. If you use the HTML tag <link> to refer to this file, the browser doesn't have to query for the static content for every page request. Most popular browser like IE, FireFox, Safari, Opera first check their local cache for the static file/resource and only if they don't find do they make a request to the web server for the same.",

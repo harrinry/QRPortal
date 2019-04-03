@@ -1,10 +1,9 @@
 {
     "id": 7270,
-    "name": "Declare as Static all methods not using instance members",
+    "name": "Declare as Static all methods not using instance members (.NET)",
     "href": "AIP/quality-rules/7270",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "All methods that don't use instance fields will be reported except if they have been extended in a subclass or inherit from their parents.\n\nFor all .Net Classes, including .Net Forms : \nIf a method doesn't use an instance field or const, it should be declared static except if the method is overriden or override another method.",
     "output": "All methods that don't use instance fields (either const or not) will be reported except if they have been extended in a subclass or inherit from their parents.",
     "rationale": "When an object is created:\n    * Memory is allocated to all the fields\n    * All super class fields are also allocated memory\n    * All sub class fields, super class fields are initialized .\n    * The constructor is invoked.\n\nUsing a static avoid to create an object that takes resources when it is unnecessary.",

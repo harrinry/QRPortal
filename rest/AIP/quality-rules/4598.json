@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4598",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
     "description": "Java artifacts should not use 'java.lang.Runtime.exec()'",
     "output": "This report lists all java artifacts using 'java.lang.Runtime.exec'.\nIt provides the following information:\n - Artifact full name",
     "rationale": "For portability reasons, 'java.lang.Runtime.exec()' should not be used since it means being dependant on the environment where the application is deployed.\nFor security reasons, 'java.lang.Runtime.exec()' can lead to malicious file execution resulting in devastating attacks such as total server compromise.\n\nThere are uses correct uses of Runtime.exec for example when the method call is platform neutral.\n\nSuch examples of the correct use of Runtime.exec are:\n- Invocation of a Java compiler, with the name of the compiler specified as a\nuser-settable Property.\n- Execution of a command the user typed in (a \"shell\").\n- Invocation of a browser, configured as part of the installation of the\nprogram, when the user presses a \"Help\" button.",

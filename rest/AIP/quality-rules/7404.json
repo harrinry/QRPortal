@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7404",
     "critical": false,
     "maxWeight": 1,
-    "associatedValueName": "Associated Value",
     "description": "List of schema views that are not called",
     "output": "this report lists all unreferenced views .\nIt provides the following information:\n\n- View name\n- View fullname",
     "rationale": "Unreferenced views may be the symptom of Dead Code. And dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance. A view is flagged as unreferenced when it is not called.\n\nWarning:\nUnreference code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.",

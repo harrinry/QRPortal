@@ -3,7 +3,6 @@
     "name": "Never use array to map a collection",
     "href": "AIP/quality-rules/7502",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Reports any association made using array",
     "output": "List all Hibernate Entities that use array to map a collection.\n\nIt provides the following information:\n Hibernate Entity Full Name",
     "rationale": "Hibernate supports this usage; indeed, the details of an array mapping are virtually identical to those of a list. However, we very strongly recommend against the use of arrays, since arrays can't be lazily initialized (there is no way to proxy an array at the virtual machine level).\nLists, maps and sets are the most efficient collection types.\n\nSo, using array can affect your application performance when it can contain many items, it looses lazy loading, optimized dirty checking and performance features for persistent collections.",

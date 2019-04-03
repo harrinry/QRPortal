@@ -1,10 +1,9 @@
 {
     "id": 7272,
-    "name": "Provide a private default Constructor for utility Classes",
+    "name": "Provide a private default Constructor for utility Classes (.NET)",
     "href": "AIP/quality-rules/7272",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "Utility classes must have a private default constructor, but must not have other constructors. Default constructors are constructors without any parameters. Utility classes are static classes: all their fields and methods (excluding constructors) are static (this excludes classes marked as static as this case is handled by the compiler).",
     "output": "This Quality Rule will list all static classes (classes with all methods/fields marked as static and with at least one static method) that do not have one private default constructor. It will also list classes that, in addition to the private default constructor, have other constructors. Classes marked with the static keyword are out of the scope of this Quality Rule and should not be returned (because this is checked by the compiler). Const fields are taken into account in the same way as other fields.",
     "rationale": "Utility classes are not meant to be instantiated because all the functionalities that they provide are accessible without instantiating the class. Instantiating these classes means that the developer has effectively misued the class. It also consumes memory unnecessarily. Providing a private default constructor ensures that the class is not instantiated.",

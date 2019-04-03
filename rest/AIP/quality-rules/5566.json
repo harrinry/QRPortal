@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/5566",
     "critical": false,
     "maxWeight": 1,
-    "associatedValueName": "Associated Value",
     "description": "\"call_form\" built-in Function should be used from a centralized location i.e. calls must be encapsulated.\nThus the report list all usages of the call_form function. Legitimate calls should be marked as exceptions.",
     "output": "This report lists all call_form built-in Functions that are not used from a centralized location",
     "rationale": "In Oracle Application/eBusiness it is recommended not to use directly the call_form buit_in but \"FND_FUNCTION.Execute\" instead.\nThe reason for that is to have a correct behaviour of the application.\n\nThis rule also apply to other built-in like Open_form, clear_form etc.\n\nOutside of Oracle Applications/eBusiness context, encapsulating built-ins allow having a centralized control and ease upgrade of the application (for example when such a built-in is not supported anymore).",

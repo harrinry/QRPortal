@@ -6,7 +6,7 @@
     "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for C++ assignment operators that do not assign all the non static members of the class.",
-    "output": "Associated to each C++ assignment operator with violations, the Quality Rule provides:\n- The number of missing static members\n- Bookmarks for violation patterns found in source code:\n  - assignment operator\n  - missing static member",
+    "output": "Associated to each C++ assignment operator with violations, the Quality Rule provides:\n- The number of missing static members\n- Bookmarks for violation occurrences found in source code:\n  - assignment operator\n  - missing static member",
     "rationale": "Not assigning all data members in 'operator=' leads to the loss of information and can make the target object in an incoherent state.",
     "remediation": "Assign non-static members to the target object.",
     "total": "Number of C++ assignment operators",

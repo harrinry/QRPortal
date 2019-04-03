@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4570",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
     "description": "Class Variables with Public or Package access type should be Final. Class Variables are Static Fields. Package access types taken into account are Non Public, Non Protected and Non Private.",
     "output": "This report lists all Non Final Class Variables with Public or Package access type. It provides the following information: Field full name",
     "rationale": "For security reasons, if a Class Variable has Public or Package visibility, it should be declared Final to avoid being updated without Class control. Also for robustness reasons in a multi-threaded environment, leaving non-protected access to non-final class variables may lead to unpredictable behavior where the state of the class/instance is changed by another thread.",

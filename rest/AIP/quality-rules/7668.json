@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7668",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "Reports all methods that reference:\n* javax.xml.parsers.DocumentBuilder class",
     "output": "List all methods, that reference javax.xml.parsers.DocumentBuilder class.\n\nIt provides the following information:\n Java Method Fullname",
     "rationale": "Efficient parsing of XML documents is more and more critical as XML gets adopted more widely. It is very important to have an efficient way to parse XML data, especially in applications that are intended to handle large volumes. Improper parsing can result in excessive memory usage and processing times that can hurt scalability.\n\nWhen you use DOM parsing techniques to read an XML, it means that entire XML document will be parsed at one time and load into memory. \nSo it will time and memory expensive and must be used only when you have to modify XML documents.",

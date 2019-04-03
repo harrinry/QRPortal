@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7678",
     "critical": false,
     "maxWeight": 3,
-    "associatedValueName": "Associated Value",
     "description": "Finds and reports all references to log4j API usage. The threshold parameter allows specifying other specific implementations package to avoid.\nAll artifacts that reference a class, an interface, a method or a field that belongs to a class from the package org.apache.log4j will be reported.",
     "output": "This report lists all artifacts and fields that violate this rule.\nIt provides the following information:\n Artifact Full Name and Field Full Name",
     "rationale": "Instead of being stick to a specific logging implementation, it is recommended to use the logging wrapper Jakarta commons-logging. It provides a Log interface that is intended to be both light-weight and an independent abstraction of other logging toolkits. It provides the middleware/tooling developer with a simple logging abstraction that allows the user (application developer) to plug in a specific logging implementation.",

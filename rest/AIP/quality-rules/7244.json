@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7244",
     "critical": false,
     "maxWeight": 3,
-    "associatedValueName": "Associated Value",
     "description": "Avoid direct usage of EJB Entity from the client. All calls to Entity Bean (implements javax.ejb.EntityBean) from the client (specified by the package name list) without passing through a Session Bean (implements javax.ejb.SessionBean) will be reported.",
     "output": "This report lists all Methods of the client that access directly to entity bean.\nIt provides the following information:\n Method full name\n\nThe client threshold can be changed at will.",
     "rationale": "An Entity Bean should always be used by the Bean Class of a Session Bean to reduce network call, to reduce coupling between the client and the implementation of business objects and also to avoid revealing your database structure to unknown application.",

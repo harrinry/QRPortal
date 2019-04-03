@@ -6,7 +6,7 @@
     "maxWeight": 4,
     "associatedValueName": "Number of parameters that are defined by value",
     "description": "This rule searches for C/C++ functions that are defined with parameters of 'struct' or 'class' type passed by value. If the classes are small with trivial copy operation, the rule is not triggered.",
-    "output": "Associated to each C/C++ function and method with violations, the Quality Rule provides:\n  - the number of parameters that are defined by value\n- Bookmarks for violation patterns found in the source code:\n  - function or method",
+    "output": "Associated to each C/C++ function and method with violations, the Quality Rule provides:\n  - the number of parameters that are defined by value\n- Bookmarks for violation occurrences found in the source code:\n  - function or method",
     "rationale": "In C++, passing a 'class' or 'struct' object by value creates a copy of the object, by calling the copy constructor of the class. This copy can be slow, especially on big objects. The same applies for C 'struct' even if the copy constructor is not called.",
     "remediation": "Pass the argument by reference (with 'const'). This may require that you add missing 'const' qualifiers to class functions.",
     "remediationSample": "class Fraction\n{\nprivate:\n    int numerator;\n    int denominator;\n    // ...\n};\n\nvoid display(Matrix const &m);",

@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7190",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
     "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that don't call super.validate()",
     "output": "This report lists all validate() methods that violate this rule.\nIt provides the following information:\n Method Full Name",
     "rationale": "Struts Validator can be extended to implement your own custom validation.\nWhen overriding the validate() method, call the ancestor validate()\nmethod, to ensure that any framework validations are triggered. In the case the validation framework is disabled, you expose the application to any type of attacks based on invalid field input.",

@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7466",
     "critical": false,
     "maxWeight": 3,
-    "associatedValueName": "Associated Value",
     "description": "This metric list all locations where the DataSource member is set before the ValueMember/DisplayMember.",
     "output": "This metric list all objects where the DataSource member is set before the ValueMember/DisplayMember.",
     "rationale": "When populating data bound controls such as ComboBox or ListBox, it is more efficient to set the DataSource property last, after ValueMember and DisplayMember are set. Otherwise your control will be repopulated as a result of the ValueMember change.\n\nBindingSource.SuspendBinding and BindingSource.ResumeBinding are two methods that allow the temporary suspension and resumption of data binding. SuspendBinding prevents changes from being pushed into the data source until ResumeBinding is called. \nThese methods are designed to be used with simple bound scenarios such as TextBox or ComboBox data binding. However, Controls that implement complex data binding, such as the DataGridView control, update their values based on change events such as ListChanged, so calling SuspendBinding will not prevent them from receiving changes to the data source. You can use these methods in complex binding scenarios if you suppress ListChanged events by setting the RaiseListChangedEvents property to false.",

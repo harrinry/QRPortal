@@ -3,7 +3,6 @@
     "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
     "href": "AIP/quality-rules/7724",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Reports all equals() methods of persistent subclasses that involves an attribute or a getter of the subclasses of the persistent base class (subclass or joined-subclass).",
     "output": "Lists all overriden equals() methods of persistent subclasses (subclass or joined-subclass) that involves an attribute or the getter of the subclasses of the persitent class.\n\nIt provides the following information:\n Method full name",
     "rationale": "It's almost never correct to override equals() on a persistant subclass and include properties that do not belong to the persistent base class in the comparison. It's tricky to satisfy the requirements that equality be both symmetric and transitive in this case; and, more important, the business key wouldn't correspond to any well-defined candidate natural key in the database (subclass properties may be mapped to a different table).",

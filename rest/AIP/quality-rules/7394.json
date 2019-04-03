@@ -1,6 +1,6 @@
 {
     "id": 7394,
-    "name": "Avoid having multiple Artifacts updating data on the same SQL Table",
+    "name": "Avoid having multiple artifacts updating data on the same SQL Table",
     "href": "AIP/quality-rules/7394",
     "critical": false,
     "maxWeight": 7,
@@ -8,6 +8,8 @@
     "description": "This metric detects tables having too many ways to update them. It retrieves tables having more than X artifacts updating these tables, where X a configurable parameter.",
     "output": "Associated to each SQL table with violations, the Quality Rule provides: \n- The Number of potential ways to update the SQL Table.",
     "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.",
+    "remediationSample": "import java.sql.*;\n\n// less than X classes update the same table\n\npublic class TestUpdate {\n\n  public static void main(java.lang.String[] args) {\n\n       String query = \"UPDATE books SET books.title = 'MyTest' WHERE books.id=1\";\n\n       try {\n          Statement stmt = con.createStatement();\n          results = stmt.executeQuery(requete);\n\n       } catch (SQLException e) {\n\n         // ...\n       }\n  }\n}",
+    "sample": "import java.sql.*;\n\npublic class TestUpdate1 {\n\n  public static void main(java.lang.String[] args) {\n\n       String query = \"UPDATE books SET books.title = 'MyTest' WHERE books.id=1\";\n\n       try {\n          Statement stmt = con.createStatement();\n          results = stmt.executeQuery(requete);\n\n       } catch (SQLException e) {\n\n         // ...\n       }\n  }\n}\n\n// ... X classes update the same table\n\npublic class TestUpdateX {\n\n  public static void main(java.lang.String[] args) {\n\n       String query = \"UPDATE books SET books.title = 'MyTest' WHERE books.id=1\";\n\n       try {\n          Statement stmt = con.createStatement();\n          results = stmt.executeQuery(requete);\n\n       } catch (SQLException e) {\n\n         // ...\n       }\n  }\n}",
     "total": "The total procedure counts the number of tables.",
     "businessCriteria": [
         {

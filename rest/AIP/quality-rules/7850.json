@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7850",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
     "description": "This rule checks all supply functions of Web Dynpro for ABAP and methods called by these supply functions to verify if they do not raise exceptions.",
     "output": "This report lists all Web Dynpro supply functions that raise exceptions or that call methods raising exceptions.\nIt provides the following information:\n- Supply Function full name",
     "rationale": "If possible, avoid raising an exception in a supply function or in a method called by a supply function. Since supply functions are often called during rendering, these exceptions cannot be processed efficiently. This can impact the error handling and the performance of the component.",

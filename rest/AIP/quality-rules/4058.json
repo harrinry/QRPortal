@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4058",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "List all statements that include JOIN clause(s) defined with the Oracle proprietary syntax",
     "output": "This report lists all queries using old style joins instead of ANSI-Standard joins,\nThis includes \"classic\" joins as well as outer joins (*= and =*)",
     "rationale": "- ANSI syntax allow a clear separation between joins clause and the where clause restrictions. The ANSI notation makes the relations between the tables explicit, and saves you from coding equality tests for join conditions in the WHERE clause. Support for full outer joins also eliminates the need for complex workarounds to do those queries (With old syntax some construction can lead to an unexpected behavior). Moreover ANSI joins allows having optimization hints. And last, this historic syntax notation will probably be deprecated in a future release",

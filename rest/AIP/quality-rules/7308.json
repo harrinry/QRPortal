@@ -5,7 +5,7 @@
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "Inner class accessed",
-    "description": "This Quality Rule retrieves all methods that use inner classes.",
+    "description": "This Quality Rule retrieves all methods that use inner classes except if the class is a static one.",
     "output": "This report lists all methods using Inner Classes. It provides the following information:\n - Method full name\n - Inner class accessed",
     "rationale": "Java bytecode has no concept of inner classes, so the compiler translates inner classes into ordinary classes that can be accessed by any code in the same package. An inner class can access the fields of the enclosing outer class even if these fields are declared private and the inner class is translated into a separate class. To allow this separate class to access the fields of the outer class, the compiler silently changes these fields' scope from private to package. As a result, when inner classes are declared, they are exposed but the compiler also silently overrules the decision to make some fields private.",
     "reference": "Gary McGraw & Ed Felten, http://www.securingjava.com/preface.html",

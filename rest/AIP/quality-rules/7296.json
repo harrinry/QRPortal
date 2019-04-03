@@ -5,7 +5,7 @@
     "critical": true,
     "associatedValueName": "Header file name",
     "description": "This rule searches for static variables which are defined in header files (ex: *.h files).  but not in a class definition. \n\nNotes: \n- Static variables which are taken into account are global variables only and, for C++, are outside any class scope.",
-    "output": "Associated to each C/C++ static variable with violations, the Quality Rule provides:\n- The header file name \n- Bookmarks for violation patterns found in the source code:\n  - static variable",
+    "output": "Associated to each C/C++ static variable with violations, the Quality Rule provides:\n- The header file name \n- Bookmarks for violation occurrences found in the source code:\n  - static variable",
     "rationale": "When defining a static variable in a header file, a new instance of the variable is created for each file including the header file. This is often surprising as people often expect to have only one instance of the variable. This leads to errors that are very difficult to track/understand.",
     "remediation": "Do not define the variable in header as static but define it as static in a source file (ex: *.c, *.cpp) and as extern in files using it instead.\nIn the particular case of \"static const variable=value;\", just remove the static, it is redundant with the \"const\" qualifier.",
     "remediationSample": "FILE: f.h\n\nextern int myvar;\n\nFILE: f2.cpp\n\n#include \"f.h\"\nvoid g() {\n   myvar = 1;\n}\n\nFILE: f1.cpp\n\n#include \"f.h\"\nint myvar = 0;\nvoid g();\nint main(int argc, char* argv[]) {\n   g();\n   printf(\"myvar value is %d\\n\", myvar); /* Display 1 as expected. */\n   return 0;\n}",

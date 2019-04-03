@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7364",
     "critical": false,
     "maxWeight": 9,
-    "associatedValueName": "Associated Value",
     "description": "This metric reports all duplicated form validators with the same name. Note that it can be the form name or the action name (in the case of a form shared among different actions)",
     "output": "This report lists all validation forms that are duplicated. It provides the following information:\n  Form Validation Full Name",
     "rationale": "When several validation form have the same name, the Struts Validator framework will choose one of the form validation to check input values. This means that the behavior is not controlled and that wrong input pass the validation check. This may lead to SQL injection, cross-site scripting...",

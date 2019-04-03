@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7640",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
     "description": "Reports all catch blocks that refer to the assert instruction.",
     "output": "This report lists all Methods that refer to the assert instruction.It provides the following information: Method full name",
     "rationale": "Assertion in a catch block has no meaning. It is often related poor conception because:\n- assertions are not enabled in production environments, so the application will end-up with an empty catch-block\n- assertions do not give any meaning to the issue\n\nAlso, in a catch block it is too late to refer to an assertion.",

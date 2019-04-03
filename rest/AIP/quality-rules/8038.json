@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/8038",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
     "description": "This metric reports validator form with all their validator form field that do not reference a java class field.",
     "output": "This report lists all validator form fields that do not reference a java class field. It provides the following information:\n  Validation Form Field",
     "rationale": "When a validation form field is not associated to java class field, this indicate that the validation logic is not properly maintained and can result in a weakness.\nInput validation is required to secure an application. Moreover, the web interface is exposed to anyone. Non validating input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like erasing the content of a database.",

@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7636",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
     "description": "Reports all hibernate entities that use timestamp property instead of version.",
     "output": "The metric will list all hibernate entities that use timestamp property instead of version.\n\nIt provides the following information:\n Hibernate Entity",
     "rationale": "In theory, a timestamp is slightly less safe, since two concurrent transactions might both load and update the same item all in the same millisecond; in practice, this is unlikely to occur. However, we recommend that new projects use a numeric version and not a timestamp.\nFor example, you might encounter this issue: after daylight savings took effect, every call to update an entry into my database created before daylight savings took effect would result in a StaleObject-StateException.\nIf your timestamp data type doesn't include a daylight saving time attribute, you'll run into problems with Hibernate's automatic versioning. A version property is less problematic for automatic versioning; hence we recommend it.",

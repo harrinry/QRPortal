@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7208",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
     "description": "All methods that use \"is\" operator inside a loop will be reported.",
     "output": "This report lists all methods that use the 'is' operator String inside loops.\nIt provides the following information:\n Method full name",
     "rationale": "The run-time type checking is a time expensive operation and as such should be avoided within loops.\nIn a more general matter, the use of is operator, run-time type checking might indicate a misuse of Object Oriented programming. In deed, it is always recommended to design classes and interfaces so client code do not need to use 'is' operator and down-casting. The recommended way is to prefer polymorphism over 'is' operator and down-casting.",

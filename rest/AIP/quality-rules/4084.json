@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4084",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
     "description": "Nested Stored Procedures should not use temporary Tables",
     "output": "This report lists all nested Stored Procedures using temporary Tables\nIt provides the following information:  Procedure name, Procedure full name, number of used temporary Tables",
     "rationale": "Using temporary tables in nested procedures could be risky when tables are created in the parent stored procedure level and changes are made in the nested level. At the creation moment of the nested procedure, we should create all parent tables. \nWhen temporary table is created in the nested procedure, note that the procedure will be recompiled at each execution before SQL Server 2005+. Starting with SQL Server 2005+, recompilation occurs at statement level rather than stored procedure level.",

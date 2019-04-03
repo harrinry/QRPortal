@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4696",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
     "description": "Catch blocks should not use 'System.err' and 'System.out' to handle the errors.",
     "output": "This report lists all Methods using 'System.err' in catch blocks. It provides the following information: Method full name",
     "rationale": "Using 'System.err' in a catch block usually means that it is used to handle errors. 'System.err' should be used by the JVM only to notify the user when errors occur.",

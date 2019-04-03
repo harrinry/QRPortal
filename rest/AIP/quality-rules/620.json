@@ -6,7 +6,7 @@
     "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "This rule searches for classes that are derived in sub-classes and that do not provide a virtual destructor.",
-    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation patterns found in source code:\n  - Class definition\n  - Non-virtual destructor if any",
+    "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- Bookmarks for violation occurrences found in source code:\n  - Class definition\n  - Non-virtual destructor if any",
     "rationale": "If an object is handled through a pointer to its base class (handled through a generic interface that is certainly a major objective in object-oriented programming), memory and stability problems occur when the object is to be deleted and when the object has been created on the heap with new. If the pointer is to the base class, the compiler can only know to call the base-class version of the destructor during the delete. Any memory clean up or functional actions that must take place when derived classes are deleted will not take place provoking memory leaks, resource losses and stability issues.",
     "reference": "Bruce Eckel's \"Thinking in C++\"\nhttp://www.cs.huji.ac.il/labs/parallel/Docs/C++/Guide/tic0161.html\n\nBruce Eckel's \"Thinking in C++\"\nhttp://www.cs.huji.ac.il/labs/parallel/Docs/C++/Guide/",
     "remediation": "Add a virtual destructor to the base class.",

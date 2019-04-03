@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/4076",
     "critical": false,
     "maxWeight": 1,
-    "associatedValueName": "Associated Value",
     "description": "Triggers, Views, Functions and Procedures should not use temporary Objects",
     "output": "This report lists all Triggers, Views, Functions and Procedures using temporary Objects\nIt provides the following information:\n  Trigger / View / Function / Procedure name, Trigger / View / Function / Procedure full name, number of used temporary Objects",
     "rationale": "Rationale - Temporary objects can have adverse impact on performance and scalability. We have to make sure the tempdb is not full anytime due to excess temporary objects. The worst case scenario will be the Server will stop working if the tempdb is full. Therefore this rule allows user to know what are the temporary objects used by his application and he can take the appropriate actions to clean/remove them if they are not needed.",

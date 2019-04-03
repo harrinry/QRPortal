@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7480",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "This metric list all indicators not using aggregate awareness.",
     "output": "List of indicators (grouped by classes) not using @aggregate_aware function",
     "rationale": "Use aggregate awareness, which speeds up query time by using special tables containing pre-calculated data. Do all aggregation on the server side instead of in the document (this can result in huge time savings).",

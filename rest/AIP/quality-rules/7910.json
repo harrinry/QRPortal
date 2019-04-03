@@ -3,7 +3,6 @@
     "name": "Never exit a finally block with a return, break, continue, or throw",
     "href": "AIP/quality-rules/7910",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Reports all methods that contain an abrupt in a finally block. An abrupt completion of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method.",
     "output": "Reports all methods that contain an abrupt exit in a finally block. An abrupt exit of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method.\n\nIt provides the following information:\n Method full name",
     "rationale": "Care must be taken if completion of a try-catch block occurs as a result of executing a return. If a finally block also returns a value, then that return supersedes any previous return in the try-catch block. Also, if an exception was thrown in the try or catch blocks that was not caught, then execution of a return in the finally block prevents the exception from being thrown to the caller (because it is not possible for the caller to simultaneously evaluate the return and catch the exception). This is also valid for break or continue instructions.",

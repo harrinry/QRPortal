@@ -6,7 +6,7 @@
     "maxWeight": 7,
     "associatedValueName": "Namespace that is referenced",
     "description": "This rule searches for header files that contain, at namespace level, a 'using namespace' declarative or a namespace 'using' declaration.",
-    "output": "Associated to each C++ header file with violations, the Quality Rule provides:\n- The namespace that is referenced\n- Bookmarks for violation patterns found in source code:\n  - \"Using namespace\" statement",
+    "output": "Associated to each C++ header file with violations, the Quality Rule provides:\n- The namespace that is referenced\n- Bookmarks for violation occurrences found in source code:\n  - \"Using namespace\" statement",
     "rationale": "The 'using namespace' directive pulls an entire namespace into not only your header, but also any client code that uses your header. This can provoke ambiguities in client code, or even select the wrong function during overload resolution. \n\nA namespace 'using' declaration is not as polluting, but can have strange side effects since it only captures function overload sets at the time it appears.\n\nUsing 'using' is a very valuable way to increase code brevity in implementation files (.cpp), but should be avoided in headers files.",
     "reference": "C++ coding standard, Sutter/Alexandrescu, Item 59 (http://www.gotw.ca/publications/c++cs.htm)",
     "remediation": "In header files, always explicitly qualify names from other namespaces.",

@@ -3,7 +3,6 @@
     "name": "Avoid use of \"truncate table\"",
     "href": "AIP/quality-rules/4070",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Avoid using \"truncate table\",",
     "output": "This report lists all uses of \"truncate table\" in database objects containing code: SP, Functions, and Triggers.",
     "rationale": "Although \"truncate table\" statement can be desirable under some circumstances from a performance point of view it is problematic because deletion are not logged. Thus the log backups become useless.",

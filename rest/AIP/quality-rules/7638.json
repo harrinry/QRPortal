@@ -4,7 +4,6 @@
     "href": "AIP/quality-rules/7638",
     "critical": false,
     "maxWeight": 9,
-    "associatedValueName": "Associated Value",
     "description": "Reports all methods that call java.sql.DriverManager.getConnection()",
     "output": "This report lists all methods that call java.sql.DriverManager.getConnection() method.\nIt provides the following information: Method Full Name",
     "rationale": "Creating a connection to the database server is expensive. It is even more expensive if the server is located on another machine. Connection can take 30 to 50 ms depending on the platform.",

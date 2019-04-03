@@ -1,10 +1,9 @@
 {
     "id": 7650,
-    "name": "All types of a serializable Class must be serializable (ASCRM-RLB-2)",
+    "name": "All types of a serializable Class must be serializable",
     "href": "AIP/quality-rules/7650",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
     "description": "For all classes that are Serializable (implement java.io.Serializable or inherit from a class that is serializable), reports all fields that are\n- not Serializable (do not implement java.io.Serializable or inherit from a class that is serializable)\n- non-static \n- non transient fields \n- and not Java primitives type.\n\nNote that in the case of a field declared with an interface, this field is considered as serializable when the concrete class used to initialized this field is serializable. This quality rule will take into account cases where the field is initialized in the declaration, not the cases where the field is initialized later in a method.",
     "output": "Report all fields of Serializable classes that are not serializable, not transient, non-static and not primitive.\n\nIt provides the following information:\n  Full Field Name",
     "rationale": "Every field of a serializable class must be either serializable or transient. Declaring non-transient fields of non-serializable type inside of a serializable class will result in an exception thrown during the serialization.",

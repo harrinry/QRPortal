@@ -3,7 +3,6 @@
     "name": "Avoid using untyped DataSet",
     "href": "AIP/quality-rules/7460",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "Avoid using Untyped DataSet. This also apply to DataTables and DataRows.",
     "output": "List all objects using an untyped DataSet/DataTable/DataRow (i.e. directly the class DataSet/DataTable/DataRow).\nUsing an untyped dataset can be used within the code of a method, as a parameter of a method, or a data member of the class.",
     "rationale": "A typed DataSet is a class that derives from a DataSet. As such, it inherits all the methods, events, and properties of a DataSet. Additionally, a typed DataSet provides strongly typed methods, events, and properties. This means you can access tables and columns by name, instead of using collection-based methods. Aside from the improved readability of the code, a typed DataSet also allows the Visual Studio .NET code editor to automatically complete lines as you type.\n\nAdditionally, the strongly typed DataSet provides access to values as the correct type at compile time. With a strongly typed DataSet, type mismatch errors are caught when the code is compiled rather than at run time.",
