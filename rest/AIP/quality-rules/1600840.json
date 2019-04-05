@@ -58,10 +58,24 @@
         },
         {
             "standard": "CWE",
+            "id": "CWE-256",
+            "name": "Unprotected Storage of Credentials",
+            "url": "https://cwe.mitre.org/data/definitions/256.html",
+            "description": "Storing a password in plaintext may result in a system compromise."
+        },
+        {
+            "standard": "CWE",
             "id": "CWE-798",
             "name": "Use of Hard-coded Credentials",
             "url": "https://cwe.mitre.org/data/definitions/798.html",
             "description": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2017",
+            "name": "Broken Authentication",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
+            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
         }
     ],
     "parameters": [
