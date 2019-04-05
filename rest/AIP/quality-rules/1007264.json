@@ -1,6 +1,6 @@
 {
     "id": 1007264,
-    "name": "CWE-434: Avoid unrestricted file upload (PHP)",
+    "name": "Avoid unrestricted file upload (PHP)",
     "href": "AIP/quality-rules/1007264",
     "critical": false,
     "maxWeight": 5,
@@ -8,7 +8,7 @@
     "description": "A file upload is an often misused feature that allows users to upload malicious files to the web server.",
     "output": "This report lists all artifacts that allow unrestricted file upload. \nThis QR provides the following information:\nArtifact Full Name",
     "rationale": "a remote code execution can be achieved by uploading a PHP file into the document root. Often, the file extension plays an important role and depending on the web server's configuration, different file extensions such as .php, .php4, or .php.zzz are passed to the PHP interpreter. Furthermore, uploading a .htaccess file can lead to remote code execution and uploading .htm, .html, .swf, or .svg files can lead to persistent cross-site scripting.",
-    "reference": "https://cwe.mitre.org/data/definitions/434.html\n",
+    "reference": "https://cwe.mitre.org/data/definitions/434.html",
     "remediation": "certain built-in functions used to ensure the presence of an image, such as getimagesize(), can be bypassed. Although it is stronly recommended, that uploaded files are not stored in the document root and the file's name is not in control of the user..",
     "total": "Number of Artifacts",
     "businessCriteria": [
