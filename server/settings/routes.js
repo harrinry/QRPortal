@@ -24,11 +24,11 @@ module.exports = [
     route: '/aip',
     router: 'router'
   },
-  {
-    name: 'determinator',
-    route: '/determinator',
-    router: 'router'
-  },
+  // {
+  //   name: 'determinator',
+  //   route: '/determinator',
+  //   router: 'router'
+  // },
   {
     name: 'search',
     route: '/search',
