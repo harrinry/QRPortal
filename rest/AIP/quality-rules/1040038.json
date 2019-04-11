@@ -1,0 +1,51 @@
+{
+    "id": 1040038,
+    "name": "Avoid using Spring Security Path Matching Inconsistency",
+    "href": "AIP/quality-rules/1040038",
+    "critical": true,
+    "description": "Avoid using Spring Security / MVC Path Matching Inconsistency for the versions mentioned below\n\nSpring Security 3.2.x, 4.0.x, 4.1.0\nSpring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x\nOther unsupported versions are also affected\n\nSpring Security provides deep integration with how Spring MVC matches on URLs with MvcRequestMatcher. It is used to ensure Security rules match the logic,  used to handle requests for authorization, for mapping requests to controllers respectively.",
+    "rationale": "Both Spring Security and the Spring Framework rely on URL pattern mappings for authorization and for mapping requests to controllers respectively.\n\nDifferences in the strictness of the pattern matching mechanisms, for example with regards to space trimming in path segments, can lead Spring Security to not recognize certain paths as not protected that are in fact mapped to Spring MVC controllers that should be protected.\n\nEnabling the TrimTokens to true for the below versions would lead to attack.\nSpring Security 3.2.x, 4.0.x, 4.1.0\nSpring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x\nOther unsupported versions are also affected",
+    "reference": "https://pivotal.io/security/cve-2016-5007\n\nCWE-264 http://cwe.mitre.org/data/definitions/264.html\nCWE-284 http://cwe.mitre.org/data/definitions/284.html\n\nA2-OWASP 2017",
+    "remediation": "Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x can use the MVC Java config or the MVC namespace to set trimTokens property of AntPathMatcher to \u201cfalse\u201d.\n\nApplications using Spring Security and Spring MVC upgrade to Spring Security 4.1.1+ and Spring Framework 4.3.1+ and use the MvcRequestMatcher.\n\nRefer to Pivotal\u2019s CVE-2016-5007 report for detailed mitigations.",
+    "remediationSample": "<!-- Setting PathMatcher. -->\n    <bean id=\"pathMatcher\" class=\"org.springframework.util.AntPathMatcher\">\n        <property name=\"trimTokens\" value=\"false\" />\n    </bean>\n\n--------\n@Configuration\n@EnableSecurityCheck\npublic class SecurityChkConfig extends WebMvcConfigurerAdapter {\n\n  @Bean\n  public PathMatcher pathMatcher() {\n\n    AntPathMatcher pathMatcher = new AntPathMatcher();\n    pathMatcher.setTrimTokens(false);\n    return pathMatcher;\n  }\n\n  @Override\n  public void configurePathMatch(PathMatchConfigurer configurer) {        \n    configurer.setPathMatcher(pathMatcher());\n  }\n}",
+    "sample": "<!-- Setting PathMatcher. -->\n    <bean id=\"pathMatcher\" class=\"org.springframework.util.AntPathMatcher\">\n        <property name=\"trimTokens\" />\n    </bean>\n\ndefault configurations is set to True.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

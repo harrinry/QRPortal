@@ -1,0 +1,51 @@
+{
+    "id": 1040036,
+    "name": "Avoid using STOMP Spring messaging module",
+    "href": "AIP/quality-rules/1040036",
+    "critical": true,
+    "description": "Spring Framework, versions 5.0.x prior to 5.0.5 and versions 4.3.x prior to 4.3.16, and older unsupported versions allow applications to expose STOMP over WebSocket endpoints with a simple, in-memory STOMP broker through the spring-messaging module. A malicious user (or attacker) can craft a message to the broker that can lead to a remote code execution attack.",
+    "rationale": "A malicious user (or attacker) can craft a message to the broker that can lead to a remote code execution attack.\n\nSpring Framework 5.0 to 5.0.4\nSpring Framework 4.3 to 4.3.15\nOlder unsupported versions are also affected",
+    "reference": "https://pivotal.io/security/cve-2018-1270\nhttps://nvd.nist.gov/vuln/detail/CVE-2018-1257\nhttps://cwe.mitre.org/data/definitions/358.html",
+    "remediation": "Users of affected versions should apply the following mitigation:\n\n5.0.x users should upgrade to 5.0.5\n4.3.x users should upgrade to 4.3.16\nOlder versions should upgrade to a supported branch",
+    "remediationSample": "Users of affected versions should apply the following mitigation:\n\n5.0.x users should upgrade to 5.0.5\n4.3.x users should upgrade to 4.3.16\nOlder versions should upgrade to a supported branch",
+    "sample": "Config :\n\n<beans xmlns=\"http://www.springframework.org/schema/beans\"\n    xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n    xmlns:websocket=\"http://www.springframework.org/schema/websocket\"\n    xsi:schemaLocation=\"\n        http://www.springframework.org/schema/beans\n        http://www.springframework.org/schema/beans/spring-beans.xsd\n        http://www.springframework.org/schema/websocket\n        http://www.springframework.org/schema/websocket/spring-websocket.xsd\">\n\n    <websocket:message-broker application-destination-prefix=\"/app\">\n        <websocket:stomp-endpoint path=\"/portfolio\">\n            <websocket:sockjs/>\n        </websocket:stomp-endpoint>\n        <websocket:simple-broker prefix=\"/topic, /queue\"/>\n    </websocket:message-broker>\n\n</beans>\n\nSource:\nimport org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;\nimport org.springframework.web.socket.config.annotation.StompEndpointRegistry;\n\n@Configuration\n@EnableWebSocketMessageBroker\npublic class WebSocketConfig implements WebSocketMessageBrokerConfigurer {\n\n    @Override\n    public void registerStompEndpoints(StompEndpointRegistry registry) {\n        registry.addEndpoint(\"/portfolio\").withSockJS();  \n    }\n\n    @Override\n    public void configureMessageBroker(MessageBrokerRegistry config) {\n        config.setApplicationDestinationPrefixes(\"/app\"); \n        config.enableSimpleBroker(\"/topic\", \"/queue\"); \n    }\n}",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

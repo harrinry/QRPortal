@@ -2,7 +2,8 @@
     "id": 1040024,
     "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
     "href": "AIP/quality-rules/1040024",
-    "critical": true,
+    "critical": false,
+    "maxWeight": 7,
     "description": "Spring Boot Shutdown Actuator is enabled and will allow users/attackers to shut down the application without authentication.",
     "rationale": "This configuration flag Shutdown Actuator will allow authenticated users to shut down the application incidentally or intentionally or accidentally.\nBy default this feature is disabled.",
     "reference": "https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html\nhttps://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/",
@@ -27,7 +28,7 @@
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
             "weight": 7,
-            "critical": true
+            "critical": false
         }
     ],
     "technologies": [
