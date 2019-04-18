@@ -8,6 +8,7 @@
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Ensure you don't use html pattern that can give a way to execute code without user interaction.",
     "reference": "https://html5sec.org/#55 \nhttps://html5sec.org/#56",
+    "remediation": "Make sure user submitted <SOURCE>, <AUDIO>, <VIDEO> tags cannot contain event handlers or whitelist event handlers necessary for UI controls",
     "sample": "<video><source onerror=\"alert(1)\"/></video> \n<video onerror=\"alert(1)\"><source></source></video>",
     "total": "Number of HTML Contents",
     "businessCriteria": [

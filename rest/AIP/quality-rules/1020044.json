@@ -7,7 +7,7 @@
     "description": "This is a text injection by drag-and-drop. If you have a draggable block which triggered an ondragstart event that contains a malicious code and an iframe, the malicious code could be executed.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Ensure you do not have html pattern that allows an attacker to try a text injection using drag and drop features.",
-    "reference": "http://www.w3.org/TR/html5/dnd.html#dnd \nhttps://html5sec.org/#118",
+    "reference": "https://www.w3.org/html/wg/spec/dnd.html#dnd\nhttps://html5sec.org/#118",
     "sample": "<div draggable=\"true\" ondragstart=\"event.dataTransfer.setData(\"text/plain\",\"malicious code\");\"> <h1>Drop me</h1> </div> <iframe src=\"http://www.example.org/dropHere.html\"></iframe>",
     "total": "Number of HTML Contents",
     "businessCriteria": [
