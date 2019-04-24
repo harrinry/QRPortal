@@ -1,0 +1,55 @@
+{
+    "id": 1039052,
+    "name": "Avoid Http Session never expires",
+    "href": "AIP/quality-rules/1039052",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The HTTP session created for this method is set to never expire.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "HTTP Session is active for long, will create multiple issue - 1) Security 2)Memory usage 3) Results into break of the authentication using session set to never expire or denial of service.",
+    "reference": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication\nhttps://cwe.mitre.org/data/definitions/613.html",
+    "remediation": "Always set a definite timeout for sessions.",
+    "remediationSample": "HttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(90);",
+    "sample": "Sample 1: \nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(-1);\n\nSample 2: \n<session-config>\n    <session-timeout>-1</session-timeout>\n</session-config>\n\nSample 3: \nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(0);",
+    "total": "Number of Java artifacts",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
