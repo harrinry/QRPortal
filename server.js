@@ -5,6 +5,7 @@ const fs = require('fs');
 const readJsonFile = require('./serverModules/readFile');
 const technoMapping = require('./serverModules/technologies-map');
 const Determinator = require('./determinator/determinator');
+const Cvetracker = require('./cvetracker/cvetracker');
 /*
 // google analytics back-end
 const got = require('got');
@@ -18,7 +19,7 @@ const helmet = require('helmet');
 
 const searchIndex = require('./serverModules/qr_searchParser');
 
-// rest dir base 
+// rest dir base
 const restDir = path.basename('./rest/');
 
 var port = process.env.PORT || 8080;
@@ -37,11 +38,11 @@ app.use(cors({
 app.use(express.static('static'));
 
 /*app.get('/qrportal/extensions/', function(req, res) {
-	
+
   console.log('index>'+req.url);
-	
+
   var urlfull = req.url;
-	
+
   res.sendFile(path.join(__dirname + urlfull/*.replace('.html','')));
 //    res.sendFile(path.join(__dirname + req.url));
 });*/
@@ -125,8 +126,8 @@ app.get('/about', (req,res)=>{
     }
     readJsonFile( 'package.json', (fileName, jsonData ) =>{
       res.json({
-        licence: fileContents, 
-        version: jsonData.version, 
+        licence: fileContents,
+        version: jsonData.version,
         news: require('./changelog.json')[jsonData.version]
       });
     }, undefined, (e) => {
@@ -139,6 +140,14 @@ app.get('/about', (req,res)=>{
 app.get('/determinator', (req, res) => {
   const query = req.query;
   res.json( Determinator( query ) );
+});
+
+app.get('/cvetracker', (req, res) => {
+  const query = req.query;
+
+  console.log("cvetracker:"+query);
+
+  res.json( Cvetracker( query ) );
 });
 
 // ------------------------ End of React Routes ------------------------------ //
@@ -161,6 +170,6 @@ app.get('/default.html', function(req, res) {
 
 app.listen(port, function() {
 
-  console.log('Listening...'+port);	
-	
+  console.log('Listening...'+port);
+
 });
