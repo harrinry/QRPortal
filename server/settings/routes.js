@@ -30,6 +30,11 @@ module.exports = [
   //   router: 'router'
   // },
   {
+    name: 'cvetracker',
+    route: '/cvetracker',
+    router: 'router'
+  },
+  {
     name: 'search',
     route: '/search',
     router: 'router'
