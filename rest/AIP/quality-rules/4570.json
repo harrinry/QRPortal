@@ -8,6 +8,7 @@
     "output": "This report lists all Non Final Class Variables with Public or Package access type. It provides the following information: Field full name",
     "rationale": "For security reasons, if a Class Variable has Public or Package visibility, it should be declared Final to avoid being updated without Class control. Also for robustness reasons in a multi-threaded environment, leaving non-protected access to non-final class variables may lead to unpredictable behavior where the state of the class/instance is changed by another thread.",
     "remediation": "Review the Field declaration to add the relevant access type.",
+    "total": "Number of Java attributes",
     "businessCriteria": [
         {
             "id": 60012,

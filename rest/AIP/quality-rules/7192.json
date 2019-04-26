@@ -9,6 +9,7 @@
     "rationale": "Struts validation framework allows preventing the application from any type of attacks based on invalid field input. To enable this framework on Struts Form, Struts Form must extend Struts Validation class. Unchecked input is the root cause of vulnerabilities like cross-site scripting, process control, and SQL injection. Although J2EE applications are not generally susceptible to memory corruption attacks, if a J2EE application interfaces with native code that does not perform array bounds checking, an attacker may be able to use an input validation mistake in the J2EE application to launch a buffer overflow attack.",
     "reference": "http://cwe.mitre.org/documents/sources/SevenPerniciousKingdoms.pdf\nhttp://cwe.mitre.org/data/definitions/104.html",
     "remediation": "Extend these classes with one of these classes:\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm",
+    "total": "Number of Java classes in the Struts application",
     "businessCriteria": [
         {
             "id": 66031,

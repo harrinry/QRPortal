@@ -4,12 +4,13 @@
     "href": "AIP/quality-rules/7774",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Integration Complexity",
     "description": "Avoid Artifacts with High Integration Complexity (IC greater than X). Integration Complexity measures the number of independent integration paths. Integration paths are paths of the control flow graph in which another object is invoked. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all Artifacts with Integration Complexity greater than X. It provides the following information:  Artifact full name, IC",
     "rationale": "Integration Complexity equals the minimum number of tests to check the Artifact's integration behavior. High IC means more testing and higher risk of errors.",
     "reference": "NIST (National Institute of Standards and Technology)\nStructured Testing: A Testing Methodology Using the Cyclomatic Complexity Metric\nChapter 7 - Integration Complexity\nhttp://hissa.nist.gov/HHRFdata/Artifacts/ITLdoc/235/chapter7.htm#449027",
     "remediation": "Review the design of the Artifact to reduce the number of independent integration paths. E.g.: reduce the number of CALL statements.",
+    "total": "Number of non abstract artifacts",
     "businessCriteria": [
         {
             "id": 66032,

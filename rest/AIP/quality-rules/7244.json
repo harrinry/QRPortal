@@ -9,7 +9,7 @@
     "rationale": "An Entity Bean should always be used by the Bean Class of a Session Bean to reduce network call, to reduce coupling between the client and the implementation of business objects and also to avoid revealing your database structure to unknown application.",
     "reference": "http://java.sun.com/blueprints/corej2eepatterns/Patterns/SessionFacade.html\nhttp://www-128.ibm.com/developerworks/java/library/j-ejb1008.html",
     "remediation": "Use an EJB Session as facade to encapsulate the complexity of interactions.",
-    "total": "The ratio is the sum of client methods that call directly an Entity Bean divided by the total of direct and indirect call from the client to Entity Beans.",
+    "total": "Number of direct and indirect call from the client to Entity Beans",
     "businessCriteria": [
         {
             "id": 66032,

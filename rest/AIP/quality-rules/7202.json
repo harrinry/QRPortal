@@ -10,6 +10,7 @@
     "remediation": "In the case of a semantic equality replace it with a call to equals method.",
     "remediationSample": "Integer ia;\nInteger ib;\n\nif (ia.equals(ib)) {}  // FIXED\nif (!ia.equals(ib)) {} // FIXED",
     "sample": "int i = 1;\nint j = 2;\nInteger ia;\nInteger ib;\n\nif (i == j) {}     // OK: i and j are primitive types\nif (ia == ib) {} // VIOLATION\nif (ia != ib) {}  // VIOLATION",
+    "total": "Number of non abstract Java Methods and Constructors",
     "businessCriteria": [
         {
             "id": 20140522,

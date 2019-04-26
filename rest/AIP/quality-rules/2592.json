@@ -4,11 +4,12 @@
     "href": "AIP/quality-rules/2592",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Module variable",
     "description": "Avoid directly accessing module variables from outside the Class not using getters and setters.",
     "output": "This report lists all direct accesses to module variables from outside the Class not using getters and setters.",
     "rationale": "Direct usage of module variables outside of the class prevents control and should be avoided.",
     "remediation": "Define getters and setters even if no checks are in place (such as setting a correct value). If these are needed later on, future modification will be easier.",
+    "total": "Number of VB artifacts",
     "businessCriteria": [
         {
             "id": 60012,

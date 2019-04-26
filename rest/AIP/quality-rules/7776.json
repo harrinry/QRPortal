@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7776",
     "critical": false,
     "maxWeight": 3,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Fan-In",
     "description": "Avoid Artifacts with High Fan-In (Fan-In > X). The Fan-In of an Artifact is the number of other Artifacts that are referencing it. When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. The threshold level is a parameter that can be changed at will.",
     "output": "This report lists all Artifacts with High Fan-In. It provides the following information:  Artifact full name, Fan-In value",
     "rationale": "The higher the number of reference to an Artifact, the more difficult the maintenance as all referencing Artifacts will have to be updated or tested.",

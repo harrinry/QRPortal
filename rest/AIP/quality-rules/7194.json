@@ -4,14 +4,14 @@
     "href": "AIP/quality-rules/7194",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of times the '+=' operator or Concat is called",
     "description": "All artifacts should not call more than X times the += operator or Concat Method\n\nLimitation: This does not apply to C# code contained directly into an ASP.net page (with <% tags)",
     "output": "This report lists all artifacts calling more than X times the '+=' operator or Concat method on String object.\nIt provides the following information:\n Method full name, the number of time the '+=' or Concat is called",
     "rationale": "String concatenation resolved at runtime is much slower than using StringBuilder.",
     "remediation": "Use StringBuilder and StringBuilder.Append() method instead",
     "remediationSample": "// C# sample\nStringBuilder result = new StringBuilder(\"hello\");\nresult.Append( \" John\");\nresult.Append( \" Smith\");",
     "sample": "// C# sample\nString result = \"hello\";\nresult += \" John\";\nresult += \" Smith\"; // VIOLATION if the threshold is 3",
-    "total": "Total number of artifacts with code",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,

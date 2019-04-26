@@ -11,7 +11,7 @@
     "remediation": "Fix the name of the method or the signature and if you use JSE 5.0 or later add the @Override annotation to inform the compiler that the method is meant to override a method declared in a superclass. If the method marked with @Override fails to correctly override a method in one of its superclasses, the compiler generates an error.",
     "remediationSample": "class Example {\n   int firstMethod (String str) {...}\n   void secondMethod (int value, boolean b) {...}\n}\n\nclass ExampleExtended extends Example{\n   @Override     // only for JSE 5 or later\n   int firstMethod (String str) {...}  // FIXED\n\n   @Override     // only for JSE 5 or later\n   void secondMethod (int value, boolean b) {...} // FIXED\n}",
     "sample": "class Example {\n   int firstMethod (String str) {...}\n   void secondMethod (int value, boolean b) {...}\n}\n\nclass ExampleExtended extends Example{\n   int firstmethod (String str) {...}  // VIOLATION because of 'm' that is not in uppercase as the parent class method\n   void secondMethod (int value) {...} // VIOLATION\n}",
-    "total": "All methods that fails and all methods that override a method from a superclass",
+    "total": "Number of methods that fails and methods that override a method from a superclass",
     "businessCriteria": [
         {
             "id": 66031,

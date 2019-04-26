@@ -3,7 +3,7 @@
     "name": "Close SQL connection ASAP",
     "href": "AIP/quality-rules/3612",
     "critical": true,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "SQL connection should be closed within the Method / Function / Sub that opened it",
     "output": "This report lists all Methods / Functions / Subs that do not close the SQL connections they opened\nIt provides the following information:  Method / Function / Sub full name",
     "rationale": "To avoid SQL connection leakage, it is highly recommended to close the SQL connection as soon as you are done using it, preferably within the Method that opened it.",

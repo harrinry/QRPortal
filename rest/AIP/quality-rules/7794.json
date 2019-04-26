@@ -4,11 +4,12 @@
     "href": "AIP/quality-rules/7794",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Public Data Ratio",
     "description": "Avoid Classes with a High Public Data Ratio greater than X %. Public Data Ratio is the percentage of public fields among all fields. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all Classes with a Public Data Ratio greater than X %. Const data members are not considered as public. Properties (.NET) are not considered as fields. It provides the following information:\n- Class full name, PDC",
     "rationale": "Public fields are accessible by any other Class, therefore its value can be modified at any time, without control by the Class itself. This goes against the concept of OO Encapsulation.",
     "remediation": "Change the field visibility to private and provide appropriate accessors.",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60012,

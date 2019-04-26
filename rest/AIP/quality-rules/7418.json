@@ -8,7 +8,7 @@
     "description": "This metric retrieves all SQL artifacts that have a query using functions on indexed columns in WHERE clause.\nIt retrieves all SQL artifacts with a WHERE clause using a function that takes a table column used as a database index as a function parameter (except specific indexes such as function-based indexes).",
     "output": "Associated to each artifact with violations, the Quality Rule provides:\n- The Name of the column (first column used as function parameter).",
     "rationale": "Whenever a function is used in a WHERE clause and takes a indexed column as a function parameter, the database engine might be unable to take advantage of the index, leading to very poor performance.",
-    "total": "The total procedure counts the number of Client-Server Artifacts using Tables.",
+    "total": "Number of Client-Server artifacts using tables",
     "businessCriteria": [
         {
             "id": 60014,

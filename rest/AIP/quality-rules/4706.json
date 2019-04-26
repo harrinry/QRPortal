@@ -4,11 +4,12 @@
     "href": "AIP/quality-rules/4706",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "Avoid using Hashtable. Its use can lead to performance problems.",
     "output": "This report lists all java artifacts using the Hashtable type, either as a parameter, or as a local variable.\nIt provides the following information:\n - Artifact full name",
     "rationale": "Since Hashtables are all synchronized - yet synchronization is usually not needed -, they are much slower than the various List and Map implementations",
     "remediation": "When synchronization is not need, prefer List and Map implementations",
+    "total": "Number of Java artifacts",
     "businessCriteria": [
         {
             "id": 60014,

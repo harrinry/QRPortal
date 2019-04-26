@@ -9,7 +9,7 @@
     "output": "This report lists all Triggers directly modifying data (insert, update or delate) in Tables.\n\nIt provides the following information:\n\n\n- Trigger full name, \n- accessed Table",
     "rationale": "To optimize the maintenance of the code, modifying data in a table should always be done through a procedure or a function. This enables the centralization of update, insert or delete operations inside appropriate procedure or function making future changes easier to implement.",
     "remediation": "Modify  the design of the Trigger so that data modification is done by calling the appropriate procedure or function.",
-    "total": "total is the number of schema triggers",
+    "total": "Number of schema triggers",
     "businessCriteria": [
         {
             "id": 66032,

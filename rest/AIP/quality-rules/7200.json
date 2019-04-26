@@ -11,6 +11,7 @@
     "remediation": "It is recommended to create a StringBuilder (if JDK >= 1.5 and not in thread environment) or StringBuffer before entering the loop, and append to it within the loop, thus reducing the overhead.",
     "remediationSample": "StringBuffer result = new StringBuffer(\"hello\");\nfor (int i = 0; i < 1500; i++) {\n   result.append(\"hello\");  // FIXED\n}",
     "sample": "String result = \"hello\";\nfor (int i = 0; i < 1500; i++) {\n   result += \"hello\";  // VIOLATION\n}",
+    "total": "Number of non abstract Java artifacts",
     "businessCriteria": [
         {
             "id": 60014,

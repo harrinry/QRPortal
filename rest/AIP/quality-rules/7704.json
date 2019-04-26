@@ -12,7 +12,7 @@
     "remediation": "Declare these static fields as final or review your design.",
     "remediationSample": "@Stateful\npublic class MyBean implements MyRemoteBean {\n   private static final String myName = \"MyBean\"; // FIXED\n    ...\n    public int aMethod() {\n        ...\n    }\n   ...\n}",
     "sample": "@Stateful\npublic class MyBean implements MyRemoteBean {\n   private static String myName = \"MyBean\"; // VIOLATION\n    ...\n    public int aMethod() {\n        ...\n    }\n   ...\n}",
-    "total": "number of enterprise bean (session, message and entity)",
+    "total": "Number of enterprise beans (session, message and entity)",
     "businessCriteria": [
         {
             "id": 60012,

@@ -10,7 +10,7 @@
     "reference": "EJB specifications, http://java.sun.com/developer/technicalArticles/J2EE/connectorarch1_5/; J2EE Best Practices: Java Design Patterns, Automation, and Performance - 2002 page 439",
     "remediation": "Use Message Driven Bean to send messages (through JMS) that will be consumed in parallel or implement JCA where the application server manages threads efficiently and can use thread pooling if necessary.",
     "sample": "class BasicThread implements Runnable {\n        public void run() {\n            [...]\n        }\n}\n\nclass SimpleThread extends Thread {\n    public SimpleThread(String str) {\n       super(str);\n    }\n    public void run() {\n       [...]\n    }\n}\n\nclass ThreadLaunch {\n    public static void main (String args[]) {\n      Runnable runnable = new BasicThread();\n        new Thread(runnable).start(); // VIOLATION\n        new SimpleThread(\"Thread\").start(); // VIOLATION\n    }\n}",
-    "total": "The number of Java methods and Constructors when ejb-jar.xml or web.xml are present in the application that is being analyzed.",
+    "total": "Number of Java methods and constructors when ejb-jar.xml or web.xml are present in the application that is being analyzed",
     "businessCriteria": [
         {
             "id": 20140522,

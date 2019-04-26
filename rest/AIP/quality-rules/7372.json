@@ -9,7 +9,7 @@
     "reference": "http://cwe.mitre.org/data/definitions/106.html",
     "remediation": "Update your application's struts-config.xml file with the Validator plugin declaration.",
     "remediationSample": "Add the following lines in your application's struts-config.xml file:\n\n<!-- Validator Configuration -->\n<plug-in className=\"org.apache.struts.validator.ValidatorPlugIn\">\n  <set-property property=\"pathnames\"               value=\"/technology/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml\"/>\n</plug-in>\n\nUpon initialization, the plug-in loads the comma-delimited list of Validator config files specified by the pathnames property. Each config file's path should be specified by use of a Web application-relative path.",
-    "total": "the total is equal to the number of struts configuration file if object of type \"Struts Configuration File\" is present, 0 if not",
+    "total": "Number of struts configuration file when object of type \"Struts Configuration File\" is present",
     "businessCriteria": [
         {
             "id": 66031,

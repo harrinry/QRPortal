@@ -11,7 +11,7 @@
     "remediation": "Find the right validator and remove the others.",
     "remediationSample": "----> validation.xml:\n<form-validation>\n  <formset>\n    <form name=\"logonBean\"> // FIXED\n    ...\n    </form>\n  </formset>\n</form-validation>",
     "sample": "----> validation.xml:\n<form-validation>\n  <formset>\n    <form name=\"logonBean\">\n    ...\n    </form>\n    <form name=\"logonBean\"> // VIOLATION\n    ...\n    </form>\n  </formset>\n</form-validation>",
-    "total": "The total number of distinct validation forms names or 0 if no object of type \"Validation Configuration File\" is present",
+    "total": "Number of distinct validation forms names or 0 if no object of type \"Validation Configuration File\" is present",
     "businessCriteria": [
         {
             "id": 66031,

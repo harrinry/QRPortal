@@ -10,7 +10,7 @@
     "remediation": "Use the action mapping table in struts configuration file.",
     "remediationSample": "----> TestAction.java:\npublic class TestAction extends Action {\n  public ActionForward execute(\n    ActionMapping mapping,\n    ActionForm form,\n    HttpServletRequest request,\n    HttpServletResponse response) throws Exception {\n    return mapping.findForward(\"mypage\"); // FIXED\n  }\n}\n\n----> struts-config.xml:\n  <action\n      path=\"/mypage\" type=\"com.cast.TestAction\">\n      <forward name=\"mypage\" path=\"/pages/myPage.jsp\"/>\n   </action>",
     "sample": "public class TestAction extends Action {\n  public ActionForward execute(\n    ActionMapping mapping,\n    ActionForm form,\n    HttpServletRequest request,\n    HttpServletResponse response) throws Exception {\n    return new ActionForward(\"/myPage.jsp\"); // VIOLATION\n  }\n}",
-    "total": "The total number of artifacts of classes and parent classes that are referenced as an action in the XML configuration file(s).",
+    "total": "Number of artifacts of classes and parent classes that are referenced as an action in the XML configuration file(s)",
     "businessCriteria": [
         {
             "id": 66032,

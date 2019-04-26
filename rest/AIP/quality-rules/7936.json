@@ -10,7 +10,7 @@
     "remediation": "When you use an object that you know has native resources associated with it -- for example, a GUI component, file, or socket -- by all means call its dispose() or equivalent method (a method in charge of cleaning resources) when you are finished using it. This will ensure the immediate reclamation of the native resources and decrease the probability of resource depletion.",
     "remediationSample": "public class MyClass  {\n     ...\n      protected void dispose() throws Throwable { // FIXED\n          // some code here\n         ......\n          super.dispose();\n     }\n}",
     "sample": "public class MyClass  {\n     ...\n      protected void finalize() throws Throwable { // VIOLATION\n          // some code here\n         ......\n          super.finalize();\n     }\n}",
-    "total": "number of classes",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 60014,

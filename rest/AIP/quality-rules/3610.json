@@ -4,13 +4,13 @@
     "href": "AIP/quality-rules/3610",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "Avoid declaring a Variable with 'Dim Var_Nam = '",
     "output": "This report lists all variable declarations without variable typing",
     "rationale": "When declaring a Variable with 'Dim Var_Nam = ' or simply 'Dim Var_Nam' the compiler will not assign a type. \nIt worsens performance level and prevents compilation to detect typing errors. \n\nPlease note that when option Infer is On local variables with initial values will not be considered in violation.",
     "remediation": "Use real type to declare the Variable\nE.g.: 'Dim Var_Nam as String = new '",
     "sample": "See rationale.",
-    "total": "Total number of variable declaration.",
+    "total": "Number of variable declarations",
     "businessCriteria": [
         {
             "id": 60012,

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7250",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "Report all initialization with String object when it can be initialized with the literal.",
     "output": "This report lists all methods initialized with a String object .\nIt provides the following information:\n Method full name",
     "rationale": "When initializing String with a literal value, it is faster to create it with a String literal than a String object.",
@@ -12,6 +12,7 @@
     "remediation": "Initialize it with the literal.",
     "remediationSample": "String s = \"hello\"; // FIXED",
     "sample": "String s = new String(\"hello\"); // VIOLATION",
+    "total": "Number of Java artifacts",
     "businessCriteria": [
         {
             "id": 60014,

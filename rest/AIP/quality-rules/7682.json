@@ -10,7 +10,7 @@
     "reference": "Hibernate in Action (ISBN 1932394-15-X) p 64",
     "remediation": "Make these calls in another layers.",
     "sample": "----> a.hbm.xml\n<hibernate-mapping >\n  \n  <class name=\"A\" table=\"A\" lazy=\"true\">\n    <id name=\"id\" column=\"A_ID\">\n      <generator class=\"increment\"/>\n    </id>\n  </class>\n\n</hibernate-mapping>\n\n----> Java Files\npublic class A {\n  private Integer id;\n   javax.naming.Context ctx;  // VIOLATION\n  ...\n  public void aMethod() {\n    // VIOLATION\n    AnObject a = (AnObject) ctx.lookup(\"AnObject\");\n  }\n  ...\n}",
-    "total": "The number of persistent classes's artifacts",
+    "total": "Number of persistent classes's artifacts",
     "businessCriteria": [
         {
             "id": 66032,

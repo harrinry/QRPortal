@@ -11,6 +11,7 @@
     "remediation": "To avoid these issues, always go from one JSP page to another through an Action class and action-mappings (in case of struts 1.x) or action (in case of struts 2.x).",
     "remediationSample": "Sample.jsp\n<%\n    response.sendRedirect(\"Example.do\"); // FIXED\n%>\n\n<%\n    pageContext.forward( \"Example.do\" ); // FIXED\n%>\n\n<jsp:forward page= 'Example.do' /> // FIXED\n\n// implement the flow into the struts-config.xml file:\n\n<action path=\"/Example\"\ntype=\"strutsSample.SampleAction\">\n<forward name=\"success\" path=\"/myPage.jsp\"/>\n</action>\n\n// And in the action class:\npublic class SampleAction extends Action {\npublic ActionForward execute(\nActionMapping mapping,\nActionForm form,\nHttpServletRequest request,\nHttpServletResponse response)\nthrows Exception {\nreturn mapping.findForward(\"success\");\n}\n}",
     "sample": "// Sample.jsp\n<%\n    response.sendRedirect(\"myPage.jsp\"); // VIOLATION\n%>\n\n<%\n    pageContext.forward( \"myPage.jsp\" ); // VIOLATION\n%>\n\n<jsp:forward page= 'myPage.jsp' /> // VIOLATION",
+    "total": "Number of JSP pages",
     "businessCriteria": [
         {
             "id": 66032,

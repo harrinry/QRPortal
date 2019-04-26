@@ -12,7 +12,7 @@
     "remediation": "Implement serialization if your web container implements such mechanisms or ignore it in others cases.",
     "remediationSample": "----> myBean.java:\n// FIXED: the interface Serializable is implemented\npublic class MyBean implements Serializable {\n    // Properties\n    private String name;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}",
     "sample": "Sample for JSF:\n----> faces-config.xml:\n<managed-bean>\n    <managed-bean-name>myBean</managed-bean-name>\n    <managed-bean-class>com.cast.MyBean</managed-bean-class>\n    <managed-bean-scope>session</managed-bean-scope>\n</managed-bean>\n\n----> myBean.java:\n// VIOLATION: the class associate to a backing bean \n// does not implement the interface Serializable\npublic class MyBean {\n    // Properties\n    private String name;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}",
-    "total": "The number of objects in the session scope",
+    "total": "Number of objects in the session scope",
     "businessCriteria": [
         {
             "id": 60014,

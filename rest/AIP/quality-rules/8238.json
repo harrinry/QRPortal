@@ -10,7 +10,7 @@
     "reference": "http://cwe.mitre.org/data/definitions/501.html",
     "remediation": "Perform input data validation before storing or transmitting the data.",
     "sample": "Java :\nusrname = request.getParameter(\"usrname\"); \nif (session.getAttribute(ATTR_USR) == null) { \n    session.setAttribute(ATTR_USR, usrname); \n} \n\nC# :\nusrname = request.Item(\"usrname\"); \nif (session.Item(ATTR_USR) == null) { \n    session.Add(ATTR_USR, usrname); \n}",
-    "total": "The number of methods calling user input methods",
+    "total": "Number of methods calling user input methods",
     "businessCriteria": [
         {
             "id": 66031,

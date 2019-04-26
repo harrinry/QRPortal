@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8064",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ assignment operators that do not assign all the non static members of the class.",
     "output": "Associated to each C++ assignment operator with violations, the Quality Rule provides:\n- The number of missing static members\n- Bookmarks for violation occurrences found in source code:\n  - assignment operator\n  - missing static member",
     "rationale": "Not assigning all data members in 'operator=' leads to the loss of information and can make the target object in an incoherent state.",

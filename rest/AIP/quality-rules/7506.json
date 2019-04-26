@@ -10,7 +10,7 @@
     "remediation": "Implement equals() and hashCode().",
     "remediationSample": "----> B.java\npublic class B {\n  private long id;\n  private String name;\n  ...\n\n  private void setId(long id) { \n    this.id = id;\n  }\n\n  public long getId() {\n    return id;\n  }\n\n  public void setName(String name) {\n    this.name = name;\n  }\n\n  public Sring getName() {\n    return name;\n  }\n\n\n  ...\n\n  // FIXED\n  public boolean equals(Object obj) {\n    ...\n  }\n\n  // FIXED\n  public int hashCode() {\n     ...\n  }\n}",
     "sample": "----> a.hbm.xml\n<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\" column=\"A_ID\">\n      <generator class=\"increment\"/>\n    </id>\n\n    <set name=\"B_items\" lazy=\"true\" table =\"B_ITEMS\"> \n      <key column=\"B_ID\"/>\n      <composite-element class=\"B\"/>\n        <property name=\"name\" column=\"B_NAME\" not-null=\"true\"/>\n        ...\n      </composite-element>\n    </set>\n  </class>\n\n</hibernate-mapping>\n\n----> B.java\npublic class B {\n  private long id;\n  private String name;\n  ...\n\n  private void setId(long id) { \n    this.id = id;\n  }\n\n  public long getId() {\n    return id;\n  }\n \n  public void setName(String name) {\n    this.name = name;\n  }\n\n  public Sring getName() {\n    return name;\n  }\n\n  ...\n  // VIOLATION: equals and hashCode are not defined\n}",
-    "total": "Total classes associated to a component (component and composite-element or @Embeddable/@IdClass)",
+    "total": "Number of classes associated to a component (component and composite-element or @Embeddable/@IdClass)",
     "businessCriteria": [
         {
             "id": 20140522,

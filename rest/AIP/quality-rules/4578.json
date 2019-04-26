@@ -9,7 +9,7 @@
     "output": "This report lists all the Methods not using the Interfaces for Collection types. It provides the following information:\n - Method full name\n - Returned Type Full Name",
     "rationale": "Using the implementation class of a collection as the return type of your method ties your code to this specific implementation and makes it difficult to change the implementation class in the future.\n\nFor example, if you use the java.util.Collection interface, you can change your implementation class from a Set to a List or to a Queue according to your needs and performance requirements.",
     "remediation": "Declare the type as an interface of a more appropriate collection.",
-    "total": "The total number of methods which return type implements or extend java.lang.Collection, java.lang.Collection<T>, java.lang.Map or java.lang.Map<U,V>.",
+    "total": "Number of methods which return type implements or extend java.lang.Collection, java.lang.Collection<T>, java.lang.Map or java.lang.Map<U,V>",
     "businessCriteria": [
         {
             "id": 60012,

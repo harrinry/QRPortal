@@ -9,7 +9,7 @@
     "rationale": "session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL) specifie that the session won't be flushed before query execution (it will be flushed only at the end of the database transaction). Be aware that this setting may expose you to stale data: modifications you made to objects only in memory may conflict with the results of the query. We don't recommend that you change this setting from the default. \nIt's provided to allow performance optimization in rare cases. Likewise, most applications rarely need to call flush() explicitly. This functionality is useful when you're working with triggers, mixing Hibernate with direct JDBC, or working with buggy JDBC drivers. You should be aware of the option but not necessarily look out for use cases.",
     "reference": "Hibernate in Action (ISBN 1932394-15-X) p 160",
     "remediation": "Verify that these settings are necessary.",
-    "total": "The number of methods that reference org.hibernate.Session.setFlushMode or net.sf.hibernate.Session.setFlushMode",
+    "total": "Number of methods that reference org.hibernate.Session.setFlushMode or net.sf.hibernate.Session.setFlushMode",
     "businessCriteria": [
         {
             "id": 20140522,

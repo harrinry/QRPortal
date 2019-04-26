@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/3616",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Accessed SQL object",
     "description": "Data Access must be based on Stored Procedure Calls.",
     "output": "This report lists all Dynamic SQL\nIt provides the following information: Object full name",
     "rationale": "By using Stored Procedures the database engine is more able to optimize the access plan and to reuse them. It also limits the parsing phase of the SQL order. This generally results in better performance.\nFrom a security point of view, it is generally safer to use SP that do not use dynamic SQL rather than dynamic SQL, as this limits the risk of SQL-injection.",

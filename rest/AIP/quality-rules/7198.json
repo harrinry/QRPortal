@@ -11,7 +11,7 @@
     "remediation": "It is recommended to create a StringBuilder before entering the loop, and append to it within the loop, thus reducing the overhead.",
     "remediationSample": "static void LoopOK()\n      {\n         StringBuilder myText = new StringBuilder();\n         for(int i = 0; i < 1000; i++)\n         {\n            myText.Append(\"count =\");       // FIXED\n            myText.Append(i.ToString());      // FIXED\n         }\n         Console.WriteLine(myText.ToString());\n      }",
     "sample": "static void LoopKO()\n      {\n         String myText = \"hello\" ;\n         for(int i = 0; i < 1000; i++)\n         {\n            myText += \"count =\";        // VIOLATION\n            myText += i.ToString();     // VIOLATION\n         }\n         Console.WriteLine(myText.ToString());\n      }",
-    "total": "Total number of artifacts with code",
+    "total": "Number of artifacts",
     "businessCriteria": [
         {
             "id": 60014,

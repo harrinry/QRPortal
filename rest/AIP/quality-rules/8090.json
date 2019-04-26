@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8090",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches all the methods and functions using Doble.NaN to test if the result of an expression is a number.",
     "output": "This report lists all the methods and functions using Doble.NaN to test if the result of an expression is a number.\n\nIt provides following information: \n- Method name",
     "rationale": "Using Double.NaN , which represents not-a-number, can produce sometimes unexpected results.  In the source code any expression that tests equality between a value and Double.NaN always returns false. Any expression that tests inequality between a value and Double.NaN always returns true.",

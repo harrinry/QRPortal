@@ -12,7 +12,7 @@
     "remediation": "It is recommended to create a StringBuilder (if JDK >= 1.5 and not in thread environment) or StringBuffer before entering the loop, and append to it within the loop, thus reducing the overhead.",
     "remediationSample": "public class ConcatenationTest {\n  public void concatString(StringBuffer result, String name) {\n    result.append(name);\n  }\n}\n\npublic class LoopTest {\n  static final int N = 18000000;\n  private ConcatenationTest ct = new ConcatenationTest();\n \n  public void myLoop() {\n    StringBuffer result = \"hello\";\n    String name = \"bob\";\n    for (int i = 1; i <= N; i++) {\n      ct.concatString(result, name); // FIXED\n    }\n  }\n}",
     "sample": "public class ConcatenationTest {\n\n  public String concatString(String name) {\n    String result = \"hello \";\n    result += name;\n   return result\n  }\n}\n\npublic class LoopTest {\n  static final int N = 18000000;\n  private ConcatenationTest ct = new ConcatenationTest();\n \n  public void myLoop(void) {\n    String name = \"bob\";\n    for (int i = 1; i <= N; i++) {\n      ct.concatString(name); // VIOLATION\n    }\n  }\n}",
-    "total": "All methods calling at least one method inside a loop",
+    "total": "Number of methods calling at least one method inside a loop",
     "businessCriteria": [
         {
             "id": 60014,

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8092",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches all the objects having IntPtr,UIntPtr, int* types as public or protected fields that are used to access unmanaged memory.",
     "output": "This report lists all the classes  and structures having IntPtr and UIntPtr types as public or protected fields that are used to access unmanaged memory.\n\nIt provides following information:\n- Class name or Structure name",
     "rationale": "For an application, if the pointers are exposed malicious code can change the value of the pointer, potentially allowing access to arbitrary locations in memory or causing application or system failures.",

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8086",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches all the classes that declare an IDisposable and not implement the IDisposable interface.",
     "output": "This report lists all the classes that declare an IDisposable and not implement the IDisposable interface.\n\nIt provides following information:\n- Class name",
     "rationale": "In an application if a class declares an IDisposable field indirectly that owns an unmanaged resource then the class should implement the IDisposable interface. When the class implements the IDisposable interface , the class dispose of unmanaged resources that it owns. If the class has an instance field that is an IDisposable type, that indicates that the field owns an unmanaged resource.\nSo if the class does not directly own any unmanaged resources, it should not implement a finalizer.",

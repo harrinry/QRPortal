@@ -11,7 +11,7 @@
     "remediation": "Use a local variable to store the condition.",
     "remediationSample": "int length = tab.length();\nfor (int i=0; i < length; i++) { // FIXED\n  tab[i] = i;\n}",
     "sample": "for (int i=0; i < tab.length();  i++) { // VIOLATION\n  tab[i] = i;\n}",
-    "total": "All methods having at least one loop",
+    "total": "Number of methods having at least one loop",
     "businessCriteria": [
         {
             "id": 60014,

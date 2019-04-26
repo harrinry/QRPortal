@@ -4,13 +4,13 @@
     "href": "AIP/quality-rules/7802",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Depth of Inheritance Tree",
     "description": "Avoid Classes and Interfaces with a High Depth of Inheritance Tree (DIT greater than X+1).\nThis means that the inheritance tree should have at most X levels. Depth of Inheritance Tree (DIT) is the maximum length of a path from a class (or interface) to a root class (or root interface) in the inheritance structure of a system. DIT measures how many super-classes can affect a class.",
     "output": "This report lists all Classes and interfaces with a Depth of Inheritance Tree greater than X+1\nIt provides the following information: Class or interface full name, DIT",
     "rationale": "Changing a class (or interface) requires prior understanding, which, in turn, is more complicated for classes (or interface) with many methods. Classes (or interfaces) that are deep down in the classes (or interfaces) hierarchy potentially inherit many methods from super-classes (or super-interfaces). Moreover, the definitions of inherited methods are not local to the class making it even harder to understand it.\n\nComplete testing requires coverage of all execution paths. The number of possible execution paths of a class increases with the number of methods and their control flow complexity. Classes (or interfaces) that are deep down in the classes hierarchy potentially inherit many methods from super-classes (super-interfaces). Due to late binding, super-class (or super-interfaces) methods need to be tested again in the sub-class (or sub-interfaces) context. This makes it potentially harder to test classes (interfaces) deep down in the classes (interfaces) hierarchy.\n\nTechnical or framework classes which are evolving and will not be changed often should not be concerned by this rule.",
-    "reference": "http://it-cisq.org/\nCISQ : ASCMM-MNT-17\n\nA Metrics Suite for Object Oriented Design\nChidamber, S.R. and C.F. Kemerer\nIEEE Transactions on Software Engineering, 1994",
+    "reference": "https://it-cisq.org/\nCISQ : ASCMM-MNT-17\n\nA Metrics Suite for Object Oriented Design\nChidamber, S.R. and C.F. Kemerer\nIEEE Transactions on Software Engineering, 1994",
     "remediation": "Review the design of the Class hierarchy.",
-    "total": "number of classes and interfaces",
+    "total": "Number of classes and interfaces",
     "businessCriteria": [
         {
             "id": 60012,

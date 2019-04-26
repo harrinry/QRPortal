@@ -11,7 +11,7 @@
     "remediation": "Define a factory or singleton using Spring framework",
     "remediationSample": "----> Spring XML file\n// FIXED with Spring\n<beans>\n     <bean name=\"theInterface\"\n          class=\"MyConcrete\">\n</beans>\n\n----> Java Client code\nInputStream is = new FileInputStream(\"spring_beans.xml\");\nBeanFactory factory = new XmlBeanFactory(is);\n\nMyInterface theInterface = (MyInterface) factory.getBean(\"theInterface\");\nString name = theInterface.getAName();",
     "sample": "-----> MyInterface.java\ninterface MyInterface {\n  public String getAName();\n}\n-----> MyConcrete.java\nclass MyConcrete extends MyInterface {\n  public MyConcrete() {\n    ...\n  }\n  public String getAName() {\n    ...\n  }\n}\n-----> MyFactory.java\n// VIOLATION: the factory pattern is detected\nclass MyFactory {\n  private MyFactory() {\n    ...\n  }\n  public static MyInterface getMyInterface () {\n    ...\n  }\n}\n----> Java Client code\nMyInterface theInterface = MyFactory.getMyInterface ();\nString name = theInterface.getAName();",
-    "total": "The total will be the total of JAVA singleton, factory and Spring beans, 0 if Spring is not used",
+    "total": "Number of Java singleton, factory and Spring beans when Spring is used",
     "businessCriteria": [
         {
             "id": 66032,

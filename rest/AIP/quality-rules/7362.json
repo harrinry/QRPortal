@@ -10,7 +10,7 @@
     "remediation": "Enable the validation.",
     "remediationSample": "----> struts-config.xml:\n...\n<action path=\"/submit\"\n             type=\"submit.SubmitAction\"\n             name=\"submitForm\" input=\"/submit.jsp\"\n             scope=\"request\"\n             validate=\"true\"> // FIXED\n    <forward name=\"success\" path=\"/submit.jsp\"/>\n    <forward name=\"failure\" path=\"/submit.jsp\"/>\n</action>\n...\n\nNote also that the absence of validate attribute is interpreted as validate=\"true\"",
     "sample": "----> struts-config.xml:\n...\n<action path=\"/submit\"\n             type=\"submit.SubmitAction\"\n             name=\"submitForm\" input=\"/submit.jsp\"\n             scope=\"request\" \n             validate=\"false\"> // VIOLATION\n    <forward name=\"success\" path=\"/submit.jsp\"/>\n    <forward name=\"failure\" path=\"/submit.jsp\"/>\n</action>\n...",
-    "total": "The number of action mapping or 0 if no object of type \"Struts Configuration File\" is present",
+    "total": "Number of action mapping or 0 if no object of type \"Struts Configuration File\" is present",
     "businessCriteria": [
         {
             "id": 66031,

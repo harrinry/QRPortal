@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7772",
     "critical": false,
     "maxWeight": 6,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Essential Complexity",
     "description": "Avoid Artifacts with High Essential Complexity (EC greater than X). Essential Complexity measures the number of non-structured independent paths. Non-structured paths are paths of the control flow graph in which an instruction that interrupts the flow is present. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all Artifacts with an Essential Complexity greater than X. It provides the following information: Artifact full name, EC",
     "rationale": "Essential Complexity equals the minimum number of tests to check the Artifact's non-structured behavior. High EC means more testing and higher risk of errors.",

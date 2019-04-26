@@ -4,12 +4,14 @@
     "href": "AIP/quality-rules/8044",
     "critical": true,
     "associatedValueName": "Call stack from user input source down to the target log method",
-    "description": "This metric uses CAST dataflow engine to detect a call path where input data from the user is written into the application logs without prior validation & sanitization.\n\nThe list of user input methods, Log writing and as well as the validation method can be customized.",
+    "description": "This metric uses CAST dataflow engine to detect a call path where input data from the user is written into the application logs without prior validation & sanitization.",
     "output": "- Method full name\n- Call stack from user input source down to the target log method",
     "rationale": "Writing unvalidated, unsanitized user input to log files can allow an attacker to forge log entries or inject malicious content into the logs.\n\nApplications typically use log files to store a history of events or transactions for later review, statistics gathering, or debugging. Depending on the nature of the application, the task of reviewing log files may be performed manually or sometimes automated with a tool that automatically gathers log data for important events or trending information. \nInterpretation of the log files may be hindered or misdirected if an attacker can supply data to the application that is subsequently logged verbatim.",
     "reference": "http://cwe.mitre.org/data/definitions/117.html",
-    "remediation": "Code the appropriate input validation as close as possible to the user input call.",
-    "total": "The number of methods calling user input methods",
+    "remediation": "Use authorized sanitization methods.",
+    "remediationSample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    String sanitizedValue = ... // Sanitize here the value\n    log.info(\"Failed to parse value = \" + sanitizedValue);\n}",
+    "sample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    log.info(\"Failed to parse value = \" + value);\n}",
+    "total": "Number of methods calling user input methods",
     "businessCriteria": [
         {
             "id": 66031,

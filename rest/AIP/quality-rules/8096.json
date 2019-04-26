@@ -3,7 +3,7 @@
     "name": "Avoid testing floating point numbers for equality",
     "href": "AIP/quality-rules/8096",
     "critical": true,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "Reports all equality or inequality operations on floating point variables:\n- float x == (...)\n- float x != (...)\n- double x == (...)\n- double x != (...)\nA violation is raised if one of the operands of the ==/!= operator is a float or a double. The other operand is not considered, it can be another floating point variable, an integer or a boolean.",
     "output": "Report all artifact that perform float equality comparison. \nIt reports:\n- artifact fullname",
     "rationale": "Due to rounding errors, most floating-point numbers end up being slightly imprecise. As long as this imprecision stays small, it can usually be ignored. However, it also means that numbers expected to be equal (e.g. when calculating the same result through different correct methods) often differ slightly, and a simple equality test fails.\nA comparison between a floating point number and an integer has the same problem, since the integer is cast into a floating point for the comparison.",
@@ -11,7 +11,7 @@
     "remediation": "Except specific cases where we can expect that the value is the same (see http://randomascii.wordpress.com/2012/06/26/doubles-are-not-floats-so-dont-compare-them), the best is to compare the difference with Epsilon a small float number that you can configure according to the accuracy you want.",
     "remediationSample": "static final float EPSILON = 0.0000001f;\n\nfloat a = 0.15f + 0.15f;\nfloat b = 0.1f + 0.2f;\nif(Math.abs(a - b) < EPSILON) {...} // FIX\nif(Math.abs(a - b) > EPSILON) {...} // FIX",
     "sample": "float a = 0.15f + 0.15f;\nfloat b = 0.1f + 0.2f;\nif(a == b) {...} // VIOLATION\nif(a != b) {...} // VIOLATION",
-    "total": "All artifacts that reference a float",
+    "total": "Number of artifacts that reference a float",
     "businessCriteria": [
         {
             "id": 20140522,

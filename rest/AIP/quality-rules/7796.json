@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7796",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Lack of Cohesion in Methods",
     "description": "This rule searches for Classes with High Lack of Cohesion in Methods (LCOM > X). LCOM measures the correlation between the methods and the local instance variables of a class. High values indicate that instance variables are accessed by different sets of methods, so that the class could be split in 2 or more entities. The threshold used to mark a class as in error is a parameter and can be changed at will.\n\nThis rule uses the LCOM5 version of the LCOM metric (sometimes called LCOM*). It is a variant of rule 7798, the difference being that it does not take into account methods that do not access any field.",
     "output": "This report lists all Classes with Lack of Cohesion in Methods greater than X.\nIt provides the following information: \n- Class full name\n- LCOM value",
     "rationale": "Cohesiveness of Methods within a Class is desirable, since it promotes encapsulation. Low cohesion increases complexity, thereby increasing the likelihood of errors during the development process.",

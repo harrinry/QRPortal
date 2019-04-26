@@ -8,7 +8,7 @@
     "description": "Dynamic instantiation should be used only when necessary.\nDynamic instantiation is done through calls to:\n- 'java.lang.Class.newInstance()'\n- 'java.lang.reflect.Constructor.newInstance()' \n- 'java.lang.Class.getMethod(String name, Class... parameterTypes)'\n- 'java.lang.Class.getMethods()\n- 'java.lang.Class.getField(String name)'\n- 'java.lang.Class.getFields()'\n- 'java.lang.reflect.Method.invoke(Object obj, Object... args) \nmethods.",
     "output": "This report lists all Artifacts using reflection API methods.\nIt provides the following information:\n - Artifacts full name\n - the method of the reflection API' that has been called",
     "rationale": "Dynamic instantiation is slower than a regular Class invocation or Method call",
-    "total": "All Java artifacts",
+    "total": "Number of Java artifacts",
     "businessCriteria": [
         {
             "id": 60012,

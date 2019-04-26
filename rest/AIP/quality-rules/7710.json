@@ -11,7 +11,7 @@
     "remediation": "Implement Serializable and verify that each its instance variables implement serializable unless they inherit from a class that is serializable, is a transient field or a Java primitives..",
     "remediationSample": "@Entity\npublic class ABean implements Serializable { // FIXED\n    private String str;\n    private aClass field;\n}",
     "sample": "@Entity\npublic class ABean  { // VIOLATION\n    private String str;\n    private aClass field;\n}",
-    "total": "the number of entities",
+    "total": "Number of entities",
     "businessCriteria": [
         {
             "id": 20140522,

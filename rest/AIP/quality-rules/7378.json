@@ -10,7 +10,7 @@
     "remediation": "For JSP: create a link (html tag) instead of an include. It will be stored in the client cache instead of being sent each time the page is loaded. For other limit the size.",
     "remediationSample": "<SCRIPT TYPE=\"text/javascript\" SRC=\"script.js'> // FIXED\n\nor\n\n<SCRIPT LANGUAGE=\"JavaScript\" SRC=\"script.js'> // FIXED",
     "sample": "<%@include file=\"script.js\" %> // VIOLATION\nor \n<jsp:include file=\"script.js\"> // VIOLATION",
-    "total": "number of JSP files that refer to JavaScript Files",
+    "total": "Number of JSP files that refer to JavaScript files",
     "businessCriteria": [
         {
             "id": 60014,

@@ -8,10 +8,10 @@
     "description": "This rule list all the artifacts having queries with nested subqueries.\nNested subqueries is measured as the maximum number of nested subqueries in a given artifact. Nested subqueries are subqueries of subqueries.",
     "output": "Associated to each Artifact with violations, the Quality Rule provides:\n- The maximum number of SQL Subqueries Nested Levels",
     "rationale": "Subqueries can possibly cause performance issues. High depth of nested subqueries is a greater source of performance issues.",
-    "reference": "http://it-cisq.org/\nCISQ: ASCPEM-PRF-04",
+    "reference": "https://it-cisq.org/\nCISQ: ASCPEM-PRF-04",
     "remediation": "Review the source code and refactor in order to limit the number of suqueries.",
     "sample": "SELECT column-names\n      FROM table-name1\n     WHERE value IN (SELECT column-name FROM table-name2 \n     WHERE value IN (SELECT column-name  FROM table-name3 \n     WHERE value IN (SELECT column-name  FROM table-name4\n     WHERE value IN (SELECT column-name   FROM table-name5 \n     WHERE condition))))",
-    "total": "The total procedure counts the number of SQL Artifacts.",
+    "total": "Number of SQL artifacts",
     "businessCriteria": [
         {
             "id": 60014,
@@ -51,13 +51,6 @@
             "name": "Complex read/write access",
             "url": null,
             "description": "Remove instances where a very large table, that is, whose number of rows exceeds a threshold value (default is 1,000,000 rows), is accessed by a SQL statement with too many joins (default threshold value for the maximum number of joins is 5), and too many sub-queries (default threshold value for the maximum number of sub-queries is 3)."
-        },
-        {
-            "standard": "OWASP",
-            "id": "A3-2013",
-            "name": "Cross-Site Scripting (XSS)",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
-            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
         }
     ],
     "parameters": [

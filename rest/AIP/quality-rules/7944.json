@@ -4,12 +4,13 @@
     "href": "AIP/quality-rules/7944",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Response For Class",
     "description": "Avoid High Response for a Class (RFC > X)\nRFC is the total number of local methods and remote methods called by methods in the Class.\nThe threshold is a parameter and can be changed at will.\n\nFor Power Builder, Classes designates PB Applications, Datastores, Menus, Userobjects and Windows.",
     "output": "This report lists all Classes with High Response for a Class\nIt provides the following information:\nClass full name, RFC",
     "rationale": "If a large number of methods can be invoked in response to a message, the testing and debugging of the Class becomes more complicated since it requires a greater level of understanding required on the part of the tester.",
     "reference": "A Metrics Suite for Object Oriented Design\nChidamber, S.R. and C.F. Kemerer\nIEEE Transactions on Software Engineering, 1994",
     "remediation": "Reduce the number of local methods and remote methods called by methods in the Class",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 66031,

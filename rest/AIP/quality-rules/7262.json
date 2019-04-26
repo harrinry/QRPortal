@@ -4,9 +4,10 @@
     "href": "AIP/quality-rules/7262",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Efferent Coupling",
     "description": "CE (also known as Outgoing Dependencies or the Number of Types outside a namespace that Types of the namespace Depend on) indicates the number of other namespaces that classes and interfaces in the analyzed namespace depend upon. This is an indicator of the namespace's independence.\nA namespace will always be counted as one entity for coupling, even if it contains both C# and VB code.",
     "rationale": "Excessive coupling is detrimental to modular design since classes are not independent. A large efferent coupling indicates that a class is unfocussed and may also indicate that it is unstable, since it depends on the stability of all the types to which it is coupled. This prevents reuse since a high coupling possibly indicates a namespace is poorly designed and difficult to understand/maintain. Extracting classes from the original class so the class is decomposed into smaller classes can reduce efferent coupling, this improves modularity and promotes encapsulation.",
+    "total": "Number of namespaces",
     "businessCriteria": [
         {
             "id": 66032,

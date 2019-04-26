@@ -9,7 +9,7 @@
     "output": "This report lists all Classes inheriting from a Class lower down in the Package path. It provides the following information: Class full name, Inherited Class Full Name",
     "rationale": "Each package is seen as completely independent by the JVM, sub-packages are seen just like any other package. It is, however, good practice to respect this hierarchy so that any package acts as a container of sub-packages. The advantages of this for other modules are that it is only necessary to import the parent package to benefit from the service offered by this parent package, and, as such, there is no obligation to import other sub-packages. The package is then seen as a unit of abstraction of the implementation of a service implemented by the classes in this package and sub-packages. This will ease the maintainability and transferability of the packages.",
     "remediation": "Review the design of the Class.",
-    "total": "The number of classes",
+    "total": "Number of classes",
     "businessCriteria": [
         {
             "id": 66031,

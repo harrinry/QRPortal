@@ -12,7 +12,7 @@
     "remediation": "If you really need to use SQL for feature that are not supported by Hibernate (like specifying SQL query hints or hierarchical queries such as Oracle CONNECT BY clause), you can use either SQL queries defined in the hibernate XML file or by using native SQL with org.hibernate.Session.createSQLQuery(java.lang.String queryString).",
     "remediationSample": "Session session = sessionFactory.openSession(); \n\nQuery query = session.createQuery(\"from EmployeeBean\"); \n// FIXED\nList<EmployeeBean> finalList = query.list();",
     "sample": "List<EmployeeBean> employeeList = new ArrayList<EmployeeBean>(); \n\nConnection con = DriverManager.getConnection(url); \nStatement stmt = con.createStatement();\n// VIOLATION\nResultSet rs = stmt.executeQuery(\"SELECT * FROM COMPANY\"); \nwhile ( rs.next() ) { \n   EmployeeBean eb = new Employeebean(); \n   eb.setName(rs.getString(\"name\")); \n   eb.setSalary(rs.getFloat(\"salary\")); \n   employeeList.add(eb); \n}",
-    "total": "The total number of artifacts that violate this rule plus the artifacts that reference net.sf.hibernate.Query, org.hiberate.Query, net.sf.hibernate.Session, org.hibernate.Session",
+    "total": "Number of artifacts that violate this rule plus the artifacts that reference net.sf.hibernate.Query, org.hiberate.Query, net.sf.hibernate.Session, org.hibernate.Session",
     "businessCriteria": [
         {
             "id": 66032,

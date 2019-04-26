@@ -9,6 +9,7 @@
     "rationale": "Rationale - Temporary objects can have adverse impact on performance and scalability. We have to make sure the tempdb is not full anytime due to excess temporary objects. The worst case scenario will be the Server will stop working if the tempdb is full. Therefore this rule allows user to know what are the temporary objects used by his application and he can take the appropriate actions to clean/remove them if they are not needed.",
     "remediation": "Remediation - Use temporary objects only to optimize your application's performance.",
     "remediationSample": "Example: If you have to perform a multi-table join and each of these tables contains millions of rows, it will probably be better to break the original query into multiple steps. For instance, the first step could query just a couple of tables and generate an intermediate result set. The subsequent steps could then query the intermediate temporary table.",
+    "total": "Number of objects that can contain SELECT",
     "businessCriteria": [
         {
             "id": 66032,

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7948",
     "critical": false,
     "maxWeight": 4,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "List all statements that include join clause(s) defined with both Oracle proprietary notation & ANSI join notation",
     "output": "This report lists all queries using  mix of both ANSI & proprietary syntax notation.",
     "rationale": "ANSI syntax allow a clear separation between joins clause and the where clause restrictions.  The ANSI notation makes the relations between the tables explicit, and saves you from coding equality tests for join conditions in the WHERE clause. \nThus the mix of both join notations makes the readability & maintainability of the code more complex. Moreover ANSI joins allows having optimization hints. And last, this historic syntax notation will probably be deprecated in a future release",

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8046",
     "critical": false,
     "maxWeight": 8,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for const C++ methods that return non-const handles to class data.",
     "output": "Associated to each C++ method with violations, the Quality Rule provides:\n- non-const class data\n- Bookmarks for violation occurrences found in the source code:\n  - non-const class data return",
     "rationale": "From a language point of view, the pointer 'p' is part of the class and then cannot be modified in a 'const' function. But the pointed-to value is not part of the class, and may be modified. However, from a design point of view, in this case the pointed to value is still logically part of the class, it should not be modified in a 'const' function, nor should a 'const' function allow its caller to modify it through a reference.",

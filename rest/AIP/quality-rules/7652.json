@@ -11,7 +11,7 @@
     "remediation": "Use Exception(String message, Throwable cause) or Exception(Throwable cause) signature to chain the exceptions. Exception chains contain information about the full call stack, thus allowing a change of type on the exception's way up the call stack without loss of stack information.",
     "remediationSample": "private void init() throws InitException {\n  ...\n  } catch( FileNotFoundException ex) {\n      throw new InitException(\"File Not Found\", ex); // FIXED\n   }\n}",
     "sample": "private void init() throws InitException {\n  ...\n  } catch( FileNotFoundException ex) {\n       throw new InitException(ex.getMessage()); // VIOLATION\n   }\n}",
-    "total": "The number of methods that throw an exception (a class that inherits from Throwable) using a constructor in a catch block",
+    "total": "Number of methods that throw an exception (a class that inherits from Throwable) using a constructor in a catch block",
     "businessCriteria": [
         {
             "id": 20140522,

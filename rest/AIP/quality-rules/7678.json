@@ -11,7 +11,7 @@
     "remediation": "Use SLF4J http://www.slf4j.org/index.html instead and configure it to use your specific logging implementation.",
     "remediationSample": "import org.apache.commons.logging.Log;\nimport org.apache.commons.logging.LogFactory;\nLog log = LogFactory.getLog(\"com.cast\"); // FIXED",
     "sample": "import org.apache.log4j.*\nLogger  logger = Logger.getLogger(\"com.cast\"); // VIOLATION",
-    "total": "total of artifacts and fields that use org.apache.log4j, org.apache.commons.logging or other logging package specified in the threshold",
+    "total": "Number of artifacts and fields that use org.apache.log4j, org.apache.commons.logging or other logging package specified in the threshold",
     "businessCriteria": [
         {
             "id": 66032,

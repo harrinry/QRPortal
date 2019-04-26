@@ -11,7 +11,7 @@
     "remediation": "Don't modify the collection.",
     "remediationSample": "public class Category {\n  ...\n  private List theList;\n\n  public void setTheList(List myList) {\n    theList =myList ; // FIXED\n  }\n\n  public List getTheList() {\n    return theList; // FIXED\n  }\n...\n}",
     "sample": "public class Category {\n  ...\n  private List theList;\n\n  public void setTheList(List myList) {\n    theList =new ArrayList(myList) ; // VIOLATION\n  }\n\n  public List getTheList() {\n    return new ArrayList(theList); // VIOLATION\n  }\n...\n}",
-    "total": "The total is the total number of hibernate or JPA persistent fields setters and getters that have a Collection as parameter or return value.",
+    "total": "Number of hibernate or JPA persistent fields setters and getters that have a Collection as parameter or return value",
     "businessCriteria": [
         {
             "id": 60014,

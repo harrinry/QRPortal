@@ -10,7 +10,7 @@
     "remediation": "When the table contains lot of rows, it is better to use a lazy fetching strategy and use a eager strategy at runtime for a particular HQL query, criteria query or JPQL query to avoid that the lazy fetching requires several queries.",
     "remediationSample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // FIXED\n    <set name=\"b_items\" lazy=\"true\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
     "sample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // VIOLATION (it could have been lazy = \"false\")\n    <set name=\"b_items\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
-    "total": "number of Hibernate Entity Property or JPA Entity Property of type collection",
+    "total": "Number of Hibernate entity properties or JPA entity properties of type collection",
     "businessCriteria": [
         {
             "id": 60014,

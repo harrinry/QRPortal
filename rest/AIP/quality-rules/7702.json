@@ -11,7 +11,7 @@
     "remediation": "Use a third party connection pool like:\n* c3p0 -  http://sourceforge.net/projects/c3p0 - Distributed with Hibernate\n* Apache DBCP -  http://jakarta.apache.org/commons/dbcp/ - Apache Pool\n* Proxool - http://proxool.sourceforge.net/   -  JDBC Pooling Wrapper\n* a connection pool from an external vendor",
     "remediationSample": "---> hibernate.cfg.xml\n...\n<hibernate-configuration>\n    <!-- a SessionFactory instance listed as /jndi/name -->\n    <session-factory\n        name=\"java:comp/env/hibernate/SessionFactory\">\n        <!-- properties -->\n        <property name=\"connection.datasource\">my/first/datasource</property> // FIXED\n     ...\n    </session-factory>\n</hibernate-configuration>\n\n---> or in hibernate.properties\n...\nhibernate.connection.datasource = my/first/datasource\n...",
     "sample": "---> hibernate.cfg.xml\n...\n<hibernate-configuration>\n    <session-factory name=\"java:comp/env/hibernate/SessionFactory\">\n       ...\n        <property name=\"connection.pool_size\">10</property> // VIOLATION\n...\n\n---> or in hibernate.properties\nhibernate.connection.pool_size = 10 // VIOLATION",
-    "total": "Total of Hibernate Configuration File (including hibernate.properties). If it doesn't exist, the diagnostic should not return violation",
+    "total": "Number of Hibernate configuration fields (including hibernate.properties)",
     "businessCriteria": [
         {
             "id": 60014,

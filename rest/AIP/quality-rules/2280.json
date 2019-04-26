@@ -8,6 +8,7 @@
     "output": "This report lists all uses of Document.all JavaScript code.\nIt provides the following information: \n - Web file Artifact full name",
     "rationale": "Using the Document.all collection is slow when retrieving its different objects into HTML, HTM, JSP, JS files as it collects - and loads in memory - all items.",
     "remediation": "E.g.: Rather use: var temp = document.foo  temp.innerText = \"Hello\" Instead of document.all['foo'].innerText = \"Hello\"",
+    "total": "Number of objects belonging to files with extension given by parameter",
     "businessCriteria": [
         {
             "id": 60014,

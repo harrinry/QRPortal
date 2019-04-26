@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8094",
     "critical": false,
     "maxWeight": 7,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "The quality rule searches all the methods or functions having threads that try to lock objects with weak identity.",
     "output": "This report lists all the methods having threads that try to lock objects with weak identity.\nIt provides following information:\n-  Method name or Function name",
     "rationale": "Applications, having threads that try to acquire a lock, on an object that has a weak identity, can have reliability issues. This is because the thread can be blocked by a second thread in a different application domain that has a lock on the same object. An object is said to have a weak identity when it can be directly accessed across application domain boundaries. The following types have a weak identity and are flagged by the rule:\n* MarshalByRefObject \n* ExecutionEngineException \n* OutOfMemoryException \n* StackOverflowException \n* String \n* MemberInfo \n* ParameterInfo \n* Thread",

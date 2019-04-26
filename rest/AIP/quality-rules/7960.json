@@ -11,7 +11,7 @@
     "reference": "Oracle documentation, for example",
     "remediation": "Change at least one synonym definition to cut the circular list",
     "sample": "For example, the following definitions are circular:\n\nSQL> create synonym s1 for s2;\nSynonym created.\nSQL> create synonym s2 for s3;\nSynonym created.\nSQL> create synonym s3 for s4;\nSynonym created.\nSQL> create synonym s4 for s1;\nSynonym created.",
-    "total": "The total procedure counts the number of synonyms that is part of the analyzed source code",
+    "total": "Number of synonyms that is part of the analyzed source code",
     "businessCriteria": [
         {
             "id": 60014,

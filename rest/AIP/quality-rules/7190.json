@@ -11,7 +11,7 @@
     "remediation": "Call super.validate() in the validate() method.",
     "remediationSample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  ActionErrors errors = super.validate(mapping, request); // FIXED\n\n  if (errors==null) {\n     if (notGood(mapping,request)) {\n        // some code\n     }\n  // some code\n}",
     "sample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  if (notGood(mapping,request)) \n    // some code\n  }\n// some code\n}  // VIOLATION",
-    "total": "Non abstract methods that override the validate method (at any depth in the inheritance tree) of one of the class ValidatorForm, ValidatorActionForm, DynaValidatorForm, DynaValidatorActionForm",
+    "total": "Number of non abstract methods that override the validate method (at any depth in the inheritance tree) of one of the class ValidatorForm, ValidatorActionForm, DynaValidatorForm, DynaValidatorActionForm",
     "businessCriteria": [
         {
             "id": 66031,

@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/3590",
     "critical": false,
     "maxWeight": 5,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Interface",
     "description": "Interfaces should not be implemented on Structures.",
     "output": "This report lists all Interfaces implemented on Structures. It provides the following information: Interface full name, Structure name",
     "rationale": "C# and VB.NET allow structs to implement interfaces. However this language feature can produce unexpected results, as structs are value types while interfaces require reference types to interact with. This means that calls to interface methods via implicit boxing operations will modify a copy rather than the original object.\nWhen implicit boxing occurs, a copy of the struct is placed on the heap and calls to the interface methods are executed on this copy via a reference. All changes to the state of the struct object are discarded after that call.",

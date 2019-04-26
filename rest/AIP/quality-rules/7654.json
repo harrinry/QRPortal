@@ -10,7 +10,7 @@
     "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.\nIn the case of Hibernate, having different mapping files associated with the same table is a source of such data corruption.",
     "remediation": "Review your design and decide which Entity must manage the table.",
     "sample": "// VIOLATION: table A is referenced by two Entities\n---> a.hbm.xml\n<class name=\"A\" table=\"A\"> \n    ...  \n</class>\n\n---> b.hbm.xml\n<class name=\"B\" table=\"A\"> \n    ...  \n</class>",
-    "total": "The total is the number of Entity",
+    "total": "Number of entities",
     "businessCriteria": [
         {
             "id": 66032,

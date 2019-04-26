@@ -10,6 +10,7 @@
     "remediation": "Replace temporary tables with queries.",
     "remediationSample": "Create proc1 \nAs \nBegin \nExec proc2 \nEnd; \nGo \nCreate proc2 \nAs \nBegin \n/* 1st case , select directly from the final table */ \nselect * from toto1 \n\n/* 2nd case, select directly from the final table */ \nselect * from toto2 \nEnd; \nGo ",
     "sample": "Create proc1 \nAs \nBegin \n\nCreate table #table1 (col1 integer) \nInsert into #table1 select * from toto1 \n\nExec proc2 \nDrop table #table1 \nEnd; \nGo \nCreate table #table1 (col1 integer) \ngo \nCreate proc2 \nAs \nBegin \n/* 1st case */ \nSelect * from #table1; \n\n/* 2nd case*/ \nCreate table #table2 (col1 int); \nInsert into #table2 select * from toto2 \n\nSelect * from #table2; \nDrop table #table2; \nEnd; \nGo \nDrop table #table1 \nGo",
+    "total": "Number of stored procedures",
     "businessCriteria": [
         {
             "id": 60014,

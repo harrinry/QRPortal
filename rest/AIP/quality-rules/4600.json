@@ -7,6 +7,7 @@
     "description": "Java artifacts should not use 'java.System.exit()'  for application deployed on a Web Server or an Application Server (when web.xml and/or ejb-jar.xml file are present)",
     "output": "This report lists all java artifacts using 'java.System.exit()'.\nIt provides the following information:\n - Artifact full name",
     "rationale": "Using 'java.System.exit()' is prohibited since it goes against the Exception error handling model.",
+    "total": "Number of Java artifacts",
     "businessCriteria": [
         {
             "id": 20140522,

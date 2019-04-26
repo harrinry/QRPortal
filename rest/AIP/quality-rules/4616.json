@@ -3,12 +3,12 @@
     "name": "Proper overriding of 'finalize()'",
     "href": "AIP/quality-rules/4616",
     "critical": true,
-    "associatedValueName": "Associated Value",
     "description": "When overriding the 'finalize()' Method, a call to 'super.finalize()' is necessary.",
     "output": "This report lists all Methods overriding 'finalize()' and not calling 'super.finalize()'. It provides the following information: Method full name",
     "rationale": "A call to 'super.finalize()' ensures the finalize behavior will still work.",
     "reference": "https://cwe.mitre.org/data/definitions/568.html",
     "remediation": "Review the Method's definition.",
+    "total": "Number of Java methods",
     "businessCriteria": [
         {
             "id": 66031,
@@ -42,13 +42,6 @@
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "CWE",
-            "id": "CWE-586",
-            "name": "Explicit Call to Finalize()",
-            "url": "https://cwe.mitre.org/data/definitions/586.html",
-            "description": "The software makes an explicit call to the finalize() method from outside the finalizer."
-        },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70385",

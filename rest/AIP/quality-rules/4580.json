@@ -10,7 +10,7 @@
     "rationale": "Using the implementation class of a collection as the type of your instance ties your code to this specific implementation and makes it difficult to change the implementation class in the future.\n\nFor example, if you use the java.util.Collection interface, you can change your implementation class from a Set to a List or to a Queue according to your needs and performance requirements.",
     "reference": "http://java.sun.com/docs/books/tutorial/collections/interfaces/index.html",
     "remediation": "Declare the type as an interface of a more appropriate collection.",
-    "total": "The total number of fields whose type implements or extends java.lang.Collection, java.lang.Collection<T>, java.lang.Map or java.lang.Map<U,V>",
+    "total": "Number of fields whose type implements or extends java.lang.Collection, java.lang.Collection<T>, java.lang.Map or java.lang.Map<U,V>",
     "businessCriteria": [
         {
             "id": 60012,

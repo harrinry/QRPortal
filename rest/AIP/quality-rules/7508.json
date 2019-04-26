@@ -11,7 +11,7 @@
     "remediation": "Instead of using a concrete class or the wrong interface, define the getter return type with the correct interface.",
     "remediationSample": "----> A.java\n\npublic class A {\n  private Integer id;\n  private SortedSet<B> b_items;\n\n  ...\n\n  // FIXED\n  public SortedSet<B> getB_items() {\n    return b_items;\n  }\n  ...\n}",
     "sample": "----> a.hbm.xml\n\n<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    <set name=\"b_items\" lazy=\"true\" table =\"B\" sort=\"natural\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n  <class name=\"B\" table=\"B\" lazy=\"true\">\n    <id name=\"id\" column=\"B_ID\">\n      <generator class=\"increment\"/>\n    </id>\n  </class>\n\n</hibernate-mapping>\n\n----> A.java\npublic class A {\n  private Integer id;\n  private SortedSet<B> b_items;\n\n  ...\n\n  // VIOLATION\n  public TreeSet<B> getB_items() {\n    return b_items;\n  }\n  ...\n}",
-    "total": "Total getters associated to persistent collection-typed attributes",
+    "total": "Number of getters associated to persistent collection-typed attributes",
     "businessCriteria": [
         {
             "id": 20140522,

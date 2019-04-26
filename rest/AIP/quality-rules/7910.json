@@ -8,7 +8,7 @@
     "rationale": "Care must be taken if completion of a try-catch block occurs as a result of executing a return. If a finally block also returns a value, then that return supersedes any previous return in the try-catch block. Also, if an exception was thrown in the try or catch blocks that was not caught, then execution of a return in the finally block prevents the exception from being thrown to the caller (because it is not possible for the caller to simultaneously evaluate the return and catch the exception). This is also valid for break or continue instructions.",
     "reference": "OWASP\nhttp://www.owasp.org/index.php/Return_Inside_Finally_Block\n\nCERT\nhttps://www.securecoding.cert.org/confluence/display/java/ERR04-J.+Do+not+exit+abruptly+from+a+finally+block\n\nPuzzle 36: Indecision from the book \"Java Puzzlers: Traps, Pitfalls, and Corner Cases\"  By Joshua Bloch, Neal Gafter\nhttp://www.javapuzzlers.com/",
     "sample": "try {\n   ...\n   throw IllegalArgumentException();\n}\nfinally {\n  // VIOLATION: the IllegalArgumentException will never be delivered to the caller. The finally block will cause the exception to be discarded. \n  return r;\n}",
-    "total": "All methods that have a finally block",
+    "total": "Number of methods that have a finally block",
     "businessCriteria": [
         {
             "id": 20140522,

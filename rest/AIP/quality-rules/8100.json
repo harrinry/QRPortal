@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8100",
     "critical": false,
     "maxWeight": 9,
-    "associatedValueName": "Associated Value",
+    "associatedValueName": "Number of violation occurrences",
     "description": "This quality rule reports synchronous call that don't use timeout to prevent an infinite waiting time.\n\nHere is the list of control that are performed:\n* Socket\n  - java.net.Socket.connect(SocketAddress endpoint) or connect(SocketAddress endpoint, int 0)/ remediation connect(SocketAddress endpoint, int timeout) - true for child classes too\n* Future: a Future represents the result of an asynchronous computation. \n  - java.util.concurrent.Future<V>.get() / remediation use java.util.concurrent.Future<V>.get(long timeout, TimeUnit unit) instead for all classes that implement this interface such as java.util.concurrent.FutureTask<V>, java.util.concurrent.ForkJoinTask<V> ... and all classes that implement a sub-interface of Future<V>.\n* JMS: \n  - all call to methods that implement javax.jms.MessageConsumer.receive() or javax.jms.MessageConsumer.receive(0) / remediation call javax.jms.MessageConsumer.receive(long timeout)\n\nNote: This quality rule implements the rule ASCRM-RLB-19 of the CISQ standard.",
     "output": "List all artifacts that call a blocking method without timeout\nIt provides the following information: \n - Artifact full name",
     "rationale": "Blocking calls can result in system failure if the called process fails. If the timeout is infinite that may cause the application to hang forever. Operations on the standard input/output streams depend directly on other processes outside of the Java VM. If they decide to block forever, so will reads/writes to these streams in the application.",
