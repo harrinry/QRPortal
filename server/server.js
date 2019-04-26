@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
 const port = require('./settings/serverConfig').port;
+const bodyParser = require('body-parser');
 
 let app = express();
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 require('./middleware/security')(app);
 require('./middleware/staticRoutes')(app);
