@@ -8,9 +8,9 @@
     "description": "Explain() provides information on the query plan for the db.collection.find(). The explain() method returns a document with the query plan and, optionally, the execution statistics.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Having explain() in the production code can slow down the performance of the code and it is not required.",
-    "remediation": "Do not use explain() in production code",
-    "remediationSample": "// DBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject);\n\n//.explain() not to be used\n        ",
-    "sample": "Mongo mongo = new Mongo(...)\nDB db = mongo.getDB(\"db\");\nDBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject).explain();",
+    "remediation": "Do not use explain() in production code.",
+    "remediationSample": "// DBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject);\n\n//.explain not to be used",
+    "sample": "DBObject explainObject = db.getCollection(\"mnMongo1\").find(searchObject).explain();",
     "total": "Number of MongoDB collection",
     "businessCriteria": [
         {
