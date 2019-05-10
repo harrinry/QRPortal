@@ -10,7 +10,7 @@
     "remediation": "Redesign the loop.",
     "remediationSample": "public class MyLoop {\n     public void printCount() {\n         StringBuffer sb = new StringBuffer(); // FIXED\n         for (int i = 0; i < 100; i++) {\n             sb.setLength(0);\n             sb.append(\"count = \");\n             sb.append(i);\n             System.out.println(sb);\n         }\n     }\n }",
     "sample": "public class MyLoop {\n     public void printCount() {\n         for (int i = 0; i < 100; i++) {\n             StringBuffer sb = new StringBuffer(); // VIOLATION\n             sb.append(\"count = \");\n             sb.append(i);\n             System.out.println(sb);\n         }\n     }\n }",
-    "total": "Total number of methods and constructors",
+    "total": "Number of non abstract Java Artifacts",
     "businessCriteria": [
         {
             "id": 60014,

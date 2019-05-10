@@ -4,13 +4,13 @@
     "href": "AIP/quality-rules/7146",
     "critical": false,
     "maxWeight": 3,
-    "associatedValueName": "JAVA object name",
+    "associatedValueName": "Java object name",
     "description": "In the contex of Struts implementation, the JSP pages must reference ONLY Java objects that belong to the bean scope or Java objects of a class belonging itself to the same scope\n\nThe scope is an attribute of the bean indicating the context of objects usage.\nIn struts-config, the scope refers to where to create/find ActionForm objects.\n\n\nAll JSP pages that refers to Java methods, field of a class or the class itself that is not associated to a scoped attribute will be reported as violation.",
-    "output": "This report lists all JSP pages referencing JAVA objects that are not associated to J2EE Scoped Bean.\nIt provides the following information:\n - Page name\n - JAVA object name",
+    "output": "This report lists all JSP pages referencing Java objects that are not associated to J2EE Scoped Bean.\nIt provides the following information:\n - Page name\n - Java object name",
     "rationale": "In a Struts implementation, JSP pages are responsible for the presentation and must not call specific Java objects other than those associated to scoped attributes.\n\nThe consequences of combining HTML and Java code in the same JSP file are:\n- no separation of technology: Java skilled people and Web designers/HTML coders must work on the same file.\n- less reusable: the Java component can't be reused elsewhere in the application\n- maintenance difficulties because of the lack of modularization",
     "reference": "http://www.javaworld.com/javaworld/jw-11-2001/jw-1130-jsp.html\n\nhttps://javapapers.com/jsp/explain-the-scope-of-jsp-objects/",
     "remediation": "Use taglib or change the architecture of the application so that the JSP page only rely on classes associated to scoped attributes.",
-    "total": "The total is the number of JSP pages. The metric must display 0 when no object of type \"Struts Configuration File\" is present",
+    "total": "Number of JSP pages when any object of type \"Struts Configuration File\" is present",
     "businessCriteria": [
         {
             "id": 66032,
