@@ -1,0 +1,92 @@
+{
+    "id": 1027004,
+    "name": "Avoid using deprecated XmlTextReader .NET API",
+    "href": "AIP/quality-rules/1027004",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Be careful when using deprecated APIs. The deprecation period should be used to smoothly make the transition. The rule raises an issue when any of the class XmlTextReader is used.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Using deprecated .Net API could lead to security compliancy issues.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmltextreader?view=netframework-4.7.2",
+    "remediation": "Use XmlReader instead",
+    "remediationSample": "public class XMLHandler : IHttpHandler\n{\n    public void ProcessRequest(HttpContext ctx)\n    {\n        // GOOD: use XmlReader\n        XmlReader reader = XmlReader.create(ctx.Request.QueryString[\"document\"]);\n    ...\n  }\n}",
+    "sample": "public class XMLHandler : IHttpHandler\n{\n    public void ProcessRequest(HttpContext ctx)\n    {\n        XmlTextReader reader = new XmlTextReader(ctx.Request.QueryString[\"document\"]);\n    ...\n  }\n}",
+    "total": "Number of methods and classes using System.Xml namespace",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-477",
+            "name": "Use of Obsolete Function",
+            "url": "https://cwe.mitre.org/data/definitions/477.html",
+            "description": "The code uses deprecated or obsolete functions, which suggests that the code has not been actively reviewed or maintained."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A4-2017",
+            "name": "XML External Entities (XXE)",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
