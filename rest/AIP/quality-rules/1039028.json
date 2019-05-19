@@ -40,7 +40,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-327",
+            "name": "Unvetted cryptographic algorithms",
+            "url": null,
+            "description": "Remove instances where the application uses a cryptographic list which is not part of the list of vetted cryptographic libraries. "
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-326",
+            "name": "Inadequate Encryption Strength",
+            "url": "https://cwe.mitre.org/data/definitions/326.html",
+            "description": "The software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required."
+        }
     ],
     "parameters": [
         

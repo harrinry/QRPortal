@@ -41,6 +41,20 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-79",
+            "name": "Cross-site scripting",
+            "url": null,
+            "description": "Remove instances where a user input is ultimatelydisplayed to the user, without any sanitization (based on a list of vetted sanitization functions, methods, procedures, stored procedures, sub-routines, etc.) of the user input value between the user input and the statement."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "url": "https://cwe.mitre.org/data/definitions/79.html",
+            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+        },
+        {
             "standard": "CWE",
             "id": "CWE-1021",
             "name": "Improper Restriction of Rendered UI Layers or Frames",

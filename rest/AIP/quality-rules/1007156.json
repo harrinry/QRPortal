@@ -47,6 +47,13 @@
             "description": "Remove instances where a user input is ultimately used to execute an OS command, without any sanitization (based on a list of vetted sanitization functions, methods, procedures, stored procedures, sub-routines, etc.) of the user input value between the user input and the statement."
         },
         {
+            "standard": "CWE",
+            "id": "CWE-95",
+            "name": "Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+            "url": "https://cwe.mitre.org/data/definitions/95.html",
+            "description": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. eval)."
+        },
+        {
             "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",

@@ -48,25 +48,18 @@
             "description": "Remove instances where a user input is ultimatelydisplayed to the user, without any sanitization (based on a list of vetted sanitization functions, methods, procedures, stored procedures, sub-routines, etc.) of the user input value between the user input and the statement."
         },
         {
+            "standard": "CWE",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "url": "https://cwe.mitre.org/data/definitions/79.html",
+            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+        },
+        {
             "standard": "OWASP",
             "id": "A3-2013",
             "name": "Cross-Site Scripting (XSS)",
             "url": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
             "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
-        },
-        {
-            "standard": "OWASP",
-            "id": "A5-2013",
-            "name": "Security Misconfiguration",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration",
-            "description": "Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. Secure settings should be defined, implemented, and maintained, as defaults are often insecure. Additionally, software should be kept up to date."
-        },
-        {
-            "standard": "OWASP",
-            "id": "A5-2017",
-            "name": "Broken Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
-            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
         },
         {
             "standard": "OWASP",
