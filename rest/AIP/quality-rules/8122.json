@@ -52,18 +52,11 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
-            "id": "ASCRM-CWE-396",
-            "name": "Catch of overly broad exception types",
-            "url": null,
-            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. contains a catch of an exception whose type is part of a list of overly broad exception types"
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCRM-CWE-397",
-            "name": "Throw of overly broad exception types",
-            "url": null,
-            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. throws an exception whose type is part of a list of overly broad exception types"
+            "standard": "CWE",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": "https://cwe.mitre.org/data/definitions/391.html",
+            "description": "Ignoring exceptions and other error conditions may allow an attacker to induce unexpected behavior unnoticed."
         }
     ],
     "parameters": [
