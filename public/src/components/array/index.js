@@ -10,10 +10,12 @@ class VerticalArray extends React.PureComponent{
     super(props);
 
     this.state = {
-      filterValue:''
+      filterValue:'',
+      filterDropDown: false
     };
 
     this.onfilterChange = this.onfilterChange.bind(this);
+    this.filterDropDown = this.filterDropDown.bind(this);
   }
 
   componentWillReceiveProps( nextprops ){
@@ -28,7 +30,7 @@ class VerticalArray extends React.PureComponent{
     
   }
 
-  onfilterChange( event ){
+  onfilterChange(event){
     this.setState({filterValue: event.target.value});
   }
 
@@ -46,6 +48,23 @@ class VerticalArray extends React.PureComponent{
     });
   }
 
+  filterDropDown(ref){
+    this.setState({filterDropDown: !this.state.filterDropDown});
+    this.refs[ref].focus();
+  }
+
+  handleSubClick( ref ){
+    this.refs[ref].blur();
+    this.setState({
+      filterDropDown: false,
+      filterValue: "ECHO Rules only"
+    });
+  }
+
+  selectAll( ref ){
+    this.refs[ref].select();
+  }
+
   render(){
     const { headers, childConstructor, itemCountTitle, filterPlaceholder, isLoading, label } = this.props;
     const filteredChildren = this.filterChildren(),
@@ -60,8 +79,9 @@ class VerticalArray extends React.PureComponent{
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
         <div className={CLASSES.itemCounter}>{_label}</div>
         <div className={CLASSES.internalFilter}>
-          <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
-          <span className={CLASSES.filter} onClick={() => this.refs[ref].focus()}></span>
+          <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange} onClick={ () => this.selectAll(ref)}/>
+          <span className={CLASSES.filter} onClick={() => this.filterDropDown(ref)}></span>
+          {this.state.filterDropDown ? <span className={CLASSES.prefilter} onClick={() => this.handleSubClick(ref) }>ECHO Rules only</span> : undefined}
         </div>
       </div>
       <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol)}>
