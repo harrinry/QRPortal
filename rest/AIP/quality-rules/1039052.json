@@ -1,11 +1,10 @@
 {
     "id": 1039052,
-    "name": "Avoid Http Session never expires",
+    "name": "Avoid Http Session without expiration",
     "href": "AIP/quality-rules/1039052",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "The HTTP session created for this method is set to never expire.",
+    "description": "The lack of proper session expiration may improve the likely success of certain attacks. For example, an attacker may intercept a session ID, possibly via a network sniffer or Cross-site Scripting attack. In some scenario, a user might access a web site from a shared computer (such as at a library, Internet cafe, or open work environment). Insufficient Session Expiration could allow an attacker to use the browser's back button to access web pages previously accessed by the victim.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "HTTP Session is active for long, will create multiple issue - 1) Security 2)Memory usage 3) Results into break of the authentication using session set to never expire or denial of service.",
     "reference": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication\nhttps://cwe.mitre.org/data/definitions/613.html",
@@ -29,8 +28,8 @@
         {
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
-            "weight": 5,
-            "critical": false
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -53,9 +52,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

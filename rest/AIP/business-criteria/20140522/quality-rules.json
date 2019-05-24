@@ -5805,10 +5805,40 @@
     },
     {
         "id": 1039052,
-        "name": "Avoid Http Session never expires",
+        "name": "Avoid Http Session without expiration",
         "href": "AIP/quality-rules/1039052",
         "status": null,
-        "critical": false,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039056,
+        "name": "Avoid insecure use of YAML deserilization (java)",
+        "href": "AIP/quality-rules/1039056",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039058,
+        "name": "Avoid Use of Insufficiently Random Generated keys in cookies",
+        "href": "AIP/quality-rules/1039058",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039062,
+        "name": "Avoid Explicitly not \"define final readObject()\" to prevent un-trusted deserialization",
+        "href": "AIP/quality-rules/1039062",
+        "status": null,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
