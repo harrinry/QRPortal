@@ -1,9 +1,9 @@
 {
     "id": "ASCPEM-PRF-4",
-    "name": "Complex read/write access",
+    "name": "Data Resource Read and Write Access Excessive Complexity",
     "href": "AIP/quality-standards/CISQ/items/ASCPEM-PRF-4",
     "url": null,
-    "description": "Remove instances where a very large table, that is, whose number of rows exceeds a threshold value (default is 1,000,000 rows), is accessed by a SQL statement with too many joins (default threshold value for the maximum number of joins is 5), and too many sub-queries (default threshold value for the maximum number of sub-queries is 3).",
+    "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the execution of overly complex data queries.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
     "count": 2,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",

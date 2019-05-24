@@ -147,9 +147,9 @@
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-4",
-            "name": "Excessive coupling",
+            "name": "Callable and Method Control Element Number of Outward Calls",
             "url": null,
-            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. has a Fan-Out value that is too large, that is, with too many references to other objects within the application. (default threshold value for the maximum number of references to other objects within the application is 5)"
+            "description": "Objective\nAvoid overly complex outward dependencies\n\nConsequence\nSoftware that does not follow the principles of modularity causes excessive propagation of modification impacts\n\nMeasure Element\nNumber of instances where a named callable control element or method control element has a Fan-Out value that is too large, that is, its number of references to other objects within the application exceeds a threshold value (the application determines the scope of the search for the referenced objects). Default threshold value for the number of references to other objects within the application is 5\n\n"
         }
     ],
     "parameters": [

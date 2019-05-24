@@ -47,9 +47,9 @@
         {
             "standard": "CISQ",
             "id": "ASCRM-RLB-6",
-            "name": "Improper copy capabilities for data pointers",
+            "name": "Storable or Member Data Element containing Pointer Item Element without Proper Copy Control Element",
             "url": null,
-            "description": "Remove instances where a variable, field, member, etc. contains a pointer but no dedicated copy operation or copy constructor"
+            "description": "Objective\nAvoid improper copy capabilities when handling data pointers\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a storable data element or member data element contains a pointer data element but no dedicated copy operation or copy constructor element\n\n"
         }
     ],
     "parameters": [

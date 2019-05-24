@@ -50,9 +50,9 @@
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-674",
-            "name": "Recursion",
+            "name": "Uncontrolled Recursion",
             "url": null,
-            "description": "Remove instances in which a control element initiates an execution path that contains itself "
+            "description": "Objective\nAvoid infinite recursions\n\nConsequence\nSoftware that is unaware of recursion incurs the risk of exceeding resource and capacity limits\n\nMeasure Element\nNumber of instances where the named callable control element or method control element starts the execution path which containts itself\n\n"
         }
     ],
     "parameters": [

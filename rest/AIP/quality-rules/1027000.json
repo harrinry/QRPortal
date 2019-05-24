@@ -54,9 +54,9 @@
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-120",
-            "name": "Buffer overflow",
+            "name": "Buffer Copy without Checking Size of Input",
             "url": null,
-            "description": "Remove instances where the content of the first buffer is moved into the content of the second buffer while their allocated sizes are incompatible"
+            "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n"
         }
     ],
     "parameters": [

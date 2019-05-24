@@ -49,9 +49,9 @@
         {
             "standard": "CISQ",
             "id": "ASCPEM-PRF-8",
-            "name": "Resource-consuming operation in loop",
+            "name": "Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
             "url": null,
-            "description": "Remove instances where an operation causing consumption of platform resource (messaging, lock, file, stream, directory, etc.) is directly or indirectly called within a loop body or within a loop condition"
+            "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the repeated consumption of resource due to resource consuming operations found directly or indirectly within loops.\n\nConsequence\nSoftware that is coded so as to execute expensive computations repeatedly (such as in loops) requires excessive computational resources when the usage and data volume grow\n\n"
         }
     ],
     "parameters": [

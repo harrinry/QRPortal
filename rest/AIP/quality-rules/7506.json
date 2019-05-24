@@ -47,9 +47,9 @@
         {
             "standard": "CISQ",
             "id": "ASCRM-RLB-4",
-            "name": "Persistent data without proper comparison controls",
+            "name": "Persistant Storable Data Element without Proper Comparison Control Element",
             "url": null,
-            "description": "Remove instances where the persistent variable, field, member, etc. has no dedicated operation handling comparison operations.\nNote: \n\u2022 In case of technologies with classes, this means situations where a persistent field is from a class that is made persistent while it does not implement methods from the list of required comparison operations (a JAVA example is the list composed of {'hashCode()','equals()'} methods) "
+            "description": "Objective\nAvoid improper comparison capabilities of persistent data\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the persistent storable element has no dedicated control element handling comparison action elements from the required comparison control element list. (in case of technologies with class elements, this means situations where a persistent storable data element is a class that is made persistent while it does not implement method elements from the required comparison control element list now composed of method elements: for example, with JAVA, a required comparison control element list is {'hashCode()','equals()'} method elements)\n\n"
         },
         {
             "standard": "STIG-V4R8",

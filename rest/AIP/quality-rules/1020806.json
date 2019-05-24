@@ -49,16 +49,16 @@
         {
             "standard": "CISQ",
             "id": "ASCMM-MNT-20",
-            "name": "Dead code",
+            "name": "Unreachable Named Callable or Method Control Element",
             "url": null,
-            "description": "Number of instances where a function or method is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a function or method element)"
+            "description": "Objective\nAvoid inactive code blocks that can mistakenly be considered as active and that can hide the active code in noise\n\nConsequence\nSoftware that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code\n\nMeasure Element\nNumber of instances where a named callable control element or method control element is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a callable or method control element)\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-704",
-            "name": "Incompatible data type conversion",
+            "name": "Incorrect Type Conversion or Cast",
             "url": null,
-            "description": "Remove instances where a variable, field, member, etc. is declared with a data type, and then is updated with a value from a second data type that is incompatible with the first data type"
+            "description": "Objective\nAvoid data corruption during incompatible mutation\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a storable element or member element is declared with a data type in the \u2018Create\u2019 action, and then is updated with a value which is cast via a type cast action into a second data type, which is incompatible with the first data type\n\n"
         },
         {
             "standard": "CWE",

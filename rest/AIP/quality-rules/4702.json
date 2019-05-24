@@ -53,9 +53,9 @@
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-396",
-            "name": "Catch of overly broad exception types",
+            "name": "Declaration of Catch for Generic Exception",
             "url": null,
-            "description": "Remove instances where a function, method, procedure, stored procedure, sub-routine, etc. contains a catch of an exception whose type is part of a list of overly broad exception types"
+            "description": "Objective\nAvoid failure to use dedicated exception types\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where the named callable control element or method control element contains a catch unit which declares to catch an exception parameter whose data type is part of a list of overly broad exception data types\n\n"
         },
         {
             "standard": "CWE",
