@@ -2,15 +2,15 @@
     "id": 1042008,
     "name": "Avoid using  ActionForward with untrusted data source to prevent file path disclosure",
     "href": "AIP/quality-rules/1042008",
-    "critical": false,
-    "maxWeight": 1,
+    "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "Constructing a server-side redirect path with user input could allow an attacker to download application binaries (including application classes or jar files) or view arbitrary files within protected directories.\n\n\nA file disclosure occur when:\n1. Data enters a program from an untrusted source.\n2. The data is used to dynamically construct a path.\n\nExample 1: The following code takes untrusted data and uses it to build a path which is used in a server side forward.\n\n\n...\n    String returnURL = request.getParameter(\"returnURL\");\n    return new ActionForward(returnURL);\n    ...\n\n\nIf an attacker provided a URL with the request parameter matching a sensitive file location, they would be able to view that file. For example, \"http://www.yourcorp.com/webApp/logic?returnURL=WEB-INF/applicationContext.xml\" would allow them to view the applicationContext.xml of the application.\nOnce the attacker had the applicationContext.xml, they could locate and download other configuration files referenced in the applicationContext.xml or even class or jar files. This would allow attackers to gain sensitive information about an application and target it for other types of attack.",
+    "description": "Avoid user input using Action forward with Untrusted data/Redirect pathw which could allow an attacker to download application binaries or read files within protected directories.\n\nChecks are limited to \n- User input path in server side application for return url",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
-    "rationale": "Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.",
+    "rationale": "Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.: /home/omg/htdocs/file/. \nCertain vulnerabilities, such as using the load_file() (within a SQL Injection) query to view the page source, require the attacker to have the full path to the file they wish to view.",
     "reference": "https://cwe.mitre.org/data/definitions/552.html",
-    "remediationSample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward NOT vulnerable code ******/\n        //returnURL moved from path to name (safe argument)       \n        ActionForward forward6 = new ActionForward(returnURL, \"path\", true); //NO VIOLATION",
-    "sample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward vulnerable code ******/\n        ActionForward forward = new ActionForward(returnURL); //VIOLATION \n        ActionForward forward2 = new ActionForward(returnURL, true); //VIOLATION \n        ActionForward forward3 = new ActionForward(\"name\", returnURL, true); //VIOLATION \n        ActionForward forward5 = new ActionForward();\n        forward5.setPath(returnURL); //VIOLATION \n\n        //false positive test - returnURL moved from path to name (safe argument)\n        ActionForward forward6 = new ActionForward(returnURL, \"path\", true); //OK",
+    "remediation": "All ways use safe argument as mentioned below to avoid untrusted access.\n\nActionForward forward6 = new ActionForward(returnURL, \"path\", true);",
+    "remediationSample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward NOT vulnerable code ******/\n        //returnURL moved from path to name (safe argument)       \n        ActionForward forward6 = new ActionForward(returnURL, \"path\", true);",
+    "sample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward vulnerable code ******/\n        ActionForward forward = new ActionForward(returnURL); //VIOLATION \n        ActionForward forward2 = new ActionForward(returnURL, true); //VIOLATION \n        ActionForward forward3 = new ActionForward(\"name\", returnURL, true); //VIOLATION \n        ActionForward forward5 = new ActionForward();\n        forward5.setPath(returnURL); //VIOLATION",
     "total": "Number of Java Servlet Method",
     "businessCriteria": [
         {
@@ -28,8 +28,8 @@
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 1,
-            "critical": false
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -66,9 +66,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }
