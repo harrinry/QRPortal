@@ -13,7 +13,7 @@
     },
     {
         "id": 7740,
-        "name": "CWE-79: Avoid cross-site scripting DOM vulnerabilities",
+        "name": "Avoid cross-site scripting vulnerabilities",
         "href": "AIP/quality-rules/7740",
         "status": null,
         "critical": true,
@@ -25,7 +25,7 @@
     },
     {
         "id": 7742,
-        "name": "CWE-89: Avoid SQL injection vulnerabilities",
+        "name": "Avoid SQL injection vulnerabilities",
         "href": "AIP/quality-rules/7742",
         "status": null,
         "critical": true,
@@ -37,7 +37,7 @@
     },
     {
         "id": 7746,
-        "name": "CWE-90: Avoid LDAP injection vulnerabilities",
+        "name": "Avoid LDAP injection vulnerabilities",
         "href": "AIP/quality-rules/7746",
         "status": null,
         "critical": true,
@@ -49,7 +49,7 @@
     },
     {
         "id": 7748,
-        "name": "CWE-78: Avoid OS command injection vulnerabilities",
+        "name": "Avoid OS command injection vulnerabilities",
         "href": "AIP/quality-rules/7748",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 7750,
-        "name": "CWE-91: Avoid XPath injection vulnerabilities",
+        "name": "Avoid XPath injection vulnerabilities",
         "href": "AIP/quality-rules/7750",
         "status": null,
         "critical": true,
@@ -73,7 +73,7 @@
     },
     {
         "id": 7752,
-        "name": "CWE-73: Avoid file path manipulation vulnerabilities",
+        "name": "Avoid file path manipulation vulnerabilities",
         "href": "AIP/quality-rules/7752",
         "status": null,
         "critical": true,
@@ -114,7 +114,7 @@
     },
     {
         "id": 8044,
-        "name": "CWE-117: Avoid Log forging vulnerabilities",
+        "name": "Avoid Log forging vulnerabilities",
         "href": "AIP/quality-rules/8044",
         "status": null,
         "critical": true,
@@ -125,20 +125,8 @@
         ]
     },
     {
-        "id": 8098,
-        "name": "CWE-134: Avoid uncontrolled format string",
-        "href": "AIP/quality-rules/8098",
-        "status": null,
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
         "id": 8218,
-        "name": "CWE-434: Content type should be checked when receiving a HTTP Post",
+        "name": "Content type should be checked when receiving a HTTP Post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -148,7 +136,7 @@
     },
     {
         "id": 8222,
-        "name": "CWE-798: Use of hard-coded credentials",
+        "name": "Avoid hardcoded credentials",
         "href": "AIP/quality-rules/8222",
         "status": null,
         "critical": true,
@@ -160,7 +148,7 @@
     },
     {
         "id": 8238,
-        "name": "CWE-501: Trust boundary violation",
+        "name": "Trust boundary violation",
         "href": "AIP/quality-rules/8238",
         "status": null,
         "critical": true,
@@ -172,7 +160,7 @@
     },
     {
         "id": 8240,
-        "name": "CWE-614: Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true,
@@ -182,7 +170,7 @@
     },
     {
         "id": 8242,
-        "name": "CWE-330: Use of insufficiently random values",
+        "name": "Use of insufficiently random values",
         "href": "AIP/quality-rules/8242",
         "status": null,
         "critical": true,
@@ -196,6 +184,16 @@
         "id": 1020096,
         "name": "Avoid using unsecured cookie (Javascript)",
         "href": "AIP/quality-rules/1020096",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020104,
+        "name": "Avoid hardcoded passwords (Javascript)",
+        "href": "AIP/quality-rules/1020104",
         "status": null,
         "critical": true,
         "technologyNames": [
@@ -224,12 +222,34 @@
     },
     {
         "id": 1021042,
-        "name": "Avoid hardcoded passwords",
+        "name": "Avoid hardcoded passwords (Python)",
         "href": "AIP/quality-rules/1021042",
         "status": null,
         "critical": true,
         "technologyNames": [
             "Python"
+        ]
+    },
+    {
+        "id": 1043022,
+        "name": "Ensure not to disable Secure attribute while creating cookie (C#)",
+        "href": "AIP/quality-rules/1043022",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043024,
+        "name": "Always enable RequireSSL attribute for cookies in Config file (ASP.NET)",
+        "href": "AIP/quality-rules/1043024",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {
@@ -244,7 +264,7 @@
     },
     {
         "id": 1600840,
-        "name": "CWE-798: Avoid using hardcoded usernames (PeopleSoft)",
+        "name": "Avoid using hardcoded usernames (PeopleSoft)",
         "href": "AIP/quality-rules/1600840",
         "status": null,
         "critical": false,
