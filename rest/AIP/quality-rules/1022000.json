@@ -59,14 +59,14 @@
             "id": "STIG-V-69257",
             "name": "The application must implement DoD-approved encryption to protect the confidentiality of remote access sessions.",
             "url": null,
-            "description": null
+            "description": "Without confidentiality protection mechanisms, unauthorized individuals may gain access to sensitive information via a remote access session.\n\nRemote access is access to DoD nonpublic information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network. Remote access methods include, for example, dial-up, broadband, and wireless.\n\nEncryption provides a means to secure the remote connection to prevent unauthorized access to the data traversing the remote access connection thereby providing a degree of confidentiality. The encryption strength of mechanism is selected based on the security categorization of the information."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69293",
             "name": "The application must ensure messages are encrypted when the SessionIndex is tied to privacy data.",
             "url": null,
-            "description": null
+            "description": "When the SessionIndex is tied to privacy data (e.g., attributes containing privacy data) the message should be encrypted. If the message is not encrypted there is the possibility of compromise of privacy data."
         }
     ],
     "parameters": [

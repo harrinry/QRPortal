@@ -64,49 +64,49 @@
             "id": "STIG-V-69241",
             "name": "The application must clear temporary storage and cookies when the session is terminated.",
             "url": null,
-            "description": null
+            "description": "Persistent cookies are a primary means by which a web application will store application state and user information.  Since HTTP is a stateless protocol, this persistence allows the web application developer to provide a robust and customizable user experience.\n\nHowever, if a web application stores user authentication information within a persistent cookie or other temporary storage mechanism, this information can be stolen and used to compromise the users account.\n\nLikewise, HTML 5 provides the developer with a client storage capability where application data larger than the 4K cookie size limit can be stored on the local client.  While this can be beneficial to the developer, this is considered insecure storage and should not be used for storing sensitive session or security tokens.  A cross site scripting attack can put this data at risk.\n\nWeb applications must clear sensitive data from files and storage areas on the client when the session is terminated."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69243",
             "name": "The application must automatically terminate the non-privileged user session and log off non-privileged users after a 15 minute idle time period has elapsed.",
             "url": null,
-            "description": null
+            "description": "Leaving a user\u2019s application session established for an indefinite period of time increases the risk of session hijacking.\n\nSession termination terminates an individual user's logical application session after 15 minutes of application inactivity at which time the user must re-authenticate and a new session must be established if the user desires to continue work in the application."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69245",
             "name": "The application must automatically terminate the admin user session and log off admin users after a 10 minute idle time period is exceeded.",
             "url": null,
-            "description": null
+            "description": "Leaving an admin user's application session established for an indefinite period of time increases the risk of session hijacking.\n\nSession termination terminates an individual user's logical application session after 10 minutes of application inactivity at which time the user must re-authenticate and a new session must be established if the user desires to continue work in the application."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69247",
             "name": "Applications requiring user access authentication must provide a logoff capability for user initiated communication session.",
             "url": null,
-            "description": null
+            "description": "If a user cannot explicitly end an application session, the session may remain open and be exploited by an attacker.  Applications providing user access must provide the ability for users to manually terminate their sessions and log off."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70187",
             "name": "The application must terminate all network connections associated with a communications session at the end of the session.",
             "url": null,
-            "description": null
+            "description": "Networked applications routinely open connections to and from other systems as part of their design and function.  When connections are opened by the application, system resources are consumed.  Terminating the network connection at the end of the application session frees up these resources for later use and aids in maintaining system stability. \n\nTerminating network connections associated with communications sessions includes, for example, de-allocating associated TCP/IP address/port pairs at the operating system level, or de-allocating networking assignments at the application level if multiple application sessions are using a single, operating system level network connection. \n\nThis does not mean that the application terminates all sessions or network access; it only ends the inactive session and releases the resources associated with that session.\n\nMany applications rely on the underlying OS to control the network connection aspect of the application which is perfectly acceptable.\n\nAdditionally, application specific operational issues may occasionally be encountered which dictate exceptions be granted to this requirement in order to ensure continuity of operations and application availability.\n\nWhen the aforementioned type of situation occurs, the root cause of the issue as well as the mitigations implemented in order to prevent a loss of availability must be documented.   Common mitigation procedures include but are not limited to stopping and restarting application or system services in order to manually release system resources."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70207",
             "name": "The application must destroy the session ID value and/or cookie on logoff or browser close.",
             "url": null,
-            "description": null
+            "description": "Many web development frameworks such as PHP, .NET, and ASP include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nSession cookies contain application session information that can be used to impersonate the web application user or hijack their application session. Once the user's session has terminated, these session IDs must be destroyed and not reused."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70211",
             "name": "Applications must validate session identifiers.",
             "url": null,
-            "description": null
+            "description": "Many web development frameworks such as PHP, .NET, and ASP include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework."
         }
     ],
     "parameters": [

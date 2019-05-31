@@ -57,7 +57,7 @@
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": null,
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
             "description": null
         },
         {
@@ -86,14 +86,14 @@
             "id": "STIG-V-70265",
             "name": "The application must validate all input.",
             "url": null,
-            "description": null
+            "description": "Checking the valid syntax and semantics of information system inputs (e.g., character set, length, numerical range, and acceptable values) verifies that inputs match specified definitions for format and content. Software applications typically follow well-defined protocols that use structured messages (i.e., commands or queries) to communicate between software modules or system components. \n\nStructured messages can contain raw or unstructured data interspersed with metadata or control information. If software applications use attacker-supplied inputs to construct structured messages without properly encoding such messages, then the attacker could insert malicious commands or special characters that can cause the data to be interpreted as control information or metadata. \n\nConsequently, the module or component that receives the tainted output will perform the wrong operations or otherwise interpret the data incorrectly. Prescreening inputs prior to passing to interpreters prevents the content from being unintentionally interpreted as commands. Input validation helps to ensure accurate and correct inputs and prevent attacks such as cross-site scripting and a variety of injection attacks.\n\nAbsence of input validation opens an application to improper manipulation of data. The lack of input validation can lead immediate access of application, denial of service, and corruption of data.\n\nInvalid input includes presence of scripting tags within text fields, query string manipulation, and invalid data types and sizes.\n\nWhen an application validates input, it will only execute provided input after it has evaluated the input, validated the input and determined the data is in an expected format, and content is not extraneous or malformed.\n\nComprehensive application security testing and code reviews are required to ensure the application is not vulnerable to input validation vulnerabilities.\n\nApplication security code reviews should be conducted during the development phase to find and address input validation errors. When code reviews are not possible, fuzz testing can be performed on the application to attempt and identify vulnerable data input fields."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70271",
             "name": "The application must not be subject to input handling vulnerabilities.",
             "url": null,
-            "description": null
+            "description": "A common application vulnerability is unpredictable behavior due to improper input validation. This requirement guards against adverse or unintended system behavior caused by invalid inputs, where information system responses to the invalid input may be disruptive or cause the system to fail into an unsafe state.\n\nData received from the user should always be suspected as being malicious and always validated prior to using it as input to the application.\n\nSome examples of input methods:\n\n- Forms Data\n- URL parameters\n- Hidden Fields\n- Cookies\n- HTTP Headers or anything in the HTTP request\n- Client data entry fields\n\nItems to validate:\n\n- Out of range values/Boundary \n- Data length \n- Validate types of characters allowed\n- Whitelist validation for known good data input while denying all other input.\n\nOther recommendations include: \n\n- Using drop down menus for lists\n- Validating input on the server, not on the client.\n\nIf validating on the client, also validate on the server:\n\n- Using regular expressions to validate input\n- Using HTML filter libraries that implement input validation tasks."
         }
     ],
     "parameters": [

@@ -1,9 +1,9 @@
 {
     "id": "STIG-V-70217",
-    "name": "The application must use the Federal Information Processing Standard (FIPS) 140-2-validated cryptographic modules and random number generator if the application implements encryption, key e...",
+    "name": "The application must use the Federal Information Processing Standard (FIPS) 140-2-validated cryptographic modules and random number generator if the application implements encryption, key exchange, digital signature, and hash functionality.",
     "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70217",
     "url": null,
-    "description": null,
+    "description": "Sequentially generated session IDs can be easily guessed by an attacker. Employing the concept of randomness in the generation of unique session identifiers helps to protect against brute-force attacks to determine future session identifiers.\n\nUnique session IDs address man-in-the-middle attacks, including session hijacking or insertion of false information into a session. If the attacker is unable to identify or guess the session information related to pending application traffic, they will have more difficulty in hijacking the session or otherwise manipulating valid sessions.\n\nThis requirement focuses on communications protection for the application session rather than for the network packet.\n\nThis requirement applies to applications that utilize communications sessions. This includes, but is not limited to, web-based applications and Service-Oriented Architectures (SOA).",
     "count": 2,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",

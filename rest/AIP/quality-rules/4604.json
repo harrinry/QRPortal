@@ -51,14 +51,14 @@
             "id": "STIG-V-70385",
             "name": "The application development team must follow a set of coding standards.",
             "url": null,
-            "description": null
+            "description": "Coding standards are guidelines established by the development team or individual developers that recommend programming style, practices and methods.  The coding standards employed will vary based upon the programming language that is being used to develop the application and the development team.\n\nCoding standards often cover the use of white space characters, variable naming conventions, function naming conventions, and comment styles.  Implementing coding standards provides many benefits to the development process.  These benefits include code readability, coding consistency among both individual and teams of developers as well as ease of code integration.  \n\nThe following are examples of what will typically be in a coding standards document.  This list is an example of what one can expect to find in typical coding standard documents and is not a comprehensive list:\n\n- Indent style conventions\n- Naming conventions\n- Line length conventions\n- Comment conventions\n- Programming best practices\n- Programming style conventions\n\nCoding standards allow developers to quickly adapt to code which has been developed by various members of a development team.  Coding standards are useful in the code review process as well as in situations where a team member leaves and duties must then be assigned to another team member.  \n\nCode conforming to a standard format is easier to read, especially if someone other than the original developer is examining the code.  In addition, formatted code can be debugged and corrected faster than unformatted code.\n\nIntroducing coding standards can help increase the consistency, reliability, and security of the application by ensuring common programming structures and tasks are handled by similar methods, as well as, reducing the occurrence of common logic errors."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70391",
             "name": "The application must not be subject to error handling vulnerabilities.",
             "url": null,
-            "description": null
+            "description": "Error handling is the failure to check the return values of functions or catch top level exceptions within a program. Improper error handling in an application can lead to an application failure or possibly result in the application entering an insecure state. \n\nThe primary way to detect error handling vulnerabilities is to perform code reviews. If a manual code review cannot be performed, static code analysis tools should be employed in conjunction with tests to help force the error conditions by specifying invalid input (such as fuzzed data and malformed filenames) and by using different accounts to run the application. These tests may give indications of vulnerability, but they are not comprehensive.\n\nIn order to minimize error handling errors, ensure proper return code and exception handling is implemented throughout the application."
         }
     ],
     "parameters": [
