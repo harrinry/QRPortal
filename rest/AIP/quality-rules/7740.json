@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7740",
     "critical": true,
     "associatedValueName": "Call stack from user input source down to the target HTML user output method",
-    "description": "Using CAST dataflow engine, this metric detects paths from user input methods to HTML user output methods which are open vulnerabilities to cross-site scripting injection flaws (XSS).",
+    "description": "Using CAST data-flow engine, this metric detects paths from user input methods to HTML user output methods which are open vulnerabilities to cross-site scripting injection flaws (XSS).",
     "output": "List all methods that miss calling the required sanitization method and provides access to the path demonstrating the vulnerability:\n\nIt provides the following information:\n- The full name of the method that calls the user input method. That is the source of the XSS flaw.\n- Call stack from user input source down to the target HTML user output method.",
     "rationale": "The most dangerous web application vulnerability is known as cross-site scripting (XSS). It is caused by malicious script echoed back into HTML returned from a trusted site, and runs under trusted context.",
     "reference": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')\nhttp://cwe.mitre.org/data/definitions/79.html\n\nOpen Web Application Security Project (OWASP) \nhttp://www.owasp.org/index.php/Top_10_2007\n\nCISQ rule: ASCSM-CWE-79.",
