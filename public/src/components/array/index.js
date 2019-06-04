@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { createClassName, COMMON_CLASSES } from 'common/';
 import { LoadingSpinner } from 'components/';
 import { CLASSES } from './constants';
@@ -11,11 +12,21 @@ class VerticalArray extends React.PureComponent{
 
     this.state = {
       filterValue:'',
-      filterDropDown: false
+      filterDropDown: false,
+      liteFilter: []
     };
 
+    this.mntd = false;
     this.onfilterChange = this.onfilterChange.bind(this);
     this.filterDropDown = this.filterDropDown.bind(this);
+  }
+
+  componentDidMount(){
+    this.mntd = true;
+  }
+
+  componentWillUnmount(){
+    this.mntd = false;
   }
 
   componentWillReceiveProps( nextprops ){
@@ -35,6 +46,11 @@ class VerticalArray extends React.PureComponent{
   }
 
   filterChildren(){
+    console.log(this.state.liteFilter);
+    if ( this.state.filterValue === 'ECHO Rules only' ) {
+      return this.state.liteFilter;
+    }
+
     return this.props.children.filter(c => {
       if (this.state.filterValue === '') {
         return c;
@@ -54,11 +70,25 @@ class VerticalArray extends React.PureComponent{
   }
 
   handleSubClick( ref ){
-    this.refs[ref].blur();
-    this.setState({
-      filterDropDown: false,
-      filterValue: "ECHO Rules only"
-    });
+    axios.post('/search/filter-lite', 
+      JSON.stringify(this.props.children), { 
+        responseType: 'json', 
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then( res => {
+        console.log(res.data);
+        this.refs[ref].blur();
+        if(this.mntd === true ){
+          this.setState({
+            filterDropDown: false,
+            filterValue: 'ECHO Rules only',
+            liteFilter: res.data
+          });
+        }
+      });
+
   }
 
   selectAll( ref ){
