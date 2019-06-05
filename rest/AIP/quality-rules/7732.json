@@ -40,18 +40,11 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
-            "id": "ASCSM-CWE-99",
-            "name": "Name or Reference Resolution Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use as resource names or references\n\nConsequence\nSoftware unaware of resource identification control incurs the risk of unauthorized access to or modification of sensitive data and system resources, including configuration files and files containing sensitive information\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the platform action to access a resource by its name; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
-        },
-        {
             "standard": "CWE",
-            "id": "CWE-99",
-            "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "url": "https://cwe.mitre.org/data/definitions/79.html",
+            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
         },
         {
             "standard": "NIST-SP-800-53R4",
