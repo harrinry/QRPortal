@@ -9,7 +9,7 @@
     "rationale": "To be secure by default, you want to ensure that any such bindings are disallowed unless you can determine that something explicitly says it's safe to use a value for binding in that context. It helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.",
     "reference": "https://docs.angularjs.org/api/ng/service/$sce",
     "sample": "angular.module('myAppWithSceDisabledmyApp', []).config(function($sceProvider) {// Completely disable SCE. $sceProvider.enabled(false); });",
-    "total": "Number of angular applications",
+    "total": "Number of angular applications (may be represented by an html file, most often index.html, or no html if such html file does not exist)",
     "businessCriteria": [
         {
             "id": 66031,
