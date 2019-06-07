@@ -1,0 +1,67 @@
+{
+    "id": 1042038,
+    "name": "Avoid ClassLoader manipulation in Struts 2.0.0 to 2.3.16",
+    "href": "AIP/quality-rules/1042038",
+    "critical": true,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "In struts 2 developer should avoid ClassLoader manipulation in the version range Struts 2.0.0 - Struts 2.3.16. Since the default upload mechanism in Apache Struts 2 is based on Commons FileUpload which is vulnerable and allows DoS attacks. Additional ParametersInterceptor allows access to 'class' parameter which is directly mapped to getClass() method and allows ClassLoader manipulation. So user should add \"^class\" to excludeParams in struts-default.xml configuration of ParametersInterceptor.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Additional ParametersInterceptor allows access to 'class' parameter which is directly mapped to getClass() method and allows ClassLoader manipulation.",
+    "reference": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0094\nhttps://cwiki.apache.org/confluence/display/WW/S2-020\nhttps://nvd.nist.gov/vuln/detail/CVE-2014-0094",
+    "remediation": "Exclude 'class' parameter\nSimple add '^class\\.*' to the list of excludeParams as below\n\nUpgrade to Struts 2.3.16.1",
+    "remediationSample": "Struts-defaults.xml\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">^class\\..*,^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>",
+    "sample": "Struts-default.xml\n\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>",
+    "total": "Number of struts 2 config XML file",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}
