@@ -51,6 +51,20 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CWE",
+            "id": "CWE-306",
+            "name": "Missing Authentication for Critical Function",
+            "url": "https://cwe.mitre.org/data/definitions/306.html",
+            "description": "The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources."
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
@@ -63,6 +77,13 @@
             "name": "Broken Authentication",
             "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
             "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         }
     ],
     "parameters": [
