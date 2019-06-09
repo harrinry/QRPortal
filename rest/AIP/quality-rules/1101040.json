@@ -56,6 +56,34 @@
             "name": "Empty Exception Block",
             "url": null,
             "description": "Objective\nAvoid improper responses to unusual and unexpected situations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where an exception handling block (such as Catch and Finally blocks) of the named callable and method control elements does not contain any other control element\n\n"
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-390",
+            "name": "Detection of Error Condition Without Action",
+            "url": "https://cwe.mitre.org/data/definitions/390.html",
+            "description": "The software detects a specific error, but takes no actions to handle the error."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": "https://cwe.mitre.org/data/definitions/391.html",
+            "description": "Ignoring exceptions and other error conditions may allow an attacker to induce unexpected behavior unnoticed."
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-11",
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "url": null,
+            "description": null
         }
     ],
     "parameters": [

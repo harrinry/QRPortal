@@ -48,11 +48,25 @@
             "description": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A4-2017",
             "name": "XML External Entities (XXE)",
             "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
             "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
         }
     ],
     "parameters": [
