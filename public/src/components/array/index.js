@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import { createClassName, COMMON_CLASSES } from 'common/';
 import { LoadingSpinner } from 'components/';
 import { CLASSES } from './constants';
@@ -10,10 +11,22 @@ class VerticalArray extends React.PureComponent{
     super(props);
 
     this.state = {
-      filterValue:''
+      filterValue:'',
+      filterDropDown: false,
+      liteFilter: []
     };
 
+    this.mntd = false;
     this.onfilterChange = this.onfilterChange.bind(this);
+    this.filterDropDown = this.filterDropDown.bind(this);
+  }
+
+  componentDidMount(){
+    this.mntd = true;
+  }
+
+  componentWillUnmount(){
+    this.mntd = false;
   }
 
   componentWillReceiveProps( nextprops ){
@@ -28,14 +41,20 @@ class VerticalArray extends React.PureComponent{
     
   }
 
-  onfilterChange( event ){
+  onfilterChange(event){
     this.setState({filterValue: event.target.value});
+  }
+
+  filterEchoIds( item ){
+    return this.state.liteFilter.indexOf( item.id ) !== -1 ? true : false;
   }
 
   filterChildren(){
     return this.props.children.filter(c => {
       if (this.state.filterValue === '') {
         return c;
+      } else if ( this.state.filterValue === 'ECHO Rules only' ){
+        return this.filterEchoIds( c ) ? c : undefined;
       } else {
         if(this.props.compare) {
           if(this.props.compare(this.state.filterValue, c)) return c;
@@ -44,6 +63,37 @@ class VerticalArray extends React.PureComponent{
         }
       }
     });
+  }
+
+  filterDropDown(ref){
+    this.setState({filterDropDown: !this.state.filterDropDown});
+    this.refs[ref].focus();
+  }
+
+  handleSubClick( ref ){
+    const ids = this.props.children.map( e => e.id );
+    axios.post('/search/filter-lite', 
+      JSON.stringify( ids ), { 
+        responseType: 'json', 
+        headers: {
+          'content-type': 'application/json'
+        }
+      })
+      .then( res => {
+        this.refs[ref].blur();
+        if(this.mntd === true ){
+          this.setState({
+            filterDropDown: false,
+            filterValue: 'ECHO Rules only',
+            liteFilter: res.data
+          });
+        }
+      });
+
+  }
+
+  selectAll( ref ){
+    this.refs[ref].select();
   }
 
   render(){
@@ -60,8 +110,9 @@ class VerticalArray extends React.PureComponent{
       <div className={createClassName(CLASSES.headerContainer, COMMON_CLASSES.flexRow)}>
         <div className={CLASSES.itemCounter}>{_label}</div>
         <div className={CLASSES.internalFilter}>
-          <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange}/>
-          <span className={CLASSES.filter} onClick={() => this.refs[ref].focus()}></span>
+          <input ref={ref} value={this.state.filterValue} placeholder={filterPlaceholder} onChange={this.onfilterChange} onClick={ () => this.selectAll(ref)}/>
+          <span className={CLASSES.filter} onClick={() => this.filterDropDown(ref)}></span>
+          {this.state.filterDropDown ? <span className={CLASSES.prefilter} onClick={() => this.handleSubClick(ref) }>ECHO Rules only</span> : undefined}
         </div>
       </div>
       <div className={createClassName(CLASSES.tableContainer, COMMON_CLASSES.flexCol)}>
