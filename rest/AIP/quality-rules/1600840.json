@@ -71,6 +71,13 @@
             "description": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
@@ -85,11 +92,25 @@
             "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
         },
         {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
+        },
+        {
             "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-2.2.4",
             "name": "Configure system security parameters to prevent misuse.",
             "url": null,
             "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         }
     ],
     "parameters": [
