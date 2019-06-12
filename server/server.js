@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 let app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ limit: '200kb' }));
+app.use(bodyParser.json());
 
 require('./middleware/security')(app);
 require('./middleware/staticRoutes')(app);
