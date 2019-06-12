@@ -50,7 +50,7 @@ module.exports = {
   },
   devServer:{
     compress: true,
-    port: 8080,
+    port: 3000,
     proxy:{
       '/': 'http://localhost:8080/'
     }
