@@ -60,6 +60,20 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-704",
+            "name": "Incorrect Type Conversion or Cast",
+            "url": null,
+            "description": "Objective\nAvoid data corruption during incompatible mutation\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a storable element or member element is declared with a data type in the \u2018Create\u2019 action, and then is updated with a value which is cast via a type cast action into a second data type, which is incompatible with the first data type\n\n"
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-704",
+            "name": "Incorrect Type Conversion or Cast",
+            "url": "https://cwe.mitre.org/data/definitions/704.html",
+            "description": "The software does not correctly convert an object, resource, or structure from one type to a different type."
+        },
+        {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70385",
             "name": "The application development team must follow a set of coding standards.",
