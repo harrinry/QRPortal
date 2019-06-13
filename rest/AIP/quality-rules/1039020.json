@@ -41,6 +41,13 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-327",
+            "name": "Broken or Risky Cryptographic Algorithm Usage",
+            "url": null,
+            "description": "Objective\nAvoid failure to use vetted cryptographic libraries\n\nConsequence\nSoftware using broken or risky cryptographic algorithm incurs the risk of sensitive data being compromised\n\nMeasure Element\nNumber of instances where the application uses the cryptographic deployed component which is not part of the list of vetted cryptographic deployed components.\n\n"
+        },
+        {
             "standard": "CWE",
             "id": "CWE-327",
             "name": "Use of a Broken or Risky Cryptographic Algorithm",
