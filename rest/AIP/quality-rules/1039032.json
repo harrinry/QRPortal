@@ -9,7 +9,7 @@
     "rationale": "XML documents optionally contain a Document Type Definition (DTD), which, among other features, enables the definition of XML entities. It is possible to define an entity by providing a substitution string in the form of a URI. The XML parser can access the contents of this URI and embed these contents back into the XML document for further processing.\n\nBy submitting an XML file that defines an external entity with a file:// URI, an attacker can cause the processing application to read the contents of a local file. For example, a URI such as \"file:///c:/winnt/win.ini\" designates (in Windows) the file C:\\Winnt\\win.ini, or file:///etc/passwd designates the password file in Unix-based systems. Using URIs with other schemes such as http://, the attacker can force the application to make outgoing requests to servers that the attacker cannot reach directly, which can be used to bypass firewall restrictions or hide the source of attacks such as port scanning.\n\nOnce the content of the URI is read, it is fed back into the application that is processing the XML. This application may echo back the data (e.g. in an error message), thereby exposing the file contents.",
     "reference": "https://cwe.mitre.org/data/definitions/611.html\nhttps://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)\nhttp://blog.bdoughan.com/2011/03/preventing-entity-expansion-attacks-in.html",
     "remediation": "Add restriction before calling parser",
-    "remediationSample": "DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\ndbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nDocumentBuilder db = dbf.newDocumentBuilder();\n\nDocument doc = db.parse(input);",
+    "remediationSample": "Example 1:\n\nDocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\ndbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nDocumentBuilder db = dbf.newDocumentBuilder();\n\nDocument doc = db.parse(input);\n\nExample 2:\nDocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();\n\ndocBuilderFactory.setFeature(\"http://apache.org/xml/features/disallow-doctype-decl\", true);\nDocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();\nInputSource is = new InputSource( new FileInputStream(f) );\nDocument doc = docBuilder.parse(is);",
     "sample": "DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();\n\nDocument doc = db.parse(input);",
     "total": "Number of Java artifacts",
     "businessCriteria": [
@@ -60,13 +60,6 @@
             "name": "XML External Entities (XXE)",
             "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
             "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
-        },
-        {
-            "standard": "PCI-DSS-V3.1",
-            "id": "PCI-Requirement-6.5.1",
-            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
         }
     ],
     "parameters": [
