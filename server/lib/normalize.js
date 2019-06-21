@@ -1,10 +1,10 @@
 const jsonExt = '.json';
  
 function normalize(url){
-    if (/(^q=AIP|^AIP)/ig.test(url))
+    if (/(AIP)/ig.test(url))
         return normalizeFileName(url);
  
-    if (/(^q=Echo|^Echo)/ig.test(url))
+    if (/(Echo)/ig.test(url))
         return normalizeFileName(url);
  
     // add AIP as a default prefix
