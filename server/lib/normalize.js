@@ -1,13 +1,19 @@
 const jsonExt = '.json';
-const AIP = 'AIP/';
-
+ 
 function normalize(url){
-  const dirTest = /(AIP)/ig.test(url);
-  return dirTest ? normalizeFileName(url) : AIP.concat( normalizeFileName(url));
+    if (/(^q=AIP|^AIP)/ig.test(url))
+        return normalizeFileName(url);
+ 
+    if (/(^q=Echo|^Echo)/ig.test(url))
+        return normalizeFileName(url);
+ 
+    // add AIP as a default prefix
+    return 'AIP/'.concat( normalizeFileName(url));
 }
-
+ 
 function normalizeFileName( fileName ){
-  return (/(\.json)/ig.test(fileName) ? fileName : fileName + jsonExt);
+    // add json as extension file name when required
+    return (/(\.json)/ig.test(fileName) ? fileName : fileName + jsonExt);
 }
-
+ 
 module.exports = normalize;
