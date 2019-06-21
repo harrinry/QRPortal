@@ -25,4 +25,9 @@ apiRouter.get('/aip*', (req, res) => {
   res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
 });
 
+apiRouter.get('/echo*', (req, res) => {
+  StatLogger.info( req.url );
+  res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
+});
+
 module.exports = apiRouter;
