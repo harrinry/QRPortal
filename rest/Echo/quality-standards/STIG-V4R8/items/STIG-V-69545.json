@@ -1,0 +1,9 @@
+{
+    "id": "STIG-V-69545",
+    "name": "The application must implement replay-resistant authentication mechanisms for network access to non-privileged accounts.",
+    "href": "Echo/quality-standards/STIG-V4R8/items/STIG-V-69545",
+    "url": null,
+    "description": "A replay attack is a man-in-the-middle style attack which allows an attacker to repeat or alter a valid data transmission that may enable unauthorized access to the application. Authentication sessions between the authenticating client and the application server validating the user credentials must not be vulnerable to a replay attack.\n\nThe protection methods selected to protect against a replay attack will vary according to the application architecture.\n\nAn authentication process resists replay attacks if it is impractical to achieve a successful authentication by recording and replaying a previous authentication message.\n\nA non-privileged account is any operating system account with authorizations of a non-privileged user.\n\nTechniques used to address this include protocols using nonces (e.g., numbers generated for a specific one time use) or challenges (e.g., TLS, WS_Security) and PKI certificates. Additional techniques include time-synchronous or challenge-response one-time authenticators.",
+    "count": 0,
+    "qualityRules": null
+}

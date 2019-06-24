@@ -1,0 +1,9 @@
+{
+    "id": "M10-2016",
+    "name": "Extraneous Functionality",
+    "href": "Echo/quality-standards/OWASP/items/M10-2016",
+    "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M10-Extraneous_Functionality",
+    "description": "There is a high likelihood that any given mobile app contains extraneous functionality that is not directly exposed to the user via the interface. Most of this additional code is benign in nature and will not give an attacker any additional insight into backend capabilities. However, some extraneous functionality can be very useful to an attacker. Functionality that exposes information related to back-end test, demo, staging, or UAT environments should not be included in a production build. Additionally, administrative API endpoints, or unofficial endpoints should not be included in final production builds. Detecting extraneous functionality can be tricky. Automated static and dynamic analysis tools can pick up low hanging fruit (log statements). However, some backdoors are difficult to detect in an automated means. As such, it is always best to prevent these things using a manual code review.",
+    "count": 0,
+    "qualityRules": null
+}

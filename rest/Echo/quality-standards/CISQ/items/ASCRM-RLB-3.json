@@ -1,0 +1,9 @@
+{
+    "id": "ASCRM-RLB-3",
+    "name": "Serializable Storable Data Element with non-Serializable Item Elements",
+    "href": "Echo/quality-standards/CISQ/items/ASCRM-RLB-3",
+    "url": null,
+    "description": "Objective\nAvoid imcomplete implementation of serialization capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a serializable storable element is composed of a non-serializable item element (in case of technologies with class and interface elements, this means situations where the serializable storable data element is a class that is serializable but owns the element that is a non-serializable member element) (the serializable nature of an element is technology dependent; for example, serializable capabilities come from a serializable attribute in .NET and the inheritance from the java.io.Serializable interface in Java)\n\n",
+    "count": 0,
+    "qualityRules": null
+}
