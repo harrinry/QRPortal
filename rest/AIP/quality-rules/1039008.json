@@ -12,6 +12,7 @@
     "remediationSample": "public void doGet(HttpServletRequest request, HttpServletResponse response) \n  throws IOException, ServletException { \n  try { \n    String ip = request.getRemoteAddr(); \n    InetAddress addr = InetAddress.getByName(ip); \n    //... \n  } \n  catch (UnknownHostException uhex) { \n    //... \n  } \n}",
     "sample": "protected void doPost (HttpServletRequest req, HttpServletResponse res) throws IOException { \nString ip = req.getRemoteAddr(); \nInetAddress addr = InetAddress.getByName(ip); \n... \nout.println(\"hello \" + addr.getHostName()); \n} \n\n\npublic void doGet(HttpServletRequest request, HttpServletResponse response) \n  throws IOException, ServletException { \n  String ip = request.getRemoteAddr(); \n  InetAddress addr = InetAddress.getByName(ip); // VIOLATION; getByName(String) throws UnknownHostException \n  //... \n}",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to manage an exception in servlet method using a try catch block to prevent exposing system vulnerabilities",
     "businessCriteria": [
         {
             "id": 20140522,

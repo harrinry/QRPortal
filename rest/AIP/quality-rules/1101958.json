@@ -12,6 +12,7 @@
     "remediationSample": "var client = new MongoClient(\"mongodb://localhost\");\nvar db = client.GetServer().GetDatabase(\"myapp\");\nvar collection = db.GetCollection<User>(\"users\");\n\ncollection.CreateIndex(new IndexKeysBuilder().Ascending(\"EmailAddress\"), IndexOptions.SetBackground(true));",
     "sample": "var server = MongoServer.Create(\"mongodb://localhost\");\nvar db = server.GetDatabase(\"myapp\");\n\nvar users = db.GetCollection<User>(\"users\");\n\nusers.EnsureIndex(new IndexKeysBuilder().Ascending(\"EmailAddress\"));",
     "total": "The total procedure counts MongoDB Collections.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66032,

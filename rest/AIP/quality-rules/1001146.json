@@ -9,6 +9,7 @@
     "rationale": "While FOR UPDATE forces a certain access path, FOR FETCH ONLY provides more opportunities to the optimizer to choose the most efficient access path.",
     "remediation": "Add one of the three clause :  \"FOR UPDATE\" or \"FOR READ ONLY\" or FORFETCH ONLY\". If you specify FOR FETCH ONLY, then DB2 does not need to know the current position of\nyour cursor on the base table, because you are not going to update qualifying rows.\nTherefore, a more efficient access path for read-only cursors may be available to the optimizer. In order to get the benefit of lock avoidance, it is important to code cursors unambiguously.\nThis is especially true for dynamic SQL. Coding a cursor unambiguously means explicitly specifying either FOR FETCH ONLY for read-only cursors or FOR UPDATE for cursors whose data will be used to perform subsequent updates.",
     "total": "Number of  PL1 Main Procedures.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

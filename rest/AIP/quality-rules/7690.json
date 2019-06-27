@@ -12,6 +12,7 @@
     "remediationSample": "EXEC SQL \n  SELECT ACT_NO, EENDDATE \n  INTO :ACT-NO, :EENDDATE \n  FROM MP_PROJ_ACT \n  WHERE PROJ_NO = :WS-PROJ-NO \nEND-EXEC \n\nEVALUATE SQLCODE \n    WHEN 0 \n         CONTINUE \n    WHEN OTHER \n         PERFORM 950-DBERROR \nEND-EVALUATE \n\nMOVE ACT-NO TO OTHER-VAR",
     "sample": "EXEC SQL \n  SELECT ACT_NO, EENDDATE \n  INTO :ACT-NO, :EENDDATE \n  FROM MP_PROJ_ACT \n  WHERE PROJ_NO = :WS-PROJ-NO \nEND-EXEC \n\nMOVE ACT-NO TO OTHER-VAR",
     "total": "Number of Cobol Programs embedding SQL",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

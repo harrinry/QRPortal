@@ -12,6 +12,7 @@
     "remediationSample": "Example 1:\n\nDocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\ndbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nDocumentBuilder db = dbf.newDocumentBuilder();\n\nDocument doc = db.parse(input);\n\nExample 2:\nDocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();\n\ndocBuilderFactory.setFeature(\"http://apache.org/xml/features/disallow-doctype-decl\", true);\nDocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();\nInputSource is = new InputSource( new FileInputStream(f) );\nDocument doc = docBuilder.parse(is);",
     "sample": "DocumentBuilder db = DocumentBuilderFactory.newInstance().newDocumentBuilder();\n\nDocument doc = db.parse(input);",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to preceed the call of DocumentBuilder by a call to the secure mode of the parser",
     "businessCriteria": [
         {
             "id": 66031,

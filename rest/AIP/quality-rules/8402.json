@@ -13,6 +13,7 @@
     "remediationSample": "using System;\nusing System.IO;\nusing System.Runtime.Serialization;\nusing System.Runtime.Serialization.Formatters.Binary;\n\nnamespace MyObjSerial\n{\n\n    [Serializable()]\n    class SomeType { }\n\n    [Serializable()]\n    class Employee\n    {\n        int EmpId;\n        string EmpName;\n        SomeType Type; //no violation\n\n        //Default constructor\n        public Employee()\n        {\n            EmpId = 0;\n            EmpName = null;\n            Type = null;\n\n        }\n    }\n}",
     "sample": "using System;\nusing System.IO;\nusing System.Runtime.Serialization;\nusing System.Runtime.Serialization.Formatters.Binary;\n\nclass SomeType { }\n\nnamespace MyObjSerial\n{\n    [Serializable()]    //Set this attribute to all the classes that want to serialize\n    public class Employee\n    {\n        int EmpId;\n        string EmpName;\n        SomeType Type; //violation\n\n\n        //Default constructor\n        public Employee()\n        {\n            EmpId = 0;\n            EmpName = null;\n            Type = null;\n\n        }\n    }\n}",
     "total": "Number of non-static, non-transient and not primitive fields of classes that implement Serializable",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

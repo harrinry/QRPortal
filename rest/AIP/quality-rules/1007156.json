@@ -11,6 +11,7 @@
     "remediation": "Modify the source code to reduce the use of eval expression.",
     "sample": "<?php\nclass CastTest {\n public function test( $param ) {\n  if (10 === $param) {\n   eval('$param = 10;');   //violation\n  }\n }\n}\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

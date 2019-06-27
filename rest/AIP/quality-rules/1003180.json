@@ -10,6 +10,7 @@
     "remediation": "Put metadata at appropriate place.",
     "sample": "package {\n    [MessageHandler(type=\"a.b.MyMessage\")] // VIOLATION\n    public class AvoidMethodWithRedundantMetadataForType\n    {\n        \n        public function AvoidMethodWithRedundantMetadataForType() \n        {\n            \n        }\n\n        public function doSomething( message : MyMessage ) : void\n        {\n           message.toString();\n        }\n\n   }\n\n}",
     "total": "Number of packages",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "NameTest.php\n//inside the file\n<?php\nclass NameTest //Violation Removed\n{\n    function subPrint() {\n       echo \"this is remediation sample\";\n    }\n}\n$sub = new NameTest();\n$sub->subPrint();\n?>",
     "sample": "NameTest.php\n//inside the file\n<?php\nclass ClassTest //Violation: Class name not same as file\n{\n    function subPrint() {\n       echo \"this is violation sample\";\n    }\n}\n$sub = new ClassTest();\n$sub->subPrint();\n?>",
     "total": "Number of classes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

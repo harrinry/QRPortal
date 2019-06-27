@@ -10,6 +10,7 @@
     "reference": "Hibernate in Action (ISBN 1932394-15-X) p 160",
     "remediation": "Verify that these settings are necessary.",
     "total": "Number of methods that reference org.hibernate.Session.setFlushMode or net.sf.hibernate.Session.setFlushMode",
+    "alternativeName": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
     "businessCriteria": [
         {
             "id": 20140522,

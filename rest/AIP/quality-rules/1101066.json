@@ -12,6 +12,7 @@
     "remediationSample": "SELECT x.OrderID, x.Freight, \n        (SELECT SUM(y.Freight) FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningTotal,\n        (SELECT COUNT(y.Freight)\n           FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningCount\n  FROM dbo.Orders X\nWHERE x.OrderID between 10 and 20\n ORDER BY x.OrderID",
     "sample": "SELECT x.OrderID, x.Freight, \n        (SELECT SUM(y.Freight) FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningTotal,\n        (SELECT COUNT(y.Freight)\n           FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningCount\n  FROM dbo.Orders X\n ORDER BY x.OrderID",
     "total": "Number of Artifacts with SQL code having JOINs.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

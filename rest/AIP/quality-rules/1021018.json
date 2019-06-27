@@ -12,6 +12,7 @@
     "remediationSample": ">>> # easy remediation\n>>> try:\n>>>     doSomething()\n>>> except:\n>>>     logging.debug(\"Someting happened\")\n\n>>> # better remediation\n>>> try:\n>>>     doSomething()\n>>> except SomeException as e:\n>>>     logging.debug(\"Something happened:\" + e.error)\n>>> except:\n>>>     logging.debug(\"Something unexpected happened ...\")",
     "sample": ">>> try:\n>>>     doSomething()\n>>> except:          # no exception type declared\n>>>     pass         # empty handler",
     "total": "Number of Python artifacts handling exceptions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "select C1a, C2a\nfrom Table1\nunion ALL <- Correction here\nselect C1b, C2b\nfrom Table2",
     "sample": "select C1a, C2a\nfrom Table1\nunion  <- Failure here\nselect C1b, C2b\nfrom Table2\n\n=> The database server will read the values, sort them and eliminate duplicates. This is costly and likely to be useless.",
     "total": "Number of Client-Server artifacts with a SQL query that contains a UNION or UNION ALL",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

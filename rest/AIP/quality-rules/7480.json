@@ -12,6 +12,7 @@
     "remediationSample": "Imagine you have 3 tables : \nT1, the full table with sales by item, customer, store (a store is linked to a city, a city to a region, a region to a country, a country to a continent). \nT2, a first aggregate tab with sales by items \nT3, a second aggregate tab with sales by country. \nIf you define an indicator \"sales\" as \"select @Aggregate_Aware(Sum(T3.nbSales), Sum(T2.nbSales), Sum(T1.nbSales))\", when the user will create a query with sales and country (or sales and continent), the query will use T3, when the user will create a query with sales & items, the query will use T2, and if the user create a query with country, item & sales, the query will use T1.",
     "sample": "See other sample.",
     "total": "Number of indicators",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

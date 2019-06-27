@@ -12,6 +12,7 @@
     "remediationSample": "private void init() throws InitException {\n  ...\n  } catch( FileNotFoundException ex) {\n      throw new InitException(\"File Not Found\", ex); // FIXED\n   }\n}",
     "sample": "private void init() throws InitException {\n  ...\n  } catch( FileNotFoundException ex) {\n       throw new InitException(ex.getMessage()); // VIOLATION\n   }\n}",
     "total": "Number of methods that throw an exception (a class that inherits from Throwable) using a constructor in a catch block",
+    "alternativeName": "Ensure that exceptions  throwed in a catch block  are cached",
     "businessCriteria": [
         {
             "id": 20140522,

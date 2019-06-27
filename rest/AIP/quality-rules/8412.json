@@ -12,6 +12,7 @@
     "remediationSample": "report zdiv_zero.\ndata x type i.\ntry.\n  x = 1 / 0.\ncatch CX_SY_ZERODIVIDE. //VIOLATION FIXED\n  write 'Divide by zero.'.\nendtry.",
     "sample": "report zdiv_zero.\ndata x type i.\ntry.\n  x = 1 / 0.\ncatch CX_ROOT.// VIOLATION \n  write 'Divide by zero.'.\nendtry.",
     "total": "Number of ABAP Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

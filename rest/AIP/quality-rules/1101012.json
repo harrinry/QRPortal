@@ -12,6 +12,7 @@
     "remediationSample": "SELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY first_name, department_name;",
     "sample": "SELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id)\nORDER BY 1, 2;",
     "total": "Number of Artifacts with SQL code.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

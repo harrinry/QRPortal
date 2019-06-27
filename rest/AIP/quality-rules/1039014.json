@@ -12,6 +12,7 @@
     "remediationSample": "Cipher c = Cipher.getInstance(\"AES/GCM/NoPadding\"); \nc.init(Cipher.ENCRYPT_MODE, k, iv); \nbyte[] cipherText = c.doFinal(plainText);",
     "sample": "AES in CBC mode \nCipher c = Cipher.getInstance(\"AES/CBC/PKCS5Padding\"); \nc.init(Cipher.ENCRYPT_MODE, k, iv); \nbyte[] cipherText = c.doFinal(plainText);",
     "total": "Number of Java artifacts",
+    "alternativeName": "Prefer using cipher including Hash based Message Authentication Code (HMAC) to ensure data integrity",
     "businessCriteria": [
         {
             "id": 20140522,

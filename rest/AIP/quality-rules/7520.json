@@ -12,6 +12,7 @@
     "remediationSample": "select date_e into zdate_e \nfrom zkopcor\nwhere date_e lt p_run and p_doc eq 'TT'.\n\nif sy-subrc <> 0.\n    message e000 with text-007.\nelse.\n    <statements>\nendif.",
     "sample": "select date_e into zdate_e \nfrom zkopcor\nwhere date_e lt p_run\n      and p_doc eq 'TT'.\n\n<statements>",
     "total": "Number of ABAP Artifacts using OpenSQL queries",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

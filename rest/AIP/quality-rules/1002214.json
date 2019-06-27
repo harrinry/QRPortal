@@ -7,6 +7,7 @@
     "description": "All the read, write and open statements are counted and compared to the number of IOSTAT statements used in these same operations. Whenever these numbers are different for an artifact, the artifact is considered being in violation.",
     "rationale": "All the Input/Output operations must be tested by the return code IOSTAT. Once the return code is not verified and tested, the artifact may run into unexpected behaviour causing the application to halt",
     "remediation": "Always use a variable to capture the return code in and test this variable to see if the operation resulted in success or not.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

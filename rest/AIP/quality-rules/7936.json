@@ -11,6 +11,7 @@
     "remediationSample": "public class MyClass  {\n     ...\n      protected void dispose() throws Throwable { // FIXED\n          // some code here\n         ......\n          super.dispose();\n     }\n}",
     "sample": "public class MyClass  {\n     ...\n      protected void finalize() throws Throwable { // VIOLATION\n          // some code here\n         ......\n          super.finalize();\n     }\n}",
     "total": "Number of classes",
+    "alternativeName": "Ensure that finalize() is not used as the time of execution is not garanteed",
     "businessCriteria": [
         {
             "id": 60014,

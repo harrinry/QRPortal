@@ -11,6 +11,7 @@
     "remediationSample": "<?php\nclass CastTest {\n    public function test($param) {\n        if ($param === 10) {\n          if ($foo % 10 === 90) {\n            if ($bar % 90 === 10) {\n               return 90;\n            }\n         }\n      }\n   }\n}\n$obj = new CastTest();\n$obj -> bar(10);\n?>",
     "sample": "<?php\nclass CastTest {\n\n    public function test($param) {\n        A:\n        if ($param === 10) {\n           goto C;\n        }\n\n        B:\n        if ($foo % 90 === 10) {\n            goto D;\n        }\n\n        C:\n        if ($bar % 10 === 90) {\n            goto B;\n        }\n\n        D: return 90;\n    }\n}\n$obj = new CastTest();\n$obj-> bar(10);\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

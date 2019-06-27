@@ -9,6 +9,7 @@
     "reference": "3.0",
     "remediation": "To force Oracle to use a specific access method use the Hints. But do so knowingly (Oracle will not use the right index...) and be aware of the consequences (if tomorrow the indexes change, you may degrade database performance without knowing).\nSo, when you know what you are doing, you might use the hints.\nThe Hints are enclosed in comment :\n{DELETE|INSERT|SELECT|UPDATE} /*+ hint [text] [hint[text]]... */\nlocated between the SELECT clause and the first column in the list.",
     "total": "Number of PeopleSoft SQL Definitions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,6 +12,7 @@
     "remediationSample": "// Use secure HTTPS protocol \n// Load keys for establishing secure HTTPS connection \nvar fs = require(\"fs\"); \nvar https = require(\"https\"); \nvar path = require(\"path\"); \nvar httpsOptions = { \n key: fs.readFileSync(path.resolve(__dirname, \"./artifacts/cert/server.key\")), \n cert: fs.readFileSync(path.resolve(__dirname, \"./artifacts/cert/server.crt\")) \n}; \nhttps.createServer(httpsOptions, app).listen(config.port, function() { \n console.log(\"Express https server listening on port \" + config.port); \n });",
     "sample": "// Insecure HTTP connection \nvar http = require(\"http\"); \n http.createServer(app).listen(config.port, function() { \n console.log(\"Express http server listening on port \" + config.port); \n });",
     "total": "Number of javascript source codes using HTTP or HTTPS createServer",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

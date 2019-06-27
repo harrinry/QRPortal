@@ -12,6 +12,7 @@
     "remediationSample": "public class ExceptionTest {\n     static final int N = 18000000;\n\n     public void myException(void) throws Throwable {\n         Throwable exc = new Throwable();\n         throw exc;\n    }\n}\n\npublic class LoopTest {\n     static final int N = 18000000;\n     private ExceptionTest et = new ExceptionTest();\n \n     public void myLoop(void) {\n         try {                                               \n             for (int i = 1; i <= N; i++) {\n                  et.myException(); // FIXED\n             }\n        } catch (Throwable e) { }\n    }\n}",
     "sample": "public class ExceptionTest {\n    static final int N = 18000000;\n\n    public void myException(void) {\n         Throwable exc = new Throwable();\n         try {                                               \n             throw exc;\n         } catch (Throwable e) { }\n    }\n}\n\npublic class LoopTest {\n    static final int N = 18000000;\n    private ExceptionTest et = new ExceptionTest();\n \n    public void myLoop(void) {\n       for (int i = 1; i <= N; i++) {\n            et.myException(); // VIOLATION\n       }\n    }\n}",
     "total": "Number of methods that contain at least one loop",
+    "alternativeName": "Ensure that indirect exception handling inside loops are not used as they lead to preformance issues",
     "businessCriteria": [
         {
             "id": 60014,

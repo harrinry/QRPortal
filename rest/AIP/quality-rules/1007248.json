@@ -12,6 +12,7 @@
     "remediationSample": "<?php\n\n$url = 'https://www.example.com';\n$req = curl_init($url);\ncurl_setopt($req, CURLOPT_RETURNTRANSFER, TRUE);\n$result = curl_exec($req);\n\n\n$contextOptions = array(\n    'ssl' => array(\n        'verify_peer'   => true,\n        'cafile'        => '/etc/ssl/certs/ca-certificates.crt',\n        'verify_depth'  => 5,\n        'CN_match'      => 'api.twitter.com',\n        'disable_compression' => true,\n        'SNI_enabled'         => true,\n        'ciphers'             => 'ALL!EXPORT!EXPORT40!EXPORT56!aNULL!LOW!RC4'\n    )\n);\n$sslContext = stream_context_create($contextOptions);\n$result = file_get_contents('https://api.twitter.com/1/statuses/public_timeline.json', NULL, $sslContext);\n\n?>",
     "sample": "<?php\n\nfile_get_contents('http://www.example.com');\n\nfile_get_contents('https://api.twitter.com/1/statuses/public_timeline.json');\n\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

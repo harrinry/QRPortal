@@ -11,6 +11,7 @@
     "remediation": "Review the architecture of the application.",
     "sample": "<?php\n\nclass DependencySingleFunction\n{\n    public function getDepend()\n    {\n        $this->depend1 = new Test1();\n        $this->depend2 = new Test2();\n        ... \n        $this->depend14 = new Test14();       \n    } \n}\nclass DependencyMultipleFunctions\n{\n    public function getDepend1()\n    {\n        $this->depend1 = new Test1();        \n    } \n    public function getDepend2()\n    {\n        $this->depend2 = new Test2();        \n    } \n    ...\n    public function getDepend14()\n    {\n        $this->depend14 = new Test14();        \n    } \n?>",
     "total": "Number of Classes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

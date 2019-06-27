@@ -12,6 +12,7 @@
     "remediation": "Review the source code and refactor in order to limit the number of suqueries.",
     "sample": "SELECT column-names\n      FROM table-name1\n     WHERE value IN (SELECT column-name FROM table-name2 \n     WHERE value IN (SELECT column-name  FROM table-name3 \n     WHERE value IN (SELECT column-name  FROM table-name4\n     WHERE value IN (SELECT column-name   FROM table-name5 \n     WHERE condition))))",
     "total": "Number of SQL artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

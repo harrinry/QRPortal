@@ -12,6 +12,7 @@
     "remediationSample": "HttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(90);",
     "sample": "Sample 1: \nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(-1);\n\nSample 2: \n<session-config>\n    <session-timeout>-1</session-timeout>\n</session-config>\n\nSample 3: \nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(0);",
     "total": "Number of Java artifacts",
+    "alternativeName": "Always set an expiration time for an Http Session to improve security",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,6 +11,7 @@
     "remediation": "Modify the source code to reduce the number of undocumented Sections.",
     "remediationSample": "<?php\n/**\n* created to perform operations on items\n* contains a sample function addItem\n*/\nclass CastTest {\n    // Item\n    var $items;\n\n    //addition of items\n   function addItem($artnr, $num) {\n        $this->items[$artnr] += $num;\n    }\n}\n$obj = new CastTest();\n$obj-> addItem();\n?>",
     "total": "Number of Sections",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,6 +12,7 @@
     "remediationSample": "Use Case 1 :\nCREATE TABLE leaders\n(\n lead_name  varchar2(12) null,\n lead_id    varchar2(6)  not null,\n lead_add   varchar2(40) null\n)\n/\n\nUse Case 2 :\nCREATE PROCEDURE remove_leaders (par_lead_name NVARCHAR2(10)) AS\nBEGIN\n  DELETE FROM leaders\n  WHERE leaders.lead_name = par_lead_name;\nEND;\n/",
     "sample": "Use Case 1 :\nCREATE TABLE leaders\n(\n lead_name  varchar2(12) null,\n lead_id    char(6) not null,\n lead_add   varchar2(40) null\n)\n/\n\nUse Case 2 :\nCREATE PROCEDURE remove_leaders (par_lead_name NCHAR(10)) AS\nBEGIN\n  DELETE FROM leaders\n  WHERE leaders.lead_name = par_lead_name;\nEND;\n/",
     "total": "Number of Tables, Functions, Procedures, Packages.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

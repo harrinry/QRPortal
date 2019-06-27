@@ -8,6 +8,7 @@
     "rationale": "Cursors are loops which number of iterations is based on the number of rows returned by an SQL query. Having a cursor inside a loop means having an SQL query inside a loop which number of iterations can be very high (dependent on the data returned from the database).\nThis iterative pattern has proved to be very dangerous for application performance and scalability. Database servers handle in a much better set-oriented pattern rather than pure iterative ones.",
     "remediation": "The remediation is often to replace the iterative approach with a set-oriented one and thus replace a cursor with a query.",
     "total": "Number of artifacts that can contain cursors (all SQL Artifacts except tables and views)",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

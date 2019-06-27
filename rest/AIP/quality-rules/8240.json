@@ -12,6 +12,7 @@
     "remediationSample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); \nc.setSecure(true); // Compliant Code with secure cookies \nresponse.addCookie(c);",
     "sample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); // Violation - cookie is not secure \nresponse.addCookie(c);",
     "total": "Number of methods adding a cookie without setting the 'secured' attribute",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

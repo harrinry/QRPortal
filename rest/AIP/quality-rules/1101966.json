@@ -12,6 +12,7 @@
     "remediationSample": "var credential = MongoCredential.CreateMongoCRCredential(\"mongoDB\", \"USER\", \"PWD\");\n\nvar settings = new MongoClientSettings\n{\n    Credentials = new[] { credential }\n};\n\n var mongoClient = new MongoClient(settings);\n            \n// or\n\nMongoClient connection_object_1 = new MongoClient(\"mongodb://USER:PWD@localhost/mongoDB\");\n\n// or\n\nvar connectionString = \"mongodb://USER:PWD@localhost/mongoDB\";\n\nMongoClient connection_object_2 = new MongoClient(connectionString);",
     "sample": "var client = new MongoClient(\"mongodb://localhost\")\n\n// or\n\nvar client = new MongoClient(\"\")",
     "total": "The total procedure counts MongoDB Access.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

@@ -11,6 +11,7 @@
     "remediationSample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\n    WHEN OTHERS THEN\n        raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);\n\nEND;",
     "sample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\nEND;",
     "total": "Number of PLSQL compiled objects",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

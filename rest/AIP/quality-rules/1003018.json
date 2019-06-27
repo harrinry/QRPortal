@@ -11,6 +11,7 @@
     "remediation": "Remove nested switch statements.",
     "sample": "public function foo( a : Number, b : Number ) : void\n      {\n          switch( a )\n          {\n             case 1:\n                break;\n             case 2:                   \n                switch ( b ) \n                {\n                  case 3 :\n                     break;\n                  case 4 :\n                     break;\n                }\n                break;                     \n          }\n      }",
     "total": "Number of artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66032,

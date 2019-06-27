@@ -12,6 +12,7 @@
     "remediationSample": "<?php\nclass CastTest {\n   public function test($param) {\n      if (90 === $param) {\n         throw new Exception(\"Param should not be 90\");\n      }\n      if (45 === $param) {\n         throw new Exception(\"param should not be 45\");\n      }\n   }\n}\ntry {\n   $obj = new CastTest();\n   $obj->test(90);\n} catch(Exception $e) {\n   echo $e->getMessage(), PHP_EOL;\n}\n\n?>",
     "sample": "<?php\nclass CastTest {\n   public function test($param) {\n      if (90 === $param) {\n         exit(10);  //violation\n      }\n      if(45 === $param) {\n         die(5);    //violation\n      }\n   }\n}\n$obj = new CastTest();\n$obj->test(90);\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

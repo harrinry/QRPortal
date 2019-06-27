@@ -12,6 +12,7 @@
     "remediationSample": "select sal.date,\n       sal.ord_num,\n       saldet.qty,\n       saldet.title_id,\n       saldet.discount,\n       titl.price,\n       total = saldet.qty * titl.price * (1 - saldet.discount/100)\nfrom sales sal\n     join salesdetail saldet on sal.ord_num = saldet.ord_num\n     join titles titl on titl.title_id = saldet.title_id\nwhere sal.stor_id = @stor_id\norder by sal.date desc, sal.ord_num",
     "sample": "select sal1.date,\n       sal1.ord_num,\n       saldet1.qty,\n       saldet1.title_id,\n       saldet1.discount,\n       titl1.price,\n       total = saldet1.qty * titl1.price * (1 - saldet1.discount/100)\nfrom sales sal1\n     join salesdetail saldet1 on sal1.ord_num = saldet1.ord_num\n     join titles titl1 on titl1.title_id = saldet1.title_id\nwhere sal1.stor_id = @stor_id\norder by sal1.date desc, sal1.ord_num",
     "total": "Number of Artifacts with SQL code having aliases.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -10,6 +10,7 @@
     "remediation": "Modify the source code to reduce the number of artifacts containing object instantiation in loops.",
     "sample": "<?php\nclass Test {\n    function do_something() {\n      echo \"Hello\";\n    }\n}\nclass ClassTest {\n    function methodCreatingObjectsInLoops() {\n        for ($i=0; $i<10; $i++) {   \n            $bar = new Test();        //VIOLATION\n            $bar->do_something();\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> test1();\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

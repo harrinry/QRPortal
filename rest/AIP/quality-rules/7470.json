@@ -11,6 +11,7 @@
     "remediationSample": "// Replace LoopWithSelect method by:\nprivate void LoopWithFind()\n{\n   DataView  dv = new DataView( dataSet11.DataTable1, \"\", \"Column1\", DataViewRowState.CurrentRows);\n   for (int i = 0; i < m_iTotalLoop; i++ )\n      dv.Find(i);\n}",
     "sample": "..\ndelegate void TestFunction();\nprivate const int m_iTotalRows = 5000;\nprivate const int m_iTotalLoop = 1000;\n\nprivate void FillDataSet() \n{\n   for (int i = 0; i < m_iTotalRows; i++)\n       dataSet11.DataTable1.AddDataTable1Row(i);\n}\n\nprivate void LoopWithSelect()\n{\n   for (int i = 0; i < m_iTotalLoop; i++ )\n      dataSet11.DataTable1.Select(\"Column1 = \" + i);\n}",
     "total": "Total number of artifacts doing a select on a datatable",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

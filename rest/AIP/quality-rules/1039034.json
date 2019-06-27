@@ -12,6 +12,7 @@
     "remediationSample": "SAXParserFactory spf = SAXParserFactory.newInstance();\nspf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nSAXParser parser = spf.newSAXParser();\n\nparser.parse(inputStream, customHandler);",
     "sample": "SAXParser parser = SAXParserFactory.newInstance().newSAXParser();\n\nparser.parse(inputStream, customHandler);",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to preceed the call of SAXParserFactory by a call to the secure mode of the parser",
     "businessCriteria": [
         {
             "id": 66031,

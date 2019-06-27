@@ -12,6 +12,7 @@
     "remediationSample": "SecureRandom sr = new SecureRandom(); \nint v = sr.next(32) // Violation FIXED",
     "sample": "Sample 1 \nSecureRandom sr = new SecureRandom(); \nsr.setSeed(123456L); // VIOLATION \nint v = sr.next(32); \n\nsr = new SecureRandom(\"abcdefghijklmnop\".getBytes(\"us-ascii\")); // VIOLATION \nv = sr.next(32); \n\n------------------------ \nSample 2 \nRandom random = new Random(System.currentTimeMillis()); // VIOLATION \nint accountID = random.nextInt();",
     "total": "Number of Java artifacts",
+    "alternativeName": "Always prefer using not predictable SecureRandom Seeds",
     "businessCriteria": [
         {
             "id": 20140522,

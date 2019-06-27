@@ -12,6 +12,7 @@
     "remediationSample": "int func(int num)\n{\n    int* val = new int(0);\n    std::exception exc;\n    if(num < 0)\n    {\n        delete val;\n        throw exc;\n    }\n    delete val;\n    return 1;\n} ",
     "sample": "int func(int num)\n{\n    int* val = new int(0);\n    std::exception exc;\n    if(num < 0)\n        throw exc;\n    delete val;\n    return 1;\n}",
     "total": "Number of C++ constructors, destructors, methods, C and C++ functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

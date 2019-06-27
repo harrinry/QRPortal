@@ -12,6 +12,7 @@
     "remediationSample": "class Sample {\n    // FIXED\n    static WeakHashMap my_map;\n    ...\n}",
     "sample": "class Sample {\n    // VIOLATION\n    static HashMap my_map;\n    ...\n}",
     "total": "Number of static field defined as collection (class or interface), java.util.WeakHashMap or java.util.WeakHashMap<K,V>",
+    "alternativeName": "Ensure that static Field of type collection are not used",
     "businessCriteria": [
         {
             "id": 60014,

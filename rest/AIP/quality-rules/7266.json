@@ -9,6 +9,7 @@
     "reference": "Resource Management in .NET\nby Krzysztof Cwalina\nProgram Manager - Microsoft .NET Framework \nhttp://www.gotdotnet.com/team/libraries/whitepapers/resourcemanagement/resourcemanagement.aspx\n\nImplementing IDisposable and the Dispose Pattern Properly\nBy Scott Dorman\nhttp://www.codeproject.com/useritems/idisposable.asp\n\nChris Lyon's WebLog\nhttp://blogs.msdn.com/clyon/archive/2004/09/23/233464.aspx\n\nUnderstanding Garbage Collection in the .NET Framework\nBy  Dipal Choksi\nhttp://www.c-sharpcorner.com/UploadFile/DipalChoksi/UnderstandingGarbageCollectioninNETFramework11292005051110AM/UnderstandingGarbageCollectioninNETFramework.aspx",
     "remediationSample": "protected override void Dispose(bool disposing)\n   {\n      if(!this.disposed)\n      {\n         try\n         {\n            if(disposing)\n            {\n               // Release the managed resources you added in\n               // this derived class here.\n               addedManaged.Dispose();         \n            }\n            // Release the native unmanaged resources you added\n            // in this derived class here.\n            CloseHandle(addedNative);\n            this.disposed = true;\n         }\n         finally\n         {\n            // Call Dispose on your base class.\n            base.Dispose(disposing);\n         }\n      }\n   }",
     "total": "Number of Dispose(bool) methods defined in classes which implement the IDisposable interface",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,6 +11,7 @@
     "remediationSample": "class Example {\n    static double pi = 3.14;\n\n    static int min (int x, int y) { // FIXED\n      return (x>y?y:x);\n    }\n\n    static double getPi() {  // FIXED\n       return pi;\n    }",
     "sample": "class Example {\n    static double pi = 3.14;\n\n    int min (int x, int y) { // VIOLATION\n      return (x>y?y:x);\n    }\n\n    double getPi() {  // VIOLATION\n       return pi;\n    }",
     "total": "Number of non static methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

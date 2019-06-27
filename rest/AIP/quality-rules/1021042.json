@@ -11,6 +11,7 @@
     "remediation": "A non-secure starting patch would be to apply obfuscation techniques to the hardcoded password to prevent reverse-engineering of the generated Python (byte)code. This could be done by hashing the password or constructing the password string in many different places by non-trivial methods. Sensitive data such as passwords should be in principle encrypted and saved in separate files or in a database with restricted user access.\nFinally one should consider removing backdoors and delegate the password ownership to the end-user.",
     "sample": ">>> set_password(user = \"John\", password = \"WinterIsComing\")",
     "total": "Number of Python artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

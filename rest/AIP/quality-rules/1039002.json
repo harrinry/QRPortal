@@ -12,6 +12,7 @@
     "remediationSample": "context = SSLContext.getInstance(\"TLSv1.2\"); // Violation FIXED",
     "sample": "context = SSLContext.getInstance(\"SSL\"); // Violation used protocol is not 'TLSv1.2' or 'DTLSv1.2'",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure you are not using deprecated SSL protocols to secure your connection",
     "businessCriteria": [
         {
             "id": 20140522,

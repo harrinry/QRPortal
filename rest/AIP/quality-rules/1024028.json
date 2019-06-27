@@ -11,6 +11,7 @@
     "remediationSample": "KeyStore ks = KeyStore.getInstance(KEY_STORE_NAME); \nks.load(null); \n\nString alias = makeNewAlias(); \nKeyPairGenerator kpg = KeyPairGenerator.getInstance(KeyProperties.KEY_ALGORITHM_EC, KEY_STORE_NAME); \n\nkpg.initialize(new KeyGenParameterSpec.Builder( \n    alias, \n    KeyProperties.PURPOSE_SIGN | KeyProperties.PURPOSE_VERIFY) \n    .setDigests(KeyProperties.DIGEST_SHA256, KeyProperties.DIGEST_SHA512) \n    .setAttestationChallenge(attestationChallengeBytes) \n    .setUserConfirmationRequired(true) \n    .build()); \nKeyPair kp = kpg.generateKeyPair(); ",
     "sample": "KeyStore ks = KeyStore.getInstance(KEY_STORE_NAME); \nks.load(null); \n\nString alias = makeNewAlias(); \nKeyPairGenerator kpg = KeyPairGenerator.getInstance(KeyProperties.KEY_ALGORITHM_EC, KEY_STORE_NAME); \n\nkpg.initialize(new KeyGenParameterSpec.Builder( \n    alias, \n    KeyProperties.PURPOSE_SIGN | KeyProperties.PURPOSE_VERIFY) \n    .setDigests(KeyProperties.DIGEST_SHA256, KeyProperties.DIGEST_SHA512) \n     //setAttestationChallenge is missing \n     //setUserConfirmationRequired() is missing and set to false\n    .build()); \nKeyPair kp = kpg.generateKeyPair();",
     "total": "Number of Android artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

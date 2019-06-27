@@ -13,6 +13,7 @@
     "remediationSample": "string query = \"UPDATE users SET password=? WHERE username=? and password=?\";\n\nPreparedStatement preparedStatement = conn.prepareStatement(query) ;\npreparedStatement.setString(1, newPassword );\npreparedStatement.setString(2, userName);\npreparedStatement.setString(3, oldPassword);",
     "sample": "...\nstring oldPassword = ...\nstring newPassword = ...\nstring userName = ... // Get the userName from the database\nstring query = \"UPDATE users SET password=? WHERE username=\" + userName + \" and password=?\";\n\nPreparedStatement preparedStatement = conn.prepareStatement(query) ;\npreparedStatement.setString(1, newPassword );\npreparedStatement.setString(2, oldPassword);\n\nint i = preparedStatement.executeUpdate();\n...",
     "total": "Number of methods calling user input methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

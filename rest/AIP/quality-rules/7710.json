@@ -12,6 +12,7 @@
     "remediationSample": "@Entity\npublic class ABean implements Serializable { // FIXED\n    private String str;\n    private aClass field;\n}",
     "sample": "@Entity\npublic class ABean  { // VIOLATION\n    private String str;\n    private aClass field;\n}",
     "total": "Number of entities",
+    "alternativeName": "Ensure that non serializable Entities are not used",
     "businessCriteria": [
         {
             "id": 20140522,

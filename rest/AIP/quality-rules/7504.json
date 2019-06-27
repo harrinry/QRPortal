@@ -11,6 +11,7 @@
     "remediationSample": "----> B.java\npublic class B {\n  private long id;\n  ...\n\n  private void setId(long id) { \n    this.id = id;\n  }\n\n   public long getId() {\n      return id;\n   }\n  ...\n\n  // FIXED\n   public boolean equals(Object obj) {\n    ...\n   }\n\n   // FIXED\n   public int hashCode() {\n     ...\n    }\n}",
     "sample": "----> a.hbm.xml\n<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    <set name=\"b_items\" lazy=\"true\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n  <class name=\"B\" table=\"B\" lazy=\"true\">\n    <id name=\"id\" column=\"B_ID\">\n      <generator class=\"increment\"/>\n    </id>\n  </class>\n\n</hibernate-mapping>\n\n----> B.java\npublic class B {\n private long id;\n ...\n\n private void setId(long id) { \n    this.id = id;\n }\n\n   public long getId() {\n      return id;\n   }\n  ...\n  // VIOLATION: equals and hashCode are not defined\n}",
     "total": "Number of persistent classes (through Hibernate or JPA)",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

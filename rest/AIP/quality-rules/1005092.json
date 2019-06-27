@@ -10,6 +10,7 @@
     "remediationSample": "program testCorrection (REC1 REC1, REC2 REC2)\nREC3 REC3;\n\nRECnew RECn // remediation : RECn does not erase with any input parameter\u0085\n\nalso in functions inside the program:  \n\nfunction test1 ()\n{\nRECnew RECn; // remediation : RECn does not erase with any input parameter\u0085\n}\n\nalso in \"external\" functions called by the program.\n\nfunction test1_test ()\n{\nRECnew RECn; // remediation : RECn does not clash with any input parameter\u0085\n}",
     "sample": "program testViolation (REC1 REC1, REC2 REC2)\nREC3 REC3;\n\nREC1 RECn; // violation : REC1 declaration erase input parameter\u0085\n\nalso in functions inside the program:  \n\nfunction test1 ()\n{\nREC1 RECn; // violation : REC1 declaration erase input parameter\u0085\n}\n\nalso in \"external\" functions called by the program.\n\nfunction test1_test ()\n{\nREC1 RECn; // violation : REC1 declaration erase input parameter\u0085\n}",
     "total": "Number of Records",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

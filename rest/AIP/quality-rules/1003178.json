@@ -11,6 +11,7 @@
     "remediationSample": "package {\n\n   public class AvoidIncorrectMessageInterceptorSignature {\n\n      [MessageInterceptor(type=\"a.b.MyMessage\")]\n      public function messageInterceptor( processor : MessageProcessor ) : void\n      {\n         processor.proceed();\n      }\n }\n\n}",
     "sample": "package {\n\n   public class AvoidIncorrectMessageInterceptorSignature {\n\n      [MessageInterceptor(type=\"a.b.MyMessage\")]\n      public function messageInterceptor() : void // VIOLATION\n      {\n      }\n\n      [MessageInterceptor(type=\"a.b.MyMessage\")]\n      public function messageInterceptor( type : MyMessage ) : void // VIOLATION\n      {\n         type.something();\n      }\n\n      [MessageInterceptor(type=\"a.b.MyMessage\")]\n      public function messageInterceptor( processor : MessageProcessor, type : MyMessage ) : void // VIOLATION\n      {\n      }\n\n   }\n\n}",
     "total": "Number of functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "MongoClientURI connstr = new MongoClientURI(\"mongodb://admin:password@localhost:27017\");\nDB database = connstr.getDB(\"IndexingCheck\");\n\t\t\n// or using springData\n\t\t \nApplicationContext ctx = new ClassPathXmlApplicationContext(\"web_configg.xml\");\n\t\t\nSpringMongoConfig1 mongoOperation1 = (SpringMongoConfig1) ctx.getBean(\"mongoURI\");\n\t\t\nMongoClient mongoClient = new MongoClient(mongoOperation1.uri);",
     "sample": "MongoClient mongo = new MongoClient(\"localhost\", 27017);",
     "total": "Number of MongoDB connection",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,6 +12,7 @@
     "remediationSample": "function delayedFunction() { \nalert(\"This is a delay\"); \n} \n\n// safe - direct call of the function \nwindow.setTimeout(delayedFunction, 100);",
     "sample": "function delayedFunction() { \nalert(\"This is a delay\"); \n} \n\n// unsafe - call to code that will be evaluated before getting the function \nwindow.setTimeout(\"delayedFunction\", 100);",
     "total": "Number of Javascript Functions using setTimeout",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

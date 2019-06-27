@@ -12,6 +12,7 @@
     "remediationSample": "protected void configure(HttpSecurity http) throws Exception {\n    http\n         .authorizeRequests()\n                  .anyRequest().authenticated()\n                   .and()\n         .formLogin()    //Login form is declared after authentication and authorization\n                  .loginPage(\"/login\")\n                  .permitAll();\n}",
     "sample": "protected void configure(HttpSecurity http) throws Exception {\n    http\n        .formLogin()   //Login form is declared without authentication and authorization\n             .loginPage(\"/login\")\n             .permitAll();\n}",
     "total": "Number of Java Methods",
+    "alternativeName": "Ensure daclaring login form after requesting authorization and authentication",
     "businessCriteria": [
         {
             "id": 66031,

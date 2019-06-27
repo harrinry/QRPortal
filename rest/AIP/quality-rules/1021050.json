@@ -11,6 +11,7 @@
     "remediationSample": "def view_method(request):\n  res = HttpResponse()\n  res.set_cookie(\"emailCookie\", email, secure=True)\n  return res\n...\nor alternatively keep the formulation and modify the settings file (such as settings.py) with:\nCSRF_COOKIE_SECURE = True",
     "sample": "from django.http.response import HttpResponse\n...\ndef view_method(request):\n  res = HttpResponse()\n  res.set_cookie(\"emailCookie\", email)\n  return res\n...",
     "total": "Number of Python functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

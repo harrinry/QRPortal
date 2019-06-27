@@ -11,6 +11,7 @@
     "remediationSample": "// C# Sample: Using Typed DataSet:\n\n//Create DataAdapter\nSqlDataAdapter daEmp = new SqlDataAdapter( \"SELECT empno,empname,empaddress FROM EMPLOYEE\",conn);\n//Create a DataSet Object\nEmployeeDS dsEmp = new EmployeeDS ();\n//Fill the DataSet\ndaEmp.Fill(dsEmp,\"EMPLOYEE\");\n//Let us print first row and first column of the table\nConsole.Write(dsEmp.EMPLOYEE[0].empno.ToString());\n//Assign a value to the first column\ndsEmp.EMPLOYEE[0].empno = \"12345\";//This will generate compile time error.",
     "sample": "// C# Sample: Using untyped DataSet:\n\n//Create DataAdapter\nSqlDataAdapter daEmp = new sqlDataAdapter( \"SELECT empno,empname,empaddress FROM EMPLOYEE\",conn);\n//Create a DataSet Object\nDataSet dsEmp = new DataSet(); // VIOLATION HERE\n//Fill the DataSet\ndaEmp.Fill(dsEmp,\"EMPLOYEE\");\n//Let us print first row and first column of the table\nConsole.Write(dsEmp.Tables[\"EMPLOYEE\"].Rows[0][0].ToString());\n//Assign a value to the first column\ndsEmp.Tables[\"EMPLOYEE\"].Rows[0][0] = \"12345\";//This will generate runtime error as empno column is integer",
     "total": "Total number of objects using typed or untyped DataSet/DataTable/DataRow.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

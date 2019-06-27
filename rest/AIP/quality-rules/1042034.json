@@ -12,6 +12,7 @@
     "remediationSample": "import org.apache.struts2.rest.handler.XStreamHandler;\n...\n\npublic class MyClass {\n\n  public MyClass(ActionInvocation invocation) {\n\n    final XStreamHandler dataHandler = new XStreamHandler();\n   \n\n    // using this API will automatically secure the instance of XStream\n    XStream dataStream = dataHandler.createXStream(invocation)\n  }\n}",
     "sample": "import org.apache.struts2.rest.handler.XStreamHandler;\n...\n\npublic class MyClass {\n\n  public MyClass() {\n\n    final XStreamHandler dataHandler = new XStreamHandler();\n\n    XStream dataStream = dataHandler.createXStream()\n  }\n}",
     "total": "Number of Java Methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

@@ -12,6 +12,7 @@
     "remediationSample": "Could be rewritten as:\nSELECT first_name,department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id);\n\nor as:\n\nSELECT first_name, department_name\nFROM employees\n     JOIN departments\n     USING(manager_id, department_id);",
     "sample": "SELECT first_name, department_name\nFROM employees\n     NATURAL JOIN departments;",
     "total": "Number of Artifacts with SQL code.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

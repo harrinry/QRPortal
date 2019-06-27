@@ -11,6 +11,7 @@
     "remediationSample": "1) management.security.enabled=true\n\n2) endpoints.health.sensitive=true",
     "sample": "1) management.security.enabled=false\n\n2) endpoints.health.sensitive=false\n\n3)\n@Component\npublic class castEndpoint implements Endpoint<List<String>> {\n\n    public String getId() {\n        return \"castEndpoint\";\n    }\n\n    public boolean isEnabled() {\n        return true;\n    }\n\n    public boolean isSensitive() {\n        return false;\n    }\n\n    public List%lt;String> invoke() {\n        // Custom logic to build the output\n        ...\n    }\n}\n\n4. Basic configuration\nStep 1\n<dependency>\n  <groupId>org.springframework.boot</groupId>\n  <artifactId>spring-boot-starter-security</artifactId>\n</dependency>\n\nStep 2\nBy default, the basic security enabled. This will be enabled for all the endpoints. But, it can disabled by updating the application.properties file and expose the non-sensitive endpoints without security.\n\nStep 3\nThe following are the basic entries that are required to configure the security for your spring boot actuator application: (needs to verified in the application.properties file.)\n\nmanagement.security.enabled=true\nsecurity.basic.enabled=true",
     "total": "Number of Properties file object",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

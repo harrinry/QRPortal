@@ -12,6 +12,7 @@
     "remediationSample": "SELECT guid partner_no partner_fct \nFROM crmd_partner \nINTO TABLE lt_crmd_partner \nFOR ALL ENTRIES IN lt_links \nWHERE guid EQ lt_links-guid_set AND partner_fct IN lt_proc_ranges \nORDER BY partner_fct. \n\nREAD TABLE lt_crmd_partner WITH KEY partner_fct = 'XX' \nBINARY SEARCH.",
     "sample": "SELECT guid partner_no partner_fct \nFROM crmd_partner \nINTO TABLE lt_crmd_partner \nFOR ALL ENTRIES IN lt_links \nWHERE guid EQ lt_links-guid_set AND partner_fct IN lt_proc_ranges. \n\nREAD TABLE lt_crmd_partner WITH KEY partner_fct = 'XX' \nBINARY SEARCH.",
     "total": "Number of ABAP Artifacts containing OpenSQL statements",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

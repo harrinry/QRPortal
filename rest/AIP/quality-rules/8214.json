@@ -12,6 +12,7 @@
     "remediationSample": "with finally\n~~~~~~~~~~~~\nif(!connection.isClosed())\n  connection.prepareStatement(\"select * from ....\");\nor\nfinally{\n      System.out.println(\"Closing a connection\");\n      connection.close();\n}",
     "sample": "String connectionUrl=\"jdbc:mysql://localhost:3306/MyDb\";\n    String userName=\"root\";\n    String userPass=\"root\";\n    DBConnectionInvalid connectionExample=new DBConnectionInvalid();\n    try{\n      connection=connectionExample.getConnection(connectionUrl, userName, userPass);\n    }catch(Exception e){\n      System.out.println(e.toString());\n    }finally{\n      System.out.println(\"Closing a connection\");\n      connection.close();\n\n      connection.prepareStatement(\"select * from ....\");\n    }",
     "total": "All the methods that have invalid access to the database resource in the body",
+    "alternativeName": "Ensure to not using Expired or Released Resource to protect accessing sensitive data",
     "businessCriteria": [
         {
             "id": 60014,

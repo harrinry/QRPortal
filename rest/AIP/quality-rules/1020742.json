@@ -13,6 +13,7 @@
     "remediationSample": "// explicit secure.example.com domain is recommended \n// .example.com is not recommended \n\nvar express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    domain: 'secure.example.com' \n  } \n}));",
     "sample": "// .example.com is not recommended \n\nvar express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    domain: '.example.com' \n  } \n}));",
     "total": "Number of NodeJS source code using express-session",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

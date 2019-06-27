@@ -12,6 +12,7 @@
     "remediationSample": "A widening primitive conversion does not lose information about the overall magnitude of a numeric value.\n  byte to short, int, long, float, or double\n    short to int, long, float, or double\n    char to int, long, float, or double\n    int to long, float, or double\n    long to float or double\n    float to double\n-Despite the fact that loss of precision may occur, a widening primitive conversion never results in a run-time exception",
     "sample": "int i = (int) 33457.8f;\nshort i1 = (short)ic.readdata(); // VIOLATION if readdata returns long\nint i1 = 1 + 2+ (int)3.5 // VIOLATION",
     "total": "Number of Java artifacts that can reference an incompatible mutation which includes methods, lambdas and constructors",
+    "alternativeName": "Ensure not using incorrect numeric type conversions to avoid data corruption",
     "businessCriteria": [
         {
             "id": 20140522,

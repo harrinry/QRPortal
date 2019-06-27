@@ -12,6 +12,7 @@
     "remediation": "Each validation form defined in validation.xml should correspend to a specified form-bean.\nAs here : we have the form-beans with associated form-validation: \n\n<form-beans>\n    <form-bean name=\"LoginForm\" type=\"org.apache.struts.validator.DynaValidatorForm\">\n        <form-property name=\"userName\" type=\"java.lang.String\" />\n        <form-property name=\"password\" type=\"java.lang.String\" />\n    </form-bean>\n</form-beans>\n\n___________________\n\n\n<form-validation>\n    <formset>\n        <form name=\"LoginForm\">\n            <field property=\"userName\" depends=\"required\">\n                <arg key=\"LoginForm.userName\"/>\n            </field>\n            <field property=\"password\" depends=\"required,minlength\">\n                <arg0 key=\"LoginForm.password\"/>\n                <arg1 key=\"${var:minlength}\" name=\"minlength\" resource=\"false\"/><br>\n                <var>\n                <var-name>minlength</var-name>\n                <var-value>6</var-value>\n                </var>\n            </field>\n        </form>\n    </formset>\n</form-validation>",
     "sample": "Some of validation forms defined in validation.xml does not correspond to any specified form-bean.",
     "total": "Number of field in struts1 XML Config File",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

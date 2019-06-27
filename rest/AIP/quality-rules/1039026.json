@@ -12,6 +12,7 @@
     "remediationSample": "Cookie cookie = new Cookie(\"userName\",userName); \ncookie.setSecure(true); \ncookie.setHttpOnly(true); // HttpOnly flag \n\n_________________________________________ \nSolution (Servlet 3.0 configuration): \n<web-app xmlns=\"http://java.sun.com/xml/ns/javaee\" version=\"3.0\" > \n[...] \n<session-config > \n <cookie-config > \n  <http-only>true</http-only> \n  <secure>true</secure> \n </cookie-config> \n</session-config> \n</web-app>",
     "sample": "Sample\n\nCookie cookie = new Cookie(\"userName\",userName); \nresponse.addCookie(cookie);",
     "total": "Number of Java artifacts",
+    "alternativeName": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "<?php\n$anarray = array(1, 2, 3);\n \nforeach($anarray as $element) { //violation removed\n   echo $element, PHP_EOL;\n}\n \n$numberOfElements = count($anarray);\n \nfor ($i = 0; $i < $numberOfElements; $i++) { //violation removed\n   echo $i, PHP_EOL;\n}\n \n$counter = 0;\n \ndo {\n   echo $counter, PHP_EOL;\n   $counter++;\n \n} while($counter < $numberOfElements); //violation removed\n?>",
     "sample": "<?php\n$anarray = array(1, 2, 3);\n \nforeach( $anarray as $element) { //violation\n   echo $element, PHP_EOL;\n}\n \n$numberOfElements = count($anarray);\n \nfor ($i = 0 ; $i < $numberOfElements ; $i++) { //violation\n   echo $i, PHP_EOL;\n}\n \n$counter = 0;\n \ndo {\n   echo $counter, PHP_EOL;\n   $counter++;\n \n} while($counter < $numberOfElements ); //violation\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66033,

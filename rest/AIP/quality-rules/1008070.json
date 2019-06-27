@@ -10,6 +10,7 @@
     "remediationSample": "Use outer join and check for null:\nSELECT c.CustomerID \nFROM Sales.Customer AS c\nLEFT OUTER JOIN Sales.SalesOrderHeaderEnlarged AS h\nON c.CustomerID = h.CustomerID\nWHERE h.CustomerID IS NULL;",
     "sample": "SELECT CustomerID \nFROM Sales.Customer \nWHERE CustomerID NOT IN \n(\n  SELECT CustomerID \n  FROM Sales.SalesOrderHeaderEnlarged\n);",
     "total": "Total number of RPG400 Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

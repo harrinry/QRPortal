@@ -12,6 +12,7 @@
     "remediationSample": "FUNCTION BAPI_PO_GETDETAIL.\n...\nSELECT SINGLE * FROM EKKO WHERE EBELN EQ PURCHASEORDER.\n\nIF SY-SUBRC NE 0.\n    PERFORM FILL_BAPIRETURN TABLES RETURN\n        USING 'E'\n                   'W5'\n                   '107'\n                   PURCHASEORDER.\n    EXIT.\nENDIF.\n...\nENDFUNCTION.",
     "sample": "FUNCTION BAPI_PO_GETDETAIL.\n...\nSELECT SINGLE * FROM EKKO WHERE EBELN EQ PURCHASEORDER.\n\nIF SY-SUBRC NE 0.\n    RAISE INCORRECT_PURCHASEORDER.\nENDIF.\n...\nENDFUNCTION.",
     "total": "Number of ABAP BAPI Methods calling an ABAP Function",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

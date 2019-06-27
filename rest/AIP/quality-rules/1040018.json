@@ -11,6 +11,7 @@
     "remediationSample": "XML CONFIGURATION\n---------------------------------\nhttp\n\n  headers\n       frame-options\n       policy=\"SAMEORIGIN\"\n  headers\nhttp\n\nSimilarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                    .frameOptions()\n                            .sameOrigin();\n        }\n    }",
     "sample": "XML CONFIGURATION\n---------------------------------\nhttp\n    headers\n       frame-options\n         policy=\"ALLOW-FORM\"\n    headers\nhttp\n\nSimilarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                        .frameOptions()\n                            .Allow-form();\n        }\n    }",
     "total": "Number of Java Methods and Xml tags",
+    "alternativeName": "Ensure correctly  setting X-Frame-Option to avoid Clickjacking attack",
     "businessCriteria": [
         {
             "id": 66031,

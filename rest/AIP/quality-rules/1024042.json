@@ -11,6 +11,7 @@
     "remediation": "Example 1:\nAvoid using ECB block chain (which is applied by default unless specified otherwise) when using Symmetric AES ciphers for encryption. Use GCM or CBC block chaining methods instead:\n\nCipher.getInstance(\"AES/GCM/NOPADDING\");\n\nECB is insecure as it does not output unique encryptions when given duplicate data (See ECB Penguin for a visual explanation).\n\nExample 2:\nDon\u2019t use hard coded values for cipher initialization. Integrity of the cipher is compromised if it isn\u2019t given unique information for every operation. Provide a SecureRandom to the init method of ciphers as the default values may not be random for older versions:\n\nSecureRandom secureRandom = new SecureRandom();\nbyte[] iv = new byte[IV_LENGTH];    \nsecureRandom.nextBytes(iv);    \nmyCipher.init(Cipher.ENCRYPT_MODE, key, new IvParameterSpec(iv));",
     "sample": "Example 1:\n\nCipher.getInstance(\"AES\");\n\nExample 2:\n\nmyCipher.init(Cipher.ENCRYPT_MODE, key);\nbyte[] iv = myCipher.getIV();",
     "total": "Number of Android artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

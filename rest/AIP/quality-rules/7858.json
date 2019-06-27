@@ -12,6 +12,7 @@
     "remediationSample": "DATA: BEGIN OF X.\nINCLUDE STRUCTURE SFLIGHT.\nDATA: ADDITION(8) TYPE C,\nEND OF X.\n...\nPERFORM U USING X.\n...\nFORM U USING X STRUCTURE SFLIGHT.\nWRITE: X-FLDATE.\nENDFORM.",
     "sample": "DATA: BEGIN OF X.\nINCLUDE STRUCTURE SFLIGHT.\nDATA: ADDITION(8) TYPE C,\nEND OF X.\n...\nPERFORM U USING X.\n...\nFORM U USING VALUE(X) STRUCTURE SFLIGHT.\nWRITE: X-FLDATE.\nENDFORM.",
     "total": "Number of Abap Forms having parameters",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

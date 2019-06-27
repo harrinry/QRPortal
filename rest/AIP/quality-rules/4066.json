@@ -10,6 +10,7 @@
     "remediation": "Always use the return value to return a status. By convention return 0 on success.",
     "remediationSample": "Declare @OpenedTran      bit\nDeclare @Error           int\n\n/*See if a transaction is already opened and possibly open a new one*/\nIf @@trancount>0\n     Select @OpenedTran = 1\nElse\n  Begin\n     Select @OpenedTran = 0\n     Begin Tran\n  End\n\nupdate mytable set col1 = 123\nwhere col2 = 456\n\nSelect @Error = @@error\nGTRAN:\n/*Close or rollback the transaction if it has been opened in this procedure*/\nIf @OpenedTran = 0\n  Begin\n     If @Error = 0   /* no error occurs*/\n          Commit Tran\n     Else\n          Rollback Tran\n  End\n/*If this procedure is not called from another one, Raise an error*/\nIf @@nestlevel = 1\n  Begin\n     If @Error !=0\n          Raiserror xxx\n\n  End\n/*return the error value*/\nReturn @Error",
     "total": "Number of stored procedures",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

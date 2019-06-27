@@ -11,6 +11,7 @@
     "remediationSample": "public class FrameActivity extends BaseActivity { \n\n public static CallbackManager callbackManager; \n@Override \nprotected void onCreate(Bundle savedInstanceState) { \n// FacebookSdk.sdkInitialize is called in the Application onCreate \n\ncallbackManager = CallbackManager.Factory.create(); \n} \n@Override \npublic void onActivityResult(int requestCode, int resultCode, Intent data) { \n    super.onActivityResult(requestCode, resultCode, data); \n    callbackManager.onActivityResult(requestCode, resultCode, data); // FIXED \n\n} ",
     "sample": "public class FrameActivity extends BaseActivity { \n\n public static CallbackManager callbackManager; \n@Override \nprotected void onCreate(Bundle savedInstanceState) { \n// FacebookSdk.sdkInitialize is called in the Application onCreate \n\ncallbackManager = CallbackManager.Factory.create(); \n} \n@Override \npublic void onActivityResult(int requestCode, int resultCode, Intent data) { \n    super.onActivityResult(requestCode, resultCode, data); \n     \n\n} ",
     "total": "Number of Android artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

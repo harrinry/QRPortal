@@ -11,6 +11,7 @@
     "remediation": "Remove the throw statements from destructors, prefer calling non throwing function only from destructors. If you call a potentially throwing function from a destructor, swallow all exception it may throw by wrapping it in a 'try/catch' clause.\n\nIf the object destruction can fail and you want to report it to the user, create a dedicated function that will be called separately before the destructor.",
     "sample": "Closing a file is an operation that may fail. Therefore, the standard library provides:\n- A 'close' function, which the user can call explicitly and check the stream state afterwards,\n- The destructor, which call the 'close' function if necessary but does not allow the user to check if it succeeded or failed. If the stream is configured to throw exceptions on error, those exceptions are swallowed by the destructor.",
     "total": "Number of C++ destructors",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

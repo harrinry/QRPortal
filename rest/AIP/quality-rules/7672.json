@@ -10,6 +10,7 @@
     "rationale": "For maintenability reasons, it is better to avoid using the EXIT statement in includes. If a program references such an include and if developers did not see the EXIT statements, then blocks could be terminated unexpectedly or the program could stop prematurely.",
     "remediation": "Use EXIT statements in programs that call the include and remove these statements from include. It could be better to use return codes and to let the calling code managing the exit.",
     "total": "Number of ABAP Includes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

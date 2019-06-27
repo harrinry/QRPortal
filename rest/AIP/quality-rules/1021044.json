@@ -11,6 +11,7 @@
     "remediationSample": ">>> from flask.ext.sqlalchemy import SQLAlchemy\n>>> db = SQLAlchemy(app)\n>>> db.execute('insert into entries (title, text) values (?, ?)', [request.form['title'], request.form['text']])",
     "sample": ">>> from flask.ext.sqlalchemy import SQLAlchemy\n>>> db = SQLAlchemy(app)\n>>> db.execute(\"insert into entries (title, text) values ('{0}', '{1}')\".format(request.form['title'], request.form['text']))",
     "total": "Number of Python artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

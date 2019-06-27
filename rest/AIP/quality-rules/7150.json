@@ -13,6 +13,7 @@
     "remediationSample": "PreparedStatement stmt = connection.prepareStatement(\"SELECT * FROM users WHERE userid=? AND password=?\");\nstmt.setString(1, userid);\nstmt.setString(2, password);\nResultSet rs = stmt.executeQuery();",
     "sample": "String query = \"SELECT * FROM users WHERE userid ='\"+ userid + \"'\" + \" AND password='\" + password + \"'\";\nStatement stmt = connection.createStatement();\nResultSet rs = stmt.executeQuery(query);",
     "total": "Number of methods that call java.sql.Connection.createStatement() or java.sql.Connection.prepareStatement() or java.sql.Connection.prepareCall()",
+    "alternativeName": "Prefer using PreparedStatement or CallableStatement over CreateStatement to prevent SQL Injection Attacks",
     "businessCriteria": [
         {
             "id": 66031,

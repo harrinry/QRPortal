@@ -10,6 +10,7 @@
     "rationale": "Placing Columns that frequently contain NULLs last in the Table Column order, minimizes the average Row length and optimizes the Table data density, which of course benefits performance. \nThis column ordering also minimizes the number of Column length bytes that need to be navigated to access the non-NULL Column values. This also benefits performance.",
     "remediation": "Review the design of the Table to change Column order",
     "total": "Number of PLSQL tables",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

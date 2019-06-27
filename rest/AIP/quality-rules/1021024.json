@@ -13,6 +13,7 @@
     "remediationSample": ">>> def experiment():\n>>>     try:\n>>>         x = 2/0\n>>>     except:\n>>>         logging.debug(\"Not Possible\")\n>>>     finally:\n>>>         logging.debug(\"Division\")\n>>>         clean_up_code()    #Return should not be used inside finally",
     "sample": ">>> def experiment():\n>>>     try:\n>>>         x = 2/0\n>>>     except:\n>>>         logging.debug(\"Not possible\")\n>>>     finally:\n>>>         logging.debug(\"Division\")\n>>>         return",
     "total": "Number of Python artifacts handling exceptions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

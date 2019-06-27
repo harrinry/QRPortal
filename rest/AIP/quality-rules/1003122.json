@@ -11,6 +11,7 @@
     "remediation": "Try to split them into methods where you add commands depending on their functional area.",
     "sample": "package control\n{\n   import control.GetItems1Command;\n   import control.GetItems1Event;\n   import control.GetItems2Command;\n   import control.GetItems2Event;\n   // A lot of other imports\n   \n   public class MyFrontController // VIOLATION\n   {\n      public function MyFrontController()\n      {\n         addCommand( \n            GetItems1Event.EVENT_NAME,\n            GetItems1Command );\n\n         addCommand( \n            GetItems2Event.EVENT_NAME,\n            GetItems2Command );\n\n         // A lot of other addCommand\n      }\n   } \n}",
     "total": "Number of classes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

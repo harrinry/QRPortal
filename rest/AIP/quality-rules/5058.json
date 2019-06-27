@@ -12,6 +12,7 @@
     "remediationSample": "//SORGDG  EXEC PGM=SORT\n//SYSOUT     DD  SYSOUT=*\n//SORTIN      DD  DISP=SHR,DSN=MYTELCO.COBDYNSQ.GDG(0)\n//SORTOUT  DD  DSN=MYTELCO.SORTOUT,DISP=(NEW,PASS,DELETE),\n//                             DCB=(LRECL=80,BLKSIZE=0,DSORG=PS,RECFM=FB),\n//                             SPACE=(CYL,(5,5) \n//SYSIN          DD  *\n  SORT FIELDS=(1,6,CH,A)\n  SUM FIELDS=NONE\n/*\n//COBOL1  EXEC PGM=COBFUNC1\n//STEPLIB  DD  DSN=APPCAST.SOURCE.LOADLIB\n//SORT01   DD  DSN=MYTELCO.SORTOUT\n//VSAMF      DD  DSN=MYTELCO.EMPDATA.VSAM,DISP=SHR  \n//SEQTF      DD  DSN=MYTELCO.COBFUNC1.SEQ1,DISP=(NEW,CATLG,DELETE),\n//                           DCB=(LRECL=120,BLKSIZE=0,DSORG=PS,RECFM=FB)\n//                           SPACE=(TRK,(5,5))",
     "sample": "IDENTIFICATION DIVISION.\n       PROGRAM-ID. COBFUNC1.\n...\n           SORT SORT-FILE\n            ON ASCENDING KEY WORKDEPT\n                USING EMPDATA\n                GIVING OUTFILE\n...",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

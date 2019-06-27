@@ -11,6 +11,7 @@
     "remediationSample": "try {\n   Date defaultDate=format.parse(DEFAULT_DATE_STRING);\n...\n} catch( ParseException pexc ) {\n  // This must never happen!\n     throw myException(\"bad init value\", pexc); // FIXED\n}",
     "sample": "try {\n   Date defaultDate=format.parse(DEFAULT_DATE_STRING);\n...\n} catch( ParseException pexc ) {\n  // This must never happen!\n  assert false : \"bad init value\"; // VIOLATION\n}",
     "total": "Number of methods and constructors that have code (not abstracts or from interfaces) containing a catch block",
+    "alternativeName": "Ensure that the catch blocks are without assertion",
     "businessCriteria": [
         {
             "id": 20140522,

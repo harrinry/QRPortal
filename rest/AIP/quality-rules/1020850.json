@@ -13,6 +13,7 @@
     "remediationSample": "import { ajax } from 'rxjs/ajax';\nimport { map, catchError } from 'rxjs/operators';\n// Return \"response\" from the API. If an error happens,\n// return an empty array.\nconst apiData = ajax('/api/data').pipe(\n  map(res => {\n    if (!res.response) {\n      throw new Error('Value expected!');\n    }\n    return res.response;\n  }),\n  catchError(err => of([]))\n);\n \napiData.subscribe({\n  next(x) { console.log('data: ', x); },\n  error(err) { console.log('errors already caught... will not run'); }\n});",
     "sample": "import { ajax } from 'rxjs/ajax';\n\nconst apiData = ajax('/api/data').pipe(\n  map(res => {\n    if (!res.response) {\n      throw new Error('Value expected!');\n    }\n    return res.response;\n  }),\n);\n \napiData.subscribe({\n  next(x) { console.log('data: ', x); }\n});",
     "total": "Number of artifacts containing a subscription to an ajax observable",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

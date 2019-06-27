@@ -13,6 +13,7 @@
     "remediationSample": "// SAMPLE 1: Basic example\nint main()\n{\n int c = 0;\n}\n\n// SAMPLE 3: Initialization in branch\n// Initialization done in conditional branching or in a called method are considered as a violation.\n\nvoid main()\n{\n     int i = 0; // REMEDIATION\n     if (...)\n         i = 3; \n} \n\n// SAMPLE 4: Use in function call\n// Although this usage is safe, we cannot know it in 'g' until we read the body of 'f'. If the implementation of 'f' changes, calling 'g' may become invalid. It is safer to initialize 'i' in 'g':\n\nvoid f( int * p) { *p = 3; }\n\nvoid g() \n{\n      int i = 0; // REMEDIATION\n      f( &i);\n}",
     "sample": "// SAMPLE 1: Basic example\nint main()\n{\n    int c; // VIOLATION\n}\n\n// SAMPLE 2: Non violations\nvoid main()\n{\n     int c;\n     c = 0; // is NOT considered as a violation\n\n     double d = f(); // not a violation\n}\n\n// SAMPLE 3: Initialization in branch\n// Initialization done in conditional branching or in a called method are considered as a violation.\n\nvoid main()\n{\n     int i;\n     if (...)\n         i = 3; // VIOLATION\n}\n\n// SAMPLE 4: Use in function call\n\nvoid f( int * p) { *p = 3; }\n\nvoid g() \n{\n      int i;\n      f( &i); // VIOLATION\n}",
     "total": "Number of C++ Functions, Methods, Constructors, and Destructors",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "private final void readObject(ObjectInputStream in)\nthrows java.io.IOException {\n     throw new java.io.IOException(\"Cannot be deserialized\");\n}",
     "sample": "try {\nFile file = new File(\"object.obj\");\nObjectInputStream in = new ObjectInputStream(new FileInputStream(file));\njavax.swing.JButton button = (javax.swing.JButton) in.readObject();\nin.close();\n}",
     "total": "Number of Java Artifacts",
+    "alternativeName": "Ensure the readObject() has been implemented for class instantiated by ObjectInputStream to prevent untrusted deserialization",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -10,6 +10,7 @@
     "remediation": "Review class design to reduce the number of interface implementations by the class.",
     "sample": "<?php\ninterface A\n{\n    public function A();\n}\ninterface B\n{\n    public function B();\n}\ninterface C\n{\n    public function C();\n}\ninterface D\n{\n    public function D();\n}\nclass ClassTest implements A,B,C,D\n{\n    public function A()\n    {\n    }\n    public function B()\n    {\n    }\n    public function C()\n    {\n    }\n    public function D()\n    {\n    }\n}\n?>",
     "total": "Number of Classes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

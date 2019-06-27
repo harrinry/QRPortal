@@ -13,6 +13,7 @@
     "remediationSample": "var express = require('express'); \nvar app = express(); \nvar helmet = require('helmet'); \napp.use(helmet) \n\n// direclty use nocache package \nvar nocache = require('nocache') \napp.use(nocache()) \n// or with helmet \napp.use(helmet.noCache()) \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

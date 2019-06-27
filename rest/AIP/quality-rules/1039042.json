@@ -12,6 +12,7 @@
     "remediationSample": " Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\nif(deptOpt.isPresent())  // Violation FIXED\n    department = deptOpt.get();\n} ",
     "sample": "Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\n    department = deptOpt.get();  // Violation  \n} ",
     "total": "Number of Java Artifact",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "[ValidateInput(true)]\n[AcceptVerbs(HttpVerbs.Post)]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}\n\n// OR\n\n[ValidateInput(true)]\n[AcceptVerbs(WebRequestMethods.HttpVerbs.Post)]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}\n\n// OR\n\n[ValidateInput(true)]\n[HttpPost]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}",
     "sample": "[ValidateInput(false)]\n[AcceptVerbs(HttpVerbs.Post)]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}\n\n// OR\n\n[ValidateInput(false)]\n[HttpPost]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}\n\n// OR \n[HttpPost]\npublic ActionResult Create([Bind(Exclude=\"Id\")]Employee empObj)\n{\n     \n}",
     "total": "Number of http put/post/any methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

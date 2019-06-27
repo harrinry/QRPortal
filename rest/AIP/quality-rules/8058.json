@@ -11,6 +11,7 @@
     "remediation": "Following the example, if A and B were not related in any way, line 1 would still compile (and be equivalent to reinterpret_cast), but would be wrong, see rule \"Never perform C-style cast between incompatible Class pointers\" (id 8002).\nIf A and B were related, but B not be derived from A, line 1 and 2 would still compile, but would be wrong. See rule \"A pointer to a base Class shall only be cast to a pointer to a derived Class by means of 'dynamic_cast'\" (id 8060).",
     "sample": "class A\n{\n};\n\nclass B : public A\n{\n};\n\nA* p1 = (A*)(new B()); // 1: Violation\nA* p1 = static_cast<A*>(new B()); // 2: Violation\nA* p1 = new B(); // 3: OK",
     "total": "Number of C++ constructors, destructors, and methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

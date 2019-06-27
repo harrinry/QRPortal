@@ -12,6 +12,7 @@
     "remediationSample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GE' \n    MOVE 'Y' TO WS-EOJ \nEND-IF \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nIF RTE-STATUS = 'GB' \n    MOVE 'Y' TO WS-EOJ \nEND-IF\n",
     "sample": "CALL 'CBLTDLI' USING WS-GNP AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n... \nCALL 'CBLTDLI' USING WS-GN AAIRTCBF-PCB WS-RATE-CHILD. \n                                       \nMOVE 'Y' TO WS-EOJ. \n",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

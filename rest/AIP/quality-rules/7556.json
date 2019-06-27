@@ -12,6 +12,7 @@
     "remediationSample": "class MyClass {\n   ...\n   public boolean equals(Object other) {\n       if (this==other) return true;\n       if (other==null) return false;\n       // FIXED\n       if (other.getClass() != this.getClass()) return false;\n       // OR in case of Hibernate\n       if (!Hibernate.getClass(other).equals(Hibernate.getClass(this)) return false;\n       ...\n    }\n   ...\n}",
     "sample": "class MyClass {\n   ...\n   public boolean equals(Object other) {\n       if (this==other) return true;\n       if (other==null) return false;\n       // VIOLATION\n       if ( !(other instanceof MyClass)) return false;\n       ...\n    }\n   ...\n}",
     "total": "Number of equals methods that override java.lang.Object.equals(java.lang.Object) and the number of methods that implement java.lang.Comparable.compareTo(java.lang.Object)",
+    "alternativeName": "Ensure that instanceof in Methods that override or implement Object.equals(), Comparable.compareTo() are not used",
     "businessCriteria": [
         {
             "id": 20140522,

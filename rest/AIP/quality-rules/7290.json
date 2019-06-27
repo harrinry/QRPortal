@@ -11,6 +11,7 @@
     "remediation": "Check if the Artifact is truly unnecessary. Then remove Artifacts that are not used.",
     "sample": "PROCEDURE DIVISION.\n      * Called by PROCEDURE DIVISION\n       MAIN SECTION.\n       PROCESS.\n           PERFORM PROC-01.\n           PERFORM PROC-02 THRU PROC-04.\n           IF A > 2 THEN \n               GO TO PROC-7.\n           END-IF\n\n      * Called by fall thru and PROC-8 (GOTO)\n       END-PROCESS.\n           GOBACK.\n\n      * Called by PROCESS (PERFORM)\n       PROC-01.\n           IF A = 10 THEN\n               PERFORM PROC-06\n           END-IF\n\n      * Called by PROCESS (PERFORM THRU)\n       PROC-02.\n           MOVE 1 TO A.\n\n      * Called by PROCESS (FALL THRU)\n       PROC-03.\n           ADD 5 TO A.\n\n      * Called by PROCESS (FALL THRU)\n       PROC-04.\n           EXIT.\n\n      **** This paragraph is never called\n       PROC-05.\n           MOVE \"PGM02\" TO PGM-NAME.\n\n      * Called by PROC-01 (PERFORM)\n       PROC-06.\n           MOVE \"PGM\" TO PGM-NAME.\n\n      * Called by PROCESS (GOTO)\n       PROC-7.\n           IF A > 2 THEN\n               MOVE 0 TO A.\n           END-IF\n\n      * Called by fall thru\n       PROC-8.\n           GO TO END-PROCESS.",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

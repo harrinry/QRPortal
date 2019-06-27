@@ -12,6 +12,7 @@
     "remediationSample": "DATA:\n  dsn(20) TYPE C VALUE '/usr/test.dat',\n  rec(80) TYPE C.\n\nOPEN DATASET dsn FOR INPUT IN TEXT MODE ENCODING DEFAULT.\nIF sy-subrc <> 0.\n  EXIT.\nENDIF.\n\nWRITE  / 'Beginning of output'.\n\nREAD DATASET dsn INTO rec.\nWHILE sy-subrc <> 0.\n  WRITE / rec.   \n  READ DATASET dsn INTO rec.\nENDWHILE.\n\nWRITE  / 'End of output'.\n\nCLOSE DATASET dsn.",
     "sample": "DATA:\n  dsn(20) TYPE C VALUE '/usr/test.dat',\n  rec(80) TYPE C.\n\nOPEN DATASET dsn FOR INPUT IN TEXT MODE ENCODING DEFAULT.\n\nWRITE  / 'Beginning of output'.\n\nREAD DATASET dsn INTO rec.\nWRITE / rec.   \n\nREAD DATASET dsn INTO rec.\nWRITE / rec.   \n\nWRITE  / 'End of output'.\n\nCLOSE DATASET dsn.",
     "total": "Number of ABAP Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

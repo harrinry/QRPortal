@@ -13,6 +13,7 @@
     "remediationSample": "----> myBean.java:\n// FIXED: the interface Serializable is implemented\npublic class MyBean implements Serializable {\n    // Properties\n    private String name;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}",
     "sample": "Sample for JSF:\n----> faces-config.xml:\n<managed-bean>\n    <managed-bean-name>myBean</managed-bean-name>\n    <managed-bean-class>com.cast.MyBean</managed-bean-class>\n    <managed-bean-scope>session</managed-bean-scope>\n</managed-bean>\n\n----> myBean.java:\n// VIOLATION: the class associate to a backing bean \n// does not implement the interface Serializable\npublic class MyBean {\n    // Properties\n    private String name;\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}",
     "total": "Number of objects in the session scope",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

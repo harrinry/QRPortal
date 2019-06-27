@@ -12,6 +12,7 @@
     "remediationSample": "listView1.BeginUpdate(); \nfor(int i = 0; i < 10000; i++) \n{\n    ListViewItem listItem = new ListViewItem(\"Item\"+i.ToString() );\n    listView1.Items.Add(listItem); \n} \nlistView1.EndUpdate();",
     "sample": "for(int i = 0; i < 10000; i++) \n{\n    ListViewItem listItem = new ListViewItem(\"Item\"+i.ToString() );\n    listView1.Items.Add(listItem); \n}",
     "total": "Total number of artifacts that call  Items.Add and where BeginUpdate/EndUpdate is available for the control.",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

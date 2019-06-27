@@ -11,6 +11,7 @@
     "remediationSample": "<?php\nfunction optionalBeforeRequired ($optionalParameter = \"\", $requiredParameter = \"\")\n{\n    echo \"optionalBeforeRequired: violation removed\", PHP_EOL;\n}\n?>\nOR \n<?php\nfunction optionalBeforeRequired ($requiredParameter, $optionalParameter = \"\")\n{\n    echo \"optionalBeforeRequired: violation removed\", PHP_EOL;\n}\n?>",
     "sample": "<?php\nfunction optionalBeforeRequired ($optionalParameter = \"\", $requiredParameter)\n{\n    echo \"optionalBeforeRequired\", PHP_EOL;\n}\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

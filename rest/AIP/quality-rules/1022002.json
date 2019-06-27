@@ -12,6 +12,7 @@
     "remediationSample": " \n Cipher cipher = Cipher.getInstance(\"RSA/ECB/PKCS1Padding\", \"BC\"); \n",
     "sample": "public class TestRSA {\n\n    public static void main(String[] args) throws Exception {\n\n byte[] input = new byte[100];\n\n Cipher cipher = Cipher.getInstance(\"RSA/None/NoPadding\", \"BC\");\n KeyFactory keyFactory = KeyFactory.getInstance(\"RSA\", \"BC\"); \n",
     "total": "Number of Java methods",
+    "alternativeName": "Ensure to use Optimal Asymmetric Encryption Padding(OAEP) scheme with RSA encryption to avoid sensitive information exposure.",
     "businessCriteria": [
         {
             "id": 20140522,

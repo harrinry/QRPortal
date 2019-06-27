@@ -9,6 +9,7 @@
     "rationale": "Customer implemented scripts containing checking of error codes",
     "remediation": "When there is an exception in the code as shown in the following example:\n\ntry \n{\n\n: my code\n\n}\n\ncatch e\n{\nApplication.RaiseErrorText(e.errtxt)\nApplication.RaiseErrorText(e.errcode)\n}\n\ne.errtxt displays a Message Code and message text (for eg: (e.g. SBL-EAI-04299: Business Service '%1' does not exist in current SRF.). \ne.errcode displays an errror code(some number eg 10654) nothing similar to message code(SBL-EAI-04299).\n\nThe error code keeps changing with each release. That is why you see it differently in different releases.\nThese error codes are not documented so it is not possible to provide a list of error codes. \nAs an alternative option you may want to use the Message Code instead of Error code. The Message Code which is embedded in the message string does not change between the releases. We can easily parse the Error message text to extract the Message Code.",
     "total": "Number of added or modified eScripts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

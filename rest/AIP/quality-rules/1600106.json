@@ -13,6 +13,7 @@
     "remediationSample": "&rs = CreateRowset (record.PS_S1_ITM_LD_CP_EC);\n&NbEnregLus = &rs.fill ( \"WHERE A.EIP_CTL_ID LIKE 'R%' and S1_NUM_LOT = :1 AND ((:2 = 'OUI' AND :1  = 0) OR (:2 <> 'OUI' AND :1  = 0) OR (:2 <> 'OUI' AND :1  = A.S1_NUM_LOT))\",S1_ITM_VAR_AET.S1_NUM_LOT, S1_RUNCNTL_AET.S1_TOPINIT_CD );",
     "sample": "SQLExec(\"SELECT count(*) FROM PS_S1_ITM_LD_CP_EC A WHERE A.EIP_CTL_ID LIKE 'R%' and S1_NUM_LOT = :1 AND ((:2 = 'OUI' AND :1  = 0) OR (:2 <> 'OUI' AND :1  = 0) OR (:2 <> 'OUI' AND :1  = A.S1_NUM_LOT))\", S1_ITM_VAR_AET.S1_NUM_LOT , S1_RUNCNTL_AET.S1_TOPINIT_CD , &NbEnregLus);",
     "total": "Number of PeopleSoft Events, Functions and Methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

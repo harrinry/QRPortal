@@ -12,6 +12,7 @@
     "remediationSample": "// specifc path is recommended \n\nvar express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    path: '/admin' \n  } \n}));",
     "sample": "// root path is not recommended \nvar express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    path: '/' \n  } \n}));",
     "total": "Number of NodeJS source code using express-session",
+    "alternativeName": "Ensure you do not allow access to all domain when defining cookie path (Node.js)",
     "businessCriteria": [
         {
             "id": 66031,

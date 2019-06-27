@@ -12,6 +12,7 @@
     "remediationSample": "<?php\n$a = 10;\n$b = 20;\nif ( $a > $b ) {\n    echo \"a is bigger than b\", PHP_EOL;\n    }\nelse if ( $a === $b ) {   //VIOLATION REMOVED\n    echo \"a is equal to b\", PHP_EOL;\n    }\nelse {\n    echo \"a is smaller than b\", PHP_EOL;\n    }\n?>",
     "sample": "<?php\n$a = 10 ;\n$b = 20 ;      \nif ( $a > $b ) {\n    echo \"a is bigger than b\", PHP_EOL;\n} elseif ( $a === $b ) {               //VIOLATION\n    echo \"a is equal to b\", PHP_EOL;\n} else {\n    echo \"a is smaller than b\", PHP_EOL;\n}\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66033,

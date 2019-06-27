@@ -10,6 +10,7 @@
     "rationale": "There are several scripts within the application that will display unilingual custom alerts and custom error messages, since the implementation does not make use of Language Independent scripting functionality. Several error messages implemented within catch(e) block are only of technical nature.",
     "remediation": "Rather than using hard coded error messages, use the Siebel provided message objects and scripting methods to provide multi lingual message handling. \nPerform the following:\n\u0095 Create a message object of type User defined error. For each deployed Language create a translation of the message within the Locale specific objects.\n\u0095 In scripting use the following methods to display alerts and messages language specific:\nTheApplication.RaiseError((\"<key>\", [param1], [param2],...., [paramN]))\nTheApplication().LookupMessage(<category>, <key>, [param1], [param2],...,\nWhereas <key> is the Object name of the user defined error and <category> is \"User defined error\"\nPlease use the new Objects Message Category for all of the messaging. For a more detail description, please refer to the technical note 386 \"Browser Scripting in Siebel 7\".",
     "total": "Number of added or modified eScripts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66032,

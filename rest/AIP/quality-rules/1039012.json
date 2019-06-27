@@ -12,6 +12,7 @@
     "remediationSample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(headerName); // VIOLATION FIXED\n    //...\n  } \n}",
     "sample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(\"referer\"); // VIOLATION \n    if(isTrustedReferer(referer)){ \n      //.. \n    } \n    //... \n  } \n}",
     "total": "Number of Java artifacts",
+    "alternativeName": "Always Prefer not using \"HTTPrequest\" with header fields to protect sensitive data",
     "businessCriteria": [
         {
             "id": 66031,

@@ -11,6 +11,7 @@
     "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrents requests. When a request callback has been managed a new request could be fired.",
     "sample": "for(...) { \n\n     var socket = new WebSocket('ws://game.example.com:12010/updates'); \n     socket.onopen = function () { \n            setInterval(function() { \n                 if (socket.bufferedAmount == 0) \n                       socket.send(getUpdateData()); \n      }, 50); \n}",
     "total": "Number of Javascript Functions using WebSocket",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

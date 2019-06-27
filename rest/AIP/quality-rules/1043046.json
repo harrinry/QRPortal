@@ -12,6 +12,7 @@
     "remediationSample": "class CookieWithOverlyBroadPath\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Path = \"/thepath\";\n    }\n}",
     "sample": "class CookieWithOverlyBroadPath\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Path = \"/\";\n    }\n}",
     "total": "Number of methods using HttpCookie",
+    "alternativeName": "Ensure you do not allow access to all domain when defining cookie path (C#)",
     "businessCriteria": [
         {
             "id": 66031,

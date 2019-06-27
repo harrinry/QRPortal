@@ -11,6 +11,7 @@
     "remediationSample": "<?php\ntry {\n      $fileHandle = fopen(\"my_file.csv\", \"r\");\n      if(false === $fileHandle) { \n         throw new Exception('Could not open CSV file!'); \n      }\n   } \n   catch (RuntimeException $ex) \n   {\n      // violation removed with comment: we should handle the exception properly \n   } catch (Exception $e)\n   { \n      echo $e->getMessage(); \n   }\n?>",
     "sample": "<?php\ntry {\n      $fileHandle = fopen(\"my_file.csv\", \"r\");\n      if(false === $fileHandle) { throw new Exception('Could not open CSV file!'); }\n   } catch (Exception $ex) //Violation\n   {\n \n   }\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

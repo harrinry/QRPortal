@@ -12,6 +12,7 @@
     "remediationSample": "static final float EPSILON = 0.0000001f;\n\nfloat a = 0.15f + 0.15f;\nfloat b = 0.1f + 0.2f;\nif(Math.abs(a - b) < EPSILON) {...} // FIX\nif(Math.abs(a - b) > EPSILON) {...} // FIX",
     "sample": "float a = 0.15f + 0.15f;\nfloat b = 0.1f + 0.2f;\nif(a == b) {...} // VIOLATION\nif(a != b) {...} // VIOLATION",
     "total": "Number of artifacts that reference a float",
+    "alternativeName": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
     "businessCriteria": [
         {
             "id": 20140522,

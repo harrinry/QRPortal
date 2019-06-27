@@ -11,6 +11,7 @@
     "remediationSample": "FILE: f.h\n\nextern int myvar;\n\nFILE: f2.cpp\n\n#include \"f.h\"\nvoid g() {\n   myvar = 1;\n}\n\nFILE: f1.cpp\n\n#include \"f.h\"\nint myvar = 0;\nvoid g();\nint main(int argc, char* argv[]) {\n   g();\n   printf(\"myvar value is %d\\n\", myvar); /* Display 1 as expected. */\n   return 0;\n}",
     "sample": "FILE: f.h\n\nstatic int myvar = 0;\n\nFILE: f2.cpp\n\n#include \"f.h\"\nvoid g() {\n   myvar = 1;\n}\n\nFILE: f1.cpp\n\n#include \"f.h\"\nvoid g();\nint main(int argc, char* argv[]) {\n  g();\n  printf(\"myvar value is %d\\n\", myvar); /* We expect 1 to be displayed, but it is not the case.. */\n  return 0;\n}",
     "total": "Number of C/C++ static variables",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

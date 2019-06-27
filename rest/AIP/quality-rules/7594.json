@@ -13,6 +13,7 @@
     "remediationSample": "SELECT cityto FROM spfli\n    INTO TABLE itab\n  WHERE carrid = 'LH'\n  AND cityfrom = 'FRANKFURT'.\n\nSORT itab BY cityto.\n\nDELETE ADJACENT DUPLICATES\n  FROM itab COMPARING cityto.",
     "sample": "SELECT DISTINCT cityto FROM spfli\n    INTO TABLE itab\n  WHERE carrid = 'LH'\n  AND cityfrom = 'FRANKFURT'.",
     "total": "Number of ABAP Artifacts containing OpenSQL queries",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

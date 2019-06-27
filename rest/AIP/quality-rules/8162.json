@@ -12,6 +12,7 @@
     "remediationSample": "01 RESP-CODE PIC S9(08) COMP. \n... \nEXEC CICS \n    SEND FROM ( WS-DTA) \n    LENGTH( WS-DTA-SZ) \n    RESP(RESP-CODE) \nEND-EXEC. \n\nIF RESP-CODE = DFHRESP(NORMAL) \n    MOVE 'Y' TO OK-COMMAND \nELSE \n    IF RESP-CODE = DFHRESP(NOTFND) \n        MOVE 'N' TO REC-NOT-FOUND \n    ELSE \n        PERFORM DISPLAY-MISC-ERROR \n    END-IF \nEND-IF \n...\n",
     "sample": "EXEC CICS \n    SEND FROM ( WS-DTA) \n    LENGTH(Ws-DTA-SZ ) \nEND-EXEC. \n...\n",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

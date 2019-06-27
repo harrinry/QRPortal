@@ -11,6 +11,7 @@
     "remediation": "Depending on the context, the user has to evaluate if the fact that the composite index is not is leading to poor performance.\nIf the query does not use other indexes, the fact that the query does not use the first column of a composite index is most probably an error that needs to be fixed.",
     "sample": "The table T is defined the 4 following columns : A, B, C, D\n\nThe analyzed application  has one artifact that contains the following query : \nSELECT * FROM T WHERE B = 'X'\n\nExample 1 : \nTable T has the following index defined i1 on (A, B, C) columns.\nThe artifact  will be part of the output of this metric to inform the user that i1 will not be used by the query processor engine. \n\nExample 2 : \nTable T has the following indexes defined  i2 (B, C) and i3 (B).\nThe artifact  will not  be part of the output of this metric (first column (i3)  or composite index( i2) is used).\n\nNote  artifact  is part of the scope and is counted by the total procedure.\n\nExample 3 : \nTable T has the following index defined i3 (B).\nThe artifact is not ignored by this metric.",
     "total": "Number of client-server artifacts using tables that contain a query using columns of a composite index in the WHERE clause of the query",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

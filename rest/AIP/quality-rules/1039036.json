@@ -12,6 +12,7 @@
     "remediationSample": "XMLReader reader = XMLReaderFactory.createXMLReader();\nreader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nreader.setContentHandler(customHandler);\n\nreader.parse(new InputSource(inputStream));",
     "sample": "XMLReader reader = XMLReaderFactory.createXMLReader();\nreader.setContentHandler(customHandler);\nreader.parse(new InputSource(inputStream));",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to preceed the call of XMLReader by a call to the secure mode of the parser",
     "businessCriteria": [
         {
             "id": 66031,

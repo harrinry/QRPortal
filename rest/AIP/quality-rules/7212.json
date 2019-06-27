@@ -9,6 +9,7 @@
     "remediationSample": "public class MyLoop {\n     public void printCount() {\n         StringBuilder sb = new StringBuilder(); // FIXED\n         for (int i = 0; i < 100; i++) {\n             sb.Length = 0;\n             sb.Append(\"count = \");\n             sb.Append(i);\n              Console.WriteLine(sb);\n         }\n     }\n }",
     "sample": "public class MyLoop {\n     public void printCount() {\n         for (int i = 0; i < 100; i++) {\n             StringBuilder sb = new StringBuilder(); // VIOLATION\n             sb.Append(\"count = \");\n             sb.Append(i);\n            Console.WriteLine(sb);\n         }\n     }\n }",
     "total": "Total number of methods and constructors",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

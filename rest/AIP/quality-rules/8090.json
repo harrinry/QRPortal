@@ -13,6 +13,7 @@
     "remediationSample": "using System;\n\nnamespace UsageLibrary\n{\n   class NaNTests\n   {\n      static double zero;\n\n      static void Main()\n      {\n         Console.WriteLine( double.IsNaN(0/zero) );\n      }\n   }\n}",
     "sample": "using System;\n\nnamespace UsageLibrary\n{\n   class NaNTests\n   {\n      static double zero;\n\n      static void Main()\n      {\n         Console.WriteLine( 0/zero == double.NaN );\n         Console.WriteLine( 0/zero != double.NaN );\n      }\n   }\n}",
     "total": "Number of Methods and Functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

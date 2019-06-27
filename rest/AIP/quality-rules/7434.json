@@ -11,6 +11,7 @@
     "remediationSample": "class Example {\n   int id;\n\n   public int getId() {\n      return id;\n   }\n    public boolean equals(Object obj) { \n         return (obj instanceof Example \n            && id == ((Example) obj).getId()); \n   }\n   public int hashCode() {  // FIXED\n       return id/10;\n   }\n}",
     "sample": "class Example {\n   int id;\n\n   public int getId() {\n      return id;\n   }\n    public boolean equals(Object obj) { \n         return (obj instanceof Example \n            && id == ((Example) obj).getId()); \n   }\n       // VIOLATION: missing hashCode()\n}",
     "total": "Number of classes that override equals() or (not exclusive) hashCode()",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

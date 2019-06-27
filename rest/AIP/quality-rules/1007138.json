@@ -12,6 +12,7 @@
     "remediationSample": "<?php\nfunction getSomething() {\n   echo \"removed unused variable\", PHP_EOL;       //violation removed\n}\nclass CastTest {  \n public function doSomething() {\n   $unusedVariable3 = 20; \n   echo $unusedVariable3;     //  violation removed\n }\n}\ngetSomething();\n$obj = new CastTest();\n$obj->doSomething();\n?>",
     "sample": "<?php\nfunction getSomething() {\n   $unusedVariable2 = 15 ;  //violation\n}\nclass CastTest {  \n public function doSomething() {\n $unusedVariable3 = 20; // violation\n }\n}\ngetSomething();\n$obj = new CastTest();\n$obj->doSomething();\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

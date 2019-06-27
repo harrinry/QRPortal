@@ -13,6 +13,7 @@
     "remediationSample": "let context = LAContext()\nvar authError: NSError?\n\nvar myLocalizedReasonString = \"String explaining why app needs authentication\"\n\nif myContext.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:&authError) {\n    myContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myReasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in\n\n        if success {\n            // User authenticated successfully\n        } else {\n            // Authenticate failed\n        }\n    })\n} else{\n    // Could not evaluate policy; check authError\n}",
     "sample": "let context = LAContext()\nvar authError: NSError?\n\nvar myLocalizedReasonString = \"String explaining why app needs authentication\"\n\nif myContext.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error:&authError) {\n    myContext.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myReasonString, reply: { (success: Bool, evalPolicyError: NSError?) -> Void in\n\n       println(\"the user seems to be connected\")\n\n    })\n} else{\n    // Could not evaluate policy; check authError\n}",
     "total": "Number of Swift artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

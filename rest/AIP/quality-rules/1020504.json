@@ -10,6 +10,7 @@
     "remediation": "N/A",
     "sample": "factory('UserPicture',function($http, $q){\n  return {\n    updatePicture : function(url, requestData) {\n      for (i = 0; i < options.length; i += 1) {\n        $http.post(\n          url,\n          requestData,\n          { headers: { 'Content-Type': undefined},\n            transformRequest: angular.identity\n          }\n        ).success(\n          function(responseData) {\n            //Passing data to deferred's resolve function on successful completion\n            deferred.resolve(responseData);\n          }\n        ).error(\n          function() {\n            deferred.reject(\"An error occured while fetching items\");\n          }\n        );\n      }\n      return deferred.promise;\n    }\n  }});",
     "total": "Number of angular services/factories using $http",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

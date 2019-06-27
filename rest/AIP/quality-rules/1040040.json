@@ -9,6 +9,7 @@
     "remediationSample": "@EnableWebSecurity\npublic class OAuth2LoginSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n            .oauth2Login()\n                .redirectionEndpoint()\n                    .baseUri(http://127.0.0.1:5555/callback?code=xznhxzcjqbwg3jjavth5tk7s7&state=I+wish+to+wash+my+irish+wristwatch#/more_url)\n                    ....\n    }\n}",
     "sample": "@EnableWebSecurity\npublic class OAuth2LoginSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n            .oauth2Login()\n                .redirectionEndpoint()\n                    .baseUri(http://127.0.0.1:5555/callback/#/more_url?code=xznhxzcjqbwg3jjavth5tk7s7&state=I+wish+to+wash+my+irish+wristwatch)\n                    ....\n    }\n}",
     "total": "Number of java methods",
+    "alternativeName": "Ensure not using fragment component in the Endpoint URI",
     "businessCriteria": [
         {
             "id": 66031,

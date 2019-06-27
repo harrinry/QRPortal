@@ -10,6 +10,7 @@
     "rationale": "C# and VB.NET allow structs to implement interfaces. However this language feature can produce unexpected results, as structs are value types while interfaces require reference types to interact with. This means that calls to interface methods via implicit boxing operations will modify a copy rather than the original object.\nWhen implicit boxing occurs, a copy of the struct is placed on the heap and calls to the interface methods are executed on this copy via a reference. All changes to the state of the struct object are discarded after that call.",
     "remediation": "Declare the type as a class rather than a struct. This is better OO practice as classes can hide their implementation details using efficient class property encapsulation. The drawback of this approach is a potential performance cost as the object will no longer be creatable as an efficient stack object. However, keep in mind that the .NET Just-In-Time compiler automatically inlines small simple methods. Create a wrapper class that contains the struct as a member - for example a property (for efficient encapsulation), and use the wrapper class to implement the interface.",
     "total": "Total number of structures",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

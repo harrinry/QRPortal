@@ -11,6 +11,7 @@
     "remediationSample": "package {\n\n    public class AvoidGloballyBindableClass \n    {\n        \n        public function AvoidGloballyBindableClass() \n        {\n            \n        }\n\n        [Bindable]\n        private var _avar : int = 10;\n\n        public function get avar() : int {\n           return _avar;\n        }\n        \n        public function set avar(avarin : int) : void {\n           _avar = avarin;\n        }\n    }\n}",
     "sample": "package {\n\n    [Bindable]\n    public class AvoidGloballyBindableClass \n    {\n        \n        public function AvoidGloballyBindableClass() \n        {\n            \n        }\n\n\n        private var _avar : int = 10;\n\n        public function get avar() : int {\n           return _avar;\n        }\n        \n        public function set avar(avarin : int) : void {\n           _avar = avarin;\n        }\n\n\n    }\n}",
     "total": "Number of classes",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

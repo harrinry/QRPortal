@@ -12,6 +12,7 @@
     "remediationSample": "-- SQL Sample\ncreate table MyTable ( C1 int identity, C2 int)\n\n-- create index MyTable_I1 on MyTable( C1)\n-- This index is useless as it is the same as MyTable_I2\n\n-- create index MyTable_I2 on MyTable( C1)\n-- This index is nearly useless as queries using C1 will be covered by the index MyTable_I3. It can then be dropped.\n\n\ncreate index MyTable_I3 on MyTable( C1, C2)",
     "sample": "-- SQL Sample\ncreate table MyTable ( C1 int identity, C2 int)\n\ncreate index MyTable_I1 on MyTable( C1)\ncreate index MyTable_I2 on MyTable( C1)\ncreate index MyTable_I3 on MyTable( C1, C2)",
     "total": "Number of tables",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

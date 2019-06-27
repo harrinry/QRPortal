@@ -13,6 +13,7 @@
     "remediationSample": "class A:\n    x = True\n    def __init__(self):\n        if self.x:\n            A.x = False      # assignment to the class variable\n            ...",
     "sample": "class A:\n    x = True\n    def __init__(self):\n        if self.x:             # access to class variable\n            self.x = False     # self.x refers to an instance variable that shadows A.x\n            ...",
     "total": "Number of Python Modules and Functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

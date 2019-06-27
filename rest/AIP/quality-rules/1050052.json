@@ -9,6 +9,7 @@
     "rationale": "Finally blocks must be used to execute the code that is needed after either the try and/or the catch block have been executed. It is usually the place to code the release of resources used in the try block. As such, an empty finally block is most probably the sign of potential \"resource leaks\" that will jeopardize the application's stability.",
     "remediation": "try {  } \ncatch ( MyException e) \n{  } \nfinally \n{ \n  DoSomething(); \n}",
     "sample": "try { ... } \ncatch ( MyException e) \n{  } \nfinally \n{ \n  // DO NOTHING\n}",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

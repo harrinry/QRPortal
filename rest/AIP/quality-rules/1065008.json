@@ -13,6 +13,7 @@
     "remediationSample": "#define MAX_ARRAY_SIZE 1000000\nint *array = NULL; \nvoid allocateArray()\n{\n      int len, itr;\n      scanf(\"%i\", &len);\n     if (len > 0 && len < MAX_ARRAY_SIZE)\n     {\n           array = malloc(len);\n           for(itr=0;itr<len;itr++)\n               array[itr] = 0;\n     }\n }\n\nint getValue(int index)\n{\n    if(index >= 0 && index < MAX_ARRAY_SIZE)\n          return array[index];\n    else\n          return array[MAX_ARRAY_SIZE-1];\n}",
     "sample": "int *array = NULL; \nvoid allocateArray()\n{\n      int len, itr;\n      scanf(\"%i\", &len);\n      array = malloc(len);\n      for(itr=0;itr<len;itr++)\n          array[itr] = 0;\n }\n\nint getValue(int index)\n{\n    return array[index];\n}",
     "total": "Number of  C/C++ method and function",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

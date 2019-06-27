@@ -12,6 +12,7 @@
     "remediationSample": "// FILE C1.H \n#ifndef C1_H \n#define C1_H \nclass C2;\nclass C1 \n{ \n   public:\n       C1(); \n        C2 * x; \n}; \n#endif \n\n// FILE C2.H \n#ifndef C2_H \n#define C2_H \nclass C1;\nclass C2 \n{ \n   public:\n      C2(); \n      C1 * x; \n}; \n#endif",
     "sample": "// FILE C1.H \n#ifndef C1_H \n#define C1_H \n#include \"C2.h\" \nclass C2;\nclass C1 \n{ \n   public:\n      C1(); \n      C2 x; \n}; \n#endif\n\n\n// FILE C2.H \n#ifndef C2_H \n#define C2_H \n#include \"C1.h\" \nclass C1;\nclass C2 \n{ \n   public:\n       C2(); \n       C1 x; \n}; \n#endif",
     "total": "Number of C++ header files",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66032,

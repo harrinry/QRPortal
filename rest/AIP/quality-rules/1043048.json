@@ -12,6 +12,7 @@
     "remediationSample": "class CookieWithOverlyBroadDomain\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Domain = \"secure.example.com\";\n    }\n}",
     "sample": "class CookieWithOverlyBroadDomain\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Domain = \"*.example.com\";\n    }\n}",
     "total": "Number of methods using HttpCookie",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

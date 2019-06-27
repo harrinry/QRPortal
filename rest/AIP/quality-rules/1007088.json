@@ -11,6 +11,7 @@
     "remediation": "Modify the source code to reduce the number of sections with variables name that are too short.",
     "sample": "<?php\nclass CastTest\n{\n   private $b = 20; // VIOLATION - Field\n\n      public function Test( array $as ) { // VIOLATION - Formal parameter\n         $a = 20 + $this-> b; // VIOLATION - Local variable\n         for ($i = 0; $i < 10; $i++)\n         { // Not a Violation (inside FOR)\n            $a += $this->b;\n         }\n   }\n}\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

@@ -13,6 +13,7 @@
     "remediationSample": "Remediation example:\n\nLOOP AT ts_invoices INTO wa_invoices\n  IF wa_invoices-matnr NE ltp_matnr_old.\n    Ltp_matnr_old = wa_invoices-matnr.\n...\n  ENDIF.\nENDLOOP.",
     "sample": "LOOP AT ts_invoices INTO wa_invoices\n  ON CHANGE OF wa_invoices-matnr.\n...\n  ENDON.\nENDLOOP.",
     "total": "Number of ABAP Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,6 +11,7 @@
     "remediationSample": "function TEST1()\nTESTTEST1.T1 = \"MMMM\";\ntry                                 //FIXED\n  with #sql{\n  INSERT INTO TEST2\n  ( select * from abcd\n  }\n\n onException\n  ...........\n  end\n\n$end",
     "sample": "function TEST1()\nTESTTEST1.T1 = \"MMMM\";\n  with #sql{                                           //VIOLATION\n  INSERT INTO TEST2\n  ( select * from abcd\n  }\n$end",
     "total": "Number of Functions",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

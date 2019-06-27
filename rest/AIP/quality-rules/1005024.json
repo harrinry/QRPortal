@@ -9,6 +9,7 @@
     "rationale": "allowUnqualifiedItemReferences = yes specifies whether to allow your code to reference structure items but to exclude the name of the container, which is the data table, record, or form that holds the structure item.\nConsider the following record part, for example:\n\n Record aRecordPart type basicRecord\n         10 myItem01 CHAR(5);\n         10 myItem02 CHAR(5);\nend\n\nIf you set the property allowUnqualifiedItemReferences to yes, however, you can avoid specifying the record name: myValue = myItem01;",
     "remediation": "Try to always have the property allowUnqualifiedItemsReferences set to YES.",
     "total": "Number of Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66032,

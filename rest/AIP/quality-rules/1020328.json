@@ -12,6 +12,7 @@
     "remediationSample": "// version NOT impacted by the vulnerability\n<script src=\"https://code.jquery.com/jquery-1.9.1.js\"></script>\n\n\n<div id=\"log\">Test passed</div>\n\n...\n<script>\n$(\"#log\").html(\n    $(\"element[attribute='<div><strong>you should not see this</strong></div>']\").html()\n);\n</script>\n...",
     "sample": "// version impacted by the vulnerability\n<script src=\"https://code.jquery.com/jquery-1.9.0.js\"></script> \n\n\n<div id=\"log\">Test passed</div>\n\n...\n<script>\n$(\"#log\").html(\n    $(\"element[attribute='<div><strong>you should not see this</strong></div>']\").html()\n);\n</script>\n...",
     "total": "Number of jQuery methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

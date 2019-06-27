@@ -12,6 +12,7 @@
     "remediationSample": "JAVA Configuration\nprotected void configure(HttpSecurity http) throws Exception {\n      http.authorizeRequests()\n        .anyRequest().authenticated() // Autentication Request\n        .and().httpBasic() // HTTP Basic Authentication\n}\n\n------------------\n\nXML configuration:\n\nhttp\n    intercept-url pattern=\"/**\" access=\"authenticated\"\n    http-basic\nhttp",
     "sample": "JAVA Configuration\n\nprotected void configure(HttpSecurity http) throws Exception {\n      http.authorizeRequests() // Authorization is made without any authentication request\n\n}\n------------------------------\nXML Configuration\n\nhttp\n    intercept-url pattern=\"/**\" access=\"authenticated\"\nhttp",
     "total": "Number of Java Methods and Xml tags",
+    "alternativeName": "Ensure that any application request is authenticated with HTTP basic",
     "businessCriteria": [
         {
             "id": 20140522,

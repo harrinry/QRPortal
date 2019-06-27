@@ -13,6 +13,7 @@
     "remediationSample": "WindowsIdentity identity = ServiceSecurityContext.Current.WindowsIdentity;\nusing (identity.Impersonate())\n{\n    // Run code under the caller's identity.\n}",
     "sample": "WindowsIdentity identity = ServiceSecurityContext.Current.WindowsIdentity;\nidentity.Impersonate()\n{\n    // Run code under the caller's identity.\n}",
     "total": "Number of Methods using Impersonation",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

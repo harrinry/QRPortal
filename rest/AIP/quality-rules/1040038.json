@@ -9,6 +9,7 @@
     "remediation": "Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x can use the MVC Java config or the MVC namespace to set trimTokens property of AntPathMatcher to \u201cfalse\u201d.\n\nApplications using Spring Security and Spring MVC upgrade to Spring Security 4.1.1+ and Spring Framework 4.3.1+ and use the MvcRequestMatcher.\n\nRefer to Pivotal\u2019s CVE-2016-5007 report for detailed mitigations.",
     "remediationSample": "<!-- Setting PathMatcher. -->\n    <bean id=\"pathMatcher\" class=\"org.springframework.util.AntPathMatcher\">\n        <property name=\"trimTokens\" value=\"false\" />\n    </bean>\n\n--------\n@Configuration\n@EnableSecurityCheck\npublic class SecurityChkConfig extends WebMvcConfigurerAdapter {\n\n  @Bean\n  public PathMatcher pathMatcher() {\n\n    AntPathMatcher pathMatcher = new AntPathMatcher();\n    pathMatcher.setTrimTokens(false);\n    return pathMatcher;\n  }\n\n  @Override\n  public void configurePathMatch(PathMatchConfigurer configurer) {        \n    configurer.setPathMatcher(pathMatcher());\n  }\n}",
     "sample": "<!-- Setting PathMatcher. -->\n    <bean id=\"pathMatcher\" class=\"org.springframework.util.AntPathMatcher\">\n        <property name=\"trimTokens\" />\n    </bean>\n\ndefault configurations is set to True.",
+    "alternativeName": "Ensure not using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
     "businessCriteria": [
         {
             "id": 20140522,

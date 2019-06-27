@@ -12,6 +12,7 @@
     "remediationSample": "<?php\nclass Test\n{\n  function testOperator()\n  {\n    $a = \"1\";\n    if ($a === \"1\")  //violation removed\n   {\n   echo \"this is true\";\n    }\n  }\n}\n$test = new Test();\n$test-> testOperator();\n?>",
     "sample": "<?php\nclass Test\n{\n function testOperator()\n {\n  $a = \"1\";\n  if ($a == \"1\")      //violation\n  {\n   echo \"this is false\";  \n  }\n }\n}\n$test = new Test();\n$test-> testOperator();\n?>",
     "total": "Number of artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

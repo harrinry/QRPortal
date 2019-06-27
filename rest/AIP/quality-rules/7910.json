@@ -9,6 +9,7 @@
     "reference": "OWASP\nhttp://www.owasp.org/index.php/Return_Inside_Finally_Block\n\nCERT\nhttps://www.securecoding.cert.org/confluence/display/java/ERR04-J.+Do+not+exit+abruptly+from+a+finally+block\n\nPuzzle 36: Indecision from the book \"Java Puzzlers: Traps, Pitfalls, and Corner Cases\"  By Joshua Bloch, Neal Gafter\nhttp://www.javapuzzlers.com/",
     "sample": "try {\n   ...\n   throw IllegalArgumentException();\n}\nfinally {\n  // VIOLATION: the IllegalArgumentException will never be delivered to the caller. The finally block will cause the exception to be discarded. \n  return r;\n}",
     "total": "Number of methods that have a finally block",
+    "alternativeName": "Ensure not using jump statements inside a finally block so that any exceptions to be thrown by try catch block are not discarded",
     "businessCriteria": [
         {
             "id": 20140522,

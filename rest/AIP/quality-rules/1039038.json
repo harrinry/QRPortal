@@ -12,6 +12,7 @@
     "remediationSample": "DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();\ndf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);\nDocumentBuilder builder = df.newDocumentBuilder();\n\n[...]\n\nxPathExpr.evaluate( builder.parse(inputStream) );",
     "sample": "DocumentBuilder builder = df.newDocumentBuilder();\n\nXPathFactory xPathFactory = XPathFactory.newInstance();\nXPath xpath = xPathFactory.newXPath();\nXPathExpression xPathExpr = xpath.compile(\"/somepath/text()\");\n\nxPathExpr.evaluate(new InputSource(inputStream));",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to preceed the call of XPathFactory by a call to the secure mode of the parser",
     "businessCriteria": [
         {
             "id": 66031,

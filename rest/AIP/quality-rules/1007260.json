@@ -12,6 +12,7 @@
     "remediationSample": "<?php\n\n$pass = $_GET[\"password\"];\nexec(\"/bin/cat /usr/share/dict/words | grep \" . escapeshellcmd($pass), $output, $status);\n\n?>",
     "sample": "<?php\n\n$pass = $_GET[\"password\"];\nexec(\"/bin/cat /usr/share/dict/words | grep \" . $pass, $output, $status);\n\n\n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

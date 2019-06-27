@@ -11,6 +11,7 @@
     "remediation": "Avoid using the function dangerouslySetInnerHTML",
     "sample": "function createMarkup() {\n  return {__html: 'First &middot; Second'};\n}\n\nfunction MyComponent() {\n  return <div dangerouslySetInnerHTML={createMarkup()} />;\n}",
     "total": "Number of ReactJS components",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

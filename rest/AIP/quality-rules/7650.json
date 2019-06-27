@@ -12,6 +12,7 @@
     "remediationSample": "---> 1st solution\npublic static  final class  SomeType implements Serializable {} // FIXED\n\npublic class SerializableField implements Serializable {\n    private String str;\n    private SomeType field;\n}\n\n---> 2nd solution\npublic static  final class  SomeType {} \n\npublic class SerializableField implements Serializable {\n    private String str;\n    private transient SomeType field; // FIXED\n}",
     "sample": "public static  final class  SomeType {}\n\npublic class SerializableField implements Serializable {\n    private String str;\n    private SomeType field; // VIOLATION\n}",
     "total": "Number of non-static, non-transient and not primitive fields of classes that implement Serializable",
+    "alternativeName": "ensure that lll types of a serializable Class are serializable",
     "businessCriteria": [
         {
             "id": 20140522,

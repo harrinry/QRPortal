@@ -12,6 +12,7 @@
     "remediationSample": " \nCipher cipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n        cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);\n        byte[] encrypted = cipher.doFinal(clean); \n",
     "sample": "// Create a DES key object specification from the raw data\nDESKeySpec dks = new DESKeySpec(Hex.fromString(keyString));\n// Create a key factory and use it to turn the DESKeySpec into\n// a SecretKey object\nSecretKeyFactory keyFactory = SecretKeyFactory.getInstance(\"DES\");\nSecretKey key = keyFactory.generateSecret( dks );\nCipher cipher = Cipher.getInstance(\"DES/ECB/NoPadding\");\n// Initialize the cipher with the key\ncipher.init( Cipher.ENCRYPT_MODE, key, sr );\nbyte[] data = Hex.fromString(plainData); \n",
     "total": "Number of Java methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

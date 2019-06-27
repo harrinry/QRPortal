@@ -12,6 +12,7 @@
     "remediationSample": "* If INPUT-REC-TYPE = 0 then INPUT-COUNT is \n* incremented.\n     IF NOT INPUT-EOF\n        IF INPUT-REC-TYPE = '55'\n           PERFORM 2100-PROCESS-WTN\n        ELSE\n           CONTINUE\n        END-IF\n        ADD +1 TO INPUT-COUNT.",
     "sample": "* If INPUT-REC-TYPE = 0 then INPUT-COUNT is not \n* incremented...\n     IF NOT INPUT-EOF\n        IF INPUT-REC-TYPE = '55'\n           PERFORM 2100-PROCESS-WTN\n        ELSE\n           NEXT SENTENCE\n        END-IF\n        ADD +1 TO INPUT-COUNT.",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

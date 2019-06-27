@@ -10,6 +10,7 @@
     "remediationSample": "Use join with null check:\n\nSELECT o.id\nFROM purchase AS o LEFT OUTER\nJOIN tcggamesummary AS g\nON g.id = o.id\nWHERE o.date < TODAY - 365\nAND g.id IS NULL;",
     "sample": "SELECT o.id\nFROM purchase AS o\nWHERE o.date < TODAY - 365\nAND NOT EXISTS\n(\nSELECT g.id\nFROM tcggamesummary AS g\nWHERE g.id = o.id\n);",
     "total": "Total number of RPG400 Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

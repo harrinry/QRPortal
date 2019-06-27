@@ -12,6 +12,7 @@
     "remediationSample": "----> Spring XML file\n// FIXED with Spring\n<beans>\n     <bean name=\"theInterface\"\n          class=\"MyConcrete\">\n</beans>\n\n----> Java Client code\nInputStream is = new FileInputStream(\"spring_beans.xml\");\nBeanFactory factory = new XmlBeanFactory(is);\n\nMyInterface theInterface = (MyInterface) factory.getBean(\"theInterface\");\nString name = theInterface.getAName();",
     "sample": "-----> MyInterface.java\ninterface MyInterface {\n  public String getAName();\n}\n-----> MyConcrete.java\nclass MyConcrete extends MyInterface {\n  public MyConcrete() {\n    ...\n  }\n  public String getAName() {\n    ...\n  }\n}\n-----> MyFactory.java\n// VIOLATION: the factory pattern is detected\nclass MyFactory {\n  private MyFactory() {\n    ...\n  }\n  public static MyInterface getMyInterface () {\n    ...\n  }\n}\n----> Java Client code\nMyInterface theInterface = MyFactory.getMyInterface ();\nString name = theInterface.getAName();",
     "total": "Number of Java singleton, factory and Spring beans when Spring is used",
+    "alternativeName": "Ensure that singleton or factory are not defined when using Spring",
     "businessCriteria": [
         {
             "id": 66032,

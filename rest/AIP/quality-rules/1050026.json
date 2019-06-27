@@ -12,6 +12,7 @@
     "remediationSample": "+ (instancetype)sharedInstance {\n    static id sharedInstance = nil;\n\n    static dispatch_once_t onceToken;\n    dispatch_once(&onceToken, ^{\n        sharedInstance = [[[self class] alloc] init];\n    });\n\n    return sharedInstance;\n}",
     "sample": "+ (instancetype)sharedInstance {\n    static id sharedInstance = nil;\n\n    sharedInstance = [[[self class] alloc] init];\n\n    return sharedInstance;\n}",
     "total": "Number of Objective-C artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 66031,

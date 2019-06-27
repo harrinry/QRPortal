@@ -12,6 +12,7 @@
     "remediationSample": "1/ synchronized the method getHelper()\n class Foo { \n   private Helper helper = null;\n   public synchronized Helper getHelper() {\n     if (helper == null) \n         helper = new Helper();\n     return helper;\n   }\n2/ declare the field as static\n class Foo { \n   private static Helper helper = new Helper();\n   public Helper getHelper() {\n     return helper;\n   }",
     "sample": "class Foo { \n  private Helper helper = null;\n  public Helper getHelper() {\n    if (helper == null) {\n      synchronized(this) {\n        if (helper == null) {\n          helper = new Helper();\n        }    \n      }    \n    }    \n    return helper;\n  }\n}",
     "total": "Number of methods that are synchronized or use the synchronized keyword",
+    "alternativeName": "Prefer not using Double checked locking for JSE 4.x and previous version",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,6 +11,7 @@
     "remediationSample": "------> Sample.java:\npublic class Sample {\n   private long id;\n   private String name;\n   ...\n   public String getName() {\n      return name;\n   }\n\n   public Long getId() {\n      return id;\n   }\n\n    public boolean equals(Object other) {\n        if (this==other) return true;\n        if ( !(other instanceof Sample) ) return false;\n        final Sample that = (Sample) other;\n        return this.getName().equals( that.getName()); // FIXED\n    }\n}",
     "sample": "------> sample.hbm.xml:\n...\n<class name=\"Sample\" table=\"SAMPLE\">\n           <id name=\"id\" column=\"id\" type=\"long\">\n                  <generator class=\"sequence\"/>\n           </id>\n           <property name=\"name\" column=\"NAME\" type=\"string\"/>\n...\n</class>\n\n------> Sample.java:\npublic class Sample {\n   private long id;\n   private String name;\n...\n   public String getName() {\n      return name;\n   }\n\n   public Long getId() {\n      return id;\n   }\n\n    public boolean equals(Object other) {\n        if (this==other) return true;\n        if ( !(other instanceof Sample) ) return false;\n        final Sample that = (Sample) other;\n        return this.getId().equals( that.getId()); // VIOLATION\n    }\n}",
     "total": "Total number of persistent class's method's equals()",
+    "alternativeName": "Ensure that references to the id in the persistent class's method equals() are not used",
     "businessCriteria": [
         {
             "id": 20140522,

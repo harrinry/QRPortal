@@ -12,6 +12,7 @@
     "remediationSample": "public class MyClassUtility\n{\n      static public bool MyUtilityFunction() {\n            // Do Something Usefull \n            return true;\n      }\n\n      private MyUtilityClass() {  // FIXED\n            // Avoid instantiation of the class\n      }\n      static int UtilityCount;\n}",
     "sample": "public class MyClassUtility\n{\n      static public bool MyUtilityFunction() {\n            // Do Something Usefull \n            return true;\n      }\n\n      static int UtilityCount;\n}  // VIOLATION",
     "total": "Number of utility classes (all their fields and methods are static)",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

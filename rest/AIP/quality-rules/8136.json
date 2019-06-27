@@ -12,6 +12,7 @@
     "remediationSample": "\npublic class Producer{\n\n  @Produces\n  @Dependent\n  @Named(\"stringProvider\")\n  public static String getStringId()\n  {\n  return \"SomeStaticID\";\n  }\n}\n\n \n@Named\npublic class MyBean \n{\n  @Named(\"stringProvider\")\n  private String id;\n}\n     ",
     "sample": "\npublic class Producer{\n  @Produces\n  @SessionScoped\n  @Named(\"stringProvider\")\n  public static String getStringId()\n  {\n     return \"SomeStaticID\";\n  }\n}\n\n \n@Named\npublic class MyBean \n{\n  @Named(\"stringProvider\")\n  private String id;\n}\n    ",
     "total": "Number of violations",
+    "alternativeName": "Ensure to have Beans with normal scope proxyable",
     "businessCriteria": [
         {
             "id": 20140522,

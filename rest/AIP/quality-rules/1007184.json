@@ -10,6 +10,7 @@
     "remediation": "Try to reduce artifacts that use size functions inside loops.",
     "sample": "<?php\n      \nclass Test\n   {\n      public function testNames($names) {\n         for($counter = 0; $counter < count($names); $counter++) { //violation\n            if (10 < strlen($names[$counter])) { //violation\n               if (100 > sizeof($names)) { //violation\n                  break;\n               }\n            } \n         }\n      }\n   }\n                           \n   $obj = new Test();\n   $obj->testNames(array(\"first name\", \"second name\", \"third name\"));\n   \n?>",
     "total": "Number of Artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

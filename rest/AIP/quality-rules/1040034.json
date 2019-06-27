@@ -12,6 +12,7 @@
     "remediationSample": "<b:bean id=\"httpFirewall\"\n      class=\"org.springframework.security.web.firewall.StrictHttpFirewall\"\n      p:allowSemicolon=\"true\"/>\n\n<http-firewall ref=\"httpFirewall\"/>\n\nThe same thing can be achieved with Java Configuration by exposing a bean.\n\n@Bean\npublic StrictHttpFirewall httpFirewall() {\n    StrictHttpFirewall firewall = new StrictHttpFirewall();\n    firewall.setAllowSemicolon(true);\n    return firewall;\n}",
     "sample": "In the XML configutaion:\n\n<b:bean id=\"httpFirewall\"\n      class=\"org.springframework.security.web.firewall.DefaultHttpFirewall\"\n      p:allowSemicolon=\"true\"/>\n\n<http-firewall ref=\"httpFirewall\"/>\n\n\n\nThe same thing can be achieved with Java Configuration by exposing a bean.\n\n@Bean\npublic DefaultHttpFirewall httpFirewall() {\n    DefaultHttpFirewall firewall = new DefaultHttpFirewall();\n    firewall.setAllowSemicolon(true);\n    return firewall;\n}",
     "total": "Number of Java Project and JSP Project",
+    "alternativeName": "Ensure setting \"StrictHttpFirewall\" as Http Firewall before Spring 5.0.1, 4.2.4, and 4.1.5 to reject requests that appear to be malicious.",
     "businessCriteria": [
         {
             "id": 66031,

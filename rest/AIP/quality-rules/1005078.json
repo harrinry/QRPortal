@@ -10,6 +10,7 @@
     "remediationSample": "try   // FIXED\n   call \"abcd\";\n  onException\n   writestdout(\"Error on call to abcd failed\");\n   writestdout(\"sysvar.errorcode = \" + sysvar.errorCode);\n end\n  writestdout(\"programming continuing after call to abcd\");",
     "sample": "call \"abcd\";  // VIOLATION\n  onException\n   writestdout(\"Error on call to abcd failed\");\n   writestdout(\"sysvar.errorcode = \" + sysvar.errorCode);\n \n  writestdout(\"programming continuing after call to abcd\");",
     "total": "Number of Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

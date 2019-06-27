@@ -12,6 +12,7 @@
     "remediationSample": "same code, without the test for If %Component, inside the Component definition itself.",
     "sample": "inside a RecordFieldEvent, for instance RowInit :\n\nIf %Component = \"AE_TEMPTBL_USE\" Then // VIOLATION\n&SQL = GetSQL(SQL.RECUSE_BITCHECK, PSAEAPPLDEFN.AE_APPLID, 1);\nIf &SQL.Fetch(&CHK) Then\nAE_DERIVED.AE_TEMP_ABORT_FLAG = &CHK;\nElse\nAE_DERIVED.AE_TEMP_ABORT_FLAG = \"N\";\nEnd-If;\n&SQL.Close();\nEnd-If;",
     "total": "Number of PeopleSoft Events, Functions and Methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

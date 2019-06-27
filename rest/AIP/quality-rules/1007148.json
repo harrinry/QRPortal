@@ -11,6 +11,7 @@
     "remediation": "Modify the source code to avoid having overridden method and constructor containing only parent artifact call without adding any new functionality or behaviour.",
     "sample": "<?php\nclass A {\n    public function Foo($bar = 1)\n    {\n        echo \"something\";\n   }\n}\n\nclass B extends A {\n    public function Foo($bar = 2)\n    {\n        parent::Foo($bar);\n    }\n}\n$obj = new A();\n$obj-> Foo(1);\n?>",
     "total": "Number of Methods and Constructors",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,

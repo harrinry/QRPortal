@@ -12,6 +12,7 @@
     "remediationSample": "* Example 1\n       DATA DIVISION.\n       FILE SECTION.\n       FD FICIN LABEL RECORDS ARE STANDARD\n                BLOCK CONTAINS 0.\n       01 FICIN-REC PIC X(80).\n      * Example 2\n       DATA DIVISION.\n       FILE SECTION.\n       FD FICIN LABEL RECORDS ARE STANDARD\n                BLOCK CONTAINS 0 RECORDS.\n       01 FICIN-REC PIC X(80).",
     "sample": "* Example 1 - Block size will not be optimized by system \n       DATA DIVISION.\n       FILE SECTION.\n       FD FICIN LABEL RECORDS ARE STANDARD.\n       01 FICIN-REC PIC X(80).\n      * Example 2 - Block size will not be optimized by system\n       DATA DIVISION.\n       FILE SECTION.\n       FD FICIN LABEL RECORDS ARE STANDARD\n                      BLOCK CONTAINS 10 RECORDS.\n       01 FICIN-REC PIC X(80).\n      * Example 3 - Block sizes will be optimized by system\n       DATA DIVISION.\n       FILE SECTION.\n       FD FICIN-1 LABEL RECORDS ARE STANDARD\n                  BLOCK CONTAINS 0 RECORDS.\n       01 FICIN-1-REC PIC X(80).\n       FD FICIN-2 LABEL RECORDS ARE STANDARD\n                  BLOCK CONTAINS 0 CHARACTERS.\n       01 FICIN-2-REC PIC X(80).\n       FD FICIN-3 LABEL RECORDS ARE STANDARD\n                  BLOCK CONTAINS 0.\n       01 FICIN-3-REC PIC X(80).",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

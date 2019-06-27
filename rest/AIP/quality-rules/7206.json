@@ -12,6 +12,7 @@
     "remediationSample": "class BaseExample { ... }\nclass Example1 extends BaseExample { ... }\nclass Examplet2 extends BaseExample { ... }\n\nclass Test {\n  BaseExample[] exList;\n  void method () {\n     for (int i = exList.length-1; i >= 0; i--) {\n       // common method to refactor aMethod1 and aMethod2\n        exList[i]).commonMethod(); // FIXED\n       } \n     }\n  }\n}",
     "sample": "class BaseExample { ... }\nclass Example1 extends BaseExample { ... }\nclass Example2 extends BaseExample { ... }\n\nclass Test {\n  BaseExample[] exList;\n  void method () {\n     for (int i = exList.length-1; i >= 0; i--) {\n        if (exList[i] instanceof Example1) { // VIOLATION\n          ((Example1) exList[i]).aMethod1();\n       } elseif (exList[i] instanceof Example2) { // VIOLATION\n         ((Example2) exList[i]).aMethod2();\n     }\n  }\n}",
     "total": "Number of methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60014,

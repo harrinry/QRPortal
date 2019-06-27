@@ -10,6 +10,7 @@
     "remediation": "Change the architecture of the application.",
     "sample": "public static void Main() { \n        Console.WriteLine(\"Main thread: Start a second thread.\"); \n        // The constructor for the Thread class requires a ThreadStart \n        // delegate that represents the method to be executed on the \n        // thread. C# simplifies the creation of this delegate. \n        Thread t = new Thread(new ThreadStart(ThreadProc)); \n\n        // Start ThreadProc. Note that on a uniprocessor, the new \n        // thread does not get any processor time until the main thread \n        // is preempted or yields. Uncomment the Thread.Sleep that \n        // follows t.Start() to see the difference. \n        t.Start(); \n        //Thread.Sleep(0); \n\n        for (int i = 0; i < 4; i++) { \n            Console.WriteLine(\"Main thread: Do some work.\"); \n            Thread.Sleep(0); \n        } \n\n        Console.WriteLine(\"Main thread: Call Join(), to wait until ThreadProc ends.\"); \n        t.Join(); \n        Console.WriteLine(\"Main thread: ThreadProc.Join has returned. Press Enter to end program.\"); \n        Console.ReadLine(); \n    }\n  ",
     "total": "Number of artifacts",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,6 +12,7 @@
     "remediationSample": "public void parseXML(InputStream input) throws XMLStreamException {\n\n    XMLInputFactory factory = XMLInputFactory.newFactory();\n    factory.setProperty(XMLInputFactory.IS_SUPPORTING_EXTERNAL_ENTITIES, false);\n    XMLStreamReader reader = factory.createXMLStreamReader(input);\n    [...]\n}",
     "sample": "public void parseXML(InputStream input) throws XMLStreamException {\n\n    XMLInputFactory factory = XMLInputFactory.newFactory();\n    XMLStreamReader reader = factory.createXMLStreamReader(input);\n    [...]\n}",
     "total": "Number of Java artifacts",
+    "alternativeName": "Ensure to preceed the call of XMLStreamReader by a call to the secure mode of the parser",
     "businessCriteria": [
         {
             "id": 66031,

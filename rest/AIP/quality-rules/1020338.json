@@ -12,6 +12,7 @@
     "remediationSample": "// version of the jquery ui library is NOT vulnerable\n<script src=\"https://code.jquery.com/ui/1.10.0/jquery-ui.js\"></script> \n...\n$( element )\n.attr( \"title\", '<script type=\"text/javascript\">alert(\"XSS\");</script>')\n.tooltip( \"open\" );\n..",
     "sample": "// version of the jquery ui library is vulnerable\n<script src=\"https://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script> \n...\n$( element )\n.attr( \"title\", '<script type=\"text/javascript\">alert(\"XSS\");</script>')\n.tooltip( \"open\" );\n..",
     "total": "Number of jQuery methods",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 20140522,

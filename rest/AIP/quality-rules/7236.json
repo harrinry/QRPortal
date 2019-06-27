@@ -12,6 +12,7 @@
     "remediationSample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01 UNTIL A = 13.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.",
     "sample": "PROCEDURE DIVISION.\n       PROCESS.\n           MOVE 0 TO A.\n           PERFORM PROC-01.\n           GOBACK.\n\n       PROC-01.\n           ADD 1 TO A.\n      * If condition is true then there is a recursive call\n           IF A < 13 THEN\n               PERFORM PROC-01\n           END-IF",
     "total": "Number of Cobol Programs",
+    "alternativeName": null,
     "businessCriteria": [
         {
             "id": 60012,
