@@ -12,7 +12,7 @@
     "remediation": "Change access modifier to \"private\", \"internal\"or \"private protected\"",
     "remediationSample": "using System;\nusing System.Runtime.InteropServices;\n\nnamespace InteroperabilityLibrary\n{\n    public class NativeMethods\n    {\n        [DllImport(\"kernel32.dll\", CharSet = CharSet.Unicode)]\n        private static extern bool RemoveDirectory(string name);\n    }\n}",
     "sample": "Will flag a violation if \"public\" or \"protected\" or \"protected internal\" access modifiers are used for P/Invoke declarations\n\nusing System;\nusing System.Runtime.InteropServices;\n\nnamespace InteroperabilityLibrary\n{ \n    public class NativeMethods\n    {\n        [DllImport(\"kernel32.dll\", CharSet = CharSet.Unicode)]\n        public static extern bool RemoveDirectory(string name);\n    }\n}",
-    "total": "Number of Methods using P/Invoke services with violation",
+    "total": "Number of Methods using P/Invoke services",
     "alternativeName": null,
     "businessCriteria": [
         {
