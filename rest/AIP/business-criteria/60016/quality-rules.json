@@ -895,16 +895,6 @@
         ]
     },
     {
-        "id": 7244,
-        "name": "Avoid direct usage of EJB Entity from the client",
-        "href": "AIP/quality-rules/7244",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 7250,
         "name": "Avoid String initialization with String object (created using the 'new' keyword)",
         "href": "AIP/quality-rules/7250",
@@ -1064,16 +1054,6 @@
         "href": "AIP/quality-rules/7362",
         "status": null,
         "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7364,
-        "name": "Avoid multiple validation form with the same name",
-        "href": "AIP/quality-rules/7364",
-        "status": null,
-        "critical": false,
         "technologyNames": [
             "JEE"
         ]
@@ -2853,7 +2833,7 @@
     },
     {
         "id": 8238,
-        "name": "Trust boundary violation",
+        "name": "Avoid mixing trusted and untrusted data in HTTP requests",
         "href": "AIP/quality-rules/8238",
         "status": null,
         "critical": true,
@@ -2884,6 +2864,17 @@
         "technologyNames": [
             "C#",
             "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
             "VB.NET"
         ]
     },
@@ -2951,7 +2942,7 @@
         "name": "Avoid NoSQL injection on MongoDB (C#)",
         "href": "AIP/quality-rules/8418",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -2962,7 +2953,7 @@
         "name": "Avoid second order SQL injection",
         "href": "AIP/quality-rules/8420",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "JEE",

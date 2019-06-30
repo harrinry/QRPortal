@@ -2,12 +2,11 @@
     "id": 8418,
     "name": "Avoid NoSQL injection on MongoDB (C#)",
     "href": "AIP/quality-rules/8418",
-    "critical": false,
-    "maxWeight": 9,
+    "critical": true,
     "associatedValueName": "Call stack from user input source down to the target SQL execution method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is sent to No-SQL database without prior validation and sanitization.",
     "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target SQL execution method.",
-    "rationale": "In web based applications, the validation of all user input is critical to avoid major security problems that would come from the injection flaws.\n\nTo avoid the creation of injection flaws, the Open Web Application Security Project (OWASP) recommends the validation of all user input:\n\"Use a standard input validation mechanism to validate all input data for length, type, syntax, and business rules before accepting the data to be displayed or stored. Use an \"accept known good\" validation strategy. Reject invalid input rather than attempting to sanitize potentially hostile data. Do not forget that error messages might also include invalid data\"\n\nThe Common Weakness Enumeration defines Improper Input Validation (CWE-20) as follows:\n\n\"When software does not validate input properly, an attacker is able to craft the input in a form that is not expected by the rest of the application. This will lead to parts of the system receiving unintended input, which may result in altered control flow, arbitrary control of a resource, or arbitrary code execution.\"",
+    "rationale": "The software constructs all or part of No-SQL command via user-controllable inputs. These inputs are not neutralized or are incorrectly neutralized. As a consequence, the No-SQL command may be completely altered.",
     "reference": "http://cwe.mitre.org/data/definitions/89.html",
     "remediation": "Use authorized sanitization methods.\nDo not expose sensible methods.",
     "remediationSample": "Use authorized sanitization methods.\nDo not expose sensible methods.",
@@ -31,7 +30,7 @@
             "id": 66062,
             "name": "Secure Coding - Input Validation",
             "weight": 9,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
