@@ -12,7 +12,7 @@
     "remediationSample": "public class Category {\n  ...\n  private List theList;\n\n  public void setTheList(List myList) {\n    theList =myList ; // FIXED\n  }\n\n  public List getTheList() {\n    return theList; // FIXED\n  }\n...\n}",
     "sample": "public class Category {\n  ...\n  private List theList;\n\n  public void setTheList(List myList) {\n    theList =new ArrayList(myList) ; // VIOLATION\n  }\n\n  public List getTheList() {\n    return new ArrayList(theList); // VIOLATION\n  }\n...\n}",
     "total": "Number of hibernate or JPA persistent fields setters and getters that have a Collection as parameter or return value",
-    "alternativeName": null,
+    "alternativeName": "Ensure to have the same collection between the getter and the setter",
     "businessCriteria": [
         {
             "id": 60014,

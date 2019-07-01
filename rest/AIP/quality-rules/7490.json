@@ -12,7 +12,7 @@
     "remediationSample": "---> sample.hbm.xml\n// FIXED\n<class name=\"Sample\" table=\"SAMPLE\"\nselect-before-update=\"true\">\n...\n</class>",
     "sample": "SAMPLE is a table managed by an UPDATE trigger\n---> sample.hbm.xml\n// VIOLATION\n<class name=\"Sample\" table=\"SAMPLE\">\n...\n</class>",
     "total": "Number of Hibernate XML classes associated to a table managed by a trigger",
-    "alternativeName": null,
+    "alternativeName": "Ensure to use the attribute select-before-update for the persistent class associated to a table that have the UPDATE trigger in order to not have UPDATE trigger when not necessary",
     "businessCriteria": [
         {
             "id": 60014,

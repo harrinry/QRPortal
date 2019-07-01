@@ -11,7 +11,7 @@
     "remediationSample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // FIXED\n    <set name=\"b_items\" lazy=\"true\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
     "sample": "<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\">\n      <generator class=\"increment\"/>\n    </id>\n\n    // VIOLATION (it could have been lazy = \"false\")\n    <set name=\"b_items\" table =\"B\"> \n      <key column=\"B_ID\"/>\n      <one-to-many class=\"B\"/>\n    </array>\n  </class>\n\n</hibernate-mapping>",
     "total": "Number of Hibernate entity properties or JPA entity properties of type collection",
-    "alternativeName": "Ensure to to use a lazy fetching strategy when the table contains lot of rows",
+    "alternativeName": "Ensure to use a lazy fetching strategy when the table contains lot of rows",
     "businessCriteria": [
         {
             "id": 60014,

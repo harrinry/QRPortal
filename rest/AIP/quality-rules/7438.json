@@ -11,7 +11,7 @@
     "remediationSample": "1/ declare a static final field\nclass Singleton\n{\n  private static final Singleton instance = new Singleton(); // FIXED\n  private Singleton() {}\n  public static Singleton getInstance() { \n    return instance;\n  }\n}\n\n2/ synchronize the method\nclass Singleton\n{\n  private static Singleton instance;\n  private Singleton() {}\n  public static synchronized Singleton getInstance() { \n    if (instance == null)              \n      instance = new Singleton();\n    return instance;\n  }",
     "sample": "class Singleton\n{\n  private static Singleton instance;\n  private Singleton() {}\n  public static Singleton getInstance() { \n    if (instance == null)                    // VIOLATION\n      instance = new Singleton();\n    return instance;\n  }\n}",
     "total": "Number of singleton classes (as defined in the definition)",
-    "alternativeName": null,
+    "alternativeName": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
     "businessCriteria": [
         {
             "id": 20140522,

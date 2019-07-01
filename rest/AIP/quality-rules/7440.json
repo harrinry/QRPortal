@@ -12,7 +12,7 @@
     "remediationSample": "class Example {\n   int firstMethod (String str) {...}\n   void secondMethod (int value, boolean b) {...}\n}\n\nclass ExampleExtended extends Example{\n   @Override     // only for JSE 5 or later\n   int firstMethod (String str) {...}  // FIXED\n\n   @Override     // only for JSE 5 or later\n   void secondMethod (int value, boolean b) {...} // FIXED\n}",
     "sample": "class Example {\n   int firstMethod (String str) {...}\n   void secondMethod (int value, boolean b) {...}\n}\n\nclass ExampleExtended extends Example{\n   int firstmethod (String str) {...}  // VIOLATION because of 'm' that is not in uppercase as the parent class method\n   void secondMethod (int value) {...} // VIOLATION\n}",
     "total": "Number of methods that fails and methods that override a method from a superclass",
-    "alternativeName": null,
+    "alternativeName": "Ensure to fix the name of the method or the signature",
     "businessCriteria": [
         {
             "id": 66031,

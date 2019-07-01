@@ -12,7 +12,7 @@
     "remediation": "In Hibernate, you can map the association class as an entity and map two one-to-many associations for either side.",
     "sample": "<class name=\"A\" table=\"A\"> \n    ...  \n    <set name=\"B\" table=\"B\">  \n        <key column=\"A_ID\"/> \n        <many-to-many column=\"B_ID\" class=\"B\"/> // VIOLATION\n    </set> \n</class>",
     "total": "Number of hibernate or JPA entity that are associated to other entity through one-to-many, many-to-one, one-to-one and many-to-many",
-    "alternativeName": "Ensure to  map the association class as an entity and map two one-to-many associations for either side",
+    "alternativeName": "Ensure to map the association class as an entity and map two one-to-many associations for either side",
     "businessCriteria": [
         {
             "id": 66032,
