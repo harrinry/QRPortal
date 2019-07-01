@@ -12,7 +12,7 @@
     "remediationSample": "As of Spring Security 4.0, CSRF protection is enabled by default with XML configuration.\nhttp\n    csrf disabled=\"false\"\nhttp\n_____________\nIn the older XML config (pre Spring Security 4), CSRF protection was disabled by default and we could enable it as follows:\n\n{code}\nhttp\n    ...\n    csrf\nhttp\n{code}",
     "sample": "As of Spring Security 4.0, CSRF protection is enabled by default with XML configuration. If you would like to disable CSRF protection, the corresponding XML configuration can be seen below.\nhttp\n    csrf disabled=\"true\"\nhttp\n-------------------\nIn the older XML config (pre Spring Security 4), CSRF protection was disabled by default.\n--------------------\nJAVA Configuration :\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n        @Override\n        protected void configure(HttpSecurity http) throws Exception {\n              http\n              .csrf().disable();     //CSRF Protection is disabled\n       }\n}",
     "total": "Number of Java Methods and Xml tags",
-    "alternativeName": "Ensure acitvating Spring Security CSRF Protection",
+    "alternativeName": "Ensure you have not disabled Spring Security CSRF protection",
     "businessCriteria": [
         {
             "id": 66031,
