@@ -12,7 +12,7 @@
     "remediationSample": "Public class BaseApplicationAction extends Action\n{\n// FIXED\npublic ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception\n[...]\n}",
     "sample": "Public class BaseApplicationAction extends Action\n{\nstatic int StaticField; // VIOLATION\nlong Id;                     // VIOLATION\n\npublic ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception\n[...]\n}",
     "total": "Number of Action Classes",
-    "alternativeName": null,
+    "alternativeName": "Ensure to use use local variables inside your methods, and pass whatever data you need to other methods in the class via parameters",
     "businessCriteria": [
         {
             "id": 20140522,

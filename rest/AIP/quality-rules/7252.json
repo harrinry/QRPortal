@@ -12,7 +12,7 @@
     "remediationSample": "class Test\n{\n // ...\n  protected void finalize() throws Throwable  {\n    try {\n      cleanup();\n    } finally { \n      super.finalize();  // FIXED: the finalize method will\n                               // execute the superclass finalizer \n                               // before re-throwing the IOException\n                               // object.\n    }\n  }",
     "sample": "class Test\n{\n // ...\n  protected void finalize() throws Throwable {\n    cleanup();\n    super.finalize(); // VIOLATION\n  }\n}",
     "total": "Number of finalize methods",
-    "alternativeName": null,
+    "alternativeName": "Ensure to add a try finally bloc",
     "businessCriteria": [
         {
             "id": 60014,

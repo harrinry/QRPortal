@@ -13,7 +13,7 @@
     "remediationSample": "Public  class MyBaseAction extends Action {\n   public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest  request, HttpServletResponse response) throws Exception {\n      //Call all common methods\n      commonTasks();\n      return executeSpecificTask(mapping,form,\n                                                   request,response);\n      }\n\n     private void commonTasks() {\n     //Code for common tasks\n    }\n\n   //Provide implementation of this method in sub-classes\n   public abstract ActionForward executeSpecificTask (ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception;\n}\n\nPublic  class MyAction extends MyBaseAction { // FIXED\n    public ActionForward executeSpecificTask (ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {\n      // some code\n   }\n}",
     "sample": "Public  class MyAction extends Action { // VIOLATION\n   public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest  request, HttpServletResponse response) throws Exception {\n      // Some code\n   }\n}",
     "total": "Number of action classes (inherit from org.apache.struts.action.Action)",
-    "alternativeName": null,
+    "alternativeName": "Ensure to have Action Class inherit from one single extension of Struts Action Class that is abstract or have an abstract method.",
     "businessCriteria": [
         {
             "id": 66032,

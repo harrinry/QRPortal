@@ -9,7 +9,7 @@
     "reference": "Sun Best Practices",
     "remediation": "Review the Class design. Store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose. For temporary storage in a Servlet use local variables that are scoped within the doGet or doPost methods (or the service method).",
     "total": "Number of fields of all classes that extend HttpServlet at any level",
-    "alternativeName": null,
+    "alternativeName": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
     "businessCriteria": [
         {
             "id": 20140522,

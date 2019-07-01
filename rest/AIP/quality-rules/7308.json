@@ -13,7 +13,7 @@
     "remediationSample": "public class MyInner {\n}\n\npublic class MyOuter {\n\n private MyInner inner;\n \n public MyInner saveInner(MyInner in) {\n  inner = in;\n  return in;\n }\n}\n\npublic class AClass extends MyOuter {\n MyOuter outer;\n \n   public MyInner saveInner(MyInner in) {\n    return outer.saveInner(in);\n   }\n}",
     "sample": "package org.test;\n\npublic class MyOuter {\n\n \n public class MyInner {\n }\n private MyInner inner;\n \n public MyInner saveInner(MyInner in) {\n  inner = in;\n  return in;\n }\n}\n\n\npublic class AClass extends MyOuter{\n MyOuter outer;\n \n   public MyInner saveInner(MyInner in) { /* VIOLATION: reference to the inner class MyInner */\n    return outer.saveInner(in);\n   }\n}",
     "total": "Number of Java artifacts",
-    "alternativeName": null,
+    "alternativeName": "Ensure to make the inner class a standard class",
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,7 +12,7 @@
     "remediationSample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward NOT vulnerable code ******/\n        //returnURL moved from path to name (safe argument)       \n        ActionForward forward6 = new ActionForward(returnURL, \"path\", true);",
     "sample": "public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException{\n    try{\n        String returnURL = request.getParameter(\"returnURL\");\n        \n        /******Struts ActionForward vulnerable code ******/\n        ActionForward forward = new ActionForward(returnURL); //VIOLATION \n        ActionForward forward2 = new ActionForward(returnURL, true); //VIOLATION \n        ActionForward forward3 = new ActionForward(\"name\", returnURL, true); //VIOLATION \n        ActionForward forward5 = new ActionForward();\n        forward5.setPath(returnURL); //VIOLATION",
     "total": "Number of Java Servlet Method",
-    "alternativeName": null,
+    "alternativeName": "Ensure not using ActionForward with untrusted data source to prevent file path disclosure",
     "businessCriteria": [
         {
             "id": 66031,

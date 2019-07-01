@@ -12,7 +12,7 @@
     "remediationSample": "<action-mappings>\n    <action path=\"/address\"\n            type=\"com.action.MainAction\"\n            name=\"myForm\"            \n            scope=\"request\" \n            input=\"/addressInput.jsp\" \n            validate=\"true\">\n        <forward name=\"success\" path=\"/addressInput.jsp\"/>\n    </action>\n</action-mappings>",
     "sample": "<action-mappings>\n    <action path=\"/address\"\n            type=\"com.action.MainAction\"\n            name=\"myForm\"            \n            scope=\"request\" \n            input=\"/addressInput.jsp\" \n            validate=\"false\">\n        <forward name=\"success\" path=\"/addressInput.jsp\"/>\n    </action>\n</action-mappings>",
     "total": "Number of field in struts1 XML Config File",
-    "alternativeName": null,
+    "alternativeName": "Ensure to enable validation for each Struts action Mapping of your application to prevent any types of attacks.",
     "businessCriteria": [
         {
             "id": 66031,
