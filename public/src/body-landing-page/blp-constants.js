@@ -28,11 +28,11 @@ export const CLASSES = {
 };
 
 export const _oIconStyle = {
-  backgroundImage: 'url(' + Imgs.logo.reflect + ')',
+  backgroundImage: 'url(' + (isEcho() ? Imgs.owllogo.reflect : Imgs.logo.reflect) + ')',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'top center',
-  backgroundSize: '80%'
+  backgroundSize: (isEcho() ? '250px' : '80%')
 };
 
-export const WELCOMETEXT = 'Welcome to CAST Rules documentation, start browsing or searching';
-export const TITLE = 'CAST Rules Documentation' + (isEcho() ? ' for Echo' : '');
+export const WELCOMETEXT = (isEcho() ? 'Welcome to CAST Echo Best Practices documentation, start browsing or searching' : 'Welcome to CAST Rules documentation, start browsing or searching');
+export const TITLE = (isEcho() ? 'Best Practices' : 'CAST Rules Documentation');

@@ -19,6 +19,10 @@ export const Imgs = {
     default: 'img/LogoStructuralRules.svg',
     reflect: 'img/LogoStructuralRulesReflect.svg'
   },
+  owllogo: {
+    default: 'img/echoowlblack.svg',
+    reflect: 'img/echoowlwithnameblack.svg'
+  },
   tiles: {
     black: 'img/tiles.svg',
     grey: 'img/tiles_grey.png'
