@@ -38,7 +38,7 @@ Router.get('/hydrate/packages', ( req, res ) => {
 
 Router.get('/hydrate', (req, res) => {
   if( req.query.q === 'packages' ) return res.redirect('/rules/hydrate/packages');
-  res.json(HydObj(req.query, /best-practices/gi.test(req.headers.referer)));
+  res.json(HydObj(req.query, /bestpractices/gi.test(req.headers.referer)));
 });
 
 Router.get('/bundle.js', (req, res)=> {

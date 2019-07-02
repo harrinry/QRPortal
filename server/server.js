@@ -46,7 +46,7 @@ app.get('/Echo*', (req, res) => {
   res.redirect( url );
 });
 
-app.get('/best-practices', (req, res) => {
+app.get('/bestpractices', (req, res) => {
   const queryValid = ValidateQuery(req.query);
   if(queryValid) {
     res.sendFile(path.resolve(__dirname, '..', 'public','index.html'), (err) => errHandler(err, res));
