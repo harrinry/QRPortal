@@ -11,7 +11,7 @@
     "remediationSample": "Add a join between children table from exists clause and person table from parent query:\n    select name \n      from person \n     where exists \n          (select 1 \n             from children \n            where children.fatherid = person.id)",
     "sample": "The following query should be reviewed:\n      select name \n        from person \n       where exists (select 1 \n                       from children)",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 60014,

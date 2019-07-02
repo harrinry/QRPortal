@@ -12,7 +12,7 @@
     "remediationSample": " \nCipher cipher = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n        cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParameterSpec);\n        byte[] encrypted = cipher.doFinal(clean); \n",
     "sample": "// Create a DES key object specification from the raw data\nDESKeySpec dks = new DESKeySpec(Hex.fromString(keyString));\n// Create a key factory and use it to turn the DESKeySpec into\n// a SecretKey object\nSecretKeyFactory keyFactory = SecretKeyFactory.getInstance(\"DES\");\nSecretKey key = keyFactory.generateSecret( dks );\nCipher cipher = Cipher.getInstance(\"DES/ECB/NoPadding\");\n// Initialize the cipher with the key\ncipher.init( Cipher.ENCRYPT_MODE, key, sr );\nbyte[] data = Hex.fromString(plainData); \n",
     "total": "Number of Java methods",
-    "alternativeName": null,
+    "alternativeName": "Ensure to use an advanced encryption algorithm and prefer avoiding DES, 3DES",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -41,6 +41,20 @@
         }
     ],
     "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-326",
+            "name": "Inadequate Encryption Strength",
+            "url": "https://cwe.mitre.org/data/definitions/326.html",
+            "description": "The software stores or transmits sensitive data using an encryption scheme that is theoretically sound, but is not strong enough for the level of protection required."
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-327",
+            "name": "Use of a Broken or Risky Cryptographic Algorithm",
+            "url": "https://cwe.mitre.org/data/definitions/327.html",
+            "description": "The use of a broken or risky cryptographic algorithm is an unnecessary risk that may result in the exposure of sensitive information."
+        },
         {
             "standard": "OWASP",
             "id": "A3-2017",

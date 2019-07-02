@@ -11,7 +11,7 @@
     "remediation": "If your application needs to share private files with other apps, you should instead use a FileProvider with the FLAG_GRANT_READ_URI_PERMISSION. For more information, see Sharing Files : https://developer.android.com/training/secure-file-sharing/\n\nYou can also use more formal mechanism for interactions such as ContentProvider, BroadcastReceiver, and Service",
     "sample": "Sample with MODE_WORLD_READABLE option \n---------------------------------------\n\n@Override\n   protected void onCreate(Bundle savedInstanceState) {\n      super.onCreate(savedInstanceState);\n      setContentView(R.layout.activity_main);\n\n      b1=(Button)findViewById(R.id.button);\n      b2=(Button)findViewById(R.id.button2);\n\n      ed1=(EditText)findViewById(R.id.editText);\n      tv=(TextView)findViewById(R.id.textView2);\n      b1.setOnClickListener(new View.OnClickListener() {\n         \n         @Override\n         public void onClick(View v) {\n            data=ed1.getText().toString();\n            try {\n               FileOutputStream fOut = openFileOutput(file,Context.MODE_WORLD_READABLE);\n               fOut.write(data.getBytes());\n               fOut.close();\n               Toast.makeText(getBaseContext(),\"file saved\",Toast.LENGTH_SHORT).show();\n            }\n            catch (Exception e) {\n               // TODO Auto-generated catch block\n               e.printStackTrace();\n            }\n         }\n      });",
     "total": "Number of Android artifacts",
-    "alternativeName": null,
+    "alternativeName": "Prefer not using MODE_WORLD_READABLE or MODE_WORLD_WRITABLE to share files with other apps",
     "businessCriteria": [
         {
             "id": 20140522,

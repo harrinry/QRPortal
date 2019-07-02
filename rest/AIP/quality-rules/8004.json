@@ -12,7 +12,7 @@
     "remediation": "The simplest solution is not to use 'delete this' at all. Objects allocated on the stack have their destructors invoked when the object goes out of scope.",
     "sample": "class SomeClass \n{\npublic:\n    void doSomething();\n    void destroy();\n    // ...\n};\n\nvoid SomeClass::destroy() \n{\n    delete this;  // Dangerous!!\n}\n\n// ...\n\nSomeClass sc;\n// ...\nsc.destroy(); // Undefined behavior",
     "total": "Number of C++ Methods/Constructors/Destructors",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 20140522,

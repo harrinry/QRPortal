@@ -12,7 +12,7 @@
     "remediationSample": "...\nstring userName = ctx.getAuthenticatedUserName();\n// validate the user input \nstring query = \"SELECT * FROM items WHERE owner = '\" + userName + \"' AND itemname = '\" + ItemName.Text + \"'\";\nsda = new SqlDataAdapter(query, conn);\nDataTable dt = new DataTable();\nsda.Fill(dt);\n...",
     "sample": "The following code dynamically constructs and executes a SQL query that searches for items matching a specified name. The query restricts the items displayed to those where owner matches the user name of the currently-authenticated user.\n\n...\nstring userName = ctx.getAuthenticatedUserName();\nstring query = \"SELECT * FROM items WHERE owner = '\" + userName + \"' AND itemname = '\" + ItemName.Text + \"'\";\nsda = new SqlDataAdapter(query, conn);\nDataTable dt = new DataTable();\nsda.Fill(dt);\n...",
     "total": "Number of methods calling user input methods",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66031,

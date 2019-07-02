@@ -11,7 +11,7 @@
     "remediation": "As of Android P (API 28) the FingerprintManager API was deprecated and Google suggests we should switch to BiometricPrompt API : https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt",
     "sample": "FingerprintManager fingerprintManager = (FingerprintManager)\n        .getSystemService(Context.FINGERPRINT_SERVICE);\n\n-------------------------------\n\nif (initCipher()) {\ncancellationSignal = new CancellationSignal();\nfingerprintManager.authenticate(new FingerprintManager.CryptoObject(cipher),\n        cancellationSignal,\n        0,     // flags\n        this,  // authentication callback \n        null); // handler\n}",
     "total": "Number of Android artifacts",
-    "alternativeName": null,
+    "alternativeName": "Prefer using BiometricPrompt API instead of FingerprintManager as the latter is deprecated",
     "businessCriteria": [
         {
             "id": 66031,

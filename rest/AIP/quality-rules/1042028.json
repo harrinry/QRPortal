@@ -12,7 +12,7 @@
     "remediationSample": "This new remote code execution vulnerability affects all supported versions of Apache Struts 2. \n- Users of Struts 2.3 are strongly advised to upgrade to 2.3.35\n- Users of Struts 2.5 need to upgrade to 2.5.17.",
     "sample": "For example, the following struts.xml configuration is potentially vulnerable becasue no namespace is specified \n\n<struts>\n\u00a0 <package> //no namespace is specified\n\u00a0\u00a0\u00a0 <action name=\"a1\">\n\u00a0\u00a0\u00a0\u00a0 \u00a0<result type=\"redirectAction\">\n\u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0<param name=\"actionName\">a2.action</param>\n\u00a0\u00a0\u00a0\u00a0\u00a0 </result>\n\u00a0\u00a0\u00a0 </action>\n \u00a0</package>\n</struts>\n\n<struts>\n  <constant name=\"struts.mapper.alwaysSelectFullNamespace\" value=\"true\" /> //alwaysSelectFullNamespace set to True\n  ...\n\n--------------------\n\nFor example, the following struts.xml configuration is potentially vulnerable because a wildcard namespace is used\n<struts>\n\u00a0 <package name=\"mypackage1\" namespace=\"/*\"> // wildcard namespace\n\u00a0\u00a0\u00a0 <action name=\"a1\">\n\u00a0\u00a0\u00a0\u00a0 \u00a0<result type=\"redirectAction\">\n\u00a0\u00a0\u00a0\u00a0\u00a0 \u00a0\u00a0<param name=\"actionName\">a2.action</param>\n\u00a0\u00a0\u00a0\u00a0\u00a0 </result>\n\u00a0\u00a0\u00a0 </action>\n \u00a0</package>\n</struts>\n\n<struts>\n  <constant name=\"struts.mapper.alwaysSelectFullNamespace\" value=\"true\" /> //alwaysSelectFullNamespace set to True\n  ...",
     "total": "Number of Field in struts2 Config XML",
-    "alternativeName": null,
+    "alternativeName": "",
     "businessCriteria": [
         {
             "id": 20140522,

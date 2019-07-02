@@ -12,7 +12,7 @@
     "remediationSample": "Review all inputs.\nDon't use inputs in formatters.",
     "sample": "public class FormatterCase {\n    FormatterCase() {}\n \n    public void printStreamFormat(String val) throws SQLException {\n        PrintStream ps = new PrintStream(new FileOutputStream(FileDescriptor.out));\n        // format a string\n        ps.printf(val, \"Hello\");// VIOLATION\n        // flush the stream\n        ps.flush();\n    }\n}\n\npublic class PrintWithReqFormat {\n        FormatterCase formatter = FormatterCase();\n \n        PrintReq() {}\n \n        public void execute(ServletRequest req) throws Exception {\n               String format = req.getParameter(\"format\");\n               formatter.printStreamFormat(format);\n       }\n}",
     "total": "Number of methods calling user input methods",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66031,

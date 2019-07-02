@@ -13,7 +13,7 @@
     "remediationSample": "class MyComponentWithErrorBoundary extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = { hasError: false };\n  }\n\n  componentDidCatch(error, info) {\n    // Display fallback UI\n    this.setState({ hasError: true });\n    // You can also log the error to an error reporting service\n    logErrorToMyService(error, info);\n  }\n\n  render() {\n    if (this.state.hasError) {\n      // You can render any custom fallback UI\n      return <h1>Something went wrong.</h1>;\n    }\n    return this.props.children;\n  }\n}",
     "sample": "class MyComponent extends React.Component {\n  constructor(props) {\n    super(props);\n  }",
     "total": "Number of ReactJS components",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 20140522,

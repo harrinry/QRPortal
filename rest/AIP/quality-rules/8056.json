@@ -11,7 +11,7 @@
     "remediation": "If the base class function must be overridden, then respect all its properties in the derived class. Otherwise, use a name that is different for the function of the derived class.",
     "sample": "class A\n{\npublic:\n    virtual ~A();\n    virtual void f() const;\n};\n\nclass B : public A\n{\npublic:\n    virtual void f(); // Violation\n};",
     "total": "Number of C++ methods",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 20140522,

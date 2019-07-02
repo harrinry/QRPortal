@@ -13,7 +13,7 @@
     "remediationSample": "import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';\n\n@Directive({\n  selector: '[appHighlight]'\n})\nexport class HighlightDirective implements OnInit {\n\n  constructor(\n    private el: ElementRef,\n    private renderer: Renderer2\n  ) { }\n\n  ngOnInit() {\n    // this.el.nativeElement.style.color = 'blue';\n    this.renderer.setStyle(this.el.nativeElement, 'color', 'blue');\n  }\n\n}",
     "sample": "import { Directive, ElementRef, OnInit } from '@angular/core';\n\n@Directive({\n  selector: '[appHighlight]'\n})\nexport class HighlightDirective implements OnInit {\n\n  constructor(\n    private el: ElementRef\n  ) { }\n\n  ngOnInit() {\n    this.el.nativeElement.style.color = 'blue';\n  }\n\n}",
     "total": "Number of TypeScript artifacts",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66032,

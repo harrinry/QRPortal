@@ -11,7 +11,7 @@
     "remediationSample": "private BiometricPrompt.AuthenticationCallback getAuthenticationCallback() {\n        // Callback for biometric authentication result\n        return new BiometricPrompt.AuthenticationCallback() {\n            @Override\n            public void onAuthenticationError(int errorCode, CharSequence errString) {\n                super.onAuthenticationError(errorCode, errString);\n\n                switch(errorCode) {\n                   \n                  case BIOMETRIC_ERROR_CANCELED:\n                  case BIOMETRIC_ERROR_HW_UNAVAILABLE:\n                     Log.i(\"The operation was canceled because the biometric sensor is unavailable\");\n                     break;\n                  case BIOMETRIC_ERROR_HW_NOT_PRESENT:\n                     Log.i(\"The device does not have a biometric sensor\");\n                     break;\n\n                  // etc...\n\n                }\n            }\n\n        };\n    }",
     "sample": "private BiometricPrompt.AuthenticationCallback getAuthenticationCallback() {\n        // Callback for biometric authentication result\n        return new BiometricPrompt.AuthenticationCallback() {\n            @Override\n            public void onAuthenticationError(int errorCode, CharSequence errString) {\n                super.onAuthenticationError(errorCode, errString);\n            }\n\n        };\n    }",
     "total": "Number of Android artifacts",
-    "alternativeName": null,
+    "alternativeName": "Ensure to check all the BiometricPrompt error options in the onAuthenticationError method",
     "businessCriteria": [
         {
             "id": 20140522,

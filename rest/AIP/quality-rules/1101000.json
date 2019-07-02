@@ -12,7 +12,7 @@
     "remediationSample": "Select * from table1 T1 inner join table2 T2 on (T1.C = T2.C)\n\nexample of non cartesian product:\nSelect p.pub_name, p.city, t.title, r.royalty\nFrom\n publishers p,\n titles t,\n roysched r \nWhere\n p.pub_id = t.pub_id AND\n t.title_id = r.title_id\n--> 87 rows",
     "sample": "Select * from table1, table2\n\nSelect count(*) from publishers\n->3 rows\nSelect count(*) from roysched\n->87 rows\nSelect count(*) from Titles\n-> 18 rows\n \nSelect p.pub_name, p.city, t.title, r.royalty\nFrom\n publishers p,\n titles t,\n roysched r\n--> 4698 rows( 87 x 18 x 3)\n \nSelect p.pub_name, p.city, t.title, r.royalty\nFrom\n publishers p,\n titles t,\n roysched r \nWhere\n p.pub_id = t.pub_id\n--> 1566 rows ( 87 x 18)\n \nSelect p.pub_name, p.city, t.title, r.royalty\nFrom\n publishers p,\n titles t,\n roysched r \nWhere\n p.pub_id = t.pub_id AND\n r.royalty = 14 \n--> 252 rows",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 60014,

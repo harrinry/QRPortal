@@ -12,7 +12,7 @@
     "remediationSample": "// default csrf library \n\nvar express = require('express'); \nvar app = express(); \napp.use(csrf()); \n\napp.use(function (req, res, next) { \n  res.cookie('XSRF-TOKEN', req.csrfToken()); \n  res.locals.csrftoken = req.csrfToken(); \n  next(); \n}); \napp.use(app.router); \n\napp.listen(3000); \n\n// or example with csurf library \n\nvar csrf = require('csurf') \n// setup route middlewares \nvar csrfProtection = csrf({ cookie: true }) \n\n// create express app \nvar app = express() \n\napp.get('/form', csrfProtection, function (req, res) { \n  // pass the csrfToken to the view \n  res.render('send', { csrfToken: req.csrfToken() }) \n}) \n\n// or example with express-csrf library \n\nvar express = require('express'), \n    csrf = require('express-csrf'); \n\napp = express.createServer(); \n\napp.dynamicHelpers({ \n    csrf: csrf.token \n}); \n\napp.use(express.cookieParser()); \napp.use(express.bodyParser()); \napp.use(express.session()); \napp.use(csrf.check()); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66031,

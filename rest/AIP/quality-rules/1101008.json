@@ -12,7 +12,7 @@
     "remediationSample": "-- Index seek  (fast)\nWHERE ColumnValue = 'Summer' -- sargable predicate\n\n------------\n-- Index seek if there is an index on ColumnValue\nWHERE ColumnValue LIKE 'sum%'  -- sargable predicate\n\n------------\n-- Index seek\nWHERE ColumDate >='2017-01-01' and ColumDate < '2017-02-01' -- sargable predicate\n\n------------\n-- Index seek if there is an index on ColumnValue\nWHERE  ColumnValue = 50 -- sargable predicate",
     "sample": "-- Index scan (slow)\nWHERE UPPER(ColumnValue) = 'SUMMER' -- not sargable predicate\n\n------------\n-- Table scan or index scan on a primary key index\n-- no index use on ColumnValue\nWHERE SUBSTRING(ColumnValue,1,3) = 'sum' -- not sargable predicate\n\n------------\n-- Table scan - no index use on ColumDate\nWHERE year(ColumDate) = 2017 and month(ColumDate) = 1 -- not sargable predicate\n\n------------\n-- not sargable predicate due to function use\n-- Table scan\nWHERE  floor(ColumnValue) = 50  -- not sargable predicate",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 60014,

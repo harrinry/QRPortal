@@ -13,7 +13,7 @@
     "remediationSample": "class UserStore { \n  constructor(){ \n   if(! UserStore.instance){ \n     UserStore.instance = this; \n   } \n\n   return UserStore.instance; \n  } \n\n} \n\nconst instance = new UserStore(); \nObject.freeze(instance); \n\nexport default instance;",
     "sample": "class UserStore { \n  constructor(){ \n   if(! UserStore.instance){ \n     UserStore.instance = this; \n   } \n\n   return UserStore.instance; \n  } \n\n// VIOLATION, THIS IS NOT ENOUGH \n}",
     "total": "Number of Javascript Classes",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66031,

@@ -13,7 +13,7 @@
     "remediationSample": "class Fraction\n{\npublic:\n    // Invariants: \n    // The fraction is stored in irreducible form: 2/4 is stored as 1/2\n    // The denominator cannot be null\n    // The denominator cannot be negative\n    Fraction(int num, int denominator);\n    void setDenominator(int denominator)\n    {\n        assert(denominator != 0);\n        myDenominator = denominator;\n        normalize();\n    }\nprivate:\n    void normalize(); // reduce to lowest terms and make the denominator positive\n    int myNumerator;\n    int myDenominator;\n    // ...\n};",
     "sample": "class Fraction\n{\npublic:\n    // Invariants: \n    // The fraction is stored in irreducible form: 2/4 is stored as 1/2\n    // The denominator cannot be null\n    // The denominator cannot be negative\n    Fraction(int num, int denominator);\n    int numerator;   // violation\n    int denominator; // violation\n    // ...\n};",
     "total": "Number of C++ class members",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 60012,

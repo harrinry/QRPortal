@@ -12,7 +12,7 @@
     "remediationSample": "MongoClient conn_str = new MongoClient(\"localhost\", 27017);\n\t\t\n\t\tDB db = conn_str.getDB(\"database\");\n\t\t\n\t\tDBCollection docColl = db.getCollection(\"document\");\n\t\t\n\t\tdocColl.createIndex(new BasicDBObject(\"filed_1\",1), \n\t\t\n\t\tnew BasicDBObject(\"_id\", 1), \n\t\t\n\t\tnew BasicDBObject(\"filed_2\", 1));",
     "sample": "MongoClient conn_str = new MongoClient(\"localhost\", 27017);\n\t\t\n\t\tDB db = conn_str.getDB(\"database\");\n\t\t\n\t\tDBCollection docColl = db.getCollection(\"document\");\n\t\t\n\t\tdocColl.createIndex(new BasicDBObject(\"filed_1\",1),\n\t\t\n\t\tnew BasicDBObject(\"_id\", -1),\n\t\t\n\t\tnew BasicDBObject(\"filed_2\", -1));",
     "total": "Number of MongoDB collection",
-    "alternativeName": null,
+    "alternativeName": "Ensure that when using compound indexes in MongoDb, have indexed as either both positive or both negative",
     "businessCriteria": [
         {
             "id": 60012,

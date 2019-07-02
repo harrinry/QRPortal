@@ -12,7 +12,7 @@
     "remediation": "Redefine the method in the child class.",
     "sample": "class Base \n{ \n   public: \n       virtual void foo( short ); \n       virtual void foo( double ); \n}; \nclass Derived : public Base \n{ \n   public: \n       virtual void foo( short );  // => VIOLATION foo(double) not redefined!\n       void bar() \n       { \n         foo( 0.1 ); // calls Derived::foo( short )! \n       } \n};",
     "total": "Number of C++ classes having at least one virtual method",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 66031,

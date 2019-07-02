@@ -13,7 +13,7 @@
     "remediationSample": "@Component({\n  selector: 'my-app',\n  template: `\n    <ul>\n      <li *ngFor=\"let item of collection;trackBy: trackByFn\">{{item.id}}</li>\n    </ul>\n    <button (click)=\"getItems()\">Refresh items</button>\n  `,\n})\nexport class App {\n\n  constructor() {\n    this.collection = [{id: 1}, {id: 2}, {id: 3}];\n  }\n  \n  getItems() {\n    this.collection = this.getItemsFromServer();\n  }\n  \n  getItemsFromServer() {\n    return [{id: 1}, {id: 2}, {id: 3}, {id: 4}];\n  }\n  \n  trackByFn(index, item) {\n    return item.id; \n  }\n}",
     "sample": "@Component({\n  selector: 'my-app',\n  template: `\n    <ul>\n      <li *ngFor=\"let item of collection;\">{{item.id}}</li>\n    </ul>\n    <button (click)=\"getItems()\">Refresh items</button>\n  `,\n})\nexport class App {\n\n  constructor() {\n    this.collection = [{id: 1}, {id: 2}, {id: 3}];\n  }\n  \n  getItems() {\n    this.collection = this.getItemsFromServer();\n  }\n  \n  getItemsFromServer() {\n    return [{id: 1}, {id: 2}, {id: 3}, {id: 4}];\n  }\n}",
     "total": "Number of HTML template artifacts",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 60014,

@@ -13,7 +13,7 @@
     "remediationSample": "const filename = process.argv[2]; \nconst crypto = require('crypto'); \nconst fs = require('fs'); \n\nconst hash = crypto.createHash('sha256'); \n\nconst input = fs.createReadStream(filename); \ninput.on('readable', () => { \n  const data = input.read(); \n  if (data) \n    hash.update(data); \n  else { \n    console.log(`${hash.digest('hex')} ${filename}`); \n  }",
     "sample": "const filename = process.argv[2]; \nconst crypto = require('crypto'); \nconst fs = require('fs'); \n\nconst hash = crypto.createHash('md5'); \n\nconst input = fs.createReadStream(filename); \ninput.on('readable', () => { \n  const data = input.read(); \n  if (data) \n    hash.update(data); \n  else { \n    console.log(`${hash.digest('hex')} ${filename}`); \n  } \n});",
     "total": "Number of javascript source codes using createHash function",
-    "alternativeName": null,
+    "alternativeName": "(undefined)",
     "businessCriteria": [
         {
             "id": 20140522,
