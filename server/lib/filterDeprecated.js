@@ -1,8 +1,9 @@
 const fs = require('fs');
 const root = require('app-root-path');
 
-const filterDeprecated = ( req, res, errorHandler ) => {
-  fs.readFile( root.resolve('rest/AIP/' + req.url + '/quality-rules.json'), (err, data) => {
+const filterDeprecated = ( req, res, errorHandler, echo ) => {
+  const fileName = root.resolve('rest/' + (echo ? 'Echo/' : 'AIP/') + req.path + '/quality-rules.json');
+  fs.readFile( fileName, (err, data) => {
     if (err) {
       return errorHandler(err, res);
     }

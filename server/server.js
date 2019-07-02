@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const port = require('./settings/serverConfig').port;
 const bodyParser = require('body-parser');
+const notFound = require('./middleware/notFound');
+const errHandler = require('./middleware/errorHandler');
+const ValidateQuery = require('./rules/lib/validateQuery');
 
 let app = express();
 
@@ -36,6 +39,20 @@ app.get('/favicon.ico', (req, res)=> {
 
 app.get('/', (req, res)=>{
   res.redirect('/rules');
+});
+
+app.get('/Echo*', (req, res) => {
+  const url = req.originalUrl.replace('/Echo/', '/AIP/');
+  res.redirect( url );
+});
+
+app.get('/best-practices', (req, res) => {
+  const queryValid = ValidateQuery(req.query);
+  if(queryValid) {
+    res.sendFile(path.resolve(__dirname, '..', 'public','index.html'), (err) => errHandler(err, res));
+  } else {
+    notFound(req, res);
+  }
 });
 
 app.use(require('./middleware/notFound'));

@@ -38,7 +38,7 @@ rulesRouter.get('/style.css', (req, res)=> {
 });
 
 rulesRouter.get('/technologies.json', (req, res) => {
-  res.json( technoMapping );
+  res.json( technoMapping.aip );
 });
 
 rulesRouter.get('/extensions.json', (req, res) => {

@@ -11,16 +11,16 @@ export const QUERIES = {
   standards: 'AIP/quality-standards',
 };
 
-export const fetchQualityStandards = () => {
-  return webFetch( QUERIES.standards );
+export const fetchQualityStandards = ( echo ) => {
+  return webFetch( QUERIES.standards + echo ? '?q=echo': '' );
 };
 
-export const FETCHTECHNOLOGIES = () => {
-  return webFetch( QUERIES.technologies );
+export const FETCHTECHNOLOGIES = ( echo ) => {
+  return webFetch( QUERIES.technologies + echo ? '?q=echo': '' );
 };
 
-export const FETCHEXTENSIONS = () => {
-  return webFetch( QUERIES.extensions );
+export const FETCHEXTENSIONS = ( echo ) => {
+  return webFetch( QUERIES.extensions + echo ? '?q=echo': '' );
 };
 
 export const fetchExtensionVersions = ( url ) => {
@@ -31,18 +31,18 @@ export const fetchCastAIPVersions = () => {
   return webFetch(AIP_VERSIONS_EXT.href);
 };
 
-export const FETCHBUSINESSCRITERIA = () => {
-  return webFetch( QUERIES.businessCriteria );
+export const FETCHBUSINESSCRITERIA = ( echo ) => {
+  return webFetch( QUERIES.businessCriteria + echo ? '?q=echo': '' );
 };
 
-export const FETCHCISQDATA = () => {
-  return webFetch( QUERIES.cisq );
+export const FETCHCISQDATA = ( echo ) => {
+  return webFetch( QUERIES.cisq + echo ? '?q=echo': '' );
 };
 
-export const FETCHCWEDATA = () => {
-  return webFetch( QUERIES.cwe );
+export const FETCHCWEDATA = ( echo ) => {
+  return webFetch( QUERIES.cwe + echo ? '?q=echo': '' );
 };
 
-export const FETCHOWASPDATA = () => {
-  return webFetch( QUERIES.owasp );
+export const FETCHOWASPDATA = ( echo ) => {
+  return webFetch( QUERIES.owasp + echo ? '?q=echo': '' );
 };

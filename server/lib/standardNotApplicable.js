@@ -17,7 +17,8 @@ function isApplicable( list ){
 }
 
 function handler( req, res, errorHandler ){
-  const filepath = root.resolve('rest/AIP/' + req.url + '/items.json');
+  const echo = req.query.q === 'echo';
+  const filepath = root.resolve('rest/' + (echo ? 'Echo' : 'AIP') + '/' + req.path + '/items.json');
   if (fs.existsSync(filepath)) {
     let data;
     const file = fs.readFileSync(filepath, {encoding: 'utf8'});

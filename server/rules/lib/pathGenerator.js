@@ -9,7 +9,7 @@ const defMap = {
   srs: 'Packages',
 };
 
-function generatePath( secRef ){
+function generatePath( secRef, echo ){
   const sec = secRef.split('_'), secl = sec.length,
     def = getDefinition(sec[0]);
   let path = [];
@@ -20,7 +20,7 @@ function generatePath( secRef ){
       path.push(getNavPath(def));
       break;
     case 1:{
-      const data = getDefPathFromDefinition(def, element),
+      const data = getDefPathFromDefinition(def, element, echo),
         isArr = Array.isArray( data ),
         _data = isArr ? data : [data];
       path.push(..._data);
@@ -46,10 +46,10 @@ function getNavPath( mapDef ){
   return navData.find( e => e.name === mapDef );
 }
 
-function getDefPathFromDefinition( def, id ){
+function getDefPathFromDefinition( def, id, echo){
   switch (def) {
   case defMap.t:
-    return getTechnologyPath(id);  
+    return getTechnologyPath(id, echo);  
   case defMap.std:
     return getStandardsPath( id );
   case defMap.srs:
@@ -63,9 +63,9 @@ function getEndPoint( def, ref ){
   return (def === defMap.std && ref) ? getStdCategoryPath(ref) : undefined;
 }
 
-function getTechnologyPath( id ){
+function getTechnologyPath( id, echo ){
   const _id = typeof id === 'string' ? parseInt(id) : id;
-  return techData.find( e => e.id === _id );
+  return techData[echo ? 'echo' : 'aip'].find( e => e.id === _id );
 }
 
 function getExtensionPath( id ){

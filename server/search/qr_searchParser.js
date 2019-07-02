@@ -17,15 +17,15 @@ let index = {
 
 const MapTechnology = (technology) => {
 
-  const technologyIndexInMap = technoMapping.findIndex(t => t.name === technology),
-    tl = technoMapping.length;
+  const technologyIndexInMap = technoMapping.aip.findIndex(t => t.name === technology),
+    tl = technoMapping.aip.length;
 
   if (technologyIndexInMap > -1) {
-    return technoMapping[technologyIndexInMap];
+    return technoMapping.aip[technologyIndexInMap];
   }
 
   for (let i = 0; i < tl; i++) {
-    const _Technology = technoMapping[i];
+    const _Technology = technoMapping.aip[i];
     if (_Technology.glob === null) continue;
     const globIndex = _Technology.glob.findIndex( t => t.name === technology);
     

@@ -1,9 +1,9 @@
 const fs = require('fs');
 const root = require('app-root-path');
 
-function getQualityStandardsMap ( response, sync = false ){
+function getQualityStandardsMap ( response, sync = false, echo ){
   if (sync) {
-    const file = fs.readFileSync(root.resolve('rest/AIP/business-criteria.json')),
+    const file = fs.readFileSync(root.resolve('rest/'+ (echo ? 'Echo' :'AIP') +'/business-criteria.json')),
       data = JSON.parse(file),
       map = data.map( e => {
         return Object.assign( {}, e, {
@@ -13,7 +13,7 @@ function getQualityStandardsMap ( response, sync = false ){
       });
     return map;
   } 
-  fs.readFile(root.resolve('rest/AIP/business-criteria.json'), ( err, data ) => {
+  fs.readFile(root.resolve('rest/'+ (echo ? 'Echo' :'AIP') +'/business-criteria.json'), ( err, data ) => {
     if (err) {
       console.log(err);
     }

@@ -1,4 +1,5 @@
 import { Imgs } from '../view-navigation/vn-constants';
+import { isEcho } from '../common';
 
 export const SECTIONSQUERY = 'aip/web-navigation';
 export const QUERYFAILED = {
@@ -34,4 +35,4 @@ export const _oIconStyle = {
 };
 
 export const WELCOMETEXT = 'Welcome to CAST Rules documentation, start browsing or searching';
-export const TITLE = 'CAST Rules Documentation';
+export const TITLE = 'CAST Rules Documentation' + (isEcho() ? ' for Echo' : '');

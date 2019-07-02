@@ -6,7 +6,7 @@ const readJsonSync = require('../../lib/readJsonSync');
 const normalize = require('../../lib/normalize');
 const {getRulesDetailsFromFile} = require('../../lib/ruleDetailsStruct');
 
-function generateRulesHydrate( params, path ){
+function generateRulesHydrate( params, path, echo ){
   const _params = params ? params.split('|') : [],
     pl = path.length;
   let out = {};
@@ -21,7 +21,8 @@ function generateRulesHydrate( params, path ){
   if ( _params.length > 0 && _params[0] !== '') {
     if (path.length > 0){
       const std = path[pl -1],
-        stdPath = std ? root.resolve('rest/' + std.href + '/items.json') : '',
+        p = echo ? std.href.replace('AIP/', 'Echo/') : std.href,
+        stdPath = std ? root.resolve('rest/' + p + '/items.json') : '',
         data = fs.existsSync(stdPath) ? JSON.parse(fs.readFileSync(stdPath)) : null,
         sel = data ? data.find( e => e.id === _params[0]) : undefined,
         _path = sel ? root.resolve('rest/' + sel.href + '/quality-rules.json') : '';
@@ -34,7 +35,7 @@ function generateRulesHydrate( params, path ){
     switch (path[0].name) {
     case 'Technologies':{
       const id = parseInt(path[1].id),
-        tech = techMap.find( e => e.id === id ),
+        tech = techMap[echo ? 'echo' : 'aip'].find( e => e.id === id ),
         isMultiQ = /\+/gi.test(tech.href);
       out.brl = isMultiQ ? syncConcatQueries(...splitOnPlus(tech.href)) : readJsonSync(root.resolve('rest/' + normalize(tech.href)), () => []);
       break;
@@ -42,7 +43,8 @@ function generateRulesHydrate( params, path ){
     case 'Standards':{
       const isBC = path[1].name.toLowerCase() === 'health factors' ? true : false,
         dir = isBC ? 'brl' : 'bsl',
-        _path = isBC ? root.resolve('rest/'.concat(path[2].href, '/quality-rules.json')) : root.resolve('rest/'.concat(path[2].href, '/items.json'));
+        p = echo ? path[2].href.replace('AIP/', 'Echo/') : path[2].href,
+        _path = isBC ? root.resolve('rest/'.concat(p, '/quality-rules.json')) : root.resolve('rest/'.concat(p, '/items.json'));
       out[dir] = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
       break;
     }
