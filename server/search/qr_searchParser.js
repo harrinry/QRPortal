@@ -36,15 +36,16 @@ const MapTechnology = (technology) => {
   return null;
 };
 
-function convertToSearchString ( dataObject, fileName ) {
+function convertToSearchString ( dataObject, fileName, echo ) {
   const technos = dataObject.technologies;
   const qsString = dataObject.qualityStandards.map( qs => qs.id ).join(' ');
+  const name = echo ? (dataObject.alternativeName || dataObject.name) : dataObject.name;
   return {
     id: dataObject.id,
-    name: dataObject.name,
+    name: name,
     critical: dataObject.critical,
     href: 'AIP/quality-rules/' + fileName,
-    searchid: `${dataObject.id} - ${qsString} - ${dataObject.name}`,
+    searchid: `${dataObject.id} - ${qsString} - ${name}`,
     technologies: technos,//UniqueArray(technos.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name), 
     resString: technos.map( tech => `${tech.name} : ${dataObject.id} - ${dataObject.name}`),
   };
@@ -161,7 +162,7 @@ function buildStandardsIndex( dataSource ){
         const rule = EchoRuleList[i];
         const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
 
-        index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json') ) );
+        index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json'), true ) );
       }
     } catch( er ){
       console.log('Echo rule index is not a valid json file');
