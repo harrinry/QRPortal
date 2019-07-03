@@ -12,7 +12,8 @@ const errLogger = require('../logger/error');
 
 let index = {
   qualityrules: [],
-  standards: []
+  standards: [],
+  echo: [],
 };
 
 const MapTechnology = (technology) => {
@@ -49,14 +50,14 @@ function convertToSearchString ( dataObject, fileName ) {
   };
 }
 
-function SearchIndex( query, indexDef ){
+function SearchIndex( query, indexDef, isEcho ){
   switch (indexDef) {
   case 'qualityrules':
-    return search( query, index[ indexDef ], ( e ) => e.searchid ).sort((a,b)=> a.id - b.id);
+    return isEcho ? (search( query, index.echo, ( e ) => e.searchid ).sort((a,b)=> a.id - b.id)) : (search( query, index[ indexDef ], ( e ) => e.searchid ).sort((a,b)=> a.id - b.id));
   case 'standards':
-    return findQualityStandard( query.toLowerCase() );
+    return findQualityStandard( query.toLowerCase(), isEcho);
   case 'qualityrulesbyid':
-    return searchBy(query, index.qualityrules, 'id').sort((a,b)=> a.id - b.id);
+    return isEcho ? (searchBy(query, index.echo, 'id').sort((a,b)=> a.id - b.id)) : (searchBy(query, index.qualityrules, 'id').sort((a,b)=> a.id - b.id));
   default:{
     const err = {
       module: 'search',
@@ -71,34 +72,24 @@ function SearchIndex( query, indexDef ){
   }
 }
 
-function findQualityStandard( standardID ){
-  return index.standards.hasOwnProperty(standardID) ? index.standards[standardID] : [];
+function findQualityStandard( standardID, echo ){
+  return index[(echo ? 'echoStandards' : 'standards')].hasOwnProperty(standardID) ? index[(echo ? 'echoStandards' : 'standards')][standardID] : [];
 }
 
 // const createUniqueTechnologiesArray = ( technologiesArray )=>{
 //   return UniqueArray(technologiesArray.map( tech => MapTechnology(tech.name)).filter(e => e !== undefined && e !== null), (val) => val.name);
 // };
 
-/* initialization */
-(function (){
-  glob( rulesDir, ( fileName, contents, i ) => {
-    const searchString = convertToSearchString( contents, fileName );
-    index.qualityrules[i] = searchString ;
-  }, ( err ) => {
-    throw err;
-  }, () => {
-    console.log('Quality Rules Search Index created');
-    //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
-  });
-
-  const standards = JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards.json')));
-
+function buildStandardsIndex( dataSource ){
+  
+  const standards = JSON.parse(fs.readFileSync(root.resolve(`/rest/${dataSource}/quality-standards.json`)));
+  let out = {};
   let standardsList = [];
   
   for (let i = 0; i < standards.length; i++) {
     const _STD = standards[i].name;
     standardsList.push(
-      ...JSON.parse(fs.readFileSync(root.resolve('/rest/AIP/quality-standards/'+_STD+'/items.json'))).map( e => {
+      ...JSON.parse(fs.readFileSync(root.resolve(`/rest/${dataSource}/quality-standards/${_STD}/items.json`))).map( e => {
         return {
           id: e.id,
           href: e.href + '/quality-rules.json',
@@ -139,11 +130,50 @@ function findQualityStandard( standardID ){
             console.log('expected ' + 'rest/' + e.href + '.json to exsist please review file indexes to not point to these files');
           }
         });
-        index.standards[std.id.toLowerCase()] = stdListRemap;
+        out[std.id.toLowerCase()] = stdListRemap;
       }
     }
   }
-  console.log('created Standards Index');
+  console.log(`created ${dataSource} Standards Index`);
+  return out;
+}
+
+/* initialization */
+(function (){
+  glob( rulesDir, ( fileName, contents, i ) => {
+    const searchString = convertToSearchString( contents, fileName );
+    index.qualityrules[i] = searchString ;
+  }, ( err ) => {
+    throw err;
+  }, () => {
+    console.log('Quality Rules Search Index created');
+    //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
+  });
+
+  fs.readFile( path.resolve( __dirname, '..', '..', 'rest', 'AIP', 'quality-standards', 'AIP', 'items', 'AIP-CAST-LITE', 'quality-rules.json'), ( err, data ) => {
+    if(err) {
+      console.log('an error occured while generating Echo search index');
+      throw err;
+    }
+    try{
+      const EchoRuleList = JSON.parse(data);
+      for (let i = 0; i < EchoRuleList.length; i++) {
+        const rule = EchoRuleList[i];
+        const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
+
+        index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json') ) );
+      }
+    } catch( er ){
+      console.log('Echo rule index is not a valid json file');
+      throw er;
+    }
+
+    console.log('Echo rules search index generated');
+  });
+
+  index.standards = buildStandardsIndex( 'AIP' );
+  index.echoStandards = buildStandardsIndex( 'Echo' );
+
 }());
 
 module.exports = SearchIndex;

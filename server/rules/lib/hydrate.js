@@ -19,7 +19,7 @@ function createHydrate( queryParams, echo ){
     PATH = [];
     RULES = {};
     const slt = s.split('|'),
-      searchData = search(slt[0], slt[1]).map( v => {
+      searchData = search(slt[0], slt[1], echo).map( v => {
         if (slt[2] !== '') {
           return parseInt(slt[2]) === v.id ? {
             ...v,
