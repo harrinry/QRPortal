@@ -11,7 +11,7 @@
     "remediationSample": "1- Define permission in the top of the manifest file as following one \n\n<permission android:name=\"com.example.testapps.permission.BIND_TO_MAIL_LISTENER\" android:protectionLevel=\"signature\" /> \n\n\n2- Add the android:permission into service \n\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" \n package=\"com.example.testapps.test1\"> \n ... \n    <service android:name=\".MailListenerService\" \n              android:permission= \n                 \"com.example.testapps.permission.BIND_TO_MAIL_LISTENER\" \n              android:enabled=\"true\" \n              android:exported=\"true\"> \n              <intent-filter></intent-filter> \n    </service> \n  ... \n</manifest> ",
     "sample": "\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" \n package=\"com.example.testapps.test1\"> \n ... \n    <service android:name=\".MailListenerService\" \n              android:enabled=\"true\" \n              android:exported=\"true\"> \n              <intent-filter></intent-filter> \n    </service> \n  ... \n</manifest> \n",
     "total": "Number of Android manifests",
-    "alternativeName": null,
+    "alternativeName": "A permission is required for securing Services",
     "businessCriteria": [
         {
             "id": 66031,

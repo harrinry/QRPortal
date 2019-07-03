@@ -12,7 +12,7 @@
     "remediationSample": "In this example, there is no sensible way to use a pointer to 'A' as if it was a pointer to 'B'. We could silence this rule by using 'reinterpret_cast', but we could not make anything useful with 'b'.\n\nIf classes have a relationship, but the compiler does not know it, the same kind of problems can occur:\n\nclass A;\nclass B;\n\nvoid f()\n{\n    A* a = (A*)new B();\n}\n\nclass A \n{ \npublic:\n    virtual ~A();\n};\n\nclass B : public A\n{\n};\n\nHere, even if the classes are related, the compiler does not know it at the point of definition of the f function. This C-style cast will still be equivalent to a 'reinterpret_cast' and can be wrong (if you used a 'static_cast' the code would not compile, which is a good thing).",
     "sample": "class A \n{ \n    int i;\n};\n\nclass B \n{\npublic:\n    B() : p(\"Hello\") { }\n    std::string p;\n};\n\nint main()\n{\n    B * b = (B*) new A(); // VIOLATION. A is not a child/mother class of B\n    std::cout << b->p << std::endl; // Probably a program crash\n    return 0;\n}",
     "total": "Number of C++ Methods, Constructors, and Destructors",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Never perform C-style cast between incompatible Class pointers",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,7 +11,7 @@
     "remediation": "Modify the source code to reduce the number of JavaScript Functions with a high Fan-Out.",
     "sample": "<!--\nJavaScriptFanOut.php\n-->\n<html>\n<head>\n\n</head>\n   <body>\n      <?php\n         echo \"JavaScript functions - Fan Out\", \"</br>\";\n      ?>\n      \n      \n      <script type=\"text/javascript\" language=\"javascript\">\n         \n         function operationStep1() {\n            document.write(\"operationStep1</br>\");\n         }\n\n         function operationStep2() {\n            document.write(\"operationStep2</br>\");\n         }\n\n         function operationStep3() {\n            document.write(\"operationStep3</br>\");\n         }\n\n         function operationStep4() {\n            document.write(\"operationStep4</br>\");\n         }\n\n         function operationStep5() {\n            document.write(\"operationStep5</br>\");\n         }\n\n         function operationStep6() {\n            document.write(\"operationStep6</br>\");\n         }\n         \n         function highFanOutOperation() {\n            document.write(\"highFanOutOperation</br>\");\n            operationStep1();\n            operationStep2();\n            operationStep3();\n            operationStep4();\n            operationStep5();\n            operationStep6();\n         }\n         \n         highFanOutOperation();\n      </script>\n      \n   </body>\n</html>",
     "total": "Number of JavaScript Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid JavaScript Functions with High Fan-Out (PHP)",
     "businessCriteria": [
         {
             "id": 66032,

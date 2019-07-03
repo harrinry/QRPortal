@@ -13,7 +13,7 @@
     "remediationSample": "Select T1.c5\nFrom T1 JOIN T2 \n  ON T1.c1=T2.c1\nWhere \n  T1.c2 IN\n   (Select T3.c1 From T4 LEFT OUTER JOIN T3 on T3.c4=T4.c4)",
     "sample": "Select T1.c5\nFrom T1, T2\nWhere \n T1.c1 = T2.c1 \n AND T1.c2 IN\n   (Select T3.c1 From T4 LEFT OUTER JOIN T3 on T3.c4=T4.c4)",
     "total": "Number of Artifacts with SQL code having JOINs.",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Do not mix ANSI and non-ANSI JOIN syntax in the same query",
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,7 +11,7 @@
     "remediation": "See rationale",
     "sample": "create table publishers\n(\npub_id   char(45),\ncity        varchar(20),\nstate      char(2),\nConstraint PK_publishers unique nonclustered\n( pub_id asc  ) \n)",
     "total": "Number of tables",
-    "alternativeName": null,
+    "alternativeName": "Avoid Tables having Indexes with a too large Index definition",
     "businessCriteria": [
         {
             "id": 60014,

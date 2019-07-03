@@ -12,7 +12,7 @@
     "remediationSample": "Use an IN test condition:\nSELECT supplier_name, city, state\nFROM suppliers\nWHERE supplier_name IN ('Microsoft', 'Oracle', 'Flowers Foods');",
     "sample": "The following SQL WHERE clause should be reviewed:\nSELECT supplier_name, city, state\nFROM suppliers\nWHERE supplier_name = 'Microsoft'\nOR supplier_name = 'Oracle'\nOR supplier_name = 'Flowers Foods';",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
     "businessCriteria": [
         {
             "id": 60014,

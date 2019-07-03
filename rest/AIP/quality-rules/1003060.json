@@ -11,7 +11,7 @@
     "remediation": "Give variables that would denote their intended use.",
     "sample": "public class SomeClass \n{\n   public var myField : int = 0; // VIOLATION - my prefix is forbidden\n   \n   public function tmpFoo() : void // VIOLATION - tmp prefix is forbidden\n   {\n    var tempFoo : int = 9; // VIOLATION - temp prefix is forbidden\n   }\n}",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid variables with names that can reduce code readability (Flex)",
     "businessCriteria": [
         {
             "id": 60012,

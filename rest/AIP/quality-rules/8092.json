@@ -13,7 +13,7 @@
     "remediationSample": "using System;\n\nnamespace SecurityRulesLibrary\n{\n\n   public class ExposedPointers\n   {\n    \n      // Violation Corrected\n      internal UIntPtr Pointer1;\n      private UIntPtr privatePointer2;\n\n   }\n}",
     "sample": "using System;\n\nnamespace SecurityRulesLibrary\n{\n\n   public class ExposedPointers\n   {\n      // Violation. The pointers should not be visibles\n      public IntPtr Pointer1;\n      public UIntPtr Pointer2;\n    \n\n}",
     "total": "Number of Classes and Structures",
-    "alternativeName": null,
+    "alternativeName": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
     "businessCriteria": [
         {
             "id": 66031,

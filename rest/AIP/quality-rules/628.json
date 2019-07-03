@@ -12,7 +12,7 @@
     "remediationSample": "class Mother \n{\npublic:\n    template <class T>\n    shared_ptr<T> create()\n    {\n        shared_ptr<T> result = make_shared<T>();\n        result->display();\n        return result;\n    }\nprotected:\n    Mother() { } // It is now protected, to prevent direct creation\nprivate:\n    virtual void display() { cout << \"Mother function call\\n\"; }\n};\n\nclass Child : public Mother \n{\nprotected:\n    Child() { } // It is now protected, to prevent direct creation\nprivate:\n    virtual void display() { cout << \"Child function call\\n\";}\n};",
     "sample": "class Mother \n{\npublic:\n    Mother() { display(); }\nprivate:\n    virtual void display() { cout << \"Mother function call\\n\"; }\n};\n\nclass Child : public Mother \n{\nprivate:\n    virtual void display() { cout << \"Child function call\\n\";}\n};\n\n\nint main()\n{\n    Child child; // will display \"Mother function call\"\n}",
     "total": "Number of Constructors and Destructors.",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid invocation of virtual Methods of the declared Class in a Constructor or Destructor",
     "businessCriteria": [
         {
             "id": 66031,

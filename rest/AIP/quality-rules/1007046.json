@@ -11,7 +11,7 @@
     "remediation": "Review the architecture of the application to reduce the depth of the inheritence Tree.",
     "sample": "<?php\nclass ClassTest1{\n    public function __construct()\n    {\n    }\n}\n\nclass ClassTest2 extends ClassTest1{\n    public function __construct(ArrayObject $arrayObj, $number = 0) \n   {\n        \n    }\n}\n\nclass ClassTest3 extends ClassTest2 {\n\npublic function __construct() \n    {\n      parent::__construct(array(1));   \n    }\n}\n...\n\n\nclass\nClassTest11 extends ClassTest10 {\n    public function __construct() \n   {\n    }\n}\n\nclass ClassTest12 extends ClassTest11 {\n\npublic function __construct() \n    {\n    }\n}\n?>",
     "total": "Number of Classes",
-    "alternativeName": null,
+    "alternativeName": "Avoid Classes with High Depth of Inheritance Tree (PHP)",
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,7 +12,7 @@
     "remediation": "Add a 'break', 'return' or 'throw' statement to end 'case' clauses.",
     "sample": "int main()\n{\n    int i = 2;\n    switch(i)\n    {\n    case 0:\n        cout << \"0\" << endl;\n        // Violation\n    case 1:\n        // No violation: Empty clause\n    case 2:\n        cout << \"1 or 2\" << endl;\n        break; // No violation: A break\n    default:\n        cout << \"Other\" << endl;\n        // No violation: Last clause is default\n    }\n}",
     "total": "Number of C functions, C++ methods, constructors, and destructors",
-    "alternativeName": "(undefined)",
+    "alternativeName": "An unconditional 'throw', 'return' or 'break' shall terminate every non-empty switch-clause",
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,7 +12,7 @@
     "remediationSample": "var express = require('express'); \nvar app = express(); \nvar marked = require(\"marked\"); \n\nmarked.setOptions({ \n sanitize: true \n }); \n\napp.locals.marked = marked; \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \nvar marked = require(\"marked\"); \n\napp.locals.marked = marked; \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express and marked",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Ensure that marked is sanitized",
     "businessCriteria": [
         {
             "id": 66031,

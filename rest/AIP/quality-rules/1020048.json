@@ -11,7 +11,7 @@
     "remediation": "Make sure user submitted <SOURCE>, <AUDIO>, <VIDEO> tags cannot contain event handlers or whitelist event handlers necessary for UI controls",
     "sample": "<video><source onerror=\"alert(1)\"/></video> \n<video onerror=\"alert(1)\"><source></source></video>",
     "total": "Number of HTML Contents",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using source tag in video/audio with event handler",
     "businessCriteria": [
         {
             "id": 66031,

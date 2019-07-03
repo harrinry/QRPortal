@@ -10,7 +10,7 @@
     "remediation": "Put metadata at appropriate place.",
     "sample": "package {\n    public class AvoidMethodWithRedundantMetadataForType\n    {\n        \n        public function AvoidMethodWithRedundantMetadataForType() \n        {\n            \n        }\n\n        [ManagedEvents(\"a\",\"b\",\"c\")] //VIOLATION\n        public function getQRName():String\n        {\n            return \"Avoid redundant type metadata argument for handler argument type (Flex)\";\n        }\n   }\n}",
     "total": "Number of classes",
-    "alternativeName": null,
+    "alternativeName": "Avoid classes having artifacts with misplaced metadata (Flex)",
     "businessCriteria": [
         {
             "id": 20140522,

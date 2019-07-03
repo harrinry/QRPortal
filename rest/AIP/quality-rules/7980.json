@@ -13,7 +13,7 @@
     "remediationSample": "void foo(char *curString)\n{\n  char *newString;\n  newString = (char *)malloc(strlen(curString));\n  strtrns(curString, oldpattern, newpattern, newString);\n}",
     "sample": "void foo(char *curString)\n{\n  char newString[20];\n  strtrns(curString, oldpattern, newpattern, newString);\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using strtrns() function",
     "businessCriteria": [
         {
             "id": 66031,

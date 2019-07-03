@@ -11,7 +11,7 @@
     "remediationSample": "<?php\n\nfunction getMaxValue() { return 2; }\n\n$maxValue = getMaxValue();\n\nfor ($i=0; $i < $maxValue; $i++) { //Violation removed\n  echo \"for: \", $i, PHP_EOL;\n}\n\n$i = 0;\nwhile($i < $maxValue) { //Violation removed\n  echo \"while: \", $i++, PHP_EOL;\n}\n\n$i = 0;\ndo {\n  echo \"do-while: \", $i++, PHP_EOL;\n} while($i < $maxValue); //Violation removed\n?>",
     "sample": "<?php\nfunction getMaxValue() { return 2; }\n\nfor ($i=0; $i < getMaxvalue(); $i++) { //Violation - a method is invocated in a loop termination expression\n  echo \"for: \", $i, PHP_EOL;\n}\n\n$i = 0;\nwhile($i < getMaxValue()) { //Violation - a method is invocated in a loop termination expression\n  echo \"while: \", $i++, PHP_EOL;\n}\n\n$i = 0;\ndo {\n  echo \"do-while: \", $i++, PHP_EOL;\n} while($i < getMaxValue()); //Violation - a method is invocated in a loop termination expression\n\n\n?>",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid method invocation in loop termination expression (PHP)",
     "businessCriteria": [
         {
             "id": 60014,

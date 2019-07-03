@@ -12,7 +12,7 @@
     "remediationSample": "JSP Example:\n<% String eid = request.getParameter(\"eid\"); %>\n... //Input validation is mandatory (Use Authorized Santization) \nEmployee ID: <%= eid %>",
     "sample": "JSP Example: JSP code segment reads an employee ID, eid, from an HTTP request and displays it to the user.\n\n<% String eid = request.getParameter(\"eid\"); %>\n...\n...\nEmployee ID: <%= eid %>\n...\n....\n\n\nASP Example :\nASP.NET code segment reads an employee ID number from an HTTP request and displays it to the user.\n\n<%\nprotected System.Web.UI.WebControls.TextBox Login;\nprotected System.Web.UI.WebControls.Label EmployeeID;\n...\n...\nEmployeeID.Text = Login.Text;\n%>\n\n<p><asp:label id=\"EmployeeID\" runat=\"server\" /></p>\n\nThe code in this example operates correctly if the Employee ID variable contains only standard alphanumeric text. If it has a value that includes meta-characters or source code, then the code will be executed by the web browser as it displays the HTTP response.",
     "total": "Number of methods calling user input methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid reflected cross-site scripting (non persistent)",
     "businessCriteria": [
         {
             "id": 66031,

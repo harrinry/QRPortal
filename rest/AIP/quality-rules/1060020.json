@@ -12,7 +12,7 @@
     "remediationSample": "C#\n\ntry { ,,, }\ncatch ( MyException e)\n{\n   DoSomething();\n}\n\nABAP\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n      TEXT = OREF->GET_TEXT( ).\n      cleanup.\n      clear RESULT.\nENDTRY.",
     "sample": "C#\n\ntry { ... }\ncatch ( MyException e)\n{\n   // DO NOTHING <= VIOLATION\n}\n\nABAP\n\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n* This CATCH block does not contain statements\n* and can be considered as not existing...\n* TEXT = OREF->GET_TEXT( ).\nENDTRY.",
     "total": "Number of artifacts with a high fan-in",
-    "alternativeName": null,
+    "alternativeName": "Avoid empty catch blocks for methods with high fan-in",
     "businessCriteria": [
         {
             "id": 20140522,

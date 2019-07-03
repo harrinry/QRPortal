@@ -12,7 +12,7 @@
     "remediationSample": "Example 1: The following code calls a transaction that can execute any ABAP program.\n\n\nDATA: carrid TYPE spfli-carrid, \n      connid TYPE spfli-connid. \n\n... \n\nSET PARAMETER ID: 'CAR' FIELD carrid, \n                  'CON' FIELD connid. \n\nTRY: \n    CALL TRANSACTION 'FLIGHT_TA' WITH AUTHORITY-CHECK.  // Violation FIXED\n                                \n    CATCH cx_sy_authorization_error. \n      RETURN. \nENDTRY.",
     "sample": "Example 1: The following code calls a transaction that can execute any ABAP program.\n\n\nDATA: carrid TYPE spfli-carrid, \n      connid TYPE spfli-connid. \n\n... \n\nSET PARAMETER ID: 'CAR' FIELD carrid, \n                  'CON' FIELD connid. \n\nTRY: \n    CALL TRANSACTION 'FLIGHT_TA'. // violation \n                                \n    CATCH cx_sy_authorization_error. \n      RETURN. \nENDTRY.",
     "total": "Number of ABAP Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Authorization check should be done before calling a transaction",
     "businessCriteria": [
         {
             "id": 66031,

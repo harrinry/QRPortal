@@ -10,7 +10,7 @@
     "remediation": "Try to always have SQL Records complying to the naming convention.",
     "sample": "Given the follow default values:  \nFirst Character - Default value - R \nFirst Character - Default Value - J \nFirst Character - Default Value - T \nSecond Character - Default value = _ \nAnd an SQL record statement as shown below: \nrecord R_USER_LOGON_INFO type SQLRecord \n\nAs per the above parameter values the record name Should start with R_  or  J_  or T_ because we have given the R , J , T as the first character and the _ as the second character. \n\nSo the record R_USER_LOGON_INFO will not be in the violation list . \n\nIf The SQL record name is \nrecord K_USER_LOGON_INFO type SQLRecord \nThe above record violates the rule because its first and second letter K_ are not matching thedefined pattern.",
     "total": "Number of SQL Records",
-    "alternativeName": null,
+    "alternativeName": "Avoid having SQL Records without a naming convention (EGL)",
     "businessCriteria": [
         {
             "id": 60012,

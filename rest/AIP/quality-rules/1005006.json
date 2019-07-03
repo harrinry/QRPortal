@@ -11,7 +11,7 @@
     "remediation": "Try to reduce the sources having data deletion on the same table.",
     "sample": "delete CAST; \ndelete CAST; with\n   #sql{\n    delete from TEST1 L1\n    where TEST_ID= :CAST.L1\n   };\nexecute delete for CAST; \n\n\nDML syntax NOT supported for delete statements :\nexecute        \n   #sql{\n    delete from CAST L1\n    where TEST_ID= :CAST.L1\n   };\nstringExpression String= \"delete from \" +     \n     CAST L1 \"+    \"where \"+     \"L1= ?\";\n  prepare preparedStatementIdentifier from stringExpression;\n  execute preparedStatementIdentifier\n   using CAST.L1;",
     "total": "Number of Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid having multiple artifacts deleting data on the same SQL table (EGL)",
     "businessCriteria": [
         {
             "id": 66032,

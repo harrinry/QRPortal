@@ -11,7 +11,7 @@
     "remediation": "The additions \"USING CLIENT\" and \"CLIENT SPECIFIED\" should not be used in OpenSQL. The following source code shows how OpenSQL is generally used for implicit automatic client handling.\n\nSELECT ... \n       FROM dbtab \n       WHERE ... \n       INTO ...",
     "sample": "OpenSQL Statements with USING CLIENT/CLIENT SPECIFIED addition.\n\nThis program allows a user to access customer data in any client.\n\nDATA client TYPE sy-mandt. \nclient = sy-mandt. \ncl_demo_input=>request( CHANGING field = client ). \n\nSELECT * \n       FROM scustom USING CLIENT @client \n       INTO TABLE @DATA(customers1). \ncl_demo_output=>display( customers1 ). \n\nSELECT * \n       FROM scustom CLIENT SPECIFIED \n       WHERE mandt = @client \n       INTO TABLE @DATA(customers2). \ncl_demo_output=>display( customers2 ).",
     "total": "Number of ABAP Artifacts containing OpenSQL",
-    "alternativeName": null,
+    "alternativeName": "Avoid Cross-Client Database Access using Open SQL statements with CLIENT SPECIFIED/USING CLIENT addition",
     "businessCriteria": [
         {
             "id": 20140522,

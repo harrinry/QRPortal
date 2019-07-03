@@ -11,7 +11,7 @@
     "remediation": "Reduce case length in switch.",
     "sample": "public class Bar   \n   {\n      public function foo() : void\n      {\n          var i : int = 4;\n          \n          switch( i )\n          {\n             case 1:\n                handleFirstCase();\n                break;\n             case 2: // VIOLATION\n                googleResquest.url = \"\";\n                handleSecondCaseFirstPart();\n                handleSecondCaseSecondPart();\n                break;\n          }\n      }\n   }",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid long cases in switch (Flex)",
     "businessCriteria": [
         {
             "id": 66032,

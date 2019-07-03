@@ -11,7 +11,7 @@
     "remediationSample": "Use join instead:\n\nSELECT *\nFROM HumanResources.Employee E\nINNER JOIN HumanResources.EmployeeAddress EA ON E.EmployeeID = EA.EmployeeID",
     "sample": "SELECT *\nFROM HumanResources.Employee E\nWHERE E.EmployeeID = ( SELECT EA.EmployeeID\nFROM HumanResources.EmployeeAddress EA\nWHERE EA.EmployeeID = E.EmployeeID)",
     "total": "Total number of RPG400 Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid Programs with Subqueries  (RPG400)",
     "businessCriteria": [
         {
             "id": 60014,

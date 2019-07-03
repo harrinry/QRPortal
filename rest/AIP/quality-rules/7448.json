@@ -12,7 +12,7 @@
     "remediationSample": "String safe=MyFilterStringFunction(Request.Form[\"UserData\"]);\n\n=> By processing the entry in the MyFilterStringFunction you can ensure that the data will not lead to SQL-Injection or other kind of attack.\nUse name convention for the variable containing the safe data to distinguish it. Always use that variable afterwards.",
     "sample": "String unsafe = Request.Form[\"UserData\"];\n..\n.. // use unsafe\n\n=> This is unsafe to use that value directly. For example if this variable is used in a SQL-Query, it is very easy to do some SQL-Injection.",
     "total": "Total number of pages and .net artifacts",
-    "alternativeName": null,
+    "alternativeName": "Always validate user input with Request variables",
     "businessCriteria": [
         {
             "id": 66031,

@@ -10,7 +10,7 @@
     "remediation": "As much as possible remove the test of the SY-UNAME system field with the name of a specific user.",
     "sample": "Example #1\nAT SELECTION-SCREEN ON p_entity.\n  IF NOT SY-UNAME = 'JOHN'.\n    PERFORM check_authorization_le using p_entity.\n  ENDIF.\n\nExample #2\n  IF SY-UNAME = 'JOHN'.\n    CHECK mara-zzcop eq k_pf.\n    LOOP AT screen.\n      IF screen-group1 eq k_zpf.\n        screen-input = k_x.\n        MODIFY SCREEN.\n      ENDIF.\n    ENDLOOP.\n  ENDIF.",
     "total": "Number of ABAP Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid testing specific values for SY-UNAME",
     "businessCriteria": [
         {
             "id": 66031,

@@ -11,7 +11,7 @@
     "remediationSample": "<?php\nfunction iterative_global($a) {\n   for($a;$a < 4;$a++)\n   {\n      echo \"$a \\n\" ;                            //violation removed\n   }\n}\nclass CastTest {\n   public function iterative($b) {\n      for($b;$b <7;$b++) {\n        echo \"$b \\n\" ;                            //violation removed\n      }\n   }\n}\n$test =  new CastTest();\n$test->iterative(4);\niterative_global(1);\n?>",
     "sample": "<?php\nfunction recursive_global($a) {\n   if($a < 4) {\n      echo \"$a \\n\";\n      recursive_global($a +1);                       //violation\n   }\n}   \nclass CastTest {\n   public function recursive($b) {\n      if($b < 7) {\n         echo \"$b \\n\";\n         $this->recursive($b +1);                  //violation\n      }\n   }\n}\n$test =  new CastTest();\n$test->recursive(4);\nrecursive_global(1);\n?>",
     "total": "Number of Methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid Methods and Functions having recursive calls (PHP)",
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,7 +12,7 @@
     "remediationSample": "Use instead db.collection.explain().find() or cursor.explain() at Mongodb Shell",
     "sample": "var database = new MongoClient().GetServer().GetDatabase(\"db\");\nvar collection = database.GetCollection<document_name>(\"document_name\");\n\nvar explanation = collection.find(document_name => document_name.Name ==\"name\").Explain();",
     "total": "The total procedure counts MongoDB collection.",
-    "alternativeName": null,
+    "alternativeName": "Avoid using explain() in production code",
     "businessCriteria": [
         {
             "id": 60012,

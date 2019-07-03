@@ -10,7 +10,7 @@
     "remediation": "Try to reduce the number of opening cursors in the loops.",
     "sample": "[BEGIN of a LOOP (see what all type of loop are possible in Language Reference )]\nopen CAST_TEST\n               with #sql{\n  select A,B, C, D\n   from CAST1_JOINT T1\n    WHERE\n       M = :N AND\n                  ORDER BY\n                    1 ASC\n             WITH UR\n     }\n                into A, B, C, D\n                for CAST2_JOINT;\n[END of a LOOP (see what all type of loop are possible in Language Reference )]",
     "total": "Number of Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid Opening Cursor in a loop (EGL)",
     "businessCriteria": [
         {
             "id": 60014,

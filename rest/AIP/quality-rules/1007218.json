@@ -9,7 +9,7 @@
     "rationale": "Fetching database rows as array and accessing through subscript makes the program dependent on backend column order.",
     "remediation": "Fetch database rows as associate array with call to xxx_fetch_assoc or xxx_fetch_array with xxx_ASSOC or xxx_BOTH as result type. Even though data fetched through xxx_BOTH contains array, it is advised to access rows thorugh column names and not subscript.",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid fetching database rows as array and accessing using subscript (PHP)",
     "businessCriteria": [
         {
             "id": 60014,

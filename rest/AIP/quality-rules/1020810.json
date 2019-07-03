@@ -12,7 +12,7 @@
     "remediationSample": "@Component({ \n  selector: 'my-app', \n  template: ` \n    <div [innerHtml]=\"html\"></div> \n  `, \n}) \nexport class App { \n  constructor() { \n    this.html = \"<h1>DomSanitizer</h1><script>attackerCode()</script>\" \n  } \n}",
     "sample": "import {BrowserModule, DomSanitizer} from '@angular/platform-browser'\n@Component({ \n  selector: 'my-app', \n  template: ` \n     <div [innerHtml]=\"html\"></div> \n  `, \n}) \nexport class App { \n  constructor(private sanitizer: DomSanitizer) { \n    this.html = sanitizer.bypassSecurityTrustHtml('<h1>DomSanitizer</h1><script>ourSafeCode()</script>') ; \n  } \n}",
     "total": "Number of Typescript artifacts",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid bypassing angular security trust ",
     "businessCriteria": [
         {
             "id": 66031,

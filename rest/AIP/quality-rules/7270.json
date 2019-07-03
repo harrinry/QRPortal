@@ -11,7 +11,7 @@
     "remediationSample": "class Example {\n    protected double pi = 3.14;\n\n    static int min (int x, int y) { // FIXED\n      return (x>y?y:x);\n    }\n\n    double getPi() {  // OK\n       return pi;\n    }",
     "sample": "class Example {\n    protected double pi = 3.14;\n\n    int min (int x, int y) { // VIOLATION\n      return (x>y?y:x);\n    }\n\n    double getPi() {  // OK\n       return pi;\n    }",
     "total": "Number of methods",
-    "alternativeName": null,
+    "alternativeName": "Declare as Static all methods not using instance members (.NET)",
     "businessCriteria": [
         {
             "id": 60014,

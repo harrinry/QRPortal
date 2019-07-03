@@ -13,7 +13,7 @@
     "remediationSample": "class Base \n{ \n public: \n  virtual void myfct( int a = 0 ); \n}; \n\nclass Derived : public Base \n{ \n public: \n  virtual void myfct( int a = 0 );  // FIXED\n};",
     "sample": "class Base \n{ \n public: \n  virtual void myfct( int a = 0 ); \n}; \n\nclass Derived : public Base \n{ \n public: \n  virtual void myfct( int a = 10 );  // VIOLATION\n};",
     "total": "Number of C++ methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid redeclaring and overriding Methods with different default parameter values",
     "businessCriteria": [
         {
             "id": 66031,

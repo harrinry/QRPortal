@@ -12,7 +12,7 @@
     "remediationSample": "// easy remediation\n\ndo {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch\n{\n   print(\"Unexpected error:\\(error).\")\n}\n\n// better remediation\n\ndo {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch SomethingError.invalidateError {\n   print(\"Invalid error\")\n}\ncatch {\n   print(\"Unexpected error:\\(error).\")\n}",
     "sample": "do {\n    try doSomethingWith(person: \"Alice\")\n    print(\"Success! Yum.\")\n}\ncatch {\n}",
     "total": "Number of Swift artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid empty generic catch blocks (Swift)",
     "businessCriteria": [
         {
             "id": 20140522,

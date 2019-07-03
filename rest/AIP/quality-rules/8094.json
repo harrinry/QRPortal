@@ -12,7 +12,7 @@
     "remediation": "Try and avoid using weak identities.",
     "sample": "using System;\nusing System.IO;\nusing System.Reflection;\nusing System.Threading;\n\nnamespace ReliabilityLibrary\n{\n   class WeakIdentities\n   {\n      void LockOnWeakId1()\n      { \n         lock(typeof(WeakIdentities)) {}\n      }\n\n      void LockOnWeakId2() \n      {\n         MemoryStream stream = new MemoryStream();\n         lock(stream) {} \n      }\n}",
     "total": "Number of Methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid locking of Objects with weak identities",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,7 +11,7 @@
     "remediationSample": "function test1()\n  execute \n   #sql{\n    delete from\n     CASTTEST1 T1\n    where\n     M= CASTTESTT1.M\n   };\n end",
     "sample": "function test1()\n  stringExpression String= \"delete from \" +\n     \"CASTTEST T1 \"+\n    \"where \"+\n     \"M= ?\";\n  prepare preparedStatementIdentifier from stringExpression;  // VIOLATION\n  execute preparedStatementIdentifier\n   using CASTTEST.T1;\n end",
     "total": "Number of Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid using prepare statement (EGL)",
     "businessCriteria": [
         {
             "id": 60014,

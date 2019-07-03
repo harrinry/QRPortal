@@ -13,7 +13,7 @@
     "remediationSample": "EXEC CICS \n     RECEIVE MAP('UA9MAP1') MAPSET('UA9MAP1')\n  END-EXEC.\n\n  EVALUATE EIBRESP\n    WHEN DFHRESP(MAPFAIL)\n* DO NOTHING\n  END-EVALUATE.\n\nPAR-3.\n  MOVE Z TO T.",
     "sample": "EXEC CICS \n     IGNORE CONDITION\n     MAPFAIL\nEND-EXEC.\nEXEC CICS \n     RECEIVE MAP('UA9MAP1') MAPSET('UA9MAP1')\nEND-EXEC.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using IGNORE CONDITION",
     "businessCriteria": [
         {
             "id": 20140522,

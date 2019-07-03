@@ -11,7 +11,7 @@
     "reference": "A Metrics Suite for Object Oriented Design\nChidamber, S.R. and C.F. Kemerer\nIEEE Transactions on Software Engineering, 1994",
     "remediation": "High CBO numbers might indicate that a class has too many responsibilities. Such a class is potential candidate for a refactoring where the class would delegate some the responsibilities to other classes or new classes (Extract Class, Extract Method refactoring). This will increase modularity and reusability.\n\nWhen refactoring with architecture in mind, the CBO metric can be used to check classes running on the application client that have high coupling. These classes are then good candidate for a refactoring towards the Session Facade pattern (Java-originated pattern that is also applicable to the .NET platform):\nhttp://java.sun.com/blueprints/patterns/SessionFacade.html",
     "total": "Number of classes",
-    "alternativeName": null,
+    "alternativeName": "Avoid Classes with High Coupling Between Objects",
     "businessCriteria": [
         {
             "id": 66032,

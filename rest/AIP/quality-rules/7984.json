@@ -13,7 +13,7 @@
     "remediationSample": "void foo()\n{\n  char strSource[100]=\"string with some expandable\\t\\tcharacters\\n\\n\";\n  char strTarget[4*100];\n  strecpy(strTarget,strSource,theExceptions);\n}",
     "sample": "void foo()\n{\n  char strSource[100]=\"string with some expandable\\t\\tcharacters\\n\\n\";\n  char strTarget[100];\n  strecpy(strTarget,strSource,theExceptions);\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using strecpy() function",
     "businessCriteria": [
         {
             "id": 66031,

@@ -12,7 +12,7 @@
     "remediationSample": "void f(HANDLE mutex)\n{\n    int const TIMEOUT = 10000; // Value depends on your application\n    DWORD result = WaitForSingleObject(mutex, TIMEOUT);\n    if (result == WAIT_TIMEOUT)\n    {\n        throw std::runtime_error(\"Cannot access mySharedData. Deadlock?\");\n    }\n    mySharedData = 10;\n    ReleaseMutex(mutex);\n}",
     "sample": "void f(HANDLE mutex)\n{\n    WaitForSingleObject(mutex, INFINITE);\n    mySharedData = 10;\n    ReleaseMutex(mutex);\n}",
     "total": "Number of C++ methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid calling blocking functions with an infinite timeout",
     "businessCriteria": [
         {
             "id": 20140522,

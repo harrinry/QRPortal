@@ -12,7 +12,7 @@
     "remediationSample": "@NgModule({\n  declarations: [\n      AppComponent,\n      ArtistSearchComponent\n  ],\n  imports: [\n      BrowserModule,\n      FormsModule,\n      HttpClientModule,\n      HttpClientXsrfModule.withOptions({\n          cookieName: 'My-Xsrf-Cookie',\n          headerName: 'My-Xsrf-Header',\n      }),\n  ],\n  providers: [\n\n      HttpErrorHandler,\n      MessageService\n\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }",
     "sample": "@NgModule({\n  declarations: [\n      AppComponent,\n      ArtistSearchComponent\n  ],\n  imports: [\n      BrowserModule,\n      FormsModule,\n      HttpClientModule,\n      HttpClientXsrfModule.disable(),\n      HttpClientXsrfModule.withOptions({\n          cookieName: 'My-Xsrf-Cookie',\n          headerName: 'My-Xsrf-Header',\n      }),\n  ],\n  providers: [\n\n      HttpErrorHandler,\n      MessageService\n\n  ],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }",
     "total": "Number of TypeScript classes",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid disabling xsrf check in HttpClientXsrfModule",
     "businessCriteria": [
         {
             "id": 66031,

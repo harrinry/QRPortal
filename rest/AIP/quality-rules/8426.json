@@ -11,7 +11,7 @@
     "remediation": "Avoid Using all of these functions\n\nIf it is not possible, filter user input via special methods QUOTE_STR and QUOTE of the CL_ABAP_DYN_PRG class. In ABAP, strings are usually enclosed with backticks (\u2018) and char arrays are usually enclosed in single quotation marks (\u2018). Use different methods of CL_ABAP_DYN_PRG depending on the type of enclosing symbol: use QUOTE_STR with backticks and QUOTE with single quotation marks.",
     "sample": "PARAMETERS STMT(65535) TYPE C.\nCALL 'C_DB_EXECUTE'\n    ID 'STATLEN' FIELD LN\n    ID 'STATTXT' FIELD STMT\n    ID 'SQLERR' FIELD SQL_CODE\n    ID 'ERRTXT' FIELD SQL_MSG\n    ID 'ROWNUM' FIELD ROW_NUM.\n\nThe field 'STATTXT' contains a SQL statement. The variable STMT is declared as a parameter and transmitted to this field. Therefore, an attacker can pass a specially crafted SQL statement to the variable STMT and reach the malicious goals by executing it.\n\n---------------------------------------------------\nPARAMETERS lv_stmt TYPE c LENGTH 80.\nCALL 'C_DB_FUNCTION' ID 'FUNCTION' FIELD 'DB_SQL'\n ID 'FCODE' FIELD 'PO'\n ID 'STMT_STR' FIELD lv_stmt\n ...\n\nThe field 'STMT_STR' contains a SQL statement. The variable lv_stmtis declared as a parameter and transmitted to this field. Therefore, an attacker can pass a specially crafted SQL statement to the variable lv_stmt and reach the malicious goals by executing it.",
     "total": "Number of ABAP Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
     "businessCriteria": [
         {
             "id": 66031,

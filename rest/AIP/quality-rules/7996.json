@@ -12,7 +12,7 @@
     "remediationSample": "It is possible to correct this violation by making the utility class non instantiable:\n\nclass MyUtilityClass\n{\npublic:\n    static bool MyUtilityFunction1() \n    {\n        //Do Something Usefull \n        return true;\n    }\n\nprivate :\n    MyUtilityClass(); // FIXED: Avoid instantiation of the class. No definition\n};\n\nOr by using a namespace instead:\n\nnamespace MyUtility {\n\nbool MyUtilityFunction1() \n{\n    //Do Something Usefull \n    return true;\n}\n\n} // namespace MyUtility",
     "sample": "class MyUtilityClass\n{\npublic:\n    static bool MyUtilityFunction1() \n    {\n        //Do Something Usefull \n        return true;\n    }\n};  // VIOLATION",
     "total": "Number of utility classes",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
     "businessCriteria": [
         {
             "id": 60014,

@@ -12,7 +12,7 @@
     "remediationSample": "SELECT first_name, department_name\nFROM employees\n     JOIN departments\nON (employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id);",
     "sample": "SELECT first_name, department_name\nFROM employees, departments\nwhere(employees.manager_id = departments.manager_id\n     AND employees.department_id = departments.department_id);",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid queries using old style join convention instead of ANSI-Standard joins (SQL)",
     "businessCriteria": [
         {
             "id": 60014,

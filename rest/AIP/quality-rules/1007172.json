@@ -11,7 +11,7 @@
     "remediationSample": "<?php\nclass ClassErrorInInitFactory {\n   public static function createMe() {\n      return new ClassErrorInInitFactory();\n   }\n   \n   private function __construct() {\n      \n   }\n   \n   public function init($filepath) {\n      if (false === file_exists($filepath)) {\n         return false;\n      }\n      \n      return true;\n   }\n}\n\n$obj = ClassErrorInInitFactory::createMe();\nif (false === $obj->init(\"C:\\\\Nonexistant\")) {\n   echo \"file does not exist\", PHP_EOL;\n} else {\n   echo \"file exists\", PHP_EOL;\n}\n\n// ---- OR --- \nclass ClassErrorInInitException {\n   public function __construct($filepath) {\n      if (false === file_exists($filepath)) {\n         throw new RuntimeException(\"file $filepath does not exist!\");\n      }\n   }\n}\n\n\ntry {\n   $obj =  new ClassErrorInInitException(\"C:\\\\NonExistant\");\n} catch(RuntimeException $e) {\n   echo \"Exception while creating object \" , $e->getMessage(), PHP_EOL;\n}\n\n  ?>",
     "sample": "<?php\nclass ClassReturingValueFromConstructor {\n   \n   public function ClassReturingValueFromConstructor($filepath) {\n      if (false === file_exists($filepath)) {\n         return false;\n      }\n      \n      return true;\n   }\n   \n}\n\n$obj = new ClassReturingValueFromConstructor(\"C:\\\\NonExistant\");\n\n  ?>",
     "total": "Number of Classes",
-    "alternativeName": null,
+    "alternativeName": "Avoid having constructors with return value (PHP)",
     "businessCriteria": [
         {
             "id": 20140522,

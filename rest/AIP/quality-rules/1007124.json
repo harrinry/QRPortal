@@ -12,7 +12,7 @@
     "remediationSample": "<?php\n\n/**\n  * Doc comment\n  * @param int    $counter  counter\n  * @throws RuntimeException if counter is 1\n  */\nfunction afunction($counter) {\n   if (1 === $counter) {\n      throw new RuntimeException(\"Bad parameter!\");\n   }\n}\n\nclass ThrowsTagUse {\n   /**\n     * Doc comment\n     * @param int    $counter  counter\n     * @throws RuntimeException if counter is 1     \n     */\n   public function __construct() {\n      if (1 === $counter) {\n         throw new RuntimeException(\"Bad parameter!\");\n      }\n   }\n\n   /**\n     * Doc comment\n     * @param int    $counter  counter\n     * @throws RuntimeException if counter is 1\n     */\n   public function aMethod() {\n      if (1 === $counter) {\n         throw new RuntimeException(\"Bad parameter!\");\n      }\n   }\n   \n}\n\n?>",
     "sample": "<?php\n\n/**\n  * Doc comment\n  * @param int    $counter  counter\n  */\nfunction afunction($counter) {\n   if (1 === $counter) {\n      throw new RuntimeException(\"Bad parameter!\");\n   }\n}\n\nclass ThrowsTagUse {\n   /**\n     * Doc comment\n     * @param int    $counter  counter\n     */\n   public function __construct() {\n      if (1 === $counter) {\n         throw new RuntimeException(\"Bad parameter!\");\n      }\n   }\n\n   /**\n     * Doc comment\n     * @param int    $counter  counter\n     */\n   public function aMethod() {\n      if (1 === $counter) {\n         throw new RuntimeException(\"Bad parameter!\");\n      }\n   }\n   \n}\n\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid artifacts throwing exceptions without @Throws tag in doc comments (PHP)",
     "businessCriteria": [
         {
             "id": 20140522,

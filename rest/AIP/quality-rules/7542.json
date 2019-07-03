@@ -13,7 +13,7 @@
     "remediationSample": "* Select orders for specific material and order type\nSELECT matnr auart vbeln posnr\n              FROM vapma\n              INTO TABLE ts_vapma[]\n              WHERE matnr IN so_matnr\n              AND auart IN so_auart.\n\n* Use this result to read the detail data from VBAP: \n* Order Item Data\nIF NOT ts_vapma[] IS INITIAL.\nSELECT matnr vbeln kwmeng vrkme\n              FROM vbap\n              INTO TABLE ts_orders\n              FOR ALL ENTRIES IN ts_vapma[]\n              WHERE vbeln = ts_vapma\n              AND posnr = ts_vapma-posnr.\nENDIF.",
     "sample": "* Select orders for specific material and order type\nSELECT matnr auart vbeln posnr\n              FROM vapma\n              INTO TABLE ts_vapma[]\n              WHERE matnr IN so_matnr\n             AND auart IN so_auart.\n\n* Use this result to read the detail data from VBAP: \n* Order Item Data\nSELECT matnr vbeln kwmeng vrkme\n              FROM vbap\n              INTO TABLE ts_orders\n              FOR ALL ENTRIES IN ts_vapma[]\n              WHERE vbeln = ts_vapma\n              AND posnr = ts_vapma-posnr",
     "total": "Number of ABAP Artifacts containing OpenSQL statements",
-    "alternativeName": null,
+    "alternativeName": "Avoid using FOR ALL ENTRIES IN without emptiness check",
     "businessCriteria": [
         {
             "id": 60014,

@@ -12,7 +12,7 @@
     "remediationSample": "* remediation\nSELECT name INTO TABLE itab \n    FROM dtab\n    WHERE typeno = 2.\nIF sy-subrc = 0.\n    LOOP AT itab.\n...\n    ENDLOOP.\nELSE.\n    MESSAGE e000 WITH text-117.\nENDIF.",
     "sample": "* violation\nSELECT name\n    FROM dtab\n    WHERE typeno = 2.\n...\nENDSELECT.\n\n* no violation\nSELECT prodid INTO lv_prodid\n    FROM prodlist\n    UP TO 1 ROWS\n    WHERE typeid = ps_alty-type_id.\nENDSELECT.\n\nIF NOT lv_prodid IS INITIAL\n...\nENDIF.\n\n* no violation\nSELECT prodid INTO lv_prodid\n    FROM prodlist\n    UP TO ONE ROWS\n    WHERE typeid = ps_alty-type_id.\nENDSELECT.\n\nIF NOT lv_prodid IS INITIAL\n...\nENDIF.",
     "total": "Number of ABAP Artifacts using SAP Tables and SAP Views.",
-    "alternativeName": null,
+    "alternativeName": "Avoid using SELECT ... ENDSELECT statement",
     "businessCriteria": [
         {
             "id": 60014,

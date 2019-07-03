@@ -9,7 +9,7 @@
     "rationale": "A join specification to a 1:1 extension table has been created with the destination column property set to ROW_ID.  Only the PAR_ROW_ID column should be used as the destination column in join specifications to 1:1 extension tables (e.g., S_EVT_ACT_X) and tables that are part of the S_PARTY model (e.g., S_ORG_EXT, S_CONTACT, S_USER, S_POSTN, S_BU).",
     "remediation": "When creating joins to 1:1 extension tables make sure that the join specification has a Destination Column of PAR_ROW_ID.",
     "total": "Number of added or modified Joins",
-    "alternativeName": null,
+    "alternativeName": "SiebelReview: Incorrect Join Specification To 1:1 Extension Table ROW_ID",
     "businessCriteria": [
         {
             "id": 66032,

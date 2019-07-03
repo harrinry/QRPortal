@@ -11,7 +11,7 @@
     "remediation": "Keep every functional area loosely coupled.",
     "sample": "package functional\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class FunctionClient\n {\n }\n}\npackage functional.func1.api\n\n{\n import functional.func1.restricted.Func1RestrictedClass; \n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1ExposedClass\n {\n }\n}\npackage functional.func1.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func2.api.Func2ExposedClass;\n import functional.func2.restricted.Func2RestrictedClass; // VIOLATION\n \n public class Func1RestrictedClass\n {\n }\n}\npackage functional.func2.api\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.restricted.Func2RestrictedClass;\n \n public class Func2ExposedClass\n {\n }\n}\npackage functional.func2.restricted\n{\n import functional.func1.api.Func1ExposedClass;\n import functional.func1.restricted.Func1RestrictedClass; // VIOLATION\n import functional.func2.api.Func2ExposedClass;\n \n public class Func2RestrictedClass\n {\n }\n}",
     "total": "Number of packages",
-    "alternativeName": null,
+    "alternativeName": "Avoid class that imports an internal class from another functional area (Flex)",
     "businessCriteria": [
         {
             "id": 66032,

@@ -10,7 +10,7 @@
     "rationale": "Several script functions were found containing objects which are not explicitly released from memory after use, or are not released in the correct order.",
     "remediation": "It is a good coding practice to release objects explicitly when they are no longer needed rather than rely on the interpreter to clean up. \nIn Siebel eScript, objects can be released by setting their value to null, as in:\nbcAccount = null;\nIn Siebel VB, objects can be released by setting their value to null, as in:\nSet bcAccount = nothing;\nPlease note that objects must be destroyed in the reverse order of their creation, otherwise references to the already destroyed object can be lost.\nAs a general practice, the objects should be destroyed in the finally{} section of the exception handling mechanism. The 'finally' section is always executed, even if there are several return() statements in the try{} section.\nWhen terminating function execution using Exit Function all new object instances have to be released first.",
     "total": "Number of added or modified eScripts",
-    "alternativeName": null,
+    "alternativeName": "SiebelScriptingReview: Explicit Object Release",
     "businessCriteria": [
         {
             "id": 60014,

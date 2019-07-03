@@ -11,7 +11,7 @@
     "remediationSample": "READ TABLE P_EVENTS WITH KEY NAME = SLIS_EV\n                           INTO LS_EVENT.\nIF SY-SUBRC = 0.\n    MOVE TOP_OF_PAGE TO LS_EVENT-FORM.\nENDIF.",
     "sample": "READ TABLE P_EVENTS WITH KEY NAME = SLIS_EV\n                           INTO LS_EVENT.\nIF SY-SUBRC = 0\nENDIF.\n...\nMOVE TOP_OF_PAGE TO LS_EVENT-FORM.",
     "total": "Number of ABAP artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid empty IF-ENDIF blocks",
     "businessCriteria": [
         {
             "id": 20140522,

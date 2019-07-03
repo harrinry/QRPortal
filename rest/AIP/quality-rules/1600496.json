@@ -11,7 +11,7 @@
     "remediation": "Messages sent online should always be coded in the SavePostChange event.",
     "sample": "Message Class Outbound Asynchronous Example\nThe following example uses the Publish method in the PeopleCode IntBroker class:\n\nLocal Message &MSG;\nLocal Rowset &SALES_ORDER, &RS;\n\n /*Get a pointer to the component buffer rowset */\n&SALES_ORDER = GetLevel0();\n/*Create an instance of the SALES_ORDER_ASYNC message object */\n&MSG = CreateMessage(OPERATION.SALES_ORDER_ASYNC);\n\n/*Copy the rows from the rowset to the message object */\n&MSG.CopyRowset(&SALES_ORDER);\n/*Send the message */\n%IntBroker.Publish(&MSG);",
     "total": "Number of PeopleSoft Events, Functions and Methods",
-    "alternativeName": null,
+    "alternativeName": "Send messages in the SavePostChange event (PeopleSoft)",
     "businessCriteria": [
         {
             "id": 60014,

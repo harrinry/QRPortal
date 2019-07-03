@@ -12,7 +12,7 @@
     "remediationSample": "* Example 1 \n            SELECT F-CARS \n            ASSIGN TO \"CARS\". \n            ... \n            1000-READ-DATA. \n            READ CARDIN INTO PEMPNO \n               AT END MOVE 'N' TO INPUT-SWITCH \n            END-READ \n\n        PERFORM PROCESS-DATA. \n\n            * Example 2 \n            SELECT F-CARS \n            ASSIGN TO \"CARS\" \n            ORGANIZATION INDEXED \n            ACCESS RANDOM \n            RECORD KEY CAR-ID. \n            ... \n            1000-READ-DATA. \n            READ F-CARS \n                INVALID KEY \n                MOVE 'N' TO INPUT-SWITCH \n            END-READ \n\n            PERFORM PROCESS-DATA. .",
     "sample": "* Example 1 \n            SELECT F-CARS \n            ASSIGN TO \"CARS\". \n            ... \n            1000-READ-DATA. \n            READ CARDIN INTO PEMPNO. \n            PERFORM PROCESS-DATA. \n\n            * Example 2 \n            SELECT F-CARS \n            ASSIGN TO \"CARS\" \n            ORGANIZATION INDEXED \n            ACCESS RANDOM \n            RECORD KEY CAR-ID. \n            ... \n            1000-READ-DATA. \n                READ F-CARS. \n            PERFORM PROCESS-DATA. ",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using READ statement without AT END clause or INVALID KEY clause",
     "businessCriteria": [
         {
             "id": 20140522,

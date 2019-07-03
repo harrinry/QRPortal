@@ -13,7 +13,7 @@
     "remediationSample": "PROCEDURE DIVISION\n       0000-MAIN.\n           OPEN OUTPUT DTA-FILE.\n           PERFORM 1000-PROC1.\n           CLOSE DTA-FILE.\n           STOP RUN.\n           \n       1000-PROC1.\n           ...\n           MOVE VAR-01 TO DTA-FILE-REC.\n           WRITE DTA-FILE-REC.",
     "sample": "PROCEDURE DIVISION\n       0000-MAIN.\n           OPEN OUTPUT DTA-FILE.\n           PERFORM 1000-PROC1.\n           STOP RUN.\n           \n       1000-PROC1.\n           ...\n           MOVE VAR-01 TO DTA-FILE-REC.\n           WRITE DTA-FILE-REC.",
     "total": "Number of Cobol Programs accessing Cobol File Links",
-    "alternativeName": null,
+    "alternativeName": "Each opened file must be closed",
     "businessCriteria": [
         {
             "id": 60014,

@@ -10,7 +10,7 @@
     "remediation": "Remove redundant metadata.",
     "sample": "class ClassHavingMethodWithRedundantMetadata {\n   [MessageHandler(method=\"doSomething\")] // VIOLATION\n   public function doSomething( message : MyMessage ) : void\n   {\n      message.toString();\n   }\n}",
     "total": "Number of classes",
-    "alternativeName": null,
+    "alternativeName": "Avoid redundant method metadata argument for handler (Flex)",
     "businessCriteria": [
         {
             "id": 20140522,

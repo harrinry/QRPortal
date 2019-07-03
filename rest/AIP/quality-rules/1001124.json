@@ -8,7 +8,7 @@
     "rationale": "A NOT operator in a WHERE clause does not allow to use database indexes and has an impact in terms of performance. It is better to invert the logical expression in data selection.",
     "remediation": "Review the SQL queries and not use NOT IN anymore.",
     "total": "Number of PL1 Main Procedures",
-    "alternativeName": null,
+    "alternativeName": "Avoid Main Procedures having  SQL queries using  NOT IN (PL1)",
     "businessCriteria": [
         {
             "id": 60014,

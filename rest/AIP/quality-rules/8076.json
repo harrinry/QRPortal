@@ -12,7 +12,7 @@
     "remediationSample": "void f()\n{\n    std::vector<MyClass> myCol(100) ;\n    std::string myText = \"Hello world !\";\n}",
     "sample": "void f()\n{\n    MyClass *myCol = new MyClass[100] ;\n    delete [] myCol ;\n    char *myText = new char[10] ;\n    strcpy (myText, \"Hello world!\");\n    delete[] myText;\n}",
     "total": "Number of C++ constructors, destructors, and methods, and  **functions** of course.",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using 'new[]', prefer 'std::vector' or 'std::array'",
     "businessCriteria": [
         {
             "id": 60012,

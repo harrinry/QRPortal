@@ -9,7 +9,7 @@
     "rationale": "Oracle instructs user to not use LONG and LONG RAW anymore and to use LOB instead.\nThe reasons for that are:\n- LONG can only store 2GB whereas LOB can have 4GB\n- In PL/SQL only 32760 bytes can be handled on LONG (on possibly 2GB)\n- Only one column of type LONG or LONG RAW per table is possible. There is no such limit with LOB\n- Acess to LONG are sequential whereas access to LOB can be direct (thus having better performances)\n- A LONG value can't be used as a parameter of a function in SQL, and in PL/SQL LONG variables will be converted to VARCHAR2\netc..",
     "remediation": "Convert LONG and LONG RAW to LOB.",
     "total": "Number of PLSQL tables and views",
-    "alternativeName": null,
+    "alternativeName": "Avoid using LONG & LONG RAW datatype for Table Columns",
     "businessCriteria": [
         {
             "id": 60014,

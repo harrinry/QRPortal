@@ -12,7 +12,7 @@
     "remediationSample": "Sample 1\n<% String eid = request.getParameter(\"eid\"); %>\n...\n//include validation code\nEmployee ID: <%= eid %>\n\n\nSample 2:\n<%\nprotected System.Web.UI.WebControls.TextBox Login;\nprotected System.Web.UI.WebControls.Label EmployeeID;\n...\nEmployeeID.Text = Login.Text;\n%>\n//Include validation methods\n<p><asp:label id=\"EmployeeID\" runat=\"server\" /></p>",
     "sample": "Sample 1\n<% String eid = request.getParameter(\"eid\"); %>\n...\nEmployee ID: <%= eid %>\n\nSample 2\n<%\nprotected System.Web.UI.WebControls.TextBox Login;\nprotected System.Web.UI.WebControls.Label EmployeeID;\n...\nEmployeeID.Text = Login.Text;\n%>\n\n<p><asp:label id=\"EmployeeID\" runat=\"server\" /></p>",
     "total": "Number of methods calling user input methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid cross-site scripting vulnerabilities",
     "businessCriteria": [
         {
             "id": 66031,

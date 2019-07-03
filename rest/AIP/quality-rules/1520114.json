@@ -10,7 +10,7 @@
     "rationale": "It was noted that pick maps were incorrectly defined or missing for fields with pick lists specified.",
     "remediation": "Make sure that all fields where pick lists are defined have a valid pick map definition.\nFor static pick lists, there is generally a single pick map defined, mapping the Value field of the pick BusComp to the current field.\nFor dynamic pick lists, there are generally at least two pick maps defined:\n* 1 pick map copies the field in the destination BusComp to the current field for visibility in the UI.  For example, when picking an account for an opportunity, the account Name gets mapped to the opportunity Account Name field.\n* 1 pick map copies a reference to the picked data, so that it may be retrieved in a subsequent visit to the record.  To continue the example, the account Id gets mapped to the opportunity Account Id field.  This will stored the value of the account's ROW_ID in S_OPTY.PR_DEPT_OU_ID to build a relationship between the records.\n* Many more pick maps may exist to allow additional data to be immediately available in the base BusComp.\nFor fields that do not have a pick list defined, delete any associated pick maps.",
     "total": "Number of added or modified Fields with PickList or PickMap",
-    "alternativeName": null,
+    "alternativeName": "SiebelReview: Pick Maps Missing or Incorrectly Defined",
     "businessCriteria": [
         {
             "id": 66032,

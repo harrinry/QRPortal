@@ -13,7 +13,7 @@
     "remediationSample": "/* Convert to snprintf */\nvoid main(int argc, char **argv)\n{\n  char cmds[128];\n  char format_string = \"COMMAND: %s\\n\";\n  snprintf(cmds, format_string, argv[0], 128-strlen(format_string) + 1);\n}",
     "sample": "void main(int argc, char **argv)\n{\n  char cmds[128];\n  sprintf(cmds, \"COMMAND: %s\\n\", argv[0]);\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Never use sprintf() or vsprintf() functions",
     "businessCriteria": [
         {
             "id": 66031,

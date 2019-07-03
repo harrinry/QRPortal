@@ -12,7 +12,7 @@
     "remediationSample": "<?php\n\nfinal class CastTest\n {\n     public function Test() // Violation removed\n     {\n     }\n }\n\n?>",
     "sample": "<?php\n\nfinal class CastTest\n {\n     public final function Test() // Violation - Unnecessary final modifiers inside a final class\n     {\n     }\n }\n\n?>",
     "total": "Number of Methods",
-    "alternativeName": null,
+    "alternativeName": "Avoid unnecessary final modifiers inside final Classes (PHP)",
     "businessCriteria": [
         {
             "id": 60012,

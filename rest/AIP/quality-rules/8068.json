@@ -12,7 +12,7 @@
     "remediationSample": "int f()\n{\n unique_ptr<int> i (new int(42));\n return *i;\n}",
     "sample": "int f()\n{\n int *i = new int(42);\n return *i;\n}",
     "total": "Number of C/C++ functins and methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Do not return a dereferenced pointer allocated inside the function",
     "businessCriteria": [
         {
             "id": 60014,

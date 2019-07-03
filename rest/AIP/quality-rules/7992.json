@@ -13,7 +13,7 @@
     "remediationSample": "void foo()\n{\n  char password[20];\n  if ( !readpassphrase(\"Password:\", password, 20, 0) )\n  {\n    /* Manage error */\n  }\n  ...\n}",
     "sample": "void foo()\n{\n  char *password = getpass(\"Password:\");\n  ...\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using getpass() function",
     "businessCriteria": [
         {
             "id": 66031,

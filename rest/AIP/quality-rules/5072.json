@@ -12,7 +12,7 @@
     "remediationSample": "PROCEDURE DIVISION.\n MAIN.\nD  DISPLAY \"BEG. PGM.\".\n     MOVE 0 TO COUNTER.\n     PERFORM BODY UNTIL COUNTER = 10.\nD  DISPLAY \"END PGM : COUNTER = \" COUNTER.\n     STOP RUN.\n BODY.\n     ADD 1 TO COUNTER.\n     ...",
     "sample": "PROCEDURE DIVISION.\n MAIN.\n     DISPLAY \"BEG. PGM\" UPON CONSOLE.\n     MOVE 0 TO COUNTER.\n     PERFORM BODY UNTIL COUNTER = 10.\n     DISPLAY \"END PGM\"  UPON  CONSOLE.\n    STOP RUN.\nBODY.\n    ADD 1 TO COUNTER.\n    DISPLAY COUNTER UPON CONSOLE.\n    ...",
     "total": "Number of COBOL programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid DISPLAY ... UPON CONSOLE",
     "businessCriteria": [
         {
             "id": 20140522,

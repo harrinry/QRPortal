@@ -12,7 +12,7 @@
     "remediationSample": "<?php\n\n$pass = $_GET[\"password\"];\nexec(\"/bin/cat /usr/share/dict/words | grep \" . escapeshellcmd($pass), $output, $status);\n\n?>",
     "sample": "<?php\n\n$pass = $_GET[\"password\"];\nexec(\"/bin/cat /usr/share/dict/words | grep \" . $pass, $output, $status);\n\n\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid Command Injection - Improper Neutralization of Special Elements used in an OS Command (PHP)",
     "businessCriteria": [
         {
             "id": 66031,

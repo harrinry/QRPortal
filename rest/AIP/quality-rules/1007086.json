@@ -12,7 +12,7 @@
     "remediationSample": "<?php\nclass ClassTest {\n    function testCondition() {\n        $status = 0;\n\n        if ($status === 0) {          //VIOLATION REMOVED\n            echo \"section: status\",PHP_EOL;\n        } elseif ($status === 1) {    //VIOLATION REMOVED\n            echo \"section: status\",PHP_EOL;\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> testCondition();\n?>",
     "sample": "<?php\nclass ClassTest {\n    function testCondition() {\n        $status = 0;\n\n        IF ($status === 0) {          //VIOLATION  \n            echo \"section: status\",PHP_EOL;\n        } elseIf ($status === 1) {    //VIOLATION \n            echo \"section: status\",PHP_EOL;\n        }\n    }\n}\n$obj = new ClassTest();\n$obj-> testCondition();\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Use lowercase for control structures (PHP)",
     "businessCriteria": [
         {
             "id": 60012,

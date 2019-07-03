@@ -13,7 +13,7 @@
     "remediationSample": ">>> class CustomError(Exception):\n>>>     def __init__(self, message, status):\n>>>     self.message = message\n>>>     self.status = status\n>>>     # parent exception class is initialized with same number of parameters\n>>>     super().__init__(message, status)",
     "sample": ">>> class CustomError(Exception):\n>>>     def __init__(self, message, status):\n>>>     self.message = message\n>>>     self.status = status",
     "total": "Number of Python __init__ methods",
-    "alternativeName": null,
+    "alternativeName": "Avoid inconsistent initialization when deriving a new exception",
     "businessCriteria": [
         {
             "id": 20140522,

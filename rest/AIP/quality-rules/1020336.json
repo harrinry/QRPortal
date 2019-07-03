@@ -12,7 +12,7 @@
     "remediationSample": "// version of library is NOT vulnerable\n<script src=\"https://code.jquery.com/ui/1.10.0/jquery-ui.js\"></script> \n...\n$('<div>Hi</div>').dialog({title:'<script type=\"text/javascript\">alert(\"XSS\");</script>\"});\n..",
     "sample": "// version of library vulnerable\n<script src=\"https://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script> \n...\n$('<div>Hi</div>').dialog({title:'<script type=\"text/javascript\">alert(\"XSS\");</script>\"});\n..",
     "total": "Number of jQuery methods",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using Dialog Widget with jQuery UI version older than 1.10.0",
     "businessCriteria": [
         {
             "id": 20140522,

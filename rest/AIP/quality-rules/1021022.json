@@ -12,7 +12,7 @@
     "remediationSample": ">>> # approach (1)\n>>> class B(A):\n>>>     def __init__(self):\n>>>         super().__init__()        # in Python2: super(B, self).__init__()\n>>>         self.y = 2\n>>>\n>>> # approach (2)\n>>> class B(A):\n>>>     def __init__(self):\n>>>         A.__init__()\n>>>         self.y = 2",
     "sample": ">>> class A:\n>>>     def __init__(self):\n>>>         self.x = 3\n>>>         self.y = 14\n>>>\n>>> class B(A):\n>>>     def __init__(self):\n>>>         self.y = 2",
     "total": "Number of Python artifacts initializing instance members",
-    "alternativeName": null,
+    "alternativeName": "'Initialize ancestors when overriding __init__'",
     "businessCriteria": [
         {
             "id": 66031,

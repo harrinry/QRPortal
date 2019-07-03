@@ -13,7 +13,7 @@
     "remediationSample": "<?php\n\nmkdir(\"../upload/{basename($_POST['tag'])}\", 0777, True);\n\n?>",
     "sample": "<?php\n\nmkdir(\"../upload/{$_POST['tag']}\", 0777, True);\n\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid file name or path controlled by raw user input (PHP)",
     "businessCriteria": [
         {
             "id": 66031,

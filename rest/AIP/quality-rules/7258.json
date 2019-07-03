@@ -12,7 +12,7 @@
     "remediationSample": "SqlDataReader reader;\nSqlCommand cmd = new SqlCommand(\"SELECT Facility FROM Tbl_Facilities\", cn);\ntry\n{\n   if(cn.State != ConnectionState.Open){cn.Open();}\n}\ncatch(SqlException ex)\n{\n    Debug.Assert(false, ex.ToString);\n}\ntry\n{ \n    reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);\n}\ncatch(System.Exception ex)\n{\n    Debug.Assert(false, ex.ToString());\n}\nwhile(reader.Read())\n{\n       Console.WriteLine(reader.GetString(0));\n}\nreader.Close;\nConsole.WriteLine(cn.State);//Closed\n}",
     "sample": "String strConn =\nConfigurationSettings.AppSettings[\"myConnection\"].ToString();\nSqlConnection sqlConn = new SqlConnection(strConn);\n\nSqlCommand sqlComm = new SqlCommand(\"p_my_procedure\", sqlConn);\nsqlComm.CommandType = CommandType.StoredProcedure;\n\nsqlComm.Parameters.Add(new SqlParameter(\"@bitSomeResult\", SqlDbType.Bit));\nsqlComm.Parameters[\"@bitSomeResult\"].Direction = ParameterDirection.Output;\n\nsqlConn.Open();\nSqlDataReader dr = sqlComm.ExecuteReader();\n\nString strSomeResult =\nsqlComm.Parameters[\"@bitSomeResult\"].Value.ToString(); \n\nif (strSomeResult.ToLower() == \"True\".ToLower())\n{\n//Do something\n}\nelse\n{\n//Do something else\n}\n\nsqlConn.Close();",
     "total": "Number of methods with a call to ExecuteReader",
-    "alternativeName": null,
+    "alternativeName": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
     "businessCriteria": [
         {
             "id": 60014,

@@ -12,7 +12,7 @@
     "remediationSample": "Upgrade to Struts version 2.5.13 or 2.3.34.\n\nWorkaround :\n\n<validator type=\"url\">\n    <param name=\"fieldName\">myHomePage</param>\n    <param name=\"urlRegex\">^(https?|ftp):\\\\/\\\\/(([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;\\\\?&=-]|%[0-9a-f]{2})+(:([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;\\\\?&=-]|%[0-9a-f]{2})+)?@)?(#?)((([a-z0-9]\\\\.|[a-z0-9][a-z0-9-]*[a-z0-9]\\\\.)*[a-z][a-z0-9-]*[a-z0-9]|((\\\\d|[1-9]\\\\d|1\\\\d{2}|2[0-4][0-9]|25[0-5])\\\\.){3}(\\\\d|[1-9]\\\\d|1\\\\d{2}|2[0-4][0-9]|25[0-5]))(:\\\\d+)?)(((\\\\/{0,1}([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)*(\\\\?([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)?)?)?(#([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)?$</param>\n    <message>Invalid homepage url</message>\n</validator>",
     "sample": "Struts 2 sample:\n\n<validator type=\"url\">\n    <param name=\"fieldName\">myHomePage</param>\n    <message>Invalid homepage url</message>\n</validator>",
     "total": "Number of struts2 config XML file",
-    "alternativeName": null,
+    "alternativeName": "Avoid using default RegEx provided by the UrlValidator",
     "businessCriteria": [
         {
             "id": 20140522,

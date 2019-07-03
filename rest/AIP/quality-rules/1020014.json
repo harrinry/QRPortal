@@ -11,7 +11,7 @@
     "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrents requests. When a request callback has been managed a new request could be fired.",
     "sample": "for(...) { \n      req = new XMLHttpRequest(); \n\n      if(req) { \n               req.onreadystatechange = processReqChange; \n               req.open(\"GET\", url + '?' + params, true); \n               req.send(null); \n      } \n}",
     "total": "Number of Javascript Functions using XMLHttpRequest",
-    "alternativeName": null,
+    "alternativeName": "Avoid using a web service with XMLHttpRequest inside a loop",
     "businessCriteria": [
         {
             "id": 60014,

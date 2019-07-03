@@ -13,7 +13,7 @@
     "remediationSample": "let credential = URLCredential.init(user: user, password: password, persistence: URLCredential.Persistence.none)\nlet shared = URLCredentialStorage.shared\nlet protectionSpace = URLProtectionSpace.init()\nshared.setDefaultCredential(credential, for: protectionSpace)",
     "sample": "let credential = URLCredential.init(user: user, password: password, persistence: URLCredential.Persistence.synchronizable)\nlet shared = URLCredentialStorage.shared\nlet protectionSpace = URLProtectionSpace.init()\nshared.setDefaultCredential(credential, for: protectionSpace)",
     "total": "Number of Swift artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid synchronizing the credentials with iCloud (Swift)",
     "businessCriteria": [
         {
             "id": 66031,

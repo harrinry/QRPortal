@@ -9,7 +9,7 @@
     "rationale": "A query that retrieves all columns of a table with a SELECT * can potentially be the source of important changeability problems. One cannot control how the columns will be ordered and returned to the client. This can lead to important data inconsistencies and thus stability issues. Also performance problems may arise when the execution of the query returns a large result sets (many rows with all the columns may then become a huge amount of data to transport over the network). Thus optimizer module can't provide a correct execution.",
     "remediation": "Review the design of the query to select only useful Columns",
     "total": "Number Process Activities",
-    "alternativeName": null,
+    "alternativeName": "Avoid Activities with \"SELECT *\" queries (TIBCO BW)",
     "businessCriteria": [
         {
             "id": 60012,

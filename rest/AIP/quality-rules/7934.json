@@ -12,7 +12,7 @@
     "remediation": "Review the design of the Class hierarchy",
     "sample": "C# Sample:\n    public class MySuperClass\n    {\n        public void aMethod() { MySubClass c = null; } // VIOLATION: Reference to a sub class\n    }\n\n    class MySubClass : MySuperClass\n    {\n        protected int m_subclassField = 0;\n    }",
     "total": "Number of classes and interfaces",
-    "alternativeName": null,
+    "alternativeName": "Avoid Superclass (or Interface) knowing Subclass (or Interface)",
     "businessCriteria": [
         {
             "id": 66031,

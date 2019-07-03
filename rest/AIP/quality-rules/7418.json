@@ -9,7 +9,7 @@
     "output": "Associated to each artifact with violations, the Quality Rule provides:\n- The Name of the column (first column used as function parameter).",
     "rationale": "Whenever a function is used in a WHERE clause and takes a indexed column as a function parameter, the database engine might be unable to take advantage of the index, leading to very poor performance.",
     "total": "Number of Client-Server artifacts using tables",
-    "alternativeName": null,
+    "alternativeName": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,7 +11,7 @@
     "remediationSample": "<?php\nrequire \"a.php\"; // violation removed\nrequire_once \"B.php\"; // violation removed\n\nfunction loadFiles() {\n   include \"c.php\"; // violation removed\n   include_once \"d.php\"; // violation removed\n}\n?>",
     "sample": "<?php\ninclude \"a.php\"; // violation\ninclude_once \"B.php\"; // violation\n\nfunction loadFiles() {\n   require \"c.php\";  //violation\n   require_once \"d.php\"; //violation\n}\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Use file inclusion based on API suitability (PHP)",
     "businessCriteria": [
         {
             "id": 60014,

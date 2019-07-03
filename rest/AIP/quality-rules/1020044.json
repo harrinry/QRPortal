@@ -10,7 +10,7 @@
     "reference": "https://www.w3.org/html/wg/spec/dnd.html#dnd\nhttps://html5sec.org/#118",
     "sample": "<div draggable=\"true\" ondragstart=\"event.dataTransfer.setData(\"text/plain\",\"malicious code\");\"> <h1>Drop me</h1> </div> <iframe src=\"http://www.example.org/dropHere.html\"></iframe>",
     "total": "Number of HTML Contents",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid using setData in ondragstart with attribute draggable set to true",
     "businessCriteria": [
         {
             "id": 66031,

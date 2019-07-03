@@ -11,7 +11,7 @@
     "remediationSample": "<?php\n  class foo {\n   public function aMethod() { // violation removed\n   }\n}\nfunction aFunction() {  // violation removed\n}\nfunction another_function() {  // violation removed\n}\n?>",
     "sample": "<?php\n  class foo {\n   public function AMethod() { // violation\n    \n   }\n}\nfunction AFunction() {  // violation\n}\nfunction AnotherFunction() {  // violation\n}\n?>",
     "total": "Number of Methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid having Methods and Functions without naming convention (PHP)",
     "businessCriteria": [
         {
             "id": 60012,

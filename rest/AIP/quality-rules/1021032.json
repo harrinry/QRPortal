@@ -11,7 +11,7 @@
     "remediationSample": ">>> import requests\n>>> requests.get(url = \"https://www.openstack.org/\", verify = CONF.ca_file) #Certificate check will be performed using file\n>>> requests.get(url = \"https://myserver.com\") # Certificate check will be perfomed. Default value of verify \"True\" will be processed",
     "sample": ">>> import requests\n>>> requests.get(url = \"https://www.openstack.org/\",verify = False)",
     "total": "Number of Python artifacts using requests",
-    "alternativeName": "(undefined)",
+    "alternativeName": "Avoid disabling certificate check when requesting secured urls",
     "businessCriteria": [
         {
             "id": 66031,

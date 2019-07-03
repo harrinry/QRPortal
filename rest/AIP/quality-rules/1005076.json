@@ -9,7 +9,7 @@
     "rationale": "V60ExceptionCompatibility property must be set to YES\nYou can have only a single onException block within a try block, and you cannot specify an exception type. \nYou can use the sysLib.currentException variable to determine the nature of the problem. This variable is only available in V60 compatibility mode. \nExceptions do not propagate beyond the part in which they occur\u0097for instance, if an error occurs within a function called by a try block, the try block never receives an indication that the exception was thrown. \nHard I/O errors terminate the application unless you set the handleHardIOErrors program property to YES. In that case, EGL throws an exception so the program can handle the hard I/O error itself. \nYou cannot throw your own exceptions.",
     "remediation": "Try to always have the V60ExceptionCompatibility set to YES.",
     "total": "Number of Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid having V60ExceptionCompatibility property set to NO (EGL)",
     "businessCriteria": [
         {
             "id": 20140522,

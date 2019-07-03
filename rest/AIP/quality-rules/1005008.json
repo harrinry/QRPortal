@@ -11,7 +11,7 @@
     "remediation": "Try to reduce the sources having data insertion on the same table.",
     "sample": "insert into CAST values (,,,); \ninsert into CAST with\n   #sql{\n    insert into CAST L1\n    value (,,,,)\n   };\nexecute insert for CAST value (,,,,);",
     "total": "Number of Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid having multiple artifacts inserting data on the same SQL table (EGL)",
     "businessCriteria": [
         {
             "id": 66032,

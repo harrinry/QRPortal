@@ -12,7 +12,7 @@
     "remediationSample": "method BOOKINGS_READ .\n\n  data:\n    Stru_flight             type IF_COMPONENTCONTROLLER=>Element_Flightinfo,\n    Itab_Booking            type IF_COMPONENTCONTROLLER=>Elements_Bookingtab.\n\n* Get Parent Element\nCALL METHOD parent_element->get_static_attributes\n  IMPORTING\n    STATIC_ATTRIBUTES = Stru_flight.\n\n* read bookings\nselect * from sbook\n  into corresponding fields of table Itab_Booking\n  where carrid = Stru_flight-carrid\n    and connid = Stru_flight-connid\n    and fldate = Stru_flight-fldate.\n\nif sy-subrc = 0.\n* bind all the elements\n  Node->Bind_Table(\n    New_Items =  Itab_Booking\n    Set_Initial_Elements = Abap_True ).\nendif.\nendmethod.",
     "sample": "method BOOKINGS_READ .\n\n  data:\n    Stru_flight             type IF_COMPONENTCONTROLLER=>Element_Flightinfo,\n    Itab_Booking            type IF_COMPONENTCONTROLLER=>Elements_Bookingtab.\n\n* Get Parent Element\nCALL METHOD parent_element->get_static_attributes\n  IMPORTING\n    STATIC_ATTRIBUTES = Stru_flight.\n\n* read bookings\nselect * from sbook\n  into corresponding fields of table Itab_Booking\n  where carrid = Stru_flight-carrid\n    and connid = Stru_flight-connid\n    and fldate = Stru_flight-fldate.\n\nif sy-subrc NE 0.\n  RAISE NO_DATA_FOUND.\nelse.\n* bind all the elements\n  Node->Bind_Table(\n    New_Items =  Itab_Booking\n    Set_Initial_Elements = Abap_True ).\nendif.\nendmethod.",
     "total": "Number of Web Dynpro Supply Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid raising an exception in a Web Dynpro Supply Function or in a Method called by a Supply Function",
     "businessCriteria": [
         {
             "id": 20140522,
