@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 import { createClassName, COMMON_CLASSES, isEcho } from '../common/';
-import { CLASSES, NORULESSELECTED } from './ds-constants';
+import { CLASSES, NORULESSELECTED, NOBPSSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
 const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
@@ -49,10 +49,12 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
             </div> : undefined ) }
-            {data.rationale ? <div className={CLASSES.rationaleContainer}>
+{isEcho() ? (data.rationale ? <div className={CLASSES.rationaleContainer}><p>{data.rationale}</p></div> : undefined) :
+
+            (data.rationale ? <div className={CLASSES.rationaleContainer}>
               <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
-            </div> : undefined}
+            </div> : undefined)}
             {data.remediation ? <div className={CLASSES.remediation}>
               <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
@@ -70,7 +72,7 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               <p className={CLASSES.textAreaRule}>{parseLinks(data.reference)}</p>
             </div> : undefined}
           </div>
-          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
+          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{ (isEcho() ? NOBPSSELECTED : NORULESSELECTED)}</div> )
       }
     </div>
   );

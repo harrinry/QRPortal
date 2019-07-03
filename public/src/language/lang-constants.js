@@ -4,7 +4,7 @@ export const EN = {
   menu: 'Menu',
   tiles: 'Tiles',
   logo: 'Logo',
-  search: 'Search Rules',
+  search: 'Search',
 };
 
 export const LANGUAGES = {
