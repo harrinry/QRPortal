@@ -11,7 +11,7 @@
     "remediationSample": "call the business package that will call this package",
     "sample": "// If the package is BusinessPackage.*\n\nimport org.apache.struts.action.Action;\n\nPublic class BaseApplicationAction extends Action\n{\n   public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {\n   NotBusinessPackage.SomeClass notTheBusiness; // VIOLATION\n   }\n}",
     "total": "Number of Action Classes",
-    "alternativeName": null,
+    "alternativeName": "Action Classes should only call Business Classes",
     "businessCriteria": [
         {
             "id": 66032,

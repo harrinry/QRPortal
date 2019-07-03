@@ -11,7 +11,7 @@
     "remediationSample": "function loadData (err, data) { \n    if (err) { \n        console.log(err.stack); \n    } \n    doSomething(); \n} \n\nfunction generateError (err) { \n    if (err) {} \n}",
     "sample": "function loadData (err, data) { \n    doSomething(); // forgot to handle error \n}",
     "total": "Number of NodeJS artifacts (javascript functions inside NodeJS files)",
-    "alternativeName": null,
+    "alternativeName": "Avoid the lack of error handling in the Node.js callbacks",
     "businessCriteria": [
         {
             "id": 20140522,

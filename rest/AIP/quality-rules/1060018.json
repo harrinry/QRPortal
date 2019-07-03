@@ -11,7 +11,7 @@
     "remediationSample": "StringBuffer result = new StringBuffer(\"hello\");\nfor (int i = 0; i < 1500; i++) {\n   result.append(\"hello\");  // FIXED\n}",
     "sample": "String result = \"hello\";\nfor (int i = 0; i < 1500; i++) {\n   result += \"hello\";  // VIOLATION\n}",
     "total": "Number of artifacts with a high fan-in",
-    "alternativeName": null,
+    "alternativeName": "Avoid String concatenation in loops for artifacts with high fan in",
     "businessCriteria": [
         {
             "id": 20140522,

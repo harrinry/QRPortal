@@ -13,7 +13,7 @@
     "remediationSample": "EXEC CICS READQ TS\n    QUEUE  (A)\n    INTO   (B)\n    LENGTH (C)\n    ITEM   (D)\n    NOHANDLE\n  END-EXEC.\n  EVALUATE EIBRESP\n    WHEN DFHRESP(ITEMERR)\n        OR DFHRESP(QIDERR)\n      MOVE X TO Y\n    WHEN NOT DFHRESP(NORMAL)\n      CALL ABEND-PROG\n  END-EVALUATE.\nPAR-3.\n  MOVE Z TO T.",
     "sample": "EXEC CICS HANDLE CONDITION\n    ITEMERR (PAR-2)         \n    QIDERR  (PAR-2)         \n  END-EXEC.                 \n  EXEC CICS READQ TS        \n    QUEUE  (A)              \n    INTO   (B)              \n    LENGTH (C)              \n    ITEM   (D)              \n  END-EXEC.                 \n  GO PAR-3.                 \nPAR-2.                      \n  MOVE X TO Y.              \nPAR-3.                      \n  MOVE Z TO T.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using HANDLE CONDITION",
     "businessCriteria": [
         {
             "id": 20140522,

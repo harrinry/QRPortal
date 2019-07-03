@@ -12,7 +12,7 @@
     "remediationSample": "SELECT SINGLE *\nFROM sflight\nINTO ls_flight\nWHERE carrid EQ lv_carrid AND connid EQ lv_connid AND fldate EQ lv_fldate.\nIF sy-subrc NE 0.\nWRITE:/ 'NOT FOUND'.\nENDIF.",
     "sample": "SELECT *\nFROM sflight\nINTO ls_flight\nWHERE carrid EQ lv_carrid AND connid EQ lv_connid AND fldate EQ lv_fldate.\nEXIT.\nENDSELECT.\nIF sy-subrc NE 0.\nWRITE:/ 'NOT FOUND'.\nENDIF.",
     "total": "Number of ABAP Artifacts containing OpenSQL statements",
-    "alternativeName": null,
+    "alternativeName": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
     "businessCriteria": [
         {
             "id": 60014,

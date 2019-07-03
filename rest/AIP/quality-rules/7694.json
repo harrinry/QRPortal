@@ -10,7 +10,7 @@
     "rationale": "For code structuration and mantainability reasons, a paragraph should not be called by PERFORM and GO TO statements. In the first case, the paragraph receives the control and return it just after its last statement. Its position in the program does not impact the execution of the program. In the second case, the paragraph receives the control by a fall-through logic and so the position of the paragraph impacts the execution of the code.\nFurthermore, the logic of the program is going to become difficult to understand, to maintain and so to test. As a result, the program could have unanticipated behavior.",
     "remediation": "Try to adapt the logic in order to remove the GO TO statement. If necessary, then copy the code of paragraph that is called by PERFORM and GO TO into a new paragraph and change the target of the PERFORM statements.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid calling the same paragraph with PERFORM and GO TO statements",
     "businessCriteria": [
         {
             "id": 60012,

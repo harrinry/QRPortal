@@ -13,7 +13,7 @@
     "remediationSample": "void f(A *p)\n{\n    B* pb = dynamic_cast<B*>(p);\n    if (!pb)\n    {\n        // Not the expected type, handle the error \n    }\n    else\n    {\n        // Use pb\n    }\n}\n\nIn circumstances where the @dynamic_cast@ has been measured to cause unacceptable delay, a @static_cast@ could be used instead, but would benefit from being written this way:\n\ntemplate<class To, class From> To checked_cast(From* p)\n{\n    assert(dynamic_cast<To>(p) == static_cast<To>(p) && \"Error: Check cast failed\");\n    return static_cast<To>(p);\n}\n\nvoid f(A *p)\n{\n    B* pb = checked_cast<B*>(p);\n    // Use pb\n}",
     "sample": "class A\n{\n};\n\nclass B : public A\n{\n};\n\nvoid f(A *p)\n{\n    B* pb = (B*)p; // Violation\n    // Use pb\n}",
     "total": "Number of C++ methods, constructors, and destructors",
-    "alternativeName": null,
+    "alternativeName": "Casting from pointer to base Class to pointer to derived Class should be done through 'dynamic_cast' or 'static_cast'",
     "businessCriteria": [
         {
             "id": 66031,

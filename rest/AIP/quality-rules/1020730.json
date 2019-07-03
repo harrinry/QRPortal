@@ -13,7 +13,7 @@
     "remediationSample": "var fs = require('fs'); \n\nfs.open('myfile', 'wx', (err, fd) => { \n  if (err) { \n    if (err.code === 'EEXIST') { \n      console.error('myfile already exists'); \n      return; \n    } \n\n    throw err; \n  } \n\n  writeMyData(fd); \n  fs.close(fd, function(error) {}) \n});",
     "sample": "var fs = require('fs'); \n\n// NOT VIOLATION \nfs.readFile('/etc/passwd', (err, data) => { \n  if (err) throw err; \n  console.log(data); \n}); \n\n// VIOLATION \nfs.open('myfile', 'wx', (err, fd) => { \n  if (err) { \n    if (err.code === 'EEXIST') { \n      console.error('myfile already exists'); \n      return; \n    } \n\n    throw err; \n  } \n\n  writeMyData(fd); \n});",
     "total": "Number of javascript source codes using fs",
-    "alternativeName": null,
+    "alternativeName": "Ensure Node.js filesystem are closed",
     "businessCriteria": [
         {
             "id": 66031,

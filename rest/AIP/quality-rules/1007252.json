@@ -12,7 +12,7 @@
     "remediationSample": "<?php\n\nif (file_exists(htmlspecialchars($_FILES['about']['tmp_name']))) {\n   echo \"File exists!\", PHP_EOL;\n} else {\n   echo \"File does not exist!\", PHP_EOL;\n}\n\n?>",
     "sample": "<?php\n\nif (file_exists($_FILES['about']['tmp_name'])) {\n   echo \"File exists!\", PHP_EOL;\n} else {\n   echo \"File does not exist!\", PHP_EOL;\n}\n\n\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid filesystem function calls without sanitizing user input (PHP)",
     "businessCriteria": [
         {
             "id": 66031,

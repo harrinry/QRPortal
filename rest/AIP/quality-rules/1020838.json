@@ -12,7 +12,7 @@
     "remediationSample": "var input = document.getElementById('textInput');\nvar input$ = Rx.Observable\n  .fromEvent(input, 'keyup')\n  .map(x => x.currentTarget.value)\n  .debounceTime(500)\ninput$.subscribe(x => sendValues(x));\nfunction sendValues(x){\n  var pre = document.createElement('pre');\n  pre.innerHTML = JSON.stringify(x);\n  document.getElementById('results').appendChild(pre);\n}",
     "sample": "var input = document.getElementById('textInput');\nvar input$ = Rx.Observable\n  .fromEvent(input, 'keyup')\n  .map(x => x.currentTarget.value)\ninput$.subscribe(x => sendValues(x));\nfunction sendValues(x){\n  var pre = document.createElement('pre');\n  pre.innerHTML = JSON.stringify(x);\n  document.getElementById('results').appendChild(pre);\n}",
     "total": "Number of TypeScript artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid using Rx.observable.fromEvent without having a debouncetime set",
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,7 +11,7 @@
     "remediationSample": "MONMSG without EXEC Sample Code:\n\nREADLOOP: RCVF /* Read a file record */ \nMONMSG MSGID(CPF0864) EXEC(GOTO CMDLBL(EOF)) \n/* Process the file record */ \nGOTO CMDLBL(READLOOP) /* Get another record */ \nEOF: /* End of file processing */",
     "sample": "Using EXEC with the MONMSG command makes the failed CLProgram to do the recovery action mentioned in the EXEC Command. If the EXEC command is not included, then program behaviour will be uncontrolled.\n\nMONMSG without EXEC Sample Code:\nREADLOOP: RCVF /* Read a file record */\nMONMSG MSGID(CPF0864) \n/* Process the file record */ \nGOTO CMDLBL(READLOOP) /* Get another record */ \nEOF: /* End of file processing */",
     "total": "Number of CL400 Programs",
-    "alternativeName": null,
+    "alternativeName": "Do not use MONMSG CPF0000 without EXEC  (CL400)",
     "businessCriteria": [
         {
             "id": 20140522,

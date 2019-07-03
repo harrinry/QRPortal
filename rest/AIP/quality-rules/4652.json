@@ -9,7 +9,7 @@
     "rationale": "All Exception Subclasses from java.lang.Throwable will be runtime Exceptions and will not need to be explicitly caught by a try and catch block. This can lead to an uncaught exception.",
     "remediation": "Review the design of the Class",
     "total": "Number of Java classes",
-    "alternativeName": null,
+    "alternativeName": "Ensure that classes are not inheriting from java.lang.Throwable.",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,7 +11,7 @@
     "remediation": "If you cannot upgrade to version 2.3.16.2 immediately - which is strongly advised - you can apply below workarounds:\n\n\nReplace the previous class related pattern with '(.*\\.|^|.*|\\[('|\"))class(\\.|('|\")]|\\[).*' on the list of excludeParams as below\n\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">(.*\\.|^|.*|\\[('|\"))(c|C)lass(\\.|('|\")]|\\[).*,^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>\n\n\n\nPlease be aware that this workaround is not as complete as the corrections in Struts 2.3.16.2",
     "sample": "<interceptors>\n  <interceptor-stack name=\"appDefault\">\n    <interceptor-ref name=\"defaultStack\">\n       <param name=\"exception.logEnabled\">true</param>\n       <param name=\"exception.logLevel\">ERROR</param>\n    </interceptor-ref>\n  </interceptor-stack>\n</interceptors>\n\n<default-interceptor-ref name=\"appDefault\" />",
     "total": "Number of field in struts2 config XML file",
-    "alternativeName": "Ensure not using Parameters Interceptor with 2.3.16 (and older)",
+    "alternativeName": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
     "businessCriteria": [
         {
             "id": 66031,

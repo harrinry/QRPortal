@@ -13,7 +13,7 @@
     "remediationSample": "EXEC CICS ...  END-EXEC.\n  EVALUATE EIBRESP\n    WHEN DFHRESP(...)\n      MOVE X TO Y\n    WHEN NOT DFHRESP(NORMAL)\n      CALL ABEND-PROG\n  END-EVALUATE.\nPAR-3.\n  MOVE Z TO T.",
     "sample": "EXEC CICS HANDLE ABEND\n   LABEL       (PAR-2)\nEND-EXEC.\n  EXEC CICS ... END-EXEC.                 \n  GO PAR-3.                 \nPAR-2.                      \n  MOVE X TO Y.              \nPAR-3.                      \n  MOVE Z TO T.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using HANDLE ABEND",
     "businessCriteria": [
         {
             "id": 20140522,

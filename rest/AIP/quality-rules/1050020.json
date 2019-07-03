@@ -10,7 +10,7 @@
     "reference": "OWASP\nhttp://www.owasp.org/index.php/Return_Inside_Finally_Block\n\nCWE\nhttp://cwe.mitre.org/data/definitions/584.html",
     "sample": "@try { \n    NSException *e = [NSException exceptionWithName:@\"FileNotFoundException\" reason:@\"File Not Found on System\" userInfo:nil]; \n    @throw e; \n} \n@catch(NSException *e) { \n    @throw; // rethrows e implicitly \n} \n@finally { \n    NSLog(@\"finally\"); \n    // VIOLATION: the NSException e will never be delivered to the caller. The finally block will cause the exception to be discarded. \n    return; \n}",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid return statement in @finally block",
     "businessCriteria": [
         {
             "id": 20140522,

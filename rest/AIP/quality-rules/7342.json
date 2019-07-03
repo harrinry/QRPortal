@@ -13,7 +13,7 @@
     "remediationSample": "class Car : public Vehicle\n{\npublic:\n    Car();\n    virtual ~Car();\n    virtual void run();\nprotected:\n    int numberOfWheels;\n};",
     "sample": "class Vehicle \n{\npublic:\n    Vehicle();\n    virtual ~Vehicle();\n    void start();\n    void stop();\n    virtual void run();     \nprotected:\n    Engine* theEngine;\n};\n\nclass Car : public Vehicle\n{\npublic:\n    Car();\n    virtual ~Car();\n    void run();           // VIOLATION\nprotected:\n    int numberOfWheels;\n};",
     "total": "Number of C++ overriding methods or virtual methods",
-    "alternativeName": null,
+    "alternativeName": "Avoid functions overriding virtual functions without having the 'virtual' keyword",
     "businessCriteria": [
         {
             "id": 60012,

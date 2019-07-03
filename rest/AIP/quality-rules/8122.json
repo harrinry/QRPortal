@@ -13,7 +13,7 @@
     "remediationSample": "CLASS C1 DEFINITION. \n  PUBLIC SECTION. \n  METHODS M1 EXCEPTIONS EX1 \n  EX2. \nENDCLASS. \n... \nFORM MY-FORM. \n  DATA O1 TYPE REF TO C1. \n\n  CREATE OBJECT O1. \n\n  CALL METHOD O1->M1 \n    EXCEPTIONS \n      EX1 = 10 \n      EX2 = 20. \n\n  CASE SY-SUBRC. \n    WHEN 10. \n    ... \n    WHEN 20. \n    ... \n  ENDCASE. \nENDFORM.",
     "sample": "CLASS C1 DEFINITION. \n  PUBLIC SECTION. \n  METHODS M1 EXCEPTIONS EX1 \n  EX2. \nENDCLASS. \n... \nFORM MY-FORM. \n  DATA O1 TYPE REF TO C1. \n\n  CREATE OBJECT O1. \n\n  CALL METHOD O1->M1 \n    EXCEPTIONS \n      EX1 = 10 \n      EX2 = 20. \nENDFORM.",
     "total": "Number of ABAP Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid using CALL METHOD without error handling",
     "businessCriteria": [
         {
             "id": 20140522,

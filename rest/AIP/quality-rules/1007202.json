@@ -10,7 +10,7 @@
     "remediationSample": "<?php\n      \n         $search_html = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_SPECIAL_CHARS);\n         echo \"search html\", $search_html, \"</br>\";\n      ?>",
     "sample": "<?php\n         $search_html = $_GET['search'];\n         echo \"search html\", $search_html, \"</br>\";\n      ?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid direct access to superglobals (PHP)",
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,7 +11,7 @@
     "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrent requests. When a request callback has been managed a new request could be fired.",
     "sample": ">>> import requests\n>>> for url in urllist:\n>>>      r = requests.get(url)",
     "total": "Number of Python artifacts web service with Python requests",
-    "alternativeName": null,
+    "alternativeName": "Avoid using a web service with Python requests inside a loop",
     "businessCriteria": [
         {
             "id": 60014,

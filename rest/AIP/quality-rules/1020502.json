@@ -12,7 +12,7 @@
     "remediationSample": "function CarCtrl($scope, $http) { \n\n    $scope.getAllCars = function () { \n        $scope.url = 'getAllCars'; \n\n        $http.get($scope.url).success(function (data, status) { \n            var carsFromServer = angular.fromJSON(data); \n            $scope.cars = carsFromServer.allCars; \n        }).error(function (data, status) { \n                $scope.response = 'Request failed'; \n            }); \n    } \n\n    $scope.getAllCars(); \n}",
     "sample": "function CarCtrl($scope, $http) { \n\n    $scope.getAllCars = function () { \n        $scope.url = 'getAllCars'; \n\n        $http.get($scope.url).success(function (data, status) { \n            var carsFromServer = JSON.parse(data); \n            $scope.cars = carsFromServer.allCars; \n        }).error(function (data, status) { \n                $scope.response = 'Request failed'; \n            }); \n    } \n\n    $scope.getAllCars(); \n}",
     "total": "Number of angular artifacts (controllers, services, factories, directives)",
-    "alternativeName": null,
+    "alternativeName": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
     "businessCriteria": [
         {
             "id": 66032,

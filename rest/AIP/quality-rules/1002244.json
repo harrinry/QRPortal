@@ -8,7 +8,7 @@
     "rationale": "The variable that contains the IOSTAT return code value must be tested to ensure properly handling of any errors in the read/write that may have occurred. Dont assume that the operation is successful.",
     "reference": "IOSTAT= ios  is an input/output status specifier that specifies the status of the input/output operation. ios is a scalar variable. When the input/output statement containing this specifier finishes execution, ios is defined with: A zero value if no error condition occurs. A positive value if an error occurs.",
     "remediation": "Make sure that all variables containing the return code value for a read, write or open opetation are actually tested to make sure the these operations are successful or not.",
-    "alternativeName": null,
+    "alternativeName": "Avoid untested Return Code variables after Read or Write in Modules (FORTRAN)",
     "businessCriteria": [
         {
             "id": 20140522,

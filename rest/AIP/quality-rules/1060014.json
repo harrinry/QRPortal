@@ -9,7 +9,7 @@
     "rationale": "SQL Queries that do not use table indexes are extremely dangerous for the application's performance.\nIndeed, each execution of the query will result in a full table scan which is extremely time consuming.\nWhen the artifacts have a high fan-in the risk is highly increased.",
     "remediation": "Try to use indexed columns in WHERE and HAVING clauses. If it is not possible, then create a secondary index for these columns.",
     "total": "Number of artifacts with SQL code for non XXS tables and having a high fan-in.",
-    "alternativeName": null,
+    "alternativeName": "Avoid SQL queries that no index can support for artifacts with high fan-in",
     "businessCriteria": [
         {
             "id": 60014,

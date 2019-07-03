@@ -11,7 +11,7 @@
     "remediationSample": "MOVE FIELD-1 OF A TO FIELD-1 OF B.\nMOVE FIELD-2 OF A TO FIELD-2 OF B.",
     "sample": "01 A.\n    05 FIELD-1 PIC XX.\n    05 FIELD-2 PIC XXX.\n    05 FIELD-3 PIC 9.\n\n01 B.\n    05 FIELD-1 PIC XX.\n    05 FIELD-4 PIC 999.\n    05 FIELD-2 PIC X(3).\n\nPROCEDURE DIVISION.\n\n    MOVE CORRESPONDING A TO B.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using MOVE CORRESPONDING ... TO ...",
     "businessCriteria": [
         {
             "id": 60012,

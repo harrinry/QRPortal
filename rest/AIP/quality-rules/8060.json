@@ -13,7 +13,7 @@
     "remediationSample": "void f(A *p)\n{\n    B* pb = dynamic_cast<B*>(p);\n    if (!pb)\n    {\n        // Not the expected type, handle the error \n    }\n    else\n    {\n        // Use pb\n    }\n}",
     "sample": "class A\n{\n};\n\nclass B : public A\n{\n};\n\nvoid f(A *p)\n{\n    B* pb = static_cast<B*>(p); // Violation\n    // Use pb\n}",
     "total": "Number of C++ methods, constructors, and destructors",
-    "alternativeName": null,
+    "alternativeName": "A pointer to a base Class shall only be cast to a pointer to a derived Class by means of 'dynamic_cast'",
     "businessCriteria": [
         {
             "id": 66031,

@@ -12,7 +12,7 @@
     "remediationSample": "Remediation Example 1\nREAD TABLE int_fligh WITH KEY airln = 'AF' BINARY SEARCH.\n\nRemediation Example 2 \n LOOP AT itab INTO wa.\n   READ myStandardTable INTO wa2 WITH KEY id = 1\n   BINARY SEARCH.\nENDLOOP.",
     "sample": "Example 1\nREAD TABLE int_fligh WITH KEY airln = 'AF'.\n\nExample 2 \n LOOP AT itab INTO wa.\n   READ myStandardTable INTO wa2 WITH KEY id = 1.\nENDLOOP.",
     "total": "Number of ABAP Artifacts using READ statements on standard ABAP internal tables only (not on SORTED and HASHED tables).",
-    "alternativeName": null,
+    "alternativeName": "Avoid READ TABLE without BINARY SEARCH",
     "businessCriteria": [
         {
             "id": 60014,

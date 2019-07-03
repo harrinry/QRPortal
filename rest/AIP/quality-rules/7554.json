@@ -10,7 +10,7 @@
     "rationale": "The access mode to an IMS segment is defined in the PSB by using the PROCOPT clause of the corresponding PCB. The programs which access to the IMS database must respect this access mode. If not, then errors can occur in production: the programs can abort and  the database could be corrupted.",
     "remediation": "Check if IMS segment accesses respect the PROCOPT clause defined for PCB in PSB. If not, then adapt the PROCOPT clause and the accesses made in the Cobol programs.",
     "total": "Number of Cobol Programs accessing IMS database (and not running under CICS).",
-    "alternativeName": null,
+    "alternativeName": "Never access an IMS segment with an access mode not authorized in the PCB",
     "businessCriteria": [
         {
             "id": 66032,

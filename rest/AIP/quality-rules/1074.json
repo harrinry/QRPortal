@@ -10,7 +10,7 @@
     "rationale": "Failing to properly handle various signals would likely cause your application to terminate, when it receives such signals.\nIn addition, the use of signal management functions slows down the application.",
     "remediation": "Avoid signal management when possible.\nSecure signal management with proper signal masking (use of \"sigaction()\")",
     "total": "Number of C/C++ functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid using signals management Functions",
     "businessCriteria": [
         {
             "id": 60014,

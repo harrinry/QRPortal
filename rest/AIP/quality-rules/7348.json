@@ -12,7 +12,7 @@
     "remediationSample": "Drop the index & empty the table\n=> 2563 ms",
     "sample": "-- SQL Server Sample\ncreate table MyManyIndexTable( C1 int, C2 int, C3 int, C4 int, C5 int)\n\n\ncreate index MyManyIndexTable_I1 on MyManyIndexTable( C1)\ncreate index MyManyIndexTable_I2 on MyManyIndexTable( C2)\ncreate index MyManyIndexTable_I3 on MyManyIndexTable( C3)\ncreate index MyManyIndexTable_I4 on MyManyIndexTable( C4)\ncreate index MyManyIndexTable_I5 on MyManyIndexTable( C5)\n\n\ndeclare @t datetime\ndeclare @i int\nSet @i = 1\nset @t = getdate()\nwhile (@i < 5000)\nbegin\n   insert MyManyIndexTable select @i,@i,@i,@i,@i\n   set @i = @i+1\nend\nSELECT DATEDIFF(ms, @t, getdate()) as 'Elapsed Time'\n\n=> 3806 ms",
     "total": "Number of tables",
-    "alternativeName": null,
+    "alternativeName": "Avoid too many Indexes on one Table",
     "businessCriteria": [
         {
             "id": 60014,

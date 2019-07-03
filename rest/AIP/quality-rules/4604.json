@@ -8,7 +8,7 @@
     "output": "This report lists all java artifacts using 'java.lang.Error()'. It provides the following information: Artifact full name",
     "rationale": "Using 'java.lang.Error()' is not recommended since it goes against the Exception error handling model. An Error is a subclass of Throwable that indicates serious problems that a reasonable application should not try to catch. Most of these errors are abnormal conditions.",
     "total": "Number of Java objects",
-    "alternativeName": null,
+    "alternativeName": "Avoid using 'java.lang.Error'",
     "businessCriteria": [
         {
             "id": 20140522,

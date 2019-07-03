@@ -12,7 +12,7 @@
     "remediationSample": "<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n package=\"com.example.testapps.test1\">\n ...\n        <provider android.name=\"com.example.testapps.test1.MailProvider\"\n                  android.authorities=\"com.example.testapps.test1.mailprovider\"\n                  android.readPermission=\"com.example.testapps.test1.permission.DB_READ\"\n                  android.writePermission=\"com.example.testapps.test1.permission.DB_WRITE\"\n                  android:grantUriPermissions=\"false\"/>\n        </provider>\n  ...\n</manifest>",
     "sample": "<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\n package=\"com.example.testapps.test1\">\n ...\n        <provider android.name=\"com.example.testapps.test1.MailProvider\"\n                  android.authorities=\"com.example.testapps.test1.mailprovider\"\n                  android.readPermission=\"com.example.testapps.test1.permission.DB_READ\"\n                  android.writePermission=\"com.example.testapps.test1.permission.DB_WRITE\"\n                  android:grantUriPermissions=\"true\"/>\n        </provider>\n  ...\n</manifest>",
     "total": "Number of Android manifests",
-    "alternativeName": null,
+    "alternativeName": "Avoid setting android:grantUriPermissions as True",
     "businessCriteria": [
         {
             "id": 66031,

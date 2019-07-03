@@ -12,7 +12,7 @@
     "remediationSample": "Remediation example:\n\nSELECT vbeln auart FROM vbak INTO TABLE ts_vbak\n         WHERE vbeln IN so_vbeln.\n         \nIF lines( ts_vbak ) > 0\n  SELECT vbeln posnr matnr kwmeng vrkme\n         FROM vbap\n         INTO TABLE ts_vbap\n         FOR ALL ENTRIES IN ts_vbak\n         WHERE vbeln = ts_vbak-vbeln.\n         \n  LOOP AT ts_vbak INTO wa_vbak.\n    LOOP AT ts_vbap INTO wa_vbap\n         WHERE vbeln EQ wa_vbak-vbeln.\n      SELECT SINGLE * FROM mara INTO wa_mara\n         WHERE matnr EQ wa_vbap-matnr.\n    ENDLOOP.\n  ENDLOOP.\nENDIF.",
     "sample": "SELECT * FROM vbak INTO wa_vbak\n         WHERE vbeln IN so_vbeln.\n  SELECT * FROM vbap INTO wa_vbap\n         WHERE vbeln = wa_vbak-vbeln.\n    SELECT SINGLE * FROM mara INTO wa_mara\n         WHERE matnr EQ wa_vbap-matnr.\n  ENDSELECT.\nENDSELECT.",
     "total": "Number of ABAP Artifacts using SAP Tables and SAP Views.",
-    "alternativeName": null,
+    "alternativeName": "Avoid nested SELECT ... ENDSELECT statements",
     "businessCriteria": [
         {
             "id": 60014,

@@ -11,7 +11,7 @@
     "remediation": "Check the statement and if so, replace dynamic with static statement.",
     "sample": "The following procedure should be reviewed:\nCREATE PROCEDURE SEARCH (IN V_DYNAMICSQL VARCHAR(2000))\nBEGIN\n  EXECUTE IMMEDIATE V_DYNAMICSQL;\nEND;",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": null,
+    "alternativeName": "Avoid using dynamic SQL in SQL Artifacts",
     "businessCriteria": [
         {
             "id": 60014,

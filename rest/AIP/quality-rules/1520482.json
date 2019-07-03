@@ -10,7 +10,7 @@
     "reference": "http://it.toolbox.com/blogs/siebel-answers/performance-considerations-for-siebel-configurationscripting-26490",
     "remediation": "Be aware that Search Specifications affect the WHERE clause and Sort Specifications affect the ORDER BY clause of the generated SQL.\nTo assist the database engine in efficiently retrieving and sorting data, be sure that search and sort specifications reference indexed columns whenever possible.  For best performance, such specifications should not only cover all of the key columns for a desirable index, but also cover them in the exact index sequence order.  This will encourage the database engine to use the index and possibly prevent unnecessary physical sorts in temporary tables.\nReview the performance of the above mentioned objects. If performance is slow determine whether an index could help.",
     "total": "Number of added or modified Sort Specifications",
-    "alternativeName": null,
+    "alternativeName": "SiebelReview: Avoid PickList using Sort specifications on non-indexed Fields",
     "businessCriteria": [
         {
             "id": 60014,

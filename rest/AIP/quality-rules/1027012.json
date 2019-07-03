@@ -12,7 +12,7 @@
     "remediationSample": "[Serializable]\npublic class EqueryRaised\n{\n#region Private Fields\nprivate string _queryID;\nprivate string _reOpenID;\n}\n________________________________________________________\n\n[Serializable]\npublic class DataGlob {\n   String GlobName;\n   String GlobValue;\n\n   public void AddToSession(HttpSessionState session) {\n     session[\"glob\"] = this;\n   }\n}",
     "sample": "HttpContext.Current.Session[CURRENT_USER_KEY] = value; \n \nthis.Session.Add(\"lbSection\", (string)((LinkButton)sender).ID.ToString());\n\n_________________________________________________________\n\npublic class DataGlob {\n   String GlobName;\n   String GlobValue;\n\n   public void AddToSession(HttpSessionState session) {\n     session[\"glob\"] = this;\n   }\n}",
     "total": "Number of Methods setting HttpSessionState Attributes",
-    "alternativeName": null,
+    "alternativeName": "Avoid storing Non-Serializable Object as HttpSessionState attributes.",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -10,7 +10,7 @@
     "remediation": "Do not use constructors to dispatch event.",
     "sample": "public class BigModel   \n{\n   public function BigModel()\n   {    \n      dispatchEvent( new Event( \"pointlessEvent\" ) );     \n   }\n}",
     "total": "Number of functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid event dispatched from a constructor (Flex)",
     "businessCriteria": [
         {
             "id": 20140522,

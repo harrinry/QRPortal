@@ -13,7 +13,7 @@
     "remediationSample": "class A\n{\n    //...\n    int const &correct1() const {return *p;}\n    int correct2() const {return *p;}\n}",
     "sample": "class A\n{\npublic:\n    A() : p(new int(0)) {}\n    ~A() {delete p;}\n    int &violation() const {return *p;} // Violation\n    int *p;\n};\n\nvoid f(A const &a)\n{\n    a.violation() = 42;\n}",
     "total": "Number of C++ methods",
-    "alternativeName": null,
+    "alternativeName": "Do not return non-const handles to Class data from const member Functions",
     "businessCriteria": [
         {
             "id": 60012,

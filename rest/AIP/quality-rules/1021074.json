@@ -12,7 +12,7 @@
     "remediationSample": "#create a slice copy of mylist can be a first simple solution to avoid violation\nmylist = [1, 2, 3, 4, 5]\nfor x in mylist[:]:\n    mylist.remove(x)\n\nThe result after each stage in for loop is:\n[2, 3, 4, 5]\n[3, 4, 5]\n[4, 5]\n[5]\n[]",
     "sample": "mylist = [1, 2, 3, 4, 5]\nfor x in mylist:\n    mylist.remove(x)\n\nThe result after each iteration in the loop is:\n[2, 3, 4, 5]\n[2, 4, 5]\n[2, 4]",
     "total": "Number of Python Modules and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid manipulating a list while iterating over it",
     "businessCriteria": [
         {
             "id": 20140522,

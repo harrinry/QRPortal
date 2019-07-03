@@ -10,7 +10,7 @@
     "remediation": "Try to declare the local variable and the pointer in the same scope to avoid protection failures.",
     "sample": "int *p;\n\nvoid f()\n{\n int i = 0;\n p = &i; // Violation\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": null,
+    "alternativeName": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
     "businessCriteria": [
         {
             "id": 20140522,

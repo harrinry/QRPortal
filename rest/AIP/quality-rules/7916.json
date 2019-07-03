@@ -10,7 +10,7 @@
     "rationale": "Direct access to database Table does not respect the multi-layer architecture principles. Pages must communicate with the business layer which in turn will communicate to the data layer through a data access layer.\nFurthermore, accessing Tables prevents the control at the database level of accesses. E.g.: use of non-optimized query against the database, use query that don't follow the data logic and that create inconsistency.",
     "remediation": "Use business layer and data layer instead",
     "total": "Number of ASP pages",
-    "alternativeName": null,
+    "alternativeName": "Avoid direct use of Database objects (JSP/ASP)",
     "businessCriteria": [
         {
             "id": 66032,

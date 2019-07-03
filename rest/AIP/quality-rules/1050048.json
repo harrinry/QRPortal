@@ -12,7 +12,7 @@
     "remediationSample": "[[NSFileManager defaultManager] createFileAtPath:PATH contents:someData attributes:@{NSFileProtectionKey:NSFileProtectionComplete}];\n\n[[NSFileManager defaultManager] createFileAtPath:PATH contents:someData attributes:@{NSURLFileProtectionKey:NSURLFileProtectionComplete}];",
     "sample": "[[NSFileManager defaultManager] createFileAtPath:PATH contents:someData attributes:@{NSFileProtectionKey:NSFileProtectionNone}];\n\n[[NSFileManager defaultManager] createFileAtPath:PATH contents:someData attributes:@{NSURLFileProtectionKey:NSURLFileProtectionNone}];",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid creating file without protection (Objective-C)",
     "businessCriteria": [
         {
             "id": 66031,

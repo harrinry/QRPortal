@@ -12,7 +12,7 @@
     "remediationSample": " Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\nif(deptOpt.isPresent())  // Violation FIXED\n    department = deptOpt.get();\n} ",
     "sample": "Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\n    department = deptOpt.get();  // Violation  \n} ",
     "total": "Number of Java Artifact",
-    "alternativeName": null,
+    "alternativeName": "[NOGO  Ensure to use \"Optional.isPresent\" before invoking \"Optional.get\" to access value.",
     "businessCriteria": [
         {
             "id": 20140522,

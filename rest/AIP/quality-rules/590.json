@@ -10,7 +10,7 @@
     "rationale": "It is not recommended to use global objects in constructors or destructors because it is not possible to know in which order the global objects are instantiated or deleted through different C++ compilation units. Thus there is a risk when global objects are used in constructors or destructors that the application will crash because a call is made to an object that is not yet in existence or has already been destroyed.",
     "remediation": "Review the object construction/destruction logic to not use global objects at this step.",
     "total": "Number of C++ Constructors and Destructors",
-    "alternativeName": null,
+    "alternativeName": "Avoid using global objects in Constructors and Destructors",
     "businessCriteria": [
         {
             "id": 60012,

@@ -11,7 +11,7 @@
     "remediation": "Functions that generate random or pseudorandom values must provide a seed argument which is not constant.\nExample:\n  GET TIME STAMP FIELD l_now.\n  g_seed = FRAC( l_now ) * 10000.\n  gcl_prng = cl_abap_random=>create( seed = g_seed ).",
     "sample": "In this sample : the values produced by the object r are predictable from the object s.\n\nDATA: s TYPE REF TO cl_abap_random,\n  r TYPE REF TO cl_abap_random,\n  var1 TYPE i,\n  var2 TYPE i.\n\ns = cl_abap_random=>create( seed = 12 ).\n\nDO 10 TIMES.\n  CALL METHOD s->int RECEIVING value = var1.\n  WRITE:/ var1.\nENDDO.\n\nr = cl_abap_random=>create( seed = 12 ).\n\nDO 10 TIMES.\n  CALL METHOD r->int RECEIVING value = var2.\n  WRITE:/ var2.\nENDDO.\n\nIn this example, pseudorandom number generators: r and s were identically seeded, so var1 = var2\n--------------------------\nSame thing with this code:\n\nDATA: s TYPE REF TO cl_abap_random,\n  r TYPE REF TO cl_abap_random,\n  var1 TYPE i,\n  var2 TYPE i.\n\ns = cl_abap_random=>create(  ).\n\nDO 10 TIMES.\n  CALL METHOD s->int RECEIVING value = var1.\n  WRITE:/ var1.\nENDDO.\n\nr = cl_abap_random=>create(  ).\n\nDO 10 TIMES.\n  CALL METHOD r->int RECEIVING value = var2.\n  WRITE:/ var2.\nENDDO.",
     "total": "Number of ABAP Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid using hardcoded seed or no seed at all for random values generation",
     "businessCriteria": [
         {
             "id": 20140522,

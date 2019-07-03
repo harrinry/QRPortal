@@ -12,7 +12,7 @@
     "remediationSample": "01 FILE-REC.\n    05 SRC-DATA PIC X(5).\n...\n01 TGT-DATA PIC S9(5) COMP-3.\n...\nREAD MY-FILE INTO FILE-REC.\nIF SRC-DATA IS NUMERIC\n    MOVE SRC-DATA TO TGT-DATA\nELSE\n    DISPLAY \"INVALID VALUE: \" SRC-DATA\nEND-IF",
     "sample": "01 FILE-REC.\n    05 SRC-DATA PIC X(5).\n...\n01 TGT-DATA PIC S9(5) COMP-3.\n...\nREAD MY-FILE INTO FILE-REC.\nMOVE SRC-DATA TO TGT-DATA.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Check alphanumeric data before moving it into numeric data",
     "businessCriteria": [
         {
             "id": 20140522,

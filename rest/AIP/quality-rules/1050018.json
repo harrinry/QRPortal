@@ -10,7 +10,7 @@
     "reference": "ISO/IEC. ISO/IEC 9899 Second edition 1999-12-01 Programming languages - C. International Organization for Standardization, 1999. \n\nApple Secure Coding Guide \nhttps://developer.apple.com/library/mac/documentation/Security/Conceptual/SecureCodingGuide/Articles/BufferOverflows.html#//apple_ref/doc/uid/TP40002577-SW1",
     "remediation": "On Linux/Unix/Windows, prefer using the 'strncpy()' function instead. \nOn iOS (FreeBSD), prefer using the 'strlcpy()' function instead",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": null,
+    "alternativeName": "Never use strcpy() function (Objective-C)",
     "businessCriteria": [
         {
             "id": 66031,

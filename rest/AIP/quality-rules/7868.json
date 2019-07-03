@@ -10,7 +10,7 @@
     "reference": "SAP",
     "sample": "loop at i_incl.\n      select single * from trdir into s_trdir\n      where name = i_incl-rep\n        and cdat in s_cdat\n        and udat in s_udat.\n    if sy-subrc ne 0.\n      continue.\n    endif.\nendloop",
     "total": "Number of ABAP Artifacts containing OpenSQL statements",
-    "alternativeName": null,
+    "alternativeName": "Avoid Open SQL queries in loops",
     "businessCriteria": [
         {
             "id": 60014,

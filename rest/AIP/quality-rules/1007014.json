@@ -11,7 +11,7 @@
     "remediationSample": "<?php\n $a = 1;\n if ($a=1){\n?>\n<script type =\"text/javascript\" src=\"javascript.js\"> </script>    //VIOLATION REMOVED\n<?php\n}\n?>",
     "sample": "<?php\n $a = 1;\n if ($a=1){\n?>\n<script>\nfunction f(){ alert('f() called'); }        //VIOLATION \n</script>\n<?php\n}\n?>",
     "total": "Number of JavaScript Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid direct definition of JavaScript Functions in a Web page (PHP)",
     "businessCriteria": [
         {
             "id": 66032,

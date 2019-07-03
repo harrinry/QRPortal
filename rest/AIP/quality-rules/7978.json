@@ -13,7 +13,7 @@
     "remediationSample": "#include <stdio.h>\n\nint main()\n{\n  int buf_size = 25;\n  char *my_buf;\n\n  my_buf = (char *) malloc (buf_size);\n\n  printf (\"Enter name\");\n  scanf (\"%20s\", my_buf);\n}",
     "sample": "int main()\n{\n  char buffer[15]={0};\n  printf(\"Enter name:\");\n  scanf(buffer,\"%s\");\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": null,
+    "alternativeName": "Avoid using the scanf() function family",
     "businessCriteria": [
         {
             "id": 66031,

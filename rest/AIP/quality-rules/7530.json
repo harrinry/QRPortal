@@ -10,7 +10,7 @@
     "rationale": "A query that retrieves all columns of a table with a SELECT *  or SELECT SINGLE * can potentially be the source of important performance problems:\nSuch performance problems may arise when the execution of the query returns a large result sets (many row with all the columns may then become a huge amount of data to transport over the network). However, there are some exceptions with standard tables such as parameter tables. \n\nAlso, when using such queries, one cannot control how the columns will be ordered and returned to the client. This can lead to important data inconsistencies and thus stability issues.",
     "remediation": "Limit the number of field selected by naming those which are expecting only.",
     "total": "Number of ABAP Artifacts containing OpenSQL queries.",
-    "alternativeName": null,
+    "alternativeName": "Avoid \"SELECT *\" or \"SELECT SINGLE *\" queries",
     "businessCriteria": [
         {
             "id": 60014,

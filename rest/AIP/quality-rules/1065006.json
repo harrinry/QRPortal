@@ -11,7 +11,7 @@
     "remediationSample": "class A{\n    std::vector<int>& getVector();\n    void removeElement(int index);\nprivate:\n    std::vector<int> m_integerVector;\n};\n\nvoid func(){\n    A a;\n    ...\n    for(int val : a.getVector()){\n        ...\n    } \n    ...\n    a.removeElement(index);\n}",
     "sample": "class A{\n    std::vector<int>& getVector();\n    void removeElement(int index);\nprivate:\n    std::vector<int> m_integerVector;\n};\n\nvoid func(){\n    A a;\n    ...\n    for(int val : a.getVector()){\n        ...\n        a.removeElement(index);\n        ...\n    } \n}",
     "total": "Number of C / C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Avoid iterator invalidation.",
     "businessCriteria": [
         {
             "id": 20140522,

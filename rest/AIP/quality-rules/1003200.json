@@ -11,7 +11,7 @@
     "remediationSample": "<mx:Script>\n      <![CDATA[\n      \n      private var firstPublicVariable:int = 1;\n      private var _secondPublicVariable:int = 2;\n      public var thirdPublicVariable:int = 3;\n        \n      public function get secondPublicVariable() : int {\n         return _secondPublicVariable;\n      }\n      \n      //...       \n        \n\n        ]]>\n   </mx:Script>",
     "sample": "<mx:Script>\n      <![CDATA[\n      \n      public var firstPublicVariable:int = 1;\n      private var _secondPublicVariable:int = 2;\n      public var thirdPublicVariable:int = 3;\n        \n      public function get secondPublicVariable() : int {\n         return _secondPublicVariable;\n      }\n      \n      public function set secondPublicVariable(anint: int) : int {\n         _secondPublicVariable = anint;\n      }\n\n      //...       \n        \n\n        ]]>\n   </mx:Script>",
     "total": "Number of MXML scripts",
-    "alternativeName": null,
+    "alternativeName": "Avoid MXML component with more than two entry points (Flex)",
     "businessCriteria": [
         {
             "id": 66031,

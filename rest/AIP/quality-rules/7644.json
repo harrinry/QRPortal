@@ -13,7 +13,7 @@
     "remediationSample": "0000-MAIN.\n           OPEN INPUT FI01 FI02.\n           PERFORM 1000-PROC1.\n           PERFORM 2000-PROC1.\n           CLOSE FI01 FI02.\n           STOP RUN.\n       1000-PROC1.\n           MOVE DTA-FIELD1 TO CONT-F1.\n           ..",
     "sample": "0000-MAIN.\n           OPEN INPUT FI01.\n           PERFORM 1000-PROC1.\n           PERFORM 2000-PROC1.\n           CLOSE FI02.\n           CLOSE FI01.\n           STOP RUN.\n       1000-PROC1.\n           OPEN INPUT FI02.\n           MOVE DTA-FIELD1 TO CONT-F1.\n           ..",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid executing multiple OPEN statements",
     "businessCriteria": [
         {
             "id": 60014,

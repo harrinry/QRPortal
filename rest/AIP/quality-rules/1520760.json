@@ -10,7 +10,7 @@
     "rationale": "System columns are exposed as BusComp fields.  These columns can be exposed as controls or list columns on applets without explicitly defining them in the BusComp definition.",
     "remediation": "Do not create BusComp fields mapped to system columns, as they are available for use in configuration and scripting without being explicitly defined, and doing so may introduce the type of error shown above.\nWhere such fields have been created, remove them from the BusComp definition and remap any existing references, such as list columns, controls, joins, and so forth to the supplied system column.  Do not forget to verify that any script that references the custom fields is also updated.\nNote:  In many implementations, this occurs when the joins to S_EMPLOYEE or S_USER are set up to display the actual creator or updater of a record, and the integration team has added a field mapped to a system column for use in the join.  This is not necessary\u0097the system fields Created By and Updated By can be used in a join specification.  There are numerous examples of how to do this in the standard application.",
     "total": "Number of added or modified Fields or Multi-Value Fields in Business Components",
-    "alternativeName": null,
+    "alternativeName": "SiebelReview: Adding System Columns as BusComp Field Objects Definitions",
     "businessCriteria": [
         {
             "id": 20140522,

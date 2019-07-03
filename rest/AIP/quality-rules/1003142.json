@@ -11,7 +11,7 @@
     "remediation": "Use CairngormEvent.dispatch() for dispatching events and normal event listening framework for listening for adding event listeners.",
     "sample": "public function foo() : void\n{\n   CairngormEventDispatcher.getInstance().dispatchEvent(new Event(CONSTANT)); // VIOLATION - use cairngormEvent.dispatch();\n   CairngormEventDispatcher.getInstance().addEventListener(CONSTANT, onHearing); // VIOLATION - MVC broken\n}",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "Cairngorm: Avoid CairngormEventDispatcher called explicitly (Flex)",
     "businessCriteria": [
         {
             "id": 20140522,

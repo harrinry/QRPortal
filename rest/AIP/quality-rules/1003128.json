@@ -11,7 +11,7 @@
     "remediation": "Use qualified names.",
     "sample": "package \n{\n   public class AvoidUseOfWithKeyword \n    {\n        function polar(r:Number):void { \n           var a:Number, x:Number, y:Number; \n           with (Math) { \n              a = PI * pow(r, 2); \n              x = r * cos(PI); \n              y = r * sin(PI / 2); \n           } \n           trace(\"area = \" + a); \n           trace(\"x = \" + x); \n           trace(\"y = \" + y); \n        }        \n        \n    }\n\n}",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid use of with statement (Flex)",
     "businessCriteria": [
         {
             "id": 60012,

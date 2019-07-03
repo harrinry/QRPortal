@@ -11,7 +11,7 @@
     "remediationSample": "class C\n{\n   void getPI() { return 3.14159; }\n}",
     "sample": "class C\n{\n   protected int m_data = 0; // HERE m_data is only written and is never\n   void getPI() { m_data = 1; return 3.14159; }\n}",
     "total": "Number of data members of classes or structs",
-    "alternativeName": null,
+    "alternativeName": "Avoid data members that are never read",
     "businessCriteria": [
         {
             "id": 60012,

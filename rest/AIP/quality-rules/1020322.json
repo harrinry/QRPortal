@@ -12,7 +12,7 @@
     "remediationSample": "<script src=\"https://code.jquery.com/jquery-2.1.4.js\"></script> \n    <script src=\"https://code.jquery.com/ui/1.12.0/jquery-ui.js\"></script> \n    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://code.jquery.com/ui/1.9.1/themes/base/ \njquery-ui.css\"> \n    <script> \n        $(document).ready(function () { \n            $('#dialog').dialog({ closeText: '<script>alert(\"XSS\")<\\/script>' }); \n        }); \n    </script>",
     "sample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user, \n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
     "total": "Number of JQuery artifacts calling Ajax function",
-    "alternativeName": null,
+    "alternativeName": "Avoid using Ajax method without dataType with jQuery version older than 3.0.0",
     "businessCriteria": [
         {
             "id": 20140522,

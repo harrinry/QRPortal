@@ -12,7 +12,7 @@
     "remediationSample": "<?php\n\n$getid  = \"SELECT first_name, last_name FROM users WHERE user_id = '$id' LIMIT 1;\";\n\n?>",
     "sample": "<?php\n\n$getid  = \"SELECT first_name, last_name FROM users WHERE user_id = '\".addslashes($id).\"' LIMIT 1;\";\n\n?>",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid SQL Injection - Improper Neutralization of Special Elements used in an SQL Command within single quotes (PHP)",
     "businessCriteria": [
         {
             "id": 66031,

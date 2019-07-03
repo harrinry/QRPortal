@@ -12,7 +12,7 @@
     "remediationSample": "SELECT TEST-FILE ASSIGN TO 'TEST-DATA.DAT'\n       ORGANIZATION IS SEQUENTIAL\n       FILE STATUS IS W-STATUS.\n...\nREAD RECORD-IN INTO W-RECORD\nIF W-STATUS = \"04\" THEN\n    DISPLAY \"Over-sized record has been read\"\n    SET REC-XS-FLAG TO TRUE\nEND-IF",
     "sample": "SELECT TEST-FILE ASSIGN TO 'TEST-DATA.DAT'\n       ORGANIZATION IS SEQUENTIAL.\n...\nREAD RECORD-IN INTO W-RECORD\n...",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Files should be declared with a FILE-STATUS",
     "businessCriteria": [
         {
             "id": 20140522,

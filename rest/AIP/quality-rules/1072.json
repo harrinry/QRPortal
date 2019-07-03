@@ -12,7 +12,7 @@
     "remediationSample": "The output of the sample program is the following:\n1.69200 seconds\n0.21000 seconds",
     "sample": "#include <time.h>\n#include <stdio.h>\n#include <string.h>\n#include <stdlib.h>\n\n#define MY_SIZE 3000000\nclock_t start, finish;\nstruct toto\n{ int i, j; };\n\ntoto * my_array[MY_SIZE];\ntoto * first = NULL;\n\ntoto * MyMalloc( int i)\n{\n   if (0 == i )\n      first = (toto *)malloc( sizeof( toto) * MY_SIZE);\n   return (first+i);\n}\n\nint main(int argc, char* argv[])\n{\n   double duration;\n   /* Standard allocation */\n   start = clock();\n   for (int i = 0; i<MY_SIZE; i++)\n   { my_array[i] = (toto *)malloc( sizeof( toto)); }\n   finish = clock();\n   duration = (double)(finish - start) / CLOCKS_PER_SEC;\n   printf( \"%2.5f seconds\\n\", duration );\n\n   /* Optimized allocation */\n   start = clock();\n   for (i = 0; i<MY_SIZE; i++)\n   { my_array[i] = MyMalloc( i);  }\n   finish = clock();\n   duration = (double)(finish - start) / CLOCKS_PER_SEC;\n   printf( \"%2.5f seconds\\n\", duration );\n   return 0;\n}",
     "total": "Number of C/C++ functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid using memory management Functions (free/malloc/realloc)",
     "businessCriteria": [
         {
             "id": 60014,

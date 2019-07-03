@@ -12,7 +12,7 @@
     "remediationSample": "EVALUATE WS-STATUS\n  WHEN 1\n    MOVE X TO Y\n  WHEN 2\n    MOVE Z TO Y\n  WHEN OTHER\n    PERFORM DISPLAY-ERROR-MESSAGE\nEND-EVALUATE.",
     "sample": "* If WS-STATUS is 3 then there is not action performed\nEVALUATE WS-STATUS\n  WHEN 1\n    MOVE X TO Y\n  WHEN 2\n    MOVE Z TO Y\nEND-EVALUATE.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Include a WHEN OTHER clause when using EVALUATE",
     "businessCriteria": [
         {
             "id": 20140522,

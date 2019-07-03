@@ -11,7 +11,7 @@
     "remediation": "If you cannot upgrade to version 2.3.16.2 immediately - which is strongly advised - you can apply below workarounds:\n\nDon't use wildcard mapping to accept cookie names or implement your own version of CookieInterceptor based on code provided in Struts 2.3.16.2.",
     "sample": "This example will inject any cookies regardless of its value into Struts' action.\n\n <action ... >\n   <interceptor-ref name=\"cookie\">\n      <param name=\"cookiesName\">*</param>\n      <param name=\"cookiesValue\">*</param>\n   </interceptor-ref>\n    ...\n </action>",
     "total": "Number of field in struts2 config XML file",
-    "alternativeName": null,
+    "alternativeName": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
     "businessCriteria": [
         {
             "id": 66031,

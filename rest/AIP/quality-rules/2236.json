@@ -11,7 +11,7 @@
     "remediation": "Review the architecture design to invoke the layer in charge of database access.",
     "sample": "<%@ page import = \"java.sql.*\" %>\n<% Connection myConnection =null; //VIOLATION\n      Statement myStatement =null; //VIOLATION\n\n      ResultSet myResultSet =null; //VIOLATION\n\n      javax.sql.DataSource myDataSource = null; //VIOLATION\n%>\n\n// 4 violations will be reported",
     "total": "Number of JSP pages",
-    "alternativeName": null,
+    "alternativeName": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
     "businessCriteria": [
         {
             "id": 66032,

@@ -8,7 +8,7 @@
     "rationale": "You incur an extra CPU cost for passing the columns from DB2 to your application. But this is not the\nonly consideration, retrieving additional columns can cause an additional access to the data\npages instead of an index-only access, resulting in additional I/Os, accumulating higher CPU,\nand elapsed time.",
     "remediation": "Limit the columns in your SQL select statements to those applications really needing it.",
     "total": "Number of PL1 Main Procedures.",
-    "alternativeName": null,
+    "alternativeName": "Avoid Main Procedures having \"SELECT * FROM ...\" clause (PL1)",
     "businessCriteria": [
         {
             "id": 60014,

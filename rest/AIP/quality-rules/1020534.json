@@ -11,7 +11,7 @@
     "remediationSample": "No loop.",
     "sample": ".factory('ScenarioReviews', function ($resource) {\n  return $resource('resources/scenarios/:id/reviews',  {'id':'@id'}, {\n    'query': { method: 'GET', isArray: false },\n    'update': {method:'PUT', isArray: false },\n    'notify': {method:'PUT', params: {notify: true}, isArray: false }\n  });  \n.controller(\"PriceformListController\",\n  [\"$scope\", \"Scenario\", \"$window\",\n    function($scope, Scenario, $window) {\n     while (...) {\n       ScenarioReviews.update(\n         {id:$scope.scenario.techId, validate:$scope.validatedScenario}, // Parameters\n         $scope.scenario, // Data\n...\n    }\n}]);",
     "total": "Number of angular artifacts using $resource",
-    "alternativeName": null,
+    "alternativeName": "Avoid using a web service with AngularJS $resource inside a loop",
     "businessCriteria": [
         {
             "id": 60014,

@@ -12,7 +12,7 @@
     "remediationSample": "response.sendRedirect(\"http://www.mysite.com\"); // Violation FIXED",
     "sample": "Sample 1: \nThe following code is a Java servlet that will receive a GET request with a url parameter in the request to redirect the browser to the address specified in the url parameter. The servlet will retrieve the url parameter value from the request and send a response to redirect the browser to the url address. \n\npublic class RedirectServlet extends HttpServlet { \nprotected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { \nString query = request.getQueryString(); \nif (query.contains(\"url\")) { \nString url = request.getParameter(\"url\"); \nresponse.sendRedirect(url); \n} \n} \n} \n\n\n------------------------------------------------------------------------ \nSample 2: \nprotected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException { \n    [...] \n    resp.sendRedirect(req.getParameter(\"redirectUrl\")); \n    [...] \n}",
     "total": "Number of Java artifacts",
-    "alternativeName": "HTTP request redirections should never be performed with user provided data",
+    "alternativeName": "Ensure that HTTP request redirections are not performed with user provided data",
     "businessCriteria": [
         {
             "id": 66031,

@@ -12,7 +12,7 @@
     "remediationSample": "with finally\n~~~~~~~~~~~~   \nprivate void correctWriting() throws IOException {\n    DataOutputStream out = null;\n    try {\n        out = new DataOutputStream(new FileOutputStream(\"data\"));\n        out.writeInt(666);\n        out.writeUTF(\"Hello\");\n    } finally {\n        if (out != null) {\n            out.close(); // FIX\n        }\n    }        \n}\n\nwith Java 7\n~~~~~~~~~~~\nprivate void writingWithARM() throws IOException {\n    try (DataOutputStream out \n            = new DataOutputStream(new FileOutputStream(\"data\"))) { // FIX\n        out.writeInt(666);\n        out.writeUTF(\"Hello\");\n    }\n}\n\nwith @Cleanup annotation\n~~~~~~~~~~~~~~~~~~~~~~~~\nprivate void writingWithCleanup() throws IOException {\n    @Cleanup DataOutputStream out = new DataOutputStream(new FileOutputStream(\"data\")); // FIX\n    out.writeInt(666);\n    out.writeUTF(\"Hello\");\n}",
     "sample": "private void incorrectWriting() throws IOException {\n    DataOutputStream out = new DataOutputStream(new FileOutputStream(\"data\"));\n    out.writeInt(666);\n    out.writeUTF(\"Hello\");\n    out.close();\n} // VIOLATION",
     "total": "Number of methods that open a stream in the body",
-    "alternativeName": null,
+    "alternativeName": "Close the outermost stream ASAP",
     "businessCriteria": [
         {
             "id": 60014,

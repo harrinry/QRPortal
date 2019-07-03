@@ -12,7 +12,7 @@
     "remediationSample": "// Remediation Sample (C#)\n\nusing (HMAC hmac = HMAC.Create(\"HMACSHA512\"))\n{\n    var rngCryptoServiceProvider = new RNGCryptoServiceProvider();\n    byte[] randomBytes = new byte[keyLength];\n    rngCryptoServiceProvider.GetBytes(randomBytes);\n    hmac.Key = randomBytes;\n}",
     "sample": "Sample code (C#)\n\nusing (HMAC hmac = HMAC.Create(\"HMACSHA512\"))\n{\n  string secureKey = \"12345\";\n  byte[] SecureBytes = Encoding.ASCII.GetBytes(secureKey);\n  hmac.Key = SecureBytes;\n}",
     "total": "Number of methods containing HMAC key(s)",
-    "alternativeName": null,
+    "alternativeName": "Avoid using hard-coded HMAC keys",
     "businessCriteria": [
         {
             "id": 20140522,

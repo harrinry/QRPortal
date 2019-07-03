@@ -10,7 +10,7 @@
     "rationale": "Direct access to the database from the User Interface does not respect the multi-layer architecture principles making the application more difficult to change.\nFurthermore, accessing database elements directly from the User Interface prevents access control at the database level . E.g.: use of non-optimized query against the database and can be the source of performance issue.",
     "sample": "public partial class Form1 : Form // Form is in one of the namespaces for GUI\n    {\n\n        private void Form1_Load(object sender, EventArgs e)\n        {\n            SqlConnection myConnection = new SqlConnection(myConnectionString);\n            SqlCommand myCommand = new SqlCommand(mySelectQuery, myConnection); // access to the DB => VIOLATION\n            myConnection.Open();\n            SqlDataReader myReader = myCommand.ExecuteReader(CommandBehavior.CloseConnection);\n            while (myReader.Read())\n            {\n                Console.WriteLine(myReader.GetString(0));\n            }\n            myReader.Close();\n\n        }",
     "total": "Number of artifacts",
-    "alternativeName": null,
+    "alternativeName": "User Interface elements must not use directly the database",
     "businessCriteria": [
         {
             "id": 66032,

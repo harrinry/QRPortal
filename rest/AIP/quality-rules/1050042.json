@@ -13,7 +13,7 @@
     "remediationSample": "NSURLCredential *credential = [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceNone];\n    NSURLCredentialStorage *shared = [NSURLCredentialStorage sharedCredentialStorage];\n    [shared setDefaultCredential:credential forProtectionSpace:protectionSpace];",
     "sample": "NSURLCredential *credential = [NSURLCredential credentialWithUser:user password:password persistence:NSURLCredentialPersistenceSynchronizable];\n    NSURLCredentialStorage *shared = [NSURLCredentialStorage sharedCredentialStorage];\n    [shared setDefaultCredential:credential forProtectionSpace:protectionSpace];",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": null,
+    "alternativeName": "Avoid synchronizing the credentials with iCloud (Objective-C)",
     "businessCriteria": [
         {
             "id": 66031,

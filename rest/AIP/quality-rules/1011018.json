@@ -9,7 +9,7 @@
     "rationale": "As your program does input operations to a logical file with the DYNSLT keyword specified, all the records in the associated physical file are tested by the system to see if they satisfy the select/omit values. Only those records that satisfy the values are supplied to your program. The testing of each record can result in slower I/O performance",
     "remediation": "Check if DYNSLT is really necessary and if we can replace it.",
     "total": "Total number of DDS400 Logical File",
-    "alternativeName": null,
+    "alternativeName": "Avoid Logical Files using DYNSLT  (DDS400)",
     "businessCriteria": [
         {
             "id": 60014,

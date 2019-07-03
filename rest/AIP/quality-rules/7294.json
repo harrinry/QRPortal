@@ -11,7 +11,7 @@
     "remediation": "If there are circular relationships among namespaces, the partitioning is not clear and should be redesigned. Use CAST Enlighten to see all dependencies to fix.",
     "sample": "* Direct call sample:\n\nnamespace CyclicalCallsA\n{\n    public static class ClassA\n    {\n        public static void f()\n        {\n            CyclicalCallsB.ClassB.g();\n        }\n    }\n}\n\nnamespace CyclicalCallsB\n{\n    public static class ClassB\n    {\n        public static void g()\n        {\n            CyclicalCallsA.ClassA.f();\n        }\n    }\n}\n\n\n* Call due to inheritance:\nnamespace CyclicalCallsWIA\n{\n    public class ClassWIA\n    {\n        public static void f()\n        {\n            CyclicalCallsB.ClassB.g();\n        }\n    }\n}\n\nnamespace CyclicalCallsWIB\n{\n    public class ClassWIB : CyclicalCallsWIA.ClassWIA\n    {\n        public static void g()\n        {\n        }\n    }\n}",
     "total": "Total number of namespaces",
-    "alternativeName": null,
+    "alternativeName": "Avoid cyclical calls and inheritances between namespaces content",
     "businessCriteria": [
         {
             "id": 66032,

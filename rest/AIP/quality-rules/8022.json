@@ -11,7 +11,7 @@
     "remediation": "The solution depends on the design: \n- use the inherited member and remove the member declaration in the child class \n- rename the member of the child class",
     "sample": "Java Sample:\npublic class SampleBase {\n     protected long a = 4;\n }\n \n public class Sample extends SampleBase {\n    protected int a = 5;  // VIOLATION\n }\n\nC++ Sample:\nclass BaseClass \n{\nprotected: \n    long a;\n};\n \nclass DerivedClass : BaseClass \n{\nprotected: \n    int a;  // VIOLATION\n };",
     "total": "Number of class data members",
-    "alternativeName": null,
+    "alternativeName": "Avoid hiding attributes",
     "businessCriteria": [
         {
             "id": 66031,

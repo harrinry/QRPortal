@@ -11,7 +11,7 @@
     "remediationSample": "DCL     SYSPRINT FILE  STREAM OUTPUT PRINT;\nDCL     FTEST1   FILE  RECORD INPUT;       \nDCL     FTEST2   FILE  RECORD INPUT;       \nDCL     FTEST3  FILE  RECORD OUTPUT;      \nON UNDF (FTEST1) UDF_FTEST1 = ON;  \nON UNDF (FTEST2) UDF_FTEST2 = ON;  \nON UNDF (FTEST3) UDF_FTEST3 = ON;",
     "sample": "DCL     SYSPRINT FILE  STREAM OUTPUT PRINT;\nDCL     FTEST1   FILE  RECORD INPUT;       \nDCL     FTEST2   FILE  RECORD INPUT;       \nDCL     FTEST3  FILE  RECORD OUTPUT;      \nON UNDF (FTEST1) UDF_FTEST1 = ON;  \nON UNDF (FTEST2) UDF_FTEST2 = ON;",
     "total": "Number of PL1 Main Procedures.",
-    "alternativeName": null,
+    "alternativeName": "Avoid Programs having files declared and not having the ON UNDF or ON UNDEFINEDFILE statement except SYSPRINT and SYSIN (PL1)",
     "businessCriteria": [
         {
             "id": 20140522,

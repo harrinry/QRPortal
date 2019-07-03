@@ -10,7 +10,7 @@
     "rationale": "To optimize the maintenance of the code, modifying data in a table should always be done through a procedure or a function. This enables the centralization of update, insert or delete operations inside appropriate procedure or function making future changes easier to implement.",
     "remediation": "Modify  the design of the Trigger so that data modification is done by calling the appropriate procedure or function.",
     "total": "Number of schema triggers",
-    "alternativeName": null,
+    "alternativeName": "Triggers should not directly modify tables, a procedure or function should be used instead",
     "businessCriteria": [
         {
             "id": 66032,

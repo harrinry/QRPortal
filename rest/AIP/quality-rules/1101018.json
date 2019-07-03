@@ -11,7 +11,7 @@
     "remediation": "Check the statement and if so, review the design of the statement to avoid if possible the GROUP BY clause.",
     "sample": "The following query should be reviewed:\nSelect T.title_id, T.def_id, T.publisher_id, T.pub_name into var1_title_id, var1_def_id, var1_publisher_id, var1_pub_name\nfrom (Select ALLESQL007_TBL3.title_id, def_id, publisher_id, pub_name from ALLESQL007_TBL1, ALLESQL007_TBL2, ALLESQL007_TBL3\nwhere pub_id = publisher_id\nand pub_name = authorname\nGroup By ALLESQL007_TBL3.title_id, publisher_id) T\nGroup By T.title_id, T.publisher_id;",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": null,
+    "alternativeName": "Avoid using the GROUP BY clause",
     "businessCriteria": [
         {
             "id": 60014,
