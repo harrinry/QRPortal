@@ -51,7 +51,7 @@ function validateTechnology( params ){
     _sec = sec.split('_'),
     techId = parseInt(_sec[1]);
 
-  return tMap.find( t => t.id === techId ) ? true : false;
+  return tMap.aip.find( t => t.id === techId ) ? true : false;
 }
 
 function validateStandard( params ){

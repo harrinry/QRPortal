@@ -5,6 +5,10 @@ export function createClassName( ...classes ){
   return classes.filter( cls => cls !== undefined && cls !== null).join(' ');
 }
 
+export function isEcho(){
+  return window.location.pathname !== '/rules';
+}
+
 export function Struct( ...composedStructure ){
   const props = composedStructure;
   const len = props.length;
@@ -103,5 +107,5 @@ export function historyReplaceState(){
 }
 
 export function nullifyHistory(){
-  return window.history.replaceState({}, undefined, '/rules');
+  return window.history.replaceState({}, undefined, window.location.pathname);
 }

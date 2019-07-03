@@ -1,8 +1,8 @@
 const fs = require('fs');
 const root = require('app-root-path');
 
-function getQualityStandardsMap ( response ){
-  fs.readFile(root.resolve('rest/AIP/quality-standards.json'), ( err, data ) => {
+function getQualityStandardsMap ( response, echo ){
+  fs.readFile(root.resolve('rest/'+ (echo ? 'Echo' :'AIP') +'/quality-standards.json'), ( err, data ) => {
     if (err) {
       console.log(err);
     }

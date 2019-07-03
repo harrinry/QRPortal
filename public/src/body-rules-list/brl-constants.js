@@ -17,8 +17,14 @@ export const HEADERS = {
 };
 
 export const NORULES = 'No Rules';
+export const ONERULE = '1 Rule';
 export const RULES = 'Rules';
-export const FILTERPLACEHOLDER = 'Filter Rules';
+export const FILTERRULESPLACEHOLDER = 'Filter Rules';
+
+export const NOBPS = 'No Best Practices';
+export const ONEBP = "1 Best Practice"
+export const BPS = 'Best Practices';
+export const FILTERBPSPLACEHOLDER = 'Filter Best Practices';
 
 export const CLASSES = {
   idCell: 'qrp_brl_tbCrid',

@@ -27,15 +27,15 @@ const QualityRule = Struct(
 
 const MapTechnology = (technology) => {
 
-  const technologyIndexInMap = TechnologiesMap.findIndex(t => t.name === technology),
-    tl = TechnologiesMap.length;
+  const technologyIndexInMap = TechnologiesMap.aip.findIndex(t => t.name === technology),
+    tl = TechnologiesMap.aip.length;
 
   if (technologyIndexInMap > -1) {
-    return TechnologiesMap[technologyIndexInMap];
+    return TechnologiesMap.aip[technologyIndexInMap];
   }
 
   for (let i = 0; i < tl; i++) {
-    const _Technology = TechnologiesMap[i];
+    const _Technology = TechnologiesMap.aip[i];
     if (_Technology.glob === null) continue;
     const globIndex = _Technology.glob.findIndex( t => t.name === technology);
     
@@ -70,7 +70,7 @@ const QualityRuleObject = (data) => {
 
 const ProcessRuleDetailsRequest = ( req, res, errorHandler ) => {
   const jsonReg = /.json/i,
-    url = jsonReg.test(req.url) ? req.url : req.url + '.json';
+    url = jsonReg.test(req.path) ? req.path : req.path + '.json';
   fs.readFile(root.resolve('/rest/AIP/' + url), (err, dataBuffer) => {
     if(err){
       errorHandler(err, res);

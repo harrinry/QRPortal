@@ -1,5 +1,5 @@
 const express = require('express');
-const options = require('./options');
+const path = require('path');
 const technoMapping = require('../lib/technologies-map');
 const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
@@ -16,11 +16,11 @@ let extVersionMap;
 let WebRouter = express.Router();
 
 WebRouter.get('/technologies', (req, res) => {
-  res.json( technoMapping );
+  return req.query.q === 'echo' ? res.json(technoMapping.echo) : res.json( technoMapping.aip );
 });
 
 WebRouter.get('/technologies/:technoID', (req, res) => {
-  filterDeprecated(req, res, errorHandler);
+  filterDeprecated(req, res, errorHandler, req.query.q === 'echo');
   // res.sendFile(req.url + '/quality-rules.json', options, (err) => errorHandler(err, res));
 });
 
@@ -43,7 +43,7 @@ WebRouter.get('/extensions/:extID/versions/:version', ( req, res ) => {
 });
 
 WebRouter.get('/quality-standards', ( req, res ) => {
-  getStandardsMap(res);
+  getStandardsMap(res, req.query.q === 'echo');
 });
 
 WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
@@ -53,24 +53,26 @@ WebRouter.get('/quality-standards/:stdID/categories', ( req, res ) => {
 });
 
 WebRouter.get('/quality-standards/:stdID/categories/:stdCatName', ( req, res ) => {
+  const isEcho = req.query.q === 'echo';
   if (req.params.stdCatName === 'OWASP-2017') {
     StandardHandler(req, res, errorHandler);
   } else {
-    res.sendFile(req.url + '/items.json', options, err => errorHandler(err, res));
+    const file = path.resolve(__dirname, '..', '..', 'rest', (isEcho ? 'Echo' : 'AIP') + req.path + '/items.json');
+    res.sendFile(file,  err => errorHandler(err, res));
   }
 });
 
 WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
   // res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
-  filterDeprecated(req, res, errorHandler);
+  filterDeprecated(req, res, errorHandler, req.query.q === 'echo');
 });
 
 WebRouter.get('/business-criteria', (req, res) => {
-  businessCriteriaMap(res);
+  businessCriteriaMap(res, false, req.query.q === 'echo');
 });
 
 WebRouter.get('/business-criteria/:bcID', ( req, res ) => {
-  filterDeprecated(req, res, errorHandler);
+  filterDeprecated(req, res, errorHandler, req.query.q === 'echo');
   // res.sendFile(req.url + '/quality-rules.json', options, err => errorHandler(err, res));
 });
 

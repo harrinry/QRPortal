@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
-import { createClassName, COMMON_CLASSES } from '../common/';
-import { CLASSES, NORULESSELECTED } from './ds-constants';
+import { createClassName, COMMON_CLASSES, isEcho } from '../common/';
+import { CLASSES, NORULESSELECTED, NOBPSSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
 const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
   let qualityStandardsTags, technologiesTags;
   if (data){
-    qualityStandardsTags = data.qualityStandards.length > 0 ? 
+    qualityStandardsTags = data.qualityStandards.length > 0 ?
       data.qualityStandards
         .map(function(listValue, index){
           return <div key={index} className={CLASSES.tag} onClick={() => {
@@ -16,7 +16,7 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               onTagClick(listValue);
           }}>{listValue.id}</div>;
         }) : [];
-    technologiesTags = data.technologies.length > 0 ? 
+    technologiesTags = data.technologies.length > 0 ?
       data.technologies.map((t, i)=>{
         return <div key={i+'techno'} className={CLASSES.technoTag} onClick={() => {
           if(!searchVisible || gsQuery !== t.id)
@@ -26,14 +26,18 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
   }
   return (
     <div className={createClassName(COMMON_CLASSES.flexCol, CLASSES.detailsContainer)}>
-      { loading ? <LoadingSpinner/> : 
-        ( data ? 
+      { loading ? <LoadingSpinner/> :
+        ( data ?
           <div className={CLASSES.subContainer}>
             <div className={CLASSES.headerContainer}>
-              <h2 className={CLASSES.title}>{data.name}</h2>
+            <h2 className={CLASSES.title}>{(isEcho() ? (data.alternativeName ? data.alternativeName : data.name) : data.name)}</h2>
+            { isEcho() ? ( data.critical ?
+
+<div className={createClassName(CLASSES.weightContainer,COMMON_CLASSES.critical)}></div> : undefined)
+               : (
               <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
                 <span className={CLASSES.weight}>{data.maxWeight}</span>
-              </div>
+              </div>)}
             </div>
             <div className={CLASSES.tagContainer}>
               {qualityStandardsTags}
@@ -41,14 +45,16 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
             <div className={CLASSES.tagContainer}>
               {technologiesTags}
             </div>
-            {data.description ? <div className={CLASSES.descriptionContainer}>
+            {isEcho() ? undefined : ( data.description ? <div className={CLASSES.descriptionContainer}>
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
-            </div> : undefined}
-            {data.rationale ? <div className={CLASSES.rationaleContainer}>
+            </div> : undefined ) }
+{isEcho() ? (data.rationale ? <div className={CLASSES.rationaleContainer}><p>{data.rationale}</p></div> : undefined) :
+
+            (data.rationale ? <div className={CLASSES.rationaleContainer}>
               <p className={CLASSES.textArea}>Rationale</p>
               <p>{data.rationale}</p>
-            </div> : undefined}
+            </div> : undefined)}
             {data.remediation ? <div className={CLASSES.remediation}>
               <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
@@ -66,7 +72,7 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               <p className={CLASSES.textAreaRule}>{parseLinks(data.reference)}</p>
             </div> : undefined}
           </div>
-          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{NORULESSELECTED}</div> )
+          : <div className={createClassName(CLASSES.noRules , COMMON_CLASSES.txtCenter)}>{ (isEcho() ? NOBPSSELECTED : NORULESSELECTED)}</div> )
       }
     </div>
   );
@@ -81,7 +87,7 @@ function parseLinks( text ){
   let str = [];
 
   for (let i = 0; i < ml; i++) {
-    const url = matches[i];    
+    const url = matches[i];
     idxStart = text.indexOf(url);
     const node = (<span key={'node-'+i}>{text.substring(idxEnd, idxStart)}</span>),
       ahrefBlock = (<a key={'anchor-'+i} href={url}>{url}</a>);

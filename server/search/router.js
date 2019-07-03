@@ -9,7 +9,7 @@ searchRouter.get(searchRoute, (req, res) => {
     query: req.query.q,
     index: req.params.filter
   };
-  const ret = searchIndex( searchParams.query, searchParams.index );
+  const ret = searchIndex( searchParams.query, searchParams.index, /bestpractices/gi.test(req.headers.referer) );
   logger.info(searchParams);
   res.json(ret);
 });

@@ -21,3 +21,4 @@ export const CLASSES = {
 };
 
 export const NORULESSELECTED = 'No Rule Selected';
+export const NOBPSSELECTED = 'No Best Practice Selected';

@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import VerticalArray from 'components/array/';
 import { compareFunction } from './brl-lib';
-import { HEADERS, NORULES, FILTERPLACEHOLDER, RULES } from './brl-constants';
+import { HEADERS, NORULES, ONERULE, FILTERRULESPLACEHOLDER, RULES, NOBPS, ONEBP, FILTERBPSPLACEHOLDER, BPS } from './brl-constants';
+import { isEcho } from '../common/';
 
 const RulesListArray = ( props ) => {
   const hasSearchResults = props.searchResults ? true : false,
     searchResultsLength = hasSearchResults ? props.searchResults.length : 0,
     searchResults = searchResultsLength > 0 ? props.searchResults : [];
   const Headers = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
-  let childConstructor; 
+  let childConstructor;
   if (props.searchVisible) {
     childConstructor = props.SearchArrayChildConstructor;
   } else if( props.listCount === 2 ) {
@@ -17,15 +18,15 @@ const RulesListArray = ( props ) => {
   } else {
     childConstructor = props.arrayChildConstructor;
   }
-    
+
 
   return(
-    <VerticalArray isLoading={props.loading} 
-      childConstructor={childConstructor} 
-      filterPlaceholder={FILTERPLACEHOLDER} 
-      itemCountTitle={RULES} 
-      onEmpty={props.customMessage || NORULES} 
-      headers={Headers} 
+    <VerticalArray isLoading={props.loading}
+      childConstructor={childConstructor}
+      filterPlaceholder={isEcho() ? FILTERBPSPLACEHOLDER : FILTERRULESPLACEHOLDER}
+      itemCountTitle={isEcho() ? BPS : RULES}
+      onEmpty={props.customMessage || (isEcho() ? NOBPS : NORULES)}
+      headers={Headers}
       compare={compareFunction}>
       { props.searchVisible ? searchResults : props.data}
     </VerticalArray>);
