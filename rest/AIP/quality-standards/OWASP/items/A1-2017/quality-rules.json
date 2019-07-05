@@ -10,18 +10,6 @@
         ]
     },
     {
-        "id": 7260,
-        "name": "User Interface elements must not use directly the database",
-        "href": "AIP/quality-rules/7260",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
         "id": 7448,
         "name": "Always validate user input with Request variables",
         "href": "AIP/quality-rules/7448",
@@ -158,6 +146,16 @@
         "id": 1007266,
         "name": "Avoid SQL Injection - Improper Neutralization of Special Elements used in an SQL Command within single quotes (PHP)",
         "href": "AIP/quality-rules/1007266",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007268,
+        "name": "Avoid SQL Injection - Improper Neutralization of Special Elements used in an SQL Command without quotes (PHP)",
+        "href": "AIP/quality-rules/1007268",
         "status": null,
         "critical": true,
         "technologyNames": [
