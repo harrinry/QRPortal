@@ -5949,7 +5949,7 @@
     },
     {
         "id": 1040026,
-        "name": "RequestMapping methods should specify HTTP method",
+        "name": "A Single HTTP method should be explicitly specified in @RequestMapping methods",
         "href": "AIP/quality-rules/1040026",
         "status": null,
         "critical": true,
@@ -5979,7 +5979,7 @@
     },
     {
         "id": 1040032,
-        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver Simultaneously",
+        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
         "href": "AIP/quality-rules/1040032",
         "status": null,
         "critical": false,
@@ -5989,7 +5989,7 @@
     },
     {
         "id": 1040036,
-        "name": "Avoid using STOMP Spring messaging module",
+        "name": "Avoid using STOMP Spring messaging module before Spring 5.0.5 and 4.3.16,",
         "href": "AIP/quality-rules/1040036",
         "status": null,
         "critical": true,
@@ -5999,8 +5999,38 @@
     },
     {
         "id": 1040038,
-        "name": "Avoid using Spring Security Path Matching Inconsistency",
+        "name": "Avoid using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
         "href": "AIP/quality-rules/1040038",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040042,
+        "name": "Avoid using Spring Security in combination with Spring Framework 5.0.5",
+        "href": "AIP/quality-rules/1040042",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040046,
+        "name": "Avoid using Spring Data with XMLBeam integration",
+        "href": "AIP/quality-rules/1040046",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040048,
+        "name": "Avoid using JWT Issuer Validation in spring-security versions 5.1.x prior to 5.1.2",
+        "href": "AIP/quality-rules/1040048",
         "status": null,
         "critical": true,
         "technologyNames": [

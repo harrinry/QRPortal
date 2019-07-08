@@ -1,0 +1,53 @@
+{
+    "id": 1040044,
+    "name": "Avoid using Spring-integration-zip in versions prior to 1.0.1",
+    "href": "AIP/quality-rules/1040044",
+    "critical": true,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Avoid using Spring-integration-zip in versions prior to 1.0.1",
+    "rationale": "spring-integration-zip , versions prior to 1.0.1, exposes an arbitrary file write vulnerability, that can be achieved using a specially crafted zip archive (affects other archives as well, bzip2, tar, xz, war, cpio, 7z), that holds path traversal filenames. So when the filename gets concatenated to the target extraction directory, the final path ends up outside of the target folder.\n\nThis specifically applies to the unzip transformer.\n\nThis can only happen if an application using this library accepts and unpacks zip files from untrusted sources.",
+    "reference": "https://pivotal.io/security/cve-2018-1261\nhttp://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1261\nhttp://cwe.mitre.org/data/definitions/22.html",
+    "remediation": "Upgrade to Spring Integration Zip Community Extension Project version 1.0.1.RELEASE",
+    "remediationSample": "Upgrade to Spring Integration Zip Community Extension Project version 1.0.1.RELEASE",
+    "sample": "import org.springframework.integration.zip.transformer\n//or\n//import org.springframework.integration.*\n\npublic class UnZipTransformer extends AbstractZipTransformer\n{\n..\n}",
+    "alternativeName": null,
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

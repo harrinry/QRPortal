@@ -3362,7 +3362,7 @@
     },
     {
         "id": 1040002,
-        "name": "Spring Security CSRF Protection must not be disabled",
+        "name": "Avoid disabling Spring Security CSRF Protection",
         "href": "AIP/quality-rules/1040002",
         "status": null,
         "critical": true,
@@ -3382,7 +3382,7 @@
     },
     {
         "id": 1040006,
-        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "name": "Ensure setting Content-Security-Policy for spring application.",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true,
@@ -3392,7 +3392,7 @@
     },
     {
         "id": 1040008,
-        "name": "Ensure that login form is declared after requesting authorization and authentication",
+        "name": "Ensure declaring formLogin after requesting authorization and authentication",
         "href": "AIP/quality-rules/1040008",
         "status": null,
         "critical": true,
@@ -3402,7 +3402,7 @@
     },
     {
         "id": 1040010,
-        "name": "Cookies must be deleted during the logout",
+        "name": "Always delete the cookies during the logout",
         "href": "AIP/quality-rules/1040010",
         "status": null,
         "critical": true,
@@ -3412,7 +3412,7 @@
     },
     {
         "id": 1040012,
-        "name": "Ensure that HTTP Session is invalidated during logout",
+        "name": "HTTP user session must be invalidated during logout",
         "href": "AIP/quality-rules/1040012",
         "status": null,
         "critical": true,
@@ -3442,7 +3442,7 @@
     },
     {
         "id": 1040018,
-        "name": "X-Frame-Options should be correctly set to avoid Clickjacking attack",
+        "name": "Ensure the X-Frame-Options header is setup (Spring)",
         "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true,
@@ -3475,14 +3475,14 @@
         "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
         "href": "AIP/quality-rules/1040024",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 1040026,
-        "name": "RequestMapping methods should specify HTTP method",
+        "name": "A Single HTTP method should be explicitly specified in @RequestMapping methods",
         "href": "AIP/quality-rules/1040026",
         "status": null,
         "critical": true,
@@ -3512,7 +3512,7 @@
     },
     {
         "id": 1040032,
-        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver Simultaneously",
+        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
         "href": "AIP/quality-rules/1040032",
         "status": null,
         "critical": false,
@@ -3522,7 +3522,7 @@
     },
     {
         "id": 1040034,
-        "name": "\"StrictHttpFirewall\" should be set as the HttpFirewall",
+        "name": "StrictHttpFirewall should be set as Http Firewall before Spring Security 5.0.1, 4.2.4, and 4.1.5",
         "href": "AIP/quality-rules/1040034",
         "status": null,
         "critical": true,
@@ -3532,7 +3532,7 @@
     },
     {
         "id": 1040036,
-        "name": "Avoid using STOMP Spring messaging module",
+        "name": "Avoid using STOMP Spring messaging module before Spring 5.0.5 and 4.3.16,",
         "href": "AIP/quality-rules/1040036",
         "status": null,
         "critical": true,
@@ -3542,10 +3542,10 @@
     },
     {
         "id": 1040038,
-        "name": "Avoid using Spring Security Path Matching Inconsistency",
+        "name": "Avoid using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
         "href": "AIP/quality-rules/1040038",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
@@ -3554,6 +3554,46 @@
         "id": 1040040,
         "name": "The Endpoint URI must not include a fragment component (OAuth)",
         "href": "AIP/quality-rules/1040040",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040042,
+        "name": "Avoid using Spring Security in combination with Spring Framework 5.0.5",
+        "href": "AIP/quality-rules/1040042",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040044,
+        "name": "Avoid using Spring-integration-zip in versions prior to 1.0.1",
+        "href": "AIP/quality-rules/1040044",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040046,
+        "name": "Avoid using Spring Data with XMLBeam integration",
+        "href": "AIP/quality-rules/1040046",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040048,
+        "name": "Avoid using JWT Issuer Validation in spring-security versions 5.1.x prior to 5.1.2",
+        "href": "AIP/quality-rules/1040048",
         "status": null,
         "critical": true,
         "technologyNames": [

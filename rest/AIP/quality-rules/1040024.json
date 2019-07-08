@@ -2,14 +2,15 @@
     "id": 1040024,
     "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
     "href": "AIP/quality-rules/1040024",
-    "critical": false,
-    "maxWeight": 7,
-    "description": "Spring Boot Shutdown Actuator is enabled and will allow users/attackers to shut down the application without authentication.",
+    "critical": true,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Spring Boot Shutdown Actuator when enabled will allow users/attackers to shut down the application without authentication.\n\n\nThis rule will check if cSpring Boot Shutdown Actuator Endpoint is disabled. If not it gives the violation",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "This configuration flag Shutdown Actuator will allow authenticated users to shut down the application incidentally or intentionally or accidentally.\nBy default this feature is disabled.",
     "reference": "https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html\nhttps://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/",
     "remediation": "management.endpoint.shutdown.enabled=false",
-    "remediationSample": "endpoints.shutdown.enabled=false\nmanagement.endpoint.shutdown.enabled=false",
-    "sample": "endpoints.shutdown.enabled=true\nmanagement.endpoint.shutdown.enabled=true",
+    "remediationSample": "The following example disable the shutdown endpoint:\n\nmanagement.endpoint.shutdown.enabled=true\n--------------------------------------------------------\n\nThe following example enables the info endpoint and disables all other endpoints:\nmanagement.endpoints.enabled-by-default=false\nmanagement.endpoint.info.enabled=true",
+    "sample": "The following example enables the shutdown endpoint:\n\nmanagement.endpoint.shutdown.enabled=true",
     "total": "Number of Properties file object",
     "alternativeName": "Ensure Spring Boot Shutdown actuator endpoint is disabled",
     "businessCriteria": [
@@ -29,7 +30,7 @@
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
             "weight": 7,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [

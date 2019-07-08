@@ -234,7 +234,7 @@
     },
     {
         "id": 1040018,
-        "name": "X-Frame-Options should be correctly set to avoid Clickjacking attack",
+        "name": "Ensure the X-Frame-Options header is setup (Spring)",
         "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true,
@@ -257,14 +257,14 @@
         "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
         "href": "AIP/quality-rules/1040024",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 1040026,
-        "name": "RequestMapping methods should specify HTTP method",
+        "name": "A Single HTTP method should be explicitly specified in @RequestMapping methods",
         "href": "AIP/quality-rules/1040026",
         "status": null,
         "critical": true,

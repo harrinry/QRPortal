@@ -2907,7 +2907,7 @@
     },
     {
         "id": 1040002,
-        "name": "Spring Security CSRF Protection must not be disabled",
+        "name": "Avoid disabling Spring Security CSRF Protection",
         "href": "AIP/quality-rules/1040002",
         "status": null,
         "critical": true,
@@ -2917,7 +2917,7 @@
     },
     {
         "id": 1040006,
-        "name": "Ensure that Content-Security-Policy is set for Spring Application",
+        "name": "Ensure setting Content-Security-Policy for spring application.",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true,
@@ -2927,7 +2927,7 @@
     },
     {
         "id": 1040008,
-        "name": "Ensure that login form is declared after requesting authorization and authentication",
+        "name": "Ensure declaring formLogin after requesting authorization and authentication",
         "href": "AIP/quality-rules/1040008",
         "status": null,
         "critical": true,
@@ -2937,7 +2937,7 @@
     },
     {
         "id": 1040010,
-        "name": "Cookies must be deleted during the logout",
+        "name": "Always delete the cookies during the logout",
         "href": "AIP/quality-rules/1040010",
         "status": null,
         "critical": true,
@@ -2947,7 +2947,7 @@
     },
     {
         "id": 1040012,
-        "name": "Ensure that HTTP Session is invalidated during logout",
+        "name": "HTTP user session must be invalidated during logout",
         "href": "AIP/quality-rules/1040012",
         "status": null,
         "critical": true,
@@ -2967,7 +2967,7 @@
     },
     {
         "id": 1040018,
-        "name": "X-Frame-Options should be correctly set to avoid Clickjacking attack",
+        "name": "Ensure the X-Frame-Options header is setup (Spring)",
         "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true,
@@ -2990,7 +2990,7 @@
         "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
         "href": "AIP/quality-rules/1040024",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -3007,7 +3007,7 @@
     },
     {
         "id": 1040032,
-        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver Simultaneously",
+        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
         "href": "AIP/quality-rules/1040032",
         "status": null,
         "critical": false,
