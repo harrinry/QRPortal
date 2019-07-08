@@ -13,7 +13,7 @@
     "remediationSample": "If you cannot migrate to the latest version, Please refer to this page : https://cwiki.apache.org/confluence/display/WW/S2-024",
     "sample": "In struts config xml file: \n--------------------------------------\n\n<interceptors>\n    <interceptor-stack name=\"appDefault\">\n        <interceptor-ref name=\"defaultStack\">\n            <param name=\"exception.logEnabled\">true</param>\n            <param name=\"exception.logLevel\">ERROR</param>\n            <param name=\"params.excludeParams\">dojo..*,^struts..*,^session..*,^request..*,^application..*,^servlet(Request|Response)..*,parameters...*</param>\n        </interceptor-ref>\n    </interceptor-stack>\n</interceptors>\n                             \n<default-interceptor-ref name=\"appDefault\" />",
     "total": "Number of field in struts2 config XML file",
-    "alternativeName": "Ensure not using excludeParams",
+    "alternativeName": "Ensure not using excludeParams for Struts 2.3.20 ( and older) to avoid",
     "businessCriteria": [
         {
             "id": 20140522,

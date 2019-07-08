@@ -12,7 +12,7 @@
     "remediationSample": "Struts-defaults.xml\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">^class\\..*,^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>",
     "sample": "Struts-default.xml\n\n<interceptor-ref name=\"params\">\n  <param name=\"excludeParams\">^dojo\\..*,^struts\\..*,^session\\..*,^request\\..*,^application\\..*,^servlet(Request|Response)\\..*,^parameters\\..*,^action:.*,^method:.*</param>\n</interceptor-ref>",
     "total": "Number of struts 2 config XML file",
-    "alternativeName": "[TOBE DEACTIVATED - DUPLICATED AS 1042010] IAvoid ClassLoader manipulation in Struts 2.0.0 to 2.3.16",
+    "alternativeName": "DELETED: [DUPLICATE OF 1042010] IAvoid ClassLoader manipulation in Struts 2.0.0 to 2.3.16",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -41,20 +41,7 @@
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "OWASP",
-            "id": "A9-2013",
-            "name": "Using Components with Known Vulnerabilities",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
-            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
-        },
-        {
-            "standard": "OWASP",
-            "id": "A9-2017",
-            "name": "Using Components with Known Vulnerabilities",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
-            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
-        }
+        
     ],
     "parameters": [
         

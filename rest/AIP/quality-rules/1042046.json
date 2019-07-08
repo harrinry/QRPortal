@@ -42,18 +42,18 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
-            "id": "A3-2017",
-            "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "standard": "CWE",
+            "id": "CWE-77",
+            "name": "Improper Neutralization of Special Elements used in a Command ('Command Injection')",
+            "url": "https://cwe.mitre.org/data/definitions/77.html",
+            "description": "The software constructs all or part of a command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended command when it is sent to a downstream component."
         },
         {
-            "standard": "OWASP",
-            "id": "A6-2013",
-            "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
+            "description": null
         },
         {
             "standard": "OWASP",
@@ -68,6 +68,20 @@
             "name": "Using Components with Known Vulnerabilities",
             "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
             "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
+            "url": null,
+            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
         }
     ],
     "parameters": [

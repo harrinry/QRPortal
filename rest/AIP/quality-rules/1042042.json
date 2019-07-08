@@ -42,11 +42,18 @@
     ],
     "qualityStandards": [
         {
+            "standard": "CWE",
+            "id": "CWE-502",
+            "name": "Deserialization of Untrusted Data",
+            "url": "https://cwe.mitre.org/data/definitions/502.html",
+            "description": "The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid."
+        },
+        {
             "standard": "OWASP",
-            "id": "A4-2017",
-            "name": "XML External Entities (XXE)",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
-            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+            "id": "A8-2017",
+            "name": "Insecure Deserialization",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization",
+            "description": "Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks."
         }
     ],
     "parameters": [
