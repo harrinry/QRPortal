@@ -1,10 +1,10 @@
 {
     "id": 1042022,
-    "name": "Avoid using CookieInterceptor with Struts 2.3.16 (and Older)",
+    "name": "Avoid using CookieInterceptor with  2.3.16 (and Older)",
     "href": "AIP/quality-rules/1042022",
     "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "Application using Apache Struts version 2 (pre-2.3.16) with CookieInterceptor feature are  vulnerable for Injection attack as it was configured to accept all cookies. The risk occurs when \"*\" is used to configure cookiesName param. This allows remote attackers to \"manipulate\" the ClassLoader and execute arbitrary code via a crafted request\n\nThis rule will check that wildcard is not used to configure cookiesName param for CookieInterceptor. If not, it gives a violation.\n\nThis check is done when used struts version is 2.3.16 or Older.",
+    "description": "Application uses Apache Struts version 2 (pre-2.3.16) using CookieInterceptor are  vulnerable for Injection attack as it was configured to accept all cookies. The risk occurs when \"*\" is used to configure cookiesName param. This allows remote attackers to \"manipulate\" the ClassLoader and execute arbitrary code via a crafted request\n\nThis injection vulnerability has identified by CVE-2014-0113",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts.",
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0113\nhttps://securityintelligence.com/struts-vulnerabilities-analysis-parameters-cookie-interceptors-impact-exploitation/",
