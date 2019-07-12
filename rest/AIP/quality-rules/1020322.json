@@ -9,7 +9,7 @@
     "rationale": "While some known vulnerabilities lead to only minor impacts, some of the largest breaches to date have relied on exploiting known vulnerabilities in components. Depending on the assets you are protecting, perhaps this risk should be at the top of the list.",
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-9251",
     "remediation": "Always provide dataType parameter.",
-    "remediationSample": "<script src=\"https://code.jquery.com/jquery-2.1.4.js\"></script> \n    <script src=\"https://code.jquery.com/ui/1.12.0/jquery-ui.js\"></script> \n    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://code.jquery.com/ui/1.9.1/themes/base/ \njquery-ui.css\"> \n    <script> \n        $(document).ready(function () { \n            $('#dialog').dialog({ closeText: '<script>alert(\"XSS\")<\\/script>' }); \n        }); \n    </script>",
+    "remediationSample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user, \n    dataType : \"json\"\n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
     "sample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user, \n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
     "total": "Number of JQuery artifacts calling Ajax function",
     "alternativeName": "Avoid using Ajax method without dataType with jQuery version older than 3.0.0",
