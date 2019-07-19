@@ -41,6 +41,27 @@
     ],
     "qualityStandards": [
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        },
+        {
             "standard": "OWASP",
             "id": "M1-2016",
             "name": "Improper Platform Usage",
@@ -53,6 +74,13 @@
             "name": "Insecure Authentication",
             "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
             "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         }
     ],
     "parameters": [

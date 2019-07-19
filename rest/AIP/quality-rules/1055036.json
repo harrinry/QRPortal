@@ -54,6 +54,13 @@
             "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
@@ -82,11 +89,25 @@
             "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
         },
         {
+            "standard": "OWASP",
+            "id": "M4-2016",
+            "name": "Insecure Authentication",
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+        },
+        {
             "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-2.2.4",
             "name": "Configure system security parameters to prevent misuse.",
             "url": null,
             "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70363",
+            "name": "The application must not contain embedded authentication data.",
+            "url": null,
+            "description": "Authentication data stored in code could potentially be read and used by anonymous users to gain access to a backend database or application servers. This could lead to compromise of application data."
         }
     ],
     "parameters": [
