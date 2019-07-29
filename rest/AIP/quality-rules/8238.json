@@ -7,7 +7,7 @@
     "description": "The product mixes trusted and untrusted data in the same data structure or structured message.",
     "output": "List all methods that miss calling the required sanitization method and provides access to the path demonstrating the vulnerability : \n  \nIt provides the following information: \n- The full name of the method that calls the user input method. That is the source of the untrusted data. \n- Call stack from user input source down to the target method.",
     "rationale": "Without well-established and maintained trust boundaries, programmers will inevitably lose track of which pieces of data have been validated and which have not. This confusion will eventually allow some data to be used without first being validated.",
-    "reference": "http://cwe.mitre.org/data/definitions/501.html",
+    "reference": "CWE-501: Trust Boundary Violation\nhttps://cwe.mitre.org/data/definitions/501.html",
     "remediation": "Perform input data validation before storing or transmitting the data.",
     "remediationSample": "// Never mix trusted and untrusted data",
     "sample": "Java :\nusrname = request.getParameter(\"usrname\"); \nif (session.getAttribute(ATTR_USR) == null) { \n    session.setAttribute(ATTR_USR, usrname); \n} \n\nC# :\nusrname = request.Item(\"usrname\"); \nif (session.Item(ATTR_USR) == null) { \n    session.Add(ATTR_USR, usrname); \n}",

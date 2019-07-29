@@ -7,7 +7,7 @@
     "description": "Using CAST data-flow engine, this metric detects the use of a broken or risky cryptographic algorithm.",
     "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
     "rationale": "The use of a non-standard algorithm is dangerous because a determined attacker may be able to break the algorithm and compromise whatever data has been protected. Well-known techniques may exist to break the algorithm.",
-    "reference": "http://cwe.mitre.org/data/definitions/327.html\nA3-OWASP",
+    "reference": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm\nhttps://cwe.mitre.org/data/definitions/327.html\n\nA3-OWASP",
     "remediation": "Use a recommended algorithm. Example: Advanced Encryption Standard (AES).",
     "remediationSample": "Cipher des=Cipher.getInstance(\"AES/CBC/PKCS5PADDING\");\ndes.initEncrypt(key2);",
     "sample": "Cipher des=Cipher.getInstance(\"DES/CBC/PKCS5PADDING\");\ndes.initEncrypt(key2);",
