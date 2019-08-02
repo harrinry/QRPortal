@@ -12,7 +12,7 @@
     "remediationSample": " Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\nif(deptOpt.isPresent())  // Violation FIXED\n    department = deptOpt.get();\n} ",
     "sample": "Optional<Department> deptOpt= studList.stream().min(comparator.comparing(Department::getDepartmentNo));\n\nDepartment department = null;\n    department = deptOpt.get();  // Violation  \n} ",
     "total": "Number of Java Artifact",
-    "alternativeName": "[NOGO  Ensure to use \"Optional.isPresent\" before invoking \"Optional.get\" to access value.",
+    "alternativeName": "DELETED: Avoid invoking  \"Optional.get\" to access value without use  of \"Optional.isPresent\"",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,13 +51,7 @@
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "CWE",
-            "id": "CWE-476",
-            "name": "NULL Pointer Dereference",
-            "url": "https://cwe.mitre.org/data/definitions/476.html",
-            "description": "A NULL pointer dereference occurs when the application dereferences a pointer that it expects to be valid, but is NULL, typically causing a crash or exit."
-        }
+        
     ],
     "parameters": [
         
