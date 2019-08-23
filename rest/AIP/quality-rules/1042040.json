@@ -12,7 +12,7 @@
     "remediationSample": "Upgrade to Struts version 2.5.13 or 2.3.34.\n\nWorkaround :\n\n<validator type=\"url\">\n    <param name=\"fieldName\">myHomePage</param>\n    <param name=\"urlRegex\">^(https?|ftp):\\\\/\\\\/(([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;\\\\?&=-]|%[0-9a-f]{2})+(:([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;\\\\?&=-]|%[0-9a-f]{2})+)?@)?(#?)((([a-z0-9]\\\\.|[a-z0-9][a-z0-9-]*[a-z0-9]\\\\.)*[a-z][a-z0-9-]*[a-z0-9]|((\\\\d|[1-9]\\\\d|1\\\\d{2}|2[0-4][0-9]|25[0-5])\\\\.){3}(\\\\d|[1-9]\\\\d|1\\\\d{2}|2[0-4][0-9]|25[0-5]))(:\\\\d+)?)(((\\\\/{0,1}([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)*(\\\\?([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)?)?)?(#([a-z0-9$_\\\\.\\\\+!\\\\*\\\\'\\\\(\\\\),;:@&=-]|%[0-9a-f]{2})*)?$</param>\n    <message>Invalid homepage url</message>\n</validator>",
     "sample": "Struts 2 sample:\n\n<validator type=\"url\">\n    <param name=\"fieldName\">myHomePage</param>\n    <message>Invalid homepage url</message>\n</validator>",
     "total": "Number of struts2 config XML file",
-    "alternativeName": "Avoid using default RegEx provided by the UrlValidator",
+    "alternativeName": "Ensure you are using Struts URLValidator with at least version 2.5.13 or 2.3.34",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -41,7 +41,27 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-676",
+            "name": "Use of Potentially Dangerous Function",
+            "url": "https://cwe.mitre.org/data/definitions/676.html",
+            "description": "The program invokes a potentially dangerous function that could introduce a vulnerability if it is used incorrectly, but the function can also be used safely."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
+            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+        }
     ],
     "parameters": [
         
