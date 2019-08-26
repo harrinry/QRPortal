@@ -10,7 +10,7 @@
     "reference": "https://cwe.mitre.org/data/definitions/287.html\nhttps://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
     "remediationSample": "protected void configure(HttpSecurity http) throws Exception {\n      http\n          .logout()\n                 .logoutUrl(\"/my/logout\")\n                 .logoutSuccessUrl(\"/my/index\")\n                 .logoutSuccessHandler(logoutSuccessHandler)\n                 .invalidateHttpSession(true) // InvalidateHttpSession is set to TRUE\n                 ...\n                 .and()\n             ...\n}",
     "sample": "protected void configure(HttpSecurity http) throws Exception {\n      http\n          .logout()\n                     .logoutUrl(\"/my/logout\")\n                     .logoutSuccessUrl(\"/my/index\")\n                     .logoutSuccessHandler(logoutSuccessHandler)\n                     .invalidateHttpSession(false) // InvalidateHttpSession is set to FALSE\n                     ...\n                     .and()\n             ...\n}\n----------------\nprotected void configure(HttpSecurity http) throws Exception {\n      http\n          .logout()\n                     .logoutUrl(\"/my/logout\")\n                     .logoutSuccessUrl(\"/my/index\")\n                     .logoutSuccessHandler(logoutSuccessHandler)\n\n                     ...\n                     // InvalidateHttpSession is missing\n                     .and()\n             ...\n}",
-    "total": "Number of Java Methods and Xml tags",
+    "total": "Number of Java Methods and XML Files",
     "alternativeName": "Ensure invalidating HTTP Session during logout to avoid broken Authentication",
     "businessCriteria": [
         {

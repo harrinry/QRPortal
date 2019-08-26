@@ -3039,7 +3039,7 @@
     },
     {
         "id": 1040006,
-        "name": "Ensure setting Content-Security-Policy for spring application.",
+        "name": "Always set Content-Security-Policy for spring application",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true,
@@ -3109,7 +3109,7 @@
     },
     {
         "id": 1040024,
-        "name": "Ensure Spring Boot Shutdown Actuator Endpoint is disabled",
+        "name": "Spring Boot Shutdown Actuator Endpoint must be secured from unauthenticated access.",
         "href": "AIP/quality-rules/1040024",
         "status": null,
         "critical": true,
@@ -3201,6 +3201,16 @@
         "id": 1042032,
         "name": "Avoid using setters with Struts 2",
         "href": "AIP/quality-rules/1042032",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1042050,
+        "name": "Avoid using special top object in struts 2.0.0 - struts 2.3.24",
+        "href": "AIP/quality-rules/1042050",
         "status": null,
         "critical": true,
         "technologyNames": [

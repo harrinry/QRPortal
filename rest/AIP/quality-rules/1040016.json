@@ -11,7 +11,7 @@
     "remediation": "Add .permitAll() for the .loginPage(\"/login\") or .antMatchers(\"/xxx/**\") if access is allowed to anyone.\nor Specify the role with .hasRole(\"ROLE\")",
     "remediationSample": "You need to add .permitAll() for the .loginPage(\"/login\") or .antMatchers(\"/xxx/**\") if access is allowed to anyone.\nor you have to specify the role with .hasRole(\"ROLE\")\n\nJAVA CONFIGURATION\n-----------------------------------------\nprotected void configure(HttpSecurity http) throws Exception {\nhttp\n.authorizeRequests()\n.antMatchers(\"/resources/**\", \"/signup\", \"/about\").permitAll()\n.antMatchers(\"/admin/**\").hasRole(\"ADMIN\") //here the permitall is not specified but the role is specified.\n.antMatchers(\"/db/**\").access(\"hasRole('ADMIN') and hasRole('DBA')\") //here the permitall is not specified but the role is specified.\n.anyRequest().authenticated()\n.and()\n\n.loginPage(\"/login\").permitAll()\n}\n\nXML CONFIGURATION\n-----------------------------------------\nintercept-url pattern=\"/login*\" access=\"permitAll\"",
     "sample": "JAVA CONFIGURATION\n-----------------------------------------\nprotected void configure(HttpSecurity http) throws Exception {\nhttp\n.authorizeRequests()\n.anyRequest().authenticated()\n.and()\n\n.loginPage(\"/login\")\n\n\nXML CONFIGURATION\n-----------------------------------------\nintercept-url pattern=\"/login*\"",
-    "total": "Number of Java Methods and Xml tags",
+    "total": "Number of Java Methods and XML Files",
     "alternativeName": "Ensure specifying \"PermitAll\" or \"user role\" for URL(s) access to enforce security",
     "businessCriteria": [
         {

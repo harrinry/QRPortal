@@ -11,7 +11,7 @@
     "remediation": "Set the X-Frame-Options header for all responses containing HTML content. The possible values are \"DENY\", \"SAMEORIGIN\", or \"ALLOW-FROM uri\".",
     "remediationSample": "// XML CONFIGURATION\n\n<http>\n  <headers>\n       <frame-options policy=\"SAMEORIGIN\"/>  // NO VIOLATION HERE\n  </headers>\n</http>\n\n// Java code\n// Similarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                    .frameOptions()\n                            .sameOrigin(); // NO VIOLATION HERE\n        }\n    }",
     "sample": "// XML CONFIGURATION\n\n<http>\n    <headers>\n       <frame-options policy=\"ALLOW-FORM\"/>  // VIOLATION HERE\n    </headers>\n</http>\n\n\n// Java code\n// Similarly, you can customize frame options to use the same origin within Java Configuration using the following:\n\n@EnableWebSecurity\npublic class WebSecurityConfig extends WebSecurityConfigurerAdapter {\n\n    @Override\n    protected void configure(HttpSecurity http) throws Exception {\n        http\n        // ...\n               .headers()\n                        .frameOptions()\n                            .Allow-form(); // VIOLATION HERE\n        }\n    }",
-    "total": "Number of Java Methods and Xml tags",
+    "total": "Number of Java Methods and XML Files",
     "alternativeName": "Ensure you safely set X-Frame-Option  to ALLOW to avoid Clickjacking attack",
     "businessCriteria": [
         {
