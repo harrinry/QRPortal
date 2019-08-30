@@ -45,29 +45,29 @@
             "standard": "CWE",
             "id": "CWE-20",
             "name": "Improper Input Validation",
-            "url": "https://cwe.mitre.org/data/definitions/20.html",
-            "description": "The product does not validate or incorrectly validates input that can affect the control flow or data flow of a program."
+            "url": null,
+            "description": null
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
+            "url": null,
             "description": null
         },
         {
             "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "url": null,
+            "description": null
         },
         {
             "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
-            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "url": null,
+            "description": null
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -88,14 +88,14 @@
             "id": "STIG-V-70257",
             "name": "The application must protect from Cross-Site Scripting (XSS) vulnerabilities.",
             "url": null,
-            "description": "XSS attacks are essentially code injection attacks against the various language interpreters contained within the browser. XSS can be executed via HTML, JavaScript, VBScript, ActiveX; essentially any scripting language a browser is capable of processing.\n\nXSS vulnerabilities are created when a website does not properly sanitize, escape, or encode user input. For example, \"&lt;\" is the HTML encoding for the \"<\" character. If the encoding is performed, the script code will not execute.\n\nThere are 3 parties involved in an XSS attack, the attacker, the trusted and vulnerable website, and the victim. An attacker will take advantage of a vulnerable website that does not properly validate user input by inserting malicious code into any data entry field.\n\nWhen the victim visits the trusted website and clicks on the malicious link left by the attacker, the attacker\u2019s script is executed in the victims browser with the trust permissions assigned to the site.\n\nThere are several different types of XSS attack and the complete details regarding XSS cannot be described completely here.\n\nTo address the issue of XSS, web application developers must escape, encode or otherwise validate all user input that is processed and output by the web server. They should also use web templates or a web development framework that provides the capability to encode or otherwise validate user input.\n\nExamples of XSS vulnerabilities can be obtained from the Open Web Application Security Project (OWASP) website.\n  \nThe site is available by pointing your browser to https://www.owasp.org."
+            "description": null
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70271",
             "name": "The application must not be subject to input handling vulnerabilities.",
             "url": null,
-            "description": "A common application vulnerability is unpredictable behavior due to improper input validation. This requirement guards against adverse or unintended system behavior caused by invalid inputs, where information system responses to the invalid input may be disruptive or cause the system to fail into an unsafe state.\n\nData received from the user should always be suspected as being malicious and always validated prior to using it as input to the application.\n\nSome examples of input methods:\n\n- Forms Data\n- URL parameters\n- Hidden Fields\n- Cookies\n- HTTP Headers or anything in the HTTP request\n- Client data entry fields\n\nItems to validate:\n\n- Out of range values/Boundary \n- Data length \n- Validate types of characters allowed\n- Whitelist validation for known good data input while denying all other input.\n\nOther recommendations include: \n\n- Using drop down menus for lists\n- Validating input on the server, not on the client.\n\nIf validating on the client, also validate on the server:\n\n- Using regular expressions to validate input\n- Using HTML filter libraries that implement input validation tasks."
+            "description": null
         }
     ],
     "parameters": [

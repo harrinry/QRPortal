@@ -76,27 +76,27 @@
             "id": "ASCRM-RLB-1",
             "name": "Empty Exception Block",
             "url": null,
-            "description": "Objective\nAvoid improper responses to unusual and unexpected situations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where an exception handling block (such as Catch and Finally blocks) of the named callable and method control elements does not contain any other control element\n\n"
+            "description": null
         },
         {
             "standard": "CWE",
             "id": "CWE-390",
             "name": "Detection of Error Condition Without Action",
-            "url": "https://cwe.mitre.org/data/definitions/390.html",
-            "description": "The software detects a specific error, but takes no actions to handle the error."
+            "url": null,
+            "description": null
         },
         {
             "standard": "CWE",
             "id": "CWE-391",
             "name": "Unchecked Error Condition",
-            "url": "https://cwe.mitre.org/data/definitions/391.html",
-            "description": "Ignoring exceptions and other error conditions may allow an attacker to induce unexpected behavior unnoticed."
+            "url": null,
+            "description": null
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-11",
             "name": "Error Handling",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-11",
+            "url": null,
             "description": null
         },
         {
@@ -111,7 +111,7 @@
             "id": "STIG-V-70391",
             "name": "The application must not be subject to error handling vulnerabilities.",
             "url": null,
-            "description": "Error handling is the failure to check the return values of functions or catch top level exceptions within a program. Improper error handling in an application can lead to an application failure or possibly result in the application entering an insecure state. \n\nThe primary way to detect error handling vulnerabilities is to perform code reviews. If a manual code review cannot be performed, static code analysis tools should be employed in conjunction with tests to help force the error conditions by specifying invalid input (such as fuzzed data and malformed filenames) and by using different accounts to run the application. These tests may give indications of vulnerability, but they are not comprehensive.\n\nIn order to minimize error handling errors, ensure proper return code and exception handling is implemented throughout the application."
+            "description": null
         }
     ],
     "parameters": [

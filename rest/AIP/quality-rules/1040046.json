@@ -44,22 +44,22 @@
             "standard": "CWE",
             "id": "CWE-611",
             "name": "Improper Restriction of XML External Entity Reference ('XXE')",
-            "url": "https://cwe.mitre.org/data/definitions/611.html",
-            "description": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
+            "url": null,
+            "description": null
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
+            "url": null,
             "description": null
         },
         {
             "standard": "OWASP",
             "id": "A4-2017",
             "name": "XML External Entities (XXE)",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A4-XML_External_Entities_(XXE)",
-            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+            "url": null,
+            "description": null
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -73,14 +73,14 @@
             "id": "STIG-V-70237",
             "name": "XML-based applications must mitigate DoS attacks by using XML filters, parser options, or gateways.",
             "url": null,
-            "description": "DoS is a condition when a resource is not available for legitimate users. When this occurs, the organization either cannot accomplish its mission or must operate at degraded capacity.\n\nXML-based applications are susceptible to DoS attacks due to the nature of XML parsing being processor intensive and complicated.\n\nBest practice for parsing XML to avoid DoS include:\n\n- Using a proven XML parser\n- Using an XML gateway that provides DoS protection\n- Using parser options that provide limits on recursive payloads, oversized payloads, and entity expansion.\n\nThis requirement addresses the configuration of applications to mitigate the impact of DoS attacks that have occurred or are ongoing on application availability. For each application, known and potential DoS attacks must be identified and solutions for each type implemented. A variety of technologies exist to limit or, in some cases, eliminate the effects of DoS attacks (e.g., limiting processes or restricting the number of sessions the application opens at one time). Employing increased capacity and bandwidth, combined with service redundancy, may reduce the susceptibility to some DoS attacks."
+            "description": null
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70269",
             "name": "The application must not be vulnerable to XML-oriented attacks.",
             "url": null,
-            "description": "Extensible Markup Language (XML) is widely employed in web technology and applications like web services (SOAP, REST, and WSDL) and is also used for configuration files. XML vulnerability examples include XML injection, XML Spoofing, XML-based Denial of Service attacks and information disclosure attacks.\n\nWhen utilizing XML, web applications must take steps to ensure they are addressing XML-related security issues. This is accomplished by choosing well-designed application components, building application code that follows security best practices and by patching application components when vulnerabilities are identified.\n\nXML firewalls or gateways may be employed to assist in protecting applications by controlling access to XML-based applications, filtering XML content, rate-limiting requests, and validating XML traffic."
+            "description": null
         }
     ],
     "parameters": [
