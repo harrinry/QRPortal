@@ -7,7 +7,7 @@
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "An attacker could access other user information thanks to string injection through the withFormat method. This is why it is highly recommended to avoid the usage of the API",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": "Avoid using NSPredicate predicateWithFormat",
+    "alternativeName": "Ensure not using string uncontrolled string concatenation to build NSPredicate request",
     "businessCriteria": [
         {
             "id": 66031,
@@ -54,6 +54,20 @@
             "standard": "OWASP",
             "id": "M7-2016",
             "name": "Poor Code Quality",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
             "url": null,
             "description": null
         }

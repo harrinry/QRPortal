@@ -9,7 +9,7 @@
     "rationale": "If -isEqual: determines that two objects are equal, they must have the same hash value. This is why, if you override the isEqual method, you also need to override the hash method.",
     "reference": "https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/ObjectComparison.html",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": "Objective-C interface overrides the isEqual: method but not the hash method",
+    "alternativeName": "Ensure to override hash and isEqual at the same time",
     "businessCriteria": [
         {
             "id": 60012,

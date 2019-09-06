@@ -12,7 +12,7 @@
     "remediationSample": "NSData *imageData = [NSData dataWithContentsOfFile:file]; \nCC_SHA256(imageData, [imageData length], result);",
     "sample": "NSData *imageData = [NSData dataWithContentsOfFile:file]; \nCC_MD5(imageData, [imageData length], result);",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": "Avoid using risky cryptographic hash (Objective-C)",
+    "alternativeName": "Ensure you provide strong cryptographic hash to enforce your encryption (Objective-C)",
     "businessCriteria": [
         {
             "id": 66031,
@@ -59,6 +59,20 @@
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SC-12",
             "name": "Cryptographic Key Establishment and Management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
             "url": null,
             "description": null
         },

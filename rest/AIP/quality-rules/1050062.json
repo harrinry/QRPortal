@@ -12,7 +12,7 @@
     "remediationSample": "C#\n\ntry { ,,, }\ncatch ( MyException e)\n{\n   DoSomething();\n}\n\nABAP\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n      TEXT = OREF->GET_TEXT( ).\n      cleanup.\n      clear RESULT.\nENDTRY.",
     "sample": "C#\n\ntry { ... }\ncatch ( MyException e)\n{\n   // DO NOTHING <= VIOLATION\n}\n\nABAP\n\nTRY.\n      RESULT = 1 / NUMBER.\n      write: / 'Result of division:', RESULT.\n      RESULT = SQRT( NUMBER ).\n      write: / 'Result of square root:', RESULT.\nCATCH CX_SY_ZERODIVIDE into OREF.\n* This CATCH block does not contain statements\n* and can be considered as not existing...\n* TEXT = OREF->GET_TEXT( ).\nENDTRY.",
     "total": "Number of Objective-C artifacts",
-    "alternativeName": "Avoid empty catch blocks (Objective-C)",
+    "alternativeName": "Ensure you properly manage the exception, it must be handled correctly according to its type.",
     "businessCriteria": [
         {
             "id": 20140522,
