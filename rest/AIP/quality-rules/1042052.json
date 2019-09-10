@@ -12,7 +12,7 @@
     "remediationSample": "Upgrade to Struts 2.5.14.1\n\n---\nOverwrite the Content Handler with the Jackson Content Handler in the struts.xml:\n\n<bean type=\"org.apache.struts2.rest.handler.ContentTypeHandler\" name=\"jackson\" class=\"org.apache.struts2.rest.handler.JacksonLibHandler\"/>\n<constant name=\"struts.rest.handlerOverride.json\" value=\"jackson\"/>\n \n<!-- Set to false if the json content can be returned for any kind of http method -->\n<constant name=\"struts.rest.content.restrictToGET\" value=\"false\"/>\n \n<!-- Set encoding to UTF-8, default is ISO-8859-1 -->\n<constant name=\"struts.i18n.encoding\" value=\"UTF-8\"/>",
     "sample": "<struts>\n\n  <package name=\"example\"  extends=\"json-default\">\n     <action name=\"JSONExample\" class=\"example.JSONExample\">\n        <result type=\"json\"/>\n     </action>\n  </package>\n\n</struts>\n\n---------------------------------------\n<struts>\n  <package name=\"employee\" extends=\"struts-default, json-default\" namespace=\"/employee\">\n\n    <action name=\"list\" method=\"list\" \n                     class=\"org.apache.struts2.showcase.action.EmployeeAction\" >\n        <result>/empmanager/listEmployees.jsp</result>\n        <result type=\"json\">\n            <param name=\"root\">employees</param>\n        </result>\n    </action>\n\n  </package>\n</struts>",
     "total": "Number of Struts 2.x config XML file",
-    "alternativeName": null,
+    "alternativeName": "Ensure not using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
     "businessCriteria": [
         {
             "id": 20140522,
