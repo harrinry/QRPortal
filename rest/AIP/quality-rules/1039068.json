@@ -11,7 +11,7 @@
     "remediation": "Inherits from the class Serializable",
     "remediationSample": "//The java.io.Serializable class serializes the session attribute. \n\npublic class DataGlob implements java.io.Serializable {\n   String globName;\n   String globValue;\n\n   public void addToSession(HttpSession session) {\n     session.setAttribute(\"glob\", this);\n   }\n}",
     "sample": "// Sample Code: The following class adds itself to the session, but because it is not serializable, the session can no longer be replicated.\n\npublic class DataGlob {\n   String globName;\n   String globValue;\n\n   public void addToSession(HttpSession session) {\n     session.setAttribute(\"glob\", this);\n   }\n}",
-    "total": "Number of Java Method",
+    "total": "Number of Java Methods",
     "alternativeName": "Ensure to declare the object as serializable if you are using it as a httpsession attribute",
     "businessCriteria": [
         {
