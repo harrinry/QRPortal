@@ -12,7 +12,7 @@
     "remediationSample": "class CookieWithOverlyBroadDomain\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Domain = \"secure.example.com\";\n    }\n}",
     "sample": "class CookieWithOverlyBroadDomain\n{\n    static public void AddCookie()\n    {\n        HttpCookie cookie = new HttpCookie(\"sessionID\");\n        cookie.Domain = \"*.example.com\";\n    }\n}",
     "total": "Number of methods using HttpCookie",
-    "alternativeName": "Avoid having cookie with an overly broad domain (C#)",
+    "alternativeName": "Ensure you do not allow access to all domain when defining cookie domain (C#)",
     "businessCriteria": [
         {
             "id": 66031,

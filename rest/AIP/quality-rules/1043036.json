@@ -5,15 +5,15 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
-    "description": "\n    When using impersonation, ASP.NET applications can execute with the Windows identity (user account) of the user making the request. Impersonation is commonly used in applications that rely on Microsoft Internet Information Services (IIS) to authenticate the user.\n\nASP.NET impersonation is disabled by default. If impersonation is enabled for an ASP.NET application, that application runs in the context of the identity whose access token IIS passes to ASP.NET. That token can be either an authenticated user token, such as a token for a logged-in Windows user, or the token that IIS provides for anonymous users (typically, the IUSR_MACHINENAME identity).\n\nUsing the Impersonate method of the WindowsIdentity class, it is possible to use impersonation in a very controlled scope. This is in contrast to using the Impersonation property of the OperationBehaviorAttribute, which allows impersonation for the scope of the entire operation. Whenever possible, control the scope of impersonation by using the more precise Impersonate method.\n    ",
+    "description": "Impersonation is commonly used in applications that rely on Microsoft Internet Information Services (IIS) to authenticate the user. Checks for the Impersonate flag in the configuration file.\n\nUsing the Impersonate method of the WindowsIdentity class, it is possible to use impersonation in a very controlled scope. This is in contrast to using the Impersonation property of the OperationBehaviorAttribute, which allows impersonation for the scope of the entire operation. Whenever possible, control the scope of impersonation by using the more precise Impersonate method.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
-    "rationale": "The technical impact is attackers acting as users or administrators, or users using privileged functions, or creating, accessing, updating or deleting every record.\nThe business impact depends on the protection needs of the application and data.",
-    "reference": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control\nhttps://docs.microsoft.com/en-us/previous-versions/aspnet/xh507fc5(v=vs.100)",
-    "remediation": "review the source code and reduce",
+    "rationale": "The technical impact is attackers acting as users or administrators, or users using privileged functions, or creating, accessing, updating or deleting every record.\nThe business impact depends on the protection needs of the application and data.\n\nASP.NET impersonation is disabled by default. If impersonation is enabled for an ASP.NET application, that application runs in the context of the identity whose access token IIS passes to ASP.NET. That token can be either an authenticated user token, such as a token for a logged-in Windows user, or the token that IIS provides for anonymous users (typically, the IUSR_MACHINENAME identity).",
+    "reference": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control\nhttps://docs.microsoft.com/en-us/previous-versions/aspnet/xh507fc5(v=vs.100)\n\nOWASP-2017 - A5 Broken Access Control",
+    "remediation": "Review the source code and reduce",
     "remediationSample": "<configuration>\n  <system.web>\n    <identity impersonate=\"false\"/>\n  </system.web>\n</configuration>",
     "sample": "<configuration>\n  <system.web>\n    <identity impersonate=\"true\"/>\n  </system.web>\n</configuration>",
     "total": "Number of config files",
-    "alternativeName": "Avoid Impersonate Globally",
+    "alternativeName": "Ensure the impersonation flag remains set to false (ASP.NET)",
     "businessCriteria": [
         {
             "id": 66031,
@@ -51,6 +51,13 @@
             "standard": "CWE",
             "id": "CWE-520",
             "name": ".NET Misconfiguration: Use of Impersonation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-AC-3",
+            "name": "Access Enforcement",
             "url": null,
             "description": null
         },

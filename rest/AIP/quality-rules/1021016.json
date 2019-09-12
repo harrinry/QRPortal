@@ -11,7 +11,7 @@
     "remediationSample": ">>> import hashlib\n>>> secure_hash = hashlib.sha512()\n>>> md5_hash.update(password)  # This hash is secure\n>>> md5_hash.digest()",
     "sample": ">>> import hashlib\n>>> md5_hash = hashlib.md5()\n>>> md5_hash.update(password)  # \"This hash can be exploited\"\n>>> md5_hash.digest()",
     "total": "Number of Python artifacts using hashlib library",
-    "alternativeName": "Avoid using MD5, SHA1 hashes to hash passwords or to encrypt data",
+    "alternativeName": "Ensure you use SHA224, SHA256, SHA384, and SHA512 algorithms.",
     "businessCriteria": [
         {
             "id": 66031,
@@ -79,6 +79,13 @@
             "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-8.2.1",
+            "name": "Using strong cryptography, render all authentication credentials (such as passwords/phrases) unreadable during transmission and storage on all system components.",
             "url": null,
             "description": null
         },

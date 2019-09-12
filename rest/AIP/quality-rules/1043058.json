@@ -10,7 +10,7 @@
     "rationale": "When Header checking attribute is disabled, there are chances for an attacker to perform header manipulation attacks. The .NET framework by default prevents sending new line characters to APIs which set HTTP header values. But this can be disabled by setting the EnableHeaderChecking property on the HttpRuntimeSection object to false.",
     "reference": "CWE-113 - https://cwe.mitre.org/data/definitions/113.html\n\nOWASP Top 10 2004: A10-Insecure Configuration Management\nOWASP Top 10 2010: A6-Security Misconfiguration\nOWASP Top 10 2013: A5-Security Misconfiguration\nOWASP Top 10 2017: A6-Security Misconfiguration\n\nhttps://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
     "remediation": "Set the EnableHeaderChecking flag to true",
-    "remediationSample": "<system.web>\n    <httpRuntime targetFramework=\"4.6.1\" enableHeaderChecking=\"false\"/>\n  </system.web>\n\n//Or - as by default it is true\n\n  <system.web>\n    <httpRuntime targetFramework=\"4.6.1\"/>\n  </system.web>",
+    "remediationSample": "<system.web>\n    <httpRuntime targetFramework=\"4.6.1\" enableHeaderChecking=\"true\"/>\n  </system.web>\n\n//Or no declaration - as by default it is true\n\n  <system.web>\n    <httpRuntime targetFramework=\"4.6.1\"/>\n  </system.web>",
     "sample": "Sample in config file\n\n  <system.web>\n    <httpRuntime targetFramework=\"4.6.1\" enableHeaderChecking=\"false\"/>\n  </system.web>",
     "total": "Number of Root web.config file",
     "alternativeName": "Avoid disabling Header Checking flag in config file",
@@ -55,6 +55,13 @@
             "description": null
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A5-2013",
             "name": "Security Misconfiguration",
@@ -65,6 +72,27 @@
             "standard": "OWASP",
             "id": "A6-2017",
             "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
             "url": null,
             "description": null
         }

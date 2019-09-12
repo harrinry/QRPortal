@@ -8,6 +8,7 @@
     "description": "Therefore always have SSL connection for any application having cookies in order to avoid eavesdropping.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
     "rationale": "Security misconfiguration can happen at any level of an application stack, including the platform, web server, application server, database, framework, and custom code. Developers and system administrators need to work together to ensure that the entire stack is configured properly. Automated scanners are useful for detecting missing patches, misconfigurations, use of default accounts, unnecessary services, etc. \n\nTherefore always have SSL connection for any application having cookies in order to avoid eavesdropping.",
+    "reference": "https://cwe.mitre.org/data/definitions/614.html\n\nOWASP Top 10 2004 -A10-Insecure Configuration Management\nOWASP Top 10 2007 -A9-Insecure Communications\nOWASP Top 10 2010 -A10-Insecure Configuration Management\nOWASP Top 10 2013 -A6-Sensitive Data exposure\nOWASP Top 10 2017 -A3-Sensitive Data exposure",
     "remediation": "Review the source code and update the value of the property.",
     "remediationSample": "<system.Web>\n    <httpCookies requireSSL=\"true\">\n</system.Web>",
     "sample": "<system.Web>\n    <httpCookies requireSSL=\"false\">\n</system.Web>\n\n//or\n\n<system.Web>\n    <!--<httpCookies requireSSL=\"false\">-->\n</system.Web>",
@@ -54,6 +55,13 @@
             "description": null
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": null,
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
@@ -64,6 +72,13 @@
             "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
             "url": null,
             "description": null
         },

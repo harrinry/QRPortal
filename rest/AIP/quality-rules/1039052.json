@@ -11,7 +11,7 @@
     "remediation": "Always set a definite timeout for sessions.",
     "remediationSample": "#Remediation\n\nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(90);",
     "sample": "# Sample 1\nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(-1);\n\n# Sample 2\n<session-config>\n    <session-timeout>-1</session-timeout>\n</session-config>\n\n# Sample 3\nHttpSession sesssion = request.getSession(true);\nsesssion.setMaxInactiveInterval(0);",
-    "total": "Number of Java Methods",
+    "total": "Number of Java artifacts",
     "alternativeName": "Always set an expiration time for an Http Session to improve security",
     "businessCriteria": [
         {

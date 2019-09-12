@@ -13,7 +13,7 @@
     "remediationSample": "The example allows only users in the Administrators role to have access. Users not in the Administrators role are denied. \n<authorization>  \n  <deny users=\"?\" />  \n  <allow roles=\"Administrators\" />  \n  <deny users=\"*\" />  \n</authorization>",
     "sample": "<authorization>  \n  <allow roles=\"*\" />  \n</authorization>",
     "total": "Number of Root web.config file",
-    "alternativeName": "Ensure to limit users access only to authorized resources (C#)",
+    "alternativeName": "Ensure to limit users access only to authorized resources (.NET)",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -58,6 +58,13 @@
             "standard": "OWASP",
             "id": "A6-2017",
             "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
             "url": null,
             "description": null
         }

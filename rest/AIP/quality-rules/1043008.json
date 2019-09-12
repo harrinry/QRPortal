@@ -11,7 +11,7 @@
     "remediationSample": "[ValidateInput(true)]\npublic class ValidInputController : Controller\n{\n}\n\n//OR \n\n\n// [ValidateInput(true)] attribute should not be present in the source file. Default for this attribute is always ture\npublic class ValidInputController : Controller\n{\n}",
     "sample": "[ValidateInput(false)]\npublic class InvalidInputController : Controller\n{\n}",
     "total": "Number of controllers",
-    "alternativeName": "Avoid disabling ValidateInput on controller",
+    "alternativeName": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
     "businessCriteria": [
         {
             "id": 66031,
@@ -63,6 +63,13 @@
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
             "url": null,
             "description": null
         },

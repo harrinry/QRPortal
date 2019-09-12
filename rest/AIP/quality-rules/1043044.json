@@ -12,7 +12,7 @@
     "remediationSample": "@using (Html.BeginForm(\"Manage\", \"Account\")) {\n    @Html.AntiForgeryToken()\n\n    ...\n}",
     "sample": "@using (Html.BeginForm(\"Manage\", \"Account\")) {\n\n    ...\n}",
     "total": "Number of cshtml source codes using forms template",
-    "alternativeName": "Ensure that CSRF Protection is enabled (ASP.NET MVC)",
+    "alternativeName": "Ensure you have enable AntiForgery token in Razor Templates.",
     "businessCriteria": [
         {
             "id": 66031,
@@ -78,6 +78,13 @@
             "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.9",
             "name": "Cross-site request forgery (CSRF)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
             "url": null,
             "description": null
         },

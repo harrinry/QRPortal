@@ -13,7 +13,7 @@
     "remediationSample": "<appSettings>\n    <add key=\"aspnet:UseLegacyFormsAuthenticationTicketCompatibility\" value=\"true\" />\n</appSettings>",
     "sample": "Sample Settings\n\n<appSettings>\n    <add key=\"aspnet:UseLegacyFormsAuthenticationTicketCompatibility\" value=\"false\" />\n</appSettings>",
     "total": "Number of config files",
-    "alternativeName": "Ensure aspnet:UseLegacyFormsAuthenticationTicketCompatibility is set to true",
+    "alternativeName": "Ensure retaining the settings of aspnet:UseLegacyFormsAuthenticationTicketCompatibility to True.",
     "businessCriteria": [
         {
             "id": 66031,
@@ -55,6 +55,20 @@
             "description": null
         },
         {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-AC-3",
+            "name": "Access Enforcement",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": null,
+            "description": null
+        },
+        {
             "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
@@ -65,6 +79,13 @@
             "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
             "url": null,
             "description": null
         }

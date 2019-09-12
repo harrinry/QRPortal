@@ -6,12 +6,12 @@
     "description": "Request validation in config file, a feature of ASP.NET since version 1.1, prevents the server from accepting content containing un-encoded HTML. This feature is designed to help prevent some script-injection attacks whereby client script code or HTML can be unknowingly submitted to a server, stored, and then presented to other users.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
     "rationale": "Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts are injected into otherwise benign and trusted websites. XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it.\n\nAn attacker can use XSS to send a malicious script to an unsuspecting user. The end user\u2019s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by the browser and used with that site. These scripts can even rewrite the content of the HTML page. For more details on the different types of XSS flaws, see: Types of Cross-Site Scripting. \n\nRequest Validation is a feature that prevents potentially dangerous content from being submitted. This feature is enabled by default. However, at times you might need your application to post HTML markup tags to the server. You would then need this feature to be disabled.",
-    "reference": "https://docs.microsoft.com/en-us/aspnet/whitepapers/request-validation",
+    "reference": "https://docs.microsoft.com/en-us/aspnet/whitepapers/request-validation\nhttps://www.owasp.org/index.php/ASP.NET_Request_Validation",
     "remediation": "Ensure the validation request is always set to true",
     "remediationSample": "<system.web>\n    <pages validateRequest=\"true\" />\n</system.web>\n\n//OR\n\n<system.web>\n    // this attribute should not be present in the config file <pages validateRequest=\"true\" />\n</system.web>",
     "sample": "<system.web>\n    <pages validateRequest=\"false\" />\n</system.web>",
     "total": "Number of config files",
-    "alternativeName": "Avoid disabling ValidateRequest in Config file",
+    "alternativeName": "Ensure the validation request is always set to true in ASP.NET config file",
     "businessCriteria": [
         {
             "id": 66031,
@@ -63,6 +63,13 @@
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
             "url": null,
             "description": null
         },

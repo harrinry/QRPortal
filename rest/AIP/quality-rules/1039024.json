@@ -11,7 +11,7 @@
     "remediation": "Always setting secure option when creating a cookie.",
     "remediationSample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); \nc.setSecure(true); // Compliant Code with secure cookies \nresponse.addCookie(c);",
     "sample": "Cookie c = new Cookie(ACCOUNT_ID, acctID); // Violation - cookie is not secure \nresponse.addCookie(c);",
-    "total": "Number of Java Methods",
+    "total": "Number of Java artifacts",
     "alternativeName": "Ensure using only secured cookie to avoid Cross-site scripting attacks (JEE)",
     "businessCriteria": [
         {

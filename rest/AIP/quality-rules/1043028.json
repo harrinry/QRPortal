@@ -12,7 +12,7 @@
     "remediationSample": "<%@ Page enableViewStateMac =\"true\" %>\n\nand/or\n\n<pages enableViewStateMac =\"true\"/>",
     "sample": "<%@ Page enableViewStateMac=\"false\" %>\n\nand/or\n\n<pages enableViewStateMac =\"false\"/>",
     "total": "Number of aspx pages",
-    "alternativeName": "Avoid disabling EnableViewStateMac in ASPX page",
+    "alternativeName": "Ensure you don't disable EnableViewStateMac in ASPX page to avoid XSS attack",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -46,7 +46,55 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-79",
+            "name": "Cross-site Scripting Improper Input Neutralization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2013",
+            "name": "Cross-Site Scripting (XSS)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A7-2017",
+            "name": "Cross-Site Scripting (XSS)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.7",
+            "name": "  Cross-site scripting (XSS)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70257",
+            "name": "The application must protect from Cross-Site Scripting (XSS) vulnerabilities.",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

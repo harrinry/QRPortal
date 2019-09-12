@@ -4,15 +4,15 @@
     "href": "AIP/quality-rules/1043026",
     "critical": false,
     "maxWeight": 8,
-    "description": "This attribute should never be set to false in a production Web site, even if the application or page does not use view state. The view state MAC helps ensure the security of other ASP.NET functions in addition to view state.\nthe quality rule is critical as the the view state MAC helps ensure the security of other ASP.NET functions in addition to view state.",
+    "description": "Check for the ViewStateMac flag in the asp pages\n\nThe quality rule is critical as the the view state MAC helps ensure the security of other ASP.NET functions in addition to view state.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
     "rationale": "XSS is the second most prevalent issue in the OWASP Top 10, and is found in around two thirds of all applications.\nAutomated tools can find some XSS problems automatically, particularly in mature technologies such as PHP, J2EE / JSP, and ASP.NET.",
-    "reference": "https://docs.microsoft.com/fr-fr/dotnet/api/system.web.ui.page.enableviewstatemac?view=netframework-4.7.2",
+    "reference": "CWE-353 http://cwe.mitre.org/data/definitions/353.html\n\nOWASP Top 10 2004 -A10-Insecure Configuration Management\nOWASP Top 10 2007 -A6-Information Leakage and Improper Error Handling\nOWASP Top 10 2010 -A6-Security Misconfiguration\nOWASP Top 10 2013 -A5-Security Misconfiguration\nOWASP Top 10 2017 -A6-Security Misconfiguration\n\nhttps://docs.microsoft.com/fr-fr/dotnet/api/system.web.ui.page.enableviewstatemac?view=netframework-4.7.2",
     "remediation": "Review the source code and have the value of the property EnableViewStateMacse to false.",
     "remediationSample": "<system.web>\n    <pages EnableViewStateMac =\"true\" />\n</system.web>\n\n//or\n\nDefault value is set for true...\nSo no tag found in the file is True.\n\n<system.web>\n    <!--<pages EnableViewStateMac =\"false\" />-->\n</system.web>",
     "sample": "<system.web>\n    <pages EnableViewStateMac =\"false\" />\n</system.web>",
     "total": "Number of config files",
-    "alternativeName": "Avoid disabling EnableViewStateMac in Config file",
+    "alternativeName": "Ensure you have set EnableViewStateMac to avoid XSS attack",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -64,6 +64,13 @@
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-79",
+            "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
             "url": null,
             "description": null
         },

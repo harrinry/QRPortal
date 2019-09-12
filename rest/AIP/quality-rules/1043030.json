@@ -12,7 +12,7 @@
     "remediationSample": "// globally in Web.config file\n\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<configuration>\n  <system.web>\n  </system.web>\n  <system.webServer>\n    <httpProtocol>\n      <customHeaders>\n        <add name=\"X-Frame-Options\" value=\"SAMEORIGIN\" />\n      </customHeaders>\n    </httpProtocol>\n  </system.webServer>\n</configuration>\n\n// or in the source code\n\nprotected void Application_BeginRequest(object sender, EventArgs e)\n{\n    HttpContext.Current.Response.AddHeader(\"X-Frame-Options\", \"Deny\");\n}\n\n// In case of .NetCore app, in Configure method of Startup class:-\n\napp.Use(async (context, next) =>\n{\n    context.Response.Headers.Add(\"X-Frame-Options\", \"SAMEORIGIN\");\n    await next();\n});\n\nNote:- Accepted values are 'SAMEORIGIN', 'DENY' and 'ALLOW FROM \"url\"'. 'ALLOW FROM *' will result into violation.",
     "sample": "// globally in Web.config file\n\n<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<configuration>\n  <system.web>\n  </system.web>\n  <system.webServer>\n    <httpProtocol>\n      <customHeaders>\n      ...\n      </customHeaders>\n    </httpProtocol>\n  </system.webServer>\n</configuration>\n\n// or locally in the source code\n\nprotected void Application_BeginRequest(object sender, EventArgs e)\n{\n    ...\n}",
     "total": "Number of Config files and Global methods",
-    "alternativeName": "Ensure the X-Frame-Options header is setup (ASP.NET)",
+    "alternativeName": "Ensure you have setup the X-Frame-Options in HTTP Response (ASP.NET)",
     "businessCriteria": [
         {
             "id": 66031,
