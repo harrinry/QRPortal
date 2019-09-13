@@ -11,7 +11,7 @@
     "remediationSample": "let f = 0;\nlet success = false; // a variable to return the status\n\ntry {\n    f = open(filename);\n    text = f.read();\n    success = true;\n}\ncatch(err) {\n    logger.error(\"Cannot read\", filename, err);\n    success = false;\n}\nfinally {\n    if (f) {\n        f.close();\n    }\n    return success; \n}",
     "sample": "let f = 0;\ntry {\n    f = open(filename);\n    text = f.read();\n    return true;\n}\ncatch(err) {\n    logger.error(\"Cannot read\", filename, err);\n    return false; // Overwritten by finally\n}\nfinally {\n    if (f) {\n        f.close();\n    }\n    return true; \n}",
     "total": "Number of Javascript Functions",
-    "alternativeName": "Avoid return statement in finally block (Javascript)",
+    "alternativeName": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
     "businessCriteria": [
         {
             "id": 20140522,

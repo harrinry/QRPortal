@@ -12,7 +12,7 @@
     "remediation": "Create one or several dedicated modules to access database. Encapsulate in these modules the object storing pool of connections",
     "sample": "tx.executeSql(str, [], function(tx, rs) { callback(result); });",
     "total": "Number of Javascript Functions",
-    "alternativeName": "Avoid direct access to Database Tables in Javascript",
+    "alternativeName": "Make sure to not access the database from Javascript directly, instead create dedicated modules for the same",
     "businessCriteria": [
         {
             "id": 66032,

@@ -12,7 +12,7 @@
     "remediationSample": "var total=0; \nvar loopCounter = myfunction(count); \n\nfor (var i=0; i<loopCounter; i++){ // FIXED \n   total+=i; \n}",
     "sample": "var total=0; \n  \nfor (var i=0;i<myfunction(count);i++){ // VIOLATION \n   total+=i; \n}",
     "total": "Number of Javascript Functions",
-    "alternativeName": "Avoid calling a function in a termination loop (Javascript)",
+    "alternativeName": "Make sure you do not execute a function inside loop termination to avoid performance issues, use a variable to store the value of a function instead",
     "businessCriteria": [
         {
             "id": 60014,
