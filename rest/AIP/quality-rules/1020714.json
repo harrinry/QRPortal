@@ -12,7 +12,7 @@
     "remediationSample": "// multiple handler for the same path /foo \nvar express = require('express'); \nvar app = express(); \napp.get('/foo', function (req, res) { \n   res.send('hi'); \n}); \n// add a second foo route handler \napp.get('/foo2', function (req, res) { \n   res.send('hi2'); \n}); \n\n// call in a loop for different paths \n\nfor (i = 0; i < paths.length; i++) { \n\n   app.get('/foo'+paths[i], function (req, res) { \n      res.send('hi ' + paths[i]); \n   }); \n} \n\nconsole.log('stack', app._router.stack); \napp.listen(3000);",
     "sample": "// multiple handler for the same path /foo \nvar express = require('express'); \nvar app = express(); \napp.get('/foo', function (req, res) { \n   res.send('hi'); \n}); \n// add a second foo route handler \napp.get('/foo', function (req, res) { \n   res.send('hi2'); \n}); \n\n// call in a loop for the same path /foo \n\nfor (i = 0; i < paths.length; i++) { \n\n   app.get('/foo', function (req, res) { \n      res.send('hi ' + paths[i]); \n   }); \n} \n\nconsole.log('stack', app._router.stack); \napp.listen(3000);",
     "total": "Number of javascript source codes using express",
-    "alternativeName": "Avoid having multiple routes for the same path with Node.js Express App",
+    "alternativeName": "Ensure having only one routing handler per path to avoid an efficiency issue",
     "businessCriteria": [
         {
             "id": 60014,

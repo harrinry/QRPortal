@@ -13,7 +13,7 @@
     "remediationSample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exitCode = 1;\n    process.exit(); \n}",
     "sample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exit(1); \n}",
     "total": "Number of NodeJS artifacts (javascript functions inside NodeJS files)",
-    "alternativeName": "Avoid using process.exit() without defining exitCode",
+    "alternativeName": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
     "businessCriteria": [
         {
             "id": 20140522,
