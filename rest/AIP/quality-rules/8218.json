@@ -12,7 +12,7 @@
     "remediationSample": " \n-Sample 1\nprotected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\nString strContentType = request.getContentType();\n  if (!strContentType.equals(\"text/xml\"))\n  {\n    //throw error as invalid MIME type and do not continue further\n  }\n}\n---------------------------------------------------------------------------------\nsample 2\nIf the browser doesn't pass content-type correctly,\nif(request.getContentType() == null)\n{\n}\n",
     "sample": "protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {\n    String firstName = request.getParameter(\"fname\");\n    response.getWriter().append(\"Served at: \").append(request.getContextPath());\n    //VIOLATION as the request getcontent type is not used to check for the valid type\n  }\n",
     "total": " Reports if getContentType is not called inside the body of a HttpServlet.doPost or HttpServlet.doGet methods.",
-    "alternativeName": "Ensure checking the content type when receiving a HTTP post",
+    "alternativeName": "Always check the content type when receiving a HTTP post",
     "businessCriteria": [
         {
             "id": 20140522,
