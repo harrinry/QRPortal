@@ -11,7 +11,7 @@
     "remediationSample": "var myArray = ['a', 'b', 'c', 'd']; \n\n// removes 1 element from index 2 \nremoved = myArray.splice(2, 1); // myArray => ['a', 'b', 'd'] \nconsole.log(myArray[2]); // outputs 'd'",
     "sample": "var myArray = ['a', 'b', 'c', 'd']; \n\ndelete myArray[2]; // Noncompliant. myArray => ['a', 'b', undefined, 'd'] \nconsole.log(myArray[2]); // expected value was 'd' but output is undefined",
     "total": "Number of Javascript Functions",
-    "alternativeName": "Avoid using delete on arrays",
+    "alternativeName": "To delete or remove an index element from an array use splice, pop or shift rather than delete to prevent empty indexes",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,7 +12,7 @@
     "remediation": "Update the Node.js library to have a fixed implementation",
     "sample": "var ps = require('ps');\n\nps.lookup({ pid: \"$(touch success.txt)\" }, function(err, proc) { // this method is vulnerable to command injection\n    if (err) {throw err;}\n    if (proc) {\n        console.log(proc);  // Process name, something like \"node\" or \"bash\"\n    } else {\n        console.log('No such process');\n    }\n});",
     "total": "Number of NodeJS source code using ps library",
-    "alternativeName": "Avoid using Node.js ps library with vulnerable versions",
+    "alternativeName": "Ensure you don't use 'ps' package' methods from NodeJS with version older than 1.0.0",
     "businessCriteria": [
         {
             "id": 20140522,

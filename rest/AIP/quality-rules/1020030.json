@@ -9,7 +9,7 @@
     "rationale": "Ensure your css files will not get data from untrusted source.",
     "sample": "{ background-url : \"javascript:alert(1)\"; } // and all other URLs \n { text-size: \"expression(alert('XSS'))\"; } // only in IE",
     "total": "Number of CSS Contents",
-    "alternativeName": "Avoid using javascript or expression in the CSS file",
+    "alternativeName": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
     "businessCriteria": [
         {
             "id": 66031,

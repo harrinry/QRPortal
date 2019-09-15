@@ -13,7 +13,7 @@
     "remediationSample": "require(\"query-mysql\")\n\n\nfetchById: function (table, id, name_id, callback) {\n    connect(function (connected) {\n        if (connected) {\n\n            var sql = \"SELECT * FROM ?? WHERE ?? = ?\";\n            inserts = [table, id, name_id];\n            sql = mysql.format(sql, inserts);\n\n\n            connection.query(sql, function (err, rows, fields) {\n                connection.end();\n                console.log(\"fetchById\");\n                //if (err) throw err;\n                if (err) {\n                    callback(\"error\", null);\n                }else{                      \n                    callback(\"success\", rows);\n                };\n            })\n\n        }else{\n            callback(\"error_connection\", null);\n        };\n    })\n},",
     "sample": "const query = require('query-mysql')\n\nquery.configure({\n  'host': '127.0.0.1',\n  'user': 'root',\n  'password': 'root',\n  'database': 'test'\n})\n\nquery.base.fetchById('users', 'noob', 'username', (msg, res) => {\n  console.log(msg, res)\n})",
     "total": "Number of NodeJS source code using query-mysql library",
-    "alternativeName": "Avoid using Node.js query-mysql third-party before 0.0.3",
+    "alternativeName": "Ensure you don't use third-party module query-mysql versions 0.0.0, 0.0.1, and 0.0.2  from NodeJS",
     "businessCriteria": [
         {
             "id": 20140522,

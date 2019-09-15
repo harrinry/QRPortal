@@ -12,7 +12,7 @@
     "remediationSample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    secure: true \n  } \n}));",
     "sample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n}));",
     "total": "Number of NodeJS source code using express-session",
-    "alternativeName": "Avoid using unsecured cookie (Node.js)",
+    "alternativeName": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
     "businessCriteria": [
         {
             "id": 66031,

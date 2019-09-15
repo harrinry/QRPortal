@@ -12,7 +12,7 @@
     "remediation": "Update the Node.js library to have a fixed implementation",
     "sample": "var url = require('url');\nurl.parse(\"javascript://myscript.js\");\nurl.parse(\"javaScript://myscript.js\");\nurl.parse(\"http://example.com\");\nvar url1 = \"javascrIpt://myscript.js\";\nvar url2 = \"http://example.com\";\nurl.parse(url1);\nurl.parse(url2);",
     "total": "Number of NodeJS source code using url.parse()",
-    "alternativeName": "Avoid using url.parse() with vulnerable versions",
+    "alternativeName": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
     "businessCriteria": [
         {
             "id": 20140522,

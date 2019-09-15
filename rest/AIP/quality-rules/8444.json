@@ -12,7 +12,7 @@
     "remediationSample": "String ctl = VALUE;\nMyClass.class.getResourceAsStream(\"/initialization/\" + VALUE);",
     "sample": "String ctl = request.getParameter(\"ctl\");\nMyClass.class.getResourceAsStream(\"/initialization/\" + ctl);",
     "total": "Number of methods calling user input methods",
-    "alternativeName": "Avoid resource URL manipulation",
+    "alternativeName": "Ensure you have sanitized the methods manipulating resources",
     "businessCriteria": [
         {
             "id": 66031,

@@ -13,7 +13,7 @@
     "remediationSample": "var a = function() {}; \n\nfor (var i=10; i; i--) { \n    a(); \n} \n\nfor (var i=10; i; i--) { \n    var a = function() {}; // OK, no references to variables in the outer scopes. \n    a(); \n} \n\nfor (let i=10; i; i--) { \n    var a = function() { return i; }; // OK, all references are referring to block scoped variables in the loop. \n    a(); \n} \n\nvar foo = 100; \nfor (let i=10; i; i--) { \n    var a = function() { return foo; }; // OK, all references are referring to never modified variables. \n    a(); \n}",
     "sample": "for (var i=10; i; i--) { \n    (function() { return i; })(); \n} \n\nwhile(i) { \n    var a = function() { return i; }; \n    a(); \n} \n\ndo { \n    function a() { return i; }; \n    a(); \n} while (i); \n\nlet foo = 0; \nfor (let i=10; i; i--) { \n    // Bad, function is referencing block scoped variable in the outer scope. \n    var a = function() { return foo; }; \n    a(); \n}",
     "total": "Number of anonymous javascript function call in loops",
-    "alternativeName": "Avoid defining and calling functions inside loops",
+    "alternativeName": "Ensure to assign a reference variable to a function output if it has to be used inside a loop to make performance better",
     "businessCriteria": [
         {
             "id": 60014,

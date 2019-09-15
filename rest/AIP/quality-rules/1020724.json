@@ -12,7 +12,7 @@
     "remediationSample": "var express = require('express'); \nvar app = express(); \nvar marked = require(\"marked\"); \n\nmarked.setOptions({ \n sanitize: true \n }); \n\napp.locals.marked = marked; \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \nvar marked = require(\"marked\"); \n\napp.locals.marked = marked; \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express and marked",
-    "alternativeName": "Ensure that marked is sanitized",
+    "alternativeName": "Ensure enabling sanitize option for marked component to avoid any security hole",
     "businessCriteria": [
         {
             "id": 66031,
@@ -42,16 +42,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
-            "id": "A9-2013",
-            "name": "Using Components with Known Vulnerabilities",
+            "standard": "CWE",
+            "id": "CWE-75",
+            "name": "Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
             "url": null,
             "description": null
         },
         {
-            "standard": "OWASP",
-            "id": "A9-2017",
-            "name": "Using Components with Known Vulnerabilities",
+            "standard": "CWE",
+            "id": "CWE-159",
+            "name": "Failure to Sanitize Special Element",
             "url": null,
             "description": null
         }

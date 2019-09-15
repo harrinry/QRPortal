@@ -12,7 +12,7 @@
     "remediationSample": "// with helmet \n\nvar express = require('express'); \nvar app = express(); \nvar helmet = require('helmet'); \n\napp.use(helmet.hsts()); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body><p>hello world</p><script type='text/javascript'>alert('got you')</script></body><html>\"); \n}); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.get('/', function(req, res){ \n    res.send(\"<html><body>hello world<script type='text/javascript'>alert('got you')</script></body></html>\"); \n}); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express",
-    "alternativeName": "Ensure encrypting all HTTP communications to protect sensitive data",
+    "alternativeName": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
     "businessCriteria": [
         {
             "id": 66031,

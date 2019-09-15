@@ -12,7 +12,7 @@
     "remediation": "Update the Node.js library to have a fixed Buffer implementation",
     "sample": "console.log(Buffer.from('fhqwhgads', 'utf16le'));",
     "total": "Number of NodeJS source code using Buffer library",
-    "alternativeName": "Avoid using Buffer library and UCS-2 encoding with vulnerable versions",
+    "alternativeName": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
     "businessCriteria": [
         {
             "id": 20140522,

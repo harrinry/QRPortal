@@ -12,7 +12,7 @@
     "remediation": "Update the Node.js library.",
     "sample": "const net = require('net');\nconst client = net.createConnection({ port: 8124 }, () => {\n  // 'connect' listener\n  console.log('connected to server!');\n  client.write('world!\\r\\n');\n});",
     "total": "Number of NodeJS source code using net.Socket as stream",
-    "alternativeName": "Avoid using net.Socket object as stream with vulnerable version of Node.js",
+    "alternativeName": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS  version older than 9.11.2 and 10.4.1",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -12,7 +12,7 @@
     "remediation": "Update the Node.js library to have a fixed Buffer implementation",
     "sample": "Buffer.alloc(100).fill(Buffer.alloc(0))\nBuffer.alloc(100).fill(Buffer.from(''))\nBuffer.alloc(100).fill(new Uint8Array([]))\nBuffer.alloc(100, Buffer.alloc(0))\nBuffer.alloc(100, new Uint8Array([]))\nnew Buffer(10).fill(new Buffer(''))",
     "total": "Number of NodeJS source code using Buffer.fill() and/or Buffer.alloc()",
-    "alternativeName": "Avoid using Buffer.fill() and/or Buffer.alloc() with vulnerable versions",
+    "alternativeName": "Ensure you don't reference Buffer.fill() or Buffer.alloc() with some parameters  of NodeJS versions older than 6.14.3, 8.11.3, 9.11.2 and 10.4.1",
     "businessCriteria": [
         {
             "id": 20140522,

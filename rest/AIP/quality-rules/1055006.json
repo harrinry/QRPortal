@@ -12,7 +12,7 @@
     "remediationSample": "let imageData = NSData.init(contentsOfFile: file)\nCC_SHA256(imageData,imageData.length,result)",
     "sample": "let imageData = NSData.init(contentsOfFile: file)\nCC_MD5(imageData,imageData.length,result)",
     "total": "Number of Swift artifacts",
-    "alternativeName": "Avoid using risky cryptographic hash (Swift)",
+    "alternativeName": "Ensure you use the value kCCAlgorithmAES128 instead of kCCAlgorithmDES, kCCAlgorithm3DES, kCCAlgorithmCAST, kCCAlgorithmRC4",
     "businessCriteria": [
         {
             "id": 66031,
