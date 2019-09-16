@@ -11,7 +11,7 @@
     "remediationSample": "var myObject = /^A/; \n\nif(angular.isRegexp(myObject)) { \n\n}",
     "sample": "var myObject = /^A/; \n\nif(typeof myObject === \"[object Regexp]\") { \n\n}",
     "total": "Number of angular artifacts",
-    "alternativeName": "Avoid using Javascript Regexp typecheck in AngularJS application",
+    "alternativeName": "Prefer using AngularJS wrapper service angular.isRegex instead of default JS implementation to maintain structuredness of code",
     "businessCriteria": [
         {
             "id": 60012,

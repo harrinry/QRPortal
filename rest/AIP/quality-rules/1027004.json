@@ -13,7 +13,7 @@
     "remediationSample": "public class XMLHandler : IHttpHandler\n{\n    public void ProcessRequest(HttpContext ctx)\n    {\n        // GOOD: use XmlReader\n        XmlReader reader = XmlReader.create(ctx.Request.QueryString[\"document\"]);\n    ...\n  }\n}",
     "sample": "public class XMLHandler : IHttpHandler\n{\n    public void ProcessRequest(HttpContext ctx)\n    {\n        XmlTextReader reader = new XmlTextReader(ctx.Request.QueryString[\"document\"]);\n    ...\n  }\n}",
     "total": "Number of methods and classes using System.Xml namespace",
-    "alternativeName": "Suggestion: Use XmlReader instead of XmlTextReader since it is deprecated and may lead to security issues",
+    "alternativeName": "Use XmlReader instead of XmlTextReader since it is deprecated and may lead to security issues",
     "businessCriteria": [
         {
             "id": 20140522,

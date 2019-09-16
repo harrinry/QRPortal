@@ -11,7 +11,7 @@
     "remediationSample": "var myObject = new Date(); \n\nif(angular.isDate(myObject)) { \n\n}",
     "sample": "var myObject = new Date(); \n\nif(typeof myObject === \"[object Date]\") { \n\n}",
     "total": "Number of angular artifacts",
-    "alternativeName": "Avoid using Javascript Date typecheck in AngularJS application",
+    "alternativeName": "Prefer using AngularJS wrapper service angular.isDate instead of default JS implementation to maintain structuredness of code",
     "businessCriteria": [
         {
             "id": 60012,

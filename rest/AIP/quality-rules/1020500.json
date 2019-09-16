@@ -12,7 +12,7 @@
     "remediationSample": "var values = {name: 'misko', gender: 'male'};\n\nangular.forEach(values,function(value, key) { \n  this.push(key + ': ' + value); \n});",
     "sample": "var values = {name: 'misko', gender: 'male'}; \n\nvalues.forEach(function(value, key) { \n  this.push(key + ': ' + value); \n});",
     "total": "Number of angular artifacts (controllers, services, factories, directives)",
-    "alternativeName": "Avoid the use of the default JavaScript implementation [].forEach in AngularJS web app",
+    "alternativeName": "Prefer using angular.forEach() instead of JS implementation [].forEach for an AngularJS app to enhance performace",
     "businessCriteria": [
         {
             "id": 60014,

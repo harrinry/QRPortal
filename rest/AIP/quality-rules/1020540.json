@@ -13,7 +13,7 @@
     "remediationSample": "$http.get('api/data').then(function onSuccess() { \n  // ... \n  }, function onReject() { \n    // ... \n  });",
     "sample": "$http.get('api/data').success(function onSuccess() { \n    // ... \n}); // error: $http success is deprecated. Use then instead \n\n// invalid \n$http.get('api/data').error(function onReject() { \n    // ... \n}); // error: $http error is deprecated. Use then or catch instead",
     "total": "Number of angular services/factories using $http",
-    "alternativeName": "Avoid using $http success and error function",
+    "alternativeName": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
     "businessCriteria": [
         {
             "id": 20140522,

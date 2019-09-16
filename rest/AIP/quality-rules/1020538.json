@@ -11,7 +11,7 @@
     "remediationSample": "// valid \nangular.element(\"#id\")",
     "sample": "// invalid \n$(angular.element(\"#id\")) // error: angular.element returns already a jQLite element. No need to wrap with the jQuery object \n\n// invalid \njQuery(angular.element(\"#id\")) // error: angular.element returns already a jQLite element. No need to wrap with the jQuery object",
     "total": "Number of angular artifacts (controllers, services, factories, directives)",
-    "alternativeName": "Avoid wrapping angular.element objects with jQuery or $",
+    "alternativeName": "Ensure that you do not use a jQuery wrapper on angular.element to ensure structuredness in code",
     "businessCriteria": [
         {
             "id": 20140522,
