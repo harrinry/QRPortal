@@ -11,7 +11,7 @@
     "remediationSample": "1- Define permission in the top of the manifest file as following one \n\n<permission android: name=\"com.x8bit.bitwarden.PackageConfirmReceiverPermission\" android:protectionLevel=\"signature\" /> \n\n2- Add the permission into receiver Permission \n\n<receiver \n    android:name=\"com.x8bit.bitwarden.PackageConfirmReceiver\" \n    android:enabled=\"true\" android:exported=\"true\" \n    android:permission=\"com.x8bit.bitwarden.PackageConfirmReceiverPermission\"> \n    <intent-filter> \n        <action android:name=\"android.action.intent.MY_PACKAGE_CONFIM\"/> \n        <category android:name=\"category\" /> \n    </intent-filter> \n</receiver>",
     "sample": "<receiver \n    android:name=\"com.x8bit.bitwarden.PackageConfirmReceiver\" \n    android:enabled=\"true\" \n    android:exported=\"true\" > \n    <intent-filter> \n        <action android:name=\"android.action.intent.MY_PACKAGE_CONFIM\"/> \n        <category android:name=\"category\" /> \n    </intent-filter> \n</receiver",
     "total": "Number of Android manifests",
-    "alternativeName": "A permission is required for securing Receivers",
+    "alternativeName": "A permission should always be specified at receiver level to control access rights",
     "businessCriteria": [
         {
             "id": 66031,

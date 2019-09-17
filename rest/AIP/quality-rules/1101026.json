@@ -12,7 +12,7 @@
     "remediationSample": "Add columns in INSERT clause:\nCREATE PROCEDURE INSERT_VALUES\nBEGIN\n  INSERT INTO Persons (LastName, FirstName, Address, City) VALUES ('Last', 'First', 'Add', 'City');\nEND;",
     "sample": "The following procedure should be reviewed:\nCREATE PROCEDURE INSERT_VALUES\nBEGIN\n  INSERT INTO Persons VALUES ('Last', 'First', 'Add', 'City');\nEND;",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "Always define column names when inserting values",
+    "alternativeName": "When inserting data into columns always define column names to prevent mistakes and wrong updates",
     "businessCriteria": [
         {
             "id": 20140522,

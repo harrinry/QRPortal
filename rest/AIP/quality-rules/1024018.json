@@ -11,7 +11,7 @@
     "remediationSample": "1- Define permission in the top of the manifest file as following one \n\n<permission android:name=\"com.example.testapps.permission.ACTIVITY\" android:protectionLevel=\"signature\" /> \n\n\n2- Add the android:permission into service \n\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\" \n package=\"com.example.testapps.test1\"> \n ... \n    <activity android:name=\".MailListenerService\" \n              android:permission= \n                 \"com.example.testapps.permission.ACTIVITY\" \n              android:enabled=\"true\" \n              android:exported=\"true\"> \n              <intent-filter></intent-filter> \n    </activity> \n  ... \n</manifest>",
     "sample": "<activity \n    android:name=\"com.x8bit.bitwarden.PackageConfirmReceiver\" \n    android:enabled=\"true\" \n    android:exported=\"true\" > \n    <intent-filter> \n        <action android:name=\"android.action.intent.MY_PACKAGE_CONFIM\"/> \n        <category android:name=\"category\" /> \n    </intent-filter> \n</activity>",
     "total": "Number of Android manifests",
-    "alternativeName": "A permission is required for securing Activities",
+    "alternativeName": "A permission should always be specified at Activity level to control access rights",
     "businessCriteria": [
         {
             "id": 66031,
