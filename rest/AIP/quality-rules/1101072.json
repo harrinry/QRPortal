@@ -12,7 +12,7 @@
     "remediationSample": "select sal.date,\n       sal.ord_num,\n       saldet.qty,\n       saldet.title_id,\n       saldet.discount,\n       titl.price,\n       total = saldet.qty * titl.price * (1 - saldet.discount/100)\nfrom sales sal\n     join salesdetail saldet on sal.ord_num = saldet.ord_num\n     join titles titl on titl.title_id = saldet.title_id\nwhere sal.stor_id = @stor_id\norder by sal.date desc, sal.ord_num",
     "sample": "select date,\n       sales.ord_num,\n       qty,\n       salesdetail.title_id,\n       discount,\n       price,\n       total = qty * price * (1 - discount/100)\nfrom sales, salesdetail, titles\nwhere sales.stor_id = @stor_id\nand sales.ord_num = salesdetail.ord_num\nand titles.title_id = salesdetail.title_id\norder by date desc, sales.ord_num",
     "total": "Number of Artifacts with SQL code having JOINs.",
-    "alternativeName": "Tables should be aliased",
+    "alternativeName": "Improve the readability and maintainability of your queries by using aliases for tables",
     "businessCriteria": [
         {
             "id": 20140522,

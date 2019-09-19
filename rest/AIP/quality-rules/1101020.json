@@ -12,7 +12,7 @@
     "remediationSample": "The following statement should be reviewed:\nDECLARE\n  L_End NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||L_End||']');\nEND;\n/",
     "sample": "The following statement should be reviewed:\nDECLARE\n  \"End\" NUMBER := 1;\nBEGIN\n  dbms_output.put_line('A quoted identifier End ['||\"End\"||']');\nEND;\n/",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "Avoid using quoted identifiers",
+    "alternativeName": "Make sure the identifiers defined in SQL are not quoted <\"\"> as it is confusing to read and reduces maintainability of code",
     "businessCriteria": [
         {
             "id": 20140522,

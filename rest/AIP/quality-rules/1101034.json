@@ -12,7 +12,7 @@
     "remediationSample": "Add an uncorrelated subquery:\nSELECT u.user_id, u.user_name, u.realname, u.email, u.confirm_hash\nFROM users u \nWHERE u.status = 'A' \n AND u.user_id \n IN (\n  SELECT ug.user_id \n  FROM user_group ug, groups g \n  WHERE ug.admin_flags='A' \n   AND g.status = 'A' \n   AND g.group_id = ug.group_id\n  )\nORDER BY u.user_id;",
     "sample": "The following SQL \"SELECT\" statement should be reviewed:\nSELECT DISTINCT u.user_id, u.user_name, u.realname, u.email, u.confirm_hash \nFROM users u, user_group ug, groups g \nWHERE u.status='A' \n AND u.user_id=ug.user_id \n AND ug.admin_flags='A' \n AND g.status='A' \n AND g.group_id=ug.group_id \nORDER BY u.user_id;",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "DISTINCT should not be used in SQL SELECT statements",
+    "alternativeName": "Prefer replacing DISTINCT in your queries with a WHERE, FROM clause that fetches only the required data",
     "businessCriteria": [
         {
             "id": 60014,

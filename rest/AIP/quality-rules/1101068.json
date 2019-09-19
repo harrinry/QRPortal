@@ -13,7 +13,7 @@
     "remediationSample": "CREATE PUBLIC SYNONYM emp FOR SCOTT.EMP;\n\nALTER SESSION SET CURRENT_SCHEMA = joe;\nCREATE SYNONYM joe_emp FOR SCOTT.EMP;",
     "sample": "CREATE PUBLIC SYNONYM emp FOR SCOTT.EMP;\n\nALTER SESSION SET CURRENT_SCHEMA = joe;\nCREATE SYNONYM emp FOR SCOTT.EMP;",
     "total": "Number of Synonyms.",
-    "alternativeName": "Avoid synonym with both private and public definition",
+    "alternativeName": "Make sure you don't have synonyms with both private and public definitions to avoid complexity, try renaming one of them instead",
     "businessCriteria": [
         {
             "id": 60014,

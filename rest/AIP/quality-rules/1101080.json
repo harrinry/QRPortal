@@ -13,7 +13,7 @@
     "remediationSample": "DROP SYNONYM SYN_TABLE_B;",
     "sample": "CREATE SYNONYM SYN_TABLE_B FOR ABC.TABLE_B; -- ABC.TABLE_B is missing",
     "total": "Number of Synonyms.",
-    "alternativeName": "Avoid orphaned synonyms",
+    "alternativeName": "When creating synonyms ensure that you do not reference a missing object as it will create errors at execution",
     "businessCriteria": [
         {
             "id": 20140522,

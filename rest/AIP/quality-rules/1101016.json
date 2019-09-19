@@ -10,7 +10,7 @@
     "rationale": "For maintainability and readability reasons, artifacts should not have too many parameters.",
     "remediation": "Review the design of the artifacts to reduce the number of parameters.",
     "total": "Number of Artifacts with SQL code.",
-    "alternativeName": "Avoid Artifacts with too many parameters (SQL)",
+    "alternativeName": "Ensure that you have a limited number of paramenters in OR clauses or IN statements to ensure good query performance",
     "businessCriteria": [
         {
             "id": 60012,
@@ -53,6 +53,20 @@
             "standard": "CISQ",
             "id": "ASCMM-MNT-13",
             "name": "Callable and Method Control Element Excessive Number of Parameters",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1064",
+            "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1064",
+            "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
             "url": null,
             "description": null
         }

@@ -11,7 +11,7 @@
     "remediationSample": "Oracle :\nbegin\n insert into table ( col1, col2, col3) values ( 1, 2, 3);\nexception\n when dup_val_on_index then\n  update t set col3 = 4 where col1 = 1 and col2 = 2;\n when others then\n   raise;\nend;\n\nPostgreSQL:\nbegin\n insert into table ( col1, col2, col3) values ( 1, 2, 3);\nexception\n when dup_val_on_index then\n  update t set col3 = 4 where col1 = 1 and col2 = 2;\n when others then\n   RAISE NOTICE 'something bad happened';\nend;",
     "sample": "begin\n insert into table ( col1, col2, col3) values ( 1, 2, 3);\nexception\n when dup_val_on_index then\n  update t set col3 = 4 where col1 = 1 and col2 = 2;\n when others then\n   null;\nend;",
     "total": "Number of Artifacts with SQL code having exception handler.",
-    "alternativeName": "Never use WHEN OTHER THEN NULL",
+    "alternativeName": "Ensure to propagate errors to client instead of using with NULL when handling exceptions through WHEN OTHERS",
     "businessCriteria": [
         {
             "id": 20140522,

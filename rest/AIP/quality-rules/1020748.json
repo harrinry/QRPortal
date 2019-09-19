@@ -10,7 +10,7 @@
     "reference": "CISQ Recommendation: ASCPEM-PRF-08",
     "remediation": "Try to create a process queue that will manage all the requests with a limited number of concurrent requests. When a request callback has been managed a new request could be fired.",
     "total": "Number of javascript artifacts calling data frameworks functions",
-    "alternativeName": "?????",
+    "alternativeName": "Ensure you minize the number of api call especially inside a loop",
     "businessCriteria": [
         {
             "id": 60014,
@@ -48,6 +48,20 @@
             "standard": "CISQ",
             "id": "ASCPEM-PRF-8",
             "name": "Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1050",
+            "name": "Excessive Platform Resource Consumption within a Loop",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1050",
+            "name": "Excessive Platform Resource Consumption within a Loop",
             "url": null,
             "description": null
         }

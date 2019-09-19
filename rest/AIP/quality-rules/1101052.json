@@ -11,7 +11,7 @@
     "remediationSample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\n    WHEN OTHERS THEN\n        raise_application_error(-20001,'An error was encountered - '||SQLCODE||' -ERROR- '||SQLERRM);\n\nEND;",
     "sample": "EXCEPTION\n     WHEN DUP_VAL_ON_INDEX THEN\n        raise_application_error (-20001,'You have tried to insert a duplicate value.');\n\nEND;",
     "total": "Number of Artifacts with SQL code having exception handler.",
-    "alternativeName": "Use WHEN OTHERS in exception management (SQL)",
+    "alternativeName": "Ensure to use WHEN OTHERS with WHEN for exception handling to prevent unexpected behavior",
     "businessCriteria": [
         {
             "id": 20140522,
