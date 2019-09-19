@@ -29,6 +29,7 @@ const mapDispatchToProps = (dispatch) => {
       case SECTIONS.pci:
       case SECTIONS.stig:
       case SECTIONS.nist:
+      case SECTIONS.omg:
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
