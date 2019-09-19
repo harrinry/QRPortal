@@ -6,16 +6,25 @@ import { CLASSES, NORULESSELECTED, NOBPSSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
 const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
-  let qualityStandardsTags, technologiesTags;
+  let qualityStandardsTags, technologiesTags, qsTagData = [];
+
   if (data){
-    qualityStandardsTags = data.qualityStandards.length > 0 ?
-      data.qualityStandards
-        .map(function(listValue, index){
-          return <div key={index} className={CLASSES.tag} onClick={() => {
-            if(!searchVisible || gsQuery !== listValue.id)
-              onTagClick(listValue);
-          }}>{listValue.id}</div>;
-        }) : [];
+
+    if( data.qualityStandards.length > 0 ){
+      for (const qualityStandard of data.qualityStandards) {
+        const exists = qsTagData.find( e => e.id === qualityStandard.id );
+        if(exists) continue;
+        qsTagData.push(qualityStandard);
+      }
+    }
+
+    qualityStandardsTags = qsTagData.map(function(listValue, index){
+      return <div key={index} className={CLASSES.tag} onClick={() => {
+        if(!searchVisible || gsQuery !== listValue.id)
+          onTagClick(listValue);
+      }}>{listValue.id}</div>;
+    });
+
     technologiesTags = data.technologies.length > 0 ?
       data.technologies.map((t, i)=>{
         return <div key={i+'techno'} className={CLASSES.technoTag} onClick={() => {
