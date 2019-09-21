@@ -13,7 +13,7 @@
     "remediationSample": "export class AppComponent {\n  constructor(private http: HttpClient) {\n  }\n    \n  getData() {\n    this.http.get(this.url).subscribe(      // subscription to Observable\n      (data: Config) => this.config = { ...data },\n        error => this.error = error         // error path\n    );\n    // ...\n  }\n}",
     "sample": "export class AppComponent {\n  constructor(private http: HttpClient) {\n  }\n    \n  getData() {\n    this.http.get(this.url).subscribe(      // subscription to Observable\n      (data: Config) => this.config = { ...data }\n    );\n    // ...\n  }\n}",
     "total": "Number of TypeScript artifacts call Web services",
-    "alternativeName": "Ensure that you provide an error callback to the HttpClient  subscribe method.",
+    "alternativeName": "Ensure that you provide an error callback to the HttpClient  ubscribe method.",
     "businessCriteria": [
         {
             "id": 20140522,

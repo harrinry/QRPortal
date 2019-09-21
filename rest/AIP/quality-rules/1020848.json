@@ -13,7 +13,7 @@
     "remediationSample": "import { map, tap } from 'rxjs/operators';\n\nmyObservable$\n   .pipe(\n   tap(company=> console.log(`Before: ${company}`)),\n   map(company=> `${company.name}, ${company.country}`),\n   tap(company=> console.log(`After: ${company}`))\n   )",
     "sample": "import 'rxjs/add/operator/map';\nimport 'rxjs/add/operator/tap';\n\nmyObservable$\n   .tap(company=> console.log(`Before: ${company}`))\n   .map(company=> `${company.name}, ${company.country}`)\n   .tap(company=> console.log(`After: ${company}`))",
     "total": "Number of modules using rxjs",
-    "alternativeName": "Always favour pipable operators in RxJS",
+    "alternativeName": "Always ensuure using \"pipeable\" operators which can be imported from \"rxjs/operators\" instead of \"patch\" operator",
     "businessCriteria": [
         {
             "id": 60012,

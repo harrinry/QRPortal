@@ -13,7 +13,7 @@
     "remediationSample": "// in shapes.ts module\nexport class Triangle { /* ... */ }\nexport class Square { /* ... */ }\n\n\n// in shapeConsumer.ts module\nimport * as shapes from \"./shapes\";\nlet t = new shapes.Triangle();",
     "sample": "//in shapes.ts module\nexport namespace Shapes {\n    export class Triangle { /* ... */ }\n    export class Square { /* ... */ }\n}\n\n\n//in shapeConsumer.ts module\nimport * as shapes from \"./shapes\";\nlet t = new shapes.Shapes.Triangle(); // shapes.Shapes?",
     "total": "Number of exported namespaces",
-    "alternativeName": "Avoid exporting namespaces",
+    "alternativeName": "Always prefer using modules over namespaces for structuring you code instead of exporting namespaces",
     "businessCriteria": [
         {
             "id": 60012,

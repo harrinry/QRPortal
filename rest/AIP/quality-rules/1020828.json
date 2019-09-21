@@ -11,7 +11,7 @@
     "remediation": "It is recommended to avoid using the concatenation of the strings in a loop",
     "sample": "var result = new String(\"hello\");\nvar element = new String(\" again\");\nvar i = 0;\n\nfor (i = 0; i < 1500; i++) {\n   result = result.concat( element );  // VIOLATION\n}",
     "total": "Number of TypeScript artifacts",
-    "alternativeName": "Avoid String concatenation in loops (Typescript)",
+    "alternativeName": "Always ensure not using the concatenation of the strings in a loop as  a costly operation.",
     "businessCriteria": [
         {
             "id": 60014,
