@@ -1,6 +1,6 @@
 {
     "id": 1043036,
-    "name": "Avoid Impersonate Globally",
+    "name": "Avoid using Impersonate identity (ASP.NET)",
     "href": "AIP/quality-rules/1043036",
     "critical": false,
     "maxWeight": 7,
@@ -9,7 +9,7 @@
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
     "rationale": "The technical impact is attackers acting as users or administrators, or users using privileged functions, or creating, accessing, updating or deleting every record.\nThe business impact depends on the protection needs of the application and data.\n\nASP.NET impersonation is disabled by default. If impersonation is enabled for an ASP.NET application, that application runs in the context of the identity whose access token IIS passes to ASP.NET. That token can be either an authenticated user token, such as a token for a logged-in Windows user, or the token that IIS provides for anonymous users (typically, the IUSR_MACHINENAME identity).",
     "reference": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control\nhttps://docs.microsoft.com/en-us/previous-versions/aspnet/xh507fc5(v=vs.100)\n\nOWASP-2017 - A5 Broken Access Control",
-    "remediation": "Review the source code and reduce",
+    "remediation": "Ensure the impersonation flag remains set to false (default value)",
     "remediationSample": "<configuration>\n  <system.web>\n    <identity impersonate=\"false\"/>\n  </system.web>\n</configuration>",
     "sample": "<configuration>\n  <system.web>\n    <identity impersonate=\"true\"/>\n  </system.web>\n</configuration>",
     "total": "Number of config files",

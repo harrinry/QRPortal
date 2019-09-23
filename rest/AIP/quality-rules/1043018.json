@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1043018",
     "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "Storing passwords, in a config files is something to be avoided at all costs.",
+    "description": "This rule will check if you have entered password in your configuration file",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",
     "rationale": "Failure frequently compromises all data that should have been protected. Typically, this information includes sensitive personal information (PII) data such as health records, credentials, personal data, and credit cards, which often require protection as defined by laws or regulations such as the EU GDPR or local privacy laws.",
     "reference": "CWE-260: Password in Configuration File\nhttps://cwe.mitre.org/data/definitions/260.html\n\nhttps://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration\n\nA6-Security_Misconfiguration",
