@@ -1,5 +1,5 @@
 import React from 'react';
-import { CLASSES, CONTACTUS, swagger, versionKey, TITLE, CASTSOFTWARE, PRIVACYPOLICY, COPY_RIGHT } from './app-footer-constants';
+import { CLASSES, CONTACTUS, COMPAREVERSIONS, swagger, versionKey, TITLE, CASTSOFTWARE, PRIVACYPOLICY, COPY_RIGHT } from './app-footer-constants';
 import { COMMON_CLASSES, createClassName, setLocalStorage, readLocalStorage } from '../common/';
 import About from 'about/';
 import './style.css';
@@ -23,11 +23,11 @@ export default class AppFooter extends React.PureComponent{
       .then(data => {
         const lastViewedVersion = readLocalStorage(versionKey);
         setLocalStorage(versionKey, data.version);
-        this.setState({ 
-          _version: lastViewedVersion, 
-          currentVersion: data.version, 
-          loading: false, 
-          info: data, 
+        this.setState({
+          _version: lastViewedVersion,
+          currentVersion: data.version,
+          loading: false,
+          info: data,
           infoVisible: false,
           licenseVisible: false });
       })
@@ -46,13 +46,13 @@ export default class AppFooter extends React.PureComponent{
   }
 
   toggleOverlay(){
-    return this.setState(_state => { 
+    return this.setState(_state => {
       return {
-        MAILTO: _state.MAILTO, 
-        _version: _state._version, 
-        currentVersion: _state.currentVersion, 
-        loading: false, 
-        info: _state.info, 
+        MAILTO: _state.MAILTO,
+        _version: _state._version,
+        currentVersion: _state.currentVersion,
+        loading: false,
+        info: _state.info,
         infoVisible: !_state.infoVisible,
         licenseVisible: false
       };
@@ -67,6 +67,7 @@ export default class AppFooter extends React.PureComponent{
           <div className={createClassName(COMMON_CLASSES.flexRow, CLASSES.links)}>
             <div onClick={this.toggleOverlay} className={CLASSES.whatisnew}>What's New?</div>
             <a href={swagger} className={CLASSES.contactus}>API</a>
+            <a href={COMPAREVERSIONS} className={CLASSES.contactus}>Compare</a>
             <a href={CONTACTUS} className={CLASSES.contactus}>Contact Us</a>
             <a href={PRIVACYPOLICY} className={CLASSES.contactus}>Privacy policy</a>
           </div>
@@ -75,9 +76,9 @@ export default class AppFooter extends React.PureComponent{
             <a href={CASTSOFTWARE}><div className={CLASSES.castLogo}></div></a>
           </div>
         </div>
-        {this.state.loading ? 
+        {this.state.loading ?
           undefined
-          : <About 
+          : <About
             title={TITLE}
             version={info.version}
             licence={info.licence}
