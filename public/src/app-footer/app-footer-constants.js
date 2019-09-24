@@ -12,6 +12,7 @@ export const CLASSES = {
 };
 
 export const CONTACTUS = 'https://help.castsoftware.com/hc/en-us';
+export const COMPAREVERSIONS = 'https://technologies.castsoftware.com/rules/packages';
 export const versionKey = 'version';
 export { TITLE } from 'body-landing-page/blp-constants';
 export { LANDING_PAGE } from 'body/body-constants';
