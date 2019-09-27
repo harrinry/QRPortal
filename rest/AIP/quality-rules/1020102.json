@@ -13,7 +13,7 @@
     "remediationSample": "function readJSON(filePath, callback) {\n\n  fs.readFile(filePath, function(err, data) {\n\n    var parsedJson;\n\n    // Handle error\n    if (err) {\n      return callback(err);\n    }\n\n    // Parse JSON\n    try {\n      parsedJson = JSON.parse(data);\n    } catch (exception) {\n      return callback(exception);\n    }\n\n    // Everything is ok\n    return callback(null, parsedJson);\n  });\n}",
     "sample": "function readJSON(filePath, callback) {\n\n  fs.readFile(filePath, function(err, data) {\n\n    var parsedJson;\n\n    // Handle error\n    if (err) {\n      return callback(err);\n    }\n\n    // Parse JSON\n    parsedJson = JSON.parse(data);\n\n    return (parsedJson !== 'undefined');\n  });\n}",
     "total": "Number of javascript function using JSON.parse or JSON.stringify",
-    "alternativeName": "Ensure you have use JSON.parse & JSON.stringify in try/catch block because of the synchronous call",
+    "alternativeName": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
     "businessCriteria": [
         {
             "id": 20140522,

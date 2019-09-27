@@ -12,7 +12,7 @@
     "remediationSample": "Use authorized sanitization methods.\nDo not expose sensible methods.",
     "sample": "var resultDoc = things.Find(new BsonDocument()).ToList();\nforeach (var item in resultDoc)\n{\n    // Exec JS command. Ok\n    JsonCommand<BsonDocument> cmd = new JsonCommand<BsonDocument>(\"{ eval: \\\"test_function(2)\\\" }\");\n    var result = db.RunCommand(cmd);\n\n    // Possible injection\n    var userInput = Console.ReadLine();\n    cmd = new JsonCommand<BsonDocument>(userInput); \n    Command<BsonDocument> cmd2 = GetCmdOfJsonCmd(cmd);\n    result = db.RunCommand(cmd2);\n}",
     "total": "Number of methods calling user input methods",
-    "alternativeName": "Ensure you don't unsanitized queries to NoSQL databases",
+    "alternativeName": "Ensure you use sanitized queries to NoSQL databases",
     "businessCriteria": [
         {
             "id": 66031,
