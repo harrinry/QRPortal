@@ -7,11 +7,11 @@
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is written into the application logs without prior validation and sanitization.",
     "output": "- Method full name\n- Call stack from user input source down to the target log method",
     "rationale": "Writing unvalidated, unsanitized user input to log files can allow an attacker to forge log entries or inject malicious content into the logs.\n\nApplications typically use log files to store a history of events or transactions for later review, statistics gathering, or debugging. Depending on the nature of the application, the task of reviewing log files may be performed manually or sometimes automated with a tool that automatically gathers log data for important events or trending information. \nInterpretation of the log files may be hindered or misdirected if an attacker can supply data to the application that is subsequently logged verbatim.",
-    "reference": "CWE-117: Improper Output Neutralization for Logs\nhttps://cwe.mitre.org/data/definitions/117.html",
+    "reference": "CWE-117: Improper Output Neutralization for Logs\nhttps://cwe.mitre.org/data/definitions/117.html\n\nOpen Web Application Security Project (OWASP)\nhttps://www.owasp.org/index.php/A6_2004_Injection_Flaws",
     "remediation": "Use authorized sanitization methods.",
     "remediationSample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    String sanitizedValue = ... // Sanitize here the value\n    log.info(\"Failed to parse value = \" + sanitizedValue);\n}",
     "sample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    log.info(\"Failed to parse value = \" + value);\n}",
-    "total": "Number of methods calling user input methods",
+    "total": "Number of potentially vulnerable methods",
     "alternativeName": "Avoid log forging vulnerabilities",
     "businessCriteria": [
         {

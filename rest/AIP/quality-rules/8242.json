@@ -7,9 +7,9 @@
     "description": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information. \n\nThe list of methods producing insufficiently random numbers can be customized.",
     "output": "List all methods that use random numbers insufficiently generated.\n\nIt provides the following information : \n - Method full name. \n - Call stack with bookmarks from the method producing insufficiently random numbers down to the target method.",
     "rationale": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.",
-    "reference": "CWE-330: Use of Insufficiently Random Values\nhttps://cwe.mitre.org/data/definitions/330.html",
+    "reference": "CWE-330: Use of Insufficiently Random Values\nhttps://cwe.mitre.org/data/definitions/330.html\n\nOpen Web Application Security Project (OWASP)\nhttps://www.owasp.org/index.php/A2_2004_Broken_Access_Control",
     "remediation": "Potential remediations : \n- Use a well-vetted algorithm that is currently considered to be strong by experts in the field, and select well-tested implementations with adequate length seeds.",
-    "total": "Number of methods calling methods producing insufficiently random numbers",
+    "total": "Number of potentially vulnerable methods",
     "alternativeName": "Use of insufficiently random values",
     "businessCriteria": [
         {

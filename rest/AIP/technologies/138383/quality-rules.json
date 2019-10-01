@@ -518,7 +518,7 @@
     },
     {
         "id": 7740,
-        "name": "Avoid cross-site scripting vulnerabilities",
+        "name": "Avoid HTTP response splitting",
         "href": "AIP/quality-rules/7740",
         "status": null,
         "critical": true,
@@ -1045,22 +1045,6 @@
         ]
     },
     {
-        "id": 7832,
-        "name": "Avoid unreferenced Classes",
-        "href": "AIP/quality-rules/7832",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
         "id": 7834,
         "name": "Avoid undocumented Interfaces",
         "href": "AIP/quality-rules/7834",
@@ -1170,38 +1154,6 @@
         "technologyNames": [
             ".NET (Legacy Analyzer)",
             "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7908,
-        "name": "Avoid unreferenced Methods",
-        "href": "AIP/quality-rules/7908",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7912,
-        "name": "Avoid unreferenced Data Members",
-        "href": "AIP/quality-rules/7912",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C",
-            "C#",
-            "C++",
             "JEE",
             "VB.NET"
         ]
@@ -1590,7 +1542,7 @@
     },
     {
         "id": 8414,
-        "name": "Avoid use of a broken or risky cryptographic algorithm",
+        "name": "Avoid weak cryptographic algorithm",
         "href": "AIP/quality-rules/8414",
         "status": null,
         "critical": true,
@@ -1614,12 +1566,13 @@
     },
     {
         "id": 8418,
-        "name": "Avoid NoSQL injection on MongoDB (C#)",
+        "name": "Avoid NoSQL injection",
         "href": "AIP/quality-rules/8418",
         "status": null,
         "critical": true,
         "technologyNames": [
             "C#",
+            "JEE",
             "VB.NET"
         ]
     },
