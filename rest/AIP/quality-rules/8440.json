@@ -12,7 +12,7 @@
     "remediationSample": "String ctl = request.getParameter(\"ctl\");\n// Compute String command without user-input control\nClass cmdClass = Class.forName(ctl + command);\nWorker ao = (Worker) cmdClass.newInstance();\nao.doAction(request);",
     "sample": "String ctl = request.getParameter(\"ctl\");\nClass cmdClass = Class.forName(ctl + \"Command\");\nWorker ao = (Worker) cmdClass.newInstance();\nao.doAction(request);",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid reflection injection",
+    "alternativeName": "Ensure you have sanitized the data received to be reflected in your application",
     "businessCriteria": [
         {
             "id": 66031,

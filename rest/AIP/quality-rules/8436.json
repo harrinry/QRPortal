@@ -12,7 +12,7 @@
     "remediationSample": "public void Wait(int length)\n{\n    System.Threading.Thread.Sleep(length);\n}",
     "sample": "public void Wait(String userInput)\n{\n    int length = int.Parse(userInput);\n    System.Threading.Thread.Sleep(length);\n}",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid thread injection vulnerabilities",
+    "alternativeName": "Ensure your application does not process thread with unsanitized stream",
     "businessCriteria": [
         {
             "id": 66031,

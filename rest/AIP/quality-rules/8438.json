@@ -12,7 +12,7 @@
     "remediationSample": "using Microsoft.CodeAnalysis.CSharp.Scripting;\n...\nvar value = CSharpScript.Eval(\"1 + 2\");\nConsole.Write(value); // 3",
     "sample": "using Microsoft.CodeAnalysis.CSharp.Scripting;\n...\nvar value = CSharpScript.Eval(\"1 + 2 + \" + fromUser);\nConsole.Write(value); // 3 + ?",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid code injection",
+    "alternativeName": "Ensure your application does not evaluate unsanitized code.",
     "businessCriteria": [
         {
             "id": 66031,
@@ -83,6 +83,13 @@
             "standard": "CWE",
             "id": "CWE-95",
             "name": "Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-2",
+            "name": "Flaw Remediation",
             "url": null,
             "description": null
         },

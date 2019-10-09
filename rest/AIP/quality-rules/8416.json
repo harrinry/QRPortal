@@ -12,7 +12,7 @@
     "remediationSample": "Sample 1: \n---------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA-256\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}\n\nSample 2:\n--------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA-512\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}",
     "sample": "Sample 1: \n---------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}\n\nSample 2:\n--------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"MD5\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid use of a reversible one-way hash",
+    "alternativeName": "Ensure you don't use weak cryptographic hash one-way reversible",
     "businessCriteria": [
         {
             "id": 20140522,
