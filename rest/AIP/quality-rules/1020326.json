@@ -13,7 +13,7 @@
     "remediationSample": "var jqxhr = $.ajax( \"example.php\" )\n  .done(function() {\n    alert( \"success\" );\n  })\n  .fail(function() {\n    alert( \"error\" );\n  })\n  .always(function() {\n    alert( \"complete\" );\n  });\n\n// OR \n \n// Set another completion function for the request above\njqxhr.always(function() {\n  alert( \"second complete\" );\n});",
     "sample": "var jqxhr = $.ajax( \"example.php\" )\n \n// Perform other work here ...",
     "total": "Number of JQuery resource service artifacts (JQuery GET resource service, JQuery PUT resource service, JQuery POST resource service)",
-    "alternativeName": "Ensure you have implemented all the $.ajax, $.get or $.getJSON callbacks done, fail and/or always callbacks when using jQuery 3.0 (and latest)",
+    "alternativeName": "Ensure you have implemented all the $.ajax, $.get or $.getJSON callbacks done, fail and always callbacks when using jQuery 3.0 (and latest)",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -52,62 +52,7 @@
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "CISQ",
-            "id": "ASCRM-CWE-252-resource",
-            "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Platform Resource",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCRM-RLB-1",
-            "name": "Empty Exception Block",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCSM-CWE-252-resource",
-            "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Platform Resource",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CWE",
-            "id": "CWE-392",
-            "name": "Missing Report of Error Condition",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "NIST-SP-800-53R4",
-            "id": "NIST-SI-11",
-            "name": "Error Handling",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "OMG-ASCQM",
-            "id": "CWE-392",
-            "name": "Missing Report of Error Condition",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "PCI-DSS-V3.1",
-            "id": "PCI-Requirement-6.5.5",
-            "name": "Improper error handling",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "STIG-V4R8",
-            "id": "STIG-V-70391",
-            "name": "The application must not be subject to error handling vulnerabilities.",
-            "url": null,
-            "description": null
-        }
+        
     ],
     "parameters": [
         

@@ -11,7 +11,7 @@
     "remediation": "restrict the conditions using other critersion",
     "sample": "SELECT x.OrderID, x.Freight, \n        (SELECT SUM(y.Freight) FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningTotal,\n        (SELECT COUNT(y.Freight)\n           FROM dbo.Orders y\n          WHERE y.OrderID <= x.OrderID) AS RunningCount\n  FROM dbo.Orders X\n ORDER BY x.OrderID",
     "total": "Number of SQL Artifacts",
-    "alternativeName": "Avoid improperly written  triangular joins with XXL tables in PL/SQL code",
+    "alternativeName": "Ensure you have properly wirtten triangular joins with XXL tables",
     "businessCriteria": [
         {
             "id": 60014,

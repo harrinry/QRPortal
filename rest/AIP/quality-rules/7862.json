@@ -12,7 +12,7 @@
     "remediationSample": "\" Hide\ntry\n{ ,,, }\ncatch (SpecificException /*e*/)\n{ ,,, }",
     "sample": "try\n{ ,,, }\ncatch (Exception /*e*/) // <= VIOLATION\n{ ,,, }",
     "total": "Number of methods",
-    "alternativeName": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+    "alternativeName": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
     "businessCriteria": [
         {
             "id": 20140522,

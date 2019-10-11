@@ -13,7 +13,7 @@
     "remediationSample": "SqlConnection sqlConnection1 = new SqlConnection (\"Data Source=server;integrated \" +  \"Security=sspi;initial catalog=pubs;\");\n\nSqlCommand testCmd = new SqlCommand  (\"TestProcedure\", sqlConnection1 );\n\ntestCmd.CommandType = CommandType.StoredProcedure;\n\nSqlParameter RetVal = testCmd.Parameters.Add \n   (\"RetVal\", SqlDbType.Int);\nPubsConn.Open();\n\nSqlDataReader myReader = testCmd.ExecuteReader();\nConsole.WriteLine (\"List of Customers:\");\nwhile (myReader.Read()) \n   {\n     Console.WriteLine (\"{0}\", myReader.GetString (2));\n   };\nmyReader.Close();",
     "sample": "SqlConnection sqlConnection1 = new SqlConnection(\"Your Connection String\");\nSqlCommand cmd = new SqlCommand();\nSqlDataReader reader;\n\ncmd.CommandText = \"SELECT * FROM Customers\"; // violation\ncmd.CommandType = CommandType.Text;\ncmd.Connection = sqlConnection1;\n\nsqlConnection1.Open();\n\nreader = cmd.ExecuteReader();\n// Data is accessible through the DataReader object here.\n\nsqlConnection1.Close();\n",
     "total": "Total number of objects accessing the database",
-    "alternativeName": "Avoid direct access to Database Tables",
+    "alternativeName": "Prefer using stored procedure instead of using direct SQL queries to database",
     "businessCriteria": [
         {
             "id": 66032,

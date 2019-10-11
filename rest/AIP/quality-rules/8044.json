@@ -12,7 +12,7 @@
     "remediationSample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    String sanitizedValue = ... // Sanitize here the value\n    log.info(\"Failed to parse value = \" + sanitizedValue);\n}",
     "sample": "String val = request.getParameter(\"value\");\ntry {\n    int value = Integer.parseInt(value);\n}\ncatch (NumberFormatException) {\n    log.info(\"Failed to parse value = \" + value);\n}",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid log forging vulnerabilities",
+    "alternativeName": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
     "businessCriteria": [
         {
             "id": 66031,
