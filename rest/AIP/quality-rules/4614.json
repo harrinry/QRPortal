@@ -8,7 +8,7 @@
     "rationale": "A call to 'super.clone()' ensures the clone behavior will still work.",
     "remediation": "Review the Method definition",
     "total": "Number of Java methods",
-    "alternativeName": "Ensure to have  a proper overriding of 'clone()'",
+    "alternativeName": "A clone method that is overridden in a subclass should call super.clone. Not doing so causes the subclass clone to return an object of the wrong type.",
     "businessCriteria": [
         {
             "id": 66031,

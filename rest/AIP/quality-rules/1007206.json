@@ -2,8 +2,7 @@
     "id": 1007206,
     "name": "Avoid using @error suppression (PHP)",
     "href": "AIP/quality-rules/1007206",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "description": "This rule searches for all artifacts having @ in order to hide the errors. Artifacts considered for this QR are PHP Secion, method, constructor and functions.",
     "output": "This report lists all the artifacts having @ in order to hide the errors.\n      \nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Use of @ decreases the performance of application. Instead of trying to hide the errors it is much better to handle them.",
@@ -39,7 +38,7 @@
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",
             "weight": 5,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -83,8 +82,8 @@
         
     ],
     "thresholds": [
-        90.0,
         95.0,
+        98.0,
         99.0,
         100.0
     ]

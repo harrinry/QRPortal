@@ -3,7 +3,7 @@
     "name": "Avoid classes having excessive number of derived classes(PHP)",
     "href": "AIP/quality-rules/1007036",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 7,
     "description": "This rule searches for all classes with excessive number of derived classes. A class is considered as having excessive number of derived classes if number of derived classes are more than 15.",
     "output": "This report lists all classes with excessive number of derived classes.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "A class with excessive number of derived classes is an indicator of unbalanced class hierarchy. You should consider refactoring this class hierarchy.",
@@ -38,7 +38,7 @@
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
-            "weight": 5,
+            "weight": 7,
             "critical": false
         }
     ],

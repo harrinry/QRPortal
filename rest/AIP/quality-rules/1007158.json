@@ -2,8 +2,7 @@
     "id": 1007158,
     "name": "Avoid artifacts using exit and die expressions (PHP)",
     "href": "AIP/quality-rules/1007158",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "description": "This rule searches for all artifacts using exit and die expressions.",
     "output": "This report lists all artifacts using exit and die expressions.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Exit and die expressions end the program prematurely without giving any chance to do error handling.",
@@ -40,7 +39,7 @@
             "id": 61024,
             "name": "Programming Practices - Structuredness",
             "weight": 5,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -70,9 +69,9 @@
         }
     ],
     "thresholds": [
-        70.0,
-        90.0,
+        95.0,
         98.0,
+        99.0,
         100.0
     ]
 }

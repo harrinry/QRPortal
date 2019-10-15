@@ -2,8 +2,7 @@
     "id": 1007156,
     "name": "Avoid using eval expressions (PHP)",
     "href": "AIP/quality-rules/1007156",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "description": "This rule searches for all artifacts using eval expression. Artifacts considered for this QR are PHP Section, method, function and constructors.",
     "output": "This report lists all artifacts using eval expression.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk.",
@@ -29,7 +28,7 @@
             "id": 66062,
             "name": "Secure Coding - Input Validation",
             "weight": 5,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -93,9 +92,9 @@
         }
     ],
     "thresholds": [
-        60.0,
-        80.0,
         95.0,
+        98.0,
+        99.0,
         100.0
     ]
 }

@@ -3,7 +3,7 @@
     "name": "Avoid method invocation in loop termination expression (PHP)",
     "href": "AIP/quality-rules/1007050",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 7,
     "description": "This rule searches for all artifacts containing function calls in loop test expressions. \nNote: foreach loop is not considered for this QR.",
     "output": "This report lists all artifact containing function calls in loop test expressions.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "When calling a function in a test expression of loop, the function will be computed in each loop iteration and will reduce performance dramatically.",
@@ -33,7 +33,7 @@
         {
             "id": 66068,
             "name": "Efficiency - Expensive Calls in Loops",
-            "weight": 5,
+            "weight": 7,
             "critical": false
         }
     ],

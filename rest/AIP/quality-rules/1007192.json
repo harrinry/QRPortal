@@ -2,8 +2,7 @@
     "id": 1007192,
     "name": "Avoid using PHP short tags (PHP)",
     "href": "AIP/quality-rules/1007192",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "description": "This rule searches for all PHP file which uses PHP short tags.",
     "output": "This report lists all artifacts containing PHP short tags.\nThis QR provides the following information:\nPHP file full name.",
     "rationale": "Usage of PHP Short tags is discouraged because, short tags may or may not be enabled on the server where application is deployed or will be deployed in future.",
@@ -39,7 +38,7 @@
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",
             "weight": 5,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -56,9 +55,9 @@
         
     ],
     "thresholds": [
-        70.0,
-        90.0,
+        95.0,
         98.0,
+        99.0,
         100.0
     ]
 }

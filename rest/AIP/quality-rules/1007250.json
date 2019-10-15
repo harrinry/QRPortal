@@ -2,8 +2,7 @@
     "id": 1007250,
     "name": "Avoid preg_replace with /e option (PHP)",
     "href": "AIP/quality-rules/1007250",
-    "critical": false,
-    "maxWeight": 5,
+    "critical": true,
     "associatedValueName": "Reasoning",
     "description": "This rule detects call to preg_replace with /e option or raw user input as pattern to replace.",
     "output": "This report lists all artifacts that uses call to preg_replace with /e option or user input as pattern to replace.\nThis QR provides the following information:\nArtifact Full Name",
@@ -31,7 +30,7 @@
             "id": 66062,
             "name": "Secure Coding - Input Validation",
             "weight": 5,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +88,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
         95.0,
-        99.0
+        98.0,
+        99.0,
+        100.0
     ]
 }

@@ -3,7 +3,7 @@
     "name": "Avoid artifacts with \"select *\" Sql statement (PHP)",
     "href": "AIP/quality-rules/1007220",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 7,
     "description": "This rule searches all the artifacts having \"select * from \u2026\" clause in sql queries. The artifacts searched for this quality rule are PHP Section, method, function and constructor.",
     "output": "The report lists all artifacts having \"select * from \" clause.\n\nThis QR provides following information:\n- Artifact full name",
     "rationale": "A query that retrieves all columns of a table with a SELECT * can potentially be the source of performance problems:\n      \nSuch performance problems may arise when the execution of the query returns a large result sets.\n\nAlso, when using such queries, one cannot control how columns will be ordered and returned to the client. This can lead to important data inconsistencies and thus stability issues.",
@@ -33,7 +33,7 @@
         {
             "id": 61019,
             "name": "Efficiency - SQL and Data Handling Performance",
-            "weight": 5,
+            "weight": 7,
             "critical": false
         }
     ],

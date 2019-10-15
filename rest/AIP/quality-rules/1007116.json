@@ -3,7 +3,7 @@
     "name": "Avoid artifacts with Object Instantiation in loops (PHP)",
     "href": "AIP/quality-rules/1007116",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 7,
     "description": "This rule searches for all the artifacts with object instantiation in loops. Artifacts considered for this QR are PHP Section are PHP Section, method, function and constructor.",
     "output": "This report lists all artifacts with object instantiation in loops.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Creating objects in loops can be expensive. Code creating objects in loops should be avoided especially in performance-critical code.",
@@ -32,7 +32,7 @@
         {
             "id": 66068,
             "name": "Efficiency - Expensive Calls in Loops",
-            "weight": 5,
+            "weight": 7,
             "critical": false
         }
     ],

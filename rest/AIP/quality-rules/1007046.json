@@ -3,7 +3,7 @@
     "name": "Avoid Classes with High Depth of Inheritance Tree (PHP)",
     "href": "AIP/quality-rules/1007046",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 7,
     "description": "This rule searches for all Classes with High Depth of Inheritance Tree",
     "output": "This report lists all the Classes with High Depth of Inheritance Tree.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "Changing a class requires prior understanding, which, in turn, is\nmore complicated for classes with many methods. Classes that are deep\ndown in hierarchy potentially inherit many methods. Moreover, the definitions of inherited methods are not local to the class making it even harder to understand.\n\nComplete testing requires coverage of all execution paths. The number of possible execution paths of class increases\nwith the number of methods and their control flow complexity.Due to late binding, base methods need to be tested again in the sub type context. This makes it potentially harder to test.\n\nTechnical or framework classes which are evolving and will not be changed often should not be concerned by this rule.",
@@ -38,7 +38,7 @@
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
-            "weight": 5,
+            "weight": 7,
             "critical": false
         }
     ],

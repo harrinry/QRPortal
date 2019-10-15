@@ -3,7 +3,7 @@
     "name": "Avoid classes with excessive number of fields (PHP)",
     "href": "AIP/quality-rules/1007132",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 6,
     "description": "This rule searches for all the classes with excessive number of fields. Modifiers which we consider with fields are public, private, protected, const and static. A class with more than 15 fields is considered as violation.",
     "output": "This report lists all the classes with excessive number of fields.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "Classes with excessive number of fields could be redesigned to have fewer fields, possibly through some nested object grouping of related information. For example, a class with city/state/zip fields could have one field as address.",
@@ -33,7 +33,7 @@
         {
             "id": 61003,
             "name": "Programming Practices - OO Inheritance and Polymorphism",
-            "weight": 5,
+            "weight": 6,
             "critical": false
         }
     ],
