@@ -11,7 +11,7 @@
     "remediationSample": "const { Pool, Client } = require('pg')\n\n// pools will use environment variables\n// for connection information\nconst pool = new Pool()\n\nconst text = 'INSERT INTO users(name, email) VALUES($1, $2) RETURNING *'\nconst values = [request.form['name'], request.form['email']]\n\n// callback\npool.query(text, values, (err, res) => {\n  if (err) {\n    console.log(err.stack)\n  } else {\n    console.log(res.rows[0])\n  }\n})",
     "sample": "const { Pool, Client } = require('pg')\n\n// pools will use environment variables\n// for connection information\nconst pool = new Pool()\n\nconst text = 'INSERT INTO users(name, email) VALUES('+request.form['name']+', '+request.form['email']+') RETURNING *'\n\n// callback\npool.query(text, (err, res) => {\n  if (err) {\n    console.log(err.stack)\n  } else {\n    console.log(res.rows[0])\n  }\n})",
     "total": "Number of NodeJS source code executing a query from an interpolated string.",
-    "alternativeName": "Avoid Javascript string interpolations to prevent SQL injections",
+    "alternativeName": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
     "businessCriteria": [
         {
             "id": 66031,
