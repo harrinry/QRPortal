@@ -9,7 +9,10 @@ const RulesListArray = ( props ) => {
   const hasSearchResults = props.searchResults ? true : false,
     searchResultsLength = hasSearchResults ? props.searchResults.length : 0,
     searchResults = searchResultsLength > 0 ? props.searchResults : [];
-  const Headers = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
+
+const BPHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies] : [HEADERS.id, HEADERS.name];
+const FullHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
+
   let childConstructor;
   if (props.searchVisible) {
     childConstructor = props.SearchArrayChildConstructor;
@@ -26,7 +29,7 @@ const RulesListArray = ( props ) => {
       filterPlaceholder={isEcho() ? FILTERBPSPLACEHOLDER : FILTERRULESPLACEHOLDER}
       itemCountTitle={isEcho() ? BPS : RULES}
       onEmpty={props.customMessage || (isEcho() ? NOBPS : NORULES)}
-      headers={Headers}
+      headers={isEcho() ? BPHeaders : FullHeaders}
       compare={compareFunction}>
       { props.searchVisible ? searchResults : props.data}
     </VerticalArray>);

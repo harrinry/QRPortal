@@ -7,6 +7,7 @@ const UniqueArray = require('../lib/uniq');
 const QualityRule = Struct(
   'id',
   'name',
+  'alternativeName',
   'href',
   'critical',
   'maxWeight',
@@ -38,7 +39,7 @@ const MapTechnology = (technology) => {
     const _Technology = TechnologiesMap.aip[i];
     if (_Technology.glob === null) continue;
     const globIndex = _Technology.glob.findIndex( t => t.name === technology);
-    
+
     if( globIndex > -1 ) return _Technology;
   }
 
@@ -49,6 +50,7 @@ const QualityRuleObject = (data) => {
   return new QualityRule(
     data.id,
     data.name,
+    data.alternativeName,
     data.href,
     data.critical,
     data.maxWeight,
