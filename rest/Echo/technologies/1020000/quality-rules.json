@@ -60,7 +60,7 @@
     },
     {
         "id": 8028,
-        "name": "Avoid missing default in switch statements",
+        "name": "Ensure you don't forget the default clause in your switch statement",
         "href": "AIP/quality-rules/8028",
         "status": null,
         "critical": false,
@@ -73,7 +73,7 @@
     },
     {
         "id": 8032,
-        "name": "Avoid using a break statement in 'for' loops",
+        "name": "Ensure you don't use multiple break statement in 'for' loops",
         "href": "AIP/quality-rules/8032",
         "status": null,
         "critical": false,
@@ -86,7 +86,7 @@
     },
     {
         "id": 1020004,
-        "name": "Avoid using querySelectorAll",
+        "name": "Avoid using querySelectorAll, prefer getElementsByTagName() or getElementsByClassName() to have better performance.",
         "href": "AIP/quality-rules/1020004",
         "status": null,
         "critical": true,
@@ -96,7 +96,7 @@
     },
     {
         "id": 1020006,
-        "name": "Avoid calling a function in a termination loop (Javascript)",
+        "name": "Make sure you do not execute a function inside loop termination to avoid performance issues, use a variable to store the value of a function instead",
         "href": "AIP/quality-rules/1020006",
         "status": null,
         "critical": true,
@@ -106,7 +106,7 @@
     },
     {
         "id": 1020008,
-        "name": "Avoid using for-in loop",
+        "name": "Replace for-in loop with a regular for loop with index to avoid slower performance",
         "href": "AIP/quality-rules/1020008",
         "status": null,
         "critical": false,
@@ -116,7 +116,7 @@
     },
     {
         "id": 1020010,
-        "name": "Avoid using forEach()",
+        "name": "Replace forEach() with a regular loop to ensure better performance",
         "href": "AIP/quality-rules/1020010",
         "status": null,
         "critical": false,
@@ -126,7 +126,7 @@
     },
     {
         "id": 1020012,
-        "name": "Avoid using a web service with WebSocket inside a loop",
+        "name": "Ensure that the web-service calls made from the client are not inside a loop so that efficiency is not impacted due to communications overhead",
         "href": "AIP/quality-rules/1020012",
         "status": null,
         "critical": true,
@@ -136,7 +136,7 @@
     },
     {
         "id": 1020014,
-        "name": "Avoid using a web service with XMLHttpRequest inside a loop",
+        "name": "Ensure having a process queue that will manage all the requests with a limited number of concurrents when making calls to web services",
         "href": "AIP/quality-rules/1020014",
         "status": null,
         "critical": true,
@@ -146,7 +146,7 @@
     },
     {
         "id": 1020016,
-        "name": "Avoid using too much dot notation in loop",
+        "name": "Ensure to use intermediate variables for minimizing dot notations for references within a loop so that performance is not adversely impacted",
         "href": "AIP/quality-rules/1020016",
         "status": null,
         "critical": false,
@@ -156,7 +156,7 @@
     },
     {
         "id": 1020018,
-        "name": "Avoid using Web SQL databases",
+        "name": "Make sure that you do not use Web SQL databases",
         "href": "AIP/quality-rules/1020018",
         "status": null,
         "critical": true,
@@ -166,7 +166,7 @@
     },
     {
         "id": 1020020,
-        "name": "Avoid blocking page loading with synchronous Javascript import",
+        "name": "Use asynchronous loading of Javascript files or code to avoid a single point of failure in page loading",
         "href": "AIP/quality-rules/1020020",
         "status": null,
         "critical": false,
@@ -176,7 +176,7 @@
     },
     {
         "id": 1020022,
-        "name": "Avoid using submitted markup containing \"form\" and \"formaction\" attributes",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use form and formaction attributes in submitted markup",
         "href": "AIP/quality-rules/1020022",
         "status": null,
         "critical": true,
@@ -186,7 +186,7 @@
     },
     {
         "id": 1020024,
-        "name": "Avoid using submit markup related to \"form\" with id attribute",
+        "name": "Make sure the Html submit markup related to 'form' does not have id attribute to avoid to prevent cross site scripting",
         "href": "AIP/quality-rules/1020024",
         "status": null,
         "critical": true,
@@ -196,7 +196,7 @@
     },
     {
         "id": 1020026,
-        "name": "Avoid using autofocus and onfocus in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onfocus in submitted markup",
         "href": "AIP/quality-rules/1020026",
         "status": null,
         "critical": true,
@@ -206,7 +206,7 @@
     },
     {
         "id": 1020028,
-        "name": "Avoid using autofocus and onblur in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onblur in a submitted markup",
         "href": "AIP/quality-rules/1020028",
         "status": null,
         "critical": true,
@@ -216,7 +216,7 @@
     },
     {
         "id": 1020030,
-        "name": "Avoid using javascript or expression in the CSS file",
+        "name": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
         "href": "AIP/quality-rules/1020030",
         "status": null,
         "critical": true,
@@ -226,7 +226,7 @@
     },
     {
         "id": 1020032,
-        "name": "Avoid using video poster attributes in combination with javascript",
+        "name": "Make sure you do not use video poster attributes in combination with javascript to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020032",
         "status": null,
         "critical": true,
@@ -236,7 +236,7 @@
     },
     {
         "id": 1020034,
-        "name": "Avoid hosting HTML code in iframe srcdoc",
+        "name": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox to prevent XSS attacks that might slip through",
         "href": "AIP/quality-rules/1020034",
         "status": null,
         "critical": true,
@@ -246,7 +246,7 @@
     },
     {
         "id": 1020036,
-        "name": "Avoid using onscroll event with autofocus input",
+        "name": "Make sure you do not use onscroll event with autofocus input to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020036",
         "status": null,
         "critical": true,
@@ -256,7 +256,7 @@
     },
     {
         "id": 1020038,
-        "name": "Avoid defining and calling functions inside loops",
+        "name": "Ensure to assign a reference variable to a function output if it has to be used inside a loop to make performance better",
         "href": "AIP/quality-rules/1020038",
         "status": null,
         "critical": false,
@@ -276,7 +276,7 @@
     },
     {
         "id": 1020042,
-        "name": "Avoid having iframe inside a tag",
+        "name": "Ensure protection from Clickjacking by not using iframe inside a tag",
         "href": "AIP/quality-rules/1020042",
         "status": null,
         "critical": true,
@@ -286,7 +286,7 @@
     },
     {
         "id": 1020044,
-        "name": "Avoid using setData in ondragstart with attribute draggable set to true",
+        "name": "Make sure you do not allow text injection by using setData in ondragstart with attribute draggable set to true",
         "href": "AIP/quality-rules/1020044",
         "status": null,
         "critical": true,
@@ -296,7 +296,7 @@
     },
     {
         "id": 1020046,
-        "name": "Avoid using oninput in body containing input autofocus",
+        "name": "Make sure you do not use oninput in body containing input autofocus to prevent Cross Site Scripting on your page",
         "href": "AIP/quality-rules/1020046",
         "status": null,
         "critical": true,
@@ -306,7 +306,7 @@
     },
     {
         "id": 1020048,
-        "name": "Avoid using source tag in video/audio with event handler",
+        "name": "Make sure you do not use <Source> tag in video/audio event handlers to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020048",
         "status": null,
         "critical": true,
@@ -316,7 +316,7 @@
     },
     {
         "id": 1020050,
-        "name": "Avoid white-listing the \"dirname\" attribute in user generated content",
+        "name": "Avoid importing content from an untrusted source like dirname",
         "href": "AIP/quality-rules/1020050",
         "status": null,
         "critical": true,
@@ -326,7 +326,7 @@
     },
     {
         "id": 1020052,
-        "name": "Avoid using import with external URI",
+        "name": "Ensure you do not import content from an untrusted source and are limited to same origin to prevent Cross Site Scripting",
         "href": "AIP/quality-rules/1020052",
         "status": null,
         "critical": true,
@@ -336,7 +336,7 @@
     },
     {
         "id": 1020054,
-        "name": "Avoid using delete on arrays",
+        "name": "To delete or remove an index element from an array use splice, pop or shift rather than delete to prevent empty indexes",
         "href": "AIP/quality-rules/1020054",
         "status": null,
         "critical": false,
@@ -346,7 +346,7 @@
     },
     {
         "id": 1020056,
-        "name": "Avoid using Javascript Document.all collection",
+        "name": "Ensure using document.getElementById() instead of documetn.all to avoid slow loading of DOM elements",
         "href": "AIP/quality-rules/1020056",
         "status": null,
         "critical": false,
@@ -356,7 +356,7 @@
     },
     {
         "id": 1020058,
-        "name": "Avoid using eval() (Javascript)",
+        "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020058",
         "status": null,
         "critical": true,
@@ -366,7 +366,7 @@
     },
     {
         "id": 1020060,
-        "name": "Avoid using console.log()",
+        "name": "Ensure you remove console.log() in your production code",
         "href": "AIP/quality-rules/1020060",
         "status": null,
         "critical": false,
@@ -376,7 +376,7 @@
     },
     {
         "id": 1020062,
-        "name": "Avoid using non thread-safe Javascript singleton pattern",
+        "name": "Make sure that you have only one instance created in class constructor and it has been frozen to avoid any changes.",
         "href": "AIP/quality-rules/1020062",
         "status": null,
         "critical": false,
@@ -386,7 +386,7 @@
     },
     {
         "id": 1020064,
-        "name": "Avoid Superclass knowing Subclass (Javascript)",
+        "name": "Ensure that there are no references to subclass in the superclass to subdue complexity of your code",
         "href": "AIP/quality-rules/1020064",
         "status": null,
         "critical": false,
@@ -396,7 +396,7 @@
     },
     {
         "id": 1020066,
-        "name": "Avoid using Javascript Function constructor",
+        "name": "Ensure to not use Javascript Function constructor calling a string represented source code to prevent impaired performace",
         "href": "AIP/quality-rules/1020066",
         "status": null,
         "critical": false,
@@ -406,7 +406,7 @@
     },
     {
         "id": 1020068,
-        "name": "Avoid return statement in finally block (Javascript)",
+        "name": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
         "href": "AIP/quality-rules/1020068",
         "status": null,
         "critical": true,
@@ -416,7 +416,7 @@
     },
     {
         "id": 1020070,
-        "name": "Avoid hardcoded network resource names (Javascript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Javascript)",
         "href": "AIP/quality-rules/1020070",
         "status": null,
         "critical": false,
@@ -426,7 +426,7 @@
     },
     {
         "id": 1020072,
-        "name": "Avoid direct access to Database Tables in Javascript",
+        "name": "Make sure to not access the database from Javascript directly, instead create dedicated modules for the same",
         "href": "AIP/quality-rules/1020072",
         "status": null,
         "critical": false,
@@ -436,7 +436,7 @@
     },
     {
         "id": 1020074,
-        "name": "Avoid enabling autocomplete \"on\" for inputs/forms",
+        "name": "Ensure to disable the auto-complete feature in input forms, especially for fields such as passwords, to avoid access that should be unauthorized",
         "href": "AIP/quality-rules/1020074",
         "status": null,
         "critical": false,
@@ -446,7 +446,7 @@
     },
     {
         "id": 1020076,
-        "name": "Avoid Artifacts with too many parameters (Javascript)",
+        "name": "Aggregate method parameters into an object to improve readability and maintainability of your code",
         "href": "AIP/quality-rules/1020076",
         "status": null,
         "critical": false,
@@ -456,7 +456,7 @@
     },
     {
         "id": 1020078,
-        "name": "Avoid using setTimeout()",
+        "name": "Use an alternative to setTimeout(), or refactor your code to avoid security vulnerabilities",
         "href": "AIP/quality-rules/1020078",
         "status": null,
         "critical": true,
@@ -466,7 +466,7 @@
     },
     {
         "id": 1020080,
-        "name": "Avoid using setInterval()",
+        "name": "Use an alternative to setInterval(), or refactor your code to avoid security vulnerabilities",
         "href": "AIP/quality-rules/1020080",
         "status": null,
         "critical": true,
@@ -475,18 +475,8 @@
         ]
     },
     {
-        "id": 1020082,
-        "name": "Avoid undocumented Functions (Javascript)",
-        "href": "AIP/quality-rules/1020082",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "HTML5"
-        ]
-    },
-    {
         "id": 1020092,
-        "name": "Avoid direct definition of JavaScript Functions in a Web page (Javascript/HTML5)",
+        "name": "Move JavaScript functions from HTML file to a '.js' file",
         "href": "AIP/quality-rules/1020092",
         "status": null,
         "critical": false,
@@ -496,7 +486,7 @@
     },
     {
         "id": 1020094,
-        "name": "Avoid creating cookie without setting httpOnly option (Javascript)",
+        "name": "Always enable HttpOnly option when creating cookies so that sensitive information is not exposed to unsecured applications and domains",
         "href": "AIP/quality-rules/1020094",
         "status": null,
         "critical": true,
@@ -506,7 +496,7 @@
     },
     {
         "id": 1020096,
-        "name": "Avoid using unsecured cookie (Javascript)",
+        "name": "Make sure you are using Secure option for cookies so that Cross-Site-Scripting attacks can be prevented",
         "href": "AIP/quality-rules/1020096",
         "status": null,
         "critical": true,
@@ -516,7 +506,7 @@
     },
     {
         "id": 1020098,
-        "name": "Avoid creating cookie with overly broad path (Javascript)",
+        "name": "Ensure you do not allow access to all domain when defining cookie path",
         "href": "AIP/quality-rules/1020098",
         "status": null,
         "critical": true,
@@ -526,7 +516,7 @@
     },
     {
         "id": 1020100,
-        "name": "Avoid having cookie with an overly broad domain (Javascript)",
+        "name": "Make sure to accurately define the path of the web application/s for which this cookie is valid",
         "href": "AIP/quality-rules/1020100",
         "status": null,
         "critical": true,
@@ -536,7 +526,7 @@
     },
     {
         "id": 1020102,
-        "name": "Always use JSON.parse & JSON.stringify with try/catch block (Javascript)",
+        "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
         "href": "AIP/quality-rules/1020102",
         "status": null,
         "critical": false,
@@ -546,7 +536,7 @@
     },
     {
         "id": 1020104,
-        "name": "Avoid hardcoded passwords (Javascript)",
+        "name": "Ensure you don't hardcode password in the source file, hackers can steal the information by retro-engineering your application (Javascript)",
         "href": "AIP/quality-rules/1020104",
         "status": null,
         "critical": true,
@@ -556,7 +546,7 @@
     },
     {
         "id": 1020300,
-        "name": "Avoid using the call of web service jQuery ajax inside a loop",
+        "name": "Ensure you minize the number of web service ajax calls inside a loop",
         "href": "AIP/quality-rules/1020300",
         "status": null,
         "critical": true,
@@ -566,7 +556,7 @@
     },
     {
         "id": 1020302,
-        "name": "Avoid using element type in jQuery",
+        "name": "Ensure you don't use the element type in your selector when using class selectors in jQuery.",
         "href": "AIP/quality-rules/1020302",
         "status": null,
         "critical": false,
@@ -576,7 +566,7 @@
     },
     {
         "id": 1020306,
-        "name": "Always use find for Id->Child nested selectors",
+        "name": "Ensure using find for Id->Child nested selectors for better performance",
         "href": "AIP/quality-rules/1020306",
         "status": null,
         "critical": false,
@@ -586,7 +576,7 @@
     },
     {
         "id": 1020308,
-        "name": "Always cache the returned objects in variables to be reused",
+        "name": "Always cache your jQuery selector, based on class, returned objects in variables for reuse.",
         "href": "AIP/quality-rules/1020308",
         "status": null,
         "critical": false,
@@ -596,7 +586,7 @@
     },
     {
         "id": 1020310,
-        "name": "Use \"type=\" to select elements by type",
+        "name": "Prefer using \"type=\" notation instead of \":\".",
         "href": "AIP/quality-rules/1020310",
         "status": null,
         "critical": false,
@@ -606,7 +596,7 @@
     },
     {
         "id": 1020312,
-        "name": "Avoid use of anonymous functions to attach events",
+        "name": "Ensure not using anonymous functions to attach events because they are difficult to debug, maintain, test or reuse",
         "href": "AIP/quality-rules/1020312",
         "status": null,
         "critical": false,
@@ -616,7 +606,7 @@
     },
     {
         "id": 1020314,
-        "name": "Avoid using css() of many elements",
+        "name": "Ensure you don't manipulate stylesheet with css() method to avoid performance issue",
         "href": "AIP/quality-rules/1020314",
         "status": null,
         "critical": false,
@@ -626,7 +616,7 @@
     },
     {
         "id": 1020316,
-        "name": "Avoid Universal Selectors",
+        "name": "Ensure you don't universal selectors to avoid performance issue.",
         "href": "AIP/quality-rules/1020316",
         "status": null,
         "critical": false,
@@ -636,7 +626,7 @@
     },
     {
         "id": 1020318,
-        "name": "Avoid using jQuery deprecated methods",
+        "name": "Ensure you don't use officially jQuery deprecated methods",
         "href": "AIP/quality-rules/1020318",
         "status": null,
         "critical": false,
@@ -646,7 +636,7 @@
     },
     {
         "id": 1020320,
-        "name": "Avoid using jQuery $.cookie",
+        "name": "Ensure you don't use jQuery $.cookie because it is deprecated",
         "href": "AIP/quality-rules/1020320",
         "status": null,
         "critical": false,
@@ -656,7 +646,7 @@
     },
     {
         "id": 1020322,
-        "name": "Avoid using Ajax method without dataType with jQuery version older than 3.0.0",
+        "name": "Ensure you use Ajax method with dataType with jQuery version older than 3.0.0",
         "href": "AIP/quality-rules/1020322",
         "status": null,
         "critical": true,
@@ -666,7 +656,7 @@
     },
     {
         "id": 1020324,
-        "name": "Avoid using dialog with closeText parameter with jQuery UI version older than 1.12",
+        "name": "Ensure you use dialog with closeText parameter with jQuery UI version older than 1.12",
         "href": "AIP/quality-rules/1020324",
         "status": null,
         "critical": true,
@@ -676,7 +666,7 @@
     },
     {
         "id": 1020328,
-        "name": "Avoid using html() with jQuery 1.9.0 (or older)",
+        "name": "Ensure you don't use html() with jQuery 1.9.0 (or older)",
         "href": "AIP/quality-rules/1020328",
         "status": null,
         "critical": true,
@@ -686,7 +676,7 @@
     },
     {
         "id": 1020330,
-        "name": "Avoid using $(location.hash) with jQuery version older than 1.6.3",
+        "name": "Ensure you don't use $(location.hash) with jQuery version older than 1.6.3",
         "href": "AIP/quality-rules/1020330",
         "status": null,
         "critical": true,
@@ -696,7 +686,7 @@
     },
     {
         "id": 1020332,
-        "name": "Avoid using .append() after() with jQuery 1.4.2 (or older)",
+        "name": "Ensure you don't use .append() after() with jQuery 1.4.2 (or older)",
         "href": "AIP/quality-rules/1020332",
         "status": null,
         "critical": false,
@@ -706,7 +696,7 @@
     },
     {
         "id": 1020334,
-        "name": "Avoid using attr() with jQuery 3.0.0-rc1",
+        "name": "Ensure you don't use attr() with jQuery 3.0.0-rc1",
         "href": "AIP/quality-rules/1020334",
         "status": null,
         "critical": true,
@@ -716,7 +706,7 @@
     },
     {
         "id": 1020336,
-        "name": "Avoid using Dialog Widget with jQuery UI version older than 1.10.0",
+        "name": "Ensure you don't use Dialog widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020336",
         "status": null,
         "critical": true,
@@ -726,7 +716,7 @@
     },
     {
         "id": 1020338,
-        "name": "Avoid using Tooltip widget with jQuery UI version older than 1.10.0",
+        "name": "Ensure you don't use Tooltip widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020338",
         "status": null,
         "critical": true,
@@ -736,7 +726,7 @@
     },
     {
         "id": 1020340,
-        "name": "Always implement the success/error/complete or done/fail/always callbacks when using jQuery ajax call",
+        "name": "Ensure you have implemented expected $ajax callbacks",
         "href": "AIP/quality-rules/1020340",
         "status": null,
         "critical": true,
@@ -746,7 +736,7 @@
     },
     {
         "id": 1020342,
-        "name": "Avoid empty jQuery ajax error/fail blocks",
+        "name": "Ensure you have properly manage errors by using the error/fail callbacks",
         "href": "AIP/quality-rules/1020342",
         "status": null,
         "critical": true,
@@ -756,7 +746,7 @@
     },
     {
         "id": 1020450,
-        "name": "Ensure catching Javascript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020450",
         "status": null,
         "critical": false,
@@ -766,7 +756,7 @@
     },
     {
         "id": 1020452,
-        "name": "Avoid empty componentDidCatch blocks",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020452",
         "status": null,
         "critical": true,
@@ -776,7 +766,7 @@
     },
     {
         "id": 1020454,
-        "name": "Avoid using React dangerouslySetInnerHTML",
+        "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020454",
         "status": null,
         "critical": true,
@@ -786,7 +776,7 @@
     },
     {
         "id": 1020456,
-        "name": "Avoid using \"<script>\" tag in HTML template used by React.js components",
+        "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020456",
         "status": null,
         "critical": false,
@@ -796,7 +786,7 @@
     },
     {
         "id": 1020500,
-        "name": "Avoid the use of the default JavaScript implementation [].forEach in AngularJS web app",
+        "name": "Prefer using angular.forEach() instead of JS implementation [].forEach for an AngularJS app to enhance performace",
         "href": "AIP/quality-rules/1020500",
         "status": null,
         "critical": false,
@@ -806,7 +796,7 @@
     },
     {
         "id": 1020502,
-        "name": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
+        "name": "Prefer using angular.fromJson and angular.toJson instead of standard JS APIs to improve maintainability and robustness of your code",
         "href": "AIP/quality-rules/1020502",
         "status": null,
         "critical": false,
@@ -816,7 +806,7 @@
     },
     {
         "id": 1020504,
-        "name": "Avoid using the call of web service with AngularJS $http inside a loop",
+        "name": "Ensure that you are not making API/web service calls inside loops so that performance is not severely impacted",
         "href": "AIP/quality-rules/1020504",
         "status": null,
         "critical": true,
@@ -826,7 +816,7 @@
     },
     {
         "id": 1020506,
-        "name": "Avoid using $scope in controllers",
+        "name": "Prefer using 'this' instead of $scope in controllers to generate views to ensure consistency and structuredness in code",
         "href": "AIP/quality-rules/1020506",
         "status": null,
         "critical": false,
@@ -836,7 +826,7 @@
     },
     {
         "id": 1020508,
-        "name": "Use Angular wrapper service $document",
+        "name": "Prefer using AngularJS wrapper service $document to maintain structuredness of code",
         "href": "AIP/quality-rules/1020508",
         "status": null,
         "critical": false,
@@ -846,7 +836,7 @@
     },
     {
         "id": 1020510,
-        "name": "Use Angular wrapper service $window",
+        "name": "Prefer using AngularJS wrapper service $window to maintain structuredness of code",
         "href": "AIP/quality-rules/1020510",
         "status": null,
         "critical": false,
@@ -856,7 +846,7 @@
     },
     {
         "id": 1020512,
-        "name": "Use Angular wrapper service $timeout",
+        "name": "Prefer using AngularJS wrapper service $timeout to maintain structuredness of code",
         "href": "AIP/quality-rules/1020512",
         "status": null,
         "critical": false,
@@ -866,7 +856,7 @@
     },
     {
         "id": 1020514,
-        "name": "Only use the angular.isUndefined or angular.isDefined methods in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isDefined or angular.isUndefined to maintain structuredness of code",
         "href": "AIP/quality-rules/1020514",
         "status": null,
         "critical": false,
@@ -876,7 +866,7 @@
     },
     {
         "id": 1020516,
-        "name": "Avoid using Javascript Array typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isArray instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020516",
         "status": null,
         "critical": false,
@@ -886,7 +876,7 @@
     },
     {
         "id": 1020518,
-        "name": "Avoid using Javascript Date typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isDate instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020518",
         "status": null,
         "critical": false,
@@ -896,7 +886,7 @@
     },
     {
         "id": 1020520,
-        "name": "Avoid using Javascript Function typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isFunction instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020520",
         "status": null,
         "critical": false,
@@ -906,7 +896,7 @@
     },
     {
         "id": 1020522,
-        "name": "Avoid using Javascript String typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isString instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020522",
         "status": null,
         "critical": false,
@@ -916,7 +906,7 @@
     },
     {
         "id": 1020524,
-        "name": "Avoid using Javascript Object typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isObject instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020524",
         "status": null,
         "critical": false,
@@ -926,7 +916,7 @@
     },
     {
         "id": 1020526,
-        "name": "Avoid using Javascript Number typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isNumber instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020526",
         "status": null,
         "critical": false,
@@ -936,7 +926,7 @@
     },
     {
         "id": 1020528,
-        "name": "Avoid using Javascript Regexp typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isRegex instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020528",
         "status": null,
         "critical": false,
@@ -946,7 +936,7 @@
     },
     {
         "id": 1020530,
-        "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
+        "name": "Ensure that you do not use NOT operator with a logical check to prevent unexpected results",
         "href": "AIP/quality-rules/1020530",
         "status": null,
         "critical": false,
@@ -956,7 +946,7 @@
     },
     {
         "id": 1020532,
-        "name": "Use Angular factory() instead of service()",
+        "name": "Prefer using Factory() provider recipe instead of Service() to ensure structuredness and efficiency",
         "href": "AIP/quality-rules/1020532",
         "status": null,
         "critical": false,
@@ -966,7 +956,7 @@
     },
     {
         "id": 1020534,
-        "name": "Avoid using a web service with AngularJS $resource inside a loop",
+        "name": "Ensure that you are not using a web service inside loops so that performance is not severely impacted",
         "href": "AIP/quality-rules/1020534",
         "status": null,
         "critical": true,
@@ -976,7 +966,7 @@
     },
     {
         "id": 1020536,
-        "name": "Avoid using $ or jQuery, use angular.element instead",
+        "name": "Prefer using Angular wrapper service instead of using $ or Jquery.element to ensure structuredness",
         "href": "AIP/quality-rules/1020536",
         "status": null,
         "critical": false,
@@ -986,7 +976,7 @@
     },
     {
         "id": 1020538,
-        "name": "Avoid wrapping angular.element objects with jQuery or $",
+        "name": "Ensure that you do not use a jQuery wrapper on angular.element to ensure structuredness in code",
         "href": "AIP/quality-rules/1020538",
         "status": null,
         "critical": false,
@@ -996,7 +986,7 @@
     },
     {
         "id": 1020540,
-        "name": "Avoid using $http success and error function",
+        "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
         "href": "AIP/quality-rules/1020540",
         "status": null,
         "critical": false,
@@ -1006,7 +996,7 @@
     },
     {
         "id": 1020542,
-        "name": "Enable Content Security Policy when creating an AngularJS application",
+        "name": "Ensure activating Content-Security-Policy in you  angular applications to enforce client-side templates protection",
         "href": "AIP/quality-rules/1020542",
         "status": null,
         "critical": true,
@@ -1016,7 +1006,7 @@
     },
     {
         "id": 1020544,
-        "name": "Avoid disabling Strict Contextual Escaping (SCE) when created",
+        "name": "Ensure to keep enabled the Strict Contextual Escaping to make code secure by default and for easy auditing for vulnerabilities",
         "href": "AIP/quality-rules/1020544",
         "status": null,
         "critical": true,
@@ -1026,7 +1016,7 @@
     },
     {
         "id": 1020546,
-        "name": "Avoid using unsanitized AngularJS application",
+        "name": "Ensure to use $sanitize service in AngularJS apps to prevent Data Injection attacks",
         "href": "AIP/quality-rules/1020546",
         "status": null,
         "critical": true,
@@ -1036,7 +1026,7 @@
     },
     {
         "id": 1020548,
-        "name": "Avoid disabling withCredentials option for the httpProvider",
+        "name": "Make sure you do not disable withCredentials option for httpProvider",
         "href": "AIP/quality-rules/1020548",
         "status": null,
         "critical": true,
@@ -1046,7 +1036,7 @@
     },
     {
         "id": 1020550,
-        "name": "Avoid using \"ng-repeat\" loop without \"track by\" option",
+        "name": "Ensure your web application interactivity by using 'track by' option in 'ng-repeat' block",
         "href": "AIP/quality-rules/1020550",
         "status": null,
         "critical": false,
@@ -1056,7 +1046,7 @@
     },
     {
         "id": 1020552,
-        "name": "Avoid enabling dangerous protocols in whitelist APIs",
+        "name": "Make sure you do not allow 'Javascript' and 'http' as accepted protocols to avoid Cross-site-scripting",
         "href": "AIP/quality-rules/1020552",
         "status": null,
         "critical": false,
@@ -1066,7 +1056,7 @@
     },
     {
         "id": 1020700,
-        "name": "Avoid the lack of error handling in the Node.js callbacks",
+        "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
         "status": null,
         "critical": false,
@@ -1076,7 +1066,7 @@
     },
     {
         "id": 1020702,
-        "name": "Avoid using process.exit() without defining exitCode",
+        "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
         "status": null,
         "critical": false,
@@ -1086,7 +1076,7 @@
     },
     {
         "id": 1020704,
-        "name": "Avoid using string concatenation when using __dirname and __filename",
+        "name": "The variables \"__dirname\" and \"__filename\" should not be used in string concatenation to avoid having an invalid path",
         "href": "AIP/quality-rules/1020704",
         "status": null,
         "critical": false,
@@ -1096,7 +1086,7 @@
     },
     {
         "id": 1020706,
-        "name": "Ensure the Content-Security-Policy is activated (Node.js)",
+        "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020706",
         "status": null,
         "critical": true,
@@ -1106,7 +1096,7 @@
     },
     {
         "id": 1020708,
-        "name": "Ensure the X-Powered-By header is disabled",
+        "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020708",
         "status": null,
         "critical": true,
@@ -1116,7 +1106,7 @@
     },
     {
         "id": 1020710,
-        "name": "Ensure the X-XSS-Protection header is enabled",
+        "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "status": null,
         "critical": true,
@@ -1126,7 +1116,7 @@
     },
     {
         "id": 1020712,
-        "name": "Ensure the X-Frame-Options header is setup (Node.js)",
+        "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020712",
         "status": null,
         "critical": true,
@@ -1136,7 +1126,7 @@
     },
     {
         "id": 1020714,
-        "name": "Avoid having multiple routes for the same path with Node.js Express App",
+        "name": "Ensure having only one routing handler per path to avoid an efficiency issue",
         "href": "AIP/quality-rules/1020714",
         "status": null,
         "critical": true,
@@ -1146,7 +1136,7 @@
     },
     {
         "id": 1020716,
-        "name": "Avoid using the call of web service with Node.js http.get or http.request inside a loop",
+        "name": "\u201chttp.get\u201d or \u201chttp.request\u201d should not be used inside a loop to optimize the number of calls between the client application and web service server",
         "href": "AIP/quality-rules/1020716",
         "status": null,
         "critical": true,
@@ -1156,7 +1146,7 @@
     },
     {
         "id": 1020718,
-        "name": "Ensure that browser cannot cache or store a page",
+        "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020718",
         "status": null,
         "critical": false,
@@ -1166,7 +1156,7 @@
     },
     {
         "id": 1020720,
-        "name": "Avoid unsecure connection to the Node.js server",
+        "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020720",
         "status": null,
         "critical": true,
@@ -1176,7 +1166,7 @@
     },
     {
         "id": 1020722,
-        "name": "Avoid enabling unsecure Node.js server",
+        "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020722",
         "status": null,
         "critical": true,
@@ -1186,7 +1176,7 @@
     },
     {
         "id": 1020724,
-        "name": "Ensure that marked is sanitized",
+        "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
         "href": "AIP/quality-rules/1020724",
         "status": null,
         "critical": true,
@@ -1196,7 +1186,7 @@
     },
     {
         "id": 1020726,
-        "name": "Ensure that CSRF Protection is enabled (Node.js)",
+        "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020726",
         "status": null,
         "critical": true,
@@ -1206,7 +1196,7 @@
     },
     {
         "id": 1020728,
-        "name": "Avoid creating cookie without setting httpOnly option (Node.js)",
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020728",
         "status": null,
         "critical": true,
@@ -1216,7 +1206,7 @@
     },
     {
         "id": 1020730,
-        "name": "Ensure Node.js filesystem are closed",
+        "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
         "href": "AIP/quality-rules/1020730",
         "status": null,
         "critical": false,
@@ -1226,7 +1216,7 @@
     },
     {
         "id": 1020732,
-        "name": "Avoid using risky cryptographic hash (Node.js)",
+        "name": "Ensure not using MD5/SHA1 hashes for cryptographic functions of NodeJs to avoid sensitive data being compromised",
         "href": "AIP/quality-rules/1020732",
         "status": null,
         "critical": false,
@@ -1236,7 +1226,7 @@
     },
     {
         "id": 1020734,
-        "name": "Avoid using unsecured cookie (Node.js)",
+        "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020734",
         "status": null,
         "critical": true,
@@ -1246,7 +1236,7 @@
     },
     {
         "id": 1020736,
-        "name": "Avoid bypassing self-signed ssl certificate (Node.js)",
+        "name": "Ensure enabling NODE_TLS_REJECT_UNAUTHORIZED attributes allowing rejecting self signed certificates",
         "href": "AIP/quality-rules/1020736",
         "status": null,
         "critical": true,
@@ -1256,7 +1246,7 @@
     },
     {
         "id": 1020738,
-        "name": "Avoid disabling SSL verification in node-curl",
+        "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020738",
         "status": null,
         "critical": true,
@@ -1266,7 +1256,7 @@
     },
     {
         "id": 1020740,
-        "name": "Avoid creating cookie with overly broad path (Node.js)",
+        "name": "Ensure you do not allow access to all domain when defining cookie path (Node.js)",
         "href": "AIP/quality-rules/1020740",
         "status": null,
         "critical": true,
@@ -1286,7 +1276,7 @@
     },
     {
         "id": 1020748,
-        "name": "Avoid using the call of data service with Node.js inside a loop",
+        "name": "Ensure you minize the number of api call especially inside a loop",
         "href": "AIP/quality-rules/1020748",
         "status": null,
         "critical": true,
@@ -1296,7 +1286,7 @@
     },
     {
         "id": 1020800,
-        "name": "Avoid jump statements in finally ",
+        "name": "Avoid jump statements in finally",
         "href": "AIP/quality-rules/1020800",
         "status": null,
         "critical": false,
@@ -1306,7 +1296,7 @@
     },
     {
         "id": 1020802,
-        "name": "Avoid having errors without throwing them ",
+        "name": "Always throw all created error.",
         "href": "AIP/quality-rules/1020802",
         "status": null,
         "critical": false,
@@ -1316,7 +1306,7 @@
     },
     {
         "id": 1020804,
-        "name": "Avoid using console logging ",
+        "name": "Prefer refactoring the source code  instead of using console logging",
         "href": "AIP/quality-rules/1020804",
         "status": null,
         "critical": false,
@@ -1326,7 +1316,7 @@
     },
     {
         "id": 1020806,
-        "name": "Avoid using NaN in comparison ",
+        "name": "Preferusing  Number.isNaN() instead NaN in comparison",
         "href": "AIP/quality-rules/1020806",
         "status": null,
         "critical": false,
@@ -1336,7 +1326,7 @@
     },
     {
         "id": 1020808,
-        "name": "Avoid using eval() (Typescript)",
+        "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020808",
         "status": null,
         "critical": true,
@@ -1346,7 +1336,7 @@
     },
     {
         "id": 1020810,
-        "name": "Avoid bypassing angular security trust ",
+        "name": "Ensure not adding unchecked HTML by not using one of these methods: bypassSecurityTrustHtml, bypassSecurityTrustStyle, bypassSecurityTrustScript, bypassSecurityTrustUrl, bypassSecurityTrustResourceUrl",
         "href": "AIP/quality-rules/1020810",
         "status": null,
         "critical": true,
@@ -1356,7 +1346,7 @@
     },
     {
         "id": 1020812,
-        "name": "Avoid invoking super more than once in constructor ",
+        "name": "Invoking super should be done only once in constructor",
         "href": "AIP/quality-rules/1020812",
         "status": null,
         "critical": false,
@@ -1366,7 +1356,7 @@
     },
     {
         "id": 1020814,
-        "name": "Avoid using web service calls inside a loop",
+        "name": "",
         "href": "AIP/quality-rules/1020814",
         "status": null,
         "critical": true,
@@ -1376,7 +1366,7 @@
     },
     {
         "id": 1020816,
-        "name": "Avoid using output of the function that does not return anything",
+        "name": "Ensure that you have not using output of the function that does not return anything",
         "href": "AIP/quality-rules/1020816",
         "status": null,
         "critical": false,
@@ -1386,7 +1376,7 @@
     },
     {
         "id": 1020818,
-        "name": "Avoid disabling xsrf check in HttpClientXsrfModule",
+        "name": "xsrf check should be enabled in HttpClientXsrfModule module to activate Cross-Site forgery protection.",
         "href": "AIP/quality-rules/1020818",
         "status": null,
         "critical": true,
@@ -1396,7 +1386,7 @@
     },
     {
         "id": 1020820,
-        "name": "Avoid hardcoded passwords (TypeScript)",
+        "name": "Ensure you don't hardcode password in the source file, hackers can steal the information by retro-engineering your application (Typescript)",
         "href": "AIP/quality-rules/1020820",
         "status": null,
         "critical": true,
@@ -1406,7 +1396,7 @@
     },
     {
         "id": 1020822,
-        "name": "Always provide error callbacks when subscribing to HttpClient observables",
+        "name": "Ensure that you provide an error callback to the HttpClient  ubscribe method.",
         "href": "AIP/quality-rules/1020822",
         "status": null,
         "critical": false,
@@ -1416,7 +1406,7 @@
     },
     {
         "id": 1020824,
-        "name": "Avoid Superclass knowing Subclass (Typescript)",
+        "name": "Always ensure Superclass not knowing Subclass",
         "href": "AIP/quality-rules/1020824",
         "status": null,
         "critical": false,
@@ -1426,7 +1416,7 @@
     },
     {
         "id": 1020826,
-        "name": "Avoid hardcoded network resource names (Typescript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Typescript)",
         "href": "AIP/quality-rules/1020826",
         "status": null,
         "critical": false,
@@ -1436,7 +1426,7 @@
     },
     {
         "id": 1020828,
-        "name": "Avoid String concatenation in loops (Typescript)",
+        "name": "Always ensure not using the concatenation of the strings in a loop as  a costly operation.",
         "href": "AIP/quality-rules/1020828",
         "status": null,
         "critical": false,
@@ -1446,7 +1436,7 @@
     },
     {
         "id": 1020830,
-        "name": "Avoid using Angular ElementRef API to manipulate DOM",
+        "name": "Prefer using Angular Renderer2 instead of directly interacting with the DOM",
         "href": "AIP/quality-rules/1020830",
         "status": null,
         "critical": false,
@@ -1456,7 +1446,7 @@
     },
     {
         "id": 1020832,
-        "name": "Avoid using javascript HTTP request in Angular Application",
+        "name": "Always prefer using HttpClient Angular Module instead of using javascript HTTP request to avoid JSON vulnerability",
         "href": "AIP/quality-rules/1020832",
         "status": null,
         "critical": true,
@@ -1466,7 +1456,7 @@
     },
     {
         "id": 1020834,
-        "name": "Avoid using \"<script>\" tag into HTML template used by Angular Application",
+        "name": "Ensure you don't inject javascript code with  \"<script>\" tag into HTML template",
         "href": "AIP/quality-rules/1020834",
         "status": null,
         "critical": false,
@@ -1476,7 +1466,7 @@
     },
     {
         "id": 1020836,
-        "name": "Avoid exporting namespaces",
+        "name": "Always prefer using modules over namespaces for structuring you code instead of exporting namespaces",
         "href": "AIP/quality-rules/1020836",
         "status": null,
         "critical": false,
@@ -1486,7 +1476,7 @@
     },
     {
         "id": 1020838,
-        "name": "Avoid using Rx.observable.fromEvent without having a debouncetime set",
+        "name": "Ensure you have provided a debounceTime after calling an Observable with using Rx.observable.fromEvent",
         "href": "AIP/quality-rules/1020838",
         "status": null,
         "critical": false,
@@ -1496,7 +1486,7 @@
     },
     {
         "id": 1020840,
-        "name": "Avoid using ngFor loop without TrackBy option",
+        "name": "Ensure you have added \"track by\" syntax into your ngFor block",
         "href": "AIP/quality-rules/1020840",
         "status": null,
         "critical": false,
@@ -1506,7 +1496,7 @@
     },
     {
         "id": 1020848,
-        "name": "Always favour pipable operators in RxJS",
+        "name": "Always ensuure using \"pipeable\" operators which can be imported from \"rxjs/operators\" instead of \"patch\" operator",
         "href": "AIP/quality-rules/1020848",
         "status": null,
         "critical": false,
@@ -1516,7 +1506,7 @@
     },
     {
         "id": 1020852,
-        "name": "Avoid using \"<script>\" tag in HTML template used by React.js components (Typescript)",
+        "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020852",
         "status": null,
         "critical": false,
@@ -1526,7 +1516,7 @@
     },
     {
         "id": 1020854,
-        "name": "Avoid using React dangerouslySetInnerHTML (Typescript)",
+        "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020854",
         "status": null,
         "critical": true,
@@ -1536,7 +1526,7 @@
     },
     {
         "id": 1020856,
-        "name": "Ensure catching Typescript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020856",
         "status": null,
         "critical": false,
@@ -1546,7 +1536,7 @@
     },
     {
         "id": 1020858,
-        "name": "Avoid empty componentDidCatch blocks (Typescript)",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020858",
         "status": null,
         "critical": true,

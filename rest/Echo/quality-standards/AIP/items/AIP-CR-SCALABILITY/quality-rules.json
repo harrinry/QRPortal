@@ -23,7 +23,7 @@
     },
     {
         "id": 4694,
-        "name": "Avoid using 'System.gc'",
+        "name": "Ensure  let the system decide when it needs to collect the heap, and whether or not to do a full collection",
         "href": "AIP/quality-rules/4694",
         "status": null,
         "critical": false,
@@ -33,7 +33,7 @@
     },
     {
         "id": 4744,
-        "name": "EJB Entity access through their local Interface",
+        "name": "Ensure that EJB Entities are accessed through their local  Interface instead of their remote interface.",
         "href": "AIP/quality-rules/4744",
         "status": null,
         "critical": true,
@@ -43,7 +43,7 @@
     },
     {
         "id": 4746,
-        "name": "EJB Session access through their local Interface",
+        "name": "Ensure that EJB Session are accessed through their local remote Interface instead of their remote Interface",
         "href": "AIP/quality-rules/4746",
         "status": null,
         "critical": true,
@@ -53,7 +53,7 @@
     },
     {
         "id": 7196,
-        "name": "Avoid large number of String concatenation (JEE)",
+        "name": "Ensure to use StringBuffer and StringBuffer.append() method instead",
         "href": "AIP/quality-rules/7196",
         "status": null,
         "critical": false,
@@ -63,7 +63,7 @@
     },
     {
         "id": 7200,
-        "name": "Avoid String concatenation in loops (JEE)",
+        "name": "Ensure to create a StringBuilder or StringBuffer before entering the loop",
         "href": "AIP/quality-rules/7200",
         "status": null,
         "critical": false,
@@ -83,7 +83,7 @@
     },
     {
         "id": 7210,
-        "name": "Avoid instantiations inside loops",
+        "name": "Ensure to not do object initialization inside a loop since it reduces performance",
         "href": "AIP/quality-rules/7210",
         "status": null,
         "critical": true,
@@ -93,7 +93,7 @@
     },
     {
         "id": 7250,
-        "name": "Avoid String initialization with String object (created using the 'new' keyword)",
+        "name": "Ensure to initialize the String it with the literal.",
         "href": "AIP/quality-rules/7250",
         "status": null,
         "critical": false,
@@ -113,7 +113,7 @@
     },
     {
         "id": 7638,
-        "name": "Avoid using DriverManager",
+        "name": "Ensure not using DriverManager",
         "href": "AIP/quality-rules/7638",
         "status": null,
         "critical": false,
@@ -123,7 +123,7 @@
     },
     {
         "id": 7720,
-        "name": "Avoid too many EJB bean",
+        "name": "Ensure that too many EJB bean are not used",
         "href": "AIP/quality-rules/7720",
         "status": null,
         "critical": true,
@@ -133,7 +133,7 @@
     },
     {
         "id": 7936,
-        "name": "Avoid using finalize()",
+        "name": "Ensure that finalize() is not used as the time of execution is not garanteed",
         "href": "AIP/quality-rules/7936",
         "status": null,
         "critical": true,
@@ -143,7 +143,7 @@
     },
     {
         "id": 7940,
-        "name": "Avoid Stateful Beans not removed",
+        "name": "Ensure that Stateful Beans not removed are not used as they lead to an accumulation",
         "href": "AIP/quality-rules/7940",
         "status": null,
         "critical": true,
@@ -175,7 +175,7 @@
     },
     {
         "id": 8100,
-        "name": "Blocking synchronous calls should have associated timeouts",
+        "name": "Ensure setting timeouts for blocking synchronous calls to prevent an infinite waiting time",
         "href": "AIP/quality-rules/8100",
         "status": null,
         "critical": false,
@@ -185,7 +185,7 @@
     },
     {
         "id": 8104,
-        "name": "Close database resources ASAP",
+        "name": "Ensure you have released your SQL connection after an effective lifetime",
         "href": "AIP/quality-rules/8104",
         "status": null,
         "critical": true,
@@ -195,7 +195,7 @@
     },
     {
         "id": 8108,
-        "name": "Close the outermost stream ASAP",
+        "name": "Ensure you have released your stream connection after an effective lifetime",
         "href": "AIP/quality-rules/8108",
         "status": null,
         "critical": true,

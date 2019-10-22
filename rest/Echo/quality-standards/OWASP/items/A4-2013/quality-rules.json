@@ -1,7 +1,7 @@
 [
     {
         "id": 2236,
-        "name": "Avoid use of standard SQL API",
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
         "href": "AIP/quality-rules/2236",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1040010,
-        "name": "Always delete the cookies during the logout",
+        "name": "Ensure cleaning the cookies during the logout to avoid them to be used by another web application",
         "href": "AIP/quality-rules/1040010",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1040012,
-        "name": "HTTP user session must be invalidated during logout",
+        "name": "Ensure invalidating HTTP Session during logout to avoid broken Authentication",
         "href": "AIP/quality-rules/1040012",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 1042010,
-        "name": "Avoid using ParametersInterceptor with class parameter for Struts 2.3.16 (and older)",
+        "name": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
         "href": "AIP/quality-rules/1042010",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 1042022,
-        "name": "Avoid using CookieInterceptor with Struts 2.3.16 (and Older)",
+        "name": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
         "href": "AIP/quality-rules/1042022",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1042026,
-        "name": "Avoid Action Mapping based on wildcards with Struts 2.3.14.2 and older",
+        "name": "Ensure note using wildcards for action mapping name to avoid executing arbitrary Java code on server side",
         "href": "AIP/quality-rules/1042026",
         "status": null,
         "critical": true,

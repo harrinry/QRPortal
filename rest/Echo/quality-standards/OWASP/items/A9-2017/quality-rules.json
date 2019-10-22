@@ -1,7 +1,7 @@
 [
     {
         "id": 1020018,
-        "name": "Avoid using Web SQL databases",
+        "name": "Make sure that you do not use Web SQL databases",
         "href": "AIP/quality-rules/1020018",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 1020320,
-        "name": "Avoid using jQuery $.cookie",
+        "name": "Ensure you don't use jQuery $.cookie because it is deprecated",
         "href": "AIP/quality-rules/1020320",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1020322,
-        "name": "Avoid using Ajax method without dataType with jQuery version older than 3.0.0",
+        "name": "Ensure you use Ajax method with dataType with jQuery version older than 3.0.0",
         "href": "AIP/quality-rules/1020322",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1020324,
-        "name": "Avoid using dialog with closeText parameter with jQuery UI version older than 1.12",
+        "name": "Ensure you use dialog with closeText parameter with jQuery UI version older than 1.12",
         "href": "AIP/quality-rules/1020324",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 1020328,
-        "name": "Avoid using html() with jQuery 1.9.0 (or older)",
+        "name": "Ensure you don't use html() with jQuery 1.9.0 (or older)",
         "href": "AIP/quality-rules/1020328",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 1020330,
-        "name": "Avoid using $(location.hash) with jQuery version older than 1.6.3",
+        "name": "Ensure you don't use $(location.hash) with jQuery version older than 1.6.3",
         "href": "AIP/quality-rules/1020330",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1020332,
-        "name": "Avoid using .append() after() with jQuery 1.4.2 (or older)",
+        "name": "Ensure you don't use .append() after() with jQuery 1.4.2 (or older)",
         "href": "AIP/quality-rules/1020332",
         "status": null,
         "critical": false,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1020334,
-        "name": "Avoid using attr() with jQuery 3.0.0-rc1",
+        "name": "Ensure you don't use attr() with jQuery 3.0.0-rc1",
         "href": "AIP/quality-rules/1020334",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1020336,
-        "name": "Avoid using Dialog Widget with jQuery UI version older than 1.10.0",
+        "name": "Ensure you don't use Dialog widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020336",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 1020338,
-        "name": "Avoid using Tooltip widget with jQuery UI version older than 1.10.0",
+        "name": "Ensure you don't use Tooltip widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020338",
         "status": null,
         "critical": true,
@@ -101,7 +101,7 @@
     },
     {
         "id": 1039044,
-        "name": "Avoid usage of BannedAPI when using ESAPI library",
+        "name": "BannedAPI should not be used because they are considered deprecated and unsafe",
         "href": "AIP/quality-rules/1039044",
         "status": null,
         "critical": false,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1042010,
-        "name": "Avoid using ParametersInterceptor with class parameter for Struts 2.3.16 (and older)",
+        "name": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
         "href": "AIP/quality-rules/1042010",
         "status": null,
         "critical": true,
@@ -121,7 +121,7 @@
     },
     {
         "id": 1042022,
-        "name": "Avoid using CookieInterceptor with Struts 2.3.16 (and Older)",
+        "name": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
         "href": "AIP/quality-rules/1042022",
         "status": null,
         "critical": true,
@@ -131,7 +131,7 @@
     },
     {
         "id": 1042026,
-        "name": "Avoid Action Mapping based on wildcards with Struts 2.3.14.2 and older",
+        "name": "Ensure note using wildcards for action mapping name to avoid executing arbitrary Java code on server side",
         "href": "AIP/quality-rules/1042026",
         "status": null,
         "critical": true,
@@ -141,7 +141,7 @@
     },
     {
         "id": 1042028,
-        "name": "Avoid activating alwaysSelectFullNamespace when actions configured without namespace or with a wildcard namespace for Struts pre 2.3.34 and pre 2.5.1",
+        "name": "configured without namespace or with wildcard namespace is vulnerable to remote code execution attack",
         "href": "AIP/quality-rules/1042028",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 1042030,
-        "name": "Avoid using Default exclude patterns (excludeParams) for Struts 2.3.20 ( and older)",
+        "name": "Ensure not using excludeParams for Struts 2.3.20 ( and older) to avoid",
         "href": "AIP/quality-rules/1042030",
         "status": null,
         "critical": false,
@@ -161,7 +161,7 @@
     },
     {
         "id": 1042036,
-        "name": "Avoid Long request parameter names in Struts 2.0.0 - struts 2.3.4",
+        "name": "Prefer using short request parameter name to prevent the DOS attack",
         "href": "AIP/quality-rules/1042036",
         "status": null,
         "critical": false,
@@ -171,7 +171,7 @@
     },
     {
         "id": 1042040,
-        "name": "Avoid using Struts URLValidator with version before 2.5.13",
+        "name": "Ensure you are using Struts URLValidator with at least version 2.5.13 or 2.3.34",
         "href": "AIP/quality-rules/1042040",
         "status": null,
         "critical": true,
@@ -181,7 +181,7 @@
     },
     {
         "id": 1042042,
-        "name": "Avoid using Rest Plugin with XStream handler to deserialise XML requests in Struts 2.1.2 - Struts 2.3.33, Struts 2.5 - Struts 2.5.12",
+        "name": "Using invoking dataHandler.createXStream method with type filtering to Remote Code Execution when deserializing XML payloads",
         "href": "AIP/quality-rules/1042042",
         "status": null,
         "critical": true,
@@ -191,7 +191,7 @@
     },
     {
         "id": 1042046,
-        "name": "Avoid Using Dynamic Method Invocation for Apache Struts 2.x",
+        "name": "Using Dynamic Method Invocation for Apache Struts 2.x allows remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
         "href": "AIP/quality-rules/1042046",
         "status": null,
         "critical": true,
@@ -201,7 +201,7 @@
     },
     {
         "id": 1042050,
-        "name": "Avoid using special top object in struts 2.0.0 - struts 2.3.24",
+        "name": "Ensure you have upgraded your Struts framework 2.3.24.1 and above if you use special top object",
         "href": "AIP/quality-rules/1042050",
         "status": null,
         "critical": true,
@@ -211,7 +211,7 @@
     },
     {
         "id": 1042052,
-        "name": "Avoid using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
+        "name": "Ensure not using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
         "href": "AIP/quality-rules/1042052",
         "status": null,
         "critical": true,

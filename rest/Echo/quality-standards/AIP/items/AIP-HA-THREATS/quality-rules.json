@@ -1,7 +1,7 @@
 [
     {
         "id": 7150,
-        "name": "Favor PreparedStatement or CallableStatement over Statement",
+        "name": "Prefer using PreparedStatement or CallableStatement over CreateStatement to prevent SQL Injection Attacks",
         "href": "AIP/quality-rules/7150",
         "status": null,
         "critical": false,
@@ -11,7 +11,7 @@
     },
     {
         "id": 7362,
-        "name": "Avoid action mappings validator turned off",
+        "name": "Ensure to have the validation activated",
         "href": "AIP/quality-rules/7362",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 7372,
-        "name": "Enable Struts Validator plugin",
+        "name": "Ensure to update your application's struts-config.xml file with the Validator plugin declaration",
         "href": "AIP/quality-rules/7372",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 7380,
-        "name": "Avoid unused validation form",
+        "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7380",
         "status": null,
         "critical": false,
@@ -41,7 +41,7 @@
     },
     {
         "id": 7382,
-        "name": "Avoid Validator field without Form Field",
+        "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7382",
         "status": null,
         "critical": false,
@@ -51,7 +51,7 @@
     },
     {
         "id": 7732,
-        "name": "Avoid non validated inputs",
+        "name": "Ensure all the inputs are validated",
         "href": "AIP/quality-rules/7732",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 7742,
-        "name": "Avoid SQL injection vulnerabilities",
+        "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/7742",
         "status": null,
         "critical": true,
@@ -111,7 +111,7 @@
     },
     {
         "id": 7752,
-        "name": "Avoid file path manipulation vulnerabilities",
+        "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/7752",
         "status": null,
         "critical": true,
@@ -121,7 +121,7 @@
     },
     {
         "id": 8038,
-        "name": "Avoid Struts 2 Validator field not referencing a java class field",
+        "name": "Ensure that Struts 2 Validator field not referencing a java class field is not used as it leads to security weakness",
         "href": "AIP/quality-rules/8038",
         "status": null,
         "critical": false,
@@ -131,7 +131,7 @@
     },
     {
         "id": 8042,
-        "name": "Struts 2 Validation: Avoid unused validation form",
+        "name": "Ensure all defined validation forms are used",
         "href": "AIP/quality-rules/8042",
         "status": null,
         "critical": false,
@@ -141,7 +141,7 @@
     },
     {
         "id": 8044,
-        "name": "Avoid log forging vulnerabilities",
+        "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 8098,
-        "name": "Avoid uncontrolled format string",
+        "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8098",
         "status": null,
         "critical": true,
@@ -161,7 +161,7 @@
     },
     {
         "id": 8222,
-        "name": "Avoid hard-coded credentials",
+        "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "status": null,
         "critical": true,
@@ -171,7 +171,7 @@
     },
     {
         "id": 8434,
-        "name": "Avoid process control",
+        "name": "Ensure you don't use external library given by unsanitized user input",
         "href": "AIP/quality-rules/8434",
         "status": null,
         "critical": true,
@@ -181,7 +181,7 @@
     },
     {
         "id": 8436,
-        "name": "Avoid thread injection vulnerabilities",
+        "name": "Ensure your application does not process thread with unsanitized stream",
         "href": "AIP/quality-rules/8436",
         "status": null,
         "critical": true,
@@ -191,7 +191,7 @@
     },
     {
         "id": 8438,
-        "name": "Avoid code injection",
+        "name": "Ensure your application does not evaluate unsanitized code.",
         "href": "AIP/quality-rules/8438",
         "status": null,
         "critical": true,
@@ -201,7 +201,7 @@
     },
     {
         "id": 8440,
-        "name": "Avoid reflection injection",
+        "name": "Ensure you have sanitized the data received to be reflected in your application",
         "href": "AIP/quality-rules/8440",
         "status": null,
         "critical": true,
@@ -211,7 +211,7 @@
     },
     {
         "id": 8442,
-        "name": "Avoid resource injection",
+        "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8442",
         "status": null,
         "critical": true,
@@ -221,7 +221,7 @@
     },
     {
         "id": 8444,
-        "name": "Avoid resource URL manipulation",
+        "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8444",
         "status": null,
         "critical": true,
@@ -231,7 +231,7 @@
     },
     {
         "id": 1020022,
-        "name": "Avoid using submitted markup containing \"form\" and \"formaction\" attributes",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use form and formaction attributes in submitted markup",
         "href": "AIP/quality-rules/1020022",
         "status": null,
         "critical": true,
@@ -241,7 +241,7 @@
     },
     {
         "id": 1020024,
-        "name": "Avoid using submit markup related to \"form\" with id attribute",
+        "name": "Make sure the Html submit markup related to 'form' does not have id attribute to avoid to prevent cross site scripting",
         "href": "AIP/quality-rules/1020024",
         "status": null,
         "critical": true,
@@ -251,7 +251,7 @@
     },
     {
         "id": 1020026,
-        "name": "Avoid using autofocus and onfocus in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onfocus in submitted markup",
         "href": "AIP/quality-rules/1020026",
         "status": null,
         "critical": true,
@@ -261,7 +261,7 @@
     },
     {
         "id": 1020028,
-        "name": "Avoid using autofocus and onblur in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onblur in a submitted markup",
         "href": "AIP/quality-rules/1020028",
         "status": null,
         "critical": true,
@@ -271,7 +271,7 @@
     },
     {
         "id": 1020030,
-        "name": "Avoid using javascript or expression in the CSS file",
+        "name": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
         "href": "AIP/quality-rules/1020030",
         "status": null,
         "critical": true,
@@ -281,7 +281,7 @@
     },
     {
         "id": 1020032,
-        "name": "Avoid using video poster attributes in combination with javascript",
+        "name": "Make sure you do not use video poster attributes in combination with javascript to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020032",
         "status": null,
         "critical": true,
@@ -291,7 +291,7 @@
     },
     {
         "id": 1020034,
-        "name": "Avoid hosting HTML code in iframe srcdoc",
+        "name": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox to prevent XSS attacks that might slip through",
         "href": "AIP/quality-rules/1020034",
         "status": null,
         "critical": true,
@@ -301,7 +301,7 @@
     },
     {
         "id": 1020036,
-        "name": "Avoid using onscroll event with autofocus input",
+        "name": "Make sure you do not use onscroll event with autofocus input to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020036",
         "status": null,
         "critical": true,
@@ -311,7 +311,7 @@
     },
     {
         "id": 1020042,
-        "name": "Avoid having iframe inside a tag",
+        "name": "Ensure protection from Clickjacking by not using iframe inside a tag",
         "href": "AIP/quality-rules/1020042",
         "status": null,
         "critical": true,
@@ -321,7 +321,7 @@
     },
     {
         "id": 1020044,
-        "name": "Avoid using setData in ondragstart with attribute draggable set to true",
+        "name": "Make sure you do not allow text injection by using setData in ondragstart with attribute draggable set to true",
         "href": "AIP/quality-rules/1020044",
         "status": null,
         "critical": true,
@@ -331,7 +331,7 @@
     },
     {
         "id": 1020046,
-        "name": "Avoid using oninput in body containing input autofocus",
+        "name": "Make sure you do not use oninput in body containing input autofocus to prevent Cross Site Scripting on your page",
         "href": "AIP/quality-rules/1020046",
         "status": null,
         "critical": true,
@@ -341,7 +341,7 @@
     },
     {
         "id": 1020048,
-        "name": "Avoid using source tag in video/audio with event handler",
+        "name": "Make sure you do not use <Source> tag in video/audio event handlers to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020048",
         "status": null,
         "critical": true,
@@ -351,7 +351,7 @@
     },
     {
         "id": 1020050,
-        "name": "Avoid white-listing the \"dirname\" attribute in user generated content",
+        "name": "Avoid importing content from an untrusted source like dirname",
         "href": "AIP/quality-rules/1020050",
         "status": null,
         "critical": true,
@@ -361,7 +361,7 @@
     },
     {
         "id": 1020052,
-        "name": "Avoid using import with external URI",
+        "name": "Ensure you do not import content from an untrusted source and are limited to same origin to prevent Cross Site Scripting",
         "href": "AIP/quality-rules/1020052",
         "status": null,
         "critical": true,
@@ -371,7 +371,7 @@
     },
     {
         "id": 1020058,
-        "name": "Avoid using eval() (Javascript)",
+        "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020058",
         "status": null,
         "critical": true,
@@ -381,7 +381,7 @@
     },
     {
         "id": 1020074,
-        "name": "Avoid enabling autocomplete \"on\" for inputs/forms",
+        "name": "Ensure to disable the auto-complete feature in input forms, especially for fields such as passwords, to avoid access that should be unauthorized",
         "href": "AIP/quality-rules/1020074",
         "status": null,
         "critical": false,
@@ -391,7 +391,7 @@
     },
     {
         "id": 1020078,
-        "name": "Avoid using setTimeout()",
+        "name": "Use an alternative to setTimeout(), or refactor your code to avoid security vulnerabilities",
         "href": "AIP/quality-rules/1020078",
         "status": null,
         "critical": true,
@@ -401,7 +401,7 @@
     },
     {
         "id": 1020080,
-        "name": "Avoid using setInterval()",
+        "name": "Use an alternative to setInterval(), or refactor your code to avoid security vulnerabilities",
         "href": "AIP/quality-rules/1020080",
         "status": null,
         "critical": true,
@@ -411,7 +411,7 @@
     },
     {
         "id": 1020706,
-        "name": "Ensure the Content-Security-Policy is activated (Node.js)",
+        "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020706",
         "status": null,
         "critical": true,
@@ -421,7 +421,7 @@
     },
     {
         "id": 1020708,
-        "name": "Ensure the X-Powered-By header is disabled",
+        "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020708",
         "status": null,
         "critical": true,
@@ -431,7 +431,7 @@
     },
     {
         "id": 1020710,
-        "name": "Ensure the X-XSS-Protection header is enabled",
+        "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "status": null,
         "critical": true,
@@ -441,7 +441,7 @@
     },
     {
         "id": 1020712,
-        "name": "Ensure the X-Frame-Options header is setup (Node.js)",
+        "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020712",
         "status": null,
         "critical": true,
@@ -451,7 +451,7 @@
     },
     {
         "id": 1020718,
-        "name": "Ensure that browser cannot cache or store a page",
+        "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020718",
         "status": null,
         "critical": false,
@@ -461,7 +461,7 @@
     },
     {
         "id": 1020720,
-        "name": "Avoid unsecure connection to the Node.js server",
+        "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020720",
         "status": null,
         "critical": true,
@@ -471,7 +471,7 @@
     },
     {
         "id": 1020722,
-        "name": "Avoid enabling unsecure Node.js server",
+        "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020722",
         "status": null,
         "critical": true,
@@ -481,7 +481,7 @@
     },
     {
         "id": 1020724,
-        "name": "Ensure that marked is sanitized",
+        "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
         "href": "AIP/quality-rules/1020724",
         "status": null,
         "critical": true,
@@ -491,7 +491,7 @@
     },
     {
         "id": 1020726,
-        "name": "Ensure that CSRF Protection is enabled (Node.js)",
+        "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020726",
         "status": null,
         "critical": true,
@@ -501,7 +501,7 @@
     },
     {
         "id": 1040018,
-        "name": "Ensure the X-Frame-Options header is setup (Spring)",
+        "name": "Ensure safely set X-Frame-Option  to avoid Clickjacking attack",
         "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true,

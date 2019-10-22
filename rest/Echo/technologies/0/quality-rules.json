@@ -41,7 +41,7 @@
     },
     {
         "id": 1101000,
-        "name": "Never use SQL queries with a cartesian product (SQL)",
+        "name": "Prefer using a Join with a consition when making SQL queries so that performance is not adversely impacted due to cartesian/cross join",
         "href": "AIP/quality-rules/1101000",
         "status": null,
         "critical": false,
@@ -51,7 +51,7 @@
     },
     {
         "id": 1101002,
-        "name": "Never use SQL queries with a cartesian product on XXL Tables (SQL)",
+        "name": "Prefer using a Join with a consition when making SQL queries on XXL tables so that performance is not adversely impacted due to cartesian/cross join",
         "href": "AIP/quality-rules/1101002",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1101004,
-        "name": "Avoid non-indexed SQL queries",
+        "name": "Ensure to include index in your SQL table so that performance of your app is not adversely impacted",
         "href": "AIP/quality-rules/1101004",
         "status": null,
         "critical": false,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1101006,
-        "name": "Avoid non-indexed XXL SQL queries",
+        "name": "Ensure to include index in your SQL XXL tables so that performance of your app is not adversely impacted",
         "href": "AIP/quality-rules/1101006",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1101008,
-        "name": "Avoid non-SARGable queries",
+        "name": "Make sure you use SARGable predicate in WHERE clauses and JOINS to prevent additional costs on CPU",
         "href": "AIP/quality-rules/1101008",
         "status": null,
         "critical": false,
@@ -91,7 +91,7 @@
     },
     {
         "id": 1101010,
-        "name": "Avoid NATURAL JOIN queries",
+        "name": "Prefer using INNER JOINS instead of NATURAL JOINS for better performance",
         "href": "AIP/quality-rules/1101010",
         "status": null,
         "critical": false,
@@ -101,7 +101,7 @@
     },
     {
         "id": 1101012,
-        "name": "Specify column names instead of column numbers in ORDER BY clauses",
+        "name": "While using ORDER BY in queries prefer using Column names instead of indexes for better maintainability and readability of queries in code",
         "href": "AIP/quality-rules/1101012",
         "status": null,
         "critical": false,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1101014,
-        "name": "Avoid queries using old style join convention instead of ANSI-Standard joins (SQL)",
+        "name": "Try to separate JOIN and WHERE clauses by following ANSI-Standard joins format to improve maintainability and readabitliy",
         "href": "AIP/quality-rules/1101014",
         "status": null,
         "critical": false,
@@ -121,7 +121,7 @@
     },
     {
         "id": 1101026,
-        "name": "Always define column names when inserting values",
+        "name": "When inserting data into columns always define column names to prevent mistakes and wrong updates",
         "href": "AIP/quality-rules/1101026",
         "status": null,
         "critical": false,
@@ -131,7 +131,7 @@
     },
     {
         "id": 1101028,
-        "name": "Use MINUS or EXCEPT operator instead of NOT EXISTS and NOT IN subqueries",
+        "name": "Always use MINUS or EXCEPT operator instead of NOT EXISTS and NOT IN subqueries for better execution performance",
         "href": "AIP/quality-rules/1101028",
         "status": null,
         "critical": false,
@@ -141,7 +141,7 @@
     },
     {
         "id": 1101032,
-        "name": "Avoid exists and not exists independent clauses (SQL)",
+        "name": "When using EXISTS or NOT EXISTS clauses make sure that you refer to parent object and not  independent clauses to ensure better performance",
         "href": "AIP/quality-rules/1101032",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 1101034,
-        "name": "DISTINCT should not be used in SQL SELECT statements",
+        "name": "Prefer replacing DISTINCT in your queries with a WHERE, FROM clause that fetches only the required data",
         "href": "AIP/quality-rules/1101034",
         "status": null,
         "critical": false,
@@ -161,7 +161,7 @@
     },
     {
         "id": 1101038,
-        "name": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
+        "name": "To improve the readability of your SQL statements use IN test condition instead of multiple OR conditions on same identifier",
         "href": "AIP/quality-rules/1101038",
         "status": null,
         "critical": false,
@@ -171,7 +171,7 @@
     },
     {
         "id": 1101058,
-        "name": "Do not mix ANSI and non-ANSI JOIN syntax in the same query",
+        "name": "Prefer to use a similar syntax for JOIN in same SQL queries and not mix ANSI and non-ANSI syntax",
         "href": "AIP/quality-rules/1101058",
         "status": null,
         "critical": false,
@@ -181,7 +181,7 @@
     },
     {
         "id": 1101060,
-        "name": "LIKE operator should not start with a wildcard character",
+        "name": "When using LIKE operator make sure the first character in search string is not a wildcard character as it reduces execution performance",
         "href": "AIP/quality-rules/1101060",
         "status": null,
         "critical": false,
@@ -191,7 +191,7 @@
     },
     {
         "id": 1101066,
-        "name": "Avoid improperly written triangular joins with XXL tables",
+        "name": "Ensure that when using triangular joins you restrict the results with some extra conditions to avoid severe performance issues",
         "href": "AIP/quality-rules/1101066",
         "status": null,
         "critical": false,
@@ -201,7 +201,7 @@
     },
     {
         "id": 1101070,
-        "name": "Avoid explicit comparison with NULL",
+        "name": "Always use 'IS NULL' or 'IS NOT NULL' to check for Nullability instead of using '=' or '!=' operators",
         "href": "AIP/quality-rules/1101070",
         "status": null,
         "critical": false,
@@ -211,7 +211,7 @@
     },
     {
         "id": 1101072,
-        "name": "Tables should be aliased",
+        "name": "Improve the readability and maintainability of your queries by using aliases for tables",
         "href": "AIP/quality-rules/1101072",
         "status": null,
         "critical": false,
@@ -221,7 +221,7 @@
     },
     {
         "id": 1101074,
-        "name": "Tables aliases should not end with a numeric suffix",
+        "name": "Ensure your table aliases do not have numbers to improve readability",
         "href": "AIP/quality-rules/1101074",
         "status": null,
         "critical": false,
@@ -231,7 +231,7 @@
     },
     {
         "id": 1101076,
-        "name": "Column references should be qualified",
+        "name": "Ensure column references in queries are qualified to avoid any ambiguous and undefined references",
         "href": "AIP/quality-rules/1101076",
         "status": null,
         "critical": false,

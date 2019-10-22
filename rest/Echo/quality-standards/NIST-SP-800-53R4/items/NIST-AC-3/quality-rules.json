@@ -1,7 +1,7 @@
 [
     {
         "id": 7752,
-        "name": "Avoid file path manipulation vulnerabilities",
+        "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/7752",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 8214,
-        "name": "Expired or Released Resource should not be used",
+        "name": "Ensure not using expired or released resource to prevent access to sensitive data that is associated with a different user or entity.",
         "href": "AIP/quality-rules/8214",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1020060,
-        "name": "Avoid using console.log()",
+        "name": "Ensure you remove console.log() in your production code",
         "href": "AIP/quality-rules/1020060",
         "status": null,
         "critical": false,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1020094,
-        "name": "Avoid creating cookie without setting httpOnly option (Javascript)",
+        "name": "Always enable HttpOnly option when creating cookies so that sensitive information is not exposed to unsecured applications and domains",
         "href": "AIP/quality-rules/1020094",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 1020728,
-        "name": "Avoid creating cookie without setting httpOnly option (Node.js)",
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020728",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 1039004,
-        "name": "Avoid using HttpServletRequest.getRequestedSessionId()",
+        "name": "Ensure not relying on the session ID provided by \"request.getRequestedSessionId()\"",
         "href": "AIP/quality-rules/1039004",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1039026,
-        "name": "Avoid creating cookie without setting httpOnly option (JEE)",
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1039026",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1040010,
-        "name": "Always delete the cookies during the logout",
+        "name": "Ensure cleaning the cookies during the logout to avoid them to be used by another web application",
         "href": "AIP/quality-rules/1040010",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1040024,
-        "name": "Spring Boot Shutdown Actuator Endpoint must be secured from unauthenticated access.",
+        "name": "Ensure securing Shutdown Actuator Endpoint from unauthenticated access.",
         "href": "AIP/quality-rules/1040024",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 1042010,
-        "name": "Avoid using ParametersInterceptor with class parameter for Struts 2.3.16 (and older)",
+        "name": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
         "href": "AIP/quality-rules/1042010",
         "status": null,
         "critical": true,
@@ -101,7 +101,7 @@
     },
     {
         "id": 1042022,
-        "name": "Avoid using CookieInterceptor with Struts 2.3.16 (and Older)",
+        "name": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
         "href": "AIP/quality-rules/1042022",
         "status": null,
         "critical": true,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1042026,
-        "name": "Avoid Action Mapping based on wildcards with Struts 2.3.14.2 and older",
+        "name": "Ensure note using wildcards for action mapping name to avoid executing arbitrary Java code on server side",
         "href": "AIP/quality-rules/1042026",
         "status": null,
         "critical": true,

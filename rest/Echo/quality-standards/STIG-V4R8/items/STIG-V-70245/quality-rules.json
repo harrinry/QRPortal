@@ -1,7 +1,7 @@
 [
     {
         "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 8242,
-        "name": "Use of insufficiently random values",
+        "name": "Ensure using sufficient random values for cookies",
         "href": "AIP/quality-rules/8242",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 8414,
-        "name": "Avoid weak cryptographic algorithm",
+        "name": "Ensure you use the right algorithm like AES-128",
         "href": "AIP/quality-rules/8414",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 8416,
-        "name": "Avoid use of a reversible one-way hash",
+        "name": "Ensure you don't use weak cryptographic hash one-way reversible",
         "href": "AIP/quality-rules/8416",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 8424,
-        "name": "Avoid using hard-coded HMAC keys",
+        "name": "Ensure not using hard-coded HMAC keys",
         "href": "AIP/quality-rules/8424",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1020720,
-        "name": "Avoid unsecure connection to the Node.js server",
+        "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020720",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1020722,
-        "name": "Avoid enabling unsecure Node.js server",
+        "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020722",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1020732,
-        "name": "Avoid using risky cryptographic hash (Node.js)",
+        "name": "Ensure not using MD5/SHA1 hashes for cryptographic functions of NodeJs to avoid sensitive data being compromised",
         "href": "AIP/quality-rules/1020732",
         "status": null,
         "critical": false,
@@ -101,7 +101,7 @@
     },
     {
         "id": 1022002,
-        "name": "Avoid using RSA Cryptographic algorithms without OAEP (Optimal Asymmetric Encryption Padding)",
+        "name": "Ensure to use Optimal Asymmetric Encryption Padding(OAEP) scheme with RSA encryption to avoid sensitive information exposure.",
         "href": "AIP/quality-rules/1022002",
         "status": null,
         "critical": true,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1039002,
-        "name": "Avoid using deprecated SSL protocols to secure connection",
+        "name": "Ensure you are not using deprecated SSL protocols to secure your connection",
         "href": "AIP/quality-rules/1039002",
         "status": null,
         "critical": true,
@@ -121,7 +121,7 @@
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "Ensure that you are not using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true,
@@ -131,7 +131,7 @@
     },
     {
         "id": 1039008,
-        "name": "Avoid thrown Exceptions in servlet methods",
+        "name": "Ensure to manage an exception in servlet method using a try catch block to prevent exposing system vulnerabilities",
         "href": "AIP/quality-rules/1039008",
         "status": null,
         "critical": true,
@@ -141,7 +141,7 @@
     },
     {
         "id": 1039010,
-        "name": "Avoid using risky cryptographic hash (JEE)",
+        "name": "Ensure not using deprecated cryptographic hash otherwise it could be broken by hackers (JEE)",
         "href": "AIP/quality-rules/1039010",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 1039014,
-        "name": "Avoid using Cipher with no HMAC to ensure data integrity",
+        "name": "Prefer using cipher including Hash based Message Authentication Code (HMAC) to ensure data integrity",
         "href": "AIP/quality-rules/1039014",
         "status": null,
         "critical": true,
@@ -161,7 +161,7 @@
     },
     {
         "id": 1039018,
-        "name": "Avoid using cryptography hash with hardcoded salt",
+        "name": "Ensure that Hardcoded salt is not used with cryptography function so that sensitive data is protected",
         "href": "AIP/quality-rules/1039018",
         "status": null,
         "critical": true,
@@ -171,7 +171,7 @@
     },
     {
         "id": 1039020,
-        "name": "Avoid using javax.crypto.NullCipher",
+        "name": "Ensure to not use \"javax.crypto.NullCipher\" for anything other than testing",
         "href": "AIP/quality-rules/1039020",
         "status": null,
         "critical": true,
@@ -181,7 +181,7 @@
     },
     {
         "id": 1039022,
-        "name": "Avoid using Insecure PBE Iteration Count",
+        "name": "Prefer using long PBE Iteration Count to to decrease attack possibilities",
         "href": "AIP/quality-rules/1039022",
         "status": null,
         "critical": true,
@@ -191,7 +191,7 @@
     },
     {
         "id": 1039028,
-        "name": "Avoid weak encryption providing not sufficient key size (JEE)",
+        "name": "Perefer using encryption providing sufficient key size to ensure enough entropy against attacks",
         "href": "AIP/quality-rules/1039028",
         "status": null,
         "critical": true,
@@ -201,7 +201,7 @@
     },
     {
         "id": 1039030,
-        "name": "Avoid using DefaultHttpClient constructor",
+        "name": "Prefer not using DefaultHttpClient Constructor to ensure better transport layer security",
         "href": "AIP/quality-rules/1039030",
         "status": null,
         "critical": true,
@@ -211,7 +211,7 @@
     },
     {
         "id": 1039058,
-        "name": "Avoid generating key with insufficient random generator in cookies",
+        "name": "Ensure the cookie id are always generate with a sufficient random algorithm like SecureRandom",
         "href": "AIP/quality-rules/1039058",
         "status": null,
         "critical": true,

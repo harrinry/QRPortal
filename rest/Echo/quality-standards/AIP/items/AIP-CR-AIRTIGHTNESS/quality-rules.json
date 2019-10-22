@@ -1,7 +1,7 @@
 [
     {
         "id": 7152,
-        "name": "Avoid Fields in Servlet Classes that are not final static",
+        "name": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
         "href": "AIP/quality-rules/7152",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
+        "name": "Ensure to use use local variables inside your methods, and pass whatever data you need to other methods in the class via parameters",
         "href": "AIP/quality-rules/7154",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 7442,
-        "name": "Avoid to use this within Constructor in multi-thread environment",
+        "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 7446,
-        "name": "Avoid double checked locking",
+        "name": "Prefer not using Double checked locking for JSE 4.x and previous version",
         "href": "AIP/quality-rules/7446",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 7636,
-        "name": "Use version instead of timestamp",
+        "name": "Ensure to use version instead of timestamp",
         "href": "AIP/quality-rules/7636",
         "status": null,
         "critical": false,

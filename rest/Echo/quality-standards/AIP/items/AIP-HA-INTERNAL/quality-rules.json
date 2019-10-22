@@ -11,7 +11,7 @@
     },
     {
         "id": 4612,
-        "name": "Avoid using native Methods (JNI)",
+        "name": "Ensure you don't use JNI for security reason",
         "href": "AIP/quality-rules/4612",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 7152,
-        "name": "Avoid Fields in Servlet Classes that are not final static",
+        "name": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
         "href": "AIP/quality-rules/7152",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
+        "name": "Ensure to use use local variables inside your methods, and pass whatever data you need to other methods in the class via parameters",
         "href": "AIP/quality-rules/7154",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to overrides equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 7442,
-        "name": "Avoid to use this within Constructor in multi-thread environment",
+        "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 7446,
-        "name": "Avoid double checked locking",
+        "name": "Prefer not using Double checked locking for JSE 4.x and previous version",
         "href": "AIP/quality-rules/7446",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 7506,
-        "name": "Define equals() and hashCode() for component",
+        "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "status": null,
         "critical": true,
@@ -101,7 +101,7 @@
     },
     {
         "id": 7636,
-        "name": "Use version instead of timestamp",
+        "name": "Ensure to use version instead of timestamp",
         "href": "AIP/quality-rules/7636",
         "status": null,
         "critical": false,
@@ -111,7 +111,7 @@
     },
     {
         "id": 7708,
-        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
+        "name": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
         "href": "AIP/quality-rules/7708",
         "status": null,
         "critical": false,
@@ -196,7 +196,7 @@
     },
     {
         "id": 8016,
-        "name": "Avoid unsecured EJB remote method",
+        "name": "Ensure that unsecured EJB remote method are not used as they lead to security weakness",
         "href": "AIP/quality-rules/8016",
         "status": null,
         "critical": true,
@@ -271,7 +271,7 @@
     },
     {
         "id": 8096,
-        "name": "Avoid testing floating point numbers for equality",
+        "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/8096",
         "status": null,
         "critical": true,
@@ -281,7 +281,7 @@
     },
     {
         "id": 8136,
-        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "name": "Ensure to have CDI Beans with normal scope proxyable",
         "href": "AIP/quality-rules/8136",
         "status": null,
         "critical": true,
@@ -291,7 +291,7 @@
     },
     {
         "id": 8216,
-        "name": "Avoid numerical data corruption during incompatible mutation",
+        "name": "Ensure not using incorrect numeric type conversions to avoid data corruption",
         "href": "AIP/quality-rules/8216",
         "status": null,
         "critical": true,
@@ -301,7 +301,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "Always check the content type when receiving a HTTP post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -311,7 +311,7 @@
     },
     {
         "id": 8220,
-        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "name": "Prefer not using deprecated methods, constructors, fields, type or packages",
         "href": "AIP/quality-rules/8220",
         "status": null,
         "critical": true,
@@ -321,7 +321,7 @@
     },
     {
         "id": 1020062,
-        "name": "Avoid using non thread-safe Javascript singleton pattern",
+        "name": "Make sure that you have only one instance created in class constructor and it has been frozen to avoid any changes.",
         "href": "AIP/quality-rules/1020062",
         "status": null,
         "critical": false,
@@ -331,7 +331,7 @@
     },
     {
         "id": 1020066,
-        "name": "Avoid using Javascript Function constructor",
+        "name": "Ensure to not use Javascript Function constructor calling a string represented source code to prevent impaired performace",
         "href": "AIP/quality-rules/1020066",
         "status": null,
         "critical": false,
@@ -341,7 +341,7 @@
     },
     {
         "id": 1020076,
-        "name": "Avoid Artifacts with too many parameters (Javascript)",
+        "name": "Aggregate method parameters into an object to improve readability and maintainability of your code",
         "href": "AIP/quality-rules/1020076",
         "status": null,
         "critical": false,
@@ -351,7 +351,7 @@
     },
     {
         "id": 1020728,
-        "name": "Avoid creating cookie without setting httpOnly option (Node.js)",
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020728",
         "status": null,
         "critical": true,
@@ -361,7 +361,7 @@
     },
     {
         "id": 1020730,
-        "name": "Ensure Node.js filesystem are closed",
+        "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
         "href": "AIP/quality-rules/1020730",
         "status": null,
         "critical": false,

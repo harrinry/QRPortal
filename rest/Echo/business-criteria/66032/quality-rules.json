@@ -11,7 +11,7 @@
     },
     {
         "id": 2236,
-        "name": "Avoid use of standard SQL API",
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
         "href": "AIP/quality-rules/2236",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 4594,
-        "name": "Avoid using 'java.io.File'",
+        "name": "Prefer not using 'java.io.File' to avoid violating the Enterprise JavaBeans (EJB) specification",
         "href": "AIP/quality-rules/4594",
         "status": null,
         "critical": false,
@@ -31,7 +31,7 @@
     },
     {
         "id": 4596,
-        "name": "Avoid using 'java.lang.System.getenv()'",
+        "name": "Prefer using environment file instead of using java.lang.System.getenv()",
         "href": "AIP/quality-rules/4596",
         "status": null,
         "critical": false,
@@ -41,7 +41,7 @@
     },
     {
         "id": 4598,
-        "name": "Avoid using 'java.lang.Runtime.exec()'",
+        "name": "Ensure you don't use 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "status": null,
         "critical": false,
@@ -51,7 +51,7 @@
     },
     {
         "id": 4606,
-        "name": "Avoid using 'sun.*' Classes",
+        "name": "Ensure you no longer use 'sun.*' Classes",
         "href": "AIP/quality-rules/4606",
         "status": null,
         "critical": false,
@@ -61,7 +61,7 @@
     },
     {
         "id": 4612,
-        "name": "Avoid using native Methods (JNI)",
+        "name": "Ensure you don't use JNI for security reason",
         "href": "AIP/quality-rules/4612",
         "status": null,
         "critical": false,
@@ -71,7 +71,7 @@
     },
     {
         "id": 4722,
-        "name": "Track Classes referencing Database objects",
+        "name": "Ensure that all classes that reference the database are in a specific layer usually called data layer",
         "href": "AIP/quality-rules/4722",
         "status": null,
         "critical": false,
@@ -81,7 +81,7 @@
     },
     {
         "id": 7140,
-        "name": "Action Artifacts should not directly call a JSP page",
+        "name": "Ensure to use the action mapping table in struts configuration file.",
         "href": "AIP/quality-rules/7140",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 7142,
-        "name": "Action Classes should have only one public method",
+        "name": "Ensure to have action classes that have only 1 public method",
         "href": "AIP/quality-rules/7142",
         "status": null,
         "critical": false,
@@ -101,7 +101,7 @@
     },
     {
         "id": 7146,
-        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+        "name": "Ensure to reference only Java Objects belonging to the scope in order to respect the usage context in a JSP page.",
         "href": "AIP/quality-rules/7146",
         "status": null,
         "critical": false,
@@ -111,7 +111,7 @@
     },
     {
         "id": 7148,
-        "name": "JSP pages should always be accessed through their tiles definition",
+        "name": "Ensure that JSP Pages are accessed through their tiles definition",
         "href": "AIP/quality-rules/7148",
         "status": null,
         "critical": false,
@@ -121,7 +121,7 @@
     },
     {
         "id": 7242,
-        "name": "Avoid implementing Action Classes inheriting directly from Struts Action",
+        "name": "Ensure to have Action Class inherit from one single extension of Struts Action Class that is abstract or have an abstract method.",
         "href": "AIP/quality-rules/7242",
         "status": null,
         "critical": false,
@@ -131,7 +131,7 @@
     },
     {
         "id": 7678,
-        "name": "Avoid using specific logging implementation",
+        "name": "Ensure not using specific logging implementation",
         "href": "AIP/quality-rules/7678",
         "status": null,
         "critical": false,
@@ -141,7 +141,7 @@
     },
     {
         "id": 7714,
-        "name": "Do not use auto-wiring",
+        "name": "Prefer not using auto-wiring to guarantee more flexibility and better performance of your application",
         "href": "AIP/quality-rules/7714",
         "status": null,
         "critical": false,
@@ -151,7 +151,7 @@
     },
     {
         "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
+        "name": "Ensure that singleton or factory are not defined when using Spring",
         "href": "AIP/quality-rules/7716",
         "status": null,
         "critical": false,
@@ -161,7 +161,7 @@
     },
     {
         "id": 7914,
-        "name": "Avoid direct access to Database Tables",
+        "name": "Prefer using stored procedure instead of using direct SQL queries to database",
         "href": "AIP/quality-rules/7914",
         "status": null,
         "critical": false,
@@ -173,7 +173,7 @@
     },
     {
         "id": 7916,
-        "name": "Avoid direct use of Database objects (JSP/ASP)",
+        "name": "Ensure your JSP/ASP pages are not directly connected to database",
         "href": "AIP/quality-rules/7916",
         "status": null,
         "critical": false,
@@ -183,7 +183,7 @@
     },
     {
         "id": 8102,
-        "name": "Avoid hardcoded network resource names (JEE)",
+        "name": "Ensure not having hardcoded network resources names in the source files (JEE)",
         "href": "AIP/quality-rules/8102",
         "status": null,
         "critical": false,
@@ -193,7 +193,7 @@
     },
     {
         "id": 1020018,
-        "name": "Avoid using Web SQL databases",
+        "name": "Make sure that you do not use Web SQL databases",
         "href": "AIP/quality-rules/1020018",
         "status": null,
         "critical": true,
@@ -203,7 +203,7 @@
     },
     {
         "id": 1020070,
-        "name": "Avoid hardcoded network resource names (Javascript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Javascript)",
         "href": "AIP/quality-rules/1020070",
         "status": null,
         "critical": false,
@@ -213,7 +213,7 @@
     },
     {
         "id": 1020072,
-        "name": "Avoid direct access to Database Tables in Javascript",
+        "name": "Make sure to not access the database from Javascript directly, instead create dedicated modules for the same",
         "href": "AIP/quality-rules/1020072",
         "status": null,
         "critical": false,
@@ -223,7 +223,7 @@
     },
     {
         "id": 1020312,
-        "name": "Avoid use of anonymous functions to attach events",
+        "name": "Ensure not using anonymous functions to attach events because they are difficult to debug, maintain, test or reuse",
         "href": "AIP/quality-rules/1020312",
         "status": null,
         "critical": false,
@@ -233,7 +233,7 @@
     },
     {
         "id": 1020502,
-        "name": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
+        "name": "Prefer using angular.fromJson and angular.toJson instead of standard JS APIs to improve maintainability and robustness of your code",
         "href": "AIP/quality-rules/1020502",
         "status": null,
         "critical": false,
@@ -243,7 +243,7 @@
     },
     {
         "id": 1020826,
-        "name": "Avoid hardcoded network resource names (Typescript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Typescript)",
         "href": "AIP/quality-rules/1020826",
         "status": null,
         "critical": false,
@@ -253,7 +253,7 @@
     },
     {
         "id": 1020830,
-        "name": "Avoid using Angular ElementRef API to manipulate DOM",
+        "name": "Prefer using Angular Renderer2 instead of directly interacting with the DOM",
         "href": "AIP/quality-rules/1020830",
         "status": null,
         "critical": false,
@@ -263,7 +263,7 @@
     },
     {
         "id": 1101036,
-        "name": "Use ANSI standard operators in SQL WHERE clauses",
+        "name": "Ensure using ANSI standard Operators such as <>,<=,>= in SQL where clauses to ensure portability",
         "href": "AIP/quality-rules/1101036",
         "status": null,
         "critical": false,

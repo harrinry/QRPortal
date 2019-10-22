@@ -1,7 +1,7 @@
 [
     {
         "id": 8044,
-        "name": "Avoid log forging vulnerabilities",
+        "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 8222,
-        "name": "Avoid hard-coded credentials",
+        "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 8240,
-        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "name": "Ensure you have secured your cookie by enabling 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1020060,
-        "name": "Avoid using console.log()",
+        "name": "Ensure you remove console.log() in your production code",
         "href": "AIP/quality-rules/1020060",
         "status": null,
         "critical": false,
@@ -41,7 +41,7 @@
     },
     {
         "id": 1020728,
-        "name": "Avoid creating cookie without setting httpOnly option (Node.js)",
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020728",
         "status": null,
         "critical": true,

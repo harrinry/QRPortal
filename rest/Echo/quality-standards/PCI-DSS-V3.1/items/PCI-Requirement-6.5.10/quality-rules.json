@@ -1,7 +1,7 @@
 [
     {
         "id": 8222,
-        "name": "Avoid hard-coded credentials",
+        "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 8240,
-        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "name": "Ensure you have secured your cookie by enabling 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1020096,
-        "name": "Avoid using unsecured cookie (Javascript)",
+        "name": "Make sure you are using Secure option for cookies so that Cross-Site-Scripting attacks can be prevented",
         "href": "AIP/quality-rules/1020096",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1020098,
-        "name": "Avoid creating cookie with overly broad path (Javascript)",
+        "name": "Ensure you do not allow access to all domain when defining cookie path",
         "href": "AIP/quality-rules/1020098",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 1020100,
-        "name": "Avoid having cookie with an overly broad domain (Javascript)",
+        "name": "Make sure to accurately define the path of the web application/s for which this cookie is valid",
         "href": "AIP/quality-rules/1020100",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 1020104,
-        "name": "Avoid hardcoded passwords (Javascript)",
+        "name": "Ensure you don't hardcode password in the source file, hackers can steal the information by retro-engineering your application (Javascript)",
         "href": "AIP/quality-rules/1020104",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1020726,
-        "name": "Ensure that CSRF Protection is enabled (Node.js)",
+        "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020726",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1020734,
-        "name": "Avoid using unsecured cookie (Node.js)",
+        "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020734",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1020738,
-        "name": "Avoid disabling SSL verification in node-curl",
+        "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020738",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 1020740,
-        "name": "Avoid creating cookie with overly broad path (Node.js)",
+        "name": "Ensure you do not allow access to all domain when defining cookie path (Node.js)",
         "href": "AIP/quality-rules/1020740",
         "status": null,
         "critical": true,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1020820,
-        "name": "Avoid hardcoded passwords (TypeScript)",
+        "name": "Ensure you don't hardcode password in the source file, hackers can steal the information by retro-engineering your application (Typescript)",
         "href": "AIP/quality-rules/1020820",
         "status": null,
         "critical": true,
@@ -121,7 +121,7 @@
     },
     {
         "id": 1039004,
-        "name": "Avoid using HttpServletRequest.getRequestedSessionId()",
+        "name": "Ensure not relying on the session ID provided by \"request.getRequestedSessionId()\"",
         "href": "AIP/quality-rules/1039004",
         "status": null,
         "critical": true,
@@ -131,7 +131,7 @@
     },
     {
         "id": 1039012,
-        "name": "Avoid using referer header field in HTTP request",
+        "name": "Ensure you are not using \"referer\" header field in HTTP request",
         "href": "AIP/quality-rules/1039012",
         "status": null,
         "critical": true,
@@ -141,7 +141,7 @@
     },
     {
         "id": 1039024,
-        "name": "Avoid using unsecured cookie (JEE)",
+        "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (JEE)",
         "href": "AIP/quality-rules/1039024",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 1039052,
-        "name": "Avoid Http Session without expiration",
+        "name": "Always set an expiration time for an Http Session to improve security",
         "href": "AIP/quality-rules/1039052",
         "status": null,
         "critical": true,
@@ -161,7 +161,7 @@
     },
     {
         "id": 1039064,
-        "name": "Avoid having cookie with an overly broad domain (JEE)",
+        "name": "Ensure you do not allow access to all domain when defining cookie domain (JEE)",
         "href": "AIP/quality-rules/1039064",
         "status": null,
         "critical": true,
@@ -171,7 +171,7 @@
     },
     {
         "id": 1040010,
-        "name": "Always delete the cookies during the logout",
+        "name": "Ensure cleaning the cookies during the logout to avoid them to be used by another web application",
         "href": "AIP/quality-rules/1040010",
         "status": null,
         "critical": true,
@@ -181,7 +181,7 @@
     },
     {
         "id": 1040012,
-        "name": "HTTP user session must be invalidated during logout",
+        "name": "Ensure invalidating HTTP Session during logout to avoid broken Authentication",
         "href": "AIP/quality-rules/1040012",
         "status": null,
         "critical": true,

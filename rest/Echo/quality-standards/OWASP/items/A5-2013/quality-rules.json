@@ -1,7 +1,7 @@
 [
     {
         "id": 7362,
-        "name": "Avoid action mappings validator turned off",
+        "name": "Ensure to have the validation activated",
         "href": "AIP/quality-rules/7362",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 8016,
-        "name": "Avoid unsecured EJB remote method",
+        "name": "Ensure that unsecured EJB remote method are not used as they lead to security weakness",
         "href": "AIP/quality-rules/8016",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 8042,
-        "name": "Struts 2 Validation: Avoid unused validation form",
+        "name": "Ensure all defined validation forms are used",
         "href": "AIP/quality-rules/8042",
         "status": null,
         "critical": false,
@@ -30,18 +30,8 @@
         ]
     },
     {
-        "id": 1020104,
-        "name": "Avoid hardcoded passwords (Javascript)",
-        "href": "AIP/quality-rules/1020104",
-        "status": null,
-        "critical": true,
-        "technologyNames": [
-            "HTML5"
-        ]
-    },
-    {
         "id": 1020544,
-        "name": "Avoid disabling Strict Contextual Escaping (SCE) when created",
+        "name": "Ensure to keep enabled the Strict Contextual Escaping to make code secure by default and for easy auditing for vulnerabilities",
         "href": "AIP/quality-rules/1020544",
         "status": null,
         "critical": true,
@@ -51,7 +41,7 @@
     },
     {
         "id": 1020552,
-        "name": "Avoid enabling dangerous protocols in whitelist APIs",
+        "name": "Make sure you do not allow 'Javascript' and 'http' as accepted protocols to avoid Cross-site-scripting",
         "href": "AIP/quality-rules/1020552",
         "status": null,
         "critical": false,
@@ -61,7 +51,7 @@
     },
     {
         "id": 1020706,
-        "name": "Ensure the Content-Security-Policy is activated (Node.js)",
+        "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020706",
         "status": null,
         "critical": true,
@@ -71,7 +61,7 @@
     },
     {
         "id": 1020708,
-        "name": "Ensure the X-Powered-By header is disabled",
+        "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020708",
         "status": null,
         "critical": true,
@@ -81,7 +71,7 @@
     },
     {
         "id": 1020712,
-        "name": "Ensure the X-Frame-Options header is setup (Node.js)",
+        "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020712",
         "status": null,
         "critical": true,
@@ -91,7 +81,7 @@
     },
     {
         "id": 1020718,
-        "name": "Ensure that browser cannot cache or store a page",
+        "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020718",
         "status": null,
         "critical": false,
@@ -101,7 +91,7 @@
     },
     {
         "id": 1020736,
-        "name": "Avoid bypassing self-signed ssl certificate (Node.js)",
+        "name": "Ensure enabling NODE_TLS_REJECT_UNAUTHORIZED attributes allowing rejecting self signed certificates",
         "href": "AIP/quality-rules/1020736",
         "status": null,
         "critical": true,
@@ -111,7 +101,7 @@
     },
     {
         "id": 1020738,
-        "name": "Avoid disabling SSL verification in node-curl",
+        "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020738",
         "status": null,
         "critical": true,
@@ -121,7 +111,7 @@
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "Ensure that you are not using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true,
@@ -131,7 +121,7 @@
     },
     {
         "id": 1040018,
-        "name": "Ensure the X-Frame-Options header is setup (Spring)",
+        "name": "Ensure safely set X-Frame-Option  to avoid Clickjacking attack",
         "href": "AIP/quality-rules/1040018",
         "status": null,
         "critical": true,
@@ -141,7 +131,7 @@
     },
     {
         "id": 1040024,
-        "name": "Spring Boot Shutdown Actuator Endpoint must be secured from unauthenticated access.",
+        "name": "Ensure securing Shutdown Actuator Endpoint from unauthenticated access.",
         "href": "AIP/quality-rules/1040024",
         "status": null,
         "critical": true,
@@ -151,7 +141,7 @@
     },
     {
         "id": 1042004,
-        "name": "Avoid Duplicate Struts validation forms with the same name",
+        "name": "Ensure not using the same name for multiple validation forms to avoid any validation error.",
         "href": "AIP/quality-rules/1042004",
         "status": null,
         "critical": false,
@@ -161,7 +151,7 @@
     },
     {
         "id": 1042012,
-        "name": "Avoid Unused Validation Form in Struts 1.x",
+        "name": "Ensure to not have Unused Validation Form in Struts 1.x to correctly maintain the validation logic",
         "href": "AIP/quality-rules/1042012",
         "status": null,
         "critical": false,
@@ -171,7 +161,7 @@
     },
     {
         "id": 1042016,
-        "name": "Avoid Struts action Mapping with disabled validator ",
+        "name": "Ensure to enable validation for each Struts action Mapping of your application to prevent any types of attacks.",
         "href": "AIP/quality-rules/1042016",
         "status": null,
         "critical": true,
@@ -181,7 +171,7 @@
     },
     {
         "id": 1042018,
-        "name": "Avoid Missing Form Bean in Struts 1.x",
+        "name": "Ensure to have Struts action pointing to a an existent form-bean in Struts 1.x to avoid mapping error",
         "href": "AIP/quality-rules/1042018",
         "status": null,
         "critical": false,

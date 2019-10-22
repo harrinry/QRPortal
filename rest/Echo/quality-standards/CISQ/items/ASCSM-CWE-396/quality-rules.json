@@ -1,7 +1,7 @@
 [
     {
         "id": 4696,
-        "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
+        "name": "Prefer using logging framework  as SLF4j instead of  'System.err' or 'System.out'",
         "href": "AIP/quality-rules/4696",
         "status": null,
         "critical": false,
@@ -11,7 +11,7 @@
     },
     {
         "id": 4702,
-        "name": "Avoid using 'Throwable.printStackTrace()' with no argument",
+        "name": "Ensure to not use default stream(System.Err) for printStackTrace to print throwable and its stack trace in order to protect sensitive information.",
         "href": "AIP/quality-rules/4702",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1020450,
-        "name": "Ensure catching Javascript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020450",
         "status": null,
         "critical": false,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1020856,
-        "name": "Ensure catching Typescript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020856",
         "status": null,
         "critical": false,

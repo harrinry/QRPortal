@@ -147,7 +147,7 @@
     },
     {
         "id": 2254,
-        "name": "Avoid large Page files (JEE)",
+        "name": "Ensure to have pages with not a too big number of lines of code",
         "href": "AIP/quality-rules/2254",
         "status": null,
         "critical": false,
@@ -157,7 +157,7 @@
     },
     {
         "id": 2282,
-        "name": "Avoid large Include Files",
+        "name": "Ensure to have a limited include files",
         "href": "AIP/quality-rules/2282",
         "status": null,
         "critical": false,
@@ -167,7 +167,7 @@
     },
     {
         "id": 2284,
-        "name": "Avoid large JSP Pages - too many Scriptlets",
+        "name": "Prefer using JSP Standard Tag Library (JSTL) instead of JSP scriptlets as easier to read and to maintain",
         "href": "AIP/quality-rules/2284",
         "status": null,
         "critical": false,
@@ -187,7 +187,7 @@
     },
     {
         "id": 4554,
-        "name": "Avoid large Classes - too many Methods (JEE)",
+        "name": "Ensure you review the Class design to reduce the number of Methods",
         "href": "AIP/quality-rules/4554",
         "status": null,
         "critical": false,
@@ -197,7 +197,7 @@
     },
     {
         "id": 4556,
-        "name": "Avoid large Classes - too many Constructors (JEE)",
+        "name": "Ensure you review the Class design to reduce the number of Constructors",
         "href": "AIP/quality-rules/4556",
         "status": null,
         "critical": false,
@@ -207,7 +207,7 @@
     },
     {
         "id": 4558,
-        "name": "Avoid large Classes - too many Fields",
+        "name": "Ensure that the classes have a resonable number of fields",
         "href": "AIP/quality-rules/4558",
         "status": null,
         "critical": false,
@@ -217,7 +217,7 @@
     },
     {
         "id": 4560,
-        "name": "Avoid large Interfaces - too many Methods (JEE)",
+        "name": "Ensure that the interfaces have a resonable number of methods",
         "href": "AIP/quality-rules/4560",
         "status": null,
         "critical": false,
@@ -227,7 +227,7 @@
     },
     {
         "id": 4592,
-        "name": "Avoid hiding static Methods",
+        "name": "Always Prefer not hiding Static Methods to avoid unexpected behavior of your application",
         "href": "AIP/quality-rules/4592",
         "status": null,
         "critical": true,
@@ -237,7 +237,7 @@
     },
     {
         "id": 4610,
-        "name": "Avoid using anonymous Classes",
+        "name": "Prefer not using anonymous Classes for maintenance reason",
         "href": "AIP/quality-rules/4610",
         "status": null,
         "critical": false,
@@ -247,7 +247,7 @@
     },
     {
         "id": 4614,
-        "name": "Proper overriding of 'clone()'",
+        "name": "A clone method that is overridden in a subclass should call super.clone. Not doing so causes the subclass clone to return an object of the wrong type.",
         "href": "AIP/quality-rules/4614",
         "status": null,
         "critical": true,
@@ -257,7 +257,7 @@
     },
     {
         "id": 4616,
-        "name": "Proper overriding of 'finalize()'",
+        "name": "Prefer calling \"super.finalize()\" at the end of \"Object.finalize()\" implementations",
         "href": "AIP/quality-rules/4616",
         "status": null,
         "critical": true,
@@ -267,7 +267,7 @@
     },
     {
         "id": 4708,
-        "name": "Avoid using Dynamic instantiation",
+        "name": "Ensure to use class invocation or method call instead of dynamic instantiation known to be slower",
         "href": "AIP/quality-rules/4708",
         "status": null,
         "critical": false,
@@ -277,7 +277,7 @@
     },
     {
         "id": 4716,
-        "name": "Avoid Classes implementing too many Interfaces (JEE)",
+        "name": "Ensure that the class is reimplementing a sonable number of Interfaces",
         "href": "AIP/quality-rules/4716",
         "status": null,
         "critical": false,
@@ -287,7 +287,7 @@
     },
     {
         "id": 7132,
-        "name": "Action Mappings should have few forwards",
+        "name": "Ensure that action mappings have few forwards to avoid managing too complex behaviors in the Action class",
         "href": "AIP/quality-rules/7132",
         "status": null,
         "critical": false,
@@ -297,7 +297,7 @@
     },
     {
         "id": 7136,
-        "name": "Each method in an Action Class should have a small complexity",
+        "name": "Ensure that application architecture in not too complex and move some of this logic to another conceptual layer",
         "href": "AIP/quality-rules/7136",
         "status": null,
         "critical": false,
@@ -307,7 +307,7 @@
     },
     {
         "id": 7220,
-        "name": "Avoid Unused Imports",
+        "name": "Ensure to remove unused and unnecessary Java imports",
         "href": "AIP/quality-rules/7220",
         "status": null,
         "critical": false,
@@ -358,7 +358,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to overrides equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -368,7 +368,7 @@
     },
     {
         "id": 7440,
-        "name": "Suspicious similar method names or signatures in an inheritance tree",
+        "name": "Ensure to fix the name of the method or the signature",
         "href": "AIP/quality-rules/7440",
         "status": null,
         "critical": true,
@@ -390,7 +390,7 @@
     },
     {
         "id": 7818,
-        "name": "Avoid Functions having a very low Comment/Code ratio",
+        "name": "Ensure you have a good level of comments of your Functions",
         "href": "AIP/quality-rules/7818",
         "status": null,
         "critical": false,
@@ -402,7 +402,7 @@
     },
     {
         "id": 7836,
-        "name": "Avoid undocumented Functions",
+        "name": "Add comments into functions to explain what is their goal and how they work.",
         "href": "AIP/quality-rules/7836",
         "status": null,
         "critical": false,
@@ -415,7 +415,7 @@
     },
     {
         "id": 7838,
-        "name": "Avoid undocumented Methods",
+        "name": "Add comments into method implementation to explain what is their goal and how they work.",
         "href": "AIP/quality-rules/7838",
         "status": null,
         "critical": false,
@@ -450,7 +450,7 @@
     },
     {
         "id": 7846,
-        "name": "Avoid Methods with a very low comment/code ratio",
+        "name": "Ensure your methods are commented enough to provide good understanding to other contributors",
         "href": "AIP/quality-rules/7846",
         "status": null,
         "critical": false,
@@ -503,7 +503,7 @@
     },
     {
         "id": 8032,
-        "name": "Avoid using a break statement in 'for' loops",
+        "name": "Ensure you don't use multiple break statement in 'for' loops",
         "href": "AIP/quality-rules/8032",
         "status": null,
         "critical": false,
@@ -593,7 +593,7 @@
     },
     {
         "id": 1020064,
-        "name": "Avoid Superclass knowing Subclass (Javascript)",
+        "name": "Ensure that there are no references to subclass in the superclass to subdue complexity of your code",
         "href": "AIP/quality-rules/1020064",
         "status": null,
         "critical": false,
@@ -603,7 +603,7 @@
     },
     {
         "id": 1020076,
-        "name": "Avoid Artifacts with too many parameters (Javascript)",
+        "name": "Aggregate method parameters into an object to improve readability and maintainability of your code",
         "href": "AIP/quality-rules/1020076",
         "status": null,
         "critical": false,
@@ -612,18 +612,8 @@
         ]
     },
     {
-        "id": 1020082,
-        "name": "Avoid undocumented Functions (Javascript)",
-        "href": "AIP/quality-rules/1020082",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "HTML5"
-        ]
-    },
-    {
         "id": 1020506,
-        "name": "Avoid using $scope in controllers",
+        "name": "Prefer using 'this' instead of $scope in controllers to generate views to ensure consistency and structuredness in code",
         "href": "AIP/quality-rules/1020506",
         "status": null,
         "critical": false,
@@ -633,7 +623,7 @@
     },
     {
         "id": 1020508,
-        "name": "Use Angular wrapper service $document",
+        "name": "Prefer using AngularJS wrapper service $document to maintain structuredness of code",
         "href": "AIP/quality-rules/1020508",
         "status": null,
         "critical": false,
@@ -643,7 +633,7 @@
     },
     {
         "id": 1020510,
-        "name": "Use Angular wrapper service $window",
+        "name": "Prefer using AngularJS wrapper service $window to maintain structuredness of code",
         "href": "AIP/quality-rules/1020510",
         "status": null,
         "critical": false,
@@ -653,7 +643,7 @@
     },
     {
         "id": 1020512,
-        "name": "Use Angular wrapper service $timeout",
+        "name": "Prefer using AngularJS wrapper service $timeout to maintain structuredness of code",
         "href": "AIP/quality-rules/1020512",
         "status": null,
         "critical": false,
@@ -663,7 +653,7 @@
     },
     {
         "id": 1020516,
-        "name": "Avoid using Javascript Array typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isArray instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020516",
         "status": null,
         "critical": false,
@@ -673,7 +663,7 @@
     },
     {
         "id": 1020518,
-        "name": "Avoid using Javascript Date typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isDate instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020518",
         "status": null,
         "critical": false,
@@ -683,7 +673,7 @@
     },
     {
         "id": 1020520,
-        "name": "Avoid using Javascript Function typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isFunction instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020520",
         "status": null,
         "critical": false,
@@ -693,7 +683,7 @@
     },
     {
         "id": 1020522,
-        "name": "Avoid using Javascript String typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isString instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020522",
         "status": null,
         "critical": false,
@@ -703,7 +693,7 @@
     },
     {
         "id": 1020524,
-        "name": "Avoid using Javascript Object typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isObject instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020524",
         "status": null,
         "critical": false,
@@ -713,7 +703,7 @@
     },
     {
         "id": 1020526,
-        "name": "Avoid using Javascript Number typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isNumber instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020526",
         "status": null,
         "critical": false,
@@ -723,7 +713,7 @@
     },
     {
         "id": 1020528,
-        "name": "Avoid using Javascript Regexp typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isRegex instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020528",
         "status": null,
         "critical": false,
@@ -733,7 +723,7 @@
     },
     {
         "id": 1020532,
-        "name": "Use Angular factory() instead of service()",
+        "name": "Prefer using Factory() provider recipe instead of Service() to ensure structuredness and efficiency",
         "href": "AIP/quality-rules/1020532",
         "status": null,
         "critical": false,
@@ -743,7 +733,7 @@
     },
     {
         "id": 1020812,
-        "name": "Avoid invoking super more than once in constructor ",
+        "name": "Invoking super should be done only once in constructor",
         "href": "AIP/quality-rules/1020812",
         "status": null,
         "critical": false,
@@ -753,7 +743,7 @@
     },
     {
         "id": 1020824,
-        "name": "Avoid Superclass knowing Subclass (Typescript)",
+        "name": "Always ensure Superclass not knowing Subclass",
         "href": "AIP/quality-rules/1020824",
         "status": null,
         "critical": false,
@@ -763,7 +753,7 @@
     },
     {
         "id": 1020836,
-        "name": "Avoid exporting namespaces",
+        "name": "Always prefer using modules over namespaces for structuring you code instead of exporting namespaces",
         "href": "AIP/quality-rules/1020836",
         "status": null,
         "critical": false,
@@ -773,7 +763,7 @@
     },
     {
         "id": 1020848,
-        "name": "Always favour pipable operators in RxJS",
+        "name": "Always ensuure using \"pipeable\" operators which can be imported from \"rxjs/operators\" instead of \"patch\" operator",
         "href": "AIP/quality-rules/1020848",
         "status": null,
         "critical": false,
@@ -783,7 +773,7 @@
     },
     {
         "id": 1039046,
-        "name": "Always use {@code} to wrap code statements or values such as null",
+        "name": "Ensure using {@code} to wrap code statements",
         "href": "AIP/quality-rules/1039046",
         "status": null,
         "critical": false,
@@ -793,7 +783,7 @@
     },
     {
         "id": 1039050,
-        "name": "Add @Override on methods overriding or implementing a method declared in a super type",
+        "name": "Prefer using @Override annotation to mark methods overriding or implementing a method declared in a super type to avoid unintentional errors",
         "href": "AIP/quality-rules/1039050",
         "status": null,
         "critical": false,
@@ -803,7 +793,7 @@
     },
     {
         "id": 1065000,
-        "name": "Avoid using \"continue\" statement",
+        "name": null,
         "href": "AIP/quality-rules/1065000",
         "status": null,
         "critical": false,
@@ -825,7 +815,7 @@
     },
     {
         "id": 1101016,
-        "name": "Avoid Artifacts with too many parameters (SQL)",
+        "name": "Ensure that you have a limited number of paramenters in OR clauses or IN statements to ensure good query performance",
         "href": "AIP/quality-rules/1101016",
         "status": null,
         "critical": false,
@@ -835,7 +825,7 @@
     },
     {
         "id": 1101050,
-        "name": "Package Stored Procedure naming convention - prefix control (SQL)",
+        "name": "Ensure to have your package stored procedures named based on the same naming convention for better readability",
         "href": "AIP/quality-rules/1101050",
         "status": null,
         "critical": false,
@@ -845,7 +835,7 @@
     },
     {
         "id": 1101056,
-        "name": "Avoid large Tables - too many columns (SQL)",
+        "name": "Ensure that your tables do not have large number of columns as it tends to add redundancy in data, try dividing the tables instead and link them through keys",
         "href": "AIP/quality-rules/1101056",
         "status": null,
         "critical": false,
@@ -855,7 +845,7 @@
     },
     {
         "id": 1101062,
-        "name": "Use at most one statement per line (SQL)",
+        "name": "Ensure to use one SQL statement per line to enhance readability and maintainability of query statements",
         "href": "AIP/quality-rules/1101062",
         "status": null,
         "critical": false,
@@ -865,7 +855,7 @@
     },
     {
         "id": 1101064,
-        "name": "Avoid cascading Triggers (SQL)",
+        "name": "Ensure that you do not have triggers acting on other triggers and cascading, review your design to avoid such cases",
         "href": "AIP/quality-rules/1101064",
         "status": null,
         "critical": false,

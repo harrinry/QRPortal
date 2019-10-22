@@ -11,7 +11,7 @@
     },
     {
         "id": 2232,
-        "name": "Pages should use error handling page",
+        "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
         "status": null,
         "critical": false,
@@ -21,7 +21,7 @@
     },
     {
         "id": 4652,
-        "name": "Avoid direct Class inheritance from java.lang.Throwable",
+        "name": "Ensure that classes are not inheriting from java.lang.Throwable.",
         "href": "AIP/quality-rules/4652",
         "status": null,
         "critical": false,
@@ -42,7 +42,7 @@
     },
     {
         "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "status": null,
         "critical": true,
@@ -52,7 +52,7 @@
     },
     {
         "id": 7862,
-        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+        "name": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
         "href": "AIP/quality-rules/7862",
         "status": null,
         "critical": false,
@@ -62,7 +62,7 @@
     },
     {
         "id": 7910,
-        "name": "Never exit a finally block with a return, break, continue, or throw",
+        "name": "Ensure not using jump statements inside a finally block so that any exceptions to be thrown by try catch block are not discarded",
         "href": "AIP/quality-rules/7910",
         "status": null,
         "critical": true,
@@ -72,7 +72,7 @@
     },
     {
         "id": 8028,
-        "name": "Avoid missing default in switch statements",
+        "name": "Ensure you don't forget the default clause in your switch statement",
         "href": "AIP/quality-rules/8028",
         "status": null,
         "critical": false,
@@ -85,7 +85,7 @@
     },
     {
         "id": 8112,
-        "name": "Avoid improper processing of the execution status of data handling operations",
+        "name": "Ensure data handling operations are properly encapsulated to provide clear status of the execution",
         "href": "AIP/quality-rules/8112",
         "status": null,
         "critical": true,
@@ -95,7 +95,7 @@
     },
     {
         "id": 1020068,
-        "name": "Avoid return statement in finally block (Javascript)",
+        "name": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
         "href": "AIP/quality-rules/1020068",
         "status": null,
         "critical": true,
@@ -105,7 +105,7 @@
     },
     {
         "id": 1020340,
-        "name": "Always implement the success/error/complete or done/fail/always callbacks when using jQuery ajax call",
+        "name": "Ensure you have implemented expected $ajax callbacks",
         "href": "AIP/quality-rules/1020340",
         "status": null,
         "critical": true,
@@ -115,7 +115,7 @@
     },
     {
         "id": 1020702,
-        "name": "Avoid using process.exit() without defining exitCode",
+        "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
         "status": null,
         "critical": false,
@@ -125,7 +125,7 @@
     },
     {
         "id": 1101040,
-        "name": "Avoid empty catch blocks (SQL)",
+        "name": "Ensure to handle exception in a catch block and not leave it empty",
         "href": "AIP/quality-rules/1101040",
         "status": null,
         "critical": true,

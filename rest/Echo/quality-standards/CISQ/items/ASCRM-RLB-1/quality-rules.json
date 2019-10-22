@@ -1,7 +1,7 @@
 [
     {
         "id": 7640,
-        "name": "Avoid catch blocks with assertion",
+        "name": "Ensure that the catch blocks are without assertion",
         "href": "AIP/quality-rules/7640",
         "status": null,
         "critical": false,
@@ -33,7 +33,7 @@
     },
     {
         "id": 1020342,
-        "name": "Avoid empty jQuery ajax error/fail blocks",
+        "name": "Ensure you have properly manage errors by using the error/fail callbacks",
         "href": "AIP/quality-rules/1020342",
         "status": null,
         "critical": true,
@@ -43,7 +43,7 @@
     },
     {
         "id": 1020452,
-        "name": "Avoid empty componentDidCatch blocks",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020452",
         "status": null,
         "critical": true,
@@ -53,7 +53,7 @@
     },
     {
         "id": 1020540,
-        "name": "Avoid using $http success and error function",
+        "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
         "href": "AIP/quality-rules/1020540",
         "status": null,
         "critical": false,
@@ -63,7 +63,7 @@
     },
     {
         "id": 1020858,
-        "name": "Avoid empty componentDidCatch blocks (Typescript)",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020858",
         "status": null,
         "critical": true,
@@ -73,7 +73,7 @@
     },
     {
         "id": 1101040,
-        "name": "Avoid empty catch blocks (SQL)",
+        "name": "Ensure to handle exception in a catch block and not leave it empty",
         "href": "AIP/quality-rules/1101040",
         "status": null,
         "critical": true,

@@ -1,7 +1,7 @@
 [
     {
         "id": 1039056,
-        "name": "Avoid insecure use of YAML deserialization when using SnakeYaml (JEE)",
+        "name": "Always make sure to use a Yaml instance that is constructed either with a SafeConstructor.",
         "href": "AIP/quality-rules/1039056",
         "status": null,
         "critical": true,
@@ -11,7 +11,7 @@
     },
     {
         "id": 1039062,
-        "name": "Always implement readObject() to prevent untrusted deserialization when loading from ObjectInputStream",
+        "name": "Ensure the readObject() has been implemented for class instantiated by ObjectInputStream to prevent untrusted deserialization",
         "href": "AIP/quality-rules/1039062",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 1042042,
-        "name": "Avoid using Rest Plugin with XStream handler to deserialise XML requests in Struts 2.1.2 - Struts 2.3.33, Struts 2.5 - Struts 2.5.12",
+        "name": "Using invoking dataHandler.createXStream method with type filtering to Remote Code Execution when deserializing XML payloads",
         "href": "AIP/quality-rules/1042042",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 1042052,
-        "name": "Avoid using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
+        "name": "Ensure not using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
         "href": "AIP/quality-rules/1042052",
         "status": null,
         "critical": true,

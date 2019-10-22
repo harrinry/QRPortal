@@ -111,7 +111,7 @@
     },
     {
         "id": 2232,
-        "name": "Pages should use error handling page",
+        "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
         "status": null,
         "critical": false,
@@ -121,7 +121,7 @@
     },
     {
         "id": 2236,
-        "name": "Avoid use of standard SQL API",
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
         "href": "AIP/quality-rules/2236",
         "status": null,
         "critical": false,
@@ -131,7 +131,7 @@
     },
     {
         "id": 2284,
-        "name": "Avoid large JSP Pages - too many Scriptlets",
+        "name": "Prefer using JSP Standard Tag Library (JSTL) instead of JSP scriptlets as easier to read and to maintain",
         "href": "AIP/quality-rules/2284",
         "status": null,
         "critical": false,
@@ -141,7 +141,7 @@
     },
     {
         "id": 4554,
-        "name": "Avoid large Classes - too many Methods (JEE)",
+        "name": "Ensure you review the Class design to reduce the number of Methods",
         "href": "AIP/quality-rules/4554",
         "status": null,
         "critical": false,
@@ -151,7 +151,7 @@
     },
     {
         "id": 4556,
-        "name": "Avoid large Classes - too many Constructors (JEE)",
+        "name": "Ensure you review the Class design to reduce the number of Constructors",
         "href": "AIP/quality-rules/4556",
         "status": null,
         "critical": false,
@@ -161,7 +161,7 @@
     },
     {
         "id": 4558,
-        "name": "Avoid large Classes - too many Fields",
+        "name": "Ensure that the classes have a resonable number of fields",
         "href": "AIP/quality-rules/4558",
         "status": null,
         "critical": false,
@@ -171,7 +171,7 @@
     },
     {
         "id": 4560,
-        "name": "Avoid large Interfaces - too many Methods (JEE)",
+        "name": "Ensure that the interfaces have a resonable number of methods",
         "href": "AIP/quality-rules/4560",
         "status": null,
         "critical": false,
@@ -181,7 +181,7 @@
     },
     {
         "id": 4592,
-        "name": "Avoid hiding static Methods",
+        "name": "Always Prefer not hiding Static Methods to avoid unexpected behavior of your application",
         "href": "AIP/quality-rules/4592",
         "status": null,
         "critical": true,
@@ -191,7 +191,7 @@
     },
     {
         "id": 4594,
-        "name": "Avoid using 'java.io.File'",
+        "name": "Prefer not using 'java.io.File' to avoid violating the Enterprise JavaBeans (EJB) specification",
         "href": "AIP/quality-rules/4594",
         "status": null,
         "critical": false,
@@ -201,7 +201,7 @@
     },
     {
         "id": 4596,
-        "name": "Avoid using 'java.lang.System.getenv()'",
+        "name": "Prefer using environment file instead of using java.lang.System.getenv()",
         "href": "AIP/quality-rules/4596",
         "status": null,
         "critical": false,
@@ -211,7 +211,7 @@
     },
     {
         "id": 4598,
-        "name": "Avoid using 'java.lang.Runtime.exec()'",
+        "name": "Ensure you don't use 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "status": null,
         "critical": false,
@@ -221,7 +221,7 @@
     },
     {
         "id": 4600,
-        "name": "Avoid using 'java.System.exit()'",
+        "name": "Ensure you don't use 'java.System.exit()' to know what happened when you exit your program",
         "href": "AIP/quality-rules/4600",
         "status": null,
         "critical": false,
@@ -231,7 +231,7 @@
     },
     {
         "id": 4604,
-        "name": "Avoid using 'java.lang.Error'",
+        "name": "Prefer using the exception error handling model instead of 'java.lang.Error'",
         "href": "AIP/quality-rules/4604",
         "status": null,
         "critical": false,
@@ -241,7 +241,7 @@
     },
     {
         "id": 4606,
-        "name": "Avoid using 'sun.*' Classes",
+        "name": "Ensure you no longer use 'sun.*' Classes",
         "href": "AIP/quality-rules/4606",
         "status": null,
         "critical": false,
@@ -251,7 +251,7 @@
     },
     {
         "id": 4610,
-        "name": "Avoid using anonymous Classes",
+        "name": "Prefer not using anonymous Classes for maintenance reason",
         "href": "AIP/quality-rules/4610",
         "status": null,
         "critical": false,
@@ -261,7 +261,7 @@
     },
     {
         "id": 4612,
-        "name": "Avoid using native Methods (JNI)",
+        "name": "Ensure you don't use JNI for security reason",
         "href": "AIP/quality-rules/4612",
         "status": null,
         "critical": false,
@@ -271,7 +271,7 @@
     },
     {
         "id": 4614,
-        "name": "Proper overriding of 'clone()'",
+        "name": "A clone method that is overridden in a subclass should call super.clone. Not doing so causes the subclass clone to return an object of the wrong type.",
         "href": "AIP/quality-rules/4614",
         "status": null,
         "critical": true,
@@ -281,7 +281,7 @@
     },
     {
         "id": 4616,
-        "name": "Proper overriding of 'finalize()'",
+        "name": "Prefer calling \"super.finalize()\" at the end of \"Object.finalize()\" implementations",
         "href": "AIP/quality-rules/4616",
         "status": null,
         "critical": true,
@@ -291,7 +291,7 @@
     },
     {
         "id": 4652,
-        "name": "Avoid direct Class inheritance from java.lang.Throwable",
+        "name": "Ensure that classes are not inheriting from java.lang.Throwable.",
         "href": "AIP/quality-rules/4652",
         "status": null,
         "critical": false,
@@ -301,7 +301,7 @@
     },
     {
         "id": 4656,
-        "name": "Avoid declaring throwing an exception and not throwing it",
+        "name": "Ensure to throw an exception which has been declared",
         "href": "AIP/quality-rules/4656",
         "status": null,
         "critical": false,
@@ -311,7 +311,7 @@
     },
     {
         "id": 4696,
-        "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
+        "name": "Prefer using logging framework  as SLF4j instead of  'System.err' or 'System.out'",
         "href": "AIP/quality-rules/4696",
         "status": null,
         "critical": false,
@@ -321,7 +321,7 @@
     },
     {
         "id": 4698,
-        "name": "Avoid using 'System.err' and 'System.out' outside a try catch block",
+        "name": "Ensure to have other ways of listing errors outside a try/catch  than 'System.err' and 'System.out'",
         "href": "AIP/quality-rules/4698",
         "status": null,
         "critical": false,
@@ -331,7 +331,7 @@
     },
     {
         "id": 4702,
-        "name": "Avoid using 'Throwable.printStackTrace()' with no argument",
+        "name": "Ensure to not use default stream(System.Err) for printStackTrace to print throwable and its stack trace in order to protect sensitive information.",
         "href": "AIP/quality-rules/4702",
         "status": null,
         "critical": false,
@@ -341,7 +341,7 @@
     },
     {
         "id": 4708,
-        "name": "Avoid using Dynamic instantiation",
+        "name": "Ensure to use class invocation or method call instead of dynamic instantiation known to be slower",
         "href": "AIP/quality-rules/4708",
         "status": null,
         "critical": false,
@@ -351,7 +351,7 @@
     },
     {
         "id": 4716,
-        "name": "Avoid Classes implementing too many Interfaces (JEE)",
+        "name": "Ensure that the class is reimplementing a sonable number of Interfaces",
         "href": "AIP/quality-rules/4716",
         "status": null,
         "critical": false,
@@ -361,7 +361,7 @@
     },
     {
         "id": 4722,
-        "name": "Track Classes referencing Database objects",
+        "name": "Ensure that all classes that reference the database are in a specific layer usually called data layer",
         "href": "AIP/quality-rules/4722",
         "status": null,
         "critical": false,
@@ -371,7 +371,7 @@
     },
     {
         "id": 7132,
-        "name": "Action Mappings should have few forwards",
+        "name": "Ensure that action mappings have few forwards to avoid managing too complex behaviors in the Action class",
         "href": "AIP/quality-rules/7132",
         "status": null,
         "critical": false,
@@ -381,7 +381,7 @@
     },
     {
         "id": 7136,
-        "name": "Each method in an Action Class should have a small complexity",
+        "name": "Ensure that application architecture in not too complex and move some of this logic to another conceptual layer",
         "href": "AIP/quality-rules/7136",
         "status": null,
         "critical": false,
@@ -391,7 +391,7 @@
     },
     {
         "id": 7140,
-        "name": "Action Artifacts should not directly call a JSP page",
+        "name": "Ensure to use the action mapping table in struts configuration file.",
         "href": "AIP/quality-rules/7140",
         "status": null,
         "critical": true,
@@ -401,7 +401,7 @@
     },
     {
         "id": 7142,
-        "name": "Action Classes should have only one public method",
+        "name": "Ensure to have action classes that have only 1 public method",
         "href": "AIP/quality-rules/7142",
         "status": null,
         "critical": false,
@@ -411,7 +411,7 @@
     },
     {
         "id": 7146,
-        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+        "name": "Ensure to reference only Java Objects belonging to the scope in order to respect the usage context in a JSP page.",
         "href": "AIP/quality-rules/7146",
         "status": null,
         "critical": false,
@@ -421,7 +421,7 @@
     },
     {
         "id": 7148,
-        "name": "JSP pages should always be accessed through their tiles definition",
+        "name": "Ensure that JSP Pages are accessed through their tiles definition",
         "href": "AIP/quality-rules/7148",
         "status": null,
         "critical": false,
@@ -431,7 +431,7 @@
     },
     {
         "id": 7152,
-        "name": "Avoid Fields in Servlet Classes that are not final static",
+        "name": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
         "href": "AIP/quality-rules/7152",
         "status": null,
         "critical": true,
@@ -441,7 +441,7 @@
     },
     {
         "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
+        "name": "Ensure to use use local variables inside your methods, and pass whatever data you need to other methods in the class via parameters",
         "href": "AIP/quality-rules/7154",
         "status": null,
         "critical": true,
@@ -451,7 +451,7 @@
     },
     {
         "id": 7220,
-        "name": "Avoid Unused Imports",
+        "name": "Ensure to remove unused and unnecessary Java imports",
         "href": "AIP/quality-rules/7220",
         "status": null,
         "critical": false,
@@ -461,7 +461,7 @@
     },
     {
         "id": 7242,
-        "name": "Avoid implementing Action Classes inheriting directly from Struts Action",
+        "name": "Ensure to have Action Class inherit from one single extension of Struts Action Class that is abstract or have an abstract method.",
         "href": "AIP/quality-rules/7242",
         "status": null,
         "critical": false,
@@ -512,7 +512,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to overrides equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -522,7 +522,7 @@
     },
     {
         "id": 7440,
-        "name": "Suspicious similar method names or signatures in an inheritance tree",
+        "name": "Ensure to fix the name of the method or the signature",
         "href": "AIP/quality-rules/7440",
         "status": null,
         "critical": true,
@@ -532,7 +532,7 @@
     },
     {
         "id": 7442,
-        "name": "Avoid to use this within Constructor in multi-thread environment",
+        "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "status": null,
         "critical": true,
@@ -542,7 +542,7 @@
     },
     {
         "id": 7446,
-        "name": "Avoid double checked locking",
+        "name": "Prefer not using Double checked locking for JSE 4.x and previous version",
         "href": "AIP/quality-rules/7446",
         "status": null,
         "critical": true,
@@ -552,7 +552,7 @@
     },
     {
         "id": 7506,
-        "name": "Define equals() and hashCode() for component",
+        "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "status": null,
         "critical": true,
@@ -562,7 +562,7 @@
     },
     {
         "id": 7636,
-        "name": "Use version instead of timestamp",
+        "name": "Ensure to use version instead of timestamp",
         "href": "AIP/quality-rules/7636",
         "status": null,
         "critical": false,
@@ -572,7 +572,7 @@
     },
     {
         "id": 7640,
-        "name": "Avoid catch blocks with assertion",
+        "name": "Ensure that the catch blocks are without assertion",
         "href": "AIP/quality-rules/7640",
         "status": null,
         "critical": false,
@@ -582,7 +582,7 @@
     },
     {
         "id": 7652,
-        "name": "Avoid throwing an exception in a catch block without chaining it",
+        "name": "Ensure that exceptions  throwed in a catch block  are cached",
         "href": "AIP/quality-rules/7652",
         "status": null,
         "critical": false,
@@ -592,7 +592,7 @@
     },
     {
         "id": 7678,
-        "name": "Avoid using specific logging implementation",
+        "name": "Ensure not using specific logging implementation",
         "href": "AIP/quality-rules/7678",
         "status": null,
         "critical": false,
@@ -602,7 +602,7 @@
     },
     {
         "id": 7708,
-        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
+        "name": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
         "href": "AIP/quality-rules/7708",
         "status": null,
         "critical": false,
@@ -612,7 +612,7 @@
     },
     {
         "id": 7714,
-        "name": "Do not use auto-wiring",
+        "name": "Prefer not using auto-wiring to guarantee more flexibility and better performance of your application",
         "href": "AIP/quality-rules/7714",
         "status": null,
         "critical": false,
@@ -622,7 +622,7 @@
     },
     {
         "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
+        "name": "Ensure that singleton or factory are not defined when using Spring",
         "href": "AIP/quality-rules/7716",
         "status": null,
         "critical": false,
@@ -666,7 +666,7 @@
     },
     {
         "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "status": null,
         "critical": true,
@@ -676,7 +676,7 @@
     },
     {
         "id": 7862,
-        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+        "name": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
         "href": "AIP/quality-rules/7862",
         "status": null,
         "critical": false,
@@ -686,7 +686,7 @@
     },
     {
         "id": 7910,
-        "name": "Never exit a finally block with a return, break, continue, or throw",
+        "name": "Ensure not using jump statements inside a finally block so that any exceptions to be thrown by try catch block are not discarded",
         "href": "AIP/quality-rules/7910",
         "status": null,
         "critical": true,
@@ -696,7 +696,7 @@
     },
     {
         "id": 7914,
-        "name": "Avoid direct access to Database Tables",
+        "name": "Prefer using stored procedure instead of using direct SQL queries to database",
         "href": "AIP/quality-rules/7914",
         "status": null,
         "critical": false,
@@ -708,7 +708,7 @@
     },
     {
         "id": 7916,
-        "name": "Avoid direct use of Database objects (JSP/ASP)",
+        "name": "Ensure your JSP/ASP pages are not directly connected to database",
         "href": "AIP/quality-rules/7916",
         "status": null,
         "critical": false,
@@ -840,7 +840,7 @@
     },
     {
         "id": 8028,
-        "name": "Avoid missing default in switch statements",
+        "name": "Ensure you don't forget the default clause in your switch statement",
         "href": "AIP/quality-rules/8028",
         "status": null,
         "critical": false,
@@ -853,7 +853,7 @@
     },
     {
         "id": 8032,
-        "name": "Avoid using a break statement in 'for' loops",
+        "name": "Ensure you don't use multiple break statement in 'for' loops",
         "href": "AIP/quality-rules/8032",
         "status": null,
         "critical": false,
@@ -1009,7 +1009,7 @@
     },
     {
         "id": 8096,
-        "name": "Avoid testing floating point numbers for equality",
+        "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/8096",
         "status": null,
         "critical": true,
@@ -1019,7 +1019,7 @@
     },
     {
         "id": 8102,
-        "name": "Avoid hardcoded network resource names (JEE)",
+        "name": "Ensure not having hardcoded network resources names in the source files (JEE)",
         "href": "AIP/quality-rules/8102",
         "status": null,
         "critical": false,
@@ -1029,7 +1029,7 @@
     },
     {
         "id": 8112,
-        "name": "Avoid improper processing of the execution status of data handling operations",
+        "name": "Ensure data handling operations are properly encapsulated to provide clear status of the execution",
         "href": "AIP/quality-rules/8112",
         "status": null,
         "critical": true,
@@ -1039,7 +1039,7 @@
     },
     {
         "id": 8136,
-        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "name": "Ensure to have CDI Beans with normal scope proxyable",
         "href": "AIP/quality-rules/8136",
         "status": null,
         "critical": true,
@@ -1049,7 +1049,7 @@
     },
     {
         "id": 8216,
-        "name": "Avoid numerical data corruption during incompatible mutation",
+        "name": "Ensure not using incorrect numeric type conversions to avoid data corruption",
         "href": "AIP/quality-rules/8216",
         "status": null,
         "critical": true,
@@ -1059,7 +1059,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "Always check the content type when receiving a HTTP post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -1069,7 +1069,7 @@
     },
     {
         "id": 8220,
-        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "name": "Prefer not using deprecated methods, constructors, fields, type or packages",
         "href": "AIP/quality-rules/8220",
         "status": null,
         "critical": true,
@@ -1079,7 +1079,7 @@
     },
     {
         "id": 1020018,
-        "name": "Avoid using Web SQL databases",
+        "name": "Make sure that you do not use Web SQL databases",
         "href": "AIP/quality-rules/1020018",
         "status": null,
         "critical": true,
@@ -1099,7 +1099,7 @@
     },
     {
         "id": 1020054,
-        "name": "Avoid using delete on arrays",
+        "name": "To delete or remove an index element from an array use splice, pop or shift rather than delete to prevent empty indexes",
         "href": "AIP/quality-rules/1020054",
         "status": null,
         "critical": false,
@@ -1109,7 +1109,7 @@
     },
     {
         "id": 1020064,
-        "name": "Avoid Superclass knowing Subclass (Javascript)",
+        "name": "Ensure that there are no references to subclass in the superclass to subdue complexity of your code",
         "href": "AIP/quality-rules/1020064",
         "status": null,
         "critical": false,
@@ -1119,7 +1119,7 @@
     },
     {
         "id": 1020066,
-        "name": "Avoid using Javascript Function constructor",
+        "name": "Ensure to not use Javascript Function constructor calling a string represented source code to prevent impaired performace",
         "href": "AIP/quality-rules/1020066",
         "status": null,
         "critical": false,
@@ -1129,7 +1129,7 @@
     },
     {
         "id": 1020068,
-        "name": "Avoid return statement in finally block (Javascript)",
+        "name": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
         "href": "AIP/quality-rules/1020068",
         "status": null,
         "critical": true,
@@ -1139,7 +1139,7 @@
     },
     {
         "id": 1020070,
-        "name": "Avoid hardcoded network resource names (Javascript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Javascript)",
         "href": "AIP/quality-rules/1020070",
         "status": null,
         "critical": false,
@@ -1149,7 +1149,7 @@
     },
     {
         "id": 1020072,
-        "name": "Avoid direct access to Database Tables in Javascript",
+        "name": "Make sure to not access the database from Javascript directly, instead create dedicated modules for the same",
         "href": "AIP/quality-rules/1020072",
         "status": null,
         "critical": false,
@@ -1159,7 +1159,7 @@
     },
     {
         "id": 1020076,
-        "name": "Avoid Artifacts with too many parameters (Javascript)",
+        "name": "Aggregate method parameters into an object to improve readability and maintainability of your code",
         "href": "AIP/quality-rules/1020076",
         "status": null,
         "critical": false,
@@ -1169,7 +1169,7 @@
     },
     {
         "id": 1020102,
-        "name": "Always use JSON.parse & JSON.stringify with try/catch block (Javascript)",
+        "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
         "href": "AIP/quality-rules/1020102",
         "status": null,
         "critical": false,
@@ -1179,7 +1179,7 @@
     },
     {
         "id": 1020312,
-        "name": "Avoid use of anonymous functions to attach events",
+        "name": "Ensure not using anonymous functions to attach events because they are difficult to debug, maintain, test or reuse",
         "href": "AIP/quality-rules/1020312",
         "status": null,
         "critical": false,
@@ -1189,7 +1189,7 @@
     },
     {
         "id": 1020318,
-        "name": "Avoid using jQuery deprecated methods",
+        "name": "Ensure you don't use officially jQuery deprecated methods",
         "href": "AIP/quality-rules/1020318",
         "status": null,
         "critical": false,
@@ -1199,7 +1199,7 @@
     },
     {
         "id": 1020340,
-        "name": "Always implement the success/error/complete or done/fail/always callbacks when using jQuery ajax call",
+        "name": "Ensure you have implemented expected $ajax callbacks",
         "href": "AIP/quality-rules/1020340",
         "status": null,
         "critical": true,
@@ -1209,7 +1209,7 @@
     },
     {
         "id": 1020342,
-        "name": "Avoid empty jQuery ajax error/fail blocks",
+        "name": "Ensure you have properly manage errors by using the error/fail callbacks",
         "href": "AIP/quality-rules/1020342",
         "status": null,
         "critical": true,
@@ -1219,7 +1219,7 @@
     },
     {
         "id": 1020450,
-        "name": "Ensure catching Javascript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020450",
         "status": null,
         "critical": false,
@@ -1229,7 +1229,7 @@
     },
     {
         "id": 1020452,
-        "name": "Avoid empty componentDidCatch blocks",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020452",
         "status": null,
         "critical": true,
@@ -1239,7 +1239,7 @@
     },
     {
         "id": 1020502,
-        "name": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
+        "name": "Prefer using angular.fromJson and angular.toJson instead of standard JS APIs to improve maintainability and robustness of your code",
         "href": "AIP/quality-rules/1020502",
         "status": null,
         "critical": false,
@@ -1249,7 +1249,7 @@
     },
     {
         "id": 1020506,
-        "name": "Avoid using $scope in controllers",
+        "name": "Prefer using 'this' instead of $scope in controllers to generate views to ensure consistency and structuredness in code",
         "href": "AIP/quality-rules/1020506",
         "status": null,
         "critical": false,
@@ -1259,7 +1259,7 @@
     },
     {
         "id": 1020508,
-        "name": "Use Angular wrapper service $document",
+        "name": "Prefer using AngularJS wrapper service $document to maintain structuredness of code",
         "href": "AIP/quality-rules/1020508",
         "status": null,
         "critical": false,
@@ -1269,7 +1269,7 @@
     },
     {
         "id": 1020510,
-        "name": "Use Angular wrapper service $window",
+        "name": "Prefer using AngularJS wrapper service $window to maintain structuredness of code",
         "href": "AIP/quality-rules/1020510",
         "status": null,
         "critical": false,
@@ -1279,7 +1279,7 @@
     },
     {
         "id": 1020512,
-        "name": "Use Angular wrapper service $timeout",
+        "name": "Prefer using AngularJS wrapper service $timeout to maintain structuredness of code",
         "href": "AIP/quality-rules/1020512",
         "status": null,
         "critical": false,
@@ -1289,7 +1289,7 @@
     },
     {
         "id": 1020514,
-        "name": "Only use the angular.isUndefined or angular.isDefined methods in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isDefined or angular.isUndefined to maintain structuredness of code",
         "href": "AIP/quality-rules/1020514",
         "status": null,
         "critical": false,
@@ -1299,7 +1299,7 @@
     },
     {
         "id": 1020516,
-        "name": "Avoid using Javascript Array typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isArray instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020516",
         "status": null,
         "critical": false,
@@ -1309,7 +1309,7 @@
     },
     {
         "id": 1020518,
-        "name": "Avoid using Javascript Date typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isDate instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020518",
         "status": null,
         "critical": false,
@@ -1319,7 +1319,7 @@
     },
     {
         "id": 1020520,
-        "name": "Avoid using Javascript Function typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isFunction instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020520",
         "status": null,
         "critical": false,
@@ -1329,7 +1329,7 @@
     },
     {
         "id": 1020522,
-        "name": "Avoid using Javascript String typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isString instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020522",
         "status": null,
         "critical": false,
@@ -1339,7 +1339,7 @@
     },
     {
         "id": 1020524,
-        "name": "Avoid using Javascript Object typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isObject instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020524",
         "status": null,
         "critical": false,
@@ -1349,7 +1349,7 @@
     },
     {
         "id": 1020526,
-        "name": "Avoid using Javascript Number typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isNumber instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020526",
         "status": null,
         "critical": false,
@@ -1359,7 +1359,7 @@
     },
     {
         "id": 1020528,
-        "name": "Avoid using Javascript Regexp typecheck in AngularJS application",
+        "name": "Prefer using AngularJS wrapper service angular.isRegex instead of default JS implementation to maintain structuredness of code",
         "href": "AIP/quality-rules/1020528",
         "status": null,
         "critical": false,
@@ -1369,7 +1369,7 @@
     },
     {
         "id": 1020530,
-        "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
+        "name": "Ensure that you do not use NOT operator with a logical check to prevent unexpected results",
         "href": "AIP/quality-rules/1020530",
         "status": null,
         "critical": false,
@@ -1379,7 +1379,7 @@
     },
     {
         "id": 1020532,
-        "name": "Use Angular factory() instead of service()",
+        "name": "Prefer using Factory() provider recipe instead of Service() to ensure structuredness and efficiency",
         "href": "AIP/quality-rules/1020532",
         "status": null,
         "critical": false,
@@ -1389,7 +1389,7 @@
     },
     {
         "id": 1020536,
-        "name": "Avoid using $ or jQuery, use angular.element instead",
+        "name": "Prefer using Angular wrapper service instead of using $ or Jquery.element to ensure structuredness",
         "href": "AIP/quality-rules/1020536",
         "status": null,
         "critical": false,
@@ -1399,7 +1399,7 @@
     },
     {
         "id": 1020538,
-        "name": "Avoid wrapping angular.element objects with jQuery or $",
+        "name": "Ensure that you do not use a jQuery wrapper on angular.element to ensure structuredness in code",
         "href": "AIP/quality-rules/1020538",
         "status": null,
         "critical": false,
@@ -1409,7 +1409,7 @@
     },
     {
         "id": 1020540,
-        "name": "Avoid using $http success and error function",
+        "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
         "href": "AIP/quality-rules/1020540",
         "status": null,
         "critical": false,
@@ -1419,7 +1419,7 @@
     },
     {
         "id": 1020700,
-        "name": "Avoid the lack of error handling in the Node.js callbacks",
+        "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
         "status": null,
         "critical": false,
@@ -1429,7 +1429,7 @@
     },
     {
         "id": 1020702,
-        "name": "Avoid using process.exit() without defining exitCode",
+        "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
         "status": null,
         "critical": false,
@@ -1439,7 +1439,7 @@
     },
     {
         "id": 1020704,
-        "name": "Avoid using string concatenation when using __dirname and __filename",
+        "name": "The variables \"__dirname\" and \"__filename\" should not be used in string concatenation to avoid having an invalid path",
         "href": "AIP/quality-rules/1020704",
         "status": null,
         "critical": false,
@@ -1449,7 +1449,7 @@
     },
     {
         "id": 1020800,
-        "name": "Avoid jump statements in finally ",
+        "name": "Avoid jump statements in finally",
         "href": "AIP/quality-rules/1020800",
         "status": null,
         "critical": false,
@@ -1459,7 +1459,7 @@
     },
     {
         "id": 1020802,
-        "name": "Avoid having errors without throwing them ",
+        "name": "Always throw all created error.",
         "href": "AIP/quality-rules/1020802",
         "status": null,
         "critical": false,
@@ -1469,7 +1469,7 @@
     },
     {
         "id": 1020806,
-        "name": "Avoid using NaN in comparison ",
+        "name": "Preferusing  Number.isNaN() instead NaN in comparison",
         "href": "AIP/quality-rules/1020806",
         "status": null,
         "critical": false,
@@ -1479,7 +1479,7 @@
     },
     {
         "id": 1020812,
-        "name": "Avoid invoking super more than once in constructor ",
+        "name": "Invoking super should be done only once in constructor",
         "href": "AIP/quality-rules/1020812",
         "status": null,
         "critical": false,
@@ -1489,7 +1489,7 @@
     },
     {
         "id": 1020816,
-        "name": "Avoid using output of the function that does not return anything",
+        "name": "Ensure that you have not using output of the function that does not return anything",
         "href": "AIP/quality-rules/1020816",
         "status": null,
         "critical": false,
@@ -1499,7 +1499,7 @@
     },
     {
         "id": 1020822,
-        "name": "Always provide error callbacks when subscribing to HttpClient observables",
+        "name": "Ensure that you provide an error callback to the HttpClient  ubscribe method.",
         "href": "AIP/quality-rules/1020822",
         "status": null,
         "critical": false,
@@ -1509,7 +1509,7 @@
     },
     {
         "id": 1020824,
-        "name": "Avoid Superclass knowing Subclass (Typescript)",
+        "name": "Always ensure Superclass not knowing Subclass",
         "href": "AIP/quality-rules/1020824",
         "status": null,
         "critical": false,
@@ -1519,7 +1519,7 @@
     },
     {
         "id": 1020826,
-        "name": "Avoid hardcoded network resource names (Typescript)",
+        "name": "Ensure not having hardcoded network resources names in the source files (Typescript)",
         "href": "AIP/quality-rules/1020826",
         "status": null,
         "critical": false,
@@ -1529,7 +1529,7 @@
     },
     {
         "id": 1020830,
-        "name": "Avoid using Angular ElementRef API to manipulate DOM",
+        "name": "Prefer using Angular Renderer2 instead of directly interacting with the DOM",
         "href": "AIP/quality-rules/1020830",
         "status": null,
         "critical": false,
@@ -1539,7 +1539,7 @@
     },
     {
         "id": 1020836,
-        "name": "Avoid exporting namespaces",
+        "name": "Always prefer using modules over namespaces for structuring you code instead of exporting namespaces",
         "href": "AIP/quality-rules/1020836",
         "status": null,
         "critical": false,
@@ -1549,7 +1549,7 @@
     },
     {
         "id": 1020848,
-        "name": "Always favour pipable operators in RxJS",
+        "name": "Always ensuure using \"pipeable\" operators which can be imported from \"rxjs/operators\" instead of \"patch\" operator",
         "href": "AIP/quality-rules/1020848",
         "status": null,
         "critical": false,
@@ -1559,7 +1559,7 @@
     },
     {
         "id": 1020856,
-        "name": "Ensure catching Typescript error in React components",
+        "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020856",
         "status": null,
         "critical": false,
@@ -1569,7 +1569,7 @@
     },
     {
         "id": 1020858,
-        "name": "Avoid empty componentDidCatch blocks (Typescript)",
+        "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020858",
         "status": null,
         "critical": true,
@@ -1579,7 +1579,7 @@
     },
     {
         "id": 1039006,
-        "name": "Avoid using predictable SecureRandom Seeds",
+        "name": "Ensure that you are not using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "status": null,
         "critical": true,
@@ -1589,7 +1589,7 @@
     },
     {
         "id": 1039050,
-        "name": "Add @Override on methods overriding or implementing a method declared in a super type",
+        "name": "Prefer using @Override annotation to mark methods overriding or implementing a method declared in a super type to avoid unintentional errors",
         "href": "AIP/quality-rules/1039050",
         "status": null,
         "critical": false,
@@ -1599,7 +1599,7 @@
     },
     {
         "id": 1039068,
-        "name": "Avoid using the Non-Serializable Object Stored in Session",
+        "name": "Ensure to declare the object as serializable if you are using it as a httpsession attribute",
         "href": "AIP/quality-rules/1039068",
         "status": null,
         "critical": true,
@@ -1609,7 +1609,7 @@
     },
     {
         "id": 1040030,
-        "name": "Avoid Using Generic Authentication Exception Class",
+        "name": "Prefer not using Generic Authentication Exception Class to promote easy error handling",
         "href": "AIP/quality-rules/1040030",
         "status": null,
         "critical": false,
@@ -1619,7 +1619,7 @@
     },
     {
         "id": 1040032,
-        "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
+        "name": "Ensure not using ControllerAdvice And HandlerExceptionResolver simultaneously to avoid unexpected behavior",
         "href": "AIP/quality-rules/1040032",
         "status": null,
         "critical": false,
@@ -1629,7 +1629,7 @@
     },
     {
         "id": 1065000,
-        "name": "Avoid using \"continue\" statement",
+        "name": null,
         "href": "AIP/quality-rules/1065000",
         "status": null,
         "critical": false,
@@ -1661,7 +1661,7 @@
     },
     {
         "id": 1101016,
-        "name": "Avoid Artifacts with too many parameters (SQL)",
+        "name": "Ensure that you have a limited number of paramenters in OR clauses or IN statements to ensure good query performance",
         "href": "AIP/quality-rules/1101016",
         "status": null,
         "critical": false,
@@ -1671,7 +1671,7 @@
     },
     {
         "id": 1101020,
-        "name": "Avoid using quoted identifiers",
+        "name": "Make sure the identifiers defined in SQL are not quoted <\"\"> as it is confusing to read and reduces maintainability of code",
         "href": "AIP/quality-rules/1101020",
         "status": null,
         "critical": false,
@@ -1681,7 +1681,7 @@
     },
     {
         "id": 1101026,
-        "name": "Always define column names when inserting values",
+        "name": "When inserting data into columns always define column names to prevent mistakes and wrong updates",
         "href": "AIP/quality-rules/1101026",
         "status": null,
         "critical": false,
@@ -1691,7 +1691,7 @@
     },
     {
         "id": 1101036,
-        "name": "Use ANSI standard operators in SQL WHERE clauses",
+        "name": "Ensure using ANSI standard Operators such as <>,<=,>= in SQL where clauses to ensure portability",
         "href": "AIP/quality-rules/1101036",
         "status": null,
         "critical": false,
@@ -1703,7 +1703,7 @@
     },
     {
         "id": 1101040,
-        "name": "Avoid empty catch blocks (SQL)",
+        "name": "Ensure to handle exception in a catch block and not leave it empty",
         "href": "AIP/quality-rules/1101040",
         "status": null,
         "critical": true,
@@ -1713,7 +1713,7 @@
     },
     {
         "id": 1101052,
-        "name": "Use WHEN OTHERS in exception management (SQL)",
+        "name": "Ensure to use WHEN OTHERS with WHEN for exception handling to prevent unexpected behavior",
         "href": "AIP/quality-rules/1101052",
         "status": null,
         "critical": true,
@@ -1723,7 +1723,7 @@
     },
     {
         "id": 1101054,
-        "name": "Never use WHEN OTHER THEN NULL",
+        "name": "Ensure to propagate errors to client instead of using with NULL when handling exceptions through WHEN OTHERS",
         "href": "AIP/quality-rules/1101054",
         "status": null,
         "critical": true,
@@ -1733,7 +1733,7 @@
     },
     {
         "id": 1101056,
-        "name": "Avoid large Tables - too many columns (SQL)",
+        "name": "Ensure that your tables do not have large number of columns as it tends to add redundancy in data, try dividing the tables instead and link them through keys",
         "href": "AIP/quality-rules/1101056",
         "status": null,
         "critical": false,
@@ -1743,7 +1743,7 @@
     },
     {
         "id": 1101064,
-        "name": "Avoid cascading Triggers (SQL)",
+        "name": "Ensure that you do not have triggers acting on other triggers and cascading, review your design to avoid such cases",
         "href": "AIP/quality-rules/1101064",
         "status": null,
         "critical": false,
@@ -1753,7 +1753,7 @@
     },
     {
         "id": 1101072,
-        "name": "Tables should be aliased",
+        "name": "Improve the readability and maintainability of your queries by using aliases for tables",
         "href": "AIP/quality-rules/1101072",
         "status": null,
         "critical": false,
@@ -1763,7 +1763,7 @@
     },
     {
         "id": 1101074,
-        "name": "Tables aliases should not end with a numeric suffix",
+        "name": "Ensure your table aliases do not have numbers to improve readability",
         "href": "AIP/quality-rules/1101074",
         "status": null,
         "critical": false,
@@ -1773,7 +1773,7 @@
     },
     {
         "id": 1101076,
-        "name": "Column references should be qualified",
+        "name": "Ensure column references in queries are qualified to avoid any ambiguous and undefined references",
         "href": "AIP/quality-rules/1101076",
         "status": null,
         "critical": false,
@@ -1783,7 +1783,7 @@
     },
     {
         "id": 1101080,
-        "name": "Avoid orphaned synonyms",
+        "name": "When creating synonyms ensure that you do not reference a missing object as it will create errors at execution",
         "href": "AIP/quality-rules/1101080",
         "status": null,
         "critical": false,

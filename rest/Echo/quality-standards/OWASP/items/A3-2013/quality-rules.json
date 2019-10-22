@@ -1,7 +1,7 @@
 [
     {
         "id": 7732,
-        "name": "Avoid non validated inputs",
+        "name": "Ensure all the inputs are validated",
         "href": "AIP/quality-rules/7732",
         "status": null,
         "critical": true,
@@ -21,7 +21,7 @@
     },
     {
         "id": 8408,
-        "name": "Avoid reflected cross-site scripting (non persistent)",
+        "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8408",
         "status": null,
         "critical": true,
@@ -31,7 +31,7 @@
     },
     {
         "id": 8410,
-        "name": "Avoid cross-site scripting (persistent)",
+        "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8410",
         "status": null,
         "critical": true,
@@ -41,7 +41,7 @@
     },
     {
         "id": 8442,
-        "name": "Avoid resource injection",
+        "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8442",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 8444,
-        "name": "Avoid resource URL manipulation",
+        "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8444",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 1020022,
-        "name": "Avoid using submitted markup containing \"form\" and \"formaction\" attributes",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use form and formaction attributes in submitted markup",
         "href": "AIP/quality-rules/1020022",
         "status": null,
         "critical": true,
@@ -71,7 +71,7 @@
     },
     {
         "id": 1020024,
-        "name": "Avoid using submit markup related to \"form\" with id attribute",
+        "name": "Make sure the Html submit markup related to 'form' does not have id attribute to avoid to prevent cross site scripting",
         "href": "AIP/quality-rules/1020024",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 1020026,
-        "name": "Avoid using autofocus and onfocus in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onfocus in submitted markup",
         "href": "AIP/quality-rules/1020026",
         "status": null,
         "critical": true,
@@ -91,7 +91,7 @@
     },
     {
         "id": 1020028,
-        "name": "Avoid using autofocus and onblur in submitted markup",
+        "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onblur in a submitted markup",
         "href": "AIP/quality-rules/1020028",
         "status": null,
         "critical": true,
@@ -101,7 +101,7 @@
     },
     {
         "id": 1020030,
-        "name": "Avoid using javascript or expression in the CSS file",
+        "name": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
         "href": "AIP/quality-rules/1020030",
         "status": null,
         "critical": true,
@@ -111,7 +111,7 @@
     },
     {
         "id": 1020032,
-        "name": "Avoid using video poster attributes in combination with javascript",
+        "name": "Make sure you do not use video poster attributes in combination with javascript to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020032",
         "status": null,
         "critical": true,
@@ -121,7 +121,7 @@
     },
     {
         "id": 1020034,
-        "name": "Avoid hosting HTML code in iframe srcdoc",
+        "name": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox to prevent XSS attacks that might slip through",
         "href": "AIP/quality-rules/1020034",
         "status": null,
         "critical": true,
@@ -131,7 +131,7 @@
     },
     {
         "id": 1020036,
-        "name": "Avoid using onscroll event with autofocus input",
+        "name": "Make sure you do not use onscroll event with autofocus input to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020036",
         "status": null,
         "critical": true,
@@ -141,7 +141,7 @@
     },
     {
         "id": 1020042,
-        "name": "Avoid having iframe inside a tag",
+        "name": "Ensure protection from Clickjacking by not using iframe inside a tag",
         "href": "AIP/quality-rules/1020042",
         "status": null,
         "critical": true,
@@ -151,7 +151,7 @@
     },
     {
         "id": 1020044,
-        "name": "Avoid using setData in ondragstart with attribute draggable set to true",
+        "name": "Make sure you do not allow text injection by using setData in ondragstart with attribute draggable set to true",
         "href": "AIP/quality-rules/1020044",
         "status": null,
         "critical": true,
@@ -161,7 +161,7 @@
     },
     {
         "id": 1020046,
-        "name": "Avoid using oninput in body containing input autofocus",
+        "name": "Make sure you do not use oninput in body containing input autofocus to prevent Cross Site Scripting on your page",
         "href": "AIP/quality-rules/1020046",
         "status": null,
         "critical": true,
@@ -171,7 +171,7 @@
     },
     {
         "id": 1020048,
-        "name": "Avoid using source tag in video/audio with event handler",
+        "name": "Make sure you do not use <Source> tag in video/audio event handlers to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020048",
         "status": null,
         "critical": true,
@@ -181,7 +181,7 @@
     },
     {
         "id": 1020050,
-        "name": "Avoid white-listing the \"dirname\" attribute in user generated content",
+        "name": "Avoid importing content from an untrusted source like dirname",
         "href": "AIP/quality-rules/1020050",
         "status": null,
         "critical": true,
@@ -191,7 +191,7 @@
     },
     {
         "id": 1020052,
-        "name": "Avoid using import with external URI",
+        "name": "Ensure you do not import content from an untrusted source and are limited to same origin to prevent Cross Site Scripting",
         "href": "AIP/quality-rules/1020052",
         "status": null,
         "critical": true,
@@ -201,7 +201,7 @@
     },
     {
         "id": 1020074,
-        "name": "Avoid enabling autocomplete \"on\" for inputs/forms",
+        "name": "Ensure to disable the auto-complete feature in input forms, especially for fields such as passwords, to avoid access that should be unauthorized",
         "href": "AIP/quality-rules/1020074",
         "status": null,
         "critical": false,
@@ -211,7 +211,7 @@
     },
     {
         "id": 1020454,
-        "name": "Avoid using React dangerouslySetInnerHTML",
+        "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020454",
         "status": null,
         "critical": true,
@@ -221,7 +221,7 @@
     },
     {
         "id": 1020456,
-        "name": "Avoid using \"<script>\" tag in HTML template used by React.js components",
+        "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020456",
         "status": null,
         "critical": false,
@@ -231,7 +231,7 @@
     },
     {
         "id": 1020542,
-        "name": "Enable Content Security Policy when creating an AngularJS application",
+        "name": "Ensure activating Content-Security-Policy in you  angular applications to enforce client-side templates protection",
         "href": "AIP/quality-rules/1020542",
         "status": null,
         "critical": true,
@@ -241,7 +241,7 @@
     },
     {
         "id": 1020546,
-        "name": "Avoid using unsanitized AngularJS application",
+        "name": "Ensure to use $sanitize service in AngularJS apps to prevent Data Injection attacks",
         "href": "AIP/quality-rules/1020546",
         "status": null,
         "critical": true,
@@ -251,7 +251,7 @@
     },
     {
         "id": 1020548,
-        "name": "Avoid disabling withCredentials option for the httpProvider",
+        "name": "Make sure you do not disable withCredentials option for httpProvider",
         "href": "AIP/quality-rules/1020548",
         "status": null,
         "critical": true,
@@ -261,7 +261,7 @@
     },
     {
         "id": 1020710,
-        "name": "Ensure the X-XSS-Protection header is enabled",
+        "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "status": null,
         "critical": true,
@@ -271,7 +271,7 @@
     },
     {
         "id": 1020810,
-        "name": "Avoid bypassing angular security trust ",
+        "name": "Ensure not adding unchecked HTML by not using one of these methods: bypassSecurityTrustHtml, bypassSecurityTrustStyle, bypassSecurityTrustScript, bypassSecurityTrustUrl, bypassSecurityTrustResourceUrl",
         "href": "AIP/quality-rules/1020810",
         "status": null,
         "critical": true,
@@ -281,7 +281,7 @@
     },
     {
         "id": 1020830,
-        "name": "Avoid using Angular ElementRef API to manipulate DOM",
+        "name": "Prefer using Angular Renderer2 instead of directly interacting with the DOM",
         "href": "AIP/quality-rules/1020830",
         "status": null,
         "critical": false,
@@ -291,7 +291,7 @@
     },
     {
         "id": 1020832,
-        "name": "Avoid using javascript HTTP request in Angular Application",
+        "name": "Always prefer using HttpClient Angular Module instead of using javascript HTTP request to avoid JSON vulnerability",
         "href": "AIP/quality-rules/1020832",
         "status": null,
         "critical": true,
@@ -301,7 +301,7 @@
     },
     {
         "id": 1020834,
-        "name": "Avoid using \"<script>\" tag into HTML template used by Angular Application",
+        "name": "Ensure you don't inject javascript code with  \"<script>\" tag into HTML template",
         "href": "AIP/quality-rules/1020834",
         "status": null,
         "critical": false,
@@ -311,7 +311,7 @@
     },
     {
         "id": 1020852,
-        "name": "Avoid using \"<script>\" tag in HTML template used by React.js components (Typescript)",
+        "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020852",
         "status": null,
         "critical": false,
@@ -321,7 +321,7 @@
     },
     {
         "id": 1020854,
-        "name": "Avoid using React dangerouslySetInnerHTML (Typescript)",
+        "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020854",
         "status": null,
         "critical": true,
@@ -331,7 +331,7 @@
     },
     {
         "id": 1040006,
-        "name": "Always set Content-Security-Policy for spring application",
+        "name": "Ensure activating Content-Security-Policy for Spring application to avoid untrusted source",
         "href": "AIP/quality-rules/1040006",
         "status": null,
         "critical": true,
@@ -341,7 +341,7 @@
     },
     {
         "id": 1042024,
-        "name": "Avoid Unescaped User-controlled Input attribute in Struts 1.x and 2.x",
+        "name": "Ensure activating tags for escaping string in order to sanitize user input and prevent XSS attacks",
         "href": "AIP/quality-rules/1042024",
         "status": null,
         "critical": true,
