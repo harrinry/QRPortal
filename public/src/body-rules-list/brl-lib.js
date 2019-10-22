@@ -1,11 +1,12 @@
 import React from 'react';
 import { compareValueKeys, CLASSES } from './brl-constants';
 import { COMMON_CLASSES, createClassName } from 'common/';
+import { isEcho } from '../common';
 
 export const compareFunction = ( textValue, obj ) =>{
 
   const hasPrefix = containesPrefix(textValue);
-  
+
   if( hasPrefix ){
     const split = textValue.split(':');
     const prefix = split[0],
@@ -50,7 +51,7 @@ const ToBool = ( text ) => {
 const testRegex = ( regex, obj, key ) => {
   if (obj.hasOwnProperty(key)) {
     return regex.test( obj[key] ) ? true : false;
-  } 
+  }
 
   return false;
 };
@@ -62,7 +63,7 @@ const searchByDefaultKeys = (textValue, obj) => {
   } catch (error) {
     return [];
   }
-  
+
   return (reg.test(obj[compareValueKeys.id]) || reg.test(obj[compareValueKeys.name]) || (textValue.toLowerCase() === compareValueKeys.critical ? obj.critical : false) ) ? true : false;
 };
 
@@ -72,6 +73,17 @@ const containesPrefix = ( text ) => {
 };
 
 export const childConstructor = ( values, index, callback ) => {
+
+  if(isEcho())
+  {
+    return (
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+        <td className={CLASSES.idCell}>{values.id}</td>
+        <td className={CLASSES.nameCell}>{values.name}</td>
+      </tr>
+    );
+  }
+
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
@@ -83,6 +95,17 @@ export const childConstructor = ( values, index, callback ) => {
 
 export const standardsChildConstructor = ( values, index, callback ) => {
   const technos = values.hasOwnProperty(compareValueKeys.techName) ? values[compareValueKeys.techName] : [''];
+
+  if(isEcho())
+  {
+    return (
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+        <td className={CLASSES.idCell}>{values.id}</td>
+        <td className={CLASSES.nameCell}>{values.name}</td>
+        <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
+      </tr>
+    );
+  }
 
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
@@ -101,6 +124,18 @@ export const SearchChildConstructor = ( values, index, callback ) => {
     }
     return '';
   }) : [''];
+
+  if(isEcho())
+  {
+    return (
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+        <td className={CLASSES.idCell}>{values.id}</td>
+        <td className={CLASSES.nameCell}>{values.name}</td>
+        <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
+      </tr>
+    );
+  }
+
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>

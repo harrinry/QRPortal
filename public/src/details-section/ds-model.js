@@ -40,13 +40,9 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
           <div className={CLASSES.subContainer}>
             <div className={CLASSES.headerContainer}>
             <h2 className={CLASSES.title}>{(isEcho() ? (data.alternativeName ? data.alternativeName : data.name) : data.name)}</h2>
-            { isEcho() ? ( data.critical ?
-
-<div className={createClassName(CLASSES.weightContainer,COMMON_CLASSES.critical)}></div> : undefined)
-               : (
-              <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
-                <span className={CLASSES.weight}>{data.maxWeight}</span>
-              </div>)}
+            { isEcho() ? undefined : ( data.critical ? <div className={createClassName(CLASSES.weightContainer,COMMON_CLASSES.critical)}></div> : <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
+              <span className={CLASSES.weight}>{data.maxWeight}</span>
+            </div>)}
             </div>
             <div className={CLASSES.tagContainer}>
               {qualityStandardsTags}
