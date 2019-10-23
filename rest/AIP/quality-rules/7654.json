@@ -11,7 +11,7 @@
     "remediation": "Review your design and decide which Entity must manage the table.",
     "sample": "// VIOLATION: table A is referenced by two Entities\n---> a.hbm.xml\n<class name=\"A\" table=\"A\"> \n    ...  \n</class>\n\n---> b.hbm.xml\n<class name=\"B\" table=\"A\"> \n    ...  \n</class>",
     "total": "Number of entities",
-    "alternativeName": "Ensure that database tables are not associated to more than one Entity",
+    "alternativeName": "Ensure that each database table is associated to only one Hibernate Entity in order avoid data corruption.",
     "businessCriteria": [
         {
             "id": 66032,

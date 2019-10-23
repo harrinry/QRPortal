@@ -1,7 +1,7 @@
 [
     {
         "id": 7740,
-        "name": "Avoid cross-site scripting vulnerabilities",
+        "name": "Avoid HTTP response splitting",
         "href": "AIP/quality-rules/7740",
         "status": null,
         "critical": true,
@@ -13,7 +13,7 @@
     },
     {
         "id": 7742,
-        "name": "Avoid SQL injection vulnerabilities",
+        "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/7742",
         "status": null,
         "critical": true,
@@ -61,7 +61,7 @@
     },
     {
         "id": 7752,
-        "name": "Avoid file path manipulation vulnerabilities",
+        "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/7752",
         "status": null,
         "critical": true,
@@ -72,30 +72,12 @@
         ]
     },
     {
-        "id": 7780,
-        "name": "Avoid Classes with a very low comment/code ratio",
-        "href": "AIP/quality-rules/7780",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
         "id": 7782,
         "name": "Avoid empty finally blocks",
         "href": "AIP/quality-rules/7782",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ASP",
             "C#",
             "HTML5",
             "JEE",
@@ -109,8 +91,6 @@
         "status": null,
         "critical": true,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C#",
             "HTML5",
             "JEE",
@@ -124,16 +104,11 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C#",
             "C++",
             "HTML5",
             "JEE",
-            "PowerBuilder",
-            "Python",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     },
     {
@@ -143,23 +118,19 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
             "C#",
             "C++",
             "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     },
     {
         "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "status": null,
         "critical": true,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
             "C#",
             "JEE",
             "VB.NET"
@@ -167,18 +138,14 @@
     },
     {
         "id": 7838,
-        "name": "Avoid undocumented Methods",
+        "name": "Add comments into method implementation to explain what is their goal and how they work.",
         "href": "AIP/quality-rules/7838",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C#",
             "C++",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     },
     {
@@ -188,20 +155,12 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C",
             "C#",
             "C++",
-            "Cobol",
-            "Forms",
             "HTML5",
             "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
             "SQLAnalyzer",
-            "Sybase T-SQL",
             "VB.NET"
         ]
     },
@@ -212,40 +171,33 @@
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C#",
             "C++",
             "HTML5",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     },
     {
         "id": 7846,
-        "name": "Avoid Methods with a very low comment/code ratio",
+        "name": "Ensure your methods are commented enough to provide good understanding to other contributors",
         "href": "AIP/quality-rules/7846",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
             "C",
             "C#",
             "C++",
             "JEE",
-            "PowerBuilder",
             "VB.NET"
         ]
     },
     {
         "id": 7862,
-        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+        "name": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
         "href": "AIP/quality-rules/7862",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
             "C#",
             "JEE",
             "VB.NET"
@@ -253,25 +205,21 @@
     },
     {
         "id": 7914,
-        "name": "Avoid direct access to Database Tables",
+        "name": "Prefer using stored procedure instead of using direct SQL queries to database",
         "href": "AIP/quality-rules/7914",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ASP",
             "C",
             "C#",
             "C++",
             "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     },
     {
         "id": 8028,
-        "name": "Avoid missing default in switch statements",
+        "name": "Ensure you don't forget the default clause in your switch statement",
         "href": "AIP/quality-rules/8028",
         "status": null,
         "critical": false,
@@ -281,18 +229,16 @@
             "C++",
             "HTML5",
             "JEE",
-            "Objective-C",
             "VB.NET"
         ]
     },
     {
         "id": 8032,
-        "name": "Avoid using a break statement in 'for' loops",
+        "name": "Ensure you don't use multiple break statement in 'for' loops",
         "href": "AIP/quality-rules/8032",
         "status": null,
         "critical": false,
         "technologyNames": [
-            ".NET (Legacy Analyzer)",
             "C",
             "C#",
             "C++",
@@ -303,7 +249,7 @@
     },
     {
         "id": 8044,
-        "name": "Avoid log forging vulnerabilities",
+        "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
         "status": null,
         "critical": true,
@@ -315,7 +261,7 @@
     },
     {
         "id": 8098,
-        "name": "Avoid uncontrolled format string",
+        "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8098",
         "status": null,
         "critical": true,
@@ -327,7 +273,7 @@
     },
     {
         "id": 8108,
-        "name": "Close the outermost stream ASAP",
+        "name": "Ensure you have released your stream connection after an effective lifetime",
         "href": "AIP/quality-rules/8108",
         "status": null,
         "critical": true,
@@ -339,7 +285,7 @@
     },
     {
         "id": 8110,
-        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
+        "name": "Ensure using dedicated stored procedures when multiple data accesses are needed",
         "href": "AIP/quality-rules/8110",
         "status": null,
         "critical": true,
@@ -351,7 +297,7 @@
     },
     {
         "id": 8112,
-        "name": "Avoid improper processing of the execution status of data handling operations",
+        "name": "Ensure data handling operations are properly encapsulated to provide clear status of the execution",
         "href": "AIP/quality-rules/8112",
         "status": null,
         "critical": true,
@@ -363,7 +309,7 @@
     },
     {
         "id": 8222,
-        "name": "Avoid hard-coded credentials",
+        "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "status": null,
         "critical": true,
@@ -387,7 +333,7 @@
     },
     {
         "id": 8240,
-        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "name": "Ensure you have secured your cookie by enabling 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true,
@@ -399,7 +345,7 @@
     },
     {
         "id": 8242,
-        "name": "Use of insufficiently random values",
+        "name": "Ensure using sufficient random values for cookies",
         "href": "AIP/quality-rules/8242",
         "status": null,
         "critical": true,
@@ -411,7 +357,7 @@
     },
     {
         "id": 8408,
-        "name": "Avoid reflected cross-site scripting (non persistent)",
+        "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8408",
         "status": null,
         "critical": true,
@@ -423,7 +369,7 @@
     },
     {
         "id": 8410,
-        "name": "Avoid cross-site scripting (persistent)",
+        "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8410",
         "status": null,
         "critical": true,
@@ -435,7 +381,7 @@
     },
     {
         "id": 8414,
-        "name": "Avoid use of a broken or risky cryptographic algorithm",
+        "name": "Ensure you use the right algorithm like AES-128",
         "href": "AIP/quality-rules/8414",
         "status": null,
         "critical": true,
@@ -447,7 +393,7 @@
     },
     {
         "id": 8416,
-        "name": "Avoid use of a reversible one-way hash",
+        "name": "Ensure you don't use weak cryptographic hash one-way reversible",
         "href": "AIP/quality-rules/8416",
         "status": null,
         "critical": true,
@@ -458,8 +404,20 @@
         ]
     },
     {
+        "id": 8418,
+        "name": "Ensure you use sanitized queries to NoSQL databases",
+        "href": "AIP/quality-rules/8418",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8420,
-        "name": "Avoid second order SQL injection",
+        "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/8420",
         "status": null,
         "critical": true,
@@ -471,7 +429,7 @@
     },
     {
         "id": 8424,
-        "name": "Avoid using hard-coded HMAC keys",
+        "name": "Ensure not using hard-coded HMAC keys",
         "href": "AIP/quality-rules/8424",
         "status": null,
         "critical": true,
@@ -482,8 +440,234 @@
         ]
     },
     {
+        "id": 8434,
+        "name": "Ensure you don't use external library given by unsanitized user input",
+        "href": "AIP/quality-rules/8434",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8436,
+        "name": "Ensure your application does not process thread with unsanitized stream",
+        "href": "AIP/quality-rules/8436",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8438,
+        "name": "Ensure your application does not evaluate unsanitized code.",
+        "href": "AIP/quality-rules/8438",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8440,
+        "name": "Ensure you have sanitized the data received to be reflected in your application",
+        "href": "AIP/quality-rules/8440",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8442,
+        "name": "Ensure you have sanitized the data received from resources",
+        "href": "AIP/quality-rules/8442",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8444,
+        "name": "Ensure you have sanitized the methods manipulating resources",
+        "href": "AIP/quality-rules/8444",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027012,
+        "name": "Ensure to declare the object as serializable if you are using it as a httpsessionstate attribute",
+        "href": "AIP/quality-rules/1027012",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1043006,
+        "name": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
+        "href": "AIP/quality-rules/1043006",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043008,
+        "name": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
+        "href": "AIP/quality-rules/1043008",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043010,
+        "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
+        "href": "AIP/quality-rules/1043010",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043012,
+        "name": "Always enable HttpOnly for cookies in Config file (ASP.NET)",
+        "href": "AIP/quality-rules/1043012",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043014,
+        "name": "Ensure the validation request is always set to true in ASP.NET config file",
+        "href": "AIP/quality-rules/1043014",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043016,
+        "name": "Ensure the request validation is always set to true",
+        "href": "AIP/quality-rules/1043016",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043018,
+        "name": "Ensure you don't store password information in a configuration file or a properties file in plaintext as this will allow anyone who can read the file access to the resource.",
+        "href": "AIP/quality-rules/1043018",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043020,
+        "name": "Ensure you have reviewed the web config file and update the value of debug property to false",
+        "href": "AIP/quality-rules/1043020",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043022,
+        "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (C#)",
+        "href": "AIP/quality-rules/1043022",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043024,
+        "name": "Ensure you review the configuration file and update the RequireSSL to yes",
+        "href": "AIP/quality-rules/1043024",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043026,
+        "name": "Ensure you have set EnableViewStateMac to avoid XSS attack",
+        "href": "AIP/quality-rules/1043026",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043028,
+        "name": "Ensure you don't disable EnableViewStateMac in ASPX page to avoid XSS attack",
+        "href": "AIP/quality-rules/1043028",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043030,
+        "name": "Ensure you have setup the X-Frame-Options in HTTP Response (ASP.NET)",
+        "href": "AIP/quality-rules/1043030",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
         "id": 1043032,
-        "name": "Avoid having aspx pages with tracing activated",
+        "name": "Ensure you did not keep the tracing activated in your ASPX file to not expose sensitive information for the hackers",
         "href": "AIP/quality-rules/1043032",
         "status": null,
         "critical": false,
@@ -493,8 +677,30 @@
         ]
     },
     {
+        "id": 1043034,
+        "name": "Ensure you did not keep the tracing activated in your web config file to not expose sensitive information for the hackers",
+        "href": "AIP/quality-rules/1043034",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043036,
+        "name": "Ensure the impersonation flag remains set to false (ASP.NET)",
+        "href": "AIP/quality-rules/1043036",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
         "id": 1043038,
-        "name": "Avoid having applications with the tracing activated in the source code",
+        "name": "Ensure you have reviewed the source code file and disable the tracing property",
         "href": "AIP/quality-rules/1043038",
         "status": null,
         "critical": false,
@@ -504,8 +710,107 @@
         ]
     },
     {
+        "id": 1043044,
+        "name": "Ensure you have enable AntiForgery token in Razor Templates.",
+        "href": "AIP/quality-rules/1043044",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043046,
+        "name": "Ensure you do not allow access to all domain when defining cookie path (C#)",
+        "href": "AIP/quality-rules/1043046",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043048,
+        "name": "Ensure you do not allow access to all domain when defining cookie domain (C#)",
+        "href": "AIP/quality-rules/1043048",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043050,
+        "name": "Ensure you set the time out to less than 5 min or less.",
+        "href": "AIP/quality-rules/1043050",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043052,
+        "name": "Ensure retaining the settings of aspnet:UseLegacyFormsAuthenticationTicketCompatibility to True.",
+        "href": "AIP/quality-rules/1043052",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043054,
+        "name": "Ensure you don't mention \"*\" use specific domain",
+        "href": "AIP/quality-rules/1043054",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043058,
+        "name": "Ensure you set the EnableHeaderChecking flag to true in the configuration file",
+        "href": "AIP/quality-rules/1043058",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043060,
+        "name": "Ensure you don't set the UseLegacyEncryption to True",
+        "href": "AIP/quality-rules/1043060",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043062,
+        "name": "Ensure to limit users access only to authorized resources (.NET)",
+        "href": "AIP/quality-rules/1043062",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
         "id": 1101036,
-        "name": "Use ANSI standard operators in SQL WHERE clauses",
+        "name": "Ensure using ANSI standard Operators such as <>,<=,>= in SQL where clauses to ensure portability",
         "href": "AIP/quality-rules/1101036",
         "status": null,
         "critical": false,
@@ -513,13 +818,8 @@
             "C",
             "C#",
             "C++",
-            "C/C++",
-            "Cobol",
             "JEE",
-            "PowerBuilder",
-            "Python",
-            "VB.NET",
-            "Visual Basic"
+            "VB.NET"
         ]
     }
 ]

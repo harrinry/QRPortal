@@ -12,7 +12,7 @@
     "remediationSample": "---> sample.hbm.xml\n// FIXED\n<class name=\"Sample\" table=\"SAMPLE\">\n...\n</class>",
     "sample": "SAMPLE is a table not managed by an UPDATE trigger\n---> sample.hbm.xml\n// VIOLATION\n<class name=\"Sample\" table=\"SAMPLE\" select-before-update=\"true\">\n...\n</class>",
     "total": "Number of Hibernate XML Entities that have the select-before-update property",
-    "alternativeName": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
+    "alternativeName": "Ensure setting 'select-before-update' to true only for Hibernate Entity associated to table that fires an UPDATE trigger.",
     "businessCriteria": [
         {
             "id": 60014,

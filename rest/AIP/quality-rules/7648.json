@@ -12,7 +12,7 @@
     "remediationSample": "public class InvokeFinalize {\n    private MyClass mine = new MyClass();\n    ...\n    public meth () {\n       ... \n/ FIXED\n    }\n}",
     "sample": "public class MyClass  {\n     ...\n      protected void finalize() throws Throwable {\n          // some code here\n         ......\n          super.finalize();\n     }\n} \n\npublic class InvokeFinalize {\n    private MyClass mine = new MyClass();\n    ...\n    public meth () {\n       ...\n        mine.finalize();  // VIOLATION\n    }\n}",
     "total": "Number of calls to finalize methods",
-    "alternativeName": "Ensure that finalize() is not called",
+    "alternativeName": "Ensure not explicitly invoking the finalize() method.",
     "businessCriteria": [
         {
             "id": 60014,
