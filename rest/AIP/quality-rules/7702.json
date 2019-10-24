@@ -12,7 +12,7 @@
     "remediationSample": "---> hibernate.cfg.xml\n...\n<hibernate-configuration>\n    <!-- a SessionFactory instance listed as /jndi/name -->\n    <session-factory\n        name=\"java:comp/env/hibernate/SessionFactory\">\n        <!-- properties -->\n        <property name=\"connection.datasource\">my/first/datasource</property> // FIXED\n     ...\n    </session-factory>\n</hibernate-configuration>\n\n---> or in hibernate.properties\n...\nhibernate.connection.datasource = my/first/datasource\n...",
     "sample": "---> hibernate.cfg.xml\n...\n<hibernate-configuration>\n    <session-factory name=\"java:comp/env/hibernate/SessionFactory\">\n       ...\n        <property name=\"connection.pool_size\">10</property> // VIOLATION\n...\n\n---> or in hibernate.properties\nhibernate.connection.pool_size = 10 // VIOLATION",
     "total": "Number of Hibernate configuration fields (including hibernate.properties)",
-    "alternativeName": "Ensure to use a third party connection pool",
+    "alternativeName": "Prefer using Hibernate-provided implementations from third parties for connection pool to increase database access performances.",
     "businessCriteria": [
         {
             "id": 60014,

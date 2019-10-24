@@ -12,7 +12,7 @@
     "remediationSample": "@Entity\npublic class ABean implements Serializable { // FIXED\n    private String str;\n    private aClass field;\n}",
     "sample": "@Entity\npublic class ABean  { // VIOLATION\n    private String str;\n    private aClass field;\n}",
     "total": "Number of entities",
-    "alternativeName": "Ensure that non serializable Entities are not used",
+    "alternativeName": "Ensure implementing the Serializable interface for all Entity beans",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -46,7 +46,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-1066",
+            "name": "Missing Serialization Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1066",
+            "name": "Missing Serialization Control Element",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

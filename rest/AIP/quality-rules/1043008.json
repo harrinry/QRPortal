@@ -11,7 +11,7 @@
     "remediationSample": "[ValidateInput(true)]\npublic class ValidInputController : Controller\n{\n}\n\n//OR \n\n\n// [ValidateInput(true)] attribute should not be present in the source file. Default for this attribute is always ture\npublic class ValidInputController : Controller\n{\n}",
     "sample": "[ValidateInput(false)]\npublic class InvalidInputController : Controller\n{\n}",
     "total": "Number of controllers",
-    "alternativeName": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
+    "alternativeName": "Ensure you have enable ValidateInput in your controller",
     "businessCriteria": [
         {
             "id": 66031,
