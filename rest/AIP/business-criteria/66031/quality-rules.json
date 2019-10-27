@@ -758,7 +758,7 @@
     },
     {
         "id": 3612,
-        "name": "Close SQL connection ASAP",
+        "name": "Avoid missing release of SQL connection after an effective lifetime (C#, VB.NET)",
         "href": "AIP/quality-rules/3612",
         "status": null,
         "critical": true,
@@ -3520,7 +3520,7 @@
     },
     {
         "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "name": "Avoid directly throwing instance of Exception class",
         "href": "AIP/quality-rules/7824",
         "status": null,
         "critical": true,
@@ -4561,7 +4561,7 @@
     },
     {
         "id": 8108,
-        "name": "Close the outermost stream ASAP",
+        "name": "Avoid missing release of stream connection after an effective lifetime",
         "href": "AIP/quality-rules/8108",
         "status": null,
         "critical": true,
@@ -4573,7 +4573,7 @@
     },
     {
         "id": 8110,
-        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
+        "name": "Avoid not using dedicated stored procedures when processing multiple data accesses",
         "href": "AIP/quality-rules/8110",
         "status": null,
         "critical": true,
@@ -4805,7 +4805,7 @@
     },
     {
         "id": 8240,
-        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "name": "Avoid using unsecured cookie",
         "href": "AIP/quality-rules/8240",
         "status": null,
         "critical": true,
@@ -4817,7 +4817,7 @@
     },
     {
         "id": 8242,
-        "name": "Use of insufficiently random values",
+        "name": "Avoid using insufficient random values for cookies",
         "href": "AIP/quality-rules/8242",
         "status": null,
         "critical": true,
@@ -4969,6 +4969,18 @@
         "id": 8444,
         "name": "Avoid resource URL manipulation",
         "href": "AIP/quality-rules/8444",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8446,
+        "name": "Avoid URL redirection to untrusted site",
+        "href": "AIP/quality-rules/8446",
         "status": null,
         "critical": true,
         "technologyNames": [

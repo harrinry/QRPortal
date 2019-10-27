@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8424",
     "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "This rule will check the use of an hard-coded secure key to generate a HMAC hash",
+    "description": "This rule will check the use of an hard-coded secure key to generate a HMAC hash.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Attacker can easily comprise the system if the HMAC keys are hard-coded.",
     "reference": "CWE-321: Use of Hard-coded Cryptographic Key\nhttps://cwe.mitre.org/data/definitions/321.html\n\nOpen Web Application Security Project (OWASP) \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure\nhttps://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration\n\nhttps://en.wikipedia.org/wiki/HMAC",

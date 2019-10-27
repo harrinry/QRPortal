@@ -1,6 +1,6 @@
 {
     "id": 8242,
-    "name": "Use of insufficiently random values",
+    "name": "Avoid using insufficient random values for cookies",
     "href": "AIP/quality-rules/8242",
     "critical": true,
     "associatedValueName": "Call stack from the use of a method producing insufficiently random numbers down to the target method",
@@ -9,6 +9,8 @@
     "rationale": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to impersonate another user or access sensitive information.",
     "reference": "CWE-330: Use of Insufficiently Random Values\nhttps://cwe.mitre.org/data/definitions/330.html\n\nOpen Web Application Security Project (OWASP)\nhttps://www.owasp.org/index.php/A2_2004_Broken_Access_Control",
     "remediation": "Potential remediations : \n- Use a well-vetted algorithm that is currently considered to be strong by experts in the field, and select well-tested implementations with adequate length seeds.",
+    "remediationSample": "static SecureRandom ranGen = new SecureRandom();\n\nString GenerateReceiptURL(String baseUrl) {\nranGen.setSeed((new Date()).getTime());\nreturn(baseUrl + ranGen.nextInt(400000000) + \".html\");\n}",
+    "sample": "static Random ranGen = new Random();\n\nString GenerateReceiptURL(String baseUrl) {\nranGen.setSeed((new Date()).getTime());\nreturn(baseUrl + ranGen.nextInt(400000000) + \".html\");\n}",
     "total": "Number of potentially vulnerable methods",
     "alternativeName": "Ensure using sufficient random values for cookies",
     "businessCriteria": [
