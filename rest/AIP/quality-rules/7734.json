@@ -12,7 +12,7 @@
     "remediationSample": "import org.apache.log4j.*;\n\npublic class MyClass {\n    Category cat = Category.getInstance(MyClass.class.getName());\n    String entry [];\n\n    public static void aMethod(int i) {\n\n        if (cat.isDebugEnabled()) { //FIXED\n            cat.debug(\"Entry number: \" + i + \" is \" + String.valueOf(entry[i])); \n        }\n   }",
     "sample": "import org.apache.log4j.*;\n\npublic class MyClass {\n    Category cat = Category.getInstance(MyClass.class.getName());\n    String entry [];\n\n    public static void aMethod(int i) {\n\n        cat.debug(\"Entry number: \" + i + \" is \" + String.valueOf(entry[i])); // VIOLATION\n   }",
     "total": "Number of methods that call debug() methods (i.e: org.apache.log4j.Category.debug, org.apache.commons.logging.Log.debug and the debug method list of the threashold)",
-    "alternativeName": "Ensure that when Log.debug() is used Log.isDebugEnabled() is called as well",
+    "alternativeName": "Ensure that debug method invocation is usually preceded by a call to its corresponding isDebugEnabled method",
     "businessCriteria": [
         {
             "id": 60014,

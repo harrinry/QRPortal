@@ -11,7 +11,7 @@
     "remediation": "Adapt the application to use Struts for all HTTP Servlets.",
     "sample": "---> web.xml\n\n<!-- Struts Action Servlet -->\n  <servlet>\n    <servlet-name>action</servlet-name>\n    <servlet-class>\n      org.apache.struts.action.ActionServlet\n    </servlet-class>\n    <init-param>\n      <param-name>config</param-name>\n      <param-value>/WEB-INF/conf/struts-config.xml</param-value>\n    </init-param>\n  <servlet>\n\n  <servlet>\n    <servlet-name>AnotherServlet</servlet-name>\n    <servlet-class>\n      // doesn't inherit from org.apache.struts.action.ActionServlet\n      // but inherits from javax.servlet.http.HttpServlet\n      com.cast.AnotherServlet // VIOLATION:    \n   </servlet-class>\n  </servlet>",
     "total": "Number of Servlets that inherit from javax.servlet.http.HttpServlet when org.apache.struts.action.ActionServlet is used",
-    "alternativeName": "Ensure to use only Struts HTTP Servlet",
+    "alternativeName": "Ensure to use only Struts HTTP Servlet for Struts based application to avoid mixing different technologies",
     "businessCriteria": [
         {
             "id": 66032,
