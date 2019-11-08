@@ -82,16 +82,6 @@
         ]
     },
     {
-        "id": 2236,
-        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
-        "href": "AIP/quality-rules/2236",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 4566,
         "name": "Ensure that you have access type defined at instance variable level to control accesss",
         "href": "AIP/quality-rules/4566",
@@ -533,7 +523,7 @@
     },
     {
         "id": 7638,
-        "name": "Ensure not using DriverManager",
+        "name": "Prefer using container's resource management facilities to obtain connections to resources instead of using DriverManager class allowing direct connection to the database",
         "href": "AIP/quality-rules/7638",
         "status": null,
         "critical": false,
@@ -573,7 +563,7 @@
     },
     {
         "id": 7668,
-        "name": "Ensure that incorrect XML parsing model is not used",
+        "name": "Prefer using SAX parser for large or medium sized XML file parsing instead of DOM parser",
         "href": "AIP/quality-rules/7668",
         "status": null,
         "critical": false,
@@ -603,7 +593,7 @@
     },
     {
         "id": 7732,
-        "name": "Ensure all the inputs are validated",
+        "name": "Ensure validating all inputs in JSP files that use JSF",
         "href": "AIP/quality-rules/7732",
         "status": null,
         "critical": true,
@@ -758,7 +748,7 @@
     },
     {
         "id": 7910,
-        "name": "Ensure not using jump statements inside a finally block so that any exceptions to be thrown by try catch block are not discarded",
+        "name": "Ensure not using jump statements inside a finally block so that any RuntimeException could be propagated and not discarded",
         "href": "AIP/quality-rules/7910",
         "status": null,
         "critical": true,
@@ -822,7 +812,7 @@
     },
     {
         "id": 7940,
-        "name": "Ensure that Stateful Beans not removed are not used as they lead to an accumulation",
+        "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
         "href": "AIP/quality-rules/7940",
         "status": null,
         "critical": true,

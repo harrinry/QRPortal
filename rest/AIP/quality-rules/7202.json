@@ -11,7 +11,7 @@
     "remediationSample": "Integer ia;\nInteger ib;\n\nif (ia.equals(ib)) {}  // FIXED\nif (!ia.equals(ib)) {} // FIXED",
     "sample": "int i = 1;\nint j = 2;\nInteger ia;\nInteger ib;\n\nif (i == j) {}     // OK: i and j are primitive types\nif (ia == ib) {} // VIOLATION\nif (ia != ib) {}  // VIOLATION",
     "total": "Number of non abstract Java Methods and Constructors",
-    "alternativeName": "Ensure using object equals method instead of equality syntax",
+    "alternativeName": "Ensure using object equals method instead of equality syntax to compare objects",
     "businessCriteria": [
         {
             "id": 20140522,

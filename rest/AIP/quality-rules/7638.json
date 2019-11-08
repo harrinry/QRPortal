@@ -12,7 +12,7 @@
     "remediationSample": "import org.apache.commons.dbcp.BasicDataSource;\n\nBasicDataSource ds = new BasicDataSource();\nds.setDriverClassName(\"oracle.jdbc.driver.OracleDriver\");\nds.setUsername(\"scott\");\nds.setPassword(\"tiger\");\nds.setUrl(\"jdbc:oracle:thin:scott/tiger@myhost:1521:mysid\");\nConnection con = ds.getConnection();",
     "sample": "Connection con = DriverManager.getConnection(URL, user, password); // VIOLATION",
     "total": "Number of methods that reference java.sql.Connection class",
-    "alternativeName": "Ensure not using DriverManager",
+    "alternativeName": "Prefer using container's resource management facilities to obtain connections to resources instead of using DriverManager class allowing direct connection to the database",
     "businessCriteria": [
         {
             "id": 60014,
