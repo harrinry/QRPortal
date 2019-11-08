@@ -9,7 +9,7 @@
     "rationale": "Using 'synchronized' qualifier for EJB methods or calling 'wait', 'notify' and 'notifyAll' from EJB methods might corrupt the normal behavior of the application server",
     "remediation": "Review EJB design",
     "total": "Number of EJB artifacts",
-    "alternativeName": "Ensure that EJBs using 'synchronized' qualifier, 'wait', 'notify' and 'notifyAll' Methods are not used as they might corrupt the normal behavior",
+    "alternativeName": "Ensure not having EJBs using 'synchronized' qualifier or calling 'wait', 'notify' and 'notifyAll' Methods as this might corrupt the normal behavior",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -43,7 +43,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-574",
+            "name": "EJB Bad Practices: Use of Synchronization Primitives",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
