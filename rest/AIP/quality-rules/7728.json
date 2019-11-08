@@ -11,7 +11,7 @@
     "remediation": "Use Message Driven Bean to send messages (through JMS) that will be consumed in parallel or implement JCA where the application server manages threads efficiently and can use thread pooling if necessary.",
     "sample": "class BasicThread implements Runnable {\n        public void run() {\n            [...]\n        }\n}\n\nclass SimpleThread extends Thread {\n    public SimpleThread(String str) {\n       super(str);\n    }\n    public void run() {\n       [...]\n    }\n}\n\nclass ThreadLaunch {\n    public static void main (String args[]) {\n      Runnable runnable = new BasicThread();\n        new Thread(runnable).start(); // VIOLATION\n        new SimpleThread(\"Thread\").start(); // VIOLATION\n    }\n}",
     "total": "Number of Java methods and constructors when ejb-jar.xml or web.xml are present in the application that is being analyzed",
-    "alternativeName": "Ensure that no thread creation is done for application running on application server",
+    "alternativeName": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
     "businessCriteria": [
         {
             "id": 20140522,
