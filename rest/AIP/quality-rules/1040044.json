@@ -1,6 +1,6 @@
 {
     "id": 1040044,
-    "name": "Avoid using spring-integration-zip in versions prior to 1.0.1",
+    "name": "Avoid using UnZipTransformer of spring-integration-zip prior to version 1.0.1",
     "href": "AIP/quality-rules/1040044",
     "critical": true,
     "associatedValueName": "Number of violation occurrences",
@@ -11,7 +11,7 @@
     "remediation": "Upgrade to Spring Integration Zip Community Extension Project version 1.0.1.RELEASE",
     "remediationSample": "import org.springframework.integration.zip.transformer // version 1.0.2\n\npublic final class Main {\n\n   ...\n   UnZipTransformer unZipTransformer = new UnZipTransformer();\n\n   unZipTransformer.transform(message);\n   ...\n}",
     "sample": "import org.springframework.integration.zip.transformer // version 1.0.1\n\npublic final class Main { k\n\n   ...\n   UnZipTransformer unZipTransformer = new UnZipTransformer();\n\n   unZipTransformer.transform(message); // VIOLATION HERE\n   ...\n}",
-    "total": "Number of Java Methods",
+    "total": "Number of Java Methods having spring-integration-zip version prior to 1.0.1",
     "alternativeName": "Upgrade to the spring-integration-zip version 1.0.2 to unsafe unzip",
     "businessCriteria": [
         {
