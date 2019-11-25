@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    th{
+      border: 1px solid black;
+      padding: 5px 10px;
+      margin: 0;
+    }
+  
+    td{
+      border: 1px solid black;
+      padding: 5px 10px;
+      margin: 0;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Extension update delta proto</title>
+</head>
+<body>
+  <div>
+    <h1>Extension update delta proto</h1>
+  </div>
+  <div>
+      <div>
+        <label for="extId">Extenion Id</label>
+        <select name="extId" id="ext-id" onchange="handleExtIdSelect()"></select>
+      </div>
+      <div>
+        <label for="version-1">Current Version</label>
+        <select name="version-1" id="ver-1"></select>
+      </div>
+      <div>
+        <label for="version-2">Target Version</label>
+        <select name="version-2" id="ver-2"></select>
+      </div>
+      <div>
+        <button type="button" onclick="handleAddImpactRequest()">Add Comparison</button>
+      </div>
+  </div>
+  <br>
+  <div>
+    <p for="result-table">All reported impact probability on only based off of changes in the extension, these might not affect your application at all even in the most impactfull situation</p>
+    <table name="result-table" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Extension id</th>
+          <th>Version</th>
+          <th>Target Version</th>
+          <th>Metamodel Changed</th>
+          <th>Transaction Configuration changed</th>
+          <th>Rules Added Or Removed</th>
+          <th>Impact Probability</th>
+          <th>Release Notes</th>
+          <th>Browse Rules</th>
+        </tr>
+      </thead>
+      <tbody id="res-body">
+      </tbody>
+    </table>
+  </div>
+  <script>
+    const extId = document.getElementById("ext-id"),
+      ver1 = document.getElementById("ver-1"),
+      ver2 = document.getElementById("ver-2"),
+      resBody = document.getElementById("res-body");
+    
+    renewIdOptions()
+      .then( () => renewVersionSelectors( extId.value ));
+    
+    function renewIdOptions(){
+      extId.innerHTML = "";
+      return fetchJsonData("/rest/AIP/extensions")
+        .then( data => {
+          for (const entry of data) {
+            extId.appendChild( createOption(entry.name) )
+          }
+        });
+    }
+
+    function renewVersionSelectors( extensionId ){
+      ver1.innerHTML = "";
+      ver1.value = "";
+      ver2.innerHTML = "";
+      ver2.value = "";
+
+      fetchJsonData(`/rest/AIP/extensions/${extensionId}/versions`)
+        .then(data => {
+          for (const entry of data) {
+            ver1.appendChild( createOption(entry.name) );
+            ver2.appendChild( createOption(entry.name) );
+          }
+        })
+    }
+
+    function createOption( val ){
+      const ele = document.createElement("option");
+      ele.setAttribute("value", val);
+      ele.innerHTML = val;
+      return ele;
+    }
+
+    function createTableEntry( cmpData, releaseNotesUrl ){
+      resBody.appendChild(
+        createTableRow(
+          cmpData.id,
+          cmpData.current,
+          cmpData.target,
+          cmpData.metaModel,
+          cmpData.transaction,
+          cmpData.rules,
+          getImpactProbability( cmpData.metaModel, cmpData.transaction, cmpData.rules ),
+          releaseNotesUrl,
+          getRulesUrl( cmpData.id, cmpData.target )
+        )
+      );
+    }
+
+    function trueCount( ...list ){
+      let count = 0;
+      for (const bvalue of list) {
+        if(bvalue) count++;
+      }
+      return count;
+    }
+
+    function getImpactProbability( ...factors ){
+      const changes = trueCount( ...factors );
+      if( changes === 0 ) return "Very Low";
+      if( changes === 1 ) return "Low";
+      if( changes === 2 ) return "Medium";
+      if( changes === 3  ) return "High";
+    }
+
+    function createTableRow( ...children){
+      const row = document.createElement("tr");
+
+      for (const child of children) {
+        row.appendChild(createCell( child ));
+      }
+
+      return row;
+    }
+
+    function createCell( value ){
+      const ele = document.createElement("td");
+
+      if( value instanceof HTMLElement ) ele.appendChild(value);
+      else ele.innerHTML = value ;
+
+      return ele;
+    }
+
+    function handleAddImpactRequest(){
+      const id = extId.value,
+        current = ver1.value,
+        target = ver2.value;
+
+      fetchJsonData(`/compare/impact/${id}/${current}/${target}`)
+        .then( cmpRes => {
+          return getReleaseNoteUrl( id, target )
+            .then( rel_url => createTableEntry({ ...cmpRes, id, current, target }, createLink( "link", rel_url )) )
+        })
+    }
+
+    function handleExtIdSelect(){
+      return renewVersionSelectors(extId.value);
+    }
+
+    function fetchJsonData( path ){
+      return fetch(path)
+        .then( res => res.json() )
+    }
+
+    function getReleaseNoteUrl( extid, version ){
+      return fetchJsonData(`https://extendng.castsoftware.com/api/package/${extid}/${version}`)
+        .then( res => res.release_notes );
+    }
+
+    function createLink( name, url, ignoreCheck = false ){
+
+      if(!ignoreCheck && !/https?:\/\/.{1,}\..{2,3}/gi.test(url)) return url;
+
+      const ele = document.createElement("a");
+      ele.setAttribute("href", url);
+      ele.innerHTML = name;
+      return ele;
+    }
+
+    function getRulesUrl(extid, version){
+      const _id = extid.split(".")
+      return createLink( "rules", `/rules?sec=srs_${_id[2]}&ref=||${version}`, true )
+    }
+
+  </script>
+</body>
+</html>
