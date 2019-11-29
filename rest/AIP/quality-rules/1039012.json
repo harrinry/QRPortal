@@ -11,7 +11,7 @@
     "remediation": "Use of referer in HTTP request header field is not recommended.",
     "remediationSample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(headerName); // VIOLATION FIXED\n    //...\n  } \n}",
     "sample": "public class MyServlet extends HttpServlet { \n  protected void doPost(HttpServletRequest request, HttpServletResponse response) \n        throws ServletException, IOException { \n    String referer = request.getHeader(\"referer\"); // VIOLATION \n    if(isTrustedReferer(referer)){ \n      //.. \n    } \n    //... \n  } \n}",
-    "total": "Number of Java artifacts",
+    "total": "Number of Java Methods",
     "alternativeName": "Ensure you are not using \"referer\" header field in HTTP request",
     "businessCriteria": [
         {

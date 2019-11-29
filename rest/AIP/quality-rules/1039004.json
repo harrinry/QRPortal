@@ -11,7 +11,7 @@
     "remediation": "Do NOT USE HttpServletRequest.getRequestedSessionId",
     "remediationSample": "// Prefer using as an alternative (just one of possible solution)\n\nHttpSession session = request.getSession(true);\nsession.getId();",
     "sample": "if(isActiveSession(request.getRequestedSessionId()) ){ \n               ... \n              }",
-    "total": "Number of Java artifacts",
+    "total": "Number of Java Methods",
     "alternativeName": "Ensure not relying on the session ID provided by \"request.getRequestedSessionId()\"",
     "businessCriteria": [
         {
