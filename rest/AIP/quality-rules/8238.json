@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/8238",
     "critical": true,
     "associatedValueName": "Call stack from a method receiving untrusted data down to a target method",
-    "description": "The product mixes trusted and untrusted data in the same data structure or structured message.",
+    "description": "Using CAST data-flow engine, this quality rule detects paths from user input methods down to session setter methods, which mix trusted and untrusted data in the same data structure.",
     "output": "List all methods that miss calling the required sanitization method and provides access to the path demonstrating the vulnerability : \n  \nIt provides the following information: \n- The full name of the method that calls the user input method. That is the source of the untrusted data. \n- Call stack from user input source down to the target method.",
     "rationale": "Without well-established and maintained trust boundaries, programmers will inevitably lose track of which pieces of data have been validated and which have not. This confusion will eventually allow some data to be used without first being validated.",
     "reference": "CWE-501: Trust Boundary Violation\nhttps://cwe.mitre.org/data/definitions/501.html\n\nOpen Web Application Security Project (OWASP)\nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",

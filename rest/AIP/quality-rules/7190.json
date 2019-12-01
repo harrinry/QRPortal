@@ -12,7 +12,7 @@
     "remediationSample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  ActionErrors errors = super.validate(mapping, request); // FIXED\n\n  if (errors==null) {\n     if (notGood(mapping,request)) {\n        // some code\n     }\n  // some code\n}",
     "sample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  if (notGood(mapping,request)) \n    // some code\n  }\n// some code\n}  // VIOLATION",
     "total": "Number of non abstract methods that override the validate method (at any depth in the inheritance tree) of one of the class ValidatorForm, ValidatorActionForm, DynaValidatorForm, DynaValidatorActionForm",
-    "alternativeName": "Validator form validate() Method must call super.validate()",
+    "alternativeName": "Validate() Method of Struts Validator form must call super.validate()",
     "businessCriteria": [
         {
             "id": 66031,
