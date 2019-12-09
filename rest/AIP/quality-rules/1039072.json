@@ -10,7 +10,7 @@
     "reference": "https://cwe.mitre.org/data/definitions/502.html\nhttps://github.com/mbechler/marshalsec",
     "remediation": "Always make sure to use only a Yaml instance that is constructed either with a SafeConstructor",
     "sample": "package yaml;\nimport org.ho.yaml;\n\nYaml.dump(object, new File(\"object.yml\"));\nObject object = Yaml.load(new File(\"object.yml\"));",
-    "total": "Number of Java Methods",
+    "total": "Number of Java Methods Which are Associated with jYAML Syntax",
     "alternativeName": "jYAML project is abandonned and muts not be used to deserialize YAML",
     "businessCriteria": [
         {
