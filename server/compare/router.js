@@ -43,11 +43,6 @@ compareRouter.get('/extensions/:extID/:ver1/:ver2', (req, res) => {
   }
 });
 
-compareRouter.get('/impact', (_req, res) => {
-  util.promisify(fs.readFile)(path.resolve(__dirname, 'demo', 'index.html'))
-    .then( data => res.type('html').send(data));
-});
-
 compareRouter.get('/impact/:extId/:ver1/:ver2', async(req, res) => {
   const { extId, ver1, ver2 } = req.params;
 
@@ -57,5 +52,31 @@ compareRouter.get('/impact/:extId/:ver1/:ver2', async(req, res) => {
   else 
     res.json( result );
 });
+
+compareRouter.get('/impact/:id', (req, res) => {
+  let { rels } = req.query;
+  const { id } = req.params;
+  if ( !Array.isArray(rels) ) rels = [ rels ];
+  const files = fs.readdirSync(path.join(__dirname, '_rel', id ));
+  let result = '';
+
+  for (const ver of rels) {
+    const rel = new RegExp(`${id}.${ver}`, 'i');
+    const file = files.find( _ => rel.test(_) );
+    const data = fs.readFileSync(path.join(__dirname, '_rel', id, file ));
+    result += data.toString();
+    result += '\n\n';
+  }
+
+  res.send(result);
+
+});
+
+compareRouter.use('/', express.static(path.join(__dirname, 'demo')));
+
+// compareRouter.get('/impact', (_req, res) => {
+//   util.promisify(fs.readFile)(path.resolve(__dirname, 'demo', 'index.html'))
+//     .then( data => res.type('html').send(data));
+// });
 
 module.exports = compareRouter;
