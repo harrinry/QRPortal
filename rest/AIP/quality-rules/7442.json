@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/7442",
     "critical": true,
     "associatedValueName": "Number of occurrences of this",
-    "description": "This metric will detect all cases where this is - directly or not - referenced in a constructor.\nIndirect reference to this means the definition of an inner class in the constructor. It includes also the case where the constructor call the method start of a thread within a constructor (i.e. a method that inherits from java.lang.Thread.start())",
+    "description": "This rule detects all cases where this is - directly or not - referenced in a constructor.\nIndirect reference to this means the definition of an inner class in the constructor. \nIt includes also the case where the constructor call the method start of a thread within a constructor (i.e. a method that inherits from java.lang.Thread.start())",
     "output": "This report lists all constructors that involve this directly or indirectly.\nIt provides the following information:\n  - Method full name\n  - the number of occurrences of this detected in the constructor",
     "rationale": "When making a reference to 'this' within a constructor - either directly or indirectly through inner classes - visible to another thread, the result can be unpredictable.\nMoreover, testing and debugging multi-threaded programs is very difficult, because of concurrency hazard that makes difficult to reproduce the issue.",
     "reference": "https://www.ibm.com/developerworks/java/library/j-jtp0618/index.html\nhttp://java.sun.com/docs/books/tutorial/essential/concurrency/syncmeth.html",
