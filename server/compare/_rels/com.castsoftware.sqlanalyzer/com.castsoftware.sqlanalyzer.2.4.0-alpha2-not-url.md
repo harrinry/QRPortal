@@ -1,0 +1,1 @@
+Quality Rules are now calculated on SQL queries externalized in .properties (Java Property Mapping objects)

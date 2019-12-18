@@ -1,0 +1,1 @@
+First release - links from methods calling the JPA repository api to the database and link from methods using querydsl to the JPA entity

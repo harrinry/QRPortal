@@ -1,0 +1,3 @@
+- This new version optimizes memory consumption.
+- Detection of controllers have been improved when they are not defined by name, but only by variable.
+- Transaction improvements

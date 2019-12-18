@@ -1,0 +1,6 @@
+-New rules:
+   -1020736 : Avoid bypassing self-signed ssl certificate (Node.js)
+   -1020738 : Avoid disabling SSL verification in node-curl
+   -1020740 : Avoid creating cookie with overly broad path (Node.js)
+   -1020742 : Avoid having cookie with an overly broad domain (Node.js)
+-Bugs corrections.

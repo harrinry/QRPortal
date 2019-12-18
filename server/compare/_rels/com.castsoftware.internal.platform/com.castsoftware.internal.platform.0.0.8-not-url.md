@@ -1,0 +1,1 @@
+Corrects an issue with SDK dotnet objects not belonging to modules.

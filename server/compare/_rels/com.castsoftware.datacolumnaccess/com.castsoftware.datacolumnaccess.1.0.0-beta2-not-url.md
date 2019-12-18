@@ -1,0 +1,1 @@
+Added Not concerned as default value for GDPR indicator

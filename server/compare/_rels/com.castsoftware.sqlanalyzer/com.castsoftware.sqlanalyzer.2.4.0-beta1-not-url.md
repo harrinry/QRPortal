@@ -1,0 +1,1 @@
+Add Access Write links for Update and Merge statements, when Data Column Access is installed.

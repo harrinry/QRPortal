@@ -1,0 +1,2 @@
+- Permanent Fix - SQL Analyzer: missing SQL column objects.
+- Support of CREATE TYPE 2 Indexes.

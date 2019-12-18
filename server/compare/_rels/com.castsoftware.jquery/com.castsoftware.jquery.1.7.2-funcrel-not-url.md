@@ -1,0 +1,1 @@
+Remove selectors from function points entry points when they are called by a HTML5 file content.

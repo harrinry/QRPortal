@@ -1,0 +1,3 @@
+-Updated for Message Queues
+-Bookmarks on the links created by web services linker
+-Servlets 3.0 support

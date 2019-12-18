@@ -1,0 +1,5 @@
+-Bugs correction:
+	-"Avoid setTimeout" diag.
+	-"Avoid to call a function in a termination loop" diag
+	-Count for metric "Number of WEB Pages"
+	-Files filter enhancement.

@@ -1,0 +1,1 @@
+Allow extraction of the latest revision of a branch. Bug fixes and performance improvements.

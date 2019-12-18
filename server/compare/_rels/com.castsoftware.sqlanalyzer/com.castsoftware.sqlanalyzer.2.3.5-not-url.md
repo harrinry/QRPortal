@@ -1,0 +1,3 @@
+- Permanent Fix - Plugin has encountered the following error : Traceback (most recent call last).
+- Permanent Fix - SQL analyzer missing objects. No stored procedures objects  are created for DB2 zOS
+- Permanent Fix - Warning messages when analyze ALTER TABLE .... ADD PRIMARY KEY ... statements

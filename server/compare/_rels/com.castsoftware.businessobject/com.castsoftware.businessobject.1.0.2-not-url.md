@@ -1,0 +1,1 @@
+This new version allows to analyze Business Objects universes without any connection to the Business Objects Repository. Universes must be extracted by using the standalone SAP BusinessObjects Extractor

@@ -1,0 +1,3 @@
+- 7 New Security Quality Rules
+- Support Node.js v5, v6 and v7 thanks to Javascript ECMA6 support
+- Added MongoDB, Marklogic and CouchDB client side connectors

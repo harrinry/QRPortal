@@ -1,0 +1,1 @@
+Supports MyBatis/iBatis for JAVA and .NET with SQL Queries configured in XML file

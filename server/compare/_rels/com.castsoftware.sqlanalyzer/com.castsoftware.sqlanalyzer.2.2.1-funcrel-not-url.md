@@ -1,0 +1,4 @@
+- Fixed loading of XXL and XXS tables size
+- Fixed schema name for Indexes when only Tables are prefixed by Schema
+- Changed links from refer to relyon, between synonyms and aliased objects, PERMANENT FIX for Avoid Tables not using referential integrity  
+- PERMANENT FIX : SQL Analyzer extension crash AttributeError: 'Schema' object has not attribute 'triggers'.

@@ -1,0 +1,2 @@
+- bug corrections
+- correction of quality rule "Avoid Constructors not supplying an initial value for all non-static data members"

@@ -1,0 +1,1 @@
+Angular application detection has been improved

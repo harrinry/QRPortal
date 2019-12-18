@@ -1,0 +1,7 @@
+-Support of Object Oriented ECMA6 annotations (classes, constructors, try/catch...)
+- Support of const, let arrows ECMA6 annotations
+- Support of Javascript call(), window.function(), bind(), prototype and prototype inheritance
+- Support of HttpRequest web service (e.g. <a href="">)
+- Extended HttpRequest call supporting popular javascript libraries Fetch, Axios, SuperAgent
+- Bug fixes for all technologies Quality Rules
+- 18 new Quality Rules

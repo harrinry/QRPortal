@@ -1,0 +1,1 @@
+This version offer support for MyBatis/iBatis framework for JAVA with SQL Queries configured in annotation and spring and with earlier release improvements

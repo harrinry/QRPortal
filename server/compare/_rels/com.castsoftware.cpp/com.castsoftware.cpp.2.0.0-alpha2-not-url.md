@@ -1,0 +1,4 @@
+- callback links
+- virtual call links
+- analyser find more include file by itself; so more resistance to incorrect/incomplete include paths
+- corrects an issue with pre-compiled headers on visual studio >= 2010

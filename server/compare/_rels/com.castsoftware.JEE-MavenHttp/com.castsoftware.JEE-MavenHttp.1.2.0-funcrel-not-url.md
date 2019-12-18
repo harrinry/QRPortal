@@ -1,0 +1,1 @@
+Minor enhancement to extact artifacts with a SNAPSHOT version

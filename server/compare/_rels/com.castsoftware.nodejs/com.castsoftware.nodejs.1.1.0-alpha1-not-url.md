@@ -1,0 +1,1 @@
+New Quality Rule: Avoid using process.exit()

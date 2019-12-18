@@ -1,0 +1,1 @@
+This is an alpha release providing support for applications using BPEL script (Business Process Execution Language script).

@@ -1,0 +1,3 @@
+-Bugs correction:
+	-Infinite loop in some rare cases with strange characters are present due to an encoding problem.
+-Diags descriptions corrections

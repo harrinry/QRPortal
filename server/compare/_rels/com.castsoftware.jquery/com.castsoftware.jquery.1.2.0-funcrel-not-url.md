@@ -1,0 +1,1 @@
+Added $.get and $.post

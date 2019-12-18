@@ -1,0 +1,3 @@
+-Support of org.apache.struts.actions.LookupDispatchAction inheritance
+-Support of "param-value" containing a list of files in web.xml
+-Support of struts 1.1 modules

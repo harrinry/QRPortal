@@ -1,0 +1,1 @@
+Along with Initial version supporting MongoDB added new three quality rules

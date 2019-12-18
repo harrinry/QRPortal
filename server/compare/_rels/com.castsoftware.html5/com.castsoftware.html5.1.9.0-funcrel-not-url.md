@@ -1,0 +1,12 @@
+-Bugs resolution, including support of new expressions in lists.
+-Better resolution with jsp files.
+-Support of jsp pager taglib.
+-Support of struts-jquery-grid-tags taglib.
+-Resources found in <form> tags have GET as default type (not POST).
+-Files filtering enhancement (skipped files are no more sent to other extensions).
+-Correction of rule "Avoid JavaScript to block page loading"
+-Correction of rule "Avoid using unsecured cookies"
+-Correction of rule "Avoid creating cookie without setting httpOnly option"
+New rules:
+   -1020098 Avoid creating cookie with overly broad path (Javascript)
+   -1020100 Avoid creating cookie with overly broad domain (Javascript)

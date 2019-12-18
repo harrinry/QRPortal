@@ -1,0 +1,2 @@
+- Remove catch-all links when urls are not defined
+- Minor bugs fixed

@@ -1,0 +1,1 @@
+First alpha version providing the modelization of the basic SAPUI5 objects (see documentation for the details)

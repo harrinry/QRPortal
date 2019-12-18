@@ -1,0 +1,12 @@
+New Quality Rules:
+-1020008 - Avoid for-in loop
+-1020010 - Avoid using forEach()
+-1020012 - Avoid using a web service with WebSocket inside a loop
+-1020014 - Avoid using a web service with XMLHttpRequest inside a loop
+-1020016 - Avoid using too much dot notation in loop
+-1020022 - Avoid using submitted markup containing "form" and "formaction" attributes
+-1020024 - Avoid "id" attributes for forms as well as submit
+-1020026 - Avoid using autofocus and onfocus in submitted markup
+-1020028 - Avoid using autofocus and onblur in submitted markup
+-1020030 - Avoid using javascript or expression in the CSS file
+-1020032 - Avoid using video poster attributes in combination with javascript

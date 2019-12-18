@@ -1,0 +1,1 @@
+This beta version allows to select Business Objects universe extractions produced by the new SAP BusinessObjects Extractor. This one is delivered as a standalone component with other CAST extractors

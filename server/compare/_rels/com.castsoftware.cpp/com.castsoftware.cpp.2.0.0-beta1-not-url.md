@@ -1,0 +1,5 @@
+- enhance identity stability for methods/functions
+- support of C++ 14/17 syntaxes
+- Removed false violation on:
+  - Do not return a dereferenced pointer allocated inside the function
+  - Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor

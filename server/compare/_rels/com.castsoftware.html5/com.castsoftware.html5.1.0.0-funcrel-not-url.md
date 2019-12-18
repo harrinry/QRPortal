@@ -1,0 +1,1 @@
+Better resolution when a local function is called before its definition

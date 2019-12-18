@@ -1,0 +1,2 @@
+-Bugs correction:
+	-Infinite loop with JQuery associated.

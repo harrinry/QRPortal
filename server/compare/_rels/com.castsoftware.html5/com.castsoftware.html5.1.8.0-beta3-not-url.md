@@ -1,0 +1,1 @@
+1020094 - Avoid creating cookie without setting httpOnly option (Javascript)

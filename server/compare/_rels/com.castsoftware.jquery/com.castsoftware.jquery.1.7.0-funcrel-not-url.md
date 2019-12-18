@@ -1,0 +1,2 @@
+-Support of jquery specific to SAPUI5.
+-Bugs correction

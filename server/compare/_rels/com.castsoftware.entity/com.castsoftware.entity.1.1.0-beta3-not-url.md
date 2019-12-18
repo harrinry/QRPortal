@@ -1,0 +1,1 @@
+Bugs fixed: http://doc.castsoftware.com/display/DOCEXT/Entity+Framework+1.1+-+Bug+Fix+List#EntityFramework1.1-BugFixList-Beta3

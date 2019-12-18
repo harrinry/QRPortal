@@ -1,0 +1,1 @@
+Bugs fixed: https://doc.castsoftware.com/display/TECHNOS/Entity+Framework+1.3+-+Bug+Fix+List

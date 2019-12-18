@@ -1,0 +1,3 @@
+- This new version optimizes memory consumption.
+- Better URL resolution for jQuery service call
+- Added $.getJSON and $.getScript

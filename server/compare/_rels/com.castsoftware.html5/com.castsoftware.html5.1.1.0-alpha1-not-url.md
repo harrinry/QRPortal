@@ -1,0 +1,1 @@
+New Quality Rules: Avoid the use of querySelectorAll and Avoid to call a function in a termination loop

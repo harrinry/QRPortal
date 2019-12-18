@@ -1,0 +1,3 @@
+- Permanent Fix - Table objects are missing in Teradata scan.
+- Fix - Icons are missing in Enlighten for synonym on a table.
+- Permanent Fix - [ORANGE][COSI][NNI] BFP is coming 0 for SQL

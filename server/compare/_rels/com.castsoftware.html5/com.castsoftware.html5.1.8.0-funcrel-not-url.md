@@ -1,0 +1,6 @@
+-New diags:
+    -1020094 - Avoid creating cookie without setting httpOnly option (Javascript)
+    -1020096 - Avoid using unsecured cookie (Javascript)
+-Better performances on recent versions of CAST-AIP (>=8.2.11 and >= 8.3.4)
+-Files filtering enhancement.
+-Bugs resolution.

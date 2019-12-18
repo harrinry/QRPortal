@@ -1,0 +1,2 @@
+-Detection of controllers which are not defined by name, but only by variable.
+-Memory optimization.

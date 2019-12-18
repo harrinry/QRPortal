@@ -1,0 +1,2 @@
+- PERMANENT FIX - Duplicate external links between Cobol and SQL Tables.
+- FIX - IndexError: list index out of range at application level.

@@ -1,0 +1,4 @@
+-New rules:
+   -1020732 - Avoid using risky cryptographic hash (Node.js)
+   -1020734 : Avoid using unsecured cookie (Node.js)
+-Bugs corrections.

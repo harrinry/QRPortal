@@ -1,0 +1,1 @@
+- Permanent Fix - SQL Objects are not getting created from SQL files.
