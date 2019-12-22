@@ -1,5 +1,15 @@
 [
     {
+        "id": 678,
+        "name": "Never throw an exception from a Destructor",
+        "href": "AIP/quality-rules/678",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 2232,
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
@@ -40,6 +50,28 @@
             "HTML5",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7824,
+        "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
+        "href": "AIP/quality-rules/7824",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8000,
+        "name": "Avoid 'catch-all' statement",
+        "href": "AIP/quality-rules/8000",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C++"
         ]
     },
     {
@@ -93,6 +125,16 @@
         ]
     },
     {
+        "id": 1020540,
+        "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
+        "href": "AIP/quality-rules/1020540",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020700,
         "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
@@ -106,6 +148,16 @@
         "id": 1020702,
         "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020802,
+        "name": "Always throw all created error.",
+        "href": "AIP/quality-rules/1020802",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -134,7 +186,7 @@
     },
     {
         "id": 1020872,
-        "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
+        "name": "Always use JSON.parse and JSON.stringify with try/catch block because of the synchronous call (Typescript)",
         "href": "AIP/quality-rules/1020872",
         "status": null,
         "critical": false,
