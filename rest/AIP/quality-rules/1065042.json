@@ -1,0 +1,60 @@
+{
+    "id": 1065042,
+    "name": "Avoid non-void return type function without an explicit return of an expression (C/C++)",
+    "href": "AIP/quality-rules/1065042",
+    "critical": false,
+    "maxWeight": 1,
+    "description": "The rule will raise a violation if an expression is not returned from a non-void function.\n\nEXCEPTION:\nThis rule does not apply if a function exit is due to exception handling (i.e. a throw statement).",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "This expression gives the value that the function returns. The absence of a return with an expression leads to undefined behaviour (and the compiler may not give an error).",
+    "reference": "Standards Reference:\nMISRA C++ 2008, Rule 8-4-3: All exit paths from a function with non-void return type shall have an explicit return statement with an expression.",
+    "remediation": "Ensure to return an appropriate expression at all exit points",
+    "remediationSample": "int32_t fn3 ( int32_t x )\n{\nif ( x > 100 )\n{\nthrow 42; // Compliant by exception\n}\nreturn ( x ); // Compliant\n}",
+    "sample": "Example\nint32_t fn1 ( void )\n{\n} // Non-compliant",
+    "total": "Number of C++ methods and Functions",
+    "alternativeName": "Ensure to return a proper expression for a non-void function",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 0,
+            "name": "ALL TECHNOLOGIES",
+            "href": "AIP/technologies/0"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        10.0,
+        70.0,
+        90.0,
+        99.0
+    ]
+}

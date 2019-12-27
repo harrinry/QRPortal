@@ -1,0 +1,58 @@
+{
+    "id": 1065014,
+    "name": "Avoid using the library functions bsearch and qsort from <stdlib.h> (C/C++)",
+    "href": "AIP/quality-rules/1065014",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "The identifiers bsearch and qsort shall not be used and no macro with one of these names shall be expanded.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "If the comparison function does not behave consistently when comparing elements, or it modifies any of the elements, the behavior is undefined.\nNote: the unspecified behavior, which relates to the treatment of elements that compare as equal, can be avoided by ensuring that the comparison function never returns 0. When two elements are otherwise equal, the comparison function could return a value that indicates their relative order in the initial array.\nThe implementation of qsort is likely to be recursive and will, therefore, place unknown demands on stack resources. This is of concern in embedded systems as the stack is likely to be a fixed, often small, size.",
+    "reference": "MISRA C 2012- 21.9: The library functions bsearch and qsort of <stdlib.h> shall not be used.",
+    "sample": "void qsort (void* base, size_t num, size_t size,  // should not use qsort\n            int (*comparator)(const void*,const void*));",
+    "total": "Number of C method and function",
+    "alternativeName": "Avoid using the library functions bsearch and qsort from <stdlib.h> (C/C++)",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 0,
+            "name": "ALL TECHNOLOGIES",
+            "href": "AIP/technologies/0"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

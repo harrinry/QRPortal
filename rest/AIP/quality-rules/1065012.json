@@ -1,0 +1,64 @@
+{
+    "id": 1065012,
+    "name": "Avoid using 'setjmp' or 'longjmp' (C/C++)",
+    "href": "AIP/quality-rules/1065012",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "None of the facilities that are specified as being provided by <setjmp.h> shall be used.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "setjmp and longjmp allow the normal function call mechanisms to be bypassed. Their use may lead to undefined and unspecified behavior.",
+    "reference": "Standards Reference\nMISRA C 2012 - 21.4: The standard header file <setjmp.h> shall not be used\nMISRA C++ 2008 17-0-5: The setjmp macro and the longjmp function shall not be used.",
+    "remediation": "Use exception handling",
+    "sample": "#include <setjmp.h>\nvoid f2 ( );\njmp_buf buf;\nvoid f1 ( )\n{\nif ( !setjmp ( buf ) ) // Non-compliant\n{\nf2 ( );\n}\nelse\n{\n}\n}\nvoid f2 ( )\n{\nlongjmp ( buf, 10 ); // Non-compliant\n}",
+    "total": "Number of C/C++ methods",
+    "alternativeName": "Avoid using 'setjmp' or 'longjmp' (C/C++)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 0,
+            "name": "ALL TECHNOLOGIES",
+            "href": "AIP/technologies/0"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
