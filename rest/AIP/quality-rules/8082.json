@@ -10,7 +10,7 @@
     "remediationSample": "ALTER TABLE <table identifier> \n      ADD [ CONSTRAINT <constraint identifier> ] \n      PRIMARY KEY ( <column expression> {, <column expression>}... )",
     "sample": "CREATE TABLE table_name (\n     id_col  INT  PRIMARY KEY,\n     col2    CHARACTER VARYING(20),\n     ...\n  )",
     "total": "Number of tables and materialized views of the scoped container (schema or database depending of the DBMS)",
-    "alternativeName": "Avoid Tables without Primary Key",
+    "alternativeName": "Make sure to include Primary Key(PK) in your tables to enforce referential integrity of data and better performance through clustered indexing",
     "businessCriteria": [
         {
             "id": 60014,
