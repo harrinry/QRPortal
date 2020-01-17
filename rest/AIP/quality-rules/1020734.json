@@ -11,7 +11,7 @@
     "remediation": "Always setting secure option when creating a cookie.",
     "remediationSample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n  cookie: { \n    secure: true \n  } \n}));",
     "sample": "var express = require('express'); \nvar session = require('express-session'); \n\nvar app = express(); \n\napp.use(session({ \n  secret: 'My super session secret', \n}));",
-    "total": "Number of NodeJS source code using express-session",
+    "total": "Number of NodeJS source codes using express-session",
     "alternativeName": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
     "businessCriteria": [
         {
