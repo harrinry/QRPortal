@@ -33,7 +33,7 @@ function validate( params ){
 }
 
 function validateExtension( params ){
-  const { sec, ref } = params,
+  const { sec = '', ref = '' } = params,
     extMap = require('../../lib/extensions-map').readExtMap(),
     _sec = sec.split('_'),
     _ref = ref.split('|'),
@@ -46,7 +46,7 @@ function validateExtension( params ){
 }
 
 function validateTechnology( params ){
-  const { sec } = params,
+  const { sec = '' } = params,
     tMap = require('../../lib/technologies-map'),
     _sec = sec.split('_'),
     techId = parseInt(_sec[1]);
@@ -55,7 +55,7 @@ function validateTechnology( params ){
 }
 
 function validateStandard( params ){
-  const { sec } = params,
+  const { sec = '' } = params,
     _sec = sec.split('_'),
     bMap = require('../../lib/std-cat-map'),
     id = _sec[2],
