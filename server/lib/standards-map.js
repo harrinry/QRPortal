@@ -1,6 +1,12 @@
 const fs = require('fs');
 const root = require('app-root-path');
 
+const qualityStandardsToFilter = ['AIP', 'PCI-DSS-V3.2.1'];
+
+function inArray( val, arr ){
+  return arr.indexOf( val ) !== -1;
+}
+
 function getQualityStandardsMap ( response, echo ){
   fs.readFile(root.resolve('rest/'+ (echo ? 'Echo' :'AIP') +'/quality-standards.json'), ( err, data ) => {
     if (err) {
@@ -11,7 +17,7 @@ function getQualityStandardsMap ( response, echo ){
     //   href: 'AIP/business-criteria',
     //   icon: 'img/castsoftwareblackbg.svg'
     // };
-    const ret = JSON.parse(data).filter( e => e.name !== 'AIP' /*&& e.name !== 'CWE'*/).map( e => {
+    const ret = JSON.parse(data).filter( e => !inArray(e.name, qualityStandardsToFilter)).map( e => {
       return {
         name: e.name,
         href: e.href + '/categories',
