@@ -4,7 +4,7 @@
     "href": "AIP/quality-rules/1024032",
     "critical": true,
     "associatedValueName": "Number of violation occurrences",
-    "description": "Once we\u2019ve called authenticate, our user can carry out the authentication flow and we will receive the result through the provided callback. At this point we will handle the result within our user interface.  When the fingerprint (even VALID one) doesn\u2019t match with any of the fingerprints registered on the device and so the authentication process fails, then onAuthenticationFailed:callback will be triggered",
+    "description": "Once we\u2019ve called authenticate, our user can carry out the authentication flow and we will receive the result through the provided callback. At this point we will handle the result within our user interface.  When the fingerprint (even VALID one) doesn\u2019t match with any of the fingerprints registered on the device ans so the authentication process fails, then onAuthenticationFailed: callback will be triggered",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Running an application which does not fail of/correctly use the platform capability is a mandatory step from development team. The defining characteristic of risks in this category of rules is that the platform (iOS, Android, Windows Phone, etc.) provides a feature or a capability that is documented and well understood.",
     "reference": "https://medium.com/exploring-android/exploring-android-p-fingerprint-dialog-fa672ae62c6f\nhttps://proandroiddev.com/5-steps-to-implement-biometric-authentication-in-android-dbeb825aeee8",
