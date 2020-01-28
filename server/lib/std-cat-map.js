@@ -29,6 +29,9 @@ function createIconString(name, standardName){
   case 'cwe':
     _path = '/img/' + name.toLowerCase() + '.svg';
     break;
+  case 'c-cpp':
+    _path = '/img/' + name.toLowerCase() + '.svg';
+    break;
   default:
     _path = '/img/' + name.substring(standardName.length).replace(/-/ig,'').toLowerCase() + '.svg';
     break;

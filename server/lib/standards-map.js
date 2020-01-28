@@ -1,7 +1,7 @@
 const fs = require('fs');
 const root = require('app-root-path');
 
-const qualityStandardsToFilter = ['AIP', 'PCI-DSS-V3.2.1'];
+const qualityStandardsToFilter = ['AIP', 'PCI-DSS-V3.1'];
 
 function inArray( val, arr ){
   return arr.indexOf( val ) !== -1;

@@ -11,7 +11,7 @@ const navData = [
     name: 'Standards',
     href: 'AIP/quality-standards',
     icon: '/img/standards.svg',
-    info: 'Browse according to the standard they meet: CAST, CISQ, OWASP, CWE'
+    info: 'Browse according to the standard they meet: CAST, CISQ, OWASP, CWE, PCI, STIG, NIST, MISRA, Autosar...'
   },
   {
     name: 'Technologies',
