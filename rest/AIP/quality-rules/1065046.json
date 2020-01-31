@@ -1,0 +1,72 @@
+{
+    "id": 1065046,
+    "name": "Avoid using the unbounded functions of <cstring> library",
+    "href": "AIP/quality-rules/1065046",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "The rule will raise a violation when the following unbounded functions of <cstring> are used:\nstrcpy\nstrcmp\nstrcat\nstrchr\nstrspn\nstrcspn\nstrpbrk\nstrrchr\nstrstr\nstrtok\nstrlen",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "The strcpy, strcmp, strcat, strchr, strspn, strcspn, strpbrk, strrchr, strstr, strtok and strlen functions within the <cstring> library can read or write beyond the end of a buffer, resulting in undefined behaviour.\n\nIdeally, a safe string handling library should be used.",
+    "reference": "MISRA C++ 2008, 18-0-5: The unbounded functions of library <cstring> shall not be used.",
+    "remediation": "Use functions such as mentioned below to ensure that the copied string is NULL-Terminated:\n\nsnprintf\nstrlcpy",
+    "sample": "#include <cstring> \nvoid fn ( const char_t * pChar ) \n{    \nchar_t array [ 10 ];\nstrcpy ( array, pChar );   // Non-compliant\n}",
+    "total": "Number of C / C++ method and function",
+    "alternativeName": "Avoid using the unbounded functions of <cstring> library",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
