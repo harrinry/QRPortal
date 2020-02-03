@@ -13,7 +13,7 @@
     "remediationSample": "#define MAX_ARRAY_SIZE 1000000\nint *array = NULL; \nvoid allocateArray()\n{\n      int len, itr;\n      scanf(\"%i\", &len);\n     if (len > 0 && len < MAX_ARRAY_SIZE)\n     {\n           array = malloc(len);\n           for(itr=0;itr<len;itr++)\n               array[itr] = 0;\n     }\n }\n\nint getValue(int index)\n{\n    if(index >= 0 && index < MAX_ARRAY_SIZE)\n          return array[index];\n    else\n          return array[MAX_ARRAY_SIZE-1];\n}",
     "sample": "int *array = NULL; \nvoid allocateArray()\n{\n      int len, itr;\n      scanf(\"%i\", &len);\n      array = malloc(len);\n      for(itr=0;itr<len;itr++)\n          array[itr] = 0;\n }\n\nint getValue(int index)\n{\n    return array[index];\n}",
     "total": "Number of  C/C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Avoid use of unvalidated input in array indexing and memory allocation",
     "businessCriteria": [
         {
             "id": 66031,
@@ -47,7 +47,55 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-129",
+            "name": "Array Index Improper Input Neutralization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-129",
+            "name": "Improper Validation of Array Index",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-16",
+            "name": "Memory Protection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-129",
+            "name": "Improper Validation of Array Index",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.2",
+            "name": "Buffer overflows",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.2",
+            "name": "Buffer overflows",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70277",
+            "name": "The application must not be vulnerable to overflow attacks.",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
