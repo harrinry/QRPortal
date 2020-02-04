@@ -19,7 +19,8 @@ export const SECTIONS = {
   nist: 'nist-sp-800-53r4',
   pci: 'pci-dss-v3.2.1',
   stig: 'stig-v4r8',
-  omg: 'omg-ascqm'
+  omg: 'omg-ascqm',
+  cpp: 'c-cpp',
 };
 
 export const defaultIconURL = 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)';
