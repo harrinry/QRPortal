@@ -30,6 +30,7 @@ const mapDispatchToProps = (dispatch) => {
       case SECTIONS.stig:
       case SECTIONS.nist:
       case SECTIONS.omg:
+      case SECTIONS.cpp:
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());
