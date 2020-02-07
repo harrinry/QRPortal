@@ -9,7 +9,7 @@
     "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.",
     "remediation": "Review the source code of the application and modify it on order not to have multiple artifacs deleting data on the same NoSQL table",
     "total": "Number of collections deleted by multiple artifacts",
-    "alternativeName": "Avoid having multiple artifacts deleting data on the same NoSQL collections",
+    "alternativeName": "Ensure you don't have multiple artifacts deleting data on the same NoSQL table",
     "businessCriteria": [
         {
             "id": 60014,

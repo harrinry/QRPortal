@@ -13,7 +13,7 @@
     "remediationSample": "int foo(char *source)\n{\n  int retcode = 1;\n  char target[20];\n  if ( snprintf(target, sizeof(target) - 1, \"%s\", source) > sizeof(target) - 1)\n  {\n    /* Manage buffer overflow situation */\n    retcode = 0;\n  }\n  return retcode;\n}",
     "sample": "void foo(char *source)\n{\n  char target[20];\n  snprintf(target, sizeof(target) - 1, \"%s\", source);\n}",
     "total": "Number of C/C++ functions, constructors, destructors, and methods",
-    "alternativeName": "Avoid using snprintf() function family",
+    "alternativeName": "DEPRECATED : Avoid using snprintf() function family",
     "businessCriteria": [
         {
             "id": 66031,
