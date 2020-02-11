@@ -3,6 +3,7 @@
     "name": "Avoid providing password in Web Service URL",
     "href": "AIP/quality-rules/1020950",
     "critical": true,
+    "maxWeight": 7,
     "description": "Lack of transport encryption allows data to be viewed as it travels over local networks or the internet. Lack of transport encryption is prevalent on local networks as it is easy to assume that local network traffic will not be widely visible, however in the case of a local wireless network, misconfiguration of that wireless network can make traffic visible to anyone within range of that wireless network. Many Issues with transport encryption are easy to discover simply by viewing network traffic and searching for readable data. Automated tools can also look for proper implementation of common transport encryption such as SSL and TLS.",
     "output": "Line and column for each violation \nAssociated value => number of violations found",
     "rationale": "Secure password management is essential to prevent attackers from gaining access to sensitive resources or abusing the application functionality. Lack of proper protection can leak account information including the passwords which could severely compromise the application.",

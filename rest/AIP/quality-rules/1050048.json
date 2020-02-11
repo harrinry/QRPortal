@@ -3,6 +3,7 @@
     "name": "Avoid creating file without protection (Objective-C)",
     "href": "AIP/quality-rules/1050048",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using NSFileManage createFileAtPath, you must provide file protection option.",
     "output": "This report lists all uses of NSFileManager createFileAtPath function with NSURLFileProtectionType option.\nAssociated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

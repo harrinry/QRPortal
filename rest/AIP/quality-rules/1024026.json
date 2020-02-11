@@ -3,6 +3,7 @@
     "name": "Avoid using MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE",
     "href": "AIP/quality-rules/1024026",
     "critical": true,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "MODE_WORLD_READABLE allow all other applications to have read access to the created file.\nMODE_WORLD_WRITEABLE allow all other applications to have write access to the created file.\n\nPlease note that MODE_WORLD_READABLE, MODE_WORLD_WRITEABLE have been deprecated in API level 17.\n\nStarting from Build.VERSION_CODES.N, attempting to use this mode throws a SecurityException.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

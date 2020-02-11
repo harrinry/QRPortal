@@ -3,6 +3,7 @@
     "name": "Avoid uncontrolled format string",
     "href": "AIP/quality-rules/8098",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the string format method",
     "description": "Using CAST data flow engine, this metric detects execution paths from user input methods down to format string manipulation methods which open vulnerabilities to uncontrolled format string flaw.",
     "output": "List all methods that miss calling the required input validation calls \n\nIt provides the following information: \n - Method full name \n - Call stack from user input source down to the string format method.",

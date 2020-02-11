@@ -3,6 +3,7 @@
     "name": "Avoid Cursors inside a loop",
     "href": "AIP/quality-rules/7790",
     "critical": true,
+    "maxWeight": 7,
     "description": "This metric detects SQL Artifacts accessing a cursor inside a loop",
     "output": "This report lists all SQL Artifacts accessing a cursor inside a loop.\nIt provides the following information: Artifact full name",
     "rationale": "Cursors are loops which number of iterations is based on the number of rows returned by an SQL query. Having a cursor inside a loop means having an SQL query inside a loop which number of iterations can be very high (dependent on the data returned from the database).\nThis iterative pattern has proved to be very dangerous for application performance and scalability. Database servers handle in a much better set-oriented pattern rather than pure iterative ones.",

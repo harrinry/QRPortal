@@ -3,6 +3,7 @@
     "name": "Avoid JMS Synchronous Activities (TIBCO BW)",
     "href": "AIP/quality-rules/1018540",
     "critical": true,
+    "maxWeight": 9,
     "description": "This rule searches for ProcessActivities of type JMSQueueSignalInActivity, JMSQueueRequestReplyActivity or JMSTopicRequestReplyActivity.\nProcessActivity is a property captured in the metamodel.",
     "output": "This report lists all  Processe Activities of type JMS JMSQueueSignalInActivity, JMSQueueRequestReplyActivity and JMSTopicRequestReplyActivity.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the activityType.",
     "rationale": "Blocking calls can result in system failure if the called process fails. JMS Synchronous activities are inefficient for scalability.",

@@ -3,6 +3,7 @@
     "name": "Avoid action mappings validator turned off",
     "href": "AIP/quality-rules/7362",
     "critical": true,
+    "maxWeight": 9,
     "description": "This metric reports all action mapping with disabled validation.",
     "output": "This report lists all Action Mapping that have a disabled validation. It provides the following information:\n  Action Mapping Full Name",
     "rationale": "Disabling the validation of a form expose this action to various types of attacks such as SQL Injection, Command Injection, Cross-Site Scripting, Denial of Service... This is due to the fact that invalidated input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like deletion of the entire content of a database. Input validation is mandatory to secure an application. \nMoreover, the web interface is exposed to anyone.",

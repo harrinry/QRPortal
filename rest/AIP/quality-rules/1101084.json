@@ -3,6 +3,7 @@
     "name": "Avoid Cursors inside a loop (SQL)",
     "href": "AIP/quality-rules/1101084",
     "critical": true,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects artifacts accessing a cursor inside a loop (meaning that the open, fetch loop and close operations are themselves embedded in a loop).",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

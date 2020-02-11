@@ -3,6 +3,7 @@
     "name": "Avoid empty catch blocks (PHP)",
     "href": "AIP/quality-rules/1007122",
     "critical": true,
+    "maxWeight": 5,
     "description": "This rule searches for all the artifacts containing empty catch blocks.\nIn a Try and Catch statement, Catch blocks should have code to handle the thrown exception or at least comments denoting why the exception was not handled.",
     "output": "This report lists all artifacts containing an empty catch block.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "An empty catch block defeats the purpose of exceptions.\nWith empty catch block, when an exception occurs, nothing happens and the program may fail because subsequent processing may rely on the result of exception causing statements. If exception cannot or should not be handled for concrete reason, empty catch block should have at least explanation of why.\nSince the reason for the issue (the type of the exception and potential embedded message) are not known, it will require more time to fix the issue.",

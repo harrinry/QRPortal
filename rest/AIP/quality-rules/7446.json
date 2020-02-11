@@ -3,6 +3,7 @@
     "name": "Avoid double checked locking for JSE 4.x and previous version",
     "href": "AIP/quality-rules/7446",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "Double checked locking is a software design pattern used to reduce locking overhead when implementing lazy initialization in a multi-thread environment. This avoid to initializing a value until the first time it is accessed.\nThis pattern is unsafe because there is no guarantee it will work on single or multi-processor machines.\n\n\n\nFor JSE 4.x and previous version, all methods that are not synchronized and that check a value of one of its field before using synchronized and then check this field again and then assign a value to this field will be reported.\n\n\nNote also that even if this issue as been fixed in JSE 5.0 it doesn't provide performance optimization.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

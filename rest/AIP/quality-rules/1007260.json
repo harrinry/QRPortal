@@ -3,6 +3,7 @@
     "name": "Avoid Command Injection - Improper Neutralization of Special Elements used in an OS Command (PHP)",
     "href": "AIP/quality-rules/1007260",
     "critical": true,
+    "maxWeight": 5,
     "associatedValueName": "Reasoning",
     "description": "A command execution vulnerability occurs when user input is embedded unsanitized into a system command. It allows an attacker to terminate the intended command and to append arbitrary system commands for execution. Common character sequences to separate commands are semicolons (;), boolean operators (&|), $(subcommands), `backticks`, and newline characters (%0a).",
     "output": "This report lists all artifacts that allow command injection through use of unsanitized user input. \nThis QR provides the following information:\nArtifact Full Name",

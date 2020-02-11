@@ -3,6 +3,7 @@
     "name": "Avoid OPEN/CLOSE inside loops",
     "href": "AIP/quality-rules/7218",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs using OPEN or CLOSE in loops. Following loops are taken into account:\n- PERFORM - TIMES\n- PERFORM - UNTIL\n- PERFORM - VARYING",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n    - Statement creating the loop in which OPEN or CLOSE statements are used\n    - OPEN statement used the loop\n    - CLOSE statement used in the loop",

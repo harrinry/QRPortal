@@ -3,6 +3,7 @@
     "name": "Avoid use of a reversible one-way hash",
     "href": "AIP/quality-rules/8416",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects the use of a risky hashing algorithm.",
     "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",

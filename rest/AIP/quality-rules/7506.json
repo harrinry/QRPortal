@@ -3,6 +3,7 @@
     "name": "Define equals() and hashCode() for component",
     "href": "AIP/quality-rules/7506",
     "critical": true,
+    "maxWeight": 9,
     "description": "Reports all hibernate and/or JPA persistent classes associated to a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable and @IdClass) and that don't implement equals() and hashCode().",
     "output": "List all Hibernate and/or JPA persistent classes associated to a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable/@IdClass) and that do not implement equals() and hashCode().\n\nIt provides the following information:\n- Class Full Name",
     "rationale": "Component classes do not have an identifier property. You must implement equals() and hashCode(). Hibernate or JPA implementation relies on this equality routine to check instances for modifications.\n\nA custom implementation of equals() and hashCode() is not required for all component classes. However, it is recommended for any component class because the implementation is straightforward, and \"better safe than sorry\".",

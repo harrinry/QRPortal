@@ -3,6 +3,7 @@
     "name": "Avoid instantiations inside loops",
     "href": "AIP/quality-rules/7210",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Associated Value",
     "description": "Reports all artifacts with loops (for, while, do while)  that contain object instantiations (object creation)..\nJava artifacts include all methods and constructors with the following exclusions:\n- the cases where the instantiation appear at the end of a return or throw statement are excluded. \n- the case where the instantiated object is one of the arguments of a call to one of the following methods :\n   . java.util.Collection.add\n   . java.util.Map.put\n   . java.lang.StringBuilder.append\n   . java.lang.StringBuilder.insert\n   . java.lang.StringBuilder.replace\n   . java.lang.StringBuffer.append\n   . java.lang.StringBuffer.insert\n   . java.lang.StringBuffer.replace\n   . java.util.stream.Stream.map\n   . and any method with the same name in their respective derived classes (e.g. java.util.ArrayList. add(int index, E element)), as ArrayList implements java.util.Collection and has the same name as the authorized method add).",
     "output": "This report lists all methods that create objects in a loop.\nIt provides the following information:\n Method full name",

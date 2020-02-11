@@ -3,6 +3,7 @@
     "name": "All traffic to particular domains should use HTTPS",
     "href": "AIP/quality-rules/1024024",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Applications intending to connect to destinations using only secure connections can opt-out of supporting cleartext (using the unencrypted HTTP protocol instead of HTTPS) to those destinations. setting cleartextTrafficPermitted to false helps prevent accidental regressions in apps due to changes in URLs provided by external sources such as backend servers. \n\nThe configuration of this option is done in the network's security settings via configuration file \n\nThis path of this configuration file is in manifest file by setting android:networkSecurityConfig tag as follow \n\n<manifest ... > \n    <application \n        android:networkSecurityConfig=\"@xml/network_security_config\" \n        ... > \n        <!-- Place child elements of <application> element here. --> \n    </application> \n</manifest> \n\n\n\nThis check should be applied only to Android Application 8.1 (API level 27) or lower. Starting with Android 9 (API level 28), cleartext support is disabled by default \n",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

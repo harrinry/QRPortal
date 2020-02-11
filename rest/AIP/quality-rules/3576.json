@@ -3,6 +3,7 @@
     "name": "Avoid declaring public Fields",
     "href": "AIP/quality-rules/3576",
     "critical": true,
+    "maxWeight": 7,
     "description": "Public Fields (defined in a class) should not be used. Const or readonly fields are excluded from the violations.",
     "output": "This report lists all Public Fields (that are not const or readonly). It provides the following information: Field full name",
     "rationale": "Public Fields can be accessed by any other Class, therefore its value can be modified at any time, without control by the Class itself. In addition, direct use of Public Fields does not let Field definition evolve without requiring updates to all Objects referencing it. This goes against OO Encapsulation concepts.",

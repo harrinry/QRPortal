@@ -3,6 +3,7 @@
     "name": "Avoid recursive calls with PERFORM statements",
     "href": "AIP/quality-rules/7236",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs in which paragraphs call themselves with a PERFORM statement.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n  - PERFORM statement that refers to the paragraph it belongs to",

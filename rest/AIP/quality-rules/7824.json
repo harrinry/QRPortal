@@ -3,6 +3,7 @@
     "name": "Avoid directly throwing instance of Exception class",
     "href": "AIP/quality-rules/7824",
     "critical": true,
+    "maxWeight": 8,
     "description": "This Quality Rule reports all methods throwing  an exception of type Exception. The exception Exception should never been thrown.",
     "output": "This report lists all Artifacts throwing an exception of type Exception.\nIt provides the following information:\n- Artifact full name",
     "rationale": "Whenever a method throws an exception of type Exception, it prevents its callers from carrying out the specific recovery process that is needed and as a consequence this will threaten both application robustness and security. For example, each exception related to resource allocation whose catch does not explicitly release the resource might create a \"resource leak\". When a leak occurs on a limited set of available resources, such as a database connection, the application can then become unusable because resources cannot be allocated any more. \nThe application also becomes difficult to support and run in production as root-cause analysis is made more difficult. The support teams might not even be aware that something went wrong (by catching Exception, RuntimeException might not be visible any more).",

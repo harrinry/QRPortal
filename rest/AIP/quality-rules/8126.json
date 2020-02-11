@@ -3,6 +3,7 @@
     "name": "Avoid using empty SELECT ... ENDSELECT loop",
     "href": "AIP/quality-rules/8126",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for artifacts containing empty SELECT..ENDSELECT loops.\nNote: The rule is applicable in SAP HANA context.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation occurrences found in source code",

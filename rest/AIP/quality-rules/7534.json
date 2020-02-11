@@ -3,6 +3,7 @@
     "name": "Avoid READ TABLE without BINARY SEARCH",
     "href": "AIP/quality-rules/7534",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric retrieves all ABAP Artifacts using READ statements on standard ABAP internal tables without using the BINARY SEARCH option.\nREAD statement on SORTED and HASHED tables are not taken into account as they do not require the  BINARY SEARCH option.",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The number of violation occurrences",

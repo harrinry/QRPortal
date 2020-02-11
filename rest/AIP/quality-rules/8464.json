@@ -3,6 +3,7 @@
     "name": "Avoid Open SQL SELECT queries without WHERE condition on XXL Tables",
     "href": "AIP/quality-rules/8464",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "XXL SAP Table/View name",
     "description": "This rule retrieves all ABAP artifacts using SELECT queries without WHERE clause on tables and views.\nThis rule is applied only on XXL tables\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",
     "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The XXL SAP Table/View name",

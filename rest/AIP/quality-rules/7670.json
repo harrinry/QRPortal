@@ -3,6 +3,7 @@
     "name": "Avoid accessing SAP standard Tables in modification from custom code",
     "href": "AIP/quality-rules/7670",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for all custom programs, user-exits, includes, functions, and methods with OpenSQL queries that access SAP standard tables in modification. \n\nSAP standard tables are identified as follows:\n- Their name does not start with Y and Z\n- They do not belong to a user namespace\n\nNote: Following tables are considered as custom tables and accessing them is not considered as a violation: T9* P9* PA9* PB9* PS9* PT9* HRT9* HRP9* HRI9*\n\nCustom components are identified as follows:\n- Their name starts with Y or Z\n- They belong to a user namespace",
     "output": "Associated to each ABAP custom components with violations, the Quality Rule provides:\n- The number of violation occurrences",

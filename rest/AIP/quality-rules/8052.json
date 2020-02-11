@@ -3,6 +3,7 @@
     "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
     "href": "AIP/quality-rules/8052",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for functions that set pointers to lower scope variables.",
     "output": "Associated to each C/C++ function with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code:\n  - pointer assignment\n  - pointer declaration\n  - local variable declaration",

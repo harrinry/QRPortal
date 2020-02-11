@@ -3,6 +3,7 @@
     "name": "Avoid artifacts with optional parameters before required parameters (PHP)",
     "href": "AIP/quality-rules/1007150",
     "critical": true,
+    "maxWeight": 5,
     "description": "This rule searches for all the Artifacts with optional parameters before required ones. Artifacts are being checked including methods, functions and constructor.",
     "output": "This report lists all artifact with optional parameters listed before required ones.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Using optional parameters is a common practice in PHP. When using optional parameters, it is very important to assign a value to the optional parameters and to ensure that the optional parameters always follow required parameters. This will prevent application from giving unpredictable results.",

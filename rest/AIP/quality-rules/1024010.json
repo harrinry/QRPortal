@@ -3,6 +3,7 @@
     "name": "Apply signature-based permissions",
     "href": "AIP/quality-rules/1024010",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "\"android:protectionLevel\" characterizes the potential risk implied in the permission and indicates the procedure the system should follow when determining whether or not to grant the permission to an application requesting it.\n\nEach protection level consists of a base permission type and zero or more flags. For example, the \"dangerous\" protection level has no flags. In contrast, the protection level \"signatureOrSystem\" is a combination of the \"signature\" base permission type and the \"privileged\" flag.\n\n\nA violation reported when android:protectionLevel flag is not used or android:protectionLevel=\"normal\"",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

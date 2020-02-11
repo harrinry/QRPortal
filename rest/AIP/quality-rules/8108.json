@@ -3,6 +3,7 @@
     "name": "Avoid missing release of stream connection after an effective lifetime",
     "href": "AIP/quality-rules/8108",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports methods that open a stream in the body and that:\n- doesn't close the outermost stream in a finally block. Note that the number of calls to open a stream and the methods in the finally must be the same.\n- or doesn't annotate this stream with @Cleanup annotation (lombok.Cleanup)\n- or doesn't use the try with resource to declare the stream that must be closed\n\nThe following objects are taken into account:\n- output streams\n- input streams\n- readers\n- writers\n- channel",
     "output": "This report lists all methods that do not close the outermost stream they opened \nIt provides the following information: \n- method full name",

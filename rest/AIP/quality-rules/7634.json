@@ -3,6 +3,7 @@
     "name": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
     "href": "AIP/quality-rules/7634",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Hibernate Entity name",
     "description": "Reports Hibernate Entities that set select-before-update property to true and that are not associated to a table that fires an UPDATE trigger.",
     "output": "List all Hibernate Entity that use select-before-update and that are not associated to a table that fires an UPDATE trigger.\n\nIt provides the following information:\n - XML File\n - Hibernate Entity",

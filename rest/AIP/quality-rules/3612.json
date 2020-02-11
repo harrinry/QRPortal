@@ -3,6 +3,7 @@
     "name": "Avoid missing release of SQL connection after an effective lifetime (C#, VB.NET)",
     "href": "AIP/quality-rules/3612",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "SQL connection should be closed within the Method / Function / Sub that opened it",
     "output": "This report lists all Methods / Functions / Subs that do not close the SQL connections they opened\nIt provides the following information:  Method / Function / Sub full name",

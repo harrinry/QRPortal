@@ -3,6 +3,7 @@
     "name": "Avoid invocation of virtual Methods of the declared Class in a Constructor or Destructor",
     "href": "AIP/quality-rules/628",
     "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Virtual class method invoked",
     "description": "This rule searches for virtual functions of a class called from within the constructor or destructor of this class.",
     "output": "Associated to each C++ Constructor/Destructor with violations, the Quality Rule provides:\n- Virtual member function name\n- Bookmarks for violation occurrences found in the source code:\n  - Virtual member function call",

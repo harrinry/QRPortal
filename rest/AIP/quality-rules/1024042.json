@@ -3,6 +3,7 @@
     "name": "Avoid using weak encryption algorithm (Android)",
     "href": "AIP/quality-rules/1024042",
     "critical": true,
+    "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "For Android application : When you have the freedom to choose which algorithm to use (such as) when you do not require compatibility with a third-party system), But it's more recommend using the following algorithms: \n\nCipher: AES in either CBC or GCM mode with 256-bit keys (such as AES/GCM/NoPadding) \nMessageDigest: SHA-2 family (eg, SHA-256) \nMac: SHA-2 family HMAC (eg, HMACSHA256) \nSignature:SHA-2 family with ECDSA (eg, SHA256withECDSA)",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

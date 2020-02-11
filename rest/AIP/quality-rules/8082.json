@@ -3,6 +3,7 @@
     "name": "Avoid Tables without Primary Key",
     "href": "AIP/quality-rules/8082",
     "critical": true,
+    "maxWeight": 5,
     "description": "This metric displays the list of tables and materialized views without Primary key constraints",
     "output": "This report lists all tables and materialized views without a primary key defined. it provides the following information:\n- full name",
     "rationale": "In relational database design, a candidate key is just a unique identifier. Next a primary key is a candidate key that's been singled out to uniquely identify each row in a table or materialized view. \nA unique key or primary key comprises a single column or set of columns. No two distinct rows in a table or materialized view can have the same value (or combination of values) in those columns. \n\nDepending on its design, a table or materialized view may have arbitrarily many unique keys but at most one primary key.\n\n=> Primary keys are defined in the ANSI SQL Standard, through the PRIMARY KEY constraint.",

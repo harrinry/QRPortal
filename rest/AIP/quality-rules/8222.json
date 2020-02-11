@@ -3,6 +3,7 @@
     "name": "Avoid hard-coded credentials",
     "href": "AIP/quality-rules/8222",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Call stack from hard-coded string down to the target method",
     "description": "This rule will detect a call path where a hard-coded credential is sent to a method used for its own inbound authentication, outbound communication to external components or validate the authentication for retrieval of data.",
     "output": "Lists all methods that call target methods, passing at least one hard-coded credential parameter. \n\nIt provides the following information : \n - Method full name. \n - Call stack with bookmarks from hard-coded credential literal down to the target method.",

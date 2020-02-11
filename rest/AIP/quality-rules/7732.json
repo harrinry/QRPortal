@@ -3,6 +3,7 @@
     "name": "Avoid non validated inputs",
     "href": "AIP/quality-rules/7732",
     "critical": true,
+    "maxWeight": 9,
     "description": "Reports all input field that is not validated in JSP files that use JSF (i.e. reference the JSF core taglib). Faces handles validation in three ways - \nvia standard validation, custom validation, validation in the backing bean.\n\nNote that the other way that consist in making the validation in the application (in the method called when a button is selected like createEmail method in the Example section)  is not considered. In this case, a manual check will be needed to validate if the validation is made or not through this way.",
     "output": "This report lists all input that are not validated. It provides the following information:\n  JSP Input Field Full Name",
     "rationale": "Input validation is required to secure an application. Moreover, the web interface is exposed to anyone. Non validating input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like erasing the content of a database.\nOnly one invalidated input can be exploited by an attacker.\n\nJSF supports validators, which are responsible for making sure that the user enters an acceptable value. Each input control must be associated with one or more validators.",

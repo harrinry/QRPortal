@@ -3,6 +3,7 @@
     "name": "Avoid using goto statements (PHP)",
     "href": "AIP/quality-rules/1007154",
     "critical": true,
+    "maxWeight": 5,
     "description": "This rule searches for all the artifacts containing goto statements. Artifacts considered for this quality rule are PHP Section, method, function and constructor.",
     "output": "This report lists all the artifacts containing goto statements.\n\nThis QR provides the following information:\n-Artifact full name.",
     "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct.",

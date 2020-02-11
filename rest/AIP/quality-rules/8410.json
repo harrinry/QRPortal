@@ -3,6 +3,7 @@
     "name": "Avoid cross-site scripting (persistent)",
     "href": "AIP/quality-rules/8410",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Stored XSS (or Persistent) - The application stores dangerous data in a database, message forum, visitor log, or other trusted data store. At a later time, the dangerous data is subsequently read back into the application and included in dynamic content. From an attacker's perspective, the optimal place to inject malicious content is in an area that is displayed to either many users or particularly interesting users. Interesting users typically have elevated privileges in the application or interact with sensitive data that is valuable to the attacker. If one of these users executes malicious content, the attacker may be able to perform privileged operations on behalf of the user or gain access to sensitive data belonging to the user. \n\nFor example, the attacker might inject XSS into a log message, which might not be handled properly when an administrator views the logs.",
     "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",

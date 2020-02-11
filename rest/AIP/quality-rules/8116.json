@@ -3,6 +3,7 @@
     "name": "Avoid calling system function (CALL 'cfunc')",
     "href": "AIP/quality-rules/8116",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for ABAP elements that contain calls to system functions.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - CALL 'cfunc'",

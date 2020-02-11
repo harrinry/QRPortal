@@ -3,6 +3,7 @@
     "name": "Avoid using the RFC_ABAP_INSTALL_AND_RUN function",
     "href": "AIP/quality-rules/8118",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for ABAP artifacts that contain calls to the RFC_ABAP_INSTALL_AND_RUN function module.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to this function module\n- Bookmarks for violation occurrences found in source code: \n  - CALL FUNCTION \"RFC_ABAP_INSTALL_AND_RUN\"",

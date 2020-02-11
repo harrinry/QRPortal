@@ -3,6 +3,7 @@
     "name": "Avoid using unsecured cookie",
     "href": "AIP/quality-rules/8240",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Call stack from the \"setSecure\" call to the \"addCookie\" target",
     "description": "The 'Secure' attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session. \nUsing the method \"setSecure\" ensures that the session cookie is not visible to an attacker.",
     "output": "List all methods full name that add cookie to a response object without setting the 'secured' attribute",

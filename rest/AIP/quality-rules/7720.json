@@ -3,6 +3,7 @@
     "name": "Avoid too many EJB bean",
     "href": "AIP/quality-rules/7720",
     "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of EJB",
     "description": "Reports a violation when the number of EJB beans (Session, Message Driven and Entity beans) defined in the application (ejb-jar.xml or annotation) is greater than 500. This number can be changed as will through the threashold parameter.",
     "output": "This report a violation when the number of EJB is greater than 500 Or the threshold.\nIt provides the following information:\n - Application\n - Number of EJB",
