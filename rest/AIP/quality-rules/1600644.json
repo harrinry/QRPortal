@@ -5,9 +5,10 @@
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Page Width",
-    "output": "This report lists all the Web Pages having a Page Width greater than the Max PageWidth.\nIt provides the following information: \n-  Page  full name.\n- The associated value is the PageWidth.",
-    "rationale": "Improve look & feel for the user",
-    "reference": "3.0",
+    "description": "This quality rule detects all pages having a PageWidth greater than PageWidthMax.\nPageWidthMax is a parameter and it can be changed at will.\nDefault value is 800.",
+    "output": "This report lists all the Web Pages having a PageWidth greater than the Max PageWidth.\nIt provides the following information: \n- Page  full name.\n- The associated value is the PageWidth.",
+    "rationale": "Improve look & feel for the user.\nScrolling to display the information is painful and should be avoided.",
+    "remediation": "Review the page design, and reduce the PageWidth to fit in a single page without having the user to scroll.",
     "total": "Number of PeopleSoft Pages (ADDED)",
     "alternativeName": "Developers should avoid developing web pages that result in horizontal scrolling (PeopleSoft)",
     "businessCriteria": [

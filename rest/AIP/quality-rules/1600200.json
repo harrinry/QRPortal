@@ -5,9 +5,11 @@
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Number of hardcoded messages",
+    "description": "This metric detects usage of litteral strings (hardcoded) during usage of following functions:\nError\nWarning\nWinMessage\nEndMessage",
     "output": "Failed checks give the number of objects that contain a calls to the message functions without using a message catalog reference",
     "rationale": "Hardcoded messages are not translated and it decrease the maintenance of the application",
-    "reference": "3.0",
+    "remediation": "Create an entry as a message catalog reference, and replace the litteral string in the message function call.",
+    "sample": "WinMessage(\"Your Kitchen Upgrade Order has been processed\");   // VIOLATION",
     "total": "Number of PeopleSoft Events, Functions and Methods",
     "alternativeName": "Don't use hardcoded message (PeopleSoft)",
     "businessCriteria": [

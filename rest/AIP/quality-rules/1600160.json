@@ -8,7 +8,6 @@
     "description": "Identify each field with XLAT in the Vanilla not in the project environment",
     "output": "Failed checks give the number of fields that contain deleted XLAT values. The XLAT name (detected in the vanilla) can be found in the value column",
     "rationale": "Standard objects are often referenced in many parts of the system. Deleting one of them can impact every part of the system that access to it.\nUnneeded XLAT item should deactivated.",
-    "reference": "3.0",
     "remediation": "Restore the XLAT item from the Vanilla",
     "total": "Number of PeopleSoft DBField (MODIFIED)",
     "alternativeName": "Avoid deleting delivered values in standard XLAT (PeopleSoft)",

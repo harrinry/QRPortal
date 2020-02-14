@@ -5,9 +5,10 @@
     "critical": false,
     "maxWeight": 4,
     "associatedValueName": "Related display field",
-    "output": "This report lists all the Display fields",
-    "reference": "3.0",
-    "remediation": "Open the page in the Application Designer, choose the Order tab, and choose another record for display control, to avoid an inconsistency of the data. It is not recommendend to modify the related field, this one must make reference of the setup record",
+    "description": "This quality rule detects Display fields having related fields from same record.",
+    "output": "This report lists all the Display fields having related fields from same record.\nThe associated value is the related field.",
+    "rationale": "It can lead to inconsistency of the data.",
+    "remediation": "Open the page in the PeopleSoft Application Designer, choose the Order tab, and choose another record for display control, to avoid an inconsistency of the data. It is not recommendend to modify the related field, this one must make reference of the setup record",
     "total": "Number of PeopleSoft Display controls",
     "alternativeName": "Display and related fields from same record must be avoided (PeopleSoft)",
     "businessCriteria": [

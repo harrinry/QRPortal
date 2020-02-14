@@ -5,9 +5,10 @@
     "critical": false,
     "maxWeight": 3,
     "associatedValueName": "Corresponding Record Field",
+    "description": "This quality rule detects radio button or check box having more than X choices.\nX is a parameter and it can be changed at will.\nDefault value is 3.",
     "output": "This report lists all the Radio buttons or Check boxes with more than three choices",
-    "rationale": "Use a radio button or check box when the user has less than three choices",
-    "reference": "3.0",
+    "rationale": "Use a radio button or check box when the user has less than three choices.\nWith more choices, it consumes too much place in the panel.",
+    "remediation": "Review th UI design and replace the radio button or the check box with a Drop-Down List Box.",
     "total": "Number of PeopleSoft Radio button or Check box",
     "alternativeName": "Avoid using a radio button or check box when the user has more than three choices (PeopleSoft)",
     "businessCriteria": [

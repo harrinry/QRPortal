@@ -6,6 +6,7 @@
     "maxWeight": 7,
     "description": "This metric detects all artifacts using commit or rollback statements",
     "output": "This report lists all artifacts using commit or rollback statements\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number commit and rollback found in the artifact source code",
+    "rationale": "A commit consumes a lot of resources. Any extraneous commit should be identified and removed, to gain performance.",
     "remediation": "This report is there to prepare a list for review. Upon review, some commit or rollback statement could be removed when appropriate.",
     "total": "Number of PeopleSoft Events, Functions and Methods",
     "alternativeName": "Check if \"Commit\" statements have been used only where it is necessary (PeopleSoft)",

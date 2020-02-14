@@ -4,9 +4,10 @@
     "href": "AIP/quality-rules/1600292",
     "critical": false,
     "maxWeight": 6,
-    "description": "PeopleSoft: In an INSERT statement, define explicitly the values for all the table columns",
-    "rationale": "PeopleSoft: In an INSERT statement, define explicitly the values for all the table columns",
-    "reference": "2.3",
+    "description": "This quality rules detects SQL Definition with INSERT statemenent not using column names.",
+    "output": "This quality rules reports PeopleSoft SQL Definitions with INSERT statement not specifying the column names.\nIt provides the PeopleSoft SQL Definitions fullname.",
+    "rationale": "In an INSERT statement, define explicitly the values for all the table columns.\nWhile valid at some time, an INSERT statement without column names is error prone, when the table structure is updated.\nIt can result in SQL error (statement not executed), or in data corruption (wrong column updated).",
+    "remediation": "Check the statement and if so, add column names in the INSERT statement.",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "In an INSERT statement, define explicitly the values for all the table columns (PeopleSoft)",
     "businessCriteria": [

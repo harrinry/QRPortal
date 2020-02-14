@@ -4,9 +4,10 @@
     "href": "AIP/quality-rules/1602132",
     "critical": false,
     "maxWeight": 4,
-    "description": "The long description must be filled. It is better to format it in order to ease the research.",
-    "rationale": "The long description (or comment) should be used to identify why the object has been created and why it has been modified",
-    "reference": "2.3",
+    "description": "This rule reports Components having no long description (field is empty).",
+    "output": "This report lists all PeopleSoft Component that have no long description.\nIt provides the following information:\n- PeopleSoft Component full name.",
+    "rationale": "Maintainability of the code is facilitated if there is documentation in the code.\nThe long description (or comment) should be used to identify why the object has been created and why it has been modified.",
+    "remediation": "The long description must be filled.\nIdeally, it is better to format it in order to ease the research.",
     "total": "Number of PeopleSoft Component",
     "alternativeName": "Component should have a Long Description (PeopleSoft)",
     "businessCriteria": [

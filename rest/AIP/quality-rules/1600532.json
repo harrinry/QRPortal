@@ -5,8 +5,10 @@
     "critical": false,
     "maxWeight": 3,
     "associatedValueName": "Number of GROUP BY clauses",
+    "description": "This rule searches for PeopleCode having a GROUP BY inside the SQL code.",
     "output": "This report lists all PeopleSoft Events, Functions and Methods using queries with the GROUP BY clause.",
     "rationale": "Rules of construction of query to improve performances",
+    "remediation": "Review the design of the query to avoid if possible GROUP BY clause.",
     "total": "Number of PeopleSoft Events, Functions and Methods",
     "alternativeName": "Avoid PeopleCode using GROUP BY (PeopleSoft)",
     "businessCriteria": [

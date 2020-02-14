@@ -4,8 +4,10 @@
     "href": "AIP/quality-rules/1600664",
     "critical": false,
     "maxWeight": 3,
-    "rationale": "Oracle does not allowed more than one long character field",
-    "reference": "3.0",
+    "description": "This quality rule detects PeopleSoft Record having more than 1 LONG column defined as child RecordField.\nIt does not apply to DB2 UDB, thus this quality rule should ignored or disabled when PeopleSoft repository is hosted on DB2 UDB.",
+    "rationale": "Oracle does not allow more than one long character field : Only one LONG column is allowed per table.",
+    "reference": "11gR2 : https://docs.oracle.com/cd/E18283_01/server.112/e17110/limits001.htm\n12gR2 : https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/datatype-limits.html#GUID-963C79C9-9303-49FE-8F2D-C8AAF04D3095\n19c : https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/datatype-limits.html#GUID-963C79C9-9303-49FE-8F2D-C8AAF04D3095",
+    "remediation": "Review the record design, and limit the LONG field to 1 maximum.",
     "total": "Number of PeopleSoft Records",
     "alternativeName": "Only one long character type field is allowed in a regular record definition (PeopleSoft)",
     "businessCriteria": [

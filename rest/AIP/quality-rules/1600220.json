@@ -4,10 +4,10 @@
     "href": "AIP/quality-rules/1600220",
     "critical": false,
     "maxWeight": 3,
+    "description": "This quality rule detects DBField with empty label.",
     "output": "Failed checks give the number of records that contain wrongly defined fields. The field name can be found in the value column",
     "rationale": "Use existing label whenever possible. A label must be filled (no empty label).",
-    "reference": "2.3",
-    "remediation": "In application designer, fill the property label id for field object",
+    "remediation": "In Peoplesoft Application Designer, fill the property label id for field object",
     "total": "Number of PeopleSoft DBField Label",
     "alternativeName": "Avoid unfilled Field Label (PeopleSoft)",
     "businessCriteria": [

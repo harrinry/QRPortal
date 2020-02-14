@@ -6,7 +6,6 @@
     "maxWeight": 8,
     "description": "Only the use of LIKE '%xxx' is checked",
     "rationale": "In the where clause, if a LIKE statement is used and the clause starts with %, no index will be use.\nThis rule is a best practice on query construction to improve performances.",
-    "reference": "2.3",
     "remediation": "Validate the query by a DBA and test it in a real environment",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "SELECT ... FROM ... WHERE alias.col LIKE '%xxx' (PeopleSoft)",

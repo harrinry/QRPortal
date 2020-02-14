@@ -8,7 +8,6 @@
     "description": "Identify each record with a defined Non-Standard SQL Table Name",
     "output": "This report lists all the Record Query Views with the property not empty",
     "rationale": "For a new record query don't use the \"Non Standard SQL Table Name' property to specify the query name. It will override the standard convention of prefixing PS_ to the record name",
-    "reference": "2.3",
     "remediation": "Delete the specific name. the impact of any change should be studied further because the table name is probably referenced in some SQL and / or PeopleCode",
     "total": "Number of PeopleSoft Record Query",
     "alternativeName": "Non-Standard SQL Table Name must be empty for a Record Query View (PeopleSoft)",

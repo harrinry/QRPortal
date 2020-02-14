@@ -4,9 +4,10 @@
     "href": "AIP/quality-rules/1600482",
     "critical": false,
     "maxWeight": 4,
-    "description": "Grid : Don't use unlimited occurs if there could be hundreds of rows coming back at a time",
-    "reference": "2.3",
-    "remediation": "In application designer, open the page who contains the grid, and in the grid options in \"General Tab\", uncheck the option \"Unlimited Occurs count\"",
+    "description": "This quality rules detects Grid having the option \"Unlimited Occurs Count (rows)\" checked in.",
+    "output": "This report lists all the PeopleSoft Grids having the option \"Unlimited Occurs Count\"checked.\nIt provides the following information:\n- PeopleSoft Grid full name",
+    "rationale": "Grid : Don't use unlimited occurs : there could be hundreds of rows coming back at a time, causing performance issues.",
+    "remediation": "In Application Designer, open the page who contains the grid, and in the grid options in \"General Tab\", uncheck the option \"Unlimited Occurs Count\"",
     "total": "Number of PeopleSoft Grids",
     "alternativeName": "Avoid unlimited occurs on grids (PeopleSoft)",
     "businessCriteria": [
