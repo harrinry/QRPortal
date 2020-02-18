@@ -1569,6 +1569,16 @@
         ]
     },
     {
+        "id": 1020860,
+        "name": "Avoid using setInterval with a string as first argument",
+        "href": "AIP/quality-rules/1020860",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020862,
         "name": "Make sure to accurately define the path of the web application/s for which this cookie is valid",
         "href": "AIP/quality-rules/1020862",
@@ -1609,9 +1619,139 @@
         ]
     },
     {
+        "id": 1020870,
+        "name": "Avoid using setTimeout with a string as first argument",
+        "href": "AIP/quality-rules/1020870",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020872,
         "name": "Always use JSON.parse and JSON.stringify with try/catch block because of the synchronous call (Typescript)",
         "href": "AIP/quality-rules/1020872",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020874,
+        "name": "Ensure you check the returned error in Node.js callbacks",
+        "href": "AIP/quality-rules/1020874",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020876,
+        "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
+        "href": "AIP/quality-rules/1020876",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020878,
+        "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
+        "href": "AIP/quality-rules/1020878",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020880,
+        "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
+        "href": "AIP/quality-rules/1020880",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020882,
+        "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
+        "href": "AIP/quality-rules/1020882",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020884,
+        "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
+        "href": "AIP/quality-rules/1020884",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020886,
+        "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
+        "href": "AIP/quality-rules/1020886",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020888,
+        "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
+        "href": "AIP/quality-rules/1020888",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020890,
+        "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
+        "href": "AIP/quality-rules/1020890",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020892,
+        "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
+        "href": "AIP/quality-rules/1020892",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020894,
+        "name": "The variables \"__dirname\" and \"__filename\" should not be used in string concatenation to avoid having an invalid path",
+        "href": "AIP/quality-rules/1020894",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020896,
+        "name": "Ensure not using MD5/SHA1 hashes for cryptographic functions of NodeJs to avoid sensitive data being compromised",
+        "href": "AIP/quality-rules/1020896",
         "status": null,
         "critical": false,
         "technologyNames": [
