@@ -4118,7 +4118,7 @@
     },
     {
         "id": 7988,
-        "name": "Avoid using snprintf() function family",
+        "name": "DEPRECATED: Avoid using snprintf() function family",
         "href": "AIP/quality-rules/7988",
         "status": null,
         "critical": false,
@@ -9560,6 +9560,36 @@
         ]
     },
     {
+        "id": 1020200,
+        "name": "Always have data property as a function that returns an object",
+        "href": "AIP/quality-rules/1020200",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020202,
+        "name": "Avoid getter functions of computed properties that do not return any value",
+        "href": "AIP/quality-rules/1020202",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020208,
+        "name": "Avoid using v-if on the same element as v-for",
+        "href": "AIP/quality-rules/1020208",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020300,
         "name": "Avoid using the call of web service jQuery ajax inside a loop",
         "href": "AIP/quality-rules/1020300",
@@ -12109,11 +12139,33 @@
     },
     {
         "id": 1065058,
-        "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions",
+        "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions in the main function(C++)",
         "href": "AIP/quality-rules/1065058",
         "status": null,
         "critical": false,
         "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065060,
+        "name": "Avoid loops with floating point counter (C/C++)",
+        "href": "AIP/quality-rules/1065060",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065064,
+        "name": "Avoid doing assignments in sub-expressions (C++)",
+        "href": "AIP/quality-rules/1065064",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
             "C++"
         ]
     },

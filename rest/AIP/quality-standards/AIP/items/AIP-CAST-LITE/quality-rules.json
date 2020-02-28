@@ -1652,7 +1652,7 @@
     },
     {
         "id": 7988,
-        "name": "Avoid using snprintf() function family",
+        "name": "DEPRECATED: Avoid using snprintf() function family",
         "href": "AIP/quality-rules/7988",
         "status": null,
         "critical": false,
@@ -5221,11 +5221,44 @@
     },
     {
         "id": 1065058,
-        "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions",
+        "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions in the main function(C++)",
         "href": "AIP/quality-rules/1065058",
         "status": null,
         "critical": false,
         "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065060,
+        "name": "Avoid loops with floating point counter (C/C++)",
+        "href": "AIP/quality-rules/1065060",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065062,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "AIP/quality-rules/1065062",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065064,
+        "name": "Avoid doing assignments in sub-expressions (C++)",
+        "href": "AIP/quality-rules/1065064",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
             "C++"
         ]
     },
