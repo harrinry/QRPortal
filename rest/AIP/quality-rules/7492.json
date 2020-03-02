@@ -1,11 +1,11 @@
 {
     "id": 7492,
-    "name": "Avoid many-to-many association",
+    "name": "Avoid Hibernate and JPA Entities using many-to-many association.",
     "href": "AIP/quality-rules/7492",
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Number of many-to-many association",
-    "description": "Reports all Hibernate or JPA Entities that use many-to-many association.",
+    "description": "This rule reports all Hibernate or JPA Entities that use many-to-many association.",
     "output": "List all Hibernate or JPA Entities that use many-to-many association.\n\nIt provides the following information:\n - Hibernate or JPA Entity Full Name\n - Number of many-to-many association",
     "rationale": "One-to-many associations are easily the most important kind of association. In fact, its usage is discouraged when a simple bidirectional many-to-one/one-to-many will do the job. In particular, a many-to-many association may always be represented as two many-to-one associations to an intervening class. This model is usually more easily extensible. In a real system, you may not have a many-to-many association. Usually there is almost always other information that must be attached to each link between associated instances (such as the date and time when an item was added to a category) and that the best way to represent this information is via an intermediate association class.\n\nMoreover, changing the definition of a primary key and all foreign keys that refer to it is a frustrating task.",
     "reference": "Hibernate in Action (ISBN 1932394-15-X) p 220",
