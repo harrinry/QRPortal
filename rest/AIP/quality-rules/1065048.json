@@ -12,7 +12,7 @@
     "remediationSample": "void f1 ( )\n{\n try\n {\n // ...\n }\n catch ( int32_t i ) // int handler\n {\n // Handle int exceptions\n }\n catch( ... ) // catch-all handler\n {\n // Handle all other exception types\n }\n}",
     "sample": "void f2 ( )\n{\n try\n {\n // ...\n }\n catch( ... ) // catch-all handler\n {\n // Handle all exception types\n }\n catch ( int32_t i ) // Non-compliant \u2013 handler will never be called\n {\n }\n}",
     "total": "Number of C / C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Where multiple handlers are provided in a single try-catch statement or function-try-block, any ellipsis (catch-all) handler shall occur last.",
     "businessCriteria": [
         {
             "id": 60012,

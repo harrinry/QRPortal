@@ -12,7 +12,7 @@
     "remediationSample": "if ( x != 0 ) // Compliant\n{\nfoo ( );\n}\n\nbool b1 = x != y; // Compliant\nbool b2;\nb2 = x != y; // Compliant\n\nif ( int16_t i = foo ( ) ) // Compliant\n{\n)\n_________________________\nx=y;\n\nif ( x != 0 ) // compliant\n{\nfoo ( );\n}",
     "sample": "x = y;\nx = y = z; // Non-compliant\n\n\nif ( ( x = y ) != 0 ) // Non-compliant\n{\nfoo ( );\n}\nif ( x = y ) // Non-compliant\n{\nfoo ( );\n}",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Ensure to split the expressions and assignments into multiple lines for better readability and maintainability.",
     "businessCriteria": [
         {
             "id": 60012,

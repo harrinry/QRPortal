@@ -12,7 +12,7 @@
     "remediationSample": "float32_t f;\nfor ( uint32_t counter = 0u; counter < 1000u; ++counter )\n{\nf = ( float32_t ) counter * 0.001f;\n}\n\n\n_______________________________________________\n\n/* The following while loop is compliant because f is not being used as a loop counter.*/\nfloat32_t f;\nuint32_t u32a;\nf = read_float32 ( );\ndo\n{\nu32a = read_u32 ( );\n/* f does not change in the loop so cannot be a loop counter */\n} while ( ( ( float32_t ) u32a - f ) > 10.0f );",
     "sample": "uint32_t counter = 0u;\nfor ( float32_t f = 0.0f; f < 1.0f; f += 0.001f )\n{\n++counter;\n}\n\n/*The following while loop is non-compliant because f is being used as a loop counter. */\nfloat32_t f = 0.0f;\nwhile ( f < 1.0f )\n{\nf += 0.001f;\n}",
     "total": "Number of C / C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Ensure to use an integral value to iterate in loops",
     "businessCriteria": [
         {
             "id": 60012,

@@ -12,7 +12,7 @@
     "remediationSample": "The following is better, but only if the magnitudes are appropriate:\n if ( fabs ( x \u2013 y ) <=       \n             std::numeric_limits<float>::epsilon( ) )   // Compliant",
     "sample": "float32_t x, y; \nif ( x == y )     // Non-compliant\nif ( x == 0.0f )  // Non-compliant\n\n\nAn indirect test is equally problematic and is also prohibited by this rule:\nif ( ( x <= y ) && ( x >= y ) )   // Non-compliant\nif ( ( x < y ) || ( x > y ) )     // Non-compliant",
     "total": "Number of C / C++ methods and functions",
-    "alternativeName": null,
+    "alternativeName": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
     "businessCriteria": [
         {
             "id": 20140522,
