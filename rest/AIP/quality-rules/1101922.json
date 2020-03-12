@@ -1,0 +1,88 @@
+{
+    "id": 1101922,
+    "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection (JEE)",
+    "href": "AIP/quality-rules/1101922",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "This metric detects tables having too many ways to update their data. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.",
+    "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.",
+    "remediation": "Review the source code of the application and modify it in order not to have multiple artifacs updating data on the same NoSQL table",
+    "alternativeName": "Avoid having multiple Artifacts updating data on the same NoSQL Collection (JEE)",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-9",
+            "name": "Non-Stored SQL Callable Control Element with Excessive Number of Data Resource Access",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1060",
+            "name": "Excessive Number of Inefficient Server-Side Data Accesses",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1060",
+            "name": "Excessive Number of Inefficient Server-Side Data Accesses",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        {
+            "name": "Max number of artifacts updating the collection",
+            "description": "Max number of artifacts updating the collection",
+            "technologies": [
+                {
+                    "id": 140029,
+                    "name": "JEE",
+                    "href": "AIP/technologies/140029",
+                    "values": [
+                        1
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
