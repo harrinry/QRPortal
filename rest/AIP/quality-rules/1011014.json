@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Physical file  (DDS400)",
     "href": "AIP/quality-rules/1011014",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "This rule searches for all the unreferenced physical files.",
     "output": "This report lists DDS400 unreferenced physical File.\nIt provides the following information:\nDDS400 Physical File full name",
     "rationale": "Unreferenced Physical files may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code",
@@ -12,6 +12,16 @@
     "total": "Total number of DDS400 Physical File",
     "alternativeName": "Avoid unreferenced Physical file  (DDS400)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -34,6 +44,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

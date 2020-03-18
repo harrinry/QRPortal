@@ -16,6 +16,16 @@
     "alternativeName": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -27,6 +37,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062154,
+            "name": "ASCRM-CWE-788: Memory Location Access After End of Buffer",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66066,
             "name": "Secure Coding - Encapsulation",

@@ -3,7 +3,7 @@
     "name": "Each method in an Action Class should have a small complexity",
     "href": "AIP/quality-rules/7136",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Cyclomatic Complexity",
     "description": "Each method in an Action Class (and inherited methods) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x) should have a small cyclomatic complexity.",
     "output": "This report lists all Action methods with Cyclomatic complexity greater than X\nIt provides the following information:\n - Action Method full name\n - Cyclomatic Complexity",
@@ -13,6 +13,16 @@
     "total": "Number of methods of classes and parent classes that are referenced as an action in the XML configuration file",
     "alternativeName": "Ensure that application architecture in not too complex and move some of this logic to another conceptual layer",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -35,6 +45,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062112,
+            "name": "ASCMM-MNT-11: Callable and Method Control Element Excessive Cyclomatic Complexity Value",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",

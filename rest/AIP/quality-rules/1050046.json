@@ -16,6 +16,16 @@
     "alternativeName": "Ensure you use the value kCCAlgorithmAES128 instead of kCCAlgorithmDES, kCCAlgorithm3DES, kCCAlgorithmCAST, kCCAlgorithmRC4",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -27,6 +37,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062179,
+            "name": "ASCSM-CWE-327: Broken or Risky Cryptographic Algorithm Usage",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66063,
             "name": "Secure Coding - API Abuse",

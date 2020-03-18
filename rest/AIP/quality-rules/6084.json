@@ -3,12 +3,22 @@
     "name": "Avoid having unreferenced code",
     "href": "AIP/quality-rules/6084",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "description": "A piece of code is flagged as unreferenced when it is not explicitly called (static call).",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreference code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
     "total": "Number of Objects referencing code",
     "alternativeName": "Avoid having unreferenced code",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -31,6 +41,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

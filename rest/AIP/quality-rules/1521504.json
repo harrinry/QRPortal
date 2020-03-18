@@ -3,11 +3,21 @@
     "name": "Siebel: Avoid unreferenced Applets",
     "href": "AIP/quality-rules/1521504",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "output": "This rule reports unreferenced Applets",
     "total": "Number of modified Applets",
     "alternativeName": "Siebel: Avoid unreferenced Applets",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -30,6 +40,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

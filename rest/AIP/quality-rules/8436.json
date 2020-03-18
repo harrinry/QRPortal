@@ -16,6 +16,16 @@
     "alternativeName": "Ensure your application does not process thread with unsanitized stream",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -27,6 +37,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062189,
+            "name": "ASCSM-CWE-78: OS Command Injection Improper Input Neutralization",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",

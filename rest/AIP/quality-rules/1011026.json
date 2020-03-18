@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Display Files  (DDS400)",
     "href": "AIP/quality-rules/1011026",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The rules searches for the unreferenced  Display Files",
     "output": "This report lists DDS400 unreferenced Display File.\nIt provides the following information:\nDDS400 Display File full name",
     "rationale": "The higher the number of unreferenced Display Files is, the more difficult the maintenance and evolution as all updates in referenced Display Files  will be.  In order the keep the same quality and performance of the application the the tests invesments must be increased.",
@@ -13,6 +13,16 @@
     "total": "Total number of DDS400 Display File",
     "alternativeName": "Avoid unreferenced Display Files  (DDS400)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -35,6 +45,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

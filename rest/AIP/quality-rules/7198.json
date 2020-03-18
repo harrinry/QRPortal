@@ -15,6 +15,21 @@
     "alternativeName": "Avoid String concatenation in loops (.NET)",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
+            "id": 1062102,
+            "name": "CISQ-Performance-Efficiency",
+            "href": "AIP/business-criteria/1062102"
+        },
+        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -31,6 +46,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062125,
+            "name": "ASCMM-MNT-5: Loop Value Update within the Loop",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062137,
+            "name": "ASCPEM-PRF-2: Immutable Storable and Member Data Element Creation",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66068,
             "name": "Efficiency - Expensive Calls in Loops",

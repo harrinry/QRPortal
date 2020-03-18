@@ -3,7 +3,7 @@
     "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
     "href": "AIP/quality-rules/7258",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "description": "The purpose of this quality rule is to detect calls to the DataReader's ExecuteReader method made without the use the CommandBehavior.CloseConnection style.\n\nThis quality rule is valid for any class that the inherit directly or indirectly from IDataReader including SqlDataReader, OleDbDataReader, OracleDataReader, OdbcDataReader.",
     "output": "List all methods where a call to ExecuteReader without the CommandBehavior.CloseConnection parameter.",
     "rationale": "It is highly recommended to tie the lifetime of the connection to the SqlDataReader object, by passing the CommandBehavior.CloseConnection enumerated value to the ExecuteReader method.\nWhat the CommandBehavior.CloseConnection does is close the underlying connection whenever the reader is closed.  It is quite easy to forget to close database connections, and thereby waste resources that may be quite scarce, leading to serious application availability and stability issues.",
@@ -14,6 +14,21 @@
     "total": "Number of methods with a call to ExecuteReader",
     "alternativeName": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
         {
             "id": 60014,
             "name": "Efficiency",
@@ -36,6 +51,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062153,
+            "name": "ASCRM-CWE-772: Missing Release of Resource after Effective Lifetime",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062188,
+            "name": "ASCSM-CWE-772: Missing Release of Resource after Effective Lifetime",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",

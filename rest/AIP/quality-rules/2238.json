@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced JSPs and web client files",
     "href": "AIP/quality-rules/2238",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "description": "All Pages and web client files (java script, html, css ...) should be referenced. An unreferenced Artifact is an Artifact that is not explicitly called from within the analyzed code.",
     "output": "This report lists all unreferenced JSP pages and web client files\nIt provides the following information: \n - Page name or client file name (html, js, css...)",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
@@ -11,6 +11,16 @@
     "total": "Number of JSP, HTM, HTML pages",
     "alternativeName": "Ensure you don't let unused JSP pages code in your project",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -33,6 +43,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

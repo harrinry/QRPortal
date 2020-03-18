@@ -16,6 +16,16 @@
     "alternativeName": "Ensure not using expired or released database resource to prevent access to sensitive data that is associated with a different user or entity.",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -37,6 +47,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062186,
+            "name": "ASCSM-CWE-672: Expired or Released Resource Usage",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",

@@ -3,7 +3,7 @@
     "name": "Avoid PeopleCode Functions with High Cyclomatic (PeopleSoft)",
     "href": "AIP/quality-rules/1600186",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "associatedValueName": "Cyclomatic complexity",
     "description": "Retrieves all Artifacts having a Cyclomatic Complexity greater than the specified threshold. Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.",
     "output": "Failed checks give the number of objects that contain too complex peoplecode function",
@@ -12,6 +12,16 @@
     "total": "Number of PeopleSoft Functions",
     "alternativeName": "Avoid PeopleCode Functions with High Cyclomatic (PeopleSoft)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -34,6 +44,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062112,
+            "name": "ASCMM-MNT-11: Callable and Method Control Element Excessive Cyclomatic Complexity Value",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",
