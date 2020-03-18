@@ -1,0 +1,66 @@
+{
+    "id": 1101092,
+    "name": "Errors should be handled in stored procedures and functions",
+    "href": "AIP/quality-rules/1101092",
+    "critical": true,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Avoid SQL Server, Sybase and Oracle stored procedures or functions using an Insert, Update, Delete, Create Table or Select without including error management.\n\nFor SQL Server and Sybase we look for the check of @@error variable or error management using TRY..CATCH blocks.\nFor Oracle we look for PL/SQL Errors and Exceptions, EXCEPTION WHEN.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Not managing errors can lead to data corruption and erroneous behaviour.",
+    "reference": "Oracle : \nhttps://docs.oracle.com/cd/E11882_01/timesten.112/e21639/exceptions.htm#TTPLS194\n\nSQL Server : \nhttps://docs.microsoft.com/fr-fr/sql/t-sql/language-elements/try-catch-transact-sql?view=sql-server-ver15, https://docs.microsoft.com/fr-fr/sql/t-sql/functions/error-transact-sql?view=sql-server-ver15",
+    "remediation": "Add error management into the stored procedures and functions using an Insert, Update, Delete, Select or Create Table.",
+    "remediationSample": "Declare @OpenedTran      bit\nDeclare @Error           int\n\n/*See if a transaction is already opened and possibly open a new one*/\nIf @@trancount>0\n     Select @OpenedTran = 1\nElse\n  Begin\n     Select @OpenedTran = 0\n     Begin Tran\n  End\n\nupdate mytable set col1 = 123\nwhere col2 = 456\n\nSelect @Error = @@error\nGTRAN:\n/*Close or rollback the transaction if it has been opened in this procedure*/\nIf @OpenedTran = 0\n  Begin\n     If @Error = 0   /* no error occurs*/\n          Commit Tran\n     Else\n          Rollback Tran\n  End\n/*If this procedure is not called from another one, Raise an error*/\nIf @@nestlevel = 1\n  Begin\n     If @Error !=0\n          Raiserror xxx\n\n  End\n/*return the error value*/\nReturn @Error",
+    "sample": "update mytable set col1 = 123\nwhere col2 = 456",
+    "total": "Number of SQL Server, Sybase and Oracle stored procedures and functions",
+    "alternativeName": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1101000,
+            "name": "SQL",
+            "href": "AIP/technologies/1101000"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}
