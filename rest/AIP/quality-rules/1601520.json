@@ -3,7 +3,7 @@
     "name": "Avoid unused Secondary Page (PeopleSoft)",
     "href": "AIP/quality-rules/1601520",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 3,
     "description": "List of 'Secondary Page' that are not called",
     "output": "List all the unreferenced PeopleSoft Secondary Page",
     "rationale": "Dead code must be avoided, it makes source code less readable, and increases the maintenance cost.",
@@ -11,16 +11,6 @@
     "total": "Number of PeopleSoft Page secondary (ADDED)",
     "alternativeName": "Avoid unused Secondary Page (PeopleSoft)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -43,12 +33,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",

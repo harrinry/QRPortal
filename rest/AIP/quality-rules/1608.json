@@ -3,7 +3,7 @@
     "name": "Avoid cascading Triggers",
     "href": "AIP/quality-rules/1608",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "associatedValueName": "Trigger name",
     "description": "Triggers should not modify data in a Table which has a Trigger for this action.",
     "output": "This report lists all cascading Triggers\nIt provides the following information: \nTrigger Full Name, Cascaded Trigger Name",
@@ -13,16 +13,6 @@
     "total": "Number of PLSQL triggers",
     "alternativeName": "Avoid cascading Triggers",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -45,12 +35,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062151,
-            "name": "ASCRM-CWE-674: Uncontrolled Recursion",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",

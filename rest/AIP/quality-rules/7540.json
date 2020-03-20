@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Includes",
     "href": "AIP/quality-rules/7540",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "associatedValueName": "N/A",
     "description": "This metric retrieves all ABAP includes that are not referenced i.e. not included either in a program or another include.",
     "output": "No additional value associated to each ABAP Include with violation.",
@@ -12,16 +12,6 @@
     "total": "Number of ABAP Includes",
     "alternativeName": "Avoid unreferenced Includes",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -44,12 +34,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",

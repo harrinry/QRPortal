@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced DB2 tables (PL1)",
     "href": "AIP/quality-rules/1001064",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 1,
     "description": "This rule searches for all the DB2 tables that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced DB2 tables.\n\nIt provides following information: \n-  DB2 tables full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

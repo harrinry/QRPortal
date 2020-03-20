@@ -3,7 +3,7 @@
     "name": "Avoid Subroutines with High Cyclomatic Complexity  (RPG400)",
     "href": "AIP/quality-rules/1008030",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 2,
     "description": "This rule searches all the subroutines  having High Cyclomatic Complexity",
     "output": "This report lists RPG400 Subroutines having High Cyclomatic Complexity.\nIt provides the following information:\nRPG400 Subroutine full name",
     "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. \nAnalyzability declines with increasing Cyclomatic Complexity. \nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nChangeability declines with increasing Cyclomatic Complexity. \nComplete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nTestability declines with increasing Cyclomatic Complexity.",
@@ -11,16 +11,6 @@
     "total": "Total number of RPG400 Subroutines",
     "alternativeName": "Avoid Subroutines with High Cyclomatic Complexity  (RPG400)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -43,12 +33,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062112,
-            "name": "ASCMM-MNT-11: Callable and Method Control Element Excessive Cyclomatic Complexity Value",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",

@@ -3,21 +3,11 @@
     "name": "Siebel: Avoid unreferenced Business Objects",
     "href": "AIP/quality-rules/1521510",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 3,
     "output": "This rule reports unreferenced Business Objects",
     "total": "Number of modified Business Objects",
     "alternativeName": "Siebel: Avoid unreferenced Business Objects",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -40,12 +30,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",

@@ -3,7 +3,7 @@
     "name": "Avoid Functions with High Cyclomatic Complexity  (FORTRAN)",
     "href": "AIP/quality-rules/1002060",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 1,
     "description": "The following statements are considered to add a decision point to the total count: IF, DO and CASE. The threshold is a parameter and can be changed at will.",
     "rationale": "Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. \nAnalyzability declines with increasing Cyclomatic Complexity. \nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations.",
     "remediation": "Reduce the number of decision points included in the artifact.",

@@ -3,7 +3,7 @@
     "name": "Avoid looping chain of synonyms",
     "href": "AIP/quality-rules/1101082",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 1,
     "associatedValueName": "This metric displays the list of chained synonyms.",
     "description": "This metric retrieves synonyms  that are part of a looping chain of synonym. Indeed through a series of CREATE synonym statements, a synonym could be defined and in fact refer to itself.",
     "output": "This report lists all the ordered looping chain of synonyms.\n\nIt provides the following information:\n- the ordered list of each synonym that is part of the looping chain\n- the name of each synonym that is part of  the  full name",

@@ -3,7 +3,7 @@
     "name": "Avoid Methods with too many parameters (PeopleSoft)",
     "href": "AIP/quality-rules/1600774",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 3,
     "associatedValueName": "Number of Parameters",
     "description": "This quality rules detects Methods with more than X parameters. The threshold X is a parameter and it can be changed at will.",
     "output": "This report lists all the Methods with too many linked parameters",
@@ -12,16 +12,6 @@
     "total": "Number of PeopleSoft Methods (ADDED)",
     "alternativeName": "Avoid Methods with too many parameters (PeopleSoft)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 66031,
             "name": "Programming Practices",
@@ -39,12 +29,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062114,
-            "name": "ASCMM-MNT-13: Callable and Method Control Element Excessive Number of Parameters",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61022,
             "name": "Volume - Number of Components",

@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Processes (TIBCO BW)",
     "href": "AIP/quality-rules/1018304",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 1,
     "description": "This metric retrieves all Tibco Processes that are not referenced i.e. not used by Tibco code.",
     "output": "This report lists all Number of Tibco Processes that are not referenced.\nIt provides the following information:\nTibco Process full name",
     "rationale": "Unreferenced Processes like any other example of dead code make maintenance more difficult and more expensive.",
@@ -11,16 +11,6 @@
     "total": "Number of Tibco Process",
     "alternativeName": "Avoid unreferenced Processes (TIBCO BW)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -43,12 +33,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",

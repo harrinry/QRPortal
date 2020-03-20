@@ -3,7 +3,7 @@
     "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
     "href": "AIP/quality-rules/7576",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 3,
     "associatedValueName": "ABAP Table/View accessed multiple times",
     "description": "This metric retrieves the ABAP includes making more than a defined number of accesses to the same database table or view. If an include defines classes, then methods belonging to the first level of classes are taken into account.\nThe number of accesses is a parameter of the rule.",
     "output": "Associated to each ABAP Include with violations, the Quality Rule provides:\n- The ABAP Table/View accessed multiple times",
@@ -12,16 +12,6 @@
     "total": "Number of ABAP Includes",
     "alternativeName": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60014,
             "name": "Efficiency",
@@ -39,12 +29,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062115,
-            "name": "ASCMM-MNT-14: Callable and Method Control Element Excessive Number of Control Elements involving Data Element from Data Manager or File Resource",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61019,
             "name": "Efficiency - SQL and Data Handling Performance",

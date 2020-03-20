@@ -3,7 +3,7 @@
     "name": "Avoid Classes with multiple inheritance",
     "href": "AIP/quality-rules/578",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "associatedValueName": "Number of parent classes",
     "description": "This rule searches for C++ classes that are derived from more than one parent class. \n\nNote: Pure virtual classes (that can be used as interfaces) are not considered as violating this rule.",
     "output": "Associated to each C++ class with violations, the Quality Rule provides:\n- The number of parent classes\n- Bookmarks for violation occurrences found in source code:\n  - Parent class derivation",
@@ -12,16 +12,6 @@
     "total": "Number of C++ classes",
     "alternativeName": "Avoid Classes with multiple inheritance",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -44,12 +34,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062121,
-            "name": "ASCMM-MNT-2: Class Element Excessive Inheritance of Class Elements with Concrete Implementation",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",

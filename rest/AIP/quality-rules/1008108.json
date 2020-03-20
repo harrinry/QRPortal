@@ -3,7 +3,7 @@
     "name": "Avoid using GOTO statement in RPG Programs  (RPG400)",
     "href": "AIP/quality-rules/1008108",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 0,
     "description": "This rule searches all the programs having GO TO statements.",
     "output": "This report lists RPG400 programs using GOTO statement.\nIt provides the following information:\nRPG400 Program full name",
     "rationale": "GOTO in is nor recomended to be used in the RPG programs . Instead, substitute either a structured alternative like status variables to skip code or to direct a program to a specific location or there is no other option use  nested IF statements.",
@@ -11,16 +11,6 @@
     "total": "Total number of RPG400 Programs",
     "alternativeName": "Avoid using GOTO statement in RPG artifact (RPG400)",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -43,12 +33,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062110,
-            "name": "ASCMM-MNT-1: Control Flow Transfer Control Element outside Switch Block",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",

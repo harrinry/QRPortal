@@ -3,22 +3,12 @@
     "name": "Siebel eScript: Avoid missing default Case handling in Switch Construct in Functions",
     "href": "AIP/quality-rules/1520182",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "associatedValueName": "Number of switch without default",
     "output": "This rule reports Functions without a default Case in a Switch",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Avoid missing default Case handling in Switch Construct in Functions",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -41,12 +31,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062110,
-            "name": "ASCMM-MNT-1: Control Flow Transfer Control Element outside Switch Block",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",

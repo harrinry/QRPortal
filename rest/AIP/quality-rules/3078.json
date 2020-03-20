@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced code",
     "href": "AIP/quality-rules/3078",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "description": "All code should be referenced.\nAn unreferenced Artifact is an Artifact that is not explicitly called from within the analyzed code.",
     "output": "This report lists all unreferenced code (dead code)\nIt provides the following information:\n Page name",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
@@ -11,16 +11,6 @@
     "total": "Number of pages",
     "alternativeName": "Avoid unreferenced code",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -43,12 +33,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",

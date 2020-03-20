@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Sections and Paragraphs",
     "href": "AIP/quality-rules/7290",
     "critical": false,
-    "maxWeight": 5,
+    "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs containing sections or paragraphs that are not called. A section or a paragraph is not called when:\n- there is no GO TO statement that refers to it\n- there is no PERFORM statement that refers to it\n- there is no fall through logic in which it is involved\n\nHowever, sections for which all statements are attached to a paragraph are excluded from the list of objects violating this rule.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n  - Section or paragraph that is not executed",
@@ -13,16 +13,6 @@
     "total": "Number of Cobol Programs",
     "alternativeName": "Avoid unreferenced Sections and Paragraphs",
     "businessCriteria": [
-        {
-            "id": 1062100,
-            "name": "CISQ-Index",
-            "href": "AIP/business-criteria/1062100"
-        },
-        {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -45,12 +35,6 @@
         }
     ],
     "technicalCriteria": [
-        {
-            "id": 1062122,
-            "name": "ASCMM-MNT-20: Unreachable Named Callable or Method Control Element",
-            "weight": 5,
-            "critical": false
-        },
         {
             "id": 61027,
             "name": "Dead code (static)",
