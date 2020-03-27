@@ -9,7 +9,7 @@ const ViewNavigation = ( props ) => {
   return (
     <div className={createClassName(CLASSES.navBarHeader, CLASSES.fixed, (viewTypeIsMenu ? CLASSES.expanded: undefined ))}>
       <div className={createClassName(CLASSES.navIcon, CLASSES.extraRightMargin)} onClick={props.goToLandingPage}>
-        <img src={ (isEcho() ? Imgs.owllogo.default : Imgs.logo.default ) } className={CLASSES.imgIcon} alt={props.language.logo} />
+        <img src={ (isEcho() ? Imgs.carllogo.default : Imgs.logo.default ) } className={CLASSES.imgIcon} alt={props.language.logo} />
       </div>
       {/* { viewTypeIsMenu ? <div className={CLASSES.navTitle}>{props.language.title}</div> : undefined }
       <div className={CLASSES.navIcon}  onClick={props.setTilesView}>

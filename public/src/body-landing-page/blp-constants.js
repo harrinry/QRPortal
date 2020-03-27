@@ -28,12 +28,12 @@ export const CLASSES = {
 };
 
 export const _oIconStyle = {
-  backgroundImage: 'url(' + (isEcho() ? Imgs.owllogo.reflect : Imgs.logo.reflect) + ')',
+  backgroundImage: 'url(' + (isEcho() ? Imgs.carllogo.reflect : Imgs.logo.reflect) + ')',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'top center',
   backgroundSize: (isEcho() ? '250px' : '80%'),
   width: (isEcho() ? '250px' : '150px')
 };
 
-export const WELCOMETEXT = (isEcho() ? 'Welcome to CAST Echo Best Practices documentation, start browsing or searching' : 'Welcome to CAST Rules documentation, start browsing or searching');
+export const WELCOMETEXT = (isEcho() ? 'Welcome to CARL Best Practices documentation, start browsing or searching' : 'Welcome to CAST Rules documentation, start browsing or searching');
 export const TITLE = (isEcho() ? 'Best Practices' : 'CAST Rules Documentation');
