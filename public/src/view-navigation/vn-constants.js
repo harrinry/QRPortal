@@ -23,6 +23,10 @@ export const Imgs = {
     default: 'img/echoowlblack.svg',
     reflect: 'img/echoowlwithnameblack.svg'
   },
+  carllogo: {
+    default: 'img/carlsmall.svg',
+    reflect: 'img/carlwithname.svg'
+  },
   tiles: {
     black: 'img/tiles.svg',
     grey: 'img/tiles_grey.png'
