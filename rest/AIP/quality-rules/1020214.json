@@ -1,0 +1,86 @@
+{
+    "id": 1020214,
+    "name": "Ensure to turn off and clear event listeners after component is destroyed",
+    "href": "AIP/quality-rules/1020214",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule will raise a violation when event listener is not turned off after component is destroyed",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "When listening to events with $on, we should always remember to remove that listener with $off on destroyed(). This prevents us from having memory leaks.",
+    "reference": "https://cwe.mitre.org/data/definitions/404.html\n\nhttps://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/#The-Three-Types-of-Common-JavaScript-Leaks",
+    "remediation": "Clear the event listener",
+    "remediationSample": "const component = {\n  methods:{\n    listener(){\n      //do something on event\n    }\n  },\n  created(){\n    EventBus.$on('content-type-saving', this.listener)\n  },\n  beforeDestroy(){\n    EventBus.$off('content-type-saving', this.listener)\n  }\n}\n______________________________________\n______________________________________\n\n<script>\n  export default {\n    methods: {\n      update() {}\n    },\n    mounted() {\n      window.addEventListener('hashchange', this.update, false);\n    },\n    beforeDestroy() {\n      window.removeEventListener('hashchange', this.update, false);\n    }\n  }\n</script>",
+    "sample": "const component = {\n  methods:{\n    listener(){\n      //do something on event\n    }\n  },\n  created(){\n    EventBus.$on('content-type-saving', this.listener)\n  }\n_______________________________________\n_______________________________________\n<script>\n  export default {\n    methods: {\n      update() {}\n    },\n    mounted() {\n      window.addEventListener('hashchange', this.update, false); // Violation\n    }\n  }\n</script>",
+    "total": "Number of VueJS source code setting up an event listener",
+    "alternativeName": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-15",
+            "name": "Storable and Member Data Element Reference Missing De-Referencing Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-401",
+            "name": "Missing Release of Memory after Effective Lifetime",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-401",
+            "name": "Missing Release of Memory after Effective Lifetime",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
