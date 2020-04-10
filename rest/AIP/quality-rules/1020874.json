@@ -11,7 +11,7 @@
     "remediation": "Make sure that possible error is handled.",
     "remediationSample": "function loadData (err, data) { \n    if (err) { \n        console.log(err.stack); \n    } \n    doSomething(); \n} \n\nfunction generateError (err) { \n    if (err) {} \n}",
     "sample": "function loadData (err, data) { \n    doSomething(); // forgot to handle error \n}",
-    "total": "Number of NodeJS artifacts (artifacts inside NodeJS files)",
+    "total": "Number of TypeScript artifacts within files using nodejs environment",
     "alternativeName": "Ensure you check the returned error in Node.js callbacks",
     "businessCriteria": [
         {

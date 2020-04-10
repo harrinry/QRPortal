@@ -12,7 +12,7 @@
     "remediation": "Rather than calling process.exit() directly, the code should set the process.exitCode and allow the process to exit naturally by avoiding scheduling any additional work for the event loop:\n\nIf it is necessary to terminate the Node.js process due to an error condition, throwing an uncaught error and allowing the process to terminate accordingly is safer than calling process.exit().",
     "remediationSample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exitCode = 1;\n}",
     "sample": "if (somethingBadHappened) { \n    console.error(\"Something bad happened!\"); \n    process.exit(1); \n}",
-    "total": "Number of NodeJS artifacts (artifacts inside NodeJS files)",
+    "total": "Number of TypeScript artifacts",
     "alternativeName": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
     "businessCriteria": [
         {
