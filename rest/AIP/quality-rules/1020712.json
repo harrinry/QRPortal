@@ -10,7 +10,7 @@
     "rationale": "In Node.js, setup X-Frame-Options to enable clickjacking protection.",
     "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Clickjacking",
     "remediation": "Ensure you have setup the X-Frame-Options in your express instance or use third-party helmet package",
-    "remediationSample": "var express = require('express'); \nvar app = express(); \n\nvar helmet = require('helmet'); \napp.use(helmet()) \n// or more specifically \napp.use(helmet.frameguard()); \n\napp.listen(3000);",
+    "remediationSample": "var express = require('express'); \nvar app = express(); \n\nvar helmet = require('helmet'); \napp.use(helmet())\n\n// do not disable the frameguard middleware:\n// app.use(helmet({ frameguard: false})) \n \n// or more specifically \napp.use(helmet.frameguard()); \n\n// or use the frameguard by middleware\nvar frameguard= require('frameguard') \napp.use(frameguard())\n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express",
     "alternativeName": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",

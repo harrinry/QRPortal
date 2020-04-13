@@ -4,11 +4,12 @@
     "href": "AIP/quality-rules/1020774",
     "critical": false,
     "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects tables having too many ways to update their data. It retrieves table having more than X artifacts updating these tables, where X a configurable parameter.\n\nLimitation: In the case where an artifact does different actions on data (such as update, delete or insert) and the violation is triggered then the bookmarks of the other actions will be present in the dashboard.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "One main source of data corruption within applications comes from lack of compliance to data modification rules defined for an application. These rules are usually related to the use of specific procedures for update/insert/delete, a specific API or a data layer that is fully tested to maintain data integrity. The creation of new, different update/insert/delete procedures and functions that do not make use the existing tested code is at origin of many data corruption cases.",
     "remediation": "Review the source code of the application and modify it on order not to have multiple artifacs updating data on the same NoSQL table",
-    "total": "Number of collections updated by multiple artifacts",
+    "total": "Number of collections updated by artifact",
     "alternativeName": "Ensure you don't have multiple artifacts updating data on the same NoSQL table",
     "businessCriteria": [
         {

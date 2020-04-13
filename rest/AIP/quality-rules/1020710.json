@@ -10,7 +10,7 @@
     "rationale": "In Node.js, enable X-XSS-Protection to enable the Cross-site scripting (XSS) filter in most recent web browsers.",
     "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/XSS",
     "remediation": "Ensure you have enabled the X-XSS-Protection in your express instance or use third-party helmet package",
-    "remediationSample": "var express = require('express'); \nvar app = express(); \n\nvar xssFilter = require('x-xss-protection') \napp.use(xssFilter()) \n\n// or with helmet \n\nvar helmet = require('helmet'); \napp.use(helmet()) \n\napp.listen(3000);",
+    "remediationSample": "var express = require('express'); \nvar app = express(); \n\nvar xssFilter = require('x-xss-protection') \napp.use(xssFilter()) \n\n// or with helmet \n\nvar helmet = require('helmet'); \napp.use(helmet()) \n\n// do not disable the xssFilter middleware:\n// app.use(helmet({ xssFilter: false})) \n\n// to activate explicitely the xssFilter middleware \napp.use(helmet.xssFilter()); \n\napp.listen(3000);",
     "sample": "var express = require('express'); \nvar app = express(); \n\napp.listen(3000);",
     "total": "Number of javascript source codes using express",
     "alternativeName": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
