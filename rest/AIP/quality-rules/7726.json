@@ -10,7 +10,7 @@
     "rationale": "Struts is a Framework for building Model-View-Controller 2 Web applications. This model is the Blueprints recommended architectural design pattern for interactive applications. The logical separation between presentation layer, the business logic layer, and the data access layer is basically an architectural way to minimize the amount of additional work necessary to add features to any layer that can be consumed by another layer.\nIt separates design concerns (data persistence and behavior, presentation, and control), decreasing code duplication, centralizing control, and making the application more easily modifiable. MVC 2 also helps developers with different skill sets to focus on their core skills and collaborate through clearly defined interfaces.\nThis is why the data access layer must be distinct from the business layer.",
     "remediation": "Review the design in order to separate the model from the data access layer.",
     "total": "Number of artifacts of classes and parent classes that are referenced as an action in the XML configuration file(s)",
-    "alternativeName": "Ensure that all packages called by the action artifacts do not have any direct access to database",
+    "alternativeName": "Ensure that all packages called by the action classes do not have any direct access to database",
     "businessCriteria": [
         {
             "id": 66032,
