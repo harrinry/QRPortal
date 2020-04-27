@@ -12,6 +12,7 @@
     "remediation": "Ensure the code constructing the string containing the JavaScript code is well encapsulated, and most of all, avoid using untrusted external data if given the case.\n\nSanitizing the string just before passing to \"evaluateJavaScript\" can eventually deflect attack attempts.",
     "remediationSample": "func evaluate() {\n  var webView: WKWebView\n\n  // if not resolved, 'color' might potentially be anything\n  let script = \"document.body.style.backgroundColor = `red`;\"\n\n  webView.evaluateJavaScript(script, completionHandler: nil)\n}",
     "sample": "func evaluate(color: String) {\n  var webView: WKWebView\n\n  // if not resolved, 'color' might potentially be anything\n  let script = \"document.body.style.backgroundColor = `\\(color)`;\"\n\n  webView.evaluateJavaScript(script, completionHandler: nil)\n}",
+    "total": "Number of Swift artifacts",
     "alternativeName": "Ensure you don't evaluate Javascript in a WKWebView with unsanitized input (Swift)",
     "businessCriteria": [
         {

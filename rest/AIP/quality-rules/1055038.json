@@ -12,6 +12,7 @@
     "remediation": "Better to use the value kCCAlgorithmAES128 instead of kCCAlgorithmDES, kCCAlgorithm3DES, kCCAlgorithmCAST, kCCAlgorithmRC4",
     "remediationSample": "CCCrypt(kCCEncrypt,\n        kCCAlgorithmAES128,\n        kCCOptionPKCS7Padding,\n        key,\n        kCCKeySizeAES128, // 128-bit key size\n        iv,\n        plaintext,\n        sizeof(plaintext),\n        ciphertext,\n        sizeof(ciphertext),\n        &numBytesEncrypted);",
     "sample": "CCCrypt(kCCEncrypt,\n        kCCAlgorithmDES,\n        kCCOptionPKCS7Padding,\n        key,\n        kCCKeySizeDES, // 64-bit key size\n        iv,\n        plaintext,\n        sizeof(plaintext),\n        ciphertext,\n        sizeof(ciphertext),\n        &numBytesEncrypted);",
+    "total": "Number of Swift artifacts",
     "alternativeName": "Ensure you use the value kCCAlgorithmAES128 instead of kCCAlgorithmDES, kCCAlgorithm3DES, kCCAlgorithmCAST, kCCAlgorithmRC4",
     "businessCriteria": [
         {

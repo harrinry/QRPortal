@@ -12,6 +12,7 @@
     "remediation": "Utilize indirect access to network resources using underlying operating system calls and relative paths. In case hard-coding is necessary, isolating hard-coded data to installation scripts or configuration files can limit its potential negative impact and render the \"build settings\" easier to understand.",
     "remediationSample": "//crypted storage\nlet keychain = KeychainSwift()\nurl = keychain.get('theurl')",
     "sample": "var url = \"http://0.0.0.0:8080/\"",
+    "total": "Number of Swift artifacts",
     "alternativeName": "Ensure not having hard-coded network resources names in the source files (Swift)",
     "businessCriteria": [
         {

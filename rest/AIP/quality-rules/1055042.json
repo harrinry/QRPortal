@@ -12,6 +12,7 @@
     "remediation": "The property \"setShouldResolveExternalEntities\" must be set to \"false\".",
     "remediationSample": "import Foundation\n\n// This Swift code that is vulnerable to XXE attacks\n\nvar success: Bool\nvar rawXmlConvToData: NSData = rawXml.data(using: NSUTF8StringEncoding)\nvar myParser: XMLParser = NSXMLParser(data: rawXmlConvToData)\nmyParser.shouldResolveExternalEntities = false // or not use the API default setting is false\nmyParser.delegate = self",
     "sample": "import Foundation\n\n// This Swift code that is vulnerable to XXE attacks\n\nvar success: Bool\nvar rawXmlConvToData: NSData = rawXml.data(using: NSUTF8StringEncoding)\nvar myParser: XMLParser = NSXMLParser(data: rawXmlConvToData)\nmyParser.shouldResolveExternalEntities = true\nmyParser.delegate = self",
+    "total": "Number of Swift artifacts",
     "alternativeName": "Ensure you did not use NSXMLParser setShouldResolveExternalEntities set to false without knowing if you can trust the sources.",
     "businessCriteria": [
         {
