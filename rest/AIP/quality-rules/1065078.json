@@ -1,0 +1,58 @@
+{
+    "id": 1065078,
+    "name": "A base class shall be declared virtual only if it is used in a diamond hierarchy",
+    "href": "AIP/quality-rules/1065078",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "The rule will raise a violation is a base class is declared virtual and if it is not used in a diamond hierarchy",
+    "rationale": "The use of virtual base classes can introduce a number of undefined and potentially confusing\nbehaviors. Therefore, a base class shall only be declared virtual if that base class is to be used as a common base class in a diamond hierarchy.",
+    "reference": "MISRA C++ 2008, 10-0-1: A base class shall only be declared virtual if it is used in a diamond hierarchy",
+    "remediation": "Do not declare the base class as virtual if not part of a diamond hierarchy",
+    "remediationSample": "//Case of diamond hierarchy\nclass A {};\nclass B1: public virtual A {}; // Compliant \u2013 A is a common base for C\nclass B2: public virtual A {}; // Compliant \u2013 A is a common base for C\nclass C: public B1, B2",
+    "sample": "class A {};\nclass D: public virtual A {}; // Non-compliant",
+    "alternativeName": null,
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61003,
+            "name": "Programming Practices - OO Inheritance and Polymorphism",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
