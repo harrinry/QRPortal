@@ -12,7 +12,7 @@
     "remediation": "Review and refactor the source code.",
     "sample": "class Account\n{\n    decimal balance;\n\n\n    public void Withdraw(decimal amount)\n    {\n        lock (this)\n        {\n            if (amount > balance)\n            {\n                throw new Exception(\"Insufficient funds\");\n            }\n            balance -= amount;\n        }\n    }\n}",
     "total": "Number of artifacts",
-    "alternativeName": "Avoid havi",
+    "alternativeName": "Avoid having lock on this object",
     "businessCriteria": [
         {
             "id": 20140522,
