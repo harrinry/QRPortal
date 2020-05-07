@@ -12,7 +12,7 @@
     "remediationSample": "class MyClass\n{\n   public void fct( String sVal )\n   {\n      exec \"MySP +sVal\"\n   }",
     "sample": "class MyClass\n{\n   private String s = \"select col1from MyTable where col2 =\";\n   public void fct( String sVal )\n   {\n      s +=  \"'\" + sVal + \"'\"; \n      exec s;\n   }",
     "total": "Total number of artifacts accessing the database",
-    "alternativeName": "Data Access must be based on Stored Procedure Calls",
+    "alternativeName": "DELETED: Data Access must be based on Stored Procedure Calls",
     "businessCriteria": [
         {
             "id": 66032,
@@ -56,48 +56,7 @@
         }
     ],
     "qualityStandards": [
-        {
-            "standard": "CISQ",
-            "id": "ASCMM-MNT-12",
-            "name": "Named Callable and Method Control Element with Layer-skipping Call",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CISQ",
-            "id": "ASCPEM-PRF-10",
-            "name": "Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CWE",
-            "id": "CWE-1054",
-            "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "CWE",
-            "id": "CWE-1073",
-            "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "OMG-ASCQM",
-            "id": "CWE-1054",
-            "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
-            "url": null,
-            "description": null
-        },
-        {
-            "standard": "OMG-ASCQM",
-            "id": "CWE-1073",
-            "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "url": null,
-            "description": null
-        }
+        
     ],
     "parameters": [
         
