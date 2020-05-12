@@ -1,0 +1,86 @@
+{
+    "id": 1030008,
+    "name": "Avoid large Files - too many Lines of Code (Kotlin)",
+    "href": "AIP/quality-rules/1030008",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "This rule searches for kotlin(.kt) files that contain more than X lines of code. The threshold is a parameter and can be changed at will.",
+    "output": "This report lists all kotlin files with more than X lines of code. \nIt provides the following information: \n - File name\n - Number of lines",
+    "rationale": "Large files are more difficult to read and manage and this can decrease the application maintenance.",
+    "reference": "CISQ: ASCMM-MNT-8",
+    "remediation": "Divide the code up to many files",
+    "total": "Number of Kotlin files(.kt)",
+    "alternativeName": "Ensure to have kotlin files with smaller amount of code to ensure maintainability in the long run",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61023,
+            "name": "Volume - Number of LOC",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1030000,
+            "name": "Kotlin",
+            "href": "AIP/technologies/1030000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-8",
+            "name": "Source Element Excessive Size",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1080",
+            "name": "Source Code File with Excessive Number of Lines of Code",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1080",
+            "name": "Source Code File with Excessive Number of Lines of Code",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        {
+            "name": "Number of Code Lines",
+            "description": null,
+            "technologies": [
+                {
+                    "id": 1030000,
+                    "name": "Kotlin",
+                    "href": "AIP/technologies/1030000",
+                    "values": [
+                        500
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
