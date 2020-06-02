@@ -1,0 +1,66 @@
+{
+    "id": 8468,
+    "name": "Program semantic should respect the logic of flow execution",
+    "href": "AIP/quality-rules/8468",
+    "critical": true,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The PERFORM statement transfers control explicitly to one or more procedures and implicitly returns control to the next executable statement after execution of the specified procedures is completed.\n\nIf the second procedure of a PERFORM THRU is not defined after the first one, the source code is semantically incorrect and the program doesn't behave as expected.",
+    "output": "Associated to each COBOL Program with violation, the Quality Rule provides the first PERFORM THRU that does not respect the logic of flow execution.",
+    "rationale": "error-prone",
+    "reference": "https://www.ibm.com/support/knowledgecenter/SS6SG3_4.2.0/com.ibm.entcobol.doc_4.2/PGandLR/ref/rlpsperf.htm",
+    "remediation": "The second procedure of a \"PERFORM THRU\" statement should be defined after the first procedure",
+    "remediationSample": "PROCEDURE DIVISION \n    PERFORM DISP-CLASS\n       THRU DISP-CLASS-EXIT\n    STROP RUN \nDISP-CLASS\n    ACCEPT ...\n    EVALUATE ...\n    ...\n    ...\n    END EVALUATE\nDISP-CLASS-EXIT\n    EXIT",
+    "sample": "PROCEDURE DIVISION \n    PERFORM DISP-CLASS\n       THRU DISP-CLASS-EXIT\n    STROP RUN \nDISP-CLASS-EXIT\n    EXIT\nDISP-CLASS\n    ACCEPT ...\n    EVALUATE ...\n    ...\n    ...\n    END EVALUATE",
+    "total": "Number of Cobol Programs",
+    "alternativeName": null,
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}
