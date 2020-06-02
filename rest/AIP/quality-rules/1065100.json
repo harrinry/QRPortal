@@ -1,0 +1,63 @@
+{
+    "id": 1065100,
+    "name": "Avoid move constructor and move assignment operator to exit with an exception",
+    "href": "AIP/quality-rules/1065100",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "The rule will raise a violation when a move constructor or move assignment operator does not declare itself noexcept",
+    "rationale": "Move constructor and move assignment operator are intended to be noexcept. If they throw exceptions, strong exception safety can not be guaranteed, because the original type values could be already modified or partially modified.",
+    "reference": "AUTOSAR 2014 C++, A15-5-1: A class destructor, \u201cdelete\u201d operators, move constructor, move assignment operator and \u201cswap\u201d function shall not exit with an exception. They shall be all specified as \u201cnoexcept\u201d.",
+    "remediation": "DEclare them as noexcept",
+    "remediationSample": "#include <stdexcept>\nclass C1\n{\npublic:\nC1() = default;\nC1(C1&& rhs)\nnoexcept // Compliant - move constructor declared to be noexcept\n{\n }\n C1& operator=(C1&& rhs) noexcept // Compliant - move assignment operator\n // declared to be noexcept\n {\n return *this;\n }",
+    "sample": "class C3\n {\n public:\n C3() = default;\n C3(C3&& rhs) // Non-compliant - move constructor throws\n {\n // ...\n throw std::runtime_error(\"Error\");\n }\n C3& operator=(C3&& rhs) // Non-compliant - move assignment operator throws\n {\n // ...\n throw std::runtime_error(\"Error\");\n return *this;",
+    "alternativeName": null,
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

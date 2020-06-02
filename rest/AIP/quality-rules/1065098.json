@@ -1,0 +1,78 @@
+{
+    "id": 1065098,
+    "name": "Avoid delete operators to exit with an exception.",
+    "href": "AIP/quality-rules/1065098",
+    "critical": false,
+    "maxWeight": 3,
+    "description": "The rule will throw a violation if the following exit with an exception:\n\nDelete Operator",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Delete operators are typically called from destructors, and so a delete operator that throws an exception is likely to cause an exception to be thrown from a destructor.",
+    "reference": "AUTOSAR 2014 C++, A15-5-1: A class destructor, \u201cdelete\u201d operators, move constructor, move assignment operator and \u201cswap\u201d function shall not exit with an exception. They shall be all specified as \u201cnoexcept\u201d.\n\nCERT C++ DCL57-CPP. Do not let exceptions escape from destructors or deallocation functions",
+    "remediation": "Specify them as noexcept",
+    "remediationSample": "Delete Operator:\n\nstatic void operator delete(void* ptr, std::size_t sz) noexcept(true)\n {\n // ...\n throw std::runtime_error(\"Error\"); \n };",
+    "sample": "Delete Operator:\nstatic void operator delete(void* ptr, std::size_t sz)\n {\n // ...\n throw std::runtime_error(\"Error\"); // Non-compliant - operator delete\n // exits with an exception\n }\n };",
+    "total": "Total number of Desctructors, Delete Operators, Swap Functions, Move and Move Assignment Operators",
+    "alternativeName": null,
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "Green Stuff",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
