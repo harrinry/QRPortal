@@ -9,17 +9,12 @@
     "rationale": "The run-time type checking is a time expensive operation and as such should be avoided within loops.\nIn a more general matter, the use of is operator, run-time type checking might indicate a misuse of Object Oriented programming. In deed, it is always recommended to design classes and interfaces so client code do not need to use 'is' operator and down-casting. The recommended way is to prefer polymorphism over 'is' operator and down-casting.",
     "remediation": "Prefer polymorphism  over 'is' operator and down-casting.\n\nIt is always recommended to design classes and interfaces so client code do not need to use 'is' operator and down-casting. The recommended way is to prefer polymorphism over  'is' operator and down-casting.",
     "total": "Total number of methods",
-    "alternativeName": "[DELETE]: Avoid the use of is inside loops",
+    "alternativeName": "DELETED: Avoid the use of is inside loops",
     "businessCriteria": [
         {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
-        },
-        {
-            "id": 20140522,
-            "name": "Green Stuff",
-            "href": "AIP/business-criteria/20140522"
         },
         {
             "id": 66031,
