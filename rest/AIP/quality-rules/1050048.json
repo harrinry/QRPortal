@@ -5,7 +5,7 @@
     "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
-    "description": "When using NSFileManage createFileAtPath, you must provide file protection option.",
+    "description": "This rule will check if some options have been used with NSFileManager createFileAtPath method",
     "output": "This report lists all uses of NSFileManager createFileAtPath function with NSURLFileProtectionType option.\nAssociated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device. \nIf the program does not ensure that the user is only requesting private files, then the user might be able to access other files on the system.",
     "reference": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M2-Insecure_Data_Storage",
