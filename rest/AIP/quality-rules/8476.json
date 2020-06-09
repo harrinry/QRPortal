@@ -12,7 +12,7 @@
     "remediation": "In such cases, it's better to use an alternate, secure function which allows you to define the maximum number of characters to be written to the buffer:\n\nstrlcpy (BSD library) or strncpy\nstrlcat (BSD library) or strncat\nsnprintf\nfgets\ngetpwuid",
     "sample": "CALL 'gets' USING in-line RETURNING in-line.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid calling unsafe C library functions from COBOL",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -11,7 +11,7 @@
     "remediation": "The PREPARE STMT statement having STRING as a parameter must not contain host variables.",
     "sample": "For example, the following SQL code could be injected if host variables X, Y or Z come from untrusted inputs:\n\n* Potential SQL injection if X, Y or Z host variables come from untrusted input\nSTRING \"INSERT INTO TBL (a,b,c) VALUES (\" X \",\" Y \",\" Z \")\" INTO MY-SQL.\nEXEC SQL PREPARE STMT FROM :MY-SQL END-EXEC.\nEXEC SQL EXECUTE STMT END-EXEC.",
     "total": "Number of Cobol Programs",
-    "alternativeName": null,
+    "alternativeName": "Avoid using PREPARE STMT statement (Dynamic SQL) with STRING containing HOST variables",
     "businessCriteria": [
         {
             "id": 66031,
