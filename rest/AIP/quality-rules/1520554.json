@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Name of the Extension Table",
-    "output": "This rule reports Joins using an Extension Table",
+    "description": "This rule reports Joins using an Extension Tables",
+    "output": "This rule reports Joins using an Extension Table. It displays:\n- the Joins full name\n- the associated value is a reference to the Table object",
+    "rationale": "Limit the number of joins, extension tables, and primary ID fields in a business component. Joins degrade performance by causing an extra row retrieval operation in the joined table for each row retrieval in the main table. Extension tables and primary ID fields also use joins, although implied rather than explicitly defined, adding a row retrieval operation for each.\nThe more joins, extension tables, and primary ID fields defined in a business component, the higher the number of row retrievals required in tables other than the main table, with a\ncorresponding performance degradation.",
+    "reference": "Siebel Performance Tuning Guide Version 8.1/8.2, page 165 : https://docs.oracle.com/cd/E14004_01/books/PDF/PerformTun.pdf",
+    "remediation": "Review the design and make sure it is validated by a Siebel DBA.",
     "total": "Number of added or modified Joins",
     "alternativeName": "SiebelReview: Using Extension Tables",
     "businessCriteria": [

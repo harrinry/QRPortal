@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "List of deleted Tables",
+    "description": "This rule reports deleted Standard Tables.",
     "output": "This rule reports the Siebel Repository",
+    "rationale": "Standard objects should not be removed, even if not used.\nIt would prevent future usage.",
+    "reference": "https://docs.oracle.com/cd/E88140_01/books/UsingTools/customizing_objects8.html",
+    "remediation": "Restore deleted Standard Table, and prefer to inactivate it.",
     "total": "Number of modified Tables",
     "alternativeName": "Siebel: Don't delete Standard Tables",
     "businessCriteria": [

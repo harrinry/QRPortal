@@ -4,7 +4,11 @@
     "href": "AIP/quality-rules/1521502",
     "critical": false,
     "maxWeight": 3,
+    "description": "This rule report unreferenced Business Component (having to incoming link)",
     "output": "This rule reports unreferenced Business Components",
+    "rationale": "Unreferenced code may be the symptom of Dead Code.\nDead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "reference": "Siebel 8 Blackbook - New Edition",
+    "remediation": "After double-check, remove the unreferenced Business Component",
     "total": "Number of modified Business Components",
     "alternativeName": "Siebel: Avoid unreferenced Business Components",
     "businessCriteria": [

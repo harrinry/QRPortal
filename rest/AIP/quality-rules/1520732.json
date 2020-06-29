@@ -1,11 +1,17 @@
 {
     "id": 1520732,
-    "name": "Siebel eScript: Use DeleteRecord Method only inside Loops located in Functions",
+    "name": "Siebel eScript: Use DeleteRecord method only inside Loops located in Functions",
     "href": "AIP/quality-rules/1520732",
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Number of call",
+    "description": "This rule reports usage of DeleteRecord() outside a Loop construct.",
     "output": "This rule reports Functions calling DeleteRecord method in a loop",
+    "rationale": "When you are deleting records in script based on a particular query, be sure to use a while loop rather than an 'If' statement as the 'If' condition will only delete one record where multiple records may need to be deleted.",
+    "reference": "https://docs.oracle.com/cd/B40099_02/books/OIRef/OIRefInterfaceRef92.html\nhttps://it.toolbox.com/blogs/joshuaweir/siebel-scripting-best-practices-080808\nhttps://it.toolbox.com/blogs/joshuaweir/siebel-scripting-best-practices-part-2-112609",
+    "remediation": "Replace the If by a Loop, like While.",
+    "remediationSample": "bcPositionMVG.ClearToQuery();\nbcPositionMVG.InvokeMethod(\"SetAdminMode\", \"TRUE\");\nbcPositionMVG.SetSearchExpr(\"[Id] <> '0-5220'\");\nbcPositionMVG.ExecuteQuery();\n \n// The first record is identified and deleted. However, \n// subsequent child records are not deleted. \nwhile ( bcPositionMVG.FirstRecord() )        // FIXED\n{ \n   bcPositionMVG.DeleteRecord(); \n}",
+    "sample": "bcPositionMVG.ClearToQuery();\nbcPositionMVG.InvokeMethod(\"SetAdminMode\", \"TRUE\");\nbcPositionMVG.SetSearchExpr(\"[Id] <> '0-5220'\");\nbcPositionMVG.ExecuteQuery();\n \n// The first record is identified and deleted. However, \n// subsequent child records are not deleted. \nif ( bcPositionMVG.FirstRecord() )              \n{ \n   bcPositionMVG.DeleteRecord();              // VIOLATION\n}",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Use DeleteRecord method only inside Loops located in Functions",
     "businessCriteria": [

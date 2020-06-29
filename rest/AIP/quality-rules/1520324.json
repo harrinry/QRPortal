@@ -5,7 +5,10 @@
     "critical": false,
     "maxWeight": 2,
     "associatedValueName": "Name of the inactive elements",
-    "output": "This rule reports Applets containing inactive elements",
+    "description": "This rule reports Applets containing inactive elements",
+    "output": "This rule reports Applets containing inactive elements. It reports:\n- Applet full name\n- the associated values are the references to the elements set to inactive",
+    "rationale": "Inactive elements may be the symptom of Dead Code. And dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "Check if the inactive element is truly unnecessary.\nRemove it if so.",
     "total": "Number of added or modified applets",
     "alternativeName": "Siebel: Avoid inactive elements in an Applet",
     "businessCriteria": [

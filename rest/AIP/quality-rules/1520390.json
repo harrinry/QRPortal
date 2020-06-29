@@ -4,7 +4,11 @@
     "href": "AIP/quality-rules/1520390",
     "critical": false,
     "maxWeight": 1,
+    "description": "This rule reports Business Components fields having a name ending with a question mark",
     "output": "This rule reports Fields in Business Components with an invalid name",
+    "rationale": "Never include a question mark at the end of a field name or user interface label.\nThis is unclear : a name should be descriptive.",
+    "reference": "https://docs.oracle.com/cd/B31104_02/books/ConfigApps/ConfigApps_Overview26.html",
+    "remediation": "Rename to a clear name, without a question mark.",
     "total": "Number of added or modified Fields or Multi-Value Fields in Business Components",
     "alternativeName": "Siebel: BC Field name should not end with a question mark",
     "businessCriteria": [

@@ -4,7 +4,10 @@
     "href": "AIP/quality-rules/1521510",
     "critical": false,
     "maxWeight": 3,
+    "description": "This rule list the Business Objects that are not called.",
     "output": "This rule reports unreferenced Business Objects",
+    "rationale": "All Business Objects should be referenced.\nUnreferenced Business Object may be the symptom of Dead Code. And dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "Check if the Business Object is truly unnecessary.\nRemove it if so.",
     "total": "Number of modified Business Objects",
     "alternativeName": "Siebel: Avoid unreferenced Business Objects",
     "businessCriteria": [

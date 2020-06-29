@@ -4,7 +4,10 @@
     "href": "AIP/quality-rules/1521506",
     "critical": false,
     "maxWeight": 3,
+    "description": "This rule list the Views that are not called.",
     "output": "This rule reports unreferenced Views",
+    "rationale": "All Views should be referenced.\nUnreferenced View may be the symptom of Dead Code. And dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "Check if the View is truly unnecessary.\nRemove it if so.",
     "total": "Number of modified Views",
     "alternativeName": "Siebel: Avoid unreferenced Views",
     "businessCriteria": [

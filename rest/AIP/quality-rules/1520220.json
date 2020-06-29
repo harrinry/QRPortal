@@ -4,7 +4,11 @@
     "href": "AIP/quality-rules/1520220",
     "critical": false,
     "maxWeight": 1,
+    "description": "This rule reports Functions that contain no statement.",
     "output": "This rule reports Functions without source code",
+    "rationale": "For maintainability aspect, avoid Siebel functions that contain no statement.",
+    "reference": "https://cwe.mitre.org/data/definitions/1071.html",
+    "remediation": "Check if the object is referenced. If not then remove it.",
     "total": "Number of added or modified eScripts except (declarations)",
     "alternativeName": "Siebel eScript: Avoid empty Functions",
     "businessCriteria": [

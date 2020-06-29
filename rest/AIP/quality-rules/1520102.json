@@ -4,8 +4,11 @@
     "href": "AIP/quality-rules/1520102",
     "critical": true,
     "maxWeight": 6,
+    "description": "The rule reports the custom Business Components based on S_PARTY table does not have the \"Inner Join Extension Table\" user property defined.",
     "output": "This rule reports all Business Components without the User Property \"Inner Join Extension Table\"",
-    "rationale": "A custom BC based on S_PARTY table does not have the \"Inner Join Extension Table\" user property defined.",
+    "rationale": "If this user property is not defined, Business Components based on S_PARTY table may not work properly.\nFor example, without this user property, the correct base table, and corresponding de-normalized information cannot be loaded.\nTherefore, de-normalized columns (such as columns in S_ORG_BU, S_ACCNT_POSTN, S_POSTN_CON and others) are not updated when creating a new record.\nThe bottom line is data corruption in Siebel repository.",
+    "reference": "https://docs.oracle.com/cd/B40099_02/books/ToolsDevRef/ToolsDevRef_UserProps88.html",
+    "remediation": "\u201cInner Join Extension Table\u201d must be used when a new Business Component that is based on the \u201cParty Model\u201d is created. This user property defines one or more tables that are implicitly joined to the S_PARTY base table.\n\nThis user property can be specified with a number appended. For a given Business Component, the value associated with the property that has the lowest number is the primary extension table. \n\nFor example, for the standard \u201cEmployee\u201d Business Component, \u201cInner Join Extension Table 1\u201d has value S_CONTACT, \u201cInner Join Extension Table 2\u201d has value S_USER and \u201cInner Join Extension Table 3\u201d has value S_EMP_PER. Three extension tables are specified, of which S_CONTACT is the primary extension table.",
     "total": "Number of added or modified Business Components based on S_PARTY",
     "alternativeName": "SiebelReview: Custom BC Based On S_PARTY Table Missing the \"Inner Join Extension Table\" User Property",
     "businessCriteria": [

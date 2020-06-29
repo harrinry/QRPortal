@@ -5,7 +5,10 @@
     "critical": false,
     "maxWeight": 2,
     "associatedValueName": "Name of the inactive eScript",
-    "output": "This rule reports Objects containing inactive eScript",
+    "description": "This rule reports artifacts containing eScript with 'Active' flag is set to FALSE.",
+    "output": "This rule reports artifacts containing inactive eScript. It reports:\n- object full name\n- the associated value is the reference of the eScript",
+    "rationale": "An eScript set to inactive will be called, but with no effect.\nThis can be error-prone for the caller, and thus lead to unexpected behavior.",
+    "remediation": "Check if the eScript is really needed.\nIf not, then remove it.\nIf yes, then set the active flag back to TRUE.",
     "total": "Number of added or modified Objects with eScript",
     "alternativeName": "Siebel eScript: Avoid setting Scripts to Inactive",
     "businessCriteria": [

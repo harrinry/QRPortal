@@ -4,7 +4,10 @@
     "href": "AIP/quality-rules/1520328",
     "critical": false,
     "maxWeight": 2,
+    "description": "The rule report unreferenced Columns.",
     "output": "This rule reports unreferenced Columns in Tables",
+    "rationale": "Unreferenced code may be the symptom of Dead Code.\nDead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "Remove the field from Column from the custom Table",
     "total": "Number of added or modified columns",
     "alternativeName": "Siebel: Avoid unreferenced Columns in Tables",
     "businessCriteria": [

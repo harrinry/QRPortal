@@ -5,9 +5,10 @@
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "Number of Business Components",
-    "description": "The threshold is a parameter and can be changed at will.",
-    "output": "This rule reports Business Objects referencing too many Business Components",
+    "description": "The threshold is a parameter and can be changed at will.\nThe parameter name is \"Siebel: Max Buscomp\", and the default value is 50.",
+    "output": "This rule reports Business Objects referencing too many Business Components.\nIt provides the following information:\n- Business Object full name\n- Number of Business Components referenced",
     "rationale": "Too many underlying Business Components in an Business Object results in an above average cost to modify the Business Component",
+    "remediation": "Review the design and try to reduce the number of Business Components in the Business Object",
     "total": "Number of added or modified Business Objects",
     "alternativeName": "Siebel: Avoid Business Objects referencing too many Business Components",
     "businessCriteria": [

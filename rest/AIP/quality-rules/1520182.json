@@ -5,7 +5,13 @@
     "critical": false,
     "maxWeight": 4,
     "associatedValueName": "Number of switch without default",
+    "description": "This rule searches for eScripts that contain no 'default' statement in a 'switch' block.",
     "output": "This rule reports Functions without a default Case in a Switch",
+    "rationale": "The keyword DEFAULT is executed when none of the conditions being tested for in the Switch statement are met or executed.\nHaving no DEFAULT means that there is a strong assumption about the value of data.\nThe cases that are \"impossible\" today are the ones most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.\nThis can lead to unpredictable behavior or even data corruption.",
+    "reference": "https://cwe.mitre.org/data/definitions/478.html\nhttps://docs.oracle.com/cd/E14004_01/books/eScript/Statements_Reference9.html",
+    "remediation": "Add a DEFAULT clause into each SWITCH statement.",
+    "remediationSample": "switch ( key[0] )\n{\ncase 'A':\n   I=I+1;\n   break;\ncase 'B':;\n   I=I+2\n   break;\ndefault:        // FIXED\n   I=I+4;\n   break;\n}",
+    "sample": "switch ( key[0] )\n{\ncase 'A':\n   I=I+1;\n   break;\ncase 'B':;\n   I=I+2\n   break;\n}              // VIOLATION",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Avoid missing default Case handling in Switch Construct in Functions",
     "businessCriteria": [

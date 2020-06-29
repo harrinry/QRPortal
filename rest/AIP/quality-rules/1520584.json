@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Number of Return in Finally",
+    "description": "Reports all Function that contain a return in a finally block.",
     "output": "This rule reports Functions having a Return statement in the Finally clause",
+    "rationale": "Care must be taken if completion of a try-catch block occurs as a result of executing a return. If a finally block also returns a value, then that return supersedes any previous return in the try-catch block. Also, if an exception was thrown in the try or catch blocks that was not caught, then execution of a return in the finally block prevents the exception from being thrown to the caller (because it is not possible for the caller to simultaneously evaluate the return and catch the exception).\nThis can lead to unexpected behavior.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/eScript/Statements_Reference11.html#wp1004538\nhttps://cwe.mitre.org/data/definitions/584.html",
+    "remediation": "Avoid using finally statement in return block. If used, it will swallow the exception raised but not handled in above try catch block.",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Avoid Functions having Return statement in the Finally clause",
     "businessCriteria": [

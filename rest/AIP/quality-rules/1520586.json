@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 5,
     "associatedValueName": "Number of GotoView outside Finally",
+    "description": "This rule reports Functions using GotoView outside the Finally clause",
     "output": "This rule reports Functions using GotoView outside the Finally clause",
+    "rationale": "The GotoView deactivates any business object, business component, applet, or control that is active.\nTherefore this a cleaning method and as such find its best location in the Finally block.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/eScript/Statements_Reference11.html#wp1004538\nhttps://docs.oracle.com/cd/E14004_01/books/OIRef/Interfaces_Reference9.html#wp1009314",
+    "remediation": "Add a Try-Catch-Finally structure if none exists.\nChange the location of the GotoView statement for the finally block.",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Prefer using GotoView in the Finally clause of a Function",
     "businessCriteria": [

@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 5,
     "associatedValueName": "Reason for violation(No variable destruction in a finally block|Missing variable destructions in a finally block)",
+    "description": "This rule reports functions where the number of variable destructions at Function level is larger than the number in the Finally Clause of that Function. The number of variable destructions statements are counted.",
     "output": "This rule reports Functions destroying variables outside the Finally clause",
+    "rationale": "Destroying object references should be made when object is no more used.\nHowever, it is quite hard to determine the exact place in the execution flow of a script.\nA wrong choice will lead to a crash.\nTherefore, the Finally block should be prefered for performing cleanup work, because it is always executed at the end of the script, whatever the success or failure of the script.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/eScript/Statements_Reference11.html#wp1004538\nhttps://it.toolbox.com/question/destroying-active-objects-in-siebel-8x-080612",
+    "remediation": "While the interpreter takes care of object cleanup, it is a best practice to write code that explicitly destroys objects when they are no longer used. Explicit destruction of Siebel objects should occur in the procedure in which they are created.\nTo destroy objects in Siebel eScript, set each object to null in the reverse order of creation. Destroy child objects before parent objects.",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Avoid Functions destroying variables outside of the finally clause",
     "businessCriteria": [

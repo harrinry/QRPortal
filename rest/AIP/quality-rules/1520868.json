@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "Number of variables",
-    "output": "This rule reports Functions with too many variables",
+    "description": "This rule reports Functions with more than X variable.\nX is a parameter, named \"Siebel: Max Variables\", and it can be changed at will.\nDefault value is 15.",
+    "output": "This rule reports Functions with too many variables. It displays:\n- Function full name\n- The associated value is the Number of variables",
+    "rationale": "Declare your variables. Declaring your variables and specifying their data type, as appropriate, can use less memory and improve performance.\nFor maintainability and readability reasons, Function should not have too many variables.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/eScript/Using_eScript14.html",
+    "remediation": "Review the Function design to reduce the number of variables.",
     "total": "Number of added or modified eScripts",
     "alternativeName": "Siebel eScript: Avoid Functions with more than X variables",
     "businessCriteria": [

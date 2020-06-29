@@ -4,7 +4,10 @@
     "href": "AIP/quality-rules/1521504",
     "critical": false,
     "maxWeight": 3,
+    "description": "This rule list the Applets that are not called.",
     "output": "This rule reports unreferenced Applets",
+    "rationale": "All Applets should be referenced.\nUnreferenced Applet may be the symptom of Dead Code. And dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "Check if the Applet is truly unnecessary.\nRemove it if so.",
     "total": "Number of modified Applets",
     "alternativeName": "Siebel: Avoid unreferenced Applets",
     "businessCriteria": [

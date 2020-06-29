@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 7,
     "associatedValueName": "List of deleted Screens",
+    "description": "This rule reports deleted Standard Screen.",
     "output": "This rule reports the Siebel Repository",
+    "rationale": "Standard objects should not be removed, even if not used.\nIt would prevent future usage.",
+    "reference": "https://docs.oracle.com/cd/E88140_01/books/UsingTools/customizing_objects8.html",
+    "remediation": "Restore deleted Standard Screen, and prefer to inactivate it.",
     "total": "Number of modified Screens",
     "alternativeName": "Siebel: Don't delete Standard Screens",
     "businessCriteria": [

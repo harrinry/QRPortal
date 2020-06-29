@@ -1,11 +1,15 @@
 {
     "id": 1520160,
-    "name": "Siebel: Don't delete standard extension columns (ATTRIB_)",
+    "name": "Siebel: Don't delete static standard extension columns (ATTRIB_)",
     "href": "AIP/quality-rules/1520160",
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "List of delete columns",
+    "description": "This rule reports all Extension Tables with deleted columns",
     "output": "This rule reports all Extension Tables with deleted columns",
+    "rationale": "Some ATTRIB_ columns in extension tables are used by Siebel Systems. Do not modify or delete ATTRIB_ columns in use by standard Siebel applications.\nThis would make standard Siebel applications malfunction.",
+    "reference": "https://docs.oracle.com/cd/B31104_02/books/ConfigApps/ConfigApps_TablesColumns3.html",
+    "remediation": "Do not modify or delete ATTRIB_ columns.",
     "total": "Number of modified Extension Tables",
     "alternativeName": "Siebel: Don't delete static standard extension columns (ATTRIB_)",
     "businessCriteria": [

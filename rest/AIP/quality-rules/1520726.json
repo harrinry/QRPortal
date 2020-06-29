@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 6,
     "associatedValueName": "Number of lines of code",
+    "description": "This rule report Applet_PreInvokeMethod eScripts having more than \"Siebel: Max LoC for Applet_PreInvokeMethod\" lines of code in the Applet_PreInvokeMethod event.\n\"Siebel: Max LoC for Applet_PreInvokeMethod\" is a parameter that can be changed at will.\nThe default value is 20.",
     "output": "This rule reports Applets with a lot of code in Applet_PreInvokeMethod",
+    "rationale": "Field-level or control-level events are fired more often than most other types of events. Consequently, invoking scripts from such events can dramatically impact scalability.",
+    "reference": "https://docs.oracle.com/cd/B31104_02/books/PerformTun/PerformTunCustConfig7.html#wp1043766",
+    "remediation": "Review the code and reduce the amount of tasks performed in code.",
     "total": "Number of added or modified Applet_PreInvokeMethod in Applets",
     "alternativeName": "Siebel eScript: Avoid putting all code in the Applet_PreInvokeMethod event",
     "businessCriteria": [

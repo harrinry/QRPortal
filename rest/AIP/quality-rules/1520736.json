@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "Types of the field and column",
-    "output": "This rule reports Fields not having the same type as the related column",
+    "description": "This rule reports BC Fields not having the same type as the related column.",
+    "output": "This rule reports Fields not having the same type as the related column.\nIt reports the following informations:\n- Field full name\n- Associated value is the types of the BC field and column",
+    "rationale": "It must use the same format/type that it uses in the Siebel database.\nSiebel does not perform type conversion.\nA different type would produce error at runtime.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/OTR/OTRObjTypesList69.html",
+    "remediation": "Align the type of Business Component Field on the type of related Table Column",
     "total": "Number of added or modified Fields in Business Components",
     "alternativeName": "Siebel: Business Component Field should have same type as related Table Column",
     "businessCriteria": [

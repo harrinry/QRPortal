@@ -4,9 +4,11 @@
     "href": "AIP/quality-rules/1520722",
     "critical": false,
     "maxWeight": 8,
-    "description": "Reports the Buscomp that do not have this property or have it switch to off",
+    "description": "Reports the Custom Business Components that do not have \"Upgrade Ancestor\" property or have it switched to off",
     "output": "This rule reports Business Components not defining the Ancestry",
-    "rationale": "The Upgrade Ancestor property allows copied objects (of types Applet, Business Component, Report, and Integration Object) to inherit properties of the original objects from which they were copied. During an upgrade, changes applied to the original objects are also applied to copied objects.",
+    "rationale": "The Upgrade Ancestor property allows copied objects (of types Applet, Business Component, Report, and Integration Object) to inherit properties of the original objects from which they were copied. During an upgrade, changes applied to the original objects are also applied to copied objects.\nWithout this property set, new functionalities will not be added to the custom Business Component.",
+    "reference": "https://docs.oracle.com/cd/B40099_02/books/UPG/UPG_HowItWorks13.html",
+    "remediation": "The Upgrade Ancestor property should be configured for custom objects that are clones of existing objects.\nThe best time to do this is immediately upon copying the object.",
     "total": "Number of added Business Components",
     "alternativeName": "Siebel: Defining Ancestry of Custom Business Components",
     "businessCriteria": [

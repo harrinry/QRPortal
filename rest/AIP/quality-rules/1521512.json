@@ -4,7 +4,10 @@
     "href": "AIP/quality-rules/1521512",
     "critical": false,
     "maxWeight": 3,
+    "description": "This rule list the Business Services that are not called.",
     "output": "This rule reports unreferenced Business Services",
+    "rationale": "Unreferenced code may be the symptom of Dead Code.\nDead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
+    "remediation": "After double-check, remove the unreferenced Business Service",
     "total": "Number of modified Business Services",
     "alternativeName": "Siebel: Avoid unreferenced Business Services",
     "businessCriteria": [

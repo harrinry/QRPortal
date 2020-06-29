@@ -4,7 +4,11 @@
     "href": "AIP/quality-rules/1520420",
     "critical": false,
     "maxWeight": 1,
-    "output": "This rule reports custom Applets without a title",
+    "description": "This rule reports custom Applets without a title.",
+    "output": "This rule reports custom Applets without a title. It displays:\n- Applet full name",
+    "rationale": "Always define the Title property of an applet. Do not leave it empty.",
+    "reference": "https://docs.oracle.com/cd/E14004_01/books/ConfigApps/Applets13.html",
+    "remediation": "Define the Title property of the applet",
     "total": "Number of added or modified applets",
     "alternativeName": "Siebel: Every Added Applet should have a title",
     "businessCriteria": [

@@ -5,7 +5,11 @@
     "critical": false,
     "maxWeight": 1,
     "associatedValueName": "List of screens",
-    "output": "This rule reports all Views associated to more than one screen",
+    "description": "This rule reports all Views associated to more than one Screen",
+    "output": "This rule reports all Views associated to more than one Screen.\nIt provides the following information:\n- View full name\n- the associated values are the reference to the Screen objects the View is associated to",
+    "rationale": "Allthough the Siebel client IDE allow this configuration, do not associate a view with more than one screen. If you do this, then problems with the Thread Manager might occur.\nWhen Siebel CRM saves a thread in the session file, it stores the name of the view without the name of the associated screen.\nIf the user chooses a thread that navigates to a duplicate view, then Siebel CRM always navigates the user to one screen, even if it created the thread in the other screen.\nIf you define the duplicate view as the default view on both screen tabs, then the user experiences an anomaly in the Siebel client. Siebel CRM chooses one screen tab as the active tab. It never displays the duplicate screen tab as an active tab.\nBottom line in unexpected behavior.",
+    "reference": "Guidelines for creating View: https://docs.oracle.com/cd/E14004_01/books/ConfigApps/ScreensViews8.html",
+    "remediation": "Review the design and associate one View per Screen",
     "total": "Number of added or modified Views",
     "alternativeName": "Siebel: Don't associate Views to more than 1 Screen",
     "businessCriteria": [
