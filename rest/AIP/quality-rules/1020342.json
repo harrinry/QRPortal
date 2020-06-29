@@ -12,6 +12,7 @@
     "remediation": "The error must be handled correctly.",
     "remediationSample": "$.ajax({\n   type: 'POST',\n   url: '_auth/login',\n   success: function(res, status, xhr) { window.location.reload(); },\n   error: function(xhr, status, err) {\n      alert(\"An error occured: \"+data); // Error has been presented to the user, NO VIOLATION \n   },\n   complete: function(xhr, status, err) {\n   }\n});\n\n-------------------------------------------\n$.ajax({\n   type: 'POST',\n   url: '_auth/login'\n})\n.done(successHandler)\n.fail(function() {\n      alert(\"An error occured: \"+data); // Error has been presented to the user, NO VIOLATION \n})\n.always();",
     "sample": "$.ajax({\n   type: 'POST',\n   url: '_auth/login',\n   success: function(res, status, xhr) { window.location.reload(); },\n   error: function(xhr, status, err) {\n   // EMPTY so there is a VIOLATION\n   },\n   complete: function(xhr, status, err) {\n   }\n});\n\n-------------------------------------------\n$.ajax({\n   type: 'POST',\n   url: '_auth/login'\n})\n.done(successHandler)\n.fail(function() {\n   // EMPTY so there is a VIOLATION\n})\n.always();",
+    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
     "alternativeName": "Ensure you have properly manage errors by using the error/fail callbacks",
     "businessCriteria": [
         {
