@@ -5,7 +5,9 @@
     "critical": false,
     "maxWeight": 6,
     "description": "Always prefer joining tables to subqueries",
+    "output": "This report lists all PeopleSoft SQL Definitions having subqueries. It provides the following information:\n- PeopleSoft SQL Definitions full name.",
     "rationale": "Rules of construction of query to improve performances",
+    "remediation": "You can use an Explain Plan to get an objective answer.\nIf appropriate, replace the subquery by a JOIN.",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "Always prefer joining tables to subqueries (PeopleSoft)",
     "businessCriteria": [

@@ -1,13 +1,15 @@
 {
     "id": 1600674,
-    "name": "Language records should have the same type as the based record (PeopleSoft)",
+    "name": "Language records should have the same type as the base record (PeopleSoft)",
     "href": "AIP/quality-rules/1600674",
     "critical": false,
     "maxWeight": 4,
     "associatedValueName": "Based record",
     "description": "List all language Records that don't have the same type as the base Record.",
     "output": "This report lists all the Language Records with a wrong type",
-    "rationale": "Related Language records are defined in PeopleSoft Application Designer just like any other record definitions. However, as they often contain many of the same fields as their base language table, it is often quicker to create the related language table by cloning the base table.",
+    "rationale": "There is a one-to-one relationship between the base record and the related language record. Also, the record type of the base record and the related language record should be the same.\nFailure to do so can lead to inconsistency in display and data corruption.",
+    "reference": "https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tgbl/concept_UnderstandingRelatedLanguageTables-076916.html",
+    "remediation": "Related Language records are defined in PeopleSoft Application Designer just like any other record definitions. However, as they often contain many of the same fields as their base language table, it is often quicker to create the related language table by cloning the base table.",
     "total": "Number of PeopleSoft Related language records",
     "alternativeName": "Language records should have the same type as the base record (PeopleSoft)",
     "businessCriteria": [

@@ -1,11 +1,14 @@
 {
     "id": 1600290,
-    "name": "Avoid using ROWNUM and ORDER BY (PeopleSoft)",
+    "name": "Avoid using ROWNUM and ORDER BY together (PeopleSoft)",
     "href": "AIP/quality-rules/1600290",
     "critical": false,
     "maxWeight": 6,
-    "description": "Call an Oracle sequence to generate an unique sequential number (ex : technical identification key who substitute to a primary multi-column key)",
-    "rationale": "Rule on program architecture",
+    "description": "This rule detects SQL Definitions using ROWNUM in a WHERE clause, and having and ORDER BY clause.",
+    "output": "This rule reports PeopleSoft SQL Definitions using ROWNUM in the WHERE clause and ORDER BY.\nIt provides the following information:\n- PeopleSoft SQL Definitions full name",
+    "rationale": "ROWNUM must not be used in a WHERE clause if the results are sorted with the ORDER BY clause.\nYou would expect the ROWNUM to be applied after the results have been ordered by the column, but instead it applies the ROWNUM and then does an order by.\nThe bottom line is unexpected results.",
+    "reference": "https://blogs.oracle.com/oraclemagazine/on-rownum-and-limiting-results\nhttps://sanaulla.info/2013/01/23/using-rownum-with-order-by-in-oracle-sql/",
+    "remediation": "The idea here is to first order the rows/records by moving the ORDER BY query as a nested SQL and then applying ROWNUM on the resultant data.",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "Avoid using ROWNUM and ORDER BY together (PeopleSoft)",
     "businessCriteria": [
