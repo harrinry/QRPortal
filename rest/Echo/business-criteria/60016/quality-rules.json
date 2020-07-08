@@ -82,6 +82,39 @@
         ]
     },
     {
+        "id": 3576,
+        "name": "Avoid declaring public Fields",
+        "href": "AIP/quality-rules/3576",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3612,
+        "name": "Ensure you have released your SQL connection after an effective lifetime",
+        "href": "AIP/quality-rules/3612",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3614,
+        "name": "Avoid using String.Empty for empty string tests",
+        "href": "AIP/quality-rules/3614",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 4566,
         "name": "Ensure that you have access type defined at instance variable level to control accesss",
         "href": "AIP/quality-rules/4566",
@@ -409,6 +442,50 @@
         "critical": false,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7260,
+        "name": "User Interface elements must not use directly the database",
+        "href": "AIP/quality-rules/7260",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7266,
+        "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
+        "href": "AIP/quality-rules/7266",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7268,
+        "name": "Dispose() methods should call GC.SuppressFinalize",
+        "href": "AIP/quality-rules/7268",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7272,
+        "name": "Ensure adding a private default constructor then the class can't be instantiated.",
+        "href": "AIP/quality-rules/7272",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -1211,6 +1288,39 @@
         ]
     },
     {
+        "id": 8090,
+        "name": "Avoid using NaN to test the result of an expression",
+        "href": "AIP/quality-rules/8090",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8092,
+        "name": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
+        "href": "AIP/quality-rules/8092",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8094,
+        "name": "Avoid locking of Objects with weak identities",
+        "href": "AIP/quality-rules/8094",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8096,
         "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/8096",
@@ -1294,6 +1404,28 @@
         "critical": true,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8150,
+        "name": "Avoid using Parse for primitive types and used instead TryParse",
+        "href": "AIP/quality-rules/8150",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8154,
+        "name": "Avoid using GC.Collect()",
+        "href": "AIP/quality-rules/8154",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -2104,6 +2236,66 @@
         ]
     },
     {
+        "id": 1020202,
+        "name": "Ensure get() function always return a value",
+        "href": "AIP/quality-rules/1020202",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020204,
+        "name": "Ensure you don't use <textarea> with child elements such as inner text, if it has the v-model attribute",
+        "href": "AIP/quality-rules/1020204",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020206,
+        "name": "Ensure that you define a key for v-for",
+        "href": "AIP/quality-rules/1020206",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020210,
+        "name": "Avoid using v-show directive inside templates",
+        "href": "AIP/quality-rules/1020210",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020212,
+        "name": "Ensure that you use $emit to emit events instead of $parent to directly change parent props, to maintain the vue philosophy of props down events up",
+        "href": "AIP/quality-rules/1020212",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020214,
+        "name": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
+        "href": "AIP/quality-rules/1020214",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020218,
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (Vue.js)",
         "href": "AIP/quality-rules/1020218",
@@ -2634,6 +2826,136 @@
         ]
     },
     {
+        "id": 1020744,
+        "name": "Ensure you don't use TLS library from NodeJS with version older than 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020744",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020746,
+        "name": "Ensure you don't use HTTP/2 llibrary from  NodeJS with version older than 6.14.13, 8.11.3, 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020746",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020750,
+        "name": "Ensure you don't use normalizeStringWin32 method of Path module with Node.js 8.5.0",
+        "href": "AIP/quality-rules/1020750",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020758,
+        "name": "Ensure you don't reference Buffer.fill() or Buffer.alloc() with some parameters  of NodeJS versions older than 6.14.3, 8.11.3, 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020758",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020760,
+        "name": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
+        "href": "AIP/quality-rules/1020760",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020762,
+        "name": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
+        "href": "AIP/quality-rules/1020762",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020764,
+        "name": "Ensure you don't use the path module from NodeJS with version older than 4.9.0",
+        "href": "AIP/quality-rules/1020764",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020766,
+        "name": "Ensure you don't use 'ps' package' methods from NodeJS with version older than 1.0.0",
+        "href": "AIP/quality-rules/1020766",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020768,
+        "name": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS  version older than 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020768",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020770,
+        "name": "Ensure you don't use third-party module query-mysql versions 0.0.0, 0.0.1, and 0.0.2  from NodeJS",
+        "href": "AIP/quality-rules/1020770",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020772,
+        "name": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
+        "href": "AIP/quality-rules/1020772",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020780,
+        "name": "Ensure you call synchronous FileSystem API inside a try/catch block to manage errors.",
+        "href": "AIP/quality-rules/1020780",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020782,
+        "name": "Ensure you no longer us Buffer() function or new Buffer() constructor because they are deprecated",
+        "href": "AIP/quality-rules/1020782",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020784,
         "name": "Ensure you don't unserialize data using node-serialize package version 0.0.4",
         "href": "AIP/quality-rules/1020784",
@@ -3054,6 +3376,86 @@
         ]
     },
     {
+        "id": 1020904,
+        "name": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
+        "href": "AIP/quality-rules/1020904",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020906,
+        "name": "Ensure you don't use TLS library from NodeJS with version older than 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020906",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020908,
+        "name": "Ensure you don't use normalizeStringWin32 method of Path module with Node.js 8.5.0",
+        "href": "AIP/quality-rules/1020908",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020910,
+        "name": "Ensure you don't use the path module from NodeJS with version older than 4.9.0",
+        "href": "AIP/quality-rules/1020910",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020912,
+        "name": "Ensure you don't use HTTP/2 llibrary from  NodeJS with version older than 6.14.13, 8.11.3, 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020912",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020914,
+        "name": "Ensure you don't reference Buffer.fill() or Buffer.alloc() of NodeJS versions older than 6.14.3, 8.11.3, 9.11.2 and 10.4.1",
+        "href": "AIP/quality-rules/1020914",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020916,
+        "name": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
+        "href": "AIP/quality-rules/1020916",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020918,
+        "name": "Ensure you don't use third-party module query-mysql versions with NodeJS",
+        "href": "AIP/quality-rules/1020918",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020920,
         "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020920",
@@ -3067,6 +3469,26 @@
         "id": 1020922,
         "name": "Ensure enabling NODE_TLS_REJECT_UNAUTHORIZED attributes allowing rejecting self signed certificates",
         "href": "AIP/quality-rules/1020922",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020924,
+        "name": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS versions from 9.7.0 to  9.11.2 and from 10.0.0 to 10.4.1",
+        "href": "AIP/quality-rules/1020924",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020926,
+        "name": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
+        "href": "AIP/quality-rules/1020926",
         "status": null,
         "critical": true,
         "technologyNames": [
@@ -3101,6 +3523,60 @@
         "critical": true,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 1027000,
+        "name": "Avoid Managed type declaration for Win32 API using Overlapped IO",
+        "href": "AIP/quality-rules/1027000",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#"
+        ]
+    },
+    {
+        "id": 1027002,
+        "name": "Change access modifier to \"private\", \"internal\"or \"private protected\"",
+        "href": "AIP/quality-rules/1027002",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027004,
+        "name": "Use XmlReader instead of XmlTextReader since it is deprecated and may lead to security issues",
+        "href": "AIP/quality-rules/1027004",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027008,
+        "name": "Always Revert After Impersonation",
+        "href": "AIP/quality-rules/1027008",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027010,
+        "name": "Ensure to use at least 2048 bits key when using RSA encryption algorithm or use some advanced algorithm",
+        "href": "AIP/quality-rules/1027010",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -4237,6 +4713,78 @@
         "critical": false,
         "technologyNames": [
             "SQL"
+        ]
+    },
+    {
+        "id": 1101092,
+        "name": "Errors should be handled in stored procedures and functions",
+        "href": "AIP/quality-rules/1101092",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101094,
+        "name": "Stored Procedures should always RETURN a status value. RETURN 0 to indicate success and any non-zero value indicates failure.",
+        "href": "AIP/quality-rules/1101094",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101096,
+        "name": "Preventing SQL injection in Oracle dynamic SQL",
+        "href": "AIP/quality-rules/1101096",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101100,
+        "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction (SQL)",
+        "href": "AIP/quality-rules/1101100",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101920,
+        "name": "Ensure to not use explain() method in production code so that performance is not reduced",
+        "href": "AIP/quality-rules/1101920",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1101958,
+        "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
+        "href": "AIP/quality-rules/1101958",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1677000,
+        "name": "Prefer using MyBatis query statementto prevent SQL Injection Attacks",
+        "href": "AIP/quality-rules/1677000",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
         ]
     }
 ]

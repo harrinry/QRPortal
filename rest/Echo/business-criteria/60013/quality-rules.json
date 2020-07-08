@@ -460,6 +460,39 @@
         ]
     },
     {
+        "id": 7260,
+        "name": "User Interface elements must not use directly the database",
+        "href": "AIP/quality-rules/7260",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7262,
+        "name": "Avoid Namespaces with High Efferent Coupling (CE)",
+        "href": "AIP/quality-rules/7262",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7264,
+        "name": "Avoid namespaces with High Afferent Coupling (CA)",
+        "href": "AIP/quality-rules/7264",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7296,
         "name": "Never define static variables in header files",
         "href": "AIP/quality-rules/7296",
@@ -1014,6 +1047,28 @@
         ]
     },
     {
+        "id": 8090,
+        "name": "Avoid using NaN to test the result of an expression",
+        "href": "AIP/quality-rules/8090",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8094,
+        "name": "Avoid locking of Objects with weak identities",
+        "href": "AIP/quality-rules/8094",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8096,
         "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/8096",
@@ -1053,6 +1108,28 @@
         "critical": true,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8148,
+        "name": "Avoid artifacts having Incorrect Type Conversion or Cast",
+        "href": "AIP/quality-rules/8148",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8150,
+        "name": "Avoid using Parse for primitive types and used instead TryParse",
+        "href": "AIP/quality-rules/8150",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -1189,6 +1266,56 @@
         "id": 1020102,
         "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
         "href": "AIP/quality-rules/1020102",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020202,
+        "name": "Ensure get() function always return a value",
+        "href": "AIP/quality-rules/1020202",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020204,
+        "name": "Ensure you don't use <textarea> with child elements such as inner text, if it has the v-model attribute",
+        "href": "AIP/quality-rules/1020204",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020206,
+        "name": "Ensure that you define a key for v-for",
+        "href": "AIP/quality-rules/1020206",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020210,
+        "name": "Avoid using v-show directive inside templates",
+        "href": "AIP/quality-rules/1020210",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020212,
+        "name": "Ensure that you use $emit to emit events instead of $parent to directly change parent props, to maintain the vue philosophy of props down events up",
+        "href": "AIP/quality-rules/1020212",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -1466,6 +1593,16 @@
         ]
     },
     {
+        "id": 1020780,
+        "name": "Ensure you call synchronous FileSystem API inside a try/catch block to manage errors.",
+        "href": "AIP/quality-rules/1020780",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020800,
         "name": "Avoid jump statements in finally",
         "href": "AIP/quality-rules/1020800",
@@ -1633,6 +1770,27 @@
         "critical": false,
         "technologyNames": [
             "HTML5"
+        ]
+    },
+    {
+        "id": 1027000,
+        "name": "Avoid Managed type declaration for Win32 API using Overlapped IO",
+        "href": "AIP/quality-rules/1027000",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#"
+        ]
+    },
+    {
+        "id": 1027004,
+        "name": "Use XmlReader instead of XmlTextReader since it is deprecated and may lead to security issues",
+        "href": "AIP/quality-rules/1027004",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -2116,6 +2274,70 @@
         "critical": false,
         "technologyNames": [
             "SQL"
+        ]
+    },
+    {
+        "id": 1101092,
+        "name": "Errors should be handled in stored procedures and functions",
+        "href": "AIP/quality-rules/1101092",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101094,
+        "name": "Stored Procedures should always RETURN a status value. RETURN 0 to indicate success and any non-zero value indicates failure.",
+        "href": "AIP/quality-rules/1101094",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101098,
+        "name": "Avoid Artifacts with a Complex SELECT Clause (SQL)",
+        "href": "AIP/quality-rules/1101098",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101100,
+        "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction (SQL)",
+        "href": "AIP/quality-rules/1101100",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101958,
+        "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
+        "href": "AIP/quality-rules/1101958",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1101964,
+        "name": "When using compound indexes, avoid having different index ordering in collection access",
+        "href": "AIP/quality-rules/1101964",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
         ]
     }
 ]

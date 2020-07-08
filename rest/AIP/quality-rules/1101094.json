@@ -13,7 +13,7 @@
     "remediationSample": "create proc checkcontract @titleid tid \nas \nif (select contract from titles where \n        title_id = @titleid) = 1 \n   return 1 \nelse \n   return 2\nGO",
     "sample": "create proc checkcontract @titleid tid \nas \nif (select contract from titles where \n        title_id = @titleid) = 1 \n   select 1 \nelse \n   select 2\nGO",
     "total": "Number of SQL Server and Sybase Stored Procedures",
-    "alternativeName": "Always use the RETURN value to return a stored procedure status. RETURN 0 to indicate success and any non-zero value indicates failure.",
+    "alternativeName": "Stored Procedures should always RETURN a status value. RETURN 0 to indicate success and any non-zero value indicates failure.",
     "businessCriteria": [
         {
             "id": 20140522,

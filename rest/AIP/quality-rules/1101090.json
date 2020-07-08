@@ -13,7 +13,7 @@
     "remediationSample": "CREATE INDEX DEPT_IX\n  ON EMP\n    (DEPTNO ASC)\n     CLUSTER;",
     "sample": "CREATE TABLE DSN8A10.EMP\n      (EMPNO     CHAR(6)                          NOT NULL,\n       FIRSTNME  VARCHAR(12)                      NOT NULL,\n       MIDINIT   CHAR(1)                          NOT NULL,\n       LASTNAME  VARCHAR(15)                      NOT NULL,\n       WORKDEPT  CHAR(3)                                  ,\n       PHONENO   CHAR(4)         CONSTRAINT NUMBER CHECK\n                 (PHONENO >= '0000' AND\n                  PHONENO <= '9999')                      ,\n       HIREDATE  DATE                                     ,\n       JOB       CHAR(8)                                  ,\n       EDLEVEL   SMALLINT                                 ,\n       SEX       CHAR(1)                                  ,\n       BIRTHDATE DATE                                     ,\n       SALARY    DECIMAL(9,2)                             ,\n       BONUS     DECIMAL(9,2)                             ,\n       COMM      DECIMAL(9,2)                             ,\n       PRIMARY KEY (EMPNO)                                ,\n       FOREIGN KEY RED (WORKDEPT) REFERENCES DSN8A10.DEPT\n                 ON DELETE SET NULL                       )\n  EDITPROC  DSN8EAE1\n  IN DSN8D10A.DSN8S10E\n  CCSID EBCDIC;",
     "total": "Total number of SQL Server, Sybase or DB2 tables.",
-    "alternativeName": "Avoid Tables without a clustered Index",
+    "alternativeName": "Each table should have a clustered index",
     "businessCriteria": [
         {
             "id": 60014,

@@ -22,6 +22,28 @@
         ]
     },
     {
+        "id": 3612,
+        "name": "Ensure you have released your SQL connection after an effective lifetime",
+        "href": "AIP/quality-rules/3612",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3614,
+        "name": "Avoid using String.Empty for empty string tests",
+        "href": "AIP/quality-rules/3614",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 4618,
         "name": "Ensure that the boolean are not instantiated",
         "href": "AIP/quality-rules/4618",
@@ -162,6 +184,50 @@
         ]
     },
     {
+        "id": 7266,
+        "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
+        "href": "AIP/quality-rules/7266",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7268,
+        "name": "Dispose() methods should call GC.SuppressFinalize",
+        "href": "AIP/quality-rules/7268",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7272,
+        "name": "Ensure adding a private default constructor then the class can't be instantiated.",
+        "href": "AIP/quality-rules/7272",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7358,
+        "name": "Avoid call to AcceptChanges in a loop",
+        "href": "AIP/quality-rules/7358",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7424,
         "name": "Avoid using SQL queries inside a loop",
         "href": "AIP/quality-rules/7424",
@@ -169,6 +235,39 @@
         "critical": true,
         "technologyNames": [
             "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7466,
+        "name": "Avoid changing DataSource member before ValueMember/DisplayMember",
+        "href": "AIP/quality-rules/7466",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7468,
+        "name": "Disable constraints before merging DataSet",
+        "href": "AIP/quality-rules/7468",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7470,
+        "name": "DEPRECATED: Avoid doing select on Datatable in loop",
+        "href": "AIP/quality-rules/7470",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -380,6 +479,28 @@
         ]
     },
     {
+        "id": 8148,
+        "name": "Avoid artifacts having Incorrect Type Conversion or Cast",
+        "href": "AIP/quality-rules/8148",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8154,
+        "name": "Avoid using GC.Collect()",
+        "href": "AIP/quality-rules/8154",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8214,
         "name": "Ensure not using expired or released database resource to prevent access to sensitive data that is associated with a different user or entity.",
         "href": "AIP/quality-rules/8214",
@@ -493,6 +614,26 @@
         "id": 1020092,
         "name": "Move JavaScript functions from HTML file to a '.js' file",
         "href": "AIP/quality-rules/1020092",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020208,
+        "name": "Prefer using a computed property as a condition, if needed, instead of using v-for and v-if on the same element",
+        "href": "AIP/quality-rules/1020208",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020214,
+        "name": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
+        "href": "AIP/quality-rules/1020214",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -645,6 +786,36 @@
         "href": "AIP/quality-rules/1020748",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020774,
+        "name": "Ensure you don't have multiple artifacts updating data on the same NoSQL table",
+        "href": "AIP/quality-rules/1020774",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020776,
+        "name": "Ensure you don't have multiple artifacts inserting data on the same NoSQL table",
+        "href": "AIP/quality-rules/1020776",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020778,
+        "name": "Ensure you don't have multiple artifacts deleting data on the same NoSQL table",
+        "href": "AIP/quality-rules/1020778",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]
@@ -979,6 +1150,102 @@
         "critical": false,
         "technologyNames": [
             "SQL"
+        ]
+    },
+    {
+        "id": 1101090,
+        "name": "Each table should have a clustered index",
+        "href": "AIP/quality-rules/1101090",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101098,
+        "name": "Avoid Artifacts with a Complex SELECT Clause (SQL)",
+        "href": "AIP/quality-rules/1101098",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101920,
+        "name": "Ensure to not use explain() method in production code so that performance is not reduced",
+        "href": "AIP/quality-rules/1101920",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1101922,
+        "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection (JEE)",
+        "href": "AIP/quality-rules/1101922",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1101924,
+        "name": "Avoid having multiple Artifacts inserting data on the same NoSQL Collection (JEE)",
+        "href": "AIP/quality-rules/1101924",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1101926,
+        "name": "Avoid having multiple artifacts deleting data on the same NoSQL collections (JEE)",
+        "href": "AIP/quality-rules/1101926",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1101968,
+        "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection",
+        "href": "AIP/quality-rules/1101968",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1101970,
+        "name": "Avoid having multiple Artifacts inserting data on the same NoSQL Collection",
+        "href": "AIP/quality-rules/1101970",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1101972,
+        "name": "Avoid having multiple artifacts deleting data on the same NoSQL collection",
+        "href": "AIP/quality-rules/1101972",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#",
+            "VB.NET"
         ]
     }
 ]
