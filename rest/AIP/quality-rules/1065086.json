@@ -11,7 +11,7 @@
     "remediation": "Do not cast a pointer type to an integer.\n\nNote: When you have to necessarily do that ensure that the memory allocated to the int is sufficient",
     "sample": "struct S\n{\nint32_t i;\nint32_t j;\n};\nvoid f ( S * s )\n{\nint32_t p = reinterpret_cast< int32_t >( s ); // Non-compliant\n}\n\n______________________________________________________\nC:\nint *p",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Ensure that pointer types are not cast to integral types",
     "businessCriteria": [
         {
             "id": 60012,
@@ -60,7 +60,27 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-C-2012-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

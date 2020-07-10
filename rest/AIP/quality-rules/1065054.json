@@ -11,7 +11,7 @@
     "remediation": "It is recommended to rename the function if the modification has been done",
     "sample": "int32_t printf ( int32_t a, int32_t b )   // Non-compliant \n{\nreturn ( ( a > b ) ? a : b ); \n}",
     "total": "Number of C / C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Do not override the standard library functions (C/C++)",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -50,7 +50,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

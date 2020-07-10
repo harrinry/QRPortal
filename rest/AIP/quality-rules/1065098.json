@@ -12,7 +12,7 @@
     "remediationSample": "Delete Operator:\n\nstatic void operator delete(void* ptr, std::size_t sz) noexcept(true)\n {\n // ...\n throw std::runtime_error(\"Error\"); \n };",
     "sample": "Delete Operator:\nstatic void operator delete(void* ptr, std::size_t sz)\n {\n // ...\n throw std::runtime_error(\"Error\"); // Non-compliant - operator delete\n // exits with an exception\n }\n };",
     "total": "Total number of Desctructors, Delete Operators, Swap Functions, Move and Move Assignment Operators",
-    "alternativeName": null,
+    "alternativeName": "Avoid delete operators to exit with an exception.",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,7 +51,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

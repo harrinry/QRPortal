@@ -12,7 +12,7 @@
     "remediationSample": "if ( ( a < b ) && ( c < d ) )   // Compliant",
     "sample": "if ( 1 && ( c < d ) )           // Non-compliant\nif ( ( a < b ) && ( c + d ) )   // Non-compliant\nif ( u8_a && ( c + d ) )        // Non-compliant\nif ( !0 )                       // Non-compliant\nif ( !ptr )                     // Non-compliant",
     "total": "Number of C / C++ methods and function",
-    "alternativeName": null,
+    "alternativeName": "Ensure to have boolean operands with boolean operators",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,7 +51,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

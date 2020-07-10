@@ -9,7 +9,7 @@
     "reference": "MISRA C++ 2008, 12-1-1: An object\u2019s dynamic type shall not be used from the body of its constructor or destructor. \nAUTOSAR C++ 2014, M12-1-1: An object\u2019s dynamic type shall not be used from the body of its constructor or destructor.",
     "remediation": "Avoid using object's dynamic type in a constructor or a destructor",
     "sample": "class B1\n{\npublic:\n   B1();\n   virtual ~B1();\n};\n\nclass B2 : public B1\n{\n};\n\nB1::B1() {\n   dynamic_cast<B2*>(this);// Non-compliant\n}\n\nB1::~B1() {\n   dynamic_cast<B2*>(this);// Non-compliant\n}",
-    "alternativeName": null,
+    "alternativeName": "Avoid dynamic_cast to convert current object to its derived class from its constructor or destructor",
     "businessCriteria": [
         {
             "id": 66031,
@@ -43,7 +43,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Special-Member-Functions",
+            "name": "Special Member Functions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Special-Member-Functions",
+            "name": "Special Member Functions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

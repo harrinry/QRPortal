@@ -10,7 +10,7 @@
     "remediation": "Ensure you do not use digraphs",
     "remediationSample": "void fn2(A* a[10]) // Compliant\n {\n a[0]->f2();\n }\n\n\nvoid f ( A<int32_t> * a[ 10 ] )\n {    a[ 0 ]->f2<20> ( );               // Compliant \n }",
     "sample": "class A\n{\npublic:\nvoid f2() {}\n};\n// void fn1(A* a<:10:>) // Non-compliant\n// <%\n// a<:0:>->f2();\n // %>\n\n\n\n<% a<:0:>->f2<20> ( ); %>            // Non-compliant",
-    "alternativeName": null,
+    "alternativeName": "Avoid using Digraphs (C++)",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -49,7 +49,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Lexical-Conventions",
+            "name": "Lexical Conventions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Lexical-Conventions",
+            "name": "Lexical Conventions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

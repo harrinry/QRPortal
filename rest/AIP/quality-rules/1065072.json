@@ -9,7 +9,7 @@
     "reference": "MISRA C++, 2008, 9-5-1: Unions shall not be used\nAUTOSAR C++, 2014, M9-5-1: Unions shall not be used",
     "remediation": "In case it is desired to use Unions it is strongly advised to create a deviation.",
     "sample": "namespace NS1\n{\n// Compliant - no union\n}\nnamespace NS2\n{\nunion U1 // Non-compliant \u2013 union\n{\nint32_t i;\nfloat32_t j;\n};\n}",
-    "alternativeName": null,
+    "alternativeName": "Avoid using Unions",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -48,7 +48,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Classes",
+            "name": "Classes",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Classes",
+            "name": "Classes",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

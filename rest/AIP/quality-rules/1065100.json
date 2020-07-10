@@ -10,7 +10,7 @@
     "remediation": "DEclare them as noexcept",
     "remediationSample": "#include <stdexcept>\nclass C1\n{\npublic:\nC1() = default;\nC1(C1&& rhs)\nnoexcept // Compliant - move constructor declared to be noexcept\n{\n }\n C1& operator=(C1&& rhs) noexcept // Compliant - move assignment operator\n // declared to be noexcept\n {\n return *this;\n }",
     "sample": "class C3\n {\n public:\n C3() = default;\n C3(C3&& rhs) // Non-compliant - move constructor throws\n {\n // ...\n throw std::runtime_error(\"Error\");\n }\n C3& operator=(C3&& rhs) // Non-compliant - move assignment operator throws\n {\n // ...\n throw std::runtime_error(\"Error\");\n return *this;",
-    "alternativeName": null,
+    "alternativeName": "Avoid move constructor and move assignment operator to exit with an exception",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -49,7 +49,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

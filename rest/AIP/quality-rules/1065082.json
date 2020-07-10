@@ -11,7 +11,7 @@
     "remediation": "Reference a Static Member",
     "sample": "class C\n    {\n        public:\n         int32_t x;\n         C ( )\n             try\n             {\n             // Action that may raise an exception\n             }\n             catch ( ... )\n                 {\n                 if ( 0 == x ) // Non-compliant \u2013 x may not exist at this point\n                 {\n             // Action dependent on value of x\n             }\n             }\n     ~C ( )\n         try\n         {\n         // Action that may raise an exception\n         }\n         catch ( ... )\n         {\n             if ( 0 == x ) // Non-compliant \u2013 x may not exist at this point\n             {\n             // Action dependent on value of x\n             }\n         }\n    };",
     "total": "Number of C / C++ method and function",
-    "alternativeName": null,
+    "alternativeName": "Handlers of a function-try-block implementation of a class constructor ordestructor shall not reference non-static members from this class or its bases.",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -50,7 +50,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Exceptions",
+            "name": "Exceptions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

@@ -12,7 +12,7 @@
     "remediationSample": "if ( b1 == false ) // Compliant\nif ( b1 == b2 ) // Compliant\nif ( b1 != b2 ) // Compliant\nif ( b1 && b2 ) // Compliant\nif ( !b1 ) // Compliant\ns8a = b1 ? 3 : 7; //Compliant",
     "sample": "bool b1 = true;\nbool b2 = false;\nint8_t s8a;\nif ( b1 & b2 ) // Non-compliant\nif ( b1 < b2 ) // Non-compliant\nif ( ~b1 ) // Non-compliant\nif ( b1 ^ b2 ) // Non-compliant",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid having expressions with bool type to be used as operands on operators other than =, &&, ||, !, ==, !=, the unary & operator, and the conditional operator",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,7 +51,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Statements",
+            "name": "Statements",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Statements",
+            "name": "Statements",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

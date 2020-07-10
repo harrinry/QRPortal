@@ -10,7 +10,7 @@
     "remediation": "Declare the data members of non-POD classes as Private",
     "remediationSample": "{\n.\n.\nprivate:\nint32_t d; // Compliant\n.\n.\n}",
     "sample": "Example\nclass C\n{\n.\n.\n.\n.\npublic:\nint32_t b; // Non-compliant\nprotected:\nint32_t c; // Non-compliant\n.\n.\n.}",
-    "alternativeName": null,
+    "alternativeName": "Avoid declaring data members in non-POD classes as public or protected",
     "businessCriteria": [
         {
             "id": 60012,
@@ -39,7 +39,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Member-Access-Control",
+            "name": "Member Access Control",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Member-Access-Control",
+            "name": "Member Access Control",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

@@ -10,7 +10,7 @@
     "remediation": "A resource can be used by the class but is not class-data, non-const handles to this data may be returned.",
     "remediationSample": "class C\n{\npublic:\nC ( int32_t * shared ) : m_shared ( shared )\n{\n}\nint32_t * getA ()\n{\nreturn m_shared; // Compliant - m_shared is not class-data\n}\nprivate:\nint32_t * m_shared;\n};",
     "sample": "class C\n{\npublic:\nint32_t & getA () // Non-compliant\n{\nreturn a;\n}\nprivate:\nint32_t a;\n};\nvoid b ( C & c )\n{\nint32_t & a_ref = c.getA ();\na_ref = 10; // External modification of private C::a\n}\n\n\n\nc.getA() returns a reference to the member, which is then stored and modified by a_ref. The\nclass, therefore, has no control over changes to its state.",
-    "alternativeName": null,
+    "alternativeName": "Member functions shall not return non-const handles to class-data.",
     "businessCriteria": [
         {
             "id": 60012,
@@ -39,7 +39,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Classes",
+            "name": "Classes",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

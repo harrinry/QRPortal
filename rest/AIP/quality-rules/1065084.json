@@ -11,7 +11,7 @@
     "remediationSample": "fp16 fp1 = NULL; /* Compliant - exception 1 */\n\nif ( fp2 != NULL ) /* Compliant - exception 1 */\n{\n}\n\n\ntypedef fp16 ( *pfp16 ) ( void );\npfp16 pfp1;\n( void ) ( *pfp1 ( ) ); /* Compliant - exception 2 - cast function\n* pointer into void\n\n\n\n\nextern void f ( int16_t n );\nf ( 1 ); /* Compliant - exception 3 - implicit conversion\n* of f into pointer to function */\nfp16 fp5 = f; /* Compliant - exception 3",
     "sample": "typedef void ( *fp16 ) ( int16_t n );\ntypedef void ( *fp32 ) ( int32_t n );\n#include <stdlib.h> /* To obtain macro NULL */\n\nfp32 fp2 = ( fp32 ) fp1; /* Non-compliant - function\n* pointer into different\n* function pointer */\n\nfp16 fp3 = ( fp16 ) 0x8000; /* Non-compliant - integer into\n* function pointer */\nfp16 fp4 = ( fp16 ) 1.0e6F; /* Non-compliant - float into\n* function pointer */",
     "total": "Total number of methods C/C++",
-    "alternativeName": null,
+    "alternativeName": "Ensure that you do not convert a function pointer to any other type to avoid unexpected behavior",
     "businessCriteria": [
         {
             "id": 66031,
@@ -50,7 +50,27 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-C-2012-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Expressions",
+            "name": "Expressions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

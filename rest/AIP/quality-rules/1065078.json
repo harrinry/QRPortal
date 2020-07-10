@@ -10,7 +10,7 @@
     "remediation": "Do not declare the base class as virtual if not part of a diamond hierarchy",
     "remediationSample": "//Case of diamond hierarchy\nclass A {};\nclass B1: public virtual A {}; // Compliant \u2013 A is a common base for C\nclass B2: public virtual A {}; // Compliant \u2013 A is a common base for C\nclass C: public B1, B2",
     "sample": "class A {};\nclass D: public virtual A {}; // Non-compliant",
-    "alternativeName": null,
+    "alternativeName": "A base class shall be declared virtual only if it is used in a diamond hierarchy",
     "businessCriteria": [
         {
             "id": 66031,
@@ -44,7 +44,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Classes",
+            "name": "Classes",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Classes",
+            "name": "Classes",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

@@ -10,7 +10,7 @@
     "remediation": "Declare such constructors as explicit",
     "remediationSample": "class D\n{\npublic:\nexplicit D ( int32_t a ) // Compliant\n{\n}\n};",
     "sample": "class C\n{\npublic:\nC ( int32_t a ) // Non-compliant\n{\n}\n};",
-    "alternativeName": null,
+    "alternativeName": "All constructors that are callable with a single argument of fundamental type shall be declared explicit.",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -44,7 +44,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Special-Member-Functions",
+            "name": "Special Member Functions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Special-Member-Functions",
+            "name": "Special Member Functions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

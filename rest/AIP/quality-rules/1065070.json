@@ -10,7 +10,7 @@
     "remediation": "Do not use Trigraphs",
     "remediationSample": "void fn2()\n{\n std::cout << \"Enter date dd/mm/yy\"; // VIOLATION FIXED\n}",
     "sample": "#include <iostream>\nvoid fn1()\n{\nstd::cout << \"Enter date ??/??/??\"; // VIOLATION, ??/??/?? becomes \\\\??\n// after trigraph translation\n}\nvoid fn2()\n{\n std::cout << \"Enter date dd/mm/yy\"; // Compliant",
-    "alternativeName": null,
+    "alternativeName": "Avoid using Trigraphs",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -49,7 +49,20 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Lexical-Conventions",
+            "name": "Lexical Conventions",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Lexical-Conventions",
+            "name": "Lexical Conventions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
