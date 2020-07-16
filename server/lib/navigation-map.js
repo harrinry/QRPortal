@@ -11,7 +11,7 @@ const navData = [
     name: 'Indexes',
     href: 'AIP/indexes',
     icon: 'img/indexes.svg',
-    info: 'Browse according to CAST health factors'
+    info: 'Browse by specific index like GreenIT, OMG CISQ, OWASP...'
   },
   {
     name: 'Standards',
