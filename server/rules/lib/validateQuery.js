@@ -1,6 +1,7 @@
 const standardize = require('./standardizeParams');
+const generateBusinessCriteriaMapping =  require('../../lib/index-standard-map');
 
-function validate( params ){
+async function validate( params ){
   params = standardize(params);
 
   if( !params || (!params.hasOwnProperty('ref') && !params.hasOwnProperty('sec')) && !params.hasOwnProperty('s') ) return true;
@@ -24,6 +25,9 @@ function validate( params ){
     break;
   case 'srs':
     secValid = validateExtension(params);
+    break;
+  case 'idx':
+    secValid = await validateIndex(params);
     break;
   default:
     secValid = false;
@@ -64,6 +68,15 @@ function validateStandard( params ){
       : undefined;
 
   return foundID;
+}
+
+async function validateIndex( params ){
+  const { sec = '' } = params,
+    _sec = sec.split('_'),
+    bMap = await generateBusinessCriteriaMapping(null, _ => _.id > 1000000, 'AIP'),
+    id = _sec[1];
+
+  return id && bMap.some( e => e.name.toLowerCase() === id.toLowerCase());
 }
 
 function isSearchFormatValid( searchParam ){

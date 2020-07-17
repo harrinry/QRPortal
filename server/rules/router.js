@@ -9,8 +9,8 @@ const notFound = require('../middleware/notFound');
 const errHandler = require('../middleware/errorHandler');
 let Router = express.Router();
 
-Router.get(main, (req, res) => {
-  const queryValid = ValidateQuery(req.query);
+Router.get(main, async (req, res) => {
+  const queryValid = await ValidateQuery(req.query);
   if(queryValid) {
     res.sendFile('index.html', options, (err) => errHandler(err, res));
   } else {
@@ -36,9 +36,9 @@ Router.get('/hydrate/packages', ( req, res ) => {
   });
 });
 
-Router.get('/hydrate', (req, res) => {
+Router.get('/hydrate', async(req, res) => {
   if( req.query.q === 'packages' ) return res.redirect('/rules/hydrate/packages');
-  res.json(HydObj(req.query, /bestpractices/gi.test(req.headers.referer)));
+  res.json(await HydObj(req.query, /bestpractices/gi.test(req.headers.referer)));
 });
 
 Router.get('/bundle.js', (req, res)=> {

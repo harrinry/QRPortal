@@ -3,13 +3,17 @@ const techData = require('../../lib/technologies-map');
 const extensionData = require('../../lib/extensions-map');
 const standardsData = require('../../lib/sync-std-map');
 const catData = require('../../lib/std-cat-map');
+
+const generateBusinessCriteriaMapping =  require('../../lib/index-standard-map');
+
 const defMap = {
   std: 'Standards',
   t: 'Technologies',
   srs: 'Packages',
+  idx: 'Indexes'
 };
 
-function generatePath( secRef, echo ){
+async function generatePath( secRef, echo ){
   const sec = secRef.split('_'), secl = sec.length,
     def = getDefinition(sec[0]);
   let path = [];
@@ -20,7 +24,7 @@ function generatePath( secRef, echo ){
       path.push(getNavPath(def));
       break;
     case 1:{
-      const data = getDefPathFromDefinition(def, element, echo),
+      const data = await getDefPathFromDefinition(def, element, echo),
         isArr = Array.isArray( data ),
         _data = isArr ? data : [data];
       path.push(..._data);
@@ -46,7 +50,7 @@ function getNavPath( mapDef ){
   return navData.find( e => e.name === mapDef );
 }
 
-function getDefPathFromDefinition( def, id, echo){
+async function getDefPathFromDefinition( def, id, echo){
   switch (def) {
   case defMap.t:
     return getTechnologyPath(id, echo);  
@@ -54,6 +58,8 @@ function getDefPathFromDefinition( def, id, echo){
     return getStandardsPath( id );
   case defMap.srs:
     return getExtensionPath( id );
+  case defMap.idx:
+    return getIndexPath(id, echo);
   default:
     break;
   }
@@ -72,6 +78,11 @@ function getExtensionPath( id ){
   const _id = 'com.castsoftware.' + id.toLowerCase();
   const eMap = extensionData.readExtMap();
   return [extensionData.extensions.find( e => e.id === _id ), eMap[_id] ];
+}
+
+async function getIndexPath( id, echo ){
+  const data = await generateBusinessCriteriaMapping('CAST-Indexes', _ => _.id > 1000000, echo ? 'Echo' : 'AIP');
+  return data.find( e => e.name.toLowerCase() === id.toLowerCase() );
 }
 
 function getStandardsPath( stdName ){

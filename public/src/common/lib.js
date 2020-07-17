@@ -51,7 +51,7 @@ function buildHistoryObject(){
     stdRef = state.standards.data.find( e => e.selected === true ),
     ruleRef = state.rulesList.data.find( e => e.selected === true ),
     versionRef = state.compare.params.vi ? state.compare.params.vi.name : '',
-    isStd = path[0] ? path[0].name === 'Standards' || path[0].name === 'Health Factors' : false,
+    isStd = path[0] ? path[0].name === 'Standards' || path[0].name === 'Health Factors' || path[0].name === 'Indexes' : false,
     isExt = path[0] ? path[0].name === 'Packages' : false,
     ref = [
       stdRef && isStd ? stdRef.id : '',
@@ -64,13 +64,17 @@ function buildHistoryObject(){
 
   const map = {
     standards: 'std',
+    indexes: 'idx',
     technologies: 't',
     packages: 'srs'
   };
+
   const query = path.map( (p, i, arr) => {
     switch (i) {
     case 0:
-      return p.name.toLowerCase() === 'health factors' ? map.standards + '_cast' : map[p.name.toLowerCase()];        
+      return p.name.toLowerCase() === 'health factors' 
+        ? map.standards + '_cast' 
+        : map[p.name.toLowerCase()];
     case 1:
       return arr[0].name === 'Technologies' ? p.id : idFromPath(p);
     case 2: 
