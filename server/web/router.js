@@ -4,11 +4,12 @@ const technoMapping = require('../lib/technologies-map');
 const errorHandler = require('../middleware/errorHandler');
 const extensionsMap = require('../lib/extensions-map');
 const getStandardsMap = require('../lib/standards-map');
-const businessCriteriaMap = require('../lib/business-criteria-map');
+// const businessCriteriaMap = require('../lib/business-criteria-map');
 const navigationData = require('../lib/navigation-map');
 const filterDeprecated = require('../lib/filterDeprecated');
 const {ProcessRuleDetailsRequest} = require('../lib/ruleDetailsStruct');
 const StandardHandler = require('../lib/standardNotApplicable');
+const generateBusinessCriteriaMapping = require('../lib/index-standard-map');
 let extVersionMap;
 
 // extensionsMap.INIT();
@@ -67,8 +68,16 @@ WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
   filterDeprecated(req, res, errorHandler, req.query.q === 'echo');
 });
 
-WebRouter.get('/business-criteria', (req, res) => {
-  businessCriteriaMap(res, false, req.query.q === 'echo');
+WebRouter.get('/business-criteria', async(req, res) => {
+  const bc = await generateBusinessCriteriaMapping('CAST', _ => _.id < 1000000, req.query.q === 'echo' ? 'Echo' : 'AIP');
+
+  res.json(bc);
+});
+
+WebRouter.get('/indexes', async(req, res) => {
+  const bc = await generateBusinessCriteriaMapping('CAST-Indexes', _ => _.id > 1000000, req.query.q === 'echo' ? 'Echo' : 'AIP');
+
+  res.json(bc);
 });
 
 WebRouter.get('/business-criteria/:bcID', ( req, res ) => {
