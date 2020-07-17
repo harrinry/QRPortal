@@ -102,6 +102,7 @@ function buildStandardsIndex( dataSource ){
   }
   
   const SLL = standardsList.length;
+  const enotentFiles = [];
 
   for (let i = 0; i < SLL; i++) {
     const std = standardsList[i];
@@ -114,23 +115,27 @@ function buildStandardsIndex( dataSource ){
         console.error(err);
         continue;
       } finally {
-        const stdListRemap = JsonParsedData.map( e => {
-          if( fs.existsSync(root.resolve('rest/' + e.href + '.json')) ){
-            const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json'));
-            let rulesData, ret = {};
-            try {
-              rulesData = JSON.parse(rawRuleData);
-            } catch (error) {
-              console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
-              return Object.assign({}, e);
-            } finally {
-              ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: rulesData.technologies/*createUniqueTechnologiesArray(rulesData.technologies)*/ });
+        const stdListRemap = JsonParsedData
+          .filter(_ => !enotentFiles.includes(_.id))
+          .map( e => {
+            if( enotentFiles.includes(e.id) ) return;
+            if( fs.existsSync(root.resolve('rest/' + e.href + '.json')) ){
+              const rawRuleData = fs.readFileSync(root.resolve('rest/' + e.href + '.json'));
+              let rulesData, ret = {};
+              try {
+                rulesData = JSON.parse(rawRuleData);
+              } catch (error) {
+                console.log('Error while trying to parse ' + 'rest/' + e.href + '.json, please review this file');
+                return Object.assign({}, e);
+              } finally {
+                ret = Object.assign({}, e, { searchid: std.searchid + ' - ' + e.id, technologies: rulesData.technologies/*createUniqueTechnologiesArray(rulesData.technologies)*/ });
+              }
+              return ret;
+            } else {
+              enotentFiles.push(e.id);
+              console.log('expected ' + 'rest/' + e.href + '.json to exist please review file indexes to not point to these files');
             }
-            return ret;
-          } else {
-            console.log('expected ' + 'rest/' + e.href + '.json to exsist please review file indexes to not point to these files');
-          }
-        });
+          }).filter( _ => _);
         out[std.id.toLowerCase()] = stdListRemap;
       }
     }
@@ -160,9 +165,14 @@ function buildStandardsIndex( dataSource ){
       const EchoRuleList = JSON.parse(data);
       for (let i = 0; i < EchoRuleList.length; i++) {
         const rule = EchoRuleList[i];
-        const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
-
-        index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json'), true ) );
+        try {
+          const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
+  
+          index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json'), true ) );
+          
+        } catch (error) {
+          console.log(error.message);
+        }
       }
     } catch( er ){
       console.log('Echo rule index is not a valid json file');
