@@ -1,0 +1,104 @@
+{
+    "id": 7292,
+    "name": "Avoid cyclical calls and inheritances between packages",
+    "href": "AIP/quality-rules/7292",
+    "critical": true,
+    "maxWeight": 7,
+    "associatedValueName": "Cyclically called / inherited Package full name",
+    "description": "This metric reports all packages that have one-on-one and more static circular dependencies.\nDependencies mean:\n - references through static methods call\n - references through class fields\n - references through inheritance\n\nNote that all these links are static link and not runtime.\nThe threshold parameter permit to define the maximal number of packages to cross for a cycle.\n\nNote that cycle notion means here a directed path in a graph that is directed by dependencies relations.",
+    "output": "This report lists all packages with static cyclical call to or inheritance with another Java Package.\nIt provides the following information:\n  - Package full name\n  - cyclically called / inherited Package full name",
+    "rationale": "When two packages refer to each other through a call, the result is a circular dependency. Neither packages can function without the other, and so neither is reusable without the other. In some cases redesign may eliminate these dependencies.\nWhen circular references are necessary, redesign it to ensure reusability. The same problem happen when some classes from a package A inherit from classes of a package B and other classes from package B inherit from other classes from package A. This rule can be extended to circular dependencies for more than 2 packages (for example a package A call a package B that call a package C, that call package A).",
+    "reference": "http://en.wikipedia.org/wiki/Circular_dependency",
+    "remediation": "If there are circular relationships among packages, the partitioning is not clear and should be redesigned. Use CAST Enlighten to see all dependencies to fix.",
+    "total": "Total number of packages",
+    "alternativeName": "Ensure to have packages without cyclical calls and inheritances between packages",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-7",
+            "name": "Inter-Module Dependency Cycles",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-13",
+            "name": "Inter-Module Dependency Cycles",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1047",
+            "name": "Modules with Circular Dependencies",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1047",
+            "name": "Modules with Circular Dependencies",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        {
+            "name": "Max_LEVEL",
+            "description": null,
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        10
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

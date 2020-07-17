@@ -1,0 +1,94 @@
+{
+    "id": 7192,
+    "name": "Form Bean must extend Validator Class",
+    "href": "AIP/quality-rules/7192",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "List all classes that inherit from:\norg.apache.struts.action.ActionForm\norg.apache.struts.action.DynaActionForm",
+    "output": "This report lists all classes that violate this rule.\nIt provides the following information:\n Class Full Name",
+    "rationale": "Struts validation framework allows preventing the application from any type of attacks based on invalid field input. To enable this framework on Struts Form, Struts Form must extend Struts Validation class. Unchecked input is the root cause of vulnerabilities like cross-site scripting, process control, and SQL injection. Although J2EE applications are not generally susceptible to memory corruption attacks, if a J2EE application interfaces with native code that does not perform array bounds checking, an attacker may be able to use an input validation mistake in the J2EE application to launch a buffer overflow attack.",
+    "reference": "http://cwe.mitre.org/documents/sources/SevenPerniciousKingdoms.pdf\nhttp://cwe.mitre.org/data/definitions/104.html",
+    "remediation": "Extend these classes with one of these classes:\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm",
+    "total": "Number of Java classes in the Struts application",
+    "alternativeName": "Ensure that Struts Forms extend a Validator Class",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-104",
+            "name": "Struts: Form Bean Does Not Extend Validation Class",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1173",
+            "name": "Improper Use of Validation Framework",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

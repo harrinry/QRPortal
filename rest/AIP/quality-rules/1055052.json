@@ -1,0 +1,88 @@
+{
+    "id": 1055052,
+    "name": "Avoid Artifacts with too many parameters (Swift)",
+    "href": "AIP/quality-rules/1055052",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Avoid artifacts with more than X parameters. The threshold X is a parameter and it can be changed at will.",
+    "output": "Line and column for each violation \nAssociated value => number of violations found",
+    "rationale": "For maintainability and readability reasons, artifacts should not have too many parameters.",
+    "total": "Number of Swift functions and methods",
+    "alternativeName": "Avoid Artifacts with too many parameters (Swift)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1055000,
+            "name": "Swift",
+            "href": "AIP/technologies/1055000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-1064",
+            "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1064",
+            "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        {
+            "name": "Maximum parameters",
+            "description": "Maximum parameters",
+            "technologies": [
+                {
+                    "id": 1055000,
+                    "name": "Swift",
+                    "href": "AIP/technologies/1055000",
+                    "values": [
+                        9
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        10.0,
+        70.0,
+        90.0,
+        99.0
+    ]
+}

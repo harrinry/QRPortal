@@ -1,0 +1,94 @@
+{
+    "id": 7650,
+    "name": "All types of a serializable Class must be serializable",
+    "href": "AIP/quality-rules/7650",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "For all classes that are Serializable (implement java.io.Serializable or inherit from a class that is serializable), reports all fields that are\n- not Serializable (do not implement java.io.Serializable or inherit from a class that is serializable)\n- non-static \n- non transient fields \n- and not Java primitives type.\n\nNote that in the case of a field declared with an interface, this field is considered as serializable when the concrete class used to initialized this field is serializable. This quality rule will take into account cases where the field is initialized in the declaration, not the cases where the field is initialized later in a method.",
+    "output": "Report all fields of Serializable classes that are not serializable, not transient, non-static and not primitive.\n\nIt provides the following information:\n  Full Field Name",
+    "rationale": "Every field of a serializable class must be either serializable or transient. Declaring non-transient fields of non-serializable type inside of a serializable class will result in an exception thrown during the serialization.",
+    "reference": "please refer to Pattern definition of ASCRM-RLB-2: Serializable Storable Data Element without Serialization Control Element in http://www.omg.org/spec/ASCRM/1.0/PDF  ",
+    "remediation": "Make the field type serializable or transient.",
+    "remediationSample": "---> 1st solution\npublic static  final class  SomeType implements Serializable {} // FIXED\n\npublic class SerializableField implements Serializable {\n    private String str;\n    private SomeType field;\n}\n\n---> 2nd solution\npublic static  final class  SomeType {} \n\npublic class SerializableField implements Serializable {\n    private String str;\n    private transient SomeType field; // FIXED\n}",
+    "sample": "public static  final class  SomeType {}\n\npublic class SerializableField implements Serializable {\n    private String str;\n    private SomeType field; // VIOLATION\n}",
+    "total": "Number of non-static, non-transient and not primitive fields of classes that implement Serializable",
+    "alternativeName": "Ensure to have every field of a serializable class either serializable or transient to avoid failure to implement serialization capabilities",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-2",
+            "name": "Serializable Storable Data Element without Serialization Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1066",
+            "name": "Missing Serialization Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1070",
+            "name": "Serializable Data Element Containing non-Serializable Item Elements",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1066",
+            "name": "Missing Serialization Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1070",
+            "name": "Serializable Data Element Containing non-Serializable Item Elements",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

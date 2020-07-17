@@ -1,0 +1,135 @@
+{
+    "id": 8470,
+    "name": "Avoid using STRING without overflow check",
+    "href": "AIP/quality-rules/8470",
+    "critical": true,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "STRING verb is used to combine multiple strings into one. \nThe ON OVERFLOW condition specifies what needs to be done when the overflow conditions occurred. \nThis rule checks if the STRING verb is used with ON OVERFLOW condition and reports violation if not.\n\nAn overflow condition occurs in the following conditions: \nThe pointer-Integer is not pointing the character position within the destination string when STRING executes i-e less than 1 or exceeds a value equal to the length of the receiving field\nIf all strings together are not accommodated to string destination then the overflow occurs.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides: \n\n- The number of using STRING without overflow check. \n- Bookmarks for violation occurrences found in source code: STRING syntax without overflow check",
+    "rationale": "When writing data to a memory buffer, it is vital to ensure that the size of the data does not exceed the size of the destination buffer. There tends to be loss of data or data being overwritten and disclosure of confidential information when the system goes into an unexpected state due to a buffer overflow exception. Failure to follow this guideline could allow attackers to control the flow of execution of your program and run arbitrary code at the same level of privilege as enjoyed by your program.",
+    "reference": "https://cwe.mitre.org/data/definitions/787.html\nhttps://www.owasp.org/index.php/A5_2004_Buffer_Overflow",
+    "remediation": "Ensure adding ON OVERFLOW option when using STRING verb",
+    "remediationSample": "100000 PROGRAM-ID. OVERRUN.\n100900\n101000 DATA DIVISION.\n101100   WORKING-STORAGE SECTION.\n101200     01 WS-PTR      PIC 99.\n101300     01 WS-FIRST    PIC X(5) VALUE 'FIRST'.\n101400     01 WS-SECOND   PIC X(6) VALUE 'SECOND'.\n101500     01 WS-THIRD    PIC X(5) VALUE 'THIRD'.\n101600     01 WS-RESULT   PIC X(15).\n101700\n101800 PROCEDURE DIVISION.\n101900     STRING WS-FIRST DELIMITED BY SIZE\n102000       WS-SECOND DELIMITED BY SIZE\n102100       WS-THIRD DELIMITED BY SPACE\n102200       INTO WS-RESULT\n102300       WITH POINTER WS-PTR\n102400       ON OVERFLOW DISPLAY 'OVERFLOW - POINTER OUT OF RANGE'.\n102500 STOP RUN.",
+    "sample": "100000 PROGRAM-ID. OVERRUN.\n100900\n101000 DATA DIVISION.\n101100   WORKING-STORAGE SECTION.\n101200     01 WS-PTR      PIC 99.\n101300     01 WS-FIRST    PIC X(5) VALUE 'FIRST'.\n101400     01 WS-SECOND   PIC X(6) VALUE 'SECOND'.\n101500     01 WS-THIRD    PIC X(5) VALUE 'THIRD'.\n101600     01 WS-RESULT   PIC X(15).\n101700\n101800 PROCEDURE DIVISION.\n101900     STRING WS-FIRST DELIMITED BY SIZE\n102000       WS-SECOND DELIMITED BY SIZE\n102100       WS-THIRD DELIMITED BY SPACE\n102200       INTO WS-RESULT\n102300       WITH POINTER WS-PTR\n102400 STOP RUN.",
+    "total": "Number of Cobol Programs",
+    "alternativeName": "Avoid using STRING without overflow check",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-120",
+            "name": "Buffer Copy without Checking Size of Input",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-120",
+            "name": "Buffer Copy without Checking Size of Input",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-120",
+            "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-787",
+            "name": "Out-of-bounds Write",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-16",
+            "name": "Memory Protection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-120",
+            "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-787",
+            "name": "Out-of-bounds Write",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.2",
+            "name": "Buffer overflows",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.2",
+            "name": "Buffer overflows",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70277",
+            "name": "The application must not be vulnerable to overflow attacks.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

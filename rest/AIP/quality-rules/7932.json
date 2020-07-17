@@ -1,0 +1,95 @@
+{
+    "id": 7932,
+    "name": "Avoid Constructors not supplying an initial value for all non-static data members",
+    "href": "AIP/quality-rules/7932",
+    "critical": false,
+    "maxWeight": 1,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule searches for C++ class constructors that do not initialize all class members defined with a scalar type or that are pointers.  \n\nInitializations can be created in the constructor declaration or in the constructor body.\n\nClass members that are not taken into account are:\n- Class instances\n- Defined with a non-scalar type",
+    "output": "Associated to each C++ constructor with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code:\n  - Class member with a scalar type and not initialized",
+    "rationale": "Each constructor must initialize members defined with a scalar type or that are pointers in order to reduce the risk of an invalid state after successful construction and to ease the understanding of the code. \n\nNot initializing scalar members and pointers can lead to unexpected behavior.",
+    "reference": "Effective C++, Item 12\nIndustrial Strength C++ 5.5",
+    "remediation": "Initialize scalar-typed members in constructor header.",
+    "remediationSample": "// Remediation \nclass C\n{\n  public:\n     C() : m_i(0) { }\n  protected:\n     int m_i;\n}",
+    "sample": "class C\n{\n  public:\n     C() {  }; // VIOLATION: m_i is not initialized\n  protected:\n     int m_i;\n}",
+    "total": "Number of C++ constructors",
+    "alternativeName": "Avoid Constructors not supplying an initial value for all non-static data members",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-456",
+            "name": "Storable and Member Data Element Missing Initialization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-456",
+            "name": "Storable and Member Data Element Missing Initialization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-456",
+            "name": "Missing Initialization of a Variable",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-456",
+            "name": "Missing Initialization of a Variable",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M7-2016",
+            "name": "Poor Code Quality",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

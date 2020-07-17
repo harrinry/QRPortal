@@ -1,0 +1,97 @@
+{
+    "id": 1600676,
+    "name": "Put Break statements in your Evaluate statements (PeopleSoft)",
+    "href": "AIP/quality-rules/1600676",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "This metric detects the usage of Evaluate not having Break statements for non-empty cases.",
+    "output": "This report lists all PeopleCode artifacts using Evaluate without a Break statements for non-empty cases\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of violation inside the violating PeopleCode artifact",
+    "rationale": "In an Evaluate statement, the When clauses continue to be evaluated until an End-evaluate or a Break statement is encountered.\nIf you have an Evaluate statement with a number of When clauses, and you only expect one of them to match, put a Break statement following the likely clause. Otherwise, all the subsequent When clauses are evaluated. Your program is still correct, but it is inefficient at runtime, particularly if you have a large number of When clauses, and the Evaluate statement is in a loop.",
+    "reference": "Oracle PeopleCode Developer's Guide : https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tpcd/task_WritingMoreEfficientCode-0749ba.html\n\nhttps://cwe.mitre.org/data/definitions/484.html ( CWE-484: Omitted Break Statement in Switch )",
+    "remediation": "Put Break statements in your Evaluate statements.",
+    "total": "Number of PeopleSoft Records",
+    "alternativeName": "Put Break statements in your Evaluate statements (PeopleSoft)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1600000,
+            "name": "PeopleSoft",
+            "href": "AIP/technologies/1600000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-1",
+            "name": "Control Flow Transfer Control Element outside Switch Block",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-484",
+            "name": "Omitted Break Statement in Switch",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1075",
+            "name": "Unconditional Control Flow Transfer outside of Switch Block",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-484",
+            "name": "Omitted Break Statement in Switch",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1075",
+            "name": "Unconditional Control Flow Transfer outside of Switch Block",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        60.0,
+        80.0,
+        95.0,
+        100.0
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "id": 7146,
+    "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+    "href": "AIP/quality-rules/7146",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Java object name",
+    "description": "In the contex of Struts implementation, the JSP pages must reference ONLY Java objects that belong to the bean scope or Java objects of a class belonging itself to the same scope\n\nThe scope is an attribute of the bean indicating the context of objects usage.\nIn struts-config, the scope refers to where to create/find ActionForm objects.\n\n\nAll JSP pages that refers to Java methods, field of a class or the class itself that is not associated to a scoped attribute will be reported as violation.",
+    "output": "This report lists all JSP pages referencing Java objects that are not associated to J2EE Scoped Bean.\nIt provides the following information:\n - Page name\n - Java object name",
+    "rationale": "In a Struts implementation, JSP pages are responsible for the presentation and must not call specific Java objects other than those associated to scoped attributes.\n\nThe consequences of combining HTML and Java code in the same JSP file are:\n- no separation of technology: Java skilled people and Web designers/HTML coders must work on the same file.\n- less reusable: the Java component can't be reused elsewhere in the application\n- maintenance difficulties because of the lack of modularization",
+    "reference": "http://www.javaworld.com/javaworld/jw-11-2001/jw-1130-jsp.html\n\nhttps://javapapers.com/jsp/explain-the-scope-of-jsp-objects/",
+    "remediation": "Use taglib or change the architecture of the application so that the JSP page only rely on classes associated to scoped attributes.",
+    "total": "Number of JSP pages when any object of type \"Struts Configuration File\" is present",
+    "alternativeName": "Ensure to reference only Java Objects belonging to the scope in order to respect the usage context in a JSP page.",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-12",
+            "name": "Named Callable and Method Control Element with Layer-skipping Call",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1054",
+            "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1054",
+            "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

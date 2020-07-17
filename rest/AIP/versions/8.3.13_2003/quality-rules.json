@@ -1,5 +1,28 @@
 [
     {
+        "id": 8418,
+        "name": "Avoid NoSQL injection on MongoDB (C#)",
+        "href": "AIP/quality-rules/8418",
+        "status": "added",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8420,
+        "name": "Avoid second order SQL injection",
+        "href": "AIP/quality-rules/8420",
+        "status": "added",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8422,
         "name": "Avoid Using COMMIT WORK or ROLLBACK WORK during update work process",
         "href": "AIP/quality-rules/8422",
@@ -10,109 +33,55 @@
         ]
     },
     {
-        "id": 578,
-        "name": "Avoid Classes with multiple inheritance",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 678,
-        "name": "Never throw an exception from a Destructor",
-        "href": null,
-        "status": "deprecated",
+        "id": 8424,
+        "name": "Avoid using hard-coded HMAC keys",
+        "href": "AIP/quality-rules/8424",
+        "status": "added",
         "critical": true,
         "technologyNames": [
-            "C++"
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
-        "id": 1058,
-        "name": "Avoid large Files - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
+        "id": 8426,
+        "name": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
+        "href": "AIP/quality-rules/8426",
+        "status": "added",
+        "critical": true,
         "technologyNames": [
-            "C",
-            "C++"
+            "ABAP"
         ]
     },
     {
-        "id": 1060,
-        "name": "Avoid large Macros - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
+        "id": 8428,
+        "name": "Authorization check should be done before calling a transaction",
+        "href": "AIP/quality-rules/8428",
+        "status": "added",
+        "critical": true,
         "technologyNames": [
-            "C",
-            "C++"
+            "ABAP"
         ]
     },
     {
-        "id": 1090,
-        "name": "Avoid unreferenced Files",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
+        "id": 8430,
+        "name": "Avoid using hardcoded seed or no seed at all for random values generation",
+        "href": "AIP/quality-rules/8430",
+        "status": "added",
+        "critical": true,
         "technologyNames": [
-            "C"
+            "ABAP"
         ]
     },
     {
-        "id": 1608,
-        "name": "Avoid cascading Triggers",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
+        "id": 8432,
+        "name": "Avoid Cross-Client Database Access using Open SQL statements with CLIENT SPECIFIED/USING CLIENT addition",
+        "href": "AIP/quality-rules/8432",
+        "status": "added",
+        "critical": true,
         "technologyNames": [
-            "Forms",
-            "PL/SQL"
-        ]
-    },
-    {
-        "id": 1634,
-        "name": "Avoid unreferenced Tables",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 2232,
-        "name": "Pages should use error handling page",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 2238,
-        "name": "Avoid unreferenced JSPs and web client files",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 2564,
-        "name": "Use a single Error Handling Method",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Visual Basic"
+            "ABAP"
         ]
     },
     {
@@ -123,49 +92,6 @@
         "critical": true,
         "technologyNames": [
             "Visual Basic"
-        ]
-    },
-    {
-        "id": 2624,
-        "name": "Avoid unreferenced Forms",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 2626,
-        "name": "Avoid unreferenced Modules",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 3062,
-        "name": "Use of error handling page",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ASP"
-        ]
-    },
-    {
-        "id": 3078,
-        "name": "Avoid unreferenced code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ASP"
         ]
     },
     {
@@ -181,139 +107,6 @@
         ]
     },
     {
-        "id": 3576,
-        "name": "Avoid declaring public Fields",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 3586,
-        "name": "Avoid large Methods - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 3610,
-        "name": "Avoid declaring VB Variables without typing them (.NET)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 3612,
-        "name": "Close SQL connection ASAP",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 3616,
-        "name": "Data Access must be based on Stored Procedure Calls",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 3630,
-        "name": "Avoid having Classes implementing too many Interfaces",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 4056,
-        "name": "Avoid recursive Triggers",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Microsoft T-SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 4574,
-        "name": "Avoid using deprecated objects",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 4598,
-        "name": "Avoid using 'java.lang.Runtime.exec()'",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 4602,
-        "name": "Avoid using Fields (non static final) from other Classes",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 4656,
-        "name": "Avoid declaring throwing an exception and not throwing it",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 4696,
-        "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 4700,
         "name": "Avoid using 'Throwable.printStackTrace()' within a try catch block",
         "href": null,
@@ -324,507 +117,11 @@
         ]
     },
     {
-        "id": 4702,
-        "name": "Avoid using 'Throwable.printStackTrace()' outside a try catch block",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 5050,
-        "name": "Avoid using HANDLE CONDITION",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5052,
-        "name": "Avoid using IGNORE CONDITION",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5054,
-        "name": "Avoid using HANDLE ABEND",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5056,
-        "name": "Avoid using SEARCH without the ALL addition",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5058,
-        "name": "Avoid using SORT",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5060,
-        "name": "Avoid using MERGE",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5092,
-        "name": "Include a WHEN OTHER clause when using EVALUATE",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5100,
-        "name": "Avoid large Sections - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 5144,
-        "name": "Avoid using GOTO statement (COBOL)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 6078,
-        "name": "Avoid Datawindows accessing Database Procedures or Functions",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "PowerBuilder"
-        ]
-    },
-    {
-        "id": 6084,
-        "name": "Avoid having unreferenced code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "PowerBuilder"
-        ]
-    },
-    {
-        "id": 6124,
-        "name": "Datawindows accessing database must be based on procedure",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "PowerBuilder"
-        ]
-    },
-    {
-        "id": 7054,
-        "name": "Avoid large Programs - too many Lines of Code (ABAP)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7126,
-        "name": "Avoid Artifacts with high Commented-out Code Lines/Code Lines ratio",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7130,
-        "name": "Avoid Artifacts with High Depth of Nested Subqueries",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7136,
-        "name": "Each method in an Action Class should have a small complexity",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7140,
-        "name": "Action Artifacts should not directly call a JSP page",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7146,
-        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7156,
-        "name": "Avoid Too Many Copy Pasted Artifacts",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7190,
-        "name": "Validator form validate() Method must call super.validate()",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7192,
-        "name": "Form Bean must extend Validator Class",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7198,
-        "name": "Avoid String concatenation in loops (.NET)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7200,
-        "name": "Avoid String concatenation in loops (JEE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7202,
-        "name": "Check usage of '==' and '!=' on objects",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7204,
-        "name": "Avoid method invocation in a loop termination expression",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7206,
-        "name": "Avoid the use of InstanceOf inside loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7210,
-        "name": "Avoid instantiations inside loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7212,
-        "name": "Avoid instantiations inside loops (.NET)",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7218,
-        "name": "Avoid OPEN/CLOSE inside loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7236,
-        "name": "Avoid recursive calls with PERFORM statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
         "id": 7244,
         "name": "Avoid direct usage of EJB Entity from the client",
         "href": null,
         "status": "deprecated",
         "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7258,
-        "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7260,
-        "name": "User Interface elements must not use directly the database",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7262,
-        "name": "Avoid Namespaces with High Efferent Coupling (CE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7264,
-        "name": "Avoid namespaces with High Afferent Coupling (CA)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7274,
-        "name": "Avoid GOTO jumps out of PERFORM range",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7288,
-        "name": "Avoid cyclic calls with PERFORM statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7290,
-        "name": "Avoid unreferenced Sections and Paragraphs",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7292,
-        "name": "Avoid cyclical calls and inheritances between packages",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7294,
-        "name": "Avoid cyclical calls and inheritances between namespaces content",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7300,
-        "name": "Avoid large Paragraphs - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7340,
-        "name": "Avoid Classes with Destructor not explicitly virtual whenever one of its base Class has a virtual Destructor",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 7344,
-        "name": "Avoid \"SELECT *\" queries",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7346,
-        "name": "Avoid redundant indexes",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7348,
-        "name": "Avoid too many Indexes on one Table",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7350,
-        "name": "Avoid Tables having Indexes with a too large Index definition",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7358,
-        "name": "Avoid call to AcceptChanges in a loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7362,
-        "name": "Avoid action mappings validator turned off",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -840,166 +137,6 @@
         ]
     },
     {
-        "id": 7366,
-        "name": "File descriptor block must be defined with 0 record",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7368,
-        "name": "When using binary data items (COMP), then use the SYNCHRONIZED clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7370,
-        "name": "Avoid using inline PERFORM with too many lines of code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7386,
-        "name": "Avoid Tables without a clustered Index",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Microsoft T-SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7388,
-        "name": "Avoid artifacts having recursive calls",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7404,
-        "name": "Avoid unreferenced views",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7416,
-        "name": "Avoid Form Field without Validator",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7418,
-        "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7420,
-        "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7424,
-        "name": "Avoid using SQL queries inside a loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7428,
-        "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7436,
-        "name": "Prefer UNION ALL to UNION",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7438,
-        "name": "Avoid non thread safe singleton",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7448,
-        "name": "Always validate user input with Request variables",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ASP"
-        ]
-    },
-    {
         "id": 7460,
         "name": "Avoid using untyped DataSet",
         "href": null,
@@ -1012,1940 +149,11 @@
         ]
     },
     {
-        "id": 7470,
-        "name": "Avoid doing select on Datatable in loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7504,
-        "name": "Persistent classes should Implement hashCode() and equals()",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7506,
-        "name": "Define equals() and hashCode() for component",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7518,
-        "name": "Avoid missing WHEN OTHERS in CASE statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7520,
-        "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
         "id": 7522,
         "name": "Avoid using literals in assignments (hardcoded values)",
         "href": null,
         "status": "deprecated",
         "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7524,
-        "name": "Avoid using BREAK or BREAK-POINT statement",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7532,
-        "name": "Avoid nested SELECT ... ENDSELECT statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7540,
-        "name": "Avoid unreferenced Includes",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7542,
-        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7548,
-        "name": "Never use incompatible statements with the CICS environment",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7562,
-        "name": "Avoid static Field of type collection",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7572,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (DELETE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7576,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7578,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (UPDATE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7580,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (DELETE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7582,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7584,
-        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (UPDATE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7586,
-        "name": "Avoid cyclic calls between Event and its handled Method",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7640,
-        "name": "Avoid catch blocks with assertion",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7642,
-        "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7644,
-        "name": "Avoid executing multiple OPEN statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7650,
-        "name": "All types of a serializable Class must be serializable",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7652,
-        "name": "Avoid throwing an exception in a catch block without chaining it",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7658,
-        "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ALL TECHNOLOGIES"
-        ]
-    },
-    {
-        "id": 7660,
-        "name": "Never use SQL queries with a cartesian product on XXL Tables",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7662,
-        "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7664,
-        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7670,
-        "name": "Avoid accessing SAP standard Tables in modification from custom code",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7688,
-        "name": "Never truncate data in MOVE statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7690,
-        "name": "Avoid unchecked return code (SQLCODE) after EXEC SQL query",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7692,
-        "name": "Each opened file must be closed",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7698,
-        "name": "Files should be declared with a FILE-STATUS",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7702,
-        "name": "Use a third party connection pool",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7710,
-        "name": "Avoid non serializable Entities",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7728,
-        "name": "Avoid thread creation for application running on application server",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7732,
-        "name": "Avoid non validated inputs",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7740,
-        "name": "Avoid cross-site scripting vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7742,
-        "name": "Avoid SQL injection vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7746,
-        "name": "Avoid LDAP injection vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7748,
-        "name": "Avoid OS command injection vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7750,
-        "name": "Avoid XPath injection vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7752,
-        "name": "Avoid file path manipulation vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7756,
-        "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 7766,
-        "name": "Avoid Artifacts with High Cyclomatic Complexity",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "ASP",
-            "C",
-            "C#",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "JavaScript",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7770,
-        "name": "Avoid Artifacts with too many parameters",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ASP",
-            "C",
-            "C#",
-            "C++",
-            "Forms",
-            "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7776,
-        "name": "Avoid Artifacts with High Fan-In",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "ASP",
-            "C",
-            "C#",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "JavaScript",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7778,
-        "name": "Avoid Artifacts with High Fan-Out",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "ASP",
-            "C",
-            "C#",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "JavaScript",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7782,
-        "name": "Avoid empty finally blocks",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ASP",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7788,
-        "name": "Avoid empty catch blocks",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7790,
-        "name": "Avoid Cursors inside a loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7792,
-        "name": "Avoid Classes with a High Number Of Children",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7794,
-        "name": "Avoid Classes with a High Public Data Ratio",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "C++",
-            "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7802,
-        "name": "Avoid Classes with a High Depth of Inheritance Tree",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7804,
-        "name": "Avoid Classes with High Weighted Methods per Class",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "C++",
-            "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7806,
-        "name": "Avoid Artifacts with Group By",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "C",
-            "C#",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7808,
-        "name": "Avoid Artifacts with SQL statement including subqueries",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "C",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7814,
-        "name": "Avoid Tables not using referential integrity",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7816,
-        "name": "Avoid using GOTO statement",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C#",
-            "C++",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7820,
-        "name": "Never use SQL queries with a cartesian product",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7822,
-        "name": "Avoid Artifacts with queries on more than 4 Tables",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "C",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "PowerBuilder",
-            "SQL Server",
-            "Sybase T-SQL",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7824,
-        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7830,
-        "name": "Avoid unreferenced Interfaces",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7832,
-        "name": "Avoid unreferenced Classes",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7842,
-        "name": "Avoid large Artifacts - too many Lines of Code",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C",
-            "C#",
-            "C++",
-            "Cobol",
-            "Forms",
-            "JEE",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7860,
-        "name": "Avoid unreferenced Functions",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "ASP",
-            "C",
-            "C++",
-            "Forms",
-            "JEE",
-            "JavaScript",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "Sybase T-SQL",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7862,
-        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7868,
-        "name": "Avoid Open SQL queries in loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7874,
-        "name": "Avoid using dynamic queries",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7880,
-        "name": "Avoid nested loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7882,
-        "name": "Avoid using Native SQL",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7884,
-        "name": "Avoid disabling source code inspection",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7886,
-        "name": "Avoid using SYSTEM-CALL",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7902,
-        "name": "Avoid SQL queries that no index can support",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP",
-            "Cobol",
-            "Forms",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7904,
-        "name": "Avoid SQL queries on XXL tables that no index can support",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP",
-            "Cobol",
-            "Microsoft T-SQL",
-            "PL/SQL",
-            "SQL Server",
-            "Sybase T-SQL"
-        ]
-    },
-    {
-        "id": 7906,
-        "name": "Avoid testing specific values for SY-UNAME",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 7908,
-        "name": "Avoid unreferenced Methods",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7912,
-        "name": "Avoid unreferenced Data Members",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7914,
-        "name": "Avoid direct access to Database Tables",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ASP",
-            "C",
-            "C#",
-            "C++",
-            "JEE",
-            "PowerBuilder",
-            "VB.NET",
-            "Visual Basic"
-        ]
-    },
-    {
-        "id": 7916,
-        "name": "Avoid direct use of Database objects (JSP/ASP)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ASP",
-            "JEE"
-        ]
-    },
-    {
-        "id": 7932,
-        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 7934,
-        "name": "Avoid Superclass (or Interface) knowing Subclass (or Interface)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "ABAP",
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 7954,
-        "name": "Avoid indirect String concatenation inside loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7962,
-        "name": "Avoid direct or indirect remote calls inside a loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 7968,
-        "name": "Never use strcat() function (C/C++)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7970,
-        "name": "Never use strcpy() function (C/C++)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7972,
-        "name": "Never use sprintf() or vsprintf() functions",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7976,
-        "name": "Never use gets() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7978,
-        "name": "Avoid using the scanf() function family",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7980,
-        "name": "Avoid using strtrns() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7982,
-        "name": "Avoid using strlen() function family",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7984,
-        "name": "Avoid using strecpy() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7986,
-        "name": "Avoid using streadd() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7988,
-        "name": "Avoid using snprintf() function family",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7990,
-        "name": "Avoid using realpath() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7992,
-        "name": "Avoid using getpass() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7994,
-        "name": "Avoid using getopt() function",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 7998,
-        "name": "Avoid local variables that are not initialized at declaration time",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8000,
-        "name": "Avoid 'catch-all' statement",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 8002,
-        "name": "Never perform C-style cast between incompatible Class pointers",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8004,
-        "name": "Avoid using 'delete this'",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 8006,
-        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 8012,
-        "name": "Avoid unchecked return code (SY-SUBRC) after opening and reading dataset",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8014,
-        "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8016,
-        "name": "Avoid unsecured EJB remote method",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8024,
-        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 8026,
-        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C++"
-        ]
-    },
-    {
-        "id": 8028,
-        "name": "Avoid missing default in switch statements",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C#",
-            "C++",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8030,
-        "name": "Check alphanumeric data before moving it into numeric data",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8034,
-        "name": "Variables defined in Working-Storage section must be initialized before to be read",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8040,
-        "name": "Avoid Struts 2 Action Fields without Validation",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8042,
-        "name": "Struts 2 Validation: Avoid unused validation form",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8044,
-        "name": "Avoid log forging vulnerabilities",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8054,
-        "name": "Avoid calling blocking functions with an infinite timeout",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8062,
-        "name": "An unconditional 'throw', 'return' or 'break' shall terminate every non-empty switch-clause",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8070,
-        "name": "Do not alter a control variable in the body of a 'for' statement",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8074,
-        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C",
-            "C++"
-        ]
-    },
-    {
-        "id": 8092,
-        "name": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            ".NET (Legacy Analyzer)",
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8098,
-        "name": "Avoid uncontrolled format string",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8100,
-        "name": "Blocking synchronous calls should have associated timeouts",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8102,
-        "name": "Avoid hardcoded network resource names (JEE)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8104,
-        "name": "Close database resources ASAP",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8108,
-        "name": "Close the outermost stream ASAP",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8110,
-        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8112,
-        "name": "Avoid improper processing of the execution status of data handling operations",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8114,
-        "name": "Avoid numerical data corruption during incompatible mutation (ABAP)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8116,
-        "name": "Avoid calling system function (CALL 'cfunc')",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8120,
-        "name": "Avoid using CALL FUNCTION without error handling",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8122,
-        "name": "Avoid using CALL METHOD without error handling",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8132,
-        "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8140,
-        "name": "Subscripts and iterators must be defined with BINARY usage",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8142,
-        "name": "Prefer using indexes instead of subscripts",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8146,
-        "name": "Avoid calling programs statically",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8148,
-        "name": "Avoid artifacts having Incorrect Type Conversion or Cast",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8152,
-        "name": "Avoid having transaction with the Thread.Sleep method in a loop",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8156,
-        "name": "Persistent classes should implement GetHashCode() and Equals()",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8158,
-        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8160,
-        "name": "Check PCB status code after DLI queries",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8162,
-        "name": "CICS return code should be checked",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8214,
-        "name": "CWE-672: Expired or Released Resource should not be used",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8216,
-        "name": "CWE-681: Avoid numerical data corruption during incompatible mutation",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8220,
-        "name": "Avoid using deprecated method, constructor, field, type or package",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 8222,
-        "name": "Avoid hard-coded credentials",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8236,
-        "name": "Avoid using hard-coded values",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "Cobol"
-        ]
-    },
-    {
-        "id": 8238,
-        "name": "Trust boundary violation",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8240,
-        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8242,
-        "name": "Use of insufficiently random values",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8400,
-        "name": "Avoid having lock on this object",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8402,
-        "name": "All types of a serializable class must be serializable",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8408,
-        "name": "Avoid reflected cross-site scripting (non persistent)",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8410,
-        "name": "Avoid cross-site scripting (persistent)",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8412,
-        "name": "\"CX_ROOT\" should not be used in TRY .. CATCH.. ENDTRY block",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8414,
-        "name": "Avoid use of a broken or risky cryptographic algorithm",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8416,
-        "name": "Avoid use of a reversible one-way hash",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8418,
-        "name": "Avoid NoSQL injection on MongoDB (C#)",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8420,
-        "name": "Avoid second order SQL injection",
-        "href": null,
-        "status": "deprecated",
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8424,
-        "name": "Avoid using hard-coded HMAC keys",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8426,
-        "name": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8428,
-        "name": "Authorization check should be done before calling a transaction",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8430,
-        "name": "Avoid using hardcoded seed or no seed at all for random values generation",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
-        "technologyNames": [
-            "ABAP"
-        ]
-    },
-    {
-        "id": 8432,
-        "name": "Avoid Cross-Client Database Access using Open SQL statements with CLIENT SPECIFIED/USING CLIENT addition",
-        "href": null,
-        "status": "deprecated",
-        "critical": true,
         "technologyNames": [
             "ABAP"
         ]
@@ -3061,6 +269,16 @@
         ]
     },
     {
+        "id": 578,
+        "name": "Avoid Classes with multiple inheritance",
+        "href": "AIP/quality-rules/578",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 580,
         "name": "Avoid using Structures",
         "href": "AIP/quality-rules/580",
@@ -3161,6 +379,16 @@
         ]
     },
     {
+        "id": 678,
+        "name": "Never throw an exception from a Destructor",
+        "href": "AIP/quality-rules/678",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 1050,
         "name": "Static Functions naming conventions - case control",
         "href": "AIP/quality-rules/1050",
@@ -3188,6 +416,28 @@
         "critical": false,
         "technologyNames": [
             "C"
+        ]
+    },
+    {
+        "id": 1058,
+        "name": "Avoid large Files - too many Lines of Code",
+        "href": "AIP/quality-rules/1058",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1060,
+        "name": "Avoid large Macros - too many Lines of Code",
+        "href": "AIP/quality-rules/1060",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
         ]
     },
     {
@@ -3259,6 +509,16 @@
         "id": 1084,
         "name": "Non static functions naming conventions - case control",
         "href": "AIP/quality-rules/1084",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C"
+        ]
+    },
+    {
+        "id": 1090,
+        "name": "Avoid unreferenced Files",
+        "href": "AIP/quality-rules/1090",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -3423,6 +683,30 @@
         ]
     },
     {
+        "id": 1608,
+        "name": "Avoid cascading Triggers",
+        "href": "AIP/quality-rules/1608",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Forms",
+            "PL/SQL"
+        ]
+    },
+    {
+        "id": 1634,
+        "name": "Avoid unreferenced Tables",
+        "href": "AIP/quality-rules/1634",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
         "id": 2230,
         "name": "Use of style sheets (JEE)",
         "href": "AIP/quality-rules/2230",
@@ -3433,9 +717,29 @@
         ]
     },
     {
+        "id": 2232,
+        "name": "Pages should use error handling page",
+        "href": "AIP/quality-rules/2232",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 2236,
         "name": "Avoid use of standard SQL API",
         "href": "AIP/quality-rules/2236",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2238,
+        "name": "Avoid unreferenced JSPs and web client files",
+        "href": "AIP/quality-rules/2238",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -3613,6 +917,16 @@
         ]
     },
     {
+        "id": 2564,
+        "name": "Use a single Error Handling Method",
+        "href": "AIP/quality-rules/2564",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 2572,
         "name": "Avoid declaring VB Variables without typing them (Visual Basic)",
         "href": "AIP/quality-rules/2572",
@@ -3750,6 +1064,29 @@
         ]
     },
     {
+        "id": 2624,
+        "name": "Avoid unreferenced Forms",
+        "href": "AIP/quality-rules/2624",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 2626,
+        "name": "Avoid unreferenced Modules",
+        "href": "AIP/quality-rules/2626",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 3058,
         "name": "Use of style sheets (ASP)",
         "href": "AIP/quality-rules/3058",
@@ -3763,6 +1100,16 @@
         "id": 3060,
         "name": "Pages with less than 3 levels of inclusion",
         "href": "AIP/quality-rules/3060",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ASP"
+        ]
+    },
+    {
+        "id": 3062,
+        "name": "Use of error handling page",
+        "href": "AIP/quality-rules/3062",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -3823,6 +1170,16 @@
         "id": 3076,
         "name": "Avoid using more than one scripting language in one page",
         "href": "AIP/quality-rules/3076",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ASP"
+        ]
+    },
+    {
+        "id": 3078,
+        "name": "Avoid unreferenced code",
+        "href": "AIP/quality-rules/3078",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -4000,6 +1357,18 @@
         ]
     },
     {
+        "id": 3576,
+        "name": "Avoid declaring public Fields",
+        "href": "AIP/quality-rules/3576",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 3578,
         "name": "Avoid large Classes - too many Constructors (.NET)",
         "href": "AIP/quality-rules/3578",
@@ -4024,11 +1393,46 @@
         ]
     },
     {
+        "id": 3586,
+        "name": "Avoid large Methods - too many Lines of Code",
+        "href": "AIP/quality-rules/3586",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 3590,
         "name": "Avoid Interface implementation on Structures",
         "href": "AIP/quality-rules/3590",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3610,
+        "name": "Avoid declaring VB Variables without typing them (.NET)",
+        "href": "AIP/quality-rules/3610",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3612,
+        "name": "Close SQL connection ASAP",
+        "href": "AIP/quality-rules/3612",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             ".NET (Legacy Analyzer)",
             "C#",
@@ -4048,6 +1452,18 @@
         ]
     },
     {
+        "id": 3616,
+        "name": "Data Access must be based on Stored Procedure Calls",
+        "href": "AIP/quality-rules/3616",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 3626,
         "name": "Avoid Interfaces with a very low comment/code ratio",
         "href": "AIP/quality-rules/3626",
@@ -4057,6 +1473,30 @@
             ".NET (Legacy Analyzer)",
             "C#",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 3630,
+        "name": "Avoid having Classes implementing too many Interfaces",
+        "href": "AIP/quality-rules/3630",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 4056,
+        "name": "Avoid recursive Triggers",
+        "href": "AIP/quality-rules/4056",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "SQL Server",
+            "Sybase T-SQL"
         ]
     },
     {
@@ -4222,6 +1662,16 @@
         ]
     },
     {
+        "id": 4574,
+        "name": "Avoid using deprecated objects",
+        "href": "AIP/quality-rules/4574",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4576,
         "name": "Provide accessors to Private Fields",
         "href": "AIP/quality-rules/4576",
@@ -4282,11 +1732,31 @@
         ]
     },
     {
+        "id": 4598,
+        "name": "Avoid using 'java.lang.Runtime.exec()'",
+        "href": "AIP/quality-rules/4598",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4600,
         "name": "Avoid using 'java.System.exit()'",
         "href": "AIP/quality-rules/4600",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4602,
+        "name": "Avoid using Fields (non static final) from other Classes",
+        "href": "AIP/quality-rules/4602",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -4365,6 +1835,16 @@
         "id": 4652,
         "name": "Avoid direct Class inheritance from java.lang.Throwable",
         "href": "AIP/quality-rules/4652",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4656,
+        "name": "Avoid declaring throwing an exception and not throwing it",
+        "href": "AIP/quality-rules/4656",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -4462,9 +1942,29 @@
         ]
     },
     {
+        "id": 4696,
+        "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
+        "href": "AIP/quality-rules/4696",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4698,
         "name": "Avoid using 'System.err' and 'System.out' outside a try catch block",
         "href": "AIP/quality-rules/4698",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4702,
+        "name": "Avoid using 'Throwable.printStackTrace()' outside a try catch block",
+        "href": "AIP/quality-rules/4702",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -4622,6 +2122,66 @@
         ]
     },
     {
+        "id": 5050,
+        "name": "Avoid using HANDLE CONDITION",
+        "href": "AIP/quality-rules/5050",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5052,
+        "name": "Avoid using IGNORE CONDITION",
+        "href": "AIP/quality-rules/5052",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5054,
+        "name": "Avoid using HANDLE ABEND",
+        "href": "AIP/quality-rules/5054",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5056,
+        "name": "Avoid using SEARCH without the ALL addition",
+        "href": "AIP/quality-rules/5056",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5058,
+        "name": "Avoid using SORT",
+        "href": "AIP/quality-rules/5058",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5060,
+        "name": "Avoid using MERGE",
+        "href": "AIP/quality-rules/5060",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 5062,
         "name": "Avoid using ALTER",
         "href": "AIP/quality-rules/5062",
@@ -4732,11 +2292,31 @@
         ]
     },
     {
+        "id": 5092,
+        "name": "Include a WHEN OTHER clause when using EVALUATE",
+        "href": "AIP/quality-rules/5092",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 5094,
         "name": "Avoid using MOVE CORRESPONDING ... TO ...",
         "href": "AIP/quality-rules/5094",
         "status": "renewed",
         "critical": true,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5100,
+        "name": "Avoid large Sections - too many Lines of Code",
+        "href": "AIP/quality-rules/5100",
+        "status": "renewed",
+        "critical": false,
         "technologyNames": [
             "Cobol"
         ]
@@ -4805,6 +2385,16 @@
         "id": 5138,
         "name": "Avoid Programs with lines of more than 80 characters",
         "href": "AIP/quality-rules/5138",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5144,
+        "name": "Avoid using GOTO statement (COBOL)",
+        "href": "AIP/quality-rules/5144",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -4992,9 +2582,29 @@
         ]
     },
     {
+        "id": 6078,
+        "name": "Avoid Datawindows accessing Database Procedures or Functions",
+        "href": "AIP/quality-rules/6078",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "PowerBuilder"
+        ]
+    },
+    {
         "id": 6082,
         "name": "Avoid PB Function/Event/Method accessing Database Procedures or Functions",
         "href": "AIP/quality-rules/6082",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "PowerBuilder"
+        ]
+    },
+    {
+        "id": 6084,
+        "name": "Avoid having unreferenced code",
+        "href": "AIP/quality-rules/6084",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -5055,6 +2665,16 @@
         "id": 6114,
         "name": "Avoid using global functions",
         "href": "AIP/quality-rules/6114",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "PowerBuilder"
+        ]
+    },
+    {
+        "id": 6124,
+        "name": "Datawindows accessing database must be based on procedure",
+        "href": "AIP/quality-rules/6124",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -5175,6 +2795,16 @@
         "id": 7050,
         "name": "Function naming convention",
         "href": "AIP/quality-rules/7050",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7054,
+        "name": "Avoid large Programs - too many Lines of Code (ABAP)",
+        "href": "AIP/quality-rules/7054",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -5312,6 +2942,26 @@
         ]
     },
     {
+        "id": 7126,
+        "name": "Avoid Artifacts with high Commented-out Code Lines/Code Lines ratio",
+        "href": "AIP/quality-rules/7126",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7130,
+        "name": "Avoid Artifacts with High Depth of Nested Subqueries",
+        "href": "AIP/quality-rules/7130",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7132,
         "name": "Action Mappings should have few forwards",
         "href": "AIP/quality-rules/7132",
@@ -5332,11 +2982,31 @@
         ]
     },
     {
+        "id": 7136,
+        "name": "Each method in an Action Class should have a small complexity",
+        "href": "AIP/quality-rules/7136",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7138,
         "name": "Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
         "href": "AIP/quality-rules/7138",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7140,
+        "name": "Action Artifacts should not directly call a JSP page",
+        "href": "AIP/quality-rules/7140",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -5357,6 +3027,16 @@
         "href": "AIP/quality-rules/7144",
         "status": "renewed",
         "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7146,
+        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+        "href": "AIP/quality-rules/7146",
+        "status": "renewed",
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
@@ -5402,9 +3082,39 @@
         ]
     },
     {
+        "id": 7156,
+        "name": "Avoid Too Many Copy Pasted Artifacts",
+        "href": "AIP/quality-rules/7156",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7188,
         "name": "Private fields must have JavaDoc Comments",
         "href": "AIP/quality-rules/7188",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7190,
+        "name": "Validator form validate() Method must call super.validate()",
+        "href": "AIP/quality-rules/7190",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7192,
+        "name": "Form Bean must extend Validator Class",
+        "href": "AIP/quality-rules/7192",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -5434,6 +3144,58 @@
         ]
     },
     {
+        "id": 7198,
+        "name": "Avoid String concatenation in loops (.NET)",
+        "href": "AIP/quality-rules/7198",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7200,
+        "name": "Avoid String concatenation in loops (JEE)",
+        "href": "AIP/quality-rules/7200",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Check usage of '==' and '!=' on objects",
+        "href": "AIP/quality-rules/7202",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7204,
+        "name": "Avoid method invocation in a loop termination expression",
+        "href": "AIP/quality-rules/7204",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7206,
+        "name": "Avoid the use of InstanceOf inside loops",
+        "href": "AIP/quality-rules/7206",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7208,
         "name": "Avoid the use of is inside loops",
         "href": "AIP/quality-rules/7208",
@@ -5443,6 +3205,38 @@
             ".NET (Legacy Analyzer)",
             "C#",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7210,
+        "name": "Avoid instantiations inside loops",
+        "href": "AIP/quality-rules/7210",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7212,
+        "name": "Avoid instantiations inside loops (.NET)",
+        "href": "AIP/quality-rules/7212",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7218,
+        "name": "Avoid OPEN/CLOSE inside loops",
+        "href": "AIP/quality-rules/7218",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -5461,6 +3255,16 @@
         "href": "AIP/quality-rules/7234",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7236,
+        "name": "Avoid recursive calls with PERFORM statements",
+        "href": "AIP/quality-rules/7236",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "Cobol"
         ]
@@ -5556,6 +3360,54 @@
         ]
     },
     {
+        "id": 7258,
+        "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+        "href": "AIP/quality-rules/7258",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7260,
+        "name": "User Interface elements must not use directly the database",
+        "href": "AIP/quality-rules/7260",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7262,
+        "name": "Avoid Namespaces with High Efferent Coupling (CE)",
+        "href": "AIP/quality-rules/7262",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7264,
+        "name": "Avoid namespaces with High Afferent Coupling (CA)",
+        "href": "AIP/quality-rules/7264",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7266,
         "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
         "href": "AIP/quality-rules/7266",
@@ -5604,6 +3456,58 @@
         ]
     },
     {
+        "id": 7274,
+        "name": "Avoid GOTO jumps out of PERFORM range",
+        "href": "AIP/quality-rules/7274",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7288,
+        "name": "Avoid cyclic calls with PERFORM statements",
+        "href": "AIP/quality-rules/7288",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7290,
+        "name": "Avoid unreferenced Sections and Paragraphs",
+        "href": "AIP/quality-rules/7290",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7292,
+        "name": "Avoid cyclical calls and inheritances between packages",
+        "href": "AIP/quality-rules/7292",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7294,
+        "name": "Avoid cyclical calls and inheritances between namespaces content",
+        "href": "AIP/quality-rules/7294",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7296,
         "name": "Never define static variables in header files",
         "href": "AIP/quality-rules/7296",
@@ -5612,6 +3516,16 @@
         "technologyNames": [
             "C",
             "C++"
+        ]
+    },
+    {
+        "id": 7300,
+        "name": "Avoid large Paragraphs - too many Lines of Code",
+        "href": "AIP/quality-rules/7300",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -5655,6 +3569,16 @@
         ]
     },
     {
+        "id": 7340,
+        "name": "Avoid Classes with Destructor not explicitly virtual whenever one of its base Class has a virtual Destructor",
+        "href": "AIP/quality-rules/7340",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 7342,
         "name": "Avoid functions overriding virtual functions without having the 'virtual' keyword",
         "href": "AIP/quality-rules/7342",
@@ -5662,6 +3586,46 @@
         "critical": false,
         "technologyNames": [
             "C++"
+        ]
+    },
+    {
+        "id": 7344,
+        "name": "Avoid \"SELECT *\" queries",
+        "href": "AIP/quality-rules/7344",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7346,
+        "name": "Avoid redundant indexes",
+        "href": "AIP/quality-rules/7346",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7348,
+        "name": "Avoid too many Indexes on one Table",
+        "href": "AIP/quality-rules/7348",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7350,
+        "name": "Avoid Tables having Indexes with a too large Index definition",
+        "href": "AIP/quality-rules/7350",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
         ]
     },
     {
@@ -5674,6 +3638,58 @@
             ".NET (Legacy Analyzer)",
             "C#",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7358,
+        "name": "Avoid call to AcceptChanges in a loop",
+        "href": "AIP/quality-rules/7358",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7362,
+        "name": "Avoid action mappings validator turned off",
+        "href": "AIP/quality-rules/7362",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7366,
+        "name": "File descriptor block must be defined with 0 record",
+        "href": "AIP/quality-rules/7366",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7368,
+        "name": "When using binary data items (COMP), then use the SYNCHRONIZED clause",
+        "href": "AIP/quality-rules/7368",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7370,
+        "name": "Avoid using inline PERFORM with too many lines of code",
+        "href": "AIP/quality-rules/7370",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -5717,6 +3733,28 @@
         ]
     },
     {
+        "id": 7386,
+        "name": "Avoid Tables without a clustered Index",
+        "href": "AIP/quality-rules/7386",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7388,
+        "name": "Avoid artifacts having recursive calls",
+        "href": "AIP/quality-rules/7388",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7390,
         "name": "Avoid having multiple artifacts inserting data on the same SQL Table",
         "href": "AIP/quality-rules/7390",
@@ -5744,6 +3782,104 @@
         "critical": false,
         "technologyNames": [
             "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7404,
+        "name": "Avoid unreferenced views",
+        "href": "AIP/quality-rules/7404",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7416,
+        "name": "Avoid Form Field without Validator",
+        "href": "AIP/quality-rules/7416",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7418,
+        "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
+        "href": "AIP/quality-rules/7418",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7420,
+        "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
+        "href": "AIP/quality-rules/7420",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7424,
+        "name": "Avoid using SQL queries inside a loop",
+        "href": "AIP/quality-rules/7424",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7428,
+        "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
+        "href": "AIP/quality-rules/7428",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7434,
+        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "href": "AIP/quality-rules/7434",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7436,
+        "name": "Prefer UNION ALL to UNION",
+        "href": "AIP/quality-rules/7436",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7438,
+        "name": "Avoid non thread safe singleton",
+        "href": "AIP/quality-rules/7438",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -5787,6 +3923,16 @@
         ]
     },
     {
+        "id": 7448,
+        "name": "Always validate user input with Request variables",
+        "href": "AIP/quality-rules/7448",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ASP"
+        ]
+    },
+    {
         "id": 7458,
         "name": "Avoid large Interfaces - too many Methods (.NET)",
         "href": "AIP/quality-rules/7458",
@@ -5816,6 +3962,18 @@
         "href": "AIP/quality-rules/7468",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7470,
+        "name": "Avoid doing select on Datatable in loop",
+        "href": "AIP/quality-rules/7470",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             ".NET (Legacy Analyzer)",
             "C#",
@@ -5965,6 +4123,26 @@
         ]
     },
     {
+        "id": 7504,
+        "name": "Persistent classes should Implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7506,
+        "name": "Define equals() and hashCode() for component",
+        "href": "AIP/quality-rules/7506",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7508,
         "name": "Collection-typed attributes getter must be defined with the correct interface",
         "href": "AIP/quality-rules/7508",
@@ -6015,6 +4193,36 @@
         ]
     },
     {
+        "id": 7518,
+        "name": "Avoid missing WHEN OTHERS in CASE statements",
+        "href": "AIP/quality-rules/7518",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7520,
+        "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
+        "href": "AIP/quality-rules/7520",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7524,
+        "name": "Avoid using BREAK or BREAK-POINT statement",
+        "href": "AIP/quality-rules/7524",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 7526,
         "name": "Avoid using hardcoded paths",
         "href": "AIP/quality-rules/7526",
@@ -6040,6 +4248,16 @@
         "href": "AIP/quality-rules/7530",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7532,
+        "name": "Avoid nested SELECT ... ENDSELECT statements",
+        "href": "AIP/quality-rules/7532",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "ABAP"
         ]
@@ -6075,6 +4293,26 @@
         ]
     },
     {
+        "id": 7540,
+        "name": "Avoid unreferenced Includes",
+        "href": "AIP/quality-rules/7540",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7542,
+        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
+        "href": "AIP/quality-rules/7542",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 7544,
         "name": "Avoid using SELECT ... ENDSELECT statement",
         "href": "AIP/quality-rules/7544",
@@ -6082,6 +4320,16 @@
         "critical": false,
         "technologyNames": [
             "ABAP"
+        ]
+    },
+    {
+        "id": 7548,
+        "name": "Never use incompatible statements with the CICS environment",
+        "href": "AIP/quality-rules/7548",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -6135,6 +4383,16 @@
         ]
     },
     {
+        "id": 7562,
+        "name": "Avoid static Field of type collection",
+        "href": "AIP/quality-rules/7562",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7568,
         "name": "Avoid undocumented User-exits",
         "href": "AIP/quality-rules/7568",
@@ -6148,6 +4406,76 @@
         "id": 7570,
         "name": "Avoid User-Exits with low comment/code ratio",
         "href": "AIP/quality-rules/7570",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7572,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (DELETE)",
+        "href": "AIP/quality-rules/7572",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7576,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (INSERT)",
+        "href": "AIP/quality-rules/7576",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7578,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP include (UPDATE)",
+        "href": "AIP/quality-rules/7578",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7580,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (DELETE)",
+        "href": "AIP/quality-rules/7580",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7582,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
+        "href": "AIP/quality-rules/7582",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7584,
+        "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (UPDATE)",
+        "href": "AIP/quality-rules/7584",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7586,
+        "name": "Avoid cyclic calls between Event and its handled Method",
+        "href": "AIP/quality-rules/7586",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -6285,9 +4613,59 @@
         ]
     },
     {
+        "id": 7640,
+        "name": "Avoid catch blocks with assertion",
+        "href": "AIP/quality-rules/7640",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7642,
+        "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
+        "href": "AIP/quality-rules/7642",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7644,
+        "name": "Avoid executing multiple OPEN statements",
+        "href": "AIP/quality-rules/7644",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 7648,
         "name": "Avoid calling finalize()",
         "href": "AIP/quality-rules/7648",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7650,
+        "name": "All types of a serializable Class must be serializable",
+        "href": "AIP/quality-rules/7650",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7652,
+        "name": "Avoid throwing an exception in a catch block without chaining it",
+        "href": "AIP/quality-rules/7652",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -6302,6 +4680,56 @@
         "critical": false,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7658,
+        "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
+        "href": "AIP/quality-rules/7658",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7660,
+        "name": "Never use SQL queries with a cartesian product on XXL Tables",
+        "href": "AIP/quality-rules/7660",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7662,
+        "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
+        "href": "AIP/quality-rules/7662",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7664,
+        "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
+        "href": "AIP/quality-rules/7664",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
         ]
     },
     {
@@ -6322,6 +4750,16 @@
         "critical": false,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7670,
+        "name": "Avoid accessing SAP standard Tables in modification from custom code",
+        "href": "AIP/quality-rules/7670",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
         ]
     },
     {
@@ -6375,6 +4813,36 @@
         ]
     },
     {
+        "id": 7688,
+        "name": "Never truncate data in MOVE statements",
+        "href": "AIP/quality-rules/7688",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7690,
+        "name": "Avoid unchecked return code (SQLCODE) after EXEC SQL query",
+        "href": "AIP/quality-rules/7690",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7692,
+        "name": "Each opened file must be closed",
+        "href": "AIP/quality-rules/7692",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 7694,
         "name": "Avoid calling the same paragraph with PERFORM and GO TO statements",
         "href": "AIP/quality-rules/7694",
@@ -6395,9 +4863,29 @@
         ]
     },
     {
+        "id": 7698,
+        "name": "Files should be declared with a FILE-STATUS",
+        "href": "AIP/quality-rules/7698",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 7700,
         "name": "Use only Struts HTTP Servlet",
         "href": "AIP/quality-rules/7700",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7702,
+        "name": "Use a third party connection pool",
+        "href": "AIP/quality-rules/7702",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -6435,6 +4923,16 @@
         ]
     },
     {
+        "id": 7710,
+        "name": "Avoid non serializable Entities",
+        "href": "AIP/quality-rules/7710",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7712,
         "name": "Avoid public/protected setter for the generated identifier field",
         "href": "AIP/quality-rules/7712",
@@ -6448,6 +4946,16 @@
         "id": 7714,
         "name": "Do not use auto-wiring",
         "href": "AIP/quality-rules/7714",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7716,
+        "name": "Avoid defining singleton or factory when using Spring",
+        "href": "AIP/quality-rules/7716",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -6505,11 +5013,31 @@
         ]
     },
     {
+        "id": 7728,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/7728",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7730,
         "name": "Use declarative transaction",
         "href": "AIP/quality-rules/7730",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7732,
+        "name": "Avoid non validated inputs",
+        "href": "AIP/quality-rules/7732",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -6525,9 +5053,91 @@
         ]
     },
     {
+        "id": 7740,
+        "name": "Avoid cross-site scripting vulnerabilities",
+        "href": "AIP/quality-rules/7740",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7742,
+        "name": "Avoid SQL injection vulnerabilities",
+        "href": "AIP/quality-rules/7742",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7746,
+        "name": "Avoid LDAP injection vulnerabilities",
+        "href": "AIP/quality-rules/7746",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7748,
+        "name": "Avoid OS command injection vulnerabilities",
+        "href": "AIP/quality-rules/7748",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7750,
+        "name": "Avoid XPath injection vulnerabilities",
+        "href": "AIP/quality-rules/7750",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7752,
+        "name": "Avoid file path manipulation vulnerabilities",
+        "href": "AIP/quality-rules/7752",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7754,
         "name": "Avoid using COMPUTE statement for elementary arithmetic operation",
         "href": "AIP/quality-rules/7754",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7756,
+        "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
+        "href": "AIP/quality-rules/7756",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -6563,6 +5173,32 @@
         ]
     },
     {
+        "id": 7766,
+        "name": "Avoid Artifacts with High Cyclomatic Complexity",
+        "href": "AIP/quality-rules/7766",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "ASP",
+            "C",
+            "C#",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "JavaScript",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 7768,
         "name": "Avoid Artifacts with High Depth of Code",
         "href": "AIP/quality-rules/7768",
@@ -6579,6 +5215,29 @@
             "Forms",
             "JEE",
             "JavaScript",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7770,
+        "name": "Avoid Artifacts with too many parameters",
+        "href": "AIP/quality-rules/7770",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ASP",
+            "C",
+            "C#",
+            "C++",
+            "Forms",
+            "JEE",
             "Microsoft T-SQL",
             "PL/SQL",
             "PowerBuilder",
@@ -6640,6 +5299,58 @@
         ]
     },
     {
+        "id": 7776,
+        "name": "Avoid Artifacts with High Fan-In",
+        "href": "AIP/quality-rules/7776",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "ASP",
+            "C",
+            "C#",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "JavaScript",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7778,
+        "name": "Avoid Artifacts with High Fan-Out",
+        "href": "AIP/quality-rules/7778",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "ASP",
+            "C",
+            "C#",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "JavaScript",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 7780,
         "name": "Avoid Classes with a very low comment/code ratio",
         "href": "AIP/quality-rules/7780",
@@ -6653,6 +5364,20 @@
             "JEE",
             "VB.NET",
             "Visual Basic"
+        ]
+    },
+    {
+        "id": 7782,
+        "name": "Avoid empty finally blocks",
+        "href": "AIP/quality-rules/7782",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ASP",
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -6690,6 +5415,67 @@
             "SAP SQL",
             "SQL Server",
             "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7788,
+        "name": "Avoid empty catch blocks",
+        "href": "AIP/quality-rules/7788",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7790,
+        "name": "Avoid Cursors inside a loop",
+        "href": "AIP/quality-rules/7790",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7792,
+        "name": "Avoid Classes with a High Number Of Children",
+        "href": "AIP/quality-rules/7792",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "C++",
+            "JEE",
+            "PowerBuilder",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7794,
+        "name": "Avoid Classes with a High Public Data Ratio",
+        "href": "AIP/quality-rules/7794",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "C++",
+            "JEE",
+            "PowerBuilder",
+            "VB.NET",
+            "Visual Basic"
         ]
     },
     {
@@ -6740,6 +5526,82 @@
         ]
     },
     {
+        "id": 7802,
+        "name": "Avoid Classes with a High Depth of Inheritance Tree",
+        "href": "AIP/quality-rules/7802",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "C++",
+            "JEE",
+            "PowerBuilder",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7804,
+        "name": "Avoid Classes with High Weighted Methods per Class",
+        "href": "AIP/quality-rules/7804",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "C++",
+            "JEE",
+            "PowerBuilder",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7806,
+        "name": "Avoid Artifacts with Group By",
+        "href": "AIP/quality-rules/7806",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "C",
+            "C#",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7808,
+        "name": "Avoid Artifacts with SQL statement including subqueries",
+        "href": "AIP/quality-rules/7808",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "C",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL",
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 7810,
         "name": "Avoid Artifacts with a Complex SELECT Clause",
         "href": "AIP/quality-rules/7810",
@@ -6774,6 +5636,37 @@
         ]
     },
     {
+        "id": 7814,
+        "name": "Avoid Tables not using referential integrity",
+        "href": "AIP/quality-rules/7814",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7816,
+        "name": "Avoid using GOTO statement",
+        "href": "AIP/quality-rules/7816",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7818,
         "name": "Avoid Functions having a very low Comment/Code ratio",
         "href": "AIP/quality-rules/7818",
@@ -6787,6 +5680,55 @@
             "JavaScript",
             "PowerBuilder",
             "Visual Basic"
+        ]
+    },
+    {
+        "id": 7820,
+        "name": "Never use SQL queries with a cartesian product",
+        "href": "AIP/quality-rules/7820",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7822,
+        "name": "Avoid Artifacts with queries on more than 4 Tables",
+        "href": "AIP/quality-rules/7822",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "C",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "PowerBuilder",
+            "SQL Server",
+            "Sybase T-SQL",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7824,
+        "name": "The exception Exception should never been thrown. Always Subclass Exception and throw the subclassed Classes.",
+        "href": "AIP/quality-rules/7824",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -6818,6 +5760,36 @@
             "PowerBuilder",
             "SQL Server",
             "Sybase T-SQL",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7830,
+        "name": "Avoid unreferenced Interfaces",
+        "href": "AIP/quality-rules/7830",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7832,
+        "name": "Avoid unreferenced Classes",
+        "href": "AIP/quality-rules/7832",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET",
             "Visual Basic"
         ]
     },
@@ -6880,6 +5852,28 @@
             "PL/SQL",
             "SQL Server",
             "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7842,
+        "name": "Avoid large Artifacts - too many Lines of Code",
+        "href": "AIP/quality-rules/7842",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C",
+            "C#",
+            "C++",
+            "Cobol",
+            "Forms",
+            "JEE",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL",
+            "VB.NET"
         ]
     },
     {
@@ -6990,6 +5984,39 @@
         ]
     },
     {
+        "id": 7860,
+        "name": "Avoid unreferenced Functions",
+        "href": "AIP/quality-rules/7860",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "ASP",
+            "C",
+            "C++",
+            "Forms",
+            "JEE",
+            "JavaScript",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "Sybase T-SQL",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7862,
+        "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
+        "href": "AIP/quality-rules/7862",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7864,
         "name": "BAPIs must not cause the Program to abort or terminate",
         "href": "AIP/quality-rules/7864",
@@ -7005,6 +6032,16 @@
         "href": "AIP/quality-rules/7866",
         "status": "renewed",
         "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7868,
+        "name": "Avoid Open SQL queries in loops",
+        "href": "AIP/quality-rules/7868",
+        "status": "renewed",
+        "critical": true,
         "technologyNames": [
             "ABAP"
         ]
@@ -7030,6 +6067,16 @@
         ]
     },
     {
+        "id": 7874,
+        "name": "Avoid using dynamic queries",
+        "href": "AIP/quality-rules/7874",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 7876,
         "name": "Avoid using SELECT ... FOR UPDATE",
         "href": "AIP/quality-rules/7876",
@@ -7045,6 +6092,46 @@
         "href": "AIP/quality-rules/7878",
         "status": "renewed",
         "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7880,
+        "name": "Avoid nested loops",
+        "href": "AIP/quality-rules/7880",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7882,
+        "name": "Avoid using Native SQL",
+        "href": "AIP/quality-rules/7882",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7884,
+        "name": "Avoid disabling source code inspection",
+        "href": "AIP/quality-rules/7884",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7886,
+        "name": "Avoid using SYSTEM-CALL",
+        "href": "AIP/quality-rules/7886",
+        "status": "renewed",
+        "critical": false,
         "technologyNames": [
             "ABAP"
         ]
@@ -7117,12 +6204,114 @@
         ]
     },
     {
+        "id": 7902,
+        "name": "Avoid SQL queries that no index can support",
+        "href": "AIP/quality-rules/7902",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP",
+            "Cobol",
+            "Forms",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7904,
+        "name": "Avoid SQL queries on XXL tables that no index can support",
+        "href": "AIP/quality-rules/7904",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP",
+            "Cobol",
+            "Microsoft T-SQL",
+            "PL/SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 7906,
+        "name": "Avoid testing specific values for SY-UNAME",
+        "href": "AIP/quality-rules/7906",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7908,
+        "name": "Avoid unreferenced Methods",
+        "href": "AIP/quality-rules/7908",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 7910,
         "name": "Never exit a finally block with a return, break, continue, or throw",
         "href": "AIP/quality-rules/7910",
         "status": "renewed",
         "critical": true,
         "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7912,
+        "name": "Avoid unreferenced Data Members",
+        "href": "AIP/quality-rules/7912",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7914,
+        "name": "Avoid direct access to Database Tables",
+        "href": "AIP/quality-rules/7914",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ASP",
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "PowerBuilder",
+            "VB.NET",
+            "Visual Basic"
+        ]
+    },
+    {
+        "id": 7916,
+        "name": "Avoid direct use of Database objects (JSP/ASP)",
+        "href": "AIP/quality-rules/7916",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ASP",
             "JEE"
         ]
     },
@@ -7189,6 +6378,30 @@
         "critical": false,
         "technologyNames": [
             "C++"
+        ]
+    },
+    {
+        "id": 7932,
+        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
+        "href": "AIP/quality-rules/7932",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7934,
+        "name": "Avoid Superclass (or Interface) knowing Subclass (or Interface)",
+        "href": "AIP/quality-rules/7934",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "ABAP",
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -7292,6 +6505,16 @@
         ]
     },
     {
+        "id": 7954,
+        "name": "Avoid indirect String concatenation inside loops",
+        "href": "AIP/quality-rules/7954",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7956,
         "name": "Avoid indirect exception handling inside loops",
         "href": "AIP/quality-rules/7956",
@@ -7323,6 +6546,16 @@
         ]
     },
     {
+        "id": 7962,
+        "name": "Avoid direct or indirect remote calls inside a loop",
+        "href": "AIP/quality-rules/7962",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7964,
         "name": "Avoid directly instantiating a Class used as a managed bean",
         "href": "AIP/quality-rules/7964",
@@ -7344,9 +6577,204 @@
         ]
     },
     {
+        "id": 7968,
+        "name": "Never use strcat() function (C/C++)",
+        "href": "AIP/quality-rules/7968",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7970,
+        "name": "Never use strcpy() function (C/C++)",
+        "href": "AIP/quality-rules/7970",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7972,
+        "name": "Never use sprintf() or vsprintf() functions",
+        "href": "AIP/quality-rules/7972",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7976,
+        "name": "Never use gets() function",
+        "href": "AIP/quality-rules/7976",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7978,
+        "name": "Avoid using the scanf() function family",
+        "href": "AIP/quality-rules/7978",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7980,
+        "name": "Avoid using strtrns() function",
+        "href": "AIP/quality-rules/7980",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7982,
+        "name": "Avoid using strlen() function family",
+        "href": "AIP/quality-rules/7982",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7984,
+        "name": "Avoid using strecpy() function",
+        "href": "AIP/quality-rules/7984",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7986,
+        "name": "Avoid using streadd() function",
+        "href": "AIP/quality-rules/7986",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7988,
+        "name": "Avoid using snprintf() function family",
+        "href": "AIP/quality-rules/7988",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7990,
+        "name": "Avoid using realpath() function",
+        "href": "AIP/quality-rules/7990",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7992,
+        "name": "Avoid using getpass() function",
+        "href": "AIP/quality-rules/7992",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 7994,
+        "name": "Avoid using getopt() function",
+        "href": "AIP/quality-rules/7994",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
         "id": 7996,
         "name": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
         "href": "AIP/quality-rules/7996",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7998,
+        "name": "Avoid local variables that are not initialized at declaration time",
+        "href": "AIP/quality-rules/7998",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8000,
+        "name": "Avoid 'catch-all' statement",
+        "href": "AIP/quality-rules/8000",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8002,
+        "name": "Never perform C-style cast between incompatible Class pointers",
+        "href": "AIP/quality-rules/8002",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8004,
+        "name": "Avoid using 'delete this'",
+        "href": "AIP/quality-rules/8004",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8006,
+        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
+        "href": "AIP/quality-rules/8006",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -7375,6 +6803,36 @@
         ]
     },
     {
+        "id": 8012,
+        "name": "Avoid unchecked return code (SY-SUBRC) after opening and reading dataset",
+        "href": "AIP/quality-rules/8012",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8014,
+        "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
+        "href": "AIP/quality-rules/8014",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8016,
+        "name": "Avoid unsecured EJB remote method",
+        "href": "AIP/quality-rules/8016",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 8022,
         "name": "Avoid hiding attributes",
         "href": "AIP/quality-rules/8022",
@@ -7383,6 +6841,50 @@
         "technologyNames": [
             "C++",
             "JEE"
+        ]
+    },
+    {
+        "id": 8024,
+        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
+        "href": "AIP/quality-rules/8024",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8026,
+        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
+        "href": "AIP/quality-rules/8026",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8028,
+        "name": "Avoid missing default in switch statements",
+        "href": "AIP/quality-rules/8028",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8030,
+        "name": "Check alphanumeric data before moving it into numeric data",
+        "href": "AIP/quality-rules/8030",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -7398,6 +6900,16 @@
             "C++",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 8034,
+        "name": "Variables defined in Working-Storage section must be initialized before to be read",
+        "href": "AIP/quality-rules/8034",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -7419,6 +6931,38 @@
         "critical": false,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8040,
+        "name": "Avoid Struts 2 Action Fields without Validation",
+        "href": "AIP/quality-rules/8040",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8042,
+        "name": "Struts 2 Validation: Avoid unused validation form",
+        "href": "AIP/quality-rules/8042",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8044,
+        "name": "Avoid log forging vulnerabilities",
+        "href": "AIP/quality-rules/8044",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -7466,6 +7010,17 @@
         ]
     },
     {
+        "id": 8054,
+        "name": "Avoid calling blocking functions with an infinite timeout",
+        "href": "AIP/quality-rules/8054",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
         "id": 8056,
         "name": "Method override fails due to mismatch of const/volatile qualifiers",
         "href": "AIP/quality-rules/8056",
@@ -7491,6 +7046,17 @@
         "id": 8060,
         "name": "A pointer to a base Class shall only be cast to a pointer to a derived Class by means of 'dynamic_cast'",
         "href": "AIP/quality-rules/8060",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8062,
+        "name": "An unconditional 'throw', 'return' or 'break' shall terminate every non-empty switch-clause",
+        "href": "AIP/quality-rules/8062",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -7532,11 +7098,33 @@
         ]
     },
     {
+        "id": 8070,
+        "name": "Do not alter a control variable in the body of a 'for' statement",
+        "href": "AIP/quality-rules/8070",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
         "id": 8072,
         "name": "Never define collection of 'std::auto_ptr'",
         "href": "AIP/quality-rules/8072",
         "status": "renewed",
         "critical": true,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8074,
+        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
+        "href": "AIP/quality-rules/8074",
+        "status": "renewed",
+        "critical": false,
         "technologyNames": [
             "C",
             "C++"
@@ -7623,6 +7211,18 @@
         ]
     },
     {
+        "id": 8092,
+        "name": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
+        "href": "AIP/quality-rules/8092",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            ".NET (Legacy Analyzer)",
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8094,
         "name": "Avoid locking of Objects with weak identities",
         "href": "AIP/quality-rules/8094",
@@ -7644,9 +7244,107 @@
         ]
     },
     {
+        "id": 8098,
+        "name": "Avoid uncontrolled format string",
+        "href": "AIP/quality-rules/8098",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8100,
+        "name": "Blocking synchronous calls should have associated timeouts",
+        "href": "AIP/quality-rules/8100",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8102,
+        "name": "Avoid hardcoded network resource names (JEE)",
+        "href": "AIP/quality-rules/8102",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8104,
+        "name": "Close database resources ASAP",
+        "href": "AIP/quality-rules/8104",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 8106,
         "name": "Avoid empty IF-ENDIF blocks",
         "href": "AIP/quality-rules/8106",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8108,
+        "name": "Close the outermost stream ASAP",
+        "href": "AIP/quality-rules/8108",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8110,
+        "name": "Use dedicated stored procedures when multiple data accesses are needed (ASCPEM-PRF-10)",
+        "href": "AIP/quality-rules/8110",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8112,
+        "name": "Avoid improper processing of the execution status of data handling operations",
+        "href": "AIP/quality-rules/8112",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8114,
+        "name": "Avoid numerical data corruption during incompatible mutation (ABAP)",
+        "href": "AIP/quality-rules/8114",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8116,
+        "name": "Avoid calling system function (CALL 'cfunc')",
+        "href": "AIP/quality-rules/8116",
         "status": "renewed",
         "critical": true,
         "technologyNames": [
@@ -7659,6 +7357,26 @@
         "href": "AIP/quality-rules/8118",
         "status": "renewed",
         "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8120,
+        "name": "Avoid using CALL FUNCTION without error handling",
+        "href": "AIP/quality-rules/8120",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8122,
+        "name": "Avoid using CALL METHOD without error handling",
+        "href": "AIP/quality-rules/8122",
+        "status": "renewed",
+        "critical": false,
         "technologyNames": [
             "ABAP"
         ]
@@ -7694,6 +7412,16 @@
         ]
     },
     {
+        "id": 8132,
+        "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
+        "href": "AIP/quality-rules/8132",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 8134,
         "name": "Avoid unsorted data after SELECT queries",
         "href": "AIP/quality-rules/8134",
@@ -7714,6 +7442,26 @@
         ]
     },
     {
+        "id": 8140,
+        "name": "Subscripts and iterators must be defined with BINARY usage",
+        "href": "AIP/quality-rules/8140",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8142,
+        "name": "Prefer using indexes instead of subscripts",
+        "href": "AIP/quality-rules/8142",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 8144,
         "name": "Avoid using INITIALIZE statement on data structures",
         "href": "AIP/quality-rules/8144",
@@ -7724,9 +7472,41 @@
         ]
     },
     {
+        "id": 8146,
+        "name": "Avoid calling programs statically",
+        "href": "AIP/quality-rules/8146",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8148,
+        "name": "Avoid artifacts having Incorrect Type Conversion or Cast",
+        "href": "AIP/quality-rules/8148",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8150,
         "name": "Avoid using Parse for primitive types and used instead TryParse",
         "href": "AIP/quality-rules/8150",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8152,
+        "name": "Avoid having transaction with the Thread.Sleep method in a loop",
+        "href": "AIP/quality-rules/8152",
         "status": "renewed",
         "critical": false,
         "technologyNames": [
@@ -7742,6 +7522,226 @@
         "critical": false,
         "technologyNames": [
             "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+        "href": "AIP/quality-rules/8158",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8160,
+        "name": "Check PCB status code after DLI queries",
+        "href": "AIP/quality-rules/8160",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8162,
+        "name": "CICS return code should be checked",
+        "href": "AIP/quality-rules/8162",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8214,
+        "name": "CWE-672: Expired or Released Resource should not be used",
+        "href": "AIP/quality-rules/8214",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8216,
+        "name": "CWE-681: Avoid numerical data corruption during incompatible mutation",
+        "href": "AIP/quality-rules/8216",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8218,
+        "name": "Content type should be checked when receiving a HTTP Post",
+        "href": "AIP/quality-rules/8218",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8220,
+        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "href": "AIP/quality-rules/8220",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8222,
+        "name": "Avoid hard-coded credentials",
+        "href": "AIP/quality-rules/8222",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8236,
+        "name": "Avoid using hard-coded values",
+        "href": "AIP/quality-rules/8236",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8238,
+        "name": "Trust boundary violation",
+        "href": "AIP/quality-rules/8238",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8240,
+        "name": "Sensitive cookie in HTTPS session without 'Secure' attribute",
+        "href": "AIP/quality-rules/8240",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8242,
+        "name": "Use of insufficiently random values",
+        "href": "AIP/quality-rules/8242",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "status": "renewed",
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8408,
+        "name": "Avoid reflected cross-site scripting (non persistent)",
+        "href": "AIP/quality-rules/8408",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8410,
+        "name": "Avoid cross-site scripting (persistent)",
+        "href": "AIP/quality-rules/8410",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8412,
+        "name": "\"CX_ROOT\" should not be used in TRY .. CATCH.. ENDTRY block",
+        "href": "AIP/quality-rules/8412",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8414,
+        "name": "Avoid use of a broken or risky cryptographic algorithm",
+        "href": "AIP/quality-rules/8414",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8416,
+        "name": "Avoid use of a reversible one-way hash",
+        "href": "AIP/quality-rules/8416",
+        "status": "renewed",
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "JEE",
             "VB.NET"
         ]
     }

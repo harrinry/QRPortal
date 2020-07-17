@@ -1,0 +1,96 @@
+{
+    "id": 7190,
+    "name": "Validator form validate() Method must call super.validate()",
+    "href": "AIP/quality-rules/7190",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that don't call super.validate()",
+    "output": "This report lists all validate() methods that violate this rule.\nIt provides the following information:\n Method Full Name",
+    "rationale": "Struts Validator can be extended to implement your own custom validation.\nWhen overriding the validate() method, call the ancestor validate()\nmethod, to ensure that any framework validations are triggered. In the case the validation framework is disabled, you expose the application to any type of attacks based on invalid field input.",
+    "reference": "http://cwe.mitre.org/documents/sources/SevenPerniciousKingdoms.pdf",
+    "remediation": "Call super.validate() in the validate() method.",
+    "remediationSample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  ActionErrors errors = super.validate(mapping, request); // FIXED\n\n  if (errors==null) {\n     if (notGood(mapping,request)) {\n        // some code\n     }\n  // some code\n}",
+    "sample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  if (notGood(mapping,request)) \n    // some code\n  }\n// some code\n}  // VIOLATION",
+    "total": "Number of non abstract methods that override the validate method (at any depth in the inheritance tree) of one of the class ValidatorForm, ValidatorActionForm, DynaValidatorForm, DynaValidatorActionForm",
+    "alternativeName": "Struts1: Validate() Method of Struts Validator form must call super.validate()",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-103",
+            "name": "Struts: Incomplete validate() Method Definition",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1173",
+            "name": "Improper Use of Validation Framework",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

@@ -1,0 +1,60 @@
+{
+    "id": 7218,
+    "name": "Avoid OPEN/CLOSE inside loops",
+    "href": "AIP/quality-rules/7218",
+    "critical": true,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule searches for Cobol programs using OPEN or CLOSE in loops. Following loops are taken into account:\n- PERFORM - TIMES\n- PERFORM - UNTIL\n- PERFORM - VARYING",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n    - Statement creating the loop in which OPEN or CLOSE statements are used\n    - OPEN statement used the loop\n    - CLOSE statement used in the loop",
+    "rationale": "File access is generally expensive in terms of run time and especially the OPEN and CLOSE statements. It is highly recommended to avoid accessing to the same file multiple times into a program but rather to save the file into a buffer. Moreover, it is even more important to avoid opening and closing the same file several times. If a file is opened or closed multiple times, for instance into a loop, then this can decrease the application performance dramatically.",
+    "remediation": "Open and close files only one time. Put the OPEN and CLOSE statements outside loops.",
+    "remediationSample": "Loops with PERFORM - TIMES\n\n      * In-line\n       OPEN INPUT FILE-02\n       PERFORM 10 TIMES\n           READ FILE-02\n       END-PERFORM\n       CLOSE FILE-02\n\n      * Out-of-line\n       PROC-TIMES-01.\n           OPEN INPUT FILE-03\n           PERFORM PROC-TIMES-01-A 10 TIMES.\n           CLOSE FILE-03\n...\n       PROC-TIMES-01-A.\n           READ FILE-03\n\nLoops with PERFORM - UNTIL\n\n      * In-line\n       OPEN INPUT FILE-05\n       PERFORM UNTIL A = 10\n           READ FILE-05\n       END-PERFORM\n       CLOSE FILE-05\n\n      * Out-of-line\n       PROC-UNTIL-01.\n           MOVE 0 TO A.\n           OPEN INPUT FILE-06\n           PERFORM PROC-UNTIL-01-A UNTIL A = 10.\n           CLOSE FILE-06\n...\n       PROC-UNTIL-01-A.\n           ADD 1 TO A.\n           READ FILE-06\n\nLoops with PERFORM - VARYING\n\n      * In-line\n       OPEN INPUT FILE-08\n       PERFORM VARYING A FROM 1 BY 1 UNTIL A = 10\n           READ FILE-08\n       END-PERFORM\n       CLOSE FILE-08\n\n      * Out-of-line\n       PROC-VARYING-01.\n           OPEN INPUT FILE-09\n           PERFORM PROC-VARYING-01-A \n               VARYING A FROM 1 BY 1 UNTIL A = 10.\n           CLOSE FILE-09\n...\n       PROC-VARYING-01-A.\n           READ FILE-09",
+    "sample": "Loops with PERFORM - TIMES\n\n      * In-line (OPEN and CLOSE must not be inside loop)\n       PERFORM 10 TIMES\n           OPEN INPUT FILE-02\n           READ FILE-02\n           CLOSE FILE-02\n       END-PERFORM\n\n      * Out-of-line (OPEN and CLOSE must not be in the\n      * paragraph called inside loop)\n       PROC-TIMES-01.\n           PERFORM PROC-TIMES-01-A 10 TIMES.\n...\n       PROC-TIMES-01-A.\n           OPEN INPUT FILE-03\n           READ FILE-03\n           CLOSE FILE-03\n\nLoops with PERFORM - UNTIL\n\n      * In-line (OPEN and CLOSE must not be inside loop)\n       PERFORM UNTIL A = 10\n           OPEN INPUT FILE-05\n           READ FILE-05\n           CLOSE FILE-05\n       END-PERFORM\n\n      * Out-of-line (OPEN and CLOSE must not be in the\n      * paragraph called inside loop)\n       PROC-UNTIL-01.\n           MOVE 0 TO A.\n           PERFORM PROC-UNTIL-01-A UNTIL A = 10.\n...\n       PROC-UNTIL-01-A.\n           ADD 1 TO A.\n           OPEN INPUT FILE-06\n           READ FILE-06\n           CLOSE FILE-06\n\nLoops with PERFORM - VARYING\n\n      * In-line (OPEN and CLOSE must not be inside loop)\n       PERFORM VARYING A FROM 1 BY 1 UNTIL A = 10\n           OPEN INPUT FILE-08\n           READ FILE-08\n           CLOSE FILE-08\n       END-PERFORM\n\n      * Out-of-line (OPEN and CLOSE must not be in the\n      * paragraph called inside loop)\n       PROC-VARYING-01.\n           PERFORM PROC-VARYING-01-A \n               VARYING A FROM 1 BY 1 UNTIL A = 10.\n...\n       PROC-VARYING-01-A.\n           OPEN INPUT FILE-09\n           READ FILE-09\n           CLOSE FILE-09",
+    "total": "Number of Cobol Programs",
+    "alternativeName": "Avoid OPEN/CLOSE inside loops",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66068,
+            "name": "Efficiency - Expensive Calls in Loops",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

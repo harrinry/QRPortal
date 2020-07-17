@@ -1,0 +1,87 @@
+{
+    "id": 7506,
+    "name": "Define equals() and hashCode() for component",
+    "href": "AIP/quality-rules/7506",
+    "critical": true,
+    "maxWeight": 9,
+    "description": "Reports all hibernate and/or JPA persistent classes associated to a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable and @IdClass) and that don't implement equals() and hashCode().",
+    "output": "List all Hibernate and/or JPA persistent classes associated to a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable/@IdClass) and that do not implement equals() and hashCode().\n\nIt provides the following information:\n- Class Full Name",
+    "rationale": "Component classes do not have an identifier property. You must implement equals() and hashCode(). Hibernate or JPA implementation relies on this equality routine to check instances for modifications.\n\nA custom implementation of equals() and hashCode() is not required for all component classes. However, it is recommended for any component class because the implementation is straightforward, and \"better safe than sorry\".",
+    "reference": "http://docs.jboss.org/hibernate/core/3.3/reference/en/html/components.html\nHibernate in Action (ISBN 1932394-15-X) p 217\nThe Java Persistence API page 252 - ISBN 1-932394-88-5",
+    "remediation": "Implement equals() and hashCode().",
+    "remediationSample": "----> B.java\npublic class B {\n  private long id;\n  private String name;\n  ...\n\n  private void setId(long id) { \n    this.id = id;\n  }\n\n  public long getId() {\n    return id;\n  }\n\n  public void setName(String name) {\n    this.name = name;\n  }\n\n  public Sring getName() {\n    return name;\n  }\n\n\n  ...\n\n  // FIXED\n  public boolean equals(Object obj) {\n    ...\n  }\n\n  // FIXED\n  public int hashCode() {\n     ...\n  }\n}",
+    "sample": "----> a.hbm.xml\n<hibernate-mapping >\n  \n  <class name=\"A\" table =\"A\"> \n    <id name=\"id\" column=\"A_ID\">\n      <generator class=\"increment\"/>\n    </id>\n\n    <set name=\"B_items\" lazy=\"true\" table =\"B_ITEMS\"> \n      <key column=\"B_ID\"/>\n      <composite-element class=\"B\"/>\n        <property name=\"name\" column=\"B_NAME\" not-null=\"true\"/>\n        ...\n      </composite-element>\n    </set>\n  </class>\n\n</hibernate-mapping>\n\n----> B.java\npublic class B {\n  private long id;\n  private String name;\n  ...\n\n  private void setId(long id) { \n    this.id = id;\n  }\n\n  public long getId() {\n    return id;\n  }\n \n  public void setName(String name) {\n    this.name = name;\n  }\n\n  public Sring getName() {\n    return name;\n  }\n\n  ...\n  // VIOLATION: equals and hashCode are not defined\n}",
+    "total": "Number of classes associated to a component (component and composite-element or @Embeddable/@IdClass)",
+    "alternativeName": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-4",
+            "name": "Persistant Storable Data Element without Proper Comparison Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-581",
+            "name": "Object Model Violation: Just One of Equals and Hashcode Defined",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1097",
+            "name": "Persistent Storable Data Element without Associated Comparison Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1097",
+            "name": "Persistent Storable Data Element without Associated Comparison Control Element",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

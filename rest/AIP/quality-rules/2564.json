@@ -1,0 +1,104 @@
+{
+    "id": 2564,
+    "name": "Use a single Error Handling Method",
+    "href": "AIP/quality-rules/2564",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Functions should use an Error Handling Method.",
+    "output": "This report lists all Functions that do not use an Error Handling Method (to be defined).",
+    "rationale": "There are three ways of registering an error handler:\n  # On Error GoTo <label>\n  # On Error Resume Next\n  # On Error GoTo 0\n\nUsing the 'On Error GoTo <label>' statement directs execution to re-start at the specified <label> in the event of an error. Error handling code is normally placed at the end of a procedure to aid source code readability. If so, you must ensure that execution does not accidentally 'fall through' into your error handler code.\n\nUsing the 'On Error Resume Next' statement directs execution to re-start at the statement after the statement which 'generated' the error. If the error occurred in a nested procedure with no active error handler then the 'next' statement will actually be that of the active error handler and not the statement following the statement which generated the error.\n\nThe 'On Error GoTo 0' statement removes any active error handler for the current procedure thereby directing errors back up the call stack to the last registered error handler (now the active error handler).\n\nAdopting the rule of a single error trap per procedure generally keeps both error handling and application logic simple and readable. Always end the error handler with a 'Resume', 'Resume Next', 'Resume <label>', 'Exit Sub/Function/Property', 'End Sub/Function/Property' or 'Err.Raise' statement.",
+    "reference": "http://www.dotnetjohn.com/articles.aspx?articleid=42",
+    "remediation": "Choose one method and stick to it.",
+    "total": "Total number of functions",
+    "alternativeName": "Use a single Error Handling Method",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70391",
+            "name": "The application must not be subject to error handling vulnerabilities.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

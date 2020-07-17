@@ -1,0 +1,87 @@
+{
+    "id": 7586,
+    "name": "Avoid cyclic calls between Event and its handled Method",
+    "href": "AIP/quality-rules/7586",
+    "critical": false,
+    "maxWeight": 9,
+    "associatedValueName": "Abap Event name",
+    "description": "This report shows ABAP Event Methods that are handled by an Abap Event and that activate this Abap Event, directly or indirectly by calling other Abap Methods. A cycle can be created by :\n- a sequence based on an Abap Event calling an Abap Event Method calling this Abap Event\n- a sequence based on an Abap Event calling an Abap Event Method calling an Abap Method calling the same Abap Event (the maximum number of Abap Methods is set to 2)\n- several sequences of Abap Event E1 calling . . . Abap Event E2",
+    "output": "Associated to each ABAP Event Method with violations, the Quality Rule provides:\n- The ABAP Event name",
+    "rationale": "A method handled by an event must not reactivate this event directly or indirectly via other called methods. Such a cycle based on event and methods can cause unpredictable behaviors.",
+    "remediation": "Try to remove cyclic calls between events and handled methods.",
+    "remediationSample": "CLASS myClass DEFINITION.\n  PUBLIC SECTION.\n    METHODS increment_counter.\n    METHODS handle_excess \n            FOR EVENT critical_value OF myClass\n            IMPORTING excess.\n    METHODS increment.\n    EVENTS  critical_value EXPORTING value(excess) TYPE i.\n  PRIVATE SECTION.\n    DATA: count1     TYPE i,\n          threshold TYPE i VALUE 10.\nENDCLASS.\n\nCLASS myClass IMPLEMENTATION.\n  METHOD increment_counter.\n    DATA diff TYPE i.\n    ADD 1 TO count1.\n    IF count1 > threshold.\n      diff = count1 - threshold.\n      RAISE EVENT critical_value EXPORTING excess = diff.\n    ENDIF.\n  ENDMETHOD.\n  METHOD handle_excess.\n    IF threshold > 5\n*      CALL METHOD me->increment.\n      write / count1.\n    ENDIF.\n  ENDMETHOD.\n  METHOD increment.\n    ADD 1 TO count1.\n  ENDMETHOD.\nENDCLASS.",
+    "sample": "CLASS myClass DEFINITION.\n  PUBLIC SECTION.\n    METHODS increment_counter.\n    METHODS handle_excess \n            FOR EVENT critical_value OF myClass\n            IMPORTING excess.\n    METHODS increment.\n    EVENTS  critical_value EXPORTING value(excess) TYPE i.\n  PRIVATE SECTION.\n    DATA: count1     TYPE i,\n          threshold TYPE i VALUE 10.\nENDCLASS.\n\nCLASS myClass IMPLEMENTATION.\n  METHOD increment_counter.\n    DATA diff TYPE i.\n    ADD 1 TO count1.\n    IF count1 > threshold.\n      diff = count1 - threshold.\n      RAISE EVENT critical_value EXPORTING excess = diff.\n    ENDIF.\n  ENDMETHOD.\n  METHOD handle_excess.\n* In the following lines, a cycle occurs\n    IF threshold > 5\n      CALL METHOD me->increment.\n    ENDIF.\n  ENDMETHOD.\n  METHOD increment.\n    ADD 1 TO count1.\n  ENDMETHOD.\nENDCLASS.",
+    "total": "Number of Abap Event Methods called by an Abap Event",
+    "alternativeName": "Avoid cyclic calls between Event and its handled Method",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-7",
+            "name": "Inter-Module Dependency Cycles",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-13",
+            "name": "Inter-Module Dependency Cycles",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1047",
+            "name": "Modules with Circular Dependencies",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1047",
+            "name": "Modules with Circular Dependencies",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

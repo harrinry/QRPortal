@@ -1,0 +1,124 @@
+{
+    "id": 8426,
+    "name": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
+    "href": "AIP/quality-rules/8426",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The system functions \u201cC_DB_EXECUTE\u201d and \u201cC_DB_FUNCTION\u201d are are used to call for database commands directly.\n\nIn this rule, we are reporting violation when using one of the following function, when their parameter containing the SQL statement is declared with a PARAMETERS statement, as they can be sources of SQL injections: C_DB_EXECUTE or C_DB_FUNCTION",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "By exploiting a SQL injection vulnerability, an attacker can get access to business-critical information or system data. Moreover, a denial of service attack can be performed by executing a complicated SQL statement. For example, a perpetrator can pass a query, which will search for a certain pattern through all the records in the database (via a LIKE statement). This query will take a long time to run and, at the same time, will significantly increase the server load, thus blocking access to the application for legitimate users.",
+    "reference": "https://dzone.com/articles/sap-sql-injections",
+    "remediation": "Avoid Using all of these functions\n\nIf it is not possible, filter user input via special methods QUOTE_STR and QUOTE of the CL_ABAP_DYN_PRG class. In ABAP, strings are usually enclosed with backticks (\u2018) and char arrays are usually enclosed in single quotation marks (\u2018). Use different methods of CL_ABAP_DYN_PRG depending on the type of enclosing symbol: use QUOTE_STR with backticks and QUOTE with single quotation marks.",
+    "sample": "PARAMETERS STMT(65535) TYPE C.\nCALL 'C_DB_EXECUTE'\n    ID 'STATLEN' FIELD LN\n    ID 'STATTXT' FIELD STMT\n    ID 'SQLERR' FIELD SQL_CODE\n    ID 'ERRTXT' FIELD SQL_MSG\n    ID 'ROWNUM' FIELD ROW_NUM.\n\nThe field 'STATTXT' contains a SQL statement. The variable STMT is declared as a parameter and transmitted to this field. Therefore, an attacker can pass a specially crafted SQL statement to the variable STMT and reach the malicious goals by executing it.\n\n---------------------------------------------------\nPARAMETERS lv_stmt TYPE c LENGTH 80.\nCALL 'C_DB_FUNCTION' ID 'FUNCTION' FIELD 'DB_SQL'\n ID 'FCODE' FIELD 'PO'\n ID 'STMT_STR' FIELD lv_stmt\n ...\n\nThe field 'STMT_STR' contains a SQL statement. The variable lv_stmtis declared as a parameter and transmitted to this field. Therefore, an attacker can pass a specially crafted SQL statement to the variable lv_stmt and reach the malicious goals by executing it.",
+    "total": "Number of ABAP Artifacts",
+    "alternativeName": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-78",
+            "name": "OS Command Injection Improper Input Neutralization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2017",
+            "name": "Injection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API8-2019",
+            "name": "Injection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

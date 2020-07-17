@@ -1,0 +1,90 @@
+{
+    "id": 1020722,
+    "name": "Avoid enabling unsecure Node.js server",
+    "href": "AIP/quality-rules/1020722",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Typically, HTTPS servers do a basic TLS handshake and accept any client connection as long as a compatible cipher suite can be found. However, the server can be configured to challenge the client with a CertificateRequest during the TLS handshake. This forces the client to present a valid certificate before the negotiation can continue. \nThis rule checks is  Node.js server is built with secured HTTPS server and using certificate to avoid connection to unsecured source.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser.",
+    "reference": "https://expressjs.com/en/advanced/best-practice-security.html \nhttps://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+    "remediation": "Ensure you have enabled secure HTTPS protocol and loaded keys for establishing secure HTTPS connection",
+    "remediationSample": "// Use secure HTTPS protocol \n// Load keys for establishing secure HTTPS connection \nvar fs = require(\"fs\"); \nvar https = require(\"https\"); \nvar path = require(\"path\"); \nvar httpsOptions = { \n key: fs.readFileSync(path.resolve(__dirname, \"./artifacts/cert/server.key\")), // setting Keys and Certificates\n cert: fs.readFileSync(path.resolve(__dirname, \"./artifacts/cert/server.crt\")) \n}; \nhttps.createServer(httpsOptions, app).listen(config.port, function() { \n console.log(\"Express https server listening on port \" + config.port); \n });\n\n// or HTTP2\nconst http2 = require('http2');\nconst fs = require('fs');\n\nconst options = {\n  key: fs.readFileSync('server-key.pem'),\n  cert: fs.readFileSync('server-cert.pem')\n};\n\n// Create a secure HTTP/2 server\nconst server = http2.createSecureServer(options);\nserver.listen(config.port, function() { \n console.log(\"Express http server listening on port \" + config.port); \n });",
+    "sample": "// Insecure HTTP connection \nvar http = require(\"http\"); \n http.createServer(app).listen(config.port, function() { \n console.log(\"Express http server listening on port \" + config.port); \n });\n\n// or HTTP2\n\nvar http = require(\"http2\");\nhttp2.createServer(app).listen(config.port, function() { \n console.log(\"Express http server listening on port \" + config.port); \n });",
+    "total": "Number of javascript source codes using HTTP or HTTP2 createServer",
+    "alternativeName": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70245",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "id": 7664,
+    "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
+    "href": "AIP/quality-rules/7664",
+    "critical": false,
+    "maxWeight": 9,
+    "associatedValueName": "XXL SAP Table/View name",
+    "description": "This rule retrieves all ABAP artifacts using FOR ALL ENTRIES IN statement without explicitly checking the emptiness of the internal table used in the FOR ALL ENTRIES IN statement. This metric applies only to extremely large database tables (XXL tables).\nThe emptiness checks recognized are the following \nCHECK NOT ts_table[] IS INITIAL.\nIF NOT ts_table[] IS INITIAL.\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",
+    "output": "Associated to each ABAP Artifact with violations, the Quality Rule provides:\n- The XXL SAP Table/View name",
+    "rationale": "As the FOR ALL ENTRIES IN is part of the WHERE clause, an empty internal table can end-up in a full table scan and thus cause very important performance troubles as this metric applies only to extremely large tables (XXL tables). This is why it is mandatory to include an  emptiness check before any use of the FOR ALL ENTRIES IN statement.",
+    "reference": "Enhancing the Quality of ABAP Development, \nMeijs-Krouwels-Heulmans-Sommen, SAP Press\nISBN 1-59229-030-2",
+    "remediation": "Use an emptiness check based on one of the following syntax :\nCHECK NOT ts_table[] IS INITIAL.\n or\nIF NOT ts_table[] IS INITIAL.",
+    "remediationSample": "* Select orders for specific material and order type\nSELECT matnr auart vbeln posnr\n              FROM vapma\n              INTO TABLE ts_vapma[]\n              WHERE matnr IN so_matnr\n              AND auart IN so_auart.\n\n* Use this result to read the detail data from VBAP: \n* Order Item Data\nIF NOT ts_vapma[] IS INITIAL.\nSELECT matnr vbeln kwmeng vrkme\n              FROM vbap\n              INTO TABLE ts_orders\n              FOR ALL ENTRIES IN ts_vapma[]\n              WHERE vbeln = ts_vapma\n              AND posnr = ts_vapma-posnr.\nENDIF.",
+    "sample": "* Select orders for specific material and order type\nSELECT matnr auart vbeln posnr\n              FROM vapma\n              INTO TABLE ts_vapma[]\n              WHERE matnr IN so_matnr\n             AND auart IN so_auart.\n\n* Use this result to read the detail data from VBAP: \n* Order Item Data\nSELECT matnr vbeln kwmeng vrkme\n              FROM vbap\n              INTO TABLE ts_orders\n              FOR ALL ENTRIES IN ts_vapma[]\n              WHERE vbeln = ts_vapma\n              AND posnr = ts_vapma-posnr",
+    "total": "Number of ABAP Artifacts using XXL SAP Tables and XXL SAP Views",
+    "alternativeName": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61019,
+            "name": "Efficiency - SQL and Data Handling Performance",
+            "weight": 9,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-391",
+            "name": "Unchecked Error Condition",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70391",
+            "name": "The application must not be subject to error handling vulnerabilities.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        {
+            "name": "Minimum number of rows to consider a table as XXL",
+            "description": "tables are considered as XXL if the number of rows is greater than this value",
+            "technologies": [
+                {
+                    "id": 0,
+                    "name": "ALL TECHNOLOGIES",
+                    "href": "AIP/technologies/0",
+                    "values": [
+                        100000
+                    ]
+                }
+            ]
+        }
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

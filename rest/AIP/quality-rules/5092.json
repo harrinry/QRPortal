@@ -1,0 +1,78 @@
+{
+    "id": 5092,
+    "name": "Include a WHEN OTHER clause when using EVALUATE",
+    "href": "AIP/quality-rules/5092",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule searches for Cobol programs using EVALUATE statements without a WHEN OTHER clause.",
+    "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n  - EVALUATE statement without a WHEN OTHER clause",
+    "rationale": "The EVALUATE statement allows the implementation of case structures in Cobol. Each case is managed by a WHEN phrase activated by a specific test of a variable. This variable can be the result of a database access, a file record type, the return code of a subprogram or an error code. The WHEN OTHER phrase allows the management of all the cases which have not been taken into account by the previous WHEN phrases. If the variable to be tested contains a new value that is not currently managed then the absence of the WHEN OTHER phrase will lead to a situation in which no process will be performed for this value and the program may have uncontrolled or undefined behavior.",
+    "remediation": "Add a WHEN OTHER clause into each EVALUATE statement.",
+    "remediationSample": "EVALUATE WS-STATUS\n  WHEN 1\n    MOVE X TO Y\n  WHEN 2\n    MOVE Z TO Y\n  WHEN OTHER\n    PERFORM DISPLAY-ERROR-MESSAGE\nEND-EVALUATE.",
+    "sample": "* If WS-STATUS is 3 then there is not action performed\nEVALUATE WS-STATUS\n  WHEN 1\n    MOVE X TO Y\n  WHEN 2\n    MOVE Z TO Y\nEND-EVALUATE.",
+    "total": "Number of Cobol Programs",
+    "alternativeName": "Include a WHEN OTHER clause when using EVALUATE",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-478",
+            "name": "Missing Default Case in Switch Statement",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-478",
+            "name": "Missing Default Case in Switch Statement",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

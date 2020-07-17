@@ -1,0 +1,70 @@
+{
+    "id": 7640,
+    "name": "Avoid catch blocks with assertion",
+    "href": "AIP/quality-rules/7640",
+    "critical": false,
+    "maxWeight": 6,
+    "description": "Reports all catch blocks that refer to the assert instruction.",
+    "output": "This report lists all Methods that refer to the assert instruction.It provides the following information: Method full name",
+    "rationale": "Assertion in a catch block has no meaning. It is often related poor conception because:\n- assertions are not enabled in production environments, so the application will end-up with an empty catch-block\n- assertions do not give any meaning to the issue\n\nAlso, in a catch block it is too late to refer to an assertion.",
+    "remediation": "The exception must be handled correctly according to its type.",
+    "remediationSample": "try {\n   Date defaultDate=format.parse(DEFAULT_DATE_STRING);\n...\n} catch( ParseException pexc ) {\n  // This must never happen!\n     throw myException(\"bad init value\", pexc); // FIXED\n}",
+    "sample": "try {\n   Date defaultDate=format.parse(DEFAULT_DATE_STRING);\n...\n} catch( ParseException pexc ) {\n  // This must never happen!\n  assert false : \"bad init value\"; // VIOLATION\n}",
+    "total": "Number of methods and constructors that have code (not abstracts or from interfaces) containing a catch block",
+    "alternativeName": "An exception should be correctly handled according to its type and not by using an assertion",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-RLB-1",
+            "name": "Empty Exception Block",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

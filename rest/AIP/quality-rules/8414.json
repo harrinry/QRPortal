@@ -1,0 +1,142 @@
+{
+    "id": 8414,
+    "name": "Avoid weak cryptographic algorithm",
+    "href": "AIP/quality-rules/8414",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Call stack from user input source down to the target method",
+    "description": "Using CAST data-flow engine, this metric detects the use of a broken or risky cryptographic algorithm.",
+    "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
+    "rationale": "The use of a non-standard algorithm is dangerous because a determined attacker may be able to break the algorithm and compromise whatever data has been protected. Well-known techniques may exist to break the algorithm.",
+    "reference": "CWE-327: Use of a Broken or Risky Cryptographic Algorithm\nhttps://cwe.mitre.org/data/definitions/327.html\n\nOpen Web Application Security Project (OWASP) \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+    "remediation": "Use a recommended algorithm. Example: Advanced Encryption Standard (AES).",
+    "remediationSample": "Cipher des=Cipher.getInstance(\"AES/CBC/PKCS5PADDING\");\ndes.initEncrypt(key2);",
+    "sample": "Cipher des=Cipher.getInstance(\"DES/CBC/PKCS5PADDING\");\ndes.initEncrypt(key2);",
+    "total": "Number of potentially vulnerable methods",
+    "alternativeName": "Ensure you use the right algorithm like AES-128",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-327",
+            "name": "Broken or Risky Cryptographic Algorithm Usage",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-327",
+            "name": "Use of a Broken or Risky Cryptographic Algorithm",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SC-12",
+            "name": "Cryptographic Key Establishment and Management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M5-2016",
+            "name": "Insufficient Cryptography",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-4.1",
+            "name": "Use strong cryptography and security protocols",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-4.1",
+            "name": "Use strong cryptography and security protocols",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70245",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

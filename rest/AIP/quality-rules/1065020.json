@@ -1,0 +1,86 @@
+{
+    "id": 1065020,
+    "name": "Avoid using <ctime> (C++)",
+    "href": "AIP/quality-rules/1065020",
+    "critical": false,
+    "maxWeight": 1,
+    "description": "The rule raises a violation when <ctime> library is used",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Various aspects of ctime are implementation-defined or unspecified, such as the formats of times.",
+    "reference": "MISRA C++, 18-0-4: The time handling functions of library <ctime> shall not be used.",
+    "remediation": "Ensure that you do not use implementation-dependent <ctime> library\n\nYou can try an alternative library such as: <chrono>",
+    "sample": "#include <ctime>\nvoid f ( )\n{\nclock ( );\n} // Non-compliant",
+    "total": "Number of C / C++ method and function",
+    "alternativeName": "Ensure that you do not use implementation-dependent <ctime> library",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "C-CPP",
+            "id": "AUTOSAR-CPP-2014-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "C-CPP",
+            "id": "MISRA-CPP-2008-Libraries",
+            "name": "Libraries",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-758",
+            "name": "Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-758",
+            "name": "Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

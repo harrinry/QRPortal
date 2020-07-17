@@ -1,0 +1,90 @@
+{
+    "id": 8152,
+    "name": "Avoid having transaction with the Thread.Sleep method in a loop",
+    "href": "AIP/quality-rules/8152",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Avoid and replace the Thread.Sleep method in a loop in a transaction.",
+    "output": "This report lists all artifacts having transactions with Thread.Sleep call in a loop.\nIt provides the following information: \n  Artifact full name.",
+    "rationale": "Having Thread.Sleep method in a loop in a transaction can increase greatly the time of execution and this is a great risk for the transaction. It can lead to transaction failure.",
+    "remediation": "Review the Function / Procedure design.",
+    "remediationSample": "static public void CreateTransactionScope()\n    {\n        try\n        {\n            // Create the TransactionScope to execute the commands, guaranteeing\n            // that both commands can commit or roll back as a single unit of work.\n            using (TransactionScope scope = new TransactionScope())\n            {\n                // The Complete method commits the transaction. If an exception has been thrown,\n                // Complete is not  called and the transaction is rolled back.\n                scope.Complete();\n            }\n        }\n        catch (TransactionAbortedException ex)\n        {\n            Console.WriteLine(\"TransactionAbortedException Message: {0}\", ex.Message);\n        }\n        catch (ApplicationException ex)\n        {\n            Console.WriteLine(\"ApplicationException Message: {0}\", ex.Message);\n        }\n    }",
+    "sample": "static public void CreateTransactionScope()\n    {\n        try\n        {\n            // Create the TransactionScope to execute the commands, guaranteeing\n            // that both commands can commit or roll back as a single unit of work.\n            using (TransactionScope scope = new TransactionScope())\n            {\n\n                for (int i = 0; i < 5; i++)\n                {\n                    Console.WriteLine(\"Sleep for 2 seconds.\");\n                    Thread.Sleep(2000);\n                }\n\n                Console.WriteLine(\"Main thread exits.\");\n\n\n                // The Complete method commits the transaction. If an exception has been thrown,\n                // Complete is not  called and the transaction is rolled back.\n                scope.Complete();\n\n            }\n\n        }\n        catch (TransactionAbortedException ex)\n        {\n            Console.WriteLine(\"TransactionAbortedException Message: {0}\", ex.Message);\n        }\n        catch (ApplicationException ex)\n        {\n            Console.WriteLine(\"ApplicationException Message: {0}\", ex.Message);\n        }\n    }",
+    "total": "Number of artifacts",
+    "alternativeName": "Avoid having transaction with the Thread.Sleep method in a loop",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61009,
+            "name": "Complexity - Algorithmic and Control Structure Complexity",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-5",
+            "name": "Loop Value Update within the Loop",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1095",
+            "name": "Loop Condition Value Update within the Loop",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1095",
+            "name": "Loop Condition Value Update within the Loop",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

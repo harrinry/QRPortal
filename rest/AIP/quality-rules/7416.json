@@ -1,0 +1,90 @@
+{
+    "id": 7416,
+    "name": "Avoid Form Field without Validator",
+    "href": "AIP/quality-rules/7416",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Form Field Name when declared in the struts-config.xml file for dynamic form-bean",
+    "description": "This metric reports all forms with fields that are not validated. Forms taken into account are forms defined as form-bean in the struts-config.xml (it can be a regular form bean or a dynamic form bean).\nNote that in the case where the form is shared among multiple actions, the validation declaration of the form will be associated to the action.\nNote that in a case of a dynamic form-bean, the fields are declared in the struts-config.xml while the fields of regular form-bean are defined in the implementation class itself and deduced from the setters of the class.\n\nNote that a form bean can be associated to several form validator. In this case, a field will be considered as validated when all form validator validate this field. This case may happen when the validator form is associated to action mapping or when internationalization is used.\n\nNote that in the case a form bean is not associated to any validator form all its fields or setter methods will be reported.",
+    "output": "This report lists all form bean fields that are not validated: setter method in case of regular form bean and form field declared in the struts-config.xml file for dynamic form-bean. It provides the following information:\n  - Form Name \n  - Field Name \nor \n - Java Method Full Name\n\nNOTE: in the case of Java method reported, the field to add in validator.xml is deduced from the method name using Java Bean convention.",
+    "rationale": "Input validation is required to secure an application. Moreover, the web interface is exposed to anyone. Non validating input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like erasing the content of a database.\nOnly one invalidated input can be exploited by an attacker.\n\nNote that unused fields should be constrained so that they can only be empty or undefined. If unused fields are not validated, shared business logic in an action may allow attackers to bypass the validation checks that are performed for other uses of the form.",
+    "reference": "http://cwe.mitre.org/data/definitions/105.html\nhttp://www.owasp.org/index.php/2004_Updates_OWASP_Top_Ten_Project",
+    "remediation": "Validate each field of a form. When a form is shared among different action, you have to use the type org.apache.struts.validator.DynaValidatorActionForm for your Form Bean definition in the struts-config.xml file to be able to define a specific validation for each action.",
+    "remediationSample": "----> validation.xml:\n\n<form-validation>\n  <formset>\n    <form name=\"logonForm\">\n      <field property=\"username\" \n            depends=\"required\">\n        <arg0 key=\"prompt.username\"/>\n      </field>\n      <field property=\"password\" // FIXED\n            depends=\"required\">\n        <arg0 key=\"prompt.password\"/>\n      </field>\n    </form>\n  </formset>\n</form-validation>",
+    "sample": "====>  For concrete Form Bean\n\n--> logonForm.java (for concrete Form Bean) :\npublic class LogonForm extends ValidatorForm {\n  private String username;\n  private String password;\n  \n  public String getUsername() {\n    return username;\n  }\n  \n  public void setUsername(String username) {\n    this.username = username;\n  }\n\n  public String getPassword() {\n    return password;\n  }\n\npublic void setPassword(String password) {\n    this.password = password;\n  }\n}\n\n--> struts-config.xml (for concrete Form Bean)\n<form-beans>\n  <form-bean name=\"logonForm\"\n            type=\"com.cast.struts.sample.LogonForm\"/>\n</form-beans>\n\n====>  for dynamic Form Bean\n--> struts-config.xml (for dynamic Form Bean)\n<form-beans>\n  <form-bean name=\"logonForm\"\n            type=\"org.apache\n.struts.validator.DynaValidatorForm\">\n    <form-property name=\"username\"\n            type=\"java.lang.String\"/>\n    <form-property name=\"password\"\n            type=\"java.lang.String\"/>\n  </form-bean>\n</form-beans>\n\n====>  for both dynamic and concrete Form Bean\n\n--> validation.xml:\n\n<form-validation>\n  <formset>\n    <form name=\"logonForm\"> // VIOLATION: password field is not validated\n      <field property=\"username\" \n            depends=\"required\">\n        <arg0 key=\"prompt.username\"/>\n      </field>\n    </form>\n  </formset>\n</form-validation>",
+    "total": "Number of form fields or Java setter methods, when defined with struts or 0 if no object of type \"Struts Configuration File\" is present",
+    "alternativeName": "Ensure to validate each field of a form",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-105",
+            "name": "Struts: Form Field Without Validator",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

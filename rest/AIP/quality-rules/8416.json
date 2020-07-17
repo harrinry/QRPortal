@@ -1,0 +1,107 @@
+{
+    "id": 8416,
+    "name": "Avoid use of a reversible one-way hash",
+    "href": "AIP/quality-rules/8416",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Call stack from user input source down to the target method",
+    "description": "Using CAST data-flow engine, this metric detects the use of a risky hashing algorithm.",
+    "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
+    "rationale": "This weakness is especially dangerous when the hash is used in security algorithms that require the one-way property to hold. For example, if an authentication system takes an incoming password and generates a hash, then compares the hash to another hash that it has stored in its authentication database, then the ability to create a collision could allow an attacker to provide an alternate password that produces the same target hash, bypassing authentication.",
+    "reference": "CWE-328: Reversible One-Way Hash\nhttps://cwe.mitre.org/data/definitions/328.html\n\nOpen Web Application Security Project (OWASP) \nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
+    "remediation": "Use a recommended hash method. Example: SHA-2.",
+    "remediationSample": "Sample 1: \n---------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA-256\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}\n\nSample 2:\n--------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA-512\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}",
+    "sample": "Sample 1: \n---------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"SHA\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}\n\nSample 2:\n--------\nString plainText = new String(plainTextIn);\nMessageDigest encer = MessageDigest.getInstance(\"MD5\");\nencer.update(plainTextIn);\nbyte[] digest = password.digest();\n\n//Login if hash matches stored hash \nif (equal(digest,secret_password())) {\nlogin_user();\n}",
+    "total": "Number of potentially vulnerable methods",
+    "alternativeName": "Ensure you don't use weak cryptographic hash one-way reversible",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-328",
+            "name": "Reversible One-Way Hash",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70245",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

@@ -1,0 +1,111 @@
+{
+    "id": 7258,
+    "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+    "href": "AIP/quality-rules/7258",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "The purpose of this quality rule is to detect calls to the DataReader's ExecuteReader method made without the use the CommandBehavior.CloseConnection style.\n\nThis quality rule is valid for any class that the inherit directly or indirectly from IDataReader including SqlDataReader, OleDbDataReader, OracleDataReader, OdbcDataReader.",
+    "output": "List all methods where a call to ExecuteReader without the CommandBehavior.CloseConnection parameter.",
+    "rationale": "It is highly recommended to tie the lifetime of the connection to the SqlDataReader object, by passing the CommandBehavior.CloseConnection enumerated value to the ExecuteReader method.\nWhat the CommandBehavior.CloseConnection does is close the underlying connection whenever the reader is closed.  It is quite easy to forget to close database connections, and thereby waste resources that may be quite scarce, leading to serious application availability and stability issues.",
+    "reference": ".NET Data Access Architecture Guide\nhttp://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnbda/html/daag.asp\n\nKnow Dot Net - IDataReader and the CommandBehavior Enumeration\nhttp://www.knowdotnet.com/articles/schemas2.html",
+    "remediation": "Use theCommandBehavior.CloseConnection call style when calling the ExecuteReader method.",
+    "remediationSample": "SqlDataReader reader;\nSqlCommand cmd = new SqlCommand(\"SELECT Facility FROM Tbl_Facilities\", cn);\ntry\n{\n   if(cn.State != ConnectionState.Open){cn.Open();}\n}\ncatch(SqlException ex)\n{\n    Debug.Assert(false, ex.ToString);\n}\ntry\n{ \n    reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);\n}\ncatch(System.Exception ex)\n{\n    Debug.Assert(false, ex.ToString());\n}\nwhile(reader.Read())\n{\n       Console.WriteLine(reader.GetString(0));\n}\nreader.Close;\nConsole.WriteLine(cn.State);//Closed\n}",
+    "sample": "String strConn =\nConfigurationSettings.AppSettings[\"myConnection\"].ToString();\nSqlConnection sqlConn = new SqlConnection(strConn);\n\nSqlCommand sqlComm = new SqlCommand(\"p_my_procedure\", sqlConn);\nsqlComm.CommandType = CommandType.StoredProcedure;\n\nsqlComm.Parameters.Add(new SqlParameter(\"@bitSomeResult\", SqlDbType.Bit));\nsqlComm.Parameters[\"@bitSomeResult\"].Direction = ParameterDirection.Output;\n\nsqlConn.Open();\nSqlDataReader dr = sqlComm.ExecuteReader();\n\nString strSomeResult =\nsqlComm.Parameters[\"@bitSomeResult\"].Value.ToString(); \n\nif (strSomeResult.ToLower() == \"True\".ToLower())\n{\n//Do something\n}\nelse\n{\n//Do something else\n}\n\nsqlConn.Close();",
+    "total": "Number of methods with a call to ExecuteReader",
+    "alternativeName": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+    "businessCriteria": [
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
+        },
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCRM-CWE-772",
+            "name": "Missing Release of Resource after Effective Lifetime",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-772",
+            "name": "Missing Release of Resource after Effective Lifetime",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-404",
+            "name": "Improper Resource Shutdown or Release",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-772",
+            "name": "Missing Release of Resource after Effective Lifetime",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-404",
+            "name": "Improper Resource Shutdown or Release",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-772",
+            "name": "Missing Release of Resource after Effective Lifetime",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

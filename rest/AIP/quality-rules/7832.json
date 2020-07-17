@@ -1,0 +1,90 @@
+{
+    "id": 7832,
+    "name": "Avoid unreferenced Classes",
+    "href": "AIP/quality-rules/7832",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "All Classes should be referenced.\nAn unreferenced Class is a class\n1- which is not referenced from other  classes and\n2- where none of its members is referenced from other members of other classes.\n3- a class that has no static main method \n\nAs of today, this excludes references from other languages (for instance, JSP calling static members. This case will be handled in the future).",
+    "output": "This report lists all unreferenced Classes\nIt provides the following information: Class full name",
+    "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
+    "remediation": "Check if the Class is truly unnecessary.\nRemove Classes that are not used.",
+    "total": "Total number of classes",
+    "alternativeName": "Ensure all the classes are used",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61027,
+            "name": "Dead code (static)",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        },
+        {
+            "id": -3,
+            "name": "C++",
+            "href": "AIP/technologies/-3"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": -9,
+            "name": "Visual Basic",
+            "href": "AIP/technologies/-9"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCMM-MNT-20",
+            "name": "Unreachable Named Callable or Method Control Element",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1061",
+            "name": "Insufficient Encapsulation",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

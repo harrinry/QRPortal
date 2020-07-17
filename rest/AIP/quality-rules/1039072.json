@@ -1,0 +1,75 @@
+{
+    "id": 1039072,
+    "name": "Avoid using jYAML to deserialize YAML (JEE)",
+    "href": "AIP/quality-rules/1039072",
+    "critical": true,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will check the use of jYAML in java source code",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "When user-controlled YAML streams are deserialized, then the attackers may gain access to execute arbitrary code on server and abuse logic of the application or may even lead to denial of service.\n\nThe YAML serialization libraries convert\u200b object graphs into YAML formatted data and it may include the metadata which is necessary to reconstruct objects back from YAML stream. If the classes of the objects which are to be reconstructed are specified by the attackers and if they force the application to run arbitrary setters with user-controlled data, in this scenario the attacker may gain access to execute arbitrary code during deserialization of YAML stream.\n\njYAML project is abandoned and must not be used to deserialize YAML.",
+    "reference": "https://cwe.mitre.org/data/definitions/502.html\nhttps://github.com/mbechler/marshalsec",
+    "remediation": "Always make sure to use only a Yaml instance that is constructed either with a SafeConstructor",
+    "sample": "package yaml;\nimport org.ho.yaml;\n\nYaml.dump(object, new File(\"object.yml\"));\nObject object = Yaml.load(new File(\"object.yml\"));",
+    "total": "Number of Java Methods Which are Associated with jYAML Syntax",
+    "alternativeName": "jYAML project is abandonned and muts not be used to deserialize YAML",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-502",
+            "name": "Deserialization of Untrusted Data",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-502",
+            "name": "Deserialization of Untrusted Data",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A8-2017",
+            "name": "Insecure Deserialization",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

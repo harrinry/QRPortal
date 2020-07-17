@@ -1,0 +1,82 @@
+{
+    "id": 1020788,
+    "name": "Avoid using moment before 2.19.3 with Node.js",
+    "href": "AIP/quality-rules/1020788",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will check the use of moment function and the version used by the application.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "The moment module before 2.19.3 for Node.js is prone to a regular expression denial of service via a crafted date string, a different vulnerability than CVE-2016-4055.",
+    "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-18214\nhttps://www.npmjs.com/advisories/532",
+    "remediation": "Upgrade the version of node-serialize",
+    "sample": "moment(\"20120620\", \"YYYYMMDD\").fromNow(); // 7 years ago",
+    "total": "Number of function moment",
+    "alternativeName": "Ensure you don't use moment before 2.19.3 functions",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-676",
+            "name": "Use of Potentially Dangerous Function",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A8-2017",
+            "name": "Insecure Deserialization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}
