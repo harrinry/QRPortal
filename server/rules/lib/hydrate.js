@@ -7,13 +7,13 @@ const {getRulesDetailsFromFile} = require('../../lib/ruleDetailsStruct');
 const Hbj = new struct( 'path', 'data', 'search' );
 const root = require('app-root-path');
 
-function createHydrate( queryParams, echo ){
+async function createHydrate( queryParams, echo ){
   const params = standardize( queryParams );
   const { sec, ref, s } = params;
   let PATH, RULES, SEARCH;
 
   if (sec && ref) {
-    PATH = generatePath(sec, echo),
+    PATH = await generatePath(sec, echo),
     RULES = generateRules(ref, PATH, echo);
   } else if( s && isSearchFormatValid(s) ){
     PATH = [];

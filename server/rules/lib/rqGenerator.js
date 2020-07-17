@@ -48,6 +48,12 @@ function generateRulesHydrate( params, path, echo ){
       out[dir] = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
       break;
     }
+    case 'Indexes': {
+      const p = echo ? path[1].href.replace('AIP/', 'Echo/') : path[1].href,
+        _path = root.resolve('rest/'.concat(p, '/quality-rules.json'));
+      out.brl = fs.existsSync(_path) ? JSON.parse(fs.readFileSync(_path)) : [];
+      break;
+    }
     }
   }
 
