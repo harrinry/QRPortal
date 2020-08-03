@@ -15,9 +15,29 @@
     "alternativeName": "Ensure to have every field of a serializable class either serializable or transient to avoid failure to implement serialization capabilities",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 60013,
@@ -31,6 +51,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062166,
+            "name": "ASCRM-RLB-2 - Serializable Storable Data Element without Serialization Control Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061123,
+            "name": "CWE-1066: Missing Serialization Control Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061125,
+            "name": "CWE-1070: Serializable Data Element Containing non-Serializable Item Elements",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",

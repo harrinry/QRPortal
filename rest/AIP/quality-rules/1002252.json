@@ -3,7 +3,7 @@
     "name": "Avoid untested Return Code variables after ALLOCATE in Modules (FORTRAN)",
     "href": "AIP/quality-rules/1002252",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The STAT usage in a allocate or deallocate operation are causing the analysis to create specific variables where the return code is stored in. Whenever this variable is not used in any IF construct , the artifact is reported as a violation. The proper order in which this needs to take place is not taken into account; only the artifacts that have no testing of STAT variables are captured by this diagnostic.",
     "rationale": "The variable that contains the STAT return code value must be tested to ensure properly handling of any errors in the ALLOCATE that may have occurred",
     "remediation": "Always use a variable to capture the return code in and test this variable to see if the operation resulted in success or not.",
@@ -13,6 +13,21 @@
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -31,6 +46,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061035,
+            "name": "CWE-252: Unchecked Return Value",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",

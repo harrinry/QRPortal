@@ -3,7 +3,7 @@
     "name": "Avoid Artifacts with High Fan-Out",
     "href": "AIP/quality-rules/7778",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Fan-Out",
     "description": "Avoid Artifacts with High Fan-Out (Fan-Out > X). The Fan-out of an Artifact is the number of other Artifacts that are referenced in it. When computing the Fan-Out of an Artifact, multiple accesses to the same component of an Artifact are counted as one access. The threshold is a parameter and can be changed at will.\n\nThe Fan-Out computed by CAST takes into account dependency resulting from polymorphism and thus depends on the number of sub-classes of the objects referenced in the artifact.",
     "output": "This report lists all Artifacts with a Fan-Out greater than X. It provides the following information: Artifact full name, Fan-Out value",
@@ -19,9 +19,29 @@
             "href": "AIP/business-criteria/66032"
         },
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 60013,
@@ -36,9 +56,21 @@
     ],
     "technicalCriteria": [
         {
+            "id": 1062124,
+            "name": "ASCMM-MNT-4 - Callable and Method Control Element Number of Outward Calls",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 61013,
             "name": "Architecture - Object-level Dependencies",
             "weight": 4,
+            "critical": false
+        },
+        {
+            "id": 1061111,
+            "name": "CWE-1048: Invokable Control Element with Large Number of Outward Calls",
+            "weight": 5,
             "critical": false
         }
     ],

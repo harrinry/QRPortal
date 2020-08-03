@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Data Members",
     "href": "AIP/quality-rules/7912",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "description": "All Data Members should be referenced.\nA data member is unreferenced when is not explicitly called from within the analyzed code.",
     "output": "This report lists all unreferenced Data Members (fields, properties and constants, whatever the modifiers applied).\nIt provides the following information:  Data Member full name\nReference to a property from it's getter or setter is no considered as a reference.",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.\n\nWarning:\nUnreferenced code can also be the symptoms of missing code (code not included in the source code analysis) and / or can be the symptom of use of polymorphism.\nThe intensive use of polymorphism can make the application easier to change but much more difficult to test, debug and stabilize.",
@@ -11,6 +11,16 @@
     "total": "Total number of Data Members and constants",
     "alternativeName": "Ensure all the data members are used",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -33,6 +43,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

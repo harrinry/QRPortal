@@ -16,6 +16,21 @@
     "alternativeName": "Ensure to preceed the call of XMLStreamReader by a call to the secure mode of the parser",
     "businessCriteria": [
         {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -27,6 +42,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061070,
+            "name": "CWE-611: Improper Restriction of XML External Entity Reference",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062324,
+            "name": "OWASP-2017-A4 XML External Entities (XXE)",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",

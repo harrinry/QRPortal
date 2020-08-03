@@ -3,7 +3,7 @@
     "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
     "href": "AIP/quality-rules/7582",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "associatedValueName": "ABAP Table/View accessed multiple times",
     "description": "This metric retrieves the ABAP programs making more than a defined number of accesses to the same database table or view. If a program defines classes, then methods belonging to the first level of classes are taken into account.\nThe number of accesses is a parameter of the rule.",
     "output": "Associated to each ABAP Program with violations, the Quality Rule provides:\n- The ABAP Table/View accessed multiple times",
@@ -12,6 +12,16 @@
     "total": "Number of ABAP Programs",
     "alternativeName": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (INSERT)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60014,
             "name": "Efficiency",
@@ -23,12 +33,34 @@
             "href": "AIP/business-criteria/20140522"
         },
         {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062115,
+            "name": "ASCMM-MNT-14 - Callable and Method Control Element Excessive Number of Control Elements involving Data Element from Data Manager or File Resource",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061135,
+            "name": "CWE-1084: Invokable Control Element with Excessive File or Data Access Operations",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61019,
             "name": "Efficiency - SQL and Data Handling Performance",

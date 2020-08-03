@@ -3,7 +3,7 @@
     "name": "Avoid using I-spec (RPG-IV only)  (RPG400)",
     "href": "AIP/quality-rules/1008102",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "This rule searches all the artifacts using I-spec.",
     "output": "This report lists RPG400 programs using I-spec.\nIt provides the following information:\nRPG400 Program full name",
     "rationale": "I-specs being deprecated it allows less re-usability",
@@ -15,6 +15,16 @@
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -33,6 +43,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061055,
+            "name": "CWE-477: Use of Obsolete Function",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",

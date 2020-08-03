@@ -3,7 +3,7 @@
     "name": "Avoid large Functions - too many Lines of Code (EGL)",
     "href": "AIP/quality-rules/1005098",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "description": "This rule searches for all functions with more than X Lines of Code.  The threshold is a parameter and can be changed at will.",
     "output": "This report lists the following information: Function Full Name, Number of LOC",
     "rationale": "Large functions are difficult to maintain",
@@ -12,6 +12,26 @@
     "total": "Number of Functions",
     "alternativeName": "Avoid large Functions - too many Lines of Code (EGL)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
+        },
         {
             "id": 66031,
             "name": "Programming Practices",
@@ -24,6 +44,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062128,
+            "name": "ASCMM-MNT-8 - Source Element Excessive Size",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061132,
+            "name": "CWE-1080: Source Code File with Excessive Number of Lines of Code",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61023,
             "name": "Volume - Number of LOC",

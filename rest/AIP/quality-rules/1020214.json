@@ -3,7 +3,7 @@
     "name": "Ensure to turn off and clear event listeners after component is destroyed",
     "href": "AIP/quality-rules/1020214",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The rule will raise a violation when event listener is not turned off after component is destroyed",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -16,6 +16,16 @@
     "alternativeName": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062102,
+            "name": "CISQ-Performance-Efficiency",
+            "href": "AIP/business-criteria/1062102"
+        },
+        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -24,6 +34,26 @@
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061002,
+            "name": "OMG-ASCQM-Performance-Efficiency",
+            "href": "AIP/business-criteria/1061002"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -37,6 +67,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062136,
+            "name": "ASCPEM-PRF-15 - Storable and Member Data Element Reference Missing De-Referencing Control Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061044,
+            "name": "CWE-401: Missing Release of Memory after Effective Lifetime",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",

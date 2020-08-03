@@ -3,7 +3,7 @@
     "name": "Avoid Datawindows accessing Database Procedures or Functions",
     "href": "AIP/quality-rules/6078",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "associatedValueName": "Database procedure or function",
     "description": "Datawindows should not access database procedures or functions",
     "total": "Number of Datawindows",
@@ -15,9 +15,29 @@
             "href": "AIP/business-criteria/66032"
         },
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 60013,
@@ -32,9 +52,21 @@
     ],
     "technicalCriteria": [
         {
+            "id": 1062113,
+            "name": "ASCMM-MNT-12 - Named Callable and Method Control Element with Layer-skipping Call",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 61001,
             "name": "Architecture - Multi-Layers and Data Access",
             "weight": 1,
+            "critical": false
+        },
+        {
+            "id": 1061116,
+            "name": "CWE-1054: Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
+            "weight": 5,
             "critical": false
         }
     ],

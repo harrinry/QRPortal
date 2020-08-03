@@ -14,9 +14,29 @@
     "alternativeName": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 60013,
@@ -30,6 +50,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062170,
+            "name": "ASCRM-RLB-6 - Storable or Member Data Element containing Pointer Item Element without Proper Copy Control Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061148,
+            "name": "CWE-1098: Data Element containing Pointer Item without Proper Copy Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",

@@ -15,9 +15,29 @@
     "alternativeName": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 60013,
@@ -31,6 +51,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062173,
+            "name": "ASCRM-RLB-9 - Float Type Storable and Member Data Element Comparison with Equality Operator",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061130,
+            "name": "CWE-1077: Floating Point Comparison with Incorrect Operator",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",

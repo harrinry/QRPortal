@@ -3,7 +3,7 @@
     "name": "Siebel: Avoid unreferenced Fields in Business Component",
     "href": "AIP/quality-rules/1520326",
     "critical": false,
-    "maxWeight": 2,
+    "maxWeight": 5,
     "description": "The rule report unreferenced Fields (having no linked control in Applet)",
     "output": "This rule reports unreferenced Fields in Business Components",
     "rationale": "Field in Business Component provides data to a control or list column in an applet.\nUnreferenced field means the data is fetched from database, but not displayed to the user: this is a waste of resource.",
@@ -12,6 +12,16 @@
     "total": "Number of added or modified Fields or Multi-Value Fields in Business Components",
     "alternativeName": "Siebel: Avoid unreferenced Fields in Business Component",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -34,6 +44,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

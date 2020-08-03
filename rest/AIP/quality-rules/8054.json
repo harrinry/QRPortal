@@ -15,9 +15,34 @@
     "alternativeName": "Avoid calling blocking functions with an infinite timeout",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 60013,
@@ -31,6 +56,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062165,
+            "name": "ASCRM-RLB-19 - Synchronous Call Time-Out Absence",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061139,
+            "name": "CWE-1088: Synchronous Access of Remote Resource without Timeout",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061096,
+            "name": "CWE-821: Incorrect Synchronization",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",

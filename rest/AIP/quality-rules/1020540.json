@@ -16,6 +16,21 @@
     "alternativeName": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -37,6 +52,30 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062148,
+            "name": "ASCRM-CWE-396 - Declaration of Catch for Generic Exception",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062149,
+            "name": "ASCRM-CWE-397 - Declaration of Throws for Generic Exception",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062155,
+            "name": "ASCRM-RLB-1 - Empty Exception Block",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062180,
+            "name": "ASCSM-CWE-396 - Declaration of Catch for Generic Exception",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",

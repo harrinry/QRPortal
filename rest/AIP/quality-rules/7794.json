@@ -3,7 +3,7 @@
     "name": "Avoid Classes with a High Public Data Ratio",
     "href": "AIP/quality-rules/7794",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Public Data Ratio",
     "description": "Avoid Classes with a High Public Data Ratio greater than X %. Public Data Ratio is the percentage of public fields among all fields. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all Classes with a Public Data Ratio greater than X %. Const data members are not considered as public. Properties (.NET) are not considered as fields. It provides the following information:\n- Class full name, PDC",
@@ -12,6 +12,16 @@
     "total": "Number of classes",
     "alternativeName": "Avoid Classes with a High Public Data Ratio",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -29,6 +39,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062116,
+            "name": "ASCMM-MNT-15 - Public Member Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61020,
             "name": "Programming Practices - Modularity and OO Encapsulation Conformity",

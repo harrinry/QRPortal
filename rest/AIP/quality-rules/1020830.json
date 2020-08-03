@@ -3,7 +3,7 @@
     "name": "Avoid using Angular ElementRef API to manipulate DOM",
     "href": "AIP/quality-rules/1020830",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The built-in browser DOM APIs don't automatically protect you from security vulnerabilities. Not only it poses security risk, but it also creates tight coupling between your application and rendering layers which makes it difficult to run an app on multiple platforms.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -21,9 +21,39 @@
             "href": "AIP/business-criteria/66032"
         },
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
         },
         {
             "id": 60013,
@@ -38,9 +68,33 @@
     ],
     "technicalCriteria": [
         {
+            "id": 1062191,
+            "name": "ASCSM-CWE-79 - Cross-site Scripting Improper Input Neutralization",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 61001,
             "name": "Architecture - Multi-Layers and Data Access",
             "weight": 1,
+            "critical": false
+        },
+        {
+            "id": 1061015,
+            "name": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062303,
+            "name": "OWASP-2013-A3 Cross-Site Scripting (XSS)",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062327,
+            "name": "OWASP-2017-A7 Cross-Site Scripting (XSS)",
+            "weight": 5,
             "critical": false
         }
     ],

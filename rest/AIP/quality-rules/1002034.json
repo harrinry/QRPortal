@@ -3,16 +3,46 @@
     "name": "Any Data must be declared, use IMPLICIT NONE in Subroutines  (FORTRAN)",
     "href": "AIP/quality-rules/1002034",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The artifact is researched for the presence of the IMPLICIT NONE statement. If an artifact does not have this statement embedded, the artifact is considered being in violation.",
     "rationale": "Every artifact must have an IMPLICIT NONE statement to make sure the compiler does not automatically declare undeclared variables as integer.",
     "remediation": "Verify existing variables for proper type declaration and add the IMPLICIT NONE statement.",
     "alternativeName": "Any Data must be declared, use IMPLICIT NONE in Subroutines  (FORTRAN)",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -31,6 +61,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062150,
+            "name": "ASCRM-CWE-456 - Storable and Member Data Element Missing Initialization",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062183,
+            "name": "ASCSM-CWE-456 - Storable and Member Data Element Missing Initialization",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061051,
+            "name": "CWE-456: Missing Initialization of a Variable",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",

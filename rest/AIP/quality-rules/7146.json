@@ -3,7 +3,7 @@
     "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
     "href": "AIP/quality-rules/7146",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "associatedValueName": "Java object name",
     "description": "In the contex of Struts implementation, the JSP pages must reference ONLY Java objects that belong to the bean scope or Java objects of a class belonging itself to the same scope\n\nThe scope is an attribute of the bean indicating the context of objects usage.\nIn struts-config, the scope refers to where to create/find ActionForm objects.\n\n\nAll JSP pages that refers to Java methods, field of a class or the class itself that is not associated to a scoped attribute will be reported as violation.",
     "output": "This report lists all JSP pages referencing Java objects that are not associated to J2EE Scoped Bean.\nIt provides the following information:\n - Page name\n - Java object name",
@@ -19,9 +19,29 @@
             "href": "AIP/business-criteria/66032"
         },
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 60013,
@@ -36,9 +56,21 @@
     ],
     "technicalCriteria": [
         {
+            "id": 1062113,
+            "name": "ASCMM-MNT-12 - Named Callable and Method Control Element with Layer-skipping Call",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 61001,
             "name": "Architecture - Multi-Layers and Data Access",
             "weight": 3,
+            "critical": false
+        },
+        {
+            "id": 1061116,
+            "name": "CWE-1054: Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
+            "weight": 5,
             "critical": false
         }
     ],

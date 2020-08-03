@@ -3,16 +3,36 @@
     "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Programs  (FORTRAN)",
     "href": "AIP/quality-rules/1002016",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The number of SELECT CASE statements is compared to the number of CASE DEFAULT statements.",
     "rationale": "Process the default case in the instruction SELECT CASE. Allows to safeguard against omissions and to process the default case.",
     "remediation": "Add the CASE DEFAULT to the switch construct with the appropriate default processing in it.",
     "alternativeName": "Process the default case in the instruction SELECT CASE in Fortran-90 Programs  (FORTRAN)",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -31,6 +51,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062110,
+            "name": "ASCMM-MNT-1 - Control Flow Transfer Control Element outside Switch Block",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061129,
+            "name": "CWE-1075: Unconditional Control Flow Transfer outside of Switch Block",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061056,
+            "name": "CWE-478: Missing Default Case in Switch Statement",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",

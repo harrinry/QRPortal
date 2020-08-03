@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Main procedures (PL1)",
     "href": "AIP/quality-rules/1001062",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "This rule searches for all the PL1 Main Procedures that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced PL1 Main Procedures. \n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "Unreferenced artifacts like any other example of dead code makes maintenance more difficult and more expensive (modification of unused code).",
@@ -11,6 +11,16 @@
     "total": "Number of the PL1 Main Procedures.",
     "alternativeName": "Avoid unreferenced Main procedures (PL1)",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -33,6 +43,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

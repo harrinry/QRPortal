@@ -3,7 +3,7 @@
     "name": "Avoid using hard-coded values",
     "href": "AIP/quality-rules/8236",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for specific alphanumeric literals used in COBOL programs. \n\nThe patterns to be searched are defined in COBOL parameterization file. \n\nNote: Literals used in DISPLAY statements are not taken in account.",
     "output": "The report lists all Cobol Programs using the alphanumeric literals. \n\nIt provides the following information: \n- Cobol Program full name \n- Number of violations \n\nIt also provides bookmarks for violation occurrences found in source code: \n- Alphanumeric literal",
@@ -15,9 +15,29 @@
     "alternativeName": "Avoid using hard-coded values",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -36,6 +56,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062123,
+            "name": "ASCMM-MNT-3 - Storable and Member Data Element Initialization with Hard-Coded Literals",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061115,
+            "name": "CWE-1052: Excessive Use of Hard-Coded Literals in Initialization",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",

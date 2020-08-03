@@ -3,16 +3,36 @@
     "name": "Avoid using too many GOTO statement in Programs  (FORTRAN)",
     "href": "AIP/quality-rules/1002024",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The number of GOTO statements is reported per artifact. Whenever the artifact contains 10 or more of these statements, it is considered as being a violation. Number of GOTO statements is a threshold and can be changed at will.",
     "rationale": "Use the structured instructions (IF-THEN-ELSE, DO,END DO, DO WHILE,END DO) instead of GOTO each time it is possible.",
     "remediation": "Reduce the number of GOTO statements; restructure the artifact to eliminate the use of a GOTO Statement. Add subroutines and Function for common behavior inside the artifact.",
     "alternativeName": "Avoid using too many GOTO statement in Programs  (FORTRAN)",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -31,6 +51,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062110,
+            "name": "ASCMM-MNT-1 - Control Flow Transfer Control Element outside Switch Block",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061129,
+            "name": "CWE-1075: Unconditional Control Flow Transfer outside of Switch Block",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",

@@ -3,7 +3,7 @@
     "name": "Avoid using <cstdio> stream input output library (C++)",
     "href": "AIP/quality-rules/1065010",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "description": "This rule will raise a violation when <cstdio> has been used",
     "output": "Information provided on:\n1. No of violations that occurred\n2. Bookmarks in the source code where violation occured",
     "rationale": "This includes file and I/O functions fgetpos, fopen, ftell, gets, perror, remove, rename, etc.\nStreams and file I/O have a large number of unspecified, undefined and implementation-defined behaviors associated with them.",
@@ -19,6 +19,16 @@
             "href": "AIP/business-criteria/20140522"
         },
         {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -30,6 +40,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061083,
+            "name": "CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",

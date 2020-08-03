@@ -3,7 +3,7 @@
     "name": "Avoid untested Return Code variables after Read or Write in Programs (FORTRAN)",
     "href": "AIP/quality-rules/1002238",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "The IOSTAT usage in a read, write or open operation are causing the analysis to create specific variables where the return code is stored in. Whenever this variable is not used in any IF construct , the artifact is reported as a violation. The proper order in which this needs to take place is not taken into account; only the artifacts that have no testing of IOSTAT variables are captured by this diagnostic.",
     "rationale": "The variable that contains the IOSTAT return code value must be tested to ensure properly handling of any errors in the read/write that may have occurred. Dont assume that the operation is successful.",
     "reference": "IOSTAT= ios  is an input/output status specifier that specifies the status of the input/output operation. ios is a scalar variable. When the input/output statement containing this specifier finishes execution, ios is defined with: A zero value if no error condition occurs. A positive value if an error occurs.",
@@ -14,6 +14,21 @@
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -32,6 +47,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061035,
+            "name": "CWE-252: Unchecked Return Value",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",

@@ -3,7 +3,7 @@
     "name": "Siebel: Avoid unreferenced Columns in Tables",
     "href": "AIP/quality-rules/1520328",
     "critical": false,
-    "maxWeight": 2,
+    "maxWeight": 5,
     "description": "The rule report unreferenced Columns.",
     "output": "This rule reports unreferenced Columns in Tables",
     "rationale": "Unreferenced code may be the symptom of Dead Code.\nDead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance.",
@@ -11,6 +11,16 @@
     "total": "Number of added or modified columns",
     "alternativeName": "Siebel: Avoid unreferenced Columns in Tables",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -33,6 +43,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

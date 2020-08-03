@@ -3,7 +3,7 @@
     "name": "Avoid unreferenced Files",
     "href": "AIP/quality-rules/1090",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "File name",
     "description": "This rule searches for C files that are not referenced. \n\nNote: A file is considered as unreferenced if it does not contain any called function nor the main() function.",
     "output": "Associated to each C file with violations, the Quality Rule provides:\n- File name",
@@ -12,6 +12,16 @@
     "total": "Number of C files",
     "alternativeName": "Ensure the file is truly unnecessary. If not, then remove it from the project to avoid dead code.",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -34,6 +44,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062122,
+            "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

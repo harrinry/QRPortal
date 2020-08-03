@@ -16,6 +16,11 @@
     "alternativeName": "Ensure that HTTP request redirections are not performed with user provided data",
     "businessCriteria": [
         {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -27,6 +32,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062310,
+            "name": "OWASP-2013-A10 Unvalidated Redirects and Forwards",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",

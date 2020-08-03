@@ -15,9 +15,34 @@
     "alternativeName": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -36,6 +61,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062157,
+            "name": "ASCRM-RLB-11 - Named Callable and Method Control Element in Multi-Thread Context with non-Final Static Storable or Member Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061119,
+            "name": "CWE-1058: Invokable Control Element in Multi-Thread Context with non-Final Static Storable or Member Element",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061060,
+            "name": "CWE-543: Use of Singleton Pattern Without Synchronization in a Multithreaded Context",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66065,
             "name": "Secure Coding - Time and State",

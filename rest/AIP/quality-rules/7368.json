@@ -3,7 +3,7 @@
     "name": "When using binary data items (COMP), then use the SYNCHRONIZED clause",
     "href": "AIP/quality-rules/7368",
     "critical": false,
-    "maxWeight": 2,
+    "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs in which binary numeric data are not defined with the SYNCHRONIZED clause.\n\nThe SYNCHRONIZED clause can be used on the data declaration itself or on the declaration of its parent structure.",
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in source code:\n  - Binary numeric data definition that is not used with the SYNC clause",
@@ -26,6 +26,11 @@
             "href": "AIP/business-criteria/20140522"
         },
         {
+            "id": 1062200,
+            "name": "MIPS-Reduction-Index",
+            "href": "AIP/business-criteria/1062200"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -41,6 +46,12 @@
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",
             "weight": 2,
+            "critical": false
+        },
+        {
+            "id": 1062201,
+            "name": "MIPS Reduction - focus on algorithmic costs",
+            "weight": 5,
             "critical": false
         }
     ],

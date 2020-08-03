@@ -3,7 +3,7 @@
     "name": "Avoid having Classes implementing too many Interfaces",
     "href": "AIP/quality-rules/3630",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Number of implementations",
     "description": "Avoid Classes implementing more than X Interfaces",
     "output": "This report lists all Classes implementing more than X Interfaces\nIt provides the following information:\n  Class full name, number of implementation",
@@ -12,9 +12,29 @@
     "alternativeName": "Avoid having Classes implementing too many Interfaces",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062101,
+            "name": "CISQ-Maintainability",
+            "href": "AIP/business-criteria/1062101"
+        },
+        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -33,6 +53,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062118,
+            "name": "ASCMM-MNT-17 - Class Element Excessive Inheritance Level",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061128,
+            "name": "CWE-1074: Class with Excessively Deep Inheritance",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
