@@ -3354,16 +3354,6 @@
         ]
     },
     {
-        "id": 1101022,
-        "name": "Avoid Tables without Primary Key (SQL)",
-        "href": "AIP/quality-rules/1101022",
-        "status": null,
-        "critical": true,
-        "technologyNames": [
-            "SQL"
-        ]
-    },
-    {
         "id": 1101024,
         "name": "Avoid using dynamic SQL in SQL Artifacts",
         "href": "AIP/quality-rules/1101024",
@@ -3407,7 +3397,7 @@
     },
     {
         "id": 1101034,
-        "name": "DISTINCT should not be used in SQL SELECT statements",
+        "name": "Avoid using DISTINCT in SQL SELECT statements",
         "href": "AIP/quality-rules/1101034",
         "status": null,
         "critical": false,
@@ -3417,7 +3407,7 @@
     },
     {
         "id": 1101038,
-        "name": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
+        "name": "Avoid OR conditions testing equality on the same identifier in SQL WHERE clauses",
         "href": "AIP/quality-rules/1101038",
         "status": null,
         "critical": false,
@@ -3427,7 +3417,7 @@
     },
     {
         "id": 1101058,
-        "name": "Do not mix ANSI and non-ANSI JOIN syntax in the same query",
+        "name": "Avoid mixing ANSI and non-ANSI JOIN syntax in the same query",
         "href": "AIP/quality-rules/1101058",
         "status": null,
         "critical": false,
@@ -3437,7 +3427,7 @@
     },
     {
         "id": 1101060,
-        "name": "LIKE operator should not start with a wildcard character",
+        "name": "Avoid using LIKE conditions starting with a wildcard character",
         "href": "AIP/quality-rules/1101060",
         "status": null,
         "critical": false,
@@ -3477,7 +3467,7 @@
     },
     {
         "id": 1101078,
-        "name": "Prefer PRIVATE to PUBLIC synonym",
+        "name": "Always prefer PRIVATE to PUBLIC synonym",
         "href": "AIP/quality-rules/1101078",
         "status": null,
         "critical": false,
@@ -3507,7 +3497,7 @@
     },
     {
         "id": 1101086,
-        "name": "VARCHAR2 and NVARCHAR2 should be used",
+        "name": "Always use VARCHAR2 and NVARCHAR2 instead of CHAR, VARCHAR or NCHAR",
         "href": "AIP/quality-rules/1101086",
         "status": null,
         "critical": false,
@@ -3517,7 +3507,7 @@
     },
     {
         "id": 1101088,
-        "name": "LONG and LONG RAW datatypes should no longer be used",
+        "name": "Avoid using LONG and LONG RAW datatypes",
         "href": "AIP/quality-rules/1101088",
         "status": null,
         "critical": false,
@@ -3527,7 +3517,7 @@
     },
     {
         "id": 1101090,
-        "name": "Each table should have a clustered index",
+        "name": "Avoid Tables without a clustered Index (SQL)",
         "href": "AIP/quality-rules/1101090",
         "status": null,
         "critical": false,
@@ -3541,6 +3531,36 @@
         "href": "AIP/quality-rules/1101098",
         "status": null,
         "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101102,
+        "name": "Avoid using LIKE conditions without wildcards",
+        "href": "AIP/quality-rules/1101102",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101104,
+        "name": "Avoid XXL tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101104",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101106,
+        "name": "Avoid tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101106",
+        "status": null,
+        "critical": true,
         "technologyNames": [
             "SQL"
         ]

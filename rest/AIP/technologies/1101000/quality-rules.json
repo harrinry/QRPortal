@@ -531,7 +531,7 @@
         "name": "Avoid Tables without Primary Key (SQL)",
         "href": "AIP/quality-rules/1101022",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "SQL"
         ]
@@ -620,7 +620,7 @@
     },
     {
         "id": 1101052,
-        "name": "Use WHEN OTHERS in exception management (SQL)",
+        "name": "Avoid using WHEN OTHERS without exception management (SQL)",
         "href": "AIP/quality-rules/1101052",
         "status": null,
         "critical": true,
@@ -650,7 +650,7 @@
     },
     {
         "id": 1101062,
-        "name": "Use at most one statement per line (SQL)",
+        "name": "Avoid using multiple statements per line (SQL)",
         "href": "AIP/quality-rules/1101062",
         "status": null,
         "critical": false,
@@ -681,7 +681,7 @@
     },
     {
         "id": 1101078,
-        "name": "Prefer PRIVATE to PUBLIC synonym",
+        "name": "Always prefer PRIVATE to PUBLIC synonym",
         "href": "AIP/quality-rules/1101078",
         "status": null,
         "critical": false,
@@ -721,7 +721,7 @@
     },
     {
         "id": 1101086,
-        "name": "VARCHAR2 and NVARCHAR2 should be used",
+        "name": "Always use VARCHAR2 and NVARCHAR2 instead of CHAR, VARCHAR or NCHAR",
         "href": "AIP/quality-rules/1101086",
         "status": null,
         "critical": false,
@@ -731,7 +731,7 @@
     },
     {
         "id": 1101088,
-        "name": "LONG and LONG RAW datatypes should no longer be used",
+        "name": "Avoid using LONG and LONG RAW datatypes",
         "href": "AIP/quality-rules/1101088",
         "status": null,
         "critical": false,
@@ -741,7 +741,7 @@
     },
     {
         "id": 1101090,
-        "name": "Each table should have a clustered index",
+        "name": "Avoid Tables without a clustered Index (SQL)",
         "href": "AIP/quality-rules/1101090",
         "status": null,
         "critical": false,
@@ -751,7 +751,7 @@
     },
     {
         "id": 1101092,
-        "name": "Errors should be handled in stored procedures and functions",
+        "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management (SQL)",
         "href": "AIP/quality-rules/1101092",
         "status": null,
         "critical": true,
@@ -761,7 +761,7 @@
     },
     {
         "id": 1101094,
-        "name": "Stored Procedures should always RETURN a status value",
+        "name": "Avoid Stored Procedures not returning a status value (SQL)",
         "href": "AIP/quality-rules/1101094",
         "status": null,
         "critical": false,
@@ -795,6 +795,26 @@
         "href": "AIP/quality-rules/1101100",
         "status": null,
         "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101104,
+        "name": "Avoid XXL tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101104",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101106,
+        "name": "Avoid tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101106",
+        "status": null,
+        "critical": true,
         "technologyNames": [
             "SQL"
         ]

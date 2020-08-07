@@ -8946,7 +8946,7 @@
     },
     {
         "id": 1101012,
-        "name": "Specify column names instead of column numbers in ORDER BY clauses",
+        "name": "Avoid specifying column numbers instead of column names in ORDER BY clauses",
         "href": "AIP/quality-rules/1101012",
         "status": null,
         "critical": false,
@@ -8968,6 +8968,16 @@
         "id": 1101020,
         "name": "Avoid using quoted identifiers",
         "href": "AIP/quality-rules/1101020",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101022,
+        "name": "Avoid Tables without Primary Key (SQL)",
+        "href": "AIP/quality-rules/1101022",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -9015,7 +9025,7 @@
     },
     {
         "id": 1101052,
-        "name": "Use WHEN OTHERS in exception management (SQL)",
+        "name": "Avoid using WHEN OTHERS without exception management (SQL)",
         "href": "AIP/quality-rules/1101052",
         "status": null,
         "critical": true,
@@ -9055,7 +9065,7 @@
     },
     {
         "id": 1101072,
-        "name": "Tables should be aliased",
+        "name": "Avoid not aliased Tables",
         "href": "AIP/quality-rules/1101072",
         "status": null,
         "critical": false,
@@ -9065,7 +9075,7 @@
     },
     {
         "id": 1101076,
-        "name": "Column references should be qualified",
+        "name": "Avoid unqualified column references",
         "href": "AIP/quality-rules/1101076",
         "status": null,
         "critical": false,
@@ -9085,7 +9095,7 @@
     },
     {
         "id": 1101092,
-        "name": "Errors should be handled in stored procedures and functions",
+        "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management (SQL)",
         "href": "AIP/quality-rules/1101092",
         "status": null,
         "critical": true,
@@ -9095,7 +9105,7 @@
     },
     {
         "id": 1101094,
-        "name": "Stored Procedures should always RETURN a status value",
+        "name": "Avoid Stored Procedures not returning a status value (SQL)",
         "href": "AIP/quality-rules/1101094",
         "status": null,
         "critical": false,

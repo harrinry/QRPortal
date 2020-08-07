@@ -321,7 +321,7 @@
     },
     {
         "id": 1101012,
-        "name": "Specify column names instead of column numbers in ORDER BY clauses",
+        "name": "Avoid specifying column numbers instead of column names in ORDER BY clauses",
         "href": "AIP/quality-rules/1101012",
         "status": null,
         "critical": false,
@@ -371,7 +371,7 @@
     },
     {
         "id": 1101034,
-        "name": "DISTINCT should not be used in SQL SELECT statements",
+        "name": "Avoid using DISTINCT in SQL SELECT statements",
         "href": "AIP/quality-rules/1101034",
         "status": null,
         "critical": false,
@@ -381,7 +381,7 @@
     },
     {
         "id": 1101038,
-        "name": "Replace OR conditions testing equality on the same identifier in SQL WHERE clauses by an IN test condition",
+        "name": "Avoid OR conditions testing equality on the same identifier in SQL WHERE clauses",
         "href": "AIP/quality-rules/1101038",
         "status": null,
         "critical": false,
@@ -391,7 +391,7 @@
     },
     {
         "id": 1101058,
-        "name": "Do not mix ANSI and non-ANSI JOIN syntax in the same query",
+        "name": "Avoid mixing ANSI and non-ANSI JOIN syntax in the same query",
         "href": "AIP/quality-rules/1101058",
         "status": null,
         "critical": false,
@@ -401,7 +401,7 @@
     },
     {
         "id": 1101060,
-        "name": "LIKE operator should not start with a wildcard character",
+        "name": "Avoid using LIKE conditions starting with a wildcard character",
         "href": "AIP/quality-rules/1101060",
         "status": null,
         "critical": false,
@@ -431,7 +431,7 @@
     },
     {
         "id": 1101072,
-        "name": "Tables should be aliased",
+        "name": "Avoid not aliased Tables",
         "href": "AIP/quality-rules/1101072",
         "status": null,
         "critical": false,
@@ -441,7 +441,7 @@
     },
     {
         "id": 1101074,
-        "name": "Tables aliases should not end with a numeric suffix",
+        "name": "Avoid Tables aliases ending with a numeric suffix",
         "href": "AIP/quality-rules/1101074",
         "status": null,
         "critical": false,
@@ -451,8 +451,18 @@
     },
     {
         "id": 1101076,
-        "name": "Column references should be qualified",
+        "name": "Avoid unqualified column references",
         "href": "AIP/quality-rules/1101076",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101102,
+        "name": "Avoid using LIKE conditions without wildcards",
+        "href": "AIP/quality-rules/1101102",
         "status": null,
         "critical": false,
         "technologyNames": [
