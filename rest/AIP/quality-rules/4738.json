@@ -6,7 +6,7 @@
     "maxWeight": 6,
     "description": "Names of Constants should be in uppercase character. Java constants are static final fields.",
     "output": "This report lists all the Constants with a lowercase letter.\nIt provides the following information:\n Constant full name",
-    "rationale": "For readability aspects, naming conventions must be respected",
+    "rationale": "For readability aspects, naming conventions must be respected. Coding naming conventions allow teams to collaborate efficiently.",
     "reference": "http://java.sun.com/docs/codeconv/html/CodeConventions.doc8.html",
     "remediation": "Change name according to the naming convention",
     "total": "Number of static final fields",
@@ -56,9 +56,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

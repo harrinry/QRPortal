@@ -1,16 +1,16 @@
 {
     "id": 7190,
-    "name": "Validator form validate() Method must call super.validate()",
+    "name": "Struts1: Validate() Method of Struts Validator form must call super.validate()",
     "href": "AIP/quality-rules/7190",
-    "critical": false,
+    "critical": true,
     "maxWeight": 7,
-    "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that don't call super.validate()",
+    "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that doesn't call super.validate()\n\nThis rule is applicable only for struts1",
     "output": "This report lists all validate() methods that violate this rule.\nIt provides the following information:\n Method Full Name",
-    "rationale": "Struts Validator can be extended to implement your own custom validation.\nWhen overriding the validate() method, call the ancestor validate()\nmethod, to ensure that any framework validations are triggered. In the case the validation framework is disabled, you expose the application to any type of attacks based on invalid field input.",
-    "reference": "http://cwe.mitre.org/documents/sources/SevenPerniciousKingdoms.pdf",
+    "rationale": "Struts Validator can be extended to implement your own custom validation.\nWhen overriding the validate() method, call the ancestor validate()\nmethod, to ensure that any framework validations are triggered. In case the validation framework is disabled, you expose the application to any type of attacks based on invalid field input.",
+    "reference": "http://cwe.mitre.org/documents/sources/SevenPerniciousKingdoms.pdf\nhttps://owasp.org/www-community/vulnerabilities/Improper_Data_Validation",
     "remediation": "Call super.validate() in the validate() method.",
     "remediationSample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  ActionErrors errors = super.validate(mapping, request); // FIXED\n\n  if (errors==null) {\n     if (notGood(mapping,request)) {\n        // some code\n     }\n  // some code\n}",
-    "sample": "public ActionErrors validate(\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  if (notGood(mapping,request)) \n    // some code\n  }\n// some code\n}  // VIOLATION",
+    "sample": "public ActionErrors validate(    // VIOLATION\n      ActionMapping mapping,\n      HttpServletRequest request) {\n  if (notGood(mapping,request)) \n    // some code\n  }\n// some code\n}",
     "total": "Number of non abstract methods that override the validate method (at any depth in the inheritance tree) of one of the class ValidatorForm, ValidatorActionForm, DynaValidatorForm, DynaValidatorActionForm",
     "alternativeName": "Struts1: Validate() Method of Struts Validator form must call super.validate()",
     "businessCriteria": [
@@ -52,7 +52,7 @@
             "id": 66062,
             "name": "Secure Coding - Input Validation",
             "weight": 7,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -110,9 +110,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

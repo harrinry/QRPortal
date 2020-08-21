@@ -2,12 +2,12 @@
     "id": 7728,
     "name": "Avoid thread creation for application running on application server",
     "href": "AIP/quality-rules/7728",
-    "critical": false,
+    "critical": true,
     "maxWeight": 9,
-    "description": "Reports all methods that call one of the following methods:\n* <class full name>.start() where <class full name> inherit from java.lang.Thread\n* java.lang.Thread.start()\nor reference one of the following interfaces or an implementation of these:\n* java.util.concurrent.Executor\n* java.util.concurrent.ExecutorService\n\nwhen ejb-jar.xml or web.xml are present in the application that is being analyzed.",
+    "description": "This rule reports violation for all methods that \ncall one of the following methods:\n  - <class full name>.start() where <class full name> inherit from java.lang.Thread\n  - java.lang.Thread.start()\nor reference one of the following interfaces or an implementation of these:\n  - java.util.concurrent.Executor\n  - java.util.concurrent.ExecutorService\n\nThis rule is applied only for EJB based application",
     "output": "This Quality Rule reports all methods that create threads. It provides the following information: Method or Constructor Full Name",
     "rationale": "One of the reasons why an application server has been created is thread management that is complex to develop. It manages multiple threads for different types of components, and in order to effectively maximize performance and resource utilization, it requires control of the threads being run on a given machine.\n\nMore often than not, threads are created when there is no time to implement a better solution. However, the consequences can be serious in terms of performance and robustness. \n\nThe EJB specification prohibits applications from managing their own threads.\nThreads in the JVM are a limited resource that must be allocated thoughtfully. Your applications may break or cause poor Application Server performance when the server load increases. Problems such as deadlocks and thread starvation may not appear until the application is under a heavy load.\nAlso multithreaded modules are complex and difficult to debug. Interactions between application-generated threads and Application Server threads are especially difficult to anticipate and analyze.",
-    "reference": "EJB specifications, http://java.sun.com/developer/technicalArticles/J2EE/connectorarch1_5/; J2EE Best Practices: Java Design Patterns, Automation, and Performance - 2002 page 439",
+    "reference": "EJB specifications, https://www.oracle.com/java/technologies/restriction.html; J2EE Best Practices: Java Design Patterns, Automation, and Performance - 2002 page 439",
     "remediation": "Use Message Driven Bean to send messages (through JMS) that will be consumed in parallel or implement JCA where the application server manages threads efficiently and can use thread pooling if necessary.",
     "sample": "class BasicThread implements Runnable {\n        public void run() {\n            [...]\n        }\n}\n\nclass SimpleThread extends Thread {\n    public SimpleThread(String str) {\n       super(str);\n    }\n    public void run() {\n       [...]\n    }\n}\n\nclass ThreadLaunch {\n    public static void main (String args[]) {\n      Runnable runnable = new BasicThread();\n        new Thread(runnable).start(); // VIOLATION\n        new SimpleThread(\"Thread\").start(); // VIOLATION\n    }\n}",
     "total": "Number of Java methods and constructors when ejb-jar.xml or web.xml are present in the application that is being analyzed",
@@ -22,6 +22,11 @@
             "id": 1062103,
             "name": "CISQ-Reliability",
             "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
         },
         {
             "id": 20140522,
@@ -49,6 +54,11 @@
             "href": "AIP/business-criteria/1061004"
         },
         {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -71,6 +81,12 @@
             "name": "CWE-404: Improper Resource Shutdown or Release",
             "weight": 5,
             "critical": false
+        },
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 9,
+            "critical": true
         },
         {
             "id": 66069,
@@ -113,9 +129,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

@@ -117,7 +117,7 @@
     },
     {
         "id": 4574,
-        "name": "Avoid using deprecated objects",
+        "name": "DEPRECATED: Avoid using deprecated objects",
         "href": "AIP/quality-rules/4574",
         "status": null,
         "critical": false,
@@ -130,7 +130,7 @@
         "name": "Avoid using 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -227,17 +227,17 @@
     },
     {
         "id": 7140,
-        "name": "Action Artifacts should not directly call a JSP page",
+        "name": "Struts Action artifacts should not directly call a JSP page",
         "href": "AIP/quality-rules/7140",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7146,
-        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+        "name": "Always have JSP pages referencing Java Objects associated to JEE Scoped Bean",
         "href": "AIP/quality-rules/7146",
         "status": null,
         "critical": false,
@@ -268,7 +268,7 @@
     },
     {
         "id": 7200,
-        "name": "Avoid String concatenation in loops (JEE)",
+        "name": "Avoid String concatenation in loops",
         "href": "AIP/quality-rules/7200",
         "status": null,
         "critical": false,
@@ -278,7 +278,7 @@
     },
     {
         "id": 7202,
-        "name": "Check usage of '==' and '!=' on objects",
+        "name": "Avoid using '==' and '!=' to compare objects",
         "href": "AIP/quality-rules/7202",
         "status": null,
         "critical": true,
@@ -298,7 +298,7 @@
     },
     {
         "id": 7206,
-        "name": "Avoid the use of InstanceOf inside loops",
+        "name": "Avoid the use of Instanceof inside loops",
         "href": "AIP/quality-rules/7206",
         "status": null,
         "critical": false,
@@ -462,7 +462,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to override both equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -503,7 +503,7 @@
     },
     {
         "id": 7506,
-        "name": "Define equals() and hashCode() for component",
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
         "href": "AIP/quality-rules/7506",
         "status": null,
         "critical": true,
@@ -693,7 +693,7 @@
     },
     {
         "id": 7702,
-        "name": "Use a third party connection pool",
+        "name": "Hibernate-provided implementations from third parties should be used for connection pool",
         "href": "AIP/quality-rules/7702",
         "status": null,
         "critical": false,
@@ -703,7 +703,7 @@
     },
     {
         "id": 7710,
-        "name": "Avoid non serializable Entities",
+        "name": "Avoid non serializable Entity beans",
         "href": "AIP/quality-rules/7710",
         "status": null,
         "critical": false,
@@ -713,7 +713,7 @@
     },
     {
         "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
+        "name": "Avoid defining singleton or factory classes when using Spring",
         "href": "AIP/quality-rules/7716",
         "status": null,
         "critical": false,
@@ -726,14 +726,14 @@
         "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/7728",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7732,
-        "name": "Avoid non validated inputs",
+        "name": "Avoid non validated inputs in JSP files that use JSF",
         "href": "AIP/quality-rules/7732",
         "status": null,
         "critical": true,
@@ -1437,14 +1437,14 @@
         "name": "Avoid hardcoded network resource names (JEE)",
         "href": "AIP/quality-rules/8102",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 8104,
-        "name": "Close database resources ASAP",
+        "name": "Avoid missing release of SQL connection after an effective lifetime (JEE)",
         "href": "AIP/quality-rules/8104",
         "status": null,
         "critical": true,
@@ -1594,7 +1594,7 @@
     },
     {
         "id": 8214,
-        "name": "Expired or Released Resource should not be used",
+        "name": "Avoid operating on resource after expiration or release",
         "href": "AIP/quality-rules/8214",
         "status": null,
         "critical": true,
@@ -1614,7 +1614,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -1627,7 +1627,7 @@
         "name": "Avoid using deprecated method, constructor, field, type or package",
         "href": "AIP/quality-rules/8220",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

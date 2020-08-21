@@ -5,7 +5,7 @@
     "critical": true,
     "maxWeight": 9,
     "associatedValueName": "Hibernate Entity name",
-    "description": "Reports Hibernate Entities that does not set select-before-update property to true and that are associated to a table that fires an UPDATE trigger.",
+    "description": "This rule checks Hibernate Entities associated to a table that fires an UPDATE trigger and that does not set select-before-update property to true.",
     "output": "List all Hibernate Entity that don't use select-before-update and that are associated to a table that fires an UPDATE trigger.\n\nIt provides the following information:\n XML File, Hibernate Entity",
     "rationale": "Triggers and object-relational mapping often create issues due to the difficulties of synchronizing the effect of a trigger with the representation of data in memory.\nWhen you are using detached objects associated to a table associated to trigger, Hibernate may execute unnecessary SQL UPDATE statements to ensure that the database state is synchronized with the session state and will affect the performances of your application.",
     "reference": "Hibernate in Action (ISBN 1932394-15-X) p 339\nJava Persistence with Hibernate (ISBN 1-932394-88-5) p 349",

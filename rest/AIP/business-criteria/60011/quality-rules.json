@@ -364,7 +364,7 @@
     },
     {
         "id": 2238,
-        "name": "Avoid unreferenced JSPs and web client files",
+        "name": "Avoid unreferenced JSP pages",
         "href": "AIP/quality-rules/2238",
         "status": null,
         "critical": false,
@@ -374,7 +374,7 @@
     },
     {
         "id": 2244,
-        "name": "Avoid undocumented Web Server Pages",
+        "name": "DEPRECATED: Avoid undocumented Web Server Pages",
         "href": "AIP/quality-rules/2244",
         "status": null,
         "critical": false,
@@ -384,7 +384,7 @@
     },
     {
         "id": 2248,
-        "name": "Avoid Web Server pages having a very low Comment/Code ratio",
+        "name": "DEPRECATED: Avoid Web Server pages having a very low Comment/Code ratio",
         "href": "AIP/quality-rules/2248",
         "status": null,
         "critical": false,
@@ -394,7 +394,7 @@
     },
     {
         "id": 2254,
-        "name": "Avoid large Page files (JEE)",
+        "name": "DEPRECATED: Avoid large Page files (JEE)",
         "href": "AIP/quality-rules/2254",
         "status": null,
         "critical": false,
@@ -404,7 +404,7 @@
     },
     {
         "id": 2258,
-        "name": "All image files should be in a specific directory",
+        "name": "DEPRECATED: All image files should be in a specific directory",
         "href": "AIP/quality-rules/2258",
         "status": null,
         "critical": false,
@@ -414,7 +414,7 @@
     },
     {
         "id": 2260,
-        "name": "All script files should be in a specific directory",
+        "name": "DEPRECATED: All script files should be in a specific directory",
         "href": "AIP/quality-rules/2260",
         "status": null,
         "critical": false,
@@ -424,7 +424,7 @@
     },
     {
         "id": 2262,
-        "name": "All stylesheet files should be in a specific directory",
+        "name": "DEPRECATED: All cascading style sheet files should be in specific directory",
         "href": "AIP/quality-rules/2262",
         "status": null,
         "critical": false,
@@ -434,7 +434,7 @@
     },
     {
         "id": 2264,
-        "name": "All page files should be in a specific directory",
+        "name": "DEPRECATED: All page files should be in a specific directory",
         "href": "AIP/quality-rules/2264",
         "status": null,
         "critical": false,
@@ -444,7 +444,7 @@
     },
     {
         "id": 2266,
-        "name": "Avoid non standard file extensions (JEE)",
+        "name": "DEPRECATED: Avoid non standard file extensions (JEE)",
         "href": "AIP/quality-rules/2266",
         "status": null,
         "critical": false,
@@ -454,7 +454,7 @@
     },
     {
         "id": 2282,
-        "name": "Avoid large Include Files",
+        "name": "DEPRECATED: Avoid large Include Files",
         "href": "AIP/quality-rules/2282",
         "status": null,
         "critical": false,
@@ -464,7 +464,7 @@
     },
     {
         "id": 2284,
-        "name": "Avoid large JSP Pages - too many Scriptlets",
+        "name": "DEPRECATED: Avoid large JSP Pages - too many Scriptlets",
         "href": "AIP/quality-rules/2284",
         "status": null,
         "critical": false,
@@ -948,6 +948,26 @@
         ]
     },
     {
+        "id": 4578,
+        "name": "Collection interfaces should be used as method return types instead of their implementation classes",
+        "href": "AIP/quality-rules/4578",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4580,
+        "name": "Collection declarations should use interfaces instead of implementation classes",
+        "href": "AIP/quality-rules/4580",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4592,
         "name": "Avoid hiding static Methods",
         "href": "AIP/quality-rules/4592",
@@ -969,7 +989,7 @@
     },
     {
         "id": 4614,
-        "name": "Proper overriding of 'clone()'",
+        "name": "DEPRECATED: Proper overriding of 'clone()'",
         "href": "AIP/quality-rules/4614",
         "status": null,
         "critical": true,
@@ -979,7 +999,7 @@
     },
     {
         "id": 4616,
-        "name": "Proper overriding of 'finalize()'",
+        "name": "'super.finalize()' should be invoked when overriding finalize() method",
         "href": "AIP/quality-rules/4616",
         "status": null,
         "critical": true,
@@ -999,7 +1019,7 @@
     },
     {
         "id": 4668,
-        "name": "Classes and Interfaces must have JavaDoc @author tag",
+        "name": "DEPRECATED: Classes and Interfaces must have JavaDoc @author tag",
         "href": "AIP/quality-rules/4668",
         "status": null,
         "critical": false,
@@ -1009,7 +1029,7 @@
     },
     {
         "id": 4670,
-        "name": "Methods must have JavaDoc comments",
+        "name": "Public Methods must have JavaDoc comments",
         "href": "AIP/quality-rules/4670",
         "status": null,
         "critical": false,
@@ -1019,7 +1039,7 @@
     },
     {
         "id": 4672,
-        "name": "Methods must have appropriate JavaDoc @param tags",
+        "name": "Public Methods must have appropriate JavaDoc @param tags",
         "href": "AIP/quality-rules/4672",
         "status": null,
         "critical": false,
@@ -1029,7 +1049,7 @@
     },
     {
         "id": 4674,
-        "name": "Methods must have appropriate JavaDoc @return tags",
+        "name": "Public Methods must have appropriate JavaDoc @return tags",
         "href": "AIP/quality-rules/4674",
         "status": null,
         "critical": false,
@@ -1039,7 +1059,7 @@
     },
     {
         "id": 4676,
-        "name": "Methods must have appropriate JavaDoc @throws tags",
+        "name": "Public Methods must have appropriate JavaDoc @throws/@exception tags",
         "href": "AIP/quality-rules/4676",
         "status": null,
         "critical": false,
@@ -1049,7 +1069,7 @@
     },
     {
         "id": 4678,
-        "name": "Methods must have appropriate JavaDoc @exception tags",
+        "name": "DEPRECATED: Public Methods must have appropriate JavaDoc @exception tags",
         "href": "AIP/quality-rules/4678",
         "status": null,
         "critical": false,
@@ -1059,7 +1079,7 @@
     },
     {
         "id": 4680,
-        "name": "Fields must have JavaDoc Comments",
+        "name": "Public Fields must have JavaDoc Comments",
         "href": "AIP/quality-rules/4680",
         "status": null,
         "critical": false,
@@ -1069,7 +1089,7 @@
     },
     {
         "id": 4708,
-        "name": "Avoid using Dynamic instantiation",
+        "name": "Avoid using Dynamic Instantiation",
         "href": "AIP/quality-rules/4708",
         "status": null,
         "critical": false,
@@ -1099,7 +1119,7 @@
     },
     {
         "id": 4718,
-        "name": "Package size control",
+        "name": "Avoid having package without enough Classes/Interfaces",
         "href": "AIP/quality-rules/4718",
         "status": null,
         "critical": false,
@@ -1799,7 +1819,7 @@
     },
     {
         "id": 7132,
-        "name": "Action Mappings should have few forwards",
+        "name": "DEPRECATED: Struts action Mappings should have few forwards",
         "href": "AIP/quality-rules/7132",
         "status": null,
         "critical": false,
@@ -1809,7 +1829,7 @@
     },
     {
         "id": 7136,
-        "name": "Each method in an Action Class should have a small complexity",
+        "name": "DEPRECATED: Each method in an Action Class should have a small complexity",
         "href": "AIP/quality-rules/7136",
         "status": null,
         "critical": false,
@@ -1819,7 +1839,7 @@
     },
     {
         "id": 7188,
-        "name": "Private fields must have JavaDoc Comments",
+        "name": "DEPRECATED : Private fields must have JavaDoc Comments",
         "href": "AIP/quality-rules/7188",
         "status": null,
         "critical": false,
@@ -1829,7 +1849,7 @@
     },
     {
         "id": 7220,
-        "name": "Avoid Unused Imports",
+        "name": "DEPRECATED: Avoid Unused Imports",
         "href": "AIP/quality-rules/7220",
         "status": null,
         "critical": false,
@@ -2026,7 +2046,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to override both equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -2036,7 +2056,7 @@
     },
     {
         "id": 7440,
-        "name": "Suspicious similar method names or signatures in an inheritance tree",
+        "name": "Avoid having suspicious similar method names or signatures in an inheritance tree",
         "href": "AIP/quality-rules/7440",
         "status": null,
         "critical": true,
@@ -2253,6 +2273,16 @@
         "critical": false,
         "technologyNames": [
             "Cobol"
+        ]
+    },
+    {
+        "id": 7716,
+        "name": "Avoid defining singleton or factory classes when using Spring",
+        "href": "AIP/quality-rules/7716",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {

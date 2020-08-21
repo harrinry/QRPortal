@@ -4,7 +4,7 @@
         "name": "Avoid using 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -21,17 +21,17 @@
     },
     {
         "id": 7190,
-        "name": "Validator form validate() Method must call super.validate()",
+        "name": "Struts1: Validate() Method of Struts Validator form must call super.validate()",
         "href": "AIP/quality-rules/7190",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7192,
-        "name": "Form Bean must extend Validator Class",
+        "name": "Avoid using Struts Form that cannot extend Validator Class",
         "href": "AIP/quality-rules/7192",
         "status": null,
         "critical": false,
@@ -41,7 +41,7 @@
     },
     {
         "id": 7362,
-        "name": "Avoid action mappings validator turned off",
+        "name": "DEPRECATED: Avoid Struts action mappings validator turned off",
         "href": "AIP/quality-rules/7362",
         "status": null,
         "critical": true,
@@ -51,7 +51,7 @@
     },
     {
         "id": 7416,
-        "name": "Avoid Form Field without Validator",
+        "name": "Struts1: Avoid Action Form Field without Validator",
         "href": "AIP/quality-rules/7416",
         "status": null,
         "critical": true,
@@ -81,7 +81,7 @@
     },
     {
         "id": 7732,
-        "name": "Avoid non validated inputs",
+        "name": "Avoid non validated inputs in JSP files that use JSF",
         "href": "AIP/quality-rules/7732",
         "status": null,
         "critical": true,
@@ -213,7 +213,7 @@
     },
     {
         "id": 8016,
-        "name": "Avoid unsecured EJB remote method",
+        "name": "Avoid unrestricted access to EJB remote methods",
         "href": "AIP/quality-rules/8016",
         "status": null,
         "critical": true,
@@ -223,7 +223,7 @@
     },
     {
         "id": 8040,
-        "name": "Avoid Struts 2 Action Fields without Validation",
+        "name": "Struts 2: Avoid Action Fields without Validation",
         "href": "AIP/quality-rules/8040",
         "status": null,
         "critical": true,
@@ -233,7 +233,7 @@
     },
     {
         "id": 8042,
-        "name": "Struts 2 Validation: Avoid unused validation form",
+        "name": "Struts 2: Avoid unused validation form",
         "href": "AIP/quality-rules/8042",
         "status": null,
         "critical": false,
@@ -270,7 +270,7 @@
         "name": "Avoid hardcoded network resource names (JEE)",
         "href": "AIP/quality-rules/8102",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -287,7 +287,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -2249,10 +2249,10 @@
     },
     {
         "id": 1022000,
-        "name": "Avoid using weak encryption algorithm as DES and triple DES",
+        "name": "DEPRECATED: Avoid weak encryption algorithm as DES and triple DES",
         "href": "AIP/quality-rules/1022000",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

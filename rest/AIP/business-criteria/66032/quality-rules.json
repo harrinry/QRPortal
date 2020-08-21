@@ -33,7 +33,7 @@
     },
     {
         "id": 2230,
-        "name": "Use of style sheets (JEE)",
+        "name": "DEPRECATED: Use of style sheets (JEE)",
         "href": "AIP/quality-rules/2230",
         "status": null,
         "critical": false,
@@ -43,7 +43,7 @@
     },
     {
         "id": 2236,
-        "name": "Avoid use of standard SQL API",
+        "name": "DEPRECATED: Avoid use of standard SQL API",
         "href": "AIP/quality-rules/2236",
         "status": null,
         "critical": false,
@@ -53,7 +53,7 @@
     },
     {
         "id": 2242,
-        "name": "Avoid direct definition of JavaScript Functions in a Web page (JEE)",
+        "name": "DEPRECATED: Avoid direct definition of JavaScript Functions in a Web page (JEE)",
         "href": "AIP/quality-rules/2242",
         "status": null,
         "critical": false,
@@ -148,7 +148,7 @@
     },
     {
         "id": 4574,
-        "name": "Avoid using deprecated objects",
+        "name": "DEPRECATED: Avoid using deprecated objects",
         "href": "AIP/quality-rules/4574",
         "status": null,
         "critical": false,
@@ -181,14 +181,14 @@
         "name": "Avoid using 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 4606,
-        "name": "Avoid using 'sun.*' Classes",
+        "name": "Avoid using 'sun.*' and 'com.sun.*' Classes",
         "href": "AIP/quality-rules/4606",
         "status": null,
         "critical": false,
@@ -208,7 +208,7 @@
     },
     {
         "id": 4722,
-        "name": "Track Classes referencing Database objects",
+        "name": "Avoid having classes referencing Database objects",
         "href": "AIP/quality-rules/4722",
         "status": null,
         "critical": false,
@@ -298,7 +298,7 @@
     },
     {
         "id": 7134,
-        "name": "Avoid having local forward with same name as global forward",
+        "name": "Struts1: Avoid having Struts local forward with same name as Struts  global forward",
         "href": "AIP/quality-rules/7134",
         "status": null,
         "critical": false,
@@ -308,7 +308,7 @@
     },
     {
         "id": 7138,
-        "name": "Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
+        "name": "DEPRECATED : Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
         "href": "AIP/quality-rules/7138",
         "status": null,
         "critical": false,
@@ -318,17 +318,17 @@
     },
     {
         "id": 7140,
-        "name": "Action Artifacts should not directly call a JSP page",
+        "name": "Struts Action artifacts should not directly call a JSP page",
         "href": "AIP/quality-rules/7140",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7142,
-        "name": "Action Classes should have only one public method",
+        "name": "DEPRECATED: Action Classes should have only one public method",
         "href": "AIP/quality-rules/7142",
         "status": null,
         "critical": false,
@@ -338,7 +338,7 @@
     },
     {
         "id": 7144,
-        "name": "Struts Action Artifacts should not directly use database objects",
+        "name": "DEPRECATED : Avoid using  database objects from Struts Action Artifacts",
         "href": "AIP/quality-rules/7144",
         "status": null,
         "critical": true,
@@ -348,7 +348,7 @@
     },
     {
         "id": 7146,
-        "name": "JSP pages should only reference Java Objects associated to J2EE Scoped Bean",
+        "name": "Always have JSP pages referencing Java Objects associated to JEE Scoped Bean",
         "href": "AIP/quality-rules/7146",
         "status": null,
         "critical": false,
@@ -358,7 +358,7 @@
     },
     {
         "id": 7148,
-        "name": "JSP pages should always be accessed through their tiles definition",
+        "name": "DEPRECATED: JSP pages should always be accessed through their tiles definition",
         "href": "AIP/quality-rules/7148",
         "status": null,
         "critical": false,
@@ -378,7 +378,7 @@
     },
     {
         "id": 7238,
-        "name": "Avoid calls between JSP Pages",
+        "name": "Avoid calls between JSP Page for application using Struts framework",
         "href": "AIP/quality-rules/7238",
         "status": null,
         "critical": false,
@@ -388,7 +388,7 @@
     },
     {
         "id": 7240,
-        "name": "Action Classes should only call Business Classes",
+        "name": "DEPRECATED: Struts Action Classes should only call Business Classes",
         "href": "AIP/quality-rules/7240",
         "status": null,
         "critical": false,
@@ -398,7 +398,7 @@
     },
     {
         "id": 7242,
-        "name": "Avoid implementing Action Classes inheriting directly from Struts Action",
+        "name": "Struts1: Avoid implementing Action Classes inheriting directly from Struts Action",
         "href": "AIP/quality-rules/7242",
         "status": null,
         "critical": false,
@@ -532,7 +532,7 @@
     },
     {
         "id": 7510,
-        "name": "Use only Hibernate API to access to the database",
+        "name": "DEPRECATED: Use only Hibernate API to access to the database",
         "href": "AIP/quality-rules/7510",
         "status": null,
         "critical": false,
@@ -572,7 +572,7 @@
     },
     {
         "id": 7654,
-        "name": "Avoid database tables associated to more than one Entity",
+        "name": "Avoid database tables associated to more than one Hibernate Entity",
         "href": "AIP/quality-rules/7654",
         "status": null,
         "critical": false,
@@ -592,7 +592,7 @@
     },
     {
         "id": 7676,
-        "name": "Avoid too many packages referencing Mainframe",
+        "name": "DEPRECATED: Avoid too many packages referencing Mainframe",
         "href": "AIP/quality-rules/7676",
         "status": null,
         "critical": false,
@@ -602,7 +602,7 @@
     },
     {
         "id": 7678,
-        "name": "Avoid using specific logging implementation",
+        "name": "Avoid logging using basic java log files",
         "href": "AIP/quality-rules/7678",
         "status": null,
         "critical": false,
@@ -612,7 +612,7 @@
     },
     {
         "id": 7682,
-        "name": "Avoid domain model depending on other Java API",
+        "name": "Avoid having Hibernate domain model depending on other Java APIs",
         "href": "AIP/quality-rules/7682",
         "status": null,
         "critical": false,
@@ -622,7 +622,7 @@
     },
     {
         "id": 7700,
-        "name": "Use only Struts HTTP Servlet",
+        "name": "Struts1: Only Struts HTTP Servlet should be used for Struts based application",
         "href": "AIP/quality-rules/7700",
         "status": null,
         "critical": false,
@@ -642,7 +642,7 @@
     },
     {
         "id": 7714,
-        "name": "Do not use auto-wiring",
+        "name": "Avoid using auto-wiring",
         "href": "AIP/quality-rules/7714",
         "status": null,
         "critical": false,
@@ -652,7 +652,7 @@
     },
     {
         "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
+        "name": "Avoid defining singleton or factory classes when using Spring",
         "href": "AIP/quality-rules/7716",
         "status": null,
         "critical": false,
@@ -662,7 +662,7 @@
     },
     {
         "id": 7726,
-        "name": "Avoid Action artifacts that call packages that reference database",
+        "name": "Avoid Struts Action Classes that call packages having direct access to database",
         "href": "AIP/quality-rules/7726",
         "status": null,
         "critical": false,
@@ -828,7 +828,7 @@
         "name": "Avoid hardcoded network resource names (JEE)",
         "href": "AIP/quality-rules/8102",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]

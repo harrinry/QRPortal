@@ -1,12 +1,14 @@
 {
     "id": 4746,
-    "name": "EJB Session access through their local Interface",
+    "name": "DEPRECATED: EJB Session access through their local Interface",
     "href": "AIP/quality-rules/4746",
     "critical": true,
     "maxWeight": 7,
     "associatedValueName": "Session Java Bean Name",
-    "description": "Since EJB 2.0, EJB Session should be accessed through their local remote Interface instead of their remote Interface. This avoids the need for the JNDI lookup, which improves the performance.",
+    "description": "This rule list all the EJB Session that are not accessed through their local remote Interface.",
     "output": "This report lists all the Methods using the EJB Session remote Interfaces.\nIt provides the following information:\n - Method full name\n - Session Java Bean Name",
+    "rationale": "Since EJB 2.0, EJB Session should be accessed through their local remote Interface instead of their remote Interface. This avoids the need for the JNDI lookup, which improves the performance.",
+    "remediation": "Review the source code and have the EJB Entities accessed through their local  Interface instead of their remote Interface.",
     "total": "Number of Methods accessing Java EJB Session",
     "alternativeName": "Ensure that EJB Session are accessed through their local remote Interface instead of their remote Interface",
     "businessCriteria": [

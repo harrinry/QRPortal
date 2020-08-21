@@ -106,7 +106,7 @@
     },
     {
         "id": 2230,
-        "name": "Use of style sheets (JEE)",
+        "name": "DEPRECATED: Use of style sheets (JEE)",
         "href": "AIP/quality-rules/2230",
         "status": null,
         "critical": false,
@@ -126,7 +126,7 @@
     },
     {
         "id": 2242,
-        "name": "Avoid direct definition of JavaScript Functions in a Web page (JEE)",
+        "name": "DEPRECATED: Avoid direct definition of JavaScript Functions in a Web page (JEE)",
         "href": "AIP/quality-rules/2242",
         "status": null,
         "critical": false,
@@ -136,7 +136,7 @@
     },
     {
         "id": 2278,
-        "name": "Check the use of \"foreach\" custom tag library",
+        "name": "DEPRECATED: Check the use of \"foreach\" custom tag library",
         "href": "AIP/quality-rules/2278",
         "status": null,
         "critical": false,
@@ -146,7 +146,7 @@
     },
     {
         "id": 2280,
-        "name": "Avoid using Document.all collection",
+        "name": "DEPRECATED: Avoid using Document.all collection",
         "href": "AIP/quality-rules/2280",
         "status": null,
         "critical": false,
@@ -265,11 +265,21 @@
         ]
     },
     {
+        "id": 4598,
+        "name": "Avoid using 'java.lang.Runtime.exec()'",
+        "href": "AIP/quality-rules/4598",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4600,
-        "name": "Avoid using 'java.System.exit()'",
+        "name": "Avoid using Exit and Halt Methods on a Web/Application Server",
         "href": "AIP/quality-rules/4600",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -296,7 +306,7 @@
     },
     {
         "id": 4618,
-        "name": "Avoid instantiating Boolean",
+        "name": "Avoid instantiating a Boolean object",
         "href": "AIP/quality-rules/4618",
         "status": null,
         "critical": false,
@@ -316,7 +326,7 @@
     },
     {
         "id": 4656,
-        "name": "Avoid declaring throwing an exception and not throwing it",
+        "name": "Avoid declaring an exception in the method signature and not throwing it",
         "href": "AIP/quality-rules/4656",
         "status": null,
         "critical": false,
@@ -326,17 +336,17 @@
     },
     {
         "id": 4694,
-        "name": "Avoid using 'System.gc'",
+        "name": "Avoid using 'System.gc' and 'Runtime.gc'",
         "href": "AIP/quality-rules/4694",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 4696,
-        "name": "Avoid using 'System.err' and 'System.out' within a try catch block",
+        "name": "DEPRECATED: Avoid using 'System.err' and 'System.out' within a try catch block",
         "href": "AIP/quality-rules/4696",
         "status": null,
         "critical": false,
@@ -346,7 +356,7 @@
     },
     {
         "id": 4698,
-        "name": "Avoid using 'System.err' and 'System.out' outside a try catch block",
+        "name": "DEPRECATED: Avoid using 'System.err' and 'System.out' outside a try catch block",
         "href": "AIP/quality-rules/4698",
         "status": null,
         "critical": false,
@@ -386,7 +396,7 @@
     },
     {
         "id": 4744,
-        "name": "EJB Entity access through their local Interface",
+        "name": "DEPRECATED: EJB Entity access through their local Interface",
         "href": "AIP/quality-rules/4744",
         "status": null,
         "critical": true,
@@ -396,7 +406,7 @@
     },
     {
         "id": 4746,
-        "name": "EJB Session access through their local Interface",
+        "name": "DEPRECATED: EJB Session access through their local Interface",
         "href": "AIP/quality-rules/4746",
         "status": null,
         "critical": true,
@@ -536,7 +546,7 @@
     },
     {
         "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
+        "name": "Struts1: Avoid Struts Fields in Action Classes that are not final static",
         "href": "AIP/quality-rules/7154",
         "status": null,
         "critical": true,
@@ -578,7 +588,7 @@
     },
     {
         "id": 7200,
-        "name": "Avoid String concatenation in loops (JEE)",
+        "name": "Avoid String concatenation in loops",
         "href": "AIP/quality-rules/7200",
         "status": null,
         "critical": false,
@@ -588,7 +598,7 @@
     },
     {
         "id": 7202,
-        "name": "Check usage of '==' and '!=' on objects",
+        "name": "Avoid using '==' and '!=' to compare objects",
         "href": "AIP/quality-rules/7202",
         "status": null,
         "critical": true,
@@ -608,7 +618,7 @@
     },
     {
         "id": 7206,
-        "name": "Avoid the use of InstanceOf inside loops",
+        "name": "Avoid the use of Instanceof inside loops",
         "href": "AIP/quality-rules/7206",
         "status": null,
         "critical": false,
@@ -680,7 +690,7 @@
     },
     {
         "id": 7254,
-        "name": "Declare as Static all methods not using instance members (JEE)",
+        "name": "Declare as Static all methods not using instance members",
         "href": "AIP/quality-rules/7254",
         "status": null,
         "critical": false,
@@ -690,7 +700,7 @@
     },
     {
         "id": 7256,
-        "name": "Provide a private default Constructor for utility Classes (JEE)",
+        "name": "Provide a private default Constructor for utility Classes",
         "href": "AIP/quality-rules/7256",
         "status": null,
         "critical": false,
@@ -934,7 +944,7 @@
     },
     {
         "id": 7444,
-        "name": "Serialize session objects",
+        "name": "Avoid Using Non-Serialized Beans with Session Scope",
         "href": "AIP/quality-rules/7444",
         "status": null,
         "critical": false,
@@ -1038,7 +1048,7 @@
     },
     {
         "id": 7488,
-        "name": "Use lazy fetching for collection",
+        "name": "Lazy fetching should be used for Hibernate collection",
         "href": "AIP/quality-rules/7488",
         "status": null,
         "critical": true,
@@ -1078,7 +1088,7 @@
     },
     {
         "id": 7498,
-        "name": "Collection must be the same between getter and setter",
+        "name": "Avoid Incorrect implementation of getters and setters for Collection Type",
         "href": "AIP/quality-rules/7498",
         "status": null,
         "critical": false,
@@ -1098,7 +1108,7 @@
     },
     {
         "id": 7502,
-        "name": "Never use array to map a collection",
+        "name": "Never use an array to map Hibernate collection",
         "href": "AIP/quality-rules/7502",
         "status": null,
         "critical": true,
@@ -1118,7 +1128,7 @@
     },
     {
         "id": 7506,
-        "name": "Define equals() and hashCode() for component",
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
         "href": "AIP/quality-rules/7506",
         "status": null,
         "critical": true,
@@ -1128,7 +1138,7 @@
     },
     {
         "id": 7508,
-        "name": "Collection-typed attributes getter must be defined with the correct interface",
+        "name": "Getter of collection-typed persistent attributes should return the correct interface type",
         "href": "AIP/quality-rules/7508",
         "status": null,
         "critical": false,
@@ -1358,7 +1368,7 @@
     },
     {
         "id": 7634,
-        "name": "Avoid select-before-update when the Table is not associated to an UPDATE Trigger",
+        "name": "Avoid Hibernate Entity with 'select-before-update' set to true if not associated to table that fires an UPDATE trigger.",
         "href": "AIP/quality-rules/7634",
         "status": null,
         "critical": true,
@@ -1368,7 +1378,7 @@
     },
     {
         "id": 7636,
-        "name": "Use version instead of timestamp",
+        "name": "Prefer using version number instead of timestamp for Hibernate Entity",
         "href": "AIP/quality-rules/7636",
         "status": null,
         "critical": false,
@@ -1378,7 +1388,7 @@
     },
     {
         "id": 7638,
-        "name": "Avoid using DriverManager",
+        "name": "Avoid directly managing the connection to the database by using DriverManager",
         "href": "AIP/quality-rules/7638",
         "status": null,
         "critical": false,
@@ -1388,7 +1398,7 @@
     },
     {
         "id": 7640,
-        "name": "Avoid catch blocks with assertion",
+        "name": "Avoid using catch blocks with assertion",
         "href": "AIP/quality-rules/7640",
         "status": null,
         "critical": false,
@@ -1418,7 +1428,7 @@
     },
     {
         "id": 7648,
-        "name": "Avoid calling finalize()",
+        "name": "Avoid an explicit call to finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false,
@@ -1508,7 +1518,7 @@
     },
     {
         "id": 7668,
-        "name": "Avoid using incorrect XML parsing model",
+        "name": "DEPRECATED: Avoid using DOM parser for large or medium sized XML file parsing",
         "href": "AIP/quality-rules/7668",
         "status": null,
         "critical": false,
@@ -1558,7 +1568,7 @@
     },
     {
         "id": 7702,
-        "name": "Use a third party connection pool",
+        "name": "Hibernate-provided implementations from third parties should be used for connection pool",
         "href": "AIP/quality-rules/7702",
         "status": null,
         "critical": false,
@@ -1578,7 +1588,7 @@
     },
     {
         "id": 7710,
-        "name": "Avoid non serializable Entities",
+        "name": "Avoid non serializable Entity beans",
         "href": "AIP/quality-rules/7710",
         "status": null,
         "critical": false,
@@ -1598,17 +1608,17 @@
     },
     {
         "id": 7720,
-        "name": "Avoid too many EJB bean",
+        "name": "DEPRECATED: Avoid too many EJB beans",
         "href": "AIP/quality-rules/7720",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7722,
-        "name": "Avoid using references to the id in the persistent class's method equals()",
+        "name": "Avoid using persistent class's identifier in equals() method",
         "href": "AIP/quality-rules/7722",
         "status": null,
         "critical": true,
@@ -1631,14 +1641,14 @@
         "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/7728",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7730,
-        "name": "Use declarative transaction",
+        "name": "Always use declarative transaction",
         "href": "AIP/quality-rules/7730",
         "status": null,
         "critical": false,
@@ -1648,7 +1658,7 @@
     },
     {
         "id": 7734,
-        "name": "Avoid to use Log.debug() without calling Log.isDebugEnabled()",
+        "name": "Avoid using debug() method without calling isDebugEnabled() method",
         "href": "AIP/quality-rules/7734",
         "status": null,
         "critical": false,
@@ -2038,7 +2048,7 @@
     },
     {
         "id": 7910,
-        "name": "Never exit a finally block with a return, break, continue, or throw",
+        "name": "Never exit a finally block with a return, break, continue, or throw statements",
         "href": "AIP/quality-rules/7910",
         "status": null,
         "critical": true,
@@ -2089,7 +2099,7 @@
     },
     {
         "id": 7936,
-        "name": "Avoid using finalize()",
+        "name": "DEPRECATED: Avoid using finalize()",
         "href": "AIP/quality-rules/7936",
         "status": null,
         "critical": true,
@@ -2099,7 +2109,7 @@
     },
     {
         "id": 7940,
-        "name": "Avoid Stateful Beans not removed",
+        "name": "Avoid accumulating Stateful Beans",
         "href": "AIP/quality-rules/7940",
         "status": null,
         "critical": true,
@@ -2173,7 +2183,7 @@
     },
     {
         "id": 7956,
-        "name": "Avoid indirect exception handling inside loops",
+        "name": "DEPRECATED:Avoid indirect exception handling inside loops",
         "href": "AIP/quality-rules/7956",
         "status": null,
         "critical": false,
@@ -2537,7 +2547,7 @@
     },
     {
         "id": 8104,
-        "name": "Close database resources ASAP",
+        "name": "Avoid missing release of SQL connection after an effective lifetime (JEE)",
         "href": "AIP/quality-rules/8104",
         "status": null,
         "critical": true,
@@ -2673,7 +2683,7 @@
     },
     {
         "id": 8136,
-        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "name": "CDI Beans with normal scope must be proxyable to avoid runtime errors",
         "href": "AIP/quality-rules/8136",
         "status": null,
         "critical": true,
@@ -2787,7 +2797,7 @@
     },
     {
         "id": 8214,
-        "name": "Expired or Released Resource should not be used",
+        "name": "Avoid operating on resource after expiration or release",
         "href": "AIP/quality-rules/8214",
         "status": null,
         "critical": true,
@@ -2807,7 +2817,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -2820,7 +2830,7 @@
         "name": "Avoid using deprecated method, constructor, field, type or package",
         "href": "AIP/quality-rules/8220",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
@@ -6005,10 +6015,10 @@
     },
     {
         "id": 1022000,
-        "name": "Avoid using weak encryption algorithm as DES and triple DES",
+        "name": "DEPRECATED: Avoid weak encryption algorithm as DES and triple DES",
         "href": "AIP/quality-rules/1022000",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

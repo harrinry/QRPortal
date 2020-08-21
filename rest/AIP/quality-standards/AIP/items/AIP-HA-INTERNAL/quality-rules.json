@@ -63,7 +63,7 @@
     },
     {
         "id": 7154,
-        "name": "Avoid Fields in Action Classes that are not final static",
+        "name": "Struts1: Avoid Struts Fields in Action Classes that are not final static",
         "href": "AIP/quality-rules/7154",
         "status": null,
         "critical": true,
@@ -73,7 +73,7 @@
     },
     {
         "id": 7202,
-        "name": "Check usage of '==' and '!=' on objects",
+        "name": "Avoid using '==' and '!=' to compare objects",
         "href": "AIP/quality-rules/7202",
         "status": null,
         "critical": true,
@@ -133,7 +133,7 @@
     },
     {
         "id": 7434,
-        "name": "Avoid classes overriding only equals() or only hashCode()",
+        "name": "Ensure to override both equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
         "status": null,
         "critical": true,
@@ -193,7 +193,7 @@
     },
     {
         "id": 7506,
-        "name": "Define equals() and hashCode() for component",
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
         "href": "AIP/quality-rules/7506",
         "status": null,
         "critical": true,
@@ -203,7 +203,7 @@
     },
     {
         "id": 7508,
-        "name": "Collection-typed attributes getter must be defined with the correct interface",
+        "name": "Getter of collection-typed persistent attributes should return the correct interface type",
         "href": "AIP/quality-rules/7508",
         "status": null,
         "critical": false,
@@ -243,7 +243,7 @@
     },
     {
         "id": 7636,
-        "name": "Use version instead of timestamp",
+        "name": "Prefer using version number instead of timestamp for Hibernate Entity",
         "href": "AIP/quality-rules/7636",
         "status": null,
         "critical": false,
@@ -273,7 +273,7 @@
     },
     {
         "id": 7710,
-        "name": "Avoid non serializable Entities",
+        "name": "Avoid non serializable Entity beans",
         "href": "AIP/quality-rules/7710",
         "status": null,
         "critical": false,
@@ -293,7 +293,7 @@
     },
     {
         "id": 7722,
-        "name": "Avoid using references to the id in the persistent class's method equals()",
+        "name": "Avoid using persistent class's identifier in equals() method",
         "href": "AIP/quality-rules/7722",
         "status": null,
         "critical": true,
@@ -316,14 +316,14 @@
         "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/7728",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 7730,
-        "name": "Use declarative transaction",
+        "name": "Always use declarative transaction",
         "href": "AIP/quality-rules/7730",
         "status": null,
         "critical": false,
@@ -541,7 +541,7 @@
     },
     {
         "id": 8016,
-        "name": "Avoid unsecured EJB remote method",
+        "name": "Avoid unrestricted access to EJB remote methods",
         "href": "AIP/quality-rules/8016",
         "status": null,
         "critical": true,
@@ -741,7 +741,7 @@
     },
     {
         "id": 8136,
-        "name": "Beans with normal scope must be proxyable to avoid runtime errors",
+        "name": "CDI Beans with normal scope must be proxyable to avoid runtime errors",
         "href": "AIP/quality-rules/8136",
         "status": null,
         "critical": true,
@@ -816,7 +816,7 @@
     },
     {
         "id": 8218,
-        "name": "Content type should be checked when receiving a HTTP Post",
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
         "href": "AIP/quality-rules/8218",
         "status": null,
         "critical": true,
@@ -829,7 +829,7 @@
         "name": "Avoid using deprecated method, constructor, field, type or package",
         "href": "AIP/quality-rules/8220",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]

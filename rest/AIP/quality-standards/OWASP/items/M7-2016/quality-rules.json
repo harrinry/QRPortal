@@ -12,7 +12,7 @@
     },
     {
         "id": 4614,
-        "name": "Proper overriding of 'clone()'",
+        "name": "DEPRECATED: Proper overriding of 'clone()'",
         "href": "AIP/quality-rules/4614",
         "status": null,
         "critical": true,
@@ -32,7 +32,7 @@
     },
     {
         "id": 7648,
-        "name": "Avoid calling finalize()",
+        "name": "Avoid an explicit call to finalize()",
         "href": "AIP/quality-rules/7648",
         "status": null,
         "critical": false,
@@ -42,7 +42,7 @@
     },
     {
         "id": 7716,
-        "name": "Avoid defining singleton or factory when using Spring",
+        "name": "Avoid defining singleton or factory classes when using Spring",
         "href": "AIP/quality-rules/7716",
         "status": null,
         "critical": false,
@@ -437,7 +437,7 @@
     },
     {
         "id": 8104,
-        "name": "Close database resources ASAP",
+        "name": "Avoid missing release of SQL connection after an effective lifetime (JEE)",
         "href": "AIP/quality-rules/8104",
         "status": null,
         "critical": true,
@@ -472,7 +472,7 @@
         "name": "Avoid using deprecated method, constructor, field, type or package",
         "href": "AIP/quality-rules/8220",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
