@@ -556,7 +556,7 @@
     },
     {
         "id": 7194,
-        "name": "Avoid large number of String concatenation (.NET)",
+        "name": "DEPRECATED: Avoid large number of String concatenation (.NET)",
         "href": "AIP/quality-rules/7194",
         "status": null,
         "critical": false,
@@ -624,17 +624,6 @@
         "critical": false,
         "technologyNames": [
             "JEE"
-        ]
-    },
-    {
-        "id": 7208,
-        "name": "Avoid the use of is inside loops",
-        "href": "AIP/quality-rules/7208",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
         ]
     },
     {
@@ -967,7 +956,7 @@
         "name": "Avoid changing DataSource member before ValueMember/DisplayMember",
         "href": "AIP/quality-rules/7466",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -986,7 +975,7 @@
     },
     {
         "id": 7470,
-        "name": "Avoid doing select on Datatable in loop",
+        "name": "DEPRECATED: Avoid doing select on Datatable in loop",
         "href": "AIP/quality-rules/7470",
         "status": null,
         "critical": true,
@@ -997,7 +986,7 @@
     },
     {
         "id": 7474,
-        "name": "Use BeginUpdate/EndUpdate when using Items.Add method in loop",
+        "name": "Avoid Repainting When Updating a ListBox",
         "href": "AIP/quality-rules/7474",
         "status": null,
         "critical": false,
@@ -2508,7 +2497,7 @@
         "name": "Avoid using NaN to test the result of an expression",
         "href": "AIP/quality-rules/8090",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -2747,7 +2736,7 @@
         "name": "Avoid using GC.Collect()",
         "href": "AIP/quality-rules/8154",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -2758,7 +2747,7 @@
         "name": "Persistent classes should implement GetHashCode() and Equals()",
         "href": "AIP/quality-rules/8156",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -2766,7 +2755,7 @@
     },
     {
         "id": 8158,
-        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+        "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/8158",
         "status": null,
         "critical": true,
@@ -6139,6 +6128,17 @@
         "href": "AIP/quality-rules/1027004",
         "status": null,
         "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027010,
+        "name": "Avoid weak encryption providing insufficient key size (.NET)",
+        "href": "AIP/quality-rules/1027010",
+        "status": null,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"

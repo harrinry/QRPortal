@@ -94,17 +94,6 @@
         ]
     },
     {
-        "id": 3616,
-        "name": "Data Access must be based on Stored Procedure Calls",
-        "href": "AIP/quality-rules/3616",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
         "id": 3630,
         "name": "Avoid having Classes implementing too many Interfaces",
         "href": "AIP/quality-rules/3630",
@@ -482,7 +471,7 @@
     },
     {
         "id": 7470,
-        "name": "Avoid doing select on Datatable in loop",
+        "name": "DEPRECATED: Avoid doing select on Datatable in loop",
         "href": "AIP/quality-rules/7470",
         "status": null,
         "critical": true,
@@ -1555,7 +1544,7 @@
         "name": "Persistent classes should implement GetHashCode() and Equals()",
         "href": "AIP/quality-rules/8156",
         "status": null,
-        "critical": false,
+        "critical": true,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1563,7 +1552,7 @@
     },
     {
         "id": 8158,
-        "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+        "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/8158",
         "status": null,
         "critical": true,

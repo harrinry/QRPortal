@@ -1,15 +1,16 @@
 {
     "id": 8158,
-    "name": "Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+    "name": "Avoid thread creation for application running on application server",
     "href": "AIP/quality-rules/8158",
     "critical": true,
-    "maxWeight": 8,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
-    "description": "This rule reports Resource Management Control Element in a Component Built to Run on Application Servers.Reports components that are using threads.",
-    "output": "\nThis report lists all artifacts having Resource Management Control Element in a Component Built to Run on Application Servers. \nIt provides the following information: \n - Artifact full name\n",
-    "rationale": "Software featuring known weak coding practices results in unexpected and erroneous behaviours",
+    "description": "This rule reports the violation for all the methods that create thread for applications running on application server.",
+    "output": "This quality rule reports all artifacts that create thread. \nIt provides the following information: \n - Artifact full name",
+    "rationale": "One of the reasons why an application server has been created is thread management that is complex to develop. It manages multiple threads for different types of components, and in order to effectively maximize performance and resource utilization, it requires control of the threads being run on a given machine.\n\nMore often than not, threads are created when there is no time to implement a better solution. However, the consequences can be serious in terms of performance and robustness.",
+    "reference": "https://cwe.mitre.org/data/definitions/1065.html",
     "remediation": "Change the architecture of the application.",
-    "sample": "public static void Main() { \n        Console.WriteLine(\"Main thread: Start a second thread.\"); \n        // The constructor for the Thread class requires a ThreadStart \n        // delegate that represents the method to be executed on the \n        // thread. C# simplifies the creation of this delegate. \n        Thread t = new Thread(new ThreadStart(ThreadProc)); \n\n        // Start ThreadProc. Note that on a uniprocessor, the new \n        // thread does not get any processor time until the main thread \n        // is preempted or yields. Uncomment the Thread.Sleep that \n        // follows t.Start() to see the difference. \n        t.Start(); \n        //Thread.Sleep(0); \n\n        for (int i = 0; i < 4; i++) { \n            Console.WriteLine(\"Main thread: Do some work.\"); \n            Thread.Sleep(0); \n        } \n\n        Console.WriteLine(\"Main thread: Call Join(), to wait until ThreadProc ends.\"); \n        t.Join(); \n        Console.WriteLine(\"Main thread: ThreadProc.Join has returned. Press Enter to end program.\"); \n        Console.ReadLine(); \n    }\n  ",
+    "sample": "public static void Main() { \n        Console.WriteLine(\"Main thread: Start a second thread.\"); \n        // The constructor for the Thread class requires a ThreadStart \n        // delegate that represents the method to be executed on the \n        // thread. C# simplifies the creation of this delegate. \n        Thread t = new Thread(new ThreadStart(ThreadProc)); \n\n        // Start ThreadProc. Note that on a uniprocessor, the new \n        // thread does not get any processor time until the main thread \n        // is preempted or yields. Uncomment the Thread.Sleep that \n        // follows t.Start() to see the difference. \n        t.Start(); \n        //Thread.Sleep(0); \n\n        for (int i = 0; i < 4; i++) { \n            Console.WriteLine(\"Main thread: Do some work.\"); \n            Thread.Sleep(0); \n        } \n\n        Console.WriteLine(\"Main thread: Call Join(), to wait until ThreadProc ends.\"); \n        t.Join(); \n        Console.WriteLine(\"Main thread: ThreadProc.Join has returned. Press Enter to end program.\"); \n        Console.ReadLine(); \n    }",
     "total": "Number of artifacts",
     "alternativeName": "Avoid thread creation for application running on application server",
     "businessCriteria": [
@@ -22,6 +23,11 @@
             "id": 1062103,
             "name": "CISQ-Reliability",
             "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 60014,
+            "name": "Efficiency",
+            "href": "AIP/business-criteria/60014"
         },
         {
             "id": 20140522,
@@ -76,6 +82,12 @@
             "name": "CWE-404: Improper Resource Shutdown or Release",
             "weight": 5,
             "critical": false
+        },
+        {
+            "id": 61018,
+            "name": "Efficiency - Memory, Network and Disk Space Management",
+            "weight": 9,
+            "critical": true
         },
         {
             "id": 66065,
@@ -137,9 +149,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

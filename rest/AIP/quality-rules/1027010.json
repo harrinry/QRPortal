@@ -2,11 +2,11 @@
     "id": 1027010,
     "name": "Avoid weak encryption providing insufficient key size (.NET)",
     "href": "AIP/quality-rules/1027010",
-    "critical": false,
-    "maxWeight": 6,
+    "critical": true,
+    "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When generating cryptograpic keys (or key pairs), it is important to use a key length that provides enough entropy against brute-force attacks. For the RSA algorithm the key should be at least 2048 bits long.\nThis rule raises an issue when a RSA key-pair generator is initialized with too small a length parameter.",
-    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "output": "Number of Methods using CryptoEncryption having key size less than given parameter",
     "rationale": "Rather than directly attacking crypto, attackers steal keys, execute man-in-the-middle attacks, or steal clear text data off the server, while in transit, or from the user\u2019s client, e.g. browser. A manual attack is generally required. Previously retrieved password databases could be brute forced by Graphics Processing Units (GPUs). \n\nOver the last few years, this has been the most common impactful attack. The most common flaw is simply not encrypting sensitive data. When crypto is employed, weak key generation and management, and weak algorithm, protocol and cipher usage is common, particularly for weak password hashing storage techniques. For data in transit, server side weaknesses are mainly easy to detect, but hard for data at rest. \n\nFailure frequently compromises all data that should have been protected. Typically, this information includes sensitive personal information (PII) data such as health records, credentials, personal data, and credit cards, which often require protection as defined by laws or regulations such as the EU GDPR or local privacy laws.",
     "reference": "MITRE, CWE-326 - Inadequate Encryption Strength\nOWASP Top 10 2017 Category A3 - Sensitive Data Exposure\n\nhttps://www.keylength.com/en/5/",
     "remediation": "Review the source code and have longer Cryptographic keys",
@@ -26,6 +26,11 @@
             "href": "AIP/business-criteria/1062104"
         },
         {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
             "id": 1062300,
             "name": "OWASP-2013-Index",
             "href": "AIP/business-criteria/1062300"
@@ -34,11 +39,6 @@
             "id": 1062320,
             "name": "OWASP-2017-Index",
             "href": "AIP/business-criteria/1062320"
-        },
-        {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "AIP/business-criteria/66031"
         },
         {
             "id": 60016,
@@ -66,10 +66,10 @@
             "critical": false
         },
         {
-            "id": 66063,
-            "name": "Secure Coding - API Abuse",
-            "weight": 6,
-            "critical": false
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 8,
+            "critical": true
         }
     ],
     "technologies": [
@@ -167,9 +167,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

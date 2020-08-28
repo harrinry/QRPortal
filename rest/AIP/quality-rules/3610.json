@@ -8,8 +8,10 @@
     "description": "Avoid declaring a Variable with 'Dim Var_Nam = '",
     "output": "This report lists all variable declarations without variable typing",
     "rationale": "When declaring a Variable with 'Dim Var_Nam = ' or simply 'Dim Var_Nam' the compiler will not assign a type. \nIt worsens performance level and prevents compilation to detect typing errors. \n\nPlease note that when option Infer is On local variables with initial values will not be considered in violation.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/statements/dim-statement",
     "remediation": "Use real type to declare the Variable\nE.g.: 'Dim Var_Nam as String = new '",
-    "sample": "See rationale.",
+    "remediationSample": "Dim Var_Nam as String;",
+    "sample": "Dim Var_Nam;",
     "total": "Number of variable declarations",
     "alternativeName": "Avoid declaring VB Variables without typing them (.NET)",
     "businessCriteria": [

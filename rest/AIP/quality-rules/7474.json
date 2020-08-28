@@ -1,17 +1,17 @@
 {
     "id": 7474,
-    "name": "Use BeginUpdate/EndUpdate when using Items.Add method in loop",
+    "name": "Avoid Repainting When Updating a ListBox",
     "href": "AIP/quality-rules/7474",
     "critical": false,
-    "maxWeight": 1,
+    "maxWeight": 5,
     "description": "This metric list all objects where calls to Items.Add (of WinForm controls) are done in loops without using BeginUpdate/EndUpdate.",
-    "output": "This metric list all objects where calls to Items.Add are done in loops without using BeginUpdate/EndUpdate.\nThis only display objects were BeginUpdate and EndUpdate are available for the control used.",
-    "rationale": "When using Items.Add in loops, you should use BeginUpdate / EndUpdate on the control to avoid unnecessarily refresh and thus improve the performance.",
-    "reference": "MSDN",
+    "output": "This metric list all objects where calls to Items.Add are done in loops without using BeginUpdate/EndUpdate.",
+    "rationale": "When updating a listbox by using Add method, we should use BeginUpdate and EndUpdate Method.\nBeginUpdate method prevent the control from repainting the ListBox each time an item is added to the list.\nOnce you have completed the task of adding items to the list, call the EndUpdate method to enable the ListBox to repaint.\nThis way of adding items can prevent flickered drawing of the ListBox when a large number of items are being added to the list.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.listbox.beginupdate?view=netcore-3.1",
     "remediation": "Call to BeginUpdate() before the loop and EndUpdate() after the loop.\nAlternatively, you can use AddRange method instead of Add.",
     "remediationSample": "listView1.BeginUpdate(); \nfor(int i = 0; i < 10000; i++) \n{\n    ListViewItem listItem = new ListViewItem(\"Item\"+i.ToString() );\n    listView1.Items.Add(listItem); \n} \nlistView1.EndUpdate();",
     "sample": "for(int i = 0; i < 10000; i++) \n{\n    ListViewItem listItem = new ListViewItem(\"Item\"+i.ToString() );\n    listView1.Items.Add(listItem); \n}",
-    "total": "Total number of artifacts that call  Items.Add and where BeginUpdate/EndUpdate is available for the control.",
+    "total": "Number of artifacts that call Items.Add in loop",
     "alternativeName": "Avoid Repainting When Updating a ListBox",
     "businessCriteria": [
         {
@@ -34,7 +34,7 @@
         {
             "id": 66068,
             "name": "Efficiency - Expensive Calls in Loops",
-            "weight": 1,
+            "weight": 5,
             "critical": false
         }
     ],

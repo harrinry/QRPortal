@@ -8,6 +8,7 @@
     "description": "Number of instances where a storable element or member element is declared with a data type in the 'Create' action, and then is updated with a value which is cast via a type cast action into a second data type, which is incompatible with the first data type",
     "output": "This report lists all methods that have incorrect Type Conversion or Cast. It provides the following information: method full name",
     "rationale": "Software featuring known weak coding practices results in unexpected and erroneous behaviour.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.convert.toboolean?view=netframework-4.8\nhttps://docs.microsoft.com/en-us/dotnet/api/system.convert.toboolean?view=netframework-4.8#System_Convert_ToBoolean_System_DateTime_\nhttps://docs.microsoft.com/en-us/dotnet/api/system.convert.toboolean?view=netframework-4.8#System_Convert_ToBoolean_System_Char_",
     "remediation": "Rewrite the source code to avoid having incorect type conversions or casts.",
     "sample": "class Example {\n    static void Cast() {\n        char ch = 'c';\n        var charToBool = Convert.ToBoolean(ch);  // Violation\n    }",
     "total": "Number of methods",
