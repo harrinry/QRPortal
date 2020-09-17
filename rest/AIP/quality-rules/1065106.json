@@ -12,7 +12,7 @@
     "remediationSample": "//This example represents only one of the ways to remediate the violation \nvoid testIntegerOverflow() {\n\n   int bytesRec = 0;\n\n   auto getFromInput = [](char*) {\n\n      return 10000;\n\n   };\n\n \n\n#define MAXGET INT_MAX\n\n  \n\n   char buf[100000];\n\n \n\n   while (bytesRec < MAXGET) {\n\n      int bytes = getFromInput(buf + bytesRec);\n\n      if (static_cast<int>(bytes + bytesRec) < bytesRec) {\n\n         break;\n\n      }\n\n      bytesRec += bytes;\n\n   }\n\n}",
     "sample": "short int bytesRec = 0;\nchar buf[SOMEBIGNUM];\n\nwhile(bytesRec < MAXGET) {\nbytesRec += getFromInput(buf+bytesRec);\n}",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid comparing types of different widths in a loop",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,7 +51,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-190",
+            "name": "Integer Overflow or Wraparound",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

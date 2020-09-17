@@ -12,7 +12,7 @@
     "remediationSample": "long k = (long) i * i; //Fixed",
     "sample": "int i = 2000000000;\nlong j = i * i;//Violation",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Converting a multiplication to a larger type should be done before the multiplication takes place",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -51,7 +51,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-190",
+            "name": "Integer Overflow or Wraparound",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

@@ -12,7 +12,7 @@
     "remediationSample": "bool OverFlowcheck(unsigned short int x, unsigned short int y) {\n  return (static_cast <unsigned short int>(x + y) < x); //Fixed\n}",
     "sample": "bool OverFlowcheck(unsigned short x, unsigned short y) {\n  return (x + y < x); \n}",
     "total": "Number of C++ methods and Functions",
-    "alternativeName": null,
+    "alternativeName": "Avoid checking Integer overflow without explicit cast",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -46,7 +46,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-190",
+            "name": "Integer Overflow or Wraparound",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
