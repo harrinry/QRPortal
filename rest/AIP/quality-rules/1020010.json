@@ -8,7 +8,7 @@
     "description": "Even though function-based iteration represents a more convenient method of iteration, it is also quite a bit slower than loop-based iteration. The slowdown can be accounted for by the overhead associated with an extra method being called on each array item. In all cases, function-based iteration takes up to eight times as long as loop-based iteration and therefore isn\u2019t a suitable approach when execution time is a significant concern.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Ensure your web application interactivity by accessing/manipulating the DOM tree with high performance queries/enumerators.",
-    "reference": "CISQ OMG ASCPEM-PRF-4 \nhttp://jsperf.com/foreach-vs-loop",
+    "reference": "CISQ OMG ASCPEM-PRF-4 \nhttps://jsperf.com/for-vs-foreach/9",
     "remediation": "Use the regular for loop to enumerate the array",
     "remediationSample": "for(var i = 0, l = arr.length; i < l; i++){arr[i];} // GOOD",
     "sample": "arr.forEach(function(v){v;}); // BAD",
@@ -105,9 +105,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }
