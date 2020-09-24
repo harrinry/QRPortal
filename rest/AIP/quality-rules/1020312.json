@@ -12,7 +12,7 @@
     "remediation": "Use explicit function name",
     "remediationSample": "function myLinkClickHandler(){...} $(\"#myLink\").on(\"click\", myLinkClickHandler); // GOOD",
     "sample": "$(\"#myLink\").on(\"click\", function(){...}); // BAD",
-    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "total": "Number of javascript source codes using jquery",
     "alternativeName": "Ensure not using anonymous functions to attach events because they are difficult to debug, maintain, test or reuse",
     "businessCriteria": [
         {

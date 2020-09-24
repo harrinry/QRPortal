@@ -12,7 +12,7 @@
     "remediation": "Do not use jQuery \"attr\" function or update the jQuery library version",
     "remediationSample": "<script src=\"https://code.jquery.com/jquery-3.0.1.js\"></script> \n...\n\nconsole.log($('<div>').attr('requiRed'));\n\n...",
     "sample": "<script src=\"https://code.jquery.com/jquery-3.0.0-rc1.js\"></script> \n...\n\nconsole.log($('<div>').attr('requiRed'));\n\n...",
-    "total": "Number of jQuery methods",
+    "total": "Number of javascript source codes using jquery",
     "alternativeName": "Ensure you don't use attr() with jQuery 3.0.0-rc1",
     "businessCriteria": [
         {
@@ -90,9 +90,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

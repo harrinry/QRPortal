@@ -12,7 +12,7 @@
     "remediation": "Always provide dataType parameter.",
     "remediationSample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user,\n    dataType : \"json\"\n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
     "sample": "$.ajax({ \n    type : \"POST\", \n    url : /v1/user, \n    success : function() { \n\n    }, \n    error : function(error) { \n\n    }});",
-    "total": "Number of JQuery artifacts calling Ajax function",
+    "total": "Number of javascript source codes using ajax",
     "alternativeName": "Ensure you use Ajax method with dataType with jQuery version older than 3.0.0",
     "businessCriteria": [
         {
@@ -90,9 +90,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

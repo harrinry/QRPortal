@@ -12,7 +12,7 @@
     "remediation": "Do not use .dialog() or update the version of jQuery",
     "remediationSample": "// version of library is NOT vulnerable\n<script src=\"https://code.jquery.com/ui/1.10.0/jquery-ui.js\"></script> \n...\n$('<div>Hi</div>').dialog({title:'<script type=\"text/javascript\">alert(\"XSS\");</script>\"});\n..",
     "sample": "// version of library vulnerable\n<script src=\"https://code.jquery.com/ui/1.9.1/jquery-ui.js\"></script> \n...\n$('<div>Hi</div>').dialog({title:'<script type=\"text/javascript\">alert(\"XSS\");</script>\"});\n..",
-    "total": "Number of jQuery methods",
+    "total": "Number of javascript source codes using jquery",
     "alternativeName": "Ensure you don't use Dialog widget from jQuery UI with version older than 1.10.0",
     "businessCriteria": [
         {
@@ -90,9 +90,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

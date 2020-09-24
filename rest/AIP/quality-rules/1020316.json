@@ -11,7 +11,7 @@
     "reference": "http://learn.jquery.com/performance/optimize-selectors/",
     "remediationSample": "$('div.container').children(); // BETTER\nor\n$( \"input:radio\" ); // Much better.",
     "sample": "$('div.container > *'); // SLOW\nor\n$( \":radio\" ); // Implied universal selection.\nor\n$( \"*:radio\" ); // Implied universal selection.",
-    "total": "Number of JQuery artifacts (Javascript source code containing JQuery)",
+    "total": "Number of javascript source codes using jquery",
     "alternativeName": "Ensure you don't universal selectors to avoid performance issue.",
     "businessCriteria": [
         {

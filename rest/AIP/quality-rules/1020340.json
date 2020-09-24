@@ -12,7 +12,7 @@
     "remediation": "Always implement success, error, complete callbacks before jQuery 3.0\nAlways implement done, fail, always callbacks with jQuery 3.0 (and latest)",
     "remediationSample": "$.ajax({\n   type: 'POST',\n   url: '_auth/login',\n   success: function(res, status, xhr) { window.location.reload(); },\n   error: function(res, status, xhr) { window.location.reload(); },\n   complete: function(xhr, status, err) {\n   }\n});\n\n-------------------------------------------\n$.ajax({\n   type: 'POST',\n   url: '_auth/login'\n})\n.done(successHandler)\n.fail(errorHandler)\n.always();",
     "sample": "// error callback is missing\n$.ajax({\n   type: 'POST',\n   url: '_auth/login',\n   success: function(res, status, xhr) { window.location.reload(); },\n   complete: function(xhr, status, err) {\n   }\n});\n\n-------------------------------------------\n// fail callback is missing\n$.ajax({\n   type: 'POST',\n   url: '_auth/login'\n})\n.done(successHandler)\n.always();",
-    "total": "Number of Javascript source codes containing ajax calls.",
+    "total": "Number of javascript source codes using jquery",
     "alternativeName": "Ensure you have implemented expected $ajax callbacks",
     "businessCriteria": [
         {
