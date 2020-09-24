@@ -11227,7 +11227,7 @@
     },
     {
         "id": 1024002,
-        "name": "A Read permission is required to read data of Content Provider",
+        "name": "Always have read permission to read data of Content Provider",
         "href": "AIP/quality-rules/1024002",
         "status": null,
         "critical": true,
@@ -11237,7 +11237,7 @@
     },
     {
         "id": 1024004,
-        "name": "A Writing permission is required to write data of Content Provider",
+        "name": "Always have writing permission to write data of Content Provider",
         "href": "AIP/quality-rules/1024004",
         "status": null,
         "critical": true,
@@ -11257,7 +11257,7 @@
     },
     {
         "id": 1024010,
-        "name": "Apply signature-based permissions",
+        "name": "Avoid applying dangerous protection level for signature-based permissions",
         "href": "AIP/quality-rules/1024010",
         "status": null,
         "critical": true,
@@ -11270,14 +11270,14 @@
         "name": "Avoid setting android:grantUriPermissions as True",
         "href": "AIP/quality-rules/1024012",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
     },
     {
         "id": 1024014,
-        "name": "A permission is required for securing Receivers",
+        "name": "Always set permission for securing Receivers",
         "href": "AIP/quality-rules/1024014",
         "status": null,
         "critical": true,
@@ -11287,7 +11287,7 @@
     },
     {
         "id": 1024016,
-        "name": "A permission is required for securing Services",
+        "name": "Always provide permission for securing Services",
         "href": "AIP/quality-rules/1024016",
         "status": null,
         "critical": true,
@@ -11307,10 +11307,10 @@
     },
     {
         "id": 1024022,
-        "name": "Media Resources should be released",
+        "name": "Always released Media Resources",
         "href": "AIP/quality-rules/1024022",
         "status": null,
-        "critical": true,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
