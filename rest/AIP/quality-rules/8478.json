@@ -9,7 +9,7 @@
     "output": "Associated to each COBOL Program with violations, the Quality Rule provides: \n\n- The number of using ADD, SUBTRACT, MULTIPLY, DIVIDE & COMPUTE statement inside a loop without ON SIZE ERROR check.\n- Bookmarks for violation occurrences found in source code:\n    - Statement creating the loop in which one of these statements are used without ON SIZE ERROR check.",
     "rationale": "Buffer overflows are one of the oldest but also the most common type of vulnerability affecting software that allows direct memory access. These vulnerabilities are because programmers make erroneous assumptions upon the size of the data that they write in their programs\u2019",
     "reference": "https://cwe.mitre.org/data/definitions/787.html\nhttps://www.owasp.org/index.php/A5_2004_Buffer_Overflow",
-    "remediation": "Check if the ON SIZE ERROR is used when using these statments inside a loop.",
+    "remediation": "Check if the ON SIZE ERROR is used when using these statements inside a loop.",
     "remediationSample": "PERFORM UNTIL A > 100\nADD 1 TO A\nON SIZE ERROR \nEND-PERFORM.",
     "sample": "PERFORM UNTIL A > 100\nADD 1 TO A\nEND-PERFORM.",
     "total": "Number of Cobol Programs",
