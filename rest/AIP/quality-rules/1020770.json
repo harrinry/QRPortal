@@ -2,7 +2,7 @@
     "id": 1020770,
     "name": "Avoid using Node.js query-mysql third-party before 0.0.3",
     "href": "AIP/quality-rules/1020770",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the use of query-mysql and the version used by the application.",
@@ -53,7 +53,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -90,9 +90,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

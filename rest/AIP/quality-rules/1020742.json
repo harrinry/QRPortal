@@ -2,7 +2,7 @@
     "id": 1020742,
     "name": "Avoid creating cookie with overly broad domain (Node.js)",
     "href": "AIP/quality-rules/1020742",
-    "critical": false,
+    "critical": true,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "The cookies with an overly broad domain can be accessed by all web applications deployed on this domain and its sub-domains. A cookie with sensitive data, but with too broad a domain, could hence be read and tampered with by a less secure and untrusted application.",
@@ -16,6 +16,11 @@
     "alternativeName": "Avoid creating cookie with overly broad domain (Node.js)",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
             "id": 1062300,
             "name": "OWASP-2013-Index",
             "href": "AIP/business-criteria/1062300"
@@ -24,11 +29,6 @@
             "id": 1062320,
             "name": "OWASP-2017-Index",
             "href": "AIP/business-criteria/1062320"
-        },
-        {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "AIP/business-criteria/66031"
         },
         {
             "id": 60016,
@@ -50,10 +50,10 @@
             "critical": false
         },
         {
-            "id": 66066,
-            "name": "Secure Coding - Encapsulation",
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
             "weight": 7,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [

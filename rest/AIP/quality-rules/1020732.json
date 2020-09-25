@@ -2,7 +2,7 @@
     "id": 1020732,
     "name": "Avoid using risky cryptographic hash (Node.js)",
     "href": "AIP/quality-rules/1020732",
-    "critical": false,
+    "critical": true,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "MD5/SHA1 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that's used as additional input to a one-way function. Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. As a consequence, somebody can break your encryption or log on to your website.",
@@ -47,7 +47,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 7,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -112,9 +112,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

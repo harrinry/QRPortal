@@ -2,8 +2,8 @@
     "id": 1020764,
     "name": "Avoid using path library parsing functions with vulnerable versions",
     "href": "AIP/quality-rules/1020764",
-    "critical": false,
-    "maxWeight": 8,
+    "critical": true,
+    "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the use of the module path parsing functions and the Node.js version used by the application.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -51,8 +51,8 @@
         {
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
-            "weight": 8,
-            "critical": false
+            "weight": 9,
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

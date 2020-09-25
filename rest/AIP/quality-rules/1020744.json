@@ -2,7 +2,7 @@
     "id": 1020744,
     "name": "Avoid using TLS library before Node.js 9.11.2 and 10.4.1",
     "href": "AIP/quality-rules/1020744",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the instance of TLS and the Node.js version used by the application.",
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

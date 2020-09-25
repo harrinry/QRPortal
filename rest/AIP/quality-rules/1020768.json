@@ -2,7 +2,7 @@
     "id": 1020768,
     "name": "Avoid using net.Socket object as stream with vulnerable version of Node.js",
     "href": "AIP/quality-rules/1020768",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the instance of net.Socket service (net.createConnection) and the Node.js version used by the application.",
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        10.0,
-        70.0,
-        90.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }
