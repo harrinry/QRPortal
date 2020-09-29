@@ -2,7 +2,7 @@
     "id": 1020916,
     "name": "Avoid using Buffer library and UCS-2 encoding with vulnerable versions (TypeScript)",
     "href": "AIP/quality-rules/1020916",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule raises a violation when the fill, alloc, from or write method of the Buffer module is used with UCS-2 encoding and with a vulnerable nodejs version.",
@@ -11,7 +11,7 @@
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12115",
     "remediation": "Update the Node.js library to have a fixed Buffer implementation",
     "sample": "console.log(Buffer.from('fhqwhgads', 'utf16le'));",
-    "total": "Number of source codes having the violation",
+    "total": "Number of source codes using buffer library with UCS-2 encoding",
     "alternativeName": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
     "businessCriteria": [
         {
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

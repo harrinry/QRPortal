@@ -2,7 +2,7 @@
     "id": 1020924,
     "name": "Avoid using net.Socket object as stream with vulnerable version of Node.js (TypeScript)",
     "href": "AIP/quality-rules/1020924",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the instance of net.Socket service (net.createConnection or net.connect) and the Node.js version used by the application.",
@@ -11,7 +11,7 @@
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7164",
     "remediation": "Update the Node.js library.",
     "sample": "import * as net from 'net';\n\nconst client = net.createConnection({ port: 8124 }, () => {\n  // 'connect' listener\n  console.log('connected to server!');\n  client.write('world!\\r\\n');\n});",
-    "total": "Number of source codes using net.createConnection() with vulnerable nodejs versions",
+    "total": "Number of source codes using net.createConnection()",
     "alternativeName": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS versions from 9.7.0 to  9.11.2 and from 10.0.0 to 10.4.1",
     "businessCriteria": [
         {
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

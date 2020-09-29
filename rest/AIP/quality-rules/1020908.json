@@ -2,7 +2,7 @@
     "id": 1020908,
     "name": "Avoid using the file path validation with Node.js 8.5.0 (TypeScript)",
     "href": "AIP/quality-rules/1020908",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check that normalizeStringWin32 is not used with Node.js 8.5.0.",
@@ -11,7 +11,7 @@
     "reference": "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-14849",
     "remediation": "Avoid using normalizeStringWin32 method defined in Path module",
     "sample": "import * as path from 'path'\npath.normalizeStringWin32('C:/pathwithtwodots/../andyouhavetheproblem');",
-    "total": "Number of source codes using path.normalizeStringWin32 () with nodejs version 8.5.0",
+    "total": "Number of source codes using path.normalizeStringWin32 ()",
     "alternativeName": "Ensure you don't use normalizeStringWin32 method of Path module with Node.js 8.5.0",
     "businessCriteria": [
         {
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

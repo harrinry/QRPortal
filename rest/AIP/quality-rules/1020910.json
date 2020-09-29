@@ -2,7 +2,7 @@
     "id": 1020910,
     "name": "Avoid using path library parsing functions with vulnerable nodejs versions (TypeScript)",
     "href": "AIP/quality-rules/1020910",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check that the parsing methods (i.e. dirname, extname, and parse) of the module path are not used with a nodejs version older than 4.9.0.",
@@ -11,7 +11,7 @@
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7158\nhttps://nodejs.org/en/blog/vulnerability/march-2018-security-releases/",
     "remediation": "Update the Node.js library",
     "sample": "import * as path from \"path\"\n\npath.dirname(foopath);\npath.extname(foopath);\npath.parse(foopath);",
-    "total": "Number of source codes using a parsing method of the path library with vulnerable nodejs versions",
+    "total": "Number of source codes using a parsing method of the path library",
     "alternativeName": "Ensure you don't use the path module from NodeJS with version older than 4.9.0",
     "businessCriteria": [
         {
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

@@ -2,7 +2,7 @@
     "id": 1020826,
     "name": "Avoid hardcoded network resource names (Typescript)",
     "href": "AIP/quality-rules/1020826",
-    "critical": false,
+    "critical": true,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This quality rule reports all artifacts that contain hardcoded \n- IP addresses (IPv4 and IPv6)\n- URLs",
@@ -16,11 +16,6 @@
     "alternativeName": "Ensure not having hardcoded network resources names in the source files (Typescript)",
     "businessCriteria": [
         {
-            "id": 66032,
-            "name": "Architectural Design",
-            "href": "AIP/business-criteria/66032"
-        },
-        {
             "id": 1062100,
             "name": "CISQ-Index",
             "href": "AIP/business-criteria/1062100"
@@ -31,9 +26,9 @@
             "href": "AIP/business-criteria/1062103"
         },
         {
-            "id": 60012,
-            "name": "Changeability",
-            "href": "AIP/business-criteria/60012"
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
         },
         {
             "id": 1061000,
@@ -51,11 +46,6 @@
             "href": "AIP/business-criteria/1061003"
         },
         {
-            "id": 60013,
-            "name": "Robustness",
-            "href": "AIP/business-criteria/60013"
-        },
-        {
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
@@ -69,16 +59,16 @@
             "critical": false
         },
         {
-            "id": 61004,
-            "name": "Architecture - OS and Platform Independence",
-            "weight": 7,
-            "critical": false
-        },
-        {
             "id": 1061114,
             "name": "CWE-1051: Initialization with Hard-Coded Network Resource Configuration Data",
             "weight": 5,
             "critical": false
+        },
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 7,
+            "critical": true
         }
     ],
     "technologies": [
@@ -129,9 +119,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

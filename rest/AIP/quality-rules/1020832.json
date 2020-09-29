@@ -12,7 +12,7 @@
     "remediation": "Always use HttpClient Angular Module",
     "remediationSample": "import { HttpModule } from '@angular/http';\n\nclass MyClass {\n  constructor(private http: Http) {\n  }\n  this.http.get(url).subscribe(res => console.log(res.text()));\n}",
     "sample": "//XMLHttpRequest\nvar xhttp = new XMLHttpRequest();\nxhttp.open(\"GET\", \"filename\", true);\n\n\n//fetch \nfetch(url).then(function() {\n})\n.catch(function() {\n});\n\n\n// axios \naxios.get(url).then(function() {\n})\n.catch(function() {\n});",
-    "total": "Number of TypeScript artifacts",
+    "total": "Number of TypeScript artifacts calling web services",
     "alternativeName": "Always prefer using HttpClient Angular Module instead of using javascript HTTP request to avoid JSON vulnerability",
     "businessCriteria": [
         {
@@ -164,9 +164,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

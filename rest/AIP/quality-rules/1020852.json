@@ -2,7 +2,7 @@
     "id": 1020852,
     "name": "Avoid using \"<script>\" tag in HTML template used by React.js components (Typescript)",
     "href": "AIP/quality-rules/1020852",
-    "critical": false,
+    "critical": true,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check that \"<script>\" tag is not used in the HTML template. <script> tag will not be considered and will be seen as a security issue by React.js.",
@@ -85,7 +85,7 @@
             "id": 66062,
             "name": "Secure Coding - Input Validation",
             "weight": 7,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -164,9 +164,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

@@ -2,7 +2,7 @@
     "id": 1020904,
     "name": "Avoid using url.parse() with vulnerable nodejs versions (TypeScript)",
     "href": "AIP/quality-rules/1020904",
-    "critical": false,
+    "critical": true,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the use of url.parse with the protocol javascript and the Node.js version used by the application.",
@@ -11,7 +11,7 @@
     "reference": "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12123",
     "remediation": "Update the Node.js library to have a fixed implementation",
     "sample": "import * as url from 'url';\n\nurl.parse(\"javascript://myscript.js\");\nurl.parse(\"javaScript://myscript.js\");\nurl.parse(\"http://example.com\");\nvar url1 = \"javascrIpt://myscript.js\";\nvar url2 = \"http://example.com\";\nurl.parse(url1);\nurl.parse(url2);",
-    "total": "Number of source codes using url.parse() with vulnerable nodejs versions",
+    "total": "Number of source codes using url.parse()",
     "alternativeName": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
     "businessCriteria": [
         {
@@ -52,7 +52,7 @@
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "weight": 8,
-            "critical": false
+            "critical": true
         }
     ],
     "technologies": [
@@ -89,9 +89,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }

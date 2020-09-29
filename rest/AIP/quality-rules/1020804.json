@@ -15,6 +15,11 @@
     "alternativeName": "Prefer refactoring the source code  instead of using console logging",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
             "id": 1062300,
             "name": "OWASP-2013-Index",
             "href": "AIP/business-criteria/1062300"
@@ -23,11 +28,6 @@
             "id": 1062320,
             "name": "OWASP-2017-Index",
             "href": "AIP/business-criteria/1062320"
-        },
-        {
-            "id": 66031,
-            "name": "Programming Practices",
-            "href": "AIP/business-criteria/66031"
         },
         {
             "id": 60016,
@@ -49,8 +49,8 @@
             "critical": false
         },
         {
-            "id": 66066,
-            "name": "Secure Coding - Encapsulation",
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
             "weight": 5,
             "critical": false
         }
@@ -117,9 +117,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }
