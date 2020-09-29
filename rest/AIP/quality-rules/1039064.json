@@ -16,6 +16,11 @@
     "alternativeName": "Ensure you do not allow access to all domain when defining cookie domain (JEE)",
     "businessCriteria": [
         {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
             "id": 1062300,
             "name": "OWASP-2013-Index",
             "href": "AIP/business-criteria/1062300"
@@ -52,6 +57,12 @@
         {
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
+            "weight": 7,
+            "critical": true
+        },
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
             "weight": 7,
             "critical": true
         }
@@ -111,9 +122,9 @@
         
     ],
     "thresholds": [
-        50.0,
-        90.0,
-        95.0,
-        99.0
+        98.0,
+        99.0,
+        99.5,
+        99.99
     ]
 }
