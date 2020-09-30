@@ -1,14 +1,14 @@
 {
     "id": 1008108,
-    "name": "Avoid using GOTO statement in RPG Programs  (RPG400)",
+    "name": "Avoid using GOTO statement in RPG artifact (RPG400)",
     "href": "AIP/quality-rules/1008108",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches all the programs having GO TO statements.",
-    "output": "This report lists RPG400 programs using GOTO statement.\nIt provides the following information:\nRPG400 Program full name",
-    "rationale": "GOTO in is nor recomended to be used in the RPG programs . Instead, substitute either a structured alternative like status variables to skip code or to direct a program to a specific location or there is no other option use  nested IF statements.",
-    "remediation": "Try to replace the GO TO with alternative structured like status variables to skip code or to direct a program to a specific location or there is no other option use  nested IF statements.",
-    "total": "Total number of RPG400 Programs",
+    "description": "This rule searches all the artefact having GOTO statements.",
+    "output": "This report lists RPG400 artefact using GOTO statement.\nIt provides the following information:\nRPG400 Artifact full name",
+    "rationale": "Using GOTO breaks the process execution flow and makes the code more difficult to understand and maintain.",
+    "remediation": "Try to replace the GOTO with alternative structured like status variables to skip code or to direct a program to a specific location or there is no other option use  nested IF statements.",
+    "total": "Total number of RPG400 Artefact",
     "alternativeName": "Avoid using GOTO statement in RPG artifact (RPG400)",
     "businessCriteria": [
         {

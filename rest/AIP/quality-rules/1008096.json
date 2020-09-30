@@ -1,14 +1,16 @@
 {
     "id": 1008096,
-    "name": "Better to use QUALIFIED data structures  (RPG400)",
+    "name": "Use QUALIFIED data structures (RPG400)",
     "href": "AIP/quality-rules/1008096",
     "critical": false,
     "maxWeight": 1,
-    "description": "This rule searches for all RPG400 programs not using QUALIFIED data structures.",
-    "output": "This report lists RPG400 programs not using QUALIFIED data structures.\nIt provides the following information:\nRPG400 Program full name",
+    "description": "This rule searches for all RPG400 artefact not using QUALIFIED data structures.",
+    "output": "This report lists RPG400 artefact not using QUALIFIED data structures.\nIt provides the following information:\nRPG400 Artifact full name",
     "rationale": "Qualified data structures allow you to use the same field name in multiple structures without name conflict, provide a means of defining standard structures (the most obvious use of this is for APIs), and they lead to self documenting code.",
     "remediation": "Try to use the QUALIFIED data structures in the RPG400 programs.",
-    "total": "Total number of RPG400 Programs",
+    "remediationSample": "D Phone           DS                  Qualified\nD  CountryCode                   5    Varying\nD  NDDPrefix                     5    Varying\nD  AreaCode                      5    Varying\nD  Number                        9    Varying\nD  Extension                     4    Varying\nD  IDDPrefix                     5    Varying Dim(5)",
+    "sample": "D Phone           DS                  \nD  CountryCode                   5    Varying\nD  NDDPrefix                     5    Varying\nD  AreaCode                      5    Varying\nD  Number                        9    Varying\nD  Extension                     4    Varying\nD  IDDPrefix                     5    Varying Dim(5)",
+    "total": "Total number of RPG400 Artefact",
     "alternativeName": "Use QUALIFIED data structures (RPG400)",
     "businessCriteria": [
         {

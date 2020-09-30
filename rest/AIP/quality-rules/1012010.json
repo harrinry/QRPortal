@@ -8,7 +8,7 @@
     "output": "This report lists CL400 programs in which MONMSG command is not formated.\nIt provides the following information:\n- CL400 program full name",
     "rationale": "The format of messages is very important. More the messages are in good format, easier is for the users to understand them.",
     "remediation": "Ensure that MSGID in the command line as following Sample\nMONMSG     MSGID(CPF0864) EXEC(GOTO FIN)\n\nThe ID should not be used without MSGID as the following case: \n\nMONMSG     CPF0864 EXEC(GOTO FIN)",
-    "remediationSample": "\nThe ID should not be used without MSGID as the following case: \n\nMONMSG     CPF0864 EXEC(GOTO FIN)",
+    "remediationSample": "The ID should not be used without MSGID as the following case: \n\nMONMSG     CPF0864 EXEC(GOTO FIN)",
     "total": "Number of CL400 Programs",
     "alternativeName": "MONMSG command must be formated    (CL400)",
     "businessCriteria": [

@@ -1,14 +1,16 @@
 {
     "id": 1008100,
-    "name": "Avoid using O-spec; use Printer Files instead  (RPG400)",
+    "name": "Avoid using O-spec; use Printer Files instead (RPG400)",
     "href": "AIP/quality-rules/1008100",
     "critical": false,
     "maxWeight": 5,
-    "description": "This rule searches all the artifacts suing O-spec.",
-    "output": "This report lists RPG400 programs using I-spec.\nIt provides the following information:\nRPG400 Program full name",
-    "rationale": "O-specs  being deprecated and allow less re-usability",
-    "remediation": "Try to replace this statements by a another one like Printer Files",
-    "total": "Total number of RPG400 Programs",
+    "description": "This rule searches all the artefact using O-spec.",
+    "output": "This report lists RPG400 artefact using O-spec.\nIt provides the following information:\nRPG400 artifact full name",
+    "rationale": "O-specs is deprecated and allow less re-usability.",
+    "remediation": "Try to replace this statements by Printer Files.",
+    "remediationSample": "AAN01N02N03T.Name++++++RLen++TDpBLinPosFunctions++++++++++++++++++++++++\n01  A                                      INDARA\n02  A                                      REF(TESTFILE)\n     *-----------------------------------------------------------------------\n03  A          R PRHEADER\n04  A            PROGRAM       10A        1SKIPB(001)\n05  A            USER          10A       +1\n06  A                                    56'REPORT TITLE'\n07  A                                   113TIME\n08  A                                    +1DATE(*YY)\n09  A                                      EDTCDE(Y)\n     *---\n10  A                                     1'Account No.'\n11  A                                      HIGHLIGHT\n12  A                                      UNDERLINE\n13  A                                      SPACEB(001)\n14  A                                    +1'Account Name                  '\n15  A                                      HIGHLIGHT\n16  A                                      UNDERLINE\n17  A                                    +1'State'\n18  A                                      HIGHLIGHT\n19  A                                      UNDERLINE\n20  A                                   123'Page'\n21  A                                    +1PAGNBR\n22  A                                      EDTCDE(Z)",
+    "sample": "OFilename++DF..N01N02N03Excnam++++B++A++Sb+Sa+\n    O..............N01N02N03Field+++++++++YB.End++PConstant/editword/DTformat\n01  OQSYSPRT   E            HDR               1\n02  O                       PgmDs.Pgm           10\n03  O                       PgmDs.User        +  1\n04  O                                           67 'REPORT TITLE'\n05  O                       RptTime            120T*hms\n06  O                       RptDate           +  1D*usa\n07  O          E            HDR         1\n08  O                                           12 'Account No.'\n09  O                                         +  1 'Account Name'\n10  O                                           49 'State'\n11  O                                          127 'Page:'\n12  O                       PAGE          Z   +  1\n13  O          E            HDR         1\n14  O                                           12 '-----------'\n15  O                                         +  1 '------------------------'\n16  O                                         +  0 '------'\n17  O                                         +  1 '-----'\n\n18  O          E            DTL         1\n19  O                       ACCNBR        Z     12\n20  O                       ACCNME            +  1\n21  O                       ACCSTE            +  3\n22  O               01                        +  1 '<- Invalid state'\n\n23  O          E            EOR         2\n24  O                                           21 '*** END OR REPORT ***'",
+    "total": "Total number of RPG400 Artefact",
     "alternativeName": "Avoid using O-spec; use Printer Files instead (RPG400)",
     "businessCriteria": [
         {

@@ -1,14 +1,14 @@
 {
     "id": 1008098,
-    "name": "Avoid using plain END statement, use the explained END statement like ENDIF, ENDDO, etc  (RPG400)",
+    "name": "Use the corresponding END statement such as ENDIF, ENDDO instead of plain END statement (RPG400)",
     "href": "AIP/quality-rules/1008098",
     "critical": false,
     "maxWeight": 1,
-    "description": "This rule searches all the artifacts using plain END statements.",
-    "output": "This report lists RPG400 programs using plain END statement, use the explained END statement like ENDIF, ENDDO, etc.\nIt provides the following information:\nRPG400 Program full name",
-    "rationale": "This increases the level of readability of the code and hence the maintainability",
-    "remediation": "Try to replace the plain END with the explained one like END IF, END DO etc",
-    "total": "Total number of RPG400 Programs",
+    "description": "This rule searches all the artifacts using plain END statements instead of corresponding END statement such as ENDIF, ENDDO etc.",
+    "output": "This report lists RPG400 artefact using plain END statement, instead of corresponding END statement such as ENDIF, ENDDO, etc.\nIt provides the following information:\nRPG400 artifact full name",
+    "rationale": "Using corresponding END statement such as ENDIF, ENDDO increases readability of the code and therefore maintainability.",
+    "remediation": "Try to replace the plain END with the corresponding END statement such as ENDIF, ENDDO etc.",
+    "total": "Total number of RPG400 Artefact",
     "alternativeName": "Use the corresponding END statement such as ENDIF, ENDDO instead of plain END statement (RPG400)",
     "businessCriteria": [
         {
