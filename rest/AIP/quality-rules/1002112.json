@@ -4,6 +4,7 @@
     "href": "AIP/quality-rules/1002112",
     "critical": false,
     "maxWeight": 0,
+    "associatedValueName": "Average Statement Size (#Non-operator words/#Statements)",
     "description": "This calculation is using the results of the calculated Halstead metrics n1, n2, N1 and N2. This diagnostic is a result of this calculation",
     "rationale": "AVGS: This metric (Average Size of statements) corresponds to the average number of operands and operators used by each of the component's executable statements.\nIt is calculated as follows:\n        AVGS = (N1+N2) / STMT;\n where:\n        N1 is the number of operator occurrences,\n        N2 is the number of operand occurrences,\n        STMT is the number of executable statements in the component",
     "alternativeName": "Avoid Subroutines with High Average size of Statements (AVGS)  (FORTRAN)",

@@ -4,6 +4,7 @@
     "href": "AIP/quality-rules/1002018",
     "critical": false,
     "maxWeight": 5,
+    "associatedValueName": "Number of select case statements without default",
     "description": "The number of SELECT CASE statements is compared to the number of CASE DEFAULT statements.",
     "rationale": "Process the default case in the instruction SELECT CASE. Allows to safeguard against omissions and to process the default case.",
     "remediation": "Add the CASE DEFAULT to the switch construct with the appropriate default processing in it.",
