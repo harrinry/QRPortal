@@ -3,7 +3,7 @@
     "name": "Avoid using C-style and functional notation casts (C++)",
     "href": "AIP/quality-rules/1065080",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "description": "This rule will raise a violation when C-style casts or functional casts are used\n\nException:\nA C-style cast to void may be used to signify that the return value for a non-void function call is being ignored",
     "output": "Information will be provided on:\n1. Methods where a violation has occurred\n2. Bookmarks for violation occurrences found in the source code",
     "rationale": "C-style (cast notation), and functional notation casts that do not invoke a converting constructor are capable of performing casts between unrelated types.\nAlso, C++ style casts clearly communicate the intent and hence improve readability.",
@@ -14,6 +14,21 @@
     "total": "Number of Methods or Functions",
     "alternativeName": "Ensure to use C++ style notation casts to avoid unexpected type conversions",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
         {
             "id": 60012,
             "name": "Changeability",
@@ -36,6 +51,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062152,
+            "name": "ASCRM-CWE-704 - Incorrect Type Conversion or Cast",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062187,
+            "name": "ASCSM-CWE-681 - Numeric Types Incorrect Conversion",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
