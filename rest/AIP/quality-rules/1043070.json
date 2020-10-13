@@ -12,7 +12,7 @@
     "remediation": "Do not disable antiforgery tokens with the asp-antiforgery attribute\nDo not opt-out the form element of Tag Helpers by using the Tag Helper\nDo not remove the FormTagHelper from the view",
     "remediationSample": "// NO VIOLATION: protected by default\n\n<form method=\"post\">\n    ...\n</form>",
     "sample": "// VIOLATION: Explicitly disable antiforgery tokens with the asp-antiforgery attribute\n\n<form method=\"post\" asp-antiforgery=\"false\">\n    ...\n</form>\n\n// VIOLATION: Form element is opted-out of Tag Helper\n<!form method=\"post\">\n    ...\n</!form>\n\n// VIOLATION: FormTagHelper removed from the view\n@removeTagHelper Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers",
-    "alternativeName": null,
+    "alternativeName": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET Core MVC)",
     "businessCriteria": [
         {
             "id": 66031,
@@ -41,7 +41,76 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-352",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2017",
+            "name": "Broken Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A8-2013",
+            "name": "Cross-Site Request Forgery (CSRF)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M4-2016",
+            "name": "Insecure Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.9",
+            "name": "Cross-site request forgery (CSRF)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.9",
+            "name": "Cross-site request forgery (CSRF)",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70259",
+            "name": "The application must protect from Cross-Site Request Forgery (CSRF) vulnerabilities.",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

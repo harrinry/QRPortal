@@ -13,7 +13,7 @@
     "remediationSample": "// no violation here because\npublic class HomeController : Controller\n{\n   public ActionResult Index()\n   {\n      return View();\n   }\n\n   public ActionResult Contact()\n   {\n      var contacts = db.Contacts.Include(c => c.Directory)\n\n      return View(contacts.ToList());\n   }\n}",
     "sample": "[RequireHttps] // violation here because some data are accessed\npublic class HomeController : Controller\n{\n   public ActionResult Index()\n   {\n      return View();\n   }\n\n   public ActionResult Contact()\n   {\n      var contacts = db.Contacts.Include(c => c.Directory)\n\n      return View(contacts.ToList());\n   }\n}",
     "total": "Number of Methods",
-    "alternativeName": null,
+    "alternativeName": "Ensure you do not use RequireHttpsAttribute on Web APIs accessing sensitive data",
     "businessCriteria": [
         {
             "id": 66031,
@@ -42,7 +42,34 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

@@ -12,7 +12,7 @@
     "remediation": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl properties",
     "remediationSample": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<configuration>\n <system.serviceModel>\n  <behaviors>\n   <serviceBehaviors>\n    <behavior name=\"mySvcBehavior\">\n     <serviceMetadata httpsGetEnabled=\"true\"\n          httpsGetUrl=\"https://localhost:8036/calcMetadata\" />\n    </behavior>\n   </serviceBehaviors>\n  </behaviors>\n <services>\n  <service behaviorConfiguration=\"mySvcBehavior\"\n        name=\"Microsoft.Security.Samples.Calculator\">\n   <endpoint address=\"http://localhost:8037/ServiceModelSamples/calculator\"\n   binding=\"wsHttpBinding\" bindingConfiguration=\"\"\n   contract=\"Microsoft.Security.Samples.ICalculator\" />\n  </service>\n </services>\n</system.serviceModel>\n</configuration>",
     "sample": "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n<configuration>\n <system.serviceModel>\n  <behaviors>\n   <serviceBehaviors>\n    <behavior name=\"mySvcBehavior\">\n     <serviceMetadata httpsGetEnabled=\"false\"/>\n    </behavior>\n   </serviceBehaviors>\n  </behaviors>\n <services>\n  <service behaviorConfiguration=\"mySvcBehavior\"\n        name=\"Microsoft.Security.Samples.Calculator\">\n   <endpoint address=\"http://localhost:8037/ServiceModelSamples/calculator\"\n   binding=\"wsHttpBinding\" bindingConfiguration=\"\"\n   contract=\"Microsoft.Security.Samples.ICalculator\" />\n  </service>\n </services>\n</system.serviceModel>\n</configuration>",
-    "alternativeName": null,
+    "alternativeName": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl in configuration",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -41,7 +41,41 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API7-2019",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

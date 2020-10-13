@@ -13,7 +13,7 @@
     "remediationSample": "// Create a new metadata behavior object and set its properties to\n// create a secure endpoint.\nServiceMetadataBehavior sb = new ServiceMetadataBehavior();\nsb.HttpsGetEnabled = true;\nsb.HttpsGetUrl = new Uri(\"https://myMachineName:8036/myEndpoint\");\nmyServiceHost.Description.Behaviors.Add(sb);\n\nmyServiceHost.Open();",
     "sample": "// Create a new metadata behavior object and set its properties to\n// create a secure endpoint.\nServiceMetadataBehavior sb = new ServiceMetadataBehavior();\nsb.HttpsGetEnabled = false;\nmyServiceHost.Description.Behaviors.Add(sb);\n\nmyServiceHost.Open();",
     "total": "Number of applications",
-    "alternativeName": null,
+    "alternativeName": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl in code",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -42,7 +42,41 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API7-2019",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         

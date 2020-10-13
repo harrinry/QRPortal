@@ -13,7 +13,7 @@
     "remediationSample": "public void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n    if (env.IsDevelopment())\n    {\n        app.UseDeveloperExceptionPage();\n    }\n    else\n    {\n        app.UseExceptionHandler(\"/Error\");\n        // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.\n        app.UseHsts();\n    }\n\n    app.UseHttpsRedirection();\n    app.UseStaticFiles();\n\n    app.UseRouting();\n\n    app.UseAuthorization();\n\n    app.UseEndpoints(endpoints =>\n    {\n        endpoints.MapRazorPages();\n    });\n}",
     "sample": "// violation here because IApplicationBuilder app has not been set properly\n\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env)\n{\n    if (env.IsDevelopment())\n    {\n        app.UseDeveloperExceptionPage();\n    }\n    else\n    {\n        app.UseExceptionHandler(\"/Error\");\n    }\n\n    app.UseStaticFiles();\n\n    app.UseRouting();\n\n    app.UseAuthorization();\n\n    app.UseEndpoints(endpoints =>\n    {\n        endpoints.MapRazorPages();\n    });\n}",
     "total": "Number of C# source codes using IApplicationBuilder object-based",
-    "alternativeName": null,
+    "alternativeName": "Ensure you enforce HTTPS in your ASP.NET core application",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -42,7 +42,41 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-523",
+            "name": "Unprotected Transport of Credentials",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.4",
+            "name": "Insecure communications",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
