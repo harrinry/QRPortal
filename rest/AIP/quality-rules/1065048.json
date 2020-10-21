@@ -3,7 +3,7 @@
     "name": "Where multiple handlers are provided in a single try-catch statement or function-try-block, any ellipsis (catch-all) handler shall occur last.",
     "href": "AIP/quality-rules/1065048",
     "critical": false,
-    "maxWeight": 2,
+    "maxWeight": 5,
     "description": "The rule will raise a violation if catch-all is followed by a handler in a try-catch block",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "If the catch-all handler is found before any other handler, that behavior will be performed. Any handlers after the catch-all are unreachable code and can never be executed.",
@@ -18,6 +18,16 @@
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061001,
+            "name": "OMG-ASCQM-Maintainability",
+            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -36,6 +46,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061061,
+            "name": "CWE-561: Dead Code",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61027,
             "name": "Dead code (static)",

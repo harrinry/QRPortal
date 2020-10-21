@@ -3,7 +3,7 @@
     "name": "Avoid using the unbounded functions of <cstring> library",
     "href": "AIP/quality-rules/1065046",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "description": "The rule will raise a violation when the following unbounded functions of <cstring> are used:\nstrcpy\nstrcmp\nstrcat\nstrchr\nstrspn\nstrcspn\nstrpbrk\nstrrchr\nstrstr\nstrtok\nstrlen",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "The strcpy, strcmp, strcat, strchr, strspn, strcspn, strpbrk, strrchr, strstr, strtok and strlen functions within the <cstring> library can read or write beyond the end of a buffer, resulting in undefined behaviour.\n\nIdeally, a safe string handling library should be used.",
@@ -14,9 +14,39 @@
     "alternativeName": "Avoid using the unbounded functions of <cstring> library",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 60013,
@@ -30,6 +60,24 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062145,
+            "name": "ASCRM-CWE-120 - Buffer Copy without Checking Size of Input",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062174,
+            "name": "ASCSM-CWE-120 - Buffer Copy without Checking Size of Input",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061022,
+            "name": "CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
