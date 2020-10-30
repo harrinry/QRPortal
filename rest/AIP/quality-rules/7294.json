@@ -2,7 +2,7 @@
     "id": 7294,
     "name": "Avoid cyclical calls and inheritances between namespaces content",
     "href": "AIP/quality-rules/7294",
-    "critical": true,
+    "critical": false,
     "maxWeight": 7,
     "associatedValueName": "Cyclically called / inherited namespace full name",
     "description": "This metric reports all namespaces that have one-on-one and more static circular dependencies.\nDependencies mean:\n - references through static methods call\n - references through class fields\n - references through inheritance\n\nNote that all these links are static links and not runtime.\nThe threshold parameter permit to define the maximal number of namespaces to cross for a cycle.\n\nNote that cycle notion means here a directed path in a graph that is directed by dependencies relations.",
@@ -77,7 +77,7 @@
             "id": 61001,
             "name": "Architecture - Multi-Layers and Data Access",
             "weight": 7,
-            "critical": true
+            "critical": false
         },
         {
             "id": 1061110,
