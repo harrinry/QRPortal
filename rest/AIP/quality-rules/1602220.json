@@ -3,7 +3,7 @@
     "name": "Never use PS and VP1 login to develop - Secondary Page (PeopleSoft)",
     "href": "AIP/quality-rules/1602220",
     "critical": false,
-    "maxWeight": 4,
+    "maxWeight": 5,
     "associatedValueName": "Name of the Development Login used for the last update",
     "description": "Identify each object that has been modified with the login PS or VP1",
     "output": "This report lists all the Secondary Pages last updated with PS or VP1 login.\nIt provides the following information: \n- Secondary Page full name.\n- The associated value is the name of the Development Login.",
@@ -17,6 +17,16 @@
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
         },
         {
             "id": 66031,
@@ -35,6 +45,18 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062305,
+            "name": "OWASP-2013-A5 Security Misconfiguration",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062326,
+            "name": "OWASP-2017-A6 Security Misconfiguration",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",
