@@ -6,7 +6,7 @@
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects paths from user input methods down to reflection code, paths which are open vulnerabilities to operating system injection flaws.",
-    "output": "List all methods that miss calling the required input validation calls\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
+    "output": "List all methods that make resource calls forged by user input\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
     "rationale": "The application uses external input with reflection methods manipulating resources, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended behavior.\n\nThis may enable an attacker to access or modify otherwise protected system resources.",
     "reference": "CWE-99: Improper Control of Resource Identifiers ('Resource Injection')\nhttps://cwe.mitre.org/data/definitions/99.html\n\nOpen Web Application Security Project (OWASP) \nhttps://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References\n\nCISQ rule: ASCSM-CWE-99.",
     "remediation": "Assume all input is malicious. \nAvoid using inputs. If it is not possible, use an \"accept known good\" input validation strategy, i.e., use stringent white-lists that limit the character set based on the expected value of the parameter in the request. This will indirectly limit the scope of an attack.",
