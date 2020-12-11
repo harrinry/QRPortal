@@ -1,0 +1,61 @@
+{
+    "id": 1027074,
+    "name": "Avoid hardcoded URIs (.NET)",
+    "href": "AIP/quality-rules/1027074",
+    "critical": false,
+    "maxWeight": 3,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule will raise a violation upon identifying hardcoded URIs or URI path delimiters\n\nExceptions:\nThis rule does not raise an issue when an ASP.NET virtual path is passed as an argument to one of the following:\n\nmethods:\nSystem.Web.HttpServerUtilityBase.MapPath()\nSystem.Web.HttpRequestBase.MapPath()\nSystem.Web.HttpResponseBase.ApplyAppPathModifier()\nSystem.Web.Mvc.UrlHelper.Content()\n\nall methods of:\nSystem.Web.VirtualPathUtility\n\nconstructors of:\nMicrosoft.AspNetCore.Mvc.VirtualFileResult\nMicrosoft.AspNetCore.Routing.VirtualPathData",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "URI paths are not portable in different systems and hence their presence make the system non-portable. A file system or a web link may not be available for access across systems and environments.",
+    "reference": "https://wiki.sei.cmu.edu/confluence/display/java/MSC03-J.+Never+hard+code+sensitive+information",
+    "remediation": "There should be dynamic access of URIs",
+    "remediationSample": "public class fileCreate {\n  public add<user> listUsers() {\n String listingFolder = config.getProperty(\"myApplication.listingFolder\");\n FileStream fs = File.Create(listingFolder, \"users.txt\"); // Fix\n    add users = parse(userList);\n    return users;\n  }\n}",
+    "sample": "public class fileCreate {\n\n  public add<user> listUsers() {\n FileStream fs = File.Create(\"/home/pass/myFileTest/users.txt\"); // Violation\n    add users = parse(userList);\n    return users;\n  }\n}",
+    "total": "Number of methods",
+    "alternativeName": "Avoid hardcoded URIs (.NET)",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61015,
+            "name": "Programming Practices - File Organization Conformity",
+            "weight": 3,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

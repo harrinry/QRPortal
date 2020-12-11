@@ -1,0 +1,70 @@
+{
+    "id": 1027038,
+    "name": "Avoid if \u2026 else if constructs not terminated with an else clause (.NET, VB)",
+    "href": "AIP/quality-rules/1027038",
+    "critical": false,
+    "maxWeight": 1,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule raises a violation when an \"if..else if\" construct does not terminate with an else statement.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "When an if statement is followed by one or more else if statements then the final else if, shall be followed by an else statement. In the case of a simple if statement the else statement need not be included. The final else statement, which should either take appropriate action or contain a suitable comment as to why no action is taken, is defensive programming.",
+    "remediation": "Ensure logical completeness by using else block at the end of \"if...else if\" contruct",
+    "remediationSample": "using System;\npublic class Klass {\n    public void func1() {}\n    public void func2() {}\n    public void Run() {\n        int val = -1;\n        if (val < 0)\n        {\n            func1();\n        }\n        else if (val > 0)\n        {\n            func2();\n        }\n        else\n        {\n            Console.Write(\"Nothing done\");\n        }\n    }\n}",
+    "sample": "using System;\npublic class Klass {\n    public void func1() {}\n    public void func2() {}\n    public void Run() {\n        int val = -1;\n        if (val < 0)\n        {\n            func1();\n        }\n        else if (val > 0) // violation: no else statement\n        {\n            func2();\n        }\n    }\n}",
+    "total": "Number of methods",
+    "alternativeName": "Avoid if \u2026 else if constructs not terminated with an else clause (.NET, VB)",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "weight": 1,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

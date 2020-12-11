@@ -1,0 +1,177 @@
+{
+    "id": 1027026,
+    "name": "Avoid Connection String Parameter Pollution",
+    "href": "AIP/quality-rules/1027026",
+    "critical": true,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "Avoid Connection String Parameter Pollution (CSPP) attack Vulnerability\nThe software does not handle or incorrectly handles when the number of parameters, fields, or arguments with the same name exceeds the expected amount.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "When unvalidated input is concatenated into a database connection, it may allow an attacker to override the value of a request parameter, inject a new parameter or exploit variables.",
+    "reference": "https://cwe.mitre.org/data/definitions/99.html",
+    "remediation": "\u2022 Use ConnectionStringBuilder\n\u2022 Filter the ;)",
+    "remediationSample": "private static void BuildConnectionString(string dataSource,\n    string userName, string userPassword)\n{\n    // Retrieve the partial connection string named databaseConnection\n    // from the application's app.config or web.config file.\n    ConnectionStringSettings settings =\n        ConfigurationManager.ConnectionStrings[\"partialConnectString\"];\n\n    if (null != settings)\n    {\n        // Retrieve the partial connection string.\n        string connectString = settings.ConnectionString;\n        Console.WriteLine(\"Original: {0}\", connectString);\n\n        // Create a new SqlConnectionStringBuilder based on the\n        // partial connection string retrieved from the config file.\n        SqlConnectionStringBuilder builder =\n            new SqlConnectionStringBuilder(connectString);\n\n        // Supply the additional values.\n        builder.DataSource = dataSource;\n        builder.UserID = username;\n        builder.Password = password;\n        Console.WriteLine(\"Modified: {0}\", builder.ConnectionString);\n    }\n}",
+    "sample": "string userID = userModel.username;\nstring passwd = userModel.password;\n\n// connect DB with the authenticated user provided credentials\n// valid connection also implies succesfull authentication\nSqlConnection DBconn = new SqlConnection(\"Data Source= tcp:10.10.2.1,1434;Initial Catalog=mydb;User ID=\" + userID +\";Password=\" + passwd);\n\n\n//User input to perform cspp\nusername = myUsername\npassword = xxx; Integrated Security = true",
+    "total": "Number of methods and fields and properties initialized using a lambda function",
+    "alternativeName": "[DUPLICATE] Avoid Connection String Parameter Pollution",
+    "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1062195,
+            "name": "ASCSM-CWE-99 - Name or Reference Resolution Improper Input Neutralization",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061020,
+            "name": "CWE-99: Improper Control of Resource Identifiers ('Resource Injection')",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062301,
+            "name": "OWASP-2013-A1 Injection",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062321,
+            "name": "OWASP-2017-A1 Injection",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-99",
+            "name": "Name or Reference Resolution Improper Input Neutralization",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-99",
+            "name": "Improper Control of Resource Identifiers ('Resource Injection')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-99",
+            "name": "Improper Control of Resource Identifiers ('Resource Injection')",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2013",
+            "name": "Injection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A1-2017",
+            "name": "Injection",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70271",
+            "name": "The application must not be subject to input handling vulnerabilities.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

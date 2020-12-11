@@ -1,0 +1,238 @@
+{
+    "id": 1027024,
+    "name": "Avoid comparing passwords against hard-coded strings",
+    "href": "AIP/quality-rules/1027024",
+    "critical": true,
+    "maxWeight": 8,
+    "description": "This rule identifies passwords compare against hard-coded strings.\nThis identification is based on password-related semantics.\n\nLimitations: this rule don't apply to stored hard-coded strings in conditional blocks used to compare to the password.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Comparing passwords to hard-coded strings is equivalent to having a hard-coded password in source code.\nHardcoded passwords in source code should be avoided because they can potentially be retrieved through code inspection and inverse engineering by attackers. Such an attack is difficult to be discovered, and eventually the problem can only be solved at software level thus compromising the usability of the application in the meantime.",
+    "reference": "https://cwe.mitre.org/data/definitions/259.html",
+    "remediation": "A non-secure starting patch would be to apply obfuscation techniques to the hardcoded password to prevent reverse-engineering of the generated Python (byte)code. This could be done by hashing the password or constructing the password string in many different places by non-trivial methods. Sensitive data such as passwords should be in principle encrypted and saved in separate files or in a database with restricted user access.\nFinally one should consider removing backdoors and delegate the password ownership to the end-user.",
+    "remediationSample": "password == getpwdsafe()\n...\nString.Equals(password,getpwdsafe())\n...\nString.compare(password,getpwdsafe())\n...\npassword.CompareTo(getpwdsafe())\n...\nconst string passwd = getpwdsafe();\nif (password == passwd)\n...",
+    "sample": "password == \"WinterIsComing\"\n...\nString.Equals(password,\"WinterIsComing\")\n...\nString.Compare(password,\"WinterIsComing\")\n...\npassword.CompareTo(\"WinterIsComing\")\n...\nconst string passwd = \"WinterIsComing\";\nif (password == passwd)\n...",
+    "total": "Number of methods",
+    "alternativeName": "Ensure you don't compare passwords against hard-coded strings in the source file, hackers can steal the information by retro-engineering your application (C#)",
+    "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062104,
+            "name": "CISQ-Security",
+            "href": "AIP/business-criteria/1062104"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061004,
+            "name": "OMG-ASCQM-Security",
+            "href": "AIP/business-criteria/1061004"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1062192,
+            "name": "ASCSM-CWE-798 - Hard-Coded Credentials Usage for Remote Authentication",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061036,
+            "name": "CWE-259: Use of Hard-coded Password",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061093,
+            "name": "CWE-798: Use of Hard-coded Credentials",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062302,
+            "name": "OWASP-2013-A2 Broken Authentication and Session Management",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062322,
+            "name": "OWASP-2017-A2 Broken Authentication",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCSM-CWE-798",
+            "name": "Hard-Coded Credentials Usage for Remote Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-259",
+            "name": "Use of Hard-coded Password",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-798",
+            "name": "Use of Hard-coded Credentials",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-259",
+            "name": "Use of Hard-coded Password",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-798",
+            "name": "Use of Hard-coded Credentials",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2013",
+            "name": "Broken Authentication and Session Management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2017",
+            "name": "Broken Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API2-2019",
+            "name": "Broken User Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "M4-2016",
+            "name": "Insecure Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.3.1",
+            "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.3.1",
+            "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.10",
+            "name": "Broken authentication and session management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70363",
+            "name": "The application must not contain embedded authentication data.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

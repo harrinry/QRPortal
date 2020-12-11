@@ -1,0 +1,65 @@
+{
+    "id": 1027014,
+    "name": "Avoid using Thread API to manage activities of threads",
+    "href": "AIP/quality-rules/1027014",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule will check the use of Thread.resume and Thread.suspend APIs.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Do not use the Suspend and Resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the AppDomain might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the AppDomain that attempt to use that class are blocked. Deadlocks can occur very easily.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.threading.thread.resume?redirectedfrom=MSDN&view=netcore-3.1#System_Threading_Thread_Resume\nhttps://docs.microsoft.com/en-us/dotnet/api/system.threading.thread.suspend?redirectedfrom=MSDN&view=netcore-3.1#System_Threading_Thread_Suspend",
+    "remediation": "Do not use the Thread.resume or Thread.suspend APIs.",
+    "sample": "using System;\nusing System.Threading;\npublic class Klass\n{\n    private static int func(Thread thread)\n        {\n            bool suspended = false;\n            try\n            {\n                thread.Suspend();\n                suspended = true;\n                return 1;\n            }\n            catch (ThreadStateException)\n            {\n                return 0; //we missed this one\n            }\n            finally\n            {\n                if (suspended)\n                {\n                    thread.Resume();\n                }\n            }\n        }\n}",
+    "total": "Number of methods and fields and properties initialized using a lambda function",
+    "alternativeName": "Do not use the Thread.resume or Thread.suspend APIs.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

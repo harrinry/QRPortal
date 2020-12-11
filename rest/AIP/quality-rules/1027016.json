@@ -1,0 +1,77 @@
+{
+    "id": 1027016,
+    "name": "Avoid throwing exceptions in destructors",
+    "href": "AIP/quality-rules/1027016",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule searches for destructors that throw exceptions.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "If Finalize or an override of Finalize throws an exception, and the runtime is not hosted by an application that overrides the default policy, the runtime terminates the process and no active try-finally blocks or finalizers are executed. This behavior ensures process integrity if the finalizer cannot free or destroy resources.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.object.finalize?redirectedfrom=MSDN&view=netcore-3.1#System_Object_Finalize",
+    "remediation": "Do not throw exceptions in destructors",
+    "remediationSample": "class MyClass\n{\n    ~MyClass()\n    {\n        // no throw\n    }\n}",
+    "sample": "class MyClass\n{\n    ~MyClass()\n    {\n        throw new NotImplementedException(); \n    }\n}",
+    "total": "Number of methods",
+    "alternativeName": "Do not throw the exceptions in destructors",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-460",
+            "name": "Improper Cleanup on Thrown Exception",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

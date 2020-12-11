@@ -1,0 +1,100 @@
+{
+    "id": 1027052,
+    "name": "Avoid NULL Pointer Dereference (C#, VB.NET)",
+    "href": "AIP/quality-rules/1027052",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will check if any object set as NULL is used inside a method/function.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "A NULL pointer dereference occurs when the application dereferences a pointer that it expects to be valid, but is NULL, typically causing a crash or exit.",
+    "reference": "https://cwe.mitre.org/data/definitions/476.html",
+    "remediation": "Always check the object is not null before using it or it is not used in a try block.",
+    "remediationSample": "object foo = null;\n\nif ( i > 0)\n{\n   if(foo != null)\n   {\n     M1(foo.ToString()); // NO VIOLATION\n   }\n}\nelse\n{\n  foo = new object();\n}\n\nM2(foo.ToString());",
+    "sample": "object foo = null;\n\nif ( i > 0)\n{\n  M1(foo.ToString()); // VIOLATION IT IS NULL\n}\nelse\n{\n  foo = new object();\n}\n\nM2(foo.ToString());",
+    "total": "Number of methods",
+    "alternativeName": "Always check the object is not null before using it or it is not used in a try block.",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061003,
+            "name": "OMG-ASCQM-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1061054,
+            "name": "CWE-476: NULL Pointer Dereference",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-476",
+            "name": "NULL Pointer Dereference",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-476",
+            "name": "NULL Pointer Dereference",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "id": 1027044,
+    "name": "Avoid using SafeHandle.DangerousGetHandle",
+    "href": "AIP/quality-rules/1027044",
+    "critical": true,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will check the use of SafeHandle.DangerousGetHandle method.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Using the DangerousGetHandle method can pose security risks because, if the handle has been marked as invalid with SetHandleAsInvalid, DangerousGetHandle still returns the original, potentially stale handle value. The returned handle can also be recycled at any point. At best, this means the handle might suddenly stop working. At worst, if the handle or the resource that the handle represents is exposed to untrusted code, this can lead to a recycling security attack on the reused or returned handle. For example, an untrusted caller can query data on the handle just returned and receive information for an entirely unrelated resource.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.safehandle.dangerousgethandle?view=netcore-3.1",
+    "remediation": "See the DangerousAddRef and the DangerousRelease methods for more information about using the DangerousGetHandle method safely.",
+    "remediationSample": "static void Main(string[] args)\n{\n    System.Reflection.FieldInfo myfieldInfo = ...;\n    SafeHandle handle = (SafeHandle)myfieldInfo.GetValue(aKey);\n\n    bool addedRef = false;\n\n    handle.DangerousAddRef(ref addedRef);  // no violation\n}",
+    "sample": "static void Main(string[] args)\n{\n    System.Reflection.FieldInfo myfieldInfo = ...;\n    SafeHandle handle = (SafeHandle)myfieldInfo.GetValue(aKey);\n    IntPtr dangerousHandle = handle.DangerousGetHandle();  // violation\n}",
+    "total": "Number of methods and fields and properties initialized using a lambda function",
+    "alternativeName": "SafeHandle.DangerousGetHandle\" should not be called",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1062302,
+            "name": "OWASP-2013-A2 Broken Authentication and Session Management",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062322,
+            "name": "OWASP-2017-A2 Broken Authentication",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 7,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-250",
+            "name": "Execution with Unnecessary Privileges",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-306",
+            "name": "Missing Authentication for Critical Function",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-AC-6",
+            "name": "Least Privilege",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "NIST-SP-800-53R4",
+            "id": "NIST-IA-9",
+            "name": "Service Identification and Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2013",
+            "name": "Broken Authentication and Session Management",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A2-2017",
+            "name": "Broken Authentication",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "PCI-DSS-V3.2.1",
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "STIG-V4R8",
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "id": 1027018,
+    "name": "Avoid throwing exceptions in finally block",
+    "href": "AIP/quality-rules/1027018",
+    "critical": false,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule searches for finally block that throw exceptions.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "If the finally block throws another exception, processing of the current exception is terminated.",
+    "reference": "http://cwe.mitre.org/data/definitions/460.html",
+    "remediation": "Do not throw exceptions in finally block",
+    "remediationSample": "try\n{\n  /* some works */\n  throw new new NotImplementedException();  \n}\nfinally\n{\n  /* some works */\n  /* do not throw exceptions here */\n}",
+    "sample": "try\n{\n  /* some works */\n  throw new new NotImplementedException();  \n}\nfinally\n{\n  /* some works */\n  new NotImplementedException();  \n}",
+    "total": "Number of methods and fields and properties initialized using a lambda function",
+    "alternativeName": "Do not throw the exceptions in finally block",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-460",
+            "name": "Improper Cleanup on Thrown Exception",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

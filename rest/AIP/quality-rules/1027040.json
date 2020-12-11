@@ -1,0 +1,118 @@
+{
+    "id": 1027040,
+    "name": "Avoid using multiple OrderBy calls",
+    "href": "AIP/quality-rules/1027040",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will raise a violation when call to OrderBy are followed by another call to OrderBy on the results of the former i.e. susequent calls are made to OrderBy",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "Because IOrderedEnumerable<TElement> inherits from IEnumerable<T>, you can call OrderBy or OrderByDescending on the results of a call to OrderBy, OrderByDescending, ThenBy, or ThenByDescending. \n\nDoing this introduces a new primary ordering that ignores the previously established ordering.\n\nThis will lead to unexpected behavior as the previous ordering is not followed.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.orderby?view=netcore-3.1\n\nhttps://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.thenby?view=netcore-3.1",
+    "remediation": "Use ThenBy instead of subsequent OrderBy.",
+    "remediationSample": "var x = personList\n  .OrderBy(pet => pet.Age)\n  .ThenBy(pet => pet.Name)\n  .ToList();",
+    "sample": "var x = personList\n  .OrderBy(pet => pet.Age)\n  .OrderBy(pet => pet.type)  // Noncompliant\n  .ToList();  // x is sorted by Name, not sub-sorted\n\n______________________________________________________\n\nvar x = personList\n  .OrderBy(pet => pet.Age)\n  .ThenBy(pet => pet.type)\n  .OrderBy(pet => pet.height)  // Noncompliant\n  .ToList();  // x is sorted by height, not sub-sorted",
+    "total": "Number of methods and fields and properties initialized using a lambda function",
+    "alternativeName": "Ensure you don't use multiple \"OrderBy\"",
+    "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062102,
+            "name": "CISQ-Performance-Efficiency",
+            "href": "AIP/business-criteria/1062102"
+        },
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "OMG-ASCQM-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061002,
+            "name": "OMG-ASCQM-Performance-Efficiency",
+            "href": "AIP/business-criteria/1061002"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1062131,
+            "name": "ASCPEM-PRF-10 - Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061127,
+            "name": "CWE-1073: Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CISQ",
+            "id": "ASCPEM-PRF-10",
+            "name": "Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-1073",
+            "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-1073",
+            "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
