@@ -1,0 +1,113 @@
+{
+    "id": 1019006,
+    "name": "Avoid wrong suppressAuditFailure and serviceAuthorizationAuditLevel parameters when enabling WCF service security audit feature",
+    "href": "AIP/quality-rules/1019006",
+    "critical": false,
+    "maxWeight": 4,
+    "description": "The rule will raise a violation:\n1. On finding suppressAuditFailure set as 'true'\n2. On finding that Service Security Audit feature is not defined",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "If the service security audit feature is disabled WCF will not throw an exception when it is unable to write to an audit log thereby making the program ignorant of this failure. This can hamper the audit of security events.",
+    "reference": "https://docs.microsoft.com/en-us/dotnet/framework/configure-apps/file-schema/wcf/servicesecurityaudit\n\nhttps://docs.microsoft.com/en-us/dotnet/api/system.servicemodel.description.servicesecurityauditbehavior?view=netframework-4.8",
+    "remediation": "1. Always define service security audit feature\n2. Always suppressAuditFailure set as 'false'",
+    "remediationSample": "1: WCF Service Security Audit Feature with proper configuration\n\n<serviceSecurityAudit auditLogLocation=\"Default\"\nsuppressAuditFailure=\"false\"\nserviceAuthorizationAuditLevel=\"SuccessOrFailure\"\nmessageAuthenticationAuditLevel=\"SuccessOrFailure\" />\n_________________________________________________________________\n\n2: WCF Service Security Audit Feature with proper configuration\n\n\n    using (ServiceHost serviceHost = new\n        ServiceHost(typeof(CalculatorService), baseAddress))\n    {\n        ServiceSecurityAuditBehavior newAudit =\n            new ServiceSecurityAuditBehavior();\n        newAudit.AuditLogLocation =\n            AuditLogLocation.Application;\n        newAudit.MessageAuthenticationAuditLevel =\n            AuditLevel.SuccessOrFailure;\n        newAudit.ServiceAuthorizationAuditLevel =\n            AuditLevel.SuccessOrFailure;\n        newAudit.SuppressAuditFailure = false;\n\n        serviceHost.Description.Behaviors.Add(newAudit); //Fixed\n\n        serviceHost.Open();\n\n        Console.WriteLine(\"The service is ready.\");\n        Console.WriteLine(\"Press <ENTER> to terminate service.\");\n        Console.WriteLine();\n        Console.ReadLine();\n\n        serviceHost.Close();\n    }\n}",
+    "sample": "1. Service Security Audit Feature defined but with inappropriate configuration\n<behaviors>\n   <serviceBehaviors>\n      <behavior name=\"NewBehavior\">\n         <serviceSecurityAudit auditLogLocation=\"Application\"\n             suppressAuditFailure=\"true\"\n             serviceAuthorizationAuditLevel=\"None/Success\"      //Failure is not included in audit\n             messageAuthenticationAuditLevel=\"None/Success\" />  //Failure is not included in audit\n      </behavior>\n   </serviceBehaviors>\n</behaviors>\n\n// Violation: Security Audit feature enabled but the configuration is not properly done\n________________________________________\n2. Service Security Audit Feature defined in Source Code with inappropriate config\n\n using (ServiceHost serviceHost = new\n        ServiceHost(typeof(CalculatorService), baseAddress))\n    {   ServiceSecurityAuditBehavior newAudit =\n            new ServiceSecurityAuditBehavior();\n        newAudit.AuditLogLocation =\n            AuditLogLocation.Application;\n        newAudit.MessageAuthenticationAuditLevel =\n            AuditLevel.Success;\n        newAudit.ServiceAuthorizationAuditLevel =\n            AuditLevel.None;\n        newAudit.SuppressAuditFailure = true;\n        serviceHost.Description.Behaviors.Add(newAudit); // Violation: Applied new audit with wrong configuration\n\n        serviceHost.Open();\n        Console.WriteLine(\"The service is ready.\");\n        Console.WriteLine(\"Press <ENTER> to terminate service.\");\n        Console.WriteLine();\n        Console.ReadLine();\n        serviceHost.Close();\n    }\n}",
+    "total": "Number of WCF configurations",
+    "alternativeName": "Avoid wrong suppressAuditFailure and serviceAuthorizationAuditLevel parameters when enabling WCF service security audit feature",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 4,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1019000,
+            "name": "WCF",
+            "href": "AIP/technologies/1019000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-778",
+            "name": "Insufficient Logging",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-778",
+            "name": "Insufficient Logging",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A10-2017",
+            "name": "Insufficient Logging&Monitoring",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API7-2019",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API10-2019",
+            "name": "Insufficient Logging & Monitoring",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
