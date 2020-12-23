@@ -1,0 +1,98 @@
+{
+    "id": 1043076,
+    "name": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
+    "href": "AIP/quality-rules/1043076",
+    "critical": false,
+    "maxWeight": 6,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "The rule will raise a violation if <customerrors> tag is set to \"off\" in web.config",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "The mode attribute of the <customErrors> tag defines whether custom or default error pages are used.\nThe default error page will provide detailed information about the error that occurred and should not be used in a production environment.\nAn ASP .NET application must enable custom error pages in order to prevent attackers from mining\ninformation from the framework's built-in error responses.",
+    "reference": "https://cwe.mitre.org/data/definitions/12.html",
+    "remediation": "Enable custom errors",
+    "remediationSample": "<customErrors mode=\"On\"/>",
+    "sample": "<customErrors mode=\"Off\"/>",
+    "total": "Number of Root web.config file",
+    "alternativeName": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61014,
+            "name": "Programming Practices - Error and Exception Handling",
+            "weight": 6,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138636,
+            "name": "ASP.NET",
+            "href": "AIP/technologies/138636"
+        },
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-12",
+            "name": "ASP.NET Misconfiguration: Missing Custom Error Page",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A5-2013",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2017",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API7-2019",
+            "name": "Security Misconfiguration",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
