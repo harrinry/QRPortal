@@ -1,0 +1,61 @@
+{
+    "id": 1027094,
+    "name": "Always provide deserialization methods for optional fields",
+    "href": "AIP/quality-rules/1027094",
+    "critical": false,
+    "maxWeight": 5,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "This rule will raise a violation when a type has a field that is marked with the System.Runtime.Serialization.OptionalFieldAttribute attribute and the type does not provide de-serialization event handling methods i.e. any of the following event handlers System.Runtime.Serialization.OnDeserializingAttribute or System.Runtime.Serialization.OnDeserializedAttribute are not present.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "The OptionalFieldAttribute attribute has no effect on serialization; a field marked with the attribute is serialized. However, the field is ignored on de-serialization and retains the default value associated with its type. De-serialization event handlers should be declared to set the field during the de-serialization process",
+    "reference": "https://docs.microsoft.com/en-us/visualstudio/code-quality/ca2239?view=vs-2019",
+    "remediation": "Add [OnDeserialized] OR [OnDeserializing] event handlers to the type",
+    "remediationSample": "namespace UsageLibrary\n{\n   [SerializableAttribute]\n   public class SerializationEventHandlers\n   {\n      [OptionalFieldAttribute(VersionAdded = 2)]\n      int optionalField = 5;\n\n      [OnDeserializingAttribute]\n      void OnDeserializing(StreamingContext context)\n      {\n         optionalField = 5;\n      }\n\n      [OnDeserializedAttribute]\n      void OnDeserialized(StreamingContext context)\n      {\n         // Set optionalField if dependent on other deserialized values.\n      }\n   }\n}",
+    "sample": "namespace UsageLibrary\n{\n   [SerializableAttribute]\n   public class SerializationEventHandlers\n   {\n      [OptionalFieldAttribute(VersionAdded = 2)]\n      int optionalField = 5;\n}  }",
+    "total": "Number of DotNet fields",
+    "alternativeName": "Always provide deserialization methods for optional fields",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
