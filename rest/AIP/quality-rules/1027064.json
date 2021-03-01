@@ -3,7 +3,7 @@
     "name": "Always override 'Equals' and Comparison operators with IComparable implementation",
     "href": "AIP/quality-rules/1027064",
     "critical": false,
-    "maxWeight": 3,
+    "maxWeight": 5,
     "description": "The rule will raise a violation where IComparable or IComparable <T> is implemented without overriding 'Equals' and comparison operators: ==, <, >, !=",
     "rationale": "Types that define a custom sort order implement the IComparable interface. The CompareTo method returns an integer value that indicates the correct sort order for two instances of the type. This rule identifies types that set a sort order. Setting a sort order implies that the ordinary meaning of equality, inequality, less-than, and greater-than don't apply. When you provide an implementation of IComparable, you must usually also override Equals so that it returns values that are consistent with CompareTo.\nThe CLR does not implement static methods in interface contracts or double-virtual dispatch, or the ability to put an operator constraint on a generic type parameter. And therefore multiple solutions have evolved to solve the equality/inequality problem.",
     "reference": "https://cwe.mitre.org/data/definitions/581\nhttps://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1036",
@@ -12,6 +12,16 @@
     "sample": "public class Foo: IComparable  \n{\n  public int CompareTo(object obj) { /* ... */ }\n} //Violation: No overriding of Equals and comparison operators",
     "alternativeName": "Always override 'Equals' and Comparison operators with IComparable implementation",
     "businessCriteria": [
+        {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1062103,
+            "name": "CISQ-Reliability",
+            "href": "AIP/business-criteria/1062103"
+        },
         {
             "id": 66031,
             "name": "Programming Practices",
@@ -29,6 +39,12 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062168,
+            "name": "ASCRM-RLB-4 - Persistant Storable Data Element without Proper Comparison Control Element",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 61003,
             "name": "Programming Practices - OO Inheritance and Polymorphism",
