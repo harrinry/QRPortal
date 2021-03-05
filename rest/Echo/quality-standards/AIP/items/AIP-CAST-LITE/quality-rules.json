@@ -1496,6 +1496,30 @@
         ]
     },
     {
+        "id": 7760,
+        "name": "Avoid triggers, functions and procedures with a very low comment/code ratio",
+        "href": "AIP/quality-rules/7760",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 7780,
+        "name": "Ensure you provide enough comment for your Classes",
+        "href": "AIP/quality-rules/7780",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7782,
         "name": "Avoid empty finally blocks",
         "href": "AIP/quality-rules/7782",
@@ -1506,6 +1530,33 @@
             "HTML5",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7784,
+        "name": "Avoid Artifacts with lines longer than X characters",
+        "href": "AIP/quality-rules/7784",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7786,
+        "name": "Avoid long Table or View names",
+        "href": "AIP/quality-rules/7786",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
         ]
     },
     {
@@ -1640,6 +1691,16 @@
             "C++",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7856,
+        "name": "Avoid Tables with more than 20 columns on an OLTP system",
+        "href": "AIP/quality-rules/7856",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "SQL"
         ]
     },
     {
@@ -1789,6 +1850,20 @@
         "critical": true,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7944,
+        "name": "Ensure you have a number of local methods and remote methods called by methods in the Class below a predefined threshold",
+        "href": "AIP/quality-rules/7944",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -2008,6 +2083,17 @@
         ]
     },
     {
+        "id": 8008,
+        "name": "Avoid data members that are never read",
+        "href": "AIP/quality-rules/8008",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
         "id": 8010,
         "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
         "href": "AIP/quality-rules/8010",
@@ -2024,6 +2110,17 @@
         "status": null,
         "critical": true,
         "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8022,
+        "name": "Ensure you don't overwrite member of a class in its subclass.",
+        "href": "AIP/quality-rules/8022",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C++",
             "JEE"
         ]
     },
@@ -3003,6 +3100,16 @@
         ]
     },
     {
+        "id": 1020002,
+        "name": "Ensure you have enough comment your code (HTML5/Javascript)",
+        "href": "AIP/quality-rules/1020002",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020004,
         "name": "Avoid using querySelectorAll, prefer getElementsByTagName() or getElementsByClassName() to have better performance.",
         "href": "AIP/quality-rules/1020004",
@@ -3388,6 +3495,16 @@
         "href": "AIP/quality-rules/1020080",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020086,
+        "name": "Enrich your code with comments to give an overview of the code to improve maintainability",
+        "href": "AIP/quality-rules/1020086",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "HTML5"
         ]
@@ -5259,6 +5376,50 @@
         ]
     },
     {
+        "id": 1027016,
+        "name": "Do not throw the exceptions in destructors",
+        "href": "AIP/quality-rules/1027016",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027018,
+        "name": "Do not throw the exceptions in finally block",
+        "href": "AIP/quality-rules/1027018",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027020,
+        "name": "Use Any instead of Count to check for a non-empty sequence",
+        "href": "AIP/quality-rules/1027020",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027022,
+        "name": "Avoid using \"new Guid()\"",
+        "href": "AIP/quality-rules/1027022",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027024,
         "name": "Ensure you don't compare passwords against hard-coded strings in the source file, hackers can steal the information by retro-engineering your application (C#)",
         "href": "AIP/quality-rules/1027024",
@@ -5270,9 +5431,42 @@
         ]
     },
     {
+        "id": 1027030,
+        "name": "Ensure to add the message for the Obsolete Attribute.",
+        "href": "AIP/quality-rules/1027030",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027032,
         "name": "Ensure not having hardcoded network resources names in the source files (.NET)",
         "href": "AIP/quality-rules/1027032",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027034,
+        "name": "Check if the variable is null before dereferencing it.",
+        "href": "AIP/quality-rules/1027034",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027036,
+        "name": "Avoid rethrow exception explicitly",
+        "href": "AIP/quality-rules/1027036",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -5292,6 +5486,17 @@
         ]
     },
     {
+        "id": 1027040,
+        "name": "Ensure you don't use multiple \"OrderBy\"",
+        "href": "AIP/quality-rules/1027040",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027042,
         "name": "Ensure your classes implement the export interface properly",
         "href": "AIP/quality-rules/1027042",
@@ -5303,9 +5508,141 @@
         ]
     },
     {
+        "id": 1027044,
+        "name": "SafeHandle.DangerousGetHandle\" should not be called",
+        "href": "AIP/quality-rules/1027044",
+        "status": null,
+        "critical": true,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027046,
+        "name": "Avoid storing passwords in Comments",
+        "href": "AIP/quality-rules/1027046",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027048,
+        "name": "Avoid returning null from non-async Task/Task<T> method",
+        "href": "AIP/quality-rules/1027048",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027052,
+        "name": "Always check the object is not null before using it or it is not used in a try block.",
+        "href": "AIP/quality-rules/1027052",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027054,
+        "name": "Always use System.Uri instead of string to build URLs",
+        "href": "AIP/quality-rules/1027054",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027058,
+        "name": "Ensure not using blocking async methods (.NET)",
+        "href": "AIP/quality-rules/1027058",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027064,
         "name": "Always override 'Equals' and Comparison operators with IComparable implementation",
         "href": "AIP/quality-rules/1027064",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027066,
+        "name": "Ensure the getter is not stopped by throwing exception.",
+        "href": "AIP/quality-rules/1027066",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027068,
+        "name": "Avoid returning null from ToString()",
+        "href": "AIP/quality-rules/1027068",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027070,
+        "name": "Avoid if statements and blocks that are always TRUE or FALSE",
+        "href": "AIP/quality-rules/1027070",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027074,
+        "name": "Avoid hardcoded URIs (.NET)",
+        "href": "AIP/quality-rules/1027074",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027076,
+        "name": "Ensure not using File IO unrestricted access",
+        "href": "AIP/quality-rules/1027076",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027078,
+        "name": "Always mark Windows Forms starting point as STAThread",
+        "href": "AIP/quality-rules/1027078",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -5328,6 +5665,61 @@
         "id": 1027082,
         "name": "Ensure you remove console.writeline() in your production code",
         "href": "AIP/quality-rules/1027082",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027086,
+        "name": "Avoid having the same implementation in a conditional structure",
+        "href": "AIP/quality-rules/1027086",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027088,
+        "name": "Avoid non-public custom exception types",
+        "href": "AIP/quality-rules/1027088",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027090,
+        "name": "Avoid improper instantiation of argument exceptions",
+        "href": "AIP/quality-rules/1027090",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027092,
+        "name": "Always pass optional parameters too, when making 'base' calls",
+        "href": "AIP/quality-rules/1027092",
+        "status": null,
+        "critical": false,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027094,
+        "name": "Always provide deserialization methods for optional fields",
+        "href": "AIP/quality-rules/1027094",
         "status": null,
         "critical": false,
         "technologyNames": [
@@ -5621,6 +6013,16 @@
         "href": "AIP/quality-rules/1039068",
         "status": null,
         "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039070,
+        "name": "Prefer using java.net.URI instead of java.net.URL",
+        "href": "AIP/quality-rules/1039070",
+        "status": null,
+        "critical": false,
         "technologyNames": [
             "JEE"
         ]
