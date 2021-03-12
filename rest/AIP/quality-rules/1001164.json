@@ -3,7 +3,7 @@
     "name": "Avoid Main procedures using the DATE builtin function (PL1)",
     "href": "AIP/quality-rules/1001164",
     "critical": false,
-    "maxWeight": 0,
+    "maxWeight": 1,
     "description": "This rule searches for all PL1 Main Procedures that are declaring the DATE function.",
     "output": "The report lists all the PL1 Main Procedures using the DATE builtin function.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "The DATE function is a deprecated functionality and causes issues in your program.",
@@ -37,7 +37,7 @@
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",
-            "weight": 0,
+            "weight": 1,
             "critical": false
         }
     ],
