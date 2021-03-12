@@ -1,13 +1,13 @@
 {
     "id": 1003152,
-    "name": "Avoid dispatching events using hardcoded strings (Flex)",
+    "name": "Avoid dispatching events using hard-coded strings (Flex)",
     "href": "AIP/quality-rules/1003152",
     "critical": false,
     "maxWeight": 5,
     "associatedValueName": "no-value",
-    "description": "This QR reports artifacts that dispatch events using hardcoded strings.",
-    "output": "This QR reports artifacts that dispatch events using hardcoded strings. It provides following information:\n\n- Artifact full name",
-    "rationale": "Events should not be dispatched using hardcoded strings for maintainability reasons.",
+    "description": "This quality rule will check if dispatch events using hard-coded strings.",
+    "output": "This QR reports artifacts that dispatch events using hard-coded strings. It provides following information:\n\n- Artifact full name",
+    "rationale": "Events should not be dispatched using hard-coded strings for maintainability reasons.",
     "remediation": "Use constant strings to dispatch events.",
     "sample": "public class Foo \n{\n   public function bar() : void\n   {\n      dispatch( new Event( \"myHardCodedEvent\" ) ); // VIOLATION\n   }\n}",
     "total": "Number of Artifacts",
@@ -64,9 +64,9 @@
         }
     ],
     "thresholds": [
+        50.0,
+        90.0,
         95.0,
-        98.0,
-        99.0,
-        100.0
+        99.0
     ]
 }
