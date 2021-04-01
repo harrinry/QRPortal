@@ -13,7 +13,7 @@
     "remediationSample": "public class fileCreate {\n  public add<user> listUsers() {\n String listingFolder = config.getProperty(\"myApplication.listingFolder\");\n FileStream fs = File.Create(listingFolder, \"users.txt\"); // Fix\n    add users = parse(userList);\n    return users;\n  }\n}",
     "sample": "public class fileCreate {\n\n  public add<user> listUsers() {\n FileStream fs = File.Create(\"/home/pass/myFileTest/users.txt\"); // Violation\n    add users = parse(userList);\n    return users;\n  }\n}",
     "total": "Number of methods",
-    "alternativeName": "Avoid hardcoded URIs (.NET)",
+    "alternativeName": "Avoid hard-coded URIs (.NET)",
     "businessCriteria": [
         {
             "id": 66031,

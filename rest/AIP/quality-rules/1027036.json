@@ -13,7 +13,7 @@
     "remediationSample": "catch (HibernateException ex)\n{\n if (transaction != null) { transaction.Rollback(); }\n throw new Exception(\"Email already in use\", ex);\n}\n______________________________________________\n\ncatch (HibernateException ex)\n{\n if (transaction != null) { transaction.Rollback(); }\n throw;\n}",
     "sample": "catch (HibernateException ex)\n{\n if (transaction != null) { transaction.Rollback(); }\n throw ex;\n}",
     "total": "Number of methods and fields and properties initialized using a lambda function",
-    "alternativeName": "Avoid rethrow exception explicitly",
+    "alternativeName": "Avoid rethrowing exception explicitly",
     "businessCriteria": [
         {
             "id": 20140522,
