@@ -21,6 +21,7 @@ export const SECTIONS = {
   stig: 'stig-v4r8',
   omg: 'omg-ascqm',
   cpp: 'c-cpp',
+  iso: 'iso-5055',
 };
 
 export const defaultIconURL = 'url(https://raw.githubusercontent.com/CAST-Extend/resources/master/technologyplaceholder.png)';
