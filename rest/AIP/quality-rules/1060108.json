@@ -1,0 +1,87 @@
+{
+    "id": 1060108,
+    "name": "Avoid data fields binded to columns to return sensitive data via APIs",
+    "href": "AIP/quality-rules/1060108",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "The rule will raise a violation if any fields that user defines as sensitive is binded to a table column and is not annotated with @JsonIgnore for returning",
+    "output": "Fields not annotated with JsonIgnore",
+    "rationale": "Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user.\nSince APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. \nWhen binding data fields accessed by APIs to columns it must be cautiously controlled that what data is to be ignored when returning the field or the model",
+    "reference": "https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa3-excessive-data-exposure.md\nhttps://owasp.org/www-project-api-security/",
+    "remediation": "Implement a schema-based response validation mechanism as an extra layer of security. As part of this mechanism define and enforce data returned by all API methods, including errors.",
+    "total": "All fields binded with Data Columns and classified as sensitive by User",
+    "alternativeName": "Avoid data fields binded to columns to return sensitive data via APIs",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-201",
+            "name": "Insertion of Sensitive Information Into Sent Data",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-213",
+            "name": "Exposure of Sensitive Information Due to Incompatible Policies",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API3-2019",
+            "name": "Excessive Data Exposure",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

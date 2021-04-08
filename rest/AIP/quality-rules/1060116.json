@@ -1,0 +1,116 @@
+{
+    "id": 1060116,
+    "name": "Always avoid http redirects to unknown or untrusted URLs",
+    "href": "AIP/quality-rules/1060116",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "The rule will raise a violation when it finds web HTTP requests which are not defined as part of whitelist in the rule.\n\nThe rule can be customised by adding the Whitelist URLs in the violations metric.",
+    "output": "http requests that are not part of a defined allowed address. The following information will be provided:\n- HTTP request with violation",
+    "rationale": "A non-existent or a loose policy on redirection to URLs can lead to security issues. At the outset all the external links/URLs should be considered as untrusted. Applications should have a set of whitelist URLs that can be directed to from the app.\nThe issue with allowing apps to access external URLs is that the security of the system then becomes dependent on an external factor which is out of scope of control of the architect and developer.",
+    "reference": "https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa9-improper-assets-management.md",
+    "remediation": "Always review the http redirects from the app and create a stringent and strict policy to include only trusted sources",
+    "total": "All http requests",
+    "alternativeName": "Always avoid http redirects to unknown or untrusted URLs",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 1061000,
+            "name": "ISO-5055-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1061002,
+            "name": "ISO-5055-Performance-Efficiency",
+            "href": "AIP/business-criteria/1061002"
+        },
+        {
+            "id": 1061003,
+            "name": "ISO-5055-Reliability",
+            "href": "AIP/business-criteria/1061003"
+        },
+        {
+            "id": 1061004,
+            "name": "ISO-5055-Security",
+            "href": "AIP/business-criteria/1061004"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 1061049,
+            "name": "CWE-424: Improper Protection of Alternate Path",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138663,
+            "name": "JavaScript",
+            "href": "AIP/technologies/138663"
+        },
+        {
+            "id": 138660,
+            "name": "JavaScript Server",
+            "href": "AIP/technologies/138660"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-424",
+            "name": "Improper Protection of Alternate Path",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "ISO-5055",
+            "id": "CWE-424",
+            "name": "Improper Protection of Alternate Path",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OMG-ASCQM",
+            "id": "CWE-424",
+            "name": "Improper Protection of Alternate Path",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API9-2019",
+            "name": "Improper Assets Management",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "id": 1060110,
+    "name": "Avoid filtering sensitive data using front-end",
+    "href": "AIP/quality-rules/1060110",
+    "critical": false,
+    "maxWeight": 7,
+    "description": "The rule will raise a violation if user-defined sensitive data is called by a API request and uses front-end to filter data",
+    "output": "All Jquery selectors and HTML functions with a name like %filter% that Access sensitive data via APIs. The following information will be provided:\n- Jquery Selector or HTML function",
+    "rationale": "APIs rely on clients to perform data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data.\n\nWhen you rely on the front-end for filtering sensitive data there is an underlying API that is returning all the data, which may be more than needed. This helps the attacker to understand the schema or intercept data that they are not intended to know.",
+    "reference": "https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa3-excessive-data-exposure.md",
+    "remediation": "Never rely on the client side to filter sensitive data.",
+    "total": "All Jquery selectors and HTML functions with name like %filter%",
+    "alternativeName": "Avoid filtering sensitive data using front-end",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-201",
+            "name": "Insertion of Sensitive Information Into Sent Data",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-213",
+            "name": "Exposure of Sensitive Information Due to Incompatible Policies",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "CWE",
+            "id": "CWE-359",
+            "name": "Exposure of Private Personal Information to an Unauthorized Actor",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API3-2019",
+            "name": "Excessive Data Exposure",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

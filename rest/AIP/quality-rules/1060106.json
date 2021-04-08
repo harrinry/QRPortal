@@ -1,0 +1,66 @@
+{
+    "id": 1060106,
+    "name": "Avoid using generic methods such as 'ToJson' or 'ToString' to save sensitive or PII data",
+    "href": "AIP/quality-rules/1060106",
+    "critical": false,
+    "maxWeight": 8,
+    "description": "The rule will raise a violation if any of the methods like following names call 'ToJson' or 'ToString' methods to save PII or sensitive data:\n1. Save\n2. Set\n3. Put",
+    "output": "Methods that use 'ToJSONString'",
+    "rationale": "Binding client provided data (e.g., JSON) to data models, without proper properties filtering based on an allowlist, usually leads to Mass Assignment. Either guessing objects properties, exploring other API endpoints, reading the documentation, or providing additional object properties in request payloads, allows attackers to modify object properties they are not supposed to.",
+    "reference": "https://owasp.org/www-project-api-security/",
+    "remediation": "Always review APIs that assign values using 'toJson' or 'ToString' methods",
+    "total": "All Methods with the function of saving data that can contain acess/authorization/sensitive information",
+    "alternativeName": "Avoid using generic methods such as 'ToJson' or 'ToString' to save sensitive or PII data",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66063,
+            "name": "Secure Coding - API Abuse",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "standard": "CWE",
+            "id": "CWE-915",
+            "name": "Improperly Controlled Modification of Dynamically-Determined Object Attributes",
+            "url": null,
+            "description": null
+        },
+        {
+            "standard": "OWASP",
+            "id": "API6-2019",
+            "name": "Mass Assignment",
+            "url": null,
+            "description": null
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
