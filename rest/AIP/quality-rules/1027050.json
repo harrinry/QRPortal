@@ -13,7 +13,7 @@
     "remediationSample": "public static IEnumerable<TFoo> TakeWhile<TFoo>(this IEnumerable<TFoo> foo)\n{\n    if (foo == null) { throw new ArgumentNullException(nameof(foo)); }\n\n    return checkThisFoo<TFoo>(foo);\n}\n\nprivate static IEnumerable<TFoo> checkThisFoo<TFoo>(IEnumerable<TFoo> foo)\n{\n    foreach (var bar in foo)\n    {\n        if (!doSomething(bar)) { break; }\n        yield return bar; // NO VIOLATION\n    }\n}",
     "sample": "public static IEnumerable<TFoo> TakeWhile<TFoo>(this IEnumerable<TFoo> foo)\n{\n    if (foo == null) { throw new ArgumentNullException(nameof(foo)); }\n\n    foreach (var bar in foo)\n    {\n        if (!doSomething(bar)) { break; }\n        yield return bar; // VIOLATION\n    }\n}",
     "total": "Number of Methods",
-    "alternativeName": null,
+    "alternativeName": "Split the method in two if it contains both ArgumentNullException and yield",
     "businessCriteria": [
         {
             "id": 20140522,
@@ -57,7 +57,13 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "standard": "CWE",
+            "id": "CWE-754",
+            "name": "Improper Check for Unusual or Exceptional Conditions",
+            "url": null,
+            "description": null
+        }
     ],
     "parameters": [
         
