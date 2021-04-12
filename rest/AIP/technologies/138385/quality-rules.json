@@ -398,7 +398,7 @@
     },
     {
         "id": 7270,
-        "name": "Declare as Static all methods not using instance members (.NET)",
+        "name": "Methods that do not use instance fields\\methods should be static (.NET)",
         "href": "AIP/quality-rules/7270",
         "status": null,
         "critical": false,
@@ -1987,7 +1987,7 @@
     },
     {
         "id": 1027014,
-        "name": "Avoid using Thread API to manage activities of threads",
+        "name": "Avoid using Thread API (Suspend\\Resume) to manage thread state",
         "href": "AIP/quality-rules/1027014",
         "status": null,
         "critical": false,
@@ -2020,7 +2020,7 @@
     },
     {
         "id": 1027020,
-        "name": "Avoid using Count or LongCount where Any can be used",
+        "name": "Prefer using Any() over Count() or LongCount()",
         "href": "AIP/quality-rules/1027020",
         "status": null,
         "critical": false,
@@ -2064,7 +2064,7 @@
     },
     {
         "id": 1027030,
-        "name": "Avoid using Obsolete attributes without message",
+        "name": "Avoid using \"Obsolete\" attribute without message",
         "href": "AIP/quality-rules/1027030",
         "status": null,
         "critical": false,
@@ -2075,7 +2075,7 @@
     },
     {
         "id": 1027032,
-        "name": "Avoid hardcoded network resource names (.NET, VB)",
+        "name": "Avoid hard-coded network resource names (.NET, VB)",
         "href": "AIP/quality-rules/1027032",
         "status": null,
         "critical": false,
@@ -2097,7 +2097,7 @@
     },
     {
         "id": 1027036,
-        "name": "Avoid rethrow exception explicitly",
+        "name": "Avoid rethrowing exception explicitly",
         "href": "AIP/quality-rules/1027036",
         "status": null,
         "critical": false,
@@ -2185,7 +2185,7 @@
     },
     {
         "id": 1027052,
-        "name": "Avoid NULL Pointer Dereference (C#, VB.NET)",
+        "name": "DEPRECATED: Avoid NULL Pointer Dereference (C#, VB.NET)",
         "href": "AIP/quality-rules/1027052",
         "status": null,
         "critical": false,
@@ -2262,7 +2262,7 @@
     },
     {
         "id": 1027074,
-        "name": "Avoid hardcoded URIs (.NET)",
+        "name": "Avoid hard-coded URIs (.NET)",
         "href": "AIP/quality-rules/1027074",
         "status": null,
         "critical": false,
@@ -2275,17 +2275,6 @@
         "id": 1027076,
         "name": "Avoid allowing File IO unrestricted access",
         "href": "AIP/quality-rules/1027076",
-        "status": null,
-        "critical": false,
-        "technologyNames": [
-            "C#",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 1027078,
-        "name": "Always mark Windows Forms starting point as STAThread",
-        "href": "AIP/quality-rules/1027078",
         "status": null,
         "critical": false,
         "technologyNames": [
