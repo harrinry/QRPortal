@@ -89,28 +89,28 @@
             "id": "ASCRM-RLB-3",
             "name": "Serializable Storable Data Element with non-Serializable Item Elements",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid imcomplete implementation of serialization capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a serializable storable element is composed of a non-serializable item element (in case of technologies with class and interface elements, this means situations where the serializable storable data element is a class that is serializable but owns the element that is a non-serializable member element) (the serializable nature of an element is technology dependent; for example, serializable capabilities come from a serializable attribute in .NET and the inheritance from the java.io.Serializable interface in Java)\n\n"
         },
         {
             "standard": "CWE",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1070.html",
+            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1070.html",
+            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1070.html",
+            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
         }
     ],
     "parameters": [

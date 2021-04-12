@@ -111,84 +111,84 @@
             "id": "ASCSM-CWE-798",
             "name": "Hard-Coded Credentials Usage for Remote Authentication",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid the existence of hard-coded credentials elements\n\nConsequence\nSoftware featuring weak authentication practices incurs the risk of exposing resources and functionality to unintended actors, possibly leading to compromised sensitive information and even the execution of arbitrary code\n\nMeasure Element\nNumber of instances where a storable data element or member data element is initialized by a \u2018Write\u2019 action, transported throughout the application along the transport sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the remote resource management action ; the transport sequence is composed of assignment operations as updates to the value would not be considered as hard-coded (literal) any more.\n\n"
         },
         {
             "standard": "CWE",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/259.html",
+            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
         },
         {
             "standard": "CWE",
             "id": "CWE-798",
             "name": "Use of Hard-coded Credentials",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/798.html",
+            "description": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/259.html",
+            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-798",
             "name": "Use of Hard-coded Credentials",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/798.html",
+            "description": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": null,
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
             "description": null
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/259.html",
+            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-798",
             "name": "Use of Hard-coded Credentials",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/798.html",
+            "description": "The software contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data."
         },
         {
             "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken Authentication and Session Management",
+            "description": "Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities."
         },
         {
             "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
+            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
         },
         {
             "standard": "OWASP",
             "id": "API2-2019",
             "name": "Broken User Authentication",
             "url": null,
-            "description": null
+            "description": "Authentication mechanisms are often implemented incorrectly, allowing attackers to compromise authentication tokens or to exploit implementation flaws to assume other user's identities temporarily or permanently. Compromising system's ability to identify the client/user, compromises API security overall."
         },
         {
             "standard": "OWASP",
             "id": "M4-2016",
             "name": "Insecure Authentication",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -209,7 +209,7 @@
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
             "url": null,
-            "description": null
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         },
         {
             "standard": "PCI-DSS-V3.2.1",
@@ -230,14 +230,14 @@
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
             "url": null,
-            "description": null
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70363",
             "name": "The application must not contain embedded authentication data.",
             "url": null,
-            "description": null
+            "description": "Authentication data stored in code could potentially be read and used by anonymous users to gain access to a backend database or application servers. This could lead to compromise of application data."
         }
     ],
     "parameters": [

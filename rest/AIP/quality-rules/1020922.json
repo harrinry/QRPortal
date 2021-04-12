@@ -68,22 +68,22 @@
             "standard": "OWASP",
             "id": "A5-2013",
             "name": "Security Misconfiguration",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A5-Security_Misconfiguration",
+            "description": "Good security requires having a secure configuration defined and deployed for the application, frameworks, application server, web server, database server, and platform. Secure settings should be defined, implemented, and maintained, as defaults are often insecure. Additionally, software should be kept up to date."
         },
         {
             "standard": "OWASP",
             "id": "A6-2017",
             "name": "Security Misconfiguration",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
+            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
         },
         {
             "standard": "OWASP",
             "id": "API7-2019",
             "name": "Security Misconfiguration",
             "url": null,
-            "description": null
+            "description": "Security misconfiguration is commonly a result of unsecure default configurations, incomplete or ad-hoc configurations, open cloud storage, misconfigured HTTP headers, unnecessary HTTP methods, permissive Cross-Origin resource sharing (CORS), and verbose error messages containing sensitive information."
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -118,14 +118,14 @@
             "id": "STIG-V-69547",
             "name": "The application must utilize mutual authentication when endpoint device non-repudiation protections are required by DoD policy or by the data owner.",
             "url": null,
-            "description": null
+            "description": "Without identifying devices, unidentified or unknown devices may be introduced, thereby facilitating malicious activity.\n\nWith one way SSL authentication which is the typical form of SSL authentication done between a web browser client and a web server, the client requests the server certificate to validate the server's identity and establish a secure connection.\n\nWhen SSL mutual authentication is used, the server is configured to request the client\u2019s certificate as well so the server can also identify the client.\n\nFor distributed architectures (e.g., service-oriented architectures), the decisions regarding the validation of identification claims may be made by services separate from the services acting on those decisions. In such situations, it is necessary to provide the identification decisions (as opposed to the actual identifiers) to the services that need to act on those decisions.\n\nThis requirement applies to applications that connect either locally, remotely, or through a network to an endpoint device (including but not limited to: workstations, printers, servers (outside a datacenter), VoIP Phones, VTC CODECs). Gateways and SOA applications are examples of where this requirement would apply."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69551",
             "name": "Service-Oriented Applications handling non-releasable data must authenticate endpoint devices via mutual SSL/TLS.",
             "url": null,
-            "description": null
+            "description": "Without identifying devices, unidentified or unknown devices may be introduced, thereby facilitating malicious activity.\n\nOne way SSL/TLS authentication is the typical form of  authentication done between a web browser client and a web server. The client requests the server certificate to validate the server's identity and establish a secure connection.\n\nWhen SSL/TLS mutual authentication is used, the server is configured to request the client\u2019s certificate as well so the server can also identify the client. This form of authentication is normally chosen for system to system communications that leverage HTTP as the transport.\n\nIt should be noted that SSL is being deprecated and replaced with TLS.\n\nFor distributed architectures (e.g., service-oriented architectures), the decisions regarding the validation of identification claims may be made by services separate from the services acting on those decisions. In such situations, it is necessary to provide the identification decisions (as opposed to the actual identifiers) to the services that need to act on those decisions.\n\nThis requirement applies to applications that connect either locally, remotely, or through a network to an endpoint device (including but not limited to: workstations, printers, servers (outside a datacenter), VoIP Phones, VTC CODECs). Gateways and SOA applications are examples of where this requirement would apply."
         }
     ],
     "parameters": [

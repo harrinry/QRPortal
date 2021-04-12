@@ -3,7 +3,7 @@
     "name": "The application must set the secure flag on session cookies.",
     "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70203",
     "url": null,
-    "description": null,
+    "description": "Many web development frameworks such as PHP, .NET, ASP as well as application servers include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nSetting the secure bit on session cookie ensures the session cookie is only sent via TLS/SSL HTTPS connections.  This helps to ensure confidentiality as the session cookie is not able to be viewed by unauthorized parties as it transits the network.\n\nSetting the secure flag on all cookies may also be warranted depending upon application design but at a minimum, the session cookie must always be secured.",
     "count": 15,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",

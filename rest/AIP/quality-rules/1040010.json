@@ -68,71 +68,71 @@
             "standard": "CWE",
             "id": "CWE-287",
             "name": "Improper Authentication",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/287.html",
+            "description": "When an actor claims to have a given identity, the software does not prove or insufficiently proves that the claim is correct."
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": null,
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
             "description": null
         },
         {
             "standard": "OWASP",
             "id": "A4-2013",
             "name": "Insecure Direct Object References",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References",
+            "description": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
         },
         {
             "standard": "OWASP",
             "id": "A5-2017",
             "name": "Broken Access Control",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
+            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
         },
         {
             "standard": "OWASP",
             "id": "M4-2016",
             "name": "Insecure Authentication",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
+            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
         },
         {
             "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
             "url": null,
-            "description": null
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         },
         {
             "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
             "url": null,
-            "description": null
+            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-69241",
             "name": "The application must clear temporary storage and cookies when the session is terminated.",
             "url": null,
-            "description": null
+            "description": "Persistent cookies are a primary means by which a web application will store application state and user information.  Since HTTP is a stateless protocol, this persistence allows the web application developer to provide a robust and customizable user experience.\n\nHowever, if a web application stores user authentication information within a persistent cookie or other temporary storage mechanism, this information can be stolen and used to compromise the users account.\n\nLikewise, HTML 5 provides the developer with a client storage capability where application data larger than the 4K cookie size limit can be stored on the local client.  While this can be beneficial to the developer, this is considered insecure storage and should not be used for storing sensitive session or security tokens.  A cross site scripting attack can put this data at risk.\n\nWeb applications must clear sensitive data from files and storage areas on the client when the session is terminated."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70207",
             "name": "The application must destroy the session ID value and/or cookie on logoff or browser close.",
             "url": null,
-            "description": null
+            "description": "Many web development frameworks such as PHP, .NET, and ASP include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nSession cookies contain application session information that can be used to impersonate the web application user or hijack their application session. Once the user's session has terminated, these session IDs must be destroyed and not reused."
         },
         {
             "standard": "STIG-V4R8",
             "id": "STIG-V-70213",
             "name": "Applications must not use URL embedded session IDs.",
             "url": null,
-            "description": null
+            "description": "Many web development frameworks such as PHP, .NET, and ASP include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nUsing a session ID that is copied to the URL introduces the risks that the session ID information will be written to log files, made available in browser history files, or made publicly available within the URL.\n\nUsing cookies to establish session ID information is desired."
         }
     ],
     "parameters": [

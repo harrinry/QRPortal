@@ -117,77 +117,77 @@
             "id": "ASCRM-CWE-252-resource",
             "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Platform Resource",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid improper processing of the execution status of resource handling operations\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the named callable control element or method control element executes a \u2018Read\u2019, \u2018Write\u2019, or \u2018Manage Access\u2019 action, yet the value of the return parameter from the action is not used by any check control element\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-RLB-1",
             "name": "Empty Exception Block",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid improper responses to unusual and unexpected situations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where an exception handling block (such as Catch and Finally blocks) of the named callable and method control elements does not contain any other control element\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCSM-CWE-252-resource",
             "name": "Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Platform Resource",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid improper processing of the execution status of resource handling operations\n\nConsequence\nSoftware unaware of execution status control incurs the risk of bad data being used in operations, possibly leading to a crash or other unintended behaviors\n\nMeasure Element\nNumber of instances where the named callable control element or method control element executes a \u2018Read\u2019, \u2018Write\u2019, or \u2018Manage Access\u2019 action, yet the value of the return parameter from the action is not used by any check control element\n\n"
         },
         {
             "standard": "CWE",
             "id": "CWE-252",
             "name": "Unchecked Return Value",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/252.html",
+            "description": "The software does not check the return value from a method or function, which can prevent it from detecting unexpected states and conditions."
         },
         {
             "standard": "CWE",
             "id": "CWE-392",
             "name": "Missing Report of Error Condition",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/392.html",
+            "description": "The software encounters an error but does not provide a status code or return value to indicate that an error has occurred."
         },
         {
             "standard": "CWE",
             "id": "CWE-1069",
             "name": "Empty Exception Block",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1069.html",
+            "description": "An invokable code block contains an exception handling block that does not contain any code, i.e. is empty."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-252",
             "name": "Unchecked Return Value",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/252.html",
+            "description": "The software does not check the return value from a method or function, which can prevent it from detecting unexpected states and conditions."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-392",
             "name": "Missing Report of Error Condition",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/392.html",
+            "description": "The software encounters an error but does not provide a status code or return value to indicate that an error has occurred."
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-11",
             "name": "Error Handling",
-            "url": null,
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-11",
             "description": null
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-252",
             "name": "Unchecked Return Value",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/252.html",
+            "description": "The software does not check the return value from a method or function, which can prevent it from detecting unexpected states and conditions."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-392",
             "name": "Missing Report of Error Condition",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/392.html",
+            "description": "The software encounters an error but does not provide a status code or return value to indicate that an error has occurred."
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -208,7 +208,7 @@
             "id": "STIG-V-70391",
             "name": "The application must not be subject to error handling vulnerabilities.",
             "url": null,
-            "description": null
+            "description": "Error handling is the failure to check the return values of functions or catch top level exceptions within a program. Improper error handling in an application can lead to an application failure or possibly result in the application entering an insecure state. \n\nThe primary way to detect error handling vulnerabilities is to perform code reviews. If a manual code review cannot be performed, static code analysis tools should be employed in conjunction with tests to help force the error conditions by specifying invalid input (such as fuzzed data and malformed filenames) and by using different accounts to run the application. These tests may give indications of vulnerability, but they are not comprehensive.\n\nIn order to minimize error handling errors, ensure proper return code and exception handling is implemented throughout the application."
         }
     ],
     "parameters": [

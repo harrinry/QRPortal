@@ -68,36 +68,36 @@
             "standard": "CWE",
             "id": "CWE-95",
             "name": "Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/95.html",
+            "description": "The software receives input from an upstream component, but it does not neutralize or incorrectly neutralizes code syntax before using the input in a dynamic evaluation call (e.g. eval)."
         },
         {
             "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": null,
+            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
             "description": null
         },
         {
             "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
+            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
         },
         {
             "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": null,
-            "description": null
+            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
+            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
         },
         {
             "standard": "OWASP",
             "id": "API8-2019",
             "name": "Injection",
             "url": null,
-            "description": null
+            "description": "Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
         },
         {
             "standard": "PCI-DSS-V3.1",
@@ -118,7 +118,7 @@
             "id": "STIG-V-70261",
             "name": "The application must protect from command injection.",
             "url": null,
-            "description": null
+            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
         }
     ],
     "parameters": [

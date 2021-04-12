@@ -122,63 +122,63 @@
             "id": "ASCPEM-PRF-15",
             "name": "Storable and Member Data Element Reference Missing De-Referencing Control Element",
             "url": null,
-            "description": null
+            "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by enforcing proper release of used data elements.\n\nConsequence\nSoftware featuring known under-efficient coding practices requires excessive computational resources\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCRM-CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid resource hoarding and consequently resource depletion\n\nConsequence\nSoftware that is unaware of resource bounds or fails to monitor resources incurs the risk of exceeding resource and capacity limits\n\nMeasure Element\nNumber of instances where a platform resource is allocated and assigned a unique resource handler value via a manage resource action, and its unique resource handler value is used throughout the application along a transformation sequence composed of action elements with data relations, some of which are part of named callable and method control elements, but none of which is a resource release statement\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCSM-CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid resource hoarding and consequently resource depletion\n\nConsequence\nSoftware unaware of resource lifecycle incurs the risk of preventing all other processes from accessing the same type of resource\n\nMeasure Element\nNumber of instances where a platform resource is allocated and assigned a unique resource handler value via a manage resource action, and its unique resource handler value is used throughout the application along a transformation sequence composed of action elements with data relations, some of which are part of named callable and method control elements, but none of which is a resource release statement\n\n"
         },
         {
             "standard": "CWE",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/772.html",
+            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
         },
         {
             "standard": "CWE",
             "id": "CWE-1091",
             "name": "Use of Object without Invoking Destructor Method",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1091.html",
+            "description": "The software contains a method that accesses an object but does not later invoke the element's associated finalize/destructor method."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/772.html",
+            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-1091",
             "name": "Use of Object without Invoking Destructor Method",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1091.html",
+            "description": "The software contains a method that accesses an object but does not later invoke the element's associated finalize/destructor method."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/772.html",
+            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-1091",
             "name": "Use of Object without Invoking Destructor Method",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/1091.html",
+            "description": "The software contains a method that accesses an object but does not later invoke the element's associated finalize/destructor method."
         }
     ],
     "parameters": [

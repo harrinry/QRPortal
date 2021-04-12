@@ -112,42 +112,42 @@
             "id": "ASCRM-CWE-120",
             "name": "Buffer Copy without Checking Size of Input",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n"
         },
         {
             "standard": "CISQ",
             "id": "ASCSM-CWE-120",
             "name": "Buffer Copy without Checking Size of Input",
             "url": null,
-            "description": null
+            "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware that is unaware of buffer bounds incurs the risk of corruption of relevant memory, and perhaps instructions, possibly leading to a crash, the risk of data integrity loss, and the risk of unauthorized access to sensitive data\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n"
         },
         {
             "standard": "CWE",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/120.html",
+            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
         },
         {
             "standard": "CWE",
             "id": "CWE-676",
             "name": "Use of Potentially Dangerous Function",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/676.html",
+            "description": "The program invokes a potentially dangerous function that could introduce a vulnerability if it is used incorrectly, but the function can also be used safely."
         },
         {
             "standard": "ISO-5055",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/120.html",
+            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
         },
         {
             "standard": "OMG-ASCQM",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": null,
-            "description": null
+            "url": "https://cwe.mitre.org/data/definitions/120.html",
+            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
         }
     ],
     "parameters": [
