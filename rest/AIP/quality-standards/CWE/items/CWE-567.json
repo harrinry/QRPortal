@@ -4,6 +4,14 @@
     "href": "AIP/quality-standards/CWE/items/CWE-567",
     "url": "https://cwe.mitre.org/data/definitions/567.html",
     "description": "The product does not properly synchronize shared data, such as static variables across threads, which can lead to undefined behavior and unpredictable data changes.",
+    "isoPatterns": [
+        {
+            "name": "ASCQM Ban Non-Final Static Data in Multi-Threaded Context"
+        },
+        {
+            "name": "ASCQM Data Read and Write without Proper Locking in Multi-Threaded Context"
+        }
+    ],
     "count": 0,
     "qualityRules": null
 }

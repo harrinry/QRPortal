@@ -4,6 +4,26 @@
     "href": "AIP/quality-standards/ISO-5055/items/CWE-672",
     "url": "https://cwe.mitre.org/data/definitions/672.html",
     "description": "The software uses, accesses, or otherwise operates on a resource after that resource has been expired, released, or revoked.",
+    "isoPatterns": [
+        {
+            "name": "ASCQM Ban Double Free On Pointers"
+        },
+        {
+            "name": "ASCQM Ban Double Release of Resource"
+        },
+        {
+            "name": "ASCQM Ban Free Operation on Pointer Received as Parameter"
+        },
+        {
+            "name": "ASCQM Ban Use of Expired Pointer"
+        },
+        {
+            "name": "ASCQM Ban Use of Expired Resource"
+        },
+        {
+            "name": "ASCQM Implement Copy Constructor for Class With Pointer Resource"
+        }
+    ],
     "count": 1,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",

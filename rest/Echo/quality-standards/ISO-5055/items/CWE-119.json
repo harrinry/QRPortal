@@ -4,6 +4,35 @@
     "href": "Echo/quality-standards/ISO-5055/items/CWE-119",
     "url": "https://cwe.mitre.org/data/definitions/119.html",
     "description": "The software performs operations on a memory buffer, but it can read from or write to a memory location that is outside of the intended boundary of the buffer.",
+    "isoPatterns": [
+        {
+            "name": "ASCQM Ban Input Acquisition Primitives without Boundary Checking Capabilities"
+        },
+        {
+            "name": "ASCQM Ban String Manipulation Primitives without Boundary Checking Capabilities"
+        },
+        {
+            "name": "ASCQM Ban Use of Expired Pointer"
+        },
+        {
+            "name": "ASCQM Check Index of Array Access"
+        },
+        {
+            "name": "ASCQM Check Input of Memory Manipulation Primitives"
+        },
+        {
+            "name": "ASCQM Check Input of String Manipulation Primitives with Boundary Checking Capabilities"
+        },
+        {
+            "name": "ASCQM Check Offset used in Pointer Arithmetic"
+        },
+        {
+            "name": "ASCQM Initialize Pointers before Use"
+        },
+        {
+            "name": "ASCQM Sanitize User Input used as Pointer"
+        }
+    ],
     "count": 1,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",

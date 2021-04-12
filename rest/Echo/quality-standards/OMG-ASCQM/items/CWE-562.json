@@ -4,6 +4,14 @@
     "href": "Echo/quality-standards/OMG-ASCQM/items/CWE-562",
     "url": "https://cwe.mitre.org/data/definitions/562.html",
     "description": "A function returns the address of a stack variable, which will cause unintended program behavior, typically in the form of a crash.",
+    "isoPatterns": [
+        {
+            "name": "ASCQM Ban Return of Local Variable Address"
+        },
+        {
+            "name": "ASCQM Ban Storage of Local Variable Address in Global Variable"
+        }
+    ],
     "count": 0,
     "qualityRules": null
 }

@@ -4,6 +4,11 @@
     "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-36",
     "url": "https://cwe.mitre.org/data/definitions/36.html",
     "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as /abs/path that can resolve to a location that is outside of that directory.",
+    "isoPatterns": [
+        {
+            "name": "ASCQM Sanitize User Input used in Path Manipulation"
+        }
+    ],
     "count": 2,
     "qualityRules": {
         "name": "Quality Rules in numeric ID order",
