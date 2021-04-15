@@ -32,6 +32,7 @@ const mapDispatchToProps = (dispatch) => {
       case SECTIONS.omg:
       case SECTIONS.cpp:
       case SECTIONS.iso:
+      case SECTIONS.cast:
         historyPushState();
         dispatch(setListCount(2));
         dispatch(showContentView());

@@ -12,9 +12,9 @@ function getQualityStandardsMap ( response, echo ){
     if (err) {
       console.log(err);
     }
-    // const businessCriteria = {
+    // const castAip = {
     //   name: 'CAST',
-    //   href: 'AIP/business-criteria',
+    //   href: 'AIP/quality-standards/AIP/categories',
     //   icon: 'img/castsoftwareblackbg.svg'
     // };
     const ret = JSON.parse(data).filter( e => !inArray(e.name, qualityStandardsToFilter)).map( e => {
@@ -24,6 +24,8 @@ function getQualityStandardsMap ( response, echo ){
         icon: 'img/'+ e.name.toLowerCase() +'.svg'
       };
     });
+
+    // const out = [ castAip, ...ret ];
 
     response.json(ret);
   });

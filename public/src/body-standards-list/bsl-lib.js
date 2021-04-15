@@ -21,9 +21,9 @@ export const childConstructor = ( values, index, callback, showinfocb ) => {
           <div className={CLASSES.idCell}>{values.id}</div>
           <div className={CLASSES.nameCell}>{values.name}</div>
         </div></td>
-      {/* <td onClick={showinfocb} className={CLASSES.infoCell}>
+      <td onClick={showinfocb} className={CLASSES.infoCell}>
         <div className={COMMON_CLASSES.infoIcon}></div>
-      </td> */}
+      </td>
     </tr>
   );
 };

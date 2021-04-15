@@ -8,6 +8,8 @@ import './style.css';
 
 const StandardsListArray = ( props ) => {
   const info = props.info.data;
+  const isoPatterns = info.isoPatterns || [];
+
   return(
     <span className={CLASSES.container}>
       <Overlay onMouseClickOut={props.hideOverlay} visible={props.info.visible}>
@@ -15,7 +17,12 @@ const StandardsListArray = ( props ) => {
           <div className={CLASSES.overlayBodyTitle}><h3>{info.id}</h3></div>
           <div className={CLASSES.overlayBodyInfoName}><p>{info.name}</p></div>
           <div className={CLASSES.overlayBodynRules}><p>Contains {info.count} Rules</p></div>
-          { props.info.url ? (<div className={CLASSES.overlayBodyExtLink}><span>Reference: </span><a href={info.url}>{info.url}</a></div>) : undefined }
+          { info.url 
+            ? (<div className={CLASSES.overlayBodyExtLink}><span>Reference: </span><a href={info.url}>{info.url}</a></div>) 
+            : undefined 
+          }
+          {isoPatterns.length > 0 && <div className={CLASSES.overlayBodyTitle}><h3>ISO Patterns</h3></div>}
+          {isoPatterns.map((_, idx) => <div key={idx} className={CLASSES.overlayBodyInfoName}><p>{_.name}</p></div>)}
         </div>
       </Overlay>
       <VerticalArray isLoading={props.loading} childConstructor={props.arrayChildConstructor} filterPlaceholder={FILTERPLACEHOLDER} itemCountTitle={STANDARDS} onEmpty={NOSTANDARDS} headers={[HEADER]} compare={compareFunction}>
