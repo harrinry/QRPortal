@@ -3,6 +3,28 @@ import { compareValueKeys, CLASSES } from './brl-constants';
 import { COMMON_CLASSES, createClassName } from 'common/';
 import { isEcho } from '../common';
 
+export function isDepricated(str = ''){
+  return stringStartsWith(str, 'DEPRECATED');
+}
+
+function stringStartsWith(str = '', value = '', ignoreCase = false){
+  const vlen = value.length;
+
+  for (let index = 0; index < vlen; index++) {
+    let vChar = value.charAt(index);
+    let sChar = str.charAt(index);
+
+    if(ignoreCase){
+      vChar = vChar.toLowerCase();
+      sChar = sChar.toLowerCase();
+    }
+
+    if(vChar !== sChar) return false;
+  }
+
+  return true;
+}
+
 export const compareFunction = ( textValue, obj ) =>{
 
   const hasPrefix = containesPrefix(textValue);
@@ -77,7 +99,7 @@ export const childConstructor = ( values, index, callback ) => {
   if(isEcho())
   {
     return (
-      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
         <td className={CLASSES.idCell}>{values.id}</td>
         <td className={CLASSES.nameCell}>{values.name}</td>
       </tr>
@@ -85,7 +107,7 @@ export const childConstructor = ( values, index, callback ) => {
   }
 
   return (
-    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
       <td className={CLASSES.nameCell}>{values.name}</td>
       <td className={createClassName(CLASSES.critical, values.critical ? COMMON_CLASSES.critical : undefined)}> </td>
@@ -99,7 +121,7 @@ export const standardsChildConstructor = ( values, index, callback ) => {
   if(isEcho())
   {
     return (
-      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
         <td className={CLASSES.idCell}>{values.id}</td>
         <td className={CLASSES.nameCell}>{values.name}</td>
         <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
@@ -108,7 +130,7 @@ export const standardsChildConstructor = ( values, index, callback ) => {
   }
 
   return (
-    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
       <td className={CLASSES.nameCell}>{values.name}</td>
       <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
@@ -128,7 +150,7 @@ export const SearchChildConstructor = ( values, index, callback ) => {
   if(isEcho())
   {
     return (
-      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+      <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
         <td className={CLASSES.idCell}>{values.id}</td>
         <td className={CLASSES.nameCell}>{values.name}</td>
         <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
@@ -137,7 +159,7 @@ export const SearchChildConstructor = ( values, index, callback ) => {
   }
 
   return (
-    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined)}>
+    <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
       <td className={CLASSES.nameCell}>{values.name}</td>
       <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>

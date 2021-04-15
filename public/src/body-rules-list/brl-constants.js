@@ -22,7 +22,7 @@ export const RULES = 'Rules';
 export const FILTERRULESPLACEHOLDER = 'Filter Rules';
 
 export const NOBPS = 'No Best Practices';
-export const ONEBP = "1 Best Practice"
+export const ONEBP = '1 Best Practice';
 export const BPS = 'Best Practices';
 export const FILTERBPSPLACEHOLDER = 'Filter Best Practices';
 
@@ -30,5 +30,6 @@ export const CLASSES = {
   idCell: 'qrp_brl_tbCrid',
   nameCell: 'qrp_brl_tbCrname',
   critical: 'qrp_brl_tbCrCriti',
-  TechnosCell: 'qrp_brl_tbCrTechno'
+  TechnosCell: 'qrp_brl_tbCrTechno',
+  emptyContent: 'qrp_std_list_empty',
 };
