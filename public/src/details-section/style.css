@@ -21,3 +21,24 @@ p {
   white-space: -o-pre-wrap;
   word-wrap: break-word;
 }
+
+.qrp_bdet_tag .tooltiptext {
+  visibility: hidden;
+  width: 800px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s;
+  top: 23%;
+  left: 18%;
+}
+
+.qrp_bdet_tag:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

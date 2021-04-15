@@ -13,6 +13,7 @@ export const CLASSES = {
   rationaleContainer: 'qrp_bdet_ratlCntr',
   descriptionContainer: 'qrp_bdet_descCntr',
   tag: 'qrp_bdet_tag',
+  tooltip: 'tooltiptext',
   technoTag: 'qrp_bdet_tagtechno',
   tagContainer: 'qrp_bdet_tagCntr',
   noRules: 'qrp_bdet_nRls',
