@@ -18,7 +18,11 @@ export const CLASSES = {
   tagContainer: 'qrp_bdet_tagCntr',
   noRules: 'qrp_bdet_nRls',
   weightIcon: 'qrp_bdet_w8t_ico',
-  weight: 'qrp_bdet_w8t'
+  smallWeightIcon: 'qrp_bdet_sweight_ico',
+  smallWeightText: 'qrp_bdet_sw8t',
+  weight: 'qrp_bdet_w8t',
+  weightTagContainer: 'qrp_weight_tag_cntr',
+  tagText: 'qrp_bdet_tag_text',
 };
 
 export const NORULESSELECTED = 'No Rule Selected';

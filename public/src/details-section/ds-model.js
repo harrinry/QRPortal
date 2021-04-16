@@ -5,8 +5,17 @@ import { createClassName, COMMON_CLASSES, isEcho } from '../common/';
 import { CLASSES, NORULESSELECTED, NOBPSSELECTED } from './ds-constants';
 import LoadingSpinner from 'components/loading-spinner';
 
+const WeightTag = ({ value, weight }) => {
+  return (<div className={CLASSES.weightTagContainer}>
+    <p className={CLASSES.tagText}>{value}</p>
+    <div className={createClassName(CLASSES.weightContainer, CLASSES.smallWeightIcon)}>
+      <span className={CLASSES.smallWeightText}>{weight}</span>
+    </div>
+  </div>);
+};
+
 const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, searchVisible, gsQuery } ) => {
-  let qualityStandardsTags, technologiesTags, qsTagData = [];
+  let qualityStandardsTags, technologiesTags, qsTagData = [], technicalCriteria = data && data.technicalCriteria || [];
 
   if (data){
 
@@ -56,6 +65,10 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
             <div className={CLASSES.tagContainer}>
               {technologiesTags}
             </div>
+            {isEcho() ? undefined : ( technicalCriteria.length > 0 ? <div className={CLASSES.descriptionContainer}>
+              <p className={CLASSES.textArea}>Technical Criteria</p>
+              {technicalCriteria.map((_, idx) => <WeightTag key={`tc-${idx}`} value={_.name} weight={_.weight}/>)}
+            </div> : undefined ) }
             {isEcho() ? undefined : ( data.description ? <div className={CLASSES.descriptionContainer}>
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
