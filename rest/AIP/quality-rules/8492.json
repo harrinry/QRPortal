@@ -13,7 +13,7 @@
     "remediationSample": "context = new InitialDirContext(env);\n//The code below constructs an LDAP query using user input address data:\nString searchFilter = \"StreetAddress=\" + address;\n// Include validate code for searchFilter\nNamingEnumeration answer = context.search(searchBase, searchFilter, searchCtls);",
     "sample": "context = new InitialDirContext(env);\nString searchFilter = \"StreetAddress=\" + address;\nNamingEnumeration answer = context.search(searchBase, searchFilter, searchCtls);",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid LDAP injection vulnerabilities through API requests",
+    "alternativeName": "Ensure your application does not run LDAP methods without sanitization",
     "businessCriteria": [
         {
             "id": 1061000,

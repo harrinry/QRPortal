@@ -13,7 +13,7 @@
     "remediationSample": "XPath xPath = XPathFactory.newInstance().newXPath();\nInputSource inputXml = new InputSource(xmlFile);\n...\nString username; // constant value\nString password; // constant value\n...\nString query = \"//users/user[name/text()='\" + username +\n               \"' and pass/text()='\" + password + \"']\" +\n               \"/secret/text()\";\nString result = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);",
     "sample": "XPath xPath = XPathFactory.newInstance().newXPath();\nInputSource inputXml = new InputSource(xmlFile);\n...\nString usernam; // value given by an API request\nString password; // value given by an API request\n...\nString query = \"//users/user[name/text()='\" + username +\n               \"' and pass/text()='\" + password + \"']\" +\n               \"/secret/text()\";\nString result = (String)xPath.evaluate(query, inputXml, XPathConstants.STRING);",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid XPath injection vulnerabilities through API requests",
+    "alternativeName": "Ensure your application properly neutralize XML content before it is processed",
     "businessCriteria": [
         {
             "id": 1061000,

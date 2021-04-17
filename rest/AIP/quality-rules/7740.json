@@ -13,7 +13,7 @@
     "remediationSample": "Sample 1\n// include validation code for rawInputData  --> cleanData\nresponse.addHeader(HEADER_NAME, cleanData);\n\n\nSample 2:\nString header = request.getParameter(HEADER_NAME);\n// ...\n// include validation code for header\nCookie cookie = new Cookie(\"header\", header);\nresponse.addCookie(cookie);",
     "sample": "Sample 1\nresponse.addHeader(HEADER_NAME, rawInputData);\n\nSample 2\nString header = request.getParameter(HEADER_NAME);\n// ...\nCookie cookie = new Cookie(\"header\", header);\nresponse.addCookie(cookie);",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid HTTP response splitting",
+    "alternativeName": "Ensure your application does not execute HTTP requests without sanitization",
     "businessCriteria": [
         {
             "id": 1062300,

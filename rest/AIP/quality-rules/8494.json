@@ -13,7 +13,7 @@
     "remediationSample": "Sample 1:\npublic String coordinateTransformLatLonToUTM(String coordinates)\n{\nString utmCoords = null;\ntry {\nString latlonCoords = coordinates;\nRuntime rt = Runtime.getRuntime();\n//insert a validation code for rt\nProcess exec = rt.exec(\"cmd.exe /C latlon2utm.exe -\" + latlonCoords);\n// process results of coordinate transform \n\n// ... \n}\ncatch(Exception e) {...}\nreturn utmCoords;\n}",
     "sample": "Sample 1:\npublic String coordinateTransformLatLonToUTM(String coordinates)\n{\nString utmCoords = null;\ntry {\nString latlonCoords = coordinates;\nRuntime rt = Runtime.getRuntime();\nProcess exec = rt.exec(\"cmd.exe /C latlon2utm.exe -\" + latlonCoords);\n// process results of coordinate transform \n\n// ... \n}\ncatch(Exception e) {...}\nreturn utmCoords;\n}",
     "total": "Number of potentially vulnerable methods",
-    "alternativeName": "Avoid OS command injection vulnerabilities through API requests",
+    "alternativeName": "Ensure your application does not run OS commande without sanitization",
     "businessCriteria": [
         {
             "id": 1062100,
