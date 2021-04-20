@@ -11,7 +11,7 @@ export const compareValueKeys = {
 export const HEADERS = {
   id: {name: 'Id', className: 'qrp_arrRlsHid'},
   name: {name: 'Name', className: 'qrp_arrRlsHname'},
-  critical: {name: 'Critical', className: 'qrp_arrRlsHcrit'},
+  critical: {name: 'Severity', className: 'qrp_arrRlsHcrit'},
   technologies: {name: 'Technologies', className: 'qrp_arrRlsHTechnos'},
   standards: {name: 'Standards', className: 'qrp_arrRlsHStds'},
 };

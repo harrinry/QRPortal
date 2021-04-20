@@ -70,7 +70,7 @@ class VerticalArray extends React.PureComponent{
             <tr>{headers.map((h, i) => <th key={i} className={h.className}>{h.name}</th>)}</tr>
           </thead>
           <tbody className={createClassName(CLASSES.tbody ,COMMON_CLASSES.overflowY)}>
-            { isLoading === false ? children : <tr><td colSpan={headers.length}><LoadingSpinner/></td></tr> }
+            { isLoading === false ? children : <tr><td className={CLASSES.loaderContainer} colSpan={headers.length}><LoadingSpinner/></td></tr> }
           </tbody>
         </table>
       </div>

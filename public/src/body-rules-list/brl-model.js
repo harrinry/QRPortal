@@ -10,8 +10,8 @@ const RulesListArray = ( props ) => {
     searchResultsLength = hasSearchResults ? props.searchResults.length : 0,
     searchResults = searchResultsLength > 0 ? props.searchResults : [];
 
-const BPHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies] : [HEADERS.id, HEADERS.name];
-const FullHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
+  const BPHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies] : [HEADERS.id, HEADERS.name];
+  const FullHeaders = props.searchVisible || props.listCount === 2 ? [HEADERS.id, HEADERS.name, HEADERS.technologies, HEADERS.critical] : [HEADERS.id, HEADERS.name, HEADERS.critical];
 
   let childConstructor;
   if (props.searchVisible) {

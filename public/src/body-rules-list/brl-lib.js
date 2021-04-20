@@ -94,6 +94,18 @@ const containesPrefix = ( text ) => {
   return hasColon.test(text);
 };
 
+function getSevertity(weight){
+  if(weight <= 3){
+    return 'Low';
+  } else if(weight > 3 && weight <= 6){
+    return 'Medium';
+  } else if(weight > 6 && weight <= 9){
+    return 'High';
+  } else {
+    return 'N/A';
+  }
+}
+
 export const childConstructor = ( values, index, callback ) => {
 
   if(isEcho())
