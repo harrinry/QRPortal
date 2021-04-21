@@ -69,60 +69,52 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-489",
             "name": "Active Debug Code",
-            "url": "https://cwe.mitre.org/data/definitions/489.html",
-            "description": "The application is deployed to unauthorized actors with debugging code still enabled or active, which can create unintended entry points or expose sensitive information."
+            "href": "AIP/quality-standards/CWE/items/CWE-489",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-532",
             "name": "Insertion of Sensitive Information into Log File",
-            "url": "https://cwe.mitre.org/data/definitions/532.html",
-            "description": "Information written to log files can be of a sensitive nature and give valuable guidance to an attacker or expose sensitive user information."
+            "href": "AIP/quality-standards/CWE/items/CWE-532",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AU-9",
             "name": "Protection of Audit Information",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AU-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AU-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-69369",
             "name": "The application must not write sensitive data into the application logs.",
-            "url": null,
-            "description": "It is important to identify and exclude certain types of data that is written into the logs. If the logs are compromised and sensitive data is included in the logs, this could assist an attacker in furthering their attack or it could completely compromise the system.\n\nExamples of such data include but are not limited to; Passwords, Session IDs, Application source code, encryption keys, and sensitive data such as personal health information (PHI), Personally Identifiable Information (PII), or government identifiers (e.g., SSN)."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69369",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70273",
             "name": "The application must generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.",
-            "url": null,
-            "description": "Only authorized personnel should be aware of errors and the details of the errors. Error messages are an indicator of an organization's operational state or can identify application components. Additionally, Personally Identifiable Information (PII) and operational information must not be revealed through error messages to unauthorized personnel or their designated representatives.\n\nThe structure and content of error messages must be carefully considered by the organization and development team. The extent to which the information system is able to identify and handle error conditions is guided by organizational policy and operational requirements.\n\nError messages should not include variable names, variable types, SQL strings, or source code. Errors that contain field names from the screen and a description of what should be in the field should not be considered a finding."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70273",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

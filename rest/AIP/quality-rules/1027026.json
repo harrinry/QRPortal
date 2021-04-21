@@ -102,74 +102,64 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-99",
             "name": "Name or Reference Resolution Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use as resource names or references\n\nConsequence\nSoftware unaware of resource identification control incurs the risk of unauthorized access to or modification of sensitive data and system resources, including configuration files and files containing sensitive information\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the platform action to access a resource by its name; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-99",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/CWE/items/CWE-99",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-99",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-99",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
-            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70271",
             "name": "The application must not be subject to input handling vulnerabilities.",
-            "url": null,
-            "description": "A common application vulnerability is unpredictable behavior due to improper input validation. This requirement guards against adverse or unintended system behavior caused by invalid inputs, where information system responses to the invalid input may be disruptive or cause the system to fail into an unsafe state.\n\nData received from the user should always be suspected as being malicious and always validated prior to using it as input to the application.\n\nSome examples of input methods:\n\n- Forms Data\n- URL parameters\n- Hidden Fields\n- Cookies\n- HTTP Headers or anything in the HTTP request\n- Client data entry fields\n\nItems to validate:\n\n- Out of range values/Boundary \n- Data length \n- Validate types of characters allowed\n- Whitelist validation for known good data input while denying all other input.\n\nOther recommendations include: \n\n- Using drop down menus for lists\n- Validating input on the server, not on the client.\n\nIf validating on the client, also validate on the server:\n\n- Using regular expressions to validate input\n- Using HTML filter libraries that implement input validation tasks."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70271",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

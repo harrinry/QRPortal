@@ -75,67 +75,58 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-250",
             "name": "Execution with Unnecessary Privileges",
-            "url": "https://cwe.mitre.org/data/definitions/250.html",
-            "description": "The software performs an operation at a privilege level that is higher than the minimum level required, which creates new weaknesses or amplifies the consequences of other weaknesses."
+            "href": "AIP/quality-standards/CWE/items/CWE-250",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-306",
             "name": "Missing Authentication for Critical Function",
-            "url": "https://cwe.mitre.org/data/definitions/306.html",
-            "description": "The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources."
+            "href": "AIP/quality-standards/CWE/items/CWE-306",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-6",
             "name": "Least Privilege",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-6",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-6",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken Authentication and Session Management",
-            "description": "Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities."
+            "href": "AIP/quality-standards/OWASP/items/A2-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
-            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
+            "href": "AIP/quality-standards/OWASP/items/A2-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70261",
             "name": "The application must protect from command injection.",
-            "url": null,
-            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70261",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

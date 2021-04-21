@@ -63,39 +63,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-1004",
             "name": "Sensitive Cookie Without 'HttpOnly' Flag",
-            "url": "https://cwe.mitre.org/data/definitions/1004.html",
-            "description": "The software uses a cookie to store sensitive information, but the cookie is not marked with the HttpOnly flag."
+            "href": "AIP/quality-standards/CWE/items/CWE-1004",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70201",
             "name": "The application must set the HTTPOnly flag on session cookies.",
-            "url": null,
-            "description": "HTTPOnly is a flag included in a Set-Cookie HTTP response header. If the HTTPOnly flag is included in the HTTP response header, the cookie cannot be accessed through client side scripts like JavaScript.\n\nIf the HTTPOnly flag is set, even if a cross-site scripting (XSS) flaw in the application exists, and a user accidentally accesses a link that exploits this flaw, the browser will not reveal the cookie to a third party.\n\nThe HTTPOnly setting is browser dependent however most popular browsers support the feature. If a browser does not support HTTPOnly and a website attempts to set an HTTPOnly cookie, the HTTPOnly flag will be ignored by the browser, thus creating a traditional, script accessible cookie. As a result, the cookie (typically the session cookie) becomes vulnerable to theft or modification by a malicious script running on the client system."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70201",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

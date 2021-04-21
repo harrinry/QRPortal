@@ -79,32 +79,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-12",
             "name": "Named Callable and Method Control Element with Layer-skipping Call",
-            "url": null,
-            "description": "Objective\nAvoid breaches of layered architecture principles due to layer-skipping references\n\nConsequence\nSoftware that does not follow the principles of layered architectures (such as strict partitioning and strict call hierarchy) decreases comprehensibility as well as simplicity to evolve the code\n\nMeasure Element\nNumber of instances where a named callable or method control element from a higher horizontal layer directly calls a named callable or method control element in a lower horizontal layer that is not adjacent to the upper layer making the call, as defined in a model of the application\u2019s architectural layers (this excludes the vertical utility layers that can be referenced from any horizontal layer)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-12",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1054",
             "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
-            "url": "https://cwe.mitre.org/data/definitions/1054.html",
-            "description": "The code at one architectural layer invokes code that resides at a deeper layer than the adjacent layer, i.e., the invocation skips at least one layer, and the invoked code is not part of a vertical utility layer that can be referenced from any horizontal layer."
+            "href": "AIP/quality-standards/CWE/items/CWE-1054",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1054",
             "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
-            "url": "https://cwe.mitre.org/data/definitions/1054.html",
-            "description": "The code at one architectural layer invokes code that resides at a deeper layer than the adjacent layer, i.e., the invocation skips at least one layer, and the invoked code is not part of a vertical utility layer that can be referenced from any horizontal layer."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1054",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1054",
             "name": "Invocation of a Control Element at an Unnecessarily Deep Horizontal Layer",
-            "url": "https://cwe.mitre.org/data/definitions/1054.html",
-            "description": "The code at one architectural layer invokes code that resides at a deeper layer than the adjacent layer, i.e., the invocation skips at least one layer, and the invoked code is not part of a vertical utility layer that can be referenced from any horizontal layer."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1054",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

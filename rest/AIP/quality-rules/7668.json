@@ -52,18 +52,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70237",
             "name": "XML-based applications must mitigate DoS attacks by using XML filters, parser options, or gateways.",
-            "url": null,
-            "description": "DoS is a condition when a resource is not available for legitimate users. When this occurs, the organization either cannot accomplish its mission or must operate at degraded capacity.\n\nXML-based applications are susceptible to DoS attacks due to the nature of XML parsing being processor intensive and complicated.\n\nBest practice for parsing XML to avoid DoS include:\n\n- Using a proven XML parser\n- Using an XML gateway that provides DoS protection\n- Using parser options that provide limits on recursive payloads, oversized payloads, and entity expansion.\n\nThis requirement addresses the configuration of applications to mitigate the impact of DoS attacks that have occurred or are ongoing on application availability. For each application, known and potential DoS attacks must be identified and solutions for each type implemented. A variety of technologies exist to limit or, in some cases, eliminate the effects of DoS attacks (e.g., limiting processes or restricting the number of sessions the application opens at one time). Employing increased capacity and bandwidth, combined with service redundancy, may reduce the susceptibility to some DoS attacks."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70237",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70243",
             "name": "An XML firewall function must be deployed to protect web services when exposed to untrusted networks.",
-            "url": null,
-            "description": "Web Services are vulnerable to many types of attacks such as XML injection or XML External Entity (XXE) attacks. The risks increase when these applications are exposed to untrusted networks.\n\nXML-based firewall functionality can be used to prevent common attacks and aid in protecting and limiting the risks of exposing web services to untrusted networks.  The XML firewall functionality may be stand-alone or embedded in various multi-purpose products including but not limited to a SOA or Web Application gateways."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70243",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

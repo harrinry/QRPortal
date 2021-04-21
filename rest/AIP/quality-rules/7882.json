@@ -115,102 +115,88 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-89",
             "name": "SQL Injection Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use in SQL compilation operations\n\nConsequence\nSoftware unaware of SQL command control incurs the risk of unauthorized read, modify, and delete access to sensitive data\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the SQL compilation statement; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-89",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-89",
             "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/89.html",
-            "description": "The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/CWE/items/CWE-89",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-662",
             "name": "Improper Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/662.html",
-            "description": "The software utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes."
+            "href": "AIP/quality-standards/CWE/items/CWE-662",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-89",
             "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/89.html",
-            "description": "The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-89",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-662",
             "name": "Improper Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/662.html",
-            "description": "The software utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-662",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-89",
             "name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/89.html",
-            "description": "The software constructs all or part of an SQL command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended SQL command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-89",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-662",
             "name": "Improper Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/662.html",
-            "description": "The software utilizes multiple threads or processes to allow temporary access to a shared resource that can only be exclusive to one process at a time, but it does not properly synchronize these actions, which might cause simultaneous accesses of this resource by multiple threads or processes."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-662",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
-            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "API8-2019",
             "name": "Injection",
-            "url": null,
-            "description": "Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70267",
             "name": "The application must not be vulnerable to SQL Injection.",
-            "url": null,
-            "description": "SQL Injection is a code injection attack against database applications. Malicious SQL statements are inserted into an application data entry field where they are submitted to the database and executed. This is a direct result of not validating input that is used by the application to perform a command or execute an action.\n\nSuccessful attacks can read data, write data, execute administrative functions within the database, shutdown the DBMS, and in some cases execute OS commands.\n\nBest practices to reduce the potential for SQL Injection vulnerabilities include:\n\nNot using concatenation or replacement to build SQL queries.\n\nUsing prepared statements with parameterized queries that have been tested and validated not to be vulnerable to SQL Injection.\n\nUsing stored procedures that have been tested and validated not to be vulnerable to SQL Injection.\n\nEscaping all user supplied input.\n\nAdditional steps to prevent SQL Injection can be found at the OWASP website:\n\nhttps://www.owasp.org/index.php/SQL_Injection_Prevention_Cheat_Sheet"
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70267",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

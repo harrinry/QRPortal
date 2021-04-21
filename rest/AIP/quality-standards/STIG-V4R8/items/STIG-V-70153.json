@@ -1,9 +1,9 @@
 {
     "id": "STIG-V-70153",
-    "name": null,
+    "name": "The application must map the authenticated identity to the individual user or group account for PKI-based authentication.",
     "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70153",
     "url": null,
-    "description": null,
+    "description": "Without mapping the certificate used to authenticate to a corresponding user account, the ability to determine the identity of the individual user or group will not be available for forensic analysis.\n\nSome CAs will include identifying information like an email address within the certificate itself. When the email is assigned to an individual, this helps to identify the individual user who has been assigned the certificate. When identifying information is not available within the certificate itself, the application must provide a mapping that allows administrators to quickly determine who the owner of the certificate is. When responding to a security incident, particularly involving user access violations, time is of the essence so this information must be readily available to investigators.",
     "isoPatterns": null,
     "count": 0,
     "qualityRules": null

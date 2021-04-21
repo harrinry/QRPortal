@@ -65,39 +65,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-863",
             "name": "Incorrect Authorization",
-            "url": "https://cwe.mitre.org/data/definitions/863.html",
-            "description": "The software performs an authorization check when an actor attempts to access a resource or perform an action, but it does not correctly perform the check. This allows attackers to bypass intended access restrictions."
+            "href": "AIP/quality-standards/CWE/items/CWE-863",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A5-2017",
             "name": "Broken Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
-            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+            "href": "AIP/quality-standards/OWASP/items/A5-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A7-2013",
             "name": "Missing Function Level Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control",
-            "description": "Most web applications verify function level access rights before making that functionality visible in the UI. However, applications need to perform the same access control checks on the server when each function is accessed. If requests are not verified, attackers will be able to forge requests in order to access functionality without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A7-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "M6-2016",
             "name": "Insecure Authorization",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M6-Insecure_Authorization",
-            "description": "To test for poor authorization schemes, testers can perform binary attacks against the mobile app and try to execute privileged functionality that should only be executable with a user of higher privilege while the mobile app is in 'offline' mode (for more information on binary attacks, see M9 and M10). As well, testers should try to execute any privileged functionality using a low-privilege session token within the corresponding POST/GET requests for the sensitive functionality to the backend server.Poor or missing authorization schemes allow an adversary to execute functionality they should not be entitled to using an authenticated but lower-privilege user of the mobile app. Authorization requirements are more vulnerable when making authorization decisions within the mobile device instead of through a remote server. This may be a requirement due to mobile requirements of offline usability."
+            "href": "AIP/quality-standards/OWASP/items/M6-2016",
+            "standard": "OWASP"
         }
     ],
     "parameters": [

@@ -53,53 +53,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-93",
             "name": "Improper Neutralization of CRLF Sequences ('CRLF Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/93.html",
-            "description": "The software uses CRLF (carriage return line feeds) as a special element, e.g. to separate lines or records, but it does not neutralize or incorrectly neutralizes CRLF sequences from inputs."
+            "href": "AIP/quality-standards/CWE/items/CWE-93",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-113",
             "name": "Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')",
-            "url": "https://cwe.mitre.org/data/definitions/113.html",
-            "description": "The software receives data from an upstream component, but does not neutralize or incorrectly neutralizes CR and LF characters before the data is included in outgoing HTTP headers."
+            "href": "AIP/quality-standards/CWE/items/CWE-113",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "API8-2019",
             "name": "Injection",
-            "url": null,
-            "description": "Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70271",
             "name": "The application must not be subject to input handling vulnerabilities.",
-            "url": null,
-            "description": "A common application vulnerability is unpredictable behavior due to improper input validation. This requirement guards against adverse or unintended system behavior caused by invalid inputs, where information system responses to the invalid input may be disruptive or cause the system to fail into an unsafe state.\n\nData received from the user should always be suspected as being malicious and always validated prior to using it as input to the application.\n\nSome examples of input methods:\n\n- Forms Data\n- URL parameters\n- Hidden Fields\n- Cookies\n- HTTP Headers or anything in the HTTP request\n- Client data entry fields\n\nItems to validate:\n\n- Out of range values/Boundary \n- Data length \n- Validate types of characters allowed\n- Whitelist validation for known good data input while denying all other input.\n\nOther recommendations include: \n\n- Using drop down menus for lists\n- Validating input on the server, not on the client.\n\nIf validating on the client, also validate on the server:\n\n- Using regular expressions to validate input\n- Using HTML filter libraries that implement input validation tasks."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70271",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

@@ -80,102 +80,88 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-327",
             "name": "Broken or Risky Cryptographic Algorithm Usage",
-            "url": null,
-            "description": "Objective\nAvoid failure to use vetted cryptographic libraries\n\nConsequence\nSoftware using broken or risky cryptographic algorithm incurs the risk of sensitive data being compromised\n\nMeasure Element\nNumber of instances where the application uses the cryptographic deployed component which is not part of the list of vetted cryptographic deployed components.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-327",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-327",
             "name": "Use of a Broken or Risky Cryptographic Algorithm",
-            "url": "https://cwe.mitre.org/data/definitions/327.html",
-            "description": "The use of a broken or risky cryptographic algorithm is an unnecessary risk that may result in the exposure of sensitive information."
+            "href": "AIP/quality-standards/CWE/items/CWE-327",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SC-12",
             "name": "Cryptographic Key Establishment and Management",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SC-12",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SC-12",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-8.2.1",
             "name": "Using strong cryptography, render all authentication credentials (such as passwords/phrases) unreadable during transmission and storage on all system components.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-8.2.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-8.2.1",
             "name": "Using strong cryptography, render all authentication credentials (such as passwords/phrases) unreadable during transmission and storage on all system components.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-8.2.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-69569",
             "name": "The application must transmit only cryptographically-protected passwords.",
-            "url": null,
-            "description": "Use of passwords for application authentication is intended only for limited situations and should not be used as a replacement for two-factor CAC-enabled authentication.\n\nExamples of situations where a user ID and password might be used include but are not limited to:\n\n- When the application user base does not have a CAC and is not a current DoD employee, member of the military, or a DoD contractor.\n\n- When an application user has been officially designated as a Temporary Exception User; one who is temporarily unable to present a CAC for some reason (lost, damaged, not yet issued, broken card reader) and to satisfy urgent organizational needs must be temporarily permitted to use user ID/password authentication until the problem with CAC use has been remedied.\n\nand\n\n- When the application is publicly available and or hosting publicly releasable data requiring some degree of need-to-know protection.\n\nPasswords need to be protected at all times and encryption is the standard method for protecting passwords. If passwords are not encrypted, they can be plainly read (i.e., clear text) and easily compromised.\n\nApplications can accomplish this by making direct function calls to encryption modules or by leveraging operating system encryption capabilities."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69569",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70191",
             "name": "The application must utilize FIPS-validated cryptographic modules when signing application components.",
-            "url": null,
-            "description": "Applications that distribute components of the application must sign the components to provide an identity assurance to consumers of the application component. Components can include application messages or application code.\n\nUse of weak or untested encryption algorithms undermines the purposes of utilizing encryption to validate the author of application components. The application must implement cryptographic modules adhering to the higher standards approved by the federal government since this provides assurance the modules have been tested and validated.\n\nIf the application resides on a National Security System (NSS) it must not use algorithms weaker than SHA-384."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70191",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70245",
             "name": "The application must protect the confidentiality and integrity of transmitted information.",
-            "url": null,
-            "description": "Without protection of the transmitted information, confidentiality and integrity may be compromised since unprotected communications can be intercepted and either read or altered.\n\nThis requirement applies  to those applications that transmit data, or allow access to data non-locally. Application and data owners have a responsibility for ensuring data integrity and confidentiality is maintained at every step of the data transfer and handling process. \n\nApplication and data owners need to identify the data that requires cryptographic protection. If no data protection requirements are defined as to what specific data must be encrypted and what data is non-sensitive and doesn't require encryption, all data must be encrypted.\n \nWhen transmitting data, applications need to leverage transmission protection mechanisms, such as TLS, SSL VPNs, or IPSEC.\n\nCommunication paths outside the physical protection of a controlled boundary are exposed to the possibility of interception and modification. Protecting the confidentiality and integrity of organizational information can be accomplished by physical means (e.g., employing physical distribution systems) or by logical means (e.g., employing cryptographic techniques). If physical means of protection are employed, then logical means (cryptography) do not have to be employed, and vice versa."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70245",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70249",
             "name": "The application must maintain the confidentiality and integrity of information during preparation for transmission.",
-            "url": null,
-            "description": "Data is subject to manipulation and other integrity related attacks whenever that data is transferred across a network. To protect data integrity during transmission, the application must implement mechanisms to ensure the integrity of all transmitted information. All transmitted information means that the protections are not restricted to just the data itself. Protection mechanisms must be extended to include data labels, security parameters or metadata if data protection requirements specify. Modern web application data transfer methods can be complex and are not necessarily just point-to-point in nature. Service-Oriented Architecture (SOA) and RESTFUL web services allow for XML-based application data to be transmitted in a manner similar to network traffic wherein the application data is transmitted along multiple servers' hops. In such cases, point-to-point protection methods like TLS or SSL may not be the best choice for ensuring data integrity and alternative data integrity protection methods like XML Integrity Signature protections where the XML payload itself is signed may be required as part of the application design. Overall application design and architecture must always be taken into account when establishing data integrity protection mechanisms. Custom-developed solutions that provide a file transfer capability should implement data integrity checks for incoming and outgoing files. Transmitted information requires mechanisms to ensure the data integrity (e.g., digital signatures, SSL, TLS, or cryptographic hashing)."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70249",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70251",
             "name": "The application must maintain the confidentiality and integrity of information during reception.",
-            "url": null,
-            "description": "Data is subject to manipulation and other integrity related attacks whenever that data is transferred across a network. To protect data integrity during transmission, the application must implement mechanisms to ensure the integrity of all transmitted information. All transmitted information means that the protections are not restricted to just the data itself. Protection mechanisms must be extended to include data labels, security parameters or metadata if data protection requirements specify. Modern web application data transfer methods can be complex and are not necessarily just point-to-point in nature. Service-Oriented Architecture (SOA) and RESTFUL web services allow for XML-based application data to be transmitted in a manner similar to network traffic wherein the application data is transmitted along multiple servers' hops. In such cases, point-to-point protection methods like TLS or SSL may not be the best choice for ensuring data integrity and alternative data integrity protection methods like XML Integrity Signature protections where the XML payload itself is signed may be required as part of the application design. Overall application design and architecture must always be taken into account when establishing data integrity protection mechanisms. Custom-developed solutions that provide a file transfer capability should implement data integrity checks for incoming and outgoing files. Transmitted information requires mechanisms to ensure the data integrity (e.g., digital signatures, SSL, TLS, or cryptographic hashing)."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70251",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

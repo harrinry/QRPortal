@@ -81,81 +81,70 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-327",
             "name": "Broken or Risky Cryptographic Algorithm Usage",
-            "url": null,
-            "description": "Objective\nAvoid failure to use vetted cryptographic libraries\n\nConsequence\nSoftware using broken or risky cryptographic algorithm incurs the risk of sensitive data being compromised\n\nMeasure Element\nNumber of instances where the application uses the cryptographic deployed component which is not part of the list of vetted cryptographic deployed components.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-327",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-327",
             "name": "Use of a Broken or Risky Cryptographic Algorithm",
-            "url": "https://cwe.mitre.org/data/definitions/327.html",
-            "description": "The use of a broken or risky cryptographic algorithm is an unnecessary risk that may result in the exposure of sensitive information."
+            "href": "AIP/quality-standards/CWE/items/CWE-327",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SC-12",
             "name": "Cryptographic Key Establishment and Management",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SC-12",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SC-12",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "M5-2016",
             "name": "Insufficient Cryptography",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M5-Insufficient_Cryptography",
-            "description": "In order to exploit this weakness, an adversary must successfully return encrypted code or sensitive data to its original unencrypted form due to weak encryption algorithms or flaws within the encryption process."
+            "href": "AIP/quality-standards/OWASP/items/M5-2016",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-3.6.1",
             "name": "Generation of strong cryptographic keys",
-            "url": null,
-            "description": "3.6.1 Generation of strong cryptographic keys"
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-3.6.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-3.6.1",
             "name": "Generation of strong cryptographic keys",
-            "url": null,
-            "description": "3.6.1 Generation of strong cryptographic keys"
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-3.6.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70245",
             "name": "The application must protect the confidentiality and integrity of transmitted information.",
-            "url": null,
-            "description": "Without protection of the transmitted information, confidentiality and integrity may be compromised since unprotected communications can be intercepted and either read or altered.\n\nThis requirement applies  to those applications that transmit data, or allow access to data non-locally. Application and data owners have a responsibility for ensuring data integrity and confidentiality is maintained at every step of the data transfer and handling process. \n\nApplication and data owners need to identify the data that requires cryptographic protection. If no data protection requirements are defined as to what specific data must be encrypted and what data is non-sensitive and doesn't require encryption, all data must be encrypted.\n \nWhen transmitting data, applications need to leverage transmission protection mechanisms, such as TLS, SSL VPNs, or IPSEC.\n\nCommunication paths outside the physical protection of a controlled boundary are exposed to the possibility of interception and modification. Protecting the confidentiality and integrity of organizational information can be accomplished by physical means (e.g., employing physical distribution systems) or by logical means (e.g., employing cryptographic techniques). If physical means of protection are employed, then logical means (cryptography) do not have to be employed, and vice versa."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70245",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [
