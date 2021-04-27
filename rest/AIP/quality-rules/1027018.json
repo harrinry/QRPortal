@@ -34,14 +34,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/61014",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -58,11 +63,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-460",
             "name": "Improper Cleanup on Thrown Exception",
-            "url": "https://cwe.mitre.org/data/definitions/460.html",
-            "description": "The product does not clean up its state or incorrectly cleans up its state when an exception is thrown, leading to unexpected state or control flow."
+            "href": "AIP/quality-standards/CWE/items/CWE-460",
+            "standard": "CWE"
         }
     ],
     "parameters": [

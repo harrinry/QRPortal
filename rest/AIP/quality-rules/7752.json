@@ -21,19 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 1062300,
@@ -54,50 +44,55 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062177,
             "name": "ASCSM-CWE-22 - Path Traversal Improper Input Neutralization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062177",
+            "weight": 5
         },
         {
             "id": 1061010,
             "name": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061010",
+            "weight": 5
         },
         {
             "id": 1061011,
             "name": "CWE-23: Relative Path Traversal",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061011",
+            "weight": 5
         },
         {
             "id": 1061012,
             "name": "CWE-36: Absolute Path Traversal",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061012",
+            "weight": 5
         },
         {
             "id": 1062307,
             "name": "OWASP-2013-A7 Missing Function Level Access Control",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062307",
+            "weight": 5
         },
         {
             "id": 1062325,
             "name": "OWASP-2017-A5 Broken Access Control",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062325",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -119,137 +114,118 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-22",
             "name": "Path Traversal Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use in path manipulation operations\n\nConsequence\nSoftware that is unaware of file path control incurs the risk of exposition of sensitive data, the risk of corruption of critical files, such as programs, libraries, or important data used in protection mechanisms\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the file path creation statement; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-22",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-22",
             "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-            "url": "https://cwe.mitre.org/data/definitions/22.html",
-            "description": "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+            "href": "AIP/quality-standards/CWE/items/CWE-22",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-23",
             "name": "Relative Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/23.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/CWE/items/CWE-23",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-36",
             "name": "Absolute Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/36.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as /abs/path that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/CWE/items/CWE-36",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-73",
             "name": "External Control of File Name or Path",
-            "url": "https://cwe.mitre.org/data/definitions/73.html",
-            "description": "The software allows user input to control or influence paths or file names that are used in filesystem operations."
+            "href": "AIP/quality-standards/CWE/items/CWE-73",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-22",
             "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-            "url": "https://cwe.mitre.org/data/definitions/22.html",
-            "description": "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-22",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-23",
             "name": "Relative Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/23.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-23",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-36",
             "name": "Absolute Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/36.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as /abs/path that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-36",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-22",
             "name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
-            "url": "https://cwe.mitre.org/data/definitions/22.html",
-            "description": "The software uses external input to construct a pathname that is intended to identify a file or directory that is located underneath a restricted parent directory, but the software does not properly neutralize special elements within the pathname that can cause the pathname to resolve to a location that is outside of the restricted directory."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-22",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-23",
             "name": "Relative Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/23.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize sequences such as .. that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-23",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-36",
             "name": "Absolute Path Traversal",
-            "url": "https://cwe.mitre.org/data/definitions/36.html",
-            "description": "The software uses external input to construct a pathname that should be within a restricted directory, but it does not properly neutralize absolute path sequences such as /abs/path that can resolve to a location that is outside of that directory."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-36",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A5-2017",
             "name": "Broken Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
-            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+            "href": "AIP/quality-standards/OWASP/items/A5-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A7-2013",
             "name": "Missing Function Level Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A7-Missing_Function_Level_Access_Control",
-            "description": "Most web applications verify function level access rights before making that functionality visible in the UI. However, applications need to perform the same access control checks on the server when each function is accessed. If requests are not verified, attackers will be able to forge requests in order to access functionality without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A7-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.8",
             "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.8",
             "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

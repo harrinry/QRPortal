@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -35,11 +30,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -48,26 +38,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062171,
             "name": "ASCRM-RLB-7 - Class Instance Self Destruction Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062171",
+            "weight": 5
         },
         {
             "id": 1061133,
             "name": "CWE-1082: Class Instance Self Destruction Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061133",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 8,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -79,32 +74,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-7",
             "name": "Class Instance Self Destruction Control Element",
-            "url": null,
-            "description": "Objective\nAvoid self-destruction capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a class element can execute a self-destruction control element to destroy itself (an example of a self-destruction control element in C++ is the 'delete this' control)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-7",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1082",
             "name": "Class Instance Self Destruction Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1082.html",
-            "description": "The code contains a class instance that calls the method or function to delete or destroy itself."
+            "href": "AIP/quality-standards/CWE/items/CWE-1082",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1082",
             "name": "Class Instance Self Destruction Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1082.html",
-            "description": "The code contains a class instance that calls the method or function to delete or destroy itself."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1082",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1082",
             "name": "Class Instance Self Destruction Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1082.html",
-            "description": "The code contains a class instance that calls the method or function to delete or destroy itself."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1082",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

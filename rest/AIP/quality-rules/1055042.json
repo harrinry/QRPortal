@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -34,20 +29,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1061070,
             "name": "CWE-611: Improper Restriction of XML External Entity Reference",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061070",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 8,
-            "critical": false
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -59,53 +59,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-611",
             "name": "Improper Restriction of XML External Entity Reference",
-            "url": "https://cwe.mitre.org/data/definitions/611.html",
-            "description": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
+            "href": "AIP/quality-standards/CWE/items/CWE-611",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-611",
             "name": "Improper Restriction of XML External Entity Reference",
-            "url": "https://cwe.mitre.org/data/definitions/611.html",
-            "description": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-611",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-611",
             "name": "Improper Restriction of XML External Entity Reference",
-            "url": "https://cwe.mitre.org/data/definitions/611.html",
-            "description": "The software processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the product to embed incorrect documents into its output."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-611",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70237",
             "name": "XML-based applications must mitigate DoS attacks by using XML filters, parser options, or gateways.",
-            "url": null,
-            "description": "DoS is a condition when a resource is not available for legitimate users. When this occurs, the organization either cannot accomplish its mission or must operate at degraded capacity.\n\nXML-based applications are susceptible to DoS attacks due to the nature of XML parsing being processor intensive and complicated.\n\nBest practice for parsing XML to avoid DoS include:\n\n- Using a proven XML parser\n- Using an XML gateway that provides DoS protection\n- Using parser options that provide limits on recursive payloads, oversized payloads, and entity expansion.\n\nThis requirement addresses the configuration of applications to mitigate the impact of DoS attacks that have occurred or are ongoing on application availability. For each application, known and potential DoS attacks must be identified and solutions for each type implemented. A variety of technologies exist to limit or, in some cases, eliminate the effects of DoS attacks (e.g., limiting processes or restricting the number of sessions the application opens at one time). Employing increased capacity and bandwidth, combined with service redundancy, may reduce the susceptibility to some DoS attacks."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70237",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70269",
             "name": "The application must not be vulnerable to XML-oriented attacks.",
-            "url": null,
-            "description": "Extensible Markup Language (XML) is widely employed in web technology and applications like web services (SOAP, REST, and WSDL) and is also used for configuration files. XML vulnerability examples include XML injection, XML Spoofing, XML-based Denial of Service attacks and information disclosure attacks.\n\nWhen utilizing XML, web applications must take steps to ensure they are addressing XML-related security issues. This is accomplished by choosing well-designed application components, building application code that follows security best practices and by patching application components when vulnerabilities are identified.\n\nXML firewalls or gateways may be employed to assist in protecting applications by controlling access to XML-based applications, filtering XML content, rate-limiting requests, and validating XML traffic."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70269",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

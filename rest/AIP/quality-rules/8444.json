@@ -21,19 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 1062300,
@@ -54,50 +44,55 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062191,
             "name": "ASCSM-CWE-79 - Cross-site Scripting Improper Input Neutralization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062191",
+            "weight": 5
         },
         {
             "id": 1062195,
             "name": "ASCSM-CWE-99 - Name or Reference Resolution Improper Input Neutralization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062195",
+            "weight": 5
         },
         {
             "id": 1061015,
             "name": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061015",
+            "weight": 5
         },
         {
             "id": 1061020,
             "name": "CWE-99: Improper Control of Resource Identifiers ('Resource Injection')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061020",
+            "weight": 5
         },
         {
             "id": 1062303,
             "name": "OWASP-2013-A3 Cross-Site Scripting (XSS)",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062303",
+            "weight": 5
         },
         {
             "id": 1062327,
             "name": "OWASP-2017-A7 Cross-Site Scripting (XSS)",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062327",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -119,123 +114,106 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-79",
             "name": "Cross-site Scripting Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use in output generation operations\n\nConsequence\nSoftware featuring weak output generation practices incurs the risk of arbitrary code execution, the risk of sensitive data being compromised, and many other nefarious consequences\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the user interface WritesUI action; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-79",
+            "standard": "CISQ"
         },
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-99",
             "name": "Name or Reference Resolution Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use as resource names or references\n\nConsequence\nSoftware unaware of resource identification control incurs the risk of unauthorized access to or modification of sensitive data and system resources, including configuration files and files containing sensitive information\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the platform action to access a resource by its name; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-99",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-79",
             "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
-            "url": "https://cwe.mitre.org/data/definitions/79.html",
-            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+            "href": "AIP/quality-standards/CWE/items/CWE-79",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/CWE/items/CWE-99",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-79",
             "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
-            "url": "https://cwe.mitre.org/data/definitions/79.html",
-            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-79",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-99",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-79",
             "name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
-            "url": "https://cwe.mitre.org/data/definitions/79.html",
-            "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-79",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-99",
             "name": "Improper Control of Resource Identifiers ('Resource Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/99.html",
-            "description": "The software receives input from an upstream component, but it does not restrict or incorrectly restricts the input before it is used as an identifier for a resource that may be outside the intended sphere of control."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-99",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2013",
             "name": "Cross-Site Scripting (XSS)",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A3-Cross-Site_Scripting_(XSS)",
-            "description": "XSS flaws occur whenever an application takes untrusted data and sends it to a web browser without proper validation or escaping. XSS allows attackers to execute scripts in the victims' browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+            "href": "AIP/quality-standards/OWASP/items/A3-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A7-2017",
             "name": "Cross-Site Scripting (XSS)",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A7-Cross-Site_Scripting_(XSS)",
-            "description": "XSS flaws occur whenever an application includes untrusted data in a new web page without proper validation or escaping, or updates an existing web page with user-supplied data using a browser API that can create HTML or JavaScript. XSS allows attackers to execute scripts in the victim's browser which can hijack user sessions, deface web sites, or redirect the user to malicious sites."
+            "href": "AIP/quality-standards/OWASP/items/A7-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.7",
             "name": "  Cross-site scripting (XSS)",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.7",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.7",
             "name": "  Cross-site scripting (XSS)",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.7",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70257",
             "name": "The application must protect from Cross-Site Scripting (XSS) vulnerabilities.",
-            "url": null,
-            "description": "XSS attacks are essentially code injection attacks against the various language interpreters contained within the browser. XSS can be executed via HTML, JavaScript, VBScript, ActiveX; essentially any scripting language a browser is capable of processing.\n\nXSS vulnerabilities are created when a website does not properly sanitize, escape, or encode user input. For example, \"&lt;\" is the HTML encoding for the \"<\" character. If the encoding is performed, the script code will not execute.\n\nThere are 3 parties involved in an XSS attack, the attacker, the trusted and vulnerable website, and the victim. An attacker will take advantage of a vulnerable website that does not properly validate user input by inserting malicious code into any data entry field.\n\nWhen the victim visits the trusted website and clicks on the malicious link left by the attacker, the attacker\u2019s script is executed in the victims browser with the trust permissions assigned to the site.\n\nThere are several different types of XSS attack and the complete details regarding XSS cannot be described completely here.\n\nTo address the issue of XSS, web application developers must escape, encode or otherwise validate all user input that is processed and output by the web server. They should also use web templates or a web development framework that provides the capability to encode or otherwise validate user input.\n\nExamples of XSS vulnerabilities can be obtained from the Open Web Application Security Project (OWASP) website.\n  \nThe site is available by pointing your browser to https://www.owasp.org."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70257",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70261",
             "name": "The application must protect from command injection.",
-            "url": null,
-            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70261",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

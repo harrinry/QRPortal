@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062102,
-            "name": "CISQ-Performance-Efficiency",
-            "href": "AIP/business-criteria/1062102"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -36,11 +31,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061002,
-            "name": "ISO-5055-Performance-Efficiency",
-            "href": "AIP/business-criteria/1061002"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -49,26 +39,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062131,
             "name": "ASCPEM-PRF-10 - Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062131",
+            "weight": 5
         },
         {
             "id": 1061127,
             "name": "CWE-1073: Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061127",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 6
         }
     ],
     "technologies": [
@@ -85,32 +80,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCPEM-PRF-10",
             "name": "Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
-            "url": null,
-            "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by the existence of software elements requiring too many data access outside of the data manager.\n\nConsequence\nSoftware that does not leverage database capabilities to efficiently run data processing (such as stored procedures and functions) requires excessive computational resources\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCPEM-PRF-10",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1073",
             "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "url": "https://cwe.mitre.org/data/definitions/1073.html",
-            "description": "The software contains a client with a function or method that contains a large number of data accesses/queries that are sent through a data manager, i.e., does not use efficient database capabilities."
+            "href": "AIP/quality-standards/CWE/items/CWE-1073",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1073",
             "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "url": "https://cwe.mitre.org/data/definitions/1073.html",
-            "description": "The software contains a client with a function or method that contains a large number of data accesses/queries that are sent through a data manager, i.e., does not use efficient database capabilities."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1073",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1073",
             "name": "Non-SQL Invokable Control Element with Excessive Number of Data Resource Accesses",
-            "url": "https://cwe.mitre.org/data/definitions/1073.html",
-            "description": "The software contains a client with a function or method that contains a large number of data accesses/queries that are sent through a data manager, i.e., does not use efficient database capabilities."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1073",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

@@ -23,14 +23,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -42,32 +47,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "M4-2016",
             "name": "Insecure Authentication",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
-            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+            "href": "AIP/quality-standards/OWASP/items/M4-2016",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

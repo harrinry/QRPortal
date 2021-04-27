@@ -18,11 +18,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -31,11 +26,6 @@
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -48,6 +38,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -57,20 +52,20 @@
         {
             "id": 1062118,
             "name": "ASCMM-MNT-17 - Class Element Excessive Inheritance Level",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062118",
+            "weight": 5
         },
         {
             "id": 1061128,
             "name": "CWE-1074: Class with Excessively Deep Inheritance",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061128",
+            "weight": 5
         },
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/61010",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -87,32 +82,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-17",
             "name": "Class Element Excessive Inheritance Level",
-            "url": null,
-            "description": "Objective\nAvoid overly complex object-oriented inheritance capabilities when dealing with the number of levels of inheritance of classes\n\nConsequence\nSoftware that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code\n\nMeasure Element\nNumber of instances where the inheritance level of a class element (that is, the number of parent class units) exceeds a threshold value. The default threshold value for number of inheritance levels is 7\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-17",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1074",
             "name": "Class with Excessively Deep Inheritance",
-            "url": "https://cwe.mitre.org/data/definitions/1074.html",
-            "description": "A class has an inheritance level that is too high, i.e., it has a large number of parent classes."
+            "href": "AIP/quality-standards/CWE/items/CWE-1074",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1074",
             "name": "Class with Excessively Deep Inheritance",
-            "url": "https://cwe.mitre.org/data/definitions/1074.html",
-            "description": "A class has an inheritance level that is too high, i.e., it has a large number of parent classes."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1074",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1074",
             "name": "Class with Excessively Deep Inheritance",
-            "url": "https://cwe.mitre.org/data/definitions/1074.html",
-            "description": "A class has an inheritance level that is too high, i.e., it has a large number of parent classes."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1074",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

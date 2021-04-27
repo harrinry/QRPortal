@@ -21,34 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061002,
-            "name": "ISO-5055-Performance-Efficiency",
-            "href": "AIP/business-criteria/1061002"
-        },
-        {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -59,32 +34,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062153,
             "name": "ASCRM-CWE-772 - Missing Release of Resource after Effective Lifetime",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062153",
+            "weight": 5
         },
         {
             "id": 1062188,
             "name": "ASCSM-CWE-772 - Missing Release of Resource after Effective Lifetime",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062188",
+            "weight": 5
         },
         {
             "id": 1061085,
             "name": "CWE-772: Missing Release of Resource after Effective Lifetime",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061085",
+            "weight": 5
         },
         {
             "id": 66063,
             "name": "Secure Coding - API Abuse",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/66063",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -96,39 +76,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": null,
-            "description": "Objective\nAvoid resource hoarding and consequently resource depletion\n\nConsequence\nSoftware that is unaware of resource bounds or fails to monitor resources incurs the risk of exceeding resource and capacity limits\n\nMeasure Element\nNumber of instances where a platform resource is allocated and assigned a unique resource handler value via a manage resource action, and its unique resource handler value is used throughout the application along a transformation sequence composed of action elements with data relations, some of which are part of named callable and method control elements, but none of which is a resource release statement\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-CWE-772",
+            "standard": "CISQ"
         },
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": null,
-            "description": "Objective\nAvoid resource hoarding and consequently resource depletion\n\nConsequence\nSoftware unaware of resource lifecycle incurs the risk of preventing all other processes from accessing the same type of resource\n\nMeasure Element\nNumber of instances where a platform resource is allocated and assigned a unique resource handler value via a manage resource action, and its unique resource handler value is used throughout the application along a transformation sequence composed of action elements with data relations, some of which are part of named callable and method control elements, but none of which is a resource release statement\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-772",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": "https://cwe.mitre.org/data/definitions/772.html",
-            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
+            "href": "AIP/quality-standards/CWE/items/CWE-772",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": "https://cwe.mitre.org/data/definitions/772.html",
-            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-772",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-772",
             "name": "Missing Release of Resource after Effective Lifetime",
-            "url": "https://cwe.mitre.org/data/definitions/772.html",
-            "description": "The software does not release a resource after its effective lifetime has ended, i.e., after the resource is no longer needed."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-772",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

@@ -19,11 +19,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -34,11 +29,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -47,26 +37,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062170,
             "name": "ASCRM-RLB-6 - Storable or Member Data Element containing Pointer Item Element without Proper Copy Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062170",
+            "weight": 5
         },
         {
             "id": 1061148,
             "name": "CWE-1098: Data Element containing Pointer Item without Proper Copy Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061148",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -78,32 +73,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-6",
             "name": "Storable or Member Data Element containing Pointer Item Element without Proper Copy Control Element",
-            "url": null,
-            "description": "Objective\nAvoid improper copy capabilities when handling data pointers\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a storable data element or member data element contains a pointer data element but no dedicated copy operation or copy constructor element\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-6",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1098",
             "name": "Data Element containing Pointer Item without Proper Copy Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1098.html",
-            "description": "The code contains a data element with a pointer that does not have an associated copy or constructor method."
+            "href": "AIP/quality-standards/CWE/items/CWE-1098",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1098",
             "name": "Data Element containing Pointer Item without Proper Copy Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1098.html",
-            "description": "The code contains a data element with a pointer that does not have an associated copy or constructor method."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1098",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1098",
             "name": "Data Element containing Pointer Item without Proper Copy Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1098.html",
-            "description": "The code contains a data element with a pointer that does not have an associated copy or constructor method."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1098",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

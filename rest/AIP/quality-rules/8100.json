@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -41,16 +36,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -59,32 +44,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062165,
             "name": "ASCRM-RLB-19 - Synchronous Call Time-Out Absence",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062165",
+            "weight": 5
         },
         {
             "id": 1061139,
             "name": "CWE-1088: Synchronous Access of Remote Resource without Timeout",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061139",
+            "weight": 5
         },
         {
             "id": 1061096,
             "name": "CWE-821: Incorrect Synchronization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061096",
+            "weight": 5
         },
         {
             "id": 61018,
             "name": "Efficiency - Memory, Network and Disk Space Management",
-            "weight": 9,
-            "critical": false
+            "href": "AIP/technical-criteria/61018",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -96,53 +86,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-19",
             "name": "Synchronous Call Time-Out Absence",
-            "url": null,
-            "description": "Objective\nAvoid synchronous remote resource access without handling time-out capabilities\n\nConsequence\nSoftware featuring blocking calls to remote systems incurs the risk of own failure when the remote systems fails to process the call correctly.\n\nMeasure Element\nNumber of instances where a synchronous call instruction is initiated but the time-out argument is not set or is set to infinite time\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-19",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-821",
             "name": "Incorrect Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/821.html",
-            "description": "The software utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource."
+            "href": "AIP/quality-standards/CWE/items/CWE-821",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1088",
             "name": "Synchronous Access of Remote Resource without Timeout",
-            "url": "https://cwe.mitre.org/data/definitions/1088.html",
-            "description": "The code has a synchronous call to a remote resource, but there is no timeout for the call, or the timeout is set to infinite."
+            "href": "AIP/quality-standards/CWE/items/CWE-1088",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-821",
             "name": "Incorrect Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/821.html",
-            "description": "The software utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-821",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1088",
             "name": "Synchronous Access of Remote Resource without Timeout",
-            "url": "https://cwe.mitre.org/data/definitions/1088.html",
-            "description": "The code has a synchronous call to a remote resource, but there is no timeout for the call, or the timeout is set to infinite."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1088",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-821",
             "name": "Incorrect Synchronization",
-            "url": "https://cwe.mitre.org/data/definitions/821.html",
-            "description": "The software utilizes a shared resource in a concurrent manner, but it does not correctly synchronize access to the resource."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-821",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1088",
             "name": "Synchronous Access of Remote Resource without Timeout",
-            "url": "https://cwe.mitre.org/data/definitions/1088.html",
-            "description": "The code has a synchronous call to a remote resource, but there is no timeout for the call, or the timeout is set to infinite."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1088",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

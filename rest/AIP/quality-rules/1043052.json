@@ -34,26 +34,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062302,
             "name": "OWASP-2013-A2 Broken Authentication and Session Management",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062302",
+            "weight": 5
         },
         {
             "id": 1062322,
             "name": "OWASP-2017-A2 Broken Authentication",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062322",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/66062",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -70,53 +75,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-863",
             "name": "Incorrect Authorization",
-            "url": "https://cwe.mitre.org/data/definitions/863.html",
-            "description": "The software performs an authorization check when an actor attempts to access a resource or perform an action, but it does not correctly perform the check. This allows attackers to bypass intended access restrictions."
+            "href": "AIP/quality-standards/CWE/items/CWE-863",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-3",
             "name": "Access Enforcement",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-3",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken Authentication and Session Management",
-            "description": "Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities."
+            "href": "AIP/quality-standards/OWASP/items/A2-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
-            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
+            "href": "AIP/quality-standards/OWASP/items/A2-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

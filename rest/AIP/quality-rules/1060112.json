@@ -21,14 +21,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66063,
             "name": "Secure Coding - API Abuse",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/66063",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -40,11 +45,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
             "id": "API9-2019",
             "name": "Improper Assets Management",
-            "url": null,
-            "description": "APIs tend to expose more endpoints than traditional web applications, making proper and updated documentation highly important. Proper hosts and deployed API versions inventory also play an important role to mitigate issues such as deprecated API versions and exposed debug endpoints."
+            "href": "AIP/quality-standards/OWASP/items/API9-2019",
+            "standard": "OWASP"
         }
     ],
     "parameters": [

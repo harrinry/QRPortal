@@ -21,19 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 66031,
@@ -44,32 +34,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062189,
             "name": "ASCSM-CWE-78 - OS Command Injection Improper Input Neutralization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062189",
+            "weight": 5
         },
         {
             "id": 1061014,
             "name": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061014",
+            "weight": 5
         },
         {
             "id": 1061016,
             "name": "CWE-88: Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061016",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -91,88 +86,76 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-78",
             "name": "OS Command Injection Improper Input Neutralization",
-            "url": null,
-            "description": "Objective\nAvoid failure to sanitize user input in use as operating system commands\n\nConsequence\nSoftware unaware of OS command control incurs the risk of unauthorized command execution, possibly used to disable the software, or possibly leading to unauthorized read and modify data access\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the in the platform action to be executed by the execution environment; none of the callable or method control element of the transformation sequence being a vetted sanitization control element from the list of vetted sanitization control elements.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-78",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-78",
             "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/78.html",
-            "description": "The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/CWE/items/CWE-78",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-88",
             "name": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/88.html",
-            "description": "The software constructs a string for a command to executed by a separate component in another control sphere, but it does not properly delimit the intended arguments, options, or switches within that command string."
+            "href": "AIP/quality-standards/CWE/items/CWE-88",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-383",
             "name": "J2EE Bad Practices: Direct Use of Threads",
-            "url": "https://cwe.mitre.org/data/definitions/383.html",
-            "description": "Thread management in a Web application is forbidden in some circumstances and is always highly error prone."
+            "href": "AIP/quality-standards/CWE/items/CWE-383",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-78",
             "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/78.html",
-            "description": "The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-78",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-88",
             "name": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/88.html",
-            "description": "The software constructs a string for a command to executed by a separate component in another control sphere, but it does not properly delimit the intended arguments, options, or switches within that command string."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-88",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-78",
             "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/78.html",
-            "description": "The software constructs all or part of an OS command using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the intended OS command when it is sent to a downstream component."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-78",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-88",
             "name": "Improper Neutralization of Argument Delimiters in a Command ('Argument Injection')",
-            "url": "https://cwe.mitre.org/data/definitions/88.html",
-            "description": "The software constructs a string for a command to executed by a separate component in another control sphere, but it does not properly delimit the intended arguments, options, or switches within that command string."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-88",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "API8-2019",
             "name": "Injection",
-            "url": null,
-            "description": "Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70261",
             "name": "The application must protect from command injection.",
-            "url": null,
-            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70261",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

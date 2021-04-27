@@ -29,20 +29,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062310,
             "name": "OWASP-2013-A10 Unvalidated Redirects and Forwards",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062310",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -64,39 +69,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-601",
             "name": "URL Redirection to Untrusted Site ('Open Redirect')",
-            "url": "https://cwe.mitre.org/data/definitions/601.html",
-            "description": "A web application accepts a user-controlled input that specifies a link to an external site, and uses that link in a Redirect. This simplifies phishing attacks."
+            "href": "AIP/quality-standards/CWE/items/CWE-601",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A10-2013",
             "name": "Unvalidated Redirects and Forwards",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A10-Unvalidated_Redirects_and_Forwards",
-            "description": "Web applications frequently redirect and forward users to other pages and websites, and use untrusted data to determine the destination pages. Without proper validation, attackers can redirect victims to phishing or malware sites, or use forwards to access unauthorized pages."
+            "href": "AIP/quality-standards/OWASP/items/A10-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

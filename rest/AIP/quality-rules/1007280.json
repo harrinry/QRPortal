@@ -32,26 +32,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062306,
             "name": "OWASP-2013-A6 Sensitive Data Exposure",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062306",
+            "weight": 5
         },
         {
             "id": 1062323,
             "name": "OWASP-2017-A3 Sensitive Data Exposure",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062323",
+            "weight": 5
         },
         {
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/66064",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -63,46 +68,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-214",
             "name": "Invocation of Process Using Visible Sensitive Information",
-            "url": "https://cwe.mitre.org/data/definitions/214.html",
-            "description": "A process is invoked with sensitive command-line arguments, environment variables, or other elements that can be seen by other processes on the operating system."
+            "href": "AIP/quality-standards/CWE/items/CWE-214",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-22",
             "name": "Publicly Accessible Content",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-22",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-22",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-15",
             "name": "Information Output Filtering",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-15",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-15",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-69329",
             "name": "The application must enforce approved authorizations for logical access to information and system resources in accordance with applicable access control policies.",
-            "url": null,
-            "description": "To mitigate the risk of unauthorized access to sensitive information by entities that have been issued certificates by DoD-approved PKIs, all DoD systems (e.g., networks, web servers, and web portals) must be properly configured to incorporate access control methods that do not rely solely on the possession of a certificate for access. \n\nSuccessful authentication must not automatically give an entity access to a restricted asset or security boundary.\n\nAuthorization procedures and controls must be implemented to ensure each authenticated entity also has a validated and current authorization.\n\nAuthorization is the process of determining whether an entity, once authenticated, is permitted to access a specific asset.\n\nInformation systems use access control policies and enforcement mechanisms to implement this requirement.\n\nAccess control policies include identity-based policies, role-based policies, and attribute-based policies.\n\nAccess enforcement mechanisms include access control lists, access control matrices, and cryptography.\n\nThese policies and mechanisms must be employed by the application to control access between users (or processes acting on behalf of users) and objects (e.g., devices, files, records, processes, programs, and domains) in the information system.\n\nThis requirement is applicable to access control enforcement applications (e.g., authentication servers) and other applications that perform information and system access control functions."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69329",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

@@ -19,11 +19,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -37,20 +32,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062111,
             "name": "ASCMM-MNT-10 - Named Callable and Method Control Element Multi-Layer Span",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062111",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 3,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 3
         }
     ],
     "technologies": [
@@ -62,11 +62,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-10",
             "name": "Named Callable and Method Control Element Multi-Layer Span",
-            "url": null,
-            "description": "Objective\nAvoid unclear allocation of software elements to a single architectural layer\n\nConsequence\nSoftware that does not follow the principles of layered architectures (such as strict partitioning and strict call hierarchy) decreases comprehensibility as well as simplicity to evolve the code\n\nMeasure Element\nNumber of instances where a callable or method control element is part of two architectural layers\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-10",
+            "standard": "CISQ"
         }
     ],
     "parameters": [

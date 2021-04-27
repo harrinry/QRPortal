@@ -17,11 +17,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -40,20 +35,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062155,
             "name": "ASCRM-RLB-1 - Empty Exception Block",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062155",
+            "weight": 5
         },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/61014",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -65,46 +65,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-1",
             "name": "Empty Exception Block",
-            "url": null,
-            "description": "Objective\nAvoid improper responses to unusual and unexpected situations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where an exception handling block (such as Catch and Finally blocks) of the named callable and method control elements does not contain any other control element\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-1",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1069",
             "name": "Empty Exception Block",
-            "url": "https://cwe.mitre.org/data/definitions/1069.html",
-            "description": "An invokable code block contains an exception handling block that does not contain any code, i.e. is empty."
+            "href": "AIP/quality-standards/CWE/items/CWE-1069",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-11",
             "name": "Error Handling",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-11",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.5",
             "name": "Improper error handling",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.5",
             "name": "Improper error handling",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70391",
             "name": "The application must not be subject to error handling vulnerabilities.",
-            "url": null,
-            "description": "Error handling is the failure to check the return values of functions or catch top level exceptions within a program. Improper error handling in an application can lead to an application failure or possibly result in the application entering an insecure state. \n\nThe primary way to detect error handling vulnerabilities is to perform code reviews. If a manual code review cannot be performed, static code analysis tools should be employed in conjunction with tests to help force the error conditions by specifying invalid input (such as fuzzed data and malformed filenames) and by using different accounts to run the application. These tests may give indications of vulnerability, but they are not comprehensive.\n\nIn order to minimize error handling errors, ensure proper return code and exception handling is implemented throughout the application."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70391",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -35,11 +30,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -48,32 +38,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062117,
             "name": "ASCMM-MNT-16 - Method Control Element Usage of Member Element from other Class Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062117",
+            "weight": 5
         },
         {
             "id": 1061141,
             "name": "CWE-1090: Method Containing Access of a Member Element from Another Class",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061141",
+            "weight": 5
         },
         {
             "id": 61020,
             "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/61020",
+            "weight": 9
         },
         {
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/66066",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -85,32 +80,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-16",
             "name": "Method Control Element Usage of Member Element from other Class Element",
-            "url": null,
-            "description": "Objective\nAvoid direct access to data elements of another entity\n\nConsequence\nSoftware that does not follow the principles of data encapsulation incurs the risk of data corruption\n\nMeasure Element\nNumber of instances where a method control element from a class element accesses a member element from another class element\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-16",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1090",
             "name": "Method Containing Access of a Member Element from Another Class",
-            "url": "https://cwe.mitre.org/data/definitions/1090.html",
-            "description": "A method for a class performs an operation that directly accesses a member element from another class."
+            "href": "AIP/quality-standards/CWE/items/CWE-1090",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1090",
             "name": "Method Containing Access of a Member Element from Another Class",
-            "url": "https://cwe.mitre.org/data/definitions/1090.html",
-            "description": "A method for a class performs an operation that directly accesses a member element from another class."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1090",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1090",
             "name": "Method Containing Access of a Member Element from Another Class",
-            "url": "https://cwe.mitre.org/data/definitions/1090.html",
-            "description": "A method for a class performs an operation that directly accesses a member element from another class."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1090",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

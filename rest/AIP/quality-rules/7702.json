@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062102,
-            "name": "CISQ-Performance-Efficiency",
-            "href": "AIP/business-criteria/1062102"
-        },
-        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -40,34 +35,34 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061002,
-            "name": "ISO-5055-Performance-Efficiency",
-            "href": "AIP/business-criteria/1061002"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062134,
             "name": "ASCPEM-PRF-13 - Data Resource Access not using Connection Pooling capability",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062134",
+            "weight": 5
         },
         {
             "id": 1061126,
             "name": "CWE-1072: Data Resource Access without Use of Connection Pooling",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061126",
+            "weight": 5
         },
         {
             "id": 61019,
             "name": "Efficiency - SQL and Data Handling Performance",
-            "weight": 8,
-            "critical": false
+            "href": "AIP/technical-criteria/61019",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -79,39 +74,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCPEM-PRF-13",
             "name": "Data Resource Access not using Connection Pooling capability",
-            "url": null,
-            "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by enforcing the sharing of database connections via a connection pool.\n\nConsequence\nSoftware featuring known under-efficient coding practices requires excessive computational resources\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCPEM-PRF-13",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-405",
             "name": "Asymmetric Resource Consumption (Amplification)",
-            "url": "https://cwe.mitre.org/data/definitions/405.html",
-            "description": "Software that does not appropriately monitor or control resource consumption can lead to adverse system performance."
+            "href": "AIP/quality-standards/CWE/items/CWE-405",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1072",
             "name": "Data Resource Access without Use of Connection Pooling",
-            "url": "https://cwe.mitre.org/data/definitions/1072.html",
-            "description": "The software accesses a data resource through a database without using a connection pooling capability."
+            "href": "AIP/quality-standards/CWE/items/CWE-1072",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1072",
             "name": "Data Resource Access without Use of Connection Pooling",
-            "url": "https://cwe.mitre.org/data/definitions/1072.html",
-            "description": "The software accesses a data resource through a database without using a connection pooling capability."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1072",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1072",
             "name": "Data Resource Access without Use of Connection Pooling",
-            "url": "https://cwe.mitre.org/data/definitions/1072.html",
-            "description": "The software accesses a data resource through a database without using a connection pooling capability."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1072",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

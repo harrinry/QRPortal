@@ -25,11 +25,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -38,20 +33,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1061068,
             "name": "CWE-597: Use of Wrong Operator in String Comparison",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061068",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 8,
-            "critical": true
+            "href": "AIP/technical-criteria/66069",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -63,25 +63,22 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-597",
             "name": "Use of Wrong Operator in String Comparison",
-            "url": "https://cwe.mitre.org/data/definitions/597.html",
-            "description": "The product uses the wrong operator when comparing a string, such as using == when the equals() method should be used instead."
+            "href": "AIP/quality-standards/CWE/items/CWE-597",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-597",
             "name": "Use of Wrong Operator in String Comparison",
-            "url": "https://cwe.mitre.org/data/definitions/597.html",
-            "description": "The product uses the wrong operator when comparing a string, such as using == when the equals() method should be used instead."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-597",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-597",
             "name": "Use of Wrong Operator in String Comparison",
-            "url": "https://cwe.mitre.org/data/definitions/597.html",
-            "description": "The product uses the wrong operator when comparing a string, such as using == when the equals() method should be used instead."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-597",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

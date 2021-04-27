@@ -24,14 +24,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 8,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -43,18 +48,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-303",
             "name": "Incorrect Implementation of Authentication Algorithm",
-            "url": "https://cwe.mitre.org/data/definitions/303.html",
-            "description": "The requirements for the software dictate the use of an established authentication algorithm, but the implementation of the algorithm is incorrect."
+            "href": "AIP/quality-standards/CWE/items/CWE-303",
+            "standard": "CWE"
         },
         {
-            "standard": "OWASP",
             "id": "M1-2016",
             "name": "Improper Platform Usage",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
-            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+            "href": "AIP/quality-standards/OWASP/items/M1-2016",
+            "standard": "OWASP"
         }
     ],
     "parameters": [

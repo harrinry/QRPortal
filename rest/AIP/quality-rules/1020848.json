@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -34,11 +29,6 @@
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -51,6 +41,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -60,20 +55,20 @@
         {
             "id": 1062160,
             "name": "ASCRM-RLB-14 - Parent Class Element with References to Child Class Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062160",
+            "weight": 5
         },
         {
             "id": 1061121,
             "name": "CWE-1062: Parent Class with References to Child Class",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061121",
+            "weight": 5
         },
         {
             "id": 61024,
             "name": "Programming Practices - Structuredness",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/61024",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -85,32 +80,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-14",
             "name": "Parent Class Element with References to Child Class Element",
-            "url": null,
-            "description": "Objective\nAvoid parent class references to child class(es)\n\nConsequence\nSoftware that does not follow the principles of inheritance and polymorphism results in unexpected behaviors\n\nMeasure Element\nNumber of instances where a parent class element that is used in the 'to' association of an Extends class relation, references the child class element used in the 'from' association of an Extends class relation, directly or indirectly through a parent and child class element, using a callable or data relation (the reference statement is made directly to the child class element or to any one of its own method or member elements)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-14",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1062",
             "name": "Parent Class with References to Child Class",
-            "url": "https://cwe.mitre.org/data/definitions/1062.html",
-            "description": "The code has a parent class that contains references to a child class, its methods, or its members."
+            "href": "AIP/quality-standards/CWE/items/CWE-1062",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1062",
             "name": "Parent Class with References to Child Class",
-            "url": "https://cwe.mitre.org/data/definitions/1062.html",
-            "description": "The code has a parent class that contains references to a child class, its methods, or its members."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1062",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1062",
             "name": "Parent Class with References to Child Class",
-            "url": "https://cwe.mitre.org/data/definitions/1062.html",
-            "description": "The code has a parent class that contains references to a child class, its methods, or its members."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1062",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

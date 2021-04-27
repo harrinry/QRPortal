@@ -29,14 +29,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66069",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -48,39 +53,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-306",
             "name": "Missing Authentication for Critical Function",
-            "url": "https://cwe.mitre.org/data/definitions/306.html",
-            "description": "The software does not perform any authentication for functionality that requires a provable user identity or consumes a significant amount of resources."
+            "href": "AIP/quality-standards/CWE/items/CWE-306",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "M1-2016",
             "name": "Improper Platform Usage",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M1-Improper_Platform_Usage",
-            "description": "In order for this vulnerability to be exploited, the organization must expose a web service or API call that is consumed by the mobile app. The exposed service or API call is implemented using insecure coding techniques that produce an OWASP Top Ten vulnerability within the server. Through the mobile interface, an adversary is able to feed malicious inputs or unexpected sequences of events to the vulnerable endpoint. Hence, the adversary realizes the original OWASP Top Ten vulnerability on the server."
+            "href": "AIP/quality-standards/OWASP/items/M1-2016",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

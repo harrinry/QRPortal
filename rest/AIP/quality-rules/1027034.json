@@ -34,14 +34,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/61014",
+            "weight": 6
         }
     ],
     "technologies": [
@@ -58,11 +63,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-395",
             "name": "Use of NullPointerException Catch to Detect NULL Pointer Dereference",
-            "url": "https://cwe.mitre.org/data/definitions/395.html",
-            "description": "Catching NullPointerException should not be used as an alternative to programmatic checks to prevent dereferencing a null pointer."
+            "href": "AIP/quality-standards/CWE/items/CWE-395",
+            "standard": "CWE"
         }
     ],
     "parameters": [

@@ -25,11 +25,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -43,20 +38,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1061087,
             "name": "CWE-778: Insufficient Logging",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061087",
+            "weight": 5
         },
         {
             "id": 61014,
             "name": "Programming Practices - Error and Exception Handling",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/61014",
+            "weight": 6
         }
     ],
     "technologies": [
@@ -68,32 +68,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-778",
             "name": "Insufficient Logging",
-            "url": "https://cwe.mitre.org/data/definitions/778.html",
-            "description": "When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it."
+            "href": "AIP/quality-standards/CWE/items/CWE-778",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-778",
             "name": "Insufficient Logging",
-            "url": "https://cwe.mitre.org/data/definitions/778.html",
-            "description": "When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-778",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AU-12",
-            "name": null,
-            "url": null,
-            "description": null
+            "name": "Audit Generation",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AU-12",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-778",
             "name": "Insufficient Logging",
-            "url": "https://cwe.mitre.org/data/definitions/778.html",
-            "description": "When a security-critical event occurs, the software either does not record the event or omits important details about the event when logging it."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-778",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

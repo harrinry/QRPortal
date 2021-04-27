@@ -19,19 +19,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -44,6 +34,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -53,20 +48,20 @@
         {
             "id": 1062114,
             "name": "ASCMM-MNT-13 - Callable and Method Control Element Excessive Number of Parameters",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062114",
+            "weight": 5
         },
         {
             "id": 1061122,
             "name": "CWE-1064: Invokable Control Element with Signature Containing an Excessive Number of Parameters",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061122",
+            "weight": 5
         },
         {
             "id": 61003,
             "name": "Programming Practices - OO Inheritance and Polymorphism",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/61003",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -78,32 +73,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-13",
             "name": "Callable and Method Control Element Excessive Number of Parameters",
-            "url": null,
-            "description": "Objective\nAvoid over-parameterization\n\nConsequence\nSoftware that does not cap the number of parameters degrades comprehensibility\n\nMeasure Element\nNumber of instances where a named callable control element or method control element has a number of parameters in its signature that exceeds a threshold value. Default threshold value for the number of parameters is 7.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-13",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1064",
             "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
-            "url": "https://cwe.mitre.org/data/definitions/1064.html",
-            "description": "The software contains a function, subroutine, or method whose signature has an unnecessarily large number of parameters/arguments."
+            "href": "AIP/quality-standards/CWE/items/CWE-1064",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1064",
             "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
-            "url": "https://cwe.mitre.org/data/definitions/1064.html",
-            "description": "The software contains a function, subroutine, or method whose signature has an unnecessarily large number of parameters/arguments."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1064",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1064",
             "name": "Invokable Control Element with Signature Containing an Excessive Number of Parameters",
-            "url": "https://cwe.mitre.org/data/definitions/1064.html",
-            "description": "The software contains a function, subroutine, or method whose signature has an unnecessarily large number of parameters/arguments."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1064",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

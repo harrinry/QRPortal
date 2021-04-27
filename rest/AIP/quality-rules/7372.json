@@ -23,14 +23,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -42,18 +47,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-106",
             "name": "Struts: Plug-in Framework not in Use",
-            "url": "https://cwe.mitre.org/data/definitions/106.html",
-            "description": "When an application does not use an input validation framework such as the Struts Validator, there is a greater risk of introducing weaknesses related to insufficient input validation."
+            "href": "AIP/quality-standards/CWE/items/CWE-106",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1173",
             "name": "Improper Use of Validation Framework",
-            "url": "https://cwe.mitre.org/data/definitions/1173.html",
-            "description": "The application does not use, or incorrectly uses, an input validation framework that is provided by the source language or an independent library."
+            "href": "AIP/quality-standards/CWE/items/CWE-1173",
+            "standard": "CWE"
         }
     ],
     "parameters": [

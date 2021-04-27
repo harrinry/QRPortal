@@ -24,11 +24,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -37,20 +32,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1061083,
             "name": "CWE-758: Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061083",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -62,46 +62,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "C-CPP",
             "id": "AUTOSAR-CPP-2014-Libraries",
             "name": "Libraries",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/AUTOSAR-CPP-2014-Libraries",
+            "standard": "C-CPP"
         },
         {
-            "standard": "C-CPP",
             "id": "MISRA-C-2012-Libraries",
             "name": "Libraries",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/MISRA-C-2012-Libraries",
+            "standard": "C-CPP"
         },
         {
-            "standard": "C-CPP",
             "id": "MISRA-CPP-2008-Libraries",
             "name": "Libraries",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/MISRA-CPP-2008-Libraries",
+            "standard": "C-CPP"
         },
         {
-            "standard": "CWE",
             "id": "CWE-758",
             "name": "Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
-            "url": "https://cwe.mitre.org/data/definitions/758.html",
-            "description": "The software uses an API function, data structure, or other entity in a way that relies on properties that are not always guaranteed to hold for that entity."
+            "href": "AIP/quality-standards/CWE/items/CWE-758",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-758",
             "name": "Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
-            "url": "https://cwe.mitre.org/data/definitions/758.html",
-            "description": "The software uses an API function, data structure, or other entity in a way that relies on properties that are not always guaranteed to hold for that entity."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-758",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-758",
             "name": "Reliance on Undefined, Unspecified, or Implementation-Defined Behavior",
-            "url": "https://cwe.mitre.org/data/definitions/758.html",
-            "description": "The software uses an API function, data structure, or other entity in a way that relies on properties that are not always guaranteed to hold for that entity."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-758",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

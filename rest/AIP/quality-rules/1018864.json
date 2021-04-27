@@ -17,19 +17,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
         },
         {
             "id": 1062320,
@@ -45,32 +35,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062192,
             "name": "ASCSM-CWE-798 - Hard-Coded Credentials Usage for Remote Authentication",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062192",
+            "weight": 5
         },
         {
             "id": 1061036,
             "name": "CWE-259: Use of Hard-coded Password",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061036",
+            "weight": 5
         },
         {
             "id": 1062326,
             "name": "OWASP-2017-A6 Security Misconfiguration",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062326",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 8,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -82,81 +77,70 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-798",
             "name": "Hard-Coded Credentials Usage for Remote Authentication",
-            "url": null,
-            "description": "Objective\nAvoid the existence of hard-coded credentials elements\n\nConsequence\nSoftware featuring weak authentication practices incurs the risk of exposing resources and functionality to unintended actors, possibly leading to compromised sensitive information and even the execution of arbitrary code\n\nMeasure Element\nNumber of instances where a storable data element or member data element is initialized by a \u2018Write\u2019 action, transported throughout the application along the transport sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the remote resource management action ; the transport sequence is composed of assignment operations as updates to the value would not be considered as hard-coded (literal) any more.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-798",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": "https://cwe.mitre.org/data/definitions/259.html",
-            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
+            "href": "AIP/quality-standards/CWE/items/CWE-259",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": "https://cwe.mitre.org/data/definitions/259.html",
-            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-259",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-259",
             "name": "Use of Hard-coded Password",
-            "url": "https://cwe.mitre.org/data/definitions/259.html",
-            "description": "The software contains a hard-coded password, which it uses for its own inbound authentication or for outbound communication to external components."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-259",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2017",
             "name": "Security Misconfiguration",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration",
-            "description": "Security misconfiguration is the most commonly seen issue. This is commonly a result of insecure default configurations, incomplete or ad hoc configurations, open cloud storage, misconfigured HTTP headers, and verbose error messages containing sensitive information. Not only must all operating systems, frameworks, libraries, and applications be securely configured, but they must be patched/upgraded in a timely fashion."
+            "href": "AIP/quality-standards/OWASP/items/A6-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "API7-2019",
             "name": "Security Misconfiguration",
-            "url": null,
-            "description": "Security misconfiguration is commonly a result of unsecure default configurations, incomplete or ad-hoc configurations, open cloud storage, misconfigured HTTP headers, unnecessary HTTP methods, permissive Cross-Origin resource sharing (CORS), and verbose error messages containing sensitive information."
+            "href": "AIP/quality-standards/OWASP/items/API7-2019",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-2.2.4",
             "name": "Configure system security parameters to prevent misuse.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-2.2.4",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.3.1",
             "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.3.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-2.2.4",
             "name": "Configure system security parameters to prevent misuse.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-2.2.4",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.3.1",
             "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.3.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70363",
             "name": "The application must not contain embedded authentication data.",
-            "url": null,
-            "description": "Authentication data stored in code could potentially be read and used by anonymous users to gain access to a backend database or application servers. This could lead to compromise of application data."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70363",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

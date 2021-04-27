@@ -21,24 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 66031,
@@ -51,6 +36,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -60,20 +50,20 @@
         {
             "id": 1062162,
             "name": "ASCRM-RLB-16 - Parent Class Element without Virtual Destructor Method Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062162",
+            "weight": 5
         },
         {
             "id": 1061131,
             "name": "CWE-1079: Parent Class without Virtual Destructor Method",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061131",
+            "weight": 5
         },
         {
             "id": 61003,
             "name": "Programming Practices - OO Inheritance and Polymorphism",
-            "weight": 8,
-            "critical": false
+            "href": "AIP/technical-criteria/61003",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -85,32 +75,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-16",
             "name": "Parent Class Element without Virtual Destructor Method Element",
-            "url": null,
-            "description": "Objective\nAvoid failing to include a virtual destructor in a parent class\n\nConsequence\nSoftware that does not follow the principles of inheritance and polymorphism results in unexpected behaviors\n\nMeasure Element\nNumber of instances where, for languages in which custom destructors can be written, the parent class of a child class element via an Extends class relation has no virtual destructor\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-16",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1079",
             "name": "Parent Class without Virtual Destructor Method",
-            "url": "https://cwe.mitre.org/data/definitions/1079.html",
-            "description": "A parent class contains one or more child classes, but the parent class does not have a virtual destructor method."
+            "href": "AIP/quality-standards/CWE/items/CWE-1079",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1079",
             "name": "Parent Class without Virtual Destructor Method",
-            "url": "https://cwe.mitre.org/data/definitions/1079.html",
-            "description": "A parent class contains one or more child classes, but the parent class does not have a virtual destructor method."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1079",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1079",
             "name": "Parent Class without Virtual Destructor Method",
-            "url": "https://cwe.mitre.org/data/definitions/1079.html",
-            "description": "A parent class contains one or more child classes, but the parent class does not have a virtual destructor method."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1079",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

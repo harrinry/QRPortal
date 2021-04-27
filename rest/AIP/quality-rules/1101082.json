@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -39,20 +34,25 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062151,
             "name": "ASCRM-CWE-674 - Uncontrolled Recursion",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062151",
+            "weight": 5
         },
         {
             "id": 61019,
             "name": "Efficiency - SQL and Data Handling Performance",
-            "weight": 1,
-            "critical": false
+            "href": "AIP/technical-criteria/61019",
+            "weight": 1
         }
     ],
     "technologies": [
@@ -64,18 +64,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-CWE-674",
             "name": "Uncontrolled Recursion",
-            "url": null,
-            "description": "Objective\nAvoid infinite recursions\n\nConsequence\nSoftware that is unaware of recursion incurs the risk of exceeding resource and capacity limits\n\nMeasure Element\nNumber of instances where the named callable control element or method control element starts the execution path which containts itself\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-CWE-674",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-674",
             "name": "Uncontrolled Recursion",
-            "url": "https://cwe.mitre.org/data/definitions/674.html",
-            "description": "The product does not properly control the amount of recursion that takes place, which consumes excessive resources, such as allocated memory or the program stack."
+            "href": "AIP/quality-standards/CWE/items/CWE-674",
+            "standard": "CWE"
         }
     ],
     "parameters": [

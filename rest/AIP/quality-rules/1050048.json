@@ -24,14 +24,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66063,
             "name": "Secure Coding - API Abuse",
-            "weight": 8,
-            "critical": true
+            "href": "AIP/technical-criteria/66063",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -43,11 +48,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
             "id": "M2-2016",
             "name": "Insecure Data Storage",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M2-Insecure_Data_Storage",
-            "description": "Insecure data storage vulnerabilities occur when development teams assume that users or malware will not have access to a mobile device's filesystem and subsequent sensitive information in data-stores on the device. Filesystems are easily accessible. Organizations should expect a malicious user or malware to inspect sensitive data stores. Usage of poor encryption libraries is to be avoided. Rooting or jailbreaking a mobile device circumvents any encryption protections. When data is not protected properly, specialized tools are all that is needed to view application data."
+            "href": "AIP/quality-standards/OWASP/items/M2-2016",
+            "standard": "OWASP"
         }
     ],
     "parameters": [

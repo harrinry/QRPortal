@@ -28,20 +28,25 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 61020,
             "name": "Programming Practices - Modularity and OO Encapsulation Conformity",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/61020",
+            "weight": 6
         },
         {
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/66066",
+            "weight": 6
         }
     ],
     "technologies": [
@@ -53,18 +58,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-493",
             "name": "Critical Public Variable Without Final Modifier",
-            "url": "https://cwe.mitre.org/data/definitions/493.html",
-            "description": "The product has a critical public variable that is not final, which allows the variable to be modified to contain unexpected values."
+            "href": "AIP/quality-standards/CWE/items/CWE-493",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-500",
             "name": "Public Static Field Not Marked Final",
-            "url": "https://cwe.mitre.org/data/definitions/500.html",
-            "description": "An object contains a public static field that is not marked final, which might allow it to be modified in unexpected ways."
+            "href": "AIP/quality-standards/CWE/items/CWE-500",
+            "standard": "CWE"
         }
     ],
     "parameters": [

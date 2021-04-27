@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -36,16 +31,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -54,26 +39,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062185,
             "name": "ASCSM-CWE-667 - Shared Resource Improper Locking",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062185",
+            "weight": 5
         },
         {
             "id": 1061076,
             "name": "CWE-667: Improper Locking",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061076",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -90,46 +80,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-667",
             "name": "Shared Resource Improper Locking",
-            "url": null,
-            "description": "Objective\nAvoid data corruption during concurrent access\n\nConsequence\nSoftware featuring inconsistent locking discipline incurs the risk of deadlock\n\nMeasure Element\nNumber of instances where the shared storable data element or member data element, declared with the Create action, is accessed outside a critical section of the application via the Read or Write action.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-667",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-250",
             "name": "Execution with Unnecessary Privileges",
-            "url": "https://cwe.mitre.org/data/definitions/250.html",
-            "description": "The software performs an operation at a privilege level that is higher than the minimum level required, which creates new weaknesses or amplifies the consequences of other weaknesses."
+            "href": "AIP/quality-standards/CWE/items/CWE-250",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-667",
             "name": "Improper Locking",
-            "url": "https://cwe.mitre.org/data/definitions/667.html",
-            "description": "The software does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors."
+            "href": "AIP/quality-standards/CWE/items/CWE-667",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-667",
             "name": "Improper Locking",
-            "url": "https://cwe.mitre.org/data/definitions/667.html",
-            "description": "The software does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-667",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AC-6",
             "name": "Least Privilege",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AC-6",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-6",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-667",
             "name": "Improper Locking",
-            "url": "https://cwe.mitre.org/data/definitions/667.html",
-            "description": "The software does not properly acquire or release a lock on a resource, leading to unexpected resource state changes and behaviors."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-667",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

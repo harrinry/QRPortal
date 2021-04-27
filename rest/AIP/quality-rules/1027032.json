@@ -26,11 +26,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -41,16 +36,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -59,26 +44,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062164,
             "name": "ASCRM-RLB-18 - Storable and Member Data Element Initialization with Hard-Coded Network Resource Configuration Data",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062164",
+            "weight": 5
         },
         {
             "id": 61004,
             "name": "Architecture - OS and Platform Independence",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/61004",
+            "weight": 7
         },
         {
             "id": 1061114,
             "name": "CWE-1051: Initialization with Hard-Coded Network Resource Configuration Data",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061114",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -95,46 +85,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-18",
             "name": "Storable and Member Data Element Initialization with Hard-Coded Network Resource Configuration Data",
-            "url": null,
-            "description": "Objective\nAvoid the existence of hard-coded network configuration elements\n\nConsequence\nSoftware featuring network configuration within its own code incurs the risk of failure when the remote resource change\n\nMeasure Element\nNumber of instances where a storable data element or member data element is initialized by a \u2018Write\u2019 action with a hard-coded value corresponding to network resource identifications\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-18",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1051",
             "name": "Initialization with Hard-Coded Network Resource Configuration Data",
-            "url": "https://cwe.mitre.org/data/definitions/1051.html",
-            "description": "The software initializes data using hard-coded values that act as network resource identifiers."
+            "href": "AIP/quality-standards/CWE/items/CWE-1051",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1051",
             "name": "Initialization with Hard-Coded Network Resource Configuration Data",
-            "url": "https://cwe.mitre.org/data/definitions/1051.html",
-            "description": "The software initializes data using hard-coded values that act as network resource identifiers."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1051",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1051",
             "name": "Initialization with Hard-Coded Network Resource Configuration Data",
-            "url": "https://cwe.mitre.org/data/definitions/1051.html",
-            "description": "The software initializes data using hard-coded values that act as network resource identifiers."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1051",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-1.3.8",
             "name": "Do not disclose private IP addresses and routing information to unauthorized parties.",
-            "url": null,
-            "description": "Note: Methods to obscure IP addressing may include, but are not limited to:\n- Network Address Translation (NAT)\n- Placing servers containing cardholder data behind proxy servers/firewalls,\n- Removal or filtering of route advertisements for private networks that employ registered addressing,\n- Internal use of RFC1918 address space instead of registered addresses."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-1.3.8",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-1.3.8",
             "name": "Do not disclose private IP addresses and routing information to unauthorized parties.",
-            "url": null,
-            "description": "Note: Methods to obscure IP addressing may include, but are not limited to:\n- Network Address Translation (NAT)\n- Placing servers containing cardholder data behind proxy servers/firewalls,\n- Removal or filtering of route advertisements for private networks that employ registered addressing,\n- Internal use of RFC1918 address space instead of registered addresses."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-1.3.8",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

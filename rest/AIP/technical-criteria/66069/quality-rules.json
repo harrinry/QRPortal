@@ -1,0 +1,1943 @@
+[
+    {
+        "id": 592,
+        "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
+        "href": "AIP/quality-rules/592",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 4070,
+        "name": "Avoid use of \"truncate table\"",
+        "href": "AIP/quality-rules/4070",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 4612,
+        "name": "Avoid using native Methods (JNI)",
+        "href": "AIP/quality-rules/4612",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Avoid using '==' and '!=' to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7494,
+        "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Persistent classes should Implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7506,
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
+        "href": "AIP/quality-rules/7506",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7508,
+        "name": "Getter of collection-typed persistent attributes should return the correct interface type",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7528,
+        "name": "Never use the ON CHANGE OF statement",
+        "href": "AIP/quality-rules/7528",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7548,
+        "name": "Never use incompatible statements with the CICS environment",
+        "href": "AIP/quality-rules/7548",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7556,
+        "name": "Avoid instanceof in Methods that override or implement Object.equals(), Comparable.compareTo()",
+        "href": "AIP/quality-rules/7556",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7586,
+        "name": "Avoid cyclic calls between Event and its handled Method",
+        "href": "AIP/quality-rules/7586",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7650,
+        "name": "All types of a serializable Class must be serializable",
+        "href": "AIP/quality-rules/7650",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7688,
+        "name": "Never truncate data in MOVE statements",
+        "href": "AIP/quality-rules/7688",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7708,
+        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
+        "href": "AIP/quality-rules/7708",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7710,
+        "name": "Avoid non serializable Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Avoid public/protected setter for the generated identifier field",
+        "href": "AIP/quality-rules/7712",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Avoid using persistent class's identifier in equals() method",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/7728",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Always use declarative transaction",
+        "href": "AIP/quality-rules/7730",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7864,
+        "name": "BAPIs must not cause the Program to abort or terminate",
+        "href": "AIP/quality-rules/7864",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7884,
+        "name": "Avoid disabling source code inspection",
+        "href": "AIP/quality-rules/7884",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7888,
+        "name": "Web Dynpro - Never use direct calls to routine via \"me->\", use \"wd_This->\" instead",
+        "href": "AIP/quality-rules/7888",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7890,
+        "name": "Web Dynpro - Never use INCLUDE statement",
+        "href": "AIP/quality-rules/7890",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7892,
+        "name": "Web Dynpro - Avoid changing the program flow",
+        "href": "AIP/quality-rules/7892",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 7926,
+        "name": "Abstract Classes should be non copy-assignable",
+        "href": "AIP/quality-rules/7926",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7932,
+        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
+        "href": "AIP/quality-rules/7932",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Avoid EJBs using 'synchronized' qualifier, 'wait', 'notify' and 'notifyAll' Methods",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7958,
+        "name": "Avoid orphaned synonyms in PL/SQL context",
+        "href": "AIP/quality-rules/7958",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "PL/SQL"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Avoid directly instantiating a Class used as a managed bean",
+        "href": "AIP/quality-rules/7964",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7998,
+        "name": "Avoid local variables that are not initialized at declaration time",
+        "href": "AIP/quality-rules/7998",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8002,
+        "name": "Never perform C-style cast between incompatible Class pointers",
+        "href": "AIP/quality-rules/8002",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8004,
+        "name": "Avoid using 'delete this'",
+        "href": "AIP/quality-rules/8004",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8006,
+        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
+        "href": "AIP/quality-rules/8006",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8010,
+        "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
+        "href": "AIP/quality-rules/8010",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8014,
+        "name": "Avoid unchecked return code (SY-SUBRC) after AUTHORITY-CHECK",
+        "href": "AIP/quality-rules/8014",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8024,
+        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
+        "href": "AIP/quality-rules/8024",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8026,
+        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
+        "href": "AIP/quality-rules/8026",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8034,
+        "name": "Working-Storage variables must be initialized before being read",
+        "href": "AIP/quality-rules/8034",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8052,
+        "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
+        "href": "AIP/quality-rules/8052",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8054,
+        "name": "Avoid calling blocking functions with an infinite timeout",
+        "href": "AIP/quality-rules/8054",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8056,
+        "name": "Method override fails due to mismatch of const/volatile qualifiers",
+        "href": "AIP/quality-rules/8056",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8064,
+        "name": "Assignment operator should assign all non-static members of the target object",
+        "href": "AIP/quality-rules/8064",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8072,
+        "name": "Never define collection of 'std::auto_ptr'",
+        "href": "AIP/quality-rules/8072",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8074,
+        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
+        "href": "AIP/quality-rules/8074",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8090,
+        "name": "Avoid using NaN to test the result of an expression",
+        "href": "AIP/quality-rules/8090",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8096,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "AIP/quality-rules/8096",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8114,
+        "name": "Avoid numerical data corruption during incompatible mutation (ABAP)",
+        "href": "AIP/quality-rules/8114",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8124,
+        "name": "Do not use function module DB_EXISTS_INDEX (HANA)",
+        "href": "AIP/quality-rules/8124",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8134,
+        "name": "Avoid unsorted data after SELECT queries",
+        "href": "AIP/quality-rules/8134",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8136,
+        "name": "CDI Beans with normal scope must be proxyable to avoid runtime errors",
+        "href": "AIP/quality-rules/8136",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8144,
+        "name": "Avoid using INITIALIZE statement on data structures",
+        "href": "AIP/quality-rules/8144",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8150,
+        "name": "Avoid using Parse for primitive types and used instead TryParse",
+        "href": "AIP/quality-rules/8150",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8216,
+        "name": "Avoid using incompatible mutation",
+        "href": "AIP/quality-rules/8216",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8218,
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
+        "href": "AIP/quality-rules/8218",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8220,
+        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "href": "AIP/quality-rules/8220",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8422,
+        "name": "Avoid Using COMMIT WORK or ROLLBACK WORK during update work process",
+        "href": "AIP/quality-rules/8422",
+        "critical": true,
+        "weight": 5,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 1001172,
+        "name": "Avoid Programs overriding the *PROCESS statement (PL1)",
+        "href": "AIP/quality-rules/1001172",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "PLI"
+        ]
+    },
+    {
+        "id": 1001174,
+        "name": "Avoid Programs declaring STATIC variables (PL1)",
+        "href": "AIP/quality-rules/1001174",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "PLI"
+        ]
+    },
+    {
+        "id": 1001176,
+        "name": "Avoid Programs having FIXED without BIN or BINARY or DEC or DECIMAL.The character \"(\"  is mandatory. (PL1)",
+        "href": "AIP/quality-rules/1001176",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "PLI"
+        ]
+    },
+    {
+        "id": 1003138,
+        "name": "Avoid BindingUtils class (Flex)",
+        "href": "AIP/quality-rules/1003138",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003140,
+        "name": "Avoid use of ChangeWatcher class (Flex)",
+        "href": "AIP/quality-rules/1003140",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003142,
+        "name": "Cairngorm: Avoid CairngormEventDispatcher called explicitly (Flex)",
+        "href": "AIP/quality-rules/1003142",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003144,
+        "name": "Cairngorm: Avoid more than one reference of ModelLocator per class (Flex)",
+        "href": "AIP/quality-rules/1003144",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003146,
+        "name": "Avoid calling callLater explicitly (Flex specific) (Flex)",
+        "href": "AIP/quality-rules/1003146",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003148,
+        "name": "Avoid clone method not overridden in a custom event (Flex)",
+        "href": "AIP/quality-rules/1003148",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003150,
+        "name": "Avoid event dispatched from a constructor (Flex)",
+        "href": "AIP/quality-rules/1003150",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003152,
+        "name": "Avoid dispatching events using hard-coded strings (Flex)",
+        "href": "AIP/quality-rules/1003152",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003154,
+        "name": "Avoid listening to events using hard-coded strings (Flex)",
+        "href": "AIP/quality-rules/1003154",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003156,
+        "name": "Avoid partial source code delivery of application (Flex)",
+        "href": "AIP/quality-rules/1003156",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003158,
+        "name": "Avoid event without type specified (Flex)",
+        "href": "AIP/quality-rules/1003158",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003160,
+        "name": "Avoid conditions with hard-coded boolean values (Flex)",
+        "href": "AIP/quality-rules/1003160",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003162,
+        "name": "Avoid dynamic class (Flex)",
+        "href": "AIP/quality-rules/1003162",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003164,
+        "name": "Avoid dynamic (Object) type fields (Flex)",
+        "href": "AIP/quality-rules/1003164",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003166,
+        "name": "Avoid dynamic (Object) type variables (Flex)",
+        "href": "AIP/quality-rules/1003166",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003168,
+        "name": "Avoid using Object class in methods' parameters (Flex)",
+        "href": "AIP/quality-rules/1003168",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003172,
+        "name": "Avoid * and use strongly typed objects instead in fields (Flex)",
+        "href": "AIP/quality-rules/1003172",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003174,
+        "name": "Avoid * and use strongly typed objects instead in variables (Flex)",
+        "href": "AIP/quality-rules/1003174",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003176,
+        "name": "Avoid array-type field without ArrayElementType metadata (Flex)",
+        "href": "AIP/quality-rules/1003176",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003178,
+        "name": "Avoid incorrect message interceptor signature (Flex)",
+        "href": "AIP/quality-rules/1003178",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003180,
+        "name": "Avoid packages having artifacts with misplaced metadata (Flex)",
+        "href": "AIP/quality-rules/1003180",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003182,
+        "name": "Avoid classes having artifacts with misplaced metadata (Flex)",
+        "href": "AIP/quality-rules/1003182",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003184,
+        "name": "Avoid redundant type metadata argument for handler type (Flex)",
+        "href": "AIP/quality-rules/1003184",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003186,
+        "name": "Avoid redundant method metadata argument for handler (Flex)",
+        "href": "AIP/quality-rules/1003186",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003188,
+        "name": "Avoid packages having artifacts with unknown metadata attribute (Flex)",
+        "href": "AIP/quality-rules/1003188",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003190,
+        "name": "Avoid classes having artifacts with unknown metadata attribute (Flex)",
+        "href": "AIP/quality-rules/1003190",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003192,
+        "name": "Avoid globally bindable classes (Flex)",
+        "href": "AIP/quality-rules/1003192",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003194,
+        "name": "Avoid constructor with void return type specification (Flex)",
+        "href": "AIP/quality-rules/1003194",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1003196,
+        "name": "Avoid switch statement without a default case (Flex)",
+        "href": "AIP/quality-rules/1003196",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Flex"
+        ]
+    },
+    {
+        "id": 1005082,
+        "name": "Avoid declaring null arrays; prefer to set to empty (EGL)",
+        "href": "AIP/quality-rules/1005082",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005084,
+        "name": "Avoid using parameters on the Record column level (EGL)",
+        "href": "AIP/quality-rules/1005084",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005086,
+        "name": "Avoid functions having creator to prefix table names in SQL statements and in SQL records (EGL)",
+        "href": "AIP/quality-rules/1005086",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005088,
+        "name": "Avoid programs not having the property I4GLItemsNullable set to NO (EGL)",
+        "href": "AIP/quality-rules/1005088",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005090,
+        "name": "Avoid Record Column without having the same nullable requirement as the corresponding SQL Table column (EGL)",
+        "href": "AIP/quality-rules/1005090",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005092,
+        "name": "Avoid having overrided record declaration with a duplicate declaration in the same application (EGL)",
+        "href": "AIP/quality-rules/1005092",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1006012,
+        "name": "Avoid functions without returning exit code  (Shell)",
+        "href": "AIP/quality-rules/1006012",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006014,
+        "name": "Function should not be named as UNIX commands  (Shell)",
+        "href": "AIP/quality-rules/1006014",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1007166,
+        "name": "Avoid classes without matching __get and __set (PHP)",
+        "href": "AIP/quality-rules/1007166",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007168,
+        "name": "Avoid using function or method return value that do not have return (PHP)",
+        "href": "AIP/quality-rules/1007168",
+        "critical": true,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007170,
+        "name": "Avoid function return value ignored (PHP)",
+        "href": "AIP/quality-rules/1007170",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007172,
+        "name": "Avoid having constructors with return value (PHP)",
+        "href": "AIP/quality-rules/1007172",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007176,
+        "name": "Avoid using break or continue statements in loops with high cyclomatic complexity (PHP)",
+        "href": "AIP/quality-rules/1007176",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007254,
+        "name": "Avoid files that declare both symbols and execute logic with side effects (PHP)",
+        "href": "AIP/quality-rules/1007254",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007286,
+        "name": "DEPRECATED: CWE-242: Avoid PHP Dangerous Feature (PHP)",
+        "href": "AIP/quality-rules/1007286",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1007288,
+        "name": "DEPRECATED: CWE-489: Avoid debug code in the production system (PHP)",
+        "href": "AIP/quality-rules/1007288",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
+        "id": 1018760,
+        "name": "Avoid AE Schema with Target namespace not defined (TIBCO BW)",
+        "href": "AIP/quality-rules/1018760",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "TIBCO"
+        ]
+    },
+    {
+        "id": 1018764,
+        "name": "Avoid Processes using JDBC SQL Direct  (TIBCO BW)",
+        "href": "AIP/quality-rules/1018764",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "TIBCO"
+        ]
+    },
+    {
+        "id": 1020040,
+        "name": "Avoid using delete with no object properties",
+        "href": "AIP/quality-rules/1020040",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020054,
+        "name": "Avoid using delete on arrays",
+        "href": "AIP/quality-rules/1020054",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020066,
+        "name": "Avoid using Javascript Function constructor",
+        "href": "AIP/quality-rules/1020066",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020204,
+        "name": "Avoid <textarea> with v-model having child elements",
+        "href": "AIP/quality-rules/1020204",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020206,
+        "name": "Avoid using v-for without key",
+        "href": "AIP/quality-rules/1020206",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020210,
+        "name": "Avoid using v-show directive inside templates",
+        "href": "AIP/quality-rules/1020210",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020212,
+        "name": "Avoid changing parent properties from child components using $parent",
+        "href": "AIP/quality-rules/1020212",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020318,
+        "name": "Avoid using jQuery deprecated methods",
+        "href": "AIP/quality-rules/1020318",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020514,
+        "name": "Only use the angular.isUndefined or angular.isDefined methods in AngularJS application",
+        "href": "AIP/quality-rules/1020514",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020530,
+        "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
+        "href": "AIP/quality-rules/1020530",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020536,
+        "name": "Avoid using $ or jQuery, use angular.element instead",
+        "href": "AIP/quality-rules/1020536",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020538,
+        "name": "Avoid wrapping angular.element objects with jQuery or $",
+        "href": "AIP/quality-rules/1020538",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020806,
+        "name": "Avoid using NaN in comparison ",
+        "href": "AIP/quality-rules/1020806",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020816,
+        "name": "Avoid using output of the function that does not return anything",
+        "href": "AIP/quality-rules/1020816",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1021020,
+        "name": "Avoid using wildcard (*) imports",
+        "href": "AIP/quality-rules/1021020",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
+        "id": 1021034,
+        "name": "Avoid inconsistent initialization when deriving a new exception",
+        "href": "AIP/quality-rules/1021034",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
+        "id": 1021072,
+        "name": "Avoid shadowing class variables",
+        "href": "AIP/quality-rules/1021072",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
+        "id": 1021074,
+        "name": "Avoid manipulating a list while iterating over it",
+        "href": "AIP/quality-rules/1021074",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
+        "id": 1021076,
+        "name": "Avoid mutable default parameter values",
+        "href": "AIP/quality-rules/1021076",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
+        "id": 1027004,
+        "name": "Avoid using deprecated XmlTextReader .NET API",
+        "href": "AIP/quality-rules/1027004",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027014,
+        "name": "Avoid using Thread API (Suspend\\Resume) to manage thread state",
+        "href": "AIP/quality-rules/1027014",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027022,
+        "name": "Avoid using \"new Guid()\"",
+        "href": "AIP/quality-rules/1027022",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027040,
+        "name": "Avoid using multiple OrderBy calls",
+        "href": "AIP/quality-rules/1027040",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027044,
+        "name": "Avoid using SafeHandle.DangerousGetHandle",
+        "href": "AIP/quality-rules/1027044",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027048,
+        "name": "Avoid returning null from non-async Task/Task<T> method",
+        "href": "AIP/quality-rules/1027048",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027058,
+        "name": "Avoid blocking async methods (.NET, VB)",
+        "href": "AIP/quality-rules/1027058",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027070,
+        "name": "Avoid if statements and blocks that are always TRUE or FALSE",
+        "href": "AIP/quality-rules/1027070",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027078,
+        "name": "Always mark Windows Forms starting point as STAThread",
+        "href": "AIP/quality-rules/1027078",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#"
+        ]
+    },
+    {
+        "id": 1027080,
+        "name": "Always use ConfigureAwait(false) in library code awaited tasks",
+        "href": "AIP/quality-rules/1027080",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027090,
+        "name": "Avoid improper instantiation of argument exceptions",
+        "href": "AIP/quality-rules/1027090",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027092,
+        "name": "Always pass optional parameters too, when making 'base' calls",
+        "href": "AIP/quality-rules/1027092",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1050028,
+        "name": "Always use LAContext canEvaluatePolicy: before using evaluatePolicy: (Objective-C)",
+        "href": "AIP/quality-rules/1050028",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050032,
+        "name": "Ensure that LAContext evaluatePolicy: reply block success is checked (Objective-C)",
+        "href": "AIP/quality-rules/1050032",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050034,
+        "name": "Ensure that LAContext evaluatePolicy: reply block is not empty (Objective-C)",
+        "href": "AIP/quality-rules/1050034",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1055014,
+        "name": "Ensure that LAContext evaluatePolicy reply block is not empty (Swift)",
+        "href": "AIP/quality-rules/1055014",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
+        "id": 1055016,
+        "name": "Ensure that LAContext evaluatePolicy reply block success is checked (Swift)",
+        "href": "AIP/quality-rules/1055016",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
+        "id": 1055018,
+        "name": "Always use LAContext canEvaluatePolicy before using evaluatePolicy (Swift)",
+        "href": "AIP/quality-rules/1055018",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
+        "id": 1065006,
+        "name": "Avoid iterator invalidation.",
+        "href": "AIP/quality-rules/1065006",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065010,
+        "name": "Avoid using <cstdio> stream input output library (C++)",
+        "href": "AIP/quality-rules/1065010",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065014,
+        "name": "Avoid using the library functions bsearch and qsort from <stdlib.h> (C/C++)",
+        "href": "AIP/quality-rules/1065014",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065016,
+        "name": "Avoid using atof,atol, atoll or atoi functions from <stdlib.h> (C/C++)",
+        "href": "AIP/quality-rules/1065016",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065018,
+        "name": "Avoid using offsetof from <cstddef>",
+        "href": "AIP/quality-rules/1065018",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065020,
+        "name": "Avoid using <ctime> (C++)",
+        "href": "AIP/quality-rules/1065020",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065022,
+        "name": "Avoid using <stdio.h> (C/C++)",
+        "href": "AIP/quality-rules/1065022",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065024,
+        "name": "Avoid using the standard library time and date functions from \"<time.h>\" (C/C++)",
+        "href": "AIP/quality-rules/1065024",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065038,
+        "name": "Avoid using 'signal.h' (C/C++)",
+        "href": "AIP/quality-rules/1065038",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065042,
+        "name": "Avoid non-void return type function without an explicit return of an expression (C/C++)",
+        "href": "AIP/quality-rules/1065042",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065046,
+        "name": "Avoid using the unbounded functions of <cstring> library",
+        "href": "AIP/quality-rules/1065046",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065050,
+        "name": "Avoid using \"sizeof\" on expressions that contain side effects",
+        "href": "AIP/quality-rules/1065050",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065052,
+        "name": "Avoid using Octal constants or escape sequences (C/C++)",
+        "href": "AIP/quality-rules/1065052",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065054,
+        "name": "Do not override the standard library functions (C/C++)",
+        "href": "AIP/quality-rules/1065054",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065062,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "AIP/quality-rules/1065062",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065068,
+        "name": "Avoid using Digraphs (C++)",
+        "href": "AIP/quality-rules/1065068",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065070,
+        "name": "Avoid using Trigraphs",
+        "href": "AIP/quality-rules/1065070",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065072,
+        "name": "Avoid using Unions",
+        "href": "AIP/quality-rules/1065072",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065074,
+        "name": "All constructors that are callable with a single argument of fundamental type shall be declared explicit.",
+        "href": "AIP/quality-rules/1065074",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065092,
+        "name": "Avoid having boolean operators with non-boolean operands (C/C++)",
+        "href": "AIP/quality-rules/1065092",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065094,
+        "name": "Avoid having expressions with bool type to be used as operands on operators other than =, &&, ||, !, ==, !=, the unary & operator, and the conditional operator",
+        "href": "AIP/quality-rules/1065094",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065104,
+        "name": "Converting a multiplication to a larger type should be done before the multiplication takes place",
+        "href": "AIP/quality-rules/1065104",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065106,
+        "name": "Avoid comparing types of different widths in a loop",
+        "href": "AIP/quality-rules/1065106",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065108,
+        "name": "Bit-fields shall be either unsigned integral, or enumeration (with underlying type of unsigned integral type).",
+        "href": "AIP/quality-rules/1065108",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065110,
+        "name": "Ensure arrays and containers are accessed using unsigned values",
+        "href": "AIP/quality-rules/1065110",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065114,
+        "name": "Avoid lines starting with \"#\" with invalid pre-processing directive",
+        "href": "AIP/quality-rules/1065114",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065116,
+        "name": "Undefined macro identifiers shall not be used in #if or #elif preprocessor directives, except as operands to the defined operator",
+        "href": "AIP/quality-rules/1065116",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065118,
+        "name": "Arguments to a function-like macro shall not contain tokens that look like preprocessing directives.",
+        "href": "AIP/quality-rules/1065118",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065120,
+        "name": "Avoid using # OR ## operators more than once while defining macros",
+        "href": "AIP/quality-rules/1065120",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065122,
+        "name": "Avoid #define or #undef macros anywhere other than global namespace",
+        "href": "AIP/quality-rules/1065122",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065130,
+        "name": "Avoid defining, redefining or undefining standard macros from standard library",
+        "href": "AIP/quality-rules/1065130",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1101012,
+        "name": "Avoid specifying column numbers instead of column names in ORDER BY clauses",
+        "href": "AIP/quality-rules/1101012",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101020,
+        "name": "Avoid using quoted identifiers",
+        "href": "AIP/quality-rules/1101020",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101026,
+        "name": "Always define column names when inserting values",
+        "href": "AIP/quality-rules/1101026",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101072,
+        "name": "Avoid not aliased Tables",
+        "href": "AIP/quality-rules/1101072",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101076,
+        "name": "Avoid unqualified column references",
+        "href": "AIP/quality-rules/1101076",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101080,
+        "name": "Avoid orphaned synonyms",
+        "href": "AIP/quality-rules/1101080",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1520760,
+        "name": "SiebelReview: Adding System Columns as BusComp Field Objects Definitions",
+        "href": "AIP/quality-rules/1520760",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520762,
+        "name": "SiebelReview: Controls or List Columns Based on Non-Existent Fields",
+        "href": "AIP/quality-rules/1520762",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520764,
+        "name": "SiebelReview: Duplicate Item Identifiers",
+        "href": "AIP/quality-rules/1520764",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520774,
+        "name": "Avoid setting field values using hard-coded values (Siebel)",
+        "href": "AIP/quality-rules/1520774",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "Siebel"
+        ]
+    }
+]

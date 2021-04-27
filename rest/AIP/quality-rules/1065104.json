@@ -28,14 +28,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -52,11 +57,10 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-190",
             "name": "Integer Overflow or Wraparound",
-            "url": "https://cwe.mitre.org/data/definitions/190.html",
-            "description": "The software performs a calculation that can produce an integer overflow or wraparound, when the logic assumes that the resulting value will always be larger than the original value. This can introduce other weaknesses when the calculation is used for resource management or execution control."
+            "href": "AIP/quality-standards/CWE/items/CWE-190",
+            "standard": "CWE"
         }
     ],
     "parameters": [

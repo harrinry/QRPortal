@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -35,11 +30,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -48,26 +38,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062173,
             "name": "ASCRM-RLB-9 - Float Type Storable and Member Data Element Comparison with Equality Operator",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062173",
+            "weight": 5
         },
         {
             "id": 1061130,
             "name": "CWE-1077: Floating Point Comparison with Incorrect Operator",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061130",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66069",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -84,46 +79,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "C-CPP",
             "id": "AUTOSAR-CPP-2014-Expressions",
             "name": "Expressions",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/AUTOSAR-CPP-2014-Expressions",
+            "standard": "C-CPP"
         },
         {
-            "standard": "C-CPP",
             "id": "MISRA-CPP-2008-Expressions",
             "name": "Expressions",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/MISRA-CPP-2008-Expressions",
+            "standard": "C-CPP"
         },
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-9",
             "name": "Float Type Storable and Member Data Element Comparison with Equality Operator",
-            "url": null,
-            "description": "Objective\nAvoid the use of fault-prone comparison operations between numerical values\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the values of storable or member data elements of float type are compared for equality using regular comparison operators in the comparison control element\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-9",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1077",
             "name": "Floating Point Comparison with Incorrect Operator",
-            "url": "https://cwe.mitre.org/data/definitions/1077.html",
-            "description": "The code performs a comparison such as an equality test between two float (floating point) values, but it uses comparison operators that do not account for the possibility of loss of precision."
+            "href": "AIP/quality-standards/CWE/items/CWE-1077",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1077",
             "name": "Floating Point Comparison with Incorrect Operator",
-            "url": "https://cwe.mitre.org/data/definitions/1077.html",
-            "description": "The code performs a comparison such as an equality test between two float (floating point) values, but it uses comparison operators that do not account for the possibility of loss of precision."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1077",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1077",
             "name": "Floating Point Comparison with Incorrect Operator",
-            "url": "https://cwe.mitre.org/data/definitions/1077.html",
-            "description": "The code performs a comparison such as an equality test between two float (floating point) values, but it uses comparison operators that do not account for the possibility of loss of precision."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1077",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

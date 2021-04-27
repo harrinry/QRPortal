@@ -34,26 +34,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062309,
             "name": "OWASP-2013-A9 Using Components with Known Vulnerabilities",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062309",
+            "weight": 5
         },
         {
             "id": 1062329,
             "name": "OWASP-2017-A9 Using Components with Known Vulnerabilities",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062329",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -65,46 +70,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "OWASP",
             "id": "A9-2013",
             "name": "Using Components with Known Vulnerabilities",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A9-Using_Components_with_Known_Vulnerabilities",
-            "description": "Components, such as libraries, frameworks, and other software modules, almost always run with full privileges. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications using components with known vulnerabilities may undermine application defenses and enable a range of possible attacks and impacts."
+            "href": "AIP/quality-standards/OWASP/items/A9-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A9-2017",
             "name": "Using Components with Known Vulnerabilities",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities",
-            "description": "Components, such as libraries, frameworks, and other software modules, run with the same privileges as the application. If a vulnerable component is exploited, such an attack can facilitate serious data loss or server takeover. Applications and APIs using components with known vulnerabilities may undermine application defenses and enable various attacks and impacts."
+            "href": "AIP/quality-standards/OWASP/items/A9-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.4",
             "name": "Insecure communications",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.4",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-4.1",
             "name": "Use strong cryptography and security protocols",
-            "url": null,
-            "description": "Use strong cryptography and security protocols (for example, TLS, IPSEC, SSH, etc.) to safeguard sensitive cardholder data during transmission over open, public networks, including the following:\n- Only trusted keys and certificates are accepted.\n- The protocol in use only supports secure versions or configurations.\n- The encryption strength is appropriate for the encryption methodology in use.\nNote: SSL and early TLS are not considered strong cryptography and cannot be used as a security control after June 30, 2016. Prior to this date, existing implementations that use SSL and/or early TLS must have a formal Risk Mitigation and Migration Plan in place.\nEffective immediately, new implementations must not use SSL or early TLS.\nPOS POI terminals (and the SSL/TLS termination points to which they connect) that can be verified as not being susceptible to any known exploits for SSL and early TLS may continue using these as a security control after June 30, 2016.\nExamples of open, public networks include but are not limited to:\n- The Internet\n- Wireless technologies, including 802.11 and Bluetooth\n- Cellular technologies, for example, Global System for Mobile communications (GSM), Code division multiple access (CDMA)\n- General Packet Radio Service (GPRS)\n- Satellite communications"
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-4.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.4",
             "name": "Insecure communications",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.4",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

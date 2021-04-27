@@ -21,24 +21,9 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 66031,
@@ -51,6 +36,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -60,20 +50,20 @@
         {
             "id": 1062161,
             "name": "ASCRM-RLB-15 - Class Element with Virtual Method Element wihout Virtual Destructor",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062161",
+            "weight": 5
         },
         {
             "id": 1061138,
             "name": "CWE-1087: Class with Virtual Method without a Virtual Destructor",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061138",
+            "weight": 5
         },
         {
             "id": 61003,
             "name": "Programming Practices - OO Inheritance and Polymorphism",
-            "weight": 6,
-            "critical": false
+            "href": "AIP/technical-criteria/61003",
+            "weight": 6
         }
     ],
     "technologies": [
@@ -85,32 +75,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-15",
             "name": "Class Element with Virtual Method Element wihout Virtual Destructor",
-            "url": null,
-            "description": "Objective\nAvoid failing to include a virtual destructor in a class that includes a virtual method(s)\n\nConsequence\nSoftware that does not follow the principles of inheritance and polymorphism results in unexpected behaviors\n\nMeasure Element\nNumber of instances where a class element contains a virtual method element yet does not declare any virtual destructor\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-15",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1087",
             "name": "Class with Virtual Method without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1087.html",
-            "description": "A class contains a virtual method, but the method does not have an associated virtual destructor."
+            "href": "AIP/quality-standards/CWE/items/CWE-1087",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1087",
             "name": "Class with Virtual Method without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1087.html",
-            "description": "A class contains a virtual method, but the method does not have an associated virtual destructor."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1087",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1087",
             "name": "Class with Virtual Method without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1087.html",
-            "description": "A class contains a virtual method, but the method does not have an associated virtual destructor."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1087",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

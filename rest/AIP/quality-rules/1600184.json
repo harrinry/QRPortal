@@ -18,11 +18,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -38,6 +33,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -47,14 +47,14 @@
         {
             "id": 1062112,
             "name": "ASCMM-MNT-11 - Callable and Method Control Element Excessive Cyclomatic Complexity Value",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062112",
+            "weight": 5
         },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/61009",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -66,18 +66,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-11",
             "name": "Callable and Method Control Element Excessive Cyclomatic Complexity Value",
-            "url": null,
-            "description": "Objective\nAvoid overly complex control flow\n\nConsequence\nSoftware that does not follow the principles of structured programming degrades comprehensibility\n\nMeasure Element\nNumber of instances where a named callable control element or method control element has a control flow with a Cyclomatic Complexity number that exceeds a threshold value. Default threshold value for Cyclomatic Complexity is 20\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-11",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1121",
             "name": "Excessive McCabe Cyclomatic Complexity",
-            "url": "https://cwe.mitre.org/data/definitions/1121.html",
-            "description": "The code contains McCabe cyclomatic complexity that exceeds a desirable maximum."
+            "href": "AIP/quality-standards/CWE/items/CWE-1121",
+            "standard": "CWE"
         }
     ],
     "parameters": [

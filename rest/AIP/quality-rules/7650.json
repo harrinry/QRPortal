@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -35,11 +30,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -48,32 +38,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062166,
             "name": "ASCRM-RLB-2 - Serializable Storable Data Element without Serialization Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062166",
+            "weight": 5
         },
         {
             "id": 1061123,
             "name": "CWE-1066: Missing Serialization Control Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061123",
+            "weight": 5
         },
         {
             "id": 1061125,
             "name": "CWE-1070: Serializable Data Element Containing non-Serializable Item Elements",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061125",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -85,53 +80,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-2",
             "name": "Serializable Storable Data Element without Serialization Control Element",
-            "url": null,
-            "description": "Objective\nAvoid failure to implement serialization capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the serializable storable element has no serialization control element in its list of control elements (in the case of technologies with class and interface elements, this means situations where the serializable storable data element is a class that implements a serializable interface element but does not implement a serialization method element as part of its list composed of method elements) (the serializable nature of an element is technology dependent, for example, serializable capabilities come from sources such as a serializable attribute in .NET and inheritance from the java.io.Serializable interface in Java)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-2",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1066",
             "name": "Missing Serialization Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1066.html",
-            "description": "The software contains a serializable data element that does not have an associated serialization method."
+            "href": "AIP/quality-standards/CWE/items/CWE-1066",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": "https://cwe.mitre.org/data/definitions/1070.html",
-            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
+            "href": "AIP/quality-standards/CWE/items/CWE-1070",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1066",
             "name": "Missing Serialization Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1066.html",
-            "description": "The software contains a serializable data element that does not have an associated serialization method."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1066",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": "https://cwe.mitre.org/data/definitions/1070.html",
-            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1070",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1066",
             "name": "Missing Serialization Control Element",
-            "url": "https://cwe.mitre.org/data/definitions/1066.html",
-            "description": "The software contains a serializable data element that does not have an associated serialization method."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1066",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1070",
             "name": "Serializable Data Element Containing non-Serializable Item Elements",
-            "url": "https://cwe.mitre.org/data/definitions/1070.html",
-            "description": "The software contains a serializable, storable data element such as a field or member, but the data element contains member elements that are not serializable."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1070",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

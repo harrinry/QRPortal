@@ -33,38 +33,43 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062302,
             "name": "OWASP-2013-A2 Broken Authentication and Session Management",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062302",
+            "weight": 5
         },
         {
             "id": 1062304,
             "name": "OWASP-2013-A4 Insecure Direct Object References",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062304",
+            "weight": 5
         },
         {
             "id": 1062322,
             "name": "OWASP-2017-A2 Broken Authentication",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062322",
+            "weight": 5
         },
         {
             "id": 1062325,
             "name": "OWASP-2017-A5 Broken Access Control",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062325",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 8,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -76,74 +81,64 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-384",
             "name": "Session Fixation",
-            "url": "https://cwe.mitre.org/data/definitions/384.html",
-            "description": "Authenticating a user, or otherwise establishing a new user session, without invalidating any existing session identifier gives an attacker the opportunity to steal authenticated sessions."
+            "href": "AIP/quality-standards/CWE/items/CWE-384",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2013",
             "name": "Broken Authentication and Session Management",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A2-Broken Authentication and Session Management",
-            "description": "Application functions related to authentication and session management are often not implemented correctly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities."
+            "href": "AIP/quality-standards/OWASP/items/A2-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
-            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
+            "href": "AIP/quality-standards/OWASP/items/A2-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A4-2013",
             "name": "Insecure Direct Object References",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A4-Insecure_Direct_Object_References",
-            "description": "A direct object reference occurs when a developer exposes a reference to an internal implementation object, such as a file, directory, or database key. Without an access control check or other protection, attackers can manipulate these references to access unauthorized data."
+            "href": "AIP/quality-standards/OWASP/items/A4-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A5-2017",
             "name": "Broken Access Control",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A5-Broken_Access_Control",
-            "description": "Restrictions on what authenticated users are allowed to do are often not properly enforced. Attackers can exploit these flaws to access unauthorized functionality and/or data, such as access other users' accounts, view sensitive files, modify other users' data, change access rights, etc."
+            "href": "AIP/quality-standards/OWASP/items/A5-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-69241",
             "name": "The application must clear temporary storage and cookies when the session is terminated.",
-            "url": null,
-            "description": "Persistent cookies are a primary means by which a web application will store application state and user information.  Since HTTP is a stateless protocol, this persistence allows the web application developer to provide a robust and customizable user experience.\n\nHowever, if a web application stores user authentication information within a persistent cookie or other temporary storage mechanism, this information can be stolen and used to compromise the users account.\n\nLikewise, HTML 5 provides the developer with a client storage capability where application data larger than the 4K cookie size limit can be stored on the local client.  While this can be beneficial to the developer, this is considered insecure storage and should not be used for storing sensitive session or security tokens.  A cross site scripting attack can put this data at risk.\n\nWeb applications must clear sensitive data from files and storage areas on the client when the session is terminated."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69241",
+            "standard": "STIG-V4R8"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70207",
             "name": "The application must destroy the session ID value and/or cookie on logoff or browser close.",
-            "url": null,
-            "description": "Many web development frameworks such as PHP, .NET, and ASP include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nSession cookies contain application session information that can be used to impersonate the web application user or hijack their application session. Once the user's session has terminated, these session IDs must be destroyed and not reused."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70207",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

@@ -34,26 +34,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062301,
             "name": "OWASP-2013-A1 Injection",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062301",
+            "weight": 5
         },
         {
             "id": 1062321,
             "name": "OWASP-2017-A1 Injection",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062321",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -75,53 +80,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-400",
             "name": "Uncontrolled Resource Consumption",
-            "url": "https://cwe.mitre.org/data/definitions/400.html",
-            "description": "The software does not properly control the allocation and maintenance of a limited resource, thereby enabling an actor to influence the amount of resources consumed, eventually leading to the exhaustion of available resources."
+            "href": "AIP/quality-standards/CWE/items/CWE-400",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-AU-7",
             "name": "Audit Reduction and Report Generation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/AU-7",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AU-7",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
-            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

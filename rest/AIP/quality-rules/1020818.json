@@ -34,26 +34,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062308,
             "name": "OWASP-2013-A8 Cross-Site Request Forgery (CSRF)",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062308",
+            "weight": 5
         },
         {
             "id": 1062322,
             "name": "OWASP-2017-A2 Broken Authentication",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062322",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -65,74 +70,64 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-352",
             "name": "Cross-Site Request Forgery (CSRF)",
-            "url": "https://cwe.mitre.org/data/definitions/352.html",
-            "description": "The web application does not, or can not, sufficiently verify whether a well-formed, valid, consistent request was intentionally provided by the user who submitted the request."
+            "href": "AIP/quality-standards/CWE/items/CWE-352",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-489",
             "name": "Active Debug Code",
-            "url": "https://cwe.mitre.org/data/definitions/489.html",
-            "description": "The application is deployed to unauthorized actors with debugging code still enabled or active, which can create unintended entry points or expose sensitive information."
+            "href": "AIP/quality-standards/CWE/items/CWE-489",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A2-2017",
             "name": "Broken Authentication",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A2-Broken_Authentication",
-            "description": "Application functions related to authentication and session management are often implemented incorrectly, allowing attackers to compromise passwords, keys, or session tokens, or to exploit other implementation flaws to assume other users' identities temporarily or permanently."
+            "href": "AIP/quality-standards/OWASP/items/A2-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A8-2013",
             "name": "Cross-Site Request Forgery (CSRF)",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A8-Cross-Site_Request_Forgery_(CSRF)",
-            "description": "A CSRF attack forces a logged-on victims' browser to send a forged HTTP request, including the victims' session cookie and any other automatically included authentication information, to a vulnerable web application. This allows the attacker to force the victims' browser to generate requests the vulnerable application thinks are legitimate requests from the victim."
+            "href": "AIP/quality-standards/OWASP/items/A8-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.9",
             "name": "Cross-site request forgery (CSRF)",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.9",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.9",
             "name": "Cross-site request forgery (CSRF)",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.9",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70259",
             "name": "The application must protect from Cross-Site Request Forgery (CSRF) vulnerabilities.",
-            "url": null,
-            "description": "Cross-Site Request Forgery (CSRF) is an attack where a website user is forced to execute an unwanted action on a website that he or she is currently authenticated to. An attacker, through social engineering (e.g., e-mail or chat) creates a hyperlink which executes unwanted actions on the website the victim is authenticated to and sends it to the victim. If the victim clicks on the link, the action is executed unbeknownst to the victim.\n\nA CSRF attack executes a website request on behalf of the user which can lead to a compromise of the user\u2019s data. What is needed to be successful is for the attacker to know the URL, an authenticated application user, and trick the user into clicking the malicious link.\n\nWhile XSS is not needed for a CSRF attack to work, XSS vulnerabilities can provide the attacker with a vector to obtain information from the user that may be used in mitigating the risk. The application must not be vulnerable to XSS as an XSS attack can be used to help defeat token, double-submit cookie, referrer and origin-based CSRF defenses."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70259",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

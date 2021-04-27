@@ -24,14 +24,19 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -43,18 +48,16 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-75",
             "name": "Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)",
-            "url": "https://cwe.mitre.org/data/definitions/75.html",
-            "description": "The software does not adequately filter user-controlled input for special elements with control implications."
+            "href": "AIP/quality-standards/CWE/items/CWE-75",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-159",
             "name": "Improper Handling of Invalid Use of Special Elements",
-            "url": "https://cwe.mitre.org/data/definitions/159.html",
-            "description": "The product does not properly filter, remove, quote, or otherwise manage the invalid use of special elements in user-controlled input, which could cause adverse effect on its behavior and integrity."
+            "href": "AIP/quality-standards/CWE/items/CWE-159",
+            "standard": "CWE"
         }
     ],
     "parameters": [

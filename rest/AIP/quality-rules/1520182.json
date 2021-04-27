@@ -21,11 +21,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -34,11 +29,6 @@
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
         },
         {
             "id": 66031,
@@ -51,6 +41,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -60,26 +55,26 @@
         {
             "id": 1062110,
             "name": "ASCMM-MNT-1 - Control Flow Transfer Control Element outside Switch Block",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062110",
+            "weight": 5
         },
         {
             "id": 1061129,
             "name": "CWE-1075: Unconditional Control Flow Transfer outside of Switch Block",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061129",
+            "weight": 5
         },
         {
             "id": 1061056,
             "name": "CWE-478: Missing Default Case in Switch Statement",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061056",
+            "weight": 5
         },
         {
             "id": 61009,
             "name": "Complexity - Algorithmic and Control Structure Complexity",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/61009",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -91,53 +86,46 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-1",
             "name": "Control Flow Transfer Control Element outside Switch Block",
-            "url": null,
-            "description": "Objective\nAvoid the unconditional transfer of control flow outside of switch structures\n\nConsequence\nSoftware that does not follow the principles of structured programming degrades comprehensibility\n\nMeasure Element\nNumber of instances where an unconditional transfer of control is located outside the branching based on the value of a storable element\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-1",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-478",
             "name": "Missing Default Case in Switch Statement",
-            "url": "https://cwe.mitre.org/data/definitions/478.html",
-            "description": "The code does not have a default case in a switch statement, which might lead to complex logical errors and resultant weaknesses."
+            "href": "AIP/quality-standards/CWE/items/CWE-478",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1075",
             "name": "Unconditional Control Flow Transfer outside of Switch Block",
-            "url": "https://cwe.mitre.org/data/definitions/1075.html",
-            "description": "The software performs unconditional control transfer (such as a goto) in code outside of a branching structure such as a switch block."
+            "href": "AIP/quality-standards/CWE/items/CWE-1075",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-478",
             "name": "Missing Default Case in Switch Statement",
-            "url": "https://cwe.mitre.org/data/definitions/478.html",
-            "description": "The code does not have a default case in a switch statement, which might lead to complex logical errors and resultant weaknesses."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-478",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1075",
             "name": "Unconditional Control Flow Transfer outside of Switch Block",
-            "url": "https://cwe.mitre.org/data/definitions/1075.html",
-            "description": "The software performs unconditional control transfer (such as a goto) in code outside of a branching structure such as a switch block."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1075",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-478",
             "name": "Missing Default Case in Switch Statement",
-            "url": "https://cwe.mitre.org/data/definitions/478.html",
-            "description": "The code does not have a default case in a switch statement, which might lead to complex logical errors and resultant weaknesses."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-478",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1075",
             "name": "Unconditional Control Flow Transfer outside of Switch Block",
-            "url": "https://cwe.mitre.org/data/definitions/1075.html",
-            "description": "The software performs unconditional control transfer (such as a goto) in code outside of a branching structure such as a switch block."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1075",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

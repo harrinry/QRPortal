@@ -34,26 +34,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062306,
             "name": "OWASP-2013-A6 Sensitive Data Exposure",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062306",
+            "weight": 5
         },
         {
             "id": 1062323,
             "name": "OWASP-2017-A3 Sensitive Data Exposure",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062323",
+            "weight": 5
         },
         {
             "id": 66066,
             "name": "Secure Coding - Encapsulation",
-            "weight": 7,
-            "critical": true
+            "href": "AIP/technical-criteria/66066",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -65,60 +70,52 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-614",
             "name": "Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
-            "url": "https://cwe.mitre.org/data/definitions/614.html",
-            "description": "The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session."
+            "href": "AIP/quality-standards/CWE/items/CWE-614",
+            "standard": "CWE"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-IA-9",
             "name": "Service Identification and Authentication",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/IA-9",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-IA-9",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OWASP",
             "id": "A3-2017",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
-            "description": "Many web applications and APIs do not properly protect sensitive data, such as financial, healthcare, and PII. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data may be compromised without extra protection, such as encryption at rest or in transit, and requires special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A6-2013",
             "name": "Sensitive Data Exposure",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A6-Sensitive_Data_Exposure",
-            "description": "Many web applications do not properly protect sensitive data, such as credit cards, tax IDs, and authentication credentials. Attackers may steal or modify such weakly protected data to conduct credit card fraud, identity theft, or other crimes. Sensitive data deserves extra protection such as encryption at rest or in transit, as well as special precautions when exchanged with the browser."
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "M4-2016",
             "name": "Insecure Authentication",
-            "url": "https://www.owasp.org/index.php/Mobile_Top_10_2016-M4-Insecure_Authentication",
-            "description": "Many older or poorly configured XML processors evaluate external entity references within XML documents. External entities can be used to disclose internal files using the file URI handler, internal file shares, internal port scanning, remote code execution, and denial of service attacks."
+            "href": "AIP/quality-standards/OWASP/items/M4-2016",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.10",
             "name": "Broken authentication and session management",
-            "url": null,
-            "description": "Note: Requirement 6.5.10 is a best practice until June 30, 2015, after which it becomes a requirement."
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.10",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70203",
             "name": "The application must set the secure flag on session cookies.",
-            "url": null,
-            "description": "Many web development frameworks such as PHP, .NET, ASP as well as application servers include their own mechanisms for session management. Whenever possible it is recommended to utilize the provided session management framework.\n\nSetting the secure bit on session cookie ensures the session cookie is only sent via TLS/SSL HTTPS connections.  This helps to ensure confidentiality as the session cookie is not able to be viewed by unauthorized parties as it transits the network.\n\nSetting the secure flag on all cookies may also be warranted depending upon application design but at a minimum, the session cookie must always be secured."
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70203",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

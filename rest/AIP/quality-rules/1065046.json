@@ -19,16 +19,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
-            "id": 1062104,
-            "name": "CISQ-Security",
-            "href": "AIP/business-criteria/1062104"
-        },
-        {
             "id": 20140522,
             "name": "GreenIT-Index",
             "href": "AIP/business-criteria/20140522"
@@ -39,16 +29,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
-        },
-        {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -57,32 +37,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062145,
             "name": "ASCRM-CWE-120 - Buffer Copy without Checking Size of Input",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062145",
+            "weight": 5
         },
         {
             "id": 1062174,
             "name": "ASCSM-CWE-120 - Buffer Copy without Checking Size of Input",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062174",
+            "weight": 5
         },
         {
             "id": 1061022,
             "name": "CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061022",
+            "weight": 5
         },
         {
             "id": 66069,
             "name": "Programming Practices - Unexpected Behavior",
-            "weight": 3,
-            "critical": false
+            "href": "AIP/technical-criteria/66069",
+            "weight": 3
         }
     ],
     "technologies": [
@@ -94,60 +79,52 @@
     ],
     "qualityStandards": [
         {
-            "standard": "C-CPP",
             "id": "AUTOSAR-CPP-2014-Libraries",
             "name": "Libraries",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/AUTOSAR-CPP-2014-Libraries",
+            "standard": "C-CPP"
         },
         {
-            "standard": "C-CPP",
             "id": "MISRA-CPP-2008-Libraries",
             "name": "Libraries",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/C-CPP/items/MISRA-CPP-2008-Libraries",
+            "standard": "C-CPP"
         },
         {
-            "standard": "CISQ",
             "id": "ASCRM-CWE-120",
             "name": "Buffer Copy without Checking Size of Input",
-            "url": null,
-            "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-CWE-120",
+            "standard": "CISQ"
         },
         {
-            "standard": "CISQ",
             "id": "ASCSM-CWE-120",
             "name": "Buffer Copy without Checking Size of Input",
-            "url": null,
-            "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware that is unaware of buffer bounds incurs the risk of corruption of relevant memory, and perhaps instructions, possibly leading to a crash, the risk of data integrity loss, and the risk of unauthorized access to sensitive data\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-120",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": "https://cwe.mitre.org/data/definitions/120.html",
-            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
+            "href": "AIP/quality-standards/CWE/items/CWE-120",
+            "standard": "CWE"
         },
         {
-            "standard": "CWE",
             "id": "CWE-676",
             "name": "Use of Potentially Dangerous Function",
-            "url": "https://cwe.mitre.org/data/definitions/676.html",
-            "description": "The program invokes a potentially dangerous function that could introduce a vulnerability if it is used incorrectly, but the function can also be used safely."
+            "href": "AIP/quality-standards/CWE/items/CWE-676",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": "https://cwe.mitre.org/data/definitions/120.html",
-            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-120",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-120",
             "name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
-            "url": "https://cwe.mitre.org/data/definitions/120.html",
-            "description": "The program copies an input buffer to an output buffer without verifying that the size of the input buffer is less than the size of the output buffer, leading to a buffer overflow."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-120",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

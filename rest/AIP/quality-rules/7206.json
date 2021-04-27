@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062102,
-            "name": "CISQ-Performance-Efficiency",
-            "href": "AIP/business-criteria/1062102"
-        },
-        {
             "id": 60014,
             "name": "Efficiency",
             "href": "AIP/business-criteria/60014"
@@ -40,34 +35,34 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061002,
-            "name": "ISO-5055-Performance-Efficiency",
-            "href": "AIP/business-criteria/1061002"
-        },
-        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062143,
             "name": "ASCPEM-PRF-8 - Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062143",
+            "weight": 5
         },
         {
             "id": 1061113,
             "name": "CWE-1050: Excessive Platform Resource Consumption within a Loop",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061113",
+            "weight": 5
         },
         {
             "id": 66068,
             "name": "Efficiency - Expensive Calls in Loops",
-            "weight": 4,
-            "critical": false
+            "href": "AIP/technical-criteria/66068",
+            "weight": 4
         }
     ],
     "technologies": [
@@ -79,32 +74,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCPEM-PRF-8",
             "name": "Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
-            "url": null,
-            "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the repeated consumption of resource due to resource consuming operations found directly or indirectly within loops.\n\nConsequence\nSoftware that is coded so as to execute expensive computations repeatedly (such as in loops) requires excessive computational resources when the usage and data volume grow\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCPEM-PRF-8",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1050",
             "name": "Excessive Platform Resource Consumption within a Loop",
-            "url": "https://cwe.mitre.org/data/definitions/1050.html",
-            "description": "The software has a loop body or loop condition that contains a control element that directly or indirectly consumes platform resources, e.g. messaging, sessions, locks, or file descriptors."
+            "href": "AIP/quality-standards/CWE/items/CWE-1050",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1050",
             "name": "Excessive Platform Resource Consumption within a Loop",
-            "url": "https://cwe.mitre.org/data/definitions/1050.html",
-            "description": "The software has a loop body or loop condition that contains a control element that directly or indirectly consumes platform resources, e.g. messaging, sessions, locks, or file descriptors."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1050",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1050",
             "name": "Excessive Platform Resource Consumption within a Loop",
-            "url": "https://cwe.mitre.org/data/definitions/1050.html",
-            "description": "The software has a loop body or loop condition that contains a control element that directly or indirectly consumes platform resources, e.g. messaging, sessions, locks, or file descriptors."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1050",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

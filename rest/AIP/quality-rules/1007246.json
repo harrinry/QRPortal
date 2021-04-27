@@ -33,26 +33,31 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062301,
             "name": "OWASP-2013-A1 Injection",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062301",
+            "weight": 5
         },
         {
             "id": 1062321,
             "name": "OWASP-2017-A1 Injection",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062321",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 8,
-            "critical": false
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8
         }
     ],
     "technologies": [
@@ -64,46 +69,40 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-98",
             "name": "Improper Control of Filename for Include/Require Statement in PHP Program ('PHP Remote File Inclusion')",
-            "url": "https://cwe.mitre.org/data/definitions/98.html",
-            "description": "The PHP application receives input from an upstream component, but it does not restrict or incorrectly restricts the input before its usage in require, include, or similar functions."
+            "href": "AIP/quality-standards/CWE/items/CWE-98",
+            "standard": "CWE"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2017",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A1-Injection",
-            "description": "Injection flaws, such as SQL, NoSQL, OS, and LDAP injection, occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
-            "standard": "STIG-V4R8",
             "id": "STIG-V-70261",
             "name": "The application must protect from command injection.",
-            "url": null,
-            "description": "A command injection attack is an attack on a vulnerable application where improperly validated input is passed to a command shell setup in the application. The result is the ability of an attacker to execute OS commands via the application.\n\nA command injection allows an attacker to execute their own commands with the same privileges as the application executing.\n\nThe following is an example of a URL based command injection attack.\n\nBefore alteration:\nhttp://sitename/cgi-bin/userData.pl?doc=user1.txt\n\nExample URL modified: \nhttp://sitename/cgi-bin/userData.pl?doc=/bin/ls|\n\nThe result is the execution of the command \u201c/bin/ls\u201d which could allow the attacker to list contents of the directory via the browser.\n\nThe following is a list of functions vulnerable to command injection sorted according to language.  \n\nLanguage Functions/Characters\n- C/C++  - system(), popen(), execlp(), execvp(), ShellExecute(), ShellExecuteEx(), _wsystem()\n- Perl - system, exec, `,open, |, eval, /e\n- Python - exec, eval, os.system, os.popen, execfile, input, compile\n- Java - Class.forName(), Class.newInstance(), Runtime.exec()"
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70261",
+            "standard": "STIG-V4R8"
         }
     ],
     "parameters": [

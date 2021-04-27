@@ -22,11 +22,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -37,14 +32,14 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,
@@ -56,20 +51,20 @@
         {
             "id": 1062124,
             "name": "ASCMM-MNT-4 - Callable and Method Control Element Number of Outward Calls",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062124",
+            "weight": 5
         },
         {
             "id": 61013,
             "name": "Architecture - Object-level Dependencies",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/61013",
+            "weight": 9
         },
         {
             "id": 1061111,
             "name": "CWE-1048: Invokable Control Element with Large Number of Outward Calls",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061111",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -81,32 +76,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-4",
             "name": "Callable and Method Control Element Number of Outward Calls",
-            "url": null,
-            "description": "Objective\nAvoid overly complex outward dependencies\n\nConsequence\nSoftware that does not follow the principles of modularity causes excessive propagation of modification impacts\n\nMeasure Element\nNumber of instances where a named callable control element or method control element has a Fan-Out value that is too large, that is, its number of references to other objects within the application exceeds a threshold value (the application determines the scope of the search for the referenced objects). Default threshold value for the number of references to other objects within the application is 5\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-4",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1048",
             "name": "Invokable Control Element with Large Number of Outward Calls",
-            "url": "https://cwe.mitre.org/data/definitions/1048.html",
-            "description": "The code contains callable control elements that contain an excessively large number of references to other application objects external to the context of the callable, i.e. a Fan-Out value that is excessively large."
+            "href": "AIP/quality-standards/CWE/items/CWE-1048",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1048",
             "name": "Invokable Control Element with Large Number of Outward Calls",
-            "url": "https://cwe.mitre.org/data/definitions/1048.html",
-            "description": "The code contains callable control elements that contain an excessively large number of references to other application objects external to the context of the callable, i.e. a Fan-Out value that is excessively large."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1048",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1048",
             "name": "Invokable Control Element with Large Number of Outward Calls",
-            "url": "https://cwe.mitre.org/data/definitions/1048.html",
-            "description": "The code contains callable control elements that contain an excessively large number of references to other application objects external to the context of the callable, i.e. a Fan-Out value that is excessively large."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1048",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

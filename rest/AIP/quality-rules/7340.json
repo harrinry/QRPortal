@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -33,16 +28,6 @@
             "id": 1061000,
             "name": "ISO-5055-Index",
             "href": "AIP/business-criteria/1061000"
-        },
-        {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
-            "id": 1061003,
-            "name": "ISO-5055-Reliability",
-            "href": "AIP/business-criteria/1061003"
         },
         {
             "id": 66031,
@@ -55,6 +40,11 @@
             "href": "AIP/business-criteria/60013"
         },
         {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -64,20 +54,20 @@
         {
             "id": 1062163,
             "name": "ASCRM-RLB-17 - Child Class Element wihout Virtual Destructor unlike its Parent Class Element",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062163",
+            "weight": 5
         },
         {
             "id": 1061108,
             "name": "CWE-1045: Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061108",
+            "weight": 5
         },
         {
             "id": 61010,
             "name": "Complexity - OO Inheritance and Polymorphism",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/61010",
+            "weight": 7
         }
     ],
     "technologies": [
@@ -89,32 +79,28 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-17",
             "name": "Child Class Element wihout Virtual Destructor unlike its Parent Class Element",
-            "url": null,
-            "description": "Objective\nAvoid failing to include a virtual destructor in a child class despite the existence of a virtual destructor in the parent class\n\nConsequence\nSoftware that does not follow the principles of inheritance and polymorphism results in unexpected behaviors\n\nMeasure Element\nNumber of instances where, for languages in which custom destructors can be written, the child class element used in the 'from' association of a Extends class relation does not have its own virtual destructor, while its parent class element that is used in the 'to' association of the Extends class relation has a virtual destructor\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-17",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1045",
             "name": "Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1045.html",
-            "description": "A parent class has a virtual destructor method, but the parent has a child class that does not have a virtual destructor."
+            "href": "AIP/quality-standards/CWE/items/CWE-1045",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1045",
             "name": "Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1045.html",
-            "description": "A parent class has a virtual destructor method, but the parent has a child class that does not have a virtual destructor."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1045",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1045",
             "name": "Parent Class with a Virtual Destructor and a Child Class without a Virtual Destructor",
-            "url": "https://cwe.mitre.org/data/definitions/1045.html",
-            "description": "A parent class has a virtual destructor method, but the parent has a child class that does not have a virtual destructor."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1045",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [

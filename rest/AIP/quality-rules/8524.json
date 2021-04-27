@@ -20,11 +20,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061004,
-            "name": "ISO-5055-Security",
-            "href": "AIP/business-criteria/1061004"
-        },
-        {
             "id": 1062300,
             "name": "OWASP-2013-Index",
             "href": "AIP/business-criteria/1062300"
@@ -43,32 +38,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1061059,
             "name": "CWE-502: Deserialization of Untrusted Data",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061059",
+            "weight": 5
         },
         {
             "id": 1062301,
             "name": "OWASP-2013-A1 Injection",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062301",
+            "weight": 5
         },
         {
             "id": 1062328,
             "name": "OWASP-2017-A8 Insecure Deserialization",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062328",
+            "weight": 5
         },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
-            "weight": 9,
-            "critical": true
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9
         }
     ],
     "technologies": [
@@ -90,67 +90,58 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CWE",
             "id": "CWE-502",
             "name": "Deserialization of Untrusted Data",
-            "url": "https://cwe.mitre.org/data/definitions/502.html",
-            "description": "The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid."
+            "href": "AIP/quality-standards/CWE/items/CWE-502",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-502",
             "name": "Deserialization of Untrusted Data",
-            "url": "https://cwe.mitre.org/data/definitions/502.html",
-            "description": "The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-502",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "NIST-SP-800-53R4",
             "id": "NIST-SI-10",
             "name": "Information Input Validation",
-            "url": "https://nvd.nist.gov/800-53/Rev4/control/SI-10",
-            "description": null
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-502",
             "name": "Deserialization of Untrusted Data",
-            "url": "https://cwe.mitre.org/data/definitions/502.html",
-            "description": "The application deserializes untrusted data without sufficiently verifying that the resulting data will be valid."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-502",
+            "standard": "OMG-ASCQM"
         },
         {
-            "standard": "OWASP",
             "id": "A1-2013",
             "name": "Injection",
-            "url": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
-            "description": "Injection flaws, such as SQL, OS, and LDAP injection occur when untrusted data is sent to an interpreter as part of a command or query. The attackers' hostile data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "A8-2017",
             "name": "Insecure Deserialization",
-            "url": "https://www.owasp.org/index.php/Top_10-2017_A8-Insecure_Deserialization",
-            "description": "Insecure deserialization often leads to remote code execution. Even if deserialization flaws do not result in remote code execution, they can be used to perform attacks, including replay attacks, injection attacks, and privilege escalation attacks."
+            "href": "AIP/quality-standards/OWASP/items/A8-2017",
+            "standard": "OWASP"
         },
         {
-            "standard": "OWASP",
             "id": "API8-2019",
             "name": "Injection",
-            "url": null,
-            "description": "Injection flaws, such as SQL, NoSQL, Command Injection, etc., occur when untrusted data is sent to an interpreter as part of a command or query. The attacker's malicious data can trick the interpreter into executing unintended commands or accessing data without proper authorization."
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
         },
         {
-            "standard": "PCI-DSS-V3.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
         },
         {
-            "standard": "PCI-DSS-V3.2.1",
             "id": "PCI-Requirement-6.5.1",
             "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
-            "url": null,
-            "description": null
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

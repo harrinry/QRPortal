@@ -26,16 +26,6 @@
             "href": "AIP/business-criteria/1062100"
         },
         {
-            "id": 1062101,
-            "name": "CISQ-Maintainability",
-            "href": "AIP/business-criteria/1062101"
-        },
-        {
-            "id": 1062103,
-            "name": "CISQ-Reliability",
-            "href": "AIP/business-criteria/1062103"
-        },
-        {
             "id": 60012,
             "name": "Changeability",
             "href": "AIP/business-criteria/60012"
@@ -46,11 +36,6 @@
             "href": "AIP/business-criteria/1061000"
         },
         {
-            "id": 1061001,
-            "name": "ISO-5055-Maintainability",
-            "href": "AIP/business-criteria/1061001"
-        },
-        {
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
@@ -59,32 +44,37 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
         {
             "id": 1062127,
             "name": "ASCMM-MNT-7 - Inter-Module Dependency Cycles",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062127",
+            "weight": 5
         },
         {
             "id": 1062159,
             "name": "ASCRM-RLB-13 - Inter-Module Dependency Cycles",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1062159",
+            "weight": 5
         },
         {
             "id": 61001,
             "name": "Architecture - Multi-Layers and Data Access",
-            "weight": 7,
-            "critical": false
+            "href": "AIP/technical-criteria/61001",
+            "weight": 7
         },
         {
             "id": 1061110,
             "name": "CWE-1047: Modules with Circular Dependencies",
-            "weight": 5,
-            "critical": false
+            "href": "AIP/technical-criteria/1061110",
+            "weight": 5
         }
     ],
     "technologies": [
@@ -96,39 +86,34 @@
     ],
     "qualityStandards": [
         {
-            "standard": "CISQ",
             "id": "ASCMM-MNT-7",
             "name": "Inter-Module Dependency Cycles",
-            "url": null,
-            "description": "Objective\nAvoid circular dependencies between modules\n\nConsequence\nSoftware that does not follow the principles of modularity causes excessive propagation of modification impacts\n\nMeasure Element\nNumber of instances where a module has references that cycle back to itself via the module callable or data relations cycle (for example, with JAVA this pattern means cycles between packages)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCMM-MNT-7",
+            "standard": "CISQ"
         },
         {
-            "standard": "CISQ",
             "id": "ASCRM-RLB-13",
             "name": "Inter-Module Dependency Cycles",
-            "url": null,
-            "description": "Objective\nAvoid circular dependencies between modules\n\nConsequence\nSoftware deployed in multi-thread environments that does not protect their state can experience deadlock or livelock\n\nMeasure Element\nNumber of instances where a module has references that cycle back to itself via the module callable or data relations cycle (for example, with JAVA this pattern means cycles between packages)\n\n"
+            "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-13",
+            "standard": "CISQ"
         },
         {
-            "standard": "CWE",
             "id": "CWE-1047",
             "name": "Modules with Circular Dependencies",
-            "url": "https://cwe.mitre.org/data/definitions/1047.html",
-            "description": "The software contains modules in which one module has references that cycle back to itself, i.e., there are circular dependencies."
+            "href": "AIP/quality-standards/CWE/items/CWE-1047",
+            "standard": "CWE"
         },
         {
-            "standard": "ISO-5055",
             "id": "CWE-1047",
             "name": "Modules with Circular Dependencies",
-            "url": "https://cwe.mitre.org/data/definitions/1047.html",
-            "description": "The software contains modules in which one module has references that cycle back to itself, i.e., there are circular dependencies."
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1047",
+            "standard": "ISO-5055"
         },
         {
-            "standard": "OMG-ASCQM",
             "id": "CWE-1047",
             "name": "Modules with Circular Dependencies",
-            "url": "https://cwe.mitre.org/data/definitions/1047.html",
-            "description": "The software contains modules in which one module has references that cycle back to itself, i.e., there are circular dependencies."
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1047",
+            "standard": "OMG-ASCQM"
         }
     ],
     "parameters": [
