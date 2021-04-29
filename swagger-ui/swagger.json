@@ -1316,11 +1316,8 @@
           "name": {
             "$ref": "#/components/schemas/QualityStandardReference.name"
           },
-          "description": {
-            "$ref": "#/components/schemas/QualityStandardReference.description"
-          },
-          "url": {
-            "$ref": "#/components/schemas/QualityStandardReference.url"
+          "href": {
+            "$ref": "#/components/schemas/QualityStandardReference.href"
           }
         }
       },
@@ -1450,6 +1447,13 @@
           },
           "quality-rules": {
             "$ref": "#/components/schemas/Resource.qualityRules"
+          },
+          
+          "iso-patterns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IsoPattern"
+            }          
           }
         }
       },
@@ -1478,10 +1482,23 @@
         "example": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
         "description": "External documentation"
       },
+      "IsoPattern": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "$ref": "#/components/schemas/IsoPattern.name"
+            }
+        }
+      },      
       "QualityStandardReference.count": {
         "type": "integer",
         "example": 9,
         "description": "Number of related quality rules"
+      },
+      "IsoPattern.name": {
+         "type": "string",
+         "example": "ASCQM Ban Circular Dependencies between Modules",
+         "description": "A detection pattern"
       },
       "Extension": {
         "type": "object",
