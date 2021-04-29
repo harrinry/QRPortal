@@ -190,6 +190,34 @@
         }
       }
     },
+    "/rest/AIP/business-criteria/{BCID}/technical-criteria": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List technical criteria contributing to a business criterion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/BCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TechnicalCriterionItem"
+                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/rest/AIP/business-criteria/{BCID}/quality-rules": {
       "get": {
         "tags": [
@@ -208,8 +236,9 @@
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "items": null,
-                  "$ref": "#/components/schemas/QualityRuleItem"
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItem"
+                  }
                 }
               }
             }
@@ -217,6 +246,59 @@
         }
       }
     },
+    "/rest/AIP/technical-criteria/{TCID}": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "Describe a technical criterion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TechnicalCriterion"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rest/AIP/technical-criteria/{TCID}/quality-rules": {
+      "get": {
+        "tags": [
+          "Quality Model"
+        ],
+        "description": "List quality rules contributing to a technical criterion",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/TCID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/QualityRuleItemByTechnicalCriterion"
+                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },    
     "/rest/AIP/quality-rules/{ID}": {
       "get": {
         "tags": [
@@ -726,6 +808,15 @@
           "type": "string"
         }
       },
+      "TCID": {
+        "name": "TCID",
+        "in": "path",
+        "required": true,
+        "description": "A Technical criterion ID such as 66062 (Secure Coding - Input Validation), etc.",
+        "schema": {
+          "type": "string"
+        }
+      },      
       "ID": {
         "name": "ID",
         "in": "path",
@@ -891,6 +982,12 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
           }
         }
       },
@@ -908,9 +1005,41 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
           }
         }
       },
+      "QualityRuleItemByTechnicalCriterion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/QualityRule.id"
+          },
+          "name": {
+            "$ref": "#/components/schemas/QualityRule.name"
+          },
+          "href": {
+            "$ref": "#/components/schemas/QualityRule.href"
+          },
+          "weight": {
+            "$ref": "#/components/schemas/Contribution.weight"
+          },
+          "critical": {
+            "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
+          }
+        }
+      },      
       "QualityRule": {
         "type": "object",
         "properties": {
@@ -1066,6 +1195,9 @@
           },
           "quality-rules": {
             "$ref": "#/components/schemas/Resource.qualityRules"
+          },
+          "technical-criteria": {
+            "$ref": "#/components/schemas/TechnicalCriterionItem"
           }
         }
       },
@@ -1089,6 +1221,26 @@
         "description": "Business Criterion URI",
         "example": "AIP/business-criteria/60016"
       },
+      "TechnicalCriterion": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/TechnicalCriterion.id"
+          },
+          "name": {
+            "$ref": "#/components/schemas/TechnicalCriterion.name"
+          },
+          "href": {
+            "$ref": "#/components/schemas/TechnicalCriterion.href"
+          },
+          "description": {
+            "$ref": "#/components/schemas/TechnicalCriterion.description"
+          },
+          "quality-rules": {
+            "$ref": "#/components/schemas/Resource.qualityRules"
+          }
+        }
+      },      
       "TechnicalCriterionItem": {
         "type": "object",
         "properties": {
@@ -1100,9 +1252,6 @@
           },
           "weight": {
             "$ref": "#/components/schemas/Contribution.weight"
-          },
-          "critical": {
-            "$ref": "#/components/schemas/Contribution.critical"
           }
         }
       },
@@ -1185,11 +1334,8 @@
           "name": {
             "$ref": "#/components/schemas/QualityStandardReference.name"
           },
-          "description": {
-            "$ref": "#/components/schemas/QualityStandardReference.description"
-          },
-          "url": {
-            "$ref": "#/components/schemas/QualityStandardReference.url"
+          "href": {
+            "$ref": "#/components/schemas/QualityStandardReference.href"
           }
         }
       },
@@ -1319,6 +1465,13 @@
           },
           "quality-rules": {
             "$ref": "#/components/schemas/Resource.qualityRules"
+          },
+          
+          "iso-patterns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IsoPattern"
+            }          
           }
         }
       },
@@ -1347,10 +1500,23 @@
         "example": "https://www.owasp.org/index.php/Top_10_2013-A1-Injection",
         "description": "External documentation"
       },
+      "IsoPattern": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "$ref": "#/components/schemas/IsoPattern.name"
+            }
+        }
+      },      
       "QualityStandardReference.count": {
         "type": "integer",
         "example": 9,
         "description": "Number of related quality rules"
+      },
+      "IsoPattern.name": {
+         "type": "string",
+         "example": "ASCQM Ban Circular Dependencies between Modules",
+         "description": "A detection pattern"
       },
       "Extension": {
         "type": "object",
