@@ -982,6 +982,12 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
           }
         }
       },
@@ -999,6 +1005,12 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
           }
         }
       },
@@ -1019,7 +1031,13 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
-          }          
+          },
+          "technologyNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Technology.name"
+            }
+          }
         }
       },      
       "QualityRule": {
