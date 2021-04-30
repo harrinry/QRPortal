@@ -210,7 +210,7 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/TechnicalCriterionItem"
-                   }
+                  }
                 }
               }
             }
@@ -291,14 +291,14 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/QualityRuleItemByTechnicalCriterion"
-                   }
+                  }
                 }
               }
             }
           }
         }
       }
-    },    
+    },
     "/rest/AIP/quality-rules/{ID}": {
       "get": {
         "tags": [
@@ -760,7 +760,7 @@
         }
       }
     }
-  },  
+  },
   "components": {
     "parameters": {
       "TECHNO": {
@@ -816,7 +816,7 @@
         "schema": {
           "type": "string"
         }
-      },      
+      },
       "ID": {
         "name": "ID",
         "in": "path",
@@ -1039,7 +1039,7 @@
             }
           }
         }
-      },      
+      },
       "QualityRule": {
         "type": "object",
         "properties": {
@@ -1240,7 +1240,7 @@
             "$ref": "#/components/schemas/Resource.qualityRules"
           }
         }
-      },      
+      },
       "TechnicalCriterionItem": {
         "type": "object",
         "properties": {
@@ -1264,6 +1264,16 @@
         "type": "integer",
         "description": "Technical Criterion name",
         "example": "Programming Practices - Unexpected Behavior"
+      },
+      "TechnicalCriterion.href": {
+        "type": "string",
+        "description": "Technical Criterion URI",
+        "example": "AIP/technical-criteria/66062"
+      },
+      "TechnicalCriterion.description": {
+        "type": "string",
+        "description": "Technical Criterion description",
+        "example": "Input validation security breaches result from trusting user input and lack of strong checks/cleanup of the user input."
       },
       "TechnologyItem": {
         "type": "object",
@@ -1466,12 +1476,11 @@
           "quality-rules": {
             "$ref": "#/components/schemas/Resource.qualityRules"
           },
-          
           "iso-patterns": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/IsoPattern"
-            }          
+            }
           }
         }
       },
@@ -1503,20 +1512,20 @@
       "IsoPattern": {
         "type": "object",
         "properties": {
-            "name": {
-                "$ref": "#/components/schemas/IsoPattern.name"
-            }
+          "name": {
+            "$ref": "#/components/schemas/IsoPattern.name"
+          }
         }
-      },      
+      },
       "QualityStandardReference.count": {
         "type": "integer",
         "example": 9,
         "description": "Number of related quality rules"
       },
       "IsoPattern.name": {
-         "type": "string",
-         "example": "ASCQM Ban Circular Dependencies between Modules",
-         "description": "A detection pattern"
+        "type": "string",
+        "example": "ASCQM Ban Circular Dependencies between Modules",
+        "description": "A detection pattern"
       },
       "Extension": {
         "type": "object",
