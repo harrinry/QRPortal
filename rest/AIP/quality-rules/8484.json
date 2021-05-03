@@ -10,8 +10,8 @@
     "rationale": "CR and LF characters in an HTTP header may give attackers control of the remaining headers and body of the response the application intends to send, as well as allowing them to create additional responses entirely under their control.",
     "reference": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')\nhttps://cwe.mitre.org/data/definitions/113.html\n\nCWE-644: Improper Neutralization of HTTP Headers for Scripting Syntax\nhttps://cwe.mitre.org/data/definitions/644.html\n\nOpen Web Application Security Project (OWASP)\nhttps://www.owasp.org/index.php/Top_10_2007",
     "remediation": "Use authorized sanitization methods.\n\nTo avoid the creation of XSS flaws, the Open Web Application Security Project (OWASP) recommends both input validation and \"strong output encoding\" or sanitization:\n\"Strong output encoding. Ensure that all user-supplied data is appropriately entity encoded (either HTML or XML depending on the output mechanism) before rendering, taking the approach to encode all characters other than a very limited subset. This is the approach of the Microsoft Anti-XSS library or any valid sanitization libraries. Also, set the character encodings for each page you output, which will reduce exposure to some variants.\"",
-    "remediationSample": "Sample 1\n// include validation code for rawInputData  --> cleanData\nresponse.addHeader(HEADER_NAME, cleanData);\n\n\nSample 2:\nString header = request.getParameter(HEADER_NAME);\n// ...\n// include validation code for header\nCookie cookie = new Cookie(\"header\", header);\nresponse.addCookie(cookie);",
-    "sample": "Sample 1\nresponse.addHeader(HEADER_NAME, rawInputData);\n\nSample 2\nString header = request.getParameter(HEADER_NAME);\n// ...\nCookie cookie = new Cookie(\"header\", header);\nresponse.addCookie(cookie);",
+    "remediationSample": "//Sample 1\n// A possibility is to sanitize the rawInputData variable\nimport org.owasp.esapi.Encoder;\nresponse.addHeader(HEADER_NAME, Encoder.encodeForHTML(rawInputData));\n\n\n//Sample 2:\nimport org.owasp.esapi.Encoder;\nString header = request.getParameter(HEADER_NAME);\nCookie cookie = new Cookie(\"header\", Encoder.encodeForHTML(header));\nresponse.addCookie(cookie);",
+    "sample": "//Sample 1\nresponse.addHeader(HEADER_NAME, rawInputData);\n\n//Sample 2\nString header = request.getParameter(HEADER_NAME);\nCookie cookie = new Cookie(\"header\", header);\nresponse.addCookie(cookie);",
     "total": "Number of potentially vulnerable methods",
     "alternativeName": "Avoid HTTP response splitting through API requests",
     "businessCriteria": [
@@ -98,6 +98,12 @@
             "name": "The application must not be subject to input handling vulnerabilities.",
             "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70271",
             "standard": "STIG-V4R8"
+        },
+        {
+            "id": "STIG-V-222609",
+            "name": "The application must not be subject to input handling vulnerabilities.",
+            "href": "AIP/quality-standards/STIG-V5/items/STIG-V-222609",
+            "standard": "STIG-V5"
         }
     ],
     "parameters": [
