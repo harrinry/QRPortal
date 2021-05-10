@@ -18,6 +18,7 @@ export const CLASSES = {
   tagContainer: 'qrp_bdet_tagCntr',
   noRules: 'qrp_bdet_nRls',
   weightIcon: 'qrp_bdet_w8t_ico',
+  weightRedIcon: 'qrp_bdet_w8t_red_ico',
   smallWeightIcon: 'qrp_bdet_sweight_ico',
   smallWeightText: 'qrp_bdet_sw8t',
   weight: 'qrp_bdet_w8t',

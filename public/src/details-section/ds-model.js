@@ -9,7 +9,7 @@ const WeightTag = ({ value, weight }) => {
   return (<div className={CLASSES.weightTagContainer}>
     <p className={CLASSES.tagText}>{value}</p>
     <div className={createClassName(CLASSES.weightContainer, CLASSES.smallWeightIcon)}>
-      <span className={CLASSES.smallWeightText}>{weight}</span>
+      /*<span className={CLASSES.smallWeightText}>{weight}</span>*/
     </div>
   </div>);
 };

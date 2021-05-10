@@ -108,6 +108,9 @@ function getSevertity(weight){
 
 export const childConstructor = ( values, index, callback ) => {
 
+    console.log("childConstructor");
+    console.log(values);
+
   if(isEcho())
   {
     return (
@@ -129,6 +132,9 @@ export const childConstructor = ( values, index, callback ) => {
 
 export const standardsChildConstructor = ( values, index, callback ) => {
   const technos = values.hasOwnProperty(compareValueKeys.techName) ? values[compareValueKeys.techName] : [''];
+    
+    console.log("standardsChildConstructor");
+    console.log(values);
 
   if(isEcho())
   {
@@ -144,8 +150,7 @@ export const standardsChildConstructor = ( values, index, callback ) => {
   return (
     <tr key={index} onClick={callback} className={createClassName( COMMON_CLASSES.arrayChildElement, values.selected ? COMMON_CLASSES.arraySelected : undefined, isDepricated(values.name) ? CLASSES.emptyContent : undefined)}>
       <td className={CLASSES.idCell}>{values.id}</td>
-      <td className={CLASSES.nameCell}>{values.name}</td>
-      <td className={CLASSES.TechnosCell}>{technos.join(', ')}</td>
+          <td className={CLASSES.nameCell}>{values.name}<br/><div className={CLASSES.TechnosCell}>{technos.map( t => <span>{t}</span>)}</div></td>
       <td className={createClassName(CLASSES.critical, values.critical ? COMMON_CLASSES.critical : undefined)}> </td>
     </tr>
   );
