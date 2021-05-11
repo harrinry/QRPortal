@@ -3435,6 +3435,78 @@
         ]
     },
     {
+        "id": 1006000,
+        "name": "Avoid scripts using SQL static statements (Shell)",
+        "href": "AIP/quality-rules/1006000",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006002,
+        "name": "Avoid scripts and functions with SQL code in temporary files (Shell)",
+        "href": "AIP/quality-rules/1006002",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006004,
+        "name": "Avoid unreferenced Programs  (Shell)",
+        "href": "AIP/quality-rules/1006004",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006006,
+        "name": "Avoid unreferenced Functions  (Shell)",
+        "href": "AIP/quality-rules/1006006",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006008,
+        "name": "Avoid programs with low comment / code ratio  (Shell)",
+        "href": "AIP/quality-rules/1006008",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006010,
+        "name": "Avoid script without interpretor access path  (Shell)",
+        "href": "AIP/quality-rules/1006010",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006012,
+        "name": "Avoid functions without returning exit code  (Shell)",
+        "href": "AIP/quality-rules/1006012",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
+        "id": 1006014,
+        "name": "Function should not be named as UNIX commands  (Shell)",
+        "href": "AIP/quality-rules/1006014",
+        "critical": false,
+        "technologyNames": [
+            "Shell"
+        ]
+    },
+    {
         "id": 1019000,
         "name": "Always separate service contracts from service implementation.",
         "href": "AIP/quality-rules/1019000",
@@ -3444,9 +3516,54 @@
         ]
     },
     {
+        "id": 1019004,
+        "name": "Avoid to set client credential type other than Certificate or Windows when using message mode",
+        "href": "AIP/quality-rules/1019004",
+        "critical": false,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
+        "id": 1019006,
+        "name": "Avoid wrong suppressAuditFailure and serviceAuthorizationAuditLevel parameters when enabling WCF service security audit feature",
+        "href": "AIP/quality-rules/1019006",
+        "critical": false,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
+        "id": 1019008,
+        "name": "Avoid not enabling throttling while setting service behavior",
+        "href": "AIP/quality-rules/1019008",
+        "critical": false,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
         "id": 1019010,
         "name": "Avoid disabling authentication mode messages when using MSMQ transport security",
         "href": "AIP/quality-rules/1019010",
+        "critical": false,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
+        "id": 1019012,
+        "name": "Avoid message security without authentication for an anonymous client",
+        "href": "AIP/quality-rules/1019012",
+        "critical": false,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
+        "id": 1019016,
+        "name": "Avoid having the property IncludeExceptionDetailInFaults activated in the source code",
+        "href": "AIP/quality-rules/1019016",
         "critical": false,
         "technologyNames": [
             "WCF"
@@ -5082,6 +5199,15 @@
         ]
     },
     {
+        "id": 1020850,
+        "name": "Always handle errors when using ajax with RxJS",
+        "href": "AIP/quality-rules/1020850",
+        "critical": false,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020852,
         "name": "Avoid using \"<script>\" tag in HTML template used by React.js components (Typescript)",
         "href": "AIP/quality-rules/1020852",
@@ -5775,6 +5901,213 @@
         ]
     },
     {
+        "id": 1024000,
+        "name": "Avoid using AbsoluteLayout",
+        "href": "AIP/quality-rules/1024000",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024002,
+        "name": "Always have read permission to read data of Content Provider",
+        "href": "AIP/quality-rules/1024002",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024004,
+        "name": "Always have writing permission to write data of Content Provider",
+        "href": "AIP/quality-rules/1024004",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024006,
+        "name": "Always limit the accessibility of your app's Content Provider",
+        "href": "AIP/quality-rules/1024006",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024008,
+        "name": "Always use onActivityResult to pass the login results when using Facebook SDK",
+        "href": "AIP/quality-rules/1024008",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024010,
+        "name": "Avoid applying dangerous protection level for signature-based permissions",
+        "href": "AIP/quality-rules/1024010",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024012,
+        "name": "Avoid setting android:grantUriPermissions as True",
+        "href": "AIP/quality-rules/1024012",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024014,
+        "name": "Always set permission for securing Receivers",
+        "href": "AIP/quality-rules/1024014",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024016,
+        "name": "Always provide permission for securing Services",
+        "href": "AIP/quality-rules/1024016",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024018,
+        "name": "Always provide a permission to secure Activities",
+        "href": "AIP/quality-rules/1024018",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024020,
+        "name": "Avoid using implicit intent",
+        "href": "AIP/quality-rules/1024020",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024022,
+        "name": "Always released Media Resources",
+        "href": "AIP/quality-rules/1024022",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024024,
+        "name": "Always use HTTPS traffic to particular domains",
+        "href": "AIP/quality-rules/1024024",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024026,
+        "name": "Avoid using MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE",
+        "href": "AIP/quality-rules/1024026",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024028,
+        "name": "Avoid using \"Android Protected Confirmation\" without User Confirmation",
+        "href": "AIP/quality-rules/1024028",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024030,
+        "name": "Avoid using FingerprintManager as biometric API",
+        "href": "AIP/quality-rules/1024030",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024032,
+        "name": "Always manage the BiometricPrompt onAuthenticationFailed method",
+        "href": "AIP/quality-rules/1024032",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024034,
+        "name": "Always check all the BiometricPrompt error options in the onAuthenticationError method",
+        "href": "AIP/quality-rules/1024034",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024036,
+        "name": "Always check all the BiometricPrompt acquired options in the onAuthenticationSucceeded method ",
+        "href": "AIP/quality-rules/1024036",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024038,
+        "name": "Avoid processing Google Sign In Client without catching error",
+        "href": "AIP/quality-rules/1024038",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024040,
+        "name": "Always activate unlockedDeviceRequired to avoid data decryption when device is unlocked",
+        "href": "AIP/quality-rules/1024040",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024042,
+        "name": "Avoid using weak encryption algorithm (Android)",
+        "href": "AIP/quality-rules/1024042",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024044,
+        "name": "Always check the device supports Biometric capability before using BiometricPrompt API",
+        "href": "AIP/quality-rules/1024044",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1027000,
         "name": "Avoid Managed type declaration for Win32 API using Overlapped IO",
         "href": "AIP/quality-rules/1027000",
@@ -6173,6 +6506,15 @@
         ]
     },
     {
+        "id": 1030000,
+        "name": "Avoid \"when\" statement or expression without an else (Kotlin)",
+        "href": "AIP/quality-rules/1030000",
+        "critical": false,
+        "technologyNames": [
+            "Kotlin"
+        ]
+    },
+    {
         "id": 1030002,
         "name": "Avoid using \"Throwable.printStackTrace()\" with no argument (Kotlin)",
         "href": "AIP/quality-rules/1030002",
@@ -6185,6 +6527,15 @@
         "id": 1030004,
         "name": "Avoid using \"foreach\" to iterate over a explicit range (Kotlin)",
         "href": "AIP/quality-rules/1030004",
+        "critical": false,
+        "technologyNames": [
+            "Kotlin"
+        ]
+    },
+    {
+        "id": 1030006,
+        "name": "Avoid large Classes - too many Methods (Kotlin)",
+        "href": "AIP/quality-rules/1030006",
         "critical": false,
         "technologyNames": [
             "Kotlin"
@@ -6587,6 +6938,15 @@
         ]
     },
     {
+        "id": 1040014,
+        "name": "Avoid using Spring Security's debug mode",
+        "href": "AIP/quality-rules/1040014",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1040016,
         "name": "PermitAll or user role should be specified to access URL(s) of the application",
         "href": "AIP/quality-rules/1040016",
@@ -6636,6 +6996,51 @@
         "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
         "href": "AIP/quality-rules/1040032",
         "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040034,
+        "name": "StrictHttpFirewall should be set as Http Firewall before Spring Security 5.0.1, 4.2.4, and 4.1.5",
+        "href": "AIP/quality-rules/1040034",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040036,
+        "name": "Avoid using STOMP Spring messaging module before Spring 5.0.5 and 4.3.16",
+        "href": "AIP/quality-rules/1040036",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040038,
+        "name": "Avoid using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
+        "href": "AIP/quality-rules/1040038",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040042,
+        "name": "Avoid using Spring Security in combination with Spring Framework 5.0.5",
+        "href": "AIP/quality-rules/1040042",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040044,
+        "name": "Avoid using UnZipTransformer of spring-integration-zip prior to version 1.0.1",
+        "href": "AIP/quality-rules/1040044",
+        "critical": true,
         "technologyNames": [
             "JEE"
         ]
@@ -7087,6 +7492,54 @@
         ]
     },
     {
+        "id": 1043076,
+        "name": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
+        "href": "AIP/quality-rules/1043076",
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043078,
+        "name": "Avoid debug binaries that include detailed debug information",
+        "href": "AIP/quality-rules/1043078",
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043080,
+        "name": "Avoid disabling OR not defining encryption behavior for encryption when connecting with Database",
+        "href": "AIP/quality-rules/1043080",
+        "critical": true,
+        "technologyNames": [
+            "ASP.NET"
+        ]
+    },
+    {
+        "id": 1043082,
+        "name": "Avoid client provided dictionaries to have high request sizes",
+        "href": "AIP/quality-rules/1043082",
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET"
+        ]
+    },
+    {
+        "id": 1043084,
+        "name": "Avoid XML schemas with unbounded occurrences",
+        "href": "AIP/quality-rules/1043084",
+        "critical": false,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
         "id": 1050000,
         "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
         "href": "AIP/quality-rules/1050000",
@@ -7348,6 +7801,33 @@
         ]
     },
     {
+        "id": 1050062,
+        "name": "Avoid empty catch blocks (Objective-C)",
+        "href": "AIP/quality-rules/1050062",
+        "critical": true,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050064,
+        "name": "Avoid weak cryptographic hash (Objective-C)",
+        "href": "AIP/quality-rules/1050064",
+        "critical": true,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050066,
+        "name": "Avoid using unsecured cookie (Objective-C)",
+        "href": "AIP/quality-rules/1050066",
+        "critical": true,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
         "id": 1055000,
         "name": "Avoid using unsecured cookie (Swift)",
         "href": "AIP/quality-rules/1055000",
@@ -7505,6 +7985,15 @@
         "name": "Avoid weak encryption algorithm (Swift)",
         "href": "AIP/quality-rules/1055038",
         "critical": true,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
+        "id": 1055040,
+        "name": "Avoid using XMLDocument without restriction of XML External Entity Reference (XXE) (Swift)",
+        "href": "AIP/quality-rules/1055040",
+        "critical": false,
         "technologyNames": [
             "Swift"
         ]
@@ -8662,6 +9151,42 @@
         "critical": false,
         "technologyNames": [
             "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101104,
+        "name": "Avoid XXL tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101104",
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101106,
+        "name": "Avoid tables without primary key / unique key constraint / unique index",
+        "href": "AIP/quality-rules/1101106",
+        "critical": true,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101108,
+        "name": "Avoid Cobol SQL Cursors without FOR READ ONLY or FOR FETCH ONLY or FOR UPDATE clauses",
+        "href": "AIP/quality-rules/1101108",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 1101112,
+        "name": "Avoid LOCK TABLE statements in SQL code for COBOL Programs",
+        "href": "AIP/quality-rules/1101112",
+        "critical": false,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
