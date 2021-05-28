@@ -1,0 +1,137 @@
+{
+    "id": 8534,
+    "name": "Avoid XQuery injection through API requests",
+    "href": "AIP/quality-rules/8534",
+    "critical": true,
+    "maxWeight": 9,
+    "associatedValueName": "Call stack from user input source down to the target method",
+    "description": "The software does not properly neutralize special elements coming from API requests that are used in an XQuery expression, allowing attackers to modify the syntax, content, or commands of the XML before it is processed by an end system.\n\nUsing CAST data-flow engine, this metric detects execution paths from user input methods down to file creation methods, paths which are open vulnerabilities to operating system injection flaws.",
+    "output": "List all methods that make resource calls forged by user input\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
+    "rationale": "The software does not properly neutralize special elements that are used in an XQuery expression, allowing attackers to modify the syntax, content, or commands of the XML before it is processed by an end system.",
+    "reference": "CWE-652: XQuery Injection\nhttps://cwe.mitre.org/data/definitions/652.html",
+    "remediation": "Use authorized sanitization methods.",
+    "remediationSample": "...\nString login; // value given by an API request\nXQDataSource dataSource = new SaxonXQDataSource();\nXQConnection xcon = dataSource.getConnection(connectionName, connectionPassword);\nString xquery = \"for $user in doc(\\\"base.xml\\\")/Users/User[login='$login'] return $user/password\";\nXQPreparedExpression xqpe = xcon.prepareExpression(xquery);\nxqpe.bindString(new QName(\"login\"), login, null);\nXQResultSequence rs = xqpe.executeQuery();\n...",
+    "sample": "...\nString login = request.getParameter(\"login\");\nXQDataSource dataSource = new SaxonXQDataSource();\nXQConnection xcon = dataSource.getConnection(connectionName, connectionPassword);\nString xquery = \"for $user in doc(\\\"base.xml\\\")/Users/User[login='\" + login + \"'] return $user/password\";\nXQPreparedExpression xqpe = xcon.prepareExpression(xquery);\nXQResultSequence rs = xqpe.executeQuery();\n...",
+    "total": "Number of potentially vulnerable methods",
+    "alternativeName": "Ensure your application properly neutralize XML content before it is processed",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "CWE-652",
+            "name": "Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')",
+            "href": "AIP/quality-standards/CWE/items/CWE-652",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-652",
+            "name": "Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')",
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-652",
+            "standard": "ISO-5055"
+        },
+        {
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "CWE-652",
+            "name": "Improper Neutralization of Data within XQuery Expressions ('XQuery Injection')",
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-652",
+            "standard": "OMG-ASCQM"
+        },
+        {
+            "id": "A1-2013",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A1-2017",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "API8-2019",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
+        },
+        {
+            "id": "STIG-V-70261",
+            "name": "The application must protect from command injection.",
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70261",
+            "standard": "STIG-V4R8"
+        },
+        {
+            "id": "STIG-V-222604",
+            "name": "The application must protect from command injection.",
+            "href": "AIP/quality-standards/STIG-V5/items/STIG-V-222604",
+            "standard": "STIG-V5"
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}
