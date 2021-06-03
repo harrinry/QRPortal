@@ -156,35 +156,7 @@ function buildStandardsIndex( dataSource ){
     //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
 
-  fs.readFile( path.resolve( __dirname, '..', '..', 'rest', 'AIP', 'quality-standards', 'AIP', 'items', 'AIP-CAST-LITE', 'quality-rules.json'), ( err, data ) => {
-    if(err) {
-      console.log('an error occured while generating Echo search index');
-      throw err;
-    }
-    try{
-      const EchoRuleList = JSON.parse(data);
-      for (let i = 0; i < EchoRuleList.length; i++) {
-        const rule = EchoRuleList[i];
-        try {
-          const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
-  
-          index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json'), true ) );
-          
-        } catch (error) {
-          console.log(error.message);
-        }
-      }
-    } catch( er ){
-      console.log('Echo rule index is not a valid json file');
-      throw er;
-    }
-
-    console.log('Echo rules search index generated');
-  });
-
   index.standards = buildStandardsIndex( 'AIP' );
-  index.echoStandards = buildStandardsIndex( 'Echo' );
-
 }());
 
 module.exports = SearchIndex;
