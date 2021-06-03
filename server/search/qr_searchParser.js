@@ -36,10 +36,10 @@ const MapTechnology = (technology) => {
   return null;
 };
 
-function convertToSearchString ( dataObject, fileName, echo ) {
+function convertToSearchString ( dataObject, fileName ) {
   const technos = dataObject.technologies;
   const qsString = dataObject.qualityStandards.map( qs => qs.id ).join(' ');
-  const name = echo ? (dataObject.alternativeName || dataObject.name) : dataObject.name;
+  const name = dataObject.name;
   return {
     id: dataObject.id,
     name: name,
@@ -51,14 +51,14 @@ function convertToSearchString ( dataObject, fileName, echo ) {
   };
 }
 
-function SearchIndex( query, indexDef, isEcho ){
+function SearchIndex( query, indexDef ){
   switch (indexDef) {
   case 'qualityrules':
-    return isEcho ? (search( query, index.echo, ( e ) => e.searchid ).sort((a,b)=> a.id - b.id)) : (search( query, index[ indexDef ], ( e ) => e.searchid ).sort((a,b)=> a.id - b.id));
+    return (search( query, index[ indexDef ], ( e ) => e.searchid ).sort((a,b)=> a.id - b.id));
   case 'standards':
-    return findQualityStandard( query.toLowerCase(), isEcho);
+    return findQualityStandard( query.toLowerCase());
   case 'qualityrulesbyid':
-    return isEcho ? (searchBy(query, index.echo, 'id').sort((a,b)=> a.id - b.id)) : (searchBy(query, index.qualityrules, 'id').sort((a,b)=> a.id - b.id));
+    return (searchBy(query, index.qualityrules, 'id').sort((a,b)=> a.id - b.id));
   default:{
     const err = {
       module: 'search',
@@ -73,8 +73,8 @@ function SearchIndex( query, indexDef, isEcho ){
   }
 }
 
-function findQualityStandard( standardID, echo ){
-  return index[(echo ? 'echoStandards' : 'standards')].hasOwnProperty(standardID) ? index[(echo ? 'echoStandards' : 'standards')][standardID] : [];
+function findQualityStandard( standardID ){
+  return index['standards'].hasOwnProperty(standardID) ? index['standards'][standardID] : [];
 }
 
 // const createUniqueTechnologiesArray = ( technologiesArray )=>{
@@ -156,35 +156,7 @@ function buildStandardsIndex( dataSource ){
     //if( process.env.NODE_ENV !== 'production' )QRinitializationTest();
   });
 
-  fs.readFile( path.resolve( __dirname, '..', '..', 'rest', 'AIP', 'quality-standards', 'AIP', 'items', 'AIP-CAST-LITE', 'quality-rules.json'), ( err, data ) => {
-    if(err) {
-      console.log('an error occured while generating Echo search index');
-      throw err;
-    }
-    try{
-      const EchoRuleList = JSON.parse(data);
-      for (let i = 0; i < EchoRuleList.length; i++) {
-        const rule = EchoRuleList[i];
-        try {
-          const ruleData = JSON.parse(fs.readFileSync( path.resolve( __dirname, '..', '..', ('rest/' + rule.href + '.json') ) ));
-  
-          index.echo.push( convertToSearchString( ruleData, path.basename(rule.href + '.json'), true ) );
-          
-        } catch (error) {
-          console.log(error.message);
-        }
-      }
-    } catch( er ){
-      console.log('Echo rule index is not a valid json file');
-      throw er;
-    }
-
-    console.log('Echo rules search index generated');
-  });
-
   index.standards = buildStandardsIndex( 'AIP' );
-  index.echoStandards = buildStandardsIndex( 'Echo' );
-
 }());
 
 module.exports = SearchIndex;
