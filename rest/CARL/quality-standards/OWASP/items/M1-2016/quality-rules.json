@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1024022,
+        "name": "Ensure to release media resorces at OnStop() and OnDestroy() to efficiently use resources",
+        "href": "AIP/quality-rules/1024022",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024026,
+        "name": "Prefer not using MODE_WORLD_READABLE or MODE_WORLD_WRITABLE to share files with other apps",
+        "href": "AIP/quality-rules/1024026",
+        "critical": false,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024030,
+        "name": "Prefer using BiometricPrompt API instead of FingerprintManager as the latter is deprecated",
+        "href": "AIP/quality-rules/1024030",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024032,
+        "name": "onAuthenticationFailed:callback should be always triggered to correctly manage the BiometricPrompt",
+        "href": "AIP/quality-rules/1024032",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024034,
+        "name": "Ensure to check all the BiometricPrompt error options in the onAuthenticationError method",
+        "href": "AIP/quality-rules/1024034",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024036,
+        "name": "Ensure to check all BiometricPrompt acquired options in the onAuthenticationSucceeded method",
+        "href": "AIP/quality-rules/1024036",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024044,
+        "name": "Ensure you have checked FEATURE_FINGERPRINT to verifify supports Biometric capability  before using BiometricPrompt API",
+        "href": "AIP/quality-rules/1024044",
+        "critical": true,
+        "technologyNames": [
+            "JEE"
+        ]
+    }
+]
