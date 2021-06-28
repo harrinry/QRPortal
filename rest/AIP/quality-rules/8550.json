@@ -1,0 +1,70 @@
+{
+    "id": 8550,
+    "name": "Avoid using ABAP command GENERATE SUBROUTINE POOL",
+    "href": "AIP/quality-rules/8550",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "This command can create arbitrary temporary ABAP programs. It must not process input, especially not from a file upload. \n\nGENERATE SUBROUTINE POOL should only be used in exceptional cases in application programs",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - GENERATE SUBROUTINE POOL ...",
+    "rationale": "ABAP command injections are possible whenever programs use external statements (or parts of statements) that are then are passed to the runtime environment without being checked.\n\nGENERATE SUBROUTINE POOL, If used wrongly, dynamic programming techniques can present a serious security risk.",
+    "reference": "https://help.sap.com/doc/abapdocu_750_index_htm/7.50/en-US/abapgenerate_subroutine_pool.htm\nhttps://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-us/abengeneric_prog_scrty.htm",
+    "remediation": "Any dynamic content that is passed to a program from the outside must be checked thoroughly or escaped before being used in dynamic statements. This can be done using the system class CL_ABAP_DYN_PRG or the predefined function escape.",
+    "sample": "https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-us/abengeneric_prog_scrty.htm\n\nTYPES prog TYPE TABLE OF string WITH EMPTY KEY.\n\nDATA(text) = concat_lines_of( VALUE prog(\n  ( |PROGRAM.\\n\\n| )\n  ( |FORM do_it.\\n| )\n  ( |  ...\\n| )\n  ( |ENDFORM.| ) ) ).\n\nCALL FUNCTION 'DEMO_INPUT_TEXT'\n  CHANGING\n    text_string = text\n  EXCEPTIONS\n    canceled    = 4.\nIF sy-subrc = 4.\n  LEAVE PROGRAM.\nENDIF.\nSPLIT text AT |\\n| INTO TABLE DATA(prog).\n\nGENERATE SUBROUTINE POOL prog NAME DATA(pool).// Violation \nIF sy-subrc = 0.\n  PERFORM do_it IN PROGRAM (pool).\nENDIF.\n\n--------------\nhttps://answers.sap.com/questions/1113113/generating-subroutine-pool.html\n\n\nDATA : itab(200) OCCURS 0.\n\nDATA zname(8).\n\nAPPEND 'DATA: BEGIN OF IT_INFTY OCCURS 0,' TO itab.\n\nAPPEND 'CALL FUNCTION ''UPLOAD''' TO itab.\n\nAPPEND 'EXPORTING' TO itab.\n\nAPPEND 'filename = ''C:\\''' TO itab.\n\nAPPEND 'filetype = ''DAT''' TO itab.\n\nAPPEND 'TABLES' TO itab.\n\nAPPEND 'DATA_TAB = IT_INFTY.' TO itab.\n\nGENERATE SUBROUTINE POOL itab NAME zname.\n\nIF sy-subrc EQ 0.\n\nWRITE:/ 'success'.\n\nELSE.\n\nWRITE :/25 'Error'.\n\nENDIF.",
+    "total": "Number of ABAP Artifacts",
+    "alternativeName": "Avoid using ABAP command GENERATE SUBROUTINE POOL",
+    "businessCriteria": [
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        },
+        {
+            "id": 60011,
+            "name": "Transferability",
+            "href": "AIP/business-criteria/60011"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61024,
+            "name": "Programming Practices - Structuredness",
+            "href": "AIP/technical-criteria/61024",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

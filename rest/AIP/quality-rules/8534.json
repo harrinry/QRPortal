@@ -11,7 +11,7 @@
     "reference": "CWE-652: XQuery Injection\nhttps://cwe.mitre.org/data/definitions/652.html",
     "remediation": "Use authorized sanitization methods.",
     "remediationSample": "...\nString login; // value given by an API request\nXQDataSource dataSource = new SaxonXQDataSource();\nXQConnection xcon = dataSource.getConnection(connectionName, connectionPassword);\nString xquery = \"for $user in doc(\\\"base.xml\\\")/Users/User[login='$login'] return $user/password\";\nXQPreparedExpression xqpe = xcon.prepareExpression(xquery);\nxqpe.bindString(new QName(\"login\"), login, null);\nXQResultSequence rs = xqpe.executeQuery();\n...",
-    "sample": "...\nString login = request.getParameter(\"login\");\nXQDataSource dataSource = new SaxonXQDataSource();\nXQConnection xcon = dataSource.getConnection(connectionName, connectionPassword);\nString xquery = \"for $user in doc(\\\"base.xml\\\")/Users/User[login='\" + login + \"'] return $user/password\";\nXQPreparedExpression xqpe = xcon.prepareExpression(xquery);\nXQResultSequence rs = xqpe.executeQuery();\n...",
+    "sample": "...\nString login; // value given by an API request\nXQDataSource dataSource = new SaxonXQDataSource();\nXQConnection xcon = dataSource.getConnection(connectionName, connectionPassword);\nString xquery = \"for $user in doc(\\\"base.xml\\\")/Users/User[login='\" + login + \"'] return $user/password\";\nXQPreparedExpression xqpe = xcon.prepareExpression(xquery);\nXQResultSequence rs = xqpe.executeQuery();\n...",
     "total": "Number of potentially vulnerable methods",
     "alternativeName": "Ensure your application properly neutralize XML content before it is processed",
     "businessCriteria": [

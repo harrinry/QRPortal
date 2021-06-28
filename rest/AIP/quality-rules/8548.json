@@ -1,0 +1,60 @@
+{
+    "id": 8548,
+    "name": "Avoid using ABAP command INSERT REPORT",
+    "href": "AIP/quality-rules/8548",
+    "critical": true,
+    "maxWeight": 9,
+    "description": "INSERT REPORT is used to pass the content of itab to the ABAP program specified in prog in the repository as source code. If a program with the specified name already exists, its source code is overwritten. Otherwise a new program with the name specified in prog and the source code from itab is created in the repository.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - INSERT REPORT ...",
+    "rationale": "If used wrongly, dynamic programming techniques can present a serious security risk. Any dynamic content that is passed to a program from the outside must be checked thoroughly or escaped before being used in dynamic statements. This can be done using the system class CL_ABAP_DYN_PRG or the predefined function escape. See ABAP Command Injections.",
+    "reference": "https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-us/abapinsert_report.htm#:~:text=See%20ABAP%20Command%20Injections.,of%20the%20system%20table%20TRDIR",
+    "remediation": "The statement INSERT REPORT must be used with extreme caution, because it can completely overwrite existing programs without warning. Any inadvertent overwriting can be prevented by checking whether the specified name already exists in the NAME column of the system table TRDIR.",
+    "sample": "DATA: itab TYPE TABLE OF string,\n      prog TYPE sy-repid,\n      uc   TYPE trdir-uccheck.\n\nFIELD-SYMBOLS <line> TYPE string.\n\nprog = ...\nSELECT SINGLE uccheck\n       FROM trdir\n       WHERE name    = @prog AND\n             uccheck = ' '\n       INTO  (@uc).\n\nIF sy-subrc = 0.\n  READ REPORT prog INTO itab.\n  LOOP AT itab ASSIGNING <line>.\n    TRANSLATE <line> TO UPPER CASE.\n    IF <line> CS 'DESCRIBE FIELD' AND\n       <line> CS 'LENGTH' AND\n       <line> NS 'MODE'.\n      REPLACE '.' IN <line> WITH ' IN CHARACTER MODE.'.\n    ENDIF.\n    ...\n  ENDLOOP.\n  SYNTAX-CHECK FOR itab ...\n  IF sy-subrc = 0.\n    INSERT REPORT prog FROM itab VERSION 'X'. //VIOLATION\n  ENDIF.\nENDIF.",
+    "total": "Number of ABAP Artifacts",
+    "alternativeName": "Avoid using ABAP command INSERT REPORT",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

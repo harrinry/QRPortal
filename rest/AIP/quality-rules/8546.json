@@ -1,0 +1,60 @@
+{
+    "id": 8546,
+    "name": "Avoid using ABAP command CALL 'SYSTEM'",
+    "href": "AIP/quality-rules/8546",
+    "critical": true,
+    "maxWeight": 9,
+    "description": "The command CALL \u2018SYSTEM\u2019 is designed to execute arbitrary OS commands.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - CALL 'SYSTEM'",
+    "rationale": "OS command injection occurs when an application accepts untrusted input (forms, cookies, HTTP headers, special characters etc.) to build operating system commands or there is an insufficient sanitizing . Executed commands will run with the privileges of a vulnerable service.\n\n\nAn attacker can use OS command execution vulnerability to execute operating system commands without authentication. As for SAP, an attacker can access arbitrary files and directories located in an SAP server file system including application source code, configuration, and critical system files. The vulnerability allows obtaining critical technical and business-related information stored in a vulnerable system",
+    "reference": "https://blogs.sap.com/2013/03/06/a-word-about-call-system/\nhttps://erpscan.io/press-center/blog/sap-security-notes-november-2016/",
+    "remediation": "If you have to use system calls, use function modules like SXPG_CALL_SYSTEM or SXPG_COMMAND_EXECUTE instead.",
+    "sample": "DATA:\n      BEGIN OF tabl OCCURS 0,\n        line(255),\n      END OF tabl.\n \nCALL 'SYSTEM' ID 'COMMAND' FIELD command\n              ID 'TAB'     FIELD tabl-line.",
+    "total": "Number of ABAP Artifacts",
+    "alternativeName": "Avoid using ABAP command CALL 'SYSTEM'",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "href": "AIP/technical-criteria/66062",
+            "weight": 9,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

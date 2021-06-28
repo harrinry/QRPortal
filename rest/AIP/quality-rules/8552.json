@@ -1,0 +1,60 @@
+{
+    "id": 8552,
+    "name": "Avoid using ABAP command OPEN DATASET with the FILTER addition",
+    "href": "AIP/quality-rules/8552",
+    "critical": true,
+    "maxWeight": 8,
+    "description": "If the command OPEN DATASET is used with the FILTER option, the value passed to FILTER as well as the file name itself are executed as part of an OS command.",
+    "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - OPEN DATASET with FILTER option",
+    "rationale": "Access to a file whose name dset is injected into a program from outside is a serious security risk. Any names passed to a program from outside must be checked thoroughly before being used.",
+    "reference": "https://help.sap.com/doc/abapdocu_752_index_htm/7.52/en-us/abapopen_dataset_os_addition.htm",
+    "remediation": "Access to a file whose name dset is injected into a program from outside is a serious security risk. Any names passed to a program from outside must be checked thoroughly before being used.",
+    "sample": "DATA file TYPE string VALUE `/usr/test.Z`.\nOPEN DATASET file FOR OUTPUT IN BINARY MODE\n                      FILTER 'gzip'.\n...\nCLOSE DATASET file.\nOPEN DATASET file FOR INPUT IN BINARY MODE\n                      FILTER 'gzip -d'.\n...\nCLOSE DATASET file.",
+    "total": "Number of ABAP Artifacts",
+    "alternativeName": "Avoid using ABAP command OPEN DATASET with the FILTER addition",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8,
+            "critical": true
+        }
+    ],
+    "technologies": [
+        {
+            "id": -15,
+            "name": "ABAP",
+            "href": "AIP/technologies/-15"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        98.0,
+        99.0,
+        99.5,
+        99.99
+    ]
+}

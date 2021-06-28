@@ -1,0 +1,119 @@
+{
+    "id": 8554,
+    "name": "Avoid using insufficient random generator",
+    "href": "AIP/quality-rules/8554",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Call stack of a method producing insufficiently random numbers",
+    "description": "This rule will check if the library used to generate random number.",
+    "output": "List all methods that use random numbers insufficiently generated.\n\nIt provides the following information : \n - Method full name. \n - Call stack with bookmarks from the method producing insufficiently random numbers down to the target method.",
+    "rationale": "When software generates predictable values in a context requiring unpredictability, it may be possible for an attacker to guess the next value that will be generated, and use this guess to access sensitive information.",
+    "reference": "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)\nhttps://cwe.mitre.org/data/definitions/338.html\n\nCWE-330: Use of Insufficiently Random Values\nhttps://cwe.mitre.org/data/definitions/330.html",
+    "remediation": "Potential remediations : \n- Use a well-vetted algorithm that is currently considered to be strong by experts in the field, and select well-tested implementations with adequate length seeds.",
+    "remediationSample": "static SecureRandom ranGen = new SecureRandom();\n\nString GenerateReceiptURL(String baseUrl) {\nranGen.setSeed((new Date()).getTime());\nreturn(baseUrl + ranGen.nextInt(400000000) + \".html\");\n}",
+    "sample": "static Random ranGen = new Random();\n\nString GenerateReceiptURL(String baseUrl) {\nranGen.setSeed((new Date()).getTime());\nreturn(baseUrl + ranGen.nextInt(400000000) + \".html\");\n}",
+    "total": "Number of potentially vulnerable methods",
+    "alternativeName": "Ensure using sufficient random generator",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66064,
+            "name": "Secure Coding - Weak Security Features",
+            "href": "AIP/technical-criteria/66064",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "CWE-330",
+            "name": "Use of Insufficiently Random Values",
+            "href": "AIP/quality-standards/CWE/items/CWE-330",
+            "standard": "CWE"
+        },
+        {
+            "id": "NIST-AC-1",
+            "name": "Access Control Policy and Procedures",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-1",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-3.6.1",
+            "name": "Generation of strong cryptographic keys",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-3.6.1",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-3.6.1",
+            "name": "Generation of strong cryptographic keys",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-3.6.1",
+            "standard": "PCI-DSS-V3.2.1"
+        },
+        {
+            "id": "STIG-V-70245",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70245",
+            "standard": "STIG-V4R8"
+        },
+        {
+            "id": "STIG-V-222596",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "href": "AIP/quality-standards/STIG-V5/items/STIG-V-222596",
+            "standard": "STIG-V5"
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

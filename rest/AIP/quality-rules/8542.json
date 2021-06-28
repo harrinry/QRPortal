@@ -1,0 +1,125 @@
+{
+    "id": 8542,
+    "name": "Avoid debug forging",
+    "href": "AIP/quality-rules/8542",
+    "critical": false,
+    "maxWeight": 8,
+    "associatedValueName": "Call stack from user input source down to the target method",
+    "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is written into the application logs (with DEBUG level or a similar level) without prior validation and sanitization.",
+    "output": "List all methods that make resource calls forged by user input\n\nIt provides the following information:\n - Method full name\n - Call stack from user input source down to the target method.",
+    "rationale": "Writing unvalidated, unsanitized user input to log files can allow an attacker to forge log entries or inject malicious content into the logs.\n\nApplications typically use log files to store a history of events or transactions for later review, statistics gathering, or debugging. Depending on the nature of the application, the task of reviewing log files may be performed manually or sometimes automated with a tool that automatically gathers log data for important events or trending information. \nInterpretation of the log files may be hindered or misdirected if an attacker can supply data to the application that is subsequently logged verbatim.\n\nAnyway, this should not be a problem as per debug level should not appear in production.",
+    "reference": "CWE-117: Improper Output Neutralization for Logs\nhttps://cwe.mitre.org/data/definitions/117.html",
+    "remediation": "Use authorized sanitization methods.",
+    "remediationSample": "String login = request.getParameter(\"login\");\nlog.debug(\"Login=\" + ESAPI.encoder().encodeForHTML(login));",
+    "sample": "String login = request.getParameter(\"login\");\nlog.debug(\"Login=\" + login);",
+    "total": "Number of potentially vulnerable methods",
+    "alternativeName": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
+    "businessCriteria": [
+        {
+            "id": 66031,
+            "name": "Programming Practices",
+            "href": "AIP/business-criteria/66031"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66062,
+            "name": "Secure Coding - Input Validation",
+            "href": "AIP/technical-criteria/66062",
+            "weight": 8,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 138383,
+            "name": "C#",
+            "href": "AIP/technologies/138383"
+        },
+        {
+            "id": 140029,
+            "name": "JEE",
+            "href": "AIP/technologies/140029"
+        },
+        {
+            "id": 138385,
+            "name": "VB.NET",
+            "href": "AIP/technologies/138385"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "CWE-93",
+            "name": "Improper Neutralization of CRLF Sequences ('CRLF Injection')",
+            "href": "AIP/quality-standards/CWE/items/CWE-93",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-117",
+            "name": "Improper Output Neutralization for Logs",
+            "href": "AIP/quality-standards/CWE/items/CWE-117",
+            "standard": "CWE"
+        },
+        {
+            "id": "NIST-AU-9",
+            "name": "Protection of Audit Information",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AU-9",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "A3-2017",
+            "name": "Sensitive Data Exposure",
+            "href": "AIP/quality-standards/OWASP/items/A3-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A6-2013",
+            "name": "Sensitive Data Exposure",
+            "href": "AIP/quality-standards/OWASP/items/A6-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
+        },
+        {
+            "id": "STIG-V-69369",
+            "name": "The application must not write sensitive data into the application logs.",
+            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69369",
+            "standard": "STIG-V4R8"
+        },
+        {
+            "id": "STIG-V-222444",
+            "name": "The application must not write sensitive data into the application logs.",
+            "href": "AIP/quality-standards/STIG-V5/items/STIG-V-222444",
+            "standard": "STIG-V5"
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

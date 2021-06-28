@@ -9,7 +9,7 @@
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - CALL 'cfunc'",
     "rationale": "As mentioned by SAP, this statement is intended for SAP internal usage only and must not be used in custom code.",
     "reference": "SAP",
-    "sample": "FORM MY-FORM. \n     CALL 'SYSTEM' ID 'COMMAND' FIELD command \n              ID 'TAB' FIELD tabl-*sys*. \nENDFORM.",
+    "sample": "FORM MY-FORM. \n     CALL 'C_SAPGPARAM' ID 'NAME' FIELD 'SAPDBHOST'\n                        ID 'VALUE' FIELD dbserver. \nENDFORM.",
     "total": "Number of ABAP Artifacts",
     "alternativeName": "Avoid calling system function (CALL 'cfunc')",
     "businessCriteria": [
