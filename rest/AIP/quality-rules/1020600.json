@@ -1,0 +1,76 @@
+{
+    "id": 1020600,
+    "name": "Avoid using namespace \"jQuery.sap.*\" as deprecated ( SAPUI5)",
+    "href": "AIP/quality-rules/1020600",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "namespace jQuery.sap is deprecated as of version 1.58.\n      To avoid usage of global variables in general, please do not use the jQuery.sap namespace any longer. Most of the jQuery.sap functionalities are replaced by alternative modules which can be found in the API doc.",
+    "output": "Associated to each violation, the following information is provided:\n      - The number of violation occurrences\n      - Bookmarks for violation occurrences found in the source code",
+    "rationale": "The purpose is to avoid to use the deprecated components as currently good and appropriate new version of the same is available. The deprecated component may be dropped sometime in near future without any intimation.\n      Using deprecated components could lead to security compliancy issues.",
+    "reference": "https://openui5.hana.ondemand.com/#/api/jQuery.sap",
+    "remediation": "Please refer to this page to check replacement alternatives : https://openui5.hana.ondemand.com/#/api/jQuery.sap",
+    "sample": "jQuery.sap.sjax({\n      url: \"http://localhost/qmacro/test\",\n      dataType: \"json\"\n      });\n\n\n      jQuery.sap.syncGet(\"syncGet_url\", { dataType: \"json\" });\n      jQuery.sap.syncGetJSON(\"syncGetJSON_url\", { dataType: \"json\" });\n      jQuery.sap.syncGetText(\"syncGetText_url\", { dataType: \"json\" });\n      jQuery.sap.syncPost(\"syncPost_url\", { dataType: \"json\" });",
+    "total": "Number of SAPUI5 Source Artifacts (Controllers, Components, Objects, JSViews...)",
+    "alternativeName": "Deprecated namespace \"jQuery.sap.*\" should not be used",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "href": "AIP/technical-criteria/66069",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "href": "AIP/quality-standards/OWASP/items/A9-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "href": "AIP/quality-standards/OWASP/items/A9-2017",
+            "standard": "OWASP"
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}

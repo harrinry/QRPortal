@@ -1,0 +1,76 @@
+{
+    "id": 1020602,
+    "name": "Avoid using \"sap.ui.model.odata.ODataModel\" as deprecated in version: SAPUI5 1.48",
+    "href": "AIP/quality-rules/1020602",
+    "critical": false,
+    "maxWeight": 5,
+    "description": "Deprecated as of version 1.48. Please use sap.ui.model.odata.v2.ODataModel instead.\n      The new version supports new features as Message handling and Client-side sorting and filtering ( see sap.ui.model.odata.OperationMode in the API reference)\n\n      It allows also caching all data in the model even Manually requested data ( Not cached when using sap.ui.model.odata.ODataModel)",
+    "output": "Associated to each violation, the following information is provided:\n      - The number of violation occurrences\n      - Bookmarks for violation occurrences found in the source code",
+    "rationale": "The purpose is to avoid to use the deprecated components as currently good and appropriate new version of the same is available. The deprecated component may be dropped sometime in near future without any intimation.\n      Using deprecated components could lead to security compliancy issues.",
+    "reference": "https://sapui5.hana.ondemand.com/1.32.4/docs/guide/6c47b2b39db9404582994070ec3d57a2.html",
+    "remediation": "Please use sap.ui.model.odata.v2.ODataModel instead.\n\n      https://sapui5.hana.ondemand.com/#/api/sap.ui.model.odata.v2.ODataModel",
+    "sample": "ForBAErr: function(oBindingContext) {\n      var sUri = \"/sap/OMS/odata/sap/YOHLHTCDS0987_TRAN_ERROR_CDS\";\n      var that = this;\n      var oModel = new sap.ui.model.odata.ODataModel(sUri);\n      oModel.setUseBatch(false);\n      oModel.read(oBindingContext + \"?$select=msgguid,Error_date\", {\n      success: function(data) {\n      var msgguid = data.msgguid;",
+    "total": "Number of SAPUI5 Source Artifacts (Controllers, Components, Objects...)",
+    "alternativeName": "Avoid using \"sap.ui.model.odata.ODataModel\" as deprecated in version: SAPUI5 1.48",
+    "businessCriteria": [
+        {
+            "id": 20140522,
+            "name": "GreenIT-Index",
+            "href": "AIP/business-criteria/20140522"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 66069,
+            "name": "Programming Practices - Unexpected Behavior",
+            "href": "AIP/technical-criteria/66069",
+            "weight": 5,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": 1020000,
+            "name": "HTML5",
+            "href": "AIP/technologies/1020000"
+        }
+    ],
+    "qualityStandards": [
+        {
+            "id": "A9-2013",
+            "name": "Using Components with Known Vulnerabilities",
+            "href": "AIP/quality-standards/OWASP/items/A9-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A9-2017",
+            "name": "Using Components with Known Vulnerabilities",
+            "href": "AIP/quality-standards/OWASP/items/A9-2017",
+            "standard": "OWASP"
+        }
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
