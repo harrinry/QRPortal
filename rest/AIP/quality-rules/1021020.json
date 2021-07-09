@@ -3,6 +3,7 @@
     "name": "Avoid using wildcard (*) imports",
     "href": "AIP/quality-rules/1021020",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Most of the time the import statements should be as specific as possible and you should only import what is needed. When from module import * is used, you are implicitly loading all locals of the imported module into and over the importing module. This has two disadvantages: first, you might unintentionally overload already imported objects. Second, it becomes difficult to detect undefined names in the program that imported the module.",

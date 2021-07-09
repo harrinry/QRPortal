@@ -3,6 +3,7 @@
     "name": "Siebel eScript: Prefer SWITCH over nested IF-THEN-ELSE in Functions",
     "href": "AIP/quality-rules/1520730",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "associatedValueName": "Numner of nested IF",
     "description": "This rule search for nested IF constructs:\nif ... if\nelse ...if\nAny Function that holds this specific type of nesting, is reported as a violation. Only these obvious examples are reported as a violation, as these are good candidates for implementing a Switch construct.",

@@ -3,6 +3,7 @@
     "name": "Using the GetNextNumberWithGaps Function (PeopleSoft)",
     "href": "AIP/quality-rules/1600538",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This metric detects all artifacts accessing the database in Insert with sequence but not using the GetNextNumberWithGaps Function",
     "output": "This report lists all artifacts using Insert statement using sequence instead of calling GetNextNumberWithGaps\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of Insert statement using sequence instead of calling GetNextNumberWithGaps found in the artifact source code",

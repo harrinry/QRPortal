@@ -3,6 +3,7 @@
     "name": "Avoid using hard-coded usernames (PeopleSoft)",
     "href": "AIP/quality-rules/1600840",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This metric detects usage of hard-coded usernames and restrictions on how or who should see a page or depending upon the permission list to show different information on the same page.\n\nIt detects all tests (If and Evaluate) on %Oprid and %Menu, against hard-coded values.",
     "output": "This report lists all artifacts using hardcoded usernames\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number violations found in the artifact source code",

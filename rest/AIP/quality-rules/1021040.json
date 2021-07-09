@@ -3,6 +3,7 @@
     "name": "Avoid instance attributes only differing by capitalization",
     "href": "AIP/quality-rules/1021040",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Python is a case-sensitive language which allows reutilization of identifier names for different types by simple capitalization changes. A typical example would be using capitalized class names and the corresponding lowercase names for their instances. However defining attributes (methods and fields) in a class that only differ by capitalization can lead to confusion and to unexpected behaviour when used with case-insensitive interfaces.",

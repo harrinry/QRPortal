@@ -3,6 +3,7 @@
     "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction (SQL)",
     "href": "AIP/quality-rules/1101100",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Number of violation occurrences",
     "description": "Avoid Stored Procedures doing an Insert, Update or Delete and not managing a transaction (execute \"begin tran\" if @@trancount=0)",

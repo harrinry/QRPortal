@@ -3,6 +3,7 @@
     "name": "Avoid database tables associated to more than one Hibernate Entity",
     "href": "AIP/quality-rules/7654",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Associated table name",
     "description": "An entity models a database table\nThis rule checks if used database tables are associated to more than one Hibernate Entity. If yes, a violation is reported except for \n- Entities that belong to the same hierarchy and that are stored into a single table using the table-per-class-hierarchy strategy (also know as SINGLE_TABLE in JPA) \nand \n- Entities that are stored into several tables using table-per-sub-class strategy (also know as JOINED in JPA).\n\nNote that in the case where two hierarchy are associated to the same table, only the root Entity will be reported, not all the hierarchy.",

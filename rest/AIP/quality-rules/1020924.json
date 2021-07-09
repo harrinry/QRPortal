@@ -3,6 +3,7 @@
     "name": "Avoid using net.Socket object as stream with vulnerable version of Node.js (TypeScript)",
     "href": "AIP/quality-rules/1020924",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the instance of net.Socket service (net.createConnection or net.connect) and the Node.js version used by the application.",

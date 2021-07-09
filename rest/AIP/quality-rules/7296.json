@@ -3,6 +3,7 @@
     "name": "Never define static variables in header files",
     "href": "AIP/quality-rules/7296",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Header file name",
     "description": "This rule searches for static variables which are defined in header files (ex: *.h files).  but not in a class definition. \n\nNotes: \n- Static variables which are taken into account are global variables only and, for C++, are outside any class scope.",

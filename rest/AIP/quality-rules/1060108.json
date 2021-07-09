@@ -3,6 +3,7 @@
     "name": "Avoid data fields binded to columns to return sensitive data via APIs",
     "href": "AIP/quality-rules/1060108",
     "critical": false,
+    "severity": 30,
     "maxWeight": 8,
     "description": "The rule will raise a violation if any fields that user defines as sensitive is binded to a table column and is not annotated with @JsonIgnore for returning",
     "output": "Fields not annotated with JsonIgnore",

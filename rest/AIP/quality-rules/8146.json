@@ -3,6 +3,7 @@
     "name": "Avoid calling programs statically",
     "href": "AIP/quality-rules/8146",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs calling large subprograms statically.\n    A static calls is done when the target of CALL statements is enclosed between quotes (ex: CALL \"SPGM\").",

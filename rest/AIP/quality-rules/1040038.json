@@ -3,6 +3,7 @@
     "name": "Avoid using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
     "href": "AIP/quality-rules/1040038",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Both Spring Security and the Spring Framework rely on URL pattern mappings for authorization and for mapping requests to controllers respectively.\n\nDifferences in the strictness of the pattern matching mechanisms, for example with regards to space trimming in path segments, can lead Spring Security to not recognize certain paths as not protected that are in fact mapped to Spring MVC controllers that should be protected.\n\nThis issue concerns following affected versions: \nSpring Security 3.2.x, 4.0.x, 4.1.0 and before\nSpring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x and before \n\nFor all affected version, this rule will check if PathMatcher is used with the trimTokens flag is set to false. If not, it gives the violation.",

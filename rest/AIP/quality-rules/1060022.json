@@ -3,6 +3,7 @@
     "name": "Avoid too many SQL calls for methods with high fan-in",
     "href": "AIP/quality-rules/1060022",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule identifies client-side control elements that embed a number of data resource access actions that exceed a threshold value.\n\nThe threshold for the number of data queries is a parameter and can be changed at will. The default value is 2.",

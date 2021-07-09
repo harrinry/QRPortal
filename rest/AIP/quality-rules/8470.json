@@ -3,6 +3,7 @@
     "name": "Avoid using STRING without overflow check",
     "href": "AIP/quality-rules/8470",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "STRING verb is used to combine multiple strings into one. \nThe ON OVERFLOW condition specifies what needs to be done when the overflow conditions occurred. \nThis rule checks if the STRING verb is used with ON OVERFLOW condition and reports violation if not.\n\nAn overflow condition occurs in the following conditions: \nThe pointer-Integer is not pointing the character position within the destination string when STRING executes i-e less than 1 or exceeds a value equal to the length of the receiving field\nIf all strings together are not accommodated to string destination then the overflow occurs.",

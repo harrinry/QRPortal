@@ -3,6 +3,7 @@
     "name": "Avoid having suspicious similar method names or signatures in an inheritance tree",
     "href": "AIP/quality-rules/7440",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Method overridden",
     "description": "This rule reports \n- Methods in an inheritance tree that have the same signature but whose name differs only by capitalization \n- Methods that have the same name but are overridden with a different signature (this signature doesn't exist in the super class) \n\nFollowing restrictions are considered : \n- Where the class implements an interface, if one method with the same signature exists in the class then no violation will be reported even if other methods exist with different signatures.\n\n- Where the class extends another class, a violation is reported for a method only when the number of parameters are the same and one of the parameters of the signature of the child class method inherits from a parameter in the same place as the parent class method with the same name.",

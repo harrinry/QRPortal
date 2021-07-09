@@ -3,6 +3,7 @@
     "name": "Provide a private default Constructor for utility Classes (.NET)",
     "href": "AIP/quality-rules/7272",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "Utility classes must have a private default constructor, but must not have other constructors. Default constructors are constructors without any parameters. Utility classes are static classes: all their fields and methods (excluding constructors) are static (this excludes classes marked as static as this case is handled by the compiler).",

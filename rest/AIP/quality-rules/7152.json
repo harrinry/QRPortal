@@ -3,6 +3,7 @@
     "name": "Avoid Fields in Servlet Classes that are not final static",
     "href": "AIP/quality-rules/7152",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "description": "Java servlets often store information associated with each client that connects to them. Using member fields in the javax.servlet.http.HttpServlet to store information specific to individual clients is a common, simple practice.\nBut all servlet fields should be static final, this approach guarantees thread-safety in the servlet.\nThis rule reports all servlet fields which are not static final \nAll Classes that extend HttpServlet at any level are considered as Servlets.",
     "output": "This report lists all non final static fields that belong to Servlet classes.\nIt provides the following information:\n  - Field full name",

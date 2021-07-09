@@ -3,6 +3,7 @@
     "name": "Avoid second order deserialization injection",
     "href": "AIP/quality-rules/8526",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "Using CAST data-flow engine, this quality rule detects execution paths from data stored in database down to deserialization methods, which are open vulnerabilities to injection flaws.\n\nThe list of deserialization methods car be extended thanks to a user configuration (Deserialize.write)",
     "output": "List all methods that make resource calls forged by user input\n\nIt provides the following information:\n - Method full name\n - Call stack from database storage down to the target deserialization method",

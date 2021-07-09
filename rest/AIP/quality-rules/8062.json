@@ -3,6 +3,7 @@
     "name": "An unconditional 'throw', 'return' or 'break' shall terminate every non-empty switch-clause",
     "href": "AIP/quality-rules/8062",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule checks for a 'switch'-clause that does not end with a 'break', a 'return' or a 'throw'. This construct should be at the top level in the 'switch'-clause. The rule is not triggered if the last 'switch'-clause of a 'switch' statement is 'default', and does not explicitly end with 'break', 'return' or 'throw'.",

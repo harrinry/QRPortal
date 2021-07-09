@@ -3,6 +3,7 @@
     "name": "Avoid having V60ExceptionCompatibility property set to NO (EGL)",
     "href": "AIP/quality-rules/1005076",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "This rule searches for all the programs having V60ExceptionCompatibility property = NO. \n\nEGL sets v60ExceptionCompatibility to YES automatically when migrating code from EGL version 6 or VisualAge\u00ae Generator. You do not need this property for new code \n\nProgram not having the V60ExceptionCompatibility property in the code is not violating this rule.",
     "output": "This report lists the following information: Program full name",

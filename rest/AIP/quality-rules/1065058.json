@@ -3,6 +3,7 @@
     "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions in the main function(C++)",
     "href": "AIP/quality-rules/1065058",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "description": "This QR would raise violations for almost ALL main\\WinMain functions.\nThe functions considered are main, WinMain, InitInstance, ExitInstance.\nThis will give violations if there are any statements out of try\\catch statement or if try in the main does not have catch all. Multiple try\\catch are allowed but each try should have catch-all and none of the statements should be outside try\\catch. The only exception is if main has only one statement \u201creturn <number>;\u201d or main is empty.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

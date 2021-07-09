@@ -3,6 +3,7 @@
     "name": "Provide a private default Constructor for utility Classes",
     "href": "AIP/quality-rules/7256",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "utility classes were not designed to be instantiated: an instance would be nonsensical. In the absence of explicit constructors, however, the compiler provides a public, parameterless default constructor. To a user, this constructor is indistinguishable from any other. It is not uncommon to see unintentionally instantiable classes in published APIs.\n\n\nUtility classes must have a private default constructor, but not other constructors. Default constructors are constructors without any parameters. Utility classes are static classes: all their fields and methods are static.\n\nExceptions\nWhen class contains public static void main(String[] args) method it is not considered as utility class and will be ignored by this rule.",
     "output": "The Quality Rule will list all classes with all fields and static methods that do not have at least one private default constructor. It will also list all classes with all fields and static methods that, in addition to the private default constructor, have other constructors.",

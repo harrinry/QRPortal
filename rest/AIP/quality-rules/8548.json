@@ -3,6 +3,7 @@
     "name": "Avoid using ABAP command INSERT REPORT",
     "href": "AIP/quality-rules/8548",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "INSERT REPORT is used to pass the content of itab to the ABAP program specified in prog in the repository as source code. If a program with the specified name already exists, its source code is overwritten. Otherwise a new program with the name specified in prog and the source code from itab is created in the repository.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - INSERT REPORT ...",

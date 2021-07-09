@@ -3,6 +3,7 @@
     "name": "Avoid namespaces with High Afferent Coupling (CA)",
     "href": "AIP/quality-rules/7264",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Afferent Coupling",
     "description": "Afferent Coupling (also known as Incoming Dependencies and Number of Types outside a namespace that Depend on Types of the namespace) indicates The number of other namespaces that depend upon classes within the analyzed namespace. Afferent Coupling is a time consuming determination of couplings between namespaces, hence showing which namespaces that depend upon each other. The number of namespaces that depend upon the analyzed namespace is an indication of the analyzed namespace's level of responsibility. In order to improve modularity and promote encapsulation, inter-object class couples should be kept to a minimum. If the namespace is relatively abstract then a large number of incoming dependencies is acceptable but the larger the number of couples, the higher the sensitivity to changes in other parts of the design, and therefore maintenance is difficult. Excessive coupling between concrete object classes is detrimental to modular design and prevents reuse.\nA namespace will always be counted as one entity for coupling, even if it contains both C# and VB code.",

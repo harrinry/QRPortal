@@ -3,6 +3,7 @@
     "name": "Avoid tables without primary key / unique key constraint / unique index",
     "href": "AIP/quality-rules/1101106",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric displays the list of tables that do not have Primary Key / Unique Key constraint / Unique Index.\n\nNames of Tables should not start with (TMP|LOG)\\_% and should not end with %\\_(TMP|LOG).\nThe prefix and suffix values are parameters, \"Table not prefixed by\" and \"Table not suffixed with\", that can be changed at will.",

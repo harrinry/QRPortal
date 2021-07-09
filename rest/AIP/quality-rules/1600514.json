@@ -3,6 +3,7 @@
     "name": "Prefer using UNION to the OR operator (PeopleSoft)",
     "href": "AIP/quality-rules/1600514",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This quality rule reports all PeopleSoft SQL Definitions having an OR operator.",
     "rationale": "Depending on the SQL statement, the same result can be obtained faster (with less resources) when a UNION is used to add the results of 2 queries, rather than using OR operator.",

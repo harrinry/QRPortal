@@ -3,6 +3,7 @@
     "name": "Avoid Classes with Destructor not explicitly virtual whenever one of its base Class has a virtual Destructor",
     "href": "AIP/quality-rules/7340",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for derived classes which provide a destructor not explicitly declared as virtual and which inherit from a base class that provides a virtual destructor.",

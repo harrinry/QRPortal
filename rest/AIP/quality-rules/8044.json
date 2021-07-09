@@ -3,6 +3,7 @@
     "name": "Avoid log forging",
     "href": "AIP/quality-rules/8044",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Call stack from user input source down to the target log method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is written into the application logs without prior validation and sanitization.",

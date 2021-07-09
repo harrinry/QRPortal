@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid using DOM parser for large or medium sized XML file parsing",
     "href": "AIP/quality-rules/7668",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "DOM Parser creates an In Memory tree representation of XML file and then parses it, so it requires more memory and it's advisable to have increased the heap size for DOM parser in order to avoid Java.lang.OutOfMemoryError:java heap space . \n\nParsing large or medium sized XML files using DOM parser will take a long time or even may not be able to load it completely simply because it requires lot of memory to create XML Dom Tree.\n\nThis rule checks all methods parsing XML files. A violation is reported when detecting a reference to javax.xml.parsers.DocumentBuilder class",
     "output": "List all methods, that reference javax.xml.parsers.DocumentBuilder class.\n\nIt provides the following information:\n Java Method Fullname",

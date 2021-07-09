@@ -3,6 +3,7 @@
     "name": "Avoid using URL.equals(Object obj) or URL.hashCode()",
     "href": "AIP/quality-rules/1039070",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The  java.net.URL class's behavior was designed to model a URL being a locator of network accessible resource . Specifically equals and hashCode() were designed so that two URL instances are equal if they locate the same resource. This requires that the DNS name be resolved to an IP address.\n\nThe equals and hashCode methods may trigger a name service (usually DNS) lookup to resolve the host name or IP address. Depending on the configuration, and network status, that can take a long time. \n\n\nThis rule checks for uses  java.net.URL class, and for explicit references to the equals and hashCode methods.",

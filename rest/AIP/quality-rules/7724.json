@@ -3,6 +3,7 @@
     "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
     "href": "AIP/quality-rules/7724",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "To preserve the equality contract, overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class\n\nThis rule reports equals() methods of persistent subclasses that involves an attribute or a getter of the subclasses of the persistent base class (subclass or joined-subclass).",

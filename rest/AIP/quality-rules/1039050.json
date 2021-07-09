@@ -3,6 +3,7 @@
     "name": "Add @Override on methods overriding or implementing a method declared in a super type",
     "href": "AIP/quality-rules/1039050",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Since Java 1.5, the @Override annotation type has been provided to allow developers to specify that a method declaration is intended to override or implement a method in a supertype (super class or super interface). When a method is marked with the @Override annotation, the compiler will perform a check to ensure that the method does indeed override or implement a method in super class or super interface. This helps in preventing unintentional errors such as misspelled method name, wrongly-typed parameters or anything that does not obey overriding rules.",

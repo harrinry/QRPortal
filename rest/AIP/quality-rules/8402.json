@@ -3,6 +3,7 @@
     "name": "All types of a serializable class must be serializable",
     "href": "AIP/quality-rules/8402",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "For all classes that are Serializable (implement System.Runtime.Serialization.ISerializable or inherit classes that implement ISerializable or marked with SerializableAttribute ), reports all fields that are \n- not Serializable\n- non-static \n- non-transient/not marked as NonSerialized\n- and not primitives types",

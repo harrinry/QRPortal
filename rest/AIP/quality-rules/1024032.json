@@ -3,6 +3,7 @@
     "name": "Always manage the BiometricPrompt onAuthenticationFailed method",
     "href": "AIP/quality-rules/1024032",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Once we\u2019ve called authenticate, our user can carry out the authentication flow and we will receive the result through the provided callback. At this point we will handle the result within our user interface.  When the fingerprint (even VALID one) doesn\u2019t match with any of the fingerprints registered on the device and so the authentication process fails, then onAuthenticationFailed:callback will be triggered",

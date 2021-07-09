@@ -3,6 +3,7 @@
     "name": "Working-Storage variables must be initialized before being read",
     "href": "AIP/quality-rules/8034",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol Programs containing variables that are used without having been initialized. Only variables defined in the WORKING-STORAGE section are taken into account. A variable is considered as initialized in the following conditions:\n- Its definition has a VALUE clause\n- It is valued by a statement (for instance, MOVE, ADD, COMPUTE, INITIALIZE, ...)",

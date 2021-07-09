@@ -3,6 +3,7 @@
     "name": "Avoid throwing an exception in a catch block without chaining it",
     "href": "AIP/quality-rules/7652",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "Reports all methods that reference a constructor of an exception (a class that inherits from Throwable) in a catch block except where:\n- java.lang.Throwable is the type of one parameter in the signature of the constructor\n- a call to the method or a method that overrides java.lang.Throwable.initCause(Throwable cause) \n\nNote that this rule does not check that the caught exception is the exception that is passed as the argument of the new Exception constructor or the initCause method.",
     "output": "This report lists all methods that contain try/catch blocks where an exception (a class that inherits from Throwable) constructor has java.lang.Throwable as the type of one parameter in the signature of the constructor or a call to the method (or a method that overrides) java.lang.Throwable.initCause(Throwable cause). It provides the following information: Method full name",

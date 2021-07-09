@@ -3,6 +3,7 @@
     "name": "Field label don't contain \":\" (PeopleSoft)",
     "href": "AIP/quality-rules/1600640",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This quality rule reports PeopleSoft DBField Label having the CheckColon property set.\nCheckColon is a property computed by the CAST extractor for PeopleSoft, detecting the presence of ':' in PSDBFLDLABL.SHORTNAME or in PSDBFLDLABL.LONGNAME.",
     "rationale": "Column headings typically do not need a colon.\nHaving an ending colon the field label and no field id defined will lead to duplicate colon : ugly.\nThe consequence is a bad User Experience.",

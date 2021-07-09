@@ -3,6 +3,7 @@
     "name": "All constructors that are callable with a single argument of fundamental type shall be declared explicit.",
     "href": "AIP/quality-rules/1065074",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "description": "The rule will raise a violation when a constructor(callable with a fundamental type) is not declared explicit",
     "rationale": "The explicit keyword prevents the constructor from being used to implicitly convert a fundamental type to the class type.\n\nThis can lead to unpredictable behaviour and hard to catch bugs",

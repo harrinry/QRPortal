@@ -3,6 +3,7 @@
     "name": "Avoid defining Functions with 'struct' or 'class' parameters passed by value",
     "href": "AIP/quality-rules/7924",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of parameters that are defined by value",
     "description": "This rule searches for C/C++ functions that are defined with parameters of 'struct' or 'class' type passed by value. If the classes are small with trivial copy operation, the rule is not triggered.",

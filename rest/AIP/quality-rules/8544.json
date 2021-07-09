@@ -3,6 +3,7 @@
     "name": "Avoid debug forging through API requests",
     "href": "AIP/quality-rules/8544",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data coming from API requests is written into the application logs (with DEBUG level or a similar level) without prior validation and sanitization.",

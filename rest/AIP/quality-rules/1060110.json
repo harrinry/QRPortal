@@ -3,6 +3,7 @@
     "name": "Avoid filtering sensitive data using front-end",
     "href": "AIP/quality-rules/1060110",
     "critical": false,
+    "severity": 30,
     "maxWeight": 7,
     "description": "The rule will raise a violation if user-defined sensitive data is called by a API request and uses front-end to filter data",
     "output": "All Jquery selectors and HTML functions with a name like %filter% that Access sensitive data via APIs. The following information will be provided:\n- Jquery Selector or HTML function",

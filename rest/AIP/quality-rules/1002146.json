@@ -3,6 +3,7 @@
     "name": "Unavoid un-deallocated variables or arrays in Fortran-90 Subroutines  (FORTRAN)",
     "href": "AIP/quality-rules/1002146",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Number of allocate statements without deallocate",
     "description": "The number of Allocate statements is compared to the number of Deallocate statements. More allocate statements than deallocate statements indicates un-allocated variables from memory.\nNote: This Rule considers pointers as well as arrays for violation.",

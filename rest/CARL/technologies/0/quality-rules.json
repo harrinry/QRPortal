@@ -4,6 +4,7 @@
         "name": "Avoid method invocation in a loop termination expression",
         "href": "AIP/quality-rules/7204",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -13,6 +14,7 @@
         "name": "Avoid artifacts having recursive calls",
         "href": "AIP/quality-rules/7388",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -22,6 +24,7 @@
         "name": "Avoid using SQL queries inside a loop",
         "href": "AIP/quality-rules/7424",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -31,6 +34,7 @@
         "name": "Avoid providing password in Web Service URL",
         "href": "AIP/quality-rules/1020950",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -40,6 +44,7 @@
         "name": "Prefer using a Join with a consition when making SQL queries so that performance is not adversely impacted due to cartesian/cross join",
         "href": "AIP/quality-rules/1101000",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -49,6 +54,7 @@
         "name": "Prefer using a Join with a consition when making SQL queries on XXL tables so that performance is not adversely impacted due to cartesian/cross join",
         "href": "AIP/quality-rules/1101002",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -58,6 +64,7 @@
         "name": "Ensure to include index in your SQL table so that performance of your app is not adversely impacted",
         "href": "AIP/quality-rules/1101004",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -67,6 +74,7 @@
         "name": "Ensure to include index in your SQL XXL tables so that performance of your app is not adversely impacted",
         "href": "AIP/quality-rules/1101006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -76,6 +84,7 @@
         "name": "Make sure you use SARGable predicate in WHERE clauses and JOINS to prevent additional costs on CPU",
         "href": "AIP/quality-rules/1101008",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -85,6 +94,7 @@
         "name": "Prefer using INNER JOINS instead of NATURAL JOINS for better performance",
         "href": "AIP/quality-rules/1101010",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -94,6 +104,7 @@
         "name": "While using ORDER BY in queries prefer using Column names instead of indexes for better maintainability and readability of queries in code",
         "href": "AIP/quality-rules/1101012",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -103,6 +114,7 @@
         "name": "Try to separate JOIN and WHERE clauses by following ANSI-Standard joins format to improve maintainability and readabitliy",
         "href": "AIP/quality-rules/1101014",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -112,6 +124,7 @@
         "name": "When inserting data into columns always define column names to prevent mistakes and wrong updates",
         "href": "AIP/quality-rules/1101026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -121,6 +134,7 @@
         "name": "Always use MINUS or EXCEPT operator instead of NOT EXISTS and NOT IN subqueries for better execution performance",
         "href": "AIP/quality-rules/1101028",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -130,6 +144,7 @@
         "name": "When using EXISTS or NOT EXISTS clauses make sure that you refer to parent object and not  independent clauses to ensure better performance",
         "href": "AIP/quality-rules/1101032",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -139,6 +154,7 @@
         "name": "Prefer replacing DISTINCT in your queries with a WHERE, FROM clause that fetches only the required data",
         "href": "AIP/quality-rules/1101034",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -148,6 +164,7 @@
         "name": "To improve the readability of your SQL statements use IN test condition instead of multiple OR conditions on same identifier",
         "href": "AIP/quality-rules/1101038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -157,6 +174,7 @@
         "name": "Prefer to use a similar syntax for JOIN in same SQL queries and not mix ANSI and non-ANSI syntax",
         "href": "AIP/quality-rules/1101058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -166,6 +184,7 @@
         "name": "When using LIKE operator make sure the first character in search string is not a wildcard character as it reduces execution performance",
         "href": "AIP/quality-rules/1101060",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -175,6 +194,7 @@
         "name": "Ensure that when using triangular joins you restrict the results with some extra conditions to avoid severe performance issues",
         "href": "AIP/quality-rules/1101066",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -184,6 +204,7 @@
         "name": "Always use 'IS NULL' or 'IS NOT NULL' to check for Nullability instead of using '=' or '!=' operators",
         "href": "AIP/quality-rules/1101070",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -193,6 +214,7 @@
         "name": "Improve the readability and maintainability of your queries by using aliases for tables",
         "href": "AIP/quality-rules/1101072",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -202,6 +224,7 @@
         "name": "Ensure your table aliases do not have numbers to improve readability",
         "href": "AIP/quality-rules/1101074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -211,6 +234,7 @@
         "name": "Ensure column references in queries are qualified to avoid any ambiguous and undefined references",
         "href": "AIP/quality-rules/1101076",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -220,6 +244,7 @@
         "name": "LIKE conditions should not be used without wildcards characters",
         "href": "AIP/quality-rules/1101102",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]

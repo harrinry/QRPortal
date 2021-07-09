@@ -3,6 +3,7 @@
     "name": "Sections and paragraphs should be located after the first statement calling them",
     "href": "AIP/quality-rules/7718",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs containing sections or paragraphs located before the first statement (GO TO or PERFORM) calling them. \n\nThere are some exceptions such as DECLARATIVES and INPUT/OUPUT procedures for SORT and MERGE statements. In addition, cycles will generate violations.",

@@ -3,6 +3,7 @@
     "name": "Avoid client provided dictionaries to have high request sizes",
     "href": "AIP/quality-rules/1043082",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will raise a violation if client provided dictionaries listed below have a large number of elements. The default limit will be 1000 and should be customizable.\nHttpRequest.Files, \nHttpRequest.Form, \nHttpRequest.Cookies, \nHttpRequest.QueryString, \nHttpRequest.Headers, \nHttpRequest.ServerVariables.",

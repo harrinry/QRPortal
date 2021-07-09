@@ -3,6 +3,7 @@
     "name": "Avoid empty finally blocks",
     "href": "AIP/quality-rules/7782",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "This metric reports all methods with at least one empty finally block (empty or only containing comments). In a try and catch/finally statement, finally blocks should contain code to handle the thrown exception.",
     "output": "This report lists all Artifacts with an empty finally block. It provides the following information: Artifact full name",

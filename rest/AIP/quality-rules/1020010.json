@@ -3,6 +3,7 @@
     "name": "Avoid using forEach()",
     "href": "AIP/quality-rules/1020010",
     "critical": false,
+    "severity": 30,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Even though function-based iteration represents a more convenient method of iteration, it is also quite a bit slower than loop-based iteration. The slowdown can be accounted for by the overhead associated with an extra method being called on each array item. In all cases, function-based iteration takes up to eight times as long as loop-based iteration and therefore isn\u2019t a suitable approach when execution time is a significant concern.",

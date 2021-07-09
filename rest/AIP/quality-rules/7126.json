@@ -3,6 +3,7 @@
     "name": "Avoid Artifacts with high Commented-out Code Lines/Code Lines ratio",
     "href": "AIP/quality-rules/7126",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Ratio of Commented-out Code Lines / Code Lines",
     "description": "Commented-out Code Lines/Code Lines ratio measures the amount of code left in comments versus the size of the source code (excluding comments and blank lines) this is done for a given artifact.\n\nPlease note that unless the following criteria are met by the source code, then the metric will be disabled: \n- the source code must contain more than 20 \"clean\" comments \n- the source code must contain at least 80 artifacts that have more than 10 lines of code \n\nWhat is a \"clean\" comment? \n- if the comment contains more than 4 words, then there must be less than 40% OOVs \n- if the comment contains less than 5 words, then there must be a maximum of 1 OOV \n- A single word on its own must not represent 50% of the comment \n\nWhat is an \"OOV\"? \n- an \"OOV\" is an \"Out of Vocabulary Word\". With regard to CAST, an OOV is a word that has never appeared in the code.",

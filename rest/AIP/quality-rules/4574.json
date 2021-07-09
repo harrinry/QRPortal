@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid using deprecated objects",
     "href": "AIP/quality-rules/4574",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Deprecated Object full name",
     "description": "List all Deprecated Methods or Fields.\nIn Java, Deprecated objects are defined with the JavaDoc tag @deprecated or the annotation @deprecated available since JSE 5. (to obtain accurate results, the java archive rt.jar must also have been analyzed).\nIn VC++ it reports objects using the deprecated __declspec declaration or pragma.\nIn GCC it reports objects with the deprecated attribute\n\nIf the reason/remediation of the deprecation is described in the source code, it is also displayed.",

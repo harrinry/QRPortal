@@ -3,6 +3,7 @@
     "name": "Avoid direct access to superglobals (PHP)",
     "href": "AIP/quality-rules/1007202",
     "critical": true,
+    "severity": 20,
     "maxWeight": 5,
     "description": "This rule searches all artifacts that access superglobals directly. Artifacts considered for this QR are php section, constructor, method and functions.",
     "output": "This report lists artifacts that directly access PHP superglobals. It provides:\n- Artifact Full Name",

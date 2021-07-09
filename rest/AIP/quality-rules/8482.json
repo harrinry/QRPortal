@@ -3,6 +3,7 @@
     "name": "Avoid cross-site scripting through API requests",
     "href": "AIP/quality-rules/8482",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "The software does not neutralize or incorrectly neutralizes user-controllable input before it is placed in output that is used as a web page that is served to other users.\n\nReflected XSS: The server reads data directly from the HTTP request and reflects it back in the HTTP response. Reflected XSS exploits occur when an attacker causes a victim to supply dangerous content to a vulnerable web application, which is then reflected back to the victim and executed by the web browser. The most common mechanism for delivering malicious content is to include it as a parameter in a URL that is posted publicly or e-mailed directly to the victim.\n\nUsing CAST data-flow engine, this metric detects paths from API requests to HTML user output methods which are open vulnerabilities to Reflected cross-site scripting injection",

@@ -3,6 +3,7 @@
     "name": "Avoid having iframe inside a tag",
     "href": "AIP/quality-rules/1020042",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This is a reverse clickjacking via iframe issue. For example, Internet Explorer allows to place <IFRAME> tags inside <A> tags. By clicking on a not clickable element inside the IFRAME there will be executed the URL defined in the \"href\" attribute of the <A> tag.",

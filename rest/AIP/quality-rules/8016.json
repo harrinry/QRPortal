@@ -3,6 +3,7 @@
     "name": "Avoid unrestricted access to EJB remote methods",
     "href": "AIP/quality-rules/8016",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "This rule reports all EJB remote methods that are not associated with permission unless this method is defined in the excluded-list (can't be called). \n\nIt works for EJB 3.0 and takes into account both annotation and descriptor specifications.",
     "output": "This report all EJB remote methods (i.e methods of the remote interface and its parent) that are not associated with permission unless this method is defined in the excluded-list. \nIt provides the following information:\n Method Full Name",

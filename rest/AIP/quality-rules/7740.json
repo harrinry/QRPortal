@@ -3,6 +3,7 @@
     "name": "Avoid HTTP response splitting",
     "href": "AIP/quality-rules/7740",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target HTML user output method",
     "description": "The application uses HTTP headers, but it does not correctly neutralizes CR and LF characters before the data is included in outgoing HTTP headers.\n\nUsing CAST data-flow engine, this metric detects paths from user input methods down to HTTP headers usage, paths which are open vulnerabilities.",

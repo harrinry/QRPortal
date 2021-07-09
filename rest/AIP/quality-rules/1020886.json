@@ -3,6 +3,7 @@
     "name": "Avoid using unsecured cookie with express (TypeScript)",
     "href": "AIP/quality-rules/1020886",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Not setting 'Secure' attribute for sensitive cookies in HTTPS sessions, could cause the user agent to send those cookies in plaintext over an HTTP session.\n\nThis rule checks that secure cookie option is set to true when using express-session.",

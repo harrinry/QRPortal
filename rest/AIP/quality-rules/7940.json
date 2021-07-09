@@ -3,6 +3,7 @@
     "name": "Avoid accumulating Stateful Beans",
     "href": "AIP/quality-rules/7940",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "description": "The @Remove annotation is used with a method to inform the container that the client no longer needs a session and that the session should be destroyed. This annotation is important, as it is the only way to request the container that the session should end. If the remove method is not used, every stateful bean instance ever created would always have to be timed out to be passivated (if the container implementation supports passivation) and timed out again to be finally destroyed.\n\n\n\nThis rule reports a violation for :\n- Class that defines an instance variable or local variable whose type is a local or remote business interface of a Stateful Session but doesn't invoke the remove method in any of its methods. \n- Class when the Stateful Session Bean doesn't implement the remove method.\n\nNotes\n1- The remove method is defined by the @Remove annotation or remove-method deployment descriptor element on the Stateful Session Bean.\n2- In the case of several EJB instances, there is no guarantee that all EJB instances will be removed. \nWe only check there is at least one call to remove method for the concerned class",
     "output": "This report lists all classes that define a variable whose type is a remote or local business interface of a stateful bean and that don't call the remove method.\n\nIt provides the following information:\n     Class Full Name",

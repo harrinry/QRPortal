@@ -3,6 +3,7 @@
     "name": "Avoid Hibernate Entity with 'select-before-update' set to true if not associated to table that fires an UPDATE trigger.",
     "href": "AIP/quality-rules/7634",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Hibernate Entity name",
     "description": "select-before-update (defaults to false): specifies that Hibernate should never perform an SQL UPDATE unless it is certain that an object is actually modified. Only when a transient object has been associated with a new session using update(), will Hibernate perform an extra SQL SELECT to determine if an UPDATE is actually required.\n\nUse of select-before-update will usually decrease performance. It is useful ONLY to prevent a database update trigger being called unnecessarily if you reattach a graph of detached instances to a Session.\n\nThis rule reports a violation for Hibernate Entity having 'select-before-update' set to true except when it's associated to a table that fires an UPDATE trigger.",

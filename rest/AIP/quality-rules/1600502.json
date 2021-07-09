@@ -3,6 +3,7 @@
     "name": "All record must have at least one column as key (PeopleSoft)",
     "href": "AIP/quality-rules/1600502",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "This quality rules reports the PeopleSoft Record Tables having no column with the Key property.",
     "rationale": "A table normally has keys to help distinguish between multiple occurrences of data, when a table has only one row of data you do not need to distinguish one row from another.\nAnother primary use for keys is to build database indexes to rows.\nNo key no index, and thus poor performance.",

@@ -3,6 +3,7 @@
     "name": "Any Data must be declared, use IMPLICIT NONE in Modules  (FORTRAN)",
     "href": "AIP/quality-rules/1002038",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "The artifact is researched for the presence of the IMPLICIT NONE statement. If an artifact does not have this statement embedded, the artifact is considered being in violation.",
     "rationale": "Every artifact must have an IMPLICIT NONE statement to make sure the compiler does not automatically declare undeclared variables as integer.",

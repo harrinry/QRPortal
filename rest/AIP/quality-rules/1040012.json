@@ -3,6 +3,7 @@
     "name": "HTTP user session must be invalidated during logout",
     "href": "AIP/quality-rules/1040012",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Logout is composed of 2 steps:\n  1. Invalidate user session : indicate web server that the session is not used anymore.\n  2. Cancel cookie send by the web server to track user session. And also all cookies sent by web application, this, in order to have a global clean state.\n\n\nThis rule will check if Http session is invalidated  during the Logout. If not it gives the violation",

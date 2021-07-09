@@ -3,6 +3,7 @@
     "name": "Avoid \"SELECT *\" or \"SELECT SINGLE *\" queries",
     "href": "AIP/quality-rules/7530",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of queries containing \"SELECT *\" or \"SELECT SINGLE *\"",
     "description": "This metric retrieves the ABAP artifacts containing queries using the \"SELECT *\" or \"SELECT SINGLE *\" statement.\nIt is possible to specify some tables as exceptions by setting them in the parameters of the rule (you can specify complete names, ex: USR02 or generic names by using '%' character, ex: T% or BUT%).",

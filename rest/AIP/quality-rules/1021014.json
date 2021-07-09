@@ -3,6 +3,7 @@
     "name": "Avoid using yield and return with value inside a function",
     "href": "AIP/quality-rules/1021014",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Functions that are using yield and return with value (different from None) are very sensitive to the Python version. To avoid any technical complexity, we strongly suggest you to do not use these annotations together within functions in your code.",

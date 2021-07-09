@@ -3,6 +3,7 @@
     "name": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
     "href": "AIP/quality-rules/7996",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for utility classes which do not have any constructors. Utility classes are static classes: all their fields and functions are static and at least one static function must exist. Default constructors are constructors without any parameters. \n\nNote: The following do not prevent a class from being considered as static: \n- Non-static Constructors \n- Destructors \n- Affectation assignment operators \n\nA class containing only protected constructors (instead of private) is not considered as violating the rule.",

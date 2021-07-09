@@ -3,6 +3,7 @@
     "name": "Avoid untested Return Code variables after Read or Write in Subroutines (FORTRAN)",
     "href": "AIP/quality-rules/1002240",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of untested return code after read or write",
     "description": "The IOSTAT usage in a read, write or open operation are causing the analysis to create specific variables where the return code is stored in. Whenever this variable is not used in any IF construct , the artifact is reported as a violation. The proper order in which this needs to take place is not taken into account; only the artifacts that have no testing of IOSTAT variables are captured by this diagnostic.",

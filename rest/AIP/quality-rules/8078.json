@@ -3,6 +3,7 @@
     "name": "Casting from pointer to base Class to pointer to derived Class should be done through 'dynamic_cast' or 'static_cast'",
     "href": "AIP/quality-rules/8078",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Pointer incorrectly casted",
     "description": "This rule searches for C++ functions that do not cast a pointer to a base class to a pointer to a derived class by using a 'static_cast' or a 'dynamic_cast'.\nThis rule is deactivated by default. If you want to activate it, please deactivate the rule #8060.",

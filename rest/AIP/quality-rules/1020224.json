@@ -3,6 +3,7 @@
     "name": "Avoid using the call of web service inside a loop (VueJS)",
     "href": "AIP/quality-rules/1020224",
     "critical": true,
+    "severity": 30,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The rule will raise a violation when web service, HTTP calls are made inside loops. The calls made with following APIs are considered and detected:\n- Axios\n- vue-resource\n- $http<nuxtjs>\n- $axios<nuxtjs>",

@@ -3,6 +3,7 @@
     "name": "Avoid an explicit call to finalize()",
     "href": "AIP/quality-rules/7648",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "finalize() method in Java should be only called by garbage collector thread before reclaiming the memory allocated to the object.\n\nThis rule reports violation when detecting an explicit call to finalize() except call to super.finalize() from a finalize() method.",
     "output": "The metric will list all methods that call a finalize method (filter by method signature void finalise() ) \n\nIt provides the following information:\n Method full name",

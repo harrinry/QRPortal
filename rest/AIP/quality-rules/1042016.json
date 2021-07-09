@@ -3,6 +3,7 @@
     "name": "Avoid Struts action Mapping with disabled validator ",
     "href": "AIP/quality-rules/1042016",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Disabling validation exposes the action to numerous types of attacks.\n\nThis rule will check that each action form mapping is enabling validation by setting the validate field to true. If not it gives the violation.",

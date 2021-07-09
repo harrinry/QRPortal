@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid weak encryption algorithm as DES and triple DES",
     "href": "AIP/quality-rules/1022000",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Associated Value",
     "description": "DES and 3DES are vulnerable to attack mainly because of time complexity and used techniques. \n   This rule is reporting violation when weak encryption algorithm like DES or Triple DES is used in the code source.\n   \n   This rule is compliant with \nCWE-326 - Inadequate Encryption Strength \nCWE-327 - Use of a Broken or Risky Cryptographic Algorithm \nOWASP Top 10 2013 : A6 Sensitive Data Exposure \nOWASP Top 10 2017 : A3 Sensitive Data Exposure",

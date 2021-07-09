@@ -3,6 +3,7 @@
     "name": "Avoid thread injection through API requests",
     "href": "AIP/quality-rules/8498",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects paths from API requests down to thread API methods, paths which are open vulnerabilities to thread injection flaws.",

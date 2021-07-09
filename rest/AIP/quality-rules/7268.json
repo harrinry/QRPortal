@@ -3,6 +3,7 @@
     "name": "Dispose() methods should call GC.SuppressFinalize",
     "href": "AIP/quality-rules/7268",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "List all Dispose() methods that do not call GC.SuppressFinalize().\nThis applies only for Dispose() method defined in classes which implement the IDisposable interface.",
     "output": "The rule will list:\n1. All the places where Dispose() method does not call GC.SupressFinalize\n2. Bookmark of such methods",

@@ -3,6 +3,7 @@
     "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction",
     "href": "AIP/quality-rules/4062",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "description": "Avoid Stored Procedures doing an Insert, Update or Delete and not managing a transaction (execute \"begin tran\" if @@trancount=0)",
     "output": "This report lists all Stored Procedures doing an Insert, Update or Delete and not managing a transaction (execute \"begin tran\" if @@trancount=0)",

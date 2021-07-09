@@ -3,6 +3,7 @@
     "name": "Avoid having multiple artifacts inserting data on the same SQL Table",
     "href": "AIP/quality-rules/7390",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of potential ways to insert the SQL Table",
     "description": "This metric detects tables having too many ways to insert data into them. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.",

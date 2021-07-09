@@ -3,6 +3,7 @@
     "name": "Avoid using Buffer library and UCS-2 encoding with vulnerable versions (TypeScript)",
     "href": "AIP/quality-rules/1020916",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule raises a violation when the fill, alloc, from or write method of the Buffer module is used with UCS-2 encoding and with a vulnerable nodejs version.",

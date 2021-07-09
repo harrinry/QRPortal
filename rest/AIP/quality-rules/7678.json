@@ -3,6 +3,7 @@
     "name": "Avoid logging using basic java log files",
     "href": "AIP/quality-rules/7678",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "This rule checks all references to log4j, Logback and Java.Util.logger API usage. \nAny artifact that reference a class, an interface, a method or a field that belongs to a class from the package org.apache.log4j\nch.qos.logback.classic.Logger\njava.util.logging.Logger\n\nwill be reported as violation.\n\nThis rule can be customized by specifying any other specific implementations package to be avoided",
     "output": "This report lists all artifacts and fields that violate this rule.\nIt provides the following information:\n Artifact Full Name and Field Full Name",

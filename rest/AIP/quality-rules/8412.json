@@ -3,6 +3,7 @@
     "name": "\"CX_ROOT\" should not be used in TRY .. CATCH.. ENDTRY block",
     "href": "AIP/quality-rules/8412",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "All the system-defined exception classes are derived from one of the classes CX_NO_CHECK,CX_DYNAMIC_CHECK or CX_STATIC_CHECK. These classes are , in turn, derived from common superclass CX_ROOT.  \n\nAs ABAP BEST PRACTICE: CX_ROOT, as base exception type, it should not be used in the CATCH clause of a TRY\u2026CATCH\u2026ENDTRY statement. In the CATCH clause of a TRY\u2026CATCH\u2026ENDTRY statement the exception class defines the exception that should be handled. \n\nCatching directly CX_ROOT may hide dangerous system errors that your CATCH logic was intended to deal with.",

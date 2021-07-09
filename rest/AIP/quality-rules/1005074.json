@@ -3,6 +3,7 @@
     "name": "Avoid having handleHardIOErrors property enabled (EGL)",
     "href": "AIP/quality-rules/1005074",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "This rule checks the combination of 1 property and 1 variable :  handleHardIOErrors (NO | YES) and VGVar.handleHardIOErrors ( =1 | absent | ...).\n1. If EGL: handleHardiOErrors property is set to NO, than no problem.\n2. If EGL: handleHardiOErrors property is set to YES and VGVar.handleHardIOErrors = 1 , than also no problem.\nOther cases than these two must be a violation of this metric.",
     "output": "This report lists the following information: Program full name",

@@ -3,6 +3,7 @@
     "name": "Avoid empty generic catch blocks (Swift)",
     "href": "AIP/quality-rules/1055034",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "In a Do-Catch statement, generic Catch blocks (catching any error type) should have code that avoids silently passing the errors.\nThis metric reports all Swift callables (functions, methods, or source codes) with at least one empty (or only containing comments) generic catch block.",

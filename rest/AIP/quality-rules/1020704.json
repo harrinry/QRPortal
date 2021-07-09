@@ -3,6 +3,7 @@
     "name": "Avoid using string concatenation when using __dirname and __filename",
     "href": "AIP/quality-rules/1020704",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "In Node.js, the __dirname and __filename global variables contain the directory path and the file path of the currently executing script file, respectively. Using these variables directly you can create an invalid path using string concatenation and assuming Unix-style separators.",

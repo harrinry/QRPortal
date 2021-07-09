@@ -3,6 +3,7 @@
     "name": "Avoid accessing multiple times the same SAP Table or View in an SAP Program (DELETE)",
     "href": "AIP/quality-rules/7580",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "ABAP Table/View accessed multiple times",
     "description": "This metric retrieves the ABAP programs making more than a defined number of accesses to the same database table or view. If a program defines classes, then methods belonging to the first level of classes are taken into account.\nThe number of accesses is a parameter of the rule.",

@@ -3,6 +3,7 @@
     "name": "Avoid mixing trusted and untrusted data in HTTP requests",
     "href": "AIP/quality-rules/8238",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from a method receiving untrusted data down to a target method",
     "description": "Using CAST data-flow engine, this quality rule detects paths from user input methods down to session setter methods, which mix trusted and untrusted data in the same data structure.",

@@ -3,6 +3,7 @@
     "name": "Avoid using Rx.observable.fromEvent without having a debouncetime set",
     "href": "AIP/quality-rules/1020838",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Instead of requesting a \"computationally intensive\" API every time the Observable receives an event, we recommend using a time filter such as debounceTime, auditTime or trottleTime which will prevent having too many calls to the API. \nThis quality rule raises a violation whenever an observer subscribes to a \"fromEvent\" observable which was not time filtered with one of the operators mentioned above. \nBe aware that if the observer is not \"computationally demanding\" using a time filter may change the behavior in a harmful way. This quality rule does not check what the observer does. It is therefor the user's responsibility to check whether a time filter is required or not.",

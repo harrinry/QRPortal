@@ -3,6 +3,7 @@
     "name": "Override all overloads of a base Class virtual Method",
     "href": "AIP/quality-rules/7938",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "associatedValueName": "Number of missing overridden methods",
     "description": "This rule searches for derived C++ classes containing at least one virtual method which should be redeclared for the following reasons:\n- They overload one or several overload(s)/signature(s) of a given virtual method of the parent classes (ex: 'mymethod()' and 'mymethod(int)')\n- Only some of these overloads/signatures (of the given virtual method) are redefined in the child class (i.e. for a given method at least one signature/overload is missing).",

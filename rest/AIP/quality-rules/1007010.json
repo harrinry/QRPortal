@@ -3,6 +3,7 @@
     "name": "Avoid JavaScript Functions with High Fan-Out (PHP)",
     "href": "AIP/quality-rules/1007010",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Fan-Out",
     "description": "This rule searches for all JavaScript Functions with High Fan-Out. \n         The Fan-out of JavaScript Function is the number of other artifacts that are referred in it. \n         When computing the Fan-Out of an artifact, multiple accesses to the same component of an artifact are counted as one access.\n         The threshold is a parameter and can be changed as per requirement.",

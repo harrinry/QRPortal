@@ -3,6 +3,7 @@
     "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
     "href": "AIP/quality-rules/8026",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for classes which implement an assignment operator (operator=) but which let the compiler generate a default version for the destructor or the copy constructor.",

@@ -3,6 +3,7 @@
     "name": "Avoid calling database commands directly using system functions as \"C_DB_EXECUTE\" and \"C_DB_FUNCTION\"",
     "href": "AIP/quality-rules/8426",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "The system functions \u201cC_DB_EXECUTE\u201d and \u201cC_DB_FUNCTION\u201d are are used to call for database commands directly.\n\nIn this rule, we are reporting violation when using one of the following function, when their parameter containing the SQL statement is declared with a PARAMETERS statement, as they can be sources of SQL injections: C_DB_EXECUTE or C_DB_FUNCTION",

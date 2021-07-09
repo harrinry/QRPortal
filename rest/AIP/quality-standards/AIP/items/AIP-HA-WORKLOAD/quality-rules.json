@@ -4,6 +4,7 @@
         "name": "Avoid using LONG & LONG RAW datatype for Table Columns",
         "href": "AIP/quality-rules/1578",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "PL/SQL"
         ]
@@ -13,6 +14,7 @@
         "name": "Avoid using execute immediate",
         "href": "AIP/quality-rules/1580",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "Forms",
             "PL/SQL"
@@ -23,6 +25,7 @@
         "name": "Avoid Rule HINT  /*+ rule */ or --+ rule in PL/SQL code",
         "href": "AIP/quality-rules/1598",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Forms",
             "PL/SQL"
@@ -33,6 +36,7 @@
         "name": "Avoid missing release of SQL connection after an effective lifetime (C#, VB.NET)",
         "href": "AIP/quality-rules/3612",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -43,6 +47,7 @@
         "name": "Avoid nested Stored Procedures using temporary Tables",
         "href": "AIP/quality-rules/4084",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Microsoft T-SQL",
             "SQL Server",
@@ -54,6 +59,7 @@
         "name": "DEPRECATED: EJB Entity access through their local Interface",
         "href": "AIP/quality-rules/4744",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -63,6 +69,7 @@
         "name": "DEPRECATED: EJB Session access through their local Interface",
         "href": "AIP/quality-rules/4746",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -72,6 +79,7 @@
         "name": "Using SEARCH ALL only with sorted data",
         "href": "AIP/quality-rules/5056",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Cobol"
         ]
@@ -81,6 +89,7 @@
         "name": "Avoid using SORT",
         "href": "AIP/quality-rules/5058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Cobol"
         ]
@@ -90,6 +99,7 @@
         "name": "Avoid using MERGE",
         "href": "AIP/quality-rules/5060",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Cobol"
         ]
@@ -99,6 +109,7 @@
         "name": "Avoid having SQL code in Triggers named \"pre-record\"",
         "href": "AIP/quality-rules/5554",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Forms"
         ]
@@ -108,6 +119,7 @@
         "name": "Avoid Artifacts with Subqueries (Power Builder)",
         "href": "AIP/quality-rules/6184",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "PowerBuilder"
         ]
@@ -117,6 +129,7 @@
         "name": "Avoid String concatenation in loops (.NET)",
         "href": "AIP/quality-rules/7198",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -127,6 +140,7 @@
         "name": "Avoid String concatenation in loops",
         "href": "AIP/quality-rules/7200",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -136,6 +150,7 @@
         "name": "Avoid instantiations inside loops",
         "href": "AIP/quality-rules/7210",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -145,6 +160,7 @@
         "name": "Avoid instantiations inside loops (.NET)",
         "href": "AIP/quality-rules/7212",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -155,6 +171,7 @@
         "name": "Avoid OPEN/CLOSE inside loops",
         "href": "AIP/quality-rules/7218",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Cobol"
         ]
@@ -164,6 +181,7 @@
         "name": "Avoid calling properties that clone values in loops",
         "href": "AIP/quality-rules/7352",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -174,6 +192,7 @@
         "name": "Avoid call to AcceptChanges in a loop",
         "href": "AIP/quality-rules/7358",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -184,6 +203,7 @@
         "name": "File descriptor block must be defined with 0 record",
         "href": "AIP/quality-rules/7366",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Cobol"
         ]
@@ -193,6 +213,7 @@
         "name": "Avoid Tables without a clustered Index",
         "href": "AIP/quality-rules/7386",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Microsoft T-SQL",
             "SQL Server",
@@ -204,6 +225,7 @@
         "name": "Avoid SQL queries with implicit conversions in the WHERE clause",
         "href": "AIP/quality-rules/7420",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "Forms",
@@ -218,6 +240,7 @@
         "name": "DEPRECATED: Avoid doing select on Datatable in loop",
         "href": "AIP/quality-rules/7470",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -228,6 +251,7 @@
         "name": "Turn off \"Multiple SQL statements for each measure\"",
         "href": "AIP/quality-rules/7476",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Business Object"
         ]
@@ -237,6 +261,7 @@
         "name": "Do not use Cartesian products in Universe properties",
         "href": "AIP/quality-rules/7482",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Business Object"
         ]
@@ -246,6 +271,7 @@
         "name": "Lazy fetching should be used for Hibernate collection",
         "href": "AIP/quality-rules/7488",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -255,6 +281,7 @@
         "name": "Avoid UPDATE trigger firing when not necessary",
         "href": "AIP/quality-rules/7490",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -264,6 +291,7 @@
         "name": "Use table-per-subclass strategy when subclasses have many properties",
         "href": "AIP/quality-rules/7496",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -273,6 +301,7 @@
         "name": "Avoid Incorrect implementation of getters and setters for Collection Type",
         "href": "AIP/quality-rules/7498",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -282,6 +311,7 @@
         "name": "Use table-per-class-hierarchy when subclasses have few properties",
         "href": "AIP/quality-rules/7500",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -291,6 +321,7 @@
         "name": "Never use an array to map Hibernate collection",
         "href": "AIP/quality-rules/7502",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -300,6 +331,7 @@
         "name": "Avoid \"SELECT *\" or \"SELECT SINGLE *\" queries",
         "href": "AIP/quality-rules/7530",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -309,6 +341,7 @@
         "name": "Avoid nested SELECT ... ENDSELECT statements",
         "href": "AIP/quality-rules/7532",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -318,6 +351,7 @@
         "name": "Avoid READ TABLE without BINARY SEARCH",
         "href": "AIP/quality-rules/7534",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -327,6 +361,7 @@
         "name": "Avoid using SELECT ... INTO CORRESPONDING FIELDS OF",
         "href": "AIP/quality-rules/7538",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -336,6 +371,7 @@
         "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
         "href": "AIP/quality-rules/7542",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -345,6 +381,7 @@
         "name": "Avoid using \"SELECT DISTINCT\", use DELETE-ADJACENT",
         "href": "AIP/quality-rules/7594",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -354,6 +391,7 @@
         "name": "Avoid Hibernate Entity with 'select-before-update' set to true if not associated to table that fires an UPDATE trigger.",
         "href": "AIP/quality-rules/7634",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -363,6 +401,7 @@
         "name": "Avoid directly managing the connection to the database by using DriverManager",
         "href": "AIP/quality-rules/7638",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -372,6 +411,7 @@
         "name": "Avoid executing multiple OPEN statements",
         "href": "AIP/quality-rules/7644",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Cobol"
         ]
@@ -381,6 +421,7 @@
         "name": "Never use SQL queries with a cartesian product on XXL Tables",
         "href": "AIP/quality-rules/7660",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP",
             "Forms",
@@ -395,6 +436,7 @@
         "name": "Avoid SQL queries on XXL Tables with implicit conversions in the WHERE clause",
         "href": "AIP/quality-rules/7662",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP",
             "Forms",
@@ -409,6 +451,7 @@
         "name": "Avoid using FOR ALL ENTRIES IN without emptiness check on XXL Tables",
         "href": "AIP/quality-rules/7664",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -418,6 +461,7 @@
         "name": "Avoid using SELECT ... ENDSELECT statement on XXL Tables",
         "href": "AIP/quality-rules/7666",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -427,6 +471,7 @@
         "name": "Each opened file must be closed",
         "href": "AIP/quality-rules/7692",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "Cobol"
         ]
@@ -436,6 +481,7 @@
         "name": "Hibernate-provided implementations from third parties should be used for connection pool",
         "href": "AIP/quality-rules/7702",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -445,6 +491,7 @@
         "name": "DEPRECATED: Avoid too many EJB beans",
         "href": "AIP/quality-rules/7720",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -454,6 +501,7 @@
         "name": "Avoid Cursors inside a loop",
         "href": "AIP/quality-rules/7790",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Forms",
             "Microsoft T-SQL",
@@ -467,6 +515,7 @@
         "name": "Avoid Artifacts with SQL statement including subqueries",
         "href": "AIP/quality-rules/7808",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "C",
@@ -487,6 +536,7 @@
         "name": "Never use SQL queries with a cartesian product",
         "href": "AIP/quality-rules/7820",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "Forms",
@@ -501,6 +551,7 @@
         "name": "Avoid Artifacts with queries on more than 4 Tables",
         "href": "AIP/quality-rules/7822",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "C",
@@ -521,6 +572,7 @@
         "name": "Avoid SELECT ... BYPASSING BUFFER",
         "href": "AIP/quality-rules/7866",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -530,6 +582,7 @@
         "name": "Avoid Open SQL queries in loops",
         "href": "AIP/quality-rules/7868",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ABAP"
         ]
@@ -539,6 +592,7 @@
         "name": "Avoid using the NOT LIKE operator in WHERE clauses",
         "href": "AIP/quality-rules/7870",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -548,6 +602,7 @@
         "name": "Avoid using IS [NOT] NULL in WHERE condition",
         "href": "AIP/quality-rules/7872",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -557,6 +612,7 @@
         "name": "Avoid using SELECT ... FOR UPDATE",
         "href": "AIP/quality-rules/7876",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -566,6 +622,7 @@
         "name": "Avoid Open SQL SELECT queries without WHERE condition",
         "href": "AIP/quality-rules/7878",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -575,6 +632,7 @@
         "name": "Avoid nested loops",
         "href": "AIP/quality-rules/7880",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -584,6 +642,7 @@
         "name": "Avoid using LOOP INTO, use LOOP ASSIGNING instead",
         "href": "AIP/quality-rules/7894",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -593,6 +652,7 @@
         "name": "Avoid SQL queries that no index can support",
         "href": "AIP/quality-rules/7902",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "Cobol",
@@ -608,6 +668,7 @@
         "name": "Avoid SQL queries on XXL tables that no index can support",
         "href": "AIP/quality-rules/7904",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP",
             "Cobol",
@@ -622,6 +683,7 @@
         "name": "DEPRECATED: Avoid using finalize()",
         "href": "AIP/quality-rules/7936",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -631,6 +693,7 @@
         "name": "Avoid accumulating Stateful Beans",
         "href": "AIP/quality-rules/7940",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -640,6 +703,7 @@
         "name": "Avoid indirect String concatenation inside loops",
         "href": "AIP/quality-rules/7954",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -649,6 +713,7 @@
         "name": "Avoid direct or indirect remote calls inside a loop",
         "href": "AIP/quality-rules/7962",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -658,6 +723,7 @@
         "name": "Invoke 'delete' with the same form as the matching 'new'",
         "href": "AIP/quality-rules/8048",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -668,6 +734,7 @@
         "name": "Do not return a dereferenced pointer allocated inside the function",
         "href": "AIP/quality-rules/8068",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -678,6 +745,7 @@
         "name": "Avoid exists independent clauses",
         "href": "AIP/quality-rules/8080",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Microsoft T-SQL",
             "PL/SQL",
@@ -689,6 +757,7 @@
         "name": "Avoid Tables without Primary Key",
         "href": "AIP/quality-rules/8082",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Microsoft T-SQL",
             "PL/SQL",
@@ -700,6 +769,7 @@
         "name": "Blocking synchronous calls should have associated timeouts",
         "href": "AIP/quality-rules/8100",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -709,6 +779,7 @@
         "name": "Avoid missing release of SQL connection after an effective lifetime (JEE)",
         "href": "AIP/quality-rules/8104",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -718,6 +789,7 @@
         "name": "Avoid missing release of stream connection after an effective lifetime",
         "href": "AIP/quality-rules/8108",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -729,6 +801,7 @@
         "name": "Avoid not using dedicated stored procedures when processing multiple data accesses",
         "href": "AIP/quality-rules/8110",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -740,6 +813,7 @@
         "name": "Avoid using empty SELECT ... ENDSELECT loop",
         "href": "AIP/quality-rules/8126",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -749,6 +823,7 @@
         "name": "Avoid using database hints",
         "href": "AIP/quality-rules/8130",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP"
         ]
@@ -758,6 +833,7 @@
         "name": "Avoid using CHECK, EXIT,or RETURN in SELECT ... ENDSELECT loops",
         "href": "AIP/quality-rules/8132",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ABAP"
         ]
@@ -767,6 +843,7 @@
         "name": "Avoid using GC.Collect()",
         "href": "AIP/quality-rules/8154",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -777,6 +854,7 @@
         "name": "Avoid operating on resource after expiration or release",
         "href": "AIP/quality-rules/8214",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -786,6 +864,7 @@
         "name": "Avoid Open SQL SELECT queries without WHERE condition on XXL Tables",
         "href": "AIP/quality-rules/8464",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ABAP"
         ]
@@ -795,6 +874,7 @@
         "name": "Avoid using querySelectorAll",
         "href": "AIP/quality-rules/1020004",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -804,6 +884,7 @@
         "name": "Avoid calling a function in a termination loop (Javascript)",
         "href": "AIP/quality-rules/1020006",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -813,6 +894,7 @@
         "name": "Avoid using forEach()",
         "href": "AIP/quality-rules/1020010",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -822,6 +904,7 @@
         "name": "Avoid using a web service with WebSocket inside a loop",
         "href": "AIP/quality-rules/1020012",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -831,6 +914,7 @@
         "name": "Avoid using a web service with XMLHttpRequest inside a loop",
         "href": "AIP/quality-rules/1020014",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -840,6 +924,7 @@
         "name": "Avoid using the call of web service jQuery ajax inside a loop",
         "href": "AIP/quality-rules/1020300",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -849,6 +934,7 @@
         "name": "Always use find for Id->Child nested selectors",
         "href": "AIP/quality-rules/1020306",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -858,6 +944,7 @@
         "name": "Always cache the returned objects in variables to be reused",
         "href": "AIP/quality-rules/1020308",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -867,6 +954,7 @@
         "name": "Avoid using css() of many elements",
         "href": "AIP/quality-rules/1020314",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -876,6 +964,7 @@
         "name": "Avoid Universal Selectors",
         "href": "AIP/quality-rules/1020316",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -885,6 +974,7 @@
         "name": "Avoid having multiple routes for the same path with Node.js Express App",
         "href": "AIP/quality-rules/1020714",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -894,6 +984,7 @@
         "name": "Avoid using the call of web service with Node.js http.get or http.request inside a loop",
         "href": "AIP/quality-rules/1020716",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -903,6 +994,7 @@
         "name": "Avoid having multiple routes for the same path with Node.js Express App (TypeScript)",
         "href": "AIP/quality-rules/1020898",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -912,6 +1004,7 @@
         "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
         "href": "AIP/quality-rules/1050000",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "Objective-C"
         ]
@@ -921,6 +1014,7 @@
         "name": "Avoid Tables without Primary Key (SQL)",
         "href": "AIP/quality-rules/1101022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -930,6 +1024,7 @@
         "name": "Avoid Artifacts with queries on too many Tables and/or Views",
         "href": "AIP/quality-rules/1101030",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ABAP",
             "SQL"
@@ -940,6 +1035,7 @@
         "name": "Avoid Cursors inside a loop (SQL)",
         "href": "AIP/quality-rules/1101084",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "SQL"
         ]
@@ -949,6 +1045,7 @@
         "name": "Avoid using LONG and LONG RAW datatypes",
         "href": "AIP/quality-rules/1101088",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]

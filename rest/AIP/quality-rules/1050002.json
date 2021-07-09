@@ -3,6 +3,7 @@
     "name": "Avoid using NSString stringWithFormat on behalf of NSURL instance",
     "href": "AIP/quality-rules/1050002",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "An attacker can tamper with the URL and point it to an unintended server. Sensitive information may then be transmitted to the attacker's server. \nThe injection could be done in NSString using the methods \nstringWithFormat:, \ninitWithFormat: \nand used when instanciating through NSURL URLWithString.",

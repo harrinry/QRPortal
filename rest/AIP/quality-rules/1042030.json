@@ -3,6 +3,7 @@
     "name": "Avoid using Default exclude patterns (excludeParams) for Struts 2.3.20 ( and older)",
     "href": "AIP/quality-rules/1042030",
     "critical": false,
+    "severity": 30,
     "maxWeight": 5,
     "associatedValueName": "The number of violation occurrences",
     "description": "Wrong default exclude patterns(excludeParams) were introduced in version 2.3.20 of Struts, if default settings are used, the attacker can compromise internal application's state.\n\nThis rule check if excludeParams is used for Struts 2.3.20 ( and older). If yes, it gives violation.",

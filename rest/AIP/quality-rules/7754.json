@@ -3,6 +3,7 @@
     "name": "Avoid using COMPUTE statement for elementary arithmetic operation",
     "href": "AIP/quality-rules/7754",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs using the COMPUTE statement for elementary arithmetic operation.\n\nExpressions with only one binary operator (+, -, *, /) are taken into account. Expressions based on the exponentiation operator ('**') are not considered as violating the rule.\n\nExpression with only one operand (with or without an unary operator) are taken into account. Example:\n- A = B\n- A = -1\n- A = 0",

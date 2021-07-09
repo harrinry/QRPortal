@@ -3,6 +3,7 @@
     "name": "Avoid reflection injection through API requests",
     "href": "AIP/quality-rules/8502",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects paths from API request down to reflection code, paths which are open vulnerabilities to operating system injection flaws.",

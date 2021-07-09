@@ -3,6 +3,7 @@
     "name": "Avoid using hard-coded seed or no seed at all for random values generation",
     "href": "AIP/quality-rules/8430",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "Functions that generate random or pseudorandom values, which are passed a seed, should not be called with a constant argument. If a pseudorandom number generator (such as CL_ABAP_RANDOM class or its variants) is seeded with a specific constant value, the values returned by GET_NEXT, INT and similar methods which return or assign values are predictable for an attacker that can collect a number of PRNG outputs.\n\nIf no seed is provided at all, the generation is also not random.\n\nClasses used to generate random /pseudorandom numbers:\n\nCL_ABAP_RANDOM\nCL_ABAP_RANDOM_DECFLOAT16\nCL_ABAP_RANDOM_DECFLOAT34\nCL_ABAP_RANDOM_FLOAT\nCL_ABAP_RANDOM_INT\nCL_ABAP_RANDOM_PACKED\nCL_ABAP_RANDOM_PACKED_DEC1\nCL_ABAP_RANDOM_PACKED_DEC2\nCL_ABAP_RANDOM_PACKED_DEC3\nCL_ABAP_RANDOM_PACKED_DEC4\nCL_ABAP_RANDOM_PACKED_DEC5\nCL_ABAP_RANDOM_PACKED_DEC6\nCL_ABAP_RANDOM_PACKED_DEC7\nCL_ABAP_RANDOM_PACKED_DEC8\nCL_ABAP_RANDOM_PACKED_DEC9\nCL_ABAP_RANDOM_PACKED_DEC10\nCL_ABAP_RANDOM_PACKED_DEC11\nCL_ABAP_RANDOM_PACKED_DEC12\nCL_ABAP_RANDOM_PACKED_DEC13\nCL_ABAP_RANDOM_PACKED_DEC14",

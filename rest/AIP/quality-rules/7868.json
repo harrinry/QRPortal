@@ -3,6 +3,7 @@
     "name": "Avoid Open SQL queries in loops",
     "href": "AIP/quality-rules/7868",
     "critical": true,
+    "severity": 30,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "The rule searches for SELECT, INSERT, UPDATE, MODIFY, DELETE statements that are contained in loops. These loops are:\n- SELECT ... ENDSELECT\n- LOOP ... ENDLOOP\n- DO ... ENDDO\n- WHILE ... ENDWHILE\n- PROVIDE ... ENDPROVIDE",

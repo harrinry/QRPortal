@@ -3,6 +3,7 @@
     "name": "Avoid hard-coded timeout in Process Activities (TIBCO BW)",
     "href": "AIP/quality-rules/1018144",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "description": "This rule searches for ProcessActivities having a timeout not starting with %% (so defined by a Global Variable).",
     "output": "This report lists all  Processe Activities having an hardcoded timeout.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the timeout value.",

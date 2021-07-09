@@ -4,6 +4,7 @@
         "name": "Never throw an exception from a Destructor",
         "href": "AIP/quality-rules/678",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C++"
         ]
@@ -13,6 +14,7 @@
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -22,6 +24,7 @@
         "name": "Prefer using logging framework  as SLF4j instead of  'System.err' or 'System.out'",
         "href": "AIP/quality-rules/4696",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -31,6 +34,7 @@
         "name": "Ensure to not use default stream(System.Err) for printStackTrace to print throwable and its stack trace in order to protect sensitive information.",
         "href": "AIP/quality-rules/4702",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -40,6 +44,7 @@
         "name": "Avoid empty catch blocks",
         "href": "AIP/quality-rules/7788",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "HTML5",
@@ -52,6 +57,7 @@
         "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -63,6 +69,7 @@
         "name": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
         "href": "AIP/quality-rules/7862",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -74,6 +81,7 @@
         "name": "Avoid 'catch-all' statement",
         "href": "AIP/quality-rules/8000",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -83,6 +91,7 @@
         "name": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
         "href": "AIP/quality-rules/1020068",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -92,6 +101,7 @@
         "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
         "href": "AIP/quality-rules/1020102",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -101,6 +111,7 @@
         "name": "Ensure you have implemented expected $ajax callbacks",
         "href": "AIP/quality-rules/1020340",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -110,6 +121,7 @@
         "name": "Ensure you have properly manage errors by using the error/fail callbacks",
         "href": "AIP/quality-rules/1020342",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -119,6 +131,7 @@
         "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020452",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -128,6 +141,7 @@
         "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
         "href": "AIP/quality-rules/1020540",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -137,6 +151,7 @@
         "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -146,6 +161,7 @@
         "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -155,6 +171,7 @@
         "name": "Always throw all created error.",
         "href": "AIP/quality-rules/1020802",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -164,6 +181,7 @@
         "name": "Ensure that you provide an error callback to the HttpClient  ubscribe method.",
         "href": "AIP/quality-rules/1020822",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -173,6 +191,7 @@
         "name": "Always handle errors when using ajax with RxJS",
         "href": "AIP/quality-rules/1020850",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -182,6 +201,7 @@
         "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020858",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -191,6 +211,7 @@
         "name": "Always use JSON.parse and JSON.stringify with try/catch block because of the synchronous call (Typescript)",
         "href": "AIP/quality-rules/1020872",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -200,6 +221,7 @@
         "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020874",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -209,6 +231,7 @@
         "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020876",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -218,6 +241,7 @@
         "name": "Ensure to check all the BiometricPrompt error options in the onAuthenticationError method",
         "href": "AIP/quality-rules/1024034",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -227,6 +251,7 @@
         "name": "Ensure to check all BiometricPrompt acquired options in the onAuthenticationSucceeded method",
         "href": "AIP/quality-rules/1024036",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -236,6 +261,7 @@
         "name": "Prefer not using Generic Authentication Exception Class to promote easy error handling",
         "href": "AIP/quality-rules/1040030",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -245,6 +271,7 @@
         "name": "Ensure not using ControllerAdvice And HandlerExceptionResolver simultaneously to avoid unexpected behavior",
         "href": "AIP/quality-rules/1040032",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -254,6 +281,7 @@
         "name": "Ensure that a class type exception is always be caught by reference to avoid slicing",
         "href": "AIP/quality-rules/1065026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -263,6 +291,7 @@
         "name": "Ensure to handle exception in a catch block and not leave it empty",
         "href": "AIP/quality-rules/1101040",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -272,6 +301,7 @@
         "name": "Ensure to use WHEN OTHERS with WHEN for exception handling to prevent unexpected behavior",
         "href": "AIP/quality-rules/1101052",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -281,6 +311,7 @@
         "name": "Ensure to propagate errors to client instead of using with NULL when handling exceptions through WHEN OTHERS",
         "href": "AIP/quality-rules/1101054",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -290,6 +321,7 @@
         "name": "Errors should be handled in stored procedures and functions",
         "href": "AIP/quality-rules/1101092",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]

@@ -3,6 +3,7 @@
     "name": "Avoid using import with external URI",
     "href": "AIP/quality-rules/1020052",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "JavaScript could be executed via cross-origin HTML imports. Make sure that HTML imports are limited to the same origin. Avoid permitting users to have <link> tags in user-generated rich-text as they can now directly execute JavaScript without any user interaction.",

@@ -3,6 +3,7 @@
     "name": "Avoid directly instantiating a Class used as a managed bean",
     "href": "AIP/quality-rules/7964",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Instantiated managed bean name",
     "description": "The rule reports Managed bean and Java methods that call a constructor of the class used to define this Managed bean. \nThe class can be instantiated directly (by new) or also by getBean. \n\nNote: Even though the getBean method is part of the Spring framework, it is considered as a bad practice to use it since it bypasses the Spring inversion of control mechanism. It will access directly the Bean factory, to either retreive the singleton instance of the bean, or create another instance of that bean. \nThe behavior is implicit, dependent on the way the bean is configured, and cannot be known by the caller. That's why this call is considered as an explicit instantiation. \nInstead, the developer should rely on Spring's injection to wire the bean to the proper location, and access it with an accessor.",

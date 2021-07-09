@@ -3,6 +3,7 @@
     "name": "Avoid Constructors not supplying an initial value for all non-static data members",
     "href": "AIP/quality-rules/7932",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ class constructors that do not initialize all class members defined with a scalar type or that are pointers.  \n\nInitializations can be created in the constructor declaration or in the constructor body.\n\nClass members that are not taken into account are:\n- Class instances\n- Defined with a non-scalar type",

@@ -3,6 +3,7 @@
     "name": "Call 'super.finalize ()' in the \"finally\" block of 'finalize ()' methods",
     "href": "AIP/quality-rules/7252",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "Calling the super.finalize() in the \"finally\" block of 'finalize ()' method is highly recommended in case parent implementations must also dispose some system resources.\n\nThis rule reports finalize method with no try finally block or with no call to super.finalize() within the finally block.",
     "output": "This report lists all Methods  'finalize()' with no try finally block or with no call to super.finalize() within the finally block.\nIt provides the following information:\n Method full name",

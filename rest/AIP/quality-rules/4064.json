@@ -3,6 +3,7 @@
     "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
     "href": "AIP/quality-rules/4064",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "description": "Avoid stored procedures or functions using an Insert, Update, Delete, Create Table or Select without including error management (check of @@error variable or error management using TRY..CATCH blocks).",
     "output": "This report lists all stored procedures using an Insert, Update, Delete, Select or Create Table without including error management (check of @@error variable or or error management using TRY..CATCH blocks)",

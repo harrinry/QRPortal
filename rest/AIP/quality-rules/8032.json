@@ -3,6 +3,7 @@
     "name": "Avoid using multiple break statement in 'for' loops",
     "href": "AIP/quality-rules/8032",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for functions that contains multiple 'break' statement in a 'for' loop. 'break' statements located in nested loops will also be reported as a violation to this rule.\n\nNote: For C#, foreach statements are not considered because there is no stop condition in the loop definition. Break statements located in nested loops will also be reported as a violation to this rule.\nNote that in VB .NET, the break statement is \"Exit For\"",

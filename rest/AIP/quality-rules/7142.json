@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Action Classes should have only one public method",
     "href": "AIP/quality-rules/7142",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Number of public methods",
     "description": "Classes that inherit from org.apache.struts.action.Action with more than one public method will be listed. Exception to this rule: \n- all classes that inherit from org.apache.struts.action.DispatchAction that is specifically designed to group related actions into a single class and have more than one public method to handle each operation.\n- all Action class that are also Spring Beans: in this case, setter methods are excluded from the violations",

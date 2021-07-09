@@ -3,6 +3,7 @@
     "name": "Avoid having multiple artifacts updating data on the same SQL Table",
     "href": "AIP/quality-rules/7394",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of potential ways to update the SQL Table",
     "description": "This metric detects tables having too many ways to update them. It retrieves tables having more than X artifacts updating these tables, where X a configurable parameter.",

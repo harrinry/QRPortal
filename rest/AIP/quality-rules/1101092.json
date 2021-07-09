@@ -3,6 +3,7 @@
     "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management (SQL)",
     "href": "AIP/quality-rules/1101092",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Avoid SQL Server, Sybase and Oracle stored procedures or functions using an Insert, Update, Delete, Create Table or Select without including error management.\n\nFor SQL Server and Sybase we look for the check of @@error variable or error management using TRY..CATCH blocks.\nFor Oracle we look for PL/SQL Errors and Exceptions, EXCEPTION WHEN.",

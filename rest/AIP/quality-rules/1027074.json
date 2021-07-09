@@ -3,6 +3,7 @@
     "name": "Avoid hard-coded URIs (.NET)",
     "href": "AIP/quality-rules/1027074",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The rule will raise a violation upon identifying hardcoded URIs or URI path delimiters\n\nExceptions:\nThis rule does not raise an issue when an ASP.NET virtual path is passed as an argument to one of the following:\n\nmethods:\nSystem.Web.HttpServerUtilityBase.MapPath()\nSystem.Web.HttpRequestBase.MapPath()\nSystem.Web.HttpResponseBase.ApplyAppPathModifier()\nSystem.Web.Mvc.UrlHelper.Content()\n\nall methods of:\nSystem.Web.VirtualPathUtility\n\nconstructors of:\nMicrosoft.AspNetCore.Mvc.VirtualFileResult\nMicrosoft.AspNetCore.Routing.VirtualPathData",

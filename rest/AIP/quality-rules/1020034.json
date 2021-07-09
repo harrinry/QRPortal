@@ -3,6 +3,7 @@
     "name": "Avoid hosting HTML code in iframe srcdoc",
     "href": "AIP/quality-rules/1020034",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "HTML5 specifies a \"srcdoc\" attribute for Iframes. This attribute, quite similar to data URIs, is capable of hosting HTML text to be rendered by the browser as the content of the Iframe. The pseudo-document created by the \"srcdoc\" attribute has full access to the hosting domain, although it runs in an artificial origin. This attribute should if at all only be used in combination with the Iframe Sandbox.",

@@ -3,6 +3,7 @@
     "name": "Avoid synchronizing the credentials with iCloud (Objective-C)",
     "href": "AIP/quality-rules/1050042",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using the NSURLCredential class, you must pay attention to the persistence attribute. With NSURLCredentialPersistenceSynchronizable attribute the distribution of the credential and its storage will be in the Apple's cloud environment. Depending upon the privacy requirements of the application, storing the credential in the Apple cloud environment may not be acceptable.",

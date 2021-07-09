@@ -3,6 +3,7 @@
     "name": "Avoid using the Hints to force Oracle to use a specific access method (PeopleSoft)",
     "href": "AIP/quality-rules/1600286",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This quality rule reports SQL Definitions using an Oracle Hint in the SQL statement.\nIt detects the specific start of comment '/*+' without further checks on the hint syntax.",
     "rationale": "To force Oracle to use a specific access method a common practive is to use the Hints. But do so knowingly (Oracle will not use the right index...) and be aware of the consequences (if tomorrow the indexes change, you may degrade database performance without knowing).\nSo, when you know what you are doing, you might use the hints....as the last chance tuning.\nOTOH and for instance, for certain SQL constructs, the use of the FIRST_ROWS hint can severely degrade performance.\n\nThis quality rule reports all SQL definition using an Oracle hint, in order to help a senior DBA check if the hints are effective.",

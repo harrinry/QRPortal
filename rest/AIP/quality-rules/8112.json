@@ -3,6 +3,7 @@
     "name": "Avoid improper processing of the execution status of data handling operations",
     "href": "AIP/quality-rules/8112",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule identifies Java control elements that embed data resource access actions without checking return code or handling error. \n\nThis quality rule checks methods that contain calls to SQL insert, update, select, create table enclosed in a try/catch block. Cases where SQL calls in functions that throw exceptions to be caught higher in the call graph are not addressed by this rule. \nEither empty catch blocks, catch blocks with comments only, or only write to a stream are violating the rule. Appropriate logging or other treatment of exception are said to be valid.",

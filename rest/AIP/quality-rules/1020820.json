@@ -3,6 +3,7 @@
     "name": "Avoid hard-coded passwords (TypeScript)",
     "href": "AIP/quality-rules/1020820",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "A non-secure starting patch would be to apply obfuscation techniques to the hard-coded password to prevent reverse-engineering of the generated Javascript code. This could be done by hashing the password or constructing the password string in many different places by non-trivial methods. Sensitive data such as passwords should be in principle encrypted and saved in separate files or in a database with restricted user access.\nFinally one should consider removing backdoors and delegate the password ownership to the end-user.",

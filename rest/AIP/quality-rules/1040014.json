@@ -3,6 +3,7 @@
     "name": "Avoid using Spring Security's debug mode",
     "href": "AIP/quality-rules/1040014",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Spring Security's debug mode is useful during development and debugging, but could expose sensitive information to attackers such as request parameters or headers and should not be included in production code.\n\nThis rule will check if Spring Security's debug mode is deactivated. If not it gives the violation",

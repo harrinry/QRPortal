@@ -3,6 +3,7 @@
     "name": "Avoid NoSQL injection",
     "href": "AIP/quality-rules/8418",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target SQL execution method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is sent to No-SQL database without prior validation and sanitization.",

@@ -3,6 +3,7 @@
     "name": "Avoid calling blocking functions with an infinite timeout",
     "href": "AIP/quality-rules/8054",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ methods that call blocking functions with the infinite timeout parameter. Functions that are detected by the rule are:\n- WaitForSingleObject() \n- WaitForMultipleObjects() \n- Sleep()",

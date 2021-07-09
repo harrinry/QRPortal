@@ -3,6 +3,7 @@
     "name": "Move PeopleCode to a Component or Page Definition (PeopleSoft)",
     "href": "AIP/quality-rules/1600680",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This metric reports all PeopleCode artifacts testing the Component name.\nIt detects the following branching statement constructs:\n- If %Component = ...Then\n- If boolean_expr1 and/or boolean_expr2 and/or %Component = ... Then\n- Evaluate %Component When = ...",
     "output": "This report lists all artifacts testing the Component name.\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of of test occurrences found in the artifact source code",

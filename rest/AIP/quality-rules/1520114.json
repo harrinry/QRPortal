@@ -3,6 +3,7 @@
     "name": "SiebelReview: Pick Maps Missing or Incorrectly Defined",
     "href": "AIP/quality-rules/1520114",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Reason for violation (No pickmap|Unecessary pickmaps)",
     "description": "A pick map determines which fields from the pick BusComp will be copied to the BusComp in which the field with a pick list is defined.\n* For a static pick list, if no pick map is defined, the user will not see a list of values to choose from.\n* For a dynamic pick list, if no pick map is defined, nothing will be copied from the source BusComp.  If the pick map is defined, but does not contain a mapping to a foreign key column on the base table, no reference to the picked data will be saved to the base record, and the data will not be appear when the user returns to the record.\n* For fields that do not have a pick list attribute defined, there should be no pick maps defined.",

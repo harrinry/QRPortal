@@ -3,6 +3,7 @@
     "name": "Send messages in the SavePostChange event (PeopleSoft)",
     "href": "AIP/quality-rules/1600496",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This metric detects all artifacts using Message sending functions, outside of the SavePostChange event",
     "output": "This report lists all artifacts using Insert statement using sequence instead of calling GetNextNumberWithGaps\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of Message sending functions found in the artifact source code, outside of the SavePostChange event",

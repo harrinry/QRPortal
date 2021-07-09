@@ -3,6 +3,7 @@
     "name": "Avoid static Field of type collection",
     "href": "AIP/quality-rules/7562",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "In practice, static collection classes, such as HashMap and Vector can cause memory leak. Static collections are likely to cause memory leaks because static variables remain in memory as long as the application runs, regardless of its object creation and destruction. So because their life cycle is the application duration, the objects that they reference will be kept in memory until the application end.\n\nThis rule reports static field defined as a class or interface that implements:\n\n  - java.util.Collection or java.util.Collection<E>\n  or\n  - java.util.Map or java.util.Map<K,V> except when:\n\n       - it is the class or a subclass of java.util.WeakHashMap or java.util.WeakHashMap<K,V>\n       - the field is defined as an interface and is initialized with an instance of the class or a subclass of java.util.WeakHashMap\n       or java.util.WeakHashMap<K,V>.\n       - if collection.clear() or Map.clear() is used.",
     "output": "This report lists all static field defined as collection (class or interface).\nIt provides the following information:\n  Field full name",

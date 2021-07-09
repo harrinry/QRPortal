@@ -3,6 +3,7 @@
     "name": "Avoid using ABAP command GENERATE SUBROUTINE POOL",
     "href": "AIP/quality-rules/8550",
     "critical": false,
+    "severity": 30,
     "maxWeight": 5,
     "description": "This command can create arbitrary temporary ABAP programs. It must not process input, especially not from a file upload. \n\nGENERATE SUBROUTINE POOL should only be used in exceptional cases in application programs",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - GENERATE SUBROUTINE POOL ...",

@@ -3,6 +3,7 @@
     "name": "Avoid Functions and Procedures having cursors  declared with \"FOR FETCH ONLY\" clause not having \"WITH ROWSET POSITIONING\" also specified (PL1)",
     "href": "AIP/quality-rules/1001138",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "description": "This rule searches all PL1 Main Procedures, PL1 Functions and PL1 Procedures having  \"FOR FETCH ONLY\" or \"FOR READ ONLY\" clause  and not having \"WITH ROWSET POSITIONING\" specified.",
     "output": "The report lists all PL1 Main Procedures, PL1 Functions and PL1 Procedures having  \"FOR FETCH ONLY\" or \"FOR READ ONLY\" clause  and not having \"WITH ROWSET POSITIONING\" specified.\n\nIt provides following information: \n-  PL1 Main Procedure, PL1 Function and PL1 Procedure full Name.",

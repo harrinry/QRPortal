@@ -3,6 +3,7 @@
     "name": "Avoid having variables without naming conventions (PHP)",
     "href": "AIP/quality-rules/1007212",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule process 3 types of variables\n1.Normal Variables\n2. Member variables ( variables declared as member variables in the class)\n3.Variables in a string\n\n\n1- For Normal variables  : If Variable is not in valid camel caps format\nthen there will be violation\n2- For Member Variables\n  - If Public member variable does not contain a leading underscore it will be a violation\n  - If member variable doesn't contain a leading underscore then that will be a violation\n  - If Member variable is not in valid camel Caps format then it will be a violation\n\n3- For Variables in string: If variable is not in valid camel Caps format then it will be a violation\n\n\n\n\nThis rule is based on Code Sniffer 2.5\n\nArtifacts considered for this QR are php Section, method, function, constructor and member variables",
     "output": "This report lists all the artifacts having variables that do not follow naming convention\n\nThis QR provides the following information:\n- Artifact Full Name",

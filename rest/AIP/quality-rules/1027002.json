@@ -3,6 +3,7 @@
     "name": "Avoid exposing methods that use Platform Invocation Services to access unmanaged code",
     "href": "AIP/quality-rules/1027002",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Avoid exposing methods that use Platform Invocation Services to access unmanaged code\n\nThis rule searches all the methods public or protected or protected internal that use Platform Invocation Services to access unmanaged code meaning that has the System.Runtime.InteropServices.DllImportAttribute attribute or implemented by the Declare keyword in Visual Basic.",

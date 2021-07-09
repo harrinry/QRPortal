@@ -3,6 +3,7 @@
     "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
     "href": "AIP/quality-rules/7266",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "This quality rule checks that when implementing the MS recommended dispose pattern that is 'Dispose(bool)' methods. You should keep it\ninside try of try/finally block and inside finally block you should call 'base.Dispose(bool)' (C#) or 'MyBase.Finalize()' (VB.NET).",
     "output": "This report lists all Dispose methods with no try/finally block or with no call to 'base.Dispose(bool)' or 'MyBase.Finalize()' within the finally block.",

@@ -3,6 +3,7 @@
     "name": "Use TRUNCATE statement to clean a whole table (PeopleSoft)",
     "href": "AIP/quality-rules/1600522",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This quality rule reports PeopleSoft SQL Definitions performing DELETE on a whole table.",
     "rationale": "Use TRUNCATE statement to clean a whole table (instead of DELETE FROM table).\nThis is faster than DELETE FROM table.\nBut beware no ROLLBACK is possible (on Oracle) on a TRUNCATE TABLE statement.",

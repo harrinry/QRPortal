@@ -3,6 +3,7 @@
     "name": "Avoid Using COMMIT WORK or ROLLBACK WORK during update work process",
     "href": "AIP/quality-rules/8422",
     "critical": true,
+    "severity": 20,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The use of COMMIT/ROLLBACK WORK statement causes the immediate interrupt of the entire update process, also if all function modules are already processed. \nSAP does not manage natively interrupted update, and there is the risk to have corrupted data in the SAP Tables.\n\nThis rule reports violation when an ABAP Functions directly called with IN UPDATE TASK mode and executing a COMMIT WORK and/or ROLLBACK WORK",

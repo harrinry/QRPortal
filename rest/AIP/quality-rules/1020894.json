@@ -3,6 +3,7 @@
     "name": "Avoid using string concatenation when using nodejs __dirname and __filename variables (TypeScript)",
     "href": "AIP/quality-rules/1020894",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Global variables should be properly used to avoid any misuse when running your Node.js application on different platforms.\n\nThis rule checks that the __dirname and __filename global variables are not used in a string concatenation.",

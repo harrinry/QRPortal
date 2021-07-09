@@ -3,6 +3,7 @@
     "name": "Avoid Buffer Overruns when using ADD, SUBTRACT, MULTIPLY, DIVIDE & COMPUTE statement inside a loop",
     "href": "AIP/quality-rules/8478",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "The following statements perform arithmetic, then store the result, or sending field, into one or more receiving fields: ADD, COMPUTE, DIVIDE, MULTIPLY and SUBTRACT\n\nThe control  of Buffer Overruns that can result by miscalculation of array size (when ADD TO or SUBTRACT FROM .... is used) should be done by using the ON SIZE ERROR statement\n\nIf the ON SIZE ERROR statements is specified and a size error condition occurs, the value of the resultant identifier affected by the size error is not altered; that is, the error results are not placed in the receiving identifier. After completion of the execution of the arithmetic operation, the imperative statement in the ON SIZE ERROR phrase is executed, control is transferred to the end of the arithmetic statement.\n\nThis rules checks if ON SIZE ERROR (imperative-statement) is specified when Arithmetic Verbs are used inside a PERFORM Statement.",

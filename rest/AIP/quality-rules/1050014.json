@@ -3,6 +3,7 @@
     "name": "UIApplication delegate applicationDidEnterBackground: must delete sensitive data (Objective-C)",
     "href": "AIP/quality-rules/1050014",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Use the UIApplication delegate method applicationDidEnterBackground: to clean up the data before your application is going in background mode. Clean up any sensitive data getting captured like images, tokens, credentials, etc... from application memory.",

@@ -3,6 +3,7 @@
     "name": "Write UNION ALL instead of UNION statement (PeopleSoft)",
     "href": "AIP/quality-rules/1600282",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This quality rule lists all PeopleSoft SQL Definitions using UNION (without ALL).",
     "rationale": "In SQL the UNION operator combines the results of two SQL queries into a single table of all matching rows. The two queries must have matching fields and data types in order to join them.\nAny duplicate records are automatically removed unless UNION ALL is used.\nThe problem is that MOST of the time it is unnecessary to remove duplicate as there are none and doing the search for duplicate rows can be very costly.",

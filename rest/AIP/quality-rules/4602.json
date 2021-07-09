@@ -3,6 +3,7 @@
     "name": "Avoid using Fields (non static final) from other Classes",
     "href": "AIP/quality-rules/4602",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "To respect OO encapsulation concepts, Fields should not be accessed from outside the Class without going through their accessors.\nProtected fields are also considered by this rule computation. Use of protected fields is allowed by the Java language but not a good practice as it introduces a hard coupling between implementation and interfaces (abstract class here).\nAs per the book \"Effective Java\" by Joshua Bloch : \"The need for protected members should be relatively rare\".Fields of an INNER class are considered as internal fields of the outer class and Fields of a Child class (By inheritance) are considered as internal fields of the outer.",

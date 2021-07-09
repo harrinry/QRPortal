@@ -3,6 +3,7 @@
     "name": "Always provide error callbacks when subscribing to HttpClient observables",
     "href": "AIP/quality-rules/1020822",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule checks that an error callback is provided when subscribing to the observable returned by an HttpClient service call. Currently the verification is only performed when the subscribe method is invoked with positional arguments.",

@@ -3,6 +3,7 @@
     "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
     "href": "AIP/quality-rules/7258",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "The purpose of this quality rule is to detect calls to the DataReader's ExecuteReader method made without the use the CommandBehavior.CloseConnection style.",
     "output": "List all methods where a call to ExecuteReader without the CommandBehavior.CloseConnection parameter.",

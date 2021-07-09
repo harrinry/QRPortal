@@ -3,6 +3,7 @@
     "name": "Ensure the express X-Powered-By header is disabled (TypeScript)",
     "href": "AIP/quality-rules/1020880",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "Attackers can use the X-Powered-By header (which is enabled by default) to detect apps running Express and then launch specifically-targeted attacks.\n\nThis rule checks that the X-Powered-By header has been disabled either explicitly or by using helmet.",

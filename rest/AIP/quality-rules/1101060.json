@@ -3,6 +3,7 @@
     "name": "Avoid using LIKE conditions starting with a wildcard character",
     "href": "AIP/quality-rules/1101060",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using the LIKE operator and having the first character in your search string a wildcard character, either %, _ or [...], the SQL Optimizer will be forced to do a table/index scan when executing your query.",

@@ -3,6 +3,7 @@
     "name": "Avoid calling CoSetProxyBlanket and CoInitializeSecurity",
     "href": "AIP/quality-rules/1027084",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "The rule will raise a violation in case calls to following methods are found:\nCoSetProxyBlanket \nCoInitializeSecurity",
     "rationale": "CoSetProxyBlanket and CoInitializeSecurity sets the authentication/permission context information that will be used to make calls on the specified proxy.\nThese methods are meant to be called from non-managed code such as a C++ wrapper that then invokes the managed, i.e. C# or VB.NET, code.\nBy the time the user code starts executing in a managed process, it's too late to reliably call CoSetProxyBlanket. The common language runtime (CLR) takes initialization actions that may prevent the users P/Invoke from succeeding.",

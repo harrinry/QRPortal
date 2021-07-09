@@ -3,6 +3,7 @@
     "name": "Avoid disabling ValidateRequest in ASPX page",
     "href": "AIP/quality-rules/1043016",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "description": "Request validation, a feature of ASP.NET since version 1.1, prevents the server from accepting content containing un-encoded HTML. This feature is designed to help prevent some script-injection attacks whereby client script code or HTML can be unknowingly submitted to a server, stored, and then presented to other users.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in aspx page",

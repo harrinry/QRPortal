@@ -3,6 +3,7 @@
     "name": "Avoid using persistent class's identifier in equals() method",
     "href": "AIP/quality-rules/7722",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule reports all the equals() methods of a persistent class that refer to the persistence class's identifier (through the identifier attribute or the identifier getter). \n\nNote that the case where the equals method is implemented on a parent class and reference the id is taken into account too.",

@@ -3,6 +3,7 @@
     "name": "Avoid using \"foreach\" to iterate over a explicit range (Kotlin)",
     "href": "AIP/quality-rules/1030004",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "Utilization of the \"foreach\" custom tag library may lead to performance problems if it iterates over a defined range",
     "rationale": "Depending on the implementation of \"forEach\" custom tag, performance issues are at hand.\nBenchmarks have shown that using \"forEach\" on a range can have a huge performance cost in comparison to simple for loops. Hence in most contexts a simple for loop should be used instead.",

@@ -3,6 +3,7 @@
     "name": "SiebelReview: Force Active property Set to TRUE at BusComp level",
     "href": "AIP/quality-rules/1520498",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "In general, customers should avoid the use of the Force Active property for BusComp fields and BusComps themselves.\nUse of this property at the field level specifies that any time the BusComp is instantiated, the field in question should be active and part of the SELECT statement.\nIn the case where the BusComp level Force Active property is set, every field in the BusComp is included in the SELECT statement.\nWhen overused, both behaviors degrade performance.\nNote that this behavior applies whether the BusComp is referenced on an applet, in script, through workflow, EAI, or any other object manager function.",
     "output": "This rule reports Business Components having a Force Active property set to TRUE",

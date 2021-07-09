@@ -3,6 +3,7 @@
     "name": "Prefer using version number instead of timestamp for Hibernate Entity",
     "href": "AIP/quality-rules/7636",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "Using the version attribute or timestamp instructs Hibernate that we would like to use an optimistic locking mechanism.\nBut the usage of timestamp is slightly less safe and a little less reliable than a version number. This is because of the following drawbacks of using Timestamp, \n1. The JVM usually doesn\u2019t provide the timestamp with millisecond accuracy.\n2. Hibernate can\u2019t detect 2 concurrent updates that are executed at the same millisecond.\n3. If you scale your application horizontally, you need to keep the timestamp of all instances in sync\n\n\n\nThis rule reports all hibernate entities that use timestamp property instead of version number.",
     "output": "The metric will list all hibernate entities that use timestamp property instead of version.\n\nIt provides the following information:\n Hibernate Entity",

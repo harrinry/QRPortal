@@ -4,6 +4,7 @@
         "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
         "href": "AIP/quality-rules/592",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C++"
         ]
@@ -13,6 +14,7 @@
         "name": "Avoid circular references between header files",
         "href": "AIP/quality-rules/610",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -22,6 +24,7 @@
         "name": "Avoid data members that are not private",
         "href": "AIP/quality-rules/630",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -31,6 +34,7 @@
         "name": "Never throw an exception from a Destructor",
         "href": "AIP/quality-rules/678",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C++"
         ]
@@ -40,6 +44,7 @@
         "name": "Avoid using memory management Functions (free/malloc/realloc)",
         "href": "AIP/quality-rules/1072",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -50,6 +55,7 @@
         "name": "Avoid using signals management Functions",
         "href": "AIP/quality-rules/1074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -60,6 +66,7 @@
         "name": "Triggers should not directly modify tables, a procedure or function should be used instead",
         "href": "AIP/quality-rules/1606",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -69,6 +76,7 @@
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -78,6 +86,7 @@
         "name": "Avoid declaring public Fields",
         "href": "AIP/quality-rules/3576",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -88,6 +97,7 @@
         "name": "Ensure you have released your SQL connection after an effective lifetime",
         "href": "AIP/quality-rules/3612",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -98,6 +108,7 @@
         "name": "Avoid using String.Empty for empty string tests",
         "href": "AIP/quality-rules/3614",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -108,6 +119,7 @@
         "name": "Ensure that you have access type defined at instance variable level to control accesss",
         "href": "AIP/quality-rules/4566",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -117,6 +129,7 @@
         "name": "Ensure that Class Variables with Public Protected or Package access type are declared Final",
         "href": "AIP/quality-rules/4570",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -126,6 +139,7 @@
         "name": "Ensure explicitly Initializing the instance variable declared as final otherwise a compile-time error occurs.",
         "href": "AIP/quality-rules/4572",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -135,6 +149,7 @@
         "name": "Prefer not using 'java.io.File' to avoid violating the Enterprise JavaBeans (EJB) specification",
         "href": "AIP/quality-rules/4594",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -144,6 +159,7 @@
         "name": "Prefer using environment file instead of using java.lang.System.getenv()",
         "href": "AIP/quality-rules/4596",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -153,6 +169,7 @@
         "name": "Ensure you don't use 'java.lang.Runtime.exec()'",
         "href": "AIP/quality-rules/4598",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -162,6 +179,7 @@
         "name": "Ensure you don't use 'java.System.exit()' to know what happened when you exit your program",
         "href": "AIP/quality-rules/4600",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -171,6 +189,7 @@
         "name": "Ensure not using Fields (non static final) from other Classes to respect OO encapsulation concepts",
         "href": "AIP/quality-rules/4602",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -180,6 +199,7 @@
         "name": "Prefer using the exception error handling model instead of 'java.lang.Error'",
         "href": "AIP/quality-rules/4604",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -189,6 +209,7 @@
         "name": "Ensure you no longer use 'sun.*' Classes",
         "href": "AIP/quality-rules/4606",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -198,6 +219,7 @@
         "name": "Ensure you don't use JNI for security reason",
         "href": "AIP/quality-rules/4612",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -207,6 +229,7 @@
         "name": "Ensure that the boolean are not instantiated",
         "href": "AIP/quality-rules/4618",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -216,6 +239,7 @@
         "name": "Ensure that classes are not inheriting from java.lang.Throwable.",
         "href": "AIP/quality-rules/4652",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -225,6 +249,7 @@
         "name": "Ensure to throw an exception which has been declared",
         "href": "AIP/quality-rules/4656",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -234,6 +259,7 @@
         "name": "Ensure  let the system decide when it needs to collect the heap, and whether or not to do a full collection",
         "href": "AIP/quality-rules/4694",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -243,6 +269,7 @@
         "name": "Prefer using logging framework  as SLF4j instead of  'System.err' or 'System.out'",
         "href": "AIP/quality-rules/4696",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -252,6 +279,7 @@
         "name": "Ensure to have other ways of listing errors outside a try/catch  than 'System.err' and 'System.out'",
         "href": "AIP/quality-rules/4698",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -261,6 +289,7 @@
         "name": "Ensure to not use default stream(System.Err) for printStackTrace to print throwable and its stack trace in order to protect sensitive information.",
         "href": "AIP/quality-rules/4702",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -270,6 +299,7 @@
         "name": "Prefer using List and Map implementations instead of using Vector.",
         "href": "AIP/quality-rules/4704",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -279,6 +309,7 @@
         "name": "Prefer using HashMap instead of HashTable",
         "href": "AIP/quality-rules/4706",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -288,6 +319,7 @@
         "name": "Ensure that all classes that reference the database are in a specific layer usually called data layer",
         "href": "AIP/quality-rules/4722",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -297,6 +329,7 @@
         "name": "Ensure that EJB Entities are accessed through their local  Interface instead of their remote interface.",
         "href": "AIP/quality-rules/4744",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -306,6 +339,7 @@
         "name": "Ensure that EJB Session are accessed through their local remote Interface instead of their remote Interface",
         "href": "AIP/quality-rules/4746",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -315,6 +349,7 @@
         "name": "Ensure to use the action mapping table in struts configuration file.",
         "href": "AIP/quality-rules/7140",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -324,6 +359,7 @@
         "name": "Ensure to have action classes that have only 1 public method",
         "href": "AIP/quality-rules/7142",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -333,6 +369,7 @@
         "name": "Ensure to reference only Java Objects belonging to the scope in order to respect the usage context in a JSP page.",
         "href": "AIP/quality-rules/7146",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -342,6 +379,7 @@
         "name": "Ensure that JSP Pages are accessed through their tiles definition",
         "href": "AIP/quality-rules/7148",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -351,6 +389,7 @@
         "name": "Prefer using PreparedStatement or CallableStatement over CreateStatement to prevent SQL Injection Attacks",
         "href": "AIP/quality-rules/7150",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -360,6 +399,7 @@
         "name": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
         "href": "AIP/quality-rules/7152",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -369,6 +409,7 @@
         "name": "Ensure to use local variables inside your methods, and pass whatever data you need to other methods in the class via parameters",
         "href": "AIP/quality-rules/7154",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -378,6 +419,7 @@
         "name": "Ensure to use StringBuilder or StringBuffer and StringBuilder.append() or StringBuffer.append() method instead",
         "href": "AIP/quality-rules/7196",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -387,6 +429,7 @@
         "name": "Ensure to initialize the String with the literal.",
         "href": "AIP/quality-rules/7250",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -396,6 +439,7 @@
         "name": "Ensure to add a try finally bloc",
         "href": "AIP/quality-rules/7252",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -405,6 +449,7 @@
         "name": "User Interface elements must not use directly the database",
         "href": "AIP/quality-rules/7260",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -415,6 +460,7 @@
         "name": "Call 'base.Dispose()' or 'MyBase.Finalize()' in the \"finally\" block of 'Dispose(bool)' methods",
         "href": "AIP/quality-rules/7266",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -425,6 +471,7 @@
         "name": "Dispose() methods should call GC.SuppressFinalize",
         "href": "AIP/quality-rules/7268",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -435,6 +482,7 @@
         "name": "Ensure adding a private default constructor then the class can't be instantiated.",
         "href": "AIP/quality-rules/7272",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -445,6 +493,7 @@
         "name": "Ensure to make the inner class a standard class.",
         "href": "AIP/quality-rules/7306",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -454,6 +503,7 @@
         "name": "Ensure to make the inner class as standard class",
         "href": "AIP/quality-rules/7308",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -463,6 +513,7 @@
         "name": "Ensure to have the validation activated  for all Struts action mappings",
         "href": "AIP/quality-rules/7362",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -472,6 +523,7 @@
         "name": "Ensure to enable the Validator plugin declaration in your application's struts-config.xml file",
         "href": "AIP/quality-rules/7372",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -481,6 +533,7 @@
         "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7380",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -490,6 +543,7 @@
         "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7382",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -499,6 +553,7 @@
         "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -508,6 +563,7 @@
         "name": "Prefer not using Double checked locking for JSE 4.x and previous version",
         "href": "AIP/quality-rules/7446",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -517,6 +573,7 @@
         "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -526,6 +583,7 @@
         "name": "Ensure that static Field of type collection are not used",
         "href": "AIP/quality-rules/7562",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -535,6 +593,7 @@
         "name": "Ensure to use version attribute instead of timestamp for Hibernate Entity",
         "href": "AIP/quality-rules/7636",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -544,6 +603,7 @@
         "name": "Prefer using container's resource management facilities to obtain connections to resources instead of using DriverManager class allowing direct connection to the database",
         "href": "AIP/quality-rules/7638",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -553,6 +613,7 @@
         "name": "An exception should be correctly handled according to its type and not by using an assertion",
         "href": "AIP/quality-rules/7640",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -562,6 +623,7 @@
         "name": "Ensure not explicitly invoking the finalize() method.",
         "href": "AIP/quality-rules/7648",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -571,6 +633,7 @@
         "name": "Ensure that exceptions  throwed in a catch block  are cached",
         "href": "AIP/quality-rules/7652",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -580,6 +643,7 @@
         "name": "Prefer using SAX parser for large or medium sized XML file parsing instead of DOM parser",
         "href": "AIP/quality-rules/7668",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -589,6 +653,7 @@
         "name": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
         "href": "AIP/quality-rules/7708",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -598,6 +663,7 @@
         "name": "Ensure reducing the number of EJB beans to hold performance and complexity of the application",
         "href": "AIP/quality-rules/7720",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -607,6 +673,7 @@
         "name": "Ensure validating all inputs in JSP files that use JSF",
         "href": "AIP/quality-rules/7732",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -616,6 +683,7 @@
         "name": "Ensure that debug method invocation is usually preceded by a call to its corresponding isDebugEnabled method",
         "href": "AIP/quality-rules/7734",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -625,6 +693,7 @@
         "name": "Ensure your application does not execute HTTP requests without sanitization",
         "href": "AIP/quality-rules/7740",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -636,6 +705,7 @@
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/7742",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -647,6 +717,7 @@
         "name": "Ensure your application does not run LDAP methods without sanitization",
         "href": "AIP/quality-rules/7746",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -658,6 +729,7 @@
         "name": "Ensure your application does not run OS commande without sanitization",
         "href": "AIP/quality-rules/7748",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -669,6 +741,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/7750",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -680,6 +753,7 @@
         "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/7752",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -691,6 +765,7 @@
         "name": "Avoid empty finally blocks",
         "href": "AIP/quality-rules/7782",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "HTML5",
@@ -703,6 +778,7 @@
         "name": "Avoid empty catch blocks",
         "href": "AIP/quality-rules/7788",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "HTML5",
@@ -715,6 +791,7 @@
         "name": "Avoid Classes with a High Public Data Ratio",
         "href": "AIP/quality-rules/7794",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "C++",
@@ -727,6 +804,7 @@
         "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -738,6 +816,7 @@
         "name": "Ensure you catch subclass of Exception, RuntimeException or Throwable",
         "href": "AIP/quality-rules/7862",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -749,6 +828,7 @@
         "name": "Ensure not using jump statements inside a finally block so that any RuntimeException could be propagated and not discarded",
         "href": "AIP/quality-rules/7910",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -758,6 +838,7 @@
         "name": "Prefer using stored procedure instead of using direct SQL queries to database",
         "href": "AIP/quality-rules/7914",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C#",
@@ -771,6 +852,7 @@
         "name": "Ensure your JSP/ASP pages are not directly connected to database",
         "href": "AIP/quality-rules/7916",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -780,6 +862,7 @@
         "name": "Avoid usage of 'std::find_first_of'",
         "href": "AIP/quality-rules/7922",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -789,6 +872,7 @@
         "name": "Abstract Classes should be non copy-assignable",
         "href": "AIP/quality-rules/7926",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -798,6 +882,7 @@
         "name": "Avoid Constructors not supplying an initial value for all non-static data members",
         "href": "AIP/quality-rules/7932",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -807,6 +892,7 @@
         "name": "Ensure that finalize() is not used as the time of execution is not garanteed",
         "href": "AIP/quality-rules/7936",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -816,6 +902,7 @@
         "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
         "href": "AIP/quality-rules/7940",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -825,6 +912,7 @@
         "name": "Never use strcat() function (C/C++)",
         "href": "AIP/quality-rules/7968",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -835,6 +923,7 @@
         "name": "Never use strcpy() function (C/C++)",
         "href": "AIP/quality-rules/7970",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -845,6 +934,7 @@
         "name": "Never use sprintf() or vsprintf() functions",
         "href": "AIP/quality-rules/7972",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -855,6 +945,7 @@
         "name": "Never use gets() function",
         "href": "AIP/quality-rules/7976",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -865,6 +956,7 @@
         "name": "Avoid using the scanf() function family",
         "href": "AIP/quality-rules/7978",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -875,6 +967,7 @@
         "name": "Avoid using strtrns() function",
         "href": "AIP/quality-rules/7980",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -885,6 +978,7 @@
         "name": "Avoid using strlen() function family",
         "href": "AIP/quality-rules/7982",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -895,6 +989,7 @@
         "name": "Avoid using strecpy() function",
         "href": "AIP/quality-rules/7984",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -905,6 +1000,7 @@
         "name": "Avoid using streadd() function",
         "href": "AIP/quality-rules/7986",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -915,6 +1011,7 @@
         "name": "DEPRECATED: Avoid using snprintf() function family",
         "href": "AIP/quality-rules/7988",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -925,6 +1022,7 @@
         "name": "Avoid using realpath() function",
         "href": "AIP/quality-rules/7990",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -935,6 +1033,7 @@
         "name": "Avoid using getpass() function",
         "href": "AIP/quality-rules/7992",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -945,6 +1044,7 @@
         "name": "Avoid using getopt() function",
         "href": "AIP/quality-rules/7994",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -955,6 +1055,7 @@
         "name": "Provide a private default Constructor for utility Classes or use free Functions in a Namespace",
         "href": "AIP/quality-rules/7996",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -964,6 +1065,7 @@
         "name": "Avoid local variables that are not initialized at declaration time",
         "href": "AIP/quality-rules/7998",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -974,6 +1076,7 @@
         "name": "Avoid 'catch-all' statement",
         "href": "AIP/quality-rules/8000",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -983,6 +1086,7 @@
         "name": "Never perform C-style cast between incompatible Class pointers",
         "href": "AIP/quality-rules/8002",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -993,6 +1097,7 @@
         "name": "Avoid using 'delete this'",
         "href": "AIP/quality-rules/8004",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -1002,6 +1107,7 @@
         "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
         "href": "AIP/quality-rules/8006",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -1011,6 +1117,7 @@
         "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
         "href": "AIP/quality-rules/8010",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -1020,6 +1127,7 @@
         "name": "Ensure that unsecured EJB remote method are not used as they lead to security weakness",
         "href": "AIP/quality-rules/8016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1029,6 +1137,7 @@
         "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
         "href": "AIP/quality-rules/8024",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -1038,6 +1147,7 @@
         "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
         "href": "AIP/quality-rules/8026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -1047,6 +1157,7 @@
         "name": "Ensure you don't forget the default clause in your switch statement",
         "href": "AIP/quality-rules/8028",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C#",
@@ -1061,6 +1172,7 @@
         "name": "Ensure that Struts 2 Validator field not referencing a java class field is not used as it leads to security weakness",
         "href": "AIP/quality-rules/8038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -1070,6 +1182,7 @@
         "name": "Ensure all defined validation forms are used",
         "href": "AIP/quality-rules/8042",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -1079,6 +1192,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1090,6 +1204,7 @@
         "name": "Invoke 'delete' with the same form as the matching 'new'",
         "href": "AIP/quality-rules/8048",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -1100,6 +1215,7 @@
         "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
         "href": "AIP/quality-rules/8052",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -1110,6 +1226,7 @@
         "name": "Avoid calling blocking functions with an infinite timeout",
         "href": "AIP/quality-rules/8054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -1120,6 +1237,7 @@
         "name": "Method override fails due to mismatch of const/volatile qualifiers",
         "href": "AIP/quality-rules/8056",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -1130,6 +1248,7 @@
         "name": "Assignment operator should assign all non-static members of the target object",
         "href": "AIP/quality-rules/8064",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -1140,6 +1259,7 @@
         "name": "Do not return a dereferenced pointer allocated inside the function",
         "href": "AIP/quality-rules/8068",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -1150,6 +1270,7 @@
         "name": "Never define collection of 'std::auto_ptr'",
         "href": "AIP/quality-rules/8072",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -1160,6 +1281,7 @@
         "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
         "href": "AIP/quality-rules/8074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -1170,6 +1292,7 @@
         "name": "Avoid using NaN to test the result of an expression",
         "href": "AIP/quality-rules/8090",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1180,6 +1303,7 @@
         "name": "Avoid Objects having exposed pointers allowed to access unmanaged memory",
         "href": "AIP/quality-rules/8092",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1190,6 +1314,7 @@
         "name": "Avoid locking of Objects with weak identities",
         "href": "AIP/quality-rules/8094",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1200,6 +1325,7 @@
         "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/8096",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1209,6 +1335,7 @@
         "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8098",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1220,6 +1347,7 @@
         "name": "Ensure setting timeouts for blocking synchronous calls to prevent an infinite waiting time",
         "href": "AIP/quality-rules/8100",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -1229,6 +1357,7 @@
         "name": "Ensure not having hard-coded network resources names in the source files (JEE)",
         "href": "AIP/quality-rules/8102",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1238,6 +1367,7 @@
         "name": "Ensure you have released your SQL connection after an effective lifetime",
         "href": "AIP/quality-rules/8104",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -1247,6 +1377,7 @@
         "name": "Ensure you have released your stream connection after an effective lifetime",
         "href": "AIP/quality-rules/8108",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1258,6 +1389,7 @@
         "name": "Ensure data handling operations are properly encapsulated to provide clear status of the execution",
         "href": "AIP/quality-rules/8112",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1269,6 +1401,7 @@
         "name": "Ensure to have CDI Beans with normal scope proxyable",
         "href": "AIP/quality-rules/8136",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1278,6 +1411,7 @@
         "name": "Avoid using Parse for primitive types and used instead TryParse",
         "href": "AIP/quality-rules/8150",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1288,6 +1422,7 @@
         "name": "Avoid using GC.Collect()",
         "href": "AIP/quality-rules/8154",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -1298,6 +1433,7 @@
         "name": "Ensure not using expired or released database resource to prevent access to sensitive data that is associated with a different user or entity.",
         "href": "AIP/quality-rules/8214",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1307,6 +1443,7 @@
         "name": "Ensure not using incorrect numeric type conversions to avoid data corruption",
         "href": "AIP/quality-rules/8216",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -1316,6 +1453,7 @@
         "name": "Always check the content type when receiving a HTTP post",
         "href": "AIP/quality-rules/8218",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -1325,6 +1463,7 @@
         "name": "Prefer not using deprecated methods, constructors, fields, type or packages",
         "href": "AIP/quality-rules/8220",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -1334,6 +1473,7 @@
         "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1345,6 +1485,7 @@
         "name": "Avoid mixing trusted and untrusted data in HTTP requests",
         "href": "AIP/quality-rules/8238",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1356,6 +1497,7 @@
         "name": "Ensure you have secured your cookie by enabling 'Secure' attribute",
         "href": "AIP/quality-rules/8240",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1367,6 +1509,7 @@
         "name": "Ensure using sufficient random values for cookies",
         "href": "AIP/quality-rules/8242",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1378,6 +1521,7 @@
         "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8408",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1389,6 +1533,7 @@
         "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8410",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1400,6 +1545,7 @@
         "name": "Ensure you use the right algorithm like AES-128",
         "href": "AIP/quality-rules/8414",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1411,6 +1557,7 @@
         "name": "Ensure you don't use weak cryptographic hash one-way reversible",
         "href": "AIP/quality-rules/8416",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1422,6 +1569,7 @@
         "name": "Ensure you use sanitized queries to NoSQL databases",
         "href": "AIP/quality-rules/8418",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1433,6 +1581,7 @@
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/8420",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1444,6 +1593,7 @@
         "name": "Ensure not using hard-coded HMAC keys",
         "href": "AIP/quality-rules/8424",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1455,6 +1605,7 @@
         "name": "Ensure you don't use external library given by unsanitized user input",
         "href": "AIP/quality-rules/8434",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1466,6 +1617,7 @@
         "name": "Ensure your application does not process thread with unsanitized stream",
         "href": "AIP/quality-rules/8436",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1477,6 +1629,7 @@
         "name": "Ensure your application does not evaluate unsanitized code.",
         "href": "AIP/quality-rules/8438",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1488,6 +1641,7 @@
         "name": "Ensure you have sanitized the data received to be reflected in your application",
         "href": "AIP/quality-rules/8440",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1499,6 +1653,7 @@
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8442",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1510,6 +1665,7 @@
         "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8444",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1521,6 +1677,7 @@
         "name": "Ensure you don't use user input without validation",
         "href": "AIP/quality-rules/8482",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1532,6 +1689,7 @@
         "name": "Avoid HTTP response splitting through API requests",
         "href": "AIP/quality-rules/8484",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1543,6 +1701,7 @@
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8486",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1554,6 +1713,7 @@
         "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8488",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1565,6 +1725,7 @@
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/8490",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1576,6 +1737,7 @@
         "name": "Ensure your application does not run LDAP methods without sanitization",
         "href": "AIP/quality-rules/8492",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1587,6 +1749,7 @@
         "name": "Ensure your application does not run OS commande without sanitization",
         "href": "AIP/quality-rules/8494",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1598,6 +1761,7 @@
         "name": "Ensure you don't use external library given by unsanitized user input",
         "href": "AIP/quality-rules/8496",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1609,6 +1773,7 @@
         "name": "Ensure your application does not process thread with unsanitized stream",
         "href": "AIP/quality-rules/8498",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1620,6 +1785,7 @@
         "name": "Ensure your application does not evaluate unsanitized code.",
         "href": "AIP/quality-rules/8500",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1631,6 +1797,7 @@
         "name": "Ensure you have sanitized the data received to be reflected in your application",
         "href": "AIP/quality-rules/8502",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1642,6 +1809,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8504",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1653,6 +1821,7 @@
         "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/8506",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1664,6 +1833,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8508",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1675,6 +1845,7 @@
         "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8510",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1686,6 +1857,7 @@
         "name": "Avoid mixing trusted and untrusted data in HTTP requests through API requests",
         "href": "AIP/quality-rules/8512",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1697,6 +1869,7 @@
         "name": "Ensure you use sanitized queries to NoSQL databases",
         "href": "AIP/quality-rules/8514",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1708,6 +1881,7 @@
         "name": "Ensure your application does not redirect to an untrusted site",
         "href": "AIP/quality-rules/8516",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1719,6 +1893,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8518",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1730,6 +1905,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8520",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1741,6 +1917,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8522",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1752,6 +1929,7 @@
         "name": "Avoid deserialization injection",
         "href": "AIP/quality-rules/8524",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1763,6 +1941,7 @@
         "name": "Avoid second order deserialization injection",
         "href": "AIP/quality-rules/8526",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1774,6 +1953,7 @@
         "name": "Avoid deserialization injection through API requests",
         "href": "AIP/quality-rules/8528",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1785,6 +1965,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8530",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1796,6 +1977,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8532",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1807,6 +1989,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8534",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1818,6 +2001,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8536",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -1827,6 +2011,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8538",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -1836,6 +2021,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8540",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -1845,6 +2031,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8542",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1856,6 +2043,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8544",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1867,6 +2055,7 @@
         "name": "Ensure using sufficient random generator",
         "href": "AIP/quality-rules/8554",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -1878,6 +2067,7 @@
         "name": "Make sure that you do not use Web SQL databases",
         "href": "AIP/quality-rules/1020018",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -1887,6 +2077,7 @@
         "name": "Use asynchronous loading of Javascript files or code to avoid a single point of failure in page loading",
         "href": "AIP/quality-rules/1020020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -1896,6 +2087,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use form and formaction attributes in submitted markup",
         "href": "AIP/quality-rules/1020022",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1905,6 +2097,7 @@
         "name": "Make sure the Html submit markup related to 'form' does not have id attribute to avoid to prevent cross site scripting",
         "href": "AIP/quality-rules/1020024",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1914,6 +2107,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onfocus in submitted markup",
         "href": "AIP/quality-rules/1020026",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1923,6 +2117,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onblur in a submitted markup",
         "href": "AIP/quality-rules/1020028",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1932,6 +2127,7 @@
         "name": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
         "href": "AIP/quality-rules/1020030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1941,6 +2137,7 @@
         "name": "Make sure you do not use video poster attributes in combination with javascript to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020032",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1950,6 +2147,7 @@
         "name": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox to prevent XSS attacks that might slip through",
         "href": "AIP/quality-rules/1020034",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1959,6 +2157,7 @@
         "name": "Make sure you do not use onscroll event with autofocus input to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020036",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1968,6 +2167,7 @@
         "name": "Avoid using delete with no object properties",
         "href": "AIP/quality-rules/1020040",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -1977,6 +2177,7 @@
         "name": "Ensure protection from Clickjacking by not using iframe inside a tag",
         "href": "AIP/quality-rules/1020042",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1986,6 +2187,7 @@
         "name": "Make sure you do not allow text injection by using setData in ondragstart with attribute draggable set to true",
         "href": "AIP/quality-rules/1020044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1995,6 +2197,7 @@
         "name": "Make sure you do not use oninput in body containing input autofocus to prevent Cross Site Scripting on your page",
         "href": "AIP/quality-rules/1020046",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2004,6 +2207,7 @@
         "name": "Make sure you do not use <Source> tag in video/audio event handlers to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020048",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2013,6 +2217,7 @@
         "name": "Avoid importing content from an untrusted source like dirname",
         "href": "AIP/quality-rules/1020050",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2022,6 +2227,7 @@
         "name": "Ensure you do not import content from an untrusted source and are limited to same origin to prevent Cross Site Scripting",
         "href": "AIP/quality-rules/1020052",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2031,6 +2237,7 @@
         "name": "To delete or remove an index element from an array use splice, pop or shift rather than delete to prevent empty indexes",
         "href": "AIP/quality-rules/1020054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2040,6 +2247,7 @@
         "name": "Ensure using document.getElementById() instead of documetn.all to avoid slow loading of DOM elements",
         "href": "AIP/quality-rules/1020056",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2049,6 +2257,7 @@
         "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020058",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2058,6 +2267,7 @@
         "name": "Ensure you remove console.log() in your production code",
         "href": "AIP/quality-rules/1020060",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2067,6 +2277,7 @@
         "name": "Make sure that you have only one instance created in class constructor and it has been frozen to avoid any changes.",
         "href": "AIP/quality-rules/1020062",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2076,6 +2287,7 @@
         "name": "Ensure to not use Javascript Function constructor calling a string represented source code to prevent impaired performance",
         "href": "AIP/quality-rules/1020066",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2085,6 +2297,7 @@
         "name": "Ensure that you are not using a break or return statement inside a finally block, to avoid dead code",
         "href": "AIP/quality-rules/1020068",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2094,6 +2307,7 @@
         "name": "Ensure not having hard-coded network resources names in the source files (Javascript)",
         "href": "AIP/quality-rules/1020070",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2103,6 +2317,7 @@
         "name": "Make sure to not access the database from Javascript directly, instead create dedicated modules for the same",
         "href": "AIP/quality-rules/1020072",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2112,6 +2327,7 @@
         "name": "Ensure to disable the auto-complete feature in input forms, especially for fields such as passwords, to avoid access that should be unauthorized",
         "href": "AIP/quality-rules/1020074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2121,6 +2337,7 @@
         "name": "Avoid using setTimeout with a string as first argument",
         "href": "AIP/quality-rules/1020078",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2130,6 +2347,7 @@
         "name": "Avoid using setInterval with a string as first argument",
         "href": "AIP/quality-rules/1020080",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2139,6 +2357,7 @@
         "name": "Move JavaScript functions from HTML file to a '.js' file",
         "href": "AIP/quality-rules/1020092",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2148,6 +2367,7 @@
         "name": "Always enable HttpOnly option when creating cookies so that sensitive information is not exposed to unsecured applications and domains",
         "href": "AIP/quality-rules/1020094",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2157,6 +2377,7 @@
         "name": "Make sure you are using Secure option for cookies so that Cross-Site-Scripting attacks can be prevented",
         "href": "AIP/quality-rules/1020096",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2166,6 +2387,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path",
         "href": "AIP/quality-rules/1020098",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2175,6 +2397,7 @@
         "name": "Make sure to accurately define the path of the web application/s for which this cookie is valid",
         "href": "AIP/quality-rules/1020100",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2184,6 +2407,7 @@
         "name": "Always use JSON.parse &amp; JSON.stringify with try/catch block because of the synchronous call(Javascript)",
         "href": "AIP/quality-rules/1020102",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2193,6 +2417,7 @@
         "name": "Ensure you don't hard-code password in the source file, hackers can steal the information by retro-engineering your application (Javascript)",
         "href": "AIP/quality-rules/1020104",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2202,6 +2427,7 @@
         "name": "Ensure get() function always return a value",
         "href": "AIP/quality-rules/1020202",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2211,6 +2437,7 @@
         "name": "Ensure you don't use <textarea> with child elements such as inner text, if it has the v-model attribute",
         "href": "AIP/quality-rules/1020204",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2220,6 +2447,7 @@
         "name": "Ensure that you define a key for v-for",
         "href": "AIP/quality-rules/1020206",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2229,6 +2457,7 @@
         "name": "Avoid using v-show directive inside templates",
         "href": "AIP/quality-rules/1020210",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2238,6 +2467,7 @@
         "name": "Ensure that you use $emit to emit events instead of $parent to directly change parent props, to maintain the vue philosophy of props down events up",
         "href": "AIP/quality-rules/1020212",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2247,6 +2477,7 @@
         "name": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
         "href": "AIP/quality-rules/1020214",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2256,6 +2487,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (Vue.js)",
         "href": "AIP/quality-rules/1020218",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2265,6 +2497,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path (Vue.js)",
         "href": "AIP/quality-rules/1020220",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2274,6 +2507,7 @@
         "name": "Avoid creating cookie with overly broad domain (Vue.js)",
         "href": "AIP/quality-rules/1020222",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2283,6 +2517,7 @@
         "name": "Ensure you don't use officially jQuery deprecated methods",
         "href": "AIP/quality-rules/1020318",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2292,6 +2527,7 @@
         "name": "Ensure you don't use jQuery $.cookie because it is deprecated",
         "href": "AIP/quality-rules/1020320",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2301,6 +2537,7 @@
         "name": "Ensure you use Ajax method with dataType with jQuery version older than 3.0.0",
         "href": "AIP/quality-rules/1020322",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2310,6 +2547,7 @@
         "name": "Ensure you use dialog with closeText parameter with jQuery UI version older than 1.12",
         "href": "AIP/quality-rules/1020324",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2319,6 +2557,7 @@
         "name": "Ensure you don't use html() with jQuery 1.9.0 (or older)",
         "href": "AIP/quality-rules/1020328",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2328,6 +2567,7 @@
         "name": "Ensure you don't use $(location.hash) with jQuery version older than 1.6.3",
         "href": "AIP/quality-rules/1020330",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2337,6 +2577,7 @@
         "name": "Ensure you don't use .append() after() with jQuery 1.4.2 (or older)",
         "href": "AIP/quality-rules/1020332",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2346,6 +2587,7 @@
         "name": "Ensure you don't use attr() with jQuery 3.0.0-rc1",
         "href": "AIP/quality-rules/1020334",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2355,6 +2597,7 @@
         "name": "Ensure you don't use Dialog widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020336",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2364,6 +2607,7 @@
         "name": "Ensure you don't use Tooltip widget from jQuery UI with version older than 1.10.0",
         "href": "AIP/quality-rules/1020338",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2373,6 +2617,7 @@
         "name": "Ensure you have implemented expected $ajax callbacks",
         "href": "AIP/quality-rules/1020340",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2382,6 +2627,7 @@
         "name": "Ensure you have properly manage errors by using the error/fail callbacks",
         "href": "AIP/quality-rules/1020342",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2391,6 +2637,7 @@
         "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020450",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2400,6 +2647,7 @@
         "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020452",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2409,6 +2657,7 @@
         "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020454",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2418,6 +2667,7 @@
         "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020456",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2427,6 +2677,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020458",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2436,6 +2687,7 @@
         "name": "Prefer using AngularJS wrapper service angular.isDefined or angular.isUndefined to maintain structuredness of code",
         "href": "AIP/quality-rules/1020514",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2445,6 +2697,7 @@
         "name": "Ensure that you do not use NOT operator with a logical check to prevent unexpected results",
         "href": "AIP/quality-rules/1020530",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2454,6 +2707,7 @@
         "name": "Prefer using Angular wrapper service instead of using $ or Jquery.element to ensure structuredness",
         "href": "AIP/quality-rules/1020536",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2463,6 +2717,7 @@
         "name": "Ensure that you do not use a jQuery wrapper on angular.element to ensure structuredness in code",
         "href": "AIP/quality-rules/1020538",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2472,6 +2727,7 @@
         "name": "Prefer using $http methods 'then' and 'catch' instead of 'success' and 'error' as the latter returns original promise when you chain off of them",
         "href": "AIP/quality-rules/1020540",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2481,6 +2737,7 @@
         "name": "Ensure activating Content-Security-Policy in you  angular applications to enforce client-side templates protection",
         "href": "AIP/quality-rules/1020542",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2490,6 +2747,7 @@
         "name": "Ensure to keep enabled the Strict Contextual Escaping to make code secure by default and for easy auditing for vulnerabilities",
         "href": "AIP/quality-rules/1020544",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2499,6 +2757,7 @@
         "name": "Ensure to use $sanitize service in AngularJS apps to prevent Data Injection attacks",
         "href": "AIP/quality-rules/1020546",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2508,6 +2767,7 @@
         "name": "Make sure you do not disable withCredentials option for httpProvider",
         "href": "AIP/quality-rules/1020548",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2517,6 +2777,7 @@
         "name": "Make sure you do not allow 'Javascript' and 'http' as accepted protocols to avoid Cross-site-scripting",
         "href": "AIP/quality-rules/1020552",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2526,6 +2787,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020554",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2535,6 +2797,7 @@
         "name": "Avoid creating cookie with overly broad domain (AngularJS)",
         "href": "AIP/quality-rules/1020556",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2544,6 +2807,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path (AngularJS)",
         "href": "AIP/quality-rules/1020558",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2553,6 +2817,7 @@
         "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020700",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2562,6 +2827,7 @@
         "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020702",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2571,6 +2837,7 @@
         "name": "The variables \"__dirname\" and \"__filename\" should not be used in string concatenation to avoid having an invalid path",
         "href": "AIP/quality-rules/1020704",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2580,6 +2847,7 @@
         "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020706",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2589,6 +2857,7 @@
         "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020708",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2598,6 +2867,7 @@
         "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2607,6 +2877,7 @@
         "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020712",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2616,6 +2887,7 @@
         "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020718",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2625,6 +2897,7 @@
         "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020720",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2634,6 +2907,7 @@
         "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020722",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2643,6 +2917,7 @@
         "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
         "href": "AIP/quality-rules/1020724",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2652,6 +2927,7 @@
         "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020726",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2661,6 +2937,7 @@
         "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020728",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2670,6 +2947,7 @@
         "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
         "href": "AIP/quality-rules/1020730",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2679,6 +2957,7 @@
         "name": "Ensure not using MD5/SHA1 hashes for cryptographic functions of NodeJs to avoid sensitive data being compromised",
         "href": "AIP/quality-rules/1020732",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2688,6 +2967,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020734",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2697,6 +2977,7 @@
         "name": "Ensure enabling NODE_TLS_REJECT_UNAUTHORIZED attributes allowing rejecting self signed certificates",
         "href": "AIP/quality-rules/1020736",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2706,6 +2987,7 @@
         "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020738",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2715,6 +2997,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path (Node.js)",
         "href": "AIP/quality-rules/1020740",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2724,6 +3007,7 @@
         "name": "Avoid creating cookie with overly broad domain (Node.js)",
         "href": "AIP/quality-rules/1020742",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2733,6 +3017,7 @@
         "name": "Ensure you don't use TLS library from NodeJS with version older than 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020744",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2742,6 +3027,7 @@
         "name": "Ensure you don't use HTTP/2 llibrary from  NodeJS with version older than 6.14.13, 8.11.3, 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020746",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2751,6 +3037,7 @@
         "name": "Ensure you don't use normalizeStringWin32 method of Path module with Node.js 8.5.0",
         "href": "AIP/quality-rules/1020750",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2760,6 +3047,7 @@
         "name": "Ensure you don't reference Buffer.fill() or Buffer.alloc() with some parameters  of NodeJS versions older than 6.14.3, 8.11.3, 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020758",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2769,6 +3057,7 @@
         "name": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
         "href": "AIP/quality-rules/1020760",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2778,6 +3067,7 @@
         "name": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
         "href": "AIP/quality-rules/1020762",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2787,6 +3077,7 @@
         "name": "Ensure you don't use the path module from NodeJS with version older than 4.9.0",
         "href": "AIP/quality-rules/1020764",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2796,6 +3087,7 @@
         "name": "Ensure you don't use 'ps' package' methods from NodeJS with version older than 1.0.0",
         "href": "AIP/quality-rules/1020766",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2805,6 +3097,7 @@
         "name": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS  version older than 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020768",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2814,6 +3107,7 @@
         "name": "Ensure you don't use third-party module query-mysql versions 0.0.0, 0.0.1, and 0.0.2  from NodeJS",
         "href": "AIP/quality-rules/1020770",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2823,6 +3117,7 @@
         "name": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
         "href": "AIP/quality-rules/1020772",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2832,6 +3127,7 @@
         "name": "Ensure you call synchronous FileSystem API inside a try/catch block to manage errors.",
         "href": "AIP/quality-rules/1020780",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2841,6 +3137,7 @@
         "name": "Ensure you no longer us Buffer() function or new Buffer() constructor because they are deprecated",
         "href": "AIP/quality-rules/1020782",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2850,6 +3147,7 @@
         "name": "Ensure you don't unserialize data using node-serialize package version 0.0.4",
         "href": "AIP/quality-rules/1020784",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2859,6 +3157,7 @@
         "name": "Ensure you don't deserialize data using node-serialize package version 0.5.0",
         "href": "AIP/quality-rules/1020786",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2868,6 +3167,7 @@
         "name": "Ensure you don't use moment before 2.19.3 functions",
         "href": "AIP/quality-rules/1020788",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2877,6 +3177,7 @@
         "name": "Avoid jump statements in finally",
         "href": "AIP/quality-rules/1020800",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2886,6 +3187,7 @@
         "name": "Always throw all created error.",
         "href": "AIP/quality-rules/1020802",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2895,6 +3197,7 @@
         "name": "Prefer refactoring the source code  instead of using console logging",
         "href": "AIP/quality-rules/1020804",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2904,6 +3207,7 @@
         "name": "Preferusing  Number.isNaN() instead NaN in comparison",
         "href": "AIP/quality-rules/1020806",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2913,6 +3217,7 @@
         "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020808",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2922,6 +3227,7 @@
         "name": "Ensure not adding unchecked HTML by not using one of these methods: bypassSecurityTrustHtml, bypassSecurityTrustStyle, bypassSecurityTrustScript, bypassSecurityTrustUrl, bypassSecurityTrustResourceUrl",
         "href": "AIP/quality-rules/1020810",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2931,6 +3237,7 @@
         "name": "Ensure that you have not using output of the function that does not return anything",
         "href": "AIP/quality-rules/1020816",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2940,6 +3247,7 @@
         "name": "xsrf check should be enabled in HttpClientXsrfModule module to activate Cross-Site forgery protection.",
         "href": "AIP/quality-rules/1020818",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2949,6 +3257,7 @@
         "name": "Ensure you don't hard-code password in the source file, hackers can steal the information by retro-engineering your application (Typescript)",
         "href": "AIP/quality-rules/1020820",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2958,6 +3267,7 @@
         "name": "Ensure that you provide an error callback to the HttpClient  ubscribe method.",
         "href": "AIP/quality-rules/1020822",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2967,6 +3277,7 @@
         "name": "Ensure not having hard-coded network resources names in the source files (Typescript)",
         "href": "AIP/quality-rules/1020826",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -2976,6 +3287,7 @@
         "name": "Prefer using Angular Renderer2 instead of directly interacting with the DOM",
         "href": "AIP/quality-rules/1020830",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -2985,6 +3297,7 @@
         "name": "Always prefer using HttpClient Angular Module instead of using javascript HTTP request to avoid JSON vulnerability",
         "href": "AIP/quality-rules/1020832",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -2994,6 +3307,7 @@
         "name": "Ensure you don't inject javascript code with  \"<script>\" tag into HTML template",
         "href": "AIP/quality-rules/1020834",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3003,6 +3317,7 @@
         "name": "Always handle errors when using ajax with RxJS",
         "href": "AIP/quality-rules/1020850",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3012,6 +3327,7 @@
         "name": "Ensure you don't inject javascript code into your HTML template.",
         "href": "AIP/quality-rules/1020852",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3021,6 +3337,7 @@
         "name": "Prefer not using the function dangerouslySetInnerHTML",
         "href": "AIP/quality-rules/1020854",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3030,6 +3347,7 @@
         "name": "Ensure you have overwritten component methods to properly catch errors",
         "href": "AIP/quality-rules/1020856",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3039,6 +3357,7 @@
         "name": "Ensure you have properly use the componentDidCatch to better manage errors",
         "href": "AIP/quality-rules/1020858",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3048,6 +3367,7 @@
         "name": "Avoid using setInterval with a string as first argument",
         "href": "AIP/quality-rules/1020860",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3057,6 +3377,7 @@
         "name": "Make sure to accurately define the path of the web application/s for which this cookie is valid",
         "href": "AIP/quality-rules/1020862",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3066,6 +3387,7 @@
         "name": "Make sure you are using Secure option for cookies so that Cross-Site-Scripting attacks can be prevented",
         "href": "AIP/quality-rules/1020864",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3075,6 +3397,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path",
         "href": "AIP/quality-rules/1020866",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3084,6 +3407,7 @@
         "name": "Always enable HttpOnly option when creating cookies so that sensitive information is not exposed to unsecured applications and domains",
         "href": "AIP/quality-rules/1020868",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3093,6 +3417,7 @@
         "name": "Avoid using setTimeout with a string as first argument",
         "href": "AIP/quality-rules/1020870",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3102,6 +3427,7 @@
         "name": "Always use JSON.parse and JSON.stringify with try/catch block because of the synchronous call (Typescript)",
         "href": "AIP/quality-rules/1020872",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3111,6 +3437,7 @@
         "name": "Ensure you check the returned error in Node.js callbacks",
         "href": "AIP/quality-rules/1020874",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3120,6 +3447,7 @@
         "name": "You should set the process.exitCode to allow the process exiting naturally rather than calling process.exit() directly.",
         "href": "AIP/quality-rules/1020876",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3129,6 +3457,7 @@
         "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020878",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3138,6 +3467,7 @@
         "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020880",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3147,6 +3477,7 @@
         "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020882",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3156,6 +3487,7 @@
         "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020884",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3165,6 +3497,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1020886",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3174,6 +3507,7 @@
         "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020888",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3183,6 +3517,7 @@
         "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020890",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3192,6 +3527,7 @@
         "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
         "href": "AIP/quality-rules/1020892",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3201,6 +3537,7 @@
         "name": "The variables \"__dirname\" and \"__filename\" should not be used in string concatenation to avoid having an invalid path",
         "href": "AIP/quality-rules/1020894",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -3210,6 +3547,7 @@
         "name": "Ensure not using MD5/SHA1 hashes for cryptographic functions of NodeJs to avoid sensitive data being compromised",
         "href": "AIP/quality-rules/1020896",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3219,6 +3557,7 @@
         "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020900",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3228,6 +3567,7 @@
         "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020902",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3237,6 +3577,7 @@
         "name": "Ensure you don't reference url.parse wich using javascript protocol with NodeJS  version older than 6.15.0, 8.14.0, 10.14.0 and 11.3.0",
         "href": "AIP/quality-rules/1020904",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3246,6 +3587,7 @@
         "name": "Ensure you don't use TLS library from NodeJS with version older than 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020906",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3255,6 +3597,7 @@
         "name": "Ensure you don't use normalizeStringWin32 method of Path module with Node.js 8.5.0",
         "href": "AIP/quality-rules/1020908",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3264,6 +3607,7 @@
         "name": "Ensure you don't use the path module from NodeJS with version older than 4.9.0",
         "href": "AIP/quality-rules/1020910",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3273,6 +3617,7 @@
         "name": "Ensure you don't use HTTP/2 llibrary from  NodeJS with version older than 6.14.13, 8.11.3, 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020912",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3282,6 +3627,7 @@
         "name": "Ensure you don't reference Buffer.fill() or Buffer.alloc() of NodeJS versions older than 6.14.3, 8.11.3, 9.11.2 and 10.4.1",
         "href": "AIP/quality-rules/1020914",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3291,6 +3637,7 @@
         "name": "Ensure you don't use Buffer with UC2 encoding from NodeJS with version older than 6.14.4, 8.11.4 and 10.9.0",
         "href": "AIP/quality-rules/1020916",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3300,6 +3647,7 @@
         "name": "Ensure you don't use third-party module query-mysql versions with NodeJS",
         "href": "AIP/quality-rules/1020918",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3309,6 +3657,7 @@
         "name": "Ensure you have enable SSL verification in node-curl",
         "href": "AIP/quality-rules/1020920",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3318,6 +3667,7 @@
         "name": "Ensure enabling NODE_TLS_REJECT_UNAUTHORIZED attributes allowing rejecting self signed certificates",
         "href": "AIP/quality-rules/1020922",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -3327,6 +3677,7 @@
         "name": "Ensure you don't reference net.createConnection method of net.Socket service with NodeJS versions from 9.7.0 to  9.11.2 and from 10.0.0 to 10.4.1",
         "href": "AIP/quality-rules/1020924",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3336,6 +3687,7 @@
         "name": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
         "href": "AIP/quality-rules/1020926",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -3345,6 +3697,7 @@
         "name": "Avoid providing password in Web Service URL",
         "href": "AIP/quality-rules/1020950",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -3354,6 +3707,7 @@
         "name": "Ensure to use an advanced encryption algorithm and prefer avoiding DES, 3DES",
         "href": "AIP/quality-rules/1022000",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -3363,6 +3717,7 @@
         "name": "Ensure to use Optimal Asymmetric Encryption Padding(OAEP) scheme with RSA encryption to avoid sensitive information exposure.",
         "href": "AIP/quality-rules/1022002",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3372,6 +3727,7 @@
         "name": "A read permission should be specified for Content Provider to restrict data access from others apps",
         "href": "AIP/quality-rules/1024002",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3381,6 +3737,7 @@
         "name": "A Write permission should be specified for Content Provider to restrict data access from others apps",
         "href": "AIP/quality-rules/1024004",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3390,6 +3747,7 @@
         "name": "Content Provider should be set as private to protect access from others apps",
         "href": "AIP/quality-rules/1024006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3399,6 +3757,7 @@
         "name": "Always use onActivityResult to pass the login results when using Facebook SDK",
         "href": "AIP/quality-rules/1024008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3408,6 +3767,7 @@
         "name": "Ensure setting \"android:protectionLevel\" to the right level to avoid any potential risk.",
         "href": "AIP/quality-rules/1024010",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3417,6 +3777,7 @@
         "name": "Ensure deactivating \"android:grantUriPermissions\" to control URI access",
         "href": "AIP/quality-rules/1024012",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -3426,6 +3787,7 @@
         "name": "A permission should always be specified at receiver level to control access rights",
         "href": "AIP/quality-rules/1024014",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3435,6 +3797,7 @@
         "name": "A permission should always be specified at service level to control access rights",
         "href": "AIP/quality-rules/1024016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3444,6 +3807,7 @@
         "name": "A permission should always be specified at Activity level to control access rights",
         "href": "AIP/quality-rules/1024018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3453,6 +3817,7 @@
         "name": "Always use explicit intent for your application security",
         "href": "AIP/quality-rules/1024020",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3462,6 +3827,7 @@
         "name": "Ensure to release media resorces at OnStop() and OnDestroy() to efficiently use resources",
         "href": "AIP/quality-rules/1024022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -3471,6 +3837,7 @@
         "name": "Ensure you use HTTPS protocol for traffic to particular domains with Android 8.1 and older",
         "href": "AIP/quality-rules/1024024",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3480,6 +3847,7 @@
         "name": "Prefer not using MODE_WORLD_READABLE or MODE_WORLD_WRITABLE to share files with other apps",
         "href": "AIP/quality-rules/1024026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -3489,6 +3857,7 @@
         "name": "Ensure to include User Confirmation when using Android Protection Confirmation prompt",
         "href": "AIP/quality-rules/1024028",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3498,6 +3867,7 @@
         "name": "Prefer using BiometricPrompt API instead of FingerprintManager as the latter is deprecated",
         "href": "AIP/quality-rules/1024030",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3507,6 +3877,7 @@
         "name": "onAuthenticationFailed:callback should be always triggered to correctly manage the BiometricPrompt",
         "href": "AIP/quality-rules/1024032",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3516,6 +3887,7 @@
         "name": "Ensure to check all the BiometricPrompt error options in the onAuthenticationError method",
         "href": "AIP/quality-rules/1024034",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3525,6 +3897,7 @@
         "name": "Ensure to check all BiometricPrompt acquired options in the onAuthenticationSucceeded method",
         "href": "AIP/quality-rules/1024036",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3534,6 +3907,7 @@
         "name": "Ensure to enclose GoogleSignInAccount in a try catch/block to check if the account is set or not",
         "href": "AIP/quality-rules/1024038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -3543,6 +3917,7 @@
         "name": "Ensure setting the flag 'unlockedDeviceRequired' to 'true' to the setUnlockedDeviceRequired() method",
         "href": "AIP/quality-rules/1024040",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3552,6 +3927,7 @@
         "name": "Only use strong encryption algorithm to enforce application protection level",
         "href": "AIP/quality-rules/1024042",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3561,6 +3937,7 @@
         "name": "Ensure you have checked FEATURE_FINGERPRINT to verifify supports Biometric capability  before using BiometricPrompt API",
         "href": "AIP/quality-rules/1024044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3570,6 +3947,7 @@
         "name": "Avoid Managed type declaration for Win32 API using Overlapped IO",
         "href": "AIP/quality-rules/1027000",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C#"
         ]
@@ -3579,6 +3957,7 @@
         "name": "Change access modifier to \"private\", \"internal\"or \"private protected\"",
         "href": "AIP/quality-rules/1027002",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3589,6 +3968,7 @@
         "name": "Use XmlReader instead of XmlTextReader since it is deprecated and may lead to security issues",
         "href": "AIP/quality-rules/1027004",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3599,6 +3979,7 @@
         "name": "Always Revert After Impersonation",
         "href": "AIP/quality-rules/1027008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3609,6 +3990,7 @@
         "name": "Ensure to use at least 2048 bits key when using RSA encryption algorithm or use some advanced algorithm",
         "href": "AIP/quality-rules/1027010",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3619,6 +4001,7 @@
         "name": "Ensure to declare the object as serializable if you are using it as a httpsessionstate attribute",
         "href": "AIP/quality-rules/1027012",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3629,6 +4012,7 @@
         "name": "Do not use the Thread.resume or Thread.suspend APIs.",
         "href": "AIP/quality-rules/1027014",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3639,6 +4023,7 @@
         "name": "Do not throw the exceptions in destructors",
         "href": "AIP/quality-rules/1027016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3649,6 +4034,7 @@
         "name": "Do not throw the exceptions in finally block",
         "href": "AIP/quality-rules/1027018",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3659,6 +4045,7 @@
         "name": "Use Any instead of Count to check for a non-empty sequence",
         "href": "AIP/quality-rules/1027020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3669,6 +4056,7 @@
         "name": "Avoid using \"new Guid()\"",
         "href": "AIP/quality-rules/1027022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3679,6 +4067,7 @@
         "name": "Ensure you don't compare passwords against hard-coded strings in the source file, hackers can steal the information by retro-engineering your application (C#)",
         "href": "AIP/quality-rules/1027024",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3689,6 +4078,7 @@
         "name": "Ensure not having hardcoded network resources names in the source files (.NET)",
         "href": "AIP/quality-rules/1027032",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3699,6 +4089,7 @@
         "name": "Check if the variable is null before dereferencing it.",
         "href": "AIP/quality-rules/1027034",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3709,6 +4100,7 @@
         "name": "Avoid rethrowing exception explicitly",
         "href": "AIP/quality-rules/1027036",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3719,6 +4111,7 @@
         "name": "Ensure you don't use multiple \"OrderBy\"",
         "href": "AIP/quality-rules/1027040",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3729,6 +4122,7 @@
         "name": "SafeHandle.DangerousGetHandle\" should not be called",
         "href": "AIP/quality-rules/1027044",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3739,6 +4133,7 @@
         "name": "Avoid storing passwords in Comments",
         "href": "AIP/quality-rules/1027046",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3749,6 +4144,7 @@
         "name": "Avoid returning null from non-async Task/Task<T> method",
         "href": "AIP/quality-rules/1027048",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3759,6 +4155,7 @@
         "name": "Split the method in two if it contains both ArgumentNullException and yield",
         "href": "AIP/quality-rules/1027050",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3769,6 +4166,7 @@
         "name": "Always check the object is not null before using it or it is not used in a try block.",
         "href": "AIP/quality-rules/1027052",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3779,6 +4177,7 @@
         "name": "Always use System.Uri instead of string to build URLs",
         "href": "AIP/quality-rules/1027054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3789,6 +4188,7 @@
         "name": "Ensure not using blocking async methods (.NET)",
         "href": "AIP/quality-rules/1027058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3799,6 +4199,7 @@
         "name": "Ensure the getter is not stopped by throwing exception.",
         "href": "AIP/quality-rules/1027066",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3809,6 +4210,7 @@
         "name": "Avoid returning null from ToString()",
         "href": "AIP/quality-rules/1027068",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3819,6 +4221,7 @@
         "name": "Avoid if statements and blocks that are always TRUE or FALSE",
         "href": "AIP/quality-rules/1027070",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3829,6 +4232,7 @@
         "name": "Ensure not using File IO unrestricted access",
         "href": "AIP/quality-rules/1027076",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3839,6 +4243,7 @@
         "name": "Always mark Windows Forms starting point as STAThread",
         "href": "AIP/quality-rules/1027078",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#"
         ]
@@ -3848,6 +4253,7 @@
         "name": "Always use ConfigureAwait(false) in library code awaited tasks",
         "href": "AIP/quality-rules/1027080",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3858,6 +4264,7 @@
         "name": "Ensure you remove console.writeline() in your production code",
         "href": "AIP/quality-rules/1027082",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3868,6 +4275,7 @@
         "name": "Avoid non-public custom exception types",
         "href": "AIP/quality-rules/1027088",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3878,6 +4286,7 @@
         "name": "Avoid improper instantiation of argument exceptions",
         "href": "AIP/quality-rules/1027090",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3888,6 +4297,7 @@
         "name": "Always pass optional parameters too, when making 'base' calls",
         "href": "AIP/quality-rules/1027092",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3898,6 +4308,7 @@
         "name": "Always provide deserialization methods for optional fields",
         "href": "AIP/quality-rules/1027094",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -3908,6 +4319,7 @@
         "name": "Ensure you are not using deprecated SSL protocols to secure your connection",
         "href": "AIP/quality-rules/1039002",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3917,6 +4329,7 @@
         "name": "Ensure not relying on the session ID provided by \"request.getRequestedSessionId()\"",
         "href": "AIP/quality-rules/1039004",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3926,6 +4339,7 @@
         "name": "Ensure that you are not using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3935,6 +4349,7 @@
         "name": "Ensure to manage an exception in servlet method using a try catch block to prevent exposing system vulnerabilities",
         "href": "AIP/quality-rules/1039008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3944,6 +4359,7 @@
         "name": "Ensure not using deprecated cryptographic hash otherwise it could be broken by hackers (JEE)",
         "href": "AIP/quality-rules/1039010",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3953,6 +4369,7 @@
         "name": "Ensure you are not using \"referer\" header field in HTTP request",
         "href": "AIP/quality-rules/1039012",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -3962,6 +4379,7 @@
         "name": "Prefer using cipher including Hash based Message Authentication Code (HMAC) to ensure data integrity",
         "href": "AIP/quality-rules/1039014",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3971,6 +4389,7 @@
         "name": "Ensure that HTTP request redirections are not performed with user provided data",
         "href": "AIP/quality-rules/1039016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3980,6 +4399,7 @@
         "name": "Ensure that Hard-coded salt is not used with cryptography function so that sensitive data is protected",
         "href": "AIP/quality-rules/1039018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3989,6 +4409,7 @@
         "name": "Ensure to not use \"javax.crypto.NullCipher\" for anything other than testing",
         "href": "AIP/quality-rules/1039020",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -3998,6 +4419,7 @@
         "name": "Prefer using long PBE Iteration Count to to decrease attack possibilities",
         "href": "AIP/quality-rules/1039022",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4007,6 +4429,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (JEE)",
         "href": "AIP/quality-rules/1039024",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4016,6 +4439,7 @@
         "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1039026",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4025,6 +4449,7 @@
         "name": "Perefer using encryption providing sufficient key size to ensure enough entropy against attacks",
         "href": "AIP/quality-rules/1039028",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4034,6 +4459,7 @@
         "name": "Prefer using SystemDefaultHttpClient Constructor to ensure better transport layer security",
         "href": "AIP/quality-rules/1039030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4043,6 +4469,7 @@
         "name": "Ensure to preceed the call of DocumentBuilder by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039032",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4052,6 +4479,7 @@
         "name": "Ensure to preceed the call of SAXParserFactory by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039034",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4061,6 +4489,7 @@
         "name": "Ensure to preceed the call of XMLReader by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039036",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4070,6 +4499,7 @@
         "name": "Ensure to preceed the call of XPathFactory by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039038",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4079,6 +4509,7 @@
         "name": "Ensure to preceed the call of XMLStreamReader by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039040",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4088,6 +4519,7 @@
         "name": "Always set an expiration time for an Http Session to improve security",
         "href": "AIP/quality-rules/1039052",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4097,6 +4529,7 @@
         "name": "Always make sure to use a Yaml instance that is constructed either with a SafeConstructor.",
         "href": "AIP/quality-rules/1039056",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4106,6 +4539,7 @@
         "name": "Ensure the cookie id are always generate with a sufficient random algorithm like SecureRandom",
         "href": "AIP/quality-rules/1039058",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4115,6 +4549,7 @@
         "name": "Ensure the readObject() has been implemented for class instantiated by ObjectInputStream to prevent untrusted deserialization",
         "href": "AIP/quality-rules/1039062",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4124,6 +4559,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie domain (JEE)",
         "href": "AIP/quality-rules/1039064",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4133,6 +4569,7 @@
         "name": "Ensure to declare the object as serializable if you are using it as a httpsession attribute",
         "href": "AIP/quality-rules/1039068",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4142,6 +4579,7 @@
         "name": "Prefer using java.net.URI instead of java.net.URL",
         "href": "AIP/quality-rules/1039070",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4151,6 +4589,7 @@
         "name": "jYAML project is abandonned and muts not be used to deserialize YAML",
         "href": "AIP/quality-rules/1039072",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4160,6 +4599,7 @@
         "name": "Ensure you have enable CSRF Protection in your spring security project.",
         "href": "AIP/quality-rules/1040002",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4169,6 +4609,7 @@
         "name": "Ensure activating Content-Security-Policy for Spring application to avoid untrusted source",
         "href": "AIP/quality-rules/1040006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4178,6 +4619,7 @@
         "name": "Ensure declaring formLogin after requesting authorization and authentication",
         "href": "AIP/quality-rules/1040008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4187,6 +4629,7 @@
         "name": "Ensure cleaning the cookies during the logout to avoid them to be used by another web application",
         "href": "AIP/quality-rules/1040010",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4196,6 +4639,7 @@
         "name": "Ensure invalidating HTTP Session during logout to avoid broken Authentication",
         "href": "AIP/quality-rules/1040012",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4205,6 +4649,7 @@
         "name": "Ensure desabling Spring Security's debug mode in production code",
         "href": "AIP/quality-rules/1040014",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4214,6 +4659,7 @@
         "name": "Ensure specifying \"PermitAll\" or \"user role\" for URL(s) access to enforce security",
         "href": "AIP/quality-rules/1040016",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4223,6 +4669,7 @@
         "name": "Ensure safely set X-Frame-Option  to avoid Clickjacking attack",
         "href": "AIP/quality-rules/1040018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4232,6 +4679,7 @@
         "name": "Ensure securing Shutdown Actuator Endpoint from unauthenticated access.",
         "href": "AIP/quality-rules/1040024",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4241,6 +4689,7 @@
         "name": "Ensure explicitly specifying single HTTP method in @RequestMapping methods to avoid information leakage",
         "href": "AIP/quality-rules/1040026",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4250,6 +4699,7 @@
         "name": "Prefer not using Generic Authentication Exception Class to promote easy error handling",
         "href": "AIP/quality-rules/1040030",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4259,6 +4709,7 @@
         "name": "Ensure not using ControllerAdvice And HandlerExceptionResolver simultaneously to avoid unexpected behavior",
         "href": "AIP/quality-rules/1040032",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4268,6 +4719,7 @@
         "name": "Ensure setting \"StrictHttpFirewall\" as Http Firewall before Spring Security 5.0.1, 4.2.4, and 4.1.5 to reject requests that appear to be malicious.",
         "href": "AIP/quality-rules/1040034",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4277,6 +4729,7 @@
         "name": "Using STOMP Spring messaging module before Spring 5.0.5 and 4.3.16 is vulnerable to remote code execution attack",
         "href": "AIP/quality-rules/1040036",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4286,6 +4739,7 @@
         "name": "Ensure not using Spring Security Path Matching Inconsistency before Spring Framework 3.2.x, 4.0.x, 4.1.x, 4.2.x",
         "href": "AIP/quality-rules/1040038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4295,6 +4749,7 @@
         "name": "Ensure you have used Spring framework with version greater than 5.0.5 when enabling global security method",
         "href": "AIP/quality-rules/1040042",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4304,6 +4759,7 @@
         "name": "Upgrade to the spring-integration-zip version 1.0.2 to unsafe unzip",
         "href": "AIP/quality-rules/1040044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4313,6 +4769,7 @@
         "name": "Ensure not using the same name for multiple validation forms to avoid any validation error.",
         "href": "AIP/quality-rules/1042004",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4322,6 +4779,7 @@
         "name": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
         "href": "AIP/quality-rules/1042010",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4331,6 +4789,7 @@
         "name": "Ensure to not have Unused Validation Form in Struts 1.x to correctly maintain the validation logic",
         "href": "AIP/quality-rules/1042012",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4340,6 +4799,7 @@
         "name": "Ensure to enable validation for each Struts action Mapping of your application to prevent any types of attacks.",
         "href": "AIP/quality-rules/1042016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -4349,6 +4809,7 @@
         "name": "Ensure to have Struts action pointing to a an existent form-bean in Struts 1.x to avoid mapping error",
         "href": "AIP/quality-rules/1042018",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -4358,6 +4819,7 @@
         "name": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
         "href": "AIP/quality-rules/1042022",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4367,6 +4829,7 @@
         "name": "Ensure activating tags for escaping string in order to sanitize user input and prevent XSS attacks",
         "href": "AIP/quality-rules/1042024",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4376,6 +4839,7 @@
         "name": "Ensure note using wildcards for action mapping name to avoid executing arbitrary Java code on server side",
         "href": "AIP/quality-rules/1042026",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4385,6 +4849,7 @@
         "name": "configured without namespace or with wildcard namespace is vulnerable to remote code execution attack",
         "href": "AIP/quality-rules/1042028",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4394,6 +4859,7 @@
         "name": "Ensure not using excludeParams for Struts 2.3.20 ( and older) to avoid",
         "href": "AIP/quality-rules/1042030",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4403,6 +4869,7 @@
         "name": "Prefer using short request parameter name to prevent the DOS attack",
         "href": "AIP/quality-rules/1042036",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4412,6 +4879,7 @@
         "name": "Ensure you are using Struts URLValidator with at least version 2.5.13 or 2.3.34",
         "href": "AIP/quality-rules/1042040",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4421,6 +4889,7 @@
         "name": "Using invoking dataHandler.createXStream method with type filtering to Remote Code Execution when deserializing XML payloads",
         "href": "AIP/quality-rules/1042042",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4430,6 +4899,7 @@
         "name": "Using Dynamic Method Invocation for Apache Struts 2.x allows remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
         "href": "AIP/quality-rules/1042046",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4439,6 +4909,7 @@
         "name": "Ensure you have upgraded your Struts framework 2.3.24.1 and above if you use special top object",
         "href": "AIP/quality-rules/1042050",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4448,6 +4919,7 @@
         "name": "Ensure not using JSON-lib library for Rest Plugin of Struts 2.5 to 2.5.14",
         "href": "AIP/quality-rules/1042052",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4457,6 +4929,7 @@
         "name": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
         "href": "AIP/quality-rules/1043006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4467,6 +4940,7 @@
         "name": "Ensure you have enable ValidateInput in your controller",
         "href": "AIP/quality-rules/1043008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4477,6 +4951,7 @@
         "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1043010",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4487,6 +4962,7 @@
         "name": "Always enable HttpOnly for cookies in Config file (ASP.NET)",
         "href": "AIP/quality-rules/1043012",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4497,6 +4973,7 @@
         "name": "Ensure the validation request is always set to true in ASP.NET config file",
         "href": "AIP/quality-rules/1043014",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4507,6 +4984,7 @@
         "name": "Ensure the request validation is always set to true",
         "href": "AIP/quality-rules/1043016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4516,6 +4994,7 @@
         "name": "Ensure you don't store password information in a configuration file or a properties file in plaintext as this will allow anyone who can read the file access to the resource.",
         "href": "AIP/quality-rules/1043018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4526,6 +5005,7 @@
         "name": "Ensure you have reviewed the web config file and update the value of debug property to false",
         "href": "AIP/quality-rules/1043020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4536,6 +5016,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (C#)",
         "href": "AIP/quality-rules/1043022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4546,6 +5027,7 @@
         "name": "Ensure you review the configuration file and update the RequireSSL to yes",
         "href": "AIP/quality-rules/1043024",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4556,6 +5038,7 @@
         "name": "Ensure you have set EnableViewStateMac to avoid XSS attack",
         "href": "AIP/quality-rules/1043026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4566,6 +5049,7 @@
         "name": "Ensure you don't disable EnableViewStateMac in ASPX page to avoid XSS attack",
         "href": "AIP/quality-rules/1043028",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4575,6 +5059,7 @@
         "name": "Ensure you have setup the X-Frame-Options in HTTP Response (ASP.NET)",
         "href": "AIP/quality-rules/1043030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4585,6 +5070,7 @@
         "name": "Ensure you did not keep the tracing activated in your ASPX file to not expose sensitive information for the hackers",
         "href": "AIP/quality-rules/1043032",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4594,6 +5080,7 @@
         "name": "Ensure you did not keep the tracing activated in your web config file to not expose sensitive information for the hackers",
         "href": "AIP/quality-rules/1043034",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4604,6 +5091,7 @@
         "name": "Ensure the impersonation flag remains set to false (ASP.NET)",
         "href": "AIP/quality-rules/1043036",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4614,6 +5102,7 @@
         "name": "Ensure you have reviewed the source code file and disable the tracing property",
         "href": "AIP/quality-rules/1043038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4624,6 +5113,7 @@
         "name": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET MVC)",
         "href": "AIP/quality-rules/1043044",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4634,6 +5124,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path (C#)",
         "href": "AIP/quality-rules/1043046",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4644,6 +5135,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie domain (C#)",
         "href": "AIP/quality-rules/1043048",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4654,6 +5146,7 @@
         "name": "Ensure you set the time out to less than 5 min or less.",
         "href": "AIP/quality-rules/1043050",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4664,6 +5157,7 @@
         "name": "Ensure retaining the settings of aspnet:UseLegacyFormsAuthenticationTicketCompatibility to True.",
         "href": "AIP/quality-rules/1043052",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4674,6 +5168,7 @@
         "name": "Ensure you don't mention \"*\" use specific domain",
         "href": "AIP/quality-rules/1043054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4684,6 +5179,7 @@
         "name": "Ensure you set the EnableHeaderChecking flag to true in the configuration file",
         "href": "AIP/quality-rules/1043058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4694,6 +5190,7 @@
         "name": "Ensure you don't set the UseLegacyEncryption to True",
         "href": "AIP/quality-rules/1043060",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4704,6 +5201,7 @@
         "name": "Ensure to limit users access only to authorized resources (.NET)",
         "href": "AIP/quality-rules/1043062",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4714,6 +5212,7 @@
         "name": "Ensure you enforce HTTPS in your ASP.NET core application",
         "href": "AIP/quality-rules/1043066",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#"
         ]
@@ -4723,6 +5222,7 @@
         "name": "Ensure you do not use RequireHttpsAttribute on Web APIs accessing sensitive data",
         "href": "AIP/quality-rules/1043068",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#"
         ]
@@ -4732,6 +5232,7 @@
         "name": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET Core MVC)",
         "href": "AIP/quality-rules/1043070",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#"
         ]
@@ -4741,6 +5242,7 @@
         "name": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl in code",
         "href": "AIP/quality-rules/1043072",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#"
         ]
@@ -4750,6 +5252,7 @@
         "name": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl in configuration",
         "href": "AIP/quality-rules/1043074",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4759,6 +5262,7 @@
         "name": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
         "href": "AIP/quality-rules/1043076",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4769,6 +5273,7 @@
         "name": "Avoid debug binaries that include detailed debug information",
         "href": "AIP/quality-rules/1043078",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4779,6 +5284,7 @@
         "name": "Avoid disabling OR not defining encryption behavior for encryption when connecting with Database",
         "href": "AIP/quality-rules/1043080",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4788,6 +5294,7 @@
         "name": "Avoid client provided dictionaries to have high request sizes",
         "href": "AIP/quality-rules/1043082",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -4797,6 +5304,7 @@
         "name": "Avoid XML schemas with unbounded occurrences",
         "href": "AIP/quality-rules/1043084",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -4807,6 +5315,7 @@
         "name": "Ensure that dynamically allocated memory on local pointer in functions/methods is freed.",
         "href": "AIP/quality-rules/1065004",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4817,6 +5326,7 @@
         "name": "Avoid iterator invalidation.",
         "href": "AIP/quality-rules/1065006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C++"
         ]
@@ -4826,6 +5336,7 @@
         "name": "Avoid use of unvalidated input in array indexing and memory allocation",
         "href": "AIP/quality-rules/1065008",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4836,6 +5347,7 @@
         "name": "Ensure that you are not using <cstdio> library",
         "href": "AIP/quality-rules/1065010",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4845,6 +5357,7 @@
         "name": "Avoid using the library functions bsearch and qsort from <stdlib.h> (C/C++)",
         "href": "AIP/quality-rules/1065014",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4855,6 +5368,7 @@
         "name": "Prefer using strto*() from core linrary instead of atol, atoll, atoi, atof from stdlib.h for a more robust string handling",
         "href": "AIP/quality-rules/1065016",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4865,6 +5379,7 @@
         "name": "Avoid using offsetof from <cstddef>",
         "href": "AIP/quality-rules/1065018",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4874,6 +5389,7 @@
         "name": "Ensure that you do not use implementation-dependent <ctime> library",
         "href": "AIP/quality-rules/1065020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4883,6 +5399,7 @@
         "name": "Avoid using <stdio.h> (C/C++)",
         "href": "AIP/quality-rules/1065022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4893,6 +5410,7 @@
         "name": "Make sure you do not use <time.h> to avoid unexpected and implementation dependent outcome",
         "href": "AIP/quality-rules/1065024",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4903,6 +5421,7 @@
         "name": "Ensure that a class type exception is always be caught by reference to avoid slicing",
         "href": "AIP/quality-rules/1065026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4912,6 +5431,7 @@
         "name": "Esnure that the exceptions are thrown by value",
         "href": "AIP/quality-rules/1065034",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4921,6 +5441,7 @@
         "name": "Avoid using 'signal.h' (C/C++)",
         "href": "AIP/quality-rules/1065038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4931,6 +5452,7 @@
         "name": "Ensure to return a proper expression for a non-void function",
         "href": "AIP/quality-rules/1065042",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4941,6 +5463,7 @@
         "name": "Avoid using the unbounded functions of <cstring> library",
         "href": "AIP/quality-rules/1065046",
         "critical": false,
+        "severity": 30,
         "technologyNames": [
             "C++"
         ]
@@ -4950,6 +5473,7 @@
         "name": "Ensure to separate a side effect of an expression from the sizeof method",
         "href": "AIP/quality-rules/1065050",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4960,6 +5484,7 @@
         "name": "Prefer using Integers rather than Octal Constants",
         "href": "AIP/quality-rules/1065052",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4970,6 +5495,7 @@
         "name": "Do not override the standard library functions (C/C++)",
         "href": "AIP/quality-rules/1065054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -4980,6 +5506,7 @@
         "name": "Ensure to handle exceptions inside main()",
         "href": "AIP/quality-rules/1065056",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4989,6 +5516,7 @@
         "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions in the main function(C++)",
         "href": "AIP/quality-rules/1065058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -4998,6 +5526,7 @@
         "name": "Ensure that testing floating point numbers for equality is not used as is source of imprecision",
         "href": "AIP/quality-rules/1065062",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -5008,6 +5537,7 @@
         "name": "Avoid using Digraphs (C++)",
         "href": "AIP/quality-rules/1065068",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5018,6 +5548,7 @@
         "name": "Avoid using Trigraphs",
         "href": "AIP/quality-rules/1065070",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5028,6 +5559,7 @@
         "name": "Avoid using Unions",
         "href": "AIP/quality-rules/1065072",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5038,6 +5570,7 @@
         "name": "All constructors that are callable with a single argument of fundamental type shall be declared explicit.",
         "href": "AIP/quality-rules/1065074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -5047,6 +5580,7 @@
         "name": "Handlers of a function-try-block implementation of a class constructor ordestructor shall not reference non-static members from this class or its bases.",
         "href": "AIP/quality-rules/1065082",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -5056,6 +5590,7 @@
         "name": "Ensure to have boolean operands with boolean operators",
         "href": "AIP/quality-rules/1065092",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5066,6 +5601,7 @@
         "name": "Avoid having expressions with bool type to be used as operands on operators other than =, &&, ||, !, ==, !=, the unary & operator, and the conditional operator",
         "href": "AIP/quality-rules/1065094",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5076,6 +5612,7 @@
         "name": "Avoid delete operators to exit with an exception.",
         "href": "AIP/quality-rules/1065098",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -5085,6 +5622,7 @@
         "name": "Avoid move constructor and move assignment operator to exit with an exception",
         "href": "AIP/quality-rules/1065100",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C++"
         ]
@@ -5094,6 +5632,7 @@
         "name": "Avoid checking Integer overflow without explicit cast",
         "href": "AIP/quality-rules/1065102",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
@@ -5104,6 +5643,7 @@
         "name": "Converting a multiplication to a larger type should be done before the multiplication takes place",
         "href": "AIP/quality-rules/1065104",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5114,6 +5654,7 @@
         "name": "Avoid comparing types of different widths in a loop",
         "href": "AIP/quality-rules/1065106",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5124,6 +5665,7 @@
         "name": "Bit-fields shall be either unsigned integral, or enumeration (with underlying type of unsigned integral type).",
         "href": "AIP/quality-rules/1065108",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5134,6 +5676,7 @@
         "name": "Ensure arrays and containers are accessed using unsigned values",
         "href": "AIP/quality-rules/1065110",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C",
             "C++"
@@ -5144,6 +5687,7 @@
         "name": "Avoid lines starting with \"#\" with invalid pre-processing directive",
         "href": "AIP/quality-rules/1065114",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5154,6 +5698,7 @@
         "name": "Undefined macro identifiers shall not be used in #if or #elif preprocessor directives, except as operands to the defined operator",
         "href": "AIP/quality-rules/1065116",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5164,6 +5709,7 @@
         "name": "Arguments to a function-like macro shall not contain tokens that look like preprocessing directives.",
         "href": "AIP/quality-rules/1065118",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5174,6 +5720,7 @@
         "name": "Avoid using # OR ## operators more than once while defining macros",
         "href": "AIP/quality-rules/1065120",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5184,6 +5731,7 @@
         "name": "Prefer defining macros in Global Namespace",
         "href": "AIP/quality-rules/1065122",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5194,6 +5742,7 @@
         "name": "Avoid defining, redefining or undefining standard macros from standard library",
         "href": "AIP/quality-rules/1065130",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C++"
@@ -5204,6 +5753,7 @@
         "name": "While using ORDER BY in queries prefer using Column names instead of indexes for better maintainability and readability of queries in code",
         "href": "AIP/quality-rules/1101012",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -5213,6 +5763,7 @@
         "name": "Make sure the identifiers defined in SQL are not quoted <\"\"> as it is confusing to read and reduces maintainability of code",
         "href": "AIP/quality-rules/1101020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -5222,6 +5773,7 @@
         "name": "When inserting data into columns always define column names to prevent mistakes and wrong updates",
         "href": "AIP/quality-rules/1101026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -5231,6 +5783,7 @@
         "name": "Ensure using ANSI standard Operators such as <>,<=,>= in SQL where clauses to ensure portability",
         "href": "AIP/quality-rules/1101036",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C",
             "C#",
@@ -5244,6 +5797,7 @@
         "name": "Ensure to handle exception in a catch block and not leave it empty",
         "href": "AIP/quality-rules/1101040",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -5253,6 +5807,7 @@
         "name": "Ensure to use WHEN OTHERS with WHEN for exception handling to prevent unexpected behavior",
         "href": "AIP/quality-rules/1101052",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -5262,6 +5817,7 @@
         "name": "Ensure to propagate errors to client instead of using with NULL when handling exceptions through WHEN OTHERS",
         "href": "AIP/quality-rules/1101054",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -5271,6 +5827,7 @@
         "name": "Improve the readability and maintainability of your queries by using aliases for tables",
         "href": "AIP/quality-rules/1101072",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -5280,6 +5837,7 @@
         "name": "Ensure column references in queries are qualified to avoid any ambiguous and undefined references",
         "href": "AIP/quality-rules/1101076",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ALL TECHNOLOGIES"
         ]
@@ -5289,6 +5847,7 @@
         "name": "When creating synonyms ensure that you do not reference a missing object as it will create errors at execution",
         "href": "AIP/quality-rules/1101080",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -5298,6 +5857,7 @@
         "name": "Ensure to use VARCHAR2 or NVARCHAR2 instead of CHAR, VARCHAR or NCHAR as the latter will be deprecated and uses more disk space",
         "href": "AIP/quality-rules/1101086",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -5307,6 +5867,7 @@
         "name": "Errors should be handled in stored procedures and functions",
         "href": "AIP/quality-rules/1101092",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "SQL"
         ]
@@ -5316,6 +5877,7 @@
         "name": "Stored Procedures should always RETURN a status value. RETURN 0 to indicate success and any non-zero value indicates failure.",
         "href": "AIP/quality-rules/1101094",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -5325,6 +5887,7 @@
         "name": "Preventing SQL injection in Oracle dynamic SQL",
         "href": "AIP/quality-rules/1101096",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "SQL"
         ]
@@ -5334,6 +5897,7 @@
         "name": "Avoid Functions and Procedures doing an Insert, Update or Delete without managing a transaction (SQL)",
         "href": "AIP/quality-rules/1101100",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]
@@ -5343,6 +5907,7 @@
         "name": "Ensure to not use explain() method in production code so that performance is not reduced",
         "href": "AIP/quality-rules/1101920",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -5352,6 +5917,7 @@
         "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
         "href": "AIP/quality-rules/1101958",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",
@@ -5363,6 +5929,7 @@
         "name": "Prefer using MyBatis query statementto prevent SQL Injection Attacks",
         "href": "AIP/quality-rules/1677000",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]

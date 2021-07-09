@@ -3,6 +3,7 @@
     "name": "Avoid using unsanitized AngularJS application",
     "href": "AIP/quality-rules/1020546",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "AngularJS includes a $sanitize service that will parse an HTML string into tokens and only allow safe and white-listed markup. The markup will no longer contain scripting expression and dangerous attributes when the string is \"disinfected\".",

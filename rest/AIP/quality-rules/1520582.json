@@ -3,6 +3,7 @@
     "name": "Siebel eScript: Avoid Functions destroying variables outside of the finally clause",
     "href": "AIP/quality-rules/1520582",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Reason for violation(No variable destruction in a finally block|Missing variable destructions in a finally block)",
     "description": "This rule reports functions where the number of variable destructions at Function level is larger than the number in the Finally Clause of that Function. The number of variable destructions statements are counted.",

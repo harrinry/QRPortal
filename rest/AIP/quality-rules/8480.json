@@ -3,6 +3,7 @@
     "name": "Avoid using PREPARE STMT statement (Dynamic SQL) with STRING containing HOST variables",
     "href": "AIP/quality-rules/8480",
     "critical": true,
+    "severity": 30,
     "maxWeight": 10,
     "description": "Input host variables are used to specify data to be transferred from the COBOL program to the database\n\nHost variables are considered data, not part of the SQL code, which is safe against SQL injection attacks. But dynamic SQL (PREPARE or EXECUTE IMMEDIATE) is allowed, and binding does not prevent the injection of code.\n\nThis rule checks for PREPARE STMT statement having STRING passed in parameter and containing host variables.",
     "output": "- The number of Exec SQL using \"PREPARE STMT\" with STRING containing HOST variables.  \n- Bookmarks for violation occurrences found in source code:\n  - EXEC SQL query use \"PREPARE STMT\" with STRING containing HOST variables.",

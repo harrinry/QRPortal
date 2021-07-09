@@ -3,6 +3,7 @@
     "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
     "href": "AIP/quality-rules/7494",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "This rule reports all Hibernate or JPA persistent class method's equals() and hashCode() that directly access its own fields without using getter methods.\nWe consider also the case where equals and hashCode are implemented on an inherited class of the persistent class (this can happen when inherited fields are persistent).",
     "output": "List all equals or hashCode methods of persistent classes that rely on the fields (persistent or not). It provides the following information: Method Full Name",

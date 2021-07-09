@@ -3,6 +3,7 @@
     "name": "DEPRECATED : Avoid declaring Final Instance Variables that are not initialized",
     "href": "AIP/quality-rules/4572",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "If the instance variable declared as final, then we have to perform initialization explicitly whether we are using it or not and JVM won\u2019t provide any default value for the final instance variable.",
     "output": "This report lists all Final Instance Variables, except those that are dynamically initialized. It provides the following information: Field full name",

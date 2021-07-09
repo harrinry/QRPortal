@@ -3,6 +3,7 @@
     "name": "Avoid having Hibernate domain model depending on other Java APIs",
     "href": "AIP/quality-rules/7682",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "A domain model represents the business entities used in a Java application. In a layered system architecture, the domain model is used to execute business logic in the business layer. The domain model implementation is such an important piece of code that it shouldn\u2019t depend on other Java APIs\n\nThis rule checks if there is any direct calls or indirect(via successive) calls from persistent classes' artifact to the methods of the following packages:\n\n- java.sql.*\n- javax.sql.*\n- javax.naming.* (include javax.naming.directory, javax.naming.event, javax.naming.ldap, javax.naming.spi)\n- javax.jms.*\n\n\nNote that we don't take into account method parameters and exception that belongs to these packages.\n\nThis list of pakages/APIs to exclude can be extended using via the rule's paramter.",
     "output": "List all persistent classes' artifact that call other JAVA API.\n\nIt provides the following information:\n Artifact Full Name",

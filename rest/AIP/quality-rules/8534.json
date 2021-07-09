@@ -3,6 +3,7 @@
     "name": "Avoid XQuery injection through API requests",
     "href": "AIP/quality-rules/8534",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "The software does not properly neutralize special elements coming from API requests that are used in an XQuery expression, allowing attackers to modify the syntax, content, or commands of the XML before it is processed by an end system.\n\nUsing CAST data-flow engine, this metric detects execution paths from user input methods down to file creation methods, paths which are open vulnerabilities to operating system injection flaws.",

@@ -3,6 +3,7 @@
     "name": "Avoid calling unsafe C library functions from COBOL",
     "href": "AIP/quality-rules/8476",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Calling unsafe C library functions from COBOL is a security problem as this requires large size of the buffer to avoid buffer overflows. \n\nThis rule reports use of the following insecure functions: strcpy(), strcat(), sprintf();",

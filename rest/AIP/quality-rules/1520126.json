@@ -3,6 +3,7 @@
     "name": "SiebelReview: Duplicate Column Mappings",
     "href": "AIP/quality-rules/1520126",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Number of mappings",
     "description": "The column that the Field is mapped to is stored as a property in the Knowledge Base. Whenever the Business Component has the same Column mapped, the Business Component is reported as a violation.\n\nLimitation: the implementation does not consider the active/inactive status of the Field.\nTherefore some violations may be reported in the case of 2 fields are mapped to same column, but 1 of the 2 fields is inactive, for instance.",

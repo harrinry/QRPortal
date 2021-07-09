@@ -3,6 +3,7 @@
     "name": "Avoid enabling dangerous protocols in whitelist APIs",
     "href": "AIP/quality-rules/1020552",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using white list API (aHrefSanitizationWhitelist, imgSrcSanitizationWhitelist), any url about to be assigned to a[href]/img[src] or via data-binding is first normalized and turned into an absolute url. Afterwards, the url is matched against the white list regular expression. If a match is found, the original url is written into the dom. Otherwise, the absolute url is prefixed with 'unsafe:' string and only then is it written into the DOM. If the url allows dangerous protocols executing external javascript, it may lead to cross-site scripting vulnerabilities.",

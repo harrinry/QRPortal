@@ -3,6 +3,7 @@
     "name": "Avoid empty IF-ENDIF blocks",
     "href": "AIP/quality-rules/8106",
     "critical": true,
+    "severity": 20,
     "maxWeight": 6,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches in ABAP code for empty IF-ENDIF statements. An empty IF block is a combination of:\nIF <cond>.\nENDIF.\n\nELSIF <cond>.\nENDIF.\n\nELSE\nENDIF.",

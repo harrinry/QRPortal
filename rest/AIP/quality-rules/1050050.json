@@ -3,6 +3,7 @@
     "name": "Avoid cryptography hash without salt (Objective-C)",
     "href": "AIP/quality-rules/1050050",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using some cryptography function like CCKeyDerivationPBKDF, CCCalibratePBKDF, an empty salt could compromise system security in a way that cannot be easily remedied.",

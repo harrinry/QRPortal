@@ -3,6 +3,7 @@
     "name": "Avoid empty catch blocks (SQL)",
     "href": "AIP/quality-rules/1101040",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "In a TRY..CATCH statement, CATCH blocks should have code to handle the thrown exception. If they are empty or only contain comments, the Exception will not be handled.",

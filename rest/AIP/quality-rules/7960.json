@@ -3,6 +3,7 @@
     "name": "Avoid looping chain of synonyms in PL/SQL context",
     "href": "AIP/quality-rules/7960",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Synonym",
     "description": "This metric retrieves synonyms  that are part of a looping chain of synonym. Indeed through a series of CREATE synonym statements, a synonym could be defined and in fact refer to itself",

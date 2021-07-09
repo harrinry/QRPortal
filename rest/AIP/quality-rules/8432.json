@@ -3,6 +3,7 @@
     "name": "Avoid Cross-Client Database Access using Open SQL statements with CLIENT SPECIFIED/USING CLIENT addition",
     "href": "AIP/quality-rules/8432",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "A client indicates a data area in an AS ABAP database that contains independent application data. The application data of different clients use the same database tables, but are flagged with a three-figure client ID within these tables.\n\nWhen logging on to AS ABAP, this client ID must be entered. The current client is entered in the system field sy-mandt.\n\nOpen SQL statements support automatic client handling by default, where the data of the current client is accessed by default. This is specified by passing an implicit condition for the current client to WHERE conditions, and ignoring clients specified in modifying statements in work areas. \nBut the Automatic client handling in OpenSQL can be switched to a different client using the addition USING CLIENT or switched off using the addition CLIENT SPECIFIED and this can be be risky as allowing access to foreign data that is critical for security.\n\nIn this rule, a violation is reported when trying an unauthorized accessing client data by bypassing the client separation and client handling mechanisms from within an ABAP program by using OpenSQL statements with \"CLIENT SPECIFIED\" or \"USING CLIENT\" addition.",

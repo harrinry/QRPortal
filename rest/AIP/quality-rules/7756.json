@@ -3,6 +3,7 @@
     "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
     "href": "AIP/quality-rules/7756",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for COBOL programs using READ statements without the AT END or INVALID KEY clause.\n\nNotes:\n- READ statements executed against QSAM files should have an AT END clause. \n- READ statements executed against VSAM files should have an INVALID KEY clause. \n- No violation is raised on files for which the SELECT ASSIGN clause has not been found. This can occur when copybooks are missing.",

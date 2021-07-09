@@ -3,6 +3,7 @@
     "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection (JEE)",
     "href": "AIP/quality-rules/1101922",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects tables having too many ways to update their data. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.",

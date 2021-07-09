@@ -3,6 +3,7 @@
     "name": "Avoid having multiple artifacts inserting data on the same SQL table (EGL)",
     "href": "AIP/quality-rules/1005008",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule searches for tables having too many ways to insert data into them. It retrieves table (EGL records) having more than X artifacts  (EGL functions) inserting data in these tables, where X is a configurable parameter.",
     "output": "This report lists all Functions inserting data in same tables.\nIt provides the following information: Function full name, SQLRecord full name.",

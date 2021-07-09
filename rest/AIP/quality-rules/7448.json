@@ -3,6 +3,7 @@
     "name": "Always validate user input with Request variables",
     "href": "AIP/quality-rules/7448",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Associated Value",
     "description": "List all locations (functions or pages when done directly into a page) where request variables are use directly without content validation (i.e. where the variable is not used as an argument of a function).\nNB: this can list location where the code is safe (like the content is affected to a variable that is in turn processed to ensure that this will not break). However, this is a potential problem, as future changes in the code might use the variable before it is checked.",

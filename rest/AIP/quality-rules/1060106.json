@@ -3,6 +3,7 @@
     "name": "Avoid using generic methods such as 'ToJson' or 'ToString' to save sensitive or PII data",
     "href": "AIP/quality-rules/1060106",
     "critical": false,
+    "severity": 30,
     "maxWeight": 8,
     "description": "The rule will raise a violation if any of the methods like following names call 'ToJson' or 'ToString' methods to save PII or sensitive data:\n1. Save\n2. Set\n3. Put",
     "output": "Methods that use 'ToJSONString'",

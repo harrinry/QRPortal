@@ -3,6 +3,7 @@
     "name": "Always enable authorization checks at function level for functions called on by APIs",
     "href": "AIP/quality-rules/1060114",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "The rule will raise a violation when it finds functions that are called by APIs to perform actions, if they do not implement any form of authorization check.",
     "output": "APIs calling functions that do not impose any authorization checks.",

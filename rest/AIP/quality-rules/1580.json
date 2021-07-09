@@ -3,6 +3,7 @@
     "name": "Avoid using execute immediate",
     "href": "AIP/quality-rules/1580",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "Using Execute immediate allows to dynamically create the query from strings, but leads to some performance problems. The execution plan cannot be stored in memory and thus needs to be calculated each time.",
     "output": "This report lists all triggers, procedures, functions and packages using the execute immediate keyword.\nIt provides the following information: Artifact Name, Artifact Full Name.",

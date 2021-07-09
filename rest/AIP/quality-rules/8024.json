@@ -3,6 +3,7 @@
     "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
     "href": "AIP/quality-rules/8024",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for classes with a non-empty destructor but which let the compiler generate a default version for the assignment operator (operator=) or a copy constructor. \n\nNote: Empty destructors are not taken into account.",

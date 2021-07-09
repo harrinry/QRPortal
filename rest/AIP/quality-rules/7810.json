@@ -3,6 +3,7 @@
     "name": "Avoid Artifacts with a Complex SELECT Clause",
     "href": "AIP/quality-rules/7810",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "Avoid Artifacts with a SELECT clause returning more than 9 columns, with a 'SELECT *' query or with a 'SELECT ALL' query for Artifacts. Such queries are considered complex. Changing threshold value requires the update of an internal configuration file, please contact CAST support to get guidance.",
     "output": "This report lists all Artifacts, except Views, with SELECT statements returning too many or all columns.\nIt provides the following information:\n- Artifact full name",

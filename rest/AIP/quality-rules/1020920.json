@@ -3,6 +3,7 @@
     "name": "Avoid disabling SSL verification in node-curl (TypeScript)",
     "href": "AIP/quality-rules/1020920",
     "critical": true,
+    "severity": 20,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The NodeJS server usually provides a digital certificate to prove its identity. Accepting all SSL certificates makes your application vulnerable to security attacks \n\nThis rule checks that SSL_VERIFYPEER is not disabled when using node-curl.",

@@ -3,6 +3,7 @@
     "name": "Avoid Programs having files declared as RECORD INPUT or RECORD UPDATE and not having  the ON EOF or ON ENDFILE statement (PL1)",
     "href": "AIP/quality-rules/1001152",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This rule searches all PL1 Main Procedures having RECORD FILES declared as INPUT or UPDATE and not having   \"ON EOF\" or \"ON ENDFILE\" for the same files.",
     "output": "The report lists all the PL1 Main Procedures having declared RECORD INPUT OR RECORD UPDATE and not having the ON EOF or ON ENDFILE.\n\nIt provides following information: \n- PL1 Main Procedures full name",

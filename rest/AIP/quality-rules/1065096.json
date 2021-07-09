@@ -3,6 +3,7 @@
     "name": "Avoid dynamic_cast to convert current object to its derived class from its constructor or destructor",
     "href": "AIP/quality-rules/1065096",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "description": "The rule will raise a violation when dynamic cast on an object of a class with a virtual function is used from within its constructor or destructor",
     "rationale": "During construction and destruction of an object, its final type may be different from that of the completely constructed object. The result of using an object\u2019s dynamic type in a constructor or destructor may not be consistent with developer expectations.",

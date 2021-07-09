@@ -3,6 +3,7 @@
     "name": "Ensure to override both equals() and hashCode()",
     "href": "AIP/quality-rules/7434",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "All Java objects are expected to obey a number of invariants related to equality. One of these invariants is that equal objects must have equal hashcodes.\nFor example, a class that is made persistent requires both hashCode() and equals() methods to be defined. This issue can prevent the software from running reliably, due to incorrect or unexpected comparison results. If the relevant code is reachable by an attacker, then this reliability problem might introduce a vulnerability.\n\nThis rule reports all classes that override\n- only boolean equals(Object) but not overriding hashCode()\nor \n- only int hashCode() but not overriding equals()",

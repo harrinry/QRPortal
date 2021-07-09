@@ -3,6 +3,7 @@
     "name": "Avoid Unescaped User-controlled Input attribute in Struts 1.x and 2.x",
     "href": "AIP/quality-rules/1042024",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Depending on the context in which the data appear, characters beyond the basic <, >, &, and \" that are HTML-encoded and those beyond <, >, &, \", and ' that are XML-encoded may take on meta-meaning. \nso the use of certain tag as <bean:write ... > (struts1.x) or <s:property...> (struts 2.x) can be used for Cross-Site Scripting (XSS) attacks.\n\nSome Web frameworks usually escape output by default. But we can also add some specific tags ( filter=\"true\" (Struts 1.x) or escapeHtml='true'( Struts 2.x)) to escape all strings output and to sanitize any user input before it is processed and/or rendered back to the browser\n\nThis rule will check if specific tags for escaping string are used to sanitize any user input. If not, it gives violation",

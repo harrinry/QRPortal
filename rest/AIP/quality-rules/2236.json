@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid use of standard SQL API",
     "href": "AIP/quality-rules/2236",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation",
     "description": "The rule reports all pages that reference a class, interface or method whose full qualified name begin with 'java.sql.' or 'javax.sql'\n\nStandard SQL APIs java.sql.* and javax.sql.* are symptoms of direct access to tables.\n  ",

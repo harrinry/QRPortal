@@ -3,6 +3,7 @@
     "name": "Avoid non serializable Entity beans",
     "href": "AIP/quality-rules/7710",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "This rule checks that Entity beans implement Serializable or they inherit from a serializable class. If not, it reports violation.",
     "output": "This report lists all entity bean implementation classes that are not serializable.\n\nIt provides the following information:\n     Class Full Name",

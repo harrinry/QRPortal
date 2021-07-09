@@ -4,6 +4,7 @@
         "name": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
         "href": "AIP/quality-rules/1043006",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -14,6 +15,7 @@
         "name": "Ensure you have enable ValidateInput in your controller",
         "href": "AIP/quality-rules/1043008",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -24,6 +26,7 @@
         "name": "Always enable HttpOnly when creating cookies to avoid Cross-site scripting attacks",
         "href": "AIP/quality-rules/1043010",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -34,6 +37,7 @@
         "name": "Always enable HttpOnly for cookies in Config file (ASP.NET)",
         "href": "AIP/quality-rules/1043012",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -44,6 +48,7 @@
         "name": "Ensure the validation request is always set to true in ASP.NET config file",
         "href": "AIP/quality-rules/1043014",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -54,6 +59,7 @@
         "name": "Ensure the request validation is always set to true",
         "href": "AIP/quality-rules/1043016",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -63,6 +69,7 @@
         "name": "Ensure you don't store password information in a configuration file or a properties file in plaintext as this will allow anyone who can read the file access to the resource.",
         "href": "AIP/quality-rules/1043018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -73,6 +80,7 @@
         "name": "Ensure you have reviewed the web config file and update the value of debug property to false",
         "href": "AIP/quality-rules/1043020",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -83,6 +91,7 @@
         "name": "Ensure using only secured cookie to avoid Cross-site scripting attacks (C#)",
         "href": "AIP/quality-rules/1043022",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -93,6 +102,7 @@
         "name": "Ensure you review the configuration file and update the RequireSSL to yes",
         "href": "AIP/quality-rules/1043024",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -103,6 +113,7 @@
         "name": "Ensure you have set EnableViewStateMac to avoid XSS attack",
         "href": "AIP/quality-rules/1043026",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -113,6 +124,7 @@
         "name": "Ensure you don't disable EnableViewStateMac in ASPX page to avoid XSS attack",
         "href": "AIP/quality-rules/1043028",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -122,6 +134,7 @@
         "name": "Ensure you have setup the X-Frame-Options in HTTP Response (ASP.NET)",
         "href": "AIP/quality-rules/1043030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -132,6 +145,7 @@
         "name": "Ensure you did not keep the tracing activated in your ASPX file to not expose sensitive information for the hackers",
         "href": "AIP/quality-rules/1043032",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -141,6 +155,7 @@
         "name": "Ensure you did not keep the tracing activated in your web config file to not expose sensitive information for the hackers",
         "href": "AIP/quality-rules/1043034",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -151,6 +166,7 @@
         "name": "Ensure the impersonation flag remains set to false (ASP.NET)",
         "href": "AIP/quality-rules/1043036",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -161,6 +177,7 @@
         "name": "Ensure you have reviewed the source code file and disable the tracing property",
         "href": "AIP/quality-rules/1043038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -171,6 +188,7 @@
         "name": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET MVC)",
         "href": "AIP/quality-rules/1043044",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -181,6 +199,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie path (C#)",
         "href": "AIP/quality-rules/1043046",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -191,6 +210,7 @@
         "name": "Ensure you do not allow access to all domain when defining cookie domain (C#)",
         "href": "AIP/quality-rules/1043048",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -201,6 +221,7 @@
         "name": "Ensure you set the time out to less than 5 min or less.",
         "href": "AIP/quality-rules/1043050",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -211,6 +232,7 @@
         "name": "Ensure retaining the settings of aspnet:UseLegacyFormsAuthenticationTicketCompatibility to True.",
         "href": "AIP/quality-rules/1043052",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -221,6 +243,7 @@
         "name": "Ensure you don't mention \"*\" use specific domain",
         "href": "AIP/quality-rules/1043054",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -231,6 +254,7 @@
         "name": "Ensure you set the EnableHeaderChecking flag to true in the configuration file",
         "href": "AIP/quality-rules/1043058",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -241,6 +265,7 @@
         "name": "Ensure you don't set the UseLegacyEncryption to True",
         "href": "AIP/quality-rules/1043060",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -251,6 +276,7 @@
         "name": "Ensure to limit users access only to authorized resources (.NET)",
         "href": "AIP/quality-rules/1043062",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -261,6 +287,7 @@
         "name": "Ensure you trust the source of your metadata by enabling HttpsGetEnalbled and HttpsGetUrl in configuration",
         "href": "AIP/quality-rules/1043074",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -270,6 +297,7 @@
         "name": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
         "href": "AIP/quality-rules/1043076",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -280,6 +308,7 @@
         "name": "Avoid debug binaries that include detailed debug information",
         "href": "AIP/quality-rules/1043078",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -290,6 +319,7 @@
         "name": "Avoid disabling OR not defining encryption behavior for encryption when connecting with Database",
         "href": "AIP/quality-rules/1043080",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -299,6 +329,7 @@
         "name": "Avoid client provided dictionaries to have high request sizes",
         "href": "AIP/quality-rules/1043082",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET"
         ]
@@ -308,6 +339,7 @@
         "name": "Avoid XML schemas with unbounded occurrences",
         "href": "AIP/quality-rules/1043084",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -318,6 +350,7 @@
         "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
         "href": "AIP/quality-rules/1101958",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",
@@ -329,6 +362,7 @@
         "name": "When using compound indexes, avoid having different index ordering in collection access",
         "href": "AIP/quality-rules/1101964",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",
@@ -340,6 +374,7 @@
         "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection",
         "href": "AIP/quality-rules/1101968",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",
@@ -351,6 +386,7 @@
         "name": "Avoid having multiple Artifacts inserting data on the same NoSQL Collection",
         "href": "AIP/quality-rules/1101970",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",
@@ -362,6 +398,7 @@
         "name": "Avoid having multiple artifacts deleting data on the same NoSQL collection",
         "href": "AIP/quality-rules/1101972",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "ASP.NET",
             "C#",

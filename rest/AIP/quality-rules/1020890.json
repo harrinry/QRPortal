@@ -3,6 +3,7 @@
     "name": "Ensure that CSRF Protection is enabled when using express (TypeScript)",
     "href": "AIP/quality-rules/1020890",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "CSRF attacks can be prevented by embedding additional authentication data into requests that allow the web application to detect requests from unauthorized locations.\n\nThis rule checks that a CSRF protection module such as csurf or express-csrf is used.",

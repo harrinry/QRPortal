@@ -3,6 +3,7 @@
     "name": "Avoid having multiple routes for the same path with Node.js Express App (TypeScript)",
     "href": "AIP/quality-rules/1020898",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When designing the routing system of the server, you have to make sure you have only one routing handler per path. The duplicating handler will affect the global performance of the server creating latency issues.\n\nThis rule will check if a routing call is called within a loop and/or there are multiple routing calls on the same path.",

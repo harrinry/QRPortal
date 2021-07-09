@@ -3,6 +3,7 @@
     "name": "Avoid LDAP injection through API requests",
     "href": "AIP/quality-rules/8492",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects paths from API requests down to LDAP methods which are open vulnerabilities to LDAP injection flaws (LDAP: Lightweight Directory Access Protocol).",

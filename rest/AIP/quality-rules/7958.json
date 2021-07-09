@@ -3,6 +3,7 @@
     "name": "Avoid orphaned synonyms in PL/SQL context",
     "href": "AIP/quality-rules/7958",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "description": "This metric identifies synonyms that are defined on objects which no longer exist. This is syntactically possible.\nIndeed through a series of CREATE synonym statements, a synonym could be defined and in fact refer to itself",
     "output": "This report lists all synonyms that are defined on objects which no longer exist. It provides the following information:\n\nthe  list of each synonym that match the citerion. The name of each synonym that is part of  the  full name,",

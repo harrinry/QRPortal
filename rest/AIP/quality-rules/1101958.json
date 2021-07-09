@@ -3,6 +3,7 @@
     "name": "Avoid artifacts having db.collection.ensureIndex() to create new indexes",
     "href": "AIP/quality-rules/1101958",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Number of violation patterns",
     "description": "Be careful when using deprecated methods. The deprecation period should be used to smoothly make the transition. The rule raises an issue when using MongoDB collections with ensureIndex.",

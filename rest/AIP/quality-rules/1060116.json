@@ -3,6 +3,7 @@
     "name": "Always avoid http redirects to unknown or untrusted URLs",
     "href": "AIP/quality-rules/1060116",
     "critical": false,
+    "severity": 30,
     "maxWeight": 5,
     "description": "The rule will raise a violation when it finds web HTTP requests which are not defined as part of whitelist in the rule.\n\nThe rule can be customised by adding the Whitelist URLs in the violations metric.",
     "output": "http requests that are not part of a defined allowed address. The following information will be provided:\n- HTTP request with violation",

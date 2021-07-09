@@ -3,6 +3,7 @@
     "name": "Avoid hiding static Methods",
     "href": "AIP/quality-rules/4592",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Hiding Static Methods is not allowed. This Rule retrieves all static methods that are redefined in subclasses i.e. \"implicitly hidden\". \n\nA Static Method MyMethod of Class MySuperClass is \"implicitly hidden\" in Subclass MySubClass if MySubClass contains a similar declaration of MyMethod (i.e. same signature).\n\nThe \"createUI\" method of the class derives from  \u201cjavax.swing.plaf.ComponentUI;\u201d is not considered by this rule.",

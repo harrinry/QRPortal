@@ -3,6 +3,7 @@
     "name": "Avoid SQL injection in dynamic SQL for Oracle",
     "href": "AIP/quality-rules/1101096",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule identifies potential risky string interpolations used to parameterize SQL dynamic queries.\n\nWe are looking for input parameters of stored procedures of functions which are concatenated directly in dynamic SQLs.",

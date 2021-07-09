@@ -3,6 +3,7 @@
     "name": "Avoid creating cookie without setting httpOnly option (JEE)",
     "href": "AIP/quality-rules/1039026",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. \nThis is why all major browsers support the HttpOnly cookie property that prevents client-side scripts from accessing the cookie. \nWhen HttpOnly is not enabled, attackers may more easily access user cookies.",

@@ -3,6 +3,7 @@
     "name": "Avoid SQL queries on XXL tables that no index can support",
     "href": "AIP/quality-rules/7904",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "XXL Table name",
     "description": "This metric retrieves the artifacts containing at least one SQL query on an XXL table not using the XXL table's indexes.\nAn SQL Query is using table's indexes if all the  following conditions are true:\n\n- At least one index is defined for each table participating in the from list\n\n- Queries must reference left-most columns of the index key\n\n- Data matching where clause criterias are highly selective\n\nwhere  selectivity = 1/density\n\nlow number = high selectivity = low density\nhigh  number = low selectivity = high density\n \nselectivity specify percentage of rows that match where clause criterias. \n\nLow number is linked to a high selectivity.\nIf selectivity is 100%, all values of the index key are differents and index is useful (best case)\nhigh number is linked to low selectivity:\nif density is 100%, all values are identical and index is inefficient.\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.\n\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",

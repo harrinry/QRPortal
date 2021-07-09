@@ -3,6 +3,7 @@
     "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
     "href": "AIP/quality-rules/7520",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This Quality Rule retrieves all ABAP artifacts which contain Open SQL statements or READ statements and that do not check the value of the return code SY-SUBRC. However, queries containing the COUNT function in their SELECT clause are not considered as a violation.\nThe rule takes in account the following cases:\n- Use of a temporary variable\n\nselect date_e into zdate_e \nfrom zkopcor\nwhere date_e lt p_run and p_doc eq 'TT'.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nselect date_e into zdate_e \nfrom zkopcor\nwhere date_e lt p_run and p_doc eq 'TT'.\n\nWRITE: / Do some testing.\n\nIF SY-SUBRC NE 0.\n    list of statements\nEND-IF.\n    ",

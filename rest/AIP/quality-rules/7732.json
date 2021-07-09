@@ -3,6 +3,7 @@
     "name": "Avoid non validated inputs in JSP files that use JSF",
     "href": "AIP/quality-rules/7732",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "JSF supports validators, which are responsible for making sure that the user enters an acceptable value. Each input control must be associated with one or more validators.\n\n\nThis rule checks if the input field in JSP files using JSF (i.e. reference the JSF core taglib) has been validated as expected.\n\nFollowing validation ways supported by JSF are considered by this rule: \nStandard validation, Custom validation, Validation in the backing bean.\n\nThe validation can be done also by using the annotation @FacesValidator in the class during runtime\n\n\n\nAll other ways that consist of making the validation in the application (in the method called when a button is selected like createEmail method in the Example section) is not considered. In this case, a manual check will be needed to validate if the validation is made or not in this way.",
     "output": "This report lists all input that are not validated. It provides the following information:\n  JSP Input Field Full Name",

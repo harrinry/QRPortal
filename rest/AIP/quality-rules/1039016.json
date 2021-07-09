@@ -3,6 +3,7 @@
     "name": "Avoid Unvalidated URL Redirect",
     "href": "AIP/quality-rules/1039016",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Unvalidated redirects occur when an application redirects a user to a destination URL specified by a user supplied parameter that is not validated. Such vulnerabilities can be used to facilitate phishing attacks. \n\nScenario \n1. A user is tricked into visiting the malicious URL: http://website.com/login?redirect=http://evil.vvebsite.com/fake/login \n2. The user is redirected to a fake login page that looks like a site they trust. (http://evil.vvebsite.com/fake/login) \n3. The user enters his credentials. \n4. The evil site steals the user's credentials and redirects him to the original website. \n\nThis attack is plausible because most users don't double check the URL after the redirection. Also, redirection to an authentication page is very common.",

@@ -3,6 +3,7 @@
     "name": "All Read and Write statements in Modules must use the return code IOSTAT (FORTRAN)",
     "href": "AIP/quality-rules/1002214",
     "critical": false,
+    "severity": 10,
     "maxWeight": 1,
     "associatedValueName": "Number of Read and Writes not using IOSTAT",
     "description": "All the read, write and open statements are counted and compared to the number of IOSTAT statements used in these same operations. Whenever these numbers are different for an artifact, the artifact is considered being in violation.\n\nWrite statement in the program that writes to the standard output is not counted towards violation.",

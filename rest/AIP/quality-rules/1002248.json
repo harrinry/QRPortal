@@ -3,6 +3,7 @@
     "name": "Avoid untested Return Code variables after ALLOCATE in Subroutines (FORTRAN)",
     "href": "AIP/quality-rules/1002248",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of untested return code after allocate or deallocate",
     "description": "The STAT usage in a allocate or deallocate operation are causing the analysis to create specific variables where the return code is stored in. Whenever this variable is not used in any IF construct , the artifact is reported as a violation. The proper order in which this needs to take place is not taken into account; only the artifacts that have no testing of STAT variables are captured by this diagnostic.",

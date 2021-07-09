@@ -3,6 +3,7 @@
     "name": "Avoid using delete on arrays",
     "href": "AIP/quality-rules/1020054",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "The delete operator can be used to remove a property from any object. Arrays are objects, so the delete operator can be used here too, but if it is, a hole will be left in the array because the indexes/keys won't be shifted to reflect the deletion.",

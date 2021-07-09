@@ -3,6 +3,7 @@
     "name": "Avoid weak encryption algorithm (Swift)",
     "href": "AIP/quality-rules/1055038",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using the CCCrypt function, you must provide an encryption algorithm. Antiquated encryption algorithms, especially those that use keys of insufficient size, no longer provide sufficient protection for use with sensitive data, as technological advancements have made it computationally feasible to obtain small encryption keys through brute-force in a reasonable amount of time.",

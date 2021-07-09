@@ -3,6 +3,7 @@
     "name": "Member functions shall not return non-const handles to class-data.",
     "href": "AIP/quality-rules/1065088",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "description": "This rule will raise a violation when member function returns non-const handles to class data",
     "rationale": "By implementing class interfaces with member functions the implementation retains more control over how the object state can be modified and helps to allow a class to be maintained without affecting clients. Returning a handle to class-data allows for clients to modify the state of the object without using any interfaces.",

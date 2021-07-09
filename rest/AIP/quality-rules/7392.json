@@ -3,6 +3,7 @@
     "name": "Avoid having multiple artifacts deleting data on the same SQL table",
     "href": "AIP/quality-rules/7392",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of potential ways to delete the SQL Table",
     "description": "This metric detects tables having too many sources of delete data deletion (too many artifacts deleting them).  It retrieves table having more than X artifacts deleting these tables, where X a configurable parameter.",

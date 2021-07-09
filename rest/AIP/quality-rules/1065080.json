@@ -3,6 +3,7 @@
     "name": "Avoid using C-style and functional notation casts (C++)",
     "href": "AIP/quality-rules/1065080",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule will raise a violation when C-style casts or functional casts are used\n\nException:\nA C-style cast to void may be used to signify that the return value for a non-void function call is being ignored",
     "output": "Information will be provided on:\n1. Methods where a violation has occurred\n2. Bookmarks for violation occurrences found in the source code",

@@ -3,6 +3,7 @@
     "name": "Avoid creating cookie with overly broad path (Node.js)",
     "href": "AIP/quality-rules/1020740",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "The cookies with an overly broad path, such as the root context path (\"/\"), can be accessed by all web applications on the same domain name. A cookie with sensitive data, but with too broad a path, could hence be read and tampered by a less secure and untrusted application.",

@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid large number of String concatenation (.NET)",
     "href": "AIP/quality-rules/7194",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Number of times the '+=' operator or Concat is called",
     "description": "All artifacts should not call more than X times the += operator or Concat Method\n\nLimitation: This does not apply to C# code contained directly into an ASP.net page (with <% tags)",

@@ -3,6 +3,7 @@
     "name": "Avoid Programs having FIXED without BIN or BINARY or DEC or DECIMAL.The character \"(\"  is mandatory. (PL1)",
     "href": "AIP/quality-rules/1001176",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "This rule searches all the PL1 Main Procedures (Programs), PL1 Functions and PL1 Procedures having the DCL statements containing  the word FIXED and not containing  the word BIN or BINARY or DEC or DECIMAL nor an open parentheses for every line of code.\nIf the result is greater 0 then the quality rule is listed as a violation.",
     "output": "The report lists all the PL1 Main Procedures , PL1 Functions and PL1 Procedures having the DCL statements containing  the word FIXED and not containing  the word BIN or BINARY or DEC or DECIMAL nor an open parentheses for every line of code.\n\nIt provides following information: \n-  PL1 Main Procedure , PL1 Function and PL1 Procedure full name",

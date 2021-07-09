@@ -3,6 +3,7 @@
     "name": "Avoid using late binding",
     "href": "AIP/quality-rules/2584",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "Avoid using late binding.\n\nLate binding is done when a call to CreateObject is done AND that the variables are of type Object/Variant.\nWhenever  a variable is typed during the definition (dim var as MyObject) it becomes early binding.",
     "output": "This report lists all uses of late binding",

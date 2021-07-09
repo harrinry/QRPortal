@@ -3,6 +3,7 @@
     "name": "Avoid move constructor and move assignment operator to exit with an exception",
     "href": "AIP/quality-rules/1065100",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "The rule will raise a violation when a move constructor or move assignment operator does not declare itself noexcept",
     "rationale": "Move constructor and move assignment operator are intended to be noexcept. If they throw exceptions, strong exception safety can not be guaranteed, because the original type values could be already modified or partially modified.",

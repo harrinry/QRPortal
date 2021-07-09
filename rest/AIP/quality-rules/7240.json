@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Struts Action Classes should only call Business Classes",
     "href": "AIP/quality-rules/7240",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "Find all Action Classes (inherit from org.apache.struts.action.Action class) that call other classes than Business Classes specified by a parameter.",
     "output": "This report lists all call from Action Classes to non Business packages (X)\nIt provides the following information:\n Action method full name",

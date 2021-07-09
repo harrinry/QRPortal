@@ -3,6 +3,7 @@
     "name": "Avoid SQL injection",
     "href": "AIP/quality-rules/7742",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target SQL execution method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is sent to SQL database without prior validation and sanitization.",

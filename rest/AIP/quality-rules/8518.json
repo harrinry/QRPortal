@@ -3,6 +3,7 @@
     "name": "Avoid Regular expression injection",
     "href": "AIP/quality-rules/8518",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "This metric uses CAST data-flow engine to detect a call path where input data from the user is sent to a Regular expression without prior validation and sanitization.",

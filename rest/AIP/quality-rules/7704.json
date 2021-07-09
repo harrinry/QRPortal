@@ -3,6 +3,7 @@
     "name": "All static fields in the enterprise bean class should be declared as final",
     "href": "AIP/quality-rules/7704",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Non final static fields",
     "description": "An enterprise bean must not use read/write static fields. Using read-only static fields is allowed. Therefore, it is recommended that all static fields in the enterprise bean class be declared as final.\n\n\nThis rule reports all enterprise beans (session, message and entity) that have non final static fields even if these static fields are held by a class in its inheritance tree.",

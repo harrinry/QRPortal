@@ -3,6 +3,7 @@
     "name": "Avoid directly managing the connection to the database by using DriverManager",
     "href": "AIP/quality-rules/7638",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "description": "The use of the DriverManager class to directly manage the connection to the database violates the JEE restriction against the direct management of connections. \n\nThis rules checks if any method calling to java.sql.DriverManager.getConnection().",
     "output": "This report lists all methods that call java.sql.DriverManager.getConnection() method.\nIt provides the following information: Method Full Name",

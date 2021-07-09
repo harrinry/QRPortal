@@ -3,6 +3,7 @@
     "name": "Avoid having SQL Records without a naming convention (EGL)",
     "href": "AIP/quality-rules/1005034",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "This rules searches for all the SQL Record name not adhering to a pattern. The parttern will be provided as parameter of the rule. \nThis rule searches the SQL record names with the below pattern, \n 4 parameters are used , which can be configured by the user , \nFirst Character - Default value - R \nFirst Character - Default Value - J \nFirst Character - Default Value - T \nSecond Character - Default value = _ \n\nThis rule will violate the SQL Record object if the SQL record name is not starting with First Character and Second Character",
     "output": "This report provides the following information: SQL RECORD full name",

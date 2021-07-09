@@ -3,6 +3,7 @@
     "name": "Avoid thread creation for application running on application server",
     "href": "AIP/quality-rules/7728",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "This rule reports violation for all methods that \ncall one of the following methods:\n  - <class full name>.start() where <class full name> inherit from java.lang.Thread\n  - java.lang.Thread.start()\nor reference one of the following interfaces or an implementation of these:\n  - java.util.concurrent.Executor\n  - java.util.concurrent.ExecutorService\n\nThis rule is applied only for EJB based application",
     "output": "This Quality Rule reports all methods that create threads. It provides the following information: Method or Constructor Full Name",

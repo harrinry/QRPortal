@@ -3,6 +3,7 @@
     "name": "Avoid Using ControllerAdvice And HandlerExceptionResolver simultaneously",
     "href": "AIP/quality-rules/1040032",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "To track all of the exceptions in Spring, we\u2019ll be making use of a global exception handler. This receives uncaught exceptions for your whole application, not just an individual controller. Spring offers two main approaches:\n\n- ControllerAdvice\n- HandlerExceptionResolver\n\nBut you cannot mix both approaches in the same application. Most applications use one approach, and using two may result in unexpected behavior.\n\n\nThis rule will check if ControllerAdvice and HandlerExceptionResolver are not used simultaneously. If not it gives the violation",

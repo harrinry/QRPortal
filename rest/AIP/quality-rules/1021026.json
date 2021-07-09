@@ -3,6 +3,7 @@
     "name": "Avoid leaving open file resources (Python)",
     "href": "AIP/quality-rules/1021026",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all Python artifacts that don't guarantee unequivocal file closing. This requires correct handling of potential exceptions arising from file manipulation.\nThe preferred way (from Python 2.5) is opening files using the with statement. Otherwise file manipulation has to be performed inside try-except blocks and file closing has to be assured in the finally block.",

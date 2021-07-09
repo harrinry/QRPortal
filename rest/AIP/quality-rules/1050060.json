@@ -3,6 +3,7 @@
     "name": "Avoid using multiple break statement in 'for' loops (Objective-C)",
     "href": "AIP/quality-rules/1050060",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for functions that contain a 'break' statement in a 'for' loop. 'break' statements located in nested loops will also be reported as a violation to this rule.\n\nNote: Range-based for loops are not considered because there is no stop condition in the loop definition.",

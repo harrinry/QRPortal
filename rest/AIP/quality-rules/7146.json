@@ -3,6 +3,7 @@
     "name": "Always have JSP pages referencing Java Objects associated to JEE Scoped Bean",
     "href": "AIP/quality-rules/7146",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Java object name",
     "description": "In the context of Struts implementation, the JSP pages must reference ONLY Java objects that belong to the bean scope or Java objects of a class belonging itself to the same scope\n\nThe scope is an attribute of the bean indicating the context of objects usage.\nIn struts-config, the scope refers to where to create/find ActionForm objects.\n\nAll JSP pages that refers to Java methods, field of a class or the class itself that is not associated to a scoped attribute will be reported as violation.",

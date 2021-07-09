@@ -3,6 +3,7 @@
     "name": "Avoid too many Indexes on one Table",
     "href": "AIP/quality-rules/7348",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of indexes of the table",
     "description": "This rule will report a violation where the number of indexes on a table exceeds X (where X is configurable parameter). Note that the rule will consider Primary Keys as indexes since we know that as per the RDBMS, there is a default index created for each Primary Key.",

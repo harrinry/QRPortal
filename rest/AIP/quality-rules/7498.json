@@ -3,6 +3,7 @@
     "name": "Avoid Incorrect implementation of getters and setters for Collection Type",
     "href": "AIP/quality-rules/7498",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all getters that don't return the same collection instance as it was assigned by Hibernate or JPA to the setter method: any modification of the setter parameter or the attribute returned by the getter will be detected and reported.\nIn setter method, a modification occur when the class attribute is not initialized with the parameter directly. And in the getter when the return value is not the class attribute itself. To perform this check, any call to a method or a constructor in the getter or setter will be considered as a violation.\nThis metric take into account the case where getter and setter are implemented on an inherited class of the persistent class (can happen when inherited fields are persistent)",

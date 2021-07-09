@@ -3,6 +3,7 @@
     "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
     "href": "AIP/quality-rules/7428",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Name of the table having a misused composite index",
     "description": "This metric retrieves all client-server artifacts that contain an SQL query with a WHERE clause not using the first column of composite index (multiple column base index).\n\nThe value of the metric is number of client-server artifacts that contain an SQL query not using the first column of a composite index divided by the number of client-server artifacts using a composite index.\nAn artifacts using a composite index means here artifacts containing a query that uses at least one column of a compostite index.",

@@ -3,6 +3,7 @@
     "name": "Avoid using ABAP command OPEN DATASET with the FILTER addition",
     "href": "AIP/quality-rules/8552",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "description": "If the command OPEN DATASET is used with the FILTER option, the value passed to FILTER as well as the file name itself are executed as part of an OS command.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - OPEN DATASET with FILTER option",

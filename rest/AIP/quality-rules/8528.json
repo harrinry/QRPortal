@@ -3,6 +3,7 @@
     "name": "Avoid deserialization injection through API requests",
     "href": "AIP/quality-rules/8528",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "Using CAST data-flow engine, this quality rule detects execution paths from API requests down to deserialization methods, which are open vulnerabilities to injection flaws.\n\nThe list of deserialization methods car be extended thanks to a user configuration (Deserialize.write)",
     "output": "List all methods that make resource calls forged by user input\n\nIt provides the following information:\n - Method full name\n - Call stack from API request down to the target deserialization method",

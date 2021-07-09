@@ -3,6 +3,7 @@
     "name": "Siebel eScript: Avoid Functions with High Cyclomatic Complexity",
     "href": "AIP/quality-rules/1520180",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Review the design of the Artifact to reduce number of independent paths. E.g.: Reduce the number of conditional statements.",
     "description": "Retrieves all Functions having a Cyclomatic Complexity greater than the specified threshold . Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.\nDefault value for \"Siebel: Max CC\" is 15.",

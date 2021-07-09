@@ -3,6 +3,7 @@
     "name": "Never use SQL queries with a cartesian product (SQL)",
     "href": "AIP/quality-rules/1101000",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "List all SQL Artifacts which contain a query that has a cartesian join, i.e; that does not explicitly state a join condition among the tables\nA cartesian join is found if, for any of the table in the from clause, no column of the table is found in a join (either in the from or where clause).",

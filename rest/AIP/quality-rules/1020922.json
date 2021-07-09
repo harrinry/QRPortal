@@ -3,6 +3,7 @@
     "name": "Avoid bypassing self-signed ssl certificate with Node.js (TypeScript)",
     "href": "AIP/quality-rules/1020922",
     "critical": true,
+    "severity": 20,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "In Node.js, allowing node server to accept self-signed certificates can lead to an secure behaviour.\n\nThis rule checks that process.env.NODE_TLS_REJECT_UNAUTHORIZED is not set to 0 to ensure that the server cannot accept self-signed certificates",

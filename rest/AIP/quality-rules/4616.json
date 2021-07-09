@@ -3,6 +3,7 @@
     "name": "'super.finalize()' should be invoked when overriding finalize() method",
     "href": "AIP/quality-rules/4616",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "When overriding the 'finalize()' Method, a call to 'super.finalize()' is necessary to ensure disposing system resources.\n\nThis rule report a violation when a method overriding 'finalize()' and not calling 'super.finalize()'.",
     "output": "This report lists all Methods overriding 'finalize()' and not calling 'super.finalize()'. It provides the following information: Method full name",

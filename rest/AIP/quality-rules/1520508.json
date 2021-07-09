@@ -3,6 +3,7 @@
     "name": "SiebelReview: Nested MVFs",
     "href": "AIP/quality-rules/1520508",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "Regardless of whether the MVF in the child BusComp references an MVL with a primary, secondary queries will always be generated against the child BusComp.\nThis can cause performance issues, particularly when the MVF is exposed on a list view.",
     "output": "This rule reports MVF having a destination field that is also an MVF in the child BusComp",

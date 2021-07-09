@@ -3,6 +3,7 @@
     "name": "Avoid PLI Main procedures using variables with ALLOCATE and without FREE  (PL1)",
     "href": "AIP/quality-rules/1001104",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule searches for all the PLI Main Procedures having variables being allocated, but not de-allocated using the FREE statement. The diagnostic will report only the mis-behavior on the artifact level in terms of number of variables not de-allocated.",
     "output": "The report lists all the PLI Main Procedures using variables with ALLOCATE and without FREE.\n\nIt provides following information: \n-  PLI Main Procedure full name",

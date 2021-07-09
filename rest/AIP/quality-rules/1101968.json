@@ -3,6 +3,7 @@
     "name": "Avoid having multiple Artifacts updating data on the same NoSQL Collection",
     "href": "AIP/quality-rules/1101968",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects tables having too many ways to insert data into them. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.\n\nLimitation: In the case where an artifact does different actions on data (such as update, delete or insert) and the violation is triggered then the bookmarks of the other actions will be present in the dashboard.",

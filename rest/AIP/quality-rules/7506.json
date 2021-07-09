@@ -3,6 +3,7 @@
     "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
     "href": "AIP/quality-rules/7506",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "This rule reports all hibernate and/or JPA persistent classes associated with a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable and @IdClass) and that don't implement equals() and hashCode().",
     "output": "List all Hibernate and/or JPA persistent classes associated to a component (component and composite-element) declared in the mapping file or through annotation (@Embeddable/@IdClass) and that do not implement equals() and hashCode().\n\nIt provides the following information:\n- Class Full Name",

@@ -3,6 +3,7 @@
     "name": "Avoid Missing Form Bean in Struts 1.x",
     "href": "AIP/quality-rules/1042018",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "A Struts action that points to a nonexistent form-bean will not be mapped correctly.\n\nStruts uses form-bean entries to map HTML forms to actions. If the name attribute in an <action> tag does not correspond with the name of a form-bean, the action cannot be mapped and indicates either a superfluous definition or a typographical error.\n\n\nThis rule will check that all form-bean specified in action definition are also specified under <form-beans> section. If not it gives the violation.\n\nThis check is done when used used struts version is 1.x",

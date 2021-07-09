@@ -3,6 +3,7 @@
     "name": "Persistent classes should implement GetHashCode() and Equals()",
     "href": "AIP/quality-rules/8156",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all persistent classes that don't implement Object.GetHashCode or Object.Equals directly (class that is referenced in the mapping file) or in an inherited class that holds persistent fields (this is the case when a persistent class makes persistent inherited fields).",

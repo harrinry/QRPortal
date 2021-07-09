@@ -3,6 +3,7 @@
     "name": "Never use SQL queries with a cartesian product on XXL Tables",
     "href": "AIP/quality-rules/7660",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "XXL Table Name",
     "description": "List all SQL Artifacts except tables having a query on XXL tables that has a cartesian join, i.e; that does not explicitly state a join condition among the tables\nA cartesian join is found if, for any of the table in the from clause, no column of the table is found in a join (either in the from or where clause).\nXXL tables are extremely large tables which contain a huge amount of data. The threshold that determines when a table is considered to contain a huge amount of data can be configured by the user.",

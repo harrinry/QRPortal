@@ -3,6 +3,7 @@
     "name": "Avoid using unsecured cookie",
     "href": "AIP/quality-rules/8240",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from the \"setSecure\" call to the \"addCookie\" target",
     "description": "This rule will check in the source code if the 'Secure' attribute for sensitive cookies in HTTPS sessions is not set. If not enabled it could cause the user agent to send those cookies in plain text over an HTTP session. \nUsing the method 'setSecure' ensures that the session cookie is not visible to an attacker.\nLimitation: in .Net environment, this rule does not check if the key 'requireSSL' exists in web.config file.",

@@ -3,6 +3,7 @@
     "name": "Avoid using \"ng-repeat\" loop without \"track by\" option",
     "href": "AIP/quality-rules/1020550",
     "critical": true,
+    "severity": 30,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "In AngularJS 1.2 a new \"track by\" clause was made to the syntax of \"ng-repeat\". It allows you to specify your own key for \"ng-repeat\" to identify objects by, instead of just generating unique IDs. ngRepeat will not recreate the DOM elements and reuse them.",

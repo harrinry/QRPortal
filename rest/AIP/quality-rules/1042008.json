@@ -3,6 +3,7 @@
     "name": "Avoid using ActionForward with untrusted data source to prevent file path disclosure",
     "href": "AIP/quality-rules/1042008",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "User input using Action forward with Untrusted data/Redirect pathw could allow an attacker to download application binaries or read files within protected directories.\n\n\n\nThis rule will check if ActionForward is used with safe argument. If not it gives the violation.\n\nChecks are limited to User input path in server side application for return url",

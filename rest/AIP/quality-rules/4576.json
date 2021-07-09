@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Provide accessors to Private Fields",
     "href": "AIP/quality-rules/4576",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "Each private field should have a setter and a getter except final static fields. \n\n\nAccessors are identified using the following java bean naming conventions: \"set\" and \"get\" followed by the name of the field with the first char in uppercase (case sensitive). For Boolean fields, the getter can also be named \"is\" followed by the name of the field. \n\nMethods not using this naming convention are not considered as accessors.",
     "output": "This report lists all Private Fields that do not have a setter and a getter. It provides the following information: Field full name",

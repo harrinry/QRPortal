@@ -3,6 +3,7 @@
     "name": "Avoid using RSA Cryptographic algorithms without OAEP (Optimal Asymmetric Encryption Padding)",
     "href": "AIP/quality-rules/1022002",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "The aim of this rule is to report violation when RSA encryption algorithm is used without Padding. This can be identified when literal value starting with RSA/NONE is found in source code",

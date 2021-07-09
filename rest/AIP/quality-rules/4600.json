@@ -3,6 +3,7 @@
     "name": "Avoid using Exit and Halt Methods on a Web/Application Server",
     "href": "AIP/quality-rules/4600",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "Java artifacts should not use 'java.System.exit()' or 'Runtime.getRuntime().exit(0)' or 'Runtime.getRuntime().halt(0)'  for application deployed on a Web Server or an Application Server (when web.xml and/or ejb-jar.xml file are present)\n\n.",
     "output": "This report lists  Java methods call or using 'java.System.exit()', 'Runtime.getRuntime().exit(0)' or 'Runtime.getRuntime().halt(0)'\nIt provides the following information:\n\n - method full name",

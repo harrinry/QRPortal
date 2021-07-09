@@ -3,6 +3,7 @@
     "name": "Avoid jump statements in finally ",
     "href": "AIP/quality-rules/1020800",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports the code when a jump statment (break, continue, return ,throw)  would force control flow to leave a finally block. Using jump statements from a finally block suppresses the propagation of any unhandled Throwable which was thrown in the try or catch block.",

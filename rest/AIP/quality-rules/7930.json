@@ -3,6 +3,7 @@
     "name": "Avoid redeclaring and overriding Methods with different default parameter values",
     "href": "AIP/quality-rules/7930",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "associatedValueName": "Overridden method",
     "description": "This rule searches for C++ methods redeclaring and overriding methods that assign different default parameter values. \n\nNote: the same parameters expressed differently (such as 2 +2 instead of 4) are considered as different.",

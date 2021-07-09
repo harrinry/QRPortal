@@ -3,6 +3,7 @@
     "name": "Avoid using RSA Cryptographic algorithms without OAEP (Optimal Asymmetric Encryption Padding) (Kotlin)",
     "href": "AIP/quality-rules/1030014",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "The aim of this rule is to report violations when RSA encryption algorithm is used without Padding. This can be identified when literal value starting with RSA/NONE is found in source code",
     "rationale": "Optimal Asymmetric Encryption Padding schemes are often used with cryptographic algorithms to make the plaintext less predictable and complicate attack efforts. The OAEP scheme is often used with RSA to nullify the impact of predictable common text.",

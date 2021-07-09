@@ -3,6 +3,7 @@
     "name": "Avoid second order SQL injection",
     "href": "AIP/quality-rules/8420",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target SQL execution method",
     "description": "SQL injection (second order) - The application stores data in a database. At a later time, the data is subsequently read back into the application and included in another SQL query without prior validation and sanitization.",

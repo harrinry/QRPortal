@@ -3,6 +3,7 @@
     "name": "Avoid using oninput in body containing input autofocus",
     "href": "AIP/quality-rules/1020046",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This is a passive JavaScript execution via <BODY> and oninput attribute. \nAll browsers besides Internet Explorer 9 support the \"oninput\" event handler around form elements like the given <INPUT>. The event works for the form elements itself, the surrounding form and <BODY> as well as <HTML> tags.",

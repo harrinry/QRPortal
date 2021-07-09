@@ -3,6 +3,7 @@
     "name": "Avoid using deprecated SSL protocols to secure connection",
     "href": "AIP/quality-rules/1039002",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule reports a violation when an SSLContext is created with an insecure protocol (ie: a protocol different from \"TLSv1.2\" or \"DTLSv1.2\").",

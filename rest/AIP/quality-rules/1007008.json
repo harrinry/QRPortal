@@ -3,6 +3,7 @@
     "name": "Avoid JavaScript Functions with High Fan-In (PHP)",
     "href": "AIP/quality-rules/1007008",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Fan-In",
     "description": "This rule searches for all JavaScript Functions with High Fan-In.\n         The Fan-in of JavaScript Function is the number of other Artifacts that are referencing it.\n         When computing the Fan-In of an Artifact, multiple accesses to it from the same Artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",

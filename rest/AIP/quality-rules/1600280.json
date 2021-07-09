@@ -3,6 +3,7 @@
     "name": "Avoid placing PeopleCode into Fields, prefer Component Level (PeopleSoft)",
     "href": "AIP/quality-rules/1600280",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of %Component or %CompIntfcName",
     "description": "This quality rule reports RecordField Event referencing the system variable %Component or %CompIntfcName.\nThe latter returns the name of the Component Interface, if the currently executing PeopleCode program is being run from a Component Interface.\nThis is a sign the code need to be moved to the parent Component.",

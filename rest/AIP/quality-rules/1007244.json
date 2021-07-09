@@ -3,6 +3,7 @@
     "name": "Avoid cross-site scripting - Improper Neutralization of script-related HTML tags in a web page (PHP)",
     "href": "AIP/quality-rules/1007244",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Reasoning",
     "description": "A reflected cross-site scripting (XSS) vulnerability occurs when user input is embedded unsanitized into the HTML response page of the web application. It allows an attacker to inject arbitrary HTML or JavaScript code into the response page of a tampered request. Usually, this attack is performed by crafting a malicious link that is sent to a victim. When opened, the attacker's JavaScript payload within the link is reflected by the application and executed in the victim's browser in the context of the web application's domain. This enables the attacker to perform phishing attacks or to steal cookies associated with the domain.",

@@ -3,6 +3,7 @@
     "name": "Avoid Artifacts with a Complex SELECT Clause (EGL)",
     "href": "AIP/quality-rules/1005062",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "This rule searches for all the artifacts having SQL SELECT statement clause returning more than 9 columns. Such queries are considered complex. \nChanging threshold value requires a Metric Assistant configuration update.",
     "output": "This report provides the following information: Function full name, Count of Complex Select Clauses",

@@ -3,6 +3,7 @@
     "name": "Avoid Superclass knowing Subclass (Swift)",
     "href": "AIP/quality-rules/1055026",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Referenced Class or Interface full name",
     "description": "A violation is raised when a Superclass directly knows about its Subclasses. This happens when a Superclass directly calls a Subclass-method, uses a Subclass-attribute or refers to the name of the Subclass. Currently the rule will only check for references. This rule is compliant with CISQ ASCRM-RLB-14 recommendation.",

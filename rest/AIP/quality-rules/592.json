@@ -3,6 +3,7 @@
     "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
     "href": "AIP/quality-rules/592",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ classes using the \"new\" operator to allocate instances but that do not define a copy constructor.",

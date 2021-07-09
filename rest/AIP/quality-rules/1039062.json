@@ -3,6 +3,7 @@
     "name": "Always implement readObject() to prevent untrusted deserialization when loading from ObjectInputStream",
     "href": "AIP/quality-rules/1039062",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the deserialization class has implemented the readObject() function with final key word or not. if not it gives the violation.",

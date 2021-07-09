@@ -3,6 +3,7 @@
     "name": "Avoid using Octal constants or escape sequences (C/C++)",
     "href": "AIP/quality-rules/1065052",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "This rule will raise a violation in case Octal Constants are used in the code.\n\n\nAn exception will be considered in case of the following syntax:\ncode[1] = 0",
     "output": "Information will be provided on:\n1. Methods where Octal Constants are used\n2. Bookmarks for violation occurrences found in the source code",

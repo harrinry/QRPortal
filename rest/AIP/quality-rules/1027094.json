@@ -3,6 +3,7 @@
     "name": "Always provide deserialization methods for optional fields",
     "href": "AIP/quality-rules/1027094",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will raise a violation when a type has a field that is marked with the System.Runtime.Serialization.OptionalFieldAttribute attribute and the type does not provide de-serialization event handling methods i.e. any of the following event handlers System.Runtime.Serialization.OnDeserializingAttribute or System.Runtime.Serialization.OnDeserializedAttribute are not present.",

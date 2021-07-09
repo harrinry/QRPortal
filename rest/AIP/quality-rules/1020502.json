@@ -3,6 +3,7 @@
     "name": "Avoid the use of JSON.parse and JSON.stringify in AngularJS web app",
     "href": "AIP/quality-rules/1020502",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "You should use angular.fromJson or angular.toJson instead of JSON.parse and JSON.stringify. In addition to the benefits of using all the provided API and improve the maintainability/robustness (some API everywhere) the AngularJS method provides additional checking mechanism to check the serialization/deserialization of the JSON to prevent any kind of JSON injection via web webservices call.",

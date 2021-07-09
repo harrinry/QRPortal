@@ -3,6 +3,7 @@
     "name": "Blocking synchronous calls should have associated timeouts",
     "href": "AIP/quality-rules/8100",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This quality rule reports synchronous call that don't use timeout to prevent an infinite waiting time.\n\nHere is the list of control that are performed:\n- Socket : java.net.Socket.connect(SocketAddress endpoint) or connect(SocketAddress endpoint, int 0)\n- Future: a Future represents the result of an asynchronous computation: java.util.concurrent.Future<V>.get() \n- JMS: All call to methods that implement javax.jms.MessageConsumer.receive() or javax.jms.MessageConsumer.receive(0)",

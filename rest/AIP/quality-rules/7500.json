@@ -3,6 +3,7 @@
     "name": "Use table-per-class-hierarchy when subclasses have few properties",
     "href": "AIP/quality-rules/7500",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "This rule reports all persistent (Hibernate & JPA) entities that don't use table-per-class-hierarchy strategy for its subclasses when the maximum added attributes of subclasses don't exceed 3. This number is a thresholds that can be changed as will.\n\nThis verification is limited to the first level of entities inheritance tree. For example, if the entity inheritance tree contains an entity C that inherit from entity B, that inherit from entity A. only the number of fields of entity B will be analyzed, not those from entity C.",
     "output": "List all Hibernate and/or JPA Entities that don't use table-per-class-hierarchy strategy for its subclasses when the maximum added attributes of subclasses don't exceed the threshold parameter.\n\nIt provides the following information:\n Hibernate and/or JPA Entity Full Name",

@@ -3,6 +3,7 @@
     "name": "Avoid using risky cryptographic hash with nodejs (TypeScript)",
     "href": "AIP/quality-rules/1020896",
     "critical": true,
+    "severity": 30,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "MD5/SHA1 hashes were used as salt to hash a password or a passphrase. In cryptography, a salt is random data that are used as an additional input to a one-way function. Recently, several exploits were developed which proved that MD5 will generate identical outputs for the different input parameters. As a consequence, somebody can break your encryption or log on to your website\n\n\nThis rule checks that no MD5 or SHA1 hash is used with the crypto module.",

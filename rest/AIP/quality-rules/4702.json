@@ -3,6 +3,7 @@
     "name": "Avoid using 'Throwable.printStackTrace()' with no argument",
     "href": "AIP/quality-rules/4702",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Number of violation occurrences",
     "description": "Throwable.printStackTrace(...) prints a Throwable and its stack trace to some stream. If no argument is used, the default stream System.Err will be used, which could inadvertently expose sensitive information.\n\n\nThis rule will report a violation when printStackTrace is used without arguments: when the stack trace is printed to the default stream.",

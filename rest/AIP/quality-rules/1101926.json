@@ -3,6 +3,7 @@
     "name": "Avoid having multiple artifacts deleting data on the same NoSQL collections (JEE)",
     "href": "AIP/quality-rules/1101926",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects tables having too many sources of delete data deletion (too many artifacts deleting them). It retrieves table having more than X artifacts deleting these tables, where X a configurable parameter.",

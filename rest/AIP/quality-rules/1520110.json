@@ -3,6 +3,7 @@
     "name": "SiebelReview: Incorrect Join Specification To 1:1 Extension Table ROW_ID",
     "href": "AIP/quality-rules/1520110",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "Although ROW_ID and PAR_ROW_ID are equivalent for extension tables in most cases, Siebel Engineering does not guarantee this to be the case.  Therefore, configuring a join in this manner is not recommended, as unexpected behavior may occur in future releases.\nAlso, from a performance perspective, indices in the Siebel data tables are built with the PAR_ROW_ID column included in many of the multi-column indexes.  These indices will not be used by the application if ROW_ID is referenced instead, which may impact performance.",
     "output": "This rule reports all Joins with a bad configuration for 1:1 Extension Table",

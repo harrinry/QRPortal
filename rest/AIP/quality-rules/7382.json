@@ -3,6 +3,7 @@
     "name": "Struts1: Avoid Struts Validator field without Form Field",
     "href": "AIP/quality-rules/7382",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Form Field Name",
     "description": "Validation fields that do not appear in forms they are associated with indicate that the validation logic is out of date.\n\nThis rule reports all validation forms that contain field property which has no field reference in associated java class\nNote that it can be related to a form name or an action name (in the case of a form shared among different actions)",

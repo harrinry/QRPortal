@@ -3,6 +3,7 @@
     "name": "Avoid usage of BannedAPI when using ESAPI library",
     "href": "AIP/quality-rules/1039044",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the use of the following APIs:\n\nSystem.out.println()\nThrowable.printStackTrace()\nRuntime.exec()\nSession.getId()\nServletRequest.getUserPrincipal()\nServletRequest.isUserInRole()\nSession.invalidate()\nMath.Random.*\nFile.createTempFile()\nServletResponse.setContentType()\nServletResponse.sendRedirect()\nRequestDispatcher.forward()\nServletResponse.addHeader()\nServletResponse.addCookie()\nServletRequest.isSecure()\nProperties.*\nServletContext.log()\njava.security and javax.crypto\njava.net.URLEncoder/Decoder\njava.sql.Statement.execute\nServletResponse.encodeURL\nServletResponse.encodeRedirectURL",

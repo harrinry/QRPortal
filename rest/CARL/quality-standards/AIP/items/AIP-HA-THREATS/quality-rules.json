@@ -4,6 +4,7 @@
         "name": "Prefer using PreparedStatement or CallableStatement over CreateStatement to prevent SQL Injection Attacks",
         "href": "AIP/quality-rules/7150",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -13,6 +14,7 @@
         "name": "Ensure to have the validation activated  for all Struts action mappings",
         "href": "AIP/quality-rules/7362",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -22,6 +24,7 @@
         "name": "Ensure to enable the Validator plugin declaration in your application's struts-config.xml file",
         "href": "AIP/quality-rules/7372",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -31,6 +34,7 @@
         "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7380",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -40,6 +44,7 @@
         "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7382",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -49,6 +54,7 @@
         "name": "Ensure validating all inputs in JSP files that use JSF",
         "href": "AIP/quality-rules/7732",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -58,6 +64,7 @@
         "name": "Ensure your application does not execute HTTP requests without sanitization",
         "href": "AIP/quality-rules/7740",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -69,6 +76,7 @@
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/7742",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -80,6 +88,7 @@
         "name": "Ensure your application does not run LDAP methods without sanitization",
         "href": "AIP/quality-rules/7746",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -91,6 +100,7 @@
         "name": "Ensure your application does not run OS commande without sanitization",
         "href": "AIP/quality-rules/7748",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -102,6 +112,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/7750",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -113,6 +124,7 @@
         "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/7752",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -124,6 +136,7 @@
         "name": "Ensure that Struts 2 Validator field not referencing a java class field is not used as it leads to security weakness",
         "href": "AIP/quality-rules/8038",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -133,6 +146,7 @@
         "name": "Ensure all defined validation forms are used",
         "href": "AIP/quality-rules/8042",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -142,6 +156,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -153,6 +168,7 @@
         "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8098",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -164,6 +180,7 @@
         "name": "Ensure you don't have hard-coded credentials in your source code because it could be retro-engineered by attackers.",
         "href": "AIP/quality-rules/8222",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -175,6 +192,7 @@
         "name": "Ensure you don't use external library given by unsanitized user input",
         "href": "AIP/quality-rules/8434",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -186,6 +204,7 @@
         "name": "Ensure your application does not process thread with unsanitized stream",
         "href": "AIP/quality-rules/8436",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -197,6 +216,7 @@
         "name": "Ensure your application does not evaluate unsanitized code.",
         "href": "AIP/quality-rules/8438",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -208,6 +228,7 @@
         "name": "Ensure you have sanitized the data received to be reflected in your application",
         "href": "AIP/quality-rules/8440",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -219,6 +240,7 @@
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8442",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -230,6 +252,7 @@
         "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8444",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -241,6 +264,7 @@
         "name": "Avoid HTTP response splitting through API requests",
         "href": "AIP/quality-rules/8484",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -252,6 +276,7 @@
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8486",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -263,6 +288,7 @@
         "name": "Ensure you have sanitized the methods manipulating resources",
         "href": "AIP/quality-rules/8488",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -274,6 +300,7 @@
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/8490",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -285,6 +312,7 @@
         "name": "Ensure your application does not run LDAP methods without sanitization",
         "href": "AIP/quality-rules/8492",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -296,6 +324,7 @@
         "name": "Ensure your application does not run OS commande without sanitization",
         "href": "AIP/quality-rules/8494",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -307,6 +336,7 @@
         "name": "Ensure you don't use external library given by unsanitized user input",
         "href": "AIP/quality-rules/8496",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -318,6 +348,7 @@
         "name": "Ensure your application does not process thread with unsanitized stream",
         "href": "AIP/quality-rules/8498",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -329,6 +360,7 @@
         "name": "Ensure your application does not evaluate unsanitized code.",
         "href": "AIP/quality-rules/8500",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -340,6 +372,7 @@
         "name": "Ensure you have sanitized the data received to be reflected in your application",
         "href": "AIP/quality-rules/8502",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -351,6 +384,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8504",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -362,6 +396,7 @@
         "name": "Ensure you do file path manipulation without including untrusted data",
         "href": "AIP/quality-rules/8506",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -373,6 +408,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8508",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -384,6 +420,7 @@
         "name": "Ensure when you use a function that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8510",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -395,6 +432,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8518",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -406,6 +444,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8520",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -417,6 +456,7 @@
         "name": "Ensure you don't have unsanitized regular expressions",
         "href": "AIP/quality-rules/8522",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -428,6 +468,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8530",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -439,6 +480,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8532",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -450,6 +492,7 @@
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8534",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -461,6 +504,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8536",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -470,6 +514,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8538",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -479,6 +524,7 @@
         "name": "Ensure your application properly neutralize expression language content before it is processed",
         "href": "AIP/quality-rules/8540",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -488,6 +534,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8542",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -499,6 +546,7 @@
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8544",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "C#",
             "JEE",
@@ -510,6 +558,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use form and formaction attributes in submitted markup",
         "href": "AIP/quality-rules/1020022",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -519,6 +568,7 @@
         "name": "Make sure the Html submit markup related to 'form' does not have id attribute to avoid to prevent cross site scripting",
         "href": "AIP/quality-rules/1020024",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -528,6 +578,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onfocus in submitted markup",
         "href": "AIP/quality-rules/1020026",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -537,6 +588,7 @@
         "name": "Prevent Cross Site Scripting on your page by making sure you do not use autofocus and onblur in a submitted markup",
         "href": "AIP/quality-rules/1020028",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -546,6 +598,7 @@
         "name": "Protect your page from Cross Site Scripting by making sure you don't use javascript and expressions in your CSS files",
         "href": "AIP/quality-rules/1020030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -555,6 +608,7 @@
         "name": "Make sure you do not use video poster attributes in combination with javascript to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020032",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -564,6 +618,7 @@
         "name": "Make sure to use \"srcdoc\" only in combination with the Iframe Sandbox to prevent XSS attacks that might slip through",
         "href": "AIP/quality-rules/1020034",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -573,6 +628,7 @@
         "name": "Make sure you do not use onscroll event with autofocus input to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020036",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -582,6 +638,7 @@
         "name": "Ensure protection from Clickjacking by not using iframe inside a tag",
         "href": "AIP/quality-rules/1020042",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -591,6 +648,7 @@
         "name": "Make sure you do not allow text injection by using setData in ondragstart with attribute draggable set to true",
         "href": "AIP/quality-rules/1020044",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -600,6 +658,7 @@
         "name": "Make sure you do not use oninput in body containing input autofocus to prevent Cross Site Scripting on your page",
         "href": "AIP/quality-rules/1020046",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -609,6 +668,7 @@
         "name": "Make sure you do not use <Source> tag in video/audio event handlers to prevent Cross Site Scripting on your page by",
         "href": "AIP/quality-rules/1020048",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -618,6 +678,7 @@
         "name": "Avoid importing content from an untrusted source like dirname",
         "href": "AIP/quality-rules/1020050",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -627,6 +688,7 @@
         "name": "Ensure you do not import content from an untrusted source and are limited to same origin to prevent Cross Site Scripting",
         "href": "AIP/quality-rules/1020052",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -636,6 +698,7 @@
         "name": "Eval() should not be used because it runs text as code.",
         "href": "AIP/quality-rules/1020058",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -645,6 +708,7 @@
         "name": "Ensure to disable the auto-complete feature in input forms, especially for fields such as passwords, to avoid access that should be unauthorized",
         "href": "AIP/quality-rules/1020074",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -654,6 +718,7 @@
         "name": "Avoid using setTimeout with a string as first argument",
         "href": "AIP/quality-rules/1020078",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -663,6 +728,7 @@
         "name": "Avoid using setInterval with a string as first argument",
         "href": "AIP/quality-rules/1020080",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -672,6 +738,7 @@
         "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020706",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -681,6 +748,7 @@
         "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020708",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -690,6 +758,7 @@
         "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -699,6 +768,7 @@
         "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020712",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -708,6 +778,7 @@
         "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020718",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -717,6 +788,7 @@
         "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020720",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -726,6 +798,7 @@
         "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020722",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -735,6 +808,7 @@
         "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
         "href": "AIP/quality-rules/1020724",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -744,6 +818,7 @@
         "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020726",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -753,6 +828,7 @@
         "name": "Avoid using setInterval with a string as first argument",
         "href": "AIP/quality-rules/1020860",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -762,6 +838,7 @@
         "name": "Avoid using setTimeout with a string as first argument",
         "href": "AIP/quality-rules/1020870",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -771,6 +848,7 @@
         "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020878",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -780,6 +858,7 @@
         "name": "Ensure disabling X-Powered-By header in your express instance or use third-party helmet package to prevent specifically-targeted attacks on running applications",
         "href": "AIP/quality-rules/1020880",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -789,6 +868,7 @@
         "name": "Ensure setting the X-Frame-Options in your express instance or use third-party helmet package to avoid Clickjacking attacks",
         "href": "AIP/quality-rules/1020882",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -798,6 +878,7 @@
         "name": "Ensure setting up the No Cache headers in your express instance or use third-party helmet package to avoid catching bad information.",
         "href": "AIP/quality-rules/1020884",
         "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -807,6 +888,7 @@
         "name": "Ensure setting the Strict-Transport-Security HTTP header to secure and encrypt communications to the Node.js server",
         "href": "AIP/quality-rules/1020888",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -816,6 +898,7 @@
         "name": "Ensure you have enable CSRF Protection to avoid Cross-Site forgery risk.",
         "href": "AIP/quality-rules/1020890",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "HTML5"
         ]
@@ -825,6 +908,7 @@
         "name": "Ensure building secured HTTPS server using certificate to avoid connection to unsecured source.",
         "href": "AIP/quality-rules/1020900",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -834,6 +918,7 @@
         "name": "Ensure activating Content-Security-Policy HTTP header to avoid untrusted source",
         "href": "AIP/quality-rules/1020902",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -843,6 +928,7 @@
         "name": "Ensure safely set X-Frame-Option  to avoid Clickjacking attack",
         "href": "AIP/quality-rules/1040018",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -852,6 +938,7 @@
         "name": "Ensure you have setup the X-Frame-Options in HTTP Response (ASP.NET)",
         "href": "AIP/quality-rules/1043030",
         "critical": true,
+        "severity": 20,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -862,6 +949,7 @@
         "name": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET MVC)",
         "href": "AIP/quality-rules/1043044",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "ASP.NET",
             "C#"
@@ -872,6 +960,7 @@
         "name": "Ensure you have not disable AntiForgery token in Razor Pages (ASP.NET Core MVC)",
         "href": "AIP/quality-rules/1043070",
         "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#"
         ]

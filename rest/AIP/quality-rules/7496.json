@@ -3,6 +3,7 @@
     "name": "Use table-per-subclass strategy when subclasses have many properties",
     "href": "AIP/quality-rules/7496",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "Using table-per-class-hierarchy should be used only for very simple simple case. Otherwise, \"table-per-subclass\" strategy is recommended\nIf we choose to go for table per subclass because, in future if we want to introduce the common column we can do it at one place but in case other start\u00e9gy as table per concrete class we have to do it in multiple tables.\n\n\nThis rule reports all persistent entities (Hibernate or JPA) that don't use table-per-subclass strategy for its subclasses when the maximum added attributes of subclasses is greater or equal to 3. This number is a thresholds that can be changed as will.\n\nThis verification is limited to the first level of entities inheritance tree. For example, if the entity inheritance tree contains an entity C that inherit from entity B, that inherit from entity A. only the number of fields of entity B will be analyzed, not those from entity C.",
     "output": "List all Hibernate and/or Entities that don't use joined-subclass for its subclasses when the maximum added attributes of subclasses exceed the threshold parameter.\n\nIt provides the following information:\n Hibernate or JPA Entity Full Name",

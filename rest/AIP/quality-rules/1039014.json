@@ -3,6 +3,7 @@
     "name": "Avoid using Cipher with no HMAC to ensure data integrity",
     "href": "AIP/quality-rules/1039014",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "The ciphertext produced is susceptible to alteration by an adversary. This mean that the cipher provides no way to detect that the data has been tampered with. If the ciphertext can be controlled by an attacker, it could be altered without detection. \n\nThe solution is to used a cipher that includes a Hash based Message Authentication Code (HMAC) to sign the data. \nAs following modes don't provide a HMAC, a violation will be reported when one of them is used. \n- CBC \n- OFB \n- CTR \n- ECB",

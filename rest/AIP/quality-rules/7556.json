@@ -3,6 +3,7 @@
     "name": "Avoid instanceof in Methods that override or implement Object.equals(), Comparable.compareTo()",
     "href": "AIP/quality-rules/7556",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "Reports all overridden java.lang.Object.equals(java.lang.Object) and implementations of java.lang.Comparable.compareTo(java.lang.Object) that reference instanceof.",
     "output": "List all equals and compareTo methods that reference instanceof. The rule provides the following information: Method Full Name",

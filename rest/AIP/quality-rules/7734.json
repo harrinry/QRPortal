@@ -3,6 +3,7 @@
     "name": "Avoid using debug() method without calling isDebugEnabled() method",
     "href": "AIP/quality-rules/7734",
     "critical": false,
+    "severity": 10,
     "maxWeight": 3,
     "description": "Invoking a debug method in production must be preceded by a call to its corresponding isDebugEnabled method. If not, a violation will be reported by this rule.\n\nFollow, the list of debug and corresponding isDebugEnabled methods considered in this rule : \n- org.apache.log4j.Category.debug corresponding to org.apache.log4j.Category. isDebugEnabled().\n- org.apache.commons.logging.Log.debug corresponding to org.apache.commons.logging.Log.isDebugEnabled().\n- java.util.logging.Logger.finest corresponding to java.util.logging.Logger.isLoggable\n- org.slf4j.logger.debug corresponding to org.slf4j.logger.isDebugEnabled()\n\nPlease note that two thresholds permit to add a list of fully qualified debug methods and isDebugEnabled methods name. A debug method name in the list must have its corresponding isDebugEnabled name at the same index.",
     "output": "This report lists all methods that violate this rule.\nIt provides the following information:\n Method Full Name, the number of call to debug() without a call to  isDebugEnabled()",

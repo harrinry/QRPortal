@@ -3,6 +3,7 @@
     "name": "Avoid using \"Throwable.printStackTrace()\" with no argument (Kotlin)",
     "href": "AIP/quality-rules/1030002",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "Throwable.printStackTrace(...) prints a Throwable and its stack trace to some stream. If no argument is used, the default stream System.Err will be used, which could inadvertently expose sensitive information.\n\n\nThe rule will raise a violation when printStackTrace prints directly to the default stream.",
     "output": "Reports cases where printStackTrace() is used without argument.",

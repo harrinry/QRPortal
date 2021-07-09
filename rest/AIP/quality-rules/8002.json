@@ -3,6 +3,7 @@
     "name": "Never perform C-style cast between incompatible Class pointers",
     "href": "AIP/quality-rules/8002",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ methods, constructors, and destructors performing C-style casts between pointers to classes that are not compatible. \n\nNote: Compatible classes belong to the same class hierarchy. However, even to cast between those classes, C-style casts are not the preferred solution: see rules #8058 and #8060.",

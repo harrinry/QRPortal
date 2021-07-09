@@ -3,6 +3,7 @@
     "name": "Avoid SQL queries that no index can support for artifacts with high fan-in",
     "href": "AIP/quality-rules/1060014",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric retrieves the artifacts with high fan-in containing at least one SQL Query not using a table's indexes.\nAn SQL Query is using table's indexes if all the  following conditions are true:\n\n- At least one index is defined for each non XXS table participating in the from list\n- Queries must reference left-most columns of the index key\n- the column must not be used in a function call\n\nAn XXS table is a table containing an extremely low amount of data. Default is 10.",

@@ -3,6 +3,7 @@
     "name": "Avoid large number of String concatenation (JEE)",
     "href": "AIP/quality-rules/7196",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of time the '+' is called",
     "description": "All String Classes should resort to using \"StringBuilder\" or \"StringBuffer\" instead of \"+\" or \"concat()\" Method because \"StringBuilder\" or \"StringBuffer\" is better in performance than the latter. of performance issue. \n\nSince version 1.6, the Oracle JVM also automatically optimizes this pattern in most cases. However, other JVMs might not. So this quality rule is kept in the AIP quality model, albeit with a low weight. And an instance where \"+\" is used more than X times should be a violation. The value of X is set to 5.",

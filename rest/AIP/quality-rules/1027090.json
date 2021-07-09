@@ -3,6 +3,7 @@
     "name": "Avoid improper instantiation of argument exceptions",
     "href": "AIP/quality-rules/1027090",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will raise a violation when a method has a parameter, and it throws an exception type that is, or derives from, ArgumentException, it expected to call a constructor accepting a paramName parameter correctly. Possible causes include the following situations:\n\n1. A call is made to the default (parameterless) constructor of an exception type that is, or derives from, ArgumentException that has a constructor accepting a paramName parameter.\n\n2. An incorrect string argument is passed to a parameterized constructor of an exception type that is, or derives from, ArgumentException.\n\n3. One of the parameters' names is passed for the message argument of the constructor of exception type that is, or derives from, ArgumentException.\n\nThe exception types checks are ArgumentException, ArgumentNullException, ArgumentOutOfRangeException and DuplicateWaitObjectException.",

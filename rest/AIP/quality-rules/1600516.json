@@ -3,6 +3,7 @@
     "name": "SELECT ... FROM ... WHERE alias.col LIKE '%xxx' (PeopleSoft)",
     "href": "AIP/quality-rules/1600516",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "Only the use of LIKE '%xxx' is checked",
     "rationale": "In the WHERE clause, if a LIKE statement is used and the clause starts with %, no index will be used.",

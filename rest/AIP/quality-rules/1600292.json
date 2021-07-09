@@ -3,6 +3,7 @@
     "name": "In an INSERT statement, define explicitly the values for all the table columns (PeopleSoft)",
     "href": "AIP/quality-rules/1600292",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "description": "This quality rules detects SQL Definition with INSERT statement without explicit specification of target column list.\nPlease note that the %BIND construct is not considered as valid w.r.t. this best practice : column names are not defined.",
     "output": "This quality rules reports PeopleSoft SQL Definitions with INSERT statement not specifying the column names.\nIt provides the PeopleSoft SQL Definitions fullname.",

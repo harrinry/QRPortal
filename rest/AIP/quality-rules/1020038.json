@@ -3,6 +3,7 @@
     "name": "Avoid defining and calling functions inside loops",
     "href": "AIP/quality-rules/1020038",
     "critical": false,
+    "severity": 30,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "Defining a function inside a loop is adding unnecessary steps and will certainly affect performance, this is why this rule will find all the javascript anonymous function call/creation in loops.",

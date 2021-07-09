@@ -3,6 +3,7 @@
     "name": "Avoid using cryptography hash with hard-coded salt",
     "href": "AIP/quality-rules/1039018",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using some cryptography function, a hard-coded salt could compromise system security in a way that cannot be easily remedied. \nIt is never a good idea to hard-code a salt. Not only does a hard-coded salt allow all of the project's developers to view the salt, it also makes fixing the problem extremely difficult. Once the code is in production, the salt cannot be easily changed. If attackers know the value of the salt, they can compute \"rainbow tables\" for the application and more easily determine the hashed values.",

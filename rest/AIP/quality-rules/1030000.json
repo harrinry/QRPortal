@@ -3,6 +3,7 @@
     "name": "Avoid \"when\" statement or expression without an else (Kotlin)",
     "href": "AIP/quality-rules/1030000",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "This rule reports violation with \"when\" statement or expression is used without an else statement.",
     "rationale": "The 'else' part is executed when none of the when part is executed. Having no else keyword means that there is no backup. The cases that are \"impossible\" today are those most likely to be the causes of untraceable bugs in the future.\nSoftware should follow the principles of structured programming or else it degrades comprehensibility.",

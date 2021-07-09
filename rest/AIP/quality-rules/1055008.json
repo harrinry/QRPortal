@@ -3,6 +3,7 @@
     "name": "Avoid weak encryption key size (Swift)",
     "href": "AIP/quality-rules/1055008",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When using the CCCrypt function, you must provide an encryption key size. The current cryptography guidelines suggest that a key length of at least 2048 bits should be used with the RSA algorithm. However, continued advancements mean that future increases in the recommended key size are inevitable. When it comes to symmetric encryption, the key lengths should be at least 128 bits.",

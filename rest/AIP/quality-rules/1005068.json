@@ -3,6 +3,7 @@
     "name": "Avoid SQL query outside try-on block (EGL)",
     "href": "AIP/quality-rules/1005068",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "This rule searches for all the functions accessing SQL Records or SQL Tables outside a try-on block. The following SQL operations are supported\nSELECT\nINSERT \nUPDATE\nDELETE\nADD\nSET\nREPLACE\nOPEN CURSOR\nGET NEXT",
     "output": "This report lists  the following information: Function full name, Number of SQL Query Outside Try Block",

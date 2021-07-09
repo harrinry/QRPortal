@@ -3,6 +3,7 @@
     "name": "StrictHttpFirewall should be set as Http Firewall before Spring Security 5.0.1, 4.2.4, and 4.1.5",
     "href": "AIP/quality-rules/1040034",
     "critical": true,
+    "severity": 30,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Spring Security does not consider URL path parameters when processing security constraints. By adding a URL path parameter with special encodings, an attacker may be able to bypass a security constraint. The root cause of this issue is a lack of clarity regarding the handling of path parameters in the Servlet Specification (see below)\n\nto adress this issue, Spring Security 5.0.1, 4.2.4, and 4.1.5 has been released. The major changes introduced for this CVE was setting StrictHttpFirewall as the default HttpFirewall. \n\n\nThis rule checks if \"Strict Http Firewall\" is set as the Http Firewall for all affected version. If not a violation is reported.\n\n\nThe Violation is be raised when: \n\n1. DefaultHttpFirewall is set as the Http firewall instead of StrictHttpFirewall.\n2. No configuration of firewall is provided \n\n\nConsider following cases to prevent false positives:\n\n1. Java Application with no configuration of firewall and not using spring security.\n2. Java Application making use of newer versions of spring security in which strict http firewall is default firewall.",

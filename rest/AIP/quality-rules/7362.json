@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid Struts action mappings validator turned off",
     "href": "AIP/quality-rules/7362",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "Automatic filtering via a Struts bean has been turned off, which disables the Struts Validator and custom validation logic. This exposes the application to other weaknesses related to insufficient input validation.\n\nThis rule reports all action mapping with disabled validation.",
     "output": "This report lists all Struts action mappingsAction Mapping that have a disabled validation. It provides the following information:\n  Action Mapping Full Name",

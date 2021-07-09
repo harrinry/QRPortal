@@ -3,6 +3,7 @@
     "name": "Never use incompatible statements with the CICS environment",
     "href": "AIP/quality-rules/7548",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs running under the CICS environment containing statements that are not permitted. These statements are the following:\n- ACCEPT\n- ENTRY\n- DISPLAY UPON CONSOLE \n- DISPLAY UPON SYSPUNCH \n- FD and SD\n- SELECT <file> ASSIGN TO\n- OPEN, CLOSE, READ, WRITE, REWRITE, DELETE\n- MERGE, SORT\n- START\n- STOP\n\nThe following exception is taken into account: some batch programs can contain EXEC CICS commands in order to run CICS utilities (DFH*). If these types of programs do not execute other commands, then they will not be considered as violating the rule.",

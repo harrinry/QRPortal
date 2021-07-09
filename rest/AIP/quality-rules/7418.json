@@ -3,6 +3,7 @@
     "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
     "href": "AIP/quality-rules/7418",
     "critical": false,
+    "severity": 10,
     "maxWeight": 9,
     "associatedValueName": "Name of the first column used as function parameter",
     "description": "This metric retrieves all SQL artifacts that have a query using functions on indexed columns in WHERE clause.\nIt retrieves all SQL artifacts with a WHERE clause using a function that takes a table column used as a database index as a function parameter (except specific indexes such as function-based indexes).",

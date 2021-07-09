@@ -3,6 +3,7 @@
     "name": "DEPRECATED: Avoid too many EJB beans",
     "href": "AIP/quality-rules/7720",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of EJB",
     "description": "This reports a violation when the number of EJB beans ( Entity Java Bean, Session Java Bean , Message Driven Java Bean) defined in the application (ejb-jar.xml or annotation) is greater than 500. \nThis number can be changed as will through the threshold parameter.\n\nThe consequences of having too many beans are typically increased time and complexity during development, and suboptimal system functioning.",

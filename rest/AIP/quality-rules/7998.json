@@ -3,6 +3,7 @@
     "name": "Avoid local variables that are not initialized at declaration time",
     "href": "AIP/quality-rules/7998",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for C++ functions, methods, constructors, and destructors where at least one local variable is not initialized at declaration time. This applies to standard types ('char', 'int', etc) and pointers of any type. This does not apply to: \n- classes (i.e. local declarations like: 'myclass var;') as they have a constructor\n- structs and arrays\n\nVariables that are initialized after their declaration are considered as initialized as long as this is done before any program logic.",

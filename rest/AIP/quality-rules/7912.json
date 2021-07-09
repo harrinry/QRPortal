@@ -3,6 +3,7 @@
     "name": "Avoid unreferenced Data Members",
     "href": "AIP/quality-rules/7912",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "All Data Members should be referenced.\nA data member is unreferenced when is not explicitly called from within the analyzed code.",
     "output": "This report lists all unreferenced Data Members (fields, properties and constants, whatever the modifiers applied).\nIt provides the following information:  Data Member full name\nReference to a property from it's getter or setter is no considered as a reference.",

@@ -3,6 +3,7 @@
     "name": "Always use onActivityResult to pass the login results when using Facebook SDK",
     "href": "AIP/quality-rules/1024008",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "In the onActivityResult method, you need to call callbackManager.onActivityResult to pass the results of the login request to LoginManager via callbackManager. \n\nThe method that should be called from the Activity's or Fragment's onActivityResult method.",

@@ -3,6 +3,7 @@
     "name": "Avoid using ABAP command CALL 'SYSTEM'",
     "href": "AIP/quality-rules/8546",
     "critical": true,
+    "severity": 30,
     "maxWeight": 9,
     "description": "The command CALL \u2018SYSTEM\u2019 is designed to execute arbitrary OS commands.",
     "output": "Associated to each ABAP artifact in violation, the Quality Rule provides: \n- The number of calls to system functions\n- Bookmarks for violation occurrences found in source code: \n  - CALL 'SYSTEM'",

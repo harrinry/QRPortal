@@ -3,6 +3,7 @@
     "name": "Ensure Node.js filesystem are closed (TypeScript)",
     "href": "AIP/quality-rules/1020892",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "When a file is opened by Node.js filesystem, resources are allocated until the file is closed. Thus it is important to ensure the file is closed as soon as the file manipulation is done by handling correctly potential exceptions. Delegating file closing to the underlying interpreter/compiler can have a negative impact on code portability and can result in unexpected behavior.\n\nThis rule will check the official Node.js syntax fs are closed.",

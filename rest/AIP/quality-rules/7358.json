@@ -3,6 +3,7 @@
     "name": "Avoid call to AcceptChanges in a loop",
     "href": "AIP/quality-rules/7358",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "description": "Avoid call to AcceptChanges (of DataSet, DataTable etc) in loop as this have a negative impact on performance.",
     "output": "The metric will list all the artifacts where a call to AcceptChanges is done within a loop: NameSpace + Class + Method names.",

@@ -3,6 +3,7 @@
     "name": "Avoid classes having with excessive number of public methods and fields (PHP)",
     "href": "AIP/quality-rules/1007136",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule searches for all the classes with excessive number of public methods and fields. All public methods, instance or static along with access modifiers final and abstract are considered for this QR. All member variables, instance or static except const members are considered for this QR. Base class members unless overriden do not contribute to the evalution of this QR.",
     "output": "This report lists all the classes with excessive number of public methods and fields.\n\nThis QR provides the following information:\nClass full name.",

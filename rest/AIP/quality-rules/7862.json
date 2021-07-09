@@ -3,6 +3,7 @@
     "name": "Avoid catching an exception of type Exception, RuntimeException, or Throwable",
     "href": "AIP/quality-rules/7862",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "description": "The exception Exception should never be caught in a catch statement. Always Subclass Exception and use the Subclassed Classes.",
     "output": "This rule lists all Methods catching an exception of type Exception.\nIt provides the following information:\n- Method full name",

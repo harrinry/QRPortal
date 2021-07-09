@@ -3,6 +3,7 @@
     "name": "Avoid using the call of web service with iOS/Objective-C API inside a loop",
     "href": "AIP/quality-rules/1050000",
     "critical": true,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "When designing web service to get/post/put data, you want to make sure that you minimize the number of calls between the client application and the web service server. This rule will check if the official iOS API (NSURLConnection, NSURLSession) syntax will do call to web service.",

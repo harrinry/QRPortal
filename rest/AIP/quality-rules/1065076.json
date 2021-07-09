@@ -3,6 +3,7 @@
     "name": "Avoid declaring data members in non-POD classes as public or protected",
     "href": "AIP/quality-rules/1065076",
     "critical": false,
+    "severity": 10,
     "maxWeight": 2,
     "description": "This rule will raise a violation when data members of non-POD members are declared either public or protected",
     "rationale": "By implementing class interfaces with member functions, the implementation retains more control over how the object state can be modified and helps to allow a class to be maintained without affecting clients.",

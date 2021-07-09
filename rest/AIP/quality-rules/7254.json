@@ -3,6 +3,7 @@
     "name": "Declare as Static all methods not using instance members",
     "href": "AIP/quality-rules/7254",
     "critical": false,
+    "severity": 10,
     "maxWeight": 5,
     "description": "This rule reports non-static methods that don't use instance fields except if they have been extended in a subclass or inherit from their parents.",
     "output": "This report lists all non-static methods that don't use any instance fields.\nIt provides the following information:  Method Full Name",

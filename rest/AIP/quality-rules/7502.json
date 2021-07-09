@@ -3,6 +3,7 @@
     "name": "Never use an array to map Hibernate collection",
     "href": "AIP/quality-rules/7502",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "description": "Using array  to map a collection can affect your application performance when it can contain many items, it looses lazy loading, optimized dirty checking and performance features for persistent collections.\n\nThis rule reports Hibernate Entities that use array to map a collection.",
     "output": "List all Hibernate Entities that use array to map a collection.\n\nIt provides the following information:\n Hibernate Entity Full Name",

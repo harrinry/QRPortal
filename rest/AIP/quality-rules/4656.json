@@ -3,6 +3,7 @@
     "name": "Avoid declaring an exception in the method signature and not throwing it",
     "href": "AIP/quality-rules/4656",
     "critical": false,
+    "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "Exception Class Full Name",
     "description": "This rule reports all methods with code (i.e. not interface or abstract method or instance of generic method) that are declared to throw an exception that is never thrown in the method body.\n\nA violattion is raised for each method: \n- declared to throw an exception in the signature\n- AND \n   o not throwing this exception or subclass directly or via a method declared to throw it\n   o OR that catch this exception \n\nNote that catching an exception is verified independently of where it occurs in the method code.",

@@ -3,6 +3,7 @@
     "name": "All functions written will use the PeopleCode type of FieldFormula (PeopleSoft)",
     "href": "AIP/quality-rules/1600574",
     "critical": false,
+    "severity": 10,
     "maxWeight": 4,
     "description": "This quality rule reports RecordField functions defined outside of FieldFormula.",
     "rationale": "The FieldFormula event is not currently used. Because FieldFormula PeopleCode initiates in many different contexts and triggers PeopleCode on every field on every row in the component buffer, it can seriously degrade application performance.\nAs a matter of convention, FieldFormula is now often used in FUNCLIB_ (function library) record definitions to store shared functions.\nRespecting this best practive improves the maintainability.",

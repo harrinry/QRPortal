@@ -3,6 +3,7 @@
     "name": "Avoid using CALL METHOD without error handling",
     "href": "AIP/quality-rules/8122",
     "critical": false,
+    "severity": 10,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for ABAP artifacts that contain calls to class methods without error handling. \nIf the method manages exceptions, then these should be referenced in the CALL METHOD and SY-SUBRC variable should be tested after. \nSyntax <obj>->meth is also supported.\nThe rule takes in account the following cases:\n- Use of a temporary variable\n\nCALL METHOD zzz.\n\nTmp = SY-SUBRC.\n\nIF Tmp NE 0.\n    list of statements\nEND-IF.\n\n- Use of WRITE statement before return code checking\n\nCALL METHOD zzz.\n\nWRITE: / Do some testing.\n\nIF SY-SUBRC NE 0.\n    list of statements\nEND-IF.\n",

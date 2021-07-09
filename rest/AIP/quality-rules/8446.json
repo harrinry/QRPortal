@@ -3,6 +3,7 @@
     "name": "Avoid URL redirection to untrusted site",
     "href": "AIP/quality-rules/8446",
     "critical": true,
+    "severity": 20,
     "maxWeight": 9,
     "associatedValueName": "Call stack from user input source down to the target method",
     "description": "Using CAST data-flow engine, this metric detects paths from user input methods down to HTTP redirection, paths which are open vulnerabilities.",

@@ -3,6 +3,7 @@
     "name": "Prefer boolean operators (EXISTS, NOT EXISTS) and non-negative predicates (PeopleSoft)",
     "href": "AIP/quality-rules/1600518",
     "critical": false,
+    "severity": 10,
     "maxWeight": 7,
     "description": "Check the use of negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=)",
     "rationale": "Negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=) are statements that generates full scan.\nThis rule is a best practice on query construction to improve performances.",

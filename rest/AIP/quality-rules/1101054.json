@@ -3,6 +3,7 @@
     "name": "Never use WHEN OTHER THEN NULL",
     "href": "AIP/quality-rules/1101054",
     "critical": true,
+    "severity": 20,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "A WHEN OTHERS THEN NULL is almost always a BUG. \n\nThe point of EXCEPTION block is to catch exceptional conditions you are expecting, handle them and continue.",

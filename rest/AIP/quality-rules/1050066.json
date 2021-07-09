@@ -3,6 +3,7 @@
     "name": "Avoid using unsecured cookie (Objective-C)",
     "href": "AIP/quality-rules/1050066",
     "critical": true,
+    "severity": 20,
     "maxWeight": 7,
     "associatedValueName": "Number of violation occurrences",
     "description": "Cross-site scripting attacks often access cookies in an attempt to steal session identifiers or authentication tokens. This is why all major browsers support the secure cookie property that prevents client-side scripts from accessing the cookie. The Secure attribute for sensitive cookies in HTTPS sessions is not set, which could cause the user agent to send those cookies in plaintext over an HTTP session.",
