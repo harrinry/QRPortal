@@ -13,7 +13,7 @@
     "remediationSample": "public class Klass\n{\n    public Klass()\n    {\n        PrivateMethod();\n    }\n\n    private void PrivateMethod()\n    {\n        var c = new PrivateClass ();\n    }\n\n    private class PrivateClass {...}\n}",
     "sample": "public class Klass\n{\n    private void PrivateMethod() {...} // VIOLATION\n\n    private class PrivateClass {...} // VIOLATION\n}",
     "total": "Number of Artifacts",
-    "alternativeName": null,
+    "alternativeName": "Remove unused private types or members",
     "businessCriteria": [
         {
             "id": 60012,

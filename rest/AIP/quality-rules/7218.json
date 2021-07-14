@@ -3,7 +3,7 @@
     "name": "Avoid OPEN/CLOSE inside loops",
     "href": "AIP/quality-rules/7218",
     "critical": true,
-    "severity": 20,
+    "severity": 30,
     "maxWeight": 8,
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for Cobol programs using OPEN or CLOSE in loops. Following loops are taken into account:\n- PERFORM - TIMES\n- PERFORM - UNTIL\n- PERFORM - VARYING",
@@ -65,7 +65,24 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "CWE-1050",
+            "name": "Excessive Platform Resource Consumption within a Loop",
+            "href": "AIP/quality-standards/CWE/items/CWE-1050",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-1050",
+            "name": "Excessive Platform Resource Consumption within a Loop",
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-1050",
+            "standard": "ISO-5055"
+        },
+        {
+            "id": "CWE-1050",
+            "name": "Excessive Platform Resource Consumption within a Loop",
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-1050",
+            "standard": "OMG-ASCQM"
+        }
     ],
     "parameters": [
         
