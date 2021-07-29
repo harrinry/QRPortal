@@ -8,7 +8,7 @@ function inArray( val, arr ){
 }
 
 function getQualityStandardsMap ( response, echo ){
-  fs.readFile(root.resolve('rest/'+ (echo ? 'Echo' :'AIP') +'/quality-standards.json'), ( err, data ) => {
+    fs.readFile(root.resolve('rest/'+ (echo ? 'Carl' :'AIP') +'/quality-standards.json'), ( err, data ) => {
     if (err) {
       console.log(err);
     }
