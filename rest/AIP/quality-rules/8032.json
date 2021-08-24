@@ -14,7 +14,7 @@
     "remediationSample": "for (int i = 0; i < 10; i++) \n{        \n    if ( ... ) \n    {\n        // do something..\n\n        break;   // compliant\n    }\n\n}",
     "sample": "for (int i = 0; i < 10; i++) \n{        \n    if ( ... ) \n    {\n        // do something..\n\n        break;   // compliant\n    }\n    else if ( ... )\n    {\n        // do something..\n\n        break;   // non compliant\n    }\n    // ...\n}",
     "total": "Number of functions that contain at least one 'for' loop",
-    "alternativeName": "Ensure you don't use multiple break statement in 'for' loops",
+    "alternativeName": "Ensure you don't use break statement in FOR loops",
     "businessCriteria": [
         {
             "id": 60012,
