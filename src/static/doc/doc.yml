@@ -1,0 +1,728 @@
+openapi: '3.0.2'
+info:
+  title: CAST RULES
+  description: REST API for CAST Rules.
+  version: '2.0.0'
+  termsOfService: https://technologies.castsoftware.com/terms/
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+servers:
+  - url: https://technologies.castsoftware.com/api/
+  - url: /api/
+
+components:
+
+  schemas:
+
+    AIP:
+      type: object
+      properties:
+        business-criteria:
+          type: object
+          description: URI to get all business criteria
+          properties:
+            href:
+              type: string
+              example: AIP/business-criteria
+            name:
+              type: string
+              example: Business Criteria in alphabetic order
+        versions:
+          type: object
+          description: URI to get all AIP versions
+          properties:
+            href:
+              type: string
+              example: AIP/versions
+            name:
+              type: string
+              example: AIP Versions from latest to newest
+        extensions:
+          type: object
+          description: URI to get all extensions
+          properties:
+            href:
+              type: string
+              example: AIP/extensions
+            name:
+              type: string
+              example: Extensions in alphabetic order
+        quality-standards:
+          type: object
+          description: URI to get all quality standards
+          properties:
+            href:
+              type: string
+              example: AIP/quality-standards
+            name:
+              type: string
+              example: Quality standards in alphabetic order
+        technologies:
+          type: object
+          description: URI to get all technologies
+          properties:
+            href:
+              type: string
+              example: AIP/technologies
+            name:
+              type: string
+              example: Technologies in alphabetic order
+    
+    Version:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/Version.name"
+        href:
+          $ref: "#/components/schemas/Version.href"
+        quality-rules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+    
+    VersionItem:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/Version.name"
+        href:
+          $ref: "#/components/schemas/Version.href"
+    
+    Version.name:
+      type: string
+      description: Version name
+      example: 8.3.4_1632
+    
+    Version.href:
+      type: string
+      description: Version URI
+      example: AIP/versions/8.3.4_1632
+    
+    QualityRuleItemByVersion:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityRule.id"
+        name:
+          $ref: "#/components/schemas/QualityRule.name"
+        href:
+          $ref: "#/components/schemas/QualityRule.href"
+        status:
+          $ref: "#/components/schemas/QualityRule.status"
+        critical:
+          $ref: "#/components/schemas/Contribution.critical"
+        technologyNames:
+          type: array
+          items:
+            $ref: "#/components/schemas/Technology.name"
+    
+    QualityRuleItem:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityRule.id"
+        name:
+          $ref: "#/components/schemas/QualityRule.name"
+        href:
+          $ref: "#/components/schemas/QualityRule.href"
+        critical:
+          $ref: "#/components/schemas/Contribution.critical"
+        technologyNames:
+          type: array
+          items:
+            $ref: "#/components/schemas/Technology.name"
+    
+    QualityRuleItemByTechnicalCriterion:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityRule.id"
+        name:
+          $ref: "#/components/schemas/QualityRule.name"
+        href:
+          $ref: "#/components/schemas/QualityRule.href"
+        weight:
+          $ref: "#/components/schemas/Contribution.weight"
+        critical:
+          $ref: "#/components/schemas/Contribution.critical"
+        technologyNames:
+          type: array
+          items:
+            $ref: "#/components/schemas/Technology.name"
+    
+    QualityRule:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityRule.id"
+        name:
+          $ref: "#/components/schemas/QualityRule.name"
+        href:
+          $ref: "#/components/schemas/QualityRule.href"
+        critical:
+          $ref: "#/components/schemas/Contribution.critical"
+        maxWeight:
+          type: integer
+          description: Maximum contribution weight to technical criteria
+        associatedValueName:
+          type: string
+          description: Violation evidence name
+        description:
+          type: string
+          description: Describe the purpose of the quality rule and explain what it
+            searches for
+        output:
+          type: string
+          description: Violation evidence name
+        rationale:
+          type: string
+          description: Explain the problem and what consequences related to this quality
+            rule
+        remediation:
+          type: string
+          description: Explain how to avoid the violations
+        remediationSample:
+          type: string
+          description: Example of a remediation
+        sample:
+          type: string
+          description: Example of a violation
+        total:
+          type: string
+          description: Scope of checked objects
+        businessCriteria:
+          type: array
+          items:
+            $ref: "#/components/schemas/BusinessCriterionItem"
+        technicalCriteria:
+          type: array
+          items:
+            $ref: "#/components/schemas/TechnicalCriterionItem"
+        technologies:
+          type: array
+          items:
+            $ref: "#/components/schemas/TechnologyItem"
+        qualityStandards:
+          type: array
+          items:
+            $ref: "#/components/schemas/QualityStandardDescriptionItem"
+    
+    QualityRule.status:
+      type: string
+      description: Status of the quality rule compared to the previous version
+      example: added
+      enum:
+        - renewed
+        - added
+    
+    QualityRule.id:
+      type: integer
+      description: Quality Rule ID
+      example: 4598
+   
+    QualityRule.name:
+      type: string
+      description: Quality Rule name
+      example: Avoid using 'java.lang.Runtime.exec()'
+    
+    QualityRule.href:
+      type: string
+      description: Quality Rule URI
+      example: AIP/quality-rules/4598
+    
+    Contribution.critical:
+      type: boolean
+      description: Indicates whether this quality rules is a critical contributor
+    
+    Contribution.weight:
+      type: integer
+      example: 7
+      description: The weight contribution to calculate the weighted average of the
+        technical criterion
+    
+    Resource.qualityRules:
+      type: object
+      description: URI to get all quality rules defined for this resource
+      properties:
+        name:
+          type: string
+          example: Quality Rules in numeric ID order
+        href:
+          type: string
+          example: AIP/...
+    
+    BusinessCriterionItem:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/BusinessCriterion.id"
+        name:
+          $ref: "#/components/schemas/BusinessCriterion.name"
+        href:
+          $ref: "#/components/schemas/BusinessCriterion.href"
+    
+    BusinessCriterion:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/BusinessCriterion.id"
+        name:
+          $ref: "#/components/schemas/BusinessCriterion.name"
+        href:
+          $ref: "#/components/schemas/BusinessCriterion.href"
+        description:
+          $ref: "#/components/schemas/BusinessCriterion.description"
+        quality-rules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+        technical-criteria:
+          $ref: "#/components/schemas/TechnicalCriterionItem"
+    
+    BusinessCriterion.id:
+      type: integer
+      description: Business Criterion ID
+      example: 60016
+    
+    BusinessCriterion.name:
+      type: string
+      description: Business Criterion name
+      example: Security
+    
+    BusinessCriterion.description:
+      type: string
+      description: Business Criterion description
+      example: Security measures the likelihood of potential security breaches linked
+        to coding practices and application source code.
+    
+    BusinessCriterion.href:
+      type: string
+      description: Business Criterion URI
+      example: AIP/business-criteria/60016
+    
+    TechnicalCriterion:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/TechnicalCriterion.id"
+        name:
+          $ref: "#/components/schemas/TechnicalCriterion.name"
+        href:
+          $ref: "#/components/schemas/TechnicalCriterion.href"
+        description:
+          $ref: "#/components/schemas/TechnicalCriterion.description"
+        quality-rules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+    
+    TechnicalCriterionItem:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/TechnicalCriterion.id"
+        name:
+          $ref: "#/components/schemas/TechnicalCriterion.name"
+        weight:
+          $ref: "#/components/schemas/Contribution.weight"
+    
+    TechnicalCriterion.id:
+      type: integer
+      description: Technical Criterion ID
+      example: 66069
+    
+    TechnicalCriterion.name:
+      type: integer
+      description: Technical Criterion name
+      example: Programming Practices - Unexpected Behavior
+    
+    TechnicalCriterion.href:
+      type: string
+      description: Technical Criterion URI
+      example: AIP/technical-criteria/66062
+    
+    TechnicalCriterion.description:
+      type: string
+      description: Technical Criterion description
+      example: Input validation security breaches result from trusting user input and
+        lack of strong checks/cleanup of the user input.
+    
+    TechnologyItem:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Technology.id"
+        name:
+          $ref: "#/components/schemas/Technology.name"
+        href:
+          $ref: "#/components/schemas/Technology.href"
+    
+    Technology:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/Technology.id"
+        name:
+          $ref: "#/components/schemas/Technology.name"
+        href:
+          $ref: "#/components/schemas/Technology.href"
+        qualityRules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+    
+    Technology.id:
+      type: integer
+      description: Technology ID
+      example: 1021000
+    
+    Technology.name:
+      type: string
+      description: Technology name
+      example: Python
+    
+    Technology.href:
+      type: string
+      description: Technology URI
+      example: AIP/technologies/1021000
+    
+    QualityStandardItem:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/QualityStandard.name"
+        href:
+          $ref: "#/components/schemas/QualityStandard.href"
+    
+    QualityStandardDescriptionItem:
+      type: object
+      properties:
+        standard:
+          $ref: "#/components/schemas/QualityStandard.name"
+        id:
+          $ref: "#/components/schemas/QualityStandardReference.id"
+        name:
+          $ref: "#/components/schemas/QualityStandardReference.name"
+        href:
+          $ref: "#/components/schemas/QualityStandardReference.href"
+    
+    QualityStandard:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/QualityStandard.name"
+        href:
+          $ref: "#/components/schemas/QualityStandard.href"
+        categories:
+          $ref: "#/components/schemas/QualityStandard.categories"
+        items:
+          $ref: "#/components/schemas/QualityStandard.items"
+    
+    QualityStandard.items:
+      type: object
+      description: URI to get all references
+      properties:
+        name:
+          type: string
+          example: References in natural order
+        href:
+          type: string
+    
+    QualityStandard.categories:
+      type: object
+      description: URI to get all sub categories
+      properties:
+        name:
+          type: string
+          example: Categories of references in natural order
+        href:
+          type: string
+          example: AIP/quality-standards/CISQ/categories
+    
+    QualityStandard.name:
+      type: string
+      example: CISQ
+      description: A Quality Standard name
+    
+    QualityStandard.href:
+      type: string
+      example: AIP/quality-standards/CISQ
+      description: A Quality Standard URI
+    
+    QualityStandardCategory:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/QualityStandarCategory.name"
+        href:
+          $ref: "#/components/schemas/QualityStandarCategory.href"
+        items:
+          $ref: "#/components/schemas/QualityStandard.items"
+    
+    QualityStandardCategoryItem:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/QualityStandarCategory.name"
+        href:
+          $ref: "#/components/schemas/QualityStandarCategory.href"
+    
+    QualityStandarCategory.name:
+      type: string
+      example: CISQ-Maintainability
+      description: A Quality Standard sub-category name
+    
+    QualityStandarCategory.href:
+      type: string
+      example: AIP/quality-standards/CISQ/categories/CISQ-Maintainability
+      description: A Quality Standard sub-category URI
+    
+    QualityStandardReferenceItem:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityStandardReference.id"
+        name:
+          $ref: "#/components/schemas/QualityStandardReference.name"
+        href:
+          $ref: "#/components/schemas/QualityStandardReference.href"
+        count:
+          $ref: "#/components/schemas/QualityStandardReference.count"
+    
+    QualityStandardReference:
+      type: object
+      properties:
+        id:
+          $ref: "#/components/schemas/QualityStandardReference.id"
+        name:
+          $ref: "#/components/schemas/QualityStandardReference.name"
+        href:
+          $ref: "#/components/schemas/QualityStandardReference.href"
+        url:
+          $ref: "#/components/schemas/QualityStandardReference.url"
+        count:
+          $ref: "#/components/schemas/QualityStandardReference.count"
+        quality-rules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+        iso-patterns:
+          type: array
+          items:
+            $ref: "#/components/schemas/IsoPattern"
+    
+    QualityStandardReference.id:
+      type: string
+      example: A1-2013
+      description: A Quality Standard ID
+    
+    QualityStandardReference.name:
+      type: string
+      example: Injection
+      description: A Quality Standard name
+    
+    QualityStandardReference.href:
+      type: string
+      example: AIP/quality-standards/OWASP/items/A1-2013
+      description: A Quality Standard reference URI
+    
+    QualityStandardReference.description:
+      type: string
+      example: Injection
+      description: A Quality Standard description
+    
+    QualityStandardReference.url:
+      type: string
+      example: https://www.owasp.org/index.php/Top_10_2013-A1-Injection
+      description: External documentation
+    
+    IsoPattern:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/IsoPattern.name"
+    
+    QualityStandardReference.count:
+      type: integer
+      example: 9
+      description: Number of related quality rules
+    
+    IsoPattern.name:
+      type: string
+      example: ASCQM Ban Circular Dependencies between Modules
+      description: A detection pattern
+    
+    Extension:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/Extension.name"
+        href:
+          $ref: "#/components/schemas/Extension.href"
+        title:
+          $ref: "#/components/schemas/Extension.title"
+        description:
+          $ref: "#/components/schemas/Extension.description"
+        qualityModel:
+          $ref: "#/components/schemas/Extension.qualityModel"
+        transactionsConfiguration:
+          $ref: "#/components/schemas/Extension.transactionConfiguration"
+        versions:
+          $ref: "#/components/schemas/Extension.versions"
+    
+    ExtensionItem:
+      type: object
+      properties:
+        qualityModel:
+          $ref: "#/components/schemas/Extension.qualityModel"
+        transactionsConfiguration:
+          $ref: "#/components/schemas/Extension.transactionConfiguration"
+        name:
+          $ref: "#/components/schemas/Extension.name"
+        href:
+          $ref: "#/components/schemas/Extension.href"
+    
+    ExtensionVersion:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/ExtensionVersion.name"
+        href:
+          $ref: "#/components/schemas/ExtensionVersion.href"
+        publishedTime:
+          $ref: "#/components/schemas/ExtensionVersion.publishedTime"
+        extension:
+          $ref: "#/components/schemas/ExtensionVersion.extension"
+        qualityModel:
+          $ref: "#/components/schemas/ExtensionVersion.qualityModel"
+        transactionsConfiguration:
+          $ref: "#/components/schemas/ExtensionVersion.transactionConfiguration"
+        qualityRules:
+          $ref: "#/components/schemas/Resource.qualityRules"
+    
+    ExtensionVersionItem:
+      type: object
+      properties:
+        name:
+          $ref: "#/components/schemas/ExtensionVersion.name"
+        href:
+          $ref: "#/components/schemas/ExtensionVersion.href"
+    
+    Extension.name:
+      type: string
+      description: Extension name
+      example: com.castsoftware.html5
+    
+    Extension.href:
+      type: string
+      description: Extension URI
+      example: AIP/extensions/com.castsoftware.html5
+    
+    Extension.title:
+      type: string
+      description: Display name
+      example: HTML5/Javascript Analyzer
+    
+    Extension.description:
+      type: string
+      description: Description of the extension content and purpose
+      example: This extension provides support for HTML5/JavaScript. This analyzer
+        enables you to compute Automated Function Points for your
+        HTML5/JavaScript projects.
+    
+    Extension.versions:
+      type: object
+      description: URI to list all quality rules implemented by the technology of this
+        extension
+      properties:
+        name:
+          type: string
+          example: versions from latest to oldest
+        href:
+          type: string
+          example: AIP/extensions/com.castsoftware.html5/versions
+    
+    Extension.qualityModel:
+      type: boolean
+      description: True if the last version of this extension defines some quality
+        rules to produce violations
+      example: true
+    
+    Extension.transactionConfiguration:
+      type: boolean
+      description: True if the last version of this extension produces transactions
+      example: true
+
+    ExtensionVersion.name:
+      type: string
+      description: Extension version name
+      example: 1.8.0-funcrel
+
+    ExtensionVersion.href:
+      type: string
+      description: Extension version URI
+      example: AIP/extensions/com.castsoftware.html5/versions/1.8.0-funcrel
+
+    ExtensionVersion.publishedTime:
+      type: string
+      description: Timestamp of publication
+      example: 2018-06-15T09:07:00.4472866+00:00
+
+    ExtensionVersion.qualityModel:
+      type: boolean
+      description: True if this extension version defines some quality rules to
+        produce violations
+      example: true
+
+    ExtensionVersion.transactionConfiguration:
+      type: boolean
+      description: True if this extension version produces transactions
+      example: true
+      
+    ExtensionVersion.extension:
+      type: object
+      description: URI to the extension
+      properties:
+        name:
+          type: string
+          example: com.castsoftware.html5
+        href:
+          type: string
+          example: AIP/extensions/com.castsoftware.html5
+
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      description: A quality rule id
+      schema:
+        type: number
+      
+  # securitySchemes:
+
+
+tags:
+  - name: AIP
+    description: Entry point of Web Services to reach collections of rules
+
+  - name: Extensions
+    description: CAST AIP Extensions/Plugins
+
+  - name: Technologies
+    description: A technology identifies a development stack
+
+  - name: Quality Model
+    description: "Quality indicators: business criteria, quality rules"
+
+  - name: Quality Standards
+    description: References of Quality Standards such as vulnerabilities, risks, etc. organized by sub categories
+
+
+paths:
+  /quality-rules/{id}:
+    get:
+      tags:
+        - Quality Models
+      description: Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria
+      parameters:
+        - $ref: "#/components/parameters/id"
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: ""

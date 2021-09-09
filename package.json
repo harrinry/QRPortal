@@ -7,6 +7,8 @@
   },
   "main": "server/server.js",
   "scripts": {
+    "start:v2": "node src/server/index.js",
+    "dev:v2": "nodemon src/server/index.js",
     "start": "set NODE_ENV=production&& node server/server.js",
     "start--mac": "env NODE_ENV=production&& node server.js",
     "start--linux": "env NODE_ENV=production PORT=2280&& node server.js",
@@ -22,18 +24,23 @@
     "app-root-path": "^2.2.1",
     "axios": "^0.18.1",
     "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-winston": "^3.4.0",
-    "helmet": "^3.22.0",
+    "helmet": "^4.6.0",
     "http-auth": "^3.2.4",
+    "inversify": "^5.0.5",
+    "inversify-vanillajs-helpers": "^2.0.0",
     "js-file-download": "^0.4.10",
+    "lunr": "^2.3.9",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^5.1.2",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
     "winston": "^3.2.1"
   },
   "devDependencies": {
@@ -62,6 +69,7 @@
     "eslint-plugin-react": "^7.19.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.12",
     "request": "^2.88.2",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.23.1",
@@ -69,7 +77,8 @@
     "tape": "^4.13.2",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "yaml": "^1.10.2"
   },
   "repository": {
     "type": "git",

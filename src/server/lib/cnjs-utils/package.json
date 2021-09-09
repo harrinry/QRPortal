@@ -1,0 +1,71 @@
+{
+  "name": "cnjs-utils",
+  "version": "1.0.0",
+  "description": "lightweight clean framework to initialize express rest-apis",
+  "main": "server/index.js",
+  "files": [
+    "config/",
+    "data/",
+    "decorators/",
+    "lib/",
+    "server/",
+    "log/",
+    "services/",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --exit --require @babel/register ./test/**/*.test.js"
+  },
+  "keywords": [
+    "NodeJs",
+    "express",
+    "sql",
+    "logging",
+    "data-management",
+    "cluster",
+    "decorators",
+    "framework",
+    "inversion-of-control"
+  ],
+  "author": "Matteo Stura MSU <m.stura@castsoftware.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inversify": "^5.0.5",
+    "inversify-vanillajs-helpers": "^2.0.0",
+    "reflect-metadata": "^0.1.13"
+  },
+  "repository": {
+    "url": "http://jnk-centos-git/tools/cast-nodejs-utils.git",
+    "type": "git"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.10.3",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
+    "@babel/runtime": "^7.10.3",
+    "babel-eslint": "^10.1.0",
+    "babel-polyfill": "^6.26.0",
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "mocha": "^7.2.0",
+    "supertest": "^4.0.2"
+  },
+  "peerDependencies": {
+    "sequelize": "^5.21.3",
+    "express": "^4.17.1",
+    "lunr": "^2.3.9",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.1",
+    "rotating-file-stream": "^2.1.3",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.1",
+    "semver": "^7.3.4",
+    "tar": "^6.1.0",
+    "uuid": "^8.3.2"
+  }
+}

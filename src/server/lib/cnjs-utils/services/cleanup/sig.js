@@ -1,0 +1,11 @@
+module.exports = {
+  SIGHUP: "SIGHUP", 
+  SIGINT: "SIGINT", 
+  SIGQUIT: "SIGQUIT", 
+  SIGILL: "SIGILL", 
+  SIGTRAP: "SIGTRAP", 
+  SIGABRT: "SIGABRT", 
+  SIGBUS: "SIGBUS", 
+  SIGUSR1: "SIGUSR1", 
+  SIGUSR2: "SIGUSR2",
+};

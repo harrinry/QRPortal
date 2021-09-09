@@ -1,0 +1,16 @@
+module.exports = {
+  algo: require("./algo"),
+  createChecksum: require("./create-checksum"),
+  createChecksumSync: require("./create-checksum-sync"),
+  createSHA256Hash: require("./create-sha256-hash"),
+  createCypher: require("./create-cypher"),
+  destructCypher: require("./destruct-cypher"),
+  createCanvasKey: require("./create-canvas-key"),
+  createIv: require("./create-iv"),
+  encryptFile: require("./encrypt-file"),
+  decryptFile: require("./decrypt-file"),
+  encryptData: require("./encrypt-data"),
+  decryptData: require("./decrypt-data"),
+  stringCrypter: require("./string-crypter"),
+  keyGen: require("./uid-gen"),
+};
