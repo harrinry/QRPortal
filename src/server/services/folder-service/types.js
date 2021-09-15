@@ -5,6 +5,7 @@ module.exports = {
   restCarl: "restCarl",
   rootStatic: "rootStatic",
   swaggerUi: "swaggerUi",
+  doc: "doc",
   static: "static",
   mapping: "staticMapping",
 };

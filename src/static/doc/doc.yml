@@ -9,8 +9,12 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 
 servers:
-  - url: https://technologies.castsoftware.com/api/
   - url: /api/
+  - url: https://technologies.castsoftware.com/api/
+
+# externalDocs:
+#   url: "http://swagger.io"
+#   description: "Find out more about Swagger"
 
 components:
 
@@ -351,7 +355,7 @@ components:
         name:
           $ref: "#/components/schemas/Technology.name"
         href:
-          $ref: "#/components/schemas/Technology.href"
+          $ref: "#/components/schemas/QualityStandarCategory.href"
     
     Technology:
       type: object
@@ -360,8 +364,8 @@ components:
           $ref: "#/components/schemas/Technology.id"
         name:
           $ref: "#/components/schemas/Technology.name"
-        href:
-          $ref: "#/components/schemas/Technology.href"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
         qualityRules:
           $ref: "#/components/schemas/Resource.qualityRules"
     
@@ -375,10 +379,10 @@ components:
       description: Technology name
       example: Python
     
-    Technology.href:
+    IconUrl:
       type: string
-      description: Technology URI
-      example: AIP/technologies/1021000
+      description: Icon URI
+      example: https://raw.githubusercontent.com/CAST-Extend/resources/master/1021000.png
     
     QualityStandardItem:
       type: object
@@ -407,10 +411,14 @@ components:
           $ref: "#/components/schemas/QualityStandard.name"
         href:
           $ref: "#/components/schemas/QualityStandard.href"
+        description:
+          $ref: "#/components/schemas/Extension.description"
+        iconUrl: 
+          $ref: "#/components/schemas/IconUrl"
         categories:
-          $ref: "#/components/schemas/QualityStandard.categories"
-        items:
-          $ref: "#/components/schemas/QualityStandard.items"
+          type: array
+          items:
+            $ref: "#/components/schemas/QualityStandard.categories"
     
     QualityStandard.items:
       type: object
@@ -427,11 +435,13 @@ components:
       description: URI to get all sub categories
       properties:
         name:
-          type: string
-          example: Categories of references in natural order
+          $ref: "#/components/schemas/QualityStandarCategory.name"
         href:
-          type: string
-          example: AIP/quality-standards/CISQ/categories
+          $ref: "#/components/schemas/QualityStandarCategory.href"
+        description:
+          $ref: "#/components/schemas/Extension.description"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
     
     QualityStandard.name:
       type: string
@@ -450,8 +460,14 @@ components:
           $ref: "#/components/schemas/QualityStandarCategory.name"
         href:
           $ref: "#/components/schemas/QualityStandarCategory.href"
+        description:
+          $ref: "#/components/schemas/Extension.description"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
         items:
-          $ref: "#/components/schemas/QualityStandard.items"
+          type: array
+          items:
+            $ref: "#/components/schemas/QualityStandardReferenceItem"
     
     QualityStandardCategoryItem:
       type: object
@@ -683,7 +699,19 @@ components:
           example: AIP/extensions/com.castsoftware.html5
 
   parameters:
-    id:
+    ServiceType:
+      name: service-type
+      in: path
+      description: service type, aip or carl
+      required: true
+      schema:
+        type: string
+        enum:
+          - aip
+          - carl
+        default: aip
+
+    ID:
       name: id
       in: path
       required: true
@@ -691,8 +719,30 @@ components:
       schema:
         type: number
       
-  # securitySchemes:
+    TechnoID: 
+      name: TechnoID
+      in: path
+      required: true
+      description: A technology ID such as 1021000
+      schema: 
+        type: integer
+        
+    QualityStandardId:
+      name: QualityStandardId
+      in: path
+      required: true
+      description: A quality Standard Name such as C-CPP
+      schema: 
+        type: string
 
+    QualityStandardCategoryId:
+      name: QualityStandardCategoryId
+      in: path
+      required: true
+      description: A quality Standard category Name such as AUTOSAR-CPP-2014
+      schema: 
+        type: string
+  # securitySchemes:
 
 tags:
   - name: AIP
@@ -704,25 +754,119 @@ tags:
   - name: Technologies
     description: A technology identifies a development stack
 
-  - name: Quality Model
-    description: "Quality indicators: business criteria, quality rules"
-
   - name: Quality Standards
     description: References of Quality Standards such as vulnerabilities, risks, etc. organized by sub categories
+  
+  - name: Quality Models
+    description: "Quality indicators: business criteria, quality rules"
 
 
 paths:
-  /quality-rules/{id}:
+  /{service-type}/technologies:
     get:
       tags:
-        - Quality Models
-      description: Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria
+        - Technologies
       parameters:
-        - $ref: "#/components/parameters/id"
+        - $ref: "#/components/parameters/ServiceType"
+      description: List all technologies
       responses:
         200:
           description: Ok
           content:
             application/json:
               schema:
-                $ref: ""
+                type: array
+                items: 
+                  $ref: "#/components/schemas/TechnologyItem"
+  /{service-type}/technologies/{TechnoID}:
+    get:
+      tags:
+        - Technologies
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/TechnoID"
+      description: A technology
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Technology"
+  /{service-type}/quality-standards:
+    get:
+      tags:
+        - Quality Standards
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+      description: List quality standards
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: "#/components/schemas/QualityStandardCategory"
+  /{service-type}/quality-standards/{QualityStandardId}:
+    get:
+      tags:
+        - Quality Standards
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/QualityStandardId"
+      description: Describe a quality standard
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QualityStandard"
+  /{service-type}/quality-standards/{QualityStandardId}/categories/{QualityStandardCategoryId}:
+    get:
+      tags:
+        - Quality Standards
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/QualityStandardId"
+        - $ref: "#/components/parameters/QualityStandardCategoryId"
+      description: Describe a quality standard sub-category
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QualityStandard"
+  /{service-type}/quality-standards/{QualityStandardId}/sections/{QualityStandardCategoryId}:
+    get:
+      tags:
+        - Quality Standards
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/QualityStandardId"
+        - $ref: "#/components/parameters/QualityStandardCategoryId"
+      description: A quality standard reference
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QualityStandardReference"
+  /quality-rules/{id}:
+    get:
+      tags:
+        - Quality Models
+      description: Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria
+      parameters:
+        - $ref: "#/components/parameters/ID"
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QualityRule"

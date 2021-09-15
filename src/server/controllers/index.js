@@ -8,4 +8,5 @@ module.exports = {
   CARLServiceController: require("./carl-service-controller"),
   BaseServiceController: require("./base-service-controller"),
   TechnologyController: require("./technology-controller"),
+  QualityStandardController: require("./quality-standard-controller"),
 };

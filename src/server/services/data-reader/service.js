@@ -45,22 +45,22 @@ class DataReader extends JsonFileReader {
   /**
    * @param {number} id
    */
-  readTechnology(id){
-    return this.read(types.technologies, id);
+  async readTechnology(id){
+    return this.read(types.technologies, await this.matchId(id, types.technologies));
   }
 
   /**
    * @param {number} id
    */
-  readTechnologyQualityRules(id){
-    return this.read(types.technologies, id, types.qualityRules);
+  async readTechnologyQualityRules(id){
+    return this.read(types.technologies, await this.matchId(id, types.technologies), types.qualityRules);
   }
 
   /**
    * @param {string} id 
    */
-  readBuisnessCriteria(id){
-    return this.read(types.businessCriteria, id);
+  async readBuisnessCriteria(id){
+    return this.read(types.businessCriteria, await this.matchId(id, types.businessCriteria));
   }
 
   listBuisnessCriteria(){
@@ -70,8 +70,8 @@ class DataReader extends JsonFileReader {
   /**
    * @param {string} id
    */
-  readExtension(id){
-    return this.read(types.extensions, id);
+  async readExtension(id){
+    return this.read(types.extensions, await this.matchId(id, types.extensions));
   }
 
   listExtensions(){
@@ -81,15 +81,15 @@ class DataReader extends JsonFileReader {
   /**
    * @param {string} id
    */
-  listExtensionVersions(id){
-    return this.read(types.extensions, id, types.versions);
+  async listExtensionVersions(id){
+    return this.read(types.extensions, await this.matchId(id, types.extensions), types.versions);
   }
 
   /**
    * @param {string} id 
    * @param {string} version 
    */
-  readExtensionVersionQualityRules(id, version){
+  async readExtensionVersionQualityRules(id, version){
     return this.read(types.extensions, id, types.versions, version, types.qualityRules);
   }
 
@@ -110,49 +110,85 @@ class DataReader extends JsonFileReader {
   }
 
   /**
+   * @param {string} id 
+   * @param  {...string} folderPath 
+   */
+  async matchId(id, ...folderPath){
+    const fileList = await this.listFiles(...folderPath);
+    const caseSensitiveId = fileList.find(_ => _.toLowerCase() === id.toLowerCase());
+
+    if(!caseSensitiveId) throw new JsonFileNotFoundError(path.join(...folderPath, id));
+
+    return caseSensitiveId;
+  }
+
+  matchQualityStandardId(id){
+    return this.matchId(id, types.qualityStandards);
+  }
+
+  async matchQualityStandardCategoryId(standardId, categoryName){
+    return this.matchId(categoryName, types.qualityStandards, await this.matchQualityStandardId(standardId), types.categories);
+  }
+
+  async matchQualityStandardItemId(standardId, itemsId){
+    return this.matchId(itemsId, types.qualityStandards, await this.matchQualityStandardId(standardId), types.items);
+  }
+
+  /**
    * @param {string} qualityStandardId 
    */
-  listQualityStandardCategories(qualityStandardId){
-    return this.read(types.qualityStandards, qualityStandardId, types.categories);
+  async readQualityStandard(qualityStandardId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId));
+  }
+
+  /**
+   * @param {string} qualityStandardId 
+   */
+  async listQualityStandardCategories(qualityStandardId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), types.categories);
   }
 
   /**
    * @param {string} qualityStandardId 
    * @param {string} categoryName
    */
-  readQualityStandardCategory(qualityStandardId, categoryName){
-    return this.read(types.qualityStandards, qualityStandardId, types.categories, categoryName);
+  async readQualityStandardCategory(qualityStandardId, categoryName){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
+      types.categories, await this.matchQualityStandardCategoryId(qualityStandardId, categoryName));
   }
 
   /**
    * @param {string} qualityStandardId 
    * @param {string} categoryName
    */
-  listQualityStandardCategoryItems(qualityStandardId, categoryName){
-    return this.read(types.qualityStandards, qualityStandardId, types.categories, categoryName, types.items);
+  async listQualityStandardCategoryItems(qualityStandardId, categoryName){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
+      types.categories,await  this.matchQualityStandardCategoryId(qualityStandardId, categoryName), types.items);
   }
 
   /**
    * @param {string} qualityStandardId 
    */
-  listQualityStandardItems(qualityStandardId){
-    return this.read(types.qualityStandards, qualityStandardId, types.items);
+  async listQualityStandardItems(qualityStandardId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), types.items);
   }
 
   /**
    * @param {string} qualityStandardId 
    * @param {string} itemId
    */
-  readQualityStandardItem(qualityStandardId, itemId){
-    return this.read(types.qualityStandards, qualityStandardId, types.items, itemId);
+  async readQualityStandardItem(qualityStandardId, itemId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
+      types.items, await this.matchQualityStandardItemId(qualityStandardId, itemId));
   }
   
   /**
    * @param {string} qualityStandardId 
    * @param {string} itemId
    */
-  listQualityStandardItemQualityRules(qualityStandardId, itemId){
-    return this.read(types.qualityStandards, qualityStandardId, types.items, itemId, types.qualityRules);
+  async listQualityStandardItemQualityRules(qualityStandardId, itemId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
+      types.items, await this.matchQualityStandardItemId(qualityStandardId, itemId), types.qualityRules);
   }
 }
 

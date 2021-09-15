@@ -85,8 +85,12 @@ class StorageService {
     return util.promisify(fs.copyFile)(this.pathTo(fileName), destination);
   }
 
-  listFiles(){
-    return util.promisify(fs.readdir)(this.storageFolder);
+  listFiles(...pathlike){
+    if(pathlike.length > 0){
+      return util.promisify(fs.readdir)(this.pathTo(path.join(...pathlike)));
+    } else {
+      return util.promisify(fs.readdir)(this.storageFolder);
+    }
   }
 
   remove(fileName){

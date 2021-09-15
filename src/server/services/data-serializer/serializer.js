@@ -1,7 +1,6 @@
 const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
-const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem } = require("./models");
-const QualityRuleReferenceSerializer = require("../data-reader/quality-rule-reference-serializer");
-const QualityRuleReference = require("../data-reader/models/quality-rule-reference");
+const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, QualityRuleReference, QualityStandardItemReference } = require("./models");
+const QualityRuleReferenceSerializer = require("./quality-rule-reference-serializer");
 
 /**
  * @typedef {import("./models/base-quality-standard")} IBaseQualityStandard
@@ -9,7 +8,7 @@ const QualityRuleReference = require("../data-reader/models/quality-rule-referen
  * @typedef {import("../icon-url-builder/service")} IconUrlBuilder
  */
 
-class QualityStandardDataSerializer extends BaseSerializer {
+class DataSerializer extends BaseSerializer {
   
   /**
    * @param {IconUrlBuilder} iconUrlBuilder 
@@ -30,13 +29,39 @@ class QualityStandardDataSerializer extends BaseSerializer {
   }
 }
 
-class QualityStandardItemSerializer extends QualityStandardDataSerializer {
+class QualityStandardItemReferenceSerializer extends BaseSerializer {
+  
+  /**
+   * @param {IconUrlBuilder} iconUrlBuilder 
+   */
   constructor(iconUrlBuilder){
-    super(iconUrlBuilder, QualityStandardItem);
+    super(QualityStandardItemReference);
+
+    this.iconBuilder = iconUrlBuilder;
   }
 
   __serialize(data){
-    const model = super.__serialize(data);
+    const Ctor = this.Ctor;
+    const model = new Ctor(data);
+
+    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.id.toLowerCase()) : null;
+
+    return model;
+  }
+}
+
+class QualityStandardItemSerializer extends BaseSerializer {
+  constructor(iconUrlBuilder){
+    super(QualityStandardItem);
+
+    this.iconBuilder = iconUrlBuilder;
+  }
+
+  __serialize(data){
+    const Ctor = this.Ctor;
+    const model = new Ctor(data);
+
+    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.id.toLowerCase()) : null;
 
     const _path = data.href.split("/");
 
@@ -48,17 +73,18 @@ class QualityStandardItemSerializer extends QualityStandardDataSerializer {
   }
 }
 
-class QualityStandardSerializer {
+class Serializer {
 
   /**
    * @param {import("../icon-url-builder/service")} iconUrlBuilder 
    */
   constructor(iconUrlBuilder){
     this.iconUrlBuilder = iconUrlBuilder;
-    this.baseQualityStandardSerializer = new QualityStandardDataSerializer(iconUrlBuilder, BaseQualityStandard);
-    this.qualityStandardSerializer = new QualityStandardDataSerializer(iconUrlBuilder, QualityStandard);
-    this.qualityStandardCategorySerializer = new QualityStandardDataSerializer(iconUrlBuilder, QualityStandardCategory);
+    this.baseQualityStandardSerializer = new DataSerializer(iconUrlBuilder, BaseQualityStandard);
+    this.qualityStandardSerializer = new DataSerializer(iconUrlBuilder, QualityStandard);
+    this.qualityStandardCategorySerializer = new DataSerializer(iconUrlBuilder, QualityStandardCategory);
     this.qualityStandardCategoryItemSerializer = new QualityStandardItemSerializer(iconUrlBuilder);
+    this.qualityStandardItemReferenceSerializer = new QualityStandardItemReferenceSerializer(iconUrlBuilder);
     this.qualityRuleReferenceSerializer = new QualityRuleReferenceSerializer();
   }
 
@@ -75,22 +101,12 @@ class QualityStandardSerializer {
         return this.qualityStandardCategoryItemSerializer.serialize(data);
       case QualityRuleReference:
         return this.qualityRuleReferenceSerializer.serialize(data);
+      case QualityStandardItemReference:
+        return this.qualityStandardItemReferenceSerializer.serialize(data);
       default:
         throw new Error("Type unknown");
     }
-
-    // return {
-    //   id: model.id,
-    //   name: model.name,
-    //   href: model.href + "/categories",
-    //   url: model.url,
-    //   iconUrl: iconBuilder.createIconUrl(model.id.toLowerCase()),
-    //   description: model.description,
-    //   isoPatterns: model.isoPatterns,
-    //   count: model.count,
-    //   qualityRules: model.qualityRules
-    // }
   }
 }
 
-module.exports = QualityStandardSerializer;
+module.exports = Serializer;

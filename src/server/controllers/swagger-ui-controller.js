@@ -7,7 +7,7 @@ class SwaggerUIController extends StaticController{
    * @param {string} dir
    */
   constructor(logger, dir){
-    super("/swagger-ui", {
+    super("/doc", {
       dir,
       catchFallthrough: (_req, res) => res.sendStatus(404),
     });

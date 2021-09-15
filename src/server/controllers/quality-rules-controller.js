@@ -25,8 +25,8 @@ class QualityRulesController extends Controller {
 
   $preprocess(){
     this
-      .get("/", this.listQualityRules(this.dataReader))
-      .get("/:id", this.getQualityRule(this.dataReader))
+      .get("/:id", this.getQualityRule(this.dataReader));
+      // .get("/", this.listQualityRules(this.dataReader))
   }
 
   $postprocess(){

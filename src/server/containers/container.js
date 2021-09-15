@@ -3,12 +3,15 @@ const types = require("./types");
 const { FolderService, types: fldTypes } = require("../services/folder-service");
 const { DataReader } = require("../services/data-reader");
 const { TechnologyDataReader } = require("../services/technology-reader");
+const { QualityStandardsDataReader } = require("../services/quality-standard-reader");
+const { Serializer } = require("../services/data-serializer");
 const { IconURLBuilder } = require("../services/icon-url-builder");
 const { RulesDocumentationServer } = require("../server");
 const { logFactory } = require("../services/logger");
 const { HttpErrorFactory } = require("../services/http-error-service");
-const { ApiController, QualityRulesController, StaticRestController, 
-  SwaggerUIController, StaticRestUIController, AIPServiceController, CARLServiceController, TechnologyController } = require("../controllers");
+const { ApiController, QualityRulesController, 
+  SwaggerUIController, AIPServiceController, CARLServiceController, TechnologyController, 
+  QualityStandardController } = require("../controllers");
 
 const iocBuilder = createIocBuilder();
 
@@ -33,7 +36,7 @@ iocBuilder
     return new IconURLBuilder("https://raw.githubusercontent.com/CAST-Extend/resources/master", "png");
   })
   .registerFactory(types.iconUrlBuilderLocal, () => {
-    return new IconURLBuilder("/img", "svg");
+    return new IconURLBuilder("https://raw.githubusercontent.com/CAST-Extend/resources/master/techportal", "svg");
   })
 
   // Data Readers
@@ -68,6 +71,23 @@ iocBuilder
 
     return new TechnologyDataReader(folderService.get(fldTypes.mapping), cntr.get(types.carlDataReader), cntr.get(types.iconUrlBuilder));
   })
+  .registerFactory(types.aipQualityStandardReaderService, (context) => {
+    const cntr = context.container;
+    const dataReader = cntr.get(types.aipDataReader);
+    const serializer = cntr.get(types.serializer);
+
+    return new QualityStandardsDataReader(dataReader, serializer);
+  })
+  .registerFactory(types.carlQualityStandardReaderService, (context) => {
+    const cntr = context.container;
+    const dataReader = cntr.get(types.aipDataReader);
+    const serializer = cntr.get(types.serializer);
+
+    return new QualityStandardsDataReader(dataReader, serializer);
+  })
+  // serializers
+  .register(types.serializer, Serializer, [types.iconUrlBuilderLocal])
+
   // service indexes
 
   // static controllers
@@ -76,7 +96,7 @@ iocBuilder
     const folderService = cntr.get(types.folderService);
     const logger = cntr.get(types.logger);
 
-    return new SwaggerUIController(logger, folderService.get(fldTypes.swaggerUi));
+    return new SwaggerUIController(logger, folderService.get(fldTypes.doc));
   })
   // .registerFactory(types.controllers.staticRest, (context) => {
   //   const cntr = context.container;
@@ -102,8 +122,16 @@ iocBuilder
     const cntr = context.container;
     return new TechnologyController(cntr.get(types.logger), cntr.get(types.carlTechnologyDataReader));
   })
-  .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader, types.controllers.carl.technology])
-  .register(types.controllers.aipServiceIndex, AIPServiceController, [types.logger, types.aipDataReader, types.controllers.aip.technology])
+  .registerFactory(types.controllers.aip.qualityStandard, (context) => {
+    const cntr = context.container;
+    return new QualityStandardController(cntr.get(types.logger), cntr.get(types.aipQualityStandardReaderService))
+  })
+  .registerFactory(types.controllers.carl.qualityStandard, (context) => {
+    const cntr = context.container;
+    return new QualityStandardController(cntr.get(types.logger), cntr.get(types.carlQualityStandardReaderService))
+  })
+  .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader, types.controllers.carl.technology, types.controllers.carl.qualityStandard])
+  .register(types.controllers.aipServiceIndex, AIPServiceController, [types.logger, types.aipDataReader, types.controllers.aip.technology, types.controllers.aip.qualityStandard])
   .register(types.controllers.qualityRules, QualityRulesController, [types.logger, types.aipDataReader, types.httpErrorFactory])
   .register(types.controllers.api, ApiController, [types.logger, types.restDataReader, types.controllers.swaggerui, types.controllers.aipServiceIndex, 
     types.controllers.carlServiceIndex, types.controllers.qualityRules])

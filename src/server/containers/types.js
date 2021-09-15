@@ -15,6 +15,9 @@ module.exports = {
   aipTechnologyDataReader: "aipTechnologyDataReader",
   carlTechnologyDataReader: "carlTechnologyDataReader",
 
+  aipQualityStandardReaderService: "aipQualityStandardReaderService",
+  carlQualityStandardReaderService: "carlQualityStandardReaderService",
+
   iconUrlBuilder: "iconUrlBuilder",
   iconUrlBuilderLocal: "iconUrlBuilderLocal",
 
@@ -24,6 +27,8 @@ module.exports = {
     aip: "aipServiceIndex",
     carl: "carlServiceIndex",
   },
+
+  serializer: "Serializer",
 
   controllers: {
     api: "apiController",
@@ -35,9 +40,11 @@ module.exports = {
     carlServiceIndex: "CARLServiceController",
     aip: {
       technology: "AIPTechnologyController",
+      qualityStandard: "AIPQualityStandardController"
     },
     carl: {
       technology: "CARLTechnologyController",
+      qualityStandard: "CARLQualityStandardController"
     }
   },
 };

@@ -1,4 +1,3 @@
 module.exports = {
-  types: require("./types"),
-  TechnologyDataReader: require("./service"),
+  QualityStandardsDataReader: require("./service"),
 };

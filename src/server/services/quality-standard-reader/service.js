@@ -1,34 +1,68 @@
-const DataCache = require("../../lib/data-cache");
-const { TimeConverter } = require("../../lib/cnjs-utils/lib/time-converter");
+// const DataCache = require("../../lib/data-cache");
+// const { TimeConverter } = require("../../lib/cnjs-utils/lib/time-converter");
+const { inArray } = require("../../lib/cnjs-utils/lib/array");
+const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, QualityStandardItemReference, QualityRuleReference } = require("../data-serializer/models");
 
 class QualityStandardsDataReader {
 
   /**
    * @param {string} folder 
    * @param {import("../data-reader/service")} dataReader
-   * @param {import("../icon-url-builder/service")} iconUrlBuilder
+   * @param {import("../data-serializer/serializer")} serializer
    */
-  constructor(dataReader, iconUrlBuilder){
+  constructor(dataReader, serializer){
     this.dataReader = dataReader;
-    this.iconUrlBuilder = iconUrlBuilder;
-    this.cache = new DataCache();
+    this.serializer = serializer;
 
-    this.cache.setRenewer(this.cacheRenewer.bind(this));
+    this.qualityStandardsToFilter = ["AIP", "PCI-DSS-V3.1"];
   }
 
-  async cacheRenewer(){
-    const data = await this.dataReader
+  async list(){
+    /** @type {Array<any>} */
+    const data = await this.dataReader.listQualityStandards();
+
+    return this.serializer.serialize(data.filter(_ => !inArray(this.qualityStandardsToFilter, _.name)), BaseQualityStandard);
   }
 
-  list(){
-    
+  async readQualityStandardCategory(qualityStandardId, categoryId){
+    const qualityStandardCategory = await this.dataReader.readQualityStandardCategory(qualityStandardId, categoryId);
+    /** @type {Array<any>} */
+    const categoryItems = await this.dataReader.listQualityStandardCategoryItems(qualityStandardId, categoryId);
+
+    /**@type {import("./models/quality-standard-category")} */
+    const model = this.serializer.serialize(qualityStandardCategory, QualityStandardCategory);
+
+    model.items = this.serializer.serialize(categoryItems, QualityStandardItem);
+
+    return model;
+  }
+
+  async readQualityStandardItems(qualityStandardId, itemId){
+    const qualityStandardItem = await this.dataReader.readQualityStandardItem(qualityStandardId, itemId);
+    /** @type {Array<any>} */
+    const rules = await this.dataReader.listQualityStandardItemQualityRules(qualityStandardId, itemId);
+
+    /**@type {import("../data-serializer/models/quality-standard-item-reference")} */
+    const model = this.serializer.serialize(qualityStandardItem, QualityStandardItemReference);
+
+    model.qualityRules = this.serializer.serialize(rules, QualityRuleReference);
+
+    return model;
   }
 
   /**
-   * @param {string|number} id 
+   * @param {string} qualityStandardId 
    */
-  read(id){
+  async read(qualityStandardId){
+    const standard = await this.dataReader.readQualityStandard(qualityStandardId);
+    const categories = await this.dataReader.listQualityStandardCategories(qualityStandardId);
 
+    /**@type {import("./models/quality-standard")} */
+    const model = this.serializer.serialize(standard, QualityStandard);
+
+    model.categories = this.serializer.serialize(categories, BaseQualityStandard);
+
+    return model;
   }
 }
 
