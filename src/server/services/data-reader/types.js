@@ -1,5 +1,6 @@
 module.exports = {
   aip: "AIP",
+  carl: "CARL",
   businessCriteria: "business-criteria",
   extensions: "extensions",
   qualityRules: "quality-rules",
@@ -10,4 +11,5 @@ module.exports = {
   qualityRules: "quality-rules",
   categories: "categories",
   items: "items",
+  aipId: "com.castsoftware.aip",
 };

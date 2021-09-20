@@ -3,7 +3,7 @@ class QualityRule {
   constructor(data = {}){
     this.id = data.id;
     this.name = data.name;
-    this.href = `api/quality-rules/${this.id}`;
+    this.href = `quality-rules/${this.id}`;
     this.critical = data.critical;
     this.severity = data.severity;
     this.maxWeight = data.maxWeight;
@@ -14,10 +14,11 @@ class QualityRule {
     this.remediation = data.remediation;
     this.total = data.total;
     this.alternativeName = data.alternativeName;
+    this.status = data.status;
 
     this.businessCriteria = data.businessCriteria || [];
     this.technicalCriteria = data.technicalCriteria || [];
-    this.technologies = data.technologies || [];
+    this.technologies = data.technologies || data.technologyNames || [];
     this.qualityStandards = data.qualityStandards || [];
     this.parameters = data.parameters || [];
     this.thresholds = data.thresholds || [];

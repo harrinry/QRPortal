@@ -9,22 +9,22 @@ const { Controller } = require("../lib/cnjs-utils/server");
  * @typedef {import("express").NextFunction} NextFunction
  */
 
-class TechnologyController extends Controller {
+class ExtensionController extends Controller {
 
   /**
    * @param {Logger} logger 
    * @param {TechnologyDataReader} dataReader 
    */
   constructor(logger, dataReader){
-    super({ logger, baseUrl: "/technologies" });
+    super({ logger, baseUrl: "/extensions" });
 
     this.dataReader = dataReader;
   }
 
   $preprocess(){
     this
-      .get("/", this.listTechnologies(this.dataReader))
-      .get("/:id", this.getTechnology(this.dataReader))
+      .get("/", this.listExtensions(this.dataReader))
+      .get("/:id", this.getExtension(this.dataReader))
   }
 
   $postprocess(){
@@ -80,4 +80,4 @@ class TechnologyController extends Controller {
   }
 }
 
-module.exports = TechnologyController;
+module.exports = ExtensionController;

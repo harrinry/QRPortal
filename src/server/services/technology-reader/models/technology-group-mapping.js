@@ -1,4 +1,5 @@
 const TechnologyGroup = require("./technology-group");
+const { inArray } = require("../../../lib/cnjs-utils/lib/array");
 
 class TechnologyGroupMapping {
   constructor(groups = []){
@@ -14,6 +15,13 @@ class TechnologyGroupMapping {
         this.technologies[technologyId] = _group.id;
       }
     }
+  }
+
+  /**
+   * @param {string} technologyId 
+   */
+  isGroup(technologyId){
+    return !!this.groups[technologyId];
   }
 
   /**

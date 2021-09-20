@@ -1,7 +1,7 @@
 const { createIocBuilder } = require("../lib/cnjs-utils/services/ioc-container");
 const types = require("./types");
 const { FolderService, types: fldTypes } = require("../services/folder-service");
-const { DataReader } = require("../services/data-reader");
+const { DataReader, types: drTypes } = require("../services/data-reader");
 const { TechnologyDataReader } = require("../services/technology-reader");
 const { QualityStandardsDataReader } = require("../services/quality-standard-reader");
 const { Serializer } = require("../services/data-serializer");
@@ -51,13 +51,13 @@ iocBuilder
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
 
-    return new DataReader(folderService.get(fldTypes.restAip));
+    return new DataReader(folderService.get(fldTypes.restAip), drTypes.aip);
   })
   .registerFactory(types.carlDataReader, (context) => {
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
 
-    return new DataReader(folderService.get(fldTypes.restCarl));
+    return new DataReader(folderService.get(fldTypes.restCarl), drTypes.carl);
   })
   .registerFactory(types.aipTechnologyDataReader, (context) => {
     const cntr = context.container;

@@ -5,4 +5,7 @@ module.exports = {
   QualityStandardCategory: require("./quality-standard-category"),
   QualityRuleReference: require("./quality-rule-reference"),
   QualityStandardItemReference: require("./quality-standard-item-reference"),
+  BaseExtension: require("./base-extension"),
+  ExtensionVersion: require("./extension-version"),
+  Extension: require("./extension"),
 };

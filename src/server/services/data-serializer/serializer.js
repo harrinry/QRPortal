@@ -1,5 +1,6 @@
 const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
-const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, QualityRuleReference, QualityStandardItemReference } = require("./models");
+const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
+  QualityRuleReference, QualityStandardItemReference, BaseExtension, ExtensionVersion } = require("./models");
 const QualityRuleReferenceSerializer = require("./quality-rule-reference-serializer");
 
 /**
@@ -8,7 +9,19 @@ const QualityRuleReferenceSerializer = require("./quality-rule-reference-seriali
  * @typedef {import("../icon-url-builder/service")} IconUrlBuilder
  */
 
-class DataSerializer extends BaseSerializer {
+class BaseDataSerializer extends BaseSerializer {
+  constructor(clsConstructor){
+    super(clsConstructor);
+  }
+
+  __serialize(data){
+    const Ctor = this.Ctor;
+    const model = new Ctor(data);
+
+    return model;
+  }
+}
+class DataSerializer extends BaseDataSerializer {
   
   /**
    * @param {IconUrlBuilder} iconUrlBuilder 
@@ -20,10 +33,32 @@ class DataSerializer extends BaseSerializer {
   }
 
   __serialize(data){
+    const model = super.__serialize(data);
+
+    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.name.toLowerCase()) : null;
+
+    return model;
+  }
+}
+
+class ExtensionDataSerializer extends BaseSerializer {
+  
+  /**
+   * @param {IconUrlBuilder} iconUrlBuilder 
+   */
+  constructor(iconUrlBuilder){
+    super(BaseExtension);
+
+    this.iconBuilder = iconUrlBuilder;
+  }
+
+  __serialize(data){
     const Ctor = this.Ctor;
     const model = new Ctor(data);
 
-    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.name.toLowerCase()) : null;
+    if(!model.iconUrl){
+      model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.name.toLowerCase()) : null;
+    }
 
     return model;
   }
@@ -86,6 +121,8 @@ class Serializer {
     this.qualityStandardCategoryItemSerializer = new QualityStandardItemSerializer(iconUrlBuilder);
     this.qualityStandardItemReferenceSerializer = new QualityStandardItemReferenceSerializer(iconUrlBuilder);
     this.qualityRuleReferenceSerializer = new QualityRuleReferenceSerializer();
+    this.baseExtensionSerializer = new ExtensionDataSerializer(iconUrlBuilder);
+    this.extensionVersionSerializer = new BaseDataSerializer(ExtensionVersion);
   }
 
   serialize(data, type){
@@ -103,8 +140,12 @@ class Serializer {
         return this.qualityRuleReferenceSerializer.serialize(data);
       case QualityStandardItemReference:
         return this.qualityStandardItemReferenceSerializer.serialize(data);
+      case BaseExtension:
+        return this.baseExtensionSerializer.serialize(data);
+      case ExtensionVersion:
+        return this.extensionVersionSerializer.serialize(data);
       default:
-        throw new Error("Type unknown");
+        throw new Error("Serializer Type unknown");
     }
   }
 }

@@ -3,4 +3,5 @@ module.exports = {
   QualityRule: require("./quality-rule"),
   Base: require("./base"),
   Technology: require("./technology"),
+  BaseExtension: require("./base-extension"),
 };

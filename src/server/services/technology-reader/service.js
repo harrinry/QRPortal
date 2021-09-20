@@ -4,6 +4,7 @@ const { Technology } = require("../data-reader/models");
 const DataCache = require("../../lib/data-cache");
 const { TimeConverter } = require("../../lib/cnjs-utils/lib/time-converter");
 const types = require("./types");
+const drTypes = require("../data-reader/types");
 
 class TechnologyDataReader extends JsonFileReader{
 
@@ -24,11 +25,19 @@ class TechnologyDataReader extends JsonFileReader{
   async readTechnology(id){
     let tech = new Technology();
     if (await this.technologyInGroup(id)) {
-      const techGroup = await this.readTechnologyGroup(this.getGroupIdFromTechnologyId(id));
+      const techGroup = await this.readTechnologyGroup(await this.getGroupIdFromTechnologyId(id));
       tech = new Technology(techGroup);
 
       for (const technologyId of techGroup.technologies) {
-        const qrData = await this.dataReader.readTechnologyQualityRules(technologyId);
+        const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
+        tech.setQualityRules(qrData);
+      }
+    } else if (await this.IsGroupId(id)){
+      const techGroup = await this.readTechnologyGroup(id);
+      tech = new Technology(techGroup);
+
+      for (const technologyId of techGroup.technologies) {
+        const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
         tech.setQualityRules(qrData);
       }
     } else {
@@ -56,7 +65,13 @@ class TechnologyDataReader extends JsonFileReader{
 
         if(!consolidatedTechnologies[groupId]){
           const group = await this.readTechnologyGroup(groupId);
-          consolidatedTechnologies[groupId] = group;
+          consolidatedTechnologies[groupId] = new TechnologyGroup(
+            group.id, 
+            group.name, 
+            group.technologies,
+            group.iconUrl,
+            `${this.dataReader.entryPoint}/${drTypes.technologies}/${groupId}`,
+          );
         }
 
       } else {
@@ -64,7 +79,8 @@ class TechnologyDataReader extends JsonFileReader{
           technology.id, 
           technology.name, 
           undefined,
-          this.iconUrlBuilder.createIconUrl(technology.id)
+          this.iconUrlBuilder.createIconUrl(technology.id),
+          technology.href,
         );
       }
     }
@@ -111,6 +127,15 @@ class TechnologyDataReader extends JsonFileReader{
     const groupMapping = await this.readTechnologyGroups();
 
     return groupMapping.inGroup(technologyId);
+  }
+
+  /**
+   * @param {number} technologyId 
+   */
+   async IsGroupId(technologyId){
+    const groupMapping = await this.readTechnologyGroups();
+
+    return groupMapping.isGroup(technologyId);
   }
 }
 

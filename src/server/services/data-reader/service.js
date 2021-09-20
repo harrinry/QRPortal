@@ -12,9 +12,10 @@ class DataReader extends JsonFileReader {
    * @param {string} folder 
    * @param {string} entryPoint 
    */
-  constructor(folder){
+  constructor(folder, entryPoint){
     super(folder);
 
+    this.entryPoint = entryPoint;
     this.ServiceIndex = null;
   }
 
@@ -46,14 +47,14 @@ class DataReader extends JsonFileReader {
    * @param {number} id
    */
   async readTechnology(id){
-    return this.read(types.technologies, await this.matchId(id, types.technologies));
+    return this.read(types.technologies, await this.matchTechnologyId(id));
   }
 
   /**
    * @param {number} id
    */
   async readTechnologyQualityRules(id){
-    return this.read(types.technologies, await this.matchId(id, types.technologies), types.qualityRules);
+    return this.read(types.technologies, await this.matchTechnologyId(id), types.qualityRules);
   }
 
   /**
@@ -71,7 +72,7 @@ class DataReader extends JsonFileReader {
    * @param {string} id
    */
   async readExtension(id){
-    return this.read(types.extensions, await this.matchId(id, types.extensions));
+    return this.read(types.extensions, await this.matchExtensionId(id), types.extensions);
   }
 
   listExtensions(){
@@ -82,7 +83,16 @@ class DataReader extends JsonFileReader {
    * @param {string} id
    */
   async listExtensionVersions(id){
-    return this.read(types.extensions, await this.matchId(id, types.extensions), types.versions);
+    if(id.toLowerCase() === types.aipId) return this.read(types.versions);
+    return this.read(types.extensions, await this.matchExtensionId(id), types.versions);
+  }
+
+  /**
+   * @param {string} id 
+   * @param {string} version 
+   */
+  async readExtensionVersion(id, version){
+    return this.read(types.extensions, await this.matchExtensionId(id), types.versions, version);
   }
 
   /**
@@ -90,7 +100,7 @@ class DataReader extends JsonFileReader {
    * @param {string} version 
    */
   async readExtensionVersionQualityRules(id, version){
-    return this.read(types.extensions, id, types.versions, version, types.qualityRules);
+    return this.read(types.extensions, await this.matchExtensionId(id), types.versions, version, types.qualityRules);
   }
 
   async listQualityRules(){
@@ -120,6 +130,14 @@ class DataReader extends JsonFileReader {
     if(!caseSensitiveId) throw new JsonFileNotFoundError(path.join(...folderPath, id));
 
     return caseSensitiveId;
+  }
+
+  matchTechnologyId(id){
+    return this.matchId(id, types.technologies);
+  }
+
+  matchExtensionId(id){
+    return this.matchId(id, types.extensions);
   }
 
   matchQualityStandardId(id){
@@ -189,6 +207,28 @@ class DataReader extends JsonFileReader {
   async listQualityStandardItemQualityRules(qualityStandardId, itemId){
     return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
       types.items, await this.matchQualityStandardItemId(qualityStandardId, itemId), types.qualityRules);
+  }
+
+  listVersions(){
+    return this.read(types.versions);
+  }
+
+  /**
+   * @param {string} version 
+   */
+  async readVersion(version){
+    return this.read(types.versions, await this.matchVersion(version));
+  }
+
+  /**
+   * @param {string} version 
+   */
+  async readVersionQualityRules(version){
+    return this.read(types.versions, await this.matchVersion(version), types.qualityRules);
+  }
+
+  matchVersion(version){
+    return this.matchId(version, types.versions);
   }
 }
 

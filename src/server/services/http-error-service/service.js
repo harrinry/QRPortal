@@ -7,15 +7,18 @@ const factory = new HttpErrorFactory();
 
 for (const locale in locales) {
   for (const ecode in ecodes) {
-    const code = ecodes[ecode];
+    const codes = ecodes[ecode];
 
-    if(!errors[code]) continue;
-
-    const error = errors[code];
-    const msg = error.message[locale] || error.message[locales.en];
-    const details = error.details[locale] || error.message[locales.en];
-
-    factory.registerErrCodes(locale, new RegistryError(code, msg, details));
+    for (const codeKey in codes) {
+      const code = codes[codeKey];
+      if(!errors[code]) continue;
+      
+      const error = errors[code];
+      const msg = error.message[locale] || error.message[locales.en];
+      const details = error.details[locale] || error.message[locales.en];
+      
+      factory.registerErrCodes(locale, new RegistryError(code, msg, details));
+    }
   }
 }
 
