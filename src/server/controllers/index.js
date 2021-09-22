@@ -9,4 +9,5 @@ module.exports = {
   BaseServiceController: require("./base-service-controller"),
   TechnologyController: require("./technology-controller"),
   QualityStandardController: require("./quality-standard-controller"),
+  ExtensionController: require("./extension-controller"),
 };

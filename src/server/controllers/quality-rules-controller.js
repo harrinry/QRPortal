@@ -2,7 +2,7 @@ const { Controller } = require("../lib/cnjs-utils/server");
 
 /**
  * @typedef {import("winston").Logger} Logger
- * @typedef {import("../services/data-reader/service")} DataReader
+ * @typedef {import("../services/quality-rule-reader/service")} DataReader
  * @typedef {import("../services/http-error-service/service")} HttpErrorFactory
  * @typedef {import("express").Request} Request
  * @typedef {import("express").Response} Response
@@ -75,10 +75,10 @@ class QualityRulesController extends Controller {
      * @param {Response} res 
      */
     async function handler(req, res, next){
-      const {id} = req.params;
+      const { id } = req.params;
 
       try {
-        const qualityRule = await dataReader.readQualityRule(id);
+        const qualityRule = await dataReader.read(id);
 
         res.status(200).json(qualityRule);
       } catch (error) {

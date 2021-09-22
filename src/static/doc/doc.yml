@@ -575,8 +575,10 @@ components:
           $ref: "#/components/schemas/Extension.qualityModel"
         transactionsConfiguration:
           $ref: "#/components/schemas/Extension.transactionConfiguration"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
         versions:
-          $ref: "#/components/schemas/Extension.versions"
+          $ref: "#/components/schemas/ExtensionVersion"
     
     ExtensionItem:
       type: object
@@ -587,8 +589,14 @@ components:
           $ref: "#/components/schemas/Extension.transactionConfiguration"
         name:
           $ref: "#/components/schemas/Extension.name"
+        title:
+          $ref: "#/components/schemas/Extension.title"
+        description:
+          $ref: "#/components/schemas/Extension.description"
         href:
           $ref: "#/components/schemas/Extension.href"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
     
     ExtensionVersion:
       type: object
@@ -742,6 +750,22 @@ components:
       description: A quality Standard category Name such as AUTOSAR-CPP-2014
       schema: 
         type: string
+
+    ExtensionsId:
+      name: ExtensionsId
+      in: path
+      required: true
+      description: An extension id such as com.castsoftware.html5
+      schema: 
+        type: string
+    
+    ExtensionVersion:
+      name: ExtensionVersion
+      in: path
+      required: true
+      description: An extension version such as 1.0.0-funcrel
+      schema: 
+        type: string
   # securitySchemes:
 
 tags:
@@ -840,7 +864,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/QualityStandard"
-  /{service-type}/quality-standards/{QualityStandardId}/sections/{QualityStandardCategoryId}:
+  /{service-type}/quality-standards/{QualityStandardId}/items/{QualityStandardCategoryId}:
     get:
       tags:
         - Quality Standards
@@ -856,6 +880,53 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/QualityStandardReference"
+  /{service-type}/extensions:
+    get:
+      tags:
+        - Extensions
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+      description: List Extensions
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ExtensionItem"
+  /{service-type}/extensions/{ExtensionId}:
+    get:
+      tags:
+        - Extensions
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/ExtensionsId"
+      description: Extension information
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Extension"
+  /{service-type}/extensions/{ExtensionId}/versions/{ExtensionVersion}:
+    get:
+      tags:
+        - Extensions
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/ExtensionsId"
+        - $ref: "#/components/parameters/ExtensionVersion"
+      description: Extension version information and list of quality rules
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ExtensionVersion"
   /quality-rules/{id}:
     get:
       tags:

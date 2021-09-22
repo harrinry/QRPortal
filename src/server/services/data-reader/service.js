@@ -72,7 +72,7 @@ class DataReader extends JsonFileReader {
    * @param {string} id
    */
   async readExtension(id){
-    return this.read(types.extensions, await this.matchExtensionId(id), types.extensions);
+    return this.read(types.extensions, await this.matchExtensionId(id));
   }
 
   listExtensions(){
@@ -112,7 +112,7 @@ class DataReader extends JsonFileReader {
    * @param {number} id 
    */
   readQualityRule(id){
-    return this.read(types.qualityRules, id);
+    return this.read(types.qualityRules, `${id}`);
   }
 
   listQualityStandards(){

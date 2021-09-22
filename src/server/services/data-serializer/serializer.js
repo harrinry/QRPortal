@@ -1,7 +1,6 @@
 const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
 const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
-  QualityRuleReference, QualityStandardItemReference, BaseExtension, ExtensionVersion } = require("./models");
-const QualityRuleReferenceSerializer = require("./quality-rule-reference-serializer");
+  QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension } = require("./models");
 
 /**
  * @typedef {import("./models/base-quality-standard")} IBaseQualityStandard
@@ -46,8 +45,8 @@ class ExtensionDataSerializer extends BaseSerializer {
   /**
    * @param {IconUrlBuilder} iconUrlBuilder 
    */
-  constructor(iconUrlBuilder){
-    super(BaseExtension);
+  constructor(iconUrlBuilder, clsConstructor){
+    super(clsConstructor);
 
     this.iconBuilder = iconUrlBuilder;
   }
@@ -96,13 +95,13 @@ class QualityStandardItemSerializer extends BaseSerializer {
     const Ctor = this.Ctor;
     const model = new Ctor(data);
 
-    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.id.toLowerCase()) : null;
+    model.iconUrl = data.id ? this.iconBuilder.createIconUrl(data.id.toLowerCase()) : null;
 
-    const _path = data.href.split("/");
+    // const _path = data.href.split("/");
 
-    _path[3] = "sections"
+    // _path[3] = "sections"
 
-    model.href = _path.join("/");
+    // model.href = _path.join("/");
 
     return model;
   }
@@ -120,9 +119,11 @@ class Serializer {
     this.qualityStandardCategorySerializer = new DataSerializer(iconUrlBuilder, QualityStandardCategory);
     this.qualityStandardCategoryItemSerializer = new QualityStandardItemSerializer(iconUrlBuilder);
     this.qualityStandardItemReferenceSerializer = new QualityStandardItemReferenceSerializer(iconUrlBuilder);
-    this.qualityRuleReferenceSerializer = new QualityRuleReferenceSerializer();
-    this.baseExtensionSerializer = new ExtensionDataSerializer(iconUrlBuilder);
+    this.qualityRuleReferenceSerializer = new BaseDataSerializer(QualityRuleReference);
+    this.baseExtensionSerializer = new ExtensionDataSerializer(iconUrlBuilder, BaseExtension);
+    this.extensionSerializer = new ExtensionDataSerializer(iconUrlBuilder, Extension);
     this.extensionVersionSerializer = new BaseDataSerializer(ExtensionVersion);
+    this.qualityRuleSerializer = new BaseDataSerializer(QualityRule);
   }
 
   serialize(data, type){
@@ -144,8 +145,10 @@ class Serializer {
         return this.baseExtensionSerializer.serialize(data);
       case ExtensionVersion:
         return this.extensionVersionSerializer.serialize(data);
+      case Extension:
+        return this.extensionSerializer.serialize(data);
       default:
-        throw new Error("Serializer Type unknown");
+        throw new Error(`Serializer Type unknown: ${type && type.name}`);
     }
   }
 }

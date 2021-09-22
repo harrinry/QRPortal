@@ -12,6 +12,10 @@ module.exports = {
   aipDataReader: "aipDataReader",
   carlDataReader: "carlDataReader",
   restDataReader: "restDataReader",
+
+  qualityRuleDataReader: "qualityRuleDataReader",
+  extensionDataReader: "extensionDataReader",
+
   aipTechnologyDataReader: "aipTechnologyDataReader",
   carlTechnologyDataReader: "carlTechnologyDataReader",
 
@@ -39,6 +43,7 @@ module.exports = {
     aipServiceIndex: "AIPServiceController",
     carlServiceIndex: "CARLServiceController",
     aip: {
+      extension: "AIPExtensionController",
       technology: "AIPTechnologyController",
       qualityStandard: "AIPQualityStandardController"
     },

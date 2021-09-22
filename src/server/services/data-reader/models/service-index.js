@@ -17,7 +17,7 @@ class ServiceIndex {
       this.items.push(new ServiceIndexElement(caseConvert.spaceSeparated(key), element.name, `${this.id}/${caseConvert.toParamCase(key)}`));
     }
 
-    this.items.push(new ServiceIndexElement("indexes", "Indexes in alphabetic order", `/${this.id}/indexes`));
+    this.items.push(new ServiceIndexElement("indexes", "Indexes in alphabetic order", `${this.id}/indexes`));
   }
 }
 

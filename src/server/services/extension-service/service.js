@@ -1,6 +1,25 @@
 const { BaseExtension, ExtensionVersion, Extension, QualityRuleReference } = require("../data-serializer/models");
 const types = require("../data-reader/types");
 
+class NameCleaner{
+  constructor(){
+    this.toClean = [' technology',' Linker', 'for ', 'for Java', 'Techonology Extension For' ,'Technology Extension For ', ' Framework', 'Support of ', 'Technology Extension'];
+    this.exceptions = ['System Level Rules', 'Web Services', 'CAST AIP'];
+  }
+
+  clean(name){
+    const cl = this.toClean.length;
+    let cleanName = name;
+    
+    for (let i = 0; i < cl; i++) {
+      const wordToRemove = this.toClean[i];
+      cleanName = cleanName.replace(wordToRemove, '');
+    }
+    
+    return (cleanName.includes('Analyzer') || this.exceptions.indexOf(cleanName) !== -1) ? cleanName : cleanName + ' Analyzer' ;
+  }
+}
+
 class ExtensionDataReader {
 
   /**
@@ -10,6 +29,7 @@ class ExtensionDataReader {
   constructor(dataReader, serializer){
     this.dataReader = dataReader;
     this.serializer = serializer;
+    this.cleaner = new NameCleaner();
 
     this.extensions = {};
 
@@ -23,6 +43,8 @@ class ExtensionDataReader {
       const id = extension.name;
       const extensionInfo = await this.dataReader.readExtension(id);
       const versions = await this.dataReader.listExtensionVersions(id);
+
+      extensionInfo.title = this.cleaner.clean(extensionInfo.title);
 
       this.extensions[id] = this.serializer.serialize(extensionInfo, BaseExtension);
       this.extensionVersions[id] = this.serializer.serialize(extensionInfo, Extension);
@@ -51,7 +73,7 @@ class ExtensionDataReader {
    * @param {string} id 
    * @param {string} version 
    */
-  readVersion(id, version){
+  async readVersion(id, version){
     let extensionVersion, qualityRules;
     
     if(id === types.aipId){

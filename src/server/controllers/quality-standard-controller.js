@@ -26,8 +26,8 @@ class QualityStandardController extends Controller {
       .get("/", this.listQualityStandards(this.dataReader))
       .get("/:id", this.getQualityStandard(this.dataReader))
       .get("/:id/categories/:categoryId", this.getQualityStandardCategory(this.dataReader))
-      .get("/:id/categories/:categoryId/section/:section", this.getQualityStandardCategorySection(this.dataReader))
-      .get("/:id/sections/:section", this.getQualityStandardSection(this.dataReader))
+      // .get("/:id/categories/:categoryId/section/:section", this.getQualityStandardCategorySection(this.dataReader))
+      .get("/:id/items/:item", this.getQualityStandardItem(this.dataReader))
   }
 
   $postprocess(){
@@ -105,44 +105,20 @@ class QualityStandardController extends Controller {
     return handler
   }
 
-  /**
+    /**
    * @param {QualityStandardDataReader} dataReader 
    */
-  getQualityStandardCategorySection(dataReader){
+  getQualityStandardItem(dataReader){
 
     /**
      * @param {Request} req 
      * @param {Response} res 
      */
      async function handler(req, res, next){
-      const {id, categoryId, section} = req.params;
+      const {id, item} = req.params;
 
       try {
-        const model = await dataReader.readQualityStandardCategory(id, categoryId);
-
-        res.status(200).json(model);
-      } catch (error) {
-        next(error);
-      }
-    }
-
-    return handler
-  }
-
-    /**
-   * @param {QualityStandardDataReader} dataReader 
-   */
-  getQualityStandardSection(dataReader){
-
-    /**
-     * @param {Request} req 
-     * @param {Response} res 
-     */
-     async function handler(req, res, next){
-      const {id, section} = req.params;
-
-      try {
-        const model = await dataReader.readQualityStandardItems(id, section);
+        const model = await dataReader.readQualityStandardItems(id, item);
 
         res.status(200).json(model);
       } catch (error) {

@@ -7,6 +7,7 @@ class QualityRuleReference {
     this.critical = data.critical;
     this.severity = data.severity;
     this.technologies = data.technologyNames;
+    this.status = data.status;
   }
 }
 

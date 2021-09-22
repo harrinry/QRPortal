@@ -2,7 +2,7 @@ const { Controller } = require("../lib/cnjs-utils/server");
 
 /**
  * @typedef {import("winston").Logger} Logger
- * @typedef {import("../services/technology-reader/service")} TechnologyDataReader
+ * @typedef {import("../services/extension-service/service")} ExtensionDataReader
  * @typedef {import("../services/http-error-service/service")} HttpErrorFactory
  * @typedef {import("express").Request} Request
  * @typedef {import("express").Response} Response
@@ -13,7 +13,7 @@ class ExtensionController extends Controller {
 
   /**
    * @param {Logger} logger 
-   * @param {TechnologyDataReader} dataReader 
+   * @param {ExtensionDataReader} dataReader 
    */
   constructor(logger, dataReader){
     super({ logger, baseUrl: "/extensions" });
@@ -21,10 +21,13 @@ class ExtensionController extends Controller {
     this.dataReader = dataReader;
   }
 
-  $preprocess(){
+  async $preprocess(){
+    await this.dataReader.initMapping();
+
     this
       .get("/", this.listExtensions(this.dataReader))
       .get("/:id", this.getExtension(this.dataReader))
+      .get("/:id/versions/:version", this.getExtensionVersion(this.dataReader));
   }
 
   $postprocess(){
@@ -32,9 +35,9 @@ class ExtensionController extends Controller {
   }
 
   /**
-   * @param {TechnologyDataReader} dataReader 
+   * @param {ExtensionDataReader} dataReader 
    */
-  listTechnologies(dataReader){
+   listExtensions(dataReader){
 
     /**
      * @param {Request} req
@@ -43,9 +46,9 @@ class ExtensionController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        const technologies = await dataReader.readConsolidatedTechnologies();
-
-        res.status(200).json(technologies);
+        const list = await dataReader.list();
+        
+        res.status(200).json(list);
       } catch (error) {
         next(error);
       }
@@ -54,10 +57,10 @@ class ExtensionController extends Controller {
     return handler
   }
 
-    /**
-   * @param {TechnologyDataReader} dataReader 
+  /**
+   * @param {ExtensionDataReader} dataReader 
    */
-  getTechnology(dataReader){
+  getExtension(dataReader){
 
     /**
      * @param {Request} req 
@@ -67,10 +70,33 @@ class ExtensionController extends Controller {
       const {id} = req.params;
 
       try {
-        const technology = await dataReader.readTechnology(id);
+        const model = await dataReader.read(id);
 
-        if(!technology) return res.sendStatus(404)
-        res.status(200).json(technology.toApiOutput());
+        res.status(200).json(model);
+      } catch (error) {
+        next(error);
+      }
+    }
+
+    return handler
+  }
+
+    /**
+   * @param {ExtensionDataReader} dataReader 
+   */
+  getExtensionVersion(dataReader){
+
+    /**
+     * @param {Request} req 
+     * @param {Response} res 
+     */
+    async function handler(req, res, next){
+      const {id, version} = req.params;
+
+      try {
+        const model = await dataReader.readVersion(id, version);
+
+        res.status(200).json(model);
       } catch (error) {
         next(error);
       }
