@@ -69,6 +69,34 @@ class DataReader extends JsonFileReader {
   }
 
   /**
+   * @param {string} id 
+   */
+  async listBuisnessCriteriaQualityRules(id){
+    return this.read(types.businessCriteria, await this.matchId(id, types.businessCriteria), types.qualityRules);
+  }
+
+  /**
+   * @param {string} id 
+   */
+  async listBuisnessCriteriaTechnicalCriterias(id){
+    return this.read(types.businessCriteria, await this.matchId(id, types.businessCriteria), types.technicalCriteria);
+  }
+
+  /**
+   * @param {string} id 
+   */
+  async readTechnicalCriteria(id){
+    return this.read(types.technicalCriteria, await this.matchId(id, types.technicalCriteria));
+  }
+
+  /**
+   * @param {string} id 
+   */
+  async readTechnicalCriteriaQualityRules(id){
+    return this.read(types.technicalCriteria, await this.matchId(id, types.technicalCriteria), types.qualityRules);
+  }
+
+  /**
    * @param {string} id
    */
   async readExtension(id){

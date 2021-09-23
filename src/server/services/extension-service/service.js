@@ -38,6 +38,8 @@ class ExtensionDataReader {
 
   async initMapping(){
     const extensions = await this.dataReader.listExtensions();
+    const aipInfo = { name: types.aipId, title: "CAST AIP", href: `${types.aip}/${types.extensions}/${types.aipId}`, qualityModel: true, transactionsConfiguration: true };
+    this.setExtensionInfo(types.aipId, aipInfo, await this.dataReader.listVersions());
 
     for (const extension of extensions) {
       const id = extension.name;
@@ -46,16 +48,19 @@ class ExtensionDataReader {
 
       extensionInfo.title = this.cleaner.clean(extensionInfo.title);
 
-      this.extensions[id] = this.serializer.serialize(extensionInfo, BaseExtension);
-      this.extensionVersions[id] = this.serializer.serialize(extensionInfo, Extension);
-      this.extensionVersions[id].versions = this.serializer.serialize(versions, ExtensionVersion);
+      this.setExtensionInfo(id, extensionInfo, versions);
     }
+  }
 
-    const aipData = { name: types.aipId, title: "CAST AIP", href: `${types.aip}/${types.extensions}/${types.aipId}` };
-
-    this.extensions[types.aipId] = this.serializer.serialize(aipData, BaseExtension);
-    this.extensionVersions[types.aipId] = this.serializer.serialize(aipData, Extension);
-    this.extensionVersions[types.aipId].versions = this.serializer.serialize(await this.dataReader.listVersions(), ExtensionVersion);
+  /**
+   * @param {string} id 
+   * @param {*} info 
+   * @param {Array<*>} versions 
+   */
+  setExtensionInfo(id, info, versions){
+    this.extensions[id] = this.serializer.serialize(info, BaseExtension);
+    this.extensionVersions[id] = this.serializer.serialize(info, Extension);
+    this.extensionVersions[id].versions = this.serializer.serialize(versions, ExtensionVersion);
   }
 
   list(){

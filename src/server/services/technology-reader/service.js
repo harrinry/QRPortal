@@ -24,15 +24,16 @@ class TechnologyDataReader extends JsonFileReader{
 
   async readTechnology(id){
     let tech = new Technology();
-    if (await this.technologyInGroup(id)) {
-      const techGroup = await this.readTechnologyGroup(await this.getGroupIdFromTechnologyId(id));
-      tech = new Technology(techGroup);
+    // if (await this.technologyInGroup(id)) {
+    //   const techGroup = await this.readTechnologyGroup(await this.getGroupIdFromTechnologyId(id));
+    //   tech = new Technology(techGroup);
 
-      for (const technologyId of techGroup.technologies) {
-        const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
-        tech.setQualityRules(qrData);
-      }
-    } else if (await this.IsGroupId(id)){
+    //   for (const technologyId of techGroup.technologies) {
+    //     const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
+    //     tech.setQualityRules(qrData);
+    //   }
+    // } else 
+    if (await this.IsGroupId(id)){
       const techGroup = await this.readTechnologyGroup(id);
       tech = new Technology(techGroup);
 

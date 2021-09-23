@@ -1,6 +1,8 @@
 const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
 const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
-  QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension } = require("./models");
+  QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension,
+  BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria } = require("./models");
+const caseConvert = require("../../lib/case-convert");
 
 /**
  * @typedef {import("./models/base-quality-standard")} IBaseQualityStandard
@@ -107,6 +109,24 @@ class QualityStandardItemSerializer extends BaseSerializer {
   }
 }
 
+class BusinessCriteriaSerializer extends BaseSerializer {
+  constructor(iconUrlBuilder, cls){
+    super(cls);
+
+    this.iconBuilder = iconUrlBuilder;
+  }
+
+  __serialize(data){
+    const Ctor = this.Ctor;
+    const model = new Ctor(data);
+    const name = data.name ? caseConvert.toParamCase(data.name.toLowerCase()) : null;
+
+    model.iconUrl = name ? this.iconBuilder.createIconUrl(name) : null;
+
+    return model;
+  }
+}
+
 class Serializer {
 
   /**
@@ -124,6 +144,10 @@ class Serializer {
     this.extensionSerializer = new ExtensionDataSerializer(iconUrlBuilder, Extension);
     this.extensionVersionSerializer = new BaseDataSerializer(ExtensionVersion);
     this.qualityRuleSerializer = new BaseDataSerializer(QualityRule);
+    this.baseBusinessCriteriaSerializer = new BusinessCriteriaSerializer(iconUrlBuilder, BaseBusinessCriteria);
+    this.businessCriteriaSerializer = new BusinessCriteriaSerializer(iconUrlBuilder, BusinessCriteria);
+    this.technicalCriteriaReferenceSerializer = new BaseDataSerializer(TechnicalCriteriaReference);
+    this.technicalCriteriaSerializer = new BaseDataSerializer(TechnicalCriteria);
   }
 
   serialize(data, type){
@@ -147,6 +171,16 @@ class Serializer {
         return this.extensionVersionSerializer.serialize(data);
       case Extension:
         return this.extensionSerializer.serialize(data);
+      case QualityRule:
+        return this.qualityRuleSerializer.serialize(data);
+      case BaseBusinessCriteria:
+        return this.baseBusinessCriteriaSerializer.serialize(data);
+      case BusinessCriteria:
+        return this.businessCriteriaSerializer.serialize(data);
+      case TechnicalCriteriaReference:
+        return this.technicalCriteriaReferenceSerializer.serialize(data);
+      case TechnicalCriteria:
+        return this.technicalCriteriaSerializer.serialize(data);
       default:
         throw new Error(`Serializer Type unknown: ${type && type.name}`);
     }

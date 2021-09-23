@@ -9,4 +9,8 @@ module.exports = {
   BaseExtension: require("./base-extension"),
   ExtensionVersion: require("./extension-version"),
   Extension: require("./extension"),
+  BaseBusinessCriteria: require("./base-business-criteria"),
+  BusinessCriteria: require("./business-criteria"),
+  TechnicalCriteriaReference: require("./technical-criteria-reference"),
+  TechnicalCriteria: require("./technical-criteria"),
 };

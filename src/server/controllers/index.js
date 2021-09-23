@@ -10,4 +10,7 @@ module.exports = {
   TechnologyController: require("./technology-controller"),
   QualityStandardController: require("./quality-standard-controller"),
   ExtensionController: require("./extension-controller"),
+  BusinessCriteriaController: require("./business-criteria-controller"),
+  IndexController: require("./index-controller"),
+  TechnicalCriteriaController: require("./technical-criteria-controller"),
 };

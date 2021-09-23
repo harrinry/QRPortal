@@ -16,6 +16,12 @@ module.exports = {
   qualityRuleDataReader: "qualityRuleDataReader",
   extensionDataReader: "extensionDataReader",
 
+  aipBusinessCriteriaDataReader: "aipBusinessCriteriaDataReader",
+  carlBusinessCriteriaDataReader: "carlBusinessCriteriaDataReader",
+
+  aipTechnicalCriteriaDataReader: "aipTechnicalCriteriaDataReader",
+  carlTechnicalCriteriaDataReader: "carlTechnicalCriteriaDataReader",
+
   aipTechnologyDataReader: "aipTechnologyDataReader",
   carlTechnologyDataReader: "carlTechnologyDataReader",
 
@@ -45,11 +51,17 @@ module.exports = {
     aip: {
       extension: "AIPExtensionController",
       technology: "AIPTechnologyController",
-      qualityStandard: "AIPQualityStandardController"
+      qualityStandard: "AIPQualityStandardController",
+      businessCriteria: "AIPBusinessCriteriaController",
+      technicalCriteria: "AIPTechnicalCriteriaController",
+      index: "AIPIndexController",
     },
     carl: {
       technology: "CARLTechnologyController",
-      qualityStandard: "CARLQualityStandardController"
+      qualityStandard: "CARLQualityStandardController",
+      businessCriteria: "CARLBusinessCriteriaController",
+      technicalCriteria: "CARLTechnicalCriteriaController",
+      index: "CARLIndexController",
     }
   },
 };
