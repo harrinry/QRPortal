@@ -727,7 +727,7 @@ components:
     QualityRuleSearch.searchBy:
       name: search-by
       in: query
-      description: quality rule search search by
+      description: "quality rule search search by the following filters are only available when authenticated: severity, critical, max-weight, associated-value-name, output, remediation, sample, total, alternative-name"
       required: false
       schema:
         type: string
@@ -739,6 +739,15 @@ components:
           - business-criteria
           - quality-standards
           - technical-criteria
+          - severity
+          - critical
+          - max-weight
+          - associated-value-name
+          - output
+          - remediation
+          - sample
+          - total
+          - alternative-name
 
     ServiceType:
       name: service-type
