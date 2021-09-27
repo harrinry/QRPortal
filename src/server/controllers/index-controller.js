@@ -43,7 +43,7 @@ class IndexController extends Controller {
       try {
         let list = await dataReader.list();
         
-        res.status(200).json(list.filter(_ => _.id > 1000000));
+        res.status(200).json({name: "indexes", items: list});
       } catch (error) {
         next(error);
       }

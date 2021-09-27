@@ -4,7 +4,7 @@ class Extension extends BaseExtension {
   constructor(params = {}){
     super(params);
 
-    this.versions = [];
+    this.items = [];
   }
 }
 

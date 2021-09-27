@@ -4,7 +4,7 @@ class QualityStandard extends BaseQualityStandard {
   constructor(params = {}, categories = []){
     super(params);
 
-    this.categories = categories;
+    this.items = categories;
   }
 }
 

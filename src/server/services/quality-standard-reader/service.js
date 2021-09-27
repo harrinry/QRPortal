@@ -57,10 +57,10 @@ class QualityStandardsDataReader {
     const standard = await this.dataReader.readQualityStandard(qualityStandardId);
     const categories = await this.dataReader.listQualityStandardCategories(qualityStandardId);
 
-    /**@type {import("./models/quality-standard")} */
+    /**@type {import("../data-serializer/models/quality-standard")} */
     const model = this.serializer.serialize(standard, QualityStandard);
 
-    model.categories = this.serializer.serialize(categories, BaseQualityStandard);
+    model.items = this.serializer.serialize(categories, BaseQualityStandard);
 
     return model;
   }

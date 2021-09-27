@@ -13,4 +13,5 @@ module.exports = {
   BusinessCriteriaController: require("./business-criteria-controller"),
   IndexController: require("./index-controller"),
   TechnicalCriteriaController: require("./technical-criteria-controller"),
+  SSOController: require("./sso-controller"),
 };

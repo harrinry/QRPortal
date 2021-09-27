@@ -13,4 +13,5 @@ module.exports = {
   BusinessCriteria: require("./business-criteria"),
   TechnicalCriteriaReference: require("./technical-criteria-reference"),
   TechnicalCriteria: require("./technical-criteria"),
+  ServiceIndex: require("./service-index"),
 };

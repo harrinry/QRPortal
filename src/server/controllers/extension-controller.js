@@ -48,7 +48,7 @@ class ExtensionController extends Controller {
       try {
         const list = await dataReader.list();
         
-        res.status(200).json(list);
+        res.status(200).json({ name: "extensions", items: list });
       } catch (error) {
         next(error);
       }

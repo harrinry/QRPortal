@@ -3,6 +3,14 @@ module.exports = {
   serverVersion: "serverVersion",
   serverPort: "serverPort",
 
+  sessionKey: "sessionKey",
+  extendUrl: "extendUrl",
+
+  ssoCache: "ssoCache",
+
+  passportConfigure: "passportConfigure",
+  extendWebClient: "extendWebClient",
+
   logger: "logger",
 
   folderService: "folderService",
@@ -38,6 +46,11 @@ module.exports = {
     carl: "carlServiceIndex",
   },
 
+  searchIndex: {
+    public: "publicQualityRuleSearchIndex",
+    private: "privateQualityRuleSearchIndex",
+  },
+
   serializer: "Serializer",
 
   controllers: {
@@ -48,6 +61,7 @@ module.exports = {
     restUi: "StaticRestUIController",
     aipServiceIndex: "AIPServiceController",
     carlServiceIndex: "CARLServiceController",
+    ssoController: "ssoController",
     aip: {
       extension: "AIPExtensionController",
       technology: "AIPTechnologyController",

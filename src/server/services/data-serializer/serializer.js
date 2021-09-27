@@ -1,7 +1,7 @@
 const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
 const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
   QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension,
-  BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria } = require("./models");
+  BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria, ServiceIndex } = require("./models");
 const caseConvert = require("../../lib/case-convert");
 
 /**
@@ -37,6 +37,30 @@ class DataSerializer extends BaseDataSerializer {
     const model = super.__serialize(data);
 
     model.iconUrl = data.name ? this.iconBuilder.createIconUrl(data.name.toLowerCase()) : null;
+
+    return model;
+  }
+}
+
+class ServiceIndexSerializer extends BaseDataSerializer {
+
+  /**
+   * @param {IconUrlBuilder} iconUrlBuilder 
+   */
+   constructor(iconUrlBuilder){
+    super(ServiceIndex);
+
+    this.iconBuilder = iconUrlBuilder;
+  }
+
+  __serialize(data){
+    const model = super.__serialize(data);
+
+    model.iconUrl = data.name ? this.iconBuilder.createIconUrl(caseConvert.toParamCase(data.name.toLowerCase())) : null;
+
+    for (const element of model.items) {
+      element.iconUrl = element.name ? this.iconBuilder.createIconUrl(caseConvert.toParamCase(element.name.toLowerCase())) : null;
+    }
 
     return model;
   }
@@ -148,6 +172,7 @@ class Serializer {
     this.businessCriteriaSerializer = new BusinessCriteriaSerializer(iconUrlBuilder, BusinessCriteria);
     this.technicalCriteriaReferenceSerializer = new BaseDataSerializer(TechnicalCriteriaReference);
     this.technicalCriteriaSerializer = new BaseDataSerializer(TechnicalCriteria);
+    this.serviceIndexSerializer = new ServiceIndexSerializer(iconUrlBuilder);
   }
 
   serialize(data, type){
@@ -181,6 +206,8 @@ class Serializer {
         return this.technicalCriteriaReferenceSerializer.serialize(data);
       case TechnicalCriteria:
         return this.technicalCriteriaSerializer.serialize(data);
+      case ServiceIndex:
+        return this.serviceIndexSerializer.serialize(data);
       default:
         throw new Error(`Serializer Type unknown: ${type && type.name}`);
     }

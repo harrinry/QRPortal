@@ -1,4 +1,4 @@
-const { QualityRule } = require("../data-serializer/models");
+const { QualityRule, QualityRuleReference } = require("../data-serializer/models");
 
 class QualityRuleDataReader {
 
@@ -27,6 +27,32 @@ class QualityRuleDataReader {
     const data = await this.dataReader.readQualityRule(id);
 
     return this.serializer.serialize(data, QualityRule);
+  }
+
+  async readAll(){
+    const items = await this.list();
+    const output = [];
+
+    for (const item of items) {
+      output.push(await this.read(item));
+    }
+
+    return output;
+  }
+
+  /**
+   * @param {number[]} ids
+   */
+  async listQualityRuleReferences(ids = []){
+    const output = [];
+
+    for (const id of ids) {
+      const data = await this.dataReader.readQualityRule(id);
+
+      output.push(this.serializer.serialize(data, QualityRuleReference));
+    }
+
+    return output;
   }
 }
 

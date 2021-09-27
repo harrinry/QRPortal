@@ -46,9 +46,9 @@ class QualityStandardController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        const qualityStandards = await dataReader.list();
+        const list = await dataReader.list();
 
-        res.status(200).json(qualityStandards);
+        res.status(200).json({name: "quality standards", items: list});
       } catch (error) {
         next(error);
       }

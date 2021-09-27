@@ -14,6 +14,7 @@ class FolderService extends BaseFolderService {
     this.add(types.static, this.fromRoot("src", "static"));
     this.add(types.mapping, this.from(types.static, "mappings"));
     this.add(types.doc, this.from(types.static, "doc"));
+    this.add(types.temp, this.fromRoot("temp"));
   }
 }
 

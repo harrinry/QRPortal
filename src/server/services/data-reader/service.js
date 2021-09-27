@@ -1,5 +1,5 @@
 const { JsonFileReader, exceptions: { JsonFileNotFoundError, JsonFileParseError } } = require("../json-file-reader");
-const { ServiceIndex } = require("./models");
+const { ServiceIndex } = require("../data-serializer/models");
 const types = require("./types");
 const { promisify } = require("util");
 const fs = require("fs");
@@ -11,10 +11,12 @@ class DataReader extends JsonFileReader {
   /**
    * @param {string} folder 
    * @param {string} entryPoint 
+   * @param {import("../data-serializer/serializer")} serializer
    */
-  constructor(folder, entryPoint){
+  constructor(folder, entryPoint, serializer){
     super(folder);
 
+    this.serializer = serializer;
     this.entryPoint = entryPoint;
     this.ServiceIndex = null;
   }
@@ -26,7 +28,7 @@ class DataReader extends JsonFileReader {
       if(!this.ServiceIndex) {
         const buff = await promisify(fs.readFile)(outpath);
         const data = JSON.parse(buff.toString());
-        this.ServiceIndex = new ServiceIndex(path.basename(this.storageFolder).toLowerCase(), data);
+        this.ServiceIndex = this.serializer.serialize({name: path.basename(this.storageFolder).toLowerCase(), items: data}, ServiceIndex);
       }
 
       return this.ServiceIndex;

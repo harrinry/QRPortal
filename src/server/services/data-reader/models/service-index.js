@@ -1,14 +1,17 @@
 const caseConvert = require("../../../lib/case-convert");
 
-function ServiceIndexElement (name, description, href){
+function ServiceIndexElement (name, description, href, iconUrl){
   this.name = name;
   this.description = description;
   this.href = href;
+
+  this.iconUrl = iconUrl;
 }
 
 class ServiceIndex {
-  constructor(id, data){
+  constructor(id, data, iconUrl){
     this.id = id;
+    this.iconUrl = iconUrl;
     this.items = [];
 
     for (const key in data) {

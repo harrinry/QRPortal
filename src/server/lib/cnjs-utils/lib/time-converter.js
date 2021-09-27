@@ -211,6 +211,18 @@ class TimeConverter {
 
     return total;
   }
+
+  toDate(initialDate = new Date()){
+    const now = new Date(initialDate);
+
+    if (this.days > 0) now.setDate(now.getDate() + this.days);
+    if (this.hours > 0) now.setHours(now.getHours() + this.hours);
+    if (this.minutes > 0) now.setMinutes(now.getMinutes() + this.minutes);
+    if (this.seconds > 0) now.setSeconds(now.getSeconds() + this.seconds);
+    if (this.milliseconds > 0 ) now.setMilliseconds(now.getMilliseconds() + this.milliseconds); 
+
+    return now;
+  }
 }
 
 module.exports = {

@@ -2,6 +2,7 @@ const { Controller } = require("../lib/cnjs-utils/server");
 
 /**
  * @typedef {import("../services/data-reader/service")} DataReader
+ * @typedef {import("../services/icon-url-builder/service")} IconURLBuilder
  */
 
 class BaseServiceController extends Controller {
@@ -38,7 +39,7 @@ class BaseServiceController extends Controller {
     async function handler(_req, res, next){
       try {
         const serviceIndex = await dataReader.readServiceIndex();
-        res.json(serviceIndex.items);
+        res.json(serviceIndex);
       } catch (error) {
         console.log(error.stack);
         next(error);

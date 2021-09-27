@@ -8,4 +8,5 @@ module.exports = {
   doc: "doc",
   static: "static",
   mapping: "staticMapping",
+  temp: "temp",
 };

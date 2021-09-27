@@ -25,6 +25,8 @@ class ApiController extends Controller {
       }
     }
 
+    this.dataReader.ServiceIndex.items.push({ name: "doc", description: "swagger aip documentation", href: "api/doc" });
+
     this.get("/", this.getServiceIndex(this.dataReader));
   }
 
@@ -37,7 +39,7 @@ class ApiController extends Controller {
     async function handler(_req, res, next){
       try {
         const serviceIndex = await dataReader.readServiceIndex();
-        res.json(serviceIndex.items);
+        res.json(serviceIndex);
       } catch (error) {
         console.log(error.stack);
         next(error);

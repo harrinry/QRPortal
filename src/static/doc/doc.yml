@@ -12,9 +12,9 @@ servers:
   - url: /api/
   - url: https://technologies.castsoftware.com/api/
 
-# externalDocs:
-#   url: "http://swagger.io"
-#   description: "Find out more about Swagger"
+externalDocs:
+  url: "http://swagger.io"
+  description: "Find out more about Swagger"
 
 components:
 
@@ -115,7 +115,7 @@ components:
           $ref: "#/components/schemas/QualityRule.status"
         critical:
           $ref: "#/components/schemas/Contribution.critical"
-        technologyNames:
+        technologies:
           type: array
           items:
             $ref: "#/components/schemas/Technology.name"
@@ -131,7 +131,7 @@ components:
           $ref: "#/components/schemas/QualityRule.href"
         critical:
           $ref: "#/components/schemas/Contribution.critical"
-        technologyNames:
+        technologies:
           type: array
           items:
             $ref: "#/components/schemas/Technology.name"
@@ -149,7 +149,7 @@ components:
           $ref: "#/components/schemas/Contribution.weight"
         critical:
           $ref: "#/components/schemas/Contribution.critical"
-        technologyNames:
+        technologies:
           type: array
           items:
             $ref: "#/components/schemas/Technology.name"
@@ -264,7 +264,11 @@ components:
           $ref: "#/components/schemas/BusinessCriterion.name"
         href:
           $ref: "#/components/schemas/BusinessCriterion.href"
-    
+        description:
+          $ref: "#/components/schemas/BusinessCriterion.description"
+        iconUrl:
+          $ref: "#/components/schemas/IconUrl"
+          
     BusinessCriterion:
       type: object
       properties:
@@ -276,10 +280,14 @@ components:
           $ref: "#/components/schemas/BusinessCriterion.href"
         description:
           $ref: "#/components/schemas/BusinessCriterion.description"
-        quality-rules:
-          $ref: "#/components/schemas/Resource.qualityRules"
+        qualityRules:
+          type: array
+          items:
+            $ref: "#/components/schemas/Resource.qualityRules"
         technical-criteria:
-          $ref: "#/components/schemas/TechnicalCriterionItem"
+          type: array
+          items:
+            $ref: "#/components/schemas/TechnicalCriterionItem"
     
     BusinessCriterion.id:
       type: integer
@@ -313,7 +321,7 @@ components:
           $ref: "#/components/schemas/TechnicalCriterion.href"
         description:
           $ref: "#/components/schemas/TechnicalCriterion.description"
-        quality-rules:
+        qualityRules:
           $ref: "#/components/schemas/Resource.qualityRules"
     
     TechnicalCriterionItem:
@@ -577,7 +585,7 @@ components:
           $ref: "#/components/schemas/Extension.transactionConfiguration"
         iconUrl:
           $ref: "#/components/schemas/IconUrl"
-        versions:
+        items:
           $ref: "#/components/schemas/ExtensionVersion"
     
     ExtensionItem:
@@ -707,6 +715,31 @@ components:
           example: AIP/extensions/com.castsoftware.html5
 
   parameters:
+
+    QualityRuleSearch.query:
+      name: q
+      in: query
+      description: quality rule search query
+      required: true
+      schema:
+        type: string
+    
+    QualityRuleSearch.searchBy:
+      name: search-by
+      in: query
+      description: quality rule search search by
+      required: false
+      schema:
+        type: string
+        enum:
+          - id
+          - name
+          - rationale
+          - technologies
+          - business-criteria
+          - quality-standards
+          - technical-criteria
+
     ServiceType:
       name: service-type
       in: path
@@ -733,7 +766,7 @@ components:
       required: true
       description: A technology ID such as 1021000
       schema: 
-        type: integer
+        type: string
         
     QualityStandardId:
       name: QualityStandardId
@@ -751,8 +784,24 @@ components:
       schema: 
         type: string
 
-    ExtensionsId:
-      name: ExtensionsId
+    BusinessCriteriaId:
+      name: BusinessCriteriaId
+      in: path
+      required: true
+      description: A Business criterion ID such as 60016 (Security), 60014 (Efficiency), etc.
+      schema:
+        type: string
+
+    TechnicalCriteriaId:
+      name: TechnicalCriteriaId
+      in: path
+      required: true
+      description: A Technical criterion ID such as 66062 (Secure Coding - Input Validation), etc.
+      schema:
+        type: string
+
+    ExtensionId:
+      name: ExtensionId
       in: path
       required: true
       description: An extension id such as com.castsoftware.html5
@@ -766,11 +815,16 @@ components:
       description: An extension version such as 1.0.0-funcrel
       schema: 
         type: string
-  # securitySchemes:
+  
+  securitySchemes:
+    jwt-bearer:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 
 tags:
-  - name: AIP
-    description: Entry point of Web Services to reach collections of rules
+  # - name: AIP
+  #   description: Entry point of Web Services to reach collections of rules
 
   - name: Extensions
     description: CAST AIP Extensions/Plugins
@@ -784,8 +838,58 @@ tags:
   - name: Quality Models
     description: "Quality indicators: business criteria, quality rules"
 
-
 paths:
+  /{service-type}/business-criteria:
+    get:
+      tags:
+        - Quality Models
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+      description: List Business Criteria
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  items:  
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/BusinessCriterionItem"
+  /{service-type}/business-criteria/{BusinessCriteriaId}:
+    get:
+      tags:
+        - Quality Models
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/BusinessCriteriaId"
+      description: Describe a business criterion
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/BusinessCriterion"
+  /{service-type}/technical-criteria/{TechnicalCriteriaId}:
+    get:
+      tags:
+        - Quality Models
+      parameters:
+        - $ref: "#/components/parameters/ServiceType"
+        - $ref: "#/components/parameters/TechnicalCriteriaId"
+      description: Describe a technical criterion
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TechnicalCriterion"
   /{service-type}/technologies:
     get:
       tags:
@@ -799,9 +903,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items: 
-                  $ref: "#/components/schemas/TechnologyItem"
+                type: object
+                properties:
+                  name:
+                    type: string
+                  items:  
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/TechnologyItem"
   /{service-type}/technologies/{TechnoID}:
     get:
       tags:
@@ -830,9 +939,14 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items: 
-                  $ref: "#/components/schemas/QualityStandardCategory"
+                type: object
+                properties:
+                  name:
+                    type: string
+                  items:  
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/QualityStandardCategory"
   /{service-type}/quality-standards/{QualityStandardId}:
     get:
       tags:
@@ -893,16 +1007,21 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/ExtensionItem"
+                type: object
+                properties:
+                  name:
+                    type: string
+                  items:  
+                    type: array
+                    items:
+                      $ref: "#/components/schemas/ExtensionItem"
   /{service-type}/extensions/{ExtensionId}:
     get:
       tags:
         - Extensions
       parameters:
         - $ref: "#/components/parameters/ServiceType"
-        - $ref: "#/components/parameters/ExtensionsId"
+        - $ref: "#/components/parameters/ExtensionId"
       description: Extension information
       responses:
         200:
@@ -917,7 +1036,7 @@ paths:
         - Extensions
       parameters:
         - $ref: "#/components/parameters/ServiceType"
-        - $ref: "#/components/parameters/ExtensionsId"
+        - $ref: "#/components/parameters/ExtensionId"
         - $ref: "#/components/parameters/ExtensionVersion"
       description: Extension version information and list of quality rules
       responses:
@@ -927,10 +1046,34 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ExtensionVersion"
+  /quality-rules:
+    get:
+      tags:
+        - Quality Models
+      security:
+        - jwt-bearer: []
+      description: search quality rules
+      parameters:
+        - $ref: "#/components/parameters/QualityRuleSearch.query"
+        - $ref: "#/components/parameters/QualityRuleSearch.searchBy"
+      responses:
+        200:
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  qualityRules:
+                    $ref: "#/components/schemas/QualityRule"
   /quality-rules/{id}:
     get:
       tags:
         - Quality Models
+      security:
+        - jwt-bearer: []
       description: Describe a quality rule, including documentation, quality tags, and contributions to technical criteria and business criteria
       parameters:
         - $ref: "#/components/parameters/ID"

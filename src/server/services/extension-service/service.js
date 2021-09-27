@@ -60,7 +60,7 @@ class ExtensionDataReader {
   setExtensionInfo(id, info, versions){
     this.extensions[id] = this.serializer.serialize(info, BaseExtension);
     this.extensionVersions[id] = this.serializer.serialize(info, Extension);
-    this.extensionVersions[id].versions = this.serializer.serialize(versions, ExtensionVersion);
+    this.extensionVersions[id].items = this.serializer.serialize(versions, ExtensionVersion);
   }
 
   list(){

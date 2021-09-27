@@ -45,7 +45,7 @@ class BusinessCriteriaController extends Controller {
       try {
         const list = await dataReader.list();
         
-        res.status(200).json(list.filter(_ => _.id < 1000000));
+        res.status(200).json({name: "business criteria", items:list.filter(_ => _.id < 1000000)});
       } catch (error) {
         next(error);
       }

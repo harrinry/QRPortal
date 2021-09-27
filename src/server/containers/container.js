@@ -4,7 +4,7 @@ const { FolderService, types: fldTypes } = require("../services/folder-service")
 const { DataReader, types: drTypes } = require("../services/data-reader");
 const { TechnologyDataReader } = require("../services/technology-reader");
 const { QualityStandardsDataReader } = require("../services/quality-standard-reader");
-const { QualityRuleDataReader } = require("../services/quality-rule-reader");
+const { QualityRuleDataReader, PublicQualityRuleSearchIndex, PrivateQualityRuleSearchIndex } = require("../services/quality-rule-reader");
 const { ExtensionDataReader } = require("../services/extension-service");
 const { Serializer } = require("../services/data-serializer");
 const { IconURLBuilder } = require("../services/icon-url-builder");
@@ -12,9 +12,11 @@ const { RulesDocumentationServer } = require("../server");
 const { logFactory } = require("../services/logger");
 const { HttpErrorFactory } = require("../services/http-error-service");
 const { ApiController, QualityRulesController, SwaggerUIController, AIPServiceController, CARLServiceController, TechnologyController, 
-  QualityStandardController, ExtensionController, BusinessCriteriaController, IndexController, TechnicalCriteriaController } = require("../controllers");
+  QualityStandardController, ExtensionController, BusinessCriteriaController, IndexController, TechnicalCriteriaController, SSOController } = require("../controllers");
 const { BusinessCriteriaDataReader } = require("../services/business-criteria-reader");
 const { TechnicalCriteriaDataReader } = require("../services/technical-criteria-reader");
+const { SSOCache, passportConfigure, ExtendAuthWebClient } = require("../services/extend-authentication-service");
+const uuid = require("uuid");
 
 const iocBuilder = createIocBuilder();
 
@@ -27,6 +29,12 @@ iocBuilder
 
   // server port
   .registerConstant(types.serverPort, process.env.PORT || 8080)
+
+  // session key
+  .registerConstant(types.sessionKey, uuid.v4())
+
+  // extend url
+  .registerConstant(types.extendUrl, "https://extend.castsoftware.com")
 
   // logger
   .registerFactory(types.logger, logFactory)
@@ -42,25 +50,49 @@ iocBuilder
     return new IconURLBuilder("https://raw.githubusercontent.com/CAST-Extend/resources/master/techportal", "svg");
   })
 
+  // sso cache
+  .registerSingleton(types.ssoCache, () => new SSOCache())
+
+  // extend web client
+  .registerFactory(types.extendWebClient, (context) => {
+    const cntr = context.container;
+
+    return new ExtendAuthWebClient(cntr.get(types.extendUrl));
+  })
+
+  // passport configure
+  .registerFactory(types.passportConfigure, (context) => {
+    const cntr = context.container;
+    const webClient = cntr.get(types.extendWebClient);
+    const sessionKey = cntr.get(types.sessionKey);
+    const ssoCache = cntr.get(types.ssoCache);
+
+    return () => passportConfigure(webClient, sessionKey, ssoCache);
+  })
+
   // Data Readers
   .registerFactory(types.restDataReader, (context) => {
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
-    const dataReader = new DataReader(folderService.get(fldTypes.restIndex));
+    const serializer = cntr.get(types.serializer);
+
+    const dataReader = new DataReader(folderService.get(fldTypes.restIndex), "/api", serializer);
 
     return dataReader;
   })
   .registerFactory(types.aipDataReader, (context) => {
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
+    const serializer = cntr.get(types.serializer);
 
-    return new DataReader(folderService.get(fldTypes.restAip), drTypes.aip);
+    return new DataReader(folderService.get(fldTypes.restAip), drTypes.aip, serializer);
   })
   .registerFactory(types.carlDataReader, (context) => {
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
+    const serializer = cntr.get(types.serializer);
 
-    return new DataReader(folderService.get(fldTypes.restCarl), drTypes.carl);
+    return new DataReader(folderService.get(fldTypes.restCarl), drTypes.carl, serializer);
   })
   .registerFactory(types.aipTechnologyDataReader, (context) => {
     const cntr = context.container;
@@ -158,6 +190,22 @@ iocBuilder
   //   return new StaticRestUIController(logger, folderService.get(fldTypes.rootStatic));
   // })
 
+  // Quality Rule Search Index
+  .registerSingleton(types.searchIndex.public, (context) => {
+    const cntr = context.container;
+    const fldService = cntr.get(types.folderService);
+    const qualityRuleReader = cntr.get(types.qualityRuleDataReader);
+
+    return new PublicQualityRuleSearchIndex(fldService, qualityRuleReader);
+  })
+  .registerSingleton(types.searchIndex.private, (context) => {
+    const cntr = context.container;
+    const fldService = cntr.get(types.folderService);
+    const qualityRuleReader = cntr.get(types.qualityRuleDataReader);
+
+    return new PrivateQualityRuleSearchIndex(fldService, qualityRuleReader);
+  })
+
   // controllers
   .registerFactory(types.controllers.aip.technology, (context) => {
     const cntr = context.container;
@@ -203,17 +251,18 @@ iocBuilder
   //   const cntr = context.container;
   //   return new TechnicalCriteriaController(cntr.get(types.logger), cntr.get(types.carlTechnicalCriteriaDataReader));
   // })
-  .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader, 
+  .register(types.controllers.ssoController, SSOController, [types.logger, types.sessionKey, types.ssoCache])
+  .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader,
     types.controllers.carl.technology, types.controllers.carl.qualityStandard, types.controllers.carl.businessCriteria, 
     types.controllers.carl.index])
-  .register(types.controllers.aipServiceIndex, AIPServiceController, [types.logger, types.aipDataReader, 
+  .register(types.controllers.aipServiceIndex, AIPServiceController, [types.logger, types.aipDataReader,
     types.controllers.aip.technology, types.controllers.aip.qualityStandard, types.controllers.aip.extension, 
     types.controllers.aip.businessCriteria, types.controllers.aip.index, types.controllers.aip.technicalCriteria])
-  .register(types.controllers.qualityRules, QualityRulesController, [types.logger, types.qualityRuleDataReader, types.httpErrorFactory])
-  .register(types.controllers.api, ApiController, [types.logger, types.restDataReader, types.controllers.swaggerui, 
-    types.controllers.aipServiceIndex, types.controllers.carlServiceIndex, types.controllers.qualityRules])
+  .register(types.controllers.qualityRules, QualityRulesController, [types.logger, types.qualityRuleDataReader, types.searchIndex.public, types.searchIndex.private])
+  .register(types.controllers.api, ApiController, [types.logger, types.restDataReader,  types.controllers.swaggerui, 
+    types.controllers.aipServiceIndex, types.controllers.carlServiceIndex, types.controllers.qualityRules, types.controllers.ssoController])
   
   .register(types.server, RulesDocumentationServer, [types.logger, types.serverVersion, types.serverPort, 
-    types.httpErrorFactory, types.controllers.api]);
+    types.httpErrorFactory, types.controllers.api, types.passportConfigure]);
 
 module.exports = iocBuilder.getContainer();

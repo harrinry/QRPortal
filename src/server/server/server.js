@@ -4,10 +4,11 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const helmet = require("helmet");
 const { middleware } = require("../services/http-error-service");
+const passport = require("passport");
 
 class RulesDocumentationServer extends Server {
   
-  constructor(logger, version, port, httpErrorFactory, apiController/*, staticRestController*/){
+  constructor(logger, version, port, httpErrorFactory, apiController, passportConfigure){
     super({
       logger,
       name: "Rules Documentation",
@@ -35,13 +36,17 @@ class RulesDocumentationServer extends Server {
           }
         },
         cookieParser(),
+        passport.initialize(),
       ],
     }, apiController);
 
     this.httpErrorFactory = httpErrorFactory;
+    this.passportConfigure = passportConfigure;
   }
 
-  // async $preprocess(){}
+  $preprocess(){
+    this.passportConfigure();
+  }
 
   async $postprocess(){
     this.app.use(middleware.errorHandlerMiddleware(this.httpErrorFactory, this.log));
