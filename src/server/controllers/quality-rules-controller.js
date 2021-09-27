@@ -103,6 +103,40 @@ class QualityRulesController extends Controller {
               _searchBy = undefined;
               break;
           }
+
+          if(!!req.user){
+            switch (searchBy.toLowerCase()) {
+              case "severity":
+                _searchBy = "severity";
+                break
+              case "critical":
+                _searchBy = "critical";
+                break;
+              case "max-weight":
+                _searchBy = "maxWeight";
+                break;
+              case "associated-value-name":
+                _searchBy = "associatedValueName";
+                break;
+              case "output":
+                _searchBy = "output";
+                break;
+              case "remediation":
+                _searchBy = "remediation";
+                break;
+              case "sample":
+                _searchBy = "sample";
+                break;
+              case "total":
+                _searchBy = "total";
+                break;
+              case "alternative-name":
+                _searchBy = "alternativeName";
+                break;
+              default:
+                break;
+            }
+          }
         }
 
         const results = searchIndex.query(q, _searchBy);
