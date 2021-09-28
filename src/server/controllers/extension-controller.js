@@ -46,9 +46,12 @@ class ExtensionController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        const list = await dataReader.list();
+        const si = await dataReader.dataReader.readServiceIndex();
+        const item = si.getItem("extensions");
         
-        res.status(200).json({ name: "extensions", items: list });
+        item.items = await dataReader.list();
+        
+        res.status(200).json(item);
       } catch (error) {
         next(error);
       }

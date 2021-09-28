@@ -43,9 +43,13 @@ class BusinessCriteriaController extends Controller {
      */
     async function handler(_req, res, next){
       try {
+        const si = await dataReader.dataReader.readServiceIndex();
+        const item = si.getItem("business criteria");
         const list = await dataReader.list();
+
+        item.items = list.filter(_ => _.id < 1000000);
         
-        res.status(200).json({name: "business criteria", items:list.filter(_ => _.id < 1000000)});
+        res.status(200).json(item);
       } catch (error) {
         next(error);
       }

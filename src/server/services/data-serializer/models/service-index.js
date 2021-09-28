@@ -31,6 +31,20 @@ class ServiceIndex {
 
     this.items.push(new ServiceIndexElement("indexes", "Indexes in alphabetic order", `${this.name}/indexes`));
   }
+
+  /**
+   * @param {string} name 
+   */
+  getItem(name){
+    const item = this.items.find(_ => _.name === name);
+
+    return {
+      name: item.name,
+      description: item.description,
+      href: item.href,
+      iconUrl: item.iconUrl,
+    }
+  }
 }
 
 module.exports = ServiceIndex;

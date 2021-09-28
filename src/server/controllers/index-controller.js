@@ -41,9 +41,13 @@ class IndexController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        let list = await dataReader.list();
+        const si = await dataReader.dataReader.readServiceIndex();
+        const item = si.getItem("indexes");
+        const list = await dataReader.list();
+
+        item.items = list.filter(_ => _.id > 1000000);
         
-        res.status(200).json({name: "indexes", items: list});
+        res.status(200).json(item);
       } catch (error) {
         next(error);
       }

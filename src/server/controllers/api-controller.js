@@ -25,7 +25,8 @@ class ApiController extends Controller {
       }
     }
 
-    this.dataReader.ServiceIndex.items.push({ name: "doc", description: "swagger aip documentation", href: "api/doc" });
+    // this.dataReader.ServiceIndex.items.push({ name: "doc", description: "swagger aip documentation", href: "api/doc" });
+    // this.dataReader.ServiceIndex.items.push({ name: "quality rules", description: "quality rules", href: "api/quality-rules" });
 
     this.get("/", this.getServiceIndex(this.dataReader));
   }

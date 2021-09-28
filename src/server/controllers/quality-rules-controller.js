@@ -142,7 +142,7 @@ class QualityRulesController extends Controller {
         const results = searchIndex.query(q, _searchBy);
         const qualityRules = await dataReader.listQualityRuleReferences(results);
 
-        res.status(200).json({name: "quality rules search", qualityRules});
+        res.status(200).json({name: "quality rules search", href: "/quality-rules", qualityRules});
       } catch (error) {
         next(error);
       }

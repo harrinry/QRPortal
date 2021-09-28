@@ -43,9 +43,12 @@ class TechnologyController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        const list = await dataReader.readConsolidatedTechnologies();
+        const si = await dataReader.dataReader.readServiceIndex();
+        const item = si.getItem("technologies");
+        
+        item.items = await dataReader.readConsolidatedTechnologies();
 
-        res.status(200).json({name: "technologies", items: list});
+        res.status(200).json(item);
       } catch (error) {
         next(error);
       }

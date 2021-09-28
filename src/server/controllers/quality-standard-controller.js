@@ -9,6 +9,7 @@ const { Controller } = require("../lib/cnjs-utils/server");
  * @typedef {import("express").NextFunction} NextFunction
  */
 
+
 class QualityStandardController extends Controller {
 
   /**
@@ -46,9 +47,12 @@ class QualityStandardController extends Controller {
      */
     async function handler(_req, res, next){
       try {
-        const list = await dataReader.list();
+        const si = await dataReader.dataReader.readServiceIndex();
+        const item = si.getItem("quality standards");
+        
+        item.items = await dataReader.list();
 
-        res.status(200).json({name: "quality standards", items: list});
+        res.status(200).json(item);
       } catch (error) {
         next(error);
       }

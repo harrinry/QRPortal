@@ -21,6 +21,9 @@ class DataReader extends JsonFileReader {
     this.ServiceIndex = null;
   }
 
+  /**
+   * @returns {Promise<ServiceIndex>}
+   */
   async readServiceIndex(){
     const outpath = `${this.storageFolder}${this.ext}`;
 
