@@ -20,10 +20,10 @@ function factory(qualityRule){
     total: qualityRule.total,
     alternativeName: qualityRule.alternativeName,
     rationale: qualityRule.rationale,
-    businessCriteria: qualityRule.businessCriteria.map(_ => `${_.id} ${_.name}`),
-    technicalCriteria: qualityRule.technicalCriteria.map(_ =>  `${_.id} ${_.name}`),
-    technologies: qualityRule.technologies.map(_ =>  `${_.id} ${_.name}`),
-    qualityStandards: qualityRule.qualityStandards.map(_ =>  `${_.id} ${_.name} ${_.standard}`)
+    businessCriteria: qualityRule.businessCriteria.map(_ => _.name),
+    technicalCriteria: qualityRule.technicalCriteria.map(_ =>  _.id),
+    technologies: qualityRule.technologies.map(_ => _.name),
+    qualityStandards: qualityRule.qualityStandards.map(_ =>  `${_.id} ${_.standard}`)
   }
 }
 
