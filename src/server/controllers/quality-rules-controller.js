@@ -90,15 +90,6 @@ class QualityRulesController extends Controller {
             case "technologies":
               _searchBy = "technologies";
               break;
-            case "technical-criteria":
-              _searchBy = "technicalCriteria";
-              break;
-            case "business-criteria":
-              _searchBy = "businessCriteria";
-              break;
-            case "quality-standards":
-              _searchBy = "qualityStandards";
-              break;
             default:
               _searchBy = undefined;
               break;
@@ -132,6 +123,15 @@ class QualityRulesController extends Controller {
                 break;
               case "alternative-name":
                 _searchBy = "alternativeName";
+                break;
+              case "technical-criteria":
+                _searchBy = "technicalCriteria";
+                break;
+              case "business-criteria":
+                _searchBy = "businessCriteria";
+                break;
+              case "quality-standards":
+                _searchBy = "qualityStandards";
                 break;
               default:
                 break;
@@ -197,10 +197,10 @@ class QualityRulesController extends Controller {
           id: qualityRule.id,
           name: qualityRule.name,
           rationale: qualityRule.rationale,
-          businessCriteria: qualityRule.businessCriteria,
-          technicalCriteria: qualityRule.technicalCriteria,
           technologies: qualityRule.technologies,
-          qualityStandards: qualityRule.qualityStandards,
+          // businessCriteria: qualityRule.businessCriteria,
+          // technicalCriteria: qualityRule.technicalCriteria,
+          // qualityStandards: qualityRule.qualityStandards,
         });
       } catch (error) {
         next(error);
