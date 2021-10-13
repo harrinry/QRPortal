@@ -1,6 +1,6 @@
 class Base {
   constructor(data = {}){
-    this.id = data.id || "";
+    this.id = (data.id !== undefined || data.id !== null) ? data.id : "";
     this.name = data.name || "";
     this.href = data.href || "";
   }
