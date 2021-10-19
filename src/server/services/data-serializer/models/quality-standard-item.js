@@ -5,6 +5,7 @@ class QualityStandardItem extends BaseQualityStandard {
     super(params);
 
     this.id = params.id;
+    this.displayName = `${this.id} - ${this.name}`;
     this.count = params.count;
     
   }

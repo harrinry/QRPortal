@@ -12,3 +12,4 @@ export { default as bool } from "./boolean-lib";
 export { default as date } from "./date";
 export { default as TextReader } from "./text-reader";
 export { default as PropertyReader } from "./property-reader";
+export { default as caseConverter } from "./case-converter";

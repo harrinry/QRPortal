@@ -32,18 +32,24 @@ class QualityStandardsDataReader {
     /**@type {import("./models/quality-standard-category")} */
     const model = this.serializer.serialize(qualityStandardCategory, QualityStandardCategory);
 
-    model.items = this.serializer.serialize(categoryItems, QualityStandardItem);
+    model.items = this.serializer.serialize(categoryItems, QualityStandardItem, model.href);
 
     return model;
   }
 
-  async readQualityStandardItems(qualityStandardId, itemId){
+  async readQualityStandardItems(qualityStandardId, categoryId, itemId){
+    const qualityStandardCategory = await this.dataReader.readQualityStandardCategory(qualityStandardId, categoryId);
     const qualityStandardItem = await this.dataReader.readQualityStandardItem(qualityStandardId, itemId);
     /** @type {Array<any>} */
     const rules = await this.dataReader.listQualityStandardItemQualityRules(qualityStandardId, itemId);
+    
+    /**@type {import("./models/quality-standard-category")} */
+    const qualityStandardCategoryModel = this.serializer.serialize(qualityStandardCategory, QualityStandardCategory);
 
     /**@type {import("../data-serializer/models/quality-standard-item-reference")} */
     const model = this.serializer.serialize(qualityStandardItem, QualityStandardItemReference);
+
+    model.href = [qualityStandardCategoryModel.href, "items", model.id].join("/");
 
     model.qualityRules = this.serializer.serialize(rules, QualityRuleReference);
 

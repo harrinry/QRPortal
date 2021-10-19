@@ -987,7 +987,7 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/QualityStandard"
-  /{service-type}/quality-standards/{QualityStandardId}/items/{QualityStandardCategoryId}:
+  /{service-type}/quality-standards/{QualityStandardId}/categories/{QualityStandardCategoryId}/items/{ItemId}:
     get:
       tags:
         - Quality Standards
@@ -995,6 +995,12 @@ paths:
         - $ref: "#/components/parameters/ServiceType"
         - $ref: "#/components/parameters/QualityStandardId"
         - $ref: "#/components/parameters/QualityStandardCategoryId"
+        - name: ItemId
+          in: path
+          required: true
+          description: Quality standard Category item id
+          schema:
+            type: string
       description: A quality standard reference
       responses:
         200:

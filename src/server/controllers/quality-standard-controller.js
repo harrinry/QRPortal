@@ -27,8 +27,7 @@ class QualityStandardController extends Controller {
       .get("/", this.listQualityStandards(this.dataReader))
       .get("/:id", this.getQualityStandard(this.dataReader))
       .get("/:id/categories/:categoryId", this.getQualityStandardCategory(this.dataReader))
-      // .get("/:id/categories/:categoryId/section/:section", this.getQualityStandardCategorySection(this.dataReader))
-      .get("/:id/items/:item", this.getQualityStandardItem(this.dataReader))
+      .get("/:id/categories/:categoryId/items/:item", this.getQualityStandardItem(this.dataReader));
   }
 
   $postprocess(){
@@ -119,10 +118,10 @@ class QualityStandardController extends Controller {
      * @param {Response} res 
      */
      async function handler(req, res, next){
-      const {id, item} = req.params;
+      const {id, item, categoryId} = req.params;
 
       try {
-        const model = await dataReader.readQualityStandardItems(id, item);
+        const model = await dataReader.readQualityStandardItems(id, categoryId, item);
 
         res.status(200).json(model);
       } catch (error) {

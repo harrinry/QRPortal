@@ -13,4 +13,5 @@ module.exports = {
   date: require("./date"),
   TextReader: require("./text-reader"),
   PropertyReader: require("./property-reader"),
+  caseConverter: require("./case-converter"),
 };

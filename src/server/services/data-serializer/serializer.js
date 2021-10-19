@@ -1,4 +1,4 @@
-const { BaseSerializer } = require("../../lib/cnjs-utils/services/serializer");
+const { BaseSerializer, Serializer } = require("../../lib/cnjs-utils/services/serializer");
 const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
   QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension,
   BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria, ServiceIndex } = require("./models");
@@ -110,24 +110,23 @@ class QualityStandardItemReferenceSerializer extends BaseSerializer {
   }
 }
 
-class QualityStandardItemSerializer extends BaseSerializer {
+class QualityStandardItemSerializer extends Serializer {
   constructor(iconUrlBuilder){
-    super(QualityStandardItem);
+    super();
 
     this.iconBuilder = iconUrlBuilder;
   }
 
-  __serialize(data){
-    const Ctor = this.Ctor;
-    const model = new Ctor(data);
+  /**
+   * @param {*} data 
+   * @param {QualityStandardItem} Model 
+   * @param {string} categoryUrl 
+   */
+  __serialize(data, Model, categoryUrl){
+    const model = super.__serialize(data, Model);
 
     model.iconUrl = data.id ? this.iconBuilder.createIconUrl(data.id.toLowerCase()) : null;
-
-    // const _path = data.href.split("/");
-
-    // _path[3] = "sections"
-
-    // model.href = _path.join("/");
+    model.href = [categoryUrl, "items", model.id].join("/");
 
     return model;
   }
@@ -151,7 +150,7 @@ class BusinessCriteriaSerializer extends BaseSerializer {
   }
 }
 
-class Serializer {
+class DefaultSerializer {
 
   /**
    * @param {import("../icon-url-builder/service")} iconUrlBuilder 
@@ -175,7 +174,7 @@ class Serializer {
     this.serviceIndexSerializer = new ServiceIndexSerializer(iconUrlBuilder);
   }
 
-  serialize(data, type){
+  serialize(data, type, ...params){
 
     switch (type) {
       case BaseQualityStandard:
@@ -185,7 +184,7 @@ class Serializer {
       case QualityStandardCategory:
         return this.qualityStandardCategorySerializer.serialize(data);
       case QualityStandardItem:
-        return this.qualityStandardCategoryItemSerializer.serialize(data);
+        return this.qualityStandardCategoryItemSerializer.serialize(data, QualityStandardItem, ...params);
       case QualityRuleReference:
         return this.qualityRuleReferenceSerializer.serialize(data);
       case QualityStandardItemReference:
@@ -214,4 +213,4 @@ class Serializer {
   }
 }
 
-module.exports = Serializer;
+module.exports = DefaultSerializer;
