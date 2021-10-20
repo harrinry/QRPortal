@@ -8,7 +8,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node src/server/index.js",
-    "preinstall": "cd ./src/client && npm install",
+    "postinstall": "cd ./src/client && npm install",
     "build": "cd ./src/client && npm run build"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "qrportalui": "file:src/client",
     "reflect-metadata": "^0.1.13",
     "rotating-file-stream": "^2.1.6",
     "uuid": "^8.3.2",
