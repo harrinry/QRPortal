@@ -38,14 +38,15 @@ class PublicController extends StaticController{
 
   $preprocess(){
     const log = this._log;
+    const publicUrl = process.env.PUBLIC_URL || "/";
 
     if (fs.existsSync(this.indexFilePath)){
       const baseHtml = fs.readFileSync(this.indexFilePath);
 
       fs.writeFileSync(this.indexFilePath, baseHtml
         .toString()
-        .replace(/(?<=<base\shref=")(.{0,})(?="\starget="_blank">)/ig, "/"));
-      log.info("Public index file base url set to " + "/");
+        .replace(/(?<=<base\shref=")(.{0,})(?="\starget="_blank">)/ig, publicUrl));
+      log.info("Public index file base url set to " + publicUrl);
     }
   }
 }

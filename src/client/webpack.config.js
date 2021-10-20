@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = function (_env, argv) {
   const isProduction = process.env.MODE === 'production' || argv.mode === 'production';
@@ -51,13 +53,23 @@ module.exports = function (_env, argv) {
       proxy: {
         '/api': {
           target: 'http://localhost:8080',
-          pathRewrite: { '^/api': '' },
         },
       },
     },
     plugins: [
+      new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'index.html'),
+        title: "CAST Rules",
+        favicon: path.join(__dirname, "src", "assets", "favicon", "favicon.png")
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { 
+            from: path.join(__dirname, "src", "assets"),
+            to: 'assets/' 
+          },
+        ]
       }),
     ],
   };

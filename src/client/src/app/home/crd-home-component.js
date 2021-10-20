@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import _isEmpty from 'lodash/isEmpty';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
+import Grid from "@material-ui/core/Grid";
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -18,7 +19,10 @@ const drawerWidth = 350;
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
+    // display: 'flex',
+  },
+  contentGrid:{
+    flexWrap: "nowrap",
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -100,23 +104,25 @@ const Home = (props) => {
           />
         </Toolbar>
       </AppBar>
-      <Drawer
-        className={classes.drawer}
-        variant='permanent'
-        classes={{
-          paper: classes.drawerPaper,
-        }}
-      >
-        <Toolbar />
-        {renderMenuIcon()}
-        <div className={classes.drawerContainer}>
-          {!_isEmpty(mainMenu) && <Tree mainMenu={mainMenu} />}
-        </div>
-      </Drawer>
-      <main className={classes.content}>
-        <Toolbar />
-        <AppRoutes />
-      </main>
+      <Grid container item direction="row" className={classes.contentGrid}>
+        <Drawer
+          className={classes.drawer}
+          variant='permanent'
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+        >
+          <Toolbar />
+          {renderMenuIcon()}
+          <div className={classes.drawerContainer}>
+            {!_isEmpty(mainMenu) && <Tree mainMenu={mainMenu} />}
+          </div>
+        </Drawer>
+        <main className={classes.content}>
+          <Toolbar />
+          <AppRoutes />
+        </main>
+      </Grid>
     </div>
   );
 };

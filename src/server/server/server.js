@@ -24,6 +24,8 @@ class RulesDocumentationServer extends Server {
             directives: {
               scriptSrc: ["'self'", "'unsafe-inline'"],
               scriptSrcAttr: null,
+              imgSrc: ["'self'","https://*", "data:"],
+              styleSrc: ["'self'", "https://*", "'unsafe-inline'"],
             }
           },
         }),
