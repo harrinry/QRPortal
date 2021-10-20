@@ -12,7 +12,8 @@ const { RulesDocumentationServer } = require("../server");
 const { logFactory } = require("../services/logger");
 const { HttpErrorFactory } = require("../services/http-error-service");
 const { ApiController, QualityRulesController, SwaggerUIController, AIPServiceController, CARLServiceController, TechnologyController, 
-  QualityStandardController, ExtensionController, BusinessCriteriaController, IndexController, TechnicalCriteriaController, SSOController } = require("../controllers");
+  QualityStandardController, ExtensionController, BusinessCriteriaController, IndexController, TechnicalCriteriaController, SSOController,
+  PublicController } = require("../controllers");
 const { BusinessCriteriaDataReader } = require("../services/business-criteria-reader");
 const { TechnicalCriteriaDataReader } = require("../services/technical-criteria-reader");
 const { SSOCache, passportConfigure, ExtendAuthWebClient } = require("../services/extend-authentication-service");
@@ -58,6 +59,14 @@ iocBuilder
     const cntr = context.container;
 
     return new ExtendAuthWebClient(cntr.get(types.extendUrl));
+  })
+
+  // public client distribution folder
+  .registerFactory(types.distFolder, (context) => {
+    const cntr = context.container;
+    const folderService = cntr.get(types.folderService);
+
+    return folderService.get(fldTypes.dist);
   })
 
   // passport configure
@@ -251,18 +260,21 @@ iocBuilder
   //   const cntr = context.container;
   //   return new TechnicalCriteriaController(cntr.get(types.logger), cntr.get(types.carlTechnicalCriteriaDataReader));
   // })
-  .register(types.controllers.ssoController, SSOController, [types.logger, types.sessionKey, types.ssoCache])
+  .register(types.controllers.sso, SSOController, [types.logger, types.sessionKey, types.ssoCache])
+  .register(types.controllers.public, PublicController, [types.logger, types.distFolder])
   .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader,
     types.controllers.carl.technology, types.controllers.carl.qualityStandard, types.controllers.carl.businessCriteria, 
     types.controllers.carl.index])
   .register(types.controllers.aipServiceIndex, AIPServiceController, [types.logger, types.aipDataReader,
-    types.controllers.aip.technology, types.controllers.aip.qualityStandard, types.controllers.aip.extension, 
+    types.controllers.aip.technology, types.controllers.aip.qualityStandard, types.controllers.aip.extension,
     types.controllers.aip.businessCriteria, types.controllers.aip.index, types.controllers.aip.technicalCriteria])
-  .register(types.controllers.qualityRules, QualityRulesController, [types.logger, types.qualityRuleDataReader, types.searchIndex.public, types.searchIndex.private])
-  .register(types.controllers.api, ApiController, [types.logger, types.restDataReader,  types.controllers.swaggerui, 
-    types.controllers.aipServiceIndex, types.controllers.carlServiceIndex, types.controllers.qualityRules, types.controllers.ssoController])
+  .register(types.controllers.qualityRules, QualityRulesController, [types.logger, types.qualityRuleDataReader,
+    types.searchIndex.public, types.searchIndex.private])
+  .register(types.controllers.api, ApiController, [types.logger, types.restDataReader,  types.controllers.swaggerui,
+    types.controllers.aipServiceIndex, types.controllers.carlServiceIndex, types.controllers.qualityRules, 
+    types.controllers.sso])
   
   .register(types.server, RulesDocumentationServer, [types.logger, types.serverVersion, types.serverPort, 
-    types.httpErrorFactory, types.controllers.api, types.passportConfigure]);
+    types.httpErrorFactory, types.passportConfigure, types.folderService, types.controllers.api, types.controllers.public]);
 
 module.exports = iocBuilder.getContainer();

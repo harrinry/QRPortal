@@ -14,4 +14,5 @@ module.exports = {
   IndexController: require("./index-controller"),
   TechnicalCriteriaController: require("./technical-criteria-controller"),
   SSOController: require("./sso-controller"),
+  PublicController: require("./public-controller"),
 };

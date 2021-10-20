@@ -8,6 +8,8 @@ module.exports = {
 
   ssoCache: "ssoCache",
 
+  distFolder: "distFolder",
+
   passportConfigure: "passportConfigure",
   extendWebClient: "extendWebClient",
 
@@ -61,7 +63,8 @@ module.exports = {
     restUi: "StaticRestUIController",
     aipServiceIndex: "AIPServiceController",
     carlServiceIndex: "CARLServiceController",
-    ssoController: "ssoController",
+    sso: "ssoController",
+    public: "PublicController",
     aip: {
       extension: "AIPExtensionController",
       technology: "AIPTechnologyController",

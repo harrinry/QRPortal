@@ -1,4 +1,6 @@
 const { Server } = require("../lib/cnjs-utils/server");
+const { accessLogFactory } = require("cnjs-utils/log");
+const { types: folderTypes } = require("../services/folder-service");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -8,13 +10,14 @@ const passport = require("passport");
 
 class RulesDocumentationServer extends Server {
   
-  constructor(logger, version, port, httpErrorFactory, apiController, passportConfigure){
+  constructor(logger, version, port, httpErrorFactory, passportConfigure, folderService, apiController, publicController){
     super({
       logger,
       name: "Rules Documentation",
       bootMessage: (name, _port) => `${name} ${version} Service started on port ${_port}`,
       port,
       middleware: [
+        accessLogFactory(folderService.get(folderTypes.logs)),
         helmet({
           contentSecurityPolicy: {
             useDefaults: true,
@@ -38,7 +41,7 @@ class RulesDocumentationServer extends Server {
         cookieParser(),
         passport.initialize(),
       ],
-    }, apiController);
+    }, apiController, publicController);
 
     this.httpErrorFactory = httpErrorFactory;
     this.passportConfigure = passportConfigure;

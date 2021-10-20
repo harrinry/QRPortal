@@ -193,14 +193,11 @@ class QualityRulesController extends Controller {
       try {
         const qualityRule = await dataReader.read(id);
 
-        res.status(200).json({
+        res.status(206).json({
           id: qualityRule.id,
           name: qualityRule.name,
           rationale: qualityRule.rationale,
           technologies: qualityRule.technologies,
-          // businessCriteria: qualityRule.businessCriteria,
-          // technicalCriteria: qualityRule.technicalCriteria,
-          // qualityStandards: qualityRule.qualityStandards,
         });
       } catch (error) {
         next(error);
