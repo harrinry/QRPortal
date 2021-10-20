@@ -1,0 +1,53 @@
+html {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  font-size: 14px;
+  font-family: 'osRegular', Arial;
+  color: #484848;
+}
+
+.crd-rules-container {
+  height: 100%;
+  width: 100%;
+}
+
+.crd-app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app-content {
+  overflow: auto;
+  height: 100vh;
+}
+
+.link-element {
+  text-decoration: none;
+  color: unset;
+}
+
+.link-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.label-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

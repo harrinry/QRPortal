@@ -8,7 +8,8 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node src/server/index.js",
-    "build": "ECHO node_modules/.bin/webpack-cli --mode production"
+    "preinstall": "echo cd ./src/client && npm install",
+    "build": "echo cd ./src/client && npm run build"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
