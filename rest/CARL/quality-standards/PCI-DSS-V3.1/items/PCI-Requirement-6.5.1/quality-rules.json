@@ -80,18 +80,6 @@
         ]
     },
     {
-        "id": 7752,
-        "name": "Ensure you do file path manipulation without including untrusted data",
-        "href": "AIP/quality-rules/7752",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
         "id": 8044,
         "name": "Ensure when you build a log that accepts a format string as an argument, the argument has been sanitized when it originates from an external source.",
         "href": "AIP/quality-rules/8044",
@@ -123,6 +111,18 @@
         "severity": 30,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8238,
+        "name": "Avoid mixing trusted and untrusted data in HTTP requests",
+        "href": "AIP/quality-rules/8238",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -345,18 +345,6 @@
         "id": 8504,
         "name": "Ensure your application properly neutralize XML content before it is processed",
         "href": "AIP/quality-rules/8504",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "C#",
-            "JEE",
-            "VB.NET"
-        ]
-    },
-    {
-        "id": 8506,
-        "name": "Ensure you do file path manipulation without including untrusted data",
-        "href": "AIP/quality-rules/8506",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -720,16 +708,6 @@
         "id": 1039040,
         "name": "Ensure to preceed the call of XMLStreamReader by a call to the secure mode of the parser",
         "href": "AIP/quality-rules/1039040",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 1040044,
-        "name": "Upgrade to the spring-integration-zip version 1.0.2 to unsafe unzip",
-        "href": "AIP/quality-rules/1040044",
         "critical": true,
         "severity": 20,
         "technologyNames": [

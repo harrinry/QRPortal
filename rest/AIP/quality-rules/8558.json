@@ -15,6 +15,16 @@
     "alternativeName": "Avoid using XML PARSE without 'VALIDATING'",
     "businessCriteria": [
         {
+            "id": 1061000,
+            "name": "ISO-5055-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -31,6 +41,20 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1061070,
+            "name": "CWE-611 - Improper Restriction of XML External Entity Reference",
+            "href": "AIP/technical-criteria/1061070",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062324,
+            "name": "OWASP-2017-A4 - XML External Entities (XXE)",
+            "href": "AIP/technical-criteria/1062324",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
@@ -69,6 +93,12 @@
             "id": "A4-2017",
             "name": "XML External Entities (XXE)",
             "href": "AIP/quality-standards/OWASP/items/A4-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A05-2021",
+            "name": "Security Misconfiguration",
+            "href": "AIP/quality-standards/OWASP/items/A05-2021",
             "standard": "OWASP"
         },
         {
