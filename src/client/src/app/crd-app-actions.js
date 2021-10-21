@@ -40,10 +40,11 @@ export const getSubMenuFailure = () => ({
   type: appActionsType.GET_SUB_MENU_FAILURE,
 });
 
-export const getRuleDetails = ruleId => ({
+export const getRuleDetails = (ruleId, isLoggedIn) => ({
   type: appActionsType.GET_RULE_DETAILS_REQUEST,
   payload: {
     ruleId,
+    isLoggedIn,
   },
 });
 

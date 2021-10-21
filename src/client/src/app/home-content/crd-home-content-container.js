@@ -11,6 +11,7 @@ function mapStateToProps(state, props) {
     matchParams: _get(computedMatch, 'params'),
     rulesList: state.app.qualityRulesList,
     ruleDetails: state.app.ruleDetails,
+    isLoggedIn: state.app.isLoggedIn,
   };
 }
 

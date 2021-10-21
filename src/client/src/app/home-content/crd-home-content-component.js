@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const HomeContent = (props) => {
-  const { matchParams, rulesList, ruleDetails, getRulesList, getRuleDetails } = props;
+  const { matchParams, rulesList, ruleDetails, getRulesList, getRuleDetails: dispatchGetRuleDetails, isLoggedIn } = props;
   const classes = useStyles();
   const { url } = useRouteMatch();
   const { pathname } = useLocation();
@@ -31,6 +31,8 @@ const HomeContent = (props) => {
   const getRulesListUrl = () => isDetailsPresentInUrl ? url.split('/details/')[0] : url;
 
   const getSelectedRuleId = () => pathname.includes('details') && pathname.split('details/')[1];
+
+  const getRuleDetails = ruleId => dispatchGetRuleDetails(ruleId, isLoggedIn);
 
   useEffect(() => {
     setRulesListInfo(rulesList);
@@ -61,6 +63,7 @@ const HomeContent = (props) => {
 };
 
 HomeContent.propTypes = {
+  isLoggedIn: PropTypes.bool,
   getRulesList: PropTypes.func,
   getRuleDetails: PropTypes.func,
 };

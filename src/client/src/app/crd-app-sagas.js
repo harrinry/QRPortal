@@ -5,7 +5,7 @@ import * as appActions from './crd-app-actions';
 import appActionsType from './crd-app-actions-type';
 import appResource from './crd-app-resource';
 import { setAxiosAuthHeader, unsetAxiosAuthHeader } from './crd-app-utils';
-import { AUTH_COOKIE_KEY } from 'app/crd-app-constants';
+import { AUTH_COOKIE_KEY, PARTIAL_CONTENT_STATUS } from 'app/crd-app-constants';
 
 import { encode as btoa } from 'base-64';
 
@@ -48,12 +48,19 @@ export function* getRulesList(action) {
 }
 
 export function* getRuleDetails(action) {
-  const { ruleId } = action.payload;
+  const { ruleId, isLoggedIn } = action.payload;
 
   try {
     const ruleDetails = yield call(appResource.getRuleDetails, ruleId);
 
-    yield put(appActions.getRuleDetailsSuccess(ruleDetails));
+    const { data: ruleDetailsData, status } = ruleDetails;
+
+    yield put(appActions.getRuleDetailsSuccess(ruleDetailsData));
+
+    // this condition indicates user has been logged out from backend, yet logged in frontend
+    if (isLoggedIn && status === PARTIAL_CONTENT_STATUS) {
+      yield put(appActions.logout());
+    }
   } catch ({ response }) {
     yield put(appActions.getRuleDetailsFailure());
   }

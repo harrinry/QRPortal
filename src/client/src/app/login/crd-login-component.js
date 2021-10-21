@@ -61,7 +61,7 @@ const Login = (props = {}) => {
   useEffect(() => {
     if (!isAuthRequestOngoing && isLoggedIn && open) {
       setOpen(false);
-      location.reload();
+      // location.reload();
     }
   }, [isAuthRequestOngoing, isLoggedIn]);
 
