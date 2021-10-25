@@ -1,19 +1,22 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import _isEmpty from 'lodash/isEmpty';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
-import Grid from "@material-ui/core/Grid";
+import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
 import Tree from '../tree';
 import AppRoutes from '../crd-app-routes-component';
 import Login from '../login/crd-login-component';
+import Search from '../global-search/crd-search-component';
 
 const drawerWidth = 350;
 
@@ -21,8 +24,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     // display: 'flex',
   },
-  contentGrid:{
-    flexWrap: "nowrap",
+  contentGrid: {
+    flexWrap: 'nowrap',
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -55,6 +58,19 @@ const useStyles = makeStyles(theme => ({
   toolbarBranding: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
+  },
+  navbarWidgets: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  searchDetails: {
+    marginLeft: '14px',
+    display: 'flex',
+    flexDirection: 'row',
+    '& button': {
+      marginLeft: '32px',
+    },
   },
 }));
 
@@ -68,6 +84,10 @@ const Home = (props) => {
     loginErrorMessage,
     resetLoginErrorMessage,
     isAuthRequestOngoing,
+    searchCriterion,
+    searchTerm,
+    resetSearch,
+    history,
   } = props;
 
   const classes = useStyles();
@@ -84,6 +104,11 @@ const Home = (props) => {
     </IconButton>
   );
 
+  const onResetSearch = () => {
+    resetSearch();
+    history.push('/');
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -94,17 +119,24 @@ const Home = (props) => {
             <Typography variant='h6' noWrap style={{ fontWeight: 'bold', letterSpacing: '2px', marginRight: '10px' }}>CAST</Typography>
             <Typography variant='h6' noWrap style={{ letterSpacing: '2px' }}>Rules</Typography>
           </div>
-          <Login
-            isLoggedIn={isLoggedIn}
-            handleLogin={login}
-            handleLogout={logout}
-            loginErrorMessage={loginErrorMessage}
-            resetLoginErrorMessage={resetLoginErrorMessage}
-            isAuthRequestOngoing={isAuthRequestOngoing}
-          />
+          <div className={classes.navbarWidgets}>
+            <Search
+              isLoggedIn={isLoggedIn}
+              searchTerm={searchTerm}
+              searchCriterion={searchCriterion}
+            />
+            <Login
+              isLoggedIn={isLoggedIn}
+              handleLogin={login}
+              handleLogout={logout}
+              loginErrorMessage={loginErrorMessage}
+              resetLoginErrorMessage={resetLoginErrorMessage}
+              isAuthRequestOngoing={isAuthRequestOngoing}
+            />
+          </div>
         </Toolbar>
       </AppBar>
-      <Grid container item direction="row" className={classes.contentGrid}>
+      <Grid container item direction='row' className={classes.contentGrid}>
         <Drawer
           className={classes.drawer}
           variant='permanent'
@@ -120,6 +152,15 @@ const Home = (props) => {
         </Drawer>
         <main className={classes.content}>
           <Toolbar />
+          {searchTerm && (<div className={classes.searchDetails}>
+            <Typography variant='h6'>
+              <>Displaying results for search term <b>"{searchTerm}"</b></>
+              {searchCriterion && <> in the criterion <b>"{searchCriterion}"</b>.</>}
+            </Typography>
+            <Button color='primary' variant='outlined' size='small' onClick={onResetSearch}>
+              Reset search
+            </Button>
+          </div>)}
           <AppRoutes />
         </main>
       </Grid>
@@ -131,9 +172,15 @@ Home.propTypes = {
   login: PropTypes.func,
   logout: PropTypes.func,
   resetLoginErrorMessage: PropTypes.func,
+  resetSearch: PropTypes.func,
   isLoggedIn: PropTypes.bool,
   isAuthRequestOngoing: PropTypes.bool,
   loginErrorMessage: PropTypes.string,
+  searchCriterion: PropTypes.string,
+  searchTerm: PropTypes.string,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }),
 };
 
-export default Home;
+export default withRouter(Home);

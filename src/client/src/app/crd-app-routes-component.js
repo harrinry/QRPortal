@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 import AppRouteLayout from './crd-app-route-layout-component';
 import HomeDefault from './crd-home-default-component';
 import HomeContent from './home-content';
+import SearchContent from './search-content';
 
 const AppRoutes = () => (
   <Switch>
@@ -13,14 +15,26 @@ const AppRoutes = () => (
     />
     <AppRouteLayout
       path={[
-        '/aip/:ruleType/:subType/items/:categoryId',
-        '/aip/:ruleType/:id',
+        '/aip/:ruleType/:ruleId/categories/:categoryId/items/:itemId',
+        '/aip/:ruleType/:ruleId/categories/:categoryId',
+        '/aip/:ruleType/:ruleId',
         '/aip/:ruleType',
         '/aip',
       ]}
       component={HomeContent}
     />
+    <AppRouteLayout
+      path={[
+        '/search_term/:searchTerm/search_criterion/:searchCriterion',
+        '/search_term/:searchTerm',
+      ]}
+      component={SearchContent}
+    />
   </Switch>
 );
+
+AppRoutes.propTypes = {
+  isSearchMode: PropTypes.bool,
+};
 
 export default AppRoutes;

@@ -11,14 +11,14 @@ import useStyles from './crd-tree-styles';
 
 const Tree = (props) => {
   const classes = useStyles();
-  const { mainMenu, treeData, getTreeData } = props;
+  const { mainMenu, treeData, getTreeData, searchTerm, resetSearch } = props;
   const { pathname } = useLocation();
   const splittedUrls = pathname.toLowerCase().split('/');
   const mainUrl = splittedUrls[2]
     ? `${splittedUrls[1]}/${splittedUrls[2]}`
     : `${splittedUrls[1]}`;
   const subUrl = splittedUrls[3] && `${mainUrl}/${splittedUrls[3]}`;
-
+  
   const getDefaultTreeInfo = () => {
     const _defaultTreeInfo = {
       defaultExpanded: [mainUrl],
@@ -37,7 +37,10 @@ const Tree = (props) => {
     return mainMenu.items.findIndex(item => item.href === indexUrl);
   };
 
-  const onNodeSelect = (event, nodeId) => getTreeData(nodeId, findIndex(nodeId));
+  const onNodeSelect = (event, nodeId) => {
+    getTreeData(nodeId, findIndex(nodeId));
+    resetSearch();
+  };
 
   const renderNeededData = href => treeDataInfo[findIndex(href)];
 
@@ -78,13 +81,19 @@ const Tree = (props) => {
       </Link>
     )));
 
-  const isReloadValid = () => mainUrl && !_isEmpty(mainUrl) && !_isEmpty(mainMenu);
+  const isReloadValid = () => mainUrl && !_isEmpty(mainUrl) && !_isEmpty(mainMenu) && !searchTerm;
 
   useEffect(() => {
     if (isReloadValid()) {
       getTreeData(mainUrl, findIndex(mainUrl));
     }
   }, []);
+
+  useEffect(() => {
+    if (searchTerm) {
+      // @TODO close the tree view
+    }
+  }, [searchTerm]);
 
   useEffect(() => {
     setTreeDataInfo(treeData);

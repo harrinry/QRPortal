@@ -137,6 +137,37 @@ export default function appReducers(state = defaultState, action) {
           isLoggedIn: false,
         };
       }
+      case appActionsType.SEARCH_QUERY: {
+        const { searchCriterion, searchTerm } = action.payload;
+
+        return {
+          ...state,
+          searchCriterion,
+          searchTerm,
+        };
+      }
+      case appActionsType.SEARCH_SUCCESS: {
+        const { searchResult } = action.payload;
+        
+        return {
+          ...state,
+          searchResult,
+        };
+      }
+      case appActionsType.RESET_SEARCH: {
+        return {
+          ...state,
+          searchResult: {},
+          searchCriterion: '',
+          searchTerm: '',
+        };
+      }
+      case appActionsType.RESET_RULE_DETAILS: {
+        return {
+          ...state,
+          ruleDetails: {},
+        };
+      }
       default:
         return state;
     }

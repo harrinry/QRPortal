@@ -110,3 +110,26 @@ export const setAuthentication = isLoggedIn => ({
     isLoggedIn,
   },
 });
+
+export const searchQuery = (searchCriterion, searchTerm) => ({
+  type: appActionsType.SEARCH_QUERY,
+  payload: {
+    searchCriterion,
+    searchTerm,
+  },
+});
+
+export const searchSuccess = searchResult => ({
+  type: appActionsType.SEARCH_SUCCESS,
+  payload: {
+    searchResult,
+  },
+});
+
+export const resetSearch = () => ({
+  type: appActionsType.RESET_SEARCH,
+});
+
+export const resetRuleDetails = () => ({
+  type: appActionsType.RESET_RULE_DETAILS,
+});

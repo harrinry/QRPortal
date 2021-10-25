@@ -51,15 +51,19 @@ export function* getRuleDetails(action) {
   const { ruleId, isLoggedIn } = action.payload;
 
   try {
-    const ruleDetails = yield call(appResource.getRuleDetails, ruleId);
+    if (ruleId) {
+      const ruleDetails = yield call(appResource.getRuleDetails, ruleId);
 
-    const { data: ruleDetailsData, status } = ruleDetails;
-
-    yield put(appActions.getRuleDetailsSuccess(ruleDetailsData));
-
-    // this condition indicates user has been logged out from backend, yet logged in frontend
-    if (isLoggedIn && status === PARTIAL_CONTENT_STATUS) {
-      yield put(appActions.logout());
+      const { data: ruleDetailsData, status } = ruleDetails;
+  
+      yield put(appActions.getRuleDetailsSuccess(ruleDetailsData));
+  
+      // this condition indicates user has been logged out from backend, yet logged in frontend
+      if (isLoggedIn && status === PARTIAL_CONTENT_STATUS) {
+        yield put(appActions.logout());
+      }
+    } else {
+      yield put(appActions.resetRuleDetails());
     }
   } catch ({ response }) {
     yield put(appActions.getRuleDetailsFailure());
@@ -104,6 +108,18 @@ export function* logout() {
   }
 }
 
+export function* searchQuery(action) {
+  const { searchCriterion, searchTerm } = action.payload;
+
+  try {
+    const searchResponse = yield call(appResource.searchQuery, searchCriterion, searchTerm);
+
+    yield put(appActions.searchSuccess(searchResponse));
+  } catch (error) {
+    // @TODO add error notification
+  }
+}
+
 export function* watchApp() {
   yield takeLatest(appActionsType.GET_MAIN_MENU_REQUEST, getMainMenu);
   yield takeLatest(appActionsType.GET_SUB_MENU_REQUEST, getSubMenu);
@@ -111,6 +127,7 @@ export function* watchApp() {
   yield takeLatest(appActionsType.GET_RULE_DETAILS_REQUEST, getRuleDetails);
   yield takeLatest(appActionsType.LOGIN, login);
   yield takeLatest(appActionsType.LOGOUT, logout);
+  yield takeLatest(appActionsType.SEARCH_QUERY, searchQuery);
 }
 
 export const appSagas = [

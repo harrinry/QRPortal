@@ -7,12 +7,14 @@ function mapStateToProps(state, props) {
   return {
     treeData: state.app.treeItem,
     isMenuLoading: state.app.isMenuLoading,
+    searchTerm: state.app.searchTerm,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     getTreeData: bindActionCreators(appActions.getSubMenu, dispatch),
+    resetSearch: bindActionCreators(appActions.resetSearch, dispatch),
   };
 }
 

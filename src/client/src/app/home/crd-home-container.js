@@ -9,6 +9,8 @@ function mapStateToProps(state) {
     isLoggedIn: state.app.isLoggedIn,
     loginErrorMessage: state.app.loginErrorMessage,
     isAuthRequestOngoing: state.app.isAuthRequestOngoing || false,
+    searchCriterion: state.app.searchCriterion,
+    searchTerm: state.app.searchTerm,
   };
 }
 
@@ -18,6 +20,7 @@ function mapDispatchToProps(dispatch) {
     login: bindActionCreators(appActions.login, dispatch),
     logout: bindActionCreators(appActions.logout, dispatch),
     resetLoginErrorMessage: bindActionCreators(appActions.resetLoginErrorMessage, dispatch),
+    resetSearch: bindActionCreators(appActions.resetSearch, dispatch),
   };
 }
 

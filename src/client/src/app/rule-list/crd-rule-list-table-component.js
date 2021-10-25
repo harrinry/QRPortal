@@ -42,14 +42,29 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     {
       name: 'id',
       label: 'Id',
+      options: { filter: false },
     },
     {
       name: 'name',
       label: 'Name',
+      options: {
+        filter: true,
+        filterType: 'checkbox',
+        filterList: ['Hide Deprecated'],
+        filterOptions: {
+          names: ['Hide Deprecated'],
+          logic: (name, filterVal) => {
+            const show = filterVal.indexOf('Hide Deprecated') >= 0 && !(name.startsWith('DEPRECATED'));
+
+            return !show;
+          },
+        },
+      },
     },
     {
       name: 'severity',
       label: 'Severity',
+      options: { filter: false },
     },
   ];
 
@@ -63,7 +78,8 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     downloadOptions: {
       filename: 'cast-rules-list.csv',
     },
-    filter: false,
+    filter: 'checkbox',
+    filterList: ['', 'Show Deprecated', ''],
     print: false,
     viewColumns: false,
     sort: false,
@@ -84,6 +100,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   return (
     <MuiThemeProvider theme={theme}>
       <MuiDataTable
+        title={'Rules'}
         columns={columns}
         data={data}
         options={tableOptions}

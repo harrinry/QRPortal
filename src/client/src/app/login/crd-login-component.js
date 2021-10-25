@@ -9,6 +9,8 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import Icon from '@material-ui/core/Icon';
+import Grid from '@mui/material/Grid';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -42,6 +44,15 @@ const useStyles = makeStyles(() => ({
     paddingLeft: '24px',
     paddingTop: '8px',
     color: 'black',
+  },
+  extendIcon: {
+    backgroundColor: '#074794',
+    padding: '8px',
+  },
+  extendIconWrapper: {
+    width: '1em',
+    height: '1em',
+    fontSize: '1em',
   },
 }));
 
@@ -98,7 +109,19 @@ const Login = (props = {}) => {
         ? <Button color='inherit' variant='outlined' onClick={handleLogout}>{labels.logout}</Button>
         : <Button color='inherit' variant='outlined' onClick={handleClickOpen}>{labels.login}</Button>}
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
-        <DialogTitle id='form-dialog-title'>Sign In</DialogTitle>
+        <Grid container spacing={2} alignItems='center' justify='center'>
+          <Grid item xs={5}>
+            <DialogTitle id='form-dialog-title'>Sign In</DialogTitle>
+          </Grid>
+          <Grid item xs={2}>
+            <Icon className={classes.extendIconWrapper}>
+              <img className={classes.extendIcon} src='assets/img/extendLogo.svg'/>
+            </Icon>
+          </Grid>
+          <Grid item xs={5}>
+            <div />
+          </Grid>
+        </Grid>
         <div>
           <form onSubmit={formik.handleSubmit}>
             <DialogContent className={classes.formContent}>

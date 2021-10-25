@@ -13,10 +13,14 @@ const getRuleDetails = ruleId => axios.get(`${constants.REST_API}/quality-rules/
 const login = (username, password) => axios.post(`${constants.REST_API}/sso/authenticate`, { uid: username, pwd: password })
   .then(response => response.data);
 
+const searchQuery = (searchCriterion, searchTerm) => axios.get(`${constants.REST_API}/quality-rules?q=${searchTerm}&${searchCriterion}`)
+  .then(response => response.data);
+
 export default {
   getMainMenu,
   getSubMenu,
   getRulesList,
   getRuleDetails,
   login,
+  searchQuery,
 };

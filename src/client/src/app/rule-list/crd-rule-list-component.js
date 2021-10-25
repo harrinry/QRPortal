@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 const RulesList = (props) => {
   const { qualityRulesList, getRuleDetails, selectedRuleId } = props;
   const classes = useStyles();
-
+  
   const renderTable = () => (
     <CardContent>
       <RulesListTable data={qualityRulesList} getRuleDetails={getRuleDetails} selectedRuleId={selectedRuleId} />
