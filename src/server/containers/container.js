@@ -124,7 +124,7 @@ iocBuilder
   })
   .registerFactory(types.carlQualityStandardReaderService, (context) => {
     const cntr = context.container;
-    const dataReader = cntr.get(types.aipDataReader);
+    const dataReader = cntr.get(types.carlDataReader);
     const serializer = cntr.get(types.serializer);
 
     return new QualityStandardsDataReader(dataReader, serializer);
