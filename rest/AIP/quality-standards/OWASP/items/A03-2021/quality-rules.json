@@ -20,16 +20,6 @@
         ]
     },
     {
-        "id": 7732,
-        "name": "Avoid non validated inputs in JSP files that use JSF",
-        "href": "AIP/quality-rules/7732",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 7740,
         "name": "Avoid HTTP response splitting",
         "href": "AIP/quality-rules/7740",
@@ -119,16 +109,6 @@
             "C#",
             "JEE",
             "VB.NET"
-        ]
-    },
-    {
-        "id": 8218,
-        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
-        "href": "AIP/quality-rules/8218",
-        "critical": true,
-        "severity": 30,
-        "technologyNames": [
-            "JEE"
         ]
     },
     {
@@ -284,6 +264,18 @@
         ]
     },
     {
+        "id": 8484,
+        "name": "Avoid HTTP response splitting through API requests",
+        "href": "AIP/quality-rules/8484",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8486,
         "name": "Avoid resource injection through API requests",
         "href": "AIP/quality-rules/8486",
@@ -311,6 +303,102 @@
         "id": 8490,
         "name": "Avoid SQL injection through API requests",
         "href": "AIP/quality-rules/8490",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8492,
+        "name": "Avoid LDAP injection through API requests",
+        "href": "AIP/quality-rules/8492",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8494,
+        "name": "Avoid OS command injection through API requests",
+        "href": "AIP/quality-rules/8494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8496,
+        "name": "Avoid process control through API requests",
+        "href": "AIP/quality-rules/8496",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8498,
+        "name": "Avoid thread injection through API requests",
+        "href": "AIP/quality-rules/8498",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8500,
+        "name": "Avoid code injection through API requests",
+        "href": "AIP/quality-rules/8500",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8502,
+        "name": "Avoid reflection injection through API requests",
+        "href": "AIP/quality-rules/8502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8504,
+        "name": "Avoid XPath injection through API requests",
+        "href": "AIP/quality-rules/8504",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8514,
+        "name": "Avoid NoSQL injection through API requests",
+        "href": "AIP/quality-rules/8514",
         "critical": true,
         "severity": 30,
         "technologyNames": [
@@ -490,6 +578,16 @@
         ]
     },
     {
+        "id": 1007252,
+        "name": "Avoid filesystem function calls without sanitizing user input (PHP)",
+        "href": "AIP/quality-rules/1007252",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "PHP"
+        ]
+    },
+    {
         "id": 1007256,
         "name": "DEPRECATED: CWE-79: Avoid cross-site scripting - Improper Neutralization of input in script tag during web page generation (PHP)",
         "href": "AIP/quality-rules/1007256",
@@ -515,26 +613,6 @@
         "href": "AIP/quality-rules/1007260",
         "critical": true,
         "severity": 20,
-        "technologyNames": [
-            "PHP"
-        ]
-    },
-    {
-        "id": 1007262,
-        "name": "Avoid file name or path controlled by raw user input (PHP)",
-        "href": "AIP/quality-rules/1007262",
-        "critical": false,
-        "severity": 10,
-        "technologyNames": [
-            "PHP"
-        ]
-    },
-    {
-        "id": 1007264,
-        "name": "DEPRECATED: CWE-434: Avoid unrestricted file upload (PHP)",
-        "href": "AIP/quality-rules/1007264",
-        "critical": false,
-        "severity": 10,
         "technologyNames": [
             "PHP"
         ]
@@ -830,11 +908,31 @@
         ]
     },
     {
+        "id": 1020552,
+        "name": "Avoid enabling dangerous protocols in whitelist APIs",
+        "href": "AIP/quality-rules/1020552",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020710,
         "name": "Ensure the X-XSS-Protection header is enabled",
         "href": "AIP/quality-rules/1020710",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020724,
+        "name": "Ensure that marked is sanitized",
+        "href": "AIP/quality-rules/1020724",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -1041,46 +1139,13 @@
         ]
     },
     {
-        "id": 1043006,
-        "name": "Avoid disabling ValidateInput on ASP.NET Http Post/Put Request",
-        "href": "AIP/quality-rules/1043006",
+        "id": 1042046,
+        "name": "Avoid Using Dynamic Method Invocation for Apache Struts 2.x",
+        "href": "AIP/quality-rules/1042046",
         "critical": true,
-        "severity": 20,
+        "severity": 30,
         "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043008,
-        "name": "Avoid disabling ValidateInput on controller",
-        "href": "AIP/quality-rules/1043008",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043014,
-        "name": "Avoid disabling ValidateRequest in Config file (ASP.NET)",
-        "href": "AIP/quality-rules/1043014",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043016,
-        "name": "Avoid disabling ValidateRequest in ASPX page",
-        "href": "AIP/quality-rules/1043016",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET"
+            "JEE"
         ]
     },
     {
@@ -1102,6 +1167,17 @@
         "severity": 10,
         "technologyNames": [
             "ASP.NET"
+        ]
+    },
+    {
+        "id": 1043058,
+        "name": "Avoid disabling Header Checking flag in config file",
+        "href": "AIP/quality-rules/1043058",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {

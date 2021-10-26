@@ -10,16 +10,6 @@
         ]
     },
     {
-        "id": 7732,
-        "name": "Ensure validating all inputs in JSP files that use JSF",
-        "href": "AIP/quality-rules/7732",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 7740,
         "name": "Ensure your application does not execute HTTP requests without sanitization",
         "href": "AIP/quality-rules/7740",
@@ -89,16 +79,6 @@
             "C#",
             "JEE",
             "VB.NET"
-        ]
-    },
-    {
-        "id": 8218,
-        "name": "Always check the content type when receiving a HTTP post",
-        "href": "AIP/quality-rules/8218",
-        "critical": true,
-        "severity": 30,
-        "technologyNames": [
-            "JEE"
         ]
     },
     {
@@ -234,6 +214,18 @@
         ]
     },
     {
+        "id": 8484,
+        "name": "Avoid HTTP response splitting through API requests",
+        "href": "AIP/quality-rules/8484",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8486,
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8486",
@@ -261,6 +253,102 @@
         "id": 8490,
         "name": "Ensure you don't unsanitized queries to SQL databases",
         "href": "AIP/quality-rules/8490",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8492,
+        "name": "Ensure your application does not run LDAP methods without sanitization",
+        "href": "AIP/quality-rules/8492",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8494,
+        "name": "Ensure your application does not run OS commande without sanitization",
+        "href": "AIP/quality-rules/8494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8496,
+        "name": "Ensure you don't use external library given by unsanitized user input",
+        "href": "AIP/quality-rules/8496",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8498,
+        "name": "Ensure your application does not process thread with unsanitized stream",
+        "href": "AIP/quality-rules/8498",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8500,
+        "name": "Ensure your application does not evaluate unsanitized code.",
+        "href": "AIP/quality-rules/8500",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8502,
+        "name": "Ensure you have sanitized the data received to be reflected in your application",
+        "href": "AIP/quality-rules/8502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8504,
+        "name": "Ensure your application properly neutralize XML content before it is processed",
+        "href": "AIP/quality-rules/8504",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8514,
+        "name": "Ensure you use sanitized queries to NoSQL databases",
+        "href": "AIP/quality-rules/8514",
         "critical": true,
         "severity": 30,
         "technologyNames": [
@@ -610,11 +698,31 @@
         ]
     },
     {
+        "id": 1020552,
+        "name": "Make sure you do not allow 'Javascript' and 'http' as accepted protocols to avoid Cross-site-scripting",
+        "href": "AIP/quality-rules/1020552",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020710,
         "name": "Ensure enabling X-XSS-Protection header to prevent attackers submitting malicious script to unsuspecting users",
         "href": "AIP/quality-rules/1020710",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020724,
+        "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
+        "href": "AIP/quality-rules/1020724",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "HTML5"
         ]
@@ -780,46 +888,13 @@
         ]
     },
     {
-        "id": 1043006,
-        "name": "Ensure the request validation is always enabled when using HttpPost/HttpPut (or equivalent) requests",
-        "href": "AIP/quality-rules/1043006",
+        "id": 1042046,
+        "name": "Using Dynamic Method Invocation for Apache Struts 2.x allows remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
+        "href": "AIP/quality-rules/1042046",
         "critical": true,
-        "severity": 20,
+        "severity": 30,
         "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043008,
-        "name": "Ensure you have enable ValidateInput in your controller",
-        "href": "AIP/quality-rules/1043008",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043014,
-        "name": "Ensure the validation request is always set to true in ASP.NET config file",
-        "href": "AIP/quality-rules/1043014",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET",
-            "C#"
-        ]
-    },
-    {
-        "id": 1043016,
-        "name": "Ensure the request validation is always set to true",
-        "href": "AIP/quality-rules/1043016",
-        "critical": true,
-        "severity": 20,
-        "technologyNames": [
-            "ASP.NET"
+            "JEE"
         ]
     },
     {
@@ -841,6 +916,17 @@
         "severity": 10,
         "technologyNames": [
             "ASP.NET"
+        ]
+    },
+    {
+        "id": 1043058,
+        "name": "Ensure you set the EnableHeaderChecking flag to true in the configuration file",
+        "href": "AIP/quality-rules/1043058",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {
