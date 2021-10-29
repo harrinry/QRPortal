@@ -40,7 +40,7 @@ class QualityRulesController extends Controller {
           this.getPublicQualityRule(this.dataReader)
         )
       )
-      .get("/", this.handleAuthorizationRedirect(
+      .get("/", jwtAuth(), this.searchQueryBuilderMiddleware(), this.handleAuthorizationRedirect(
         this.searchQualityRules(this.dataReader, this.privateSearchIndex),
         this.searchQualityRules(this.dataReader, this.publicSearchIndex)
       ));
@@ -59,19 +59,20 @@ class QualityRulesController extends Controller {
     };
   }
 
-  /**
-   * @param {DataReader} dataReader 
-   * @param {QualityRuleSearchIndex} searchIndex 
+    /**
+   * @param {TechnologyService} technologyService 
+   * @param {Logger} logger 
    */
-  searchQualityRules(dataReader, searchIndex){
+  searchQueryBuilderMiddleware(){
 
     /**
-     * @param {Request} req
+     * @param {Request} req 
      * @param {Response} res
      * @param {NextFunction} next
      */
-    async function handler(req, res, next){
-      const { q, "search-by": searchBy } = req.query;
+     async function handler(req, _res, next){
+      const { q: query, "search-by": searchBy } = req.query;
+      const _query = [];
       let _searchBy;
 
       try {
@@ -139,8 +140,68 @@ class QualityRulesController extends Controller {
           }
         }
 
-        const results = searchIndex.query(q, _searchBy);
-        const qualityRules = await dataReader.listQualityRuleReferences(results);
+        if(query){
+          if(Array.isArray(query)){
+            for (const term of query) {
+              const splitTerms = term.split(" ");
+
+              if(query.length > 1){
+                for (const splitTerm of splitTerms) {
+                  if(splitTerm.length > 2){
+                    _query.push(splitTerm);
+                  }
+                }
+              } else {
+                _query.push(...splitTerms);
+              }
+            }
+          } else {
+            const splitTerms = query.split(" ");
+            if(splitTerms.length > 1){
+              for (const splitTerm of splitTerms) {
+                if(splitTerm.length > 2){
+                  _query.push(splitTerm);
+                }
+              }
+            } else {
+              _query.push(...splitTerms);
+            }
+          }
+        }
+
+        req.searchParams = {
+          query: _query,
+          searchBy: _searchBy,
+        };
+        
+        next();
+      } catch (error) {
+        next(error);
+      }
+    }
+
+    return handler;
+  }
+
+  /**
+   * @param {DataReader} dataReader 
+   * @param {QualityRuleSearchIndex} searchIndex 
+   */
+  searchQualityRules(dataReader, searchIndex){
+
+    /**
+     * @param {Request} req
+     * @param {Response} res
+     * @param {NextFunction} next
+     */
+    async function handler(req, res, next){
+      const { query, searchBy } = req.searchParams;
+
+      try {
+        let results = searchIndex.search(query, searchBy);
+        if(results.length === 0) results = searchIndex.looseSearch(query, searchBy);
+        const ids = results.map(_ => _.ref);
+        const qualityRules = await dataReader.listQualityRuleReferences(ids);
 
         res.status(200).json({name: "quality rules search", href: "/quality-rules", qualityRules});
       } catch (error) {

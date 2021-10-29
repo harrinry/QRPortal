@@ -86,9 +86,10 @@ class QualityRuleSearchIndex extends IndexService {
    */
   generateIndex(qualityRules = [], fields = [],  entryBuilder){
     const customTrimmer = this.customTrimmer;
+    const defaultPipelineFn = this.defaultPipelineFunction;
 
     return super.generateIndex(function(){
-      this.use(customTrimmer);
+      this.use(customTrimmer(defaultPipelineFn));
       
       this.ref("ref");
 

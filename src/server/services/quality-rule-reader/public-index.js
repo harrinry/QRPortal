@@ -13,7 +13,7 @@ function factory(qualityRule){
     rationale: qualityRule.rationale,
     businessCriteria: qualityRule.businessCriteria.map(_ => _.name),
     technicalCriteria: qualityRule.technicalCriteria.map(_ =>  _.id),
-    technologies: qualityRule.technologies.map(_ => _.name),
+    technologies: qualityRule.technologies.map(_ => `${_.id} ${_.name}`),
     qualityStandards: qualityRule.qualityStandards.map(_ =>  `${_.id} ${_.standard}`)
   }
 }

@@ -39,13 +39,48 @@ class IndexService {
   sanitize(queryString){
     return queryString.replace(/[:*^~+-]/gi, "").trim();
   }
+  
+  /**
+   * @param {string[]} terms
+   * @param {string} searchBy
+   */
+  looseSearch(terms = [], searchBy){
+    return this.index.query(query => {
+      for (const term of terms) {
+        query.clause({
+          boost: 1,
+          fields: searchBy ? [searchBy] : query.allFields,
+          term: term,
+          usePipeline: false,
+          wildcard: lunr.Query.wildcard.LEADING | lunr.Query.wildcard.TRAILING,
+        });
+      }
+    });
+  }
 
+  /**
+   * @param {string[]} terms
+   * @param {string} searchBy
+   */
+  search(terms = [], searchBy){
+    return this.index.query(query => {
+      for (const term of terms) {
+        query.clause({
+          boost: 1,
+          fields: searchBy ? [searchBy] : query.allFields,
+          term: term,
+          usePipeline: false,
+          wildcard: lunr.Query.wildcard.NONE,
+        });
+      }
+    });
+  }
   /**
    * @param {lunr.Token} token 
    */
   defaultPipelineFunction(token){
     return token.update(function (s) {
-      return s.replace(/((?!\.)^\W+)|(\W+$)/, "");
+      return s.replace(/((?!\.)^\W+)/, "");
     });
   }
 

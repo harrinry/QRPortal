@@ -722,7 +722,9 @@ components:
       description: quality rule search query
       required: true
       schema:
-        type: string
+        type: array
+        items:
+          type: string
     
     QualityRuleSearch.searchBy:
       name: search-by
