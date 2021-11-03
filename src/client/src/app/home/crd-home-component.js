@@ -95,7 +95,9 @@ const Home = (props) => {
   const mainPath = pathname.split('/').slice(1);
 
   useEffect(() => {
-    if (mainPath[0] === '') {
+    if (mainPath[0] === 'search_term') {
+      getMainMenu('aip');
+    } else if (mainPath[0] === '') {
       history.push('/aip');
       getMainMenu('aip');
     } else {

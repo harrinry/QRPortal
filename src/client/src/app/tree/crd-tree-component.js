@@ -5,6 +5,7 @@ import _isEmpty from 'lodash/isEmpty';
 import PropTypes from 'prop-types';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
+import Typography from '@material-ui/core/Typography';
 import { TreeView, TreeItem } from '@mui/lab';
 import { StyledEngineProvider } from '@mui/material/styles';
 import useStyles from './crd-tree-styles';
@@ -54,9 +55,36 @@ const Tree = (props) => {
 
   const isCountNotValid = node => node.hasOwnProperty('count') && node.count === 0;
 
-  const renderLabel = name => (
-    <Tooltip title={name}>
-      <div className='label-ellipsis'>{name}</div>
+  const renderTooltipDescription = description => (
+    <Typography
+      variant='caption'
+      align='justify'
+      paragraph={true}
+      gutterBottom
+      style={{ letterSpacing: '0.75px', padding: '3px', fontSize: '10px' }}
+    >
+      <i>{description}</i>
+    </Typography>
+  );
+
+  const renderTooltipMessage = (title, description) => (
+    <span>
+      <div>
+        <Typography variant='overline' gutterBottom style={{ fontWeight: 'bold', fontSize: '11px', color: '#bebdb6' }}>
+          {title}
+        </Typography>
+      </div>
+      {description && renderTooltipDescription(description)}
+    </span>
+  );
+
+  const renderLabel = (title, description) => (
+    <Tooltip
+      title={renderTooltipMessage(title, description)}
+      placement='right'
+      arrow={true}
+    >
+      <div className='label-ellipsis'>{title}</div>
     </Tooltip>
   );
 
@@ -69,7 +97,7 @@ const Tree = (props) => {
         <TreeItem
           disabled={isCountNotValid(node)}
           nodeId={node.href.toLowerCase()}
-          label={renderLabel(node.displayName || node.name)}
+          label={renderLabel((node.displayName || node.name), node.description)}
           icon={node.iconUrl && renderLabelIcon(node.iconUrl)}
         >
           {
