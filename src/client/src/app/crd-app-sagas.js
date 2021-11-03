@@ -9,9 +9,10 @@ import { AUTH_COOKIE_KEY, PARTIAL_CONTENT_STATUS } from 'app/crd-app-constants';
 
 import { encode as btoa } from 'base-64';
 
-export function* getMainMenu() {
+export function* getMainMenu(action) {
   try {
-    const mainMenu = yield call(appResource.getMainMenu);
+    const { serviceType } = action.payload;
+    const mainMenu = yield call(appResource.getMainMenu, serviceType);
     const filteredMainMenu = {
       ...mainMenu,
       items: mainMenu.items.filter(item => item.name !== 'extensions'),
@@ -55,9 +56,9 @@ export function* getRuleDetails(action) {
       const ruleDetails = yield call(appResource.getRuleDetails, ruleId);
 
       const { data: ruleDetailsData, status } = ruleDetails;
-  
+
       yield put(appActions.getRuleDetailsSuccess(ruleDetailsData));
-  
+
       // this condition indicates user has been logged out from backend, yet logged in frontend
       if (isLoggedIn && status === PARTIAL_CONTENT_STATUS) {
         yield put(appActions.logout());

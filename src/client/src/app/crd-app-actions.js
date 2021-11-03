@@ -1,7 +1,10 @@
 import appActionsType from './crd-app-actions-type';
 
-export const getMainMenu = () => ({
+export const getMainMenu = serviceType => ({
   type: appActionsType.GET_MAIN_MENU_REQUEST,
+  payload: {
+    serviceType,
+  },
 });
 
 export const getMainMenuSuccess = mainMenu => ({

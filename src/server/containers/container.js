@@ -13,10 +13,11 @@ const { logFactory } = require("../services/logger");
 const { HttpErrorFactory } = require("../services/http-error-service");
 const { ApiController, QualityRulesController, SwaggerUIController, AIPServiceController, CARLServiceController, TechnologyController, 
   QualityStandardController, ExtensionController, BusinessCriteriaController, IndexController, TechnicalCriteriaController, SSOController,
-  PublicController } = require("../controllers");
+  PublicController, RulesController} = require("../controllers");
 const { BusinessCriteriaDataReader } = require("../services/business-criteria-reader");
 const { TechnicalCriteriaDataReader } = require("../services/technical-criteria-reader");
 const { SSOCache, passportConfigure, ExtendAuthWebClient } = require("../services/extend-authentication-service");
+const { UrlConverter } = require("../services/url-converter");
 const uuid = require("uuid");
 
 const iocBuilder = createIocBuilder();
@@ -30,6 +31,9 @@ iocBuilder
 
   // server port
   .registerConstant(types.serverPort, process.env.PORT || 8080)
+
+  // public url
+  .registerConstant(types.publicUrl, process.env.PUBLIC_URL || "http://localhost:8080")
 
   // session key
   .registerConstant(types.sessionKey, uuid.v4())
@@ -77,6 +81,16 @@ iocBuilder
     const ssoCache = cntr.get(types.ssoCache);
 
     return () => passportConfigure(webClient, sessionKey, ssoCache);
+  })
+
+  // url conveter from v1 implementation
+  .registerFactory(types.urlConverter, (context) => {
+    const cntr = context.container;
+    const publicUrl = cntr.get(types.publicUrl);
+    const qualityStandardReader = cntr.get(types.aipQualityStandardReaderService);
+    const businessCriteriaReader = cntr.get(types.aipBusinessCriteriaDataReader);
+
+    return new UrlConverter(publicUrl, businessCriteriaReader, qualityStandardReader);
   })
 
   // Data Readers
@@ -256,12 +270,12 @@ iocBuilder
     const cntr = context.container;
     return new TechnicalCriteriaController(cntr.get(types.logger), cntr.get(types.aipTechnicalCriteriaDataReader));
   })
-  // .registerFactory(types.controllers.carl.technicalCriteria, (context) => {
-  //   const cntr = context.container;
-  //   return new TechnicalCriteriaController(cntr.get(types.logger), cntr.get(types.carlTechnicalCriteriaDataReader));
-  // })
+  .registerFactory(types.controllers.rules, (context) => {
+    const cntr = context.container;
+    return new RulesController(cntr.get(types.logger), cntr.get(types.urlConverter));
+  })
   .register(types.controllers.sso, SSOController, [types.logger, types.sessionKey, types.ssoCache])
-  .register(types.controllers.public, PublicController, [types.logger, types.distFolder])
+  .register(types.controllers.public, PublicController, [types.logger, types.distFolder, types.publicUrl])
   .register(types.controllers.carlServiceIndex, CARLServiceController, [types.logger, types.carlDataReader,
     types.controllers.carl.technology, types.controllers.carl.qualityStandard, types.controllers.carl.businessCriteria, 
     types.controllers.carl.index])
@@ -275,6 +289,6 @@ iocBuilder
     types.controllers.sso])
   
   .register(types.server, RulesDocumentationServer, [types.logger, types.serverVersion, types.serverPort, 
-    types.httpErrorFactory, types.passportConfigure, types.folderService, types.controllers.api, types.controllers.public]);
+    types.httpErrorFactory, types.passportConfigure, types.folderService, types.controllers.api, types.controllers.public, types.controllers.rules]);
 
 module.exports = iocBuilder.getContainer();

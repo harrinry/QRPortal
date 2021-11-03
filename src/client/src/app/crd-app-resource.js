@@ -1,7 +1,7 @@
 import axios from 'axios';
 import constants from './crd-app-constants';
 
-const getMainMenu = () => axios.get(`${constants.REST_API}/aip`).then(response => response.data);
+const getMainMenu = serviceType => axios.get(`${constants.REST_API}/${serviceType}`).then(response => response.data);
 
 const getSubMenu = url => axios.get(`${constants.REST_API}/${url}`).then(response => response.data);
 

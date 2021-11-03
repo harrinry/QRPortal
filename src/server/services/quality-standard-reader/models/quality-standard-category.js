@@ -4,6 +4,7 @@ class QualityStandardCategory extends BaseQualityStandard {
   constructor(data = {}, items = []){
     super(data);
 
+    /**@type {import("./quality-standard-item")[]} */
     this.items = items;
   }
 }

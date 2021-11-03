@@ -8,7 +8,6 @@ const defaultState = {
   mainMenu: [],
   subMenu: [],
   treeItem: [],
-  treeViewData: [],
   qualityRulesList: [],
   ruleDetails: [],
 };
@@ -148,7 +147,7 @@ export default function appReducers(state = defaultState, action) {
       }
       case appActionsType.SEARCH_SUCCESS: {
         const { searchResult } = action.payload;
-        
+
         return {
           ...state,
           searchResult,

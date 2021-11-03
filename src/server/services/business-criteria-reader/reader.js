@@ -11,6 +11,9 @@ class BusinessCriteriaDataReader {
     this.serializer = serializer;
   }
 
+  /**
+   * @returns {Promise<import("../data-serializer/models/base-business-criteria")[]>}
+   */
   async list(){
     const businessCriterias = await this.dataReader.listBuisnessCriteria();
 
@@ -19,6 +22,7 @@ class BusinessCriteriaDataReader {
 
   /**
    * @param {string} id 
+   * @returns {Promise<import("../data-serializer/models/business-criteria")}
    */
   async read(id){
     const data = await this.dataReader.readBuisnessCriteria(`${id}`);

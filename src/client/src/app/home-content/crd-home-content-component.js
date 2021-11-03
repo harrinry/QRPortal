@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch, useLocation, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import _isEqual from 'lodash/isEqual';
 
 import RulesWrapper from '../display-widgets/rules-wrapper';
 
-const useStyles = makeStyles(() => ({
-  deprecatedOption: {
-    paddingRight: '10px',
-    marginBottom: '-10px',
-  },
-  deprecatedOptionLabel: {
-    letterSpacing: '1.25px',
-    fontWeight: 'bold',
-  },
-}));
-
 const HomeContent = (props) => {
   const {
-    // matchParams,
     rulesList = [],
     ruleDetails,
     getRulesList,
@@ -30,7 +17,6 @@ const HomeContent = (props) => {
     searchTerm,
   } = props;
 
-  const classes = useStyles();
   const { url } = useRouteMatch();
   const { pathname } = useLocation();
   const history = useHistory();
@@ -53,7 +39,7 @@ const HomeContent = (props) => {
       setRulesListInfo(rulesList);
     }
   }, [rulesList]);
-  
+
   useEffect(() => {
     if (searchResultQualityRules.length > 0) {
       setRulesDetailsInfo([]);

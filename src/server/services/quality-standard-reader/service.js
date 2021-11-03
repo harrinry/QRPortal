@@ -17,6 +17,10 @@ class QualityStandardsDataReader {
     this.qualityStandardsToFilter = ["AIP", "PCI-DSS-V3.1"];
   }
 
+  /**
+   * 
+   * @returns {Promise<import("../data-serializer/models/base-quality-standard")[]>}
+   */
   async list(){
     /** @type {Array<any>} */
     const data = await this.dataReader.listQualityStandards();

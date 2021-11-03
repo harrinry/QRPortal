@@ -5,6 +5,7 @@ module.exports = {
 
   sessionKey: "sessionKey",
   extendUrl: "extendUrl",
+  publicUrl: "publicUrl",
 
   ssoCache: "ssoCache",
 
@@ -43,6 +44,8 @@ module.exports = {
 
   httpErrorFactory: "httpErrorFactory",
 
+  urlConverter: "UrlConverter",
+
   serviceIndex: {
     aip: "aipServiceIndex",
     carl: "carlServiceIndex",
@@ -65,6 +68,7 @@ module.exports = {
     carlServiceIndex: "CARLServiceController",
     sso: "ssoController",
     public: "PublicController",
+    rules: "RulesController",
     aip: {
       extension: "AIPExtensionController",
       technology: "AIPTechnologyController",

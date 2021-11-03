@@ -10,7 +10,7 @@ const passport = require("passport");
 
 class RulesDocumentationServer extends Server {
   
-  constructor(logger, version, port, httpErrorFactory, passportConfigure, folderService, apiController, publicController){
+  constructor(logger, version, port, httpErrorFactory, passportConfigure, folderService, apiController, publicController, rulesController){
     super({
       logger,
       name: "Rules Documentation",
@@ -43,7 +43,7 @@ class RulesDocumentationServer extends Server {
         cookieParser(),
         passport.initialize(),
       ],
-    }, apiController, publicController);
+    }, apiController, rulesController, publicController);
 
     this.httpErrorFactory = httpErrorFactory;
     this.passportConfigure = passportConfigure;

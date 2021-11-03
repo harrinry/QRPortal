@@ -5,10 +5,7 @@ import * as appActions from 'app/crd-app-actions';
 import HomeContentComponent from './crd-home-content-component';
 
 function mapStateToProps(state, props) {
-  const computedMatch = _get(props, 'computedMatch');
-
   return {
-    // matchParams: _get(computedMatch, 'params'),
     rulesList: state.app.qualityRulesList,
     ruleDetails: state.app.ruleDetails,
     isLoggedIn: state.app.isLoggedIn,

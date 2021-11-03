@@ -15,4 +15,5 @@ module.exports = {
   TechnicalCriteriaController: require("./technical-criteria-controller"),
   SSOController: require("./sso-controller"),
   PublicController: require("./public-controller"),
+  RulesController: require("./rules-controller"),
 };

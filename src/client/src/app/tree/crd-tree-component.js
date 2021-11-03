@@ -18,7 +18,7 @@ const Tree = (props) => {
     ? `${splittedUrls[1]}/${splittedUrls[2]}`
     : `${splittedUrls[1]}`;
   const subUrl = splittedUrls[3] && `${mainUrl}/${splittedUrls[3]}`;
-  
+
   const getDefaultTreeInfo = () => {
     const _defaultTreeInfo = {
       defaultExpanded: [mainUrl],
@@ -53,7 +53,7 @@ const Tree = (props) => {
   );
 
   const isCountNotValid = node => node.hasOwnProperty('count') && node.count === 0;
-  
+
   const renderLabel = name => (
     <Tooltip title={name}>
       <div className='label-ellipsis'>{name}</div>
@@ -69,7 +69,7 @@ const Tree = (props) => {
         <TreeItem
           disabled={isCountNotValid(node)}
           nodeId={node.href.toLowerCase()}
-          label={renderLabel(node.name)}
+          label={renderLabel(node.displayName || node.name)}
           icon={node.iconUrl && renderLabelIcon(node.iconUrl)}
         >
           {

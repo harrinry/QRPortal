@@ -8,14 +8,14 @@ const fs = require("fs");
 class PublicController extends StaticController{
 
   /**
-   * @param {import("../config")} configuration
+   * @param {string} publicUrl
    * @param {import("winston").Logger} logger
    * @param {string} distributionFolder
    */
-  constructor(logger, distributionFolder){
+  constructor(logger, distributionFolder, publicUrl){
     super("/", {
       dir: distributionFolder,
-      ignore: /(\/api)/i,
+      ignore: /(\/api)|(\/rules)/i,
       spa: true,
     }, {
       dotfiles: "ignore",
@@ -29,6 +29,7 @@ class PublicController extends StaticController{
     });
 
     this._log = logger;
+    this.publicUrl = publicUrl;
     this.indexFilePath = path.join(distributionFolder, "index.html");
   }
 
@@ -38,7 +39,7 @@ class PublicController extends StaticController{
 
   $preprocess(){
     const log = this._log;
-    const publicUrl = process.env.PUBLIC_URL || "/";
+    const publicUrl = this.publicUrl || "/";
 
     if (fs.existsSync(this.indexFilePath)){
       const baseHtml = fs.readFileSync(this.indexFilePath);

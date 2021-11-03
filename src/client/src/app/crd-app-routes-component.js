@@ -25,6 +25,16 @@ const AppRoutes = () => (
     />
     <AppRouteLayout
       path={[
+        '/carl/:ruleType/:ruleId/categories/:categoryId/items/:itemId',
+        '/carl/:ruleType/:ruleId/categories/:categoryId',
+        '/carl/:ruleType/:ruleId',
+        '/carl/:ruleType',
+        '/carl',
+      ]}
+      component={HomeContent}
+    />
+    <AppRouteLayout
+      path={[
         '/search_term/:searchTerm/search_criterion/:searchCriterion',
         '/search_term/:searchTerm',
       ]}

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import _isEmpty from 'lodash/isEmpty';
@@ -91,9 +91,16 @@ const Home = (props) => {
   } = props;
 
   const classes = useStyles();
+  const { pathname } = useLocation();
+  const mainPath = pathname.split('/').slice(1);
 
   useEffect(() => {
-    getMainMenu();
+    if (mainPath[0] === '') {
+      history.push('/aip');
+      getMainMenu('aip');
+    } else {
+      getMainMenu(mainPath[0]);
+    }
   }, []);
 
   const renderMenuIcon = () => (
