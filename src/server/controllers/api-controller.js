@@ -16,17 +16,6 @@ class ApiController extends Controller {
 
   async $preprocess(){
     await this.dataReader.readServiceIndex();
-    
-    for (let index = 0; index < this.dataReader.ServiceIndex.items.length; index++) {
-      const item = this.dataReader.ServiceIndex.items[index];
-      
-      if(item.name === "indexes") {
-        this.dataReader.ServiceIndex.items.splice(index, 1);
-      }
-    }
-
-    // this.dataReader.ServiceIndex.items.push({ name: "doc", description: "swagger aip documentation", href: "api/doc" });
-    // this.dataReader.ServiceIndex.items.push({ name: "quality rules", description: "quality rules", href: "api/quality-rules" });
 
     this.get("/", this.getServiceIndex(this.dataReader));
   }

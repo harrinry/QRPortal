@@ -1,7 +1,8 @@
 const caseConvert = require("../../../lib/case-convert");
 
-function ServiceIndexElement (name, description, href, iconUrl){
+function ServiceIndexElement (name, description, href, displayName, iconUrl){
   this.name = name;
+  this.displayName = displayName;
   this.description = description;
   this.href = href;
 
@@ -19,17 +20,16 @@ class ServiceIndex {
     this.name = data.name;
     this.items = [];
 
-    for (const key in data.items) {
-      const element = data.items[key];
-      if(caseConvert.toParamCase(key) === "rules-history" || caseConvert.toParamCase(key) === "versions") continue;
-      this.items.push(new ServiceIndexElement(
-        caseConvert.spaceSeparated(key),
-        element.name,
-        `${this.name}/${caseConvert.toParamCase(key)}`)
-        );
+    for (const item of data.items) {
+      const { name, description, displayName } = item;
+      const indexElement = new ServiceIndexElement(
+        caseConvert.spaceSeparated(name), 
+        description, 
+        `${this.name}/${name}`,
+        displayName,
+      );
+      this.items.push(indexElement);
     }
-
-    this.items.push(new ServiceIndexElement("indexes", "Indexes in alphabetic order", `${this.name}/indexes`));
   }
 
   /**
@@ -40,6 +40,7 @@ class ServiceIndex {
 
     return {
       name: item.name,
+      displayName: item.displayName,
       description: item.description,
       href: item.href,
       iconUrl: item.iconUrl,

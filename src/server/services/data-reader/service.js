@@ -12,10 +12,12 @@ class DataReader extends JsonFileReader {
    * @param {string} folder 
    * @param {string} entryPoint 
    * @param {import("../data-serializer/serializer")} serializer
+   * @param {import("../json-file-reader/service")} staticFolderReader
    */
-  constructor(folder, entryPoint, serializer){
+  constructor(folder, entryPoint, serializer, staticFolderReader){
     super(folder);
 
+    this.staticFolderReader = staticFolderReader;
     this.serializer = serializer;
     this.entryPoint = entryPoint;
     this.ServiceIndex = null;
@@ -25,13 +27,13 @@ class DataReader extends JsonFileReader {
    * @returns {Promise<ServiceIndex>}
    */
   async readServiceIndex(){
-    const outpath = `${this.storageFolder}${this.ext}`;
-
     try {
       if(!this.ServiceIndex) {
-        const buff = await promisify(fs.readFile)(outpath);
-        const data = JSON.parse(buff.toString());
-        this.ServiceIndex = this.serializer.serialize({name: path.basename(this.storageFolder).toLowerCase(), items: data}, ServiceIndex);
+        const mapping = await this.staticFolderReader.read("service-index");
+        const indexName = path.basename(this.storageFolder).toLowerCase();
+        const itemIds = mapping.indexes[indexName].items;
+        const items = itemIds.map(_ => mapping.items.find(__ => __.id === _));
+        this.ServiceIndex = this.serializer.serialize({name: indexName, items}, ServiceIndex);
       }
 
       return this.ServiceIndex;

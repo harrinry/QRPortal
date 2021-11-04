@@ -20,6 +20,8 @@ module.exports = {
   storageService: "storageService",
   jsonFileReader: "jsonFileReader",
 
+  staticFolderReader: "staticFolderReader",
+
   aipDataReader: "aipDataReader",
   carlDataReader: "carlDataReader",
   restDataReader: "restDataReader",

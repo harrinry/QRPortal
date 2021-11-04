@@ -18,6 +18,7 @@ const { BusinessCriteriaDataReader } = require("../services/business-criteria-re
 const { TechnicalCriteriaDataReader } = require("../services/technical-criteria-reader");
 const { SSOCache, passportConfigure, ExtendAuthWebClient } = require("../services/extend-authentication-service");
 const { UrlConverter } = require("../services/url-converter");
+const { JsonFileReader } = require("../services/json-file-reader");
 const uuid = require("uuid");
 
 const iocBuilder = createIocBuilder();
@@ -98,8 +99,9 @@ iocBuilder
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
     const serializer = cntr.get(types.serializer);
+    const staticReader = cntr.get(types.staticFolderReader);
 
-    const dataReader = new DataReader(folderService.get(fldTypes.restIndex), "/api", serializer);
+    const dataReader = new DataReader(folderService.get(fldTypes.restIndex), "/api", serializer, staticReader);
 
     return dataReader;
   })
@@ -107,15 +109,17 @@ iocBuilder
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
     const serializer = cntr.get(types.serializer);
+    const staticReader = cntr.get(types.staticFolderReader);
 
-    return new DataReader(folderService.get(fldTypes.restAip), drTypes.aip, serializer);
+    return new DataReader(folderService.get(fldTypes.restAip), drTypes.aip, serializer, staticReader);
   })
   .registerFactory(types.carlDataReader, (context) => {
     const cntr = context.container;
     const folderService = cntr.get(types.folderService);
     const serializer = cntr.get(types.serializer);
+    const staticReader = cntr.get(types.staticFolderReader);
 
-    return new DataReader(folderService.get(fldTypes.restCarl), drTypes.carl, serializer);
+    return new DataReader(folderService.get(fldTypes.restCarl), drTypes.carl, serializer, staticReader);
   })
   .registerFactory(types.aipTechnologyDataReader, (context) => {
     const cntr = context.container;
@@ -177,6 +181,12 @@ iocBuilder
     const serializer = cntr.get(types.serializer);
 
     return new TechnicalCriteriaDataReader(dataReader, serializer);
+  })
+  .registerFactory(types.staticFolderReader, (context) => {
+    const cntr = context.container;
+    const folderService = cntr.get(types.folderService);
+
+    return new JsonFileReader(folderService.get(fldTypes.mapping));
   })
   // .registerFactory(types.carlTechnicalCriteriaDataReader, (context) => {
   //   const cntr = context.container;
