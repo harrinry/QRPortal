@@ -406,16 +406,6 @@
         ]
     },
     {
-        "id": 1040016,
-        "name": "Ensure specifying \"PermitAll\" or \"user role\" for URL(s) access to enforce security",
-        "href": "AIP/quality-rules/1040016",
-        "critical": true,
-        "severity": 30,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
         "id": 1040026,
         "name": "Ensure explicitly specifying single HTTP method in @RequestMapping methods to avoid information leakage",
         "href": "AIP/quality-rules/1040026",
@@ -423,6 +413,17 @@
         "severity": 30,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 1043018,
+        "name": "Ensure you don't store password information in a configuration file or a properties file in plaintext as this will allow anyone who can read the file access to the resource.",
+        "href": "AIP/quality-rules/1043018",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {
