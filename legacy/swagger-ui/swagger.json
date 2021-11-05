@@ -4,7 +4,6 @@
     "description": "REST API for CAST Rules.",
     "version": "1.0.0",
     "title": "CAST RULES",
-    "termsOfService": "https://technologies.castsoftware.com/terms/",
     "contact": {
       "email": "ppares@castsoftware.com"
     },
@@ -983,6 +982,9 @@
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
           },
+          "severity": {
+            "$ref": "#/components/schemas/QualityRule.severity"
+          },
           "technologyNames": {
             "type": "array",
             "items": {
@@ -1005,6 +1007,9 @@
           },
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/QualityRule.severity"
           },
           "technologyNames": {
             "type": "array",
@@ -1032,6 +1037,9 @@
           "critical": {
             "$ref": "#/components/schemas/Contribution.critical"
           },
+          "severity": {
+            "$ref": "#/components/schemas/QualityRule.severity"
+          },
           "technologyNames": {
             "type": "array",
             "items": {
@@ -1058,6 +1066,9 @@
           "maxWeight": {
             "type": "integer",
             "description": "Maximum contribution weight to technical criteria"
+          },
+          "severity": {
+            "$ref": "#/components/schemas/QualityRule.severity"
           },
           "associatedValueName": {
             "type": "string",
@@ -1116,6 +1127,15 @@
             }
           }
         }
+      },
+      "QualityRule.severity": {
+        "type": "integer",
+        "description": "The importance of the quality rule violation. A high severity value is of high importance.",
+        "enum": [
+          10,
+          20,
+          30
+        ]
       },
       "QualityRule.status": {
         "type": "string",
