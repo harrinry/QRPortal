@@ -22,14 +22,14 @@ const RulesWrapper = (props) => {
         <RuleDetails ruleDetails={ruleDetailsInfo} />
       </Grid>
     </Grid>
-  
+
   );
 };
 
 RulesWrapper.propTypes = {
   getRuleDetails: PropTypes.func,
-  rulesListInfo: PropTypes.array,
-  ruleDetailsInfo: PropTypes.object,
+  rulesListInfo: PropTypes.any,
+  ruleDetailsInfo: PropTypes.any,
   selectedRuleId: PropTypes.string,
 };
 

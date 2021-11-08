@@ -1,5 +1,6 @@
 import React, { memo, useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import _isEmpty from 'lodash/isEmpty';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import MuiDataTable from 'lib/material-ui-components/data-table';
@@ -37,6 +38,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   });
   const theme = useMemo(() => getMuiTheme(), []);
   const [selectedRow, setSelectedRow] = useState([]);
+  const [filterListItems, setFilterListItems] = useState(['Hide Deprecated']);
 
   const columns = [
     {
@@ -50,7 +52,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
       options: {
         filter: true,
         filterType: 'checkbox',
-        filterList: ['Hide Deprecated'],
+        filterList: filterListItems,
         filterOptions: {
           names: ['Hide Deprecated'],
           logic: (name, filterVal) => {
@@ -75,20 +77,22 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   };
 
   const tableOptions = {
-    downloadOptions: {
-      filename: 'cast-rules-list.csv',
-    },
-    filter: 'checkbox',
-    filterList: ['', 'Show Deprecated', ''],
+    filter: true,
     print: false,
     viewColumns: false,
     sort: false,
     selectableRowsHeader: false,
-    selectableRows: 'single',
     selectableRowsHideCheckboxes: true,
-    rowsSelected: selectedRow,
+    selectableRows: 'single',
     selectToolbarPlacement: 'none',
+    rowsSelected: selectedRow,
+    downloadOptions: { filename: 'cast-rules-list.csv' },
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),
+    onFilterChange: (changedColumn, filterList) => {
+      (changedColumn === 'name' && !_isEmpty(filterList[1]))
+        ? setFilterListItems(['Hide Deprecated'])
+        : setFilterListItems([]);
+    },
   };
 
   useEffect(() => {
