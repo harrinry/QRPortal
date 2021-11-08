@@ -19,6 +19,7 @@ export const SECTIONS = {
   nist: 'nist-sp-800-53r4',
   pci: 'pci-dss-v3.2.1',
   stig: 'stig-v4r8',
+  stigv5: 'stig-v5',
   omg: 'omg-ascqm',
   cpp: 'c-cpp',
   iso: 'iso-5055',

@@ -28,6 +28,7 @@ const mapDispatchToProps = (dispatch) => {
       case SECTIONS.cwe:
       case SECTIONS.pci:
       case SECTIONS.stig:
+      case SECTIONS.stigv5:
       case SECTIONS.nist:
       case SECTIONS.omg:
       case SECTIONS.cpp:
