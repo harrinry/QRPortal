@@ -12,7 +12,7 @@ import useStyles from './crd-tree-styles';
 
 const Tree = (props) => {
   const classes = useStyles();
-  const { mainMenu, treeData, getTreeData, searchTerm, resetSearch } = props;
+  const { mainMenu, treeData, getTreeData, searchTerm, resetSearch, resetTreeData } = props;
   const { pathname } = useLocation();
   const splittedUrls = pathname.toLowerCase().split('/');
   const mainUrl = splittedUrls[2]
@@ -119,7 +119,7 @@ const Tree = (props) => {
 
   useEffect(() => {
     if (searchTerm) {
-      // @TODO close the tree view
+      resetTreeData();
     }
   }, [searchTerm]);
 

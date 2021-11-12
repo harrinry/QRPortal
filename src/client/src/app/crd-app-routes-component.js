@@ -10,26 +10,30 @@ const AppRoutes = () => (
   <Switch>
     <AppRouteLayout
       exact={true}
-      path='/'
+      path={[
+        '/aip/:ruleType/:ruleId/categories/:categoryId',
+        '/aip/quality-standards/:ruleId',
+        '/aip/:ruleType',
+        '/aip',
+        '/carl/:ruleType/:ruleId/categories/:categoryId',
+        '/carl/quality-standards/:ruleId',
+        '/carl/:ruleType',
+        '/carl',
+        '/',
+      ]}
       component={HomeDefault}
     />
     <AppRouteLayout
       path={[
         '/aip/:ruleType/:ruleId/categories/:categoryId/items/:itemId',
-        '/aip/:ruleType/:ruleId/categories/:categoryId',
         '/aip/:ruleType/:ruleId',
-        '/aip/:ruleType',
-        '/aip',
       ]}
       component={HomeContent}
     />
     <AppRouteLayout
       path={[
         '/carl/:ruleType/:ruleId/categories/:categoryId/items/:itemId',
-        '/carl/:ruleType/:ruleId/categories/:categoryId',
         '/carl/:ruleType/:ruleId',
-        '/carl/:ruleType',
-        '/carl',
       ]}
       component={HomeContent}
     />

@@ -15,6 +15,7 @@ function mapDispatchToProps(dispatch) {
   return {
     getTreeData: bindActionCreators(appActions.getSubMenu, dispatch),
     resetSearch: bindActionCreators(appActions.resetSearch, dispatch),
+    resetTreeData: bindActionCreators(appActions.resetTreeData, dispatch),
   };
 }
 

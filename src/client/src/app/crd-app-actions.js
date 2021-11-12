@@ -136,3 +136,7 @@ export const resetSearch = () => ({
 export const resetRuleDetails = () => ({
   type: appActionsType.RESET_RULE_DETAILS,
 });
+
+export const resetTreeData = () => ({
+  type: appActionsType.RESET_TREE_DATA,
+});

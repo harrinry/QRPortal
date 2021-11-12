@@ -50,7 +50,7 @@ export default function appReducers(state = defaultState, action) {
         };
       }
       case appActionsType.GET_SUB_MENU_SUCCESS: {
-        let newTree = state.treeItem;
+        let newTree = [...state.treeItem];
         const { subMenu, url, updateIndex } = action.payload;
         const subItems = _get(subMenu, 'items');
         const isQualityRulesPresent = Array.isArray(subMenu.qualityRules);
@@ -165,6 +165,12 @@ export default function appReducers(state = defaultState, action) {
         return {
           ...state,
           ruleDetails: {},
+        };
+      }
+      case appActionsType.RESET_TREE_DATA: {
+        return {
+          ...state,
+          treeItem: _get(state.mainMenu, 'items'),
         };
       }
       default:
