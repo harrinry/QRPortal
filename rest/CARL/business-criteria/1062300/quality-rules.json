@@ -404,6 +404,18 @@
         ]
     },
     {
+        "id": 8484,
+        "name": "Avoid HTTP response splitting through API requests",
+        "href": "AIP/quality-rules/8484",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8486,
         "name": "Ensure you have sanitized the data received from resources",
         "href": "AIP/quality-rules/8486",
@@ -421,6 +433,102 @@
         "href": "AIP/quality-rules/8488",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8490,
+        "name": "Ensure you don't unsanitized queries to SQL databases",
+        "href": "AIP/quality-rules/8490",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8492,
+        "name": "Ensure your application does not run LDAP methods without sanitization",
+        "href": "AIP/quality-rules/8492",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8494,
+        "name": "Ensure your application does not run OS commande without sanitization",
+        "href": "AIP/quality-rules/8494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8496,
+        "name": "Ensure you don't use external library given by unsanitized user input",
+        "href": "AIP/quality-rules/8496",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8498,
+        "name": "Ensure your application does not process thread with unsanitized stream",
+        "href": "AIP/quality-rules/8498",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8500,
+        "name": "Ensure your application does not evaluate unsanitized code.",
+        "href": "AIP/quality-rules/8500",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8502,
+        "name": "Ensure you have sanitized the data received to be reflected in your application",
+        "href": "AIP/quality-rules/8502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8504,
+        "name": "Ensure your application properly neutralize XML content before it is processed",
+        "href": "AIP/quality-rules/8504",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -457,6 +565,18 @@
         "href": "AIP/quality-rules/8512",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8514,
+        "name": "Ensure you use sanitized queries to NoSQL databases",
+        "href": "AIP/quality-rules/8514",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -2227,6 +2347,16 @@
         ]
     },
     {
+        "id": 1039056,
+        "name": "Always make sure to use a Yaml instance that is constructed either with a SafeConstructor.",
+        "href": "AIP/quality-rules/1039056",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039058,
         "name": "Ensure the cookie id are always generate with a sufficient random algorithm like SecureRandom",
         "href": "AIP/quality-rules/1039058",
@@ -2237,9 +2367,29 @@
         ]
     },
     {
+        "id": 1039062,
+        "name": "Ensure the readObject() has been implemented for class instantiated by ObjectInputStream to prevent untrusted deserialization",
+        "href": "AIP/quality-rules/1039062",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039064,
         "name": "Ensure you do not allow access to all domain when defining cookie domain (JEE)",
         "href": "AIP/quality-rules/1039064",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039072,
+        "name": "jYAML project is abandonned and muts not be used to deserialize YAML",
+        "href": "AIP/quality-rules/1039072",
         "critical": true,
         "severity": 20,
         "technologyNames": [
