@@ -6,12 +6,10 @@
     "severity": 10,
     "maxWeight": 5,
     "associatedValueName": "Either 'Missing EFF_STATUS' or 'Missing EFFDT'",
-    "description": "This quality rule reports PeopleSoft Records with EFFDT alone or EFFSTATUS alone.",
+    "description": "When EFFDT is used on a non-employee data record, the EFF_STATUS field should also be defined for the record. Do not define only one without the other.",
     "output": "This report lists all the PeopleSoft Records with either EFFDT or EFF_STATUS but not the other",
-    "rationale": "As PeopleSoft generates automatically the SQL query to handle the effective date, both columns should be defined.\nWhen EFFDT is used on a non-employee data record, the EFF_STATUS field should also be defined for the record. Do not define only one without the other.",
-    "reference": "http://peoplesoft.wikidot.com/effective-dates-sequence-status",
-    "remediation": "Define the missing recordField :\ndefine EFFDT if not defined.\ndefine EFF_STATUS if not defined.",
-    "total": "Number of PeopleSoft Records with EFFDT or EFF_STATUS",
+    "rationale": "As PeopleSoft generates automatically the SQL query to handle the effective date, both columns should be defined.",
+    "total": "Number of PeopleSoft Records with EFFDT or EFFSTATUS",
     "alternativeName": "Do not define a recordField EFFDT or EFF_STATUS without the other (PeopleSoft)",
     "businessCriteria": [
         {

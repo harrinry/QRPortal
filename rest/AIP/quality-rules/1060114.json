@@ -1,17 +1,17 @@
 {
     "id": 1060114,
-    "name": "Always enable authorization checks at function level for functions called on by APIs",
+    "name": "Always enable authorization checks at function level for functions called on by APIs based with Spring Application",
     "href": "AIP/quality-rules/1060114",
     "critical": true,
     "severity": 30,
     "maxWeight": 9,
-    "description": "The rule will raise a violation when it finds functions that are called by APIs to perform actions, if they do not implement any form of authorization check.",
+    "description": "The rule will raise a violation when it finds functions that are called by APIs to perform actions, if they do not implement any form of authorization check. Spring Security configuration will be also checked at the same time.",
     "output": "APIs calling functions that do not impose any authorization checks.",
     "rationale": "Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It\u2019s easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g., replacing the HTTP method from GET to PUT, or changing the \u201cusers\u201d string in the URL to \"admins\").\nWhen defining APIs inside controllers and the methods called on by APIs to perform certain tasks it is important to restrict the user(authenticated or otherwise) based on her role.",
     "reference": "https://github.com/OWASP/API-Security/blob/master/2019/en/src/0xa5-broken-function-level-authorization.md",
     "remediation": "Review your API endpoints against function level authorization flaws, while keeping in mind the business logic of the application and groups hierarchy.\nPut restrictions on actions like Delete, Put after reviewing the context thoroughly.",
     "total": "All APIs",
-    "alternativeName": "Always enable authorization checks at function level for functions called on by APIs",
+    "alternativeName": "Ensure you check authorization at function level when Spring Security is not activated",
     "businessCriteria": [
         {
             "id": 20140522,

@@ -6,11 +6,9 @@
     "severity": 10,
     "maxWeight": 6,
     "associatedValueName": "RecordView referenced by the page field",
-    "description": "This quality rule reports Pages having fields referencing a RecordView and not set to display-only.",
+    "description": "Page fields using views must be display only",
     "output": "Failed checks give the number of pages that contain wrongly defined grids. The grid name can be found in the value column",
     "rationale": "To prevent data corruption, it is better to limit the data modifications to the table",
-    "reference": "Setting Page Field Properties for Controls: https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tapd/task_SettingPageFieldPropertiesforControls-077512.html",
-    "remediation": "Set the fields referencing a RecordView to display-only.\nIf edition is required, then have the field linked to a Table directly, not a RecordView.",
     "total": "Number of PeopleSoft Page Fields",
     "alternativeName": "Page fields using views must be display only (PeopleSoft)",
     "businessCriteria": [

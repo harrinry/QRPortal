@@ -5,10 +5,8 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
-    "description": "This quality rule reports all PeopleSoft SQL Definitions having an OR operator.",
-    "rationale": "Depending on the SQL statement, the same result can be obtained faster (with less resources) when a UNION is used to add the results of 2 queries, rather than using OR operator.",
-    "reference": "https://bertwagner.com/2018/02/20/or-vs-union-all-is-one-better-for-performance/",
-    "remediation": "With the help of a DBA, analyse the execution plan of both queries (with UNION and with OR) and chose the one that provide the best performance.",
+    "description": "Prefer using UNION to the OR operator.",
+    "rationale": "Rules of construction of query to improve performances",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "Prefer using UNION to the OR operator (PeopleSoft)",
     "businessCriteria": [

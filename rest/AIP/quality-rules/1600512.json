@@ -8,7 +8,7 @@
     "description": "Using pattern-matching engine, this rule reports PeopleSoft SQL Definitions having the DISTINCT clause inside the SQL statement.",
     "output": "This report lists all PeopleSoft SQL Definitions using the DISTINCT clause. It provides the following information:\n- PeopleSoft SQL Definitions full name.",
     "rationale": "Use the DISTINCT clause only when you are sure that the query will return duplicate results.\nUsage of DISTINCT clause is frequently a \"code smell\".\nIt indicates that something is not quite right because using the DISTINCT keyword means that redundant data is being pulled from the database and then discarded.",
-    "reference": "SQL Distinct keyword bogs down performance? https://stackoverflow.com/questions/5341276/sql-distinct-keyword-bogs-down-performance",
+    "reference": "Rules of construction of query to improve performances",
     "remediation": "When you are sure that the query won't return duplicate rows, remove the DISTINCT clause.\nOr check the statement and if so, rearrange the \"WHERE\" or the \"FROM\" clause in the SQL \"SELECT\" statement to only get the rows you need.",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "Use the DISTINCT clause only when we are sure that the query will return duplicate results (PeopleSoft)",

@@ -5,10 +5,8 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
-    "description": "This quality rules reports the PeopleSoft Record Tables having no column with the Key property.",
-    "rationale": "A table normally has keys to help distinguish between multiple occurrences of data, when a table has only one row of data you do not need to distinguish one row from another.\nAnother primary use for keys is to build database indexes to rows.\nNo key no index, and thus poor performance.",
-    "reference": "https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tapd/task_SettingRecordFieldProperties-077634.html",
-    "remediation": "Record Field Properties dialog box, in Use tab, check the Key checkbox on the desired column(s).",
+    "description": "All record must have at least one column as key",
+    "rationale": "All record must have at least one column as key",
     "total": "Number of PeopleSoft Record Table",
     "alternativeName": "All record must have at least one column as key (PeopleSoft)",
     "businessCriteria": [
