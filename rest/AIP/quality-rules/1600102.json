@@ -6,9 +6,11 @@
     "severity": 10,
     "maxWeight": 4,
     "associatedValueName": "RecordView referenced by the page field",
-    "description": "If the main record for the grid is a Record View, you should check the \"No Row Insert\" and \"No Row Delete\" properties in the Use properties",
+    "description": "This quality rule reports PeopleSoft Grids using Record Views and that have the properties \"No Row Insert\" and \"No Row Delete\" not checked.",
     "output": "Failed checks give the number of pages that contain wrongly defined grids. The grid name can be found in the value column",
-    "rationale": "As grid integrates data entry controls, you should be careful before allowing insertion or deletion",
+    "rationale": "As Grid integrates data entry controls, you should be careful before allowing insertion or deletion.",
+    "reference": "Using Grids: https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tapd/task_UsingGrids-077583.html",
+    "remediation": "If the main record for the Grid is a Record View, you should check the \"No Row Insert\" and \"No Row Delete\" properties of Data Options panel in the Use properties dialog.",
     "total": "Number of PeopleSoft Grids",
     "alternativeName": "Avoid inserting or deleting data on grid based on a record view (PeopleSoft)",
     "businessCriteria": [

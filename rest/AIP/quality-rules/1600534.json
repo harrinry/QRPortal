@@ -6,8 +6,8 @@
     "severity": 10,
     "maxWeight": 3,
     "description": "This rule searches for all HAVING clause inside PeopleSoft SQL Definitions.",
-    "rationale": "Rules of construction of query to improve performances.\nA 'having' clause is just like a where clause, but processed after an aggregation step.\nIf GROUP BY isn't there, an implicit single aggregated group in built, with a cost in performance.",
-    "remediation": "Review the design of the query to avoid if possible HAVING clause.\nIf GROUP BY isn't there, prefer using a WHERE clause instead of HAVING.",
+    "rationale": "Rules of construction of query to improve performances.\nA 'having' clause is just like a where clause, but processed after an aggregation step.\nIf GROUP BY is not there, an implicit single aggregated group in built, with a cost in performance.",
+    "remediation": "Review the design of the query to avoid if possible HAVING clause.\nIf GROUP BY is not there, prefer using a WHERE clause instead of HAVING.",
     "total": "Number of PeopleSoft SQL Definitions",
     "alternativeName": "Avoid SQL using HAVING (PeopleSoft)",
     "businessCriteria": [
