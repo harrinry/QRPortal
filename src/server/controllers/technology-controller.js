@@ -45,8 +45,9 @@ class TechnologyController extends Controller {
       try {
         const si = await dataReader.dataReader.readServiceIndex();
         const item = si.getItem("technologies");
-        
-        item.items = await dataReader.readConsolidatedTechnologies();
+        const technologies = await dataReader.readConsolidatedTechnologies();
+
+        item.items = technologies.sort((a, b) => a.name.localeCompare(b.name));
 
         res.status(200).json(item);
       } catch (error) {
