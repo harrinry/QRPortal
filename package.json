@@ -11,7 +11,7 @@
     "start--mac": "env NODE_ENV=production&& node server.js",
     "start--linux": "env NODE_ENV=production PORT=2280&& node server.js",
     "dev": "node_modules/.bin/webpack-dev-server --developement",
-    "build": "node_modules/.bin/webpack-cli --mode development",
+    "build": "node_modules/.bin/webpack-cli --mode production",
     "build--watch": "node_modules/.bin/webpack-cli --mode development --watch",
     "build--production": "node_modules/.bin/webpack-cli --mode production",
     "test": "node_modules/.bin/mocha --require ./test/testHelper.js ./test/**/*Spec.js",

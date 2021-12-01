@@ -10,8 +10,8 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
 
   if (data){
 
-    if( data.qualityStandards.length > 0 ){
-      for (const qualityStandard of data.qualityStandards) {
+    if( (data.qualityStandards || []).length > 0 ){
+      for (const qualityStandard of (data.qualityStandards || [])) {
         const exists = qsTagData.find( e => e.id === qualityStandard.id );
         if(exists) continue;
         qsTagData.push(qualityStandard);
@@ -25,8 +25,8 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
       }}>{listValue.id}</div>;
     });
 
-    technologiesTags = data.technologies.length > 0 ?
-      data.technologies.map((t, i)=>{
+    technologiesTags = (data.technologies || []).length > 0 ?
+      (data.technologies || []).map((t, i)=>{
         return <div key={i+'techno'} className={CLASSES.technoTag} onClick={() => {
           if(!searchVisible || gsQuery !== t.id)
             onTechnologyTagClick(t);
@@ -39,10 +39,10 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
         ( data ?
           <div className={CLASSES.subContainer}>
             <div className={CLASSES.headerContainer}>
-            <h2 className={CLASSES.title}>{(isEcho() ? (data.alternativeName ? data.alternativeName : data.name) : data.name)}</h2>
-            { isEcho() ? undefined : ( data.critical ? <div className={createClassName(CLASSES.weightContainer,COMMON_CLASSES.critical)}></div> : <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
-              <span className={CLASSES.weight}>{data.maxWeight}</span>
-            </div>)}
+              <h2 className={CLASSES.title}>{(isEcho() ? (data.alternativeName ? data.alternativeName : data.name) : data.name)}</h2>
+              { isEcho() ? undefined : ( data.critical ? <div className={createClassName(CLASSES.weightContainer,COMMON_CLASSES.critical)}></div> : <div className={createClassName(CLASSES.weightContainer, data.critical ? COMMON_CLASSES.critical : CLASSES.weightIcon)}>
+                <span className={CLASSES.weight}>{data.maxWeight}</span>
+              </div>)}
             </div>
             <div className={CLASSES.tagContainer}>
               {qualityStandardsTags}
@@ -54,12 +54,12 @@ const RulesDetails = ( { data, loading, onTagClick, onTechnologyTagClick, search
               <p className={CLASSES.textArea}>Description</p>
               <p>{data.description}</p>
             </div> : undefined ) }
-{isEcho() ? (data.rationale ? <div className={CLASSES.rationaleContainer}><p>{data.rationale}</p></div> : undefined) :
+            {isEcho() ? (data.rationale ? <div className={CLASSES.rationaleContainer}><p>{data.rationale}</p></div> : undefined) :
 
-            (data.rationale ? <div className={CLASSES.rationaleContainer}>
-              <p className={CLASSES.textArea}>Rationale</p>
-              <p>{data.rationale}</p>
-            </div> : undefined)}
+              (data.rationale ? <div className={CLASSES.rationaleContainer}>
+                <p className={CLASSES.textArea}>Rationale</p>
+                <p>{data.rationale}</p>
+              </div> : undefined)}
             {data.remediation ? <div className={CLASSES.remediation}>
               <p className={CLASSES.textArea}>Remediation</p>
               <p>{data.remediation}</p>
