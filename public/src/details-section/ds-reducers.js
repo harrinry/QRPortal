@@ -25,9 +25,8 @@ const detailsReducers = (state = initialState, action) => {
     return {
       ...state,
       query: action.payload.query,
-      data: {
-        ...action.payload.err
-      }
+      data: undefined,
+      loading: false
     };
   case ACTIONTYPES.FETCHING_DETAILS_CONTENT_FROM_API:
     return {

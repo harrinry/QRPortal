@@ -77,10 +77,14 @@ const ProcessRuleDetailsRequest = ( req, res, errorHandler ) => {
     if(err){
       errorHandler(err, res);
     }
-    const data = JSON.parse(dataBuffer);
-    res.json(
-      QualityRuleObject(data)
-    );
+    try {
+      const data = JSON.parse(dataBuffer);
+      res.json(
+        QualityRuleObject(data)
+      );
+    } catch (error) {
+      res.sendStatus(404);
+    }
   });
 };
 
