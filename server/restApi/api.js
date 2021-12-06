@@ -17,15 +17,13 @@ apiRouter.get(main, ( req, res ) => {
   } else if ( query.length === 1 ){
     StatLogger.info( query );
     res.sendFile(normalize(query[0]), options, (err) => errHandler(err, res));
+  } else {
+    StatLogger.info( query );
+    res.sendFile("/Root.json", options, (err) => errHandler(err, res)); 
   }
 });
 
-apiRouter.get('/aip*', (req, res) => {
-  StatLogger.info( req.url );
-  res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
-});
-
-apiRouter.get('/echo*', (req, res) => {
+apiRouter.get('*', (req, res) => {
   StatLogger.info( req.url );
   res.sendFile(normalize(req.url), options, (err) => errHandler(err, res));
 });
