@@ -69,7 +69,7 @@ WebRouter.get('/quality-standards/:stdID/items/:stdTagName', ( req, res ) => {
 });
 
 WebRouter.get('/business-criteria', async(req, res) => {
-  const bc = await generateBusinessCriteriaMapping('CAST', _ => _.id < 1000000, req.query.q === 'echo' ? 'Echo' : 'AIP');
+  const bc = await generateBusinessCriteriaMapping('CAST', _ => _.id < 1000000 && _.id !== 60017, req.query.q === 'echo' ? 'Echo' : 'AIP');
 
   res.json(bc);
 });
