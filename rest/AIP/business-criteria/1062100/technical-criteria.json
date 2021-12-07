@@ -133,31 +133,10 @@
         "weight": 5
     },
     {
-        "id": 1062129,
-        "name": "ASCMM-MNT-9 - Horizontal Layer Excessive Number",
-        "description": "Objective\nAvoid the existence of too many or too few horizontal layers\n\nConsequence\nSoftware that does not follow the principles of layered architectures (such as strict partitioning and strict call hierarchy) decreases comprehensibility as well as simplicity to evolve the code\n\nMeasure Element\nNumber of instances where a model of the architectural layers of an application contains too may or too few horizontal layers (excluding the vertical utility layers) based on comparison to a threshold value. The default value for the minimal number of horizontal layers is 4, and the default value for maximal number of horizontal layers is 8.\n\n",
-        "href": "AIP/technical-criteria/1062129",
-        "weight": 5
-    },
-    {
-        "id": 1062130,
-        "name": "ASCPEM-PRF-1 - Static Block Element containing Class Instance Creation Control Element",
-        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing upfront initialization of software data elements.\n\nConsequence\nSoftware that is coded so as to execute expensive computations repeatedly (such as in loops) requires excessive computational resources when the usage and data volume grow\n\n",
-        "href": "AIP/technical-criteria/1062130",
-        "weight": 5
-    },
-    {
         "id": 1062131,
         "name": "ASCPEM-PRF-10 - Non-SQL Named Callable and Method Control Element with Excessive Number of Data Resource Access",
         "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by the existence of software elements requiring too many data access outside of the data manager.\n\nConsequence\nSoftware that does not leverage database capabilities to efficiently run data processing (such as stored procedures and functions) requires excessive computational resources\n\n",
         "href": "AIP/technical-criteria/1062131",
-        "weight": 5
-    },
-    {
-        "id": 1062132,
-        "name": "ASCPEM-PRF-11 - Data Access Control Element from Outside Designated Data Manager Component",
-        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by enforcing the use of dedicated and specialized data manager component(s).\n\nConsequence\nSoftware deployed in distributed environment that does not maintain redundancy of data (such as cache) and code increases the time with which they are accessed\n\n",
-        "href": "AIP/technical-criteria/1062132",
         "weight": 5
     },
     {
@@ -196,13 +175,6 @@
         "weight": 5
     },
     {
-        "id": 1062138,
-        "name": "ASCPEM-PRF-3 - Static Member Data Element outside of a Singleton Class Element",
-        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing unnecessary up-front allocation of memory for all data elements.\n\nConsequence\nSoftware featuring known under-efficient coding practices requires excessive computational resources\n\n",
-        "href": "AIP/technical-criteria/1062138",
-        "weight": 5
-    },
-    {
         "id": 1062139,
         "name": "ASCPEM-PRF-4 - Data Resource Read and Write Access Excessive Complexity",
         "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the execution of overly complex data queries.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
@@ -224,13 +196,6 @@
         "weight": 5
     },
     {
-        "id": 1062142,
-        "name": "ASCPEM-PRF-7 - Large Data Resource ColumnSet with Index Element of Excessive Size",
-        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the existence of overly large indices on very large data tables.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
-        "href": "AIP/technical-criteria/1062142",
-        "weight": 5
-    },
-    {
         "id": 1062143,
         "name": "ASCPEM-PRF-8 - Control Elements Requiring Significant Resource Element within Control Flow Loop Block",
         "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the repeated consumption of resource due to resource consuming operations found directly or indirectly within loops.\n\nConsequence\nSoftware that is coded so as to execute expensive computations repeatedly (such as in loops) requires excessive computational resources when the usage and data volume grow\n\n",
@@ -249,13 +214,6 @@
         "name": "ASCRM-CWE-120 - Buffer Copy without Checking Size of Input",
         "description": "Objective\nAvoid buffer operations among buffers with incompatible sizes\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances in which the content of the first buffer is moved into the content of the second buffer while the size of the first buffer is greater than the size of the second buffer.\n\n",
         "href": "AIP/technical-criteria/1062145",
-        "weight": 5
-    },
-    {
-        "id": 1062146,
-        "name": "ASCRM-CWE-252-data - Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Data Resource",
-        "description": "Objective\nAvoid improper processing of the execution status of data handling operations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where the named callable control element or method control element executes a CRUD SQL statement with an action, yet the value of the return parameter from the action is not used by any check control element\n\n",
-        "href": "AIP/technical-criteria/1062146",
         "weight": 5
     },
     {
@@ -319,13 +277,6 @@
         "name": "ASCRM-RLB-1 - Empty Exception Block",
         "description": "Objective\nAvoid improper responses to unusual and unexpected situations\n\nConsequence\nSoftware without consistent and complete handling of errors and exceptions makes it impossible to accurately identify and adequately respond to unusual and unexpected situations.\n\nMeasure Element\nNumber of instances where an exception handling block (such as Catch and Finally blocks) of the named callable and method control elements does not contain any other control element\n\n",
         "href": "AIP/technical-criteria/1062155",
-        "weight": 5
-    },
-    {
-        "id": 1062156,
-        "name": "ASCRM-RLB-10 - Data Access Control Element from Outside Designated Data Manager Component",
-        "description": "Objective\nAvoid circumventing dedicated and specialized data manager component(s)\n\nConsequence\nSoftware without consistently-enforced approach to data integrity management incurs the risk of behaving unexpectedly\n\nMeasure Element\nNumber of instances where named callable control element or method control element executes a data action which is not part of a component on the dedicated data access component list thus circumventing the intended design for data access (the unlisted data access component can be either client-side or server-side, which means that data access components can be developed using non-SQL languages)\n\n",
-        "href": "AIP/technical-criteria/1062156",
         "weight": 5
     },
     {
@@ -476,13 +427,6 @@
         "weight": 5
     },
     {
-        "id": 1062178,
-        "name": "ASCSM-CWE-252-resource - Unchecked Return Parameter Value of named Callable and Method Control Element with Read, Write, and Manage Access to Platform Resource",
-        "description": "Objective\nAvoid improper processing of the execution status of resource handling operations\n\nConsequence\nSoftware unaware of execution status control incurs the risk of bad data being used in operations, possibly leading to a crash or other unintended behaviors\n\nMeasure Element\nNumber of instances where the named callable control element or method control element executes a \u2018Read\u2019, \u2018Write\u2019, or \u2018Manage Access\u2019 action, yet the value of the return parameter from the action is not used by any check control element\n\n",
-        "href": "AIP/technical-criteria/1062178",
-        "weight": 5
-    },
-    {
         "id": 1062179,
         "name": "ASCSM-CWE-327 - Broken or Risky Cryptographic Algorithm Usage",
         "description": "Objective\nAvoid failure to use vetted cryptographic libraries\n\nConsequence\nSoftware using broken or risky cryptographic algorithm incurs the risk of sensitive data being compromised\n\nMeasure Element\nNumber of instances where the application uses the cryptographic deployed component which is not part of the list of vetted cryptographic deployed components.\n\n",
@@ -515,13 +459,6 @@
         "name": "ASCSM-CWE-456 - Storable and Member Data Element Missing Initialization",
         "description": "Objective\nAvoid failure to explicitly initialize software data elements in use\n\nConsequence\nSoftware featuring weak initialization practices incurs the risk of logic errors within the program, possibly leading to a security problem\n\nMeasure Element\nNumber of instances where a storable data element or member data element is declared by the \u2018Create\u2019 action, then is evaluated in a \u2018Read\u2019 action without ever being initialized by a \u2018Write\u2019 action prior to the evaluation\n\n",
         "href": "AIP/technical-criteria/1062183",
-        "weight": 5
-    },
-    {
-        "id": 1062184,
-        "name": "ASCSM-CWE-606 - Unchecked Input for Loop Condition",
-        "description": "Objective\nAvoid failure to check range of user input in use in iteration control\n\nConsequence\nSoftware unaware of iteration control incurs the risk of unexpected consumption of resources, such as CPU cycles or memory, possibly leading to a crash or program exit due to exhaustion of resources\n\nMeasure Element\nNumber of instances where an external value is entered into the application through the user interface ReadsUI action, transformed throughout the application along the sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the loop condition statement; none of the callable or method control element of the transformation sequence being a range check control element.\n\n",
-        "href": "AIP/technical-criteria/1062184",
         "weight": 5
     },
     {
@@ -578,13 +515,6 @@
         "name": "ASCSM-CWE-798 - Hard-Coded Credentials Usage for Remote Authentication",
         "description": "Objective\nAvoid the existence of hard-coded credentials elements\n\nConsequence\nSoftware featuring weak authentication practices incurs the risk of exposing resources and functionality to unintended actors, possibly leading to compromised sensitive information and even the execution of arbitrary code\n\nMeasure Element\nNumber of instances where a storable data element or member data element is initialized by a \u2018Write\u2019 action, transported throughout the application along the transport sequence composed of ActionElements with DataRelations relations, some of which being part of named callable and method control elements, and ultimately used in the remote resource management action ; the transport sequence is composed of assignment operations as updates to the value would not be considered as hard-coded (literal) any more.\n\n",
         "href": "AIP/technical-criteria/1062192",
-        "weight": 5
-    },
-    {
-        "id": 1062193,
-        "name": "ASCSM-CWE-835 - Loop with Unreachable Exit Condition ('Infinite Loop')",
-        "description": "Objective\nAvoid infinite iterations\n\nConsequence\nSoftware unaware of iteration control incurs the risk of unexpected consumption of resources, such as CPU cycles or memory, possibly leading to a crash or program exit due to exhaustion of resources\n\nMeasure Element\nNumber of instances where the named callable control element or method control element features the executioon path whose entry element is found again in the path, while it has no path whatsoever to not return to itself and exit the recursion\n\n",
-        "href": "AIP/technical-criteria/1062193",
         "weight": 5
     },
     {

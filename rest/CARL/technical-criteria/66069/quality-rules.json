@@ -1,0 +1,938 @@
+[
+    {
+        "id": 592,
+        "name": "Ensure you provide a user-defined copy constructor or disable copy when a class allocates memory in its constructor",
+        "href": "AIP/quality-rules/592",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 4612,
+        "name": "Avoid using native Methods (JNI)",
+        "href": "AIP/quality-rules/4612",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7506,
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
+        "href": "AIP/quality-rules/7506",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7708,
+        "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
+        "href": "AIP/quality-rules/7708",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7926,
+        "name": "Abstract Classes should be non copy-assignable",
+        "href": "AIP/quality-rules/7926",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7932,
+        "name": "Avoid Constructors not supplying an initial value for all non-static data members",
+        "href": "AIP/quality-rules/7932",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 7998,
+        "name": "Avoid local variables that are not initialized at declaration time",
+        "href": "AIP/quality-rules/7998",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8002,
+        "name": "Never perform C-style cast between incompatible Class pointers",
+        "href": "AIP/quality-rules/8002",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8004,
+        "name": "Avoid using 'delete this'",
+        "href": "AIP/quality-rules/8004",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8006,
+        "name": "Avoid Classes with a copy Constructor and the default Destructor or assignment operator",
+        "href": "AIP/quality-rules/8006",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8010,
+        "name": "Do not overload the ampersand, comma, logical AND or logical OR operators",
+        "href": "AIP/quality-rules/8010",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8024,
+        "name": "Avoid Classes with a non-empty Destructor and the default assignment operator or copy Constructor",
+        "href": "AIP/quality-rules/8024",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8026,
+        "name": "Avoid Classes with an assignment operator and the default Destructor or copy constructor",
+        "href": "AIP/quality-rules/8026",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 8052,
+        "name": "Avoid setting a pointer to the address of a local variable defined in a lower scope",
+        "href": "AIP/quality-rules/8052",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8054,
+        "name": "Avoid calling blocking functions with an infinite timeout",
+        "href": "AIP/quality-rules/8054",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8056,
+        "name": "Method override fails due to mismatch of const/volatile qualifiers",
+        "href": "AIP/quality-rules/8056",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8064,
+        "name": "Assignment operator should assign all non-static members of the target object",
+        "href": "AIP/quality-rules/8064",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8072,
+        "name": "Never define collection of 'std::auto_ptr'",
+        "href": "AIP/quality-rules/8072",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8074,
+        "name": "Avoid using 'class' or 'struct' parameters with variadic Functions",
+        "href": "AIP/quality-rules/8074",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 8090,
+        "name": "Avoid using NaN to test the result of an expression",
+        "href": "AIP/quality-rules/8090",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8096,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "AIP/quality-rules/8096",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8136,
+        "name": "CDI Beans with normal scope must be proxyable to avoid runtime errors",
+        "href": "AIP/quality-rules/8136",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8150,
+        "name": "Avoid using Parse for primitive types and used instead TryParse",
+        "href": "AIP/quality-rules/8150",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8216,
+        "name": "Avoid using incompatible mutation",
+        "href": "AIP/quality-rules/8216",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8218,
+        "name": "DEPRECATED: Content type should be checked when receiving a HTTP Post",
+        "href": "AIP/quality-rules/8218",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 8220,
+        "name": "Avoid using deprecated method, constructor, field, type or package",
+        "href": "AIP/quality-rules/8220",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1020040,
+        "name": "Avoid using delete with no object properties",
+        "href": "AIP/quality-rules/1020040",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020054,
+        "name": "Avoid using delete on arrays",
+        "href": "AIP/quality-rules/1020054",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020066,
+        "name": "Avoid using Javascript Function constructor",
+        "href": "AIP/quality-rules/1020066",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020204,
+        "name": "Avoid <textarea> with v-model having child elements",
+        "href": "AIP/quality-rules/1020204",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020206,
+        "name": "Avoid using v-for without key",
+        "href": "AIP/quality-rules/1020206",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020210,
+        "name": "Avoid using v-show directive inside templates",
+        "href": "AIP/quality-rules/1020210",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020212,
+        "name": "Avoid changing parent properties from child components using $parent",
+        "href": "AIP/quality-rules/1020212",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020318,
+        "name": "Avoid using jQuery deprecated methods",
+        "href": "AIP/quality-rules/1020318",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020514,
+        "name": "Only use the angular.isUndefined or angular.isDefined methods in AngularJS application",
+        "href": "AIP/quality-rules/1020514",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020530,
+        "name": "Avoid using !angular.isUndefined() and !angular.isDefined() in AngularJS application",
+        "href": "AIP/quality-rules/1020530",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020536,
+        "name": "Avoid using $ or jQuery, use angular.element instead",
+        "href": "AIP/quality-rules/1020536",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020538,
+        "name": "Avoid wrapping angular.element objects with jQuery or $",
+        "href": "AIP/quality-rules/1020538",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020806,
+        "name": "Avoid using NaN in comparison ",
+        "href": "AIP/quality-rules/1020806",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020816,
+        "name": "Avoid using output of the function that does not return anything",
+        "href": "AIP/quality-rules/1020816",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1027004,
+        "name": "Avoid using deprecated XmlTextReader .NET API",
+        "href": "AIP/quality-rules/1027004",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027014,
+        "name": "Avoid using Thread API (Suspend\\Resume) to manage thread state",
+        "href": "AIP/quality-rules/1027014",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027022,
+        "name": "Avoid using \"new Guid()\"",
+        "href": "AIP/quality-rules/1027022",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027040,
+        "name": "Avoid using multiple OrderBy calls",
+        "href": "AIP/quality-rules/1027040",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027044,
+        "name": "Avoid using SafeHandle.DangerousGetHandle",
+        "href": "AIP/quality-rules/1027044",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027048,
+        "name": "Avoid returning null from non-async Task/Task<T> method",
+        "href": "AIP/quality-rules/1027048",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027058,
+        "name": "Avoid blocking async methods (.NET, VB)",
+        "href": "AIP/quality-rules/1027058",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027070,
+        "name": "Avoid if statements and blocks that are always TRUE or FALSE",
+        "href": "AIP/quality-rules/1027070",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027078,
+        "name": "Always mark Windows Forms starting point as STAThread",
+        "href": "AIP/quality-rules/1027078",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#"
+        ]
+    },
+    {
+        "id": 1027080,
+        "name": "Always use ConfigureAwait(false) in library code awaited tasks",
+        "href": "AIP/quality-rules/1027080",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027090,
+        "name": "Avoid improper instantiation of argument exceptions",
+        "href": "AIP/quality-rules/1027090",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027092,
+        "name": "Always pass optional parameters too, when making 'base' calls",
+        "href": "AIP/quality-rules/1027092",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1065006,
+        "name": "Avoid iterator invalidation.",
+        "href": "AIP/quality-rules/1065006",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065010,
+        "name": "Avoid using <cstdio> stream input output library (C++)",
+        "href": "AIP/quality-rules/1065010",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065014,
+        "name": "Avoid using the library functions bsearch and qsort from <stdlib.h> (C/C++)",
+        "href": "AIP/quality-rules/1065014",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065016,
+        "name": "Avoid using atof,atol, atoll or atoi functions from <stdlib.h> (C/C++)",
+        "href": "AIP/quality-rules/1065016",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065018,
+        "name": "Avoid using offsetof from <cstddef>",
+        "href": "AIP/quality-rules/1065018",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065020,
+        "name": "Avoid using <ctime> (C++)",
+        "href": "AIP/quality-rules/1065020",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065022,
+        "name": "Avoid using <stdio.h> (C/C++)",
+        "href": "AIP/quality-rules/1065022",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065024,
+        "name": "Avoid using the standard library time and date functions from \"<time.h>\" (C/C++)",
+        "href": "AIP/quality-rules/1065024",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065038,
+        "name": "Avoid using 'signal.h' (C/C++)",
+        "href": "AIP/quality-rules/1065038",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065042,
+        "name": "Avoid non-void return type function without an explicit return of an expression (C/C++)",
+        "href": "AIP/quality-rules/1065042",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065046,
+        "name": "Avoid using the unbounded functions of <cstring> library",
+        "href": "AIP/quality-rules/1065046",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065050,
+        "name": "Avoid using \"sizeof\" on expressions that contain side effects",
+        "href": "AIP/quality-rules/1065050",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065052,
+        "name": "Avoid using Octal constants or escape sequences (C/C++)",
+        "href": "AIP/quality-rules/1065052",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065054,
+        "name": "Do not override the standard library functions (C/C++)",
+        "href": "AIP/quality-rules/1065054",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065062,
+        "name": "Avoid testing floating point numbers for equality",
+        "href": "AIP/quality-rules/1065062",
+        "critical": true,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065068,
+        "name": "Avoid using Digraphs (C++)",
+        "href": "AIP/quality-rules/1065068",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065070,
+        "name": "Avoid using Trigraphs",
+        "href": "AIP/quality-rules/1065070",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065072,
+        "name": "Avoid using Unions",
+        "href": "AIP/quality-rules/1065072",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065074,
+        "name": "All constructors that are callable with a single argument of fundamental type shall be declared explicit.",
+        "href": "AIP/quality-rules/1065074",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065092,
+        "name": "Avoid having boolean operators with non-boolean operands (C/C++)",
+        "href": "AIP/quality-rules/1065092",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065094,
+        "name": "Avoid having expressions with bool type to be used as operands on operators other than =, &&, ||, !, ==, !=, the unary & operator, and the conditional operator",
+        "href": "AIP/quality-rules/1065094",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065104,
+        "name": "Converting a multiplication to a larger type should be done before the multiplication takes place",
+        "href": "AIP/quality-rules/1065104",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065106,
+        "name": "Avoid comparing types of different widths in a loop",
+        "href": "AIP/quality-rules/1065106",
+        "critical": false,
+        "weight": 6,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065108,
+        "name": "Bit-fields shall be either unsigned integral, or enumeration (with underlying type of unsigned integral type).",
+        "href": "AIP/quality-rules/1065108",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065110,
+        "name": "Ensure arrays and containers are accessed using unsigned values",
+        "href": "AIP/quality-rules/1065110",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065114,
+        "name": "Avoid lines starting with \"#\" with invalid pre-processing directive",
+        "href": "AIP/quality-rules/1065114",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065116,
+        "name": "Undefined macro identifiers shall not be used in #if or #elif preprocessor directives, except as operands to the defined operator",
+        "href": "AIP/quality-rules/1065116",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065118,
+        "name": "Arguments to a function-like macro shall not contain tokens that look like preprocessing directives.",
+        "href": "AIP/quality-rules/1065118",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065120,
+        "name": "Avoid using # OR ## operators more than once while defining macros",
+        "href": "AIP/quality-rules/1065120",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065122,
+        "name": "Avoid #define or #undef macros anywhere other than global namespace",
+        "href": "AIP/quality-rules/1065122",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065130,
+        "name": "Avoid defining, redefining or undefining standard macros from standard library",
+        "href": "AIP/quality-rules/1065130",
+        "critical": false,
+        "weight": 2,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1101012,
+        "name": "Avoid specifying column numbers instead of column names in ORDER BY clauses",
+        "href": "AIP/quality-rules/1101012",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101020,
+        "name": "Avoid using quoted identifiers",
+        "href": "AIP/quality-rules/1101020",
+        "critical": false,
+        "weight": 3,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101026,
+        "name": "Always define column names when inserting values",
+        "href": "AIP/quality-rules/1101026",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101072,
+        "name": "Avoid not aliased Tables",
+        "href": "AIP/quality-rules/1101072",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101076,
+        "name": "Avoid unqualified column references",
+        "href": "AIP/quality-rules/1101076",
+        "critical": false,
+        "weight": 4,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 1101080,
+        "name": "Avoid orphaned synonyms",
+        "href": "AIP/quality-rules/1101080",
+        "critical": false,
+        "weight": 1,
+        "technologyNames": [
+            "SQL"
+        ]
+    }
+]
