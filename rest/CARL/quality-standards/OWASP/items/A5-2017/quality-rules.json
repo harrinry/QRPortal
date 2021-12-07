@@ -24,6 +24,36 @@
         ]
     },
     {
+        "id": 1024002,
+        "name": "A read permission should be specified for Content Provider to restrict data access from others apps",
+        "href": "AIP/quality-rules/1024002",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024004,
+        "name": "A Write permission should be specified for Content Provider to restrict data access from others apps",
+        "href": "AIP/quality-rules/1024004",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024006,
+        "name": "Content Provider should be set as private to protect access from others apps",
+        "href": "AIP/quality-rules/1024006",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1024012,
         "name": "Ensure deactivating \"android:grantUriPermissions\" to control URI access",
         "href": "AIP/quality-rules/1024012",
@@ -125,6 +155,16 @@
         ]
     },
     {
+        "id": 1040016,
+        "name": "Ensure specifying \"PermitAll\" or \"user role\" for URL(s) access to enforce security",
+        "href": "AIP/quality-rules/1040016",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1040042,
         "name": "Ensure you have used Spring framework with version greater than 5.0.5 when enabling global security method",
         "href": "AIP/quality-rules/1040042",
@@ -140,36 +180,6 @@
         "href": "AIP/quality-rules/1040044",
         "critical": true,
         "severity": 20,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 1042010,
-        "name": "Ensure excluding class parameter for ParametersInterceptor when using Struts 2.3.16 (and older)",
-        "href": "AIP/quality-rules/1042010",
-        "critical": true,
-        "severity": 30,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 1042022,
-        "name": "Ensure not using wildcard for cookiesName param configuration in CookieInterceptor with Struts 2.3.16 (and Older). This allow preventing Injection attack.",
-        "href": "AIP/quality-rules/1042022",
-        "critical": true,
-        "severity": 30,
-        "technologyNames": [
-            "JEE"
-        ]
-    },
-    {
-        "id": 1042026,
-        "name": "Ensure note using wildcards for action mapping name to avoid executing arbitrary Java code on server side",
-        "href": "AIP/quality-rules/1042026",
-        "critical": true,
-        "severity": 30,
         "technologyNames": [
             "JEE"
         ]

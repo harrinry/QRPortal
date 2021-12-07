@@ -31,6 +31,11 @@
             "href": "AIP/business-criteria/1062320"
         },
         {
+            "id": 1062340,
+            "name": "OWASP-2021-Index",
+            "href": "AIP/business-criteria/1062340"
+        },
+        {
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
@@ -53,6 +58,13 @@
             "id": 1062323,
             "name": "OWASP-2017-A3 - Sensitive Data Exposure",
             "href": "AIP/technical-criteria/1062323",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062349,
+            "name": "OWASP-2021-A09 - Security Logging and Monitoring Failures",
+            "href": "AIP/technical-criteria/1062349",
             "weight": 5,
             "critical": false
         },
@@ -114,16 +126,22 @@
             "standard": "OWASP"
         },
         {
-            "id": "STIG-V-69369",
-            "name": "The application must not write sensitive data into the application logs.",
-            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-69369",
-            "standard": "STIG-V4R8"
+            "id": "A09-2021",
+            "name": "Security Logging and Monitoring Failures",
+            "href": "AIP/quality-standards/OWASP/items/A09-2021",
+            "standard": "OWASP"
         },
         {
-            "id": "STIG-V-70273",
-            "name": "The application must generate error messages that provide information necessary for corrective actions without revealing information that could be exploited by adversaries.",
-            "href": "AIP/quality-standards/STIG-V4R8/items/STIG-V-70273",
-            "standard": "STIG-V4R8"
+            "id": "PCI-Requirement-6.3.1",
+            "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.3.1",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.3.1",
+            "name": "Remove development, test and/or custom application accounts, user IDs, and passwords before applications become active or are released to customers.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.3.1",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
             "id": "STIG-V-222444",

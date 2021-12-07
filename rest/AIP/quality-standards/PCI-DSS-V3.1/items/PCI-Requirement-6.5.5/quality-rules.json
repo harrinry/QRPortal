@@ -80,6 +80,56 @@
         ]
     },
     {
+        "id": 5050,
+        "name": "Avoid using HANDLE CONDITION",
+        "href": "AIP/quality-rules/5050",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5052,
+        "name": "Avoid using IGNORE CONDITION",
+        "href": "AIP/quality-rules/5052",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5054,
+        "name": "Avoid using HANDLE ABEND",
+        "href": "AIP/quality-rules/5054",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 5092,
+        "name": "Include a WHEN OTHER clause when using EVALUATE",
+        "href": "AIP/quality-rules/5092",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7520,
+        "name": "Avoid unchecked return code (SY-SUBRC) after OPEN SQL or READ statement",
+        "href": "AIP/quality-rules/7520",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 7542,
         "name": "Avoid using FOR ALL ENTRIES IN without emptiness check",
         "href": "AIP/quality-rules/7542",
@@ -87,6 +137,16 @@
         "severity": 10,
         "technologyNames": [
             "ABAP"
+        ]
+    },
+    {
+        "id": 7652,
+        "name": "Avoid throwing an exception in a catch block without chaining it",
+        "href": "AIP/quality-rules/7652",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -107,6 +167,40 @@
         "severity": 20,
         "technologyNames": [
             "Cobol"
+        ]
+    },
+    {
+        "id": 7698,
+        "name": "Files should be declared with a FILE-STATUS",
+        "href": "AIP/quality-rules/7698",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7756,
+        "name": "Avoid using READ statement without AT END clause or INVALID KEY clause",
+        "href": "AIP/quality-rules/7756",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 7782,
+        "name": "Avoid empty finally blocks",
+        "href": "AIP/quality-rules/7782",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP",
+            "C#",
+            "HTML5",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -195,6 +289,34 @@
         "severity": 20,
         "technologyNames": [
             "ABAP"
+        ]
+    },
+    {
+        "id": 8028,
+        "name": "Avoid missing default in switch statements",
+        "href": "AIP/quality-rules/8028",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "Objective-C",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8112,
+        "name": "Avoid improper processing of the execution status of data handling operations",
+        "href": "AIP/quality-rules/8112",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
         ]
     },
     {
@@ -388,6 +510,16 @@
         ]
     },
     {
+        "id": 1012026,
+        "name": "Do not use MONMSG CPF0000 without EXEC  (CL400)",
+        "href": "AIP/quality-rules/1012026",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "CL400"
+        ]
+    },
+    {
         "id": 1020068,
         "name": "Avoid return statement in finally block (Javascript)",
         "href": "AIP/quality-rules/1020068",
@@ -423,6 +555,16 @@
         "href": "AIP/quality-rules/1020342",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020450,
+        "name": "Ensure catching Javascript error in React components",
+        "href": "AIP/quality-rules/1020450",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "HTML5"
         ]
@@ -491,6 +633,16 @@
         "id": 1020850,
         "name": "Always handle errors when using ajax with RxJS",
         "href": "AIP/quality-rules/1020850",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020856,
+        "name": "Ensure catching Typescript error in React components",
+        "href": "AIP/quality-rules/1020856",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -588,11 +740,32 @@
         ]
     },
     {
+        "id": 1027088,
+        "name": "Avoid non-public custom exception types",
+        "href": "AIP/quality-rules/1027088",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1030002,
         "name": "Avoid using \"Throwable.printStackTrace()\" with no argument (Kotlin)",
         "href": "AIP/quality-rules/1030002",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "Kotlin"
+        ]
+    },
+    {
+        "id": 1030020,
+        "name": "Avoid unhandled Exceptions in servlet methods (Kotlin)",
+        "href": "AIP/quality-rules/1030020",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "Kotlin"
         ]

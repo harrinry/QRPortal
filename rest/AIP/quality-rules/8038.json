@@ -16,6 +16,11 @@
     "alternativeName": "Ensure that Struts 2 Validator field not referencing a java class field is not used as it leads to security weakness",
     "businessCriteria": [
         {
+            "id": 1062340,
+            "name": "OWASP-2021-Index",
+            "href": "AIP/business-criteria/1062340"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -32,6 +37,13 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062344,
+            "name": "OWASP-2021-A04 - Insecure Design",
+            "href": "AIP/technical-criteria/1062344",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
@@ -59,6 +71,24 @@
             "name": "Improper Use of Validation Framework",
             "href": "AIP/quality-standards/CWE/items/CWE-1173",
             "standard": "CWE"
+        },
+        {
+            "id": "A04-2021",
+            "name": "Insecure Design",
+            "href": "AIP/quality-standards/OWASP/items/A04-2021",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-2.2.4",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-2.2.4",
+            "name": "Configure system security parameters to prevent misuse.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-2.2.4",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

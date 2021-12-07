@@ -17,6 +17,21 @@
     "alternativeName": "A Write permission should be specified for Content Provider to restrict data access from others apps",
     "businessCriteria": [
         {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
+            "id": 1062320,
+            "name": "OWASP-2017-Index",
+            "href": "AIP/business-criteria/1062320"
+        },
+        {
+            "id": 1062340,
+            "name": "OWASP-2021-Index",
+            "href": "AIP/business-criteria/1062340"
+        },
+        {
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
@@ -33,6 +48,27 @@
         }
     ],
     "technicalCriteria": [
+        {
+            "id": 1062307,
+            "name": "OWASP-2013-A7 - Missing Function Level Access Control",
+            "href": "AIP/technical-criteria/1062307",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062325,
+            "name": "OWASP-2017-A5 - Broken Access Control",
+            "href": "AIP/technical-criteria/1062325",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062341,
+            "name": "OWASP-2021-A01 - Broken Access Control",
+            "href": "AIP/technical-criteria/1062341",
+            "weight": 5,
+            "critical": false
+        },
         {
             "id": 66062,
             "name": "Secure Coding - Input Validation",
@@ -62,10 +98,40 @@
             "standard": "NIST-SP-800-53R4"
         },
         {
+            "id": "A5-2017",
+            "name": "Broken Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A5-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A7-2013",
+            "name": "Missing Function Level Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A7-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A01-2021",
+            "name": "Broken Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A01-2021",
+            "standard": "OWASP"
+        },
+        {
             "id": "M3-2016",
             "name": "Insecure Communication",
             "href": "AIP/quality-standards/OWASP/items/M3-2016",
             "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

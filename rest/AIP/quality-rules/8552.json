@@ -15,9 +15,29 @@
     "alternativeName": "Avoid using ABAP command OPEN DATASET with the FILTER addition",
     "businessCriteria": [
         {
+            "id": 1062100,
+            "name": "CISQ-Index",
+            "href": "AIP/business-criteria/1062100"
+        },
+        {
+            "id": 1061000,
+            "name": "ISO-5055-Index",
+            "href": "AIP/business-criteria/1061000"
+        },
+        {
+            "id": 1062300,
+            "name": "OWASP-2013-Index",
+            "href": "AIP/business-criteria/1062300"
+        },
+        {
             "id": 1062320,
             "name": "OWASP-2017-Index",
             "href": "AIP/business-criteria/1062320"
+        },
+        {
+            "id": 1062340,
+            "name": "OWASP-2021-Index",
+            "href": "AIP/business-criteria/1062340"
         },
         {
             "id": 66031,
@@ -37,9 +57,37 @@
     ],
     "technicalCriteria": [
         {
+            "id": 1062189,
+            "name": "ASCSM-CWE-78 - OS Command Injection Improper Input Neutralization",
+            "href": "AIP/technical-criteria/1062189",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1061014,
+            "name": "CWE-78 - Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "href": "AIP/technical-criteria/1061014",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062301,
+            "name": "OWASP-2013-A1 - Injection",
+            "href": "AIP/technical-criteria/1062301",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 1062321,
             "name": "OWASP-2017-A1 - Injection",
             "href": "AIP/technical-criteria/1062321",
+            "weight": 5,
+            "critical": false
+        },
+        {
+            "id": 1062343,
+            "name": "OWASP-2021-A03 - Injection",
+            "href": "AIP/technical-criteria/1062343",
             "weight": 5,
             "critical": false
         },
@@ -60,9 +108,51 @@
     ],
     "qualityStandards": [
         {
+            "id": "ASCSM-CWE-78",
+            "name": "OS Command Injection Improper Input Neutralization",
+            "href": "AIP/quality-standards/CISQ/items/ASCSM-CWE-78",
+            "standard": "CISQ"
+        },
+        {
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "href": "AIP/quality-standards/CWE/items/CWE-78",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "href": "AIP/quality-standards/ISO-5055/items/CWE-78",
+            "standard": "ISO-5055"
+        },
+        {
+            "id": "NIST-SI-10",
+            "name": "Information Input Validation",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-10",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "CWE-78",
+            "name": "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+            "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-78",
+            "standard": "OMG-ASCQM"
+        },
+        {
+            "id": "A1-2013",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
+        },
+        {
             "id": "A1-2017",
             "name": "Injection",
             "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A03-2021",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A03-2021",
             "standard": "OWASP"
         },
         {

@@ -3548,6 +3548,26 @@
         ]
     },
     {
+        "id": 8556,
+        "name": "'XML GENERATE' should be used with 'WITH ENCODING'",
+        "href": "AIP/quality-rules/8556",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
+        "id": 8558,
+        "name": "Avoid using XML PARSE without 'VALIDATING'",
+        "href": "AIP/quality-rules/8558",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Cobol"
+        ]
+    },
+    {
         "id": 1001008,
         "name": "Avoid having multiple artifacts inserting data on the same SQL table (PLI)",
         "href": "AIP/quality-rules/1001008",
@@ -5215,26 +5235,6 @@
         "severity": 10,
         "technologyNames": [
             "RPG300"
-        ]
-    },
-    {
-        "id": 1011010,
-        "name": "Avoid Logical File without associated Physical File  (DDS400)",
-        "href": "AIP/quality-rules/1011010",
-        "critical": false,
-        "severity": 10,
-        "technologyNames": [
-            "DDS400"
-        ]
-    },
-    {
-        "id": 1011018,
-        "name": "Avoid Logical Files using DYNSLT  (DDS400)",
-        "href": "AIP/quality-rules/1011018",
-        "critical": false,
-        "severity": 10,
-        "technologyNames": [
-            "DDS400"
         ]
     },
     {
@@ -9613,7 +9613,7 @@
     },
     {
         "id": 1060114,
-        "name": "Always enable authorization checks at function level for functions called on by APIs",
+        "name": "Always enable authorization checks at function level for functions called on by APIs based with Spring Application",
         "href": "AIP/quality-rules/1060114",
         "critical": true,
         "severity": 30,

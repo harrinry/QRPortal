@@ -32,6 +32,11 @@
             "href": "AIP/business-criteria/1062320"
         },
         {
+            "id": 1062340,
+            "name": "OWASP-2021-Index",
+            "href": "AIP/business-criteria/1062340"
+        },
+        {
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
@@ -58,6 +63,13 @@
             "critical": false
         },
         {
+            "id": 1062342,
+            "name": "OWASP-2021-A02 - Cryptographic Failures",
+            "href": "AIP/technical-criteria/1062342",
+            "weight": 5,
+            "critical": false
+        },
+        {
             "id": 66064,
             "name": "Secure Coding - Weak Security Features",
             "href": "AIP/technical-criteria/66064",
@@ -74,10 +86,22 @@
     ],
     "qualityStandards": [
         {
+            "id": "CWE-319",
+            "name": "Cleartext Transmission of Sensitive Information",
+            "href": "AIP/quality-standards/CWE/items/CWE-319",
+            "standard": "CWE"
+        },
+        {
             "id": "CWE-523",
             "name": "Unprotected Transport of Credentials",
             "href": "AIP/quality-standards/CWE/items/CWE-523",
             "standard": "CWE"
+        },
+        {
+            "id": "NIST-AC-22",
+            "name": "Publicly Accessible Content",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-22",
+            "standard": "NIST-SP-800-53R4"
         },
         {
             "id": "A3-2017",
@@ -92,16 +116,28 @@
             "standard": "OWASP"
         },
         {
-            "id": "PCI-Requirement-6.5.4",
-            "name": "Insecure communications",
-            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.4",
+            "id": "A02-2021",
+            "name": "Cryptographic Failures",
+            "href": "AIP/quality-standards/OWASP/items/A02-2021",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-4.1",
+            "name": "Use strong cryptography and security protocols",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-4.1",
             "standard": "PCI-DSS-V3.1"
         },
         {
-            "id": "PCI-Requirement-6.5.4",
-            "name": "Insecure communications",
-            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.4",
+            "id": "PCI-Requirement-4.1",
+            "name": "Use strong cryptography and security protocols",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-4.1",
             "standard": "PCI-DSS-V3.2.1"
+        },
+        {
+            "id": "STIG-V-222596",
+            "name": "The application must protect the confidentiality and integrity of transmitted information.",
+            "href": "AIP/quality-standards/STIG-V5/items/STIG-V-222596",
+            "standard": "STIG-V5"
         }
     ],
     "parameters": [

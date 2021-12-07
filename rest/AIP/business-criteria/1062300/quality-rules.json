@@ -184,6 +184,16 @@
         ]
     },
     {
+        "id": 7882,
+        "name": "Avoid using Native SQL",
+        "href": "AIP/quality-rules/7882",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
         "id": 7884,
         "name": "Avoid disabling source code inspection",
         "href": "AIP/quality-rules/7884",
@@ -586,6 +596,18 @@
         ]
     },
     {
+        "id": 8484,
+        "name": "Avoid HTTP response splitting through API requests",
+        "href": "AIP/quality-rules/8484",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8486,
         "name": "Avoid resource injection through API requests",
         "href": "AIP/quality-rules/8486",
@@ -603,6 +625,102 @@
         "href": "AIP/quality-rules/8488",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8490,
+        "name": "Avoid SQL injection through API requests",
+        "href": "AIP/quality-rules/8490",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8492,
+        "name": "Avoid LDAP injection through API requests",
+        "href": "AIP/quality-rules/8492",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8494,
+        "name": "Avoid OS command injection through API requests",
+        "href": "AIP/quality-rules/8494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8496,
+        "name": "Avoid process control through API requests",
+        "href": "AIP/quality-rules/8496",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8498,
+        "name": "Avoid thread injection through API requests",
+        "href": "AIP/quality-rules/8498",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8500,
+        "name": "Avoid code injection through API requests",
+        "href": "AIP/quality-rules/8500",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8502,
+        "name": "Avoid reflection injection through API requests",
+        "href": "AIP/quality-rules/8502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8504,
+        "name": "Avoid XPath injection through API requests",
+        "href": "AIP/quality-rules/8504",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -639,6 +757,18 @@
         "href": "AIP/quality-rules/8512",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8514,
+        "name": "Avoid NoSQL injection through API requests",
+        "href": "AIP/quality-rules/8514",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "JEE",
@@ -805,6 +935,46 @@
             "C#",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 8546,
+        "name": "Avoid using ABAP command CALL 'SYSTEM'",
+        "href": "AIP/quality-rules/8546",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8548,
+        "name": "Avoid using ABAP command INSERT REPORT",
+        "href": "AIP/quality-rules/8548",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8550,
+        "name": "Avoid using ABAP command GENERATE SUBROUTINE POOL",
+        "href": "AIP/quality-rules/8550",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "ABAP"
+        ]
+    },
+    {
+        "id": 8552,
+        "name": "Avoid using ABAP command OPEN DATASET with the FILTER addition",
+        "href": "AIP/quality-rules/8552",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "ABAP"
         ]
     },
     {
@@ -1073,6 +1243,16 @@
         "id": 1019010,
         "name": "Avoid disabling authentication mode messages when using MSMQ transport security",
         "href": "AIP/quality-rules/1019010",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
+        "id": 1019012,
+        "name": "Avoid message security without authentication for an anonymous client",
+        "href": "AIP/quality-rules/1019012",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -2370,6 +2550,36 @@
         ]
     },
     {
+        "id": 1024002,
+        "name": "Always have read permission to read data of Content Provider",
+        "href": "AIP/quality-rules/1024002",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024004,
+        "name": "Always have writing permission to write data of Content Provider",
+        "href": "AIP/quality-rules/1024004",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1024006,
+        "name": "Always limit the accessibility of your app's Content Provider",
+        "href": "AIP/quality-rules/1024006",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1024010,
         "name": "Avoid applying dangerous protection level for signature-based permissions",
         "href": "AIP/quality-rules/1024010",
@@ -2811,9 +3021,29 @@
         ]
     },
     {
+        "id": 1039056,
+        "name": "Avoid insecure use of YAML deserialization when using SnakeYaml (JEE)",
+        "href": "AIP/quality-rules/1039056",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039058,
         "name": "Avoid generating key with insufficient random generator in cookies",
         "href": "AIP/quality-rules/1039058",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039062,
+        "name": "Always implement readObject() to prevent untrusted deserialization when loading from ObjectInputStream",
+        "href": "AIP/quality-rules/1039062",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -2834,6 +3064,16 @@
         "id": 1039066,
         "name": "Avoid creating cookie with an overly broad path (JEE)",
         "href": "AIP/quality-rules/1039066",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039072,
+        "name": "Avoid using jYAML to deserialize YAML (JEE)",
+        "href": "AIP/quality-rules/1039072",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -3536,6 +3776,16 @@
         ]
     },
     {
+        "id": 1050028,
+        "name": "Always use LAContext canEvaluatePolicy: before using evaluatePolicy: (Objective-C)",
+        "href": "AIP/quality-rules/1050028",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
         "id": 1050044,
         "name": "Avoid weak encryption key size (Objective-C)",
         "href": "AIP/quality-rules/1050044",
@@ -3550,6 +3800,16 @@
         "name": "Avoid weak encryption algorithm (Objective-C)",
         "href": "AIP/quality-rules/1050046",
         "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050050,
+        "name": "Avoid cryptography hash without salt (Objective-C)",
+        "href": "AIP/quality-rules/1050050",
+        "critical": true,
         "severity": 30,
         "technologyNames": [
             "Objective-C"
@@ -3636,6 +3896,16 @@
         ]
     },
     {
+        "id": 1055044,
+        "name": "Avoid using cryptography hash without salt (Swift)",
+        "href": "AIP/quality-rules/1055044",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
         "id": 1055046,
         "name": "Avoid dynamic code injection in WKWebView (Swift)",
         "href": "AIP/quality-rules/1055046",
@@ -3649,6 +3919,16 @@
         "id": 1060104,
         "name": "Review APIs returning sensitive data fields",
         "href": "AIP/quality-rules/1060104",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1060106,
+        "name": "Avoid using generic methods such as 'ToJson' or 'ToString' to save sensitive or PII data",
+        "href": "AIP/quality-rules/1060106",
         "critical": false,
         "severity": 30,
         "technologyNames": [
@@ -3677,7 +3957,7 @@
     },
     {
         "id": 1060114,
-        "name": "Always enable authorization checks at function level for functions called on by APIs",
+        "name": "Always enable authorization checks at function level for functions called on by APIs based with Spring Application",
         "href": "AIP/quality-rules/1060114",
         "critical": true,
         "severity": 30,

@@ -1,0 +1,73 @@
+{
+    "id": 8556,
+    "name": "'XML GENERATE' should be used with 'WITH ENCODING'",
+    "href": "AIP/quality-rules/8556",
+    "critical": false,
+    "severity": 10,
+    "maxWeight": 7,
+    "associatedValueName": "Number of violation occurrences",
+    "description": "When you generate XML output by using the XML GENERATE statement, you can control the encoding of the output by the category of the data item that receives the output, and by identifying the code page using the WITH ENCODING phrase of the XML GENERATE statement\nCOBOL provides an encoding option with generating XML.",
+    "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
+    "rationale": "COBOL systems usually do not interact directly with users on the Internet, reflected Cross-site scripting (XSS) is unlikely to occur. But COBOL programs generally provide back-end storage management and consequently handle data that is eventually presented to the end-users via the Internet. This data must be vetted before storage. \nPersistent XSS occurs when data is included in dynamic content that is sent to a system or user without being validated. It is important to protect and validate the data before sending it to the backend for persistent storage.  For other systems or applications that implement and queries data from COBOL based database storage, it is necessary to sanitize and encoded before the data is stored and/or displayed to the user.",
+    "reference": "https://www.ibm.com/support/knowledgecenter/SS6SG3_4.2.0/com.ibm.entcobol.doc_4.2/PGandLR/tasks/tpxgn02.htm\nc\n\nhttps://books.google.tn/books?id=E1PAAgAAQBAJ&pg=PA150&lpg=PA150&dq=cobol+xml+generate++specify+the+CCSID+of+the+generated+XML+document.&source=bl&ots=zPd1t5v0xB&sig=ACfU3U28-8e4bn3POwTUFv4Q9wJi98hWpQ&hl=en&sa=X&ved=2ahUKEwiO56P7rYXnAhUCTBoKHcXKC0IQ6AEwA3oECAkQAQ#v=onepage&q&f=false",
+    "remediation": "Follow the coded character sets for XML documents (CCSID to be specified WITH ENCODING OPTION) \n\n1208: UTF-8(1)\n1047: Latin 1 / Open Systems\n1140, 37: USA, Canada, . . . Euro Country Extended Code Page (ECECP), Country Extended Code Page (CECP)\n1141, 273: Austria, Germany ECECP, CECP\n1142, 277: Denmark, Norway ECECP, CECP\n1143, 278: Finland, Sweden ECECP, CECP\n1144, 280: Italy ECECP, CECP\n1145, 284: Spain, Latin America (Spanish) ECECP, CECP\n1146, 285: UK ECECP, CECP\n1147, 297: France ECECP, CECP\n1148, 500: International ECECP, CECP\n1149, 871: Iceland ECECP, CECP",
+    "remediationSample": "PROGRAM-ID. OUTPUTENC.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 GREET.\n      02 NAME PIC X(20).\n      02 EMP PIC 9(12).\n      05 GREETMSG PIC X(80) VALUE 'Hello !!'.\n01 DOC PIC X(512).\n01 DOC-LENGTH PIC 9(05)\n \n* NAMESPACE AND PREFIX.\n01 NSPACE  PIC X(20) VALUE 'http://example'.\n01 NPREFIX  PIC X(5) VALUE 'pre'.\n    . . .\n* SQL QUERY RETRIEVE AND VALIDATE DATA FROM THE DATABASE.\n    . . .\n* GENERATE THE XML VALIDATES OUTPUT AND ENCODING.\n    XML GENERATE DOC FROM GREET\n    COUNT IN DOC-LENGTH\n        ON EXCEPTION\n        DISPLAY 'ERROR IN GENERATE XML:\u2019 XML-CODE \n     WITH ENCODING 1208 \n     NAMESPACE IS NSPACE\n    NAMESPACE-PREFIX IS NPREFIX\n   END-XML.\n   STOP RUN.",
+    "sample": "PROGRAM-ID. OUTPUTENC.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 GREET.\n      02 NAME PIC X(20).\n      02 EMP PIC 9(12).\n      05 GREETMSG PIC X(80) VALUE 'Hello !!'.\n01 DOC PIC X(512).\n01 DOC-LENGTH PIC 9(05)\n \n* NAMESPACE AND PREFIX.\n01 NSPACE  PIC X(20) VALUE 'http://example'.\n01 NPREFIX  PIC X(5) VALUE 'pre'.\n    . . .\n* SQL QUERY RETRIEVE AND VALIDATE DATA FROM THE DATABASE.\n    . . .\n* GENERATE THE XML VALIDATES OUTPUT AND ENCODING.\n    XML GENERATE DOC FROM GREET\n    COUNT IN DOC-LENGTH\n        ON EXCEPTION\n        DISPLAY 'ERROR IN GENERATE XML:\u2019 XML-CODE \n        NAMESPACE IS NSPACE\n    NAMESPACE-PREFIX IS NPREFIX\n   END-XML.\n   STOP RUN.",
+    "total": "Number of Cobol Programs",
+    "alternativeName": "'XML GENERATE' should be used with 'WITH ENCODING'",
+    "businessCriteria": [
+        {
+            "id": 66032,
+            "name": "Architectural Design",
+            "href": "AIP/business-criteria/66032"
+        },
+        {
+            "id": 60012,
+            "name": "Changeability",
+            "href": "AIP/business-criteria/60012"
+        },
+        {
+            "id": 60013,
+            "name": "Robustness",
+            "href": "AIP/business-criteria/60013"
+        },
+        {
+            "id": 60016,
+            "name": "Security",
+            "href": "AIP/business-criteria/60016"
+        },
+        {
+            "id": 60017,
+            "name": "Total Quality Index",
+            "href": "AIP/business-criteria/60017"
+        }
+    ],
+    "technicalCriteria": [
+        {
+            "id": 61001,
+            "name": "Architecture - Multi-Layers and Data Access",
+            "href": "AIP/technical-criteria/61001",
+            "weight": 7,
+            "critical": false
+        }
+    ],
+    "technologies": [
+        {
+            "id": -4,
+            "name": "Cobol",
+            "href": "AIP/technologies/-4"
+        }
+    ],
+    "qualityStandards": [
+        
+    ],
+    "parameters": [
+        
+    ],
+    "thresholds": [
+        50.0,
+        90.0,
+        95.0,
+        99.0
+    ]
+}
