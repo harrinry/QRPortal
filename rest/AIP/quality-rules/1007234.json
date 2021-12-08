@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the artifacts having inline control statements. The Control statements being checked including \"if\", \"else\", \"elseif\", \"for\", \"while\", \"foreach\". \nEven if intention is to execute only one statement for the given condition, the statement should be put inside curly braces as a good practice.",
     "output": "This report lists all the Artifacts having inline control statements\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Using curly braces with the control statements increases readability and decreases the likelihood of logical errors being introduced when new code lines are added.",

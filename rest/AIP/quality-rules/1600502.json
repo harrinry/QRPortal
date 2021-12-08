@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rules reports the PeopleSoft Record Tables having no column with the Key property.",
     "rationale": "A table normally has keys to help distinguish between multiple occurrences of data, when a table has only one row of data you do not need to distinguish one row from another.\nAnother primary use for keys is to build database indexes to rows.\nNo key no index, and thus poor performance.",
     "reference": "https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tapd/task_SettingRecordFieldProperties-077634.html",

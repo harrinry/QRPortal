@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "For all classes that are Serializable (implement System.Runtime.Serialization.ISerializable or inherit classes that implement ISerializable or marked with SerializableAttribute ), reports all fields that are \n- not Serializable\n- non-static \n- non-transient/not marked as NonSerialized\n- and not primitives types",
     "output": "All fields of Serializable classes that are NOT Serializable.\n(non-static, non-transient, not primitive fields)\n\nIt provides the following information: Full Field Name",

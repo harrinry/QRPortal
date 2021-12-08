@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "A pointer to a function shall only be converted into or from a pointer to a function with a compatible type.\n\nAn exception to the rule:\n1. A null pointer constant may be converted into a pointer to a function;\n2. A pointer to a function may be converted into void;\n3. A function type may be implicitly converted into a pointer to that function type.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "The conversion of a function pointer into or from any of:\n\u2022 Pointer to object;\n\u2022 Pointer to incomplete;\n\u2022 void *\nresults in undefined behaviour.\nIf a function is called by means of a pointer whose type is not compatible with the called function, the behaviour is undefined. Conversion of a pointer to a function into a pointer to a function with a different type is permitted by The Standard. Conversion of an integer into a pointer to a function is also permitted by The Standard. However, both are prohibited by this rule in order to avoid the undefined behaviour that would result from calling a function using an incompatible pointer type.",

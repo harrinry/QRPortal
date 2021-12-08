@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Java artifacts should not use 'java.System.exit()' or 'Runtime.getRuntime().exit(0)' or 'Runtime.getRuntime().halt(0)'  for application deployed on a Web Server or an Application Server (when web.xml and/or ejb-jar.xml file are present)\n\n.",
     "output": "This report lists  Java methods call or using 'java.System.exit()', 'Runtime.getRuntime().exit(0)' or 'Runtime.getRuntime().halt(0)'\nIt provides the following information:\n\n - method full name",
     "rationale": "Using the exit and halt methods in web application is a bad idea because it terminates not only program but also the Java Virtual Machine. Therefore it will shutdown the current application as well as other critical applications if any, running in the same JVM. This can result in DoS (Denial Of Service) attacks. Additionally, programs should perform necessary cleanup actions when forcibly terminated.",

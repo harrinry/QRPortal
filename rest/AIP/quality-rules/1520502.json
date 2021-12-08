@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Reports if :\nUnecessary LinkSpec\nMissing LinkSpec, used as Pre or Post DefVal\nMissing LinkSpec, used as ParentFieldValue\nMissing LinkSpec for, used as Parent Read Only Field",
     "description": "Setting Link Specification to TRUE has the following impacts on performance when set unnecessarily:\n* Increases the size of the result set returned to the client.\n* For joined fields, it will result in a join to an additional table where this join may not have been present.\n* For MVFs, it will result in an extra primary join to the child table where a primary is configured or secondary queries to the child table where a primary is not configured.",
     "output": "This rule reports Fields in Business Components having an invalid Link Specification",

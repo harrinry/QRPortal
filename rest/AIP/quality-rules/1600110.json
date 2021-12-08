@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects all artifacts using \"Update\", \"Insert\" & \"Delete\" statements inside SQLExec function",
     "output": "This report lists all artifacts using \"Update\", \"Insert\" & \"Delete\" statements inside SQLExec function\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of UID statements inside SQLExec function found in the artifact source code",
     "rationale": "The SQLExec function allows execution of a SQL statement inside PeopleCode and is often used by developers because they only need to copy the query. The SQLExec function has some limitations:\n\n-limited to 1000 characters\n\n-possible data corruption because it directly impacts the database\n\n-the server is queried for each call\n\n-only get one line\n\n-SQL code is static. If the table structure change, you need to rewrite it\n\n-it doesn't handle the multi-language\n\nImpacts are:\n\n-performance: it only gets one line if the query contains a join. If the query returns more than one line, only the first one is used but the query execution is for all rows\n\n-maintenance: during upgrade and maintain, the SQL strings is considered a black box. If field names or table names change during an upgrade, table and field references within the SQL string are not updated automatically. For these reasons, you should use a SQL definition and the meta-SQL statements provided in PeopleTools.\n\n-development: the multi-language is not handled by the framework. The join must be written by the developer\n\nThis report comes in addition to the sibling quality rule \"PeopleSoft: Avoid using the SQLExec statements in the PeopleCode\".",

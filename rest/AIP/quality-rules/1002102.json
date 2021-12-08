@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of allocate statements",
     "description": "The number of ALLOCATE statements are counted; too many of these statements is causing the artifcat to run into violation.  Number of ALLOCATE statements is a threshold and can be changed at will.",
     "rationale": "If an array or variable is not de-allocated, memory is not freed up. This main lead to memory issues. Advised standard is to both limit the use of ALLOCATE and to make sure that variables are de-allocated from memory",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.flex",
+        "href": "AIP/extensions/com.castsoftware.flex"
+    },
     "description": "This QR reports constructors which has void return type specification.",
     "output": "This QR reports flex function which is a constructor and have void type return type specification. It provides following information:\n- Flex Function full name",
     "rationale": "Even if specifying void type for constructor is syntactically correct, there should not be a return type for a constructor.",

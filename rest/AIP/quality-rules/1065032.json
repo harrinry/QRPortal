@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule detects flexible array used as members.",
     "output": "Information will be provided on:\n1. Methods where a violation has occurred\n2. Bookmarks for violation occurrences found in the source code",
     "rationale": "Flexible array members are most likely to be used in conjunction with dynamic memory allocation. The presence of \ufb02exible array members modi\ufb01es the behavior of the sizeof operator in ways that might not be expected by a programmer. The assignment of a structure that contains a \ufb02exible array member to another structure of the same type may not behave in the expected manner as it copies only those elements up to but not including the start of the \ufb02exible array member.",

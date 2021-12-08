@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "None of the facilities that are specified as being provided by <setjmp.h> shall be used.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "setjmp and longjmp allow the normal function call mechanisms to be bypassed. Their use may lead to undefined and unspecified behavior.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.html5",
+        "href": "AIP/extensions/com.castsoftware.html5"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Since each iteration through the loop results in a property lookup either on the instance or on a prototype, the for-in loop has considerably more overhead per iteration and is therefore slower than the other loops. For the same number of loop iterations, a for-in loop can end up as much as seven times slower than the other loop types. For this reason, it's recommended to avoid the for-in loop unless your intent is to iterate over an unknown number of object properties.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "The rule reports all artifacts instantiating a Boolean object.",
     "output": "This report lists all java artifacts instantiating a Boolean\nIt provides the following information:\n Artifact full name",
     "rationale": "Instantiating a Boolean object consumes memory and CPU but does not bring value.\n\nJava artifacts should not instantiate Booleans.\nExample of instantiation:\n'Boolean b = new Boolean();'",

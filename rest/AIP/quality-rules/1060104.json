@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "This rule will raise a violation if an API exposes data that has been classified as Sensitive by the user",
     "output": "All APIs exposing sensitive or personally identifiable data",
     "rationale": "Looking forward to generic implementations, developers tend to expose all object properties without considering their individual sensitivity.\nExploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user.",

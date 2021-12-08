@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Avoid and replace the Thread.Sleep method in a loop in a transaction.",
     "output": "This report lists all artifacts having transactions with Thread.Sleep call in a loop.\nIt provides the following information: \n  Artifact full name.",

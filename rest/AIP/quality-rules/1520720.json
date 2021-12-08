@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "Reports the Applets that do not have Upgrade Ancestor property or have it switched to off",
     "output": "This rule reports Applets not defining the Ancestry",
     "rationale": "The Upgrade Ancestor property allows copied objects (of types Applet, Business Component, Report, and Integration Object) to inherit properties of the original objects from which they were copied. During an upgrade, changes applied to the original objects are also applied to copied objects.\nWithout this property set, new functionalities will not be added to the custom Applet.",

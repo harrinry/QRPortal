@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches all the objects having IntPtr,UIntPtr, int* types as public or protected fields that are used to access unmanaged memory.",
     "output": "This report lists all the classes  and structures having IntPtr and UIntPtr types as public or protected fields that are used to access unmanaged memory.\n\nIt provides following information:\n- Class name or Structure name",

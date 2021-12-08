@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "The use of the DriverManager class to directly manage the connection to the database violates the JEE restriction against the direct management of connections. \n\nThis rules checks if any method calling to java.sql.DriverManager.getConnection().",
     "output": "This report lists all methods that call java.sql.DriverManager.getConnection() method.\nIt provides the following information: Method Full Name",
     "rationale": "The JEE standard forbids the direct management of connections as very expensive. It requires that applications use the container's resource management facilities to obtain connections to resources. Every major web application container provides pooled database connection management as part of its resource management framework. Duplicating this functionality in an application is difficult and error prone, which is part of the reason it is forbidden under the JEE standard.",

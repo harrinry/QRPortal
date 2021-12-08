@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Only the use of LIKE '%xxx' is checked",
     "rationale": "In the WHERE clause, if a LIKE statement is used and the clause starts with %, no index will be used.",
     "reference": "https://stackoverflow.com/questions/6142235/sql-like-vs-performance\nhttp://www.dba-oracle.com/t_sql_like_clause_index_usage.htm",

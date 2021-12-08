@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of complex allocates",
     "description": "The number of complex Allocate Statements are reported, which is defined as using a single Allocate statement to allocate multiple variables to memory. Example of such a complex allocate statement: \n\nallocate(test_cast(n),test_cast2(n),stat=cast_stat)",
     "rationale": "Using such a statement reduces the readability and understandability. It becomes difficult to track what variables have been allocated and deallocated.",

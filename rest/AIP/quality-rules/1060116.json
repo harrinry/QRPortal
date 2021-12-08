@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "The rule will raise a violation when it finds web HTTP requests which are not defined as part of whitelist in the rule.\n\nThe rule can be customised by adding the Whitelist URLs in the violations metric.",
     "output": "http requests that are not part of a defined allowed address. The following information will be provided:\n- HTTP request with violation",
     "rationale": "A non-existent or a loose policy on redirection to URLs can lead to security issues. At the outset all the external links/URLs should be considered as untrusted. Applications should have a set of whitelist URLs that can be directed to from the app.\nThe issue with allowing apps to access external URLs is that the security of the system then becomes dependent on an external factor which is out of scope of control of the architect and developer.",

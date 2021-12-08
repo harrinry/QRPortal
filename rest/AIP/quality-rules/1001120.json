@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all PL1 Procedures and PL1 Functions having variables enclosed between parentheses and not  declared as FIXED BIN(31) or BIN FIXED (31). If the variable is declared differently, then the procedure is listed as a violation. The assumption is made that the variable needs to be declared inside the procedure itself.",
     "output": "The report lists all the PL1 Procedures and PL1 Functions violating the rule. \nIt provides the following information: \nPL1 Procedure and PL1 Function full name. The value is the name of the subscript not declared as BINARY FIXED(31).",
     "rationale": "A variable declared BIN FIXED(31) gives a better performance then any other type when used as a  subscript.",

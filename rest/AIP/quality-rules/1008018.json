@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the procedures with High Fan-In.",
     "output": "This report lists RPG400 Procedure with High Fan-In.\nIt provides the following information:\nRPG400 Procedure full name",
     "rationale": "The higher the number of reference to a procedure, the more difficult the maintenance as all referencing. Artifacts will have to be updated or tested.",

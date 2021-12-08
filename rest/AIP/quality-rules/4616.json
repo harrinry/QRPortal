@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "When overriding the 'finalize()' Method, a call to 'super.finalize()' is necessary to ensure disposing system resources.\n\nThis rule report a violation when a method overriding 'finalize()' and not calling 'super.finalize()'.",
     "output": "This report lists all Methods overriding 'finalize()' and not calling 'super.finalize()'. It provides the following information: Method full name",
     "rationale": "finalize() method is a pre-defined method in the Object class and it is protected. The purpose of a finalize() method can be overridden for an object to include the cleanup code or to dispose of the system resources that can be done before the object is garbage collected. One of the most important points of finalize method is that it's not automatically chained like constructors. If you are overriding finalize method then it's your responsibility to call finalize() method of the superclass, if you forgot to call then finalize of super class will never be called. so it becomes critical to remember this and provide an opportunity to finalize of super class to perform cleanup",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports Record Definitions having keys not located at the top of the Record Definition.",
     "output": "This report lists all the PeopleSoft Records with at least one key not at the top of the record definition.\nIt provides the following information: \n- PeopleSoft Record full name.",
     "rationale": "The order of columns having the 'Key' attribute drives how the compound index is built.\nThe order is good if the resulting index satisfies most of the queries using the index.\nA wrong location (not at the top) or a wrong order will impact the usage of the index, and thus the performance of the queries.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Number of %Component or %CompIntfcName",
     "description": "This quality rule reports RecordField Event referencing the system variable %Component or %CompIntfcName.\nThe latter returns the name of the Component Interface, if the currently executing PeopleCode program is being run from a Component Interface.\nThis is a sign the code need to be moved to the parent Component.",
     "rationale": "Restrict the use of RecordField level PeopleCode as it hinders on-line performance.\n\nAlso, for question of code organization and hence maintenance, it is better to manage the events centrally, at the Component Level.\nIt avoids to jump from one place to another.",

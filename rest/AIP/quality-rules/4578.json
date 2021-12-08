@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Returned Type Full Name",
     "description": "When a collection is returned from a method, it should be of the Interface type, and not as the Class type. Collections are considered to be any classes implementing java.util.Collection, java.util.Collection<E>, java.util.Map or java.util.Map<U,V> or one of their sub-interfaces.",
     "output": "This report lists all the Methods not using the Interfaces for Collection types. It provides the following information:\n - Method full name\n - Returned Type Full Name",

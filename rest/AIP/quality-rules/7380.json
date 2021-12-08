@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "An unused validation form indicates that validation logic is not up-to-date.\nThis rule reports all unused form validator not referencing java class. \nNote that it can be the form name or the action name (in the case of a form shared among different actions)",
     "output": "This report lists all unused validation forms name. It provides the following information:\n  Form Validation Full Name",
     "rationale": "It is easy for developers to forget to update validation logic when they remove or rename action form mappings. One indication that validation logic is not being properly maintained is the presence of an unused validation form.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "To avoid unpredictable behavior, this rule raises violation when an EJB artifact (Entity Java Bean , Session Java Bean ,Message Driven Java Bean) \n- is calling one of following methods 'wait()', 'notify()' and notifyAll() \nor \n- is defining method(s) with the 'synchronized' qualifier ( Note that for synchronized qualifier, we only check the keyword synchronized but we don't consider the case where there is a block synchronized in the method)",
     "output": "This report lists all EJB artifact that use 'synchronized' keyword or call 'wait', 'notify' or 'notifyAll' methods.\nIt provides the following information:\n Artifact full name",
     "rationale": "The Enterprise JavaBeans specification requires that every bean provider follow a set of programming guidelines designed to ensure that the bean will be portable and behave consistently in any EJB container. In this case, the program violates the following EJB guideline: \"An enterprise bean must not use thread synchronization primitives to synchronize execution of multiple instances.\" The specification justifies this requirement in the following way: \"This rule is required to ensure consistent runtime semantics because while some EJB containers may use a single JVM to execute all enterprise bean's instances, others may distribute the instances across multiple JVMs.\"\nAlso, calling 'wait', 'notify' and 'notifyAll' from EJB methods might corrupt the normal behavior of the application server as It is ambiguous which thread will wake up when notify() is called for exemple.",

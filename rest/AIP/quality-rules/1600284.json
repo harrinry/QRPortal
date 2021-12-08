@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Using pattern-matching engine, this rule reports PeopleSoft SQL Definitions having comments inside the SQL statement.\nThe 2 styles of comment are searched (/* and --).",
     "output": "This report lists all PeopleSoft SQL Definitions having comments. It provides the following information:\n- PeopleSoft SQL Definitions full name.",
     "rationale": "PeopleSoft treats the SQL in a SQL object as a single line no matter how you've formatted it in the editor.\nSo the comment inside the SQL Definition invalidates the statement.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the Classes implementing excessive number of interfaces. A class implementing more than 3 interfaces is considered as violation for this rule. The parameter denoting number of interfaces can be changed to suit scenario.",
     "output": "This report lists all the Classes implementing excessive number of interfaces.\n      \nThis QR provides the following information:\nClass full name.",
     "rationale": "A Class that implements excessive number of interfaces increases complexity of source code and makes it difficult to maintain and test.",

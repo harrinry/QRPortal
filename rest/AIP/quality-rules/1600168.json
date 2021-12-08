@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports all Field Translate values with an effective date not equal to parameter 'Format is dd/mm/yyyy'.\nThis parameter is of type character, and it can be changed at will.\nDefault value is 01/01/1900.",
     "output": "This report lists all the PeopleSoft Field translate values with effective date not aligned with the parameter value.\nIt provides the following information: \n- PeopleSoft Field translate value full name.",
     "rationale": "To ensure that added Translate values are used in place of the standard value, choose an effective date greater than 01/01/1900.",

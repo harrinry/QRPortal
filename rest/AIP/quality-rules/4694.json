@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports all java artifacts that call java.lang.System.gc() and java.lang.Runtime.gc()",
     "output": "This report lists all java artifacts using the 'java.lang.System.gc' Method.\nIt provides the following information:\n - Artifact full name",
     "rationale": "The garbage collector should not be used explicitly in the code. It is an automated process scheduled by the Java Runtime Environment. System.gc() triggers a full collection, which includes tracing all live objects in the heap and sweeping and compacting the old generation. Lot of time can be spent during this operation. In general, it is better to let the system decide when it needs to collect the heap, and whether or not to do a full collection.",

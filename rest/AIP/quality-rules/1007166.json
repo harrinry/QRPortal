@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the classes not having matching __get and __set.",
     "output": "This rule searches for all the classes not having matching __get and __set\n\nThis QR provides the following information:\nClass  full name.",
     "rationale": "PHP __get and __set magic methods are used to have control over dynamic properties. It is a practice to have matching __get and __set.",

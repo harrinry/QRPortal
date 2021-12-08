@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Value of the CascadeDel option",
     "description": "Finally, create a link between the parent and child BusComp based on the _XM table.  This link should have the Cascade Delete property set to Delete, as a record on the _XM table will belong to one and only one parent record.  If the parent is deleted, the child should also be deleted to prevent orphaned records.  This link can be used as the basis of an MVL to display this information in a MVG, or to add the new BusComp to a BusObject.",
     "output": "This rule reports all Links without the CascadeDel option set to Delete",

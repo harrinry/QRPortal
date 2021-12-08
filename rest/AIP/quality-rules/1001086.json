@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PL1 Main Procedure having for each SQL SELECT statement, the number of tables enumerated after the FROM clause (A) and  the number of times the word JOIN is present after the FROM clause (B). If  B not = A-1 then the procedure is listed as a violation.",
     "output": "The report lists all the PL1 Main Procedure having for each SQL SELECT statement, the number of tables enumerated after the FROM clause (A) and  the number of times the word JOIN is present after the FROM clause (B). If  B not = A-1 then the procedure is listed as a violation. \n\nIt provides following information: \n-  PL1 Main Procedure full name",
     "rationale": "For a readability reason join and  predicates for selection must be encoded separately",

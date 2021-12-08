@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PLI Procedures or Functions having a very low comment/code ratio. PLI procedures or functions should have at least a ratio comment/code > X %\nThe threshold is a parameter and can be changed at will. The default parameter value is 5 percent. Undocumented artifacts are not considered for violation in this QR.",
     "output": "The report lists all the PLI Procedures  and PLI Functions with a very low comment/code ratio.\n\nIt provides following information: \n-  PLI Procedures and PLC Function full name",
     "rationale": "Maintainability of the code is facilitated if there is documentation in the code. This rule will ensure there are comments within the Artifact",

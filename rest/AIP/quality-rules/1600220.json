@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule detects DBField with empty label.",
     "output": "Failed checks give the number of records that contain wrongly defined fields. The field name can be found in the value column",
     "rationale": "Use existing label whenever possible. A label must be filled (no empty label).",

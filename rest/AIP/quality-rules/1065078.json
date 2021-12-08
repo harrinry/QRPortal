@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation is a base class is declared virtual and if it is not used in a diamond hierarchy",
     "rationale": "The use of virtual base classes can introduce a number of undefined and potentially confusing\nbehaviors. Therefore, a base class shall only be declared virtual if that base class is to be used as a common base class in a diamond hierarchy.",
     "reference": "MISRA C++ 2008, 10-0-1: A base class shall only be declared virtual if it is used in a diamond hierarchy",

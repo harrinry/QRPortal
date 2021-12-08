@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This quality rules checks all the CDI Beans, that is all the classes and producer methods which are annotated with a scope or a qualifier",
     "output": "This quality rule reports all the CDI beans which cannot be proxied.\n\nIt handles both the standard scopes and the custom scopes.",

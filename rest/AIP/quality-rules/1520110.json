@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "Although ROW_ID and PAR_ROW_ID are equivalent for extension tables in most cases, Siebel Engineering does not guarantee this to be the case.  Therefore, configuring a join in this manner is not recommended, as unexpected behavior may occur in future releases.\nAlso, from a performance perspective, indices in the Siebel data tables are built with the PAR_ROW_ID column included in many of the multi-column indexes.  These indices will not be used by the application if ROW_ID is referenced instead, which may impact performance.",
     "output": "This rule reports all Joins with a bad configuration for 1:1 Extension Table",
     "rationale": "A join specification to a 1:1 extension table has been created with the destination column property set to ROW_ID.  Only the PAR_ROW_ID column should be used as the destination column in join specifications to 1:1 extension tables (e.g., S_EVT_ACT_X) and tables that are part of the S_PARTY model (e.g., S_ORG_EXT, S_CONTACT, S_USER, S_POSTN, S_BU).",

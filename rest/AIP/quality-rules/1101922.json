@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.nosqljava",
+        "href": "AIP/extensions/com.castsoftware.nosqljava"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects tables having too many ways to update their data. It retrieves table having more than X artifacts inserting these tables, where X a configurable parameter.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

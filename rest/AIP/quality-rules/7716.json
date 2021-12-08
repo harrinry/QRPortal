@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Reports all JAVA singleton and factory classes for Spring based application \n\nA singleton is defined as:\n- a class with a static member with the same type as the class\n- a static method that refers the instance and return an object of same or a parent type\n(extended or implemented)\n- a class that has only private constructors\n\nA factory is defined as:\n- a class with a public static method that return a Java interface\n- a class that has only private or protected constructors",
     "output": "The metric will list singleton or factories classes when Spring is used.\nIt provides the following information:\n  Class Full Name",
     "rationale": "On large software applications, the number of factory classes can become quite large. There is lot of code duplication because constructors are private and the usage of static methods and variables make the class not extendable. Thus very singleton must re-implement the same basic structure. \nSpring provides a core factory pattern, which eliminates the need to manually program factory objects (usually realized as singletons). It allows you to decouple the configuration and specification of dependencies from your actual program logic. You will remove the need of your own glue code and gain a much more robust factory implementation with better error handling and fully de-coupled configuration mechanism\n\nIt will also avoid to fall into the classic double-checked locking issue where you can easily have more than one singleton instance when invoked into a multi-threaded application.",

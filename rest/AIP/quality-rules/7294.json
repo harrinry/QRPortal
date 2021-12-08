@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Cyclically called / inherited namespace full name",
     "description": "This metric reports all namespaces that have one-on-one and more static circular dependencies.\nDependencies mean:\n - references through static methods call\n - references through class fields\n - references through inheritance\n\nNote that all these links are static links and not runtime.\nThe threshold parameter permit to define the maximal number of namespaces to cross for a cycle.\n\nNote that cycle notion means here a directed path in a graph that is directed by dependencies relations.",
     "output": "This report lists all namespaces with static cyclical call to or inheritance with another .NET namespace.\nIt provides the following information:\n  * namespace full name \n  * cyclically called / inherited namespace full name",

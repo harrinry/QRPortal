@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "For Security reason, Password should not be of string type. A password type should be used instead.",
     "output": "This report lists all  JDBC resources having  password type as string.\nIt provides the following information:\nJDBC Resource full name.\nThe associated value is the number of  JDBC Resources",
     "rationale": "For security reasons, JDBC Resources should use Password type for the Password parameter in the configuration.",

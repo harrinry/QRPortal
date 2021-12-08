@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation if an expression is not returned from a non-void function.\n\nEXCEPTION:\nThis rule does not apply if a function exit is due to exception handling (i.e. a throw statement).",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "This expression gives the value that the function returns. The absence of a return with an expression leads to undefined behaviour (and the compiler may not give an error).",

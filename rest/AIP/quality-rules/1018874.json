@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule searches for Activities having SQL queries on more than 4 tables.",
     "output": "This report lists all Activities having SQL queries on more than 4 tables.\nIt provides following information:\n- Tibco Activities full name",
     "rationale": "Activities containing queries on a large number of tables can cause performance problems.",

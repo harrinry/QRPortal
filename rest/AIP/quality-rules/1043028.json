@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnetweb",
+        "href": "AIP/extensions/com.castsoftware.dotnetweb"
+    },
     "description": "This rule will check if the enableViewStateMac option is set to false in the ASPX pages.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in aspx page",
     "rationale": "This attribute should never be set to false in a production Web site, even if the application or page does not use view state. The view state MAC helps ensure the security of other ASP.NET functions in addition to view state.",

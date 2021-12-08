@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of Tables",
     "description": "Although developers are no longer constrained to a maximum of eight applets per view, performance and usability is adversely affected by large numbers of applets per view.\nFrom a performance perspective - with each applet on a view, additional queries must be executed and page sizes increase - both of which contribute to slower download times. There is also overall performance degradation on the servers running object managers as the additional queries are run for each user.  It is true that with even 2 or 3 BusComps being referenced in a View one can produce extremely poor performance so even more care must be taken when referencing a larger number of Applets/BusComps.\nFrom a usability perspective - users can become distracted and overwhelmed by the amount of information presented.  An exception to this case is the home page, where several small applets can entice users to drill down.\nAnother usability issue arises when applets appear completely beneath the initially visible portion of the page, and users do not realize the information is available.",
     "output": "This rule reports Business Components referencing too many Tables",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of select case statements without default",
     "description": "The number of SELECT CASE statements is compared to the number of CASE DEFAULT statements.",
     "rationale": "Process the default case in the instruction SELECT CASE. Allows to safeguard against omissions and to process the default case.",

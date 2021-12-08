@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the functions having creator to prefix tables in SQL statements and in SQL records.",
     "output": "This report lists the following information: Function Full Name",
     "rationale": "Creator prefix will prevent the default creator to be used in the different environments : DEV, TEST, PREPROD, PROD.",

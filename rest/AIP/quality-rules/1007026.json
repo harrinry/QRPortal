@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts using \"equal\" operators instead of type operator. Artifacts considered for this QR are PHP Section, function, method and constructor.",
     "output": "This report lists all artifacts that use implicit true checking or equal operators rather than identical type operators.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "To compare with type safety,identical type operators should be preffered over implicit true check or equal operators.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Call path from the method that contains the loop to the method that does the concatenation",
     "description": "This rule reports all methods that call indirectly a method that uses string concatenation in loops (for, while, do while) at a depth level less than <depth level> will be reported.\n\nThe depth level is 50",
     "output": "This reports all methods that call indirectly string concatenation in loops.\nIt provides the following information:\nMethod full name that has the loop, the call path from the method that contains the loop to the method that does  the concatenation.\n\nNote that:\n1/ The the call paths may contain different paths while only one path is a violation. For example:\nvoid concatString(String name) {\n    String result = \" concat \";\n    result += name;  }\n\nvoid g() {concatString(\" String \");}\n\nvoid f() {\n       while (myCondition) { g ();}\n        g();\n        } \n\nwill report both path to g() while only one is a violation.\n\n2/ Several paths for the same method violating the rule are identified in the Metric Detail page by a sequence ID (in the Value column), this ID is dynamically set during each snapshot and the same path can have a different sequence ID in different snapshots. (the value column), this value can vary from a snapshot to another and is used just to distinguish the violations.",

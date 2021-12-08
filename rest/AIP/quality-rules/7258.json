@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "The purpose of this quality rule is to detect calls to the DataReader's ExecuteReader method made without the use the CommandBehavior.CloseConnection style.",
     "output": "List all methods where a call to ExecuteReader without the CommandBehavior.CloseConnection parameter.",
     "rationale": "It is highly recommended to tie the lifetime of the connection to the SqlDataReader object, by passing the CommandBehavior.CloseConnection enumerated value to the ExecuteReader method.\nWhat the CommandBehavior.CloseConnection does is close the underlying connection whenever the reader is closed.  It is quite easy to forget to close database connections, and thereby waste resources that may be quite scarce, leading to serious application availability and stability issues.",

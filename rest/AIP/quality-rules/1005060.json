@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all programs having a GROUP BY inside the SQL code.",
     "output": "This report provides the following information: Function full name, Count of GROUP BY",
     "rationale": "Having complex queries in Artifacts can cause performance problems. Queries using group by is considered complex and not performant.",

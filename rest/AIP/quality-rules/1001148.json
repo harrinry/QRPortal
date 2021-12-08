@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PL1 Main Procedures not having an ON ERROR clause.",
     "output": "The report lists all the PL1 Main Procedures not having ON ERROR clause. \n\nIt provides following information: \n- PL1 Main Procedure full name",
     "rationale": "Not managing errors can lead to data corruption and incorrect behavior, even if the error is managed through specific architecture.",

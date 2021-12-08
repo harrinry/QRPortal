@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of variable declarations / Number of variable destructions",
     "description": "Unless object variables are explicitly destroyed, the amount of time they remain in memory may be longer than necessary.  This may in turn lead to performance issues and unexpected application errors or crashes.  This issue becomes more critical with Siebel 7 WebClient and Portal implementations accessing the application via the Siebel Object Manager, which shares memory among a number of user connections.\nObjects should be destroyed from the bottom up; in a Siebel context this means that Pick BusComps and MVG BusComps must be destroyed first, followed by Business Components and then finally Business Objects. If objects are not destroyed in this order, memory leaks are likely to occur.",
     "output": "This rule reports Functions having objects which are not explicitly released from memory after use, or are not released in the correct order",

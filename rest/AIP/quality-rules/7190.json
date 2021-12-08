@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "List all validate() methods that override the validate method of the following classes (at any depth in the inheritance tree):\norg.apache.struts.validator.ValidatorForm\norg.apache.struts.validator.ValidatorActionForm\norg.apache.struts.validator.DynaValidatorForm\norg.apache.struts.validator.DynaValidatorActionForm\n\nand that doesn't call super.validate()\n\nThis rule is applicable only for struts1",
     "output": "This report lists all validate() methods that violate this rule.\nIt provides the following information:\n Method Full Name",
     "rationale": "Struts Validator can be extended to implement your own custom validation.\nWhen overriding the validate() method, call the ancestor validate()\nmethod, to ensure that any framework validations are triggered. In case the validation framework is disabled, you expose the application to any type of attacks based on invalid field input.",

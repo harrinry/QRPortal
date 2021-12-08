@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all the PLI Main Procedures using FIXED variables declaration type.",
     "output": "The report lists all the PLI Main Procedures using FIXED variable type declaration.\n\nIt provides following information: \n-  PLI main procedures full name",
     "rationale": "Use of FIXED variable may lead to loss of precision while performing arithmetic operations in the Main Procedures.",

@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "The rule will raise a violation when it finds functions that are called by APIs to perform actions, if they do not implement any form of authorization check. Spring Security configuration will be also checked at the same time.",
     "output": "APIs calling functions that do not impose any authorization checks.",
     "rationale": "Exploitation requires the attacker to send legitimate API calls to the API endpoint that they should not have access to. These endpoints might be exposed to anonymous users or regular, non-privileged users. It\u2019s easier to discover these flaws in APIs since APIs are more structured, and the way to access certain functions is more predictable (e.g., replacing the HTTP method from GET to PUT, or changing the \u201cusers\u201d string in the URL to \"admins\").\nWhen defining APIs inside controllers and the methods called on by APIs to perform certain tasks it is important to restrict the user(authenticated or otherwise) based on her role.",

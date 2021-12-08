@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "If you do have a synchronizable component interface, then you have to have a SYNCID.\n\nWhen the quality rule is not applicable, you just have to either :\nignore the violations and don't include them in an action plan\nor\ndisable the quality rule in CMS, and rerun a snapshot : this is a local adaptation of the quality model to the specific context of a given Peoplesoft application, having no synchronization requirements with a mobile tier.",
     "output": "This report lists all the PeopleSoft Record Table with violation:\nIt provides the following information: \n- PeopleSoft Record Table full name.",
     "rationale": "System ID functionality simplifies system ID maintenance for developers, especially for those working on mobile applications where the System ID field must be set to SYNCID on the record properties for each record of each component used in mobile applications.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PL1 Main Procedures having modules declared as ENTRY and not used.",
     "output": "The report lists all the PL1 Main Procedures having modules declared as external entries and unused. \n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "Unused external entry definitions should be discarded because they make the code heavy to read and understand.",

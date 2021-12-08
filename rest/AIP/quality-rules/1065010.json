@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation when <cstdio> has been used",
     "output": "Information provided on:\n1. No of violations that occurred\n2. Bookmarks in the source code where violation occured",
     "rationale": "This includes file and I/O functions fgetpos, fopen, ftell, gets, perror, remove, rename, etc.\nStreams and file I/O have a large number of unspecified, undefined and implementation-defined behaviors associated with them.",

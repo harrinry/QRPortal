@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the programs using copyStr and compareStr functions.",
     "output": "This report provides the following information: Function full name, Count of copySTR abd compareStr functions",
     "rationale": "Expensive operations compared to substring and concatenation operator for CHAR data types and NUM datatypes.  Some concatenation operations like CHAR and PACK/DECIMAL will require string processing vs CHAR processing (see item above for cost). \nComments are generated into the COBOL program indicating which statements cause String processing to occur (in a performance considerations section in the initial comments).",

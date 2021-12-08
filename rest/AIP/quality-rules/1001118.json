@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for PL1 Main Procedures (Programs) not using explicitly OPEN and CLOSE files.",
     "output": "The report lists all the PL1 Main Procedures  using  OPEN and not using CLOSE for the same file.\n\nIt provides following information: \n-  program full name",
     "rationale": "Each file used by a program must be properly opened and closed. If the file is not closed explicitly, then data can be lost.",

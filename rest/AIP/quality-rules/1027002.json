@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Avoid exposing methods that use Platform Invocation Services to access unmanaged code\n\nThis rule searches all the methods public or protected or protected internal that use Platform Invocation Services to access unmanaged code meaning that has the System.Runtime.InteropServices.DllImportAttribute attribute or implemented by the Declare keyword in Visual Basic.",
     "output": "Number of Methods using P/Invoke services that are public or protected or protected internal",

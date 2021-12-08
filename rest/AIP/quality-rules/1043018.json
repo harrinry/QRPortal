@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnetweb",
+        "href": "AIP/extensions/com.castsoftware.dotnetweb"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check if you have entered password in your configuration file stored in the connection string.\nCurrent limitation: the rule only considers the passwords stored in the connectionStrings and appSettings tag of the config files.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",

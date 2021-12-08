@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts that direct access database Table. The artifacts checked are php section, function, method and constructors.",
     "output": "This report lists all artifacts that directly access database table.\n\nThis QR provides the following information:\n- Artifact full name",
     "rationale": "For security reasons, directly accessing database tables is not advised.",

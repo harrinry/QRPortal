@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation in case goto statement is used to jump backward in code",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Unconstrained use of goto can lead to programs that are extremely difficult to comprehend, analyze and, for C++, can also lead to the program exhibiting unspecified behavior. However, in many cases, a total ban on goto requires the introduction of flags to ensure correct control flow, and it is possible that these flags may themselves be less transparent than the goto they replace. \n\nTherefore, the restricted use of goto is allowed where that use will not lead to semantics contrary to developer expectations. \u201cBack\u201d jumps are prohibited as they can be used to create iterations without using the well-defined iteration statements supplied by the core language",

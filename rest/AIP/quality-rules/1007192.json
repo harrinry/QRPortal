@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all PHP file which uses PHP short tags.",
     "output": "This report lists all artifacts containing PHP short tags.\nThis QR provides the following information:\nPHP file full name.",
     "rationale": "Usage of PHP Short tags is discouraged because, short tags may or may not be enabled on the server where application is deployed or will be deployed in future.",

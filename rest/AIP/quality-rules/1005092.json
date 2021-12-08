@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all records beeing overridden by a duplicate declaration",
     "output": "This report lists the following information: Record Full Name, Overriding Record Name",
     "rationale": "More than one declaration mustn't be declared for the same record in the same application. Otherwise, declaration that has the value will be null.\nThis  is not checked by the EGL compiler unfortunatelly\u0085",

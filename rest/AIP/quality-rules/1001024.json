@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the procedures and functions having the number of other Artifacts that are referenced in it very high. When computing the Fan-Out of an Artifact, multiple accesses to the same component of an Artifact are counted as one access. \nThe threshold is a parameter and can be changed at will.\nPlease note that special procedures ignored in the calculation of this quality rule are PT%, ERROR, ERRORMSG, ERRORDB, DEBUG, ERR_DL1 and XERR_DL1. The default parameter value is 10.",
     "output": "The report lists all the PLI procedures or functions having a High Fan-in. \n\nIt provides following information: \n- procedure or function full name",
     "rationale": "The higher the number of referenced Artifacts, the more difficult the maintenance and evolution as all updates in referenced Artifacts will have to be tested and taken into account. Avoid Artifacts with High Fan-Out (Fan-Out > X).",

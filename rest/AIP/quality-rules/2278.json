@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Utilization of \"foreach\" custom tag library may lead to performance problems.",
     "output": "This report lists all uses of \"forEach\" custom",
     "rationale": "Depending on the implementation of \"forEach\" custom tag, performance issues are at hand. E.g.: in JSTL 1.1., \"forEach\" is much slower than \"transform\" to process XML files; \"forEach\" can lead to the generation of huge table display; etc.",

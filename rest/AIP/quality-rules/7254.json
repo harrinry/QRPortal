@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports non-static methods that don't use instance fields except if they have been extended in a subclass or inherit from their parents.",
     "output": "This report lists all non-static methods that don't use any instance fields.\nIt provides the following information:  Method Full Name",
     "rationale": "When an object is created:\n    * Memory is allocated to all the fields\n    * All super class fields are also allocated memory\n    * All sub class fields, super class fields are initialized .\n    * The constructor is invoked.\n\nUsing a static avoid to create an object that takes resources when it is unnecessary.",

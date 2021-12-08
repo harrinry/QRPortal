@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation in case Octal Constants are used in the code.\n\n\nAn exception will be considered in case of the following syntax:\ncode[1] = 0",
     "output": "Information will be provided on:\n1. Methods where Octal Constants are used\n2. Bookmarks for violation occurrences found in the source code",
     "rationale": "Any integer constant beginning with a \u201c0\u201d (zero) is treated as octal. Because of this, it is possible\nfor a zero-prefixed constant that is intended to be a decimal number to be incorrectly entered as an\noctal number, contrary to developer expectations.\nOctal escape sequences can also be problematic because of the inadvertent introduction of a decimal\ndigit (i.e. \u201c8\u201d or \u201c9\u201d) ends the octal escape and introduces another character.\nThe integer constant zero (written as a single numeric digit), is strictly speaking an octal constant but is a permitted exception to this rule. Additionally, \u201c\\0\u201d is the only permitted octal escape\nsequence.",

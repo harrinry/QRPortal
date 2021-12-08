@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "RecordTable",
     "description": "This quality rules reports all Language Records that don't have the field LANGUAGE_CD in the key and all Language Records that don't have the same list of field in the key as in the base Record.",
     "rationale": "As PeopleSoft generates automatically the SQL query to handle multi-language, the related language table must have the same key structure as the table with the addition of the field LANGUAGE_CD.",

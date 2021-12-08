@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "This rule reports Functions with exception handling events inside a loop.\nIt detects presence of (try|catch) inside (while|for|do) loops.",
     "output": "This rule reports Functions with exception handling events inside a loop. It displays:\n- eScript full name\n- Number of violation occurrences",
     "rationale": "Use appropriate error handling. Appropriate error handling can help maintain optimal performance. Although error handling is important, it also has a performance cost. For additional\nguidelines for using error handling in scripts, see 477766.1 (Article ID) on My Oracle Support.\nThis document was previously published as Siebel Technical Note 514.",

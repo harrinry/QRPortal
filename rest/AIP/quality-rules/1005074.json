@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule checks the combination of 1 property and 1 variable :  handleHardIOErrors (NO | YES) and VGVar.handleHardIOErrors ( =1 | absent | ...).\n1. If EGL: handleHardiOErrors property is set to NO, than no problem.\n2. If EGL: handleHardiOErrors property is set to YES and VGVar.handleHardIOErrors = 1 , than also no problem.\nOther cases than these two must be a violation of this metric.",
     "output": "This report lists the following information: Program full name",
     "rationale": "handleHardIOErrors property  must be set to NO\n\"VGVar.handleHardIOErrors = 1\" used instead. Usage is default of VAGEN migration also it's required for VAGEN Compatibility",

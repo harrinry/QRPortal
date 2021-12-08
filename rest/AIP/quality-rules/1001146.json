@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all PL1 Main Procedures (Programs) having cursors not containing either  \"FOR UPDATE\" or \"FOR READ ONLY\" or FOR FETCH ONLY\" clause.",
     "output": "The report lists all PL1 Main Procedures having cursors not containing either  \"FOR UPDATE\" or \"FOR READ ONLY\" or FOR FETCH ONLY\" clause. \nIt provides the following information: PL1 Function and PL1 Procedure full name.",
     "rationale": "While FOR UPDATE forces a certain access path, FOR FETCH ONLY provides more opportunities to the optimizer to choose the most efficient access path.",

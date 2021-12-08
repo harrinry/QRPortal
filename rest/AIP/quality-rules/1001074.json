@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PL1 Main Procedures having in the same statement a  combination of two functions among INDEX, SUBSTR, REPEAT, TRANSLATE  and it occurs in the same line of code.",
     "output": "The report lists all the PL1 Main Procedures having in the same statement the combination of the two words among: INDEX,SUBSTR,REPEAT,TRANSLATE.\n\nIt provides following information: \n-   procedure full name",
     "rationale": "Mixing multiple builtins in the same statement will depreciate the performance and increase complexity of the program.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "List all Dispose() methods that do not call GC.SuppressFinalize().\nThis applies only for Dispose() method defined in classes which implement the IDisposable interface.",
     "output": "The rule will list:\n1. All the places where Dispose() method does not call GC.SupressFinalize\n2. Bookmark of such methods",
     "rationale": "Because the cleanup code executed at dispose-time is a superset of the code executed at the finalize-time, there is no need to call the finalize-time code during object finalization after the object has been disposed. Moreover, keeping objects that don't need to be finalized in the finalization queue has a cost associated with it. This is why the Dispose() method should call GC.SuppressFinalize, which removes the object from the finalization queue and thus prevents unnecessary finalization.",

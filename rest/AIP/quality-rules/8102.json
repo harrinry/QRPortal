@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This quality rule reports all artifacts that contain hardcoded network resource\n\n- URLs (of the form file:///c:/Tmp/Folder/ or http://host.com/folder) \n- Paths (Windows absolute paths of the form c:\\Tmp\\Folder) \n- JDBC URL (of the form jdbc:oracle:thin:@//myhost:1521/orcl) \n- IP addresses (IPv4 format like 0.0.0.0 to 255.255.255.255) \n- JNDI lookup path",
     "output": "List all artifacts that reference hard coded IP adresses, URL, paths\nIt provides the following information: \n - Artifact full name",

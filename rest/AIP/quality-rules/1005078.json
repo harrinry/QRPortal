@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rules searches for all the functions calling programs outside a try end block",
     "output": "This report lists the following information: Program full name",
     "rationale": "Program call can raise exception. If they are not properly catched, the troubleshooting get harder and thus cost is higher.",

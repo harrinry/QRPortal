@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "Throwable.printStackTrace(...) prints a Throwable and its stack trace to some stream. If no argument is used, the default stream System.Err will be used, which could inadvertently expose sensitive information.\n\n\nThe rule will raise a violation when printStackTrace prints directly to the default stream.",
     "output": "Reports cases where printStackTrace() is used without argument.",
     "rationale": "Using 'Throwable.printStackTrace()' usually means that it is used to log the stack of errors, which has the risk of filling up the stdout or the log file. Moreover, it is accessible to end-user which is bad for security and user-experience.\nIt is recommended to use a Logger instead.",

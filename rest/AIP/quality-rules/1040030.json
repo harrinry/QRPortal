@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.springsecurity",
+        "href": "AIP/extensions/com.castsoftware.springsecurity"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "An authentication error can happen, for example, when the credentials supplied by the user program is invalid or otherwise fails to authenticate the user to the naming/directory service.\n\norg.springframework.security.core.AuthenticationException superclass is usually used for all exceptions related to an Authentication object being invalid for whatever reason.\n\nHowever, it\u2019s not uncommon to be in particular situations where the generic AuthenticationException isn\u2019t enough to meet requirements.\n\nSpring security provides others ready to use components that we can leverage depending on what we want to do.\n\n\n\nThis will report violation each time when the AuthenticationException Class is used.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

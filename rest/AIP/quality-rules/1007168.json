@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the functions that do not have a return and they are used in a right side of an assignment.",
     "output": "This QR searches for all functions or method whose return value is used even though they do not return any value.\n\nThis QR provides the following information:\nMethod or function full name.",
     "rationale": "In PHP the assignment of a function or method that has no return will always result in the value 'null'. This means that this statement has no effect. If the value returned by the function is re-used in the source code, this could produce a crash of part of the application or even the entire application.",

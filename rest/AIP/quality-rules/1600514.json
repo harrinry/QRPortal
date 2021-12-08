@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports all PeopleSoft SQL Definitions having an OR operator.",
     "rationale": "Depending on the SQL statement, the same result can be obtained faster (with less resources) when a UNION is used to add the results of 2 queries, rather than using OR operator.",
     "reference": "https://bertwagner.com/2018/02/20/or-vs-union-all-is-one-better-for-performance/",

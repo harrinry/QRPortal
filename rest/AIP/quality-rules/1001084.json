@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all PL1 Main Procedures  having FETCH without the TITLE option.",
     "output": "The report lists all the PL1 Main Procedures  having FETCH without the TITLE option. \n\nIt provides following information: \n-  PL1 Main Procedure full name",
     "rationale": "For better performance, It is recommended to declare a component as fetchable in the fetchable component itself rather then issuing a fetch.",

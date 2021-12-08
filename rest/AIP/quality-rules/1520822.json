@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Reason for violation (1 of 3 cases)",
     "description": "Incorrectly configured visibility settings will affect the display of records within the view. \nIf both of these properties are not set correctly or are missing, then the view will either inherit visibility from the previous view (if there is one) or default to the most restrictive visibility type for the driving BC. \n\nIf the Visibility Applet Type is defined but the Visibility Applet is not, then the application will ignore the visibility settings since it cannot determine on which business component data to restrict the visibility.\nIn some cases Visibility Applet is wrongly set to an applet that doesn't exists in the current view.",
     "output": "This rule reports Applets having the \"Visibility Applet Type\" and/or \"Visibility Applet\" properties incorrectly configured",

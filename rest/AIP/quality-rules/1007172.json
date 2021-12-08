@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the classes with constructors returning value.",
     "output": "This report lists all the classes with constructors returning value.\n\nThis QR provides the following information:\n- Class  full name.",
     "rationale": "In PHP, a constructor is the function that is called when an object is created and can be used for initialization. Although constructor can return value, that value is not useful unless constructor is called explicitly which is not a good practice. \n\nReturning value from constructor is done normally to return error code if initialization encounters an error. This functionality should be achieved either by member function that gives result of along with factory pattern or using exceptions.",

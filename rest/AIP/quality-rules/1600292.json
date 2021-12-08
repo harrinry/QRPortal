@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rules detects SQL Definition with INSERT statement without explicit specification of target column list.\nPlease note that the %BIND construct is not considered as valid w.r.t. this best practice : column names are not defined.",
     "output": "This quality rules reports PeopleSoft SQL Definitions with INSERT statement not specifying the column names.\nIt provides the PeopleSoft SQL Definitions fullname.",
     "rationale": "While valid at some time, an INSERT statement without column names is error prone, when the table structure is updated.\nProblems can occur when the table structure changes (like adding or dropping a column, changing the order of columns, ...).\nIt can result in SQL error (statement not executed), or in data corruption (wrong column updated).",

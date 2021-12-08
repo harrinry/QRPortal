@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Collection Class Fullname",
     "description": "Report any field declaration whose type is a class that implements an interface of type java.lang.Collection, java.lang.Collection<T>, java.lang.Map or java.lang.Map<U,V> or that implements an interface that inherits from these any of the aforementioned interfaces.",
     "output": "This report lists all the fields initialized with the Collection and Map implementation class. It provides the following information:\n - Field Full Name\n - Collection Class Fullname",

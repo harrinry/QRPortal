@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports all Hibernate or JPA persistent class method's equals() and hashCode() that directly access its own fields without using getter methods.\nWe consider also the case where equals and hashCode are implemented on an inherited class of the persistent class (this can happen when inherited fields are persistent).",
     "output": "List all equals or hashCode methods of persistent classes that rely on the fields (persistent or not). It provides the following information: Method Full Name",
     "rationale": "This is important, since the object instance passed as other might be a proxy object, not the actual instance that holds the persistent state. This is the case when there are lazy associations between classes. This is one point where Hibernate is not completely transparent, but it's good practice to use accessor methods instead of direct instance variable access: when tuning the performance of the application, a lazy association might be required and the issue can occur.\n\nThis potential issue raises a ClassCastException and can cause the application to become unstable.",

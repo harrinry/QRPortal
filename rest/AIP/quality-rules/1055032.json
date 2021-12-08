@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.swift",
+        "href": "AIP/extensions/com.castsoftware.swift"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "An attacker could access other user information thanks to string injection. Manipulating input, an attacker could fetch more data from the database than what was originally intended by the application.\nThe injection could be done in NSPredicate using the methods\nformat:,\nformat:arguments:\nThe injection point will be part of the format string as \"...%@...\".",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

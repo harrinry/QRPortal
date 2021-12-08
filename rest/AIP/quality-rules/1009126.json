@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the unreferenced file disks.",
     "output": "This report lists RPG400 unreferenced file disks.\nIt provides the following information:\nRPG400 File Disk full name",
     "rationale": "Unreferenced code may be the symptom of Dead Code. Dead Code must be avoided as it makes source code less readable and increases the cost of the software maintenance. \nWarning: \nUnreferenced code can also be the symptoms of missing code",

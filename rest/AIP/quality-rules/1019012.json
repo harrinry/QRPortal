@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.wcf",
+        "href": "AIP/extensions/com.castsoftware.wcf"
+    },
     "description": "This rule will raise a violation when a WCF security method used is Message Security but there is no authentication used",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Allowing access to all accessors puts the resource provided by the service at exposure.",

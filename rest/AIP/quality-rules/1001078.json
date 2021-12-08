@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all the Copybooks using reserved prefixes like below:\n- CEE : IBM routines \n- DFH : CICS vendor modules\n- IGY : Cobol\n- EYU : Cicsplex SM\n- DSN : DB2\n- CTG : CTG\n- CSQ / MQ  : MQ framework",
     "output": "The report lists all the Copybook not following the Naming Convention for the Prefix.\nIt provides following information: \n- Copybook full name",
     "rationale": "These prefixes are used as a standard by software vendors and modules could overlap.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of Allocates or Deallocates not using STAT",
     "description": "The number of ALLOCATE statements are compared against the number of STAT return code statements. The artifacts that have a ALLOCATE without a STAT return code are reported as a violation.",
     "alternativeName": "All ALLOCATE statements in Fortran-90 Modules must use the return code STAT (FORTRAN)",

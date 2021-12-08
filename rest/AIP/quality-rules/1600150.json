@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Check that the number of substitution joker (%) into the default language message text and language message text is equal.\nThe translate language is defined as a parameter at extraction time.",
     "output": "Failed checks give the number of wrongly defined Message Catalogs",
     "rationale": "Message Catalog allows to define messages in multiple languages. PeopleCode functions substitutes the values of the parameters in paramlist into the explain text. If the number of substitution joker in messages is not the same, it will generate inconsistent message to the user.",

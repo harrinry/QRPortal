@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the programs having obsolete \"Arithmetic Operations\" statements.",
     "output": "This report lists RPG400 programs using obsolete \"Arithmetic Operations\" Statement in RPG Programs (RPG-IV only).\nIt provides the following information:\nRPG400 Program full name",
     "rationale": "During the upgrade of the different RPG versions (V2 / V3 / ILE V4) some statements are no longer supported. Where ever in the code these statements the artifact is reported as a violation.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Numner of nested IF",
     "description": "This rule search for nested IF constructs:\nif ... if\nelse ...if\nAny Function that holds this specific type of nesting, is reported as a violation. Only these obvious examples are reported as a violation, as these are good candidates for implementing a Switch construct.",
     "output": "This rule reports Functions with nested IF",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects usage of hard-coded usernames and restrictions on how or who should see a page or depending upon the permission list to show different information on the same page.\n\nIt detects all tests (If and Evaluate) on %Oprid and %Menu, against hard-coded values.",
     "output": "This report lists all artifacts using hardcoded usernames\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number violations found in the artifact source code",
     "rationale": "The software should not have hard-coded credentials (username, password) in the application code or files.\nHard-coded credentials typically create a significant security hole that allows an attacker to bypass the authentication that has been configured by the software administrator. This hole might be difficult for the system administrator to detect. \n\nHard-coded restrictions is also difficult to detect and lower the maintainability of the application.",

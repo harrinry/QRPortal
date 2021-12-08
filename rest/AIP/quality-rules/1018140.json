@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule searches for ProcessActivities of type Java Activities.\nProcessActivity is a property captured in the metamodel.",
     "output": "This report lists all  Processe Activities of type Java Activity.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the activityType.",
     "rationale": "The use of Java activities is discouraged since it will break the BusinessWorks design.\nIt is possible to use Java code from external classes instead or to use the Java Custom Functions to extend XPaths possibilities of BusinessWorks.",

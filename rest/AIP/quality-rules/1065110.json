@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when signed counters/iterators/parameters are used",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "When using standard template library vectors, the programmer is responsible for ensuring integer indexes are within the bounds of the vector to prevent out-of-bounds write. Even when checks are performed for range, there are possibilities for the indices to be of a signed type and hence go out of bounds.\nTypically, this can result in the corruption of data, a crash, or code execution. The software may modify an index or perform pointer arithmetic that references a memory location that is outside of the boundaries of the buffer. A subsequent write operation then produces undefined or unexpected results.",

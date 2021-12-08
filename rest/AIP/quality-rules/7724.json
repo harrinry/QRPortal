@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "To preserve the equality contract, overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class\n\nThis rule reports equals() methods of persistent subclasses that involves an attribute or a getter of the subclasses of the persistent base class (subclass or joined-subclass).",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

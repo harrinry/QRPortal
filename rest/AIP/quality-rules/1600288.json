@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "General rule for performance improvement",
     "rationale": "General rule for performance improvment",
     "remediation": "\"SELECT COUNT(*) FROM TABLE\", if the record is too big, use \"SELECT COUNT(col) FROM TABLE\" where \"col\" is an index column if possible",

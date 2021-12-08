@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Full Name of createStatement method called",
     "description": "This rule will check the use of the method java.sql.Connection.createStatement() with interpolated string query.",
     "output": "This report lists all methods that reference java.sql.Connection.Statement interface instances (or its sub-interface or sub-class).\nIt provides the following information: \n - Method Full Name\n - The Full Name of createStatement method that has been called",

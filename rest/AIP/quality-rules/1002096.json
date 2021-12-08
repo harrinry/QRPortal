@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of global SAVE statements",
     "description": "The keyword  SAVE will be searched for, indicating this global save. Any artifact having this statement is considered being in violation.",
     "rationale": "Instruction SAVE maintains local variables in memory until the program exit. The data area is normally used for variables that are in common, saved variables, and initialized variables.  The size of the data area is system dependent .",

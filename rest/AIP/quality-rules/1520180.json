@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Review the design of the Artifact to reduce number of independent paths. E.g.: Reduce the number of conditional statements.",
     "description": "Retrieves all Functions having a Cyclomatic Complexity greater than the specified threshold . Cyclomatic Complexity is a measure of the complexity of the control structure of an Artifact. It is the number of linearly independent paths and therefore, the minimum number of independent paths when executing the software. \nThe threshold is a parameter and can be changed at will.\nDefault value for \"Siebel: Max CC\" is 15.",
     "output": "This rule reports Functions with a High Cyclomatic complexity. It displays:\n- function full name\n- associated value is the value of Cyclomatic Complexity",

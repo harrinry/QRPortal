@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "All methods that don't use instance fields will be reported except if they have been extended in a subclass or inherit from their parents.\n\nFor all .Net Classes, including .Net Forms : \nIf a method doesn't use an instance field or const, it should be declared static except if the method is overriden or override another method.",
     "output": "All methods that don't use instance fields (either const or not) will be reported except if they have been extended in a subclass or inherit from their parents.",

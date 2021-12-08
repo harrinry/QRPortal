@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports PeopleSoft DBField Label having the CheckColon property set.\nCheckColon is a property computed by the CAST extractor for PeopleSoft, detecting the presence of ':' in PSDBFLDLABL.SHORTNAME or in PSDBFLDLABL.LONGNAME.",
     "rationale": "Column headings typically do not need a colon.\nHaving an ending colon the field label and no field id defined will lead to duplicate colon : ugly.\nThe consequence is a bad User Experience.",
     "reference": "https://docs.oracle.com/cd/E41633_01/pt853pbh1/eng/pt/tapd/task_SettingPageFieldPropertiesforControls-077512.html\nhttp://www.go-faster.co.uk/peopletools/psdbfldlabl.htm",

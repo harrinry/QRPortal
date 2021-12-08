@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of public methods",
     "description": "Classes that inherit from org.apache.struts.action.Action with more than one public method will be listed. Exception to this rule: \n- all classes that inherit from org.apache.struts.action.DispatchAction that is specifically designed to group related actions into a single class and have more than one public method to handle each operation.\n- all Action class that are also Spring Beans: in this case, setter methods are excluded from the violations",
     "output": "This report lists all Action Classes with more than one public method.\nIt provides the following information:\n - Action Class full name\n - public method number",

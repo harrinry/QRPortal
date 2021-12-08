@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric reports all PeopleCode artifacts testing the Component name.\nIt detects the following branching statement constructs:\n- If %Component = ...Then\n- If boolean_expr1 and/or boolean_expr2 and/or %Component = ... Then\n- Evaluate %Component When = ...",
     "output": "This report lists all artifacts testing the Component name.\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of of test occurrences found in the artifact source code",
     "rationale": "Analyze transactions and move PeopleCode that is specific to a component from the record definition to the component or page definition. This action eliminates the need to execute conditional statements, such as If %Component = .\nThis action helps only if you are able to move all the PeopleCode in a program from the record to a component or page, and multiple components access that record.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Session Bean Name",
     "description": "The application stores a non-serializable object as an HttpSession attribute, which can hurt reliability.\nThis rule reports classes that are not serialized (i.e. don't implement or inherit from the java.io.Serializable interface) and that are instantiated by beans stored in the session. This includes JSP beans and also JSF backing beans.",
     "output": "Report all classes that don't implement (or inherit from) Serializable interface and that instantiated as session scope objects.\nIt provides the following information:\n  - Full Class Name\n  - Session Bean Name",

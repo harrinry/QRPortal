@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all equality or inequality operations on floating point variables:\n- float x == (...)\n- float x != (...)\n- double x == (...)\n- double x != (...)\nA violation is raised if one of the operands of the ==/!= operator is a float or a double. The other operand is not considered, it can be another floating point variable, an integer or a boolean.\nComparing a Float to NULL is considered as violation.",
     "output": "Report all artifact that perform float equality comparison. \nIt reports:\n- artifact fullname",

@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "The rule reports the custom Business Components based on S_PARTY table does not have the \"Inner Join Extension Table\" user property defined.",
     "output": "This rule reports all Business Components without the User Property \"Inner Join Extension Table\"",
     "rationale": "If this user property is not defined, Business Components based on S_PARTY table may not work properly.\nFor example, without this user property, the correct base table, and corresponding de-normalized information cannot be loaded.\nTherefore, de-normalized columns (such as columns in S_ORG_BU, S_ACCNT_POSTN, S_POSTN_CON and others) are not updated when creating a new record.\nThe bottom line is data corruption in Siebel repository.",

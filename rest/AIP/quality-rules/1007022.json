@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts containing \"for\" loops which can be simplified to \"while\" loops.",
     "output": "This report lists all artifacts containing \"for\" loops which can be simplified to \"while\" loops.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "If for-loop does not have initialization and increment step, while loop is better suited.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Each private field should have a setter and a getter except final static fields. \n\n\nAccessors are identified using the following java bean naming conventions: \"set\" and \"get\" followed by the name of the field with the first char in uppercase (case sensitive). For Boolean fields, the getter can also be named \"is\" followed by the name of the field. \n\nMethods not using this naming convention are not considered as accessors.",
     "output": "This report lists all Private Fields that do not have a setter and a getter. It provides the following information: Field full name",
     "rationale": "To respect OO encapsulation concepts, private fields should always be accessed through accessors. \n\nThe only exception is injected fields of classes which are managed by a framework (CDI, JSF). In that case, a setter is not required, since the field content will be set directly by the injection framework.",

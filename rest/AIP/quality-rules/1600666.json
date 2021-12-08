@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "All page fields with a label TEXT",
     "rationale": "All labels should be defined at Field level only. If a label is defined at the page level, it will impact the maintenance and it can generate some side-effects if the label don't describe the content of the field.",
     "remediation": "Select the corresponding label (DESCR or DESCRSHORT). If no label matches, create a new one at field level.",

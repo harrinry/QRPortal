@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.typescript",
+        "href": "AIP/extensions/com.castsoftware.typescript"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check that http requests are not carried out using an API prone to cross-site script inclusion such as XMLHttpRequest, axios and fetch. We recommand using the official HttpClient Angular module. \n\nCross-site script inclusion, also known as JSON vulnerability, can allow an attacker's website to read data from a JSON API. The attack works on older browsers by overriding native JavaScript object constructors, and then including an API URL using a <script> tag. This attack is only successful if the returned JSON is executable as JavaScript. Servers can prevent an attack by prefixing all JSON responses to make them non-executable, by convention, using the well-known string \")]}',\\n\".\n\nAngular's HttpClient library recognizes this convention and automatically strips the string \")]}',\\n\" from all responses before further parsing.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",

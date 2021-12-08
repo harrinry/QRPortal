@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule searches for Process Activities with a width greater than X pixel or an height greater than Y pixel. The thresholds X and Y are parameters that can be changed at will.",
     "output": "This report lists all  Processe Activities having either a width or a height greater than the defined limits.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the size : width x height.",
     "rationale": "Processes spanning over screen limits force the user to scroll in multiple directions to read the design. Keeping the process within the limits improve look & feel for the other administrators.",

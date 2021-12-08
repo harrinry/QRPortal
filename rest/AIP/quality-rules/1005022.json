@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all programs having includeReferencedFunctions  set to NO",
     "output": "This report provides the following information: Program full name",
     "rationale": "If the includeReferencedFunctions property is set to YES, the program namespace automatically includes all standalone functions (functions declared outside of a program or library) that can be found in its part lookup scope. That scope finds any of the following standalone functions:\n\n    * Those located in the same file\n    * Those named in import statements\n    * Those in packages named in import statements",

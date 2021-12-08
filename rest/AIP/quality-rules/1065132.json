@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when typeid on a class with a virtual function is used from within its constructor or destructor",
     "rationale": "During construction and destruction of an object, its final type may be different from that of the completely constructed object. The result of using an object\u2019s dynamic type in a constructor or destructor may not be consistent with developer expectations. The dynamic type of an object is used in the following construct:\n- typeid on a class with a virtual function or a virtual function in a base class.",
     "reference": "MISRA C++ 2008, 12-1-1: An object\u2019s dynamic type shall not be used from the body of its constructor or destructor. \nAUTOSAR C++ 2014, M12-1-1: An object\u2019s dynamic type shall not be used from the body of its constructor or destructor.",

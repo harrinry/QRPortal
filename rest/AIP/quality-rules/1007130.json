@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the artifacts with excessive lines of code including comments. Artifacts being checked including methods, functions and constructor. An artifact with more than 100 lines of code is considered as violation.",
     "output": "This report lists all the artifacts with excessive lines of code.\n\nThis QR provides the following information:\n- Artifact full name.",
     "rationale": "Artifact with excessive lines of code indicates that it has lot of operations to perform and therefore will be difficult to understand and maintain.",

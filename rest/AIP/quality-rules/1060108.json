@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "The rule will raise a violation if any fields that user defines as sensitive is binded to a table column and is not annotated with @JsonIgnore for returning",
     "output": "Fields not annotated with JsonIgnore",
     "rationale": "Exploitation of Excessive Data Exposure is simple, and is usually performed by sniffing the traffic to analyze the API responses, looking for sensitive data exposure that should not be returned to the user.\nSince APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data. \nWhen binding data fields accessed by APIs to columns it must be cautiously controlled that what data is to be ignored when returning the field or the model",

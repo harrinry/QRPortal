@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches for all RPG400 artefact not using QUALIFIED data structures.",
     "output": "This report lists RPG400 artefact not using QUALIFIED data structures.\nIt provides the following information:\nRPG400 Artifact full name",
     "rationale": "Qualified data structures allow you to use the same field name in multiple structures without name conflict, provide a means of defining standard structures (the most obvious use of this is for APIs), and they lead to self documenting code.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "List all methods that call the get accessor of a property inside a loop whenever the accessor returns a cloned object.\nA cloned object is retrieved from a call to the System.ICloneable.Clone method.\n\nLimitation: Due to the way this quality rule is implemented, false positive can be found if:\n- a getter is doing call to Clone method AND\n- if a method calls this getter but not in a loop AND\n- if the method calls another getter in a loop",
     "output": "This report lists all artifacts with code calling properties that clone values in loops.\nIt provides the following information:\n Artifact full name",

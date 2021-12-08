@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Average Statement Size (#Non-operator words/#Statements)",
     "description": "This calculation is using the results of the calculated Halstead metrics n1, n2, N1 and N2. This diagnostic is a result of this calculation",
     "rationale": "AVGS: This metric (Average Size of statements) corresponds to the average number of operands and operators used by each of the component's executable statements.\nIt is calculated as follows:\n        AVGS = (N1+N2) / STMT;\n where:\n        N1 is the number of operator occurrences,\n        N2 is the number of operand occurrences,\n        STMT is the number of executable statements in the component",

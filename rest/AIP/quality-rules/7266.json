@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "This quality rule checks that when implementing the MS recommended dispose pattern that is 'Dispose(bool)' methods. You should keep it\ninside try of try/finally block and inside finally block you should call 'base.Dispose(bool)' (C#) or 'MyBase.Finalize()' (VB.NET).",
     "output": "This report lists all Dispose methods with no try/finally block or with no call to 'base.Dispose(bool)' or 'MyBase.Finalize()' within the finally block.",
     "rationale": "If a type inherits from a disposable type, it must call the Dispose method of the base type from within its own Dispose method in order to make sure all allocated resources are released properly and timely.\nFailing to do so can provoke a resource leak that will  lead to serious application availability and stability issues.",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Comment Percentage",
     "description": "This is a derived value from the number if comment blocks and statements. The division of the both provides the result of this diagnostic.",
     "rationale": "COMF: Number of blocks of comments per statement in the component (Comments Frequency).\nThe following formula is used to calculate this metric:\n         COMF = (BCOM) / STMT\n where:\n         BCOM is the number of blocks of comments in the component,\n         STMT is the number of executable statements in the component",

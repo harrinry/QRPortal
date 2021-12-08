@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Cyclically called / inherited Package full name",
     "description": "This metric reports all packages that have one-on-one and more static circular dependencies.\nDependencies mean:\n - references through static methods call\n - references through class fields\n - references through inheritance\n\nNote that all these links are static link and not runtime.\nThe threshold parameter permit to define the maximal number of packages to cross for a cycle.\n\nNote that cycle notion means here a directed path in a graph that is directed by dependencies relations.",
     "output": "This report lists all packages with static cyclical call to or inheritance with another Java Package.\nIt provides the following information:\n  - Package full name\n  - cyclically called / inherited Package full name",

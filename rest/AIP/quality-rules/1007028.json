@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts which do not use increment\\decrement operator for increment\\decrement. Artifacts considered for this QR are PHP Section, constructor, method and functions.",
     "output": "This report lists all artifacts not using increment/decrement operators where possible.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Increment\\decrement without increment\\decrement operator makes code confusing and increases chances of mistake.",

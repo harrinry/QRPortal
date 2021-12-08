@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "The rule will raise a violation if user-defined sensitive data is called by a API request and uses front-end to filter data",
     "output": "All Jquery selectors and HTML functions with a name like %filter% that Access sensitive data via APIs. The following information will be provided:\n- Jquery Selector or HTML function",
     "rationale": "APIs rely on clients to perform data filtering. Since APIs are used as data sources, sometimes developers try to implement them in a generic way without thinking about the sensitivity of the exposed data.\n\nWhen you rely on the front-end for filtering sensitive data there is an underlying API that is returning all the data, which may be more than needed. This helps the attacker to understand the schema or intercept data that they are not intended to know.",

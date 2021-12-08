@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Reason for violation(No Try|No Finally|More Try Than Finally)",
     "description": "This rule reports Functions without Try statement or with a missing Finally block in a Try statement.\nDeclaration are not considered.",
     "output": "This rule reports Functions without Try statement or with a missing Finally block in a Try statement.\nIt provides the following information:\n- Function full name\n- Associated value is the reason for violation (No Try|No Finally|More Try Than Finally)",

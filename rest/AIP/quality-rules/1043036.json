@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnetweb",
+        "href": "AIP/extensions/com.castsoftware.dotnetweb"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Impersonation is commonly used in applications that rely on Microsoft Internet Information Services (IIS) to authenticate the user. Checks for the Impersonate flag in the configuration file.\n\nUsing the Impersonate method of the WindowsIdentity class, it is possible to use impersonation in a very controlled scope. This is in contrast to using the Impersonation property of the OperationBehaviorAttribute, which allows impersonation for the scope of the entire operation. Whenever possible, control the scope of impersonation by using the more precise Impersonate method.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in config file",

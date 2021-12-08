@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the methods and functions returning value and their return value is being ignored.",
     "output": "This report lists all the methods and functions returning value and their return value is being ignored.\n\nThis QR provides the following information:\nMethod and Function full name.",
     "rationale": "In PHP ignoring the result of a function indicates that the programmer has made an assumption about this return value. Unfortunately, sometimes this assumption can be wrong and produce unexpected results for the application.",

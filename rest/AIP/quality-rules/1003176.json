@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.flex",
+        "href": "AIP/extensions/com.castsoftware.flex"
+    },
     "description": "This QR reports flex fields of type \"Array\" without ArrayElementType metadata.",
     "output": "This QR reports classes with fields of type \"Array\" without ArrayElementType metadata. It provides following information:\n- Field Full name",
     "rationale": "Not specifying ArrayElementType metadata for Array type field would make code confusing and less maintainable.",

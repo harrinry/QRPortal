@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Check the use of negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=)",
     "rationale": "Negative predicates (NOT IN, NOT BETWEEN, NOT LIKE, NOT NULL, <>, !=) are statements that generates full scan.\nThis rule is a best practice on query construction to improve performances.",
     "remediation": "Validate the query by a DBA and test it in a real environment",

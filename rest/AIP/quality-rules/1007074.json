@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all Functions and Methods that do not respect naming convention.\nFollowing naming conventions are considered for evaluation of this QR:\nIf method name is not in camel case, violation will be reported.\nIf global function is neither in camel nor in snake case, violation will be reported.",
     "output": "This report lists all Functions and Methods that do not respect naming convention.\n\nThis QR provides the following information:\nFunction or Method full name.",
     "rationale": "Use of naming convention makes the source code easier to read and therefore to maintain.",

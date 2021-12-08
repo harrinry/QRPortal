@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PL1 Procedures and PL1 Functions having SELECT clauses without the default OTHERWISE clause.",
     "output": "The report lists all the PL1 Procedures and PL1 Functions having a SELECT without the default OTHERWISE clause. \n\nIt provides following information: \n-  PL1 Procedures and PL1 Functions full name",
     "rationale": "The default case is executed when none of the conditions being tested for in the switch statement are met or executed. Having no default, means that there is no backup.\nThe cases that are \"impossible\" today are the ones most likely to be the causes of untraceable bugs in the future, when the impossible changes to the standard.",

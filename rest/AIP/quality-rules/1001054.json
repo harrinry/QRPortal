@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PLI  Procedures and Functions that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced PLI Procedures and Functions.\n\nIt provides following information: \n-  PL1 Procedure and Function full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",

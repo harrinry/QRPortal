@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Parent Class full name",
     "description": "All Action Classes should inherit from a single Class, inheriting from the Struts Action Class (org.apache.struts.action.Action). \nWhen a class inherit from an action class, all other action class must inherit from the same one. This base class must be abstract or have an abstract method.",
     "output": "This report lists all Action Classes inheriting from different Class.\nIt provides the following information:\n - Class full name\n - parent Class full name",

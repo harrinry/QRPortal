@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Record fields directly defined in the record",
     "description": "New field added in a standard record must be done in a specific <KEY> sub-record, always at the end of the record; except when the last field have type long, then add the new field before this field.\nFor new record, it's not mandatory to add a specific sub-record. You can add a standard sub-record to a new record.",
     "output": "This report lists all the Records with added fields not defined in a sub-record",

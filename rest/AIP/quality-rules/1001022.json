@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all the PLC procedures and functions having a large number of other artifacts that are referenced in them. When computing the Fan-Out of an Artifact, multiple accesses to the same component of an Artifact are counted as one access. \nThe threshold is a parameter and can be changed at will. The default parameter value is 10.",
     "output": "The report lists all the PLC procedures or functions having a High Fan-out. \n\nIt provides following information: \n- procedure or function full name",
     "rationale": "The higher the number of referenced Artifacts, the more difficult the maintenance and evolution as all updates in referenced Artifacts will have to be tested and taken into account.",

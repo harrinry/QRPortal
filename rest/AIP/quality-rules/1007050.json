@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts containing function calls in loop test expressions. \nNote: foreach loop is not considered for this QR.",
     "output": "This report lists all artifact containing function calls in loop test expressions.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "When calling a function in a test expression of loop, the function will be computed in each loop iteration and will reduce performance dramatically.",

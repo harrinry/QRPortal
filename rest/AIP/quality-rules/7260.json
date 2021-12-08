@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Database object",
     "description": "List all the artifacts belonging to User Interface classes that are using directly objects from the database.\nUser Interface classes are classes belonging to User Interface namespaces such as WinForms or namespaces used for web pages implementation. \nThe list of these namespaces are parameters of the quality rule.",
     "output": "List all artifacts belonging to one of the namespaces given as a parameter (or to sub namespaces) and that access a database object (either with code or in a property).\nDisplay the artifact full name and the database object used.",

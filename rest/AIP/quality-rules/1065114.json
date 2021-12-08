@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when a line starting with \"#\" has a malformed or syntactically incorrect pre-processing directive",
     "output": "Information will be provided on:\n1. Files where violation has occurred\n2. Bookmarks for violation occurrences found in the source code",
     "rationale": "When a section of source code is excluded by preprocessor directives, the content of each excluded statement is ignored until a #else, #elif or #endif directive is encountered (depending on the context). If one of these excluded directives is badly formed, it may be ignored without warning by a compiler with unexpected consequences.\nThe requirement of this rule is that all preprocessor directives shall be syntactically valid even\nwhen they occur within an excluded block of code.\n\nIn particular, ensure that #else and #endif directives are not followed by any characters other than\nwhite-space. Compilers are not always consistent in enforcing this requirement.",

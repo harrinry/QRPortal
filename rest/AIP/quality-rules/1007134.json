@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the classes that have excessive number of methods. Threshold for number of methods is set to 10. All methods, public\\private\\protected with all access qualifiers abstract and final along with static methods are considered while counting methods of the class. Base class methods unless overriden do not contribute to this QR.",
     "output": "This report lists all the classes with excessive number of methods.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "A Class with too many Methods is probably a good target for refactoring to reduce its complexity and find a way to have more fine-grained classes.",

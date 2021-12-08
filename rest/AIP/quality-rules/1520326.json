@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "The rule report unreferenced Fields (having no linked control in Applet)",
     "output": "This rule reports unreferenced Fields in Business Components",
     "rationale": "Field in Business Component provides data to a control or list column in an applet.\nUnreferenced field means the data is fetched from database, but not displayed to the user: this is a waste of resource.",

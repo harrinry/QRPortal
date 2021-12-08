@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports SQL Definitions using an Oracle Hint in the SQL statement.\nIt detects the specific start of comment '/*+' without further checks on the hint syntax.",
     "rationale": "To force Oracle to use a specific access method a common practive is to use the Hints. But do so knowingly (Oracle will not use the right index...) and be aware of the consequences (if tomorrow the indexes change, you may degrade database performance without knowing).\nSo, when you know what you are doing, you might use the hints....as the last chance tuning.\nOTOH and for instance, for certain SQL constructs, the use of the FIRST_ROWS hint can severely degrade performance.\n\nThis quality rule reports all SQL definition using an Oracle hint, in order to help a senior DBA check if the hints are effective.",
     "reference": "Oracle Database Performance Tuning Guide: https://docs.oracle.com/cd/B19306_01/server.102/b14211/hintsref.htm#i8327\nPeopleSoft Application Server Domain Parameter OracleDisableFirstRowsHint :https://docs.oracle.com/cd/E13292_01/pt849pbr0/eng/psbooks/tsvt/chapter.htm?File=tsvt/htm/tsvt05.htm%23g037ee99c9453fb39_ef90c_10c791ddc07_ec7",

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Associated Value",
     "description": "Java artifacts should not use 'java.io.File' for application deployed on a Web Server or an Application Server to avoid any kind of dependencies with deployment environment of your application\n\nThis rule is computed only when web.xml or ejb-jar.xml file are present.",
     "output": "This report lists all java artifacts using 'java.io.File'.\nIt provides the following information:\n Artifact full name",

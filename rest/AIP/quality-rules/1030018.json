@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "This quality rule reports all artifacts that contain hard-coded network resources: \n\n- URLs (of the form file:///c:/Tmp/Folder/ or http://host.com/folder) \n- Paths (Windows absolute paths of the form c:\\Tmp\\Folder) \n- JDBC URL (of the form jdbc:oracle:thin:@//myhost:1521/orcl) \n- IP addresses (IPv4 format except 0.0.0.0 and 255.255.255.255) \n- JNDI lookup path",
     "rationale": "Built-in remote addresses cause problems when the target is moved. Avoid of hard-coded network resources (e.g., IP addresses, URLs, etc.)",
     "reference": "ASCRM 1.0, Automated Source Code Reliability Measure, Object Management Group.",

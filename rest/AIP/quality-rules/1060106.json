@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "description": "The rule will raise a violation if any of the methods like following names call 'ToJson' or 'ToString' methods to save PII or sensitive data:\n1. Save\n2. Set\n3. Put",
     "output": "Methods that use 'ToJSONString'",
     "rationale": "Binding client provided data (e.g., JSON) to data models, without proper properties filtering based on an allowlist, usually leads to Mass Assignment. Either guessing objects properties, exploring other API endpoints, reading the documentation, or providing additional object properties in request payloads, allows attackers to modify object properties they are not supposed to.",

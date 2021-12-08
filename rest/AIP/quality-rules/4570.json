@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Class Variables with Public, Protected or Package access type should be Final. Class Variables are Static Fields. Package access types taken into account are Non Public, Non Protected and Non Private.",
     "output": "This report lists all Non Final Class Variables with Public or Package access type. It provides the following information: Field full name",
     "rationale": "If a field is non-final and public, it can be changed once the value is set by any function that has access to the class which contains the field. This could lead to a vulnerability if other parts of the program make assumptions about the contents of that field.\n\nFor security reasons, if a Class Variable has Public, Protected or Package visibility, it should be declared Final to avoid being updated without Class control. Also for robustness reasons in a multi-threaded environment, leaving non-protected access to non-final class variables may lead to unpredictable behavior where the state of the class/instance is changed by another thread.",

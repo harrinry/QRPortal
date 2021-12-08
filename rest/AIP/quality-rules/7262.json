@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Efferent Coupling",
     "description": "CE (also known as Outgoing Dependencies or the Number of Types outside a namespace that Types of the namespace Depend on) indicates the number of other namespaces that classes and interfaces in the analyzed namespace depend upon. This is an indicator of the namespace's independence.\nA namespace will always be counted as one entity for coupling, even if it contains both C# and VB code.",
     "output": "Number of namespaces having Afferent Coupling greater than given parameter",
