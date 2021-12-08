@@ -40,6 +40,36 @@
         ]
     },
     {
+        "id": 4604,
+        "name": "Avoid using 'java.lang.Error'",
+        "href": "AIP/quality-rules/4604",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4652,
+        "name": "Avoid direct Class inheritance from java.lang.Throwable",
+        "href": "AIP/quality-rules/4652",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4656,
+        "name": "Avoid declaring an exception in the method signature and not throwing it",
+        "href": "AIP/quality-rules/4656",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4676,
         "name": "Public Methods must have appropriate JavaDoc @throws/@exception tags",
         "href": "AIP/quality-rules/4676",
@@ -137,6 +167,16 @@
         "severity": 10,
         "technologyNames": [
             "ABAP"
+        ]
+    },
+    {
+        "id": 7640,
+        "name": "Avoid using catch blocks with assertion",
+        "href": "AIP/quality-rules/7640",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -252,6 +292,16 @@
         ]
     },
     {
+        "id": 7910,
+        "name": "Never exit a finally block with a return, break, continue, or throw statements",
+        "href": "AIP/quality-rules/7910",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7956,
         "name": "DEPRECATED:Avoid indirect exception handling inside loops",
         "href": "AIP/quality-rules/7956",
@@ -305,6 +355,16 @@
             "JEE",
             "Objective-C",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 8030,
+        "name": "Check alphanumeric data before moving it into numeric data",
+        "href": "AIP/quality-rules/8030",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -520,6 +580,16 @@
         ]
     },
     {
+        "id": 1019006,
+        "name": "Avoid wrong suppressAuditFailure and serviceAuthorizationAuditLevel parameters when enabling WCF service security audit feature",
+        "href": "AIP/quality-rules/1019006",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "WCF"
+        ]
+    },
+    {
         "id": 1020068,
         "name": "Avoid return statement in finally block (Javascript)",
         "href": "AIP/quality-rules/1020068",
@@ -603,6 +673,26 @@
         "id": 1020702,
         "name": "Avoid using nodejs process.exit()",
         "href": "AIP/quality-rules/1020702",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020780,
+        "name": "Avoid using Node.js synchronous FileSystem API without try/catch block",
+        "href": "AIP/quality-rules/1020780",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020800,
+        "name": "Avoid jump statements in finally ",
+        "href": "AIP/quality-rules/1020800",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -710,6 +800,16 @@
         ]
     },
     {
+        "id": 1021028,
+        "name": "Avoid empty finally block (Python)",
+        "href": "AIP/quality-rules/1021028",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Python"
+        ]
+    },
+    {
         "id": 1021034,
         "name": "Avoid inconsistent initialization when deriving a new exception",
         "href": "AIP/quality-rules/1021034",
@@ -740,6 +840,93 @@
         ]
     },
     {
+        "id": 1024038,
+        "name": "Avoid processing Google Sign In Client without catching error",
+        "href": "AIP/quality-rules/1024038",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1027016,
+        "name": "Avoid throwing exceptions in destructors",
+        "href": "AIP/quality-rules/1027016",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027018,
+        "name": "Avoid throwing exceptions in finally block",
+        "href": "AIP/quality-rules/1027018",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027034,
+        "name": "Never catch NullReferenceException",
+        "href": "AIP/quality-rules/1027034",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027036,
+        "name": "Avoid rethrowing exception explicitly",
+        "href": "AIP/quality-rules/1027036",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027050,
+        "name": "Avoid throwing ArgumentException from yielding method.",
+        "href": "AIP/quality-rules/1027050",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027066,
+        "name": "Avoid throwing exception from property getters",
+        "href": "AIP/quality-rules/1027066",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027068,
+        "name": "Avoid returning null from ToString()",
+        "href": "AIP/quality-rules/1027068",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027088,
         "name": "Avoid non-public custom exception types",
         "href": "AIP/quality-rules/1027088",
@@ -748,6 +935,16 @@
         "technologyNames": [
             "C#",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 1030000,
+        "name": "Avoid \"when\" statement or expression without an else (Kotlin)",
+        "href": "AIP/quality-rules/1030000",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Kotlin"
         ]
     },
     {
@@ -791,6 +988,17 @@
         ]
     },
     {
+        "id": 1043076,
+        "name": "Avoid disabling custom errors mode to prevent exposure of exceptions and error data",
+        "href": "AIP/quality-rules/1043076",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
         "id": 1050020,
         "name": "Avoid return statement in @finally block",
         "href": "AIP/quality-rules/1050020",
@@ -814,6 +1022,16 @@
         "id": 1050032,
         "name": "Ensure that LAContext evaluatePolicy: reply block success is checked (Objective-C)",
         "href": "AIP/quality-rules/1050032",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050052,
+        "name": "Avoid empty finally block (Objective-C)",
+        "href": "AIP/quality-rules/1050052",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -874,6 +1092,56 @@
         ]
     },
     {
+        "id": 1065056,
+        "name": "Avoid throwing exceptions outside of main()",
+        "href": "AIP/quality-rules/1065056",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065058,
+        "name": "Ensure that there is at least one exception handler to catch-all otherwise unhandled exceptions in the main function(C++)",
+        "href": "AIP/quality-rules/1065058",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065082,
+        "name": "Handlers of a function-try-block implementation of a class constructor ordestructor shall not reference non-static members from this class or its bases.",
+        "href": "AIP/quality-rules/1065082",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065098,
+        "name": "Avoid delete operators to exit with an exception.",
+        "href": "AIP/quality-rules/1065098",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
+        "id": 1065100,
+        "name": "Avoid move constructor and move assignment operator to exit with an exception",
+        "href": "AIP/quality-rules/1065100",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 1101040,
         "name": "Avoid empty catch blocks (SQL)",
         "href": "AIP/quality-rules/1101040",
@@ -909,6 +1177,16 @@
         "href": "AIP/quality-rules/1101092",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101094,
+        "name": "Avoid Stored Procedures not returning a status value (SQL)",
+        "href": "AIP/quality-rules/1101094",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "SQL"
         ]

@@ -11,11 +11,51 @@
         ]
     },
     {
+        "id": 4600,
+        "name": "Ensure you don't use 'java.System.exit()' to know what happened when you exit your program",
+        "href": "AIP/quality-rules/4600",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4694,
+        "name": "Ensure  let the system decide when it needs to collect the heap, and whether or not to do a full collection",
+        "href": "AIP/quality-rules/4694",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7506,
+        "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
+        "href": "AIP/quality-rules/7506",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7562,
         "name": "Ensure that static Field of type collection are not used",
         "href": "AIP/quality-rules/7562",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7940,
+        "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
+        "href": "AIP/quality-rules/7940",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -31,9 +71,29 @@
         ]
     },
     {
+        "id": 1020062,
+        "name": "Make sure that you have only one instance created in class constructor and it has been frozen to avoid any changes.",
+        "href": "AIP/quality-rules/1020062",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020214,
         "name": "Ensure to clear event listeners after components are destroyed to prevent memory leaks",
         "href": "AIP/quality-rules/1020214",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020730,
+        "name": "Ensure you have closed  Node.js filesystem after using open or openSync.",
+        "href": "AIP/quality-rules/1020730",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -48,6 +108,102 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 1024026,
+        "name": "Prefer not using MODE_WORLD_READABLE or MODE_WORLD_WRITABLE to share files with other apps",
+        "href": "AIP/quality-rules/1024026",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1027046,
+        "name": "Avoid storing passwords in Comments",
+        "href": "AIP/quality-rules/1027046",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027054,
+        "name": "Always use System.Uri instead of string to build URLs",
+        "href": "AIP/quality-rules/1027054",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027076,
+        "name": "Ensure not using File IO unrestricted access",
+        "href": "AIP/quality-rules/1027076",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027094,
+        "name": "Always provide deserialization methods for optional fields",
+        "href": "AIP/quality-rules/1027094",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1039008,
+        "name": "Ensure to manage an exception in servlet method using a try catch block to prevent exposing system vulnerabilities",
+        "href": "AIP/quality-rules/1039008",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040014,
+        "name": "Ensure desabling Spring Security's debug mode in production code",
+        "href": "AIP/quality-rules/1040014",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1043020,
+        "name": "Ensure you have reviewed the web config file and update the value of debug property to false",
+        "href": "AIP/quality-rules/1043020",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043060,
+        "name": "Ensure you don't set the UseLegacyEncryption to True",
+        "href": "AIP/quality-rules/1043060",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {
@@ -77,6 +233,17 @@
         "href": "AIP/quality-rules/1065004",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065102,
+        "name": "Avoid checking Integer overflow without explicit cast",
+        "href": "AIP/quality-rules/1065102",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"

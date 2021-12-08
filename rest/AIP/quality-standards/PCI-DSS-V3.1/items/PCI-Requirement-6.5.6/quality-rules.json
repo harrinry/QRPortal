@@ -11,6 +11,36 @@
         ]
     },
     {
+        "id": 4600,
+        "name": "Avoid using Exit and Halt Methods on a Web/Application Server",
+        "href": "AIP/quality-rules/4600",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4694,
+        "name": "Avoid using 'System.gc' and 'Runtime.gc'",
+        "href": "AIP/quality-rules/4694",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Avoid using '==' and '!=' to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7258,
         "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
         "href": "AIP/quality-rules/7258",
@@ -19,6 +49,26 @@
         "technologyNames": [
             "C#",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7506,
+        "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
+        "href": "AIP/quality-rules/7506",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7548,
+        "name": "Never use incompatible statements with the CICS environment",
+        "href": "AIP/quality-rules/7548",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Cobol"
         ]
     },
     {
@@ -42,11 +92,41 @@
         ]
     },
     {
+        "id": 7722,
+        "name": "Avoid using persistent class's identifier in equals() method",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7728,
         "name": "Avoid thread creation for application running on application server",
         "href": "AIP/quality-rules/7728",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7940,
+        "name": "Avoid accumulating Stateful Beans",
+        "href": "AIP/quality-rules/7940",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -104,9 +184,29 @@
         ]
     },
     {
+        "id": 1020062,
+        "name": "Avoid using non thread-safe Javascript singleton pattern",
+        "href": "AIP/quality-rules/1020062",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020214,
         "name": "Ensure to turn off and clear event listeners after component is destroyed",
         "href": "AIP/quality-rules/1020214",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020730,
+        "name": "Ensure Node.js filesystem are closed",
+        "href": "AIP/quality-rules/1020730",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -121,6 +221,102 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 1024026,
+        "name": "Avoid using MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE",
+        "href": "AIP/quality-rules/1024026",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1027046,
+        "name": "Avoid storing passwords in Comments",
+        "href": "AIP/quality-rules/1027046",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027054,
+        "name": "Always use System.Uri instead of string to build URLs",
+        "href": "AIP/quality-rules/1027054",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027076,
+        "name": "Avoid allowing File IO unrestricted access",
+        "href": "AIP/quality-rules/1027076",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027094,
+        "name": "Always provide deserialization methods for optional fields",
+        "href": "AIP/quality-rules/1027094",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1039008,
+        "name": "Avoid thrown Exceptions in servlet methods",
+        "href": "AIP/quality-rules/1039008",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1040014,
+        "name": "Avoid using Spring Security's debug mode",
+        "href": "AIP/quality-rules/1040014",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1043020,
+        "name": "Avoid having applications with the debug mode activated",
+        "href": "AIP/quality-rules/1043020",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
+        ]
+    },
+    {
+        "id": 1043060,
+        "name": "Avoid disabling HMAC signature verification (C#)",
+        "href": "AIP/quality-rules/1043060",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ASP.NET",
+            "C#"
         ]
     },
     {
@@ -145,11 +341,82 @@
         ]
     },
     {
+        "id": 1050024,
+        "name": "Avoid using kSecAttrAccessibleAlways attribute when storing data in the Keychain",
+        "href": "AIP/quality-rules/1050024",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050026,
+        "name": "Avoid using non thread-safe Objective-C singleton pattern",
+        "href": "AIP/quality-rules/1050026",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050036,
+        "name": "Ensure that iOS Projects are ARC enabled",
+        "href": "AIP/quality-rules/1050036",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050038,
+        "name": "Avoid using NSURLRequestUseProtocolCachePolicy for NSURLRequest (Objective-C)",
+        "href": "AIP/quality-rules/1050038",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1050048,
+        "name": "Avoid creating file without protection (Objective-C)",
+        "href": "AIP/quality-rules/1050048",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Objective-C"
+        ]
+    },
+    {
+        "id": 1055020,
+        "name": "Avoid using kSecAttrAccessibleAlways attribute when storing data in the Keychain (Swift)",
+        "href": "AIP/quality-rules/1055020",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Swift"
+        ]
+    },
+    {
         "id": 1065004,
         "name": "Ensure that dynamically allocated memory on local pointer in functions/methods is freed.",
         "href": "AIP/quality-rules/1065004",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++"
+        ]
+    },
+    {
+        "id": 1065102,
+        "name": "Avoid checking Integer overflow without explicit cast",
+        "href": "AIP/quality-rules/1065102",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C",
             "C++"
