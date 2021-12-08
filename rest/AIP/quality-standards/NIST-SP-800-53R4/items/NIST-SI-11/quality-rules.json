@@ -10,6 +10,17 @@
         ]
     },
     {
+        "id": 1588,
+        "name": "Use WHEN OTHERS in exception management",
+        "href": "AIP/quality-rules/1588",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Forms",
+            "PL/SQL"
+        ]
+    },
+    {
         "id": 2232,
         "name": "Pages should use error handling page",
         "href": "AIP/quality-rules/2232",
@@ -30,6 +41,16 @@
         ]
     },
     {
+        "id": 2590,
+        "name": "Avoid using \"On error Resume Next\" in the Class event terminate",
+        "href": "AIP/quality-rules/2590",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Visual Basic"
+        ]
+    },
+    {
         "id": 3062,
         "name": "Use of error handling page",
         "href": "AIP/quality-rules/3062",
@@ -37,6 +58,30 @@
         "severity": 10,
         "technologyNames": [
             "ASP"
+        ]
+    },
+    {
+        "id": 4064,
+        "name": "Avoid Procedures using an Insert, Update, Delete, Create Table or Select without including error management",
+        "href": "AIP/quality-rules/4064",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "SQL Server",
+            "Sybase T-SQL"
+        ]
+    },
+    {
+        "id": 4066,
+        "name": "Avoid Stored Procedures not returning a status value",
+        "href": "AIP/quality-rules/4066",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Microsoft T-SQL",
+            "SQL Server",
+            "Sybase T-SQL"
         ]
     },
     {
@@ -137,6 +182,16 @@
         "severity": 10,
         "technologyNames": [
             "Cobol"
+        ]
+    },
+    {
+        "id": 7518,
+        "name": "Avoid missing WHEN OTHERS in CASE statements",
+        "href": "AIP/quality-rules/7518",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ABAP"
         ]
     },
     {
@@ -400,6 +455,16 @@
         ]
     },
     {
+        "id": 1001148,
+        "name": "Avoid Main Procedures not having an ON ERROR clause (PL1)",
+        "href": "AIP/quality-rules/1001148",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "PLI"
+        ]
+    },
+    {
         "id": 1001152,
         "name": "Avoid Programs having files declared as RECORD INPUT or RECORD UPDATE and not having  the ON EOF or ON ENDFILE statement (PL1)",
         "href": "AIP/quality-rules/1001152",
@@ -437,6 +502,86 @@
         "severity": 20,
         "technologyNames": [
             "PLI"
+        ]
+    },
+    {
+        "id": 1002016,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Programs  (FORTRAN)",
+        "href": "AIP/quality-rules/1002016",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002018,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Subroutines  (FORTRAN)",
+        "href": "AIP/quality-rules/1002018",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002020,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Functions  (FORTRAN)",
+        "href": "AIP/quality-rules/1002020",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002022,
+        "name": "Process the default case in the instruction SELECT CASE in Fortran-90 Modules  (FORTRAN)",
+        "href": "AIP/quality-rules/1002022",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002208,
+        "name": "All Read and Write statements in Programs must use the return code IOSTAT (FORTRAN)",
+        "href": "AIP/quality-rules/1002208",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002210,
+        "name": "All Read and Write statements in Subroutines must use the return code IOSTAT (FORTRAN)",
+        "href": "AIP/quality-rules/1002210",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002212,
+        "name": "All Read and Write statements in Functions must use the return code IOSTAT (FORTRAN)",
+        "href": "AIP/quality-rules/1002212",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
+        ]
+    },
+    {
+        "id": 1002214,
+        "name": "All Read and Write statements in Modules must use the return code IOSTAT (FORTRAN)",
+        "href": "AIP/quality-rules/1002214",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Fortran"
         ]
     },
     {
@@ -490,9 +635,59 @@
         ]
     },
     {
+        "id": 1005068,
+        "name": "Avoid SQL query outside try-on block (EGL)",
+        "href": "AIP/quality-rules/1005068",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
         "id": 1005070,
         "name": "Avoid Program calls without checking the return code (EGL)",
         "href": "AIP/quality-rules/1005070",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005072,
+        "name": "Enable Exception for migrated programs - throwNrfEofExceptions property must be set to YES (EGL)",
+        "href": "AIP/quality-rules/1005072",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005074,
+        "name": "Avoid having handleHardIOErrors property enabled (EGL)",
+        "href": "AIP/quality-rules/1005074",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005076,
+        "name": "Avoid having V60ExceptionCompatibility property set to NO (EGL)",
+        "href": "AIP/quality-rules/1005076",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "EGL"
+        ]
+    },
+    {
+        "id": 1005078,
+        "name": "Avoid program calls outside a try end block (EGL)",
+        "href": "AIP/quality-rules/1005078",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -918,6 +1113,17 @@
         ]
     },
     {
+        "id": 1027096,
+        "name": "Avoid raising exceptions in unexpected location",
+        "href": "AIP/quality-rules/1027096",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1030000,
         "name": "Avoid \"when\" statement or expression without an else (Kotlin)",
         "href": "AIP/quality-rules/1030000",
@@ -1169,6 +1375,56 @@
         "severity": 10,
         "technologyNames": [
             "SQL"
+        ]
+    },
+    {
+        "id": 1520580,
+        "name": "Siebel eScript: Avoid Functions without Try, Catch and Finally block",
+        "href": "AIP/quality-rules/1520580",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520582,
+        "name": "Siebel eScript: Avoid Functions destroying variables outside of the finally clause",
+        "href": "AIP/quality-rules/1520582",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520584,
+        "name": "Siebel eScript: Avoid Functions having Return statement in the Finally clause",
+        "href": "AIP/quality-rules/1520584",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520586,
+        "name": "Siebel eScript: Prefer using GotoView in the Finally clause of a Function",
+        "href": "AIP/quality-rules/1520586",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Siebel"
+        ]
+    },
+    {
+        "id": 1520588,
+        "name": "Siebel Scripting Review: Using Error Code in scripts",
+        "href": "AIP/quality-rules/1520588",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "Siebel"
         ]
     }
 ]

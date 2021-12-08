@@ -52,6 +52,46 @@
         ]
     },
     {
+        "id": 7438,
+        "name": "Avoid non thread safe singleton",
+        "href": "AIP/quality-rules/7438",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7442,
+        "name": "Avoid to use this within Constructor in multi-thread environment",
+        "href": "AIP/quality-rules/7442",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7444,
+        "name": "Avoid Using Non-Serialized Beans with Session Scope",
+        "href": "AIP/quality-rules/7444",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7446,
+        "name": "Avoid double checked locking for JSE 4.x and previous version",
+        "href": "AIP/quality-rules/7446",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7506,
         "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
         "href": "AIP/quality-rules/7506",
@@ -75,6 +115,16 @@
         "id": 7562,
         "name": "Avoid static Field of type collection",
         "href": "AIP/quality-rules/7562",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7636,
+        "name": "Prefer using version number instead of timestamp for Hibernate Entity",
+        "href": "AIP/quality-rules/7636",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -135,6 +185,17 @@
         "id": 8086,
         "name": "Avoid types that own disposable fields and are not disposable",
         "href": "AIP/quality-rules/8086",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8094,
+        "name": "Avoid locking of Objects with weak identities",
+        "href": "AIP/quality-rules/8094",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -234,6 +295,17 @@
         ]
     },
     {
+        "id": 1027012,
+        "name": "Avoid storing Non-Serializable Object as HttpSessionState attributes.",
+        "href": "AIP/quality-rules/1027012",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027046,
         "name": "Avoid storing passwords in Comments",
         "href": "AIP/quality-rules/1027046",
@@ -283,6 +355,26 @@
         "href": "AIP/quality-rules/1039008",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039068,
+        "name": "Avoid using the Non-Serializable Object Stored in Session",
+        "href": "AIP/quality-rules/1039068",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039070,
+        "name": "Avoid using URL.equals(Object obj) or URL.hashCode()",
+        "href": "AIP/quality-rules/1039070",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
