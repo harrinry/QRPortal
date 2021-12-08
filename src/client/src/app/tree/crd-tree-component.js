@@ -47,8 +47,8 @@ const Tree = (props) => {
 
   const renderLabelIcon = iconUrl => (
     <IconButton aria-label='' size='small'>
-      <img className='labelIcon' src={iconUrl} alt='' width='26' height='26'
-        onError={(e) => (e.target.onerror = null, e.target.src = '/assets/favicon/favicon.png')}
+      <img src={iconUrl} alt='' width='26' height='26'
+        onError={(e) => (e.target.onerror = null, e.target.src = '/assets/img/placeholder.svg')}
       />
     </IconButton>
   );
@@ -63,16 +63,31 @@ const Tree = (props) => {
       gutterBottom
       style={{ letterSpacing: '0.75px', padding: '3px', fontSize: '10px' }}
     >
-      <i>{description}</i>
+      {description}
+    </Typography>
+  );
+
+  const renderTitle = title => (
+    <Typography
+      variant='caption'
+      align='justify'
+      gutterBottom
+      style={{ letterSpacing: '0.75px', padding: '3px', fontSize: '10px' }}
+    >
+      {title}
     </Typography>
   );
 
   const renderTooltipMessage = (title, description) => (
     <span>
       <div>
-        <Typography variant='overline' gutterBottom style={{ fontWeight: 'bold', fontSize: '11px', color: '#bebdb6' }}>
-          {title}
-        </Typography>
+        {
+          description
+           ? <Typography variant='overline' gutterBottom style={{ fontWeight: 'bold', fontSize: '11px', color: '#bebdb6' }}>
+             {title}
+           </Typography>
+           : renderTitle(title)
+        }
       </div>
       {description && renderTooltipDescription(description)}
     </span>
