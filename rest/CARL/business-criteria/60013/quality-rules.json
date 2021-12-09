@@ -110,6 +110,26 @@
         ]
     },
     {
+        "id": 1070,
+        "name": "Avoid header files circular references",
+        "href": "AIP/quality-rules/1070",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C"
+        ]
+    },
+    {
+        "id": 1090,
+        "name": "Ensure the file is truly unnecessary. If not, then remove it from the project to avoid dead code.",
+        "href": "AIP/quality-rules/1090",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C"
+        ]
+    },
+    {
         "id": 1606,
         "name": "Triggers should not directly modify tables, a procedure or function should be used instead",
         "href": "AIP/quality-rules/1606",
@@ -120,9 +140,59 @@
         ]
     },
     {
+        "id": 1634,
+        "name": "Ensure the table is truly unnecessary. If not, then remove it from the project to avoid dead code.",
+        "href": "AIP/quality-rules/1634",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 2230,
+        "name": "DEPRECATED: Use of style sheets (JEE)",
+        "href": "AIP/quality-rules/2230",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 2232,
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2236,
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
+        "href": "AIP/quality-rules/2236",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2238,
+        "name": "Ensure you don't let unused JSP pages code in your project",
+        "href": "AIP/quality-rules/2238",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2242,
+        "name": "Ensure to have separate behavior from presentation and not to have direct definition of JavaScript Functions in a Web page",
+        "href": "AIP/quality-rules/2242",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -137,6 +207,70 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 2624,
+        "name": "Avoid unreferenced Forms",
+        "href": "AIP/quality-rules/2624",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 2626,
+        "name": "Avoid unreferenced Modules",
+        "href": "AIP/quality-rules/2626",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3578,
+        "name": "Avoid large Classes - too many Constructors (.NET)",
+        "href": "AIP/quality-rules/3578",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3580,
+        "name": "Avoid large Classes - too many Methods (.NET)",
+        "href": "AIP/quality-rules/3580",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3610,
+        "name": "Avoid declaring VB Variables without typing them (.NET)",
+        "href": "AIP/quality-rules/3610",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 3630,
+        "name": "Avoid having Classes implementing too many Interfaces",
+        "href": "AIP/quality-rules/3630",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -180,6 +314,16 @@
         ]
     },
     {
+        "id": 4574,
+        "name": "Ensure to not use the deprecated objects",
+        "href": "AIP/quality-rules/4574",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4578,
         "name": "Ensure you declare the type as an interface of a more appropriate collection",
         "href": "AIP/quality-rules/4578",
@@ -195,6 +339,16 @@
         "href": "AIP/quality-rules/4580",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4592,
+        "name": "Always Prefer not hiding Static Methods to avoid unexpected behavior of your application",
+        "href": "AIP/quality-rules/4592",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -360,9 +514,29 @@
         ]
     },
     {
+        "id": 4712,
+        "name": "Ensure you respect the hierarchy of packages so that any package acts as a container of sub-packages",
+        "href": "AIP/quality-rules/4712",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 4716,
         "name": "Ensure that the class is implementing a reasonable number of Interfaces",
         "href": "AIP/quality-rules/4716",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4718,
+        "name": "Ensure you don't have packages with very few Classes/Interfaces",
+        "href": "AIP/quality-rules/4718",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -390,9 +564,29 @@
         ]
     },
     {
+        "id": 7134,
+        "name": "Ensure you don't have local forward with same name as global forward for better readability and to avoid unexpected behavior",
+        "href": "AIP/quality-rules/7134",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7136,
         "name": "Ensure that application architecture in not too complex and move some of this logic to another conceptual layer",
         "href": "AIP/quality-rules/7136",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7138,
+        "name": "DEPRECATED : Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
+        "href": "AIP/quality-rules/7138",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -415,6 +609,16 @@
         "href": "AIP/quality-rules/7142",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7144,
+        "name": "Ensure to have database access code encapsulated behind the business API classes for Struts Action Artifacts",
+        "href": "AIP/quality-rules/7144",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -460,6 +664,26 @@
         ]
     },
     {
+        "id": 7156,
+        "name": "Avoid Too Many Copy Pasted Artifacts",
+        "href": "AIP/quality-rules/7156",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Ensure using object equals method instead of equality syntax to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7220,
         "name": "Ensure to remove unused and unnecessary Java imports",
         "href": "AIP/quality-rules/7220",
@@ -470,9 +694,39 @@
         ]
     },
     {
+        "id": 7238,
+        "name": "Ensure to go from one JSP page to another through an Struts Action class and Struts action-mappings or action",
+        "href": "AIP/quality-rules/7238",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7242,
         "name": "Ensure to have Action Class inherit from one single extension of Struts Action Class that is abstract or have an abstract method.",
         "href": "AIP/quality-rules/7242",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7246,
+        "name": "Ensure to review the packages in order to to have an Efferent Coupling.",
+        "href": "AIP/quality-rules/7246",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7248,
+        "name": "Ensure to review the packages in order to to have an Afferent Coupling.",
+        "href": "AIP/quality-rules/7248",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -505,6 +759,27 @@
         "id": 7264,
         "name": "Avoid namespaces with High Afferent Coupling (CA)",
         "href": "AIP/quality-rules/7264",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7292,
+        "name": "Ensure to have packages without cyclical calls and inheritances between packages",
+        "href": "AIP/quality-rules/7292",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7294,
+        "name": "Avoid cyclical calls and inheritances between namespaces content",
+        "href": "AIP/quality-rules/7294",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -554,9 +829,59 @@
         ]
     },
     {
+        "id": 7390,
+        "name": "Avoid having multiple artifacts inserting data on the same SQL Table",
+        "href": "AIP/quality-rules/7390",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7392,
+        "name": "Avoid having multiple artifacts deleting data on the same SQL table",
+        "href": "AIP/quality-rules/7392",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7394,
+        "name": "Avoid having multiple artifacts updating data on the same SQL Table",
+        "href": "AIP/quality-rules/7394",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7404,
+        "name": "Avoid unreferenced views",
+        "href": "AIP/quality-rules/7404",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
         "id": 7434,
         "name": "Ensure to overrides equals() and hashCode()",
         "href": "AIP/quality-rules/7434",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7438,
+        "name": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
+        "href": "AIP/quality-rules/7438",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -594,11 +919,82 @@
         ]
     },
     {
+        "id": 7458,
+        "name": "Avoid large Interfaces - too many Methods (.NET)",
+        "href": "AIP/quality-rules/7458",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7492,
+        "name": "Ensure to map the association class as an entity and map two one-to-many associations for either side",
+        "href": "AIP/quality-rules/7492",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7494,
+        "name": "Ensure to use  getter method to access fields  of persistent class method's equals() and hashCode().",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Ensure that persistent classes implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7506,
         "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7508,
+        "name": "Ensure you provide interfaces for Hibernate/JPA collection-typed attributes.",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7510,
+        "name": "Ensure using only Hibernate API to access to the database in order to improve the performances",
+        "href": "AIP/quality-rules/7510",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7556,
+        "name": "Ensure that instanceof in Methods that override or implement Object.equals(), Comparable.compareTo() are not used",
+        "href": "AIP/quality-rules/7556",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -624,9 +1020,39 @@
         ]
     },
     {
+        "id": 7650,
+        "name": "Ensure to have every field of a serializable class either serializable or transient to avoid failure to implement serialization capabilities",
+        "href": "AIP/quality-rules/7650",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7652,
         "name": "Ensure that exceptions  throwed in a catch block  are cached",
         "href": "AIP/quality-rules/7652",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7654,
+        "name": "Ensure that each database table is associated to only one Hibernate Entity in order avoid data corruption.",
+        "href": "AIP/quality-rules/7654",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7676,
+        "name": "Ensure that there are not too many packages referencing Mainframe",
+        "href": "AIP/quality-rules/7676",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -644,9 +1070,59 @@
         ]
     },
     {
+        "id": 7682,
+        "name": "Ensure not building dependencies between an Hibernate domain model and  other Java APIs. So it can be heavily reused by any new application functionality",
+        "href": "AIP/quality-rules/7682",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7700,
+        "name": "Ensure to use only Struts HTTP Servlet for Struts based application to avoid mixing different technologies",
+        "href": "AIP/quality-rules/7700",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7706,
+        "name": "Ensure that table and column names are ,not too long (portability)",
+        "href": "AIP/quality-rules/7706",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7708,
         "name": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
         "href": "AIP/quality-rules/7708",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7710,
+        "name": "Ensure implementing the Serializable interface for all Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Usually declare the setId() method private and let Hibernate/JPA generate and set the identifier value",
+        "href": "AIP/quality-rules/7712",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -671,6 +1147,168 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Ensure not referencing the persistent class's identifier in equals() method.",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Ensure that overriden equals() Methods in persistent Subclasses only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7726,
+        "name": "Ensure that all packages called by the action classes do not have any direct access to database",
+        "href": "AIP/quality-rules/7726",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Prefer using declarative transaction to improve clarity and flexibility of the code",
+        "href": "AIP/quality-rules/7730",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7766,
+        "name": "Ensure you keep simple the design of the component/module to reduce number of independent paths",
+        "href": "AIP/quality-rules/7766",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7768,
+        "name": "Avoid Artifacts with High Depth of Code",
+        "href": "AIP/quality-rules/7768",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7770,
+        "name": "Avoid Artifacts with too many parameters",
+        "href": "AIP/quality-rules/7770",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7772,
+        "name": "Avoid Artifacts with High Essential Complexity",
+        "href": "AIP/quality-rules/7772",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7774,
+        "name": "Avoid Artifacts with High Integration Complexity",
+        "href": "AIP/quality-rules/7774",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7776,
+        "name": "Avoid Artifacts with High Fan-In",
+        "href": "AIP/quality-rules/7776",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7778,
+        "name": "Ensure you reduce the number of referenced Artifacts",
+        "href": "AIP/quality-rules/7778",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
         ]
     },
     {
@@ -714,6 +1352,81 @@
         ]
     },
     {
+        "id": 7800,
+        "name": "Avoid Classes with High Coupling Between Objects",
+        "href": "AIP/quality-rules/7800",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7802,
+        "name": "Avoid Classes with a High Depth of Inheritance Tree",
+        "href": "AIP/quality-rules/7802",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7804,
+        "name": "Avoid Classes with High Weighted Methods per Class",
+        "href": "AIP/quality-rules/7804",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7810,
+        "name": "Avoid Artifacts with a Complex SELECT Clause",
+        "href": "AIP/quality-rules/7810",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE"
+        ]
+    },
+    {
+        "id": 7814,
+        "name": "Avoid Tables not using referential integrity",
+        "href": "AIP/quality-rules/7814",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 7816,
+        "name": "Avoid using GOTO statement",
+        "href": "AIP/quality-rules/7816",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7824,
         "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
@@ -726,12 +1439,61 @@
         ]
     },
     {
+        "id": 7828,
+        "name": "Ensure to write SQL query with a limited number of tables used in the FROM clause",
+        "href": "AIP/quality-rules/7828",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE",
+            "SQL"
+        ]
+    },
+    {
+        "id": 7830,
+        "name": "Ensure all the interfaces are used",
+        "href": "AIP/quality-rules/7830",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7832,
+        "name": "Ensure all the classes are used",
+        "href": "AIP/quality-rules/7832",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++"
+        ]
+    },
+    {
         "id": 7856,
         "name": "Avoid Tables with more than 20 columns on an OLTP system",
         "href": "AIP/quality-rules/7856",
         "critical": false,
         "severity": 10,
         "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 7860,
+        "name": "Ensure all the functions and procedures are used",
+        "href": "AIP/quality-rules/7860",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE",
+            "JavaScript",
             "SQL"
         ]
     },
@@ -748,12 +1510,35 @@
         ]
     },
     {
+        "id": 7908,
+        "name": "Ensure all the methods are used",
+        "href": "AIP/quality-rules/7908",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C++",
+            "JEE"
+        ]
+    },
+    {
         "id": 7910,
         "name": "Ensure not using jump statements inside a finally block so that any RuntimeException could be propagated and not discarded",
         "href": "AIP/quality-rules/7910",
         "critical": true,
         "severity": 20,
         "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7912,
+        "name": "Ensure all the data members are used",
+        "href": "AIP/quality-rules/7912",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
             "JEE"
         ]
     },
@@ -812,6 +1597,18 @@
         ]
     },
     {
+        "id": 7934,
+        "name": "Ensure your Superclass is not aware of its Subclasses",
+        "href": "AIP/quality-rules/7934",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7938,
         "name": "Override all overloads of a base Class virtual Method",
         "href": "AIP/quality-rules/7938",
@@ -819,6 +1616,16 @@
         "severity": 10,
         "technologyNames": [
             "C++"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Ensure not having EJBs using 'synchronized' qualifier or calling 'wait', 'notify' and 'notifyAll' Methods as this might corrupt the normal behavior",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -833,6 +1640,16 @@
             "HTML5",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Ensure that directly instantiating a Class used as a managed bean  are not used as they lead to unpredictable behavior",
+        "href": "AIP/quality-rules/7964",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -1113,6 +1930,17 @@
         ]
     },
     {
+        "id": 8086,
+        "name": "Avoid types that own disposable fields and are not disposable",
+        "href": "AIP/quality-rules/8086",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8090,
         "name": "Avoid using NaN to test the result of an expression",
         "href": "AIP/quality-rules/8090",
@@ -1199,6 +2027,39 @@
         ]
     },
     {
+        "id": 8152,
+        "name": "Avoid having transaction with the Thread.Sleep method in a loop",
+        "href": "AIP/quality-rules/8152",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8216,
         "name": "Ensure not using incorrect numeric type conversions to avoid data corruption",
         "href": "AIP/quality-rules/8216",
@@ -1226,6 +2087,28 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -1312,6 +2195,26 @@
         "id": 1020076,
         "name": "Aggregate method parameters into an object to improve readability and maintainability of your code",
         "href": "AIP/quality-rules/1020076",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020084,
+        "name": "Ensure your code does not have un-referenced functions as it may indicate missed functionality and impairs maintainability",
+        "href": "AIP/quality-rules/1020084",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
+        "id": 1020090,
+        "name": "Ensure to keep your code maintainable by reducing the nested control statements",
+        "href": "AIP/quality-rules/1020090",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -2145,6 +3048,28 @@
         ]
     },
     {
+        "id": 1027096,
+        "name": "Do not raise exceptions in unexpected locations",
+        "href": "AIP/quality-rules/1027096",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027098,
+        "name": "Remove unused private types or members",
+        "href": "AIP/quality-rules/1027098",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1039006,
         "name": "Ensure that you are not using predictable SecureRandom Seeds",
         "href": "AIP/quality-rules/1039006",
@@ -2838,6 +3763,16 @@
         "id": 1101020,
         "name": "Make sure the identifiers defined in SQL are not quoted <\"\"> as it is confusing to read and reduces maintainability of code",
         "href": "AIP/quality-rules/1101020",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
+        ]
+    },
+    {
+        "id": 1101022,
+        "name": "Make sure to define Primary Key (PK) for your tables to enforce row integrity of data",
+        "href": "AIP/quality-rules/1101022",
         "critical": false,
         "severity": 10,
         "technologyNames": [

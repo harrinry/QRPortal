@@ -51,6 +51,17 @@
         ]
     },
     {
+        "id": 7212,
+        "name": "Ensure you don't instantiate objects in loops",
+        "href": "AIP/quality-rules/7212",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7358,
         "name": "Avoid call to AcceptChanges in a loop",
         "href": "AIP/quality-rules/7358",
@@ -69,6 +80,16 @@
         "severity": 30,
         "technologyNames": [
             "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -129,6 +150,26 @@
             "C#",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7954,
+        "name": "Ensure not having indirect String concatenation inside loops to avoid making your software performance slowly.",
+        "href": "AIP/quality-rules/7954",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7962,
+        "name": "Ensure not having direct or indirect remote calls inside a loop to avoid making your software performance slow",
+        "href": "AIP/quality-rules/7962",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -305,6 +346,17 @@
         "technologyNames": [
             "C#",
             "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
             "VB.NET"
         ]
     },
@@ -1380,6 +1432,16 @@
         "id": 1039052,
         "name": "Always set an expiration time for an Http Session to improve security",
         "href": "AIP/quality-rules/1039052",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039074,
+        "name": "Avoid using Apache ActiveMQ 5.x before 5.13.0",
+        "href": "AIP/quality-rules/1039074",
         "critical": true,
         "severity": 30,
         "technologyNames": [

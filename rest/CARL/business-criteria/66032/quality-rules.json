@@ -10,6 +10,16 @@
         ]
     },
     {
+        "id": 1070,
+        "name": "Avoid header files circular references",
+        "href": "AIP/quality-rules/1070",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C"
+        ]
+    },
+    {
         "id": 1606,
         "name": "Triggers should not directly modify tables, a procedure or function should be used instead",
         "href": "AIP/quality-rules/1606",
@@ -17,6 +27,46 @@
         "severity": 10,
         "technologyNames": [
             "SQL"
+        ]
+    },
+    {
+        "id": 2230,
+        "name": "DEPRECATED: Use of style sheets (JEE)",
+        "href": "AIP/quality-rules/2230",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2236,
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
+        "href": "AIP/quality-rules/2236",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2242,
+        "name": "Ensure to have separate behavior from presentation and not to have direct definition of JavaScript Functions in a Web page",
+        "href": "AIP/quality-rules/2242",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4574,
+        "name": "Ensure to not use the deprecated objects",
+        "href": "AIP/quality-rules/4574",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -80,6 +130,26 @@
         ]
     },
     {
+        "id": 7134,
+        "name": "Ensure you don't have local forward with same name as global forward for better readability and to avoid unexpected behavior",
+        "href": "AIP/quality-rules/7134",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7138,
+        "name": "DEPRECATED : Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
+        "href": "AIP/quality-rules/7138",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7140,
         "name": "Ensure to use the action mapping table in struts configuration file.",
         "href": "AIP/quality-rules/7140",
@@ -95,6 +165,16 @@
         "href": "AIP/quality-rules/7142",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7144,
+        "name": "Ensure to have database access code encapsulated behind the business API classes for Struts Action Artifacts",
+        "href": "AIP/quality-rules/7144",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -120,9 +200,49 @@
         ]
     },
     {
+        "id": 7156,
+        "name": "Avoid Too Many Copy Pasted Artifacts",
+        "href": "AIP/quality-rules/7156",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7238,
+        "name": "Ensure to go from one JSP page to another through an Struts Action class and Struts action-mappings or action",
+        "href": "AIP/quality-rules/7238",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7242,
         "name": "Ensure to have Action Class inherit from one single extension of Struts Action Class that is abstract or have an abstract method.",
         "href": "AIP/quality-rules/7242",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7246,
+        "name": "Ensure to review the packages in order to to have an Efferent Coupling.",
+        "href": "AIP/quality-rules/7246",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7248,
+        "name": "Ensure to review the packages in order to to have an Afferent Coupling.",
+        "href": "AIP/quality-rules/7248",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -163,9 +283,130 @@
         ]
     },
     {
+        "id": 7292,
+        "name": "Ensure to have packages without cyclical calls and inheritances between packages",
+        "href": "AIP/quality-rules/7292",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7294,
+        "name": "Avoid cyclical calls and inheritances between namespaces content",
+        "href": "AIP/quality-rules/7294",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7390,
+        "name": "Avoid having multiple artifacts inserting data on the same SQL Table",
+        "href": "AIP/quality-rules/7390",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7392,
+        "name": "Avoid having multiple artifacts deleting data on the same SQL table",
+        "href": "AIP/quality-rules/7392",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7394,
+        "name": "Avoid having multiple artifacts updating data on the same SQL Table",
+        "href": "AIP/quality-rules/7394",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7492,
+        "name": "Ensure to map the association class as an entity and map two one-to-many associations for either side",
+        "href": "AIP/quality-rules/7492",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7510,
+        "name": "Ensure using only Hibernate API to access to the database in order to improve the performances",
+        "href": "AIP/quality-rules/7510",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7654,
+        "name": "Ensure that each database table is associated to only one Hibernate Entity in order avoid data corruption.",
+        "href": "AIP/quality-rules/7654",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7676,
+        "name": "Ensure that there are not too many packages referencing Mainframe",
+        "href": "AIP/quality-rules/7676",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7678,
         "name": "Prefer using SLF4J that acts as a facade for different logging frameworks instead of using basic java log files",
         "href": "AIP/quality-rules/7678",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7682,
+        "name": "Ensure not building dependencies between an Hibernate domain model and  other Java APIs. So it can be heavily reused by any new application functionality",
+        "href": "AIP/quality-rules/7682",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7700,
+        "name": "Ensure to use only Struts HTTP Servlet for Struts based application to avoid mixing different technologies",
+        "href": "AIP/quality-rules/7700",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7706,
+        "name": "Ensure that table and column names are ,not too long (portability)",
+        "href": "AIP/quality-rules/7706",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -190,6 +431,79 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7726,
+        "name": "Ensure that all packages called by the action classes do not have any direct access to database",
+        "href": "AIP/quality-rules/7726",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7774,
+        "name": "Avoid Artifacts with High Integration Complexity",
+        "href": "AIP/quality-rules/7774",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7776,
+        "name": "Avoid Artifacts with High Fan-In",
+        "href": "AIP/quality-rules/7776",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7778,
+        "name": "Ensure you reduce the number of referenced Artifacts",
+        "href": "AIP/quality-rules/7778",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "HTML5",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7800,
+        "name": "Avoid Classes with High Coupling Between Objects",
+        "href": "AIP/quality-rules/7800",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
         ]
     },
     {

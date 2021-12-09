@@ -20,6 +20,36 @@
         ]
     },
     {
+        "id": 7202,
+        "name": "Avoid using '==' and '!=' to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7494,
+        "name": "Persistent class method's equals() and hashCode() must access its fields through getter methods",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Persistent classes should Implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7506,
         "name": "equals() and hashCode() should be defined for Hibernate/JPA component",
         "href": "AIP/quality-rules/7506",
@@ -30,11 +60,101 @@
         ]
     },
     {
+        "id": 7508,
+        "name": "Getter of collection-typed persistent attributes should return the correct interface type",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7556,
+        "name": "Avoid instanceof in Methods that override or implement Object.equals(), Comparable.compareTo()",
+        "href": "AIP/quality-rules/7556",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7650,
+        "name": "All types of a serializable Class must be serializable",
+        "href": "AIP/quality-rules/7650",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7708,
         "name": "Avoid using session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)",
         "href": "AIP/quality-rules/7708",
         "critical": false,
         "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7710,
+        "name": "Avoid non serializable Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "weight": 8,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Avoid public/protected setter for the generated identifier field",
+        "href": "AIP/quality-rules/7712",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Avoid using persistent class's identifier in equals() method",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Overriden equals() Methods in persistent Subclasses should only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/7728",
+        "critical": false,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Always use declarative transaction",
+        "href": "AIP/quality-rules/7730",
+        "critical": false,
+        "weight": 7,
         "technologyNames": [
             "JEE"
         ]
@@ -57,6 +177,26 @@
         "weight": 1,
         "technologyNames": [
             "C++"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Avoid EJBs using 'synchronized' qualifier, 'wait', 'notify' and 'notifyAll' Methods",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "weight": 7,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Avoid directly instantiating a Class used as a managed bean",
+        "href": "AIP/quality-rules/7964",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "JEE"
         ]
     },
     {
@@ -240,6 +380,17 @@
         ]
     },
     {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "weight": 9,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8216,
         "name": "Avoid using incompatible mutation",
         "href": "AIP/quality-rules/8216",
@@ -267,6 +418,28 @@
         "weight": 6,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "critical": false,
+        "weight": 5,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {

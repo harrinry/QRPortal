@@ -31,11 +31,52 @@
         ]
     },
     {
+        "id": 7202,
+        "name": "Ensure using object equals method instead of equality syntax to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7258,
+        "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+        "href": "AIP/quality-rules/7258",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7438,
+        "name": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
+        "href": "AIP/quality-rules/7438",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7442,
         "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7444,
+        "name": "Ensure to implement serialization if your web container implements such mechanisms or ignore it in others cases",
+        "href": "AIP/quality-rules/7444",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -81,6 +122,36 @@
         ]
     },
     {
+        "id": 7722,
+        "name": "Ensure not referencing the persistent class's identifier in equals() method.",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Ensure that overriden equals() Methods in persistent Subclasses only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7940,
         "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
         "href": "AIP/quality-rules/7940",
@@ -88,6 +159,17 @@
         "severity": 20,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8086,
+        "name": "Avoid types that own disposable fields and are not disposable",
+        "href": "AIP/quality-rules/8086",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -109,6 +191,17 @@
         "severity": 30,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {

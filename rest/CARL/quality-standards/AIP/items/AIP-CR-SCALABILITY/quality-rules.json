@@ -73,6 +73,17 @@
         ]
     },
     {
+        "id": 7198,
+        "name": "Avoid String concatenation in loops (.NET)",
+        "href": "AIP/quality-rules/7198",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7200,
         "name": "Ensure to create a StringBuilder or StringBuffer before entering the loop",
         "href": "AIP/quality-rules/7200",
@@ -103,6 +114,17 @@
         ]
     },
     {
+        "id": 7212,
+        "name": "Ensure you don't instantiate objects in loops",
+        "href": "AIP/quality-rules/7212",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7250,
         "name": "Ensure to initialize the String with the literal.",
         "href": "AIP/quality-rules/7250",
@@ -110,6 +132,38 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7254,
+        "name": "Ensure to make static all methods not using instance members",
+        "href": "AIP/quality-rules/7254",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7270,
+        "name": "Methods that do not use instance fields\\methods should be static (.NET)",
+        "href": "AIP/quality-rules/7270",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7352,
+        "name": "Avoid calling properties that clone values in loops",
+        "href": "AIP/quality-rules/7352",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -169,6 +223,26 @@
         "href": "AIP/quality-rules/7940",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7954,
+        "name": "Ensure not having indirect String concatenation inside loops to avoid making your software performance slowly.",
+        "href": "AIP/quality-rules/7954",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7962,
+        "name": "Ensure not having direct or indirect remote calls inside a loop to avoid making your software performance slow",
+        "href": "AIP/quality-rules/7962",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]

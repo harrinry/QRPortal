@@ -42,9 +42,49 @@
         ]
     },
     {
+        "id": 2230,
+        "name": "DEPRECATED: Use of style sheets (JEE)",
+        "href": "AIP/quality-rules/2230",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 2232,
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2242,
+        "name": "Ensure to have separate behavior from presentation and not to have direct definition of JavaScript Functions in a Web page",
+        "href": "AIP/quality-rules/2242",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2278,
+        "name": "Ensure that the use of \"forEach\" is well controlled",
+        "href": "AIP/quality-rules/2278",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2280,
+        "name": "Ensure to use an alternative to Document.all collection",
+        "href": "AIP/quality-rules/2280",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -224,6 +264,16 @@
         ]
     },
     {
+        "id": 7130,
+        "name": "Avoid Artifacts with High Depth of Nested Subqueries",
+        "href": "AIP/quality-rules/7130",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7152,
         "name": "Ensure to store global information in HttpSession, or use stateful session beans that are specifically targeted for this purpose",
         "href": "AIP/quality-rules/7152",
@@ -254,11 +304,32 @@
         ]
     },
     {
+        "id": 7198,
+        "name": "Avoid String concatenation in loops (.NET)",
+        "href": "AIP/quality-rules/7198",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7200,
         "name": "Ensure to create a StringBuilder or StringBuffer before entering the loop",
         "href": "AIP/quality-rules/7200",
         "critical": false,
         "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Ensure using object equals method instead of equality syntax to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -294,6 +365,17 @@
         ]
     },
     {
+        "id": 7212,
+        "name": "Ensure you don't instantiate objects in loops",
+        "href": "AIP/quality-rules/7212",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7250,
         "name": "Ensure to initialize the String with the literal.",
         "href": "AIP/quality-rules/7250",
@@ -311,6 +393,37 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7254,
+        "name": "Ensure to make static all methods not using instance members",
+        "href": "AIP/quality-rules/7254",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7256,
+        "name": "Enforce noninstantiability with a private constructor",
+        "href": "AIP/quality-rules/7256",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7258,
+        "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+        "href": "AIP/quality-rules/7258",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -336,9 +449,61 @@
         ]
     },
     {
+        "id": 7270,
+        "name": "Methods that do not use instance fields\\methods should be static (.NET)",
+        "href": "AIP/quality-rules/7270",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7272,
         "name": "Ensure adding a private default constructor then the class can't be instantiated.",
         "href": "AIP/quality-rules/7272",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7344,
+        "name": "Avoid \"SELECT *\" queries",
+        "href": "AIP/quality-rules/7344",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7346,
+        "name": "Avoid redundant indexes",
+        "href": "AIP/quality-rules/7346",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7348,
+        "name": "Avoid too many Indexes on one Table",
+        "href": "AIP/quality-rules/7348",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7352,
+        "name": "Avoid calling properties that clone values in loops",
+        "href": "AIP/quality-rules/7352",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -358,6 +523,26 @@
         ]
     },
     {
+        "id": 7378,
+        "name": "Ensure to create a link (html tag) instead of an include in a JSP file",
+        "href": "AIP/quality-rules/7378",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7418,
+        "name": "Avoid SQL queries using functions on indexed columns in the WHERE clause",
+        "href": "AIP/quality-rules/7418",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7424,
         "name": "Avoid using SQL queries inside a loop",
         "href": "AIP/quality-rules/7424",
@@ -368,11 +553,51 @@
         ]
     },
     {
+        "id": 7428,
+        "name": "Avoid SQL queries not using the first column of a composite index in the WHERE clause",
+        "href": "AIP/quality-rules/7428",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7436,
+        "name": "Prefer UNION ALL to UNION",
+        "href": "AIP/quality-rules/7436",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7438,
+        "name": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
+        "href": "AIP/quality-rules/7438",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7442,
         "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7444,
+        "name": "Ensure to implement serialization if your web container implements such mechanisms or ignore it in others cases",
+        "href": "AIP/quality-rules/7444",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -442,9 +667,69 @@
         ]
     },
     {
+        "id": 7490,
+        "name": "Ensure to use the attribute select-before-update for the persistent class associated to a table that have the UPDATE trigger in order to not have UPDATE trigger when not necessary",
+        "href": "AIP/quality-rules/7490",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7494,
+        "name": "Ensure to use  getter method to access fields  of persistent class method's equals() and hashCode().",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7496,
+        "name": "Ensure to use table-per-subclass strategy when subclasses have many properties",
+        "href": "AIP/quality-rules/7496",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7498,
+        "name": "Ensure to have the same collection between the getter and the setter",
+        "href": "AIP/quality-rules/7498",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7500,
+        "name": "Choose table-per-class-hierarchy when the maximum added attributes of subclasses don't exceed 3",
+        "href": "AIP/quality-rules/7500",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7502,
         "name": "Ensure to use  lists, maps, bags, idbags and sets depending on your case to map a collection instead of using array to Map Collection",
         "href": "AIP/quality-rules/7502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Ensure that persistent classes implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -462,11 +747,41 @@
         ]
     },
     {
+        "id": 7508,
+        "name": "Ensure you provide interfaces for Hibernate/JPA collection-typed attributes.",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7556,
+        "name": "Ensure that instanceof in Methods that override or implement Object.equals(), Comparable.compareTo() are not used",
+        "href": "AIP/quality-rules/7556",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7562,
         "name": "Ensure that static Field of type collection are not used",
         "href": "AIP/quality-rules/7562",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7634,
+        "name": "Ensure setting 'select-before-update' to true only for Hibernate Entity associated to table that fires an UPDATE trigger.",
+        "href": "AIP/quality-rules/7634",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -502,9 +817,29 @@
         ]
     },
     {
+        "id": 7642,
+        "name": "Avoid SQL queries on XXL tables not using the first column of a composite index in the WHERE clause",
+        "href": "AIP/quality-rules/7642",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7648,
         "name": "Ensure not explicitly invoking the finalize() method.",
         "href": "AIP/quality-rules/7648",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7650,
+        "name": "Ensure to have every field of a serializable class either serializable or transient to avoid failure to implement serialization capabilities",
+        "href": "AIP/quality-rules/7650",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -522,9 +857,29 @@
         ]
     },
     {
+        "id": 7658,
+        "name": "Avoid SQL queries on XXL Tables using Functions on indexed Columns in the WHERE clause",
+        "href": "AIP/quality-rules/7658",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
         "id": 7668,
         "name": "Prefer using SAX parser for large or medium sized XML file parsing instead of DOM parser",
         "href": "AIP/quality-rules/7668",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7702,
+        "name": "Prefer using Hibernate-provided implementations from third parties for connection pool to increase database access performances.",
+        "href": "AIP/quality-rules/7702",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -542,9 +897,69 @@
         ]
     },
     {
+        "id": 7710,
+        "name": "Ensure implementing the Serializable interface for all Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Usually declare the setId() method private and let Hibernate/JPA generate and set the identifier value",
+        "href": "AIP/quality-rules/7712",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7720,
         "name": "Ensure reducing the number of EJB beans to hold performance and complexity of the application",
         "href": "AIP/quality-rules/7720",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Ensure not referencing the persistent class's identifier in equals() method.",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Ensure that overriden equals() Methods in persistent Subclasses only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Prefer using declarative transaction to improve clarity and flexibility of the code",
+        "href": "AIP/quality-rules/7730",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -588,6 +1003,57 @@
         ]
     },
     {
+        "id": 7806,
+        "name": "Avoid Artifacts with Group By",
+        "href": "AIP/quality-rules/7806",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7808,
+        "name": "Avoid Artifacts with SQL statement including subqueries",
+        "href": "AIP/quality-rules/7808",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE",
+            "SQL"
+        ]
+    },
+    {
+        "id": 7810,
+        "name": "Avoid Artifacts with a Complex SELECT Clause",
+        "href": "AIP/quality-rules/7810",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE"
+        ]
+    },
+    {
+        "id": 7822,
+        "name": "Avoid Artifacts with queries on more than 4 Tables",
+        "href": "AIP/quality-rules/7822",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE"
+        ]
+    },
+    {
         "id": 7824,
         "name": "Always Subclass Exception and throw the subclassed Classes, do not throw the exception Exception.",
         "href": "AIP/quality-rules/7824",
@@ -597,6 +1063,19 @@
             "C#",
             "JEE",
             "VB.NET"
+        ]
+    },
+    {
+        "id": 7828,
+        "name": "Ensure to write SQL query with a limited number of tables used in the FROM clause",
+        "href": "AIP/quality-rules/7828",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE",
+            "SQL"
         ]
     },
     {
@@ -676,6 +1155,46 @@
         "id": 7940,
         "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
         "href": "AIP/quality-rules/7940",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Ensure not having EJBs using 'synchronized' qualifier or calling 'wait', 'notify' and 'notifyAll' Methods as this might corrupt the normal behavior",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7954,
+        "name": "Ensure not having indirect String concatenation inside loops to avoid making your software performance slowly.",
+        "href": "AIP/quality-rules/7954",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7962,
+        "name": "Ensure not having direct or indirect remote calls inside a loop to avoid making your software performance slow",
+        "href": "AIP/quality-rules/7962",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Ensure that directly instantiating a Class used as a managed bean  are not used as they lead to unpredictable behavior",
+        "href": "AIP/quality-rules/7964",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -998,6 +1517,28 @@
         ]
     },
     {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8214,
         "name": "Ensure not using expired or released database resource to prevent access to sensitive data that is associated with a different user or entity.",
         "href": "AIP/quality-rules/8214",
@@ -1035,6 +1576,28 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -2618,6 +3181,17 @@
         ]
     },
     {
+        "id": 1027084,
+        "name": "Avoid calling CoSetProxyBlanket and CoInitializeSecurity",
+        "href": "AIP/quality-rules/1027084",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027088,
         "name": "Avoid non-public custom exception types",
         "href": "AIP/quality-rules/1027088",
@@ -2654,6 +3228,17 @@
         "id": 1027094,
         "name": "Always provide deserialization methods for optional fields",
         "href": "AIP/quality-rules/1027094",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027096,
+        "name": "Do not raise exceptions in unexpected locations",
+        "href": "AIP/quality-rules/1027096",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -2815,6 +3400,16 @@
         "id": 1039062,
         "name": "Ensure the readObject() has been implemented for class instantiated by ObjectInputStream to prevent untrusted deserialization",
         "href": "AIP/quality-rules/1039062",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039066,
+        "name": "Ensure you do not allow access to all domain when defining cookie path (JEE)",
+        "href": "AIP/quality-rules/1039066",
         "critical": true,
         "severity": 20,
         "technologyNames": [

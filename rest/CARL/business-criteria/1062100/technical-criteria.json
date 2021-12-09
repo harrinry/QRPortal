@@ -56,6 +56,13 @@
         "weight": 5
     },
     {
+        "id": 1062118,
+        "name": "ASCMM-MNT-17 - Class Element Excessive Inheritance Level",
+        "description": "Objective\nAvoid overly complex object-oriented inheritance capabilities when dealing with the number of levels of inheritance of classes\n\nConsequence\nSoftware that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code\n\nMeasure Element\nNumber of instances where the inheritance level of a class element (that is, the number of parent class units) exceeds a threshold value. The default threshold value for number of inheritance levels is 7\n\n",
+        "href": "CARL/technical-criteria/1062118",
+        "weight": 5
+    },
+    {
         "id": 1062119,
         "name": "ASCMM-MNT-18 - Class Element Excessive Number of Children",
         "description": "Objective\nAvoid overly complex object-oriented inheritance capabilities when dealing with the number of direct children of classes\n\nConsequence\nSoftware that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code\n\nMeasure Element\nNumber of instances where the number of children of a class element (that is, its number of child classes) exceeds a threshold value. The default threshold value for number of children of a class element is 10\n\n",
@@ -77,10 +84,31 @@
         "weight": 5
     },
     {
+        "id": 1062122,
+        "name": "ASCMM-MNT-20 - Unreachable Named Callable or Method Control Element",
+        "description": "Objective\nAvoid inactive code blocks that can mistakenly be considered as active and that can hide the active code in noise\n\nConsequence\nSoftware that does not follow the principles of reuse requires more maintenance effort in order to propagate changes to all instances of duplicated code\n\nMeasure Element\nNumber of instances where a named callable control element or method control element is unreferenced by any other code item in the application (the application determines the scope of the search for code items that could call a callable or method control element)\n\n",
+        "href": "CARL/technical-criteria/1062122",
+        "weight": 5
+    },
+    {
+        "id": 1062124,
+        "name": "ASCMM-MNT-4 - Callable and Method Control Element Number of Outward Calls",
+        "description": "Objective\nAvoid overly complex outward dependencies\n\nConsequence\nSoftware that does not follow the principles of modularity causes excessive propagation of modification impacts\n\nMeasure Element\nNumber of instances where a named callable control element or method control element has a Fan-Out value that is too large, that is, its number of references to other objects within the application exceeds a threshold value (the application determines the scope of the search for the referenced objects). Default threshold value for the number of references to other objects within the application is 5\n\n",
+        "href": "CARL/technical-criteria/1062124",
+        "weight": 5
+    },
+    {
         "id": 1062125,
         "name": "ASCMM-MNT-5 - Loop Value Update within the Loop",
         "description": "Objective\nAvoid overly complex behaviors of loop indices\n\nConsequence\nSoftware that does not follow the principles of modularity causes excessive propagation of modification impacts\n\nMeasure Element\nNumber of instances where a value of a local storable data element used in the condition of the loop control flow is updated within the \u2018Write\u2019 action located in the loop body block\n\n",
         "href": "CARL/technical-criteria/1062125",
+        "weight": 5
+    },
+    {
+        "id": 1062126,
+        "name": "ASCMM-MNT-6 - Commented-out Code Element Excessive Volume",
+        "description": "Objective\nAvoid code blocks found in comments\n\nConsequence\nSoftware that does contain commented-out code that can mistakenly be considered as active code and that can hide a lack of comments causes excessive modification effort\n\nMeasure Element\nNumber of instances where a named callable control element or method control element contains too many commented-out code items compared to a threshold that is based on the percentage of instructions in the callable control element or method control element that are in comments. Default threshold value for the percentage of commented-out out instructions is 2%.\n\n",
+        "href": "CARL/technical-criteria/1062126",
         "weight": 5
     },
     {
@@ -112,6 +140,13 @@
         "weight": 5
     },
     {
+        "id": 1062134,
+        "name": "ASCPEM-PRF-13 - Data Resource Access not using Connection Pooling capability",
+        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by enforcing the sharing of database connections via a connection pool.\n\nConsequence\nSoftware featuring known under-efficient coding practices requires excessive computational resources\n\n",
+        "href": "CARL/technical-criteria/1062134",
+        "weight": 5
+    },
+    {
         "id": 1062135,
         "name": "ASCPEM-PRF-14 - Storable and Member Data Element Memory Allocation Missing De-Allocation Control Element",
         "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by enforcing proper release of used memory.\n\nConsequence\nSoftware featuring known under-efficient coding practices requires excessive computational resources\n\n",
@@ -133,10 +168,24 @@
         "weight": 5
     },
     {
+        "id": 1062139,
+        "name": "ASCPEM-PRF-4 - Data Resource Read and Write Access Excessive Complexity",
+        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the execution of overly complex data queries.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
+        "href": "CARL/technical-criteria/1062139",
+        "weight": 5
+    },
+    {
         "id": 1062140,
         "name": "ASCPEM-PRF-5 - Data Resource Read Access Unsupported by Index Element",
         "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing unnecessary full scan of data tables.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
         "href": "CARL/technical-criteria/1062140",
+        "weight": 5
+    },
+    {
+        "id": 1062141,
+        "name": "ASCPEM-PRF-6 - Large Data Resource ColumnSet Excessive Number of Index Elements",
+        "description": "Objective\nDetection of occurrences of this pattern helps decrease software resource waste by preventing the existence of too many indices on very large data tables.\n\nConsequence\nSoftware featuring known under-efficient SQL Query and Data Access constructs requires excessive computational resources\n\n",
+        "href": "CARL/technical-criteria/1062141",
         "weight": 5
     },
     {
@@ -224,6 +273,13 @@
         "weight": 5
     },
     {
+        "id": 1062157,
+        "name": "ASCRM-RLB-11 - Named Callable and Method Control Element in Multi-Thread Context with non-Final Static Storable or Member Element",
+        "description": "Objective\nAvoid unsafe implementations in multi-thread environments that fail to protect state\n\nConsequence\nSoftware deployed in multi-thread environments that does not protect their state can experience deadlock or livelock\n\nMeasure Element\nNumber of instances where a named callable control element or method control element owns an unsafe non-final static storable or member data element while it operates in a multi-threaded environment\n\n",
+        "href": "CARL/technical-criteria/1062157",
+        "weight": 5
+    },
+    {
         "id": 1062158,
         "name": "ASCRM-RLB-12 - Singleton Class Instance Creation without Proper Lock Element Management",
         "description": "Objective\nAvoid incorrect implementation of singleton patterns caused by improperly-locked instantiations\n\nConsequence\nSoftware deployed in multi-thread environments that does not protect their state can experience deadlock or livelock\n\nMeasure Element\nNumber of instances where a singleton class element, (that is, a class element that can be used only once in the 'to' association of a \u2018Create\u2019 action) is instantiated with the \u2018Creates\u2019 action element without any prior locking mechanism activation\n\n",
@@ -280,10 +336,31 @@
         "weight": 5
     },
     {
+        "id": 1062166,
+        "name": "ASCRM-RLB-2 - Serializable Storable Data Element without Serialization Control Element",
+        "description": "Objective\nAvoid failure to implement serialization capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the serializable storable element has no serialization control element in its list of control elements (in the case of technologies with class and interface elements, this means situations where the serializable storable data element is a class that implements a serializable interface element but does not implement a serialization method element as part of its list composed of method elements) (the serializable nature of an element is technology dependent, for example, serializable capabilities come from sources such as a serializable attribute in .NET and inheritance from the java.io.Serializable interface in Java)\n\n",
+        "href": "CARL/technical-criteria/1062166",
+        "weight": 5
+    },
+    {
+        "id": 1062167,
+        "name": "ASCRM-RLB-3 - Serializable Storable Data Element with non-Serializable Item Elements",
+        "description": "Objective\nAvoid imcomplete implementation of serialization capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where a serializable storable element is composed of a non-serializable item element (in case of technologies with class and interface elements, this means situations where the serializable storable data element is a class that is serializable but owns the element that is a non-serializable member element) (the serializable nature of an element is technology dependent; for example, serializable capabilities come from a serializable attribute in .NET and the inheritance from the java.io.Serializable interface in Java)\n\n",
+        "href": "CARL/technical-criteria/1062167",
+        "weight": 5
+    },
+    {
         "id": 1062168,
         "name": "ASCRM-RLB-4 - Persistant Storable Data Element without Proper Comparison Control Element",
         "description": "Objective\nAvoid improper comparison capabilities of persistent data\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the persistent storable element has no dedicated control element handling comparison action elements from the required comparison control element list. (in case of technologies with class elements, this means situations where a persistent storable data element is a class that is made persistent while it does not implement method elements from the required comparison control element list now composed of method elements: for example, with JAVA, a required comparison control element list is {'hashCode()','equals()'} method elements)\n\n",
         "href": "CARL/technical-criteria/1062168",
+        "weight": 5
+    },
+    {
+        "id": 1062169,
+        "name": "ASCRM-RLB-5 - Runtime Resource Management Control Element in a Component Built to Run on Application Servers",
+        "description": "Objective\nAvoid unproven platform capabilities\n\nConsequence\nSoftware featuring known weak coding practices results in unexpected and erroneous behaviors\n\nMeasure Element\nNumber of instances where the application uses deployed components from application servers, yet uses control elements from the list of low-level resource management API\n\n",
+        "href": "CARL/technical-criteria/1062169",
         "weight": 5
     },
     {
@@ -375,6 +452,13 @@
         "name": "ASCSM-CWE-456 - Storable and Member Data Element Missing Initialization",
         "description": "Objective\nAvoid failure to explicitly initialize software data elements in use\n\nConsequence\nSoftware featuring weak initialization practices incurs the risk of logic errors within the program, possibly leading to a security problem\n\nMeasure Element\nNumber of instances where a storable data element or member data element is declared by the \u2018Create\u2019 action, then is evaluated in a \u2018Read\u2019 action without ever being initialized by a \u2018Write\u2019 action prior to the evaluation\n\n",
         "href": "CARL/technical-criteria/1062183",
+        "weight": 5
+    },
+    {
+        "id": 1062185,
+        "name": "ASCSM-CWE-667 - Shared Resource Improper Locking",
+        "description": "Objective\nAvoid data corruption during concurrent access\n\nConsequence\nSoftware featuring inconsistent locking discipline incurs the risk of deadlock\n\nMeasure Element\nNumber of instances where the shared storable data element or member data element, declared with the Create action, is accessed outside a critical section of the application via the Read or Write action.\n\n",
+        "href": "CARL/technical-criteria/1062185",
         "weight": 5
     },
     {
