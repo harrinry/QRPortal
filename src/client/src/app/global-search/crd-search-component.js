@@ -97,7 +97,7 @@ const Search = (props = {}) => {
     let searchString = `/search_term/${searchTerm}`;
     
     if (searchCriterion) {
-      searchString = `${searchString}/search_criterion/${searchCriterion}`;
+      searchString = `${searchString}?search-criterion=${searchCriterion}`;
     }
 
     history.push(searchString);

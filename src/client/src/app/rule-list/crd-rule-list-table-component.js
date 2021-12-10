@@ -1,12 +1,16 @@
 import React, { memo, useMemo, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import _isEmpty from 'lodash/isEmpty';
-import { useRouteMatch, useHistory } from 'react-router-dom';
+import { useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import MuiDataTable from 'lib/material-ui-components/data-table';
 
 const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   const { url } = useRouteMatch();
+
+  const locationParams = useLocation();
+  const { search: locationParamSearch } = locationParams || {};
+
   const history = useHistory();
 
   const getMuiTheme = () => createMuiTheme({
@@ -72,7 +76,14 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
 
   const onRowClick = (rowData, rowMeta) => {
     rowData[0] && getRuleDetails(rowData[0]);
-    rowData[0] && history.push(`${url}/details/${rowData[0]}`);
+    let searchString = `${url}/details/${rowData[0]}`;
+
+    // add query parameter to search string if they exist
+    if (locationParamSearch) {
+      searchString = searchString + locationParamSearch;
+    }
+
+    rowData[0] && history.push(searchString);
     setSelectedRow([rowMeta.dataIndex]);
   };
 
