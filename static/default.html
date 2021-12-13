@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="stylesheets/jquery-ui.css"/>
     <link rel="stylesheet" href="stylesheets/style.css"/>
 
-    <script src="libs/jquery/jquery-1.9.1.min.js"></script>
+    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
     <script src="libs/jquery/ui/1.10.2/jquery-ui.min.js"></script>
     <script src="libs/jquery/tablesorter/2.13.3/jquery.tablesorter.min.js"></script>
 
@@ -200,6 +200,31 @@
     		font-weight: 200;        
     		letter-spacing: 0.01em;
 		}
+
+        #submit {
+            height: 32px;
+            width: 70px;
+            background: #008cff;
+            color: white;
+            border-radius: 10%;
+            border-color: transparent;
+        }
+
+        #rootPath {
+            width: 60px;
+            height: 24px;
+        }
+
+        #href {
+            height: 24px;
+            width:50%;
+            margin-right: 10px;
+        }
+        
+        #method {
+            height: 32px;
+        }
+        
     </style>
     <script>
         var decodedURL = decodeURI(location.href);
@@ -782,64 +807,24 @@
         	var index = -1;
 		
 			return {
-				// submit previous url
-				previous: function previous() {
-            		if (index <= 0) return;
-            		index--;
-            		var request = stack[index];
-            		this.select(request);            		
-        		},
+            
+                pushState: function(request) {
+                   if (JSON.stringify(window.history.state) == JSON.stringify(request)) return;
+                    window.history.pushState(request, null);                     
+                },
 
-				// submit next url
-        		next: function next() {
-            		if (index == stack.length - 1) return;
-            		index++;
-            		var request = stack[index];
-            		this.select(request);            		
-        		},
-
-				// submit first url
-        		first: function first() {
-            		if (stack.length == 0) return;
-            		index = 0;
-            		var request = stack[index];
-            		this.select(request);            		
-        		},
-
-				// submit last url
-        		last: function last() {
-            		if (stack.length == 0) return;
-            		index = stack.length - 1;
-            		var request = stack[index];
-            		this.select(request);            		
-       		 	},
-
-				// Push url in the history stack
-				add:  function add(request) {
-                    // do not add the same request
-                    if (stack[index]){
-                        if ((stack[index].method == request.method)
-                            && (stack[index].mediaType == request.mediaType)
-                            && (stack[index].url == request.url)) return;
-                    }    
-                    // cut history at index
-                    stack = stack.slice(0,index+1);
-           			stack.push(request);
-            		index = stack.length - 1;
-            	},
-                
                 navigate:  function navigate(href) {
                     var request = {method:"GET", mediaType:"application/json", url:href};
-                    this.add(request);            
                     $('#href').val(request.url);
               		$('#payload').val("");
                     this.submit(request);
+                    this.pushState(request);
                 },
                 
                 onSubmit: function() {
                     var request = this.recover();
-                	this.add(request);
                 	this.submit(request);
+                    this.pushState(request);
                 },
                 	
                 submit: function submit(request) {
@@ -872,6 +857,14 @@
                  }
         	}
         })();
+        
+                
+        window.addEventListener('popstate', (event) => { 
+            let request = event.state;
+            if (! request) return;
+            MyHistory.select(request);
+            MyHistory.submit(request);
+        });
 
 		/**
 		 *****************************************************************************************************
@@ -994,7 +987,6 @@
             this.requests = requests;
             this.refresh();
         }
-
     </script>
 </head>
 <body>
@@ -1003,28 +995,14 @@
 <h2>Simple REST Client</h2>
 
 <div>
-    <span style="display:inline-block;">Server: </span><input id="rootPath"/> URI: <input id="href" type="text"
-                                                                                          list="completion"
-                                                                                          style="width:50%;"/>
-
-    <button onclick="javascript:MyHistory.onSubmit();">Submit</button>
-    <a href="#" onclick="javascript:MyHistory.first();">First</a>
-    |<a href="#" onclick="javascript:MyHistory.previous();">Previous</a>
-    |<a href="#" onclick="javascript:MyHistory.next();">Next</a>
-    |<a href="#" onclick="javascript:MyHistory.last();">Last</a>
+    <select id="method" disabled value="GET"><option value="GET">GET</option></select>
+    <input disabled="true" id="rootPath"/> <input id="href" type="text" list="completion"/><button id="submit" onclick="javascript:MyHistory.onSubmit();">Submit</button>
     
 </div>
 <br/>
 
 <div>
-    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="cacheDisabled">Disable client cache
-</div>
-
-<br/>
-
-
-<div>
-    Display up to <input id="maxItems" value="10000" style="max-width:6em;text-align:right;"> items
+    Display up to <input id="maxItems" value="1000" style="max-width:6em;text-align:right;"> items
 </div>
 
 <datalist id="completion"></datalist>
@@ -1089,6 +1067,9 @@
         document.execCommand('insertText', false, text);
     });
     
+    MyHistory.select("");
+    MyHistory.onSubmit();;
+
 </script>
 
 </body>
