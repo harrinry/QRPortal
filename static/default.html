@@ -21,7 +21,6 @@
 	    	margin-bottom: 10px;
 	    	word-wrap:normal;
 	    	white-space:pre-wrap;
-	    	overflow:auto;
 		}
 		
 		.editor:empty:before {
@@ -41,6 +40,8 @@
         body {
             font-family: arial;
             font-size: 14px;
+            overflow-x: scroll;
+            overflow-y: scroll;        
         }
 
         .preformatted {
@@ -803,9 +804,7 @@
 		 */
     
         var MyHistory = (function() { 
-        	var stack = new Array();
-        	var index = -1;
-		
+	
 			return {
             
                 pushState: function(request) {
@@ -863,7 +862,12 @@
             let request = event.state;
             if (! request) return;
             MyHistory.select(request);
-            MyHistory.submit(request);
+            if (request.method === "GET")
+                MyHistory.submit(request);
+            else {
+                // Cleanup tiles
+                $(".tile-value").html("&nbsp;");
+            }                  
         });
 
 		/**
@@ -1060,12 +1064,6 @@
      		MyHistory.onSubmit();
   		}
 	});
- 
-    $(".editor").on('paste',function(e) {
-        e.preventDefault();
-        var text = (e.originalEvent || e).clipboardData.getData('text/plain') || '';
-        document.execCommand('insertText', false, text);
-    });
     
     MyHistory.select("");
     MyHistory.onSubmit();;
