@@ -1,7 +1,7 @@
 const { BaseSerializer, Serializer } = require("../../lib/cnjs-utils/services/serializer");
 const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, 
   QualityRuleReference, QualityRule, QualityStandardItemReference, BaseExtension, ExtensionVersion, Extension,
-  BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria, ServiceIndex } = require("./models");
+  BaseBusinessCriteria, BusinessCriteria, TechnicalCriteriaReference, TechnicalCriteria, ServiceIndex, QualityTemplateReference } = require("./models");
 const caseConvert = require("../../lib/case-convert");
 
 /**
@@ -163,6 +163,7 @@ class DefaultSerializer {
     this.qualityStandardCategoryItemSerializer = new QualityStandardItemSerializer(iconUrlBuilder);
     this.qualityStandardItemReferenceSerializer = new QualityStandardItemReferenceSerializer(iconUrlBuilder);
     this.qualityRuleReferenceSerializer = new BaseDataSerializer(QualityRuleReference);
+    this.qualityTemplateReferenceSerializer = new BaseDataSerializer(QualityTemplateReference);
     this.baseExtensionSerializer = new ExtensionDataSerializer(iconUrlBuilder, BaseExtension);
     this.extensionSerializer = new ExtensionDataSerializer(iconUrlBuilder, Extension);
     this.extensionVersionSerializer = new BaseDataSerializer(ExtensionVersion);
@@ -187,6 +188,8 @@ class DefaultSerializer {
         return this.qualityStandardCategoryItemSerializer.serialize(data, QualityStandardItem, ...params);
       case QualityRuleReference:
         return this.qualityRuleReferenceSerializer.serialize(data);
+      case QualityTemplateReference:
+        return this.qualityTemplateReferenceSerializer.serialize(data);
       case QualityStandardItemReference:
         return this.qualityStandardItemReferenceSerializer.serialize(data);
       case BaseExtension:

@@ -28,13 +28,10 @@ class QualityRule {
     return {
       id: this.id,
       name: this.name,
-      href: this.href,
       critical: this.critical,
       severity: this.severity,
-      maxWeight: this.maxWeight,
-      associatedValueName: this.associatedValueName,
-      description: this.description,
-      output: this.output,
+      rationale: this.rationale,
+      technologies: this.technologies,
     }
   }
 }

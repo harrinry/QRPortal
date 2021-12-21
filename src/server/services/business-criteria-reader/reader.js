@@ -1,4 +1,4 @@
-const { BaseBusinessCriteria, QualityRuleReference, BusinessCriteria, TechnicalCriteriaReference  } = require("../data-serializer/models");
+const { BaseBusinessCriteria, QualityRuleReference, BusinessCriteria, TechnicalCriteriaReference, QualityTemplateReference  } = require("../data-serializer/models");
 
 class BusinessCriteriaDataReader {
 
@@ -38,7 +38,7 @@ class BusinessCriteriaDataReader {
     }
 
     try {
-      model.qualityTemplates = this.serializer.serialize(await this.dataReader.listBuisnessCriteriaQualityTemplates(id), QualityRuleReference);
+      model.qualityTemplates = this.serializer.serialize(await this.dataReader.listBuisnessCriteriaQualityTemplates(id), QualityTemplateReference);
     } catch (error) {
       // ignore the error and set technical criteria to empty array
       model.qualityTemplates = [];

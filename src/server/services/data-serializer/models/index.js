@@ -4,6 +4,7 @@ module.exports = {
   QualityStandardItem: require("./quality-standard-item"),
   QualityStandardCategory: require("./quality-standard-category"),
   QualityRuleReference: require("./quality-rule-reference"),
+  QualityTemplateReference: require("./quality-template-reference"),
   QualityRule: require("./quality-rule"),
   QualityStandardItemReference: require("./quality-standard-item-reference"),
   BaseExtension: require("./base-extension"),

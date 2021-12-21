@@ -1,7 +1,7 @@
 // const DataCache = require("../../lib/data-cache");
 // const { TimeConverter } = require("../../lib/cnjs-utils/lib/time-converter");
 const { inArray } = require("../../lib/cnjs-utils/lib/array");
-const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, QualityStandardItemReference, QualityRuleReference } = require("../data-serializer/models");
+const { BaseQualityStandard, QualityStandard, QualityStandardCategory, QualityStandardItem, QualityStandardItemReference, QualityRuleReference, QualityTemplateReference } = require("../data-serializer/models");
 
 class QualityStandardsDataReader {
 
@@ -60,7 +60,7 @@ class QualityStandardsDataReader {
     try {
       /** @type {Array<any>} */
       const templates = await this.dataReader.listQualityStandardItemQualityTemplates(qualityStandardId, itemId);
-      model.qualityTemplates = this.serializer.serialize(templates, QualityRuleReference);
+      model.qualityTemplates = this.serializer.serialize(templates, QualityTemplateReference);
     } catch (error) {
       // ignore and move on
     }

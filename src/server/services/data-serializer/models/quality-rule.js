@@ -3,6 +3,7 @@ class QualityRule {
   constructor(data = {}){
     this.id = data.id;
     this.name = data.name;
+    this.href = `quality-rules/${this.id}`;
     this.critical = data.critical;
     this.severity = data.severity;
     this.maxWeight = data.maxWeight;
@@ -18,6 +19,7 @@ class QualityRule {
     this.sample = data.sample;
     this.total = data.total;
     this.alternativeName = data.alternativeName;
+    this.status = data.status;
 
     this.businessCriteria = data.businessCriteria || [];
     this.technicalCriteria = data.technicalCriteria || [];
@@ -25,6 +27,20 @@ class QualityRule {
     this.qualityStandards = data.qualityStandards || [];
     this.parameters = data.parameters || [];
     this.thresholds = data.thresholds || [];
+  }
+
+  toPublicOutput(){
+    return {
+      id: this.id,
+      name: this.name,
+      href: this.href,
+      isTemplate: this.isTemplate,
+      critical: this.critical,
+      severity: this.severity,
+      technologies: this.technologies,
+      status: this.status,
+      rationale: this.rationale,
+    };
   }
 }
 

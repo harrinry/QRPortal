@@ -1,5 +1,5 @@
 const Base = require("./base");
-const QualityRule = require("./quality-rule");
+const QualityRule = require("../../data-serializer/models/quality-rule");
 
 class Technology extends Base {
   constructor(data = {}){

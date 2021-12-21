@@ -1,10 +1,10 @@
 
-class QualityRuleReference {
+class QualityTemplateReference {
   constructor(data = {}){
     this.id = data.id;
     this.name = data.name;
     this.href = `quality-rules/${this.id}`;
-    this.isTemplate = false;
+    this.isTemplate = true;
     this.critical = data.critical;
     this.severity = data.severity;
     this.technologies = data.technologyNames || (data.technologies ? data.technologies.map(_ => _.name) : undefined);
@@ -12,4 +12,4 @@ class QualityRuleReference {
   }
 }
 
-module.exports = QualityRuleReference;
+module.exports = QualityTemplateReference;

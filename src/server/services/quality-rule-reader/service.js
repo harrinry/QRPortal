@@ -1,4 +1,4 @@
-const { QualityRule, QualityRuleReference } = require("../data-serializer/models");
+const { QualityRule, QualityRuleReference, QualityTemplateReference } = require("../data-serializer/models");
 
 class QualityRuleDataReader {
 
@@ -58,11 +58,12 @@ class QualityRuleDataReader {
 
       if(id > 2_000_000){
         data = await this.dataReader.readQualityTemplate(id);
+        output.push(this.serializer.serialize(data, QualityTemplateReference));
       } else {
         data = await this.dataReader.readQualityRule(id);
+        output.push(this.serializer.serialize(data, QualityRuleReference));
       }
 
-      output.push(this.serializer.serialize(data, QualityRuleReference));
     }
 
     return output;
