@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "In general, customers should avoid the use of the Force Active property for BusComp fields and BusComps themselves.\nUse of this property at the field level specifies that any time the BusComp is instantiated, the field in question should be active and part of the SELECT statement.",
     "output": "This rule reports Fields in Business Components having a Force Active BusComp Field property set to TRUE",
     "rationale": "Many fields have the property Force Active unnecessarily set to TRUE.\nThe \"Force Active\" property is set on the new business components.\nThis means that all fields are always retrieved when the business component is queried.\nThis may lead to performance issues, e.g if the business components contains a lot of joined or multi value fields.\n\nWhen overused, both behaviors degrade performance.\nNote that this behavior applies whether the BusComp is referenced on an applet, in script, through workflow, EAI, or any other object manager function.",
@@ -31,11 +35,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

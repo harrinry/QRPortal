@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "Reports all equality or inequality operations on floating point variables:\n- float x == (...)\n- float x != (...)\n- double x == (...)\n- double x != (...)\nA violation is raised if one of the operands of the ==/!= operator is a float or a double. The other operand is not considered, it can be another floating point variable, an integer or a boolean.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "The inherent nature of floating-point types is such that comparisons of equality will often not evaluate to true, even when they are expected to. Also, the behavior of such a comparison cannot be predicted before execution, and may well vary from one implementation to another.\nThe recommended method for achieving deterministic floating-point comparisons is to write a library that implements the comparison operations. The library should take into account the floating-point granularity (std::numeric_limits<float>:: epsilon()) and the magnitude of the numbers being compared.\n\nDue to rounding errors, most floating-point numbers end up being slightly imprecise. As long as this imprecision stays small, it can usually be ignored. However, it also means that numbers expected to be equal (e.g. when calculating the same result through different correct methods) often differ slightly, and a simple equality test fails.\nA comparison between a floating-point number and an integer has the same problem since the integer is cast into a floating-point for the comparison.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

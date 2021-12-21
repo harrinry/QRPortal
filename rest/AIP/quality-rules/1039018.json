@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jeerules",
+        "href": "AIP/extensions/com.castsoftware.jeerules"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "When using some cryptography function, a hard-coded salt could compromise system security in a way that cannot be easily remedied. \nIt is never a good idea to hard-code a salt. Not only does a hard-coded salt allow all of the project's developers to view the salt, it also makes fixing the problem extremely difficult. Once the code is in production, the salt cannot be easily changed. If attackers know the value of the salt, they can compute \"rainbow tables\" for the application and more easily determine the hashed values.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -45,11 +49,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

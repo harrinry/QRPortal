@@ -24,15 +24,7 @@ class TechnologyDataReader extends JsonFileReader{
 
   async readTechnology(id){
     let tech = new Technology();
-    // if (await this.technologyInGroup(id)) {
-    //   const techGroup = await this.readTechnologyGroup(await this.getGroupIdFromTechnologyId(id));
-    //   tech = new Technology(techGroup);
 
-    //   for (const technologyId of techGroup.technologies) {
-    //     const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
-    //     tech.setQualityRules(qrData);
-    //   }
-    // } else 
     if (await this.IsGroupId(id)){
       const techGroup = await this.readTechnologyGroup(id);
       tech = new Technology(techGroup);
@@ -40,6 +32,13 @@ class TechnologyDataReader extends JsonFileReader{
       for (const technologyId of techGroup.technologies) {
         const qrData = await this.dataReader.readTechnologyQualityRules(typeof technologyId === "number" ? technologyId.toString() : technologyId);
         tech.setQualityRules(qrData);
+        
+        try {
+          const qtData = await this.dataReader.readTechnologyQualityTemplates(typeof technologyId === "number" ? technologyId.toString() : technologyId);
+          tech.setQualityTemplates(qtData);
+        } catch (error) {
+          // ignore and more on
+        }
       }
     } else {
       const data = await this.dataReader.readTechnology(id);
@@ -47,6 +46,14 @@ class TechnologyDataReader extends JsonFileReader{
       tech = new Technology(data);
 
       tech.setQualityRules(qrData);
+
+      try {
+        const qtData = await this.dataReader.readTechnologyQualityTemplates(typeof technologyId === "number" ? technologyId.toString() : technologyId);
+        tech.setQualityTemplates(qtData);
+      } catch (error) {
+        // ignore and more on
+      }
+
       tech.iconUrl = this.iconUrlBuilder.createIconUrl(id);
     }
 

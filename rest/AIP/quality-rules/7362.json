@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Automatic filtering via a Struts bean has been turned off, which disables the Struts Validator and custom validation logic. This exposes the application to other weaknesses related to insufficient input validation.\n\nThis rule reports all action mapping with disabled validation.",
     "output": "This report lists all Struts action mappingsAction Mapping that have a disabled validation. It provides the following information:\n  Action Mapping Full Name",
     "rationale": "Disabling the validation of a form expose this action to various types of attacks such as SQL Injection, Command Injection, Cross-Site Scripting, Denial of Service... This is due to the fact that invalidated input may allow injecting arbitrary web script, HTML, SQL... Consequences can be severe, like deletion of the entire content of a database. Input validation is mandatory to secure an application. \nMoreover, the web interface is exposed to anyone.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

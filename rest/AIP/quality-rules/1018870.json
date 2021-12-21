@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This metric retrieves the artifacts containing queries using the \"Group By\" statement.",
     "output": "This QR retrieves all the activies that use SQL statement with \"Group By\".",
     "rationale": "Having complex queries in Tibco Activities can cause performance problems. Queries using group by are considered complex and not efficient.",
@@ -26,11 +30,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

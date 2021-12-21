@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "The rule will raise a violation where IComparable or IComparable <T> is implemented without overriding 'Equals' and comparison operators: ==, <, >, !=",
     "rationale": "Types that define a custom sort order implement the IComparable interface. The CompareTo method returns an integer value that indicates the correct sort order for two instances of the type. This rule identifies types that set a sort order. Setting a sort order implies that the ordinary meaning of equality, inequality, less-than, and greater-than don't apply. When you provide an implementation of IComparable, you must usually also override Equals so that it returns values that are consistent with CompareTo.\nThe CLR does not implement static methods in interface contracts or double-virtual dispatch, or the ability to put an operator constraint on a generic type parameter. And therefore multiple solutions have evolved to solve the equality/inequality problem.",
     "reference": "https://cwe.mitre.org/data/definitions/581\nhttps://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1036",
@@ -32,11 +36,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

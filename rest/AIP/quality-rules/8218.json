@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "If getContentType is not called inside the body of a HttpServlet.doPost or HttpServlet.doGet methods a violation will be reported by this rule.",
     "output": "A violation is reported only if getContentType is not called inside the body of a HttpServlet.doPost or HttpServlet.doGet methods.",
@@ -55,11 +59,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

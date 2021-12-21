@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.cfamily",
+        "href": "AIP/extensions/com.castsoftware.cfamily"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for one-line blocks that are not surrounded by curly braces.",
     "output": "Associated to each C++ method, constructor, and destructor with violations, the Quality Rule provides:\n- number of violation patterns\n- Bookmarks for violation occurrences found in source code:\n  - block without curly braces",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

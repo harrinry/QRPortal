@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.sqlanalyzer",
+        "href": "AIP/extensions/com.castsoftware.sqlanalyzer"
+    },
     "associatedValueName": "This metric displays the list of chained synonyms.",
     "description": "This metric retrieves synonyms  that are part of a looping chain of synonym. Indeed through a series of CREATE synonym statements, a synonym could be defined and in fact refer to itself.",
     "output": "This report lists all the ordered looping chain of synonyms.\n\nIt provides the following information:\n- the ordered list of each synonym that is part of the looping chain\n- the name of each synonym that is part of  the  full name",
@@ -35,11 +39,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

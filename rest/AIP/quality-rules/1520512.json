@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "Using this event for a business service may degrade the performance of the business service.",
     "output": "This rule reports Business Services with code in the PreCanInvokeMethod",
     "rationale": "The Service_PreCanInvokeMethod event is there to allow the selective ability to invoke a business service's method.  One does not have to script this event to enable the method.  Business service methods are active by default.",
@@ -31,11 +35,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -6,6 +6,7 @@ class Technology extends Base {
     super(data);
 
     this.qualityRules = {};
+    this.qualityTemplates = {};
     this.iconUrl = data.iconUrl;
   }
 
@@ -17,11 +18,20 @@ class Technology extends Base {
     }
   }
 
+  setQualityTemplates(templates = []){
+    for (const template of templates) {
+      if(!this.qualityTemplates[template.id]){
+        this.qualityTemplates[template.id] = new QualityRule(template);
+      }
+    }
+  }
+
   toApiOutput(){
     return {
       ...super.toApiOutput(),
       iconUrl: this.iconUrl,
       qualityRules: Object.values(this.qualityRules).map(_ => _.toPublicOutput()),
+      qualityTemplates: Object.values(this.qualityTemplates).map(_ => _.toPublicOutput()),
     }
   }
 }

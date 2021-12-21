@@ -10,6 +10,26 @@
         ]
     },
     {
+        "id": 7150,
+        "name": "Prefer using PreparedStatement or CallableStatement over CreateStatement to prevent SQL Injection Attacks",
+        "href": "AIP/quality-rules/7150",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7380,
+        "name": "Ensure to update the validation.xml's entries according to the form used in your application",
+        "href": "AIP/quality-rules/7380",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7740,
         "name": "Ensure your application does not execute HTTP requests without sanitization",
         "href": "AIP/quality-rules/7740",
@@ -414,6 +434,16 @@
         ]
     },
     {
+        "id": 1020724,
+        "name": "Ensure enabling sanitize option for marked component to avoid any security hole",
+        "href": "AIP/quality-rules/1020724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "HTML5"
+        ]
+    },
+    {
         "id": 1020772,
         "name": "Use common database libraries handling SQL code provide specific API to perform parameterized SQL queries to assure sanitized SQL queries.",
         "href": "AIP/quality-rules/1020772",
@@ -477,6 +507,16 @@
         "id": 1042028,
         "name": "configured without namespace or with wildcard namespace is vulnerable to remote code execution attack",
         "href": "AIP/quality-rules/1042028",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1042046,
+        "name": "Using Dynamic Method Invocation for Apache Struts 2.x allows remote attackers to execute arbitrary code via method: prefix, related to chained expressions.",
+        "href": "AIP/quality-rules/1042046",
         "critical": true,
         "severity": 30,
         "technologyNames": [

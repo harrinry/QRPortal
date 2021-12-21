@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This quality rule retrieves all functions and methods that are recursive in nature.",
     "output": "This report lists all methods and functions having recursive calls.\nThis QR provides the following information:\nMethod or Function full name",
     "rationale": "Recursive calls can be unpredictable with regard to memory consumption, takes more time than iterative. It may cause stack-overflow if recursion goes deep to solve problem. It is very difficult to debug and trace the values with each step of recursion",
@@ -33,11 +37,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

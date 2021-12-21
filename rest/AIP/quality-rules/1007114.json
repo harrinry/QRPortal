@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts with unnecessary string concatenations.",
     "output": "This report lists all artifacts with unnecessary string concatenations.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "String concatenation results in the creation and garbage collection of large numbers of temporary objects. This consumes memory and can dramatically slow the script execution. It is recommended to avoid unnecessary string concatenations.",
@@ -29,11 +33,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

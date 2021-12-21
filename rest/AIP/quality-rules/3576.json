@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "Instance fields should not be public",
     "output": "This report lists all Public Fields (that are not const or readonly). It provides the following information: Field full name",
     "rationale": "Public Fields can be accessed by any other Class, therefore its value can be modified at any time, without control by the Class itself. In addition, direct use of Public Fields does not let Field definition evolve without requiring updates to all Objects referencing it. This goes against OO Encapsulation concepts.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

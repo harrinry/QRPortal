@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the functions with High Cyclomatic Complexity.\nParameter X is a configurable parameter.",
     "output": "This report provides the following information: Function full name, Cyclomatic Complexity",
     "rationale": "The effort and time for diagnosis of deficiencies or causes of failures, or for identification of parts to be modified is directly related to the number of execution paths, i.e. the complexity of the control flow. \nAnalyzability declines with increasing Cyclomatic Complexity. \nEach modification must be correct for all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nChangeability declines with increasing Cyclomatic Complexity. \nComplete testing requires coverage of all execution paths. Cyclomatic Complexity computes the number of the linearly independent paths, a lower bound of all execution paths ignoring multiple iterations. \nTestability declines with increasing Cyclomatic Complexity.",
@@ -37,11 +41,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

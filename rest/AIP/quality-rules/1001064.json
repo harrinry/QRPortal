@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the DB2 tables that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced DB2 tables.\n\nIt provides following information: \n-  DB2 tables full name",
     "rationale": "Unreferenced artifacts like any other examples of dead code make maintenance more difficult and more expensive (modification of unused code).",
@@ -38,11 +42,6 @@
             "href": "AIP/business-criteria/60013"
         },
         {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
-        },
-        {
             "id": 60011,
             "name": "Transferability",
             "href": "AIP/business-criteria/60011"
@@ -74,7 +73,7 @@
     "technologies": [
         {
             "id": -14,
-            "name": "NO LABEL",
+            "name": "DB2 Server",
             "href": "AIP/technologies/-14"
         }
     ],

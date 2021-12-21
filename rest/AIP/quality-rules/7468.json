@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "Call to Dataset.Merge method should be done with disabled constraints.",
     "output": "List all artifacts where a call to a Merge is done and where EnforceConstraint is not set to false before the method call (in the same method).",
     "rationale": "By disabling/enabling constraints before/after call to Merge method, the merge process is quicker.",
@@ -29,11 +33,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

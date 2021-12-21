@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jeerules",
+        "href": "AIP/extensions/com.castsoftware.jeerules"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "The  java.net.URL class's behavior was designed to model a URL being a locator of network accessible resource . Specifically equals and hashCode() were designed so that two URL instances are equal if they locate the same resource. This requires that the DNS name be resolved to an IP address.\n\nThe equals and hashCode methods may trigger a name service (usually DNS) lookup to resolve the host name or IP address. Depending on the configuration, and network status, that can take a long time. \n\n\nThis rule checks for uses  java.net.URL class, and for explicit references to the equals and hashCode methods.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -35,11 +39,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -59,7 +58,24 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "CWE-400",
+            "name": "Uncontrolled Resource Consumption",
+            "href": "AIP/quality-standards/CWE/items/CWE-400",
+            "standard": "CWE"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

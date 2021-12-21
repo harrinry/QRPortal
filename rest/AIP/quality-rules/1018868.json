@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This metric retrieves the artifacts containing queries using \"Union\" instead of \"Union all\" statement",
     "output": "This metric retrieves the artifacts containing queries using \"Union\" instead of \"Union all\" statement",
     "rationale": "In SQL the UNION operator combines the results of two SQL queries into a single table of all matching rows. The two queries must have matching fields and data types in order to join them. Any duplicate records are automatically removed unless UNION ALL is used. The problem is that MOST of the time it is unnecessary to remove duplicate as there are none and doing the search for duplicate rows can be very costly.",
@@ -26,11 +30,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

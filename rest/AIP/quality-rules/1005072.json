@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the migrated programs having enabled Exception and  having throwNrfEofExceptions property not set to YES",
     "output": "This report lists the following information: Program full name",
     "rationale": "throwNrfEofExceptions property must be set to YES\n\nIf the throwNrfEofExceptions property is set to YES, a soft error (typically \"no record found\" or \"end of file\") causes an exception to be thrown, allowing you to handle the exception.",
@@ -31,11 +35,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -55,7 +54,24 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

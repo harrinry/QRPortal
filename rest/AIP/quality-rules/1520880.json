@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of lines of code",
     "description": "This rule reports Functions with too many lines of code, above \"Siebel: Max LoC\".\n\"Siebel: Max LoC\" is a parameter and it can be changed at wrill.\nDefault value is 50.",
     "output": "This rule reports Functions with too many lines of code. It displays:\n- the function full name\n- the associated value is the Number of lines of code",
@@ -17,11 +21,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

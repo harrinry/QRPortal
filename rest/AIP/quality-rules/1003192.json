@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.flex",
+        "href": "AIP/extensions/com.castsoftware.flex"
+    },
     "description": "This QR reports classes that are globally bindable.",
     "output": "This QR reports classes that are globally bindable. It provides following information:\n- Class Full Name",
     "rationale": "Globally bindable classes can lead to unexpected behaviour especially when you have a setter to a property, and hits the performance of the application.",
@@ -28,11 +32,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

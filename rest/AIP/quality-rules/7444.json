@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Session Bean Name",
     "description": "The application stores a non-serializable object as an HttpSession attribute, which can hurt reliability.\nThis rule reports classes that are not serialized (i.e. don't implement or inherit from the java.io.Serializable interface) and that are instantiated by beans stored in the session. This includes JSP beans and also JSF backing beans.",
     "output": "Report all classes that don't implement (or inherit from) Serializable interface and that instantiated as session scope objects.\nIt provides the following information:\n  - Full Class Name\n  - Session Bean Name",
@@ -35,11 +39,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -64,6 +63,24 @@
             "name": "J2EE Bad Practices: Non-serializable Object Stored in Session",
             "href": "AIP/quality-standards/CWE/items/CWE-579",
             "standard": "CWE"
+        },
+        {
+            "id": "A04-2021",
+            "name": "Insecure Design",
+            "href": "AIP/quality-standards/OWASP/items/A04-2021",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

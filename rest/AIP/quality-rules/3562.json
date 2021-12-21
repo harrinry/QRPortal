@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "Names of Private Fields should not start with an uppercase character and should not include any underscore",
     "output": "This report lists all Private Fields (that are not const) with first letter starting with an uppercase or having an underscore.\nIt provides the following information:  Field full name",
     "rationale": "For readability aspects, naming conventions must be respected",
@@ -22,11 +26,6 @@
             "id": 66033,
             "name": "Documentation",
             "href": "AIP/business-criteria/66033"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

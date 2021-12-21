@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.html5",
+        "href": "AIP/extensions/com.castsoftware.html5"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Each time [\u2026] the Function constructor is called on a string representing source code, the script engine must start the machinery that converts the source code to executable code. This is usually expensive for performance \u2013 easily a hundred times more expensive than a simple function call, for example. \nAn exception will be made for Function('return this')(); . It is the best way to retrieve the global in both node and web with or without \"use strict\".",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -54,11 +58,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

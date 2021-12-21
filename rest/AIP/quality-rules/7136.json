@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Cyclomatic Complexity",
     "description": "Each method in an Action Class (and inherited methods) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x) should have a small cyclomatic complexity.",
     "output": "This report lists all Action methods with Cyclomatic complexity greater than X\nIt provides the following information:\n - Action Method full name\n - Cyclomatic Complexity",
@@ -38,11 +42,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

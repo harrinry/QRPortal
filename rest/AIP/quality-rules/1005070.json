@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all program calls without checking the return code",
     "output": "This report lists the following information: Function full name, Number of SQL Query Outside Try Block",
     "rationale": "A program call must always have a return code.",
@@ -36,11 +40,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

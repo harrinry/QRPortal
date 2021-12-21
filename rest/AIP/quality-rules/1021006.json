@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.python",
+        "href": "AIP/extensions/com.castsoftware.python"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "When designing web service to get/post/put data, you want to make sure that you minimize the number of calls between the client application and web service server. This rule will check the official Python requests syntax, to do call to web service.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -39,11 +43,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

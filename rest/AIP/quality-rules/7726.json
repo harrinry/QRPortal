@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "The package that reference the database",
     "description": "In struts based application, the data access layer must be distinct from the business layer.\n\nThis rule finds all Action Classes (and parent classes) list artifacts that call classes (&anonymous classes) and Lambda referenced in a package that reference directly the database or reference JPA or Hibernate Entities.\n\n\nThe Action Classes considered by this rule are ones referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x)",
     "output": "This report lists all Action Classes that call a package that reference database or reference JPA or Hibernate Entities.\nIt provides the following information:\n Artifact full name, the package that reference the database",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

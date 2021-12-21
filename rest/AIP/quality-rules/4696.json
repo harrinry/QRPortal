@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports any reference to  'System.err' and/or'System.out' as violation.",
     "output": "This report lists all Methods using 'System.err' in catch blocks. It provides the following information: Method full name",
     "rationale": "Accessing System.out or System.err from an application is a problem if the system (especially as a server) goes to production:\n\n\u2013 Messages are written directly to the console. This makes it difficult to redirect specific entries to separate files, configure the required log format (e.g. timestamp, current thread etc.) or specify rules for rollover, retention etc.\n\n\u2013 There\u2019s no way to use severity for messages (e.g. trace, debug, info, warn, error). There\u2019s natural difference between an exception which needs to be logged and some debugging output. The latter one is not desired to be visible in a production system as it negatively affects performance and creates large log files which are hard to analyze.",
@@ -37,11 +41,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

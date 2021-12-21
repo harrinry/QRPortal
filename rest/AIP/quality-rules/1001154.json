@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PL1 Main Procedures (Programs)  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.",
     "output": "The report lists all the  PL1 Main Procedures  having files declarations and not having  \"ON UNDF\" or \"ON UNDEFINEDFILE\" for them. Exceptions are SYSPRINT and SYSIN.\n\nIt provides following information: \n- PL1 Main Procedures full name",
     "rationale": "When a program doesn't check for its files availability, it may produce an abend.",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

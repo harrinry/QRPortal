@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Size of field, name and size of the column",
     "description": "This rule reports Business Component Fields having a length exceeding the length of the Column.\nThe properties compared are BC Field's TextLength and Siebel Column's Length.",
     "output": "This rule reports Fields having a length exceeding the length of the column.\nIt provides the following information:\n- BC Field full name\n- the associated value is : (BC Field TextLength) -> Siebel Column Name (Column Length)",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

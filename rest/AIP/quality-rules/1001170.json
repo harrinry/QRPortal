@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for PL1 Main Procedures having LEAVE statements.",
     "output": "The report lists all the  PL1 Main Procedures having LEAVE statements.\n\nIt provides following information: \n-   PL1 Main Procedures full name",
     "rationale": "Using the LEAVE statement results in the production of unstructureness coding.",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation when trigraphs are used.",
     "rationale": "Trigraphs are denoted to be a sequence of 2 question marks followed by a specified third character (e.g. ??\u2019 represents a ~character. They can cause accidental confusion with other uses of two question marks.\n\nThe Trigraphs are: ??=, ??/, ??\u2019, ??(, ??), ??!, ??<, ??>, ??-.",
     "reference": "MISRA C++, 2008, Rule 2\u20133\u20131: Trigraphs shall not be used. \n\nAUTOSAR 2014, C++, Rule A2-5-1: Trigraphs shall not be used.\n\nMISRA C, 2012, 4.2: Trigraphs should not be used.",
@@ -27,11 +31,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

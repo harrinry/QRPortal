@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.flex",
+        "href": "AIP/extensions/com.castsoftware.flex"
+    },
     "description": "This QR reports Adobe mxml scripts that have more than one entry point represented by public variables and\\or setter.",
     "output": "This QR reports MXML scripts that have more than one public variables. It provides following information:\n- MXML Script Fullname",
     "rationale": "In order to have better encapsulation there should be only one entry point to mxml.",
@@ -23,11 +27,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

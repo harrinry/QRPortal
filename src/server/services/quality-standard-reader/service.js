@@ -57,6 +57,14 @@ class QualityStandardsDataReader {
 
     model.qualityRules = this.serializer.serialize(rules, QualityRuleReference);
 
+    try {
+      /** @type {Array<any>} */
+      const templates = await this.dataReader.listQualityStandardItemQualityTemplates(qualityStandardId, itemId);
+      model.qualityTemplates = this.serializer.serialize(templates, QualityRuleReference);
+    } catch (error) {
+      // ignore and move on
+    }
+
     return model;
   }
 

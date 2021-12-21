@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Associated Value",
     "description": "The Bean Provider can choose between using programmatic transaction demarcation in the enterprise bean code (this style is called bean-managed transaction demarcation)  or  declarative transaction demarcation performed automatically by the EJB container (this style is called container-managed transaction demarcation).\n\nWithout theses features, transactions must be controlled using explicit transaction demarcation which is less recommended as it requires that the transactional code be written within the business logic, which reduces the clarity of the code and more importantly creates inflexible distributed objects\n\n\nThis rule reports violation when an explicit transaction demarcation is done in project using EJB BEANS and/or Message Driven Beans\n\nThis Quality Rule reports all methods that directly (or indirectly through inheritance) reference an object of the following type:\n\n* java.sql.Connection\n* javax.transaction.UserTransaction\n* javax.persistence.EntityTransaction\n* org.hibernate.Transaction\n* org.springframework.transaction.PlatformTransactionManager\n* org.springframework.transaction.support.TransactionTemplate",
     "output": "This Quality Rule reports all methods that reference programmatic transactions. It provides the following information: Method or Constructor Full Name",
@@ -30,11 +34,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

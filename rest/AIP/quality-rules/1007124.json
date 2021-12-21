@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts that throw exceptions without having @Throws tag in doc comments. Contructor, function and methods are considered as artifacts for this QR.",
     "output": "This report lists all artifacts throwing exceptions without having @Throws tag in doc comments.\n\nThis QR provides following information:\nArtifact full name.",
     "rationale": "Every Function that throws an exception must have an @Throws tag in doc comments. This is specially important since PHP does not support \"throws\" declaration.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the artifacts with unused variables.\nA violation is detected when a local variable is declared and/or assigned and not used.",
     "output": "This report lists all artifacts with unused variables.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "For readability and usability reasons, artifacts should not have unused variables. For more complex types, such as class, having unused variables would cost resources.",
@@ -24,11 +28,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

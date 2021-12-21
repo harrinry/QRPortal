@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "This rule reports violation with \"when\" statement or expression is used without an else statement.",
     "rationale": "The 'else' part is executed when none of the when part is executed. Having no else keyword means that there is no backup. The cases that are \"impossible\" today are those most likely to be the causes of untraceable bugs in the future.\nSoftware should follow the principles of structured programming or else it degrades comprehensibility.",
     "reference": "CISQ rule: ASCMM-MNT-1.",
@@ -42,11 +46,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -118,6 +117,12 @@
             "standard": "ISO-5055"
         },
         {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
             "id": "CWE-478",
             "name": "Missing Default Case in Switch Statement",
             "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-478",
@@ -134,6 +139,18 @@
             "name": "Poor Code Quality",
             "href": "AIP/quality-standards/OWASP/items/M7-2016",
             "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

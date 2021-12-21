@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PL1 Main Procedures not having an ON ERROR clause.",
     "output": "The report lists all the PL1 Main Procedures not having ON ERROR clause. \n\nIt provides following information: \n- PL1 Main Procedure full name",
     "rationale": "Not managing errors can lead to data corruption and incorrect behavior, even if the error is managed through specific architecture.",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -57,7 +56,24 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

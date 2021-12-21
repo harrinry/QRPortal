@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports all EJB remote methods that are not associated with permission unless this method is defined in the excluded-list (can't be called). \n\nIt works for EJB 3.0 and takes into account both annotation and descriptor specifications.",
     "output": "This report all EJB remote methods (i.e methods of the remote interface and its parent) that are not associated with permission unless this method is defined in the excluded-list. \nIt provides the following information:\n Method Full Name",
     "rationale": "If you handle sensitive data or offer restricted services, you need a clearly defined security policy for your application and a framework that enforces it.\n\nWhen an application exposes a remote interface for an entity bean, it might also expose methods that get or set the bean's data. These methods could be leveraged to read sensitive information, or to change data in ways that violate the application's expectations, potentially leading to other vulnerabilities.\n\n\nIt is common to think that EJBs are deployed where they can only be accessed from their related JSPs and servlets, and security is applied at the JSP/servlet layer. But in reality, you can often find situations where the security policy needs to change, for example, the ports to access to the EJB become opened, and the access to these EJB becomes possible.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

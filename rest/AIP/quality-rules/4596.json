@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "The rule reports all Java artifacts using 'java.lang.System.getenv()'",
     "output": "This report lists all java artifacts using 'java.lang.System.getenv()'.\nIt provides the following information:\n - Artifact full name",
     "rationale": "For portability reasons, in Web applications, 'java.lang.System.getenv()' should not be used since it means using Operating System variables and therefore being dependent on the environment where the application is deployed.",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

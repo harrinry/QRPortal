@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "Avoid call to AcceptChanges (of DataSet, DataTable etc) in loop as this have a negative impact on performance.",
     "output": "The metric will list all the artifacts where a call to AcceptChanges is done within a loop: NameSpace + Class + Method names.",
     "rationale": "From a performance point of view, it is better to call AcceptChanges only once at the end of a loop rather than at each iteration.",
@@ -39,11 +43,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

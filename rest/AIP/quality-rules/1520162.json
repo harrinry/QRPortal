@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "This rule reports Siebel standard Tables having added custom Columns.",
     "output": "This rule reports all Tables with added Columns",
     "rationale": "Extending Siebel standard tables can affect both performance and reuse.\nOnly public tables can be extended, but still it is not always a good idea.",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

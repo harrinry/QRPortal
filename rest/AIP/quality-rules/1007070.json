@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all Methods and Functions that do not end with comments i.e. without an //end <function or method name>() For-example, //end anyFunction().",
     "output": "This report lists all Methods and Functions that do not end with comments.\n\nThis QR provides the following information:\nMethod or Function full name.",
     "rationale": "Methods and functions should end with comments denoting end of scope. This increases readability.",
@@ -18,11 +22,6 @@
             "id": 66033,
             "name": "Documentation",
             "href": "AIP/business-criteria/66033"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

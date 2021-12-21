@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "associatedValueName": "Fan-Out",
     "description": "This rule searches for all JavaScript Functions with High Fan-Out. \n         The Fan-out of JavaScript Function is the number of other artifacts that are referred in it. \n         When computing the Fan-Out of an artifact, multiple accesses to the same component of an artifact are counted as one access.\n         The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all JavaScript Functions with a High Fan-Out.\n      \nThis QR provides the following information:\nJavaScript Function full name.",
@@ -38,11 +42,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

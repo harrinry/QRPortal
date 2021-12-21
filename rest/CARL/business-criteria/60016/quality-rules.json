@@ -40,6 +40,16 @@
         ]
     },
     {
+        "id": 1070,
+        "name": "Avoid header files circular references",
+        "href": "AIP/quality-rules/1070",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C"
+        ]
+    },
+    {
         "id": 1072,
         "name": "Avoid using memory management Functions (free/malloc/realloc)",
         "href": "AIP/quality-rules/1072",
@@ -72,9 +82,59 @@
         ]
     },
     {
+        "id": 2230,
+        "name": "DEPRECATED: Use of style sheets (JEE)",
+        "href": "AIP/quality-rules/2230",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 2232,
         "name": "Prefer using shared error-page elements via web.xml to better control error handling",
         "href": "AIP/quality-rules/2232",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2236,
+        "name": "Ensure that the architecture design of the application invoke the layer in charge of database access.",
+        "href": "AIP/quality-rules/2236",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2242,
+        "name": "Ensure to have separate behavior from presentation and not to have direct definition of JavaScript Functions in a Web page",
+        "href": "AIP/quality-rules/2242",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2278,
+        "name": "Ensure that the use of \"forEach\" is well controlled",
+        "href": "AIP/quality-rules/2278",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 2280,
+        "name": "Ensure to use an alternative to Document.all collection",
+        "href": "AIP/quality-rules/2280",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -138,6 +198,16 @@
         "id": 4572,
         "name": "Ensure explicitly Initializing the instance variable declared as final otherwise a compile-time error occurs.",
         "href": "AIP/quality-rules/4572",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 4574,
+        "name": "Ensure to not use the deprecated objects",
+        "href": "AIP/quality-rules/4574",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -345,6 +415,26 @@
         ]
     },
     {
+        "id": 7134,
+        "name": "Ensure you don't have local forward with same name as global forward for better readability and to avoid unexpected behavior",
+        "href": "AIP/quality-rules/7134",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7138,
+        "name": "DEPRECATED : Action Classes should only be called by Action Mappings tag (for Struts 1.x) or Action tag (for Struts 2.x)",
+        "href": "AIP/quality-rules/7138",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7140,
         "name": "Ensure to use the action mapping table in struts configuration file.",
         "href": "AIP/quality-rules/7140",
@@ -360,6 +450,16 @@
         "href": "AIP/quality-rules/7142",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7144,
+        "name": "Ensure to have database access code encapsulated behind the business API classes for Struts Action Artifacts",
+        "href": "AIP/quality-rules/7144",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -415,9 +515,49 @@
         ]
     },
     {
+        "id": 7190,
+        "name": "Struts1: Validate() Method of Struts Validator form must call super.validate()",
+        "href": "AIP/quality-rules/7190",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7192,
+        "name": "Ensure that Struts Forms extend a Validator Class",
+        "href": "AIP/quality-rules/7192",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7196,
         "name": "Ensure to use StringBuilder or StringBuffer and StringBuilder.append() or StringBuffer.append() method instead",
         "href": "AIP/quality-rules/7196",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7202,
+        "name": "Ensure using object equals method instead of equality syntax to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7238,
+        "name": "Ensure to go from one JSP page to another through an Struts Action class and Struts action-mappings or action",
+        "href": "AIP/quality-rules/7238",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -442,6 +582,37 @@
         "severity": 10,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7254,
+        "name": "Ensure to make static all methods not using instance members",
+        "href": "AIP/quality-rules/7254",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7256,
+        "name": "Enforce noninstantiability with a private constructor",
+        "href": "AIP/quality-rules/7256",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7258,
+        "name": "DataReader must be called using CommandBehavior.CloseConnection enumeration",
+        "href": "AIP/quality-rules/7258",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -478,9 +649,41 @@
         ]
     },
     {
+        "id": 7270,
+        "name": "Methods that do not use instance fields\\methods should be static (.NET)",
+        "href": "AIP/quality-rules/7270",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7272,
         "name": "Ensure adding a private default constructor then the class can't be instantiated.",
         "href": "AIP/quality-rules/7272",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7292,
+        "name": "Ensure to have packages without cyclical calls and inheritances between packages",
+        "href": "AIP/quality-rules/7292",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7294,
+        "name": "Avoid cyclical calls and inheritances between namespaces content",
+        "href": "AIP/quality-rules/7294",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -529,6 +732,16 @@
         ]
     },
     {
+        "id": 7378,
+        "name": "Ensure to create a link (html tag) instead of an include in a JSP file",
+        "href": "AIP/quality-rules/7378",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7380,
         "name": "Ensure to update the validation.xml's entries according to the form used in your application",
         "href": "AIP/quality-rules/7380",
@@ -549,11 +762,71 @@
         ]
     },
     {
+        "id": 7390,
+        "name": "Avoid having multiple artifacts inserting data on the same SQL Table",
+        "href": "AIP/quality-rules/7390",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7392,
+        "name": "Avoid having multiple artifacts deleting data on the same SQL table",
+        "href": "AIP/quality-rules/7392",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7394,
+        "name": "Avoid having multiple artifacts updating data on the same SQL Table",
+        "href": "AIP/quality-rules/7394",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "ALL TECHNOLOGIES"
+        ]
+    },
+    {
+        "id": 7416,
+        "name": "Ensure to validate each field of a form",
+        "href": "AIP/quality-rules/7416",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7438,
+        "name": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
+        "href": "AIP/quality-rules/7438",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7442,
         "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7444,
+        "name": "Ensure to implement serialization if your web container implements such mechanisms or ignore it in others cases",
+        "href": "AIP/quality-rules/7444",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -569,11 +842,71 @@
         ]
     },
     {
+        "id": 7492,
+        "name": "Ensure to map the association class as an entity and map two one-to-many associations for either side",
+        "href": "AIP/quality-rules/7492",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7494,
+        "name": "Ensure to use  getter method to access fields  of persistent class method's equals() and hashCode().",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Ensure that persistent classes implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7506,
         "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7508,
+        "name": "Ensure you provide interfaces for Hibernate/JPA collection-typed attributes.",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7510,
+        "name": "Ensure using only Hibernate API to access to the database in order to improve the performances",
+        "href": "AIP/quality-rules/7510",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7556,
+        "name": "Ensure that instanceof in Methods that override or implement Object.equals(), Comparable.compareTo() are not used",
+        "href": "AIP/quality-rules/7556",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -629,9 +962,29 @@
         ]
     },
     {
+        "id": 7650,
+        "name": "Ensure to have every field of a serializable class either serializable or transient to avoid failure to implement serialization capabilities",
+        "href": "AIP/quality-rules/7650",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7652,
         "name": "Ensure that exceptions  throwed in a catch block  are cached",
         "href": "AIP/quality-rules/7652",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7654,
+        "name": "Ensure that each database table is associated to only one Hibernate Entity in order avoid data corruption.",
+        "href": "AIP/quality-rules/7654",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -649,6 +1002,36 @@
         ]
     },
     {
+        "id": 7676,
+        "name": "Ensure that there are not too many packages referencing Mainframe",
+        "href": "AIP/quality-rules/7676",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7700,
+        "name": "Ensure to use only Struts HTTP Servlet for Struts based application to avoid mixing different technologies",
+        "href": "AIP/quality-rules/7700",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7706,
+        "name": "Ensure that table and column names are ,not too long (portability)",
+        "href": "AIP/quality-rules/7706",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7708,
         "name": "Ensure that session.setFlushMode(FlushMode.COMMIT, FlushMode.NEVER or FlushMode.MANUAL)  is not used",
         "href": "AIP/quality-rules/7708",
@@ -659,9 +1042,79 @@
         ]
     },
     {
+        "id": 7710,
+        "name": "Ensure implementing the Serializable interface for all Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Usually declare the setId() method private and let Hibernate/JPA generate and set the identifier value",
+        "href": "AIP/quality-rules/7712",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7720,
         "name": "Ensure reducing the number of EJB beans to hold performance and complexity of the application",
         "href": "AIP/quality-rules/7720",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Ensure not referencing the persistent class's identifier in equals() method.",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Ensure that overriden equals() Methods in persistent Subclasses only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7726,
+        "name": "Ensure that all packages called by the action classes do not have any direct access to database",
+        "href": "AIP/quality-rules/7726",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Prefer using declarative transaction to improve clarity and flexibility of the code",
+        "href": "AIP/quality-rules/7730",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -901,6 +1354,26 @@
         "id": 7940,
         "name": "Ensure defining a business method for removing the Stateful bean instance and call it from the client side",
         "href": "AIP/quality-rules/7940",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Ensure not having EJBs using 'synchronized' qualifier or calling 'wait', 'notify' and 'notifyAll' Methods as this might corrupt the normal behavior",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Ensure that directly instantiating a Class used as a managed bean  are not used as they lead to unpredictable behavior",
+        "href": "AIP/quality-rules/7964",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -1178,6 +1651,16 @@
         ]
     },
     {
+        "id": 8040,
+        "name": "Ensure that Struts 2 Action Fields without Validation are not used as they lead to security weakness",
+        "href": "AIP/quality-rules/8040",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 8042,
         "name": "Ensure all defined validation forms are used",
         "href": "AIP/quality-rules/8042",
@@ -1285,6 +1768,28 @@
         "technologyNames": [
             "C",
             "C++"
+        ]
+    },
+    {
+        "id": 8086,
+        "name": "Avoid types that own disposable fields and are not disposable",
+        "href": "AIP/quality-rules/8086",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8088,
+        "name": "Avoid override artifacts not having link demands identical to base",
+        "href": "AIP/quality-rules/8088",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -1429,6 +1934,28 @@
         ]
     },
     {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8214,
         "name": "Ensure not using expired or released database resource to prevent access to sensitive data that is associated with a different user or entity.",
         "href": "AIP/quality-rules/8214",
@@ -1513,6 +2040,28 @@
         "technologyNames": [
             "C#",
             "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8400,
+        "name": "Avoid having lock on this object",
+        "href": "AIP/quality-rules/8400",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8402,
+        "name": "All types of a serializable class must be serializable",
+        "href": "AIP/quality-rules/8402",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
             "VB.NET"
         ]
     },
@@ -1666,6 +2215,18 @@
         "href": "AIP/quality-rules/8444",
         "critical": true,
         "severity": 30,
+        "technologyNames": [
+            "C#",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8446,
+        "name": "Ensure your application does not redirect to an untrusted site",
+        "href": "AIP/quality-rules/8446",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "C#",
             "JEE",
@@ -4271,6 +4832,17 @@
         ]
     },
     {
+        "id": 1027084,
+        "name": "Avoid calling CoSetProxyBlanket and CoInitializeSecurity",
+        "href": "AIP/quality-rules/1027084",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 1027088,
         "name": "Avoid non-public custom exception types",
         "href": "AIP/quality-rules/1027088",
@@ -4307,6 +4879,17 @@
         "id": 1027094,
         "name": "Always provide deserialization methods for optional fields",
         "href": "AIP/quality-rules/1027094",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 1027096,
+        "name": "Do not raise exceptions in unexpected locations",
+        "href": "AIP/quality-rules/1027096",
         "critical": false,
         "severity": 10,
         "technologyNames": [
@@ -4565,6 +5148,16 @@
         ]
     },
     {
+        "id": 1039066,
+        "name": "Ensure you do not allow access to all domain when defining cookie path (JEE)",
+        "href": "AIP/quality-rules/1039066",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 1039068,
         "name": "Ensure to declare the object as serializable if you are using it as a httpsession attribute",
         "href": "AIP/quality-rules/1039068",
@@ -4590,6 +5183,16 @@
         "href": "AIP/quality-rules/1039072",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1039074,
+        "name": "Avoid using Apache ActiveMQ 5.x before 5.13.0",
+        "href": "AIP/quality-rules/1039074",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -4770,6 +5373,16 @@
         "href": "AIP/quality-rules/1042004",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 1042008,
+        "name": "Ensure not using ActionForward with untrusted data source to prevent file path disclosure",
+        "href": "AIP/quality-rules/1042008",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]

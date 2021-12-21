@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts containing empty statements. Artifacts considered for this QR are PHP section, method, function and constructors.",
     "output": "This report lists all artifacts containing empty statements.\n\nThis QR provides the following information:\nartifact full name.",
     "rationale": "For maintainability reasons, empty statements should be avoided. Empty statements make the source code harder to read and to maintain.",
@@ -23,11 +27,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

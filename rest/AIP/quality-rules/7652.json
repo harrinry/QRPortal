@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Reports all methods that reference a constructor of an exception (a class that inherits from Throwable) in a catch block except where:\n- java.lang.Throwable is the type of one parameter in the signature of the constructor\n- a call to the method or a method that overrides java.lang.Throwable.initCause(Throwable cause) \n\nNote that this rule does not check that the caught exception is the exception that is passed as the argument of the new Exception constructor or the initCause method.",
     "output": "This report lists all methods that contain try/catch blocks where an exception (a class that inherits from Throwable) constructor has java.lang.Throwable as the type of one parameter in the signature of the constructor or a call to the method (or a method that overrides) java.lang.Throwable.initCause(Throwable cause). It provides the following information: Method full name",
     "rationale": "There are many cases where it is very useful to change an exception's class. But if you create a new exception using the original exception message (i.e. MyException(originalException.getMessage())) valuable information about the original exception will not be propagated.\n\nAs such, you may loss the original exception's class and stack trace. This lack of information will slow the investigation process when an issue occurs in validation or in production.",
@@ -44,11 +48,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

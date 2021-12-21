@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jeerules",
+        "href": "AIP/extensions/com.castsoftware.jeerules"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check that session contains only serializable object by checking class inheritance and specific API usage.",
     "output": "Total number of violation related to Java Method\n-Primary Bookmark to Method.\n-Secondary Bookmark to Class.",
@@ -35,11 +39,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -64,6 +63,24 @@
             "name": "J2EE Bad Practices: Non-serializable Object Stored in Session",
             "href": "AIP/quality-standards/CWE/items/CWE-579",
             "standard": "CWE"
+        },
+        {
+            "id": "A04-2021",
+            "name": "Insecure Design",
+            "href": "AIP/quality-standards/OWASP/items/A04-2021",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

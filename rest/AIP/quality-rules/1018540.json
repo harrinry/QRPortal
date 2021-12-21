@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule searches for ProcessActivities of type JMSQueueSignalInActivity, JMSQueueRequestReplyActivity or JMSTopicRequestReplyActivity.\nProcessActivity is a property captured in the metamodel.",
     "output": "This report lists all  Processe Activities of type JMS JMSQueueSignalInActivity, JMSQueueRequestReplyActivity and JMSTopicRequestReplyActivity.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the activityType.",
     "rationale": "Blocking calls can result in system failure if the called process fails. JMS Synchronous activities are inefficient for scalability.",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

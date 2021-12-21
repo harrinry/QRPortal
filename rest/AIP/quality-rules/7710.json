@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule checks that Entity beans implement Serializable or they inherit from a serializable class. If not, it reports violation.",
     "output": "This report lists all entity bean implementation classes that are not serializable.\n\nIt provides the following information:\n     Class Full Name",
     "rationale": "When Entity bean instance is to be passed by value as a detached object (e.g., through a remote interface), the entity class must implement the Serializable interface.\nAlso, In some cases an OptimisticLockException will be thrown and wrapped by another exception, such as a RemoteException, when VM boundaries are crossed. Entities that may be referenced in wrapped exceptions should be Serializable so that marshalling will not fail.\n\nThis issue can prevent the software from running reliably, e.g. by triggering an exeption. If the relevant code is reachable by an attacker, then this reliability problem might introduce a vulnerability.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

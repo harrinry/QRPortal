@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of MVG",
     "description": "You should have less than \"Siebel: Max MVG Applet\" multi value group (MVG) in a list Applet.\nThe threshold \"Siebel: Max MVG Applet\" is a parameter and can be changed at will.\nThe default value is 5.",
     "output": "This rule reports Applets with too many MVG. It displays:\n- the Applet full name\n- the associated value is the number of MVG",
@@ -28,11 +32,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

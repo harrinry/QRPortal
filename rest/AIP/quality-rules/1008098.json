@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the artifacts using plain END statements instead of corresponding END statement such as ENDIF, ENDDO etc.",
     "output": "This report lists RPG400 artefact using plain END statement, instead of corresponding END statement such as ENDIF, ENDDO, etc.\nIt provides the following information:\nRPG400 artifact full name",
     "rationale": "Using corresponding END statement such as ENDIF, ENDDO increases readability of the code and therefore maintainability.",
@@ -26,11 +30,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

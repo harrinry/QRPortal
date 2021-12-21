@@ -6,6 +6,8 @@ class QualityRule {
     this.critical = data.critical;
     this.severity = data.severity;
     this.maxWeight = data.maxWeight;
+    this.isTemplate = data.isTemplate || false;
+    this.download = data.download || null;
     this.associatedValueName = data.associatedValueName;
     this.description = data.description;
     this.output = data.output;

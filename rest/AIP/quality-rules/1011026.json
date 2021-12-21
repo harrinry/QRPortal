@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "The rules searches for the unreferenced  Display Files",
     "output": "This report lists DDS400 unreferenced Display File.\nIt provides the following information:\nDDS400 Display File full name",
     "rationale": "The higher the number of unreferenced Display Files is, the more difficult the maintenance and evolution as all updates in referenced Display Files  will be.  In order the keep the same quality and performance of the application the the tests invesments must be increased.",
@@ -38,11 +42,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

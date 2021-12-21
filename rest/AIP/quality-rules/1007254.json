@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule detects files that both declare symbols and executes logic with side effects.",
     "output": "This report lists all files that declares symbols and executes logic with side effects. \nThis QR provides the following information:\nFile Full Name",
     "rationale": "A file should either declare symbol and cause no side effect or execute logic with side effects but not both.",
@@ -28,11 +32,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

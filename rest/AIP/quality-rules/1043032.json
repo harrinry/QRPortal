@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnetweb",
+        "href": "AIP/extensions/com.castsoftware.dotnetweb"
+    },
     "description": "This rule will check if the trace flag is activated",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in aspx page",
     "rationale": "If the traces are enabled and the attackers can leverage the additional information they gain from debugging output to mount attacks targeted on the framework, database, or other resources used by the application.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

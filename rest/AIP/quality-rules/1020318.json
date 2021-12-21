@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jquery",
+        "href": "AIP/extensions/com.castsoftware.jquery"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Be careful when using deprecated methods. The deprecation period should be used to smoothly make the transition. The rule raises an issue when any of the following methods is used:\n- .andSelf()\n- .context\n- .die()\n- .error()\n- jQuery.boxModel\n- jQuery.browser\n- jQuery.sub()\n- jQuery.support\n- .live()\n- .load()\n- .selector\n- .size()\n- .toggle()\n- .unload()",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

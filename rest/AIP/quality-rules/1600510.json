@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports all PeopleSoft SQL Definitions having subqueries.",
     "output": "This report lists all PeopleSoft SQL Definitions having subqueries. It provides the following information:\n- PeopleSoft SQL Definitions full name.",
     "rationale": "Having complex queries can cause performance problems. Queries with Subqueries is considered complex.\nQuery with Subqueries are often costlier than the query using Joins.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

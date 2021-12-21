@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "DOM Parser creates an In Memory tree representation of XML file and then parses it, so it requires more memory and it's advisable to have increased the heap size for DOM parser in order to avoid Java.lang.OutOfMemoryError:java heap space . \n\nParsing large or medium sized XML files using DOM parser will take a long time or even may not be able to load it completely simply because it requires lot of memory to create XML Dom Tree.\n\nThis rule checks all methods parsing XML files. A violation is reported when detecting a reference to javax.xml.parsers.DocumentBuilder class",
     "output": "List all methods, that reference javax.xml.parsers.DocumentBuilder class.\n\nIt provides the following information:\n Java Method Fullname",
     "rationale": "Efficient parsing of XML documents is more and more critical as XML gets adopted more widely. It is very important to have an efficient way to parse XML data, especially in applications that are intended to handle large volumes. Improper parsing can result in excessive memory usage and processing times that can hurt scalability.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

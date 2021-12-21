@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all PHP Files that are not linked to a style sheet(*.css) and contain hardcoded style definition. Style sheets (*.css) should be used instead of hardcoded style definition.",
     "output": "This report lists all PHP Files with hardcoded style definition instead of having link to a style sheet.\n\nThis QR provides the following information:\nPHP File full name.",
     "rationale": "Using style sheets (*.css) instead of hardcoded style definition improves readability and is less costly to maintain.",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

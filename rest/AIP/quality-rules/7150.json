@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Full Name of createStatement method called",
     "description": "This rule will check the use of the method java.sql.Connection.createStatement() with interpolated string query.",
     "output": "This report lists all methods that reference java.sql.Connection.Statement interface instances (or its sub-interface or sub-class).\nIt provides the following information: \n - Method Full Name\n - The Full Name of createStatement method that has been called",
@@ -25,11 +29,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -49,7 +48,36 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "A1-2013",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A1-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A1-2017",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/A1-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "API8-2019",
+            "name": "Injection",
+            "href": "AIP/quality-standards/OWASP/items/API8-2019",
+            "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.1",
+            "name": "Injection flaws, particularly SQL injection. Also consider OS Command Injection, LDAP and XPath injection flaws as well as other injection flaws.",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.1",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

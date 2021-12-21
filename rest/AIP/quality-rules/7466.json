@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "This metric list all locations where the DataSource member is set before the ValueMember/DisplayMember.",
     "output": "This metric list all objects where the DataSource member is set before the ValueMember/DisplayMember.",
     "rationale": "Setting data source before resting the display/value member will result in performance penalty as every time display/value member is set it will remove the data source and set it again",
@@ -29,11 +33,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

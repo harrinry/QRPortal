@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric reports all forms with fields that are not validated. Forms taken into account are forms defined as form-bean in the struts-config.xml (it can be a regular form bean or a dynamic form bean).\n\nNote that: \n1- In the case where the form is shared among multiple actions, the validation declaration of the form will be associated to the action.\nNote that in a case of a dynamic form-bean, the fields are declared in the struts-config.xml while the fields of regular form-bean are defined in the implementation class itself and deduced from the setters of the class.\n\n2- When the form bean is associated to several form validator. In this case, a field will be considered as validated when all form validator validate this field. This case may happen when the validator form is associated to action mapping or when internationalization is used.\n\n3- When a form bean is not associated to any validator form all its fields or setter methods will be reported.\n\n\nThis rule is only for Struts1 based application.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

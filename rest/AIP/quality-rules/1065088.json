@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation when member function returns non-const handles to class data",
     "rationale": "By implementing class interfaces with member functions the implementation retains more control over how the object state can be modified and helps to allow a class to be maintained without affecting clients. Returning a handle to class-data allows for clients to modify the state of the object without using any interfaces.",
     "reference": "MISRA C++ 2008, 9-3-2: Member functions shall not return non-const handles to class-data.\n\nAUTOSAR C++ 2014, A9-3-1: Member functions shall not return non-const \u201craw\u201d pointers or references to private or protected data owned by the class.",
@@ -22,11 +26,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

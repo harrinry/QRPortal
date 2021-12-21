@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the artifacts with excessive number of parameters. Artifacts being checked including methods, functions and constructor. An artifact is considered as having excessive number of parameters if number of parameters are 10 or more.",
     "output": "This report lists all the Artifacts with excessive number of parameters.\n\nThis QR provides the following information:\n- Artifact full name.",
     "rationale": "Long parameter list can indicate that a new object should be created to wrap the numerous parameters. In other words, always try to group the parameters together.",
@@ -33,11 +37,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

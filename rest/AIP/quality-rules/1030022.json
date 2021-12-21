@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "This rule reports a violation when a vararg is used for method parameterization and a developer uses the spread operator to use an existing array as a method argument.",
     "rationale": "In most cases using a spread operator causes a full copy of the array to be created before calling a method. This has a very high performance penalty.\nThe decrease in performance in Kotlin as compared to Java is double in such case.",
     "reference": "https://sites.google.com/a/athaydes.com/renato-athaydes/posts/kotlinshiddencosts-benchmarks",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

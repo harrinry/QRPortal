@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jeerules",
+        "href": "AIP/extensions/com.castsoftware.jeerules"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule checks if whitelist Java packages list is correctly set so that they can be used in a serialized object message.  if not, it will report a violation",
     "output": "Total number of violation related to Java Methods which are associated to ActiveMQ\n-Primary Bookmark to Method.\n-Secondary Bookmark to Method.",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

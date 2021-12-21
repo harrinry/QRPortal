@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the program  having the the sum of call links from child EGL functions to other programs too high.\nThe threshold is a parameter and can be changed at will.",
     "output": "This report lists all Program having more than X outgoing call links.\nIt provides the following information: Program full name, Nb of ougoing call links.",
     "rationale": "The higher the number of referenced Artifacts, the more difficult the maintenance and evolution as all updates in referenced Artifacts will have to be tested and taken into account.",
@@ -36,11 +40,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

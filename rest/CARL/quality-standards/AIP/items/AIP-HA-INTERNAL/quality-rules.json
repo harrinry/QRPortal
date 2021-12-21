@@ -40,6 +40,16 @@
         ]
     },
     {
+        "id": 7202,
+        "name": "Ensure using object equals method instead of equality syntax to compare objects",
+        "href": "AIP/quality-rules/7202",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7340,
         "name": "Avoid Classes with Destructor not explicitly virtual whenever one of its base Class has a virtual Destructor",
         "href": "AIP/quality-rules/7340",
@@ -70,6 +80,16 @@
         ]
     },
     {
+        "id": 7438,
+        "name": "Ensure to declare the field that hold the unique instance as static final and initialize it in the declaration or synchronize the method that initialize the field",
+        "href": "AIP/quality-rules/7438",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7442,
         "name": "Prefer not using this within Constructor in multi-thread environment to avoid unpredictable behavior",
         "href": "AIP/quality-rules/7442",
@@ -90,11 +110,41 @@
         ]
     },
     {
+        "id": 7494,
+        "name": "Ensure to use  getter method to access fields  of persistent class method's equals() and hashCode().",
+        "href": "AIP/quality-rules/7494",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7504,
+        "name": "Ensure that persistent classes implement hashCode() and equals()",
+        "href": "AIP/quality-rules/7504",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7506,
         "name": "Ensure that equals() and hashCode() are defined for component as they do not have an identifier property",
         "href": "AIP/quality-rules/7506",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7508,
+        "name": "Ensure you provide interfaces for Hibernate/JPA collection-typed attributes.",
+        "href": "AIP/quality-rules/7508",
+        "critical": false,
+        "severity": 10,
         "technologyNames": [
             "JEE"
         ]
@@ -115,6 +165,129 @@
         "href": "AIP/quality-rules/7708",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7710,
+        "name": "Ensure implementing the Serializable interface for all Entity beans",
+        "href": "AIP/quality-rules/7710",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7712,
+        "name": "Usually declare the setId() method private and let Hibernate/JPA generate and set the identifier value",
+        "href": "AIP/quality-rules/7712",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7722,
+        "name": "Ensure not referencing the persistent class's identifier in equals() method.",
+        "href": "AIP/quality-rules/7722",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7724,
+        "name": "Ensure that overriden equals() Methods in persistent Subclasses only reference properties from the persistent base Class",
+        "href": "AIP/quality-rules/7724",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7728,
+        "name": "Ensure that no thread creation is done for application running on application server to avoid any performance and robustness issues.",
+        "href": "AIP/quality-rules/7728",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7730,
+        "name": "Prefer using declarative transaction to improve clarity and flexibility of the code",
+        "href": "AIP/quality-rules/7730",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7766,
+        "name": "Ensure you keep simple the design of the component/module to reduce number of independent paths",
+        "href": "AIP/quality-rules/7766",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "JavaScript",
+            "SQL",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7770,
+        "name": "Avoid Artifacts with too many parameters",
+        "href": "AIP/quality-rules/7770",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7804,
+        "name": "Avoid Classes with High Weighted Methods per Class",
+        "href": "AIP/quality-rules/7804",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "C++",
+            "JEE",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7942,
+        "name": "Ensure not having EJBs using 'synchronized' qualifier or calling 'wait', 'notify' and 'notifyAll' Methods as this might corrupt the normal behavior",
+        "href": "AIP/quality-rules/7942",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7964,
+        "name": "Ensure that directly instantiating a Class used as a managed bean  are not used as they lead to unpredictable behavior",
+        "href": "AIP/quality-rules/7964",
+        "critical": true,
+        "severity": 20,
         "technologyNames": [
             "JEE"
         ]
@@ -270,6 +443,28 @@
         ]
     },
     {
+        "id": 8086,
+        "name": "Avoid types that own disposable fields and are not disposable",
+        "href": "AIP/quality-rules/8086",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8088,
+        "name": "Avoid override artifacts not having link demands identical to base",
+        "href": "AIP/quality-rules/8088",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 8090,
         "name": "Avoid using NaN to test the result of an expression",
         "href": "AIP/quality-rules/8090",
@@ -339,6 +534,39 @@
         "href": "AIP/quality-rules/8150",
         "critical": false,
         "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8152,
+        "name": "Avoid having transaction with the Thread.Sleep method in a loop",
+        "href": "AIP/quality-rules/8152",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8156,
+        "name": "Persistent classes should implement GetHashCode() and Equals()",
+        "href": "AIP/quality-rules/8156",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 8158,
+        "name": "Avoid thread creation for application running on application server",
+        "href": "AIP/quality-rules/8158",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "C#",
             "VB.NET"
@@ -476,6 +704,16 @@
         "technologyNames": [
             "C",
             "C++"
+        ]
+    },
+    {
+        "id": 1101022,
+        "name": "Make sure to define Primary Key (PK) for your tables to enforce row integrity of data",
+        "href": "AIP/quality-rules/1101022",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
         ]
     }
 ]

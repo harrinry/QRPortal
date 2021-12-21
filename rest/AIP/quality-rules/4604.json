@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Java artifacts should not use 'java.lang.Error()'",
     "output": "This report lists all java Objects using 'java.lang.Error()'. It provides the following information: Object full name",
     "rationale": "Using 'java.lang.Error()' is not recommended since it goes against the Exception error handling model. An Error is a subclass of Throwable that indicates serious problems that a reasonable application should not try to catch. Most of these errors are abnormal conditions.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -58,6 +57,24 @@
         }
     ],
     "qualityStandards": [
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
+        },
         {
             "id": "STIG-V-222656",
             "name": "The application must not be subject to error handling vulnerabilities.",

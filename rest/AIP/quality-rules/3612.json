@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "SQL connection should be closed within the Method / Function / Sub that opened it",
     "output": "This report lists all Methods / Functions / Subs that do not close the SQL connections they opened\nIt provides the following information:  Method / Function / Sub full name",
@@ -45,11 +49,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

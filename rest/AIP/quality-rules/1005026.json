@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all Copy-Pasted artifacts with custom parameters.",
     "output": "This report lists all Program having Copy Pasted Artifacts.\nIt provides the following information: Artifact full name, Copy Pasted Artifact full name",
     "rationale": "A program with a lot of duplication is hard to change. It might be required to change every copy of a copy/pasted code while it is very difficult to locate these  copy/pasted code elements. Copy-and-paste is not always bad for a quick urgent \"hack\", but it is always a very dangerous practice in the long run.",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

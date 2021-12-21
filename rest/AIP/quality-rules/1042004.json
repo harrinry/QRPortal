@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.struts",
+        "href": "AIP/extensions/com.castsoftware.struts"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "The application uses multiple validation forms with the same name, which might cause the Struts Validator to validate a form that the programmer does not expect. \n\n\nThis rule will check if same name is used by multiple validation forms. If yes, it gives the violation.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Primary and Secondary Bookmarks for violation occurrences found in the source code",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

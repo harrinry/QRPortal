@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts using exit and die expressions.",
     "output": "This report lists all artifacts using exit and die expressions.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Exit and die expressions end the program prematurely without giving any chance to do error handling.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

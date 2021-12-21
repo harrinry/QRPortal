@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Formatted string in the form of: 'Related=<Page Field Number> before Control= <Page Field Number>'",
     "description": "This quality rule detects related Display Controls having a Page Field Number lower (displayed before) than the Display Controls governing.",
     "output": "This report lists all the related Display Controls having a Page Field Number lower than the Display Controls governing.\nThe associated value is a string giving Page Field Numbers of both related Display Control and Display Control governing:\n'Related=' || T4.METRIC_VALUE || ' before Control=' || T3.METRIC_VALUE",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

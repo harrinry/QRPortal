@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the program not specifying a result set id.",
     "output": "This report provides the following information: Function full name",
     "rationale": "A result set is the set of rows selected by an SQL query. The EGL open statement sends a query to the database manager. The EGL for each or get next are used to retrieve the rows in the setone at a time for processing.\nVisualAgeGenerator connected the statements using the SQL record name specified on both statements. However in scenarios where there were multiple opens in the program for the same record, the generated program had to be smart enough to connect the statements to the result set that was currently opened.\nEGL allows a handle called a result set identifier to be specified on the open statement that selects the result set and the foreach or get next statements that process the set.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

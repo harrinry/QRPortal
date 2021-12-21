@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "PeopleSoft: Max column per index",
     "description": "This rule will report a violation where the number of columns on an index exceeds a parameter, named \"PeopleSoft: Max column per index\".\nThe default value is 3. (This parameter is configurable).",
     "output": "Associated to each Index with violations, the quality rule provides: \n- The index name.\n- The associated value is the number of columns of the composite index.",
@@ -43,11 +47,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

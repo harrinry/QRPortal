@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.sapui5",
+        "href": "AIP/extensions/com.castsoftware.sapui5"
+    },
     "description": "Deprecated as of version 1.48. Please use sap.ui.model.odata.v2.ODataModel instead.\n      The new version supports new features as Message handling and Client-side sorting and filtering ( see sap.ui.model.odata.OperationMode in the API reference)\n\n      It allows also caching all data in the model even Manually requested data ( Not cached when using sap.ui.model.odata.ODataModel)",
     "output": "Associated to each violation, the following information is provided:\n      - The number of violation occurrences\n      - Bookmarks for violation occurrences found in the source code",
     "rationale": "The purpose is to avoid to use the deprecated components as currently good and appropriate new version of the same is available. The deprecated component may be dropped sometime in near future without any intimation.\n      Using deprecated components could lead to security compliancy issues.",
@@ -43,11 +47,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

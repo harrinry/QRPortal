@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Using pattern-matching engine, this rule reports PeopleSoft SQL Definitions having the DISTINCT clause inside the SQL statement.",
     "output": "This report lists all PeopleSoft SQL Definitions using the DISTINCT clause. It provides the following information:\n- PeopleSoft SQL Definitions full name.",
     "rationale": "Use the DISTINCT clause only when you are sure that the query will return duplicate results.\nUsage of DISTINCT clause is frequently a \"code smell\".\nIt indicates that something is not quite right because using the DISTINCT keyword means that redundant data is being pulled from the database and then discarded.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

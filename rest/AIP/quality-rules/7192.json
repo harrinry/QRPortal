@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Bypassing the validation framework for a form exposes the application to numerous types of attacks. \nForms derived from 'ActionForm' or 'DynaActionForm' classes cannot use the Struts Validator. This rule reports all classes that inherit from:\n- org.apache.struts.action.ActionForm\n- org.apache.struts.action.DynaActionForm",
     "output": "This report lists all classes that violate this rule.\nIt provides the following information:\n Class Full Name",
     "rationale": "Struts validation framework allows preventing the application from any type of attacks based on invalid field input. To enable this framework on Struts Form, Struts Form must extend Struts Validation class. Unchecked input is the root cause of vulnerabilities like cross-site scripting, process control, and SQL injection. Although J2EE applications are not generally susceptible to memory corruption attacks, if a J2EE application interfaces with native code that does not perform array bounds checking, an attacker may be able to use an input validation mistake in the J2EE application to launch a buffer overflow attack.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

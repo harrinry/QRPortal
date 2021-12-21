@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Java object name",
     "description": "In the context of Struts implementation, the JSP pages must reference ONLY Java objects that belong to the bean scope or Java objects of a class belonging itself to the same scope\n\nThe scope is an attribute of the bean indicating the context of objects usage.\nIn struts-config, the scope refers to where to create/find ActionForm objects.\n\nAll JSP pages that refers to Java methods, field of a class or the class itself that is not associated to a scoped attribute will be reported as violation.",
     "output": "This report lists all JSP pages referencing Java objects that are not associated to J2EE Scoped Bean.\nIt provides the following information:\n - Page name\n - Java object name",
@@ -45,11 +49,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

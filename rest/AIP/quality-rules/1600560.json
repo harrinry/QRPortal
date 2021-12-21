@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This quality rule reports Component including a page but never subpage (SBP) or secondary page.",
     "rationale": "A Component represents a complete business transaction. It comprises either a single page or a set of pages that is meant to be processed as one page.\nFor a reason of maintainability, it is recommended to include subpage and secondary pages in the same component as their parent Page.",
     "remediation": "Include subpage and secondary pages in the same component as their parent Page.",
@@ -15,11 +19,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

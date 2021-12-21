@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Database object used",
     "description": "For all action class (and parent classes) that are referenced in the struts-config.xml through the tag 'action-mapping' (in struts 1.x) or in struts.xml and its included files through the tag 'action' (in struts 2.x), list artifacts that reference direct database access",
     "output": "This report lists all Action artifacts having access to the database.\nIt provides the following information:\n - Action artifact full name\n - database object used",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

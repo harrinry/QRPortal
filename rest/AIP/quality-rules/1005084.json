@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rules searches for records having specific parameter statements on the column declarations.",
     "output": "This report lists the following information: Record Full Name",
     "rationale": "Block the parameter that comes with retrieve sql.\nCOBOL will be generated, but you will get errors with DATE and TIMESTAMP at runtime.",
@@ -26,11 +30,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

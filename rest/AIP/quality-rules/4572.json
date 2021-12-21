@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "If the instance variable declared as final, then we have to perform initialization explicitly whether we are using it or not and JVM won\u2019t provide any default value for the final instance variable.",
     "output": "This report lists all Final Instance Variables, except those that are dynamically initialized. It provides the following information: Field full name",
     "rationale": "If a Final Instance Variable is not dynamically initialized, its value will be the same for all Instances and need not be an Instance Variable. This final instance variable requires memory for each new instantiation while it could be declared as static and require memory only once for all instances of the class.",
@@ -28,11 +32,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

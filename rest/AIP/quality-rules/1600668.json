@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Either 'Missing EFF_STATUS' or 'Missing EFFDT'",
     "description": "This quality rule reports PeopleSoft Records with EFFDT alone or EFFSTATUS alone.",
     "output": "This report lists all the PeopleSoft Records with either EFFDT or EFF_STATUS but not the other",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

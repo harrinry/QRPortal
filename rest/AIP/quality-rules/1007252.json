@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule detects the use of raw user input as parameter to file system functions that could potentially be dangerous.",
     "output": "This report lists all artifacts that use raw user input as input to file system functions. \nThis QR provides the following information:\nArtifact Full Name",
     "rationale": "Using raw user input as parameter to file system functiosn could potentially be dangerous.",
@@ -29,11 +33,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -77,6 +76,18 @@
             "name": "Injection",
             "href": "AIP/quality-standards/OWASP/items/A03-2021",
             "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.2.1"
         },
         {
             "id": "STIG-V-222609",

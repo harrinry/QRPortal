@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "String.Empty should not be used for empty string tests.",
     "output": "This report lists all uses of String.Empty (or string.Empty) in a test (ie not in an affectation or as a parameter).",
     "rationale": "If you want to test for empty strings, test the length (compare with 0) of the string instead. This is over twice as quick. Also as String objects can be null, you can use String.IsNullOrEmpty instead - however, do not compare it to true (ie not if (StringIsNullOrEmpty (myString)  == true), just use: if (StringIsNullOrEmpty (myString) ).",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

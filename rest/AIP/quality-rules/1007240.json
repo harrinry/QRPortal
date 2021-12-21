@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This QR will have violations if parenthesis are not used while instantiating objects.",
     "output": "This report will list all artifacts that instantiate object without using parenthesis. It provides:\nArtifact full name",
     "rationale": "Parenthesis should be used when instantiating classes regardless of the number of arguments since when method is being called PHP requires \"()\" and constructors are methods. \n      Also, it's more consistent with instantiations that have parameters.",
@@ -33,11 +37,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

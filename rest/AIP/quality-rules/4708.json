@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Dynamic instantiation method",
     "description": "Dynamic instantiation should be used only when necessary.\nDynamic instantiation is done through calls to:\n- 'java.lang.Class.newInstance()'\n- 'java.lang.reflect.Constructor.newInstance()' \n- 'java.lang.reflect.Array.newInstance(Class<?> ComponentType, int... dimensions)'\n- 'java.lang.reflect.Method.invoke(Object obj, Object... args)'\nmethods.",
     "output": "This report lists all Artifacts using reflection API methods.\nIt provides the following information:\n - Artifacts full name\n - the method of the reflection API' that has been called",
@@ -34,11 +38,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

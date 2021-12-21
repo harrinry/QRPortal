@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of allocate statements without deallocate",
     "description": "The number of Allocate statements is compared to the number of Deallocate statements. More allocate statements than deallocate statements indicates un-allocated variables from memory.\nNote: This Rule considers pointers as well as arrays for violation.",
     "rationale": "If an array or variable is not de-allocated, memory is not freed up. This main lead to memory issues. Advised standard is to both limit the use of ALLOCATE and to make sure that variables are de-allocated from memory",
@@ -30,11 +34,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

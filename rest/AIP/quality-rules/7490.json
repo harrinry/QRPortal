@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Hibernate Entity name",
     "description": "This rule checks Hibernate Entities associated to a table that fires an UPDATE trigger and that does not set select-before-update property to true.",
     "output": "List all Hibernate Entity that don't use select-before-update and that are associated to a table that fires an UPDATE trigger.\n\nIt provides the following information:\n XML File, Hibernate Entity",
@@ -30,11 +34,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

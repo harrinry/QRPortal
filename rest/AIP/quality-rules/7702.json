@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "An application should not have to configure a ConnectionProvider explicitly if using one of the Hibernate-provided implementations from third parties. \nHibernate will internally determine which ConnectionProvider to use based on the following algorithm:\n\nIf hibernate.connection.provider_class is set, it takes precedence\nelse if hibernate.connection.datasource is set \nelse if any setting prefixed by hibernate.c3p0. is set \nelse if any setting prefixed by hibernate.proxool. is set \nelse if any setting prefixed by hibernate.hikari. is set \nelse if any setting prefixed by hibernate.vibur. is set \nelse if any setting prefixed by hibernate.agroal. is set \n\n\n\nThis rule checks hibernate.properties or hibernate.cfg.xml file: \n\n- If hibernate.connection.provider_class is set, it will report a violation as it takes precedence over all Hibernate-provided implementations from any third party\n\n- If hibernate.connection.provider_class in not set but no other setting prefixed by hibernate.c3p0 or hibernate.proxool, hibernate.hikari, or hibernate.vibur  or hibernate.agroal can be found neither the setting for hibernate.connection.datasource : a violation will be reported also as no explicit configuration tu use Hibernate-provided implementations from third parties.",
     "output": "This report list the XML or .properties file that doesn't define a third party pool.\nIt provides the following information:\n File Full Name",
     "rationale": "It is very important to define a connection pool to increase database access performances.\nHibernate's own connection pooling algorithm is quite rudimentary. It is intended to help you get started and is not intended for use in a production system, or even for performance testing. You should use a third party pool for best performance and stability. \n\nJust replace the hibernate.connection.pool_size property with connection pool specific settings. This will turn off Hibernate's internal pool. For example, you might like to use c3p0.",
@@ -39,11 +43,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

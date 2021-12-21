@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PL1 Main Procedures having SQL queries using NOT IN.",
     "output": "The report lists all the PL1 Main Procedures having SQL queries using NOT IN.\n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "A NOT operator in a WHERE clause does not allow to use database indexes and has an impact in terms of performance. It is better to invert the logical expression in data selection.",
@@ -26,11 +30,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

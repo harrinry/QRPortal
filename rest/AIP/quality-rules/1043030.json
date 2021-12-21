@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.dotnetweb",
+        "href": "AIP/extensions/com.castsoftware.dotnetweb"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will detect if X-Frame-Options has been enabled for clickjacking protection when doing HTTP calls. It will check the web.config file as well as the source code.",
     "output": "Violated Config files",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

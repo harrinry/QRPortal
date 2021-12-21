@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Number of occurrences of this",
     "description": "This rule detects all cases where this is - directly or not - referenced in a constructor.\nIndirect reference to this means the definition of an inner class in the constructor. \nIt includes also the case where the constructor call the method start of a thread within a constructor (i.e. a method that inherits from java.lang.Thread.start())",
     "output": "This report lists all constructors that involve this directly or indirectly.\nIt provides the following information:\n  - Method full name\n  - the number of occurrences of this detected in the constructor",
@@ -35,11 +39,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -59,7 +58,18 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

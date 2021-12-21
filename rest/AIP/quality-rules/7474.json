@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "description": "This metric list all objects where calls to Items.Add (of WinForm controls) are done in loops without using BeginUpdate/EndUpdate.",
     "output": "This metric list all objects where calls to Items.Add are done in loops without using BeginUpdate/EndUpdate.",
     "rationale": "When updating a listbox by using Add method, we should use BeginUpdate and EndUpdate Method.\nBeginUpdate method prevent the control from repainting the ListBox each time an item is added to the list.\nOnce you have completed the task of adding items to the list, call the EndUpdate method to enable the ListBox to repaint.\nThis way of adding items can prevent flickered drawing of the ListBox when a large number of items are being added to the list.",
@@ -29,11 +33,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

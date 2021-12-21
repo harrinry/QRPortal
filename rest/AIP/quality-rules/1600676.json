@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects the usage of Evaluate not having Break statements for non-empty cases.",
     "output": "This report lists all PeopleCode artifacts using Evaluate without a Break statements for non-empty cases\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of violation inside the violating PeopleCode artifact",
     "rationale": "In an Evaluate statement, the When clauses continue to be evaluated until an End-evaluate or a Break statement is encountered.\nIf you have an Evaluate statement with a number of When clauses, and you only expect one of them to match, put a Break statement following the likely clause. Otherwise, all the subsequent When clauses are evaluated. Your program is still correct, but it is inefficient at runtime, particularly if you have a large number of When clauses, and the Evaluate statement is in a loop.",
@@ -37,11 +41,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "List of undefined PickList",
     "description": "A PickList determines the BusComp from which Fields may be picked into the current BusComp.  If the PickList is not defined, it will not be possible to pick any values.  This will prevent the user from being able to use the field in question properly, and may result in more serious issues if the field is required or has other validation that may prevent the user from saving the record.",
     "output": "This rule reports all Fields in which PickList are not defined",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

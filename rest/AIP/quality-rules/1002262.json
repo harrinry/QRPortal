@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of missing parenthesis",
     "description": "All the artifacts are reported that have insufficient parenthesis for these types of logical operators. The Cast analysis will look at this on a line per line basis; multi-line checking is not taken into account. The last case is actually considered a violation from a readibility perspective.",
     "rationale": "For readability purposes, all the logical operators in a conditional statement (AND, OR, XOR and NOT) should be enclosed in parenthesis.",
@@ -25,11 +29,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

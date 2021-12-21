@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Efferent Coupling",
     "description": "Efferent Coupling between packages (Ce) measures the total number of external classes coupled to classes of a package due to outgoing coupling. This is an indicator of the package's independence.\nThis rule reports all classes ( and interfaces ) of a package with a high efferent Coupling. \n\nThe threshold contains the maximum efferent coupling.",
     "output": "This report all APM Java Classes of a package with a high efferent Coupling. \nIt provides the following information: \n- Class (Or Interface) \n- CE",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

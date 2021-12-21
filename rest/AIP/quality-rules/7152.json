@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Java servlets often store information associated with each client that connects to them. Using member fields in the javax.servlet.http.HttpServlet to store information specific to individual clients is a common, simple practice.\nBut all servlet fields should be static final, this approach guarantees thread-safety in the servlet.\nThis rule reports all servlet fields which are not static final \nAll Classes that extend HttpServlet at any level are considered as Servlets.",
     "output": "This report lists all non final static fields that belong to Servlet classes.\nIt provides the following information:\n  - Field full name",
     "rationale": "Servlets must be programmed in a thread-safe manner because the controller will share the same instance for multiple simultaneous requests. In addition to the servlet's threading model, if your intention is to store request-specific state and if your container provides clustering facilities, there's no guarantee that the same servlet instance will receive all the requests (from one user or all users) in a Web application.\n\nThe use of servlet fields that are not static final creates a security breach as this object is shared among multiple sessions and thus can lead to confidential data leaks.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -87,6 +86,18 @@
             "name": "Unsynchronized Access to Shared Data in a Multithreaded Context",
             "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-567",
             "standard": "OMG-ASCQM"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

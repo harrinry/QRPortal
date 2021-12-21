@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of Read and Writes not using IOSTAT",
     "description": "All the read, write and open statements are counted and compared to the number of IOSTAT statements used in these same operations. Whenever these numbers are different for an artifact, the artifact is considered being in violation.\n\nWrite statement in the program that writes to the standard output is not counted towards violation.",
     "rationale": "All the Input/Output operations must be tested by the return code IOSTAT. Once the return code is not verified and tested, the artifact may run into unexpected behaviour causing the application to halt",
@@ -30,11 +34,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -54,7 +53,24 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

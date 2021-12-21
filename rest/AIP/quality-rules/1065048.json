@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation if catch-all is followed by a handler in a try-catch block",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "If the catch-all handler is found before any other handler, that behavior will be performed. Any handlers after the catch-all are unreachable code and can never be executed.",
@@ -34,11 +38,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

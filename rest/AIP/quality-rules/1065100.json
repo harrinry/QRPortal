@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when a move constructor or move assignment operator does not declare itself noexcept",
     "rationale": "Move constructor and move assignment operator are intended to be noexcept. If they throw exceptions, strong exception safety can not be guaranteed, because the original type values could be already modified or partially modified.",
     "reference": "AUTOSAR 2014 C++, A15-5-1: A class destructor, \u201cdelete\u201d operators, move constructor, move assignment operator and \u201cswap\u201d function shall not exit with an exception. They shall be all specified as \u201cnoexcept\u201d.",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -61,6 +60,24 @@
             "name": "Exceptions",
             "href": "AIP/quality-standards/C-CPP/items/AUTOSAR-CPP-2014-Exceptions",
             "standard": "C-CPP"
+        },
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

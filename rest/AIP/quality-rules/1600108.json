@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects all artifacts using commit or rollback statements",
     "output": "This report lists all artifacts using commit or rollback statements\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number commit and rollback found in the artifact source code",
     "rationale": "A commit consumes a lot of resources. Any extraneous commit should be identified and removed, to gain performance.",
@@ -31,11 +35,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

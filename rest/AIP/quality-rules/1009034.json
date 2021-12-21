@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches the subroutines having nested IF statements.\nThe rule checks for ENDIF statements and when it finds atleast 5 nested ENDIFs, it throws a violation.",
     "output": "The rule checks for ENDIF statements and when it finds atleast 5 nested ENDIFs, it throws a violation.\nIt provides the following information:\nRPG300 Subroutines full name \"",
     "rationale": "Nested IF statements made source code more difficult to read and to test.",
@@ -26,11 +30,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

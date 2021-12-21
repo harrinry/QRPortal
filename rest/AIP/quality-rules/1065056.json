@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation if exceptions are thrown outside of main()",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Throwing an exception during start-up or termination results in the program being terminated in\nan implementation-defined manner. Before the program starts executing the body of main, it is in a start-up phase, constructing and initializing static objects. Similarly, after main has returned, it is in a termination phase where static objects are being destroyed. If an exception is thrown in either of these phases it leads to the program being terminated in an implementation-defined manner. \n\nSpecifically from Section 15.3(13) of ISO/IEC 14882:2003 [1], if main is implemented as a function-try-block, exceptions raised during start-up and close down are not caught by the catch block(s) of main.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -69,6 +68,24 @@
             "name": "Exceptions",
             "href": "AIP/quality-standards/C-CPP/items/MISRA-CPP-2008-Exceptions",
             "standard": "C-CPP"
+        },
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Only for CRM 8.9\nVisible label must be left align and don't use \":\" (attribute \"No colon\" check into designer).",
     "rationale": "Improve look & feel for the user",
     "remediation": "Open the page in application deisgner and use the left alignment function and use an existant label ID using the rule PFLr03, if it is not possible to use an existing label ID so don't use \":\" for the text property of the field",
@@ -25,11 +29,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

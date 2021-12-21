@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "The aim of this rule is to report violations when RSA encryption algorithm is used without Padding. This can be identified when literal value starting with RSA/NONE is found in source code",
     "rationale": "Optimal Asymmetric Encryption Padding schemes are often used with cryptographic algorithms to make the plaintext less predictable and complicate attack efforts. The OAEP scheme is often used with RSA to nullify the impact of predictable common text.",
     "reference": "https://cwe.mitre.org/data/definitions/780.html\nhttps://rdist.root.org/2009/10/06/why-rsa-encryption-padding-is-critical/",
@@ -43,11 +47,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

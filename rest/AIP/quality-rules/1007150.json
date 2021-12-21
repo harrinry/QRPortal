@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the Artifacts with optional parameters before required ones. Artifacts are being checked including methods, functions and constructor.",
     "output": "This report lists all artifact with optional parameters listed before required ones.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Using optional parameters is a common practice in PHP. When using optional parameters, it is very important to assign a value to the optional parameters and to ensure that the optional parameters always follow required parameters. This will prevent application from giving unpredictable results.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "The rule searches for all PL1 Main Procedures, PL1 Functions and PL1 Procedures with High RAW SQL Complexity (SQL Complexity greater than X).\nRAW SQL Complexity measures the total number of tables used in FROM Clauses (Note: a single table used X times counts X).\nThe threshold is a parameter and can be changed at will. The default value for parameter is 5.",
     "output": "The report lists all the PL1 Main Procedures, PL1 Functions and PL1 Procedures with HIGH RAW SQL Complexity.\n\nIt provides following information: \n- PL1 Main Procedures, PL1 Functions and PL1 Procedures full name",
     "rationale": "High Raw SQL Complexity denotes an artifact that either contains a very large number of queries and/or very complex queries.\nThe artifacts high Raw SQL Complexity can be difficult to change and can potentially cause performance problems.",
@@ -26,11 +30,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

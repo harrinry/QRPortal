@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all artifacts with loops (for, while, do while)  that contain object instantiations (object creation).\n.NET artifacts include all methods and constructors.\n \nIf the instantiation concerns one of the following cases listed here below  it will be not considered as a violation.\n* The instantiation is an element of the list created using the following methods.\n       - System.Collections.Generic.Dictionary<TKey, TValue>..Add(TKey, TValue)\n       - System.Collections.Generic.List<T>..Add(T)\n       - System.Collections.Generic.Queue<T>.Enqueue\n       - System.Collections.Generic.SortedList<TKey, TValue>.Add\n       - System.Collections.Generic.Stack<T>.Push\n       - System.Collections.ArrayList.Add\n       - System.Collections.Hashtable.Add\n       - System.Collections.Queue.Enqueue\n      - System.Collections.Stack.Push\n      - System.Collections.Concurrent.BlockingCollection<T>.Add(T)\n\n* The instantiation is in the end of a return or throw statement.\n\n The list can be extended with other methods given as parameter of the rule.",
     "output": "All .NET artifacts(methods and constructors) with loops (for, while, do while) that contain object instantiations (object creation)",
@@ -40,11 +44,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

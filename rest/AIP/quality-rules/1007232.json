@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "Passing a variable by reference to a function will cause the original value to be changed if that variable is modified inside the called function and may produce unexpected results. Therefore, forcing variables passed by reference should be avoided.\nNote: Allowing to pass the variables by reference even though function signature does not allow variables passed by reference is no longer possible in PHP 5.x. This QR is kept only for compatibility with PHP 4.x code.",
     "output": "This report lists all artifacts with variables passed by reference when calling a function. It provides:\nFunction, method and constructor full name",
     "rationale": "If the variable is passed by reference when calling a function even though function signature does not accept parameter by reference, it may give unexpected result if value is changed and it is not expected behaviour.",
@@ -34,11 +38,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

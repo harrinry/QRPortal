@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of DO statements not using end do",
     "description": "All the DO statements and END DO statements are counted. Whenever the number of DO statements are larger than the number of ENDDO statements, the artifact is considered as being in violation. Other end tags for the DO Loop are used;",
     "rationale": "The use of the old end tag for a DO loop should be eliminated over time. It will simply code structure, and therefore readability.",
@@ -25,11 +29,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

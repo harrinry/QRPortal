@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule checks the usage of == and != operators between two objects (not primitive types). If detected, a violation will be reported.",
     "output": "This report lists all methods that use the == or != operators. It provides the following information:\n Method full name",
     "rationale": "It is a source of great confusion to novice programmers that Java has two ways of thinking about the equality of objects. When used with object references, the == operator returns true only if both references are to the same object. The == operator is used to compare values of primitive types or object references, but it does not test for value or semantic equality. This is the same for the '!=' operator.\n\nTwo objects are considered equal if they have the same states (values)\nwhen you use the == operator with object types, what you\u2019re actually doing is testing whether the two variables have references that point to the same space in memory. Even if the objects referenced by the variables are identical in regards to their values, the results will still be false. This is somewhat unintuitive, and it can be a source of confusion\u2014and bugs",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -107,6 +106,18 @@
             "name": "Use of Wrong Operator in String Comparison",
             "href": "AIP/quality-standards/OMG-ASCQM/items/CWE-597",
             "standard": "OMG-ASCQM"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

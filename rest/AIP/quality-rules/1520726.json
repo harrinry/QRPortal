@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of lines of code",
     "description": "This rule report Applet_PreInvokeMethod eScripts having more than \"Siebel: Max LoC for Applet_PreInvokeMethod\" lines of code in the Applet_PreInvokeMethod event.\n\"Siebel: Max LoC for Applet_PreInvokeMethod\" is a parameter that can be changed at will.\nThe default value is 20.",
     "output": "This rule reports Applets with a lot of code in Applet_PreInvokeMethod",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

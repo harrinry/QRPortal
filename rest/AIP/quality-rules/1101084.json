@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.sqlanalyzer",
+        "href": "AIP/extensions/com.castsoftware.sqlanalyzer"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric detects artifacts accessing a cursor inside a loop (meaning that the open, fetch loop and close operations are themselves embedded in a loop).",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -37,11 +41,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

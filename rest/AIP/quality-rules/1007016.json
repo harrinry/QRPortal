@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all Functions Methods & constructors with High Cyclomatic Complexity.\n          Cyclomatic Complexity is a measure of the complexity of the control structure of an artifact. It is the number of linearly independent paths and also the minimum number of independent paths while executing the software. \n          The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all Methods and Functions with a High Cyclomatic Complexity.\n\nThis QR provides the following information:\n- Artifact full name",
     "rationale": "Cyclomatic Complexity computes the number of linearly independent paths and a lower boundary of all execution paths ignoring multiple iterations.\n      \nThe effort and time for diagnosis of deficiencies or causes of failures, or for\nidentification of parts to be modified is directly related to the number of execution paths, i.e. the\ncomplexity of the control flow.\n\nAnalyzability, changeability and testability decreases with increasing Cyclomatic Complexity.\n\nEach modification must be correct for all execution paths. \nComplete testing requires coverage of all execution paths.",
@@ -36,11 +40,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

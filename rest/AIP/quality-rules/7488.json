@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Field Name",
     "description": "This rule reports all collection association (set, list, bag, idbag, map) that don't use lazy fetching strategy. This strategy is set through the lazy property set to \"true\".",
     "output": "List all Hibernate Entity Property and JPA Entity Property of type collection that does not use lazy fetching.\n\nIt provides the following information:\n Hibernate Entity Property Full Name or JPA Entity Property Full Name",
@@ -30,11 +34,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

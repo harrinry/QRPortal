@@ -5,6 +5,7 @@ class TechnicalCriteria extends BaseBusinessCriteria {
     super(data);
 
     this.qualityRules = [];
+    this.qualityTemplates = [];
   }
 }
 

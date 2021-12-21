@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.android",
+        "href": "AIP/extensions/com.castsoftware.android"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the proper use of setUserConfirmationRequired() and setAttestationChallenge() to pass a suitable challenge value provided by the relying party.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -120,6 +119,18 @@
             "name": "Insecure Authorization",
             "href": "AIP/quality-standards/OWASP/items/M6-2016",
             "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.8",
+            "name": "Improper access control (such as insecure direct object references, failure to restrict URL access, directory traversal, and failure to restrict user access to functions).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.8",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

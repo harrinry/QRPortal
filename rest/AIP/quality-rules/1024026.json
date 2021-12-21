@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.android",
+        "href": "AIP/extensions/com.castsoftware.android"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule will check the use of MODE_WORLD_READABLE or MODE_WORLD_WRITEABLE.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -24,11 +28,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -49,6 +48,48 @@
     ],
     "qualityStandards": [
         {
+            "id": "CWE-276",
+            "name": "Incorrect Default Permissions",
+            "href": "AIP/quality-standards/CWE/items/CWE-276",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-359",
+            "name": "Exposure of Private Personal Information to an Unauthorized Actor",
+            "href": "AIP/quality-standards/CWE/items/CWE-359",
+            "standard": "CWE"
+        },
+        {
+            "id": "CWE-921",
+            "name": "Storage of Sensitive Data in a Mechanism without Access Control",
+            "href": "AIP/quality-standards/CWE/items/CWE-921",
+            "standard": "CWE"
+        },
+        {
+            "id": "NIST-AC-3",
+            "name": "Access Enforcement",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-AC-3",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "A5-2017",
+            "name": "Broken Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A5-2017",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A7-2013",
+            "name": "Missing Function Level Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A7-2013",
+            "standard": "OWASP"
+        },
+        {
+            "id": "A01-2021",
+            "name": "Broken Access Control",
+            "href": "AIP/quality-standards/OWASP/items/A01-2021",
+            "standard": "OWASP"
+        },
+        {
             "id": "M1-2016",
             "name": "Improper Platform Usage",
             "href": "AIP/quality-standards/OWASP/items/M1-2016",
@@ -59,6 +100,18 @@
             "name": "Insecure Data Storage",
             "href": "AIP/quality-standards/OWASP/items/M2-2016",
             "standard": "OWASP"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.6",
+            "name": "All high risk vulnerabilities identified in the vulnerability identification process (as defined in PCI DSS Requirement 6.1).",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.6",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

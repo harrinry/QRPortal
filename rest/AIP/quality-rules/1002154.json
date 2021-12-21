@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Fan-out",
     "description": "Avoid Subroutines with a high Fan-out.  Avoid Artifacts with High Fan-Out (Fan-Out > X). The Fan-out of an Artifact is the number of other Artifacts that are referenced in it. When computing the Fan-Out of an Artifact, multiple accesses to the same component of an Artifact are counted as one access. The threshold is a parameter and can be changed at will.",
     "alternativeName": "Avoid Subroutines with a high Fan-out (FORTRAN)",
@@ -33,11 +37,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects all PeopleCode objects that compute expression inside loops and fail to compute them once outside of the loop.",
     "output": "This report lists all PeopleCode objects having common expressions. inside loops\nIt provides the following information:\n- Record full name\n- The associated value is the number of violation inside the violating PeopleCode object",
     "rationale": "The PeopleCode compiler is not an optimizing compiler, unlike some current compilers for languages such as C++. For example, the PeopleCode compiler does not do common subexpression analysis. So, sometimes, if you have a complicated bit of PeopleCode that is used often, you can isolate the common expression yourself. This isolation can make your code look cleaner and make your code faster, especially if it is in a loop.\nThe compiler has to evaluate each occurrence of the expression, even though it would only execute it once.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

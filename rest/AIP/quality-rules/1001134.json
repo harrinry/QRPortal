@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PL1 Main Procedures (Programs) that are using the GROUP BY statement.",
     "output": "The report lists all the PL1 Main Procedures  having GROUP BY statement. \n\nIt provides following information: \n-  PL1 Main Procedures (Programs) full name",
     "rationale": "Having complex queries in SQL Artifacts can cause performance problems. Queries using group by are considered complex and not efficient.",
@@ -26,11 +30,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

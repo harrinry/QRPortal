@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Parent record",
     "description": "List all Child Records that don't have a key longer than the parent Record's one and all Child Records that don't have the same list of fields in the key as in the parent Record.",
     "rationale": "In some cases, you have a field in a table for which you want to allow multiple occurrences, in which case you create a subordinate or child table. For example, for employee reviews, an employee can be reviewed for performance in multiple categories - organization skills, interpersonal skills, and so on. These categories and ratings are stored in a separate child table, EE_REVIEW_RT, which is directly related to REVIEW_DT, the parent table that stores information about employee reviews.\nThe keys that you establish in a parent record definition determine which keys are required in child record definitions. The child must have the same keys as the parent, plus one or more keys that uniquely identify each row.",
@@ -36,11 +40,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

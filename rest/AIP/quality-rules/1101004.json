@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.sqlanalyzer",
+        "href": "AIP/extensions/com.castsoftware.sqlanalyzer"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric retrieves the artifacts with at least one table accessed on non-indexed columns.\nA SQL query is considered indexed when all the following conditions are true:\n\n- At least one index is accessed for each non XXS table\n- the access is on the left-most columns of the indexes\n\nAn XXS table is a table containing an extremely low amount of data. Default is 10. The threshold that determines when a table XXS can be configured by the user in the same manner as for XXL tables.",
     "output": "Associated to each Artifact with violations, the Quality Rule provides:\n- The number of violation patterns.\n- Each violation pattern shows :\n- the query \n- each table accessed on non-indexed columns\n- the table's indexes",
@@ -45,11 +49,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

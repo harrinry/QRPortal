@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This metric retrieves all Tibco Processes that are not referenced i.e. not used by Tibco code.",
     "output": "This report lists all Number of Tibco Processes that are not referenced.\nIt provides the following information:\nTibco Process full name",
     "rationale": "Unreferenced Processes like any other example of dead code make maintenance more difficult and more expensive.",
@@ -36,11 +40,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

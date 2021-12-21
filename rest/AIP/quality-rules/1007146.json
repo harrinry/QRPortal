@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts containing unconditional \"if\" and \"else if\\elseif\" statements. Artifacts considered for this quality rule are PHP Section, function, method and constructors.",
     "output": "This report lists all artifacts containing unconditional \"if\" and \"else if\\elseif\" statements.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Unconditional \"if\" and \"else if\\elseif\" statements are not necessary.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

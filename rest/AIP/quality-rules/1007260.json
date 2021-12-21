@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "associatedValueName": "Reasoning",
     "description": "A command execution vulnerability occurs when user input is embedded unsanitized into a system command. It allows an attacker to terminate the intended command and to append arbitrary system commands for execution. Common character sequences to separate commands are semicolons (;), boolean operators (&|), $(subcommands), `backticks`, and newline characters (%0a).",
     "output": "This report lists all artifacts that allow command injection through use of unsanitized user input. \nThis QR provides the following information:\nArtifact Full Name",
@@ -50,11 +54,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

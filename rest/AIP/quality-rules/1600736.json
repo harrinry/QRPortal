@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "Objects (Process Group) created by the project should be at least in one Permission List (AuthPrcs).\nThis rule reports objects being in no Permission List.",
     "output": "This report lists all the Process Groups not in a permission list",
     "rationale": "To give access to the object, it must be referenced by a Permission List.\nIf not, ther user belonging to a particular role won't be able to invoke batch (and online) processes he need to through PeopleSoft Process Scheduler.",
@@ -37,11 +41,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

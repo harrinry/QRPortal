@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of Columns",
     "description": "This rule reports Applets with too many Columns in a List.\nThe threshold is a parameter, named \"Siebel: Max number of columns\" and can be changed at will.\nDefault value is 50.",
     "output": "This rule reports Applets with too many Columns in a List. It displays:\n- List applet full name\n- The assciated value is the Number of Columns",
@@ -23,11 +27,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

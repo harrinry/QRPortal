@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Path until the remote called artifact",
     "description": "This rules reports violation when detecting one of the following remote call inside a loop at a depth level less than <depth level>:\n* SQL Statement through loop (example: SQL cursor on SQL Server, nested cursors on Oracle)\n* Stored procedure called many times from the client in a loop.\n* EJB3 Session remote method\n\n\n<depth level> is a parameter that can be changed at will.",
     "output": "This report all remote call inside a loop. \nIt provides the following information:\n - Caller Artifact Full Name that contains the loop\n - path until the remote called artifact\n\nNote that:\n1/ The call path may contains different path while only one is an error. For example:\ng(){myException()}\n f() {\n       while { g ()}\n        g()\n        } \n\nwill report both path to g() while only one is a violation.\n\n2/ 2/ Several paths for the same method violating the rule are identified in the Metric Detail page by a sequence ID (in the Value column), this ID is dynamically set during each snapshot and the same path can have a different sequence ID in different snapshots.",
@@ -39,11 +43,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

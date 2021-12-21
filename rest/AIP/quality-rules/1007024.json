@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "The jumbling incrementer detects use of an outer incrementer in an inner loop and vice versa.",
     "output": "This report lists all artifacts containing incrementer jumbling in loops.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "For maintainability and readability reasons, it is preferable to avoid incrementer jumbling in loops.",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

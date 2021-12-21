@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches all PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL containing builtin function UPPER, LOWER or SUBSTR  in the WHERE clause.",
     "output": "This report lists all the PL1 Main Procedures, PL1 Functions and PL1 Procedures having DB2 SQL containing builtin function UPPER, LOWER or SUBSTR  in the WHERE clause.\n\nIt provides the following information: PL1 Main Procedures, PL1 Functions and PL1 Procedures full name.",
     "rationale": "A builtin function on column table increases CPU consumption and changes access path.",
@@ -26,11 +30,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

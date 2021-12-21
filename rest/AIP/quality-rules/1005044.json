@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rule searches for all the artifacts using at least one SQL query inside a loop statement.",
     "output": "This report provides the following information: Function full name. Number of Cursors being opened in a Loop",
     "rationale": "Having an SQL query inside a loop is usually the source of performance and scalability problems especially if the number of iterations become very high (for example if it is dependent on the data returned from the database).\nThis iterative pattern has proved to be very dangerous for application performance and scalability. Database servers handle in a much better set-oriented pattern rather than pure iterative ones.",
@@ -38,11 +42,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.cfamily",
+        "href": "AIP/extensions/com.castsoftware.cfamily"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This rule searches for functions that contain a 'break' statement in a 'for' loop. 'break' statements located in nested loops will also be reported as a violation to this rule.\n\nNote: Range-based for loops are not considered because there is no stop condition in the loop definition.",
     "output": "Associated to each Function with violations, the Quality Rule provides:\n- Number of violation occurrences\n- Bookmarks for violation patterns found in the source code:\n  - 'break' statement\n  - 'for' loop",
@@ -30,11 +34,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

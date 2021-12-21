@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for PL1 Main Procedures using DATE builtin function via include PLC.",
     "output": "The report lists all the PL1 Main Procedures having DATE builtin function via Include PLC.\n\nIt provides following information: \n-  PL1 Main procedure full name",
     "rationale": "The DATE function is a deprecated functionality and causes issues in your program.",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

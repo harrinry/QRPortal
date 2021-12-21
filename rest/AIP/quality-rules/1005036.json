@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.egl",
+        "href": "AIP/extensions/com.castsoftware.egl"
+    },
     "description": "This rules searches for all the Record with name not adhering to a pattern. The pattern will be provided as parameter of the rule.\nThis rule will list out the record name which has the Upper or lower case of parameter valuer not present in the name.\nThe default parameter value is W.\nThe parameter value can be changed by user.",
     "output": "This report provides the following information: OTHER RECORD full name",
     "rationale": "Having the naming conventions make the source code more easy to ready and so to maintain.",
@@ -23,11 +27,6 @@
             "id": 66033,
             "name": "Documentation",
             "href": "AIP/business-criteria/66033"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

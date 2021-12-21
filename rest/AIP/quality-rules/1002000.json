@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Number of EQUIVALENCE statements",
     "description": "The number of EQUIVALENCE statements are counted per artifact; whenever the artifact has 1 or more occurences of this statement, it is considered as being in violation. The number of EQUIVALENCE statements is presented in the value of the violated artifact.",
     "rationale": "Use of the instruction EQUIVALENCE is forbidden.",
@@ -24,11 +28,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,
@@ -53,7 +52,18 @@
         }
     ],
     "qualityStandards": [
-        
+        {
+            "id": "PCI-Requirement-6.2",
+            "name": "Ensure that all system components and software are protected from known vulnerabilities by installing applicable vendor- supplied security patches. Install critical security patches within ...",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.2",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.2",
+            "name": "Ensure that all system components and software are protected from known vulnerabilities by installing applicable vendor- supplied security patches. Install critical security patches within ...",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.2",
+            "standard": "PCI-DSS-V3.2.1"
+        }
     ],
     "parameters": [
         

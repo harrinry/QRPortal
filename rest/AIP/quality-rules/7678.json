@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule checks all references to log4j, Logback and Java.Util.logger API usage. \nAny artifact that reference a class, an interface, a method or a field that belongs to a class from the package org.apache.log4j\nch.qos.logback.classic.Logger\njava.util.logging.Logger\n\nwill be reported as violation.\n\nThis rule can be customized by specifying any other specific implementations package to be avoided",
     "output": "This report lists all artifacts and fields that violate this rule.\nIt provides the following information:\n Artifact Full Name and Field Full Name",
     "rationale": "Instead of being stick to a specific logging implementation, it is recommended to use Java-based logging utility and a programming model for logging and for other toolkits that provides APIs, log implementations, and wrapper implementations over some other tools \nas Apache Commons Logging (previously known as Jakarta Commons Logging or JCL).\nit's also recommanded to use Log interface that is intended to be both light-weight and an independent abstraction of other logging toolkits. It provides the middleware/tooling developer with a simple logging abstraction that allows the user (application developer) to plug in a specific logging implementation.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

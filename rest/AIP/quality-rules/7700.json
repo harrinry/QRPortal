@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Servlet Class Name",
     "description": "For Struts based application, this rule reports all Servlet that inherit from javax.servlet.http.HttpServlet but not from org.apache.struts.action.ActionServlet class.",
     "output": "This report lists all HTTP Servlets that don't inherit from Struts action Servlet.\nIt provides the following information:\n  Servlet Full Name, Servlet Class Name",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

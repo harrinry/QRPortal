@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports Java artifacts using 'java.lang.Runtime.exec()'",
     "output": "This report lists all java artifacts using 'java.lang.Runtime.exec'.\nIt provides the following information:\n - Artifact full name",
     "rationale": "For portability reasons, 'java.lang.Runtime.exec()' should not be used since it means being dependent on the environment where the application is deployed.\nFor security reasons, 'java.lang.Runtime.exec()' can lead to malicious file execution resulting in devastating attacks such as total server compromise.",
@@ -63,11 +67,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

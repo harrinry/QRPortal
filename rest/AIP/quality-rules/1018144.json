@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule searches for ProcessActivities having a timeout not starting with %% (so defined by a Global Variable).",
     "output": "This report lists all  Processe Activities having an hardcoded timeout.\nIt provides the following information:\nProcess Activity full name.\nThe associated value is the timeout value.",
     "rationale": "A connection is not configurable if one element of its configuration is not set by using a Global Variable.\nThe timeout is one of these elements. Such hardcoded value makes it harder to move from one environment to another without changing each hardcoded value.",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

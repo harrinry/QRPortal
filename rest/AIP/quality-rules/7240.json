@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Find all Action Classes (inherit from org.apache.struts.action.Action class) that call other classes than Business Classes specified by a parameter.",
     "output": "This report lists all call from Action Classes to non Business packages (X)\nIt provides the following information:\n Action method full name",
     "rationale": "Struts is a Framework for building Model-View-Controller 2 Web applications. This model is the Blueprints recommended architectural design pattern for interactive applications. It separates design concerns (data persistence and behavior, presentation, and control), decreasing code duplication, centralizing control, and making the application more easily modifiable. MVC 2 also helps developers with different skill sets to focus on their core skills and collaborate through clearly defined interfaces.",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

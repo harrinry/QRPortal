@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the classes with excessive number of public methods and fields. All public methods, instance or static along with access modifiers final and abstract are considered for this QR. All member variables, instance or static except const members are considered for this QR. Base class members unless overriden do not contribute to the evalution of this QR.",
     "output": "This report lists all the classes with excessive number of public methods and fields.\n\nThis QR provides the following information:\nClass full name.",
     "rationale": "A large number of public methods and attributes in a class can be an indication that the class has too many responsibilities and can be refactored into multiple classes.",
@@ -23,11 +27,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

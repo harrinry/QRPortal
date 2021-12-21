@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule process 3 types of variables\n1.Normal Variables\n2. Member variables ( variables declared as member variables in the class)\n3.Variables in a string\n\n\n1- For Normal variables  : If Variable is not in valid camel caps format\nthen there will be violation\n2- For Member Variables\n  - If Public member variable does not contain a leading underscore it will be a violation\n  - If member variable doesn't contain a leading underscore then that will be a violation\n  - If Member variable is not in valid camel Caps format then it will be a violation\n\n3- For Variables in string: If variable is not in valid camel Caps format then it will be a violation\n\n\n\n\nThis rule is based on Code Sniffer 2.5\n\nArtifacts considered for this QR are php Section, method, function, constructor and member variables",
     "output": "This report lists all the artifacts having variables that do not follow naming convention\n\nThis QR provides the following information:\n- Artifact Full Name",
     "rationale": "Using naming conventions helps reduce the effort to understand the SourceCode and also to increase the code quality",
@@ -23,11 +27,6 @@
             "id": 66033,
             "name": "Documentation",
             "href": "AIP/business-criteria/66033"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

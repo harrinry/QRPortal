@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.systemlevelrules",
+        "href": "AIP/extensions/com.castsoftware.systemlevelrules"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "This metric retrieves the artifacts with high fan-in containing at least one SQL Query not using a table's indexes.\nAn SQL Query is using table's indexes if all the  following conditions are true:\n\n- At least one index is defined for each non XXS table participating in the from list\n- Queries must reference left-most columns of the index key\n- the column must not be used in a function call\n\nAn XXS table is a table containing an extremely low amount of data. Default is 10.",
     "output": "Associated to each Artifact having violations, the Quality Rule provides:\n- The number of violation occurrences.\n- Each violation occurrence shows :\n- the query \n- each table not using index\n- the table's indexes",
@@ -37,11 +41,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

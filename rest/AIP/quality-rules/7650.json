@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Every field of a serializable class must be either serializable or transient\n\nThis rule reports a violation if a Serializable class (implement java.io.Serializable or inherit from a class that is serializable) has a field that is \n- not Serializable (do not implement java.io.Serializable or inherit from a class that is serializable)\n- non-static \n- non transient fields \n- and not Java primitives type.\n\nNote that in the case of a field declared with an interface, this field is considered as serializable when the concrete class used to initialized this field is serializable. This quality rule will take into account cases where the field is initialized in the declaration, not the cases where the field is initialized later in a method.",
     "output": "Report all fields of Serializable classes that are not serializable, not transient, non-static and not primitive.\n\nIt provides the following information:\n  Full Field Name",
     "rationale": "Declaring non-transient fields of non-serializable type inside of a serializable class will result in an exception thrown during the serialization.\n\nThis issue can prevent the software from running reliably, e.g. by triggering an exeption. If the relevant code is reachable by an attacker, then this reliability problem might introduce a vulnerability.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

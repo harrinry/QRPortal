@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all Classes with excessive number of dependencies. A class is considered as having excessive number of dependencies if number of dependencies are more than 13.",
     "output": "This report lists all Classes with excessive number of dependencies.\n                \nThis QR provides the following information:\nClass full name.",
     "rationale": "A class with excessive number of dependencies has negative impact on several quality aspects of a class, including stability, maintainability and understandability.",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -15,8 +15,9 @@ class QualityRuleDataReader {
   async list(){
     /** @type {Array<number>} */
     const data = await this.dataReader.listQualityRules();
+    const templates = await this.dataReader.listQualityTemplates();
 
-    return data;
+    return [...data, ...templates];
   }
 
   /**
@@ -24,7 +25,13 @@ class QualityRuleDataReader {
    * @returns {Promise<import("../data-serializer/models/quality-rule")>}
    */
   async read(id){
-    const data = await this.dataReader.readQualityRule(id);
+    let data;
+    
+    if(id > 2_000_000){
+      data = await this.dataReader.readQualityTemplate(id);
+    } else {
+      data = await this.dataReader.readQualityRule(id);
+    }
 
     return this.serializer.serialize(data, QualityRule);
   }
@@ -47,7 +54,13 @@ class QualityRuleDataReader {
     const output = [];
 
     for (const id of ids) {
-      const data = await this.dataReader.readQualityRule(id);
+      let data = {};
+
+      if(id > 2_000_000){
+        data = await this.dataReader.readQualityTemplate(id);
+      } else {
+        data = await this.dataReader.readQualityRule(id);
+      }
 
       output.push(this.serializer.serialize(data, QualityRuleReference));
     }

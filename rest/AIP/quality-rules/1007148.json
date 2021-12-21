@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all methods and constructor overridden only with parent artifact call.",
     "output": "This report lists all methods and constructor overridden only with parent artifact call.\n\nThis QR provides the following information:\nMethod and constructor full name.",
     "rationale": "Overriding Methods is a very powerful way to refactor the code and produce complete functionalities. However, useless overriding can make source code more complex.",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

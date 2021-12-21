@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rules verifies that Class Methods and Constructor have scope modifiers. Class Methods and constructors must be defined as public, private, or protected.",
     "output": "This report will list all PHP class Methods and Constructor not having scope modifiers. It provides:\nClass Method or Constructor full name.",
     "rationale": "Access modifiers are essential element of object oriented language. Use of access modifier helps achieve encapsulation and abstraction. They also make code understanding clearer.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

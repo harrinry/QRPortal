@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This rule reports violation for all methods and constructors containing a catch block that refer to the assert instruction.",
     "output": "This report lists all Methods that refer to the assert instruction.It provides the following information: Method full name",
     "rationale": "Assertions are not meant to replace checking method parameters or program state and throwing informative exceptions when facing an exceptional situation. The program logic or the error handling logic shouldn't rely on them.\n\nThe purpose of an assertion is to force a program to fail when a simple self-diagnosis shows there's something wrong with the program itself. Assertions may help a programmer in finding bugs and avoiding them in the first place. Since all programming and debugging should be done in a development environment rather than in a production environment, assertions are usually disabled in production environments.",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -75,6 +74,24 @@
             "name": "Empty Exception Block",
             "href": "AIP/quality-standards/CISQ/items/ASCRM-RLB-1",
             "standard": "CISQ"
+        },
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

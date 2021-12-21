@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Reports all persistent classes that don't implement Object.GetHashCode or Object.Equals directly (class that is referenced in the mapping file) or in an inherited class that holds persistent fields (this is the case when a persistent class makes persistent inherited fields).",
     "output": "This report lists all .Net persistent classes that don't implement Object.GetHashCode or Object.Equals directly.\n\nIt provides the following information:\n- Class Full Name",
@@ -39,11 +43,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

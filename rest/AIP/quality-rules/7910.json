@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "When the code has a jump statement inside a finally block, it will cause any thrown exception in the try/catch block to be discarded.\n\nThis rule raises violation when detecting method that contains an abrupt in a finally block. \nAn abrupt completion of a statement or block occurs when it throws an exception, executes a break or continue to an enclosing statement, or executes a return from the method thereby preventing the exception from being thrown to the caller.",
     "output": "Reports all methods that contain an abrupt exit in a finally block. An abrupt exit of a statement or block occurs when it throws an exception, executes a break or continues to an enclosing statement, or executes a return from the method.\n\nIt provides the following information:\n Method full name",
     "rationale": "Care must be taken if completion of a try-catch block occurs as a result of executing a return. If a finally block also returns a value, then that return supersedes any previous return in the try-catch block. Also, if an exception was thrown in the try or catch blocks that was not caught, then execution of a return in the finally block prevents the exception from being thrown to the caller (because it is not possible for the caller to simultaneously evaluate the return and catch the exception). This is also valid for break or continue instructions.",
@@ -33,11 +37,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
@@ -62,6 +61,24 @@
             "name": "Return Inside Finally Block",
             "href": "AIP/quality-standards/CWE/items/CWE-584",
             "standard": "CWE"
+        },
+        {
+            "id": "NIST-SI-11",
+            "name": "Error Handling",
+            "href": "AIP/quality-standards/NIST-SP-800-53R4/items/NIST-SI-11",
+            "standard": "NIST-SP-800-53R4"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.1"
+        },
+        {
+            "id": "PCI-Requirement-6.5.5",
+            "name": "Improper error handling",
+            "href": "AIP/quality-standards/PCI-DSS-V3.2.1/items/PCI-Requirement-6.5.5",
+            "standard": "PCI-DSS-V3.2.1"
         }
     ],
     "parameters": [

@@ -37,6 +37,13 @@ class BusinessCriteriaDataReader {
       model.technicalCriteria = [];
     }
 
+    try {
+      model.qualityTemplates = this.serializer.serialize(await this.dataReader.listBuisnessCriteriaQualityTemplates(id), QualityRuleReference);
+    } catch (error) {
+      // ignore the error and set technical criteria to empty array
+      model.qualityTemplates = [];
+    }
+
     return model;
   }
 

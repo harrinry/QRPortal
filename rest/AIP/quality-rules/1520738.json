@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Number of compiler directives",
     "description": "This rules detects eScript using either #if or #define preprocessor directives.",
     "output": "This rule reports Functions with compiler directives. It provides:\n- function full name\n- The associated value is the Number of compiler directives",
@@ -30,11 +34,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

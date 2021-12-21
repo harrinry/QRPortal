@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "Number of instances where a storable element or member element is declared with a data type in the 'Create' action, and then is updated with a value which is cast via a type cast action into a second data type, which is incompatible with the first data type",
     "output": "This report lists all methods that have incorrect Type Conversion or Cast. It provides the following information: method full name",
@@ -44,11 +48,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

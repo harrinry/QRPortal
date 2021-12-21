@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "Even though the signatures for methods in a servlet include throws IOException, ServletException, it's a bad idea to let such exceptions be thrown. \n\nThis rule reports all exceptions in methods named \"do*\" ( doPost; doGet...) are explicitly handled in servlet classes.",
     "rationale": "When a Servlet throws an exception, the default error response the Servlet container sends back to the user typically includes debugging information. \nThis information is of great value to an attacker. For example, a stack trace might show the attacker a malformed SQL query string, the type of database being used, and the version of the application container. This information enables the attacker to target known vulnerabilities in these components.",
     "reference": "http://cwe.mitre.org/data/definitions/600.html",
@@ -38,11 +42,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

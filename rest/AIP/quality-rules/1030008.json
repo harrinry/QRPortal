@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "This rule searches for kotlin(.kt) files that contain more than X lines of code. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all kotlin files with more than X lines of code. \nIt provides the following information: \n - File name\n - Number of lines",
     "rationale": "Large files are more difficult to read and manage and this can decrease the application maintenance.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.fortran",
+        "href": "AIP/extensions/com.castsoftware.fortran"
+    },
     "associatedValueName": "Program Length",
     "description": "This calculation is using the results of the calculated Halstead metrics n1, n2, N1 and N2. This diagnostic is a result of this calculation",
     "rationale": "PR_LGTH: Total number of operators and operands used between the component's header and the closing curly bracket.\n          PR_LGTH = N1 + N2\nThe code's textual elements that are considered as operators, operands are respectively indicated by the metrics n1 and n2\"",
@@ -24,11 +28,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

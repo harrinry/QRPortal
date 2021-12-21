@@ -65,6 +65,13 @@ class DataReader extends JsonFileReader {
   }
 
   /**
+   * @param {number} id
+   */
+  async readTechnologyQualityTemplates(id){
+    return this.read(types.technologies, await this.matchTechnologyId(id), types.qualityTemplates);
+  }
+
+  /**
    * @param {string} id 
    */
   async readBuisnessCriteria(id){
@@ -80,6 +87,13 @@ class DataReader extends JsonFileReader {
    */
   async listBuisnessCriteriaQualityRules(id){
     return this.read(types.businessCriteria, await this.matchId(id, types.businessCriteria), types.qualityRules);
+  }
+
+  /**
+   * @param {string} id 
+   */
+  async listBuisnessCriteriaQualityTemplates(id){
+    return this.read(types.businessCriteria, await this.matchId(id, types.businessCriteria), types.qualityTemplates);
   }
 
   /**
@@ -143,11 +157,23 @@ class DataReader extends JsonFileReader {
     return files.map(_ => parseInt(path.basename(_, this.ext)));
   }
 
+  async listQualityTemplates(){
+    const files = await promisify(fs.readdir)(path.join(this.storageFolder, types.qualityTemplates));
+    return files.map(_ => parseInt(path.basename(_, this.ext)));
+  }
+
   /**
    * @param {number} id 
    */
   readQualityRule(id){
     return this.read(types.qualityRules, `${id}`);
+  }
+
+  /**
+   * @param {number} id 
+   */
+   readQualityTemplate(id){
+    return this.read(types.qualityTemplates, `${id}`);
   }
 
   listQualityStandards(){
@@ -242,6 +268,15 @@ class DataReader extends JsonFileReader {
   async listQualityStandardItemQualityRules(qualityStandardId, itemId){
     return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
       types.items, await this.matchQualityStandardItemId(qualityStandardId, itemId), types.qualityRules);
+  }
+
+    /**
+   * @param {string} qualityStandardId 
+   * @param {string} itemId
+   */
+  async listQualityStandardItemQualityTemplates(qualityStandardId, itemId){
+    return this.read(types.qualityStandards, await this.matchQualityStandardId(qualityStandardId), 
+      types.items, await this.matchQualityStandardItemId(qualityStandardId, itemId), types.qualityTemplates);
   }
 
   listVersions(){

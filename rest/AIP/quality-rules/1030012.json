@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.kotlin",
+        "href": "AIP/extensions/com.castsoftware.kotlin"
+    },
     "description": "DES and 3DES are vulnerable to attack mainly because of time complexity and used techniques. \n   This rule is will report a violation when weak encryption algorithms like DES or Triple-DES is used in the source code.\n   \nThis rule is related to:\nCWE-326 - Inadequate Encryption Strength \nCWE-327 - Use of a Broken or Risky Cryptographic Algorithm \nOWASP Top 10 2013: A6 Sensitive Data Exposure \nOWASP Top 10 2017: A3 Sensitive Data Exposure",
     "rationale": "The Data Encryption Standard is a symmetric-key algorithm for the encryption of electronic data.\nDES is now considered to be insecure for many applications. This is mainly due to the 56-bit key size being too small. In January 1999, distributed.net and the Electronic Frontier Foundation collaborated to publicly break a DES key in 22 hours and 15 minutes (see chronology).\nSome analytical results demonstrate theoretical weaknesses in the cipher, Attack have been also demonstrated in practice. Even in the form of Triple DES, it is believed to be insecure.\nDES has been withdrawn as a standard by the National Institute of Standards and Technology. (NIST)",
     "reference": "https://cwe.mitre.org/data/definitions/327.html\nhttps://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure",
@@ -43,11 +47,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

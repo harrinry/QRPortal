@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation when a statement, with \"++\" and \"--\" operators, has other side effects apart from increment and decrement.\nA function call is considered to be a side effect for the purposes of t his rule.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "The use of increment and decrement operators in combination with other operators is not\nrecommended because:\n\u2022 It can significantly impair the readability of the code;\n\u2022 It introduces additional side effects into a statement with the potential for undefined behavior\n\nIt is safer to use these operators in isolation from any other arithmetic operators",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

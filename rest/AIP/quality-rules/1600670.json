@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Either 'FIELDNUM not sequential = <FIELDNUM value>' or 'Same FIELDNUM = <FIELDNUM value>'",
     "description": "The PSRECFIELD.FIELDNUM values should be numbered sequentially from 1 through PSRECDEFN.FIELDCOUNT.\nNote: when using Application Designer, it is not possible to generate errors",
     "output": "This report lists all Record fields with a bad FIELDNUM:\n- No field with FIELDNUM - 1\n- Another field with the same FIELDNUM",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

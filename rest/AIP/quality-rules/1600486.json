@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Tablespace",
     "description": "Tablespaces that must be used are listed in the parameter list",
     "rationale": "In order to better identify the amount of datas generated in specific tables during some processes, all new record should be created in specific tablespaces.\nIt allows DBAs to reorganize these tablespaces.",
@@ -31,11 +35,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

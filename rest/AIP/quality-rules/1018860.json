@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "Processes should have less than a defined number of Activities. The threshold is a parameter and can be changed at will.",
     "output": "This report lists all  Processes having  too many Activities.\nIt provides the following information:\nProcess full name.\nThe associated value is the number of  Activities defined inside the Process.",
     "rationale": "For maintainability and readability reasons, classes should not have too many Activities.",
@@ -22,11 +26,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when any artifacts other than main, namespace or extern C are defined in global scope.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
     "rationale": "Declaring names into appropriate namespaces reduces the names found during lookup, helping to ensure that the names found meet developer expectations.",
@@ -24,11 +28,6 @@
             "id": 66033,
             "name": "Documentation",
             "href": "AIP/business-criteria/66033"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

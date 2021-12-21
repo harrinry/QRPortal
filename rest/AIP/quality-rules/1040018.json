@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.springsecurity",
+        "href": "AIP/extensions/com.castsoftware.springsecurity"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "The X-Frame-Options HTTP response header can be used to indicate whether or not a browser should be allowed to render a page in a frame or iframe. Sites can use this to avoid Clickjacking attacks, by ensuring that their content is not embedded into other sites. Set the X-Frame-Options header for all responses containing HTML content. The possible values are \"DENY\", \"SAMEORIGIN\", or \"ALLOW-FROM uri\".\nThere are three possible values for the X-Frame-Options header:\n\n1. DENY, which prevents any domain from framing the content. The \"DENY\" setting is recommended unless a specific need has been identified for framing.\n2. SAMEORIGIN, which only allows the current site to frame the content.\n3. ALLOW-FROM uri, which permits the specified 'uri' to frame this page. (e.g., ALLOW-FROM http://www.example.com) Check Limitations Below this will fail open if the browser does not support it. Other browsers support the new CSP frame-ancestors directive instead. A few support both.\n\n\nThis rule will check if a value of \"X-Frame-Options\" is specified and it's not set to \"ALLOW\". If not it gives the violation.",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -40,11 +44,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

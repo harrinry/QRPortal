@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the procedures having more than N lines of code.\nN is a parameter and can be changed at will.",
     "output": "This report lists RPG400 Procedures with more than N lines of code.\nIt provides the following information:\nRPG400 Procedure full name",
     "rationale": "Maintainability of the code is facilitated if procedures and thus programs are not too big.",
@@ -26,11 +30,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

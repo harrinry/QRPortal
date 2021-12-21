@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.flex",
+        "href": "AIP/extensions/com.castsoftware.flex"
+    },
     "description": "This QR denotes events that specify type which is not given as part of application source.",
     "output": "This QR gives the list of artifacts which use Event with type which is not part of application source. It provides following information:\n- Artifact Full Name",
     "rationale": "In order to give correct violations, complete application source should be provided.",
@@ -27,11 +31,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

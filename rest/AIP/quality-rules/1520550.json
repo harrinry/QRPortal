@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "description": "This rule reports MLVs (Multi-Value Links) with \"Check No Match\" property set to TRUE.",
     "output": "This rule reports Multi-Value Links with No Match property set to True.\nIt provides the following information:\nMulti-Value Links full name",
     "rationale": "The \"Check No Match\" property controls the behavior of the application when an MVL uses a primary join and the primary ID field has the value special value \"No Match Row Id\".\n\nSetting the \"Check No Match\" property to TRUE could negatively impact performance, especially in situations where most parent records do not have child records defined in an MVG.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

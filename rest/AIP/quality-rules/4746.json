@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Session Java Bean Name",
     "description": "This rule list all the EJB Session that are not accessed through their local remote Interface.",
     "output": "This report lists all the Methods using the EJB Session remote Interfaces.\nIt provides the following information:\n - Method full name\n - Session Java Bean Name",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

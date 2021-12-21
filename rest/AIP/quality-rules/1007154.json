@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the artifacts containing goto statements. Artifacts considered for this quality rule are PHP Section, method, function and constructor.",
     "output": "This report lists all the artifacts containing goto statements.\n\nThis QR provides the following information:\n-Artifact full name.",
     "rationale": "Goto statements make code harder to read and it is nearly impossible to understand the control flow of an application that uses this language construct.",
@@ -39,11 +43,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.sqlanalyzer",
+        "href": "AIP/extensions/com.castsoftware.sqlanalyzer"
+    },
     "associatedValueName": "Synonym name",
     "description": "Synonyms and aliases should not have two definitions: one private and one public",
     "output": "This report lists all Synonyms with both private and public definition\nIt provides the following information: \nPublic Synonym Full Name, Private Synonym Name",
@@ -30,11 +34,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

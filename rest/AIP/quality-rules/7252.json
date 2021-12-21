@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Calling the super.finalize() in the \"finally\" block of 'finalize ()' method is highly recommended in case parent implementations must also dispose some system resources.\n\nThis rule reports finalize method with no try finally block or with no call to super.finalize() within the finally block.",
     "output": "This report lists all Methods  'finalize()' with no try finally block or with no call to super.finalize() within the finally block.\nIt provides the following information:\n Method full name",
     "rationale": "The Java Language Specification states that it is a good practice for a finalize() method to call super.finalize().\n\nThe finalize method is careful to call super.finalize from a finally block. All finalize methods should call super.finalize to ensure that any superclass finalize methods are invoked. Unlike superclass constructors that are invoked automatically, finalize methods must be chained manually. The super.finalize call is made from a finally block to ensure that it is called regardless of whether the call to the cleanup method generates an exception.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

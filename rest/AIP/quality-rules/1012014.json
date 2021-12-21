@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 1,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule seraches for CL400 programs containing objects locked by the ALCOBJ command.",
     "output": "This report lists CL400 programs .\nIt provides the following information:\n- CL400 artifact full name",
     "rationale": "Objects that are allocated to you should be deallocated as soon as you are finished using them because other users may need those objects. However, allocated objects are automatically deallocated at the end of the routing step.",
@@ -28,11 +32,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Field name",
     "description": "Struts action classes are not thread-safe. You should not place any fields which are not static final in the class.\nThis rule reports fields that are not static final in classes that inherit from the class org.apache.struts.action.Action",
     "output": "This report lists all fields which are not final static in Action classes:\nIt provides the following information:\n - Action Class\n - Field name",
@@ -35,11 +39,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

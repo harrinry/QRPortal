@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 3,
+    "extension": {
+        "name": "com.castsoftware.rpg",
+        "href": "AIP/extensions/com.castsoftware.rpg"
+    },
     "description": "This rule searches all the subroutines having nested IF statements.",
     "output": "This report lists RPG400 Subroutines with nested IF statements.\nIt provides the following information:\n- RPG400 Subroutine full name",
     "rationale": "Nested IF statements increase the complexity of the program logic and made the source code more difficult to read and to test.",
@@ -26,11 +30,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for PL1 Main Procedures (Programs) that have more 500 LoC and less than 5 procedures.",
     "output": "The report lists all the PL1 Main Procedures (Programs)  having more than 500 lines of code and less than 5 procedures.\n\nIt provides following information: \n- PL1 Main Procedures full name",
     "rationale": "Having large programs with no structured sub artifacts is difficult to maintain.",
@@ -31,11 +35,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

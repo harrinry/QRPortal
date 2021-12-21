@@ -31,6 +31,17 @@
         ]
     },
     {
+        "id": 7198,
+        "name": "Avoid String concatenation in loops (.NET)",
+        "href": "AIP/quality-rules/7198",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
         "id": 7200,
         "name": "Ensure to create a StringBuilder or StringBuffer before entering the loop",
         "href": "AIP/quality-rules/7200",
@@ -48,6 +59,28 @@
         "severity": 30,
         "technologyNames": [
             "JEE"
+        ]
+    },
+    {
+        "id": 7212,
+        "name": "Ensure you don't instantiate objects in loops",
+        "href": "AIP/quality-rules/7212",
+        "critical": true,
+        "severity": 30,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
+        ]
+    },
+    {
+        "id": 7352,
+        "name": "Avoid calling properties that clone values in loops",
+        "href": "AIP/quality-rules/7352",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C#",
+            "VB.NET"
         ]
     },
     {
@@ -83,9 +116,59 @@
         ]
     },
     {
+        "id": 7490,
+        "name": "Ensure to use the attribute select-before-update for the persistent class associated to a table that have the UPDATE trigger in order to not have UPDATE trigger when not necessary",
+        "href": "AIP/quality-rules/7490",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7496,
+        "name": "Ensure to use table-per-subclass strategy when subclasses have many properties",
+        "href": "AIP/quality-rules/7496",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7498,
+        "name": "Ensure to have the same collection between the getter and the setter",
+        "href": "AIP/quality-rules/7498",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7500,
+        "name": "Choose table-per-class-hierarchy when the maximum added attributes of subclasses don't exceed 3",
+        "href": "AIP/quality-rules/7500",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7502,
         "name": "Ensure to use  lists, maps, bags, idbags and sets depending on your case to map a collection instead of using array to Map Collection",
         "href": "AIP/quality-rules/7502",
+        "critical": true,
+        "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7634,
+        "name": "Ensure setting 'select-before-update' to true only for Hibernate Entity associated to table that fires an UPDATE trigger.",
+        "href": "AIP/quality-rules/7634",
         "critical": true,
         "severity": 20,
         "technologyNames": [
@@ -103,12 +186,47 @@
         ]
     },
     {
+        "id": 7702,
+        "name": "Prefer using Hibernate-provided implementations from third parties for connection pool to increase database access performances.",
+        "href": "AIP/quality-rules/7702",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
         "id": 7720,
         "name": "Ensure reducing the number of EJB beans to hold performance and complexity of the application",
         "href": "AIP/quality-rules/7720",
         "critical": false,
         "severity": 10,
         "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7808,
+        "name": "Avoid Artifacts with SQL statement including subqueries",
+        "href": "AIP/quality-rules/7808",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
+            "JEE",
+            "SQL"
+        ]
+    },
+    {
+        "id": 7822,
+        "name": "Avoid Artifacts with queries on more than 4 Tables",
+        "href": "AIP/quality-rules/7822",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "C",
+            "C++",
             "JEE"
         ]
     },
@@ -128,6 +246,26 @@
         "href": "AIP/quality-rules/7940",
         "critical": true,
         "severity": 20,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7954,
+        "name": "Ensure not having indirect String concatenation inside loops to avoid making your software performance slowly.",
+        "href": "AIP/quality-rules/7954",
+        "critical": false,
+        "severity": 30,
+        "technologyNames": [
+            "JEE"
+        ]
+    },
+    {
+        "id": 7962,
+        "name": "Ensure not having direct or indirect remote calls inside a loop to avoid making your software performance slow",
+        "href": "AIP/quality-rules/7962",
+        "critical": true,
+        "severity": 30,
         "technologyNames": [
             "JEE"
         ]
@@ -347,6 +485,16 @@
         "severity": 10,
         "technologyNames": [
             "HTML5"
+        ]
+    },
+    {
+        "id": 1101022,
+        "name": "Make sure to define Primary Key (PK) for your tables to enforce row integrity of data",
+        "href": "AIP/quality-rules/1101022",
+        "critical": false,
+        "severity": 10,
+        "technologyNames": [
+            "SQL"
         ]
     },
     {

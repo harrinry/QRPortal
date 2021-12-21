@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 6,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "associatedValueName": "Number of hardcoded messages",
     "description": "This metric detects usage of litteral strings (hard-coded) during usage of below functions not having a call to MsgGet() or MsgGetText()\nError\nWarning\nWinMessage\nEndMessage\nMessageBox",
     "output": "This report lists all the artifacts calling message functions without using a message catalog lookup.\nIt provides the following information:\n- PeopleSoft Event, Function or Method full name\n- Number of calls to message functions",
@@ -45,11 +49,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

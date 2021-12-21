@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all the PL1 Main Procedures that are not referenced i.e. not called.",
     "output": "The report lists all the unreferenced PL1 Main Procedures. \n\nIt provides following information: \n-  PL1 Main Procedures full name",
     "rationale": "Unreferenced artifacts like any other example of dead code makes maintenance more difficult and more expensive (modification of unused code).",
@@ -36,11 +40,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

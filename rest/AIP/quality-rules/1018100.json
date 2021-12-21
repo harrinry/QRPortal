@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "This rule  reports  processes with at least a \" Get JMS Queue Message\" activity.",
     "output": "This report lists all  Processes Activities having a Get JMS Queue Message Activity.\nIt provides the following information:\nProcess Activity full name.",
     "rationale": "The use of the Get JMS Queue Message is discouraged for two reasons:\n  Performance issue : it is expensive for EMS server\n  It often reveals a bad architectural design (anti-pattern)",
@@ -32,11 +36,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

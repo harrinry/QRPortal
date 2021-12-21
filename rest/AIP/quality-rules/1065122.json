@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "The rule will raise a violation when #define and #undef are found in places other than global namespace",
     "output": "Information will be provided on:\n1. Methods where a violation has occurred\n2. Bookmarks for violation occurrences found in the source code",
     "rationale": "While it is legal to place #define or #undef directives anywhere in a source file, placing them outside of the global namespace is misleading as their scope is not restricted. This may be inconsistent with developer expectations.",
@@ -29,11 +33,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

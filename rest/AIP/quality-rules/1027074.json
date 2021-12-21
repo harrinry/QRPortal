@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.dotnet",
+        "href": "AIP/extensions/com.castsoftware.dotnet"
+    },
     "associatedValueName": "Number of violation occurrences",
     "description": "The rule will raise a violation upon identifying hardcoded URIs or URI path delimiters\n\nExceptions:\nThis rule does not raise an issue when an ASP.NET virtual path is passed as an argument to one of the following:\n\nmethods:\nSystem.Web.HttpServerUtilityBase.MapPath()\nSystem.Web.HttpRequestBase.MapPath()\nSystem.Web.HttpResponseBase.ApplyAppPathModifier()\nSystem.Web.Mvc.UrlHelper.Content()\n\nall methods of:\nSystem.Web.VirtualPathUtility\n\nconstructors of:\nMicrosoft.AspNetCore.Mvc.VirtualFileResult\nMicrosoft.AspNetCore.Routing.VirtualPathData",
     "output": "Associated to each violation, the following information is provided:\n- The number of violation occurrences\n- Bookmarks for violation occurrences found in the source code",
@@ -30,11 +34,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

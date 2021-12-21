@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all the Methods with unnecessary final modifiers.",
     "output": "This report lists all methods of final Classes with unnecessary final modifiers.\n\nThis QR provides the following information:\nMethod full name.",
     "rationale": "Final classes cannot be derived from. If the class itself is defined final then it cannot be extended and the modifier is useless.",
@@ -29,11 +33,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

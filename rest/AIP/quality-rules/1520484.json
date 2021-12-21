@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.siebel",
+        "href": "AIP/extensions/com.castsoftware.siebel"
+    },
     "associatedValueName": "Name of the Sort Specification",
     "description": "Sorting or searching on non-indexed fields can have detrimental effects on database performance, especially on large tables, as it will produce table scans and temporary tables in the SQL execution plan.\nKeep in mind that pre-defined queries where the filter or sort is based on a non-indexed column will also result in a performance impact.",
     "output": "This rule reports PickLists using a non-indexed Sort Specification",
@@ -28,11 +32,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -10,6 +10,7 @@ class QualityStandardItemReference extends BaseQualityStandard {
     this.url = params.url;
     this.isoPatterns = params.isoPatterns || [];
     this.qualityRules = params.qualityRules || [];
+    this.qualityTemplates = params.qualityTemplates || [];
   }
 }
 

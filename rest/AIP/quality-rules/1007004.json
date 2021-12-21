@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "associatedValueName": "Fan-In",
     "description": "This rule searches for all Functions and Methods with High Fan-In.\n         The Fan-in of Method or Function is the number of other artifacts that are referencing it.\n         When computing the Fan-In of an artifact, multiple accesses to it from the same artifact are counted as one access. \n         The threshold is a parameter and can be changed as per requirement.",
     "output": "This report lists all Methods and Functions with a High Fan-In.\n               \nThis QR provides the following information:\nMethod or Function full name.",
@@ -27,11 +31,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

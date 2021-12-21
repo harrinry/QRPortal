@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 30,
     "maxWeight": 5,
+    "extension": {
+        "name": "com.castsoftware.php",
+        "href": "AIP/extensions/com.castsoftware.php"
+    },
     "description": "This rule searches for all artifacts using eval expression. Artifacts considered for this QR are PHP Section, method, function and constructors.",
     "output": "This report lists all artifacts using eval expression.\n\nThis QR provides the following information:\nArtifact full name.",
     "rationale": "Source code containing eval-expressions is difficult to test and represents a security risk.",
@@ -38,11 +42,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

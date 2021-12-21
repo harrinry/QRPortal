@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 4,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "This report lists all java artifacts using the Vector type, either as a parameter, or as a local variable.",
     "output": "This report lists all java artifacts using the Vector type, either as a parameter, or as a local variable.\nIt provides the following information:\n - Artifact full name",
     "rationale": "Performance: Vector is synchronized and thread-safe and because of this, it is slightly slower than ArrayList.\nFunctionality: Vector synchronizes at the level of each individual operation. Generally a programmer likes to synchronize a whole sequence of operations. Synchronizing individual operations is both less safe and slower.\nVectors obsolete: Vectors are considered obsolete and unofficially deprecated in java. Also, vector synchronizes on each individual operation which is almost never done. Mostly java programmers prefer using ArrayList since they will probably synchronize the arrayList explicitly anyway if they need to do synchronization.",
@@ -34,11 +38,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 2,
+    "extension": {
+        "name": "com.castsoftware.cpp",
+        "href": "AIP/extensions/com.castsoftware.cpp"
+    },
     "description": "This rule will raise a violation when data members of non-POD members are declared either public or protected",
     "rationale": "By implementing class interfaces with member functions, the implementation retains more control over how the object state can be modified and helps to allow a class to be maintained without affecting clients.",
     "reference": "AUTOSAR C++, 2014, M11-0-1:  Member data in non-POD class types shall be private.\n\nMISRA C++ 2008, 11-0-1: Member data in non-POD class types shall be private.\n\nhttps://scc.ustc.edu.cn/zlsc/chinagrid/intel/ssadiag_docs/GUID-F51536D1-92E6-4A21-9CCD-57612A8BA41E.htm",
@@ -22,11 +26,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

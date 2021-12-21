@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 8,
+    "extension": {
+        "name": "com.castsoftware.tibco",
+        "href": "AIP/extensions/com.castsoftware.tibco"
+    },
     "description": "If user want to connect a different DB(according to the input) every time, then Is it possible to define the database URL , User and password details in global variables so that the query runs on new connection as defined by values of global variables.",
     "output": "This report lists all  JDBC resources having  username and password not defined as global variables.\nIt provides the following information:\nJDBC Resource full name.\nThe associated value is the number of  JDBC Resources",
     "rationale": "For maintainability and reusability reasons, JDBC Resources should use global Username and Password.",
@@ -21,11 +25,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

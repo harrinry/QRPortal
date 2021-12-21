@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "associatedValueName": "Non final static fields",
     "description": "An enterprise bean must not use read/write static fields. Using read-only static fields is allowed. Therefore, it is recommended that all static fields in the enterprise bean class be declared as final.\n\n\nThis rule reports all enterprise beans (session, message and entity) that have non final static fields even if these static fields are held by a class in its inheritance tree.",
     "output": "This report lists all java enterprise classes that have non final static fields.\nIt provides the following information:\n - Class full name\n - list of non final static fields",
@@ -25,11 +29,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

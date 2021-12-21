@@ -5,6 +5,10 @@
     "critical": true,
     "severity": 20,
     "maxWeight": 9,
+    "extension": {
+        "name": "com.castsoftware.pl1",
+        "href": "AIP/extensions/com.castsoftware.pl1"
+    },
     "description": "This rule searches for all PLC Copybook using the GO TO statement to manage the control flow.",
     "output": "The report lists all the PLC Copybook having GOTO statement.\n\nIt provides following information: \n- PLC Copybook full name",
     "rationale": "Using Goto code breaks the process execution flow and makes the code more difficult to understand and maintain",
@@ -37,11 +41,6 @@
             "id": 60013,
             "name": "Robustness",
             "href": "AIP/business-criteria/60013"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         },
         {
             "id": 60011,

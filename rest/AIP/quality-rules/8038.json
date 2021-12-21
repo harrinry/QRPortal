@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.jee",
+        "href": "AIP/extensions/com.castsoftware.jee"
+    },
     "description": "Validation fields that do not appear in forms they are associated with indicate that the validation logic is out of date.\n\nThis rule reports validator form with all their validator form field that does not reference a Java class field.",
     "output": "This report lists all validator form fields that do not reference a java class field. It provides the following information:\n  Validation Form Field",
     "rationale": "When a validation form field is not associated to java class field, this indicate that the validation logic is not properly maintained and can result in a weakness.\n\nIt is easy for developers to forget to update validation logic when they make changes to an ActionForm class. One indication that validation logic is not being properly maintained is inconsistencies between the action form and the validation form.\n\nAlthough J2EE applications are not generally susceptible to memory corruption attacks, if a J2EE application interfaces with native code that does not perform array bounds checking, an attacker may be able to use an input validation mistake in the J2EE application to launch a buffer overflow attack.",
@@ -29,11 +33,6 @@
             "id": 60016,
             "name": "Security",
             "href": "AIP/business-criteria/60016"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [

@@ -5,6 +5,10 @@
     "critical": false,
     "severity": 10,
     "maxWeight": 7,
+    "extension": {
+        "name": "com.castsoftware.peoplesoft",
+        "href": "AIP/extensions/com.castsoftware.peoplesoft"
+    },
     "description": "This metric detects all artifacts accessing the database in Insert with sequence but not using the GetNextNumberWithGaps Function",
     "output": "This report lists all artifacts using Insert statement using sequence instead of calling GetNextNumberWithGaps\nIt provides the following information:\n- PeopleCode artifacts full name\n- The associated value is the number of Insert statement using sequence instead of calling GetNextNumberWithGaps found in the artifact source code",
     "rationale": "Many applications use a sequence number as a unique key. The last number used is stored in a common table, and a SQL statement is issued to retrieve the last number used and update the table. This action locks the common table until the whole transaction is saved and the unit of work committed.\n\nInstead, consider using the GetNextNumberWithGaps PeopleCode function whenever gaps in the sequence numbering are acceptable. The function retrieves the last number used, increments it by one, and updates the common table. This action is done in a separate unit of work to minimize the time a database lock is held on the common table.\n\nGetNextNumberWithGaps issues a commit only when issued from the SavePreChange or Workflow event.",
@@ -27,11 +31,6 @@
             "id": 66031,
             "name": "Programming Practices",
             "href": "AIP/business-criteria/66031"
-        },
-        {
-            "id": 60017,
-            "name": "Total Quality Index",
-            "href": "AIP/business-criteria/60017"
         }
     ],
     "technicalCriteria": [
