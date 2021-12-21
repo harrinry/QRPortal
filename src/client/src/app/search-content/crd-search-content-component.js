@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch, useLocation, useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import * as qs from 'query-string';
 
 import RulesWrapper from '../display-widgets/rules-wrapper';
 
@@ -15,11 +16,12 @@ const SearchContent = (props) => {
   } = props;
   
   const { url } = useRouteMatch();
-  const { pathname } = useLocation();
+  const locationParams = useLocation();
+  const { pathname, search } = locationParams || {};
 
   const urlParams = useParams();
 
-  const { searchTerm: urlSearchTerm, searchCriterion: urlSearchCriterion = '' } = urlParams;
+  const { searchTerm: urlSearchTerm } = urlParams;
   
   const { qualityRules: searchResultQualityRules = [] } = searchResult;
 
@@ -32,9 +34,12 @@ const SearchContent = (props) => {
   // run query if search term is set
   useEffect(() => {
     if (urlSearchTerm) {
+      const parsedSearch = qs.parse(search);
+      const { 'search-criterion': urlSearchCriterion = '' } = parsedSearch || {};
+  
       searchQuery(urlSearchCriterion, urlSearchTerm);
     }
-  }, [urlSearchTerm]);
+  }, [urlSearchTerm, search]);
 
   // if search results exist in store, set them as rules list
   useEffect(() => {

@@ -29,6 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
+    backgroundColor: '#1f2444',
   },
   drawer: {
     width: drawerWidth,
@@ -36,14 +37,14 @@ const useStyles = makeStyles(theme => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: '#D3DBE8',
+    backgroundColor: '#e1e7f0',
   },
   drawerContainer: {
     overflow: 'auto',
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: '5px',
   },
   homeIcon: {
     width: '25px',
@@ -105,14 +106,6 @@ const Home = (props) => {
     }
   }, []);
 
-  const renderMenuIcon = () => (
-    <IconButton edge='start' style={{ backgroundColor: '#1f2444', color: 'white', borderRadius: '0%' }}
-      className={classes.menuButton} color='inherit' aria-label='menu' disabled={true}
-    >
-      <MenuIcon />
-    </IconButton>
-  );
-
   const onResetSearch = () => {
     resetSearch();
     history.push('/');
@@ -125,8 +118,8 @@ const Home = (props) => {
         <Toolbar className={classes.toolbar}>
           <div className={classes.toolbarBranding}>
             <div className={classes.homeIcon} />
-            <Typography variant='h6' noWrap style={{ fontWeight: 'bold', letterSpacing: '2px', marginRight: '10px' }}>CAST</Typography>
-            <Typography variant='h6' noWrap style={{ letterSpacing: '2px' }}>Rules</Typography>
+            <Typography noWrap style={{ letterSpacing: '2.5px', fontWeight: 'bold', marginRight: '10px' }}>CAST</Typography>
+            <Typography noWrap style={{ letterSpacing: '2.5px' }}>Rules Documentation</Typography>
           </div>
           <div className={classes.navbarWidgets}>
             <Search
@@ -154,10 +147,10 @@ const Home = (props) => {
           }}
         >
           <Toolbar />
-          {renderMenuIcon()}
           <div className={classes.drawerContainer}>
             {!_isEmpty(mainMenu) && <Tree mainMenu={mainMenu} />}
           </div>
+          <Toolbar />
         </Drawer>
         <main className={classes.content}>
           <Toolbar />
@@ -171,6 +164,7 @@ const Home = (props) => {
             </Button>
           </div>)}
           <AppRoutes />
+          <Toolbar />
         </main>
       </Grid>
     </div>
