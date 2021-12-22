@@ -43,7 +43,7 @@ const SearchContent = (props) => {
 
   // if search results exist in store, set them as rules list
   useEffect(() => {
-    if (searchResultQualityRules.length > 0) {
+    if (searchResultQualityRules) {
       setRulesListInfo(searchResultQualityRules);
     }
   }, [searchResultQualityRules]);
