@@ -17,7 +17,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     overrides: {
       MUIDataTable: {
         responsiveBase: {
-          maxHeight: 'calc(100vh - 325px) !important',
+          maxHeight: 'calc(100vh - 352px) !important',
           overflow: 'auto',
         }
       },
@@ -107,6 +107,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     selectableRows: 'single',
     selectToolbarPlacement: 'none',
     rowsSelected: selectedRow,
+    rowsPerPageOptions: [10, 25, 50, 100],
     downloadOptions: { filename: 'cast-rules-list.csv' },
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),
     onFilterChange: (changedColumn, filterList) => {
