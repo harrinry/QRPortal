@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ruleDetailsContainer: {
     padding: '24px 24px 0 24px',
-    maxHeight: 'calc(100vh - 150px) !important',
+    maxHeight: 'calc(100vh - 178px) !important',
     overflow: 'hidden auto',
   },
   ruleDetailsContent: {
