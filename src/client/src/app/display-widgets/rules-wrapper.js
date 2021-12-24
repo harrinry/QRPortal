@@ -10,14 +10,14 @@ const RulesWrapper = (props) => {
 
   return (
     <Grid container={true} justifyContent='center'>
-      <Grid item={true} xs={6} style={{ overflowY: 'auto', overflowX: 'hidden', maxHeight: '78vh' }}>
+      <Grid item={true} xs={6}>
         <RuleList
           qualityRulesList={rulesListInfo}
           getRuleDetails={getRuleDetails}
           selectedRuleId={selectedRuleId}
         />
       </Grid>
-      <Grid item={true} xs={6} style={{ overflowY: 'auto', maxHeight: '78vh' }}>
+      <Grid item={true} xs={6}>
         <Grid container />
         <RuleDetails ruleDetails={ruleDetailsInfo} />
       </Grid>

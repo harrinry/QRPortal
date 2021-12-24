@@ -78,10 +78,12 @@ export default function appReducers(state = defaultState, action) {
       }
       case appActionsType.GET_RULES_LIST_SUCCESS: {
         const { rulesList } = action.payload;
+        const qualityRules = _get(rulesList, 'qualityRules', []);
+        const qualityTemplates = _get(rulesList, 'qualityTemplates', []);
 
         return {
           ...state,
-          qualityRulesList: _get(rulesList, 'qualityRules', []),
+          qualityRulesList: [...qualityRules, ...qualityTemplates],
           isPending: false,
         };
       }

@@ -1,6 +1,6 @@
 const SEARCH_CRITERIA = [
   {
-    label: '-',
+    label: 'None',
     value: '',
     isAuthRequired: false,
   },

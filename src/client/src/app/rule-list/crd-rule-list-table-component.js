@@ -15,9 +15,15 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
 
   const getMuiTheme = () => createMuiTheme({
     overrides: {
+      MUIDataTable: {
+        responsiveBase: {
+          maxHeight: 'calc(100vh - 352px) !important',
+          overflow: 'auto',
+        }
+      },
       MuiTableCell: {
         root: {
-          padding: '13px',
+          padding: 12,
         },
         head: {
           fontWeight: 'bold',
@@ -34,8 +40,12 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
       },
       MUIDataTableBodyCell: {
         root: {
-          fontSize: '13px',
-          letterSpacing: '0.5px',
+          fontSize: 13,
+        },
+      },
+      MuiTablePagination: {
+        menuItem: {
+          fontSize: 12,
         },
       },
     },
@@ -97,6 +107,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     selectableRows: 'single',
     selectToolbarPlacement: 'none',
     rowsSelected: selectedRow,
+    rowsPerPageOptions: [10, 25, 50, 100],
     downloadOptions: { filename: 'cast-rules-list.csv' },
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),
     onFilterChange: (changedColumn, filterList) => {

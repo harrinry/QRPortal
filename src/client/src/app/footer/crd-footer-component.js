@@ -13,22 +13,52 @@ const useStyles = makeStyles((theme) => ({
     top: 'auto',
     bottom: 0,
     zIndex: 1300,
+    height: 54,
     backgroundColor: '#1f2444',
     color: 'white',
-    height: '54px',
   },
-  grow: {
-    flexGrow: 1,
+  toolBar: {
+    minHeight: 54,
+  },
+  footerWrapper: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  footerLinks: {
+    display: 'flex',
+  },
+  footerLink: {
+    marginRight: 16,
+    display: 'flex',
+  },
+  footerText: {
+    fontSize: 11,
+    color: '#789',
+    textAlign: 'center',
+  },
+  footerCopyright: {
+    marginRight: 16,
+    fontSize: 12,
+    letterSpacing: 1,
+    color: '#789',
+    textTransform: 'capitalize',
+  },
+  footerOption: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  footerLogoWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
   },
   footerLogo: {
     background: 'url(/assets/img/castWithTaglineWhite.svg) no-repeat center',
-    width: '300px',
-    height: '30px',
+    width: 160,
+    height: 30,
     cursor: 'pointer',
-  },
-  footerOptions: {
-    color: '#789',
-    fontSize: '11px',
   },
 }));
 
@@ -43,28 +73,20 @@ const Footer = () => {
     <>
       <CssBaseline />
       <AppBar position="fixed" color="primary" className={classes.appBar}>
-        <Toolbar>
-          <div className={classes.grow}>
-            <Grid container={true} direction='row' justifyContent='flex-end' alignItems='center'>
-              <Grid item={true} xs={1}>
-                <Typography variant='button' display='block' gutterBottom>
-                  <Link target='_blank' href={constants.CONTACT_US} className={classes.footerOptions}>{labels.contact}</Link>
-                </Typography>
-              </Grid>
-              <Grid item={true} xs={1}>
-                <Typography variant='button' display='block' gutterBottom>
-                  <Link target='_blank' href={constants.PRIVACY_POLICY} className={classes.footerOptions}>{labels.privacy}</Link>
-                </Typography>
-              </Grid>
-              <Grid item={true} xs={8} style={{ textAlign: 'center', letterSpacing: '0.5px' }} className={classes.footerOptions}>
-                <Typography variant='overline' display='block' gutterBottom style={{ letterSpacing: '1px', textTransform: 'capitalize' }}>{constants.COPY_RIGHT}</Typography>
-              </Grid>
-              <Grid item={true} xs={2}>
-                <Link target='_blank' href={constants.CAST_SOFTWARE}>
-                  <div className={classes.footerLogo} />
-                </Link>
-              </Grid>
-            </Grid>
+        <Toolbar className={classes.toolBar}>
+          <div className={classes.footerWrapper}>
+            <div className={classes.footerLinks}>
+              <Typography variant='button' className={classes.footerLink}>
+                <Link target='_blank' href={constants.CONTACT_US} className={classes.footerText}>{labels.contact}</Link>
+              </Typography>
+              <Typography variant='button' className={classes.footerLink}>
+                <Link target='_blank' href={constants.PRIVACY_POLICY} className={classes.footerText}>{labels.privacy}</Link>
+              </Typography>
+            </div>
+            <Typography className={classes.footerCopyright}>{constants.COPY_RIGHT}</Typography>
+            <Link target='_blank' href={constants.CAST_SOFTWARE}>
+              <div className={classes.footerLogo} />
+            </Link>
           </div>
         </Toolbar>
       </AppBar>
