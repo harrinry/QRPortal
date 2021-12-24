@@ -94,7 +94,7 @@ const Search = (props = {}) => {
   };
 
   const submitSearchQuery = () => {
-    let searchString = `/search_term/${searchTerm}`;
+    let searchString = `/search_term/${encodeURIComponent(searchTerm)}`;
     
     if (searchCriterion) {
       searchString = `${searchString}?search-criterion=${searchCriterion}`;
@@ -129,7 +129,7 @@ const Search = (props = {}) => {
             <SearchIcon onClick={submitSearchQuery} />
           </InputAdornment>
         }
-        value={searchTerm}
+        value={searchTerm ? decodeURIComponent(searchTerm) : ""}
         onChange={handleSearchChange}
         onKeyPress= {(evnt) => {
           if (evnt.key === 'Enter') {

@@ -156,7 +156,7 @@ const Home = (props) => {
           <Toolbar />
           {searchTerm && (<div className={classes.searchDetails}>
             <Typography variant='h6'>
-              <>Displaying results for search term <b>"{searchTerm}"</b></>
+              <>Displaying results for search term <b>"{decodeURIComponent(searchTerm)}"</b></>
               {searchCriterion && <> in the criterion <b>"{searchCriterion}"</b>.</>}
             </Typography>
             <Button color='primary' variant='outlined' size='small' onClick={onResetSearch}>
