@@ -8,23 +8,44 @@ import { makeStyles } from '@material-ui/core/styles';
 import classNames from "classnames";
 
 const useStyles = makeStyles({
+  cellContainer: {
+    width: 70,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center"
+  },
   cell: {
+    display: "flex",
     color: "#fff",
     padding: 8,
-    width: "100%",
     borderRadius: 6,
-    marginLeft: 15,
   },
   severityCritical: {
+    // marginLeft: 15,
     backgroundColor: "#e50202",
   },
   severityMedium: {
+    // marginLeft: 5,
     backgroundColor: "#ea921e",
   },
   severityLow: {
+    // marginLeft: 17,
     backgroundColor: "#1e98ea",
   }
 });
+
+function getSeverityText(severity){
+  switch (severity) {
+    case 10:
+        return "Low";
+      case 20:
+        return "Medium";
+      case 30:
+        return "High";
+      default:
+        return "Low";
+  }
+}
 
 const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   const { url } = useRouteMatch();
@@ -120,7 +141,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         
         customBodyRenderLite: (dataIndex) => {
           const item = data[dataIndex];
-          return(<span className={classNames(classes.cell, getSeverityColorClass(item.severity))}>{item.severity}</span>)
+          return(<div className={classes.cellContainer}><span className={classNames(classes.cell, getSeverityColorClass(item.severity))}>{getSeverityText(item.severity)}</span></div>)
         }
       },
     },
