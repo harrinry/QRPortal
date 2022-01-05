@@ -47,7 +47,14 @@ const useStyles = makeStyles(() => ({
   },
   extendIcon: {
     backgroundColor: '#074794',
-    padding: '8px',
+    borderRadius: 50,
+    height: 100,
+    width: 100,
+    padding: 1,
+  },
+  description: {
+    textAlign: "center",
+    width: "80%",
   },
   extendIconWrapper: {
     width: '1em',
@@ -109,14 +116,13 @@ const Login = (props = {}) => {
         ? <Button color='inherit' variant='outlined' onClick={handleLogout}>{labels.logout}</Button>
         : <Button color='inherit' variant='outlined' onClick={handleClickOpen}>{labels.login}</Button>}
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
-        <Grid container spacing={2} alignItems='center' justify='center'>
-          <Grid item xs={5}>
+        <Grid container alignItems='center' justify='center' direction="column">
+          <Grid item alignItems='center' xs={12} justify='center' direction="column">
             <DialogTitle id='form-dialog-title'>Sign In</DialogTitle>
           </Grid>
-          <Grid item xs={2}>
-            <Icon className={classes.extendIconWrapper}>
+          <DialogContentText className={classes.description} variant='body2'>Using your CAST Extend will allow you to gain access to additional rule information</DialogContentText>
+          <Grid item alignItems='center' xs={12} justify='center' direction="row">
               <img className={classes.extendIcon} src='assets/img/extendLogo.svg'/>
-            </Icon>
           </Grid>
           <Grid item xs={5}>
             <div />
