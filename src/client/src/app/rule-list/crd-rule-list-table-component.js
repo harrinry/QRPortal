@@ -131,6 +131,11 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
             return !show;
           },
         },
+        customBodyRenderLite: (dataIndex) => {
+          const item = data[dataIndex];
+          const value = item.name;
+          return(<span className="if-cell-container">{item.isTemplate && <img src='assets/img/placeholder-template.svg'/>}<span className="if-cell-value">{value}</span></span>)
+        }
       },
     },
     {
