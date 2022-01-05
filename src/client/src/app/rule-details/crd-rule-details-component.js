@@ -53,8 +53,9 @@ const RuleDetailsContent = (props) => {
       </Typography>
     </div>
   );
-
-  const renderChipsInfo = (title, content) => (
+  
+  const defaultValueSetter = (item) => item.name;
+  const renderChipsInfo = (title, content, valueSetter = defaultValueSetter) => (
     <div className={classes.marginBottom5}>
       <Typography gutterBottom variant='button' component='h2'>
         {title}
@@ -63,7 +64,7 @@ const RuleDetailsContent = (props) => {
         {
           content.map(item => (
             <span key={item.id}>
-              <Chip size='small' label={<Typography variant='caption'>{item.name}</Typography>} />
+              <Chip size='small' label={<Typography variant='caption'>{valueSetter(item)}</Typography>} />
             </span>
           ))
         }
@@ -80,7 +81,7 @@ const RuleDetailsContent = (props) => {
         <div className={classes.ruleDetailsContent}>
           <div className={classes.marginBottom20}>
             {isDataValid(_get(ruleDetails, 'businessCriteria')) && renderChipsInfo('Business Criteria', _get(ruleDetails, 'businessCriteria'))}
-            {isDataValid(_get(ruleDetails, 'qualityStandards')) && renderChipsInfo('Quality Standards', _get(ruleDetails, 'qualityStandards'))}
+            {isDataValid(_get(ruleDetails, 'qualityStandards')) && renderChipsInfo('Quality Standards', _get(ruleDetails, 'qualityStandards'), (item) => `${item.id} - ${item.name}`)}
             {isDataValid(_get(ruleDetails, 'technologies')) && renderChipsInfo('Technologies', _get(ruleDetails, 'technologies'))}
             {isDataValid(_get(ruleDetails, 'technicalCriteria')) && renderChipsInfo('Technical Criteria', _get(ruleDetails, 'technicalCriteria'))}
           </div>
