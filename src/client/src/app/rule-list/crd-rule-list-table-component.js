@@ -4,6 +4,27 @@ import _isEmpty from 'lodash/isEmpty';
 import { useRouteMatch, useHistory, useLocation } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import MuiDataTable from 'lib/material-ui-components/data-table';
+import { makeStyles } from '@material-ui/core/styles';
+import classNames from "classnames";
+
+const useStyles = makeStyles({
+  cell: {
+    color: "#fff",
+    padding: 8,
+    width: "100%",
+    borderRadius: 6,
+    marginLeft: 15,
+  },
+  severityCritical: {
+    backgroundColor: "#e50202",
+  },
+  severityMedium: {
+    backgroundColor: "#ea921e",
+  },
+  severityLow: {
+    backgroundColor: "#1e98ea",
+  }
+});
 
 const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   const { url } = useRouteMatch();
@@ -53,6 +74,20 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   const theme = useMemo(() => getMuiTheme(), []);
   const [selectedRow, setSelectedRow] = useState([]);
   const [filterListItems, setFilterListItems] = useState(['Hide Deprecated']);
+  const classes = useStyles();
+
+  const getSeverityColorClass = (severity) => {
+    switch (severity) {
+      case 10:
+        return classes.severityLow;
+      case 20:
+        return classes.severityMedium;
+      case 30:
+        return classes.severityCritical;
+      default:
+        return classes.severityLow;
+    }
+  }
 
   const columns = [
     {
@@ -80,7 +115,14 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     {
       name: 'severity',
       label: 'Severity',
-      options: { filter: false },
+      options: { 
+        filter: false,
+        
+        customBodyRenderLite: (dataIndex) => {
+          const item = data[dataIndex];
+          return(<span className={classNames(classes.cell, getSeverityColorClass(item.severity))}>{item.severity}</span>)
+        }
+      },
     },
   ];
 
