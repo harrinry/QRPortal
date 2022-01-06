@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   cell: {
     display: "flex",
     color: "#fff",
-    padding: 8,
+    padding: 4,
     borderRadius: 6,
   },
   severityCritical: {
