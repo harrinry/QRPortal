@@ -41,6 +41,7 @@ const useStyles = makeStyles(theme => ({
   },
   drawerContainer: {
     overflow: 'auto',
+    scrollbarWidth: "thin",
   },
   content: {
     flexGrow: 1,

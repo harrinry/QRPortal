@@ -61,6 +61,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         responsiveBase: {
           maxHeight: 'calc(100vh - 352px) !important',
           overflow: 'auto',
+          scrollbarWidth: "thin",
         }
       },
       MuiTableCell: {

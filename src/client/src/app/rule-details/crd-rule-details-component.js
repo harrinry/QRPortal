@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '24px 24px 0 24px',
     maxHeight: 'calc(100vh - 178px) !important',
     overflow: 'hidden auto',
+    scrollbarWidth: "thin",
   },
   ruleDetailsContent: {
     paddingTop: 24,
