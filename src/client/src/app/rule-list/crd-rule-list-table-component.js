@@ -19,6 +19,8 @@ const useStyles = makeStyles({
     color: "#fff",
     padding: 4,
     borderRadius: 6,
+    width: 60,
+    justifyContent: "center",
   },
   severityCritical: {
     // marginLeft: 15,
@@ -135,7 +137,11 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         customBodyRenderLite: (dataIndex) => {
           const item = data[dataIndex];
           const value = item.name;
-          return(<span className="if-cell-container">{item.isTemplate && <img src='assets/img/placeholder-template.svg'/>}<span className="if-cell-value">{value}</span></span>)
+          return(<div className="if-cell-container">
+
+            {item.isTemplate && <img src='assets/img/placeholder-template.svg'/>}
+            <span className="if-cell-value">{value}</span>
+            </div>)
         }
       },
     },

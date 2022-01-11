@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import _get from 'lodash/get';
 import _isEmpty from 'lodash/isEmpty';
 import { makeStyles } from '@material-ui/core/styles';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
+import { Link, SvgIcon } from '@material-ui/core';
+import classNames from 'classnames';
 
 const useStyles = makeStyles((theme) => ({
   empty: {
@@ -28,6 +30,36 @@ const useStyles = makeStyles((theme) => ({
   },
   marginBottom5: {    
     marginBottom: 5,
+  },
+  marginTop20: {
+    marginTop: 20,
+  },
+  downloadTag: {
+    color: "#fff",
+    backgroundColor: "#1f2444",
+    borderRadius: 10,
+    maxWidth: "50%",
+    padding: 8,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center"
+  },
+  downloadLinkContainer: {
+    color: "#fff",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+
+    "& :visited": {
+      color: "#fff",
+    }
+  },
+  downloadIcon: {
+    filter: "invert(100%) sepia(100%) saturate(0%) hue-rotate(81deg) brightness(101%) contrast(102%)",
+    paddingRight: 8
+  },
+  downloadLink: {
+    display: "inline-block"
   },
   chipRoot: {
     display: 'flex',
@@ -73,6 +105,10 @@ const RuleDetailsContent = (props) => {
     </div>
   );
 
+  const downloadLink = useMemo(() => {
+    return _get(ruleDetails, "download");
+  }, [ ruleDetails ]);
+
   return (
     !_isEmpty(ruleDetails)
       ? (<div className={classes.ruleDetailsContainer}>
@@ -90,6 +126,12 @@ const RuleDetailsContent = (props) => {
             {_get(ruleDetails, 'rationale') && renderItemInfo('Rationale', _get(ruleDetails, 'rationale'))}
             {_get(ruleDetails, 'remediation') && renderItemInfo('Remediation', _get(ruleDetails, 'remediation'))}
           </div>
+          {downloadLink && <div className={classNames(classes.marginTop20, classes.downloadTag)}>
+            <Link href={downloadLink} className={classes.downloadLinkContainer}>
+              <img src='assets/img/placeholder-template.svg' className={classes.downloadIcon}/>
+              <Typography className={classes.downloadLink} variant="body2">Download Template for CAST Architecture Studio</Typography>
+            </Link>
+          </div>}
         </div>
       </div>)
       : <div className={classes.empty}>No results found</div>
