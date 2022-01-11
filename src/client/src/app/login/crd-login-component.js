@@ -46,11 +46,8 @@ const useStyles = makeStyles(() => ({
     color: 'black',
   },
   extendIcon: {
-    backgroundColor: '#074794',
-    borderRadius: 50,
     height: 100,
     width: 100,
-    padding: 1,
   },
   description: {
     textAlign: "center",
@@ -122,7 +119,7 @@ const Login = (props = {}) => {
           </Grid>
           <DialogContentText className={classes.description} variant='body2'>Using your CAST Extend will allow you to gain access to additional rule information</DialogContentText>
           <Grid item alignItems='center' xs={12} justify='center' direction="row">
-              <img className={classes.extendIcon} src='assets/img/extendLogo.svg'/>
+              <img className={classes.extendIcon} src='assets/img/com.castsoftware.aip.extendservice.png'/>
           </Grid>
           <Grid item xs={5}>
             <div />
