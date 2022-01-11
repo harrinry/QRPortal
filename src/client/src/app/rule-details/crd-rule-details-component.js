@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
     backgroundColor: "#1f2444",
     borderRadius: 10,
-    maxWidth: "50%",
+    maxWidth: "52%",
     padding: 8,
     display: "flex",
     flexDirection: "row",
