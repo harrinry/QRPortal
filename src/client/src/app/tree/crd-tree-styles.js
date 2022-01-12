@@ -9,6 +9,7 @@ const useStyles = makeStyles({
       letterSpacing: '1px',
       lineHeight: '2',
       paddingLeft: '10px',
+      fontSize: "0.8rem",
     },
   },
 });
