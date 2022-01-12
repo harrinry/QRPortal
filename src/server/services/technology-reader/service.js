@@ -37,6 +37,7 @@ class TechnologyDataReader extends JsonFileReader{
           const qtData = await this.dataReader.readTechnologyQualityTemplates(typeof technologyId === "number" ? technologyId.toString() : technologyId);
           tech.setQualityTemplates(qtData);
         } catch (error) {
+          console.log(error.stack);
           // ignore and more on
         }
       }
@@ -48,9 +49,10 @@ class TechnologyDataReader extends JsonFileReader{
       tech.setQualityRules(qrData);
 
       try {
-        const qtData = await this.dataReader.readTechnologyQualityTemplates(typeof technologyId === "number" ? technologyId.toString() : technologyId);
+        const qtData = await this.dataReader.readTechnologyQualityTemplates(typeof id === "number" ? id.toString() : id);
         tech.setQualityTemplates(qtData);
       } catch (error) {
+        console.log(error.stack);
         // ignore and more on
       }
 
