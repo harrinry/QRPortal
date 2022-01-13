@@ -39,13 +39,13 @@ const useStyles = makeStyles({
 function getSeverityText(severity){
   switch (severity) {
     case 10:
-        return "Low";
-      case 20:
         return "Medium";
-      case 30:
+      case 20:
         return "High";
+      case 30:
+        return "Critical";
       default:
-        return "Low";
+        return "Medium";
   }
 }
 
