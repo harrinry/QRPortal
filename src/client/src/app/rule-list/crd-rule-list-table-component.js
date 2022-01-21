@@ -49,6 +49,10 @@ function getSeverityText(severity){
   }
 }
 
+const FILTERS = {
+  notDepricated: "Not Deprecated",
+};
+
 const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   const { url } = useRouteMatch();
 
@@ -61,9 +65,14 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     overrides: {
       MUIDataTable: {
         responsiveBase: {
-          maxHeight: 'calc(100vh - 280px)',
+          maxHeight: 'calc(100vh - 318px)',
           overflow: 'auto',
           scrollbarWidth: "thin",
+        },
+      },
+      MUIDataTableFilterList: {
+        root: {
+          minHeight: 40,  
         }
       },
       MuiTableCell: {
@@ -97,7 +106,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   });
   const theme = useMemo(() => getMuiTheme(), []);
   const [selectedRow, setSelectedRow] = useState([]);
-  const [filterListItems, setFilterListItems] = useState(['Not Deprecated']);
+  const [nameFilterList, setNameFilterList] = useState([FILTERS.notDepricated]);
   const classes = useStyles();
 
   const getSeverityColorClass = (severity) => {
@@ -126,10 +135,11 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         sort: true,
         filter: true,
         filterType: 'checkbox',
+        filterList: nameFilterList,
         filterOptions: {
-          names: ['Not Deprecated'],
+          names: [FILTERS.notDepricated],
           logic: (name, filterVal) => {
-            const show = filterVal.indexOf('Not Deprecated') >= 0 && !(name.startsWith('DEPRECATED'));
+            const show = filterVal.indexOf(FILTERS.notDepricated) >= 0 && !(name.startsWith('DEPRECATED'));
 
             return !show;
           },
@@ -154,9 +164,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         filterType: 'checkbox',
         filterOptions: {
           names: ['Only Templates'],
-          logic: (name) => {
-            return !name;
-          },
+          logic: (name) => !name,
         },
       }
     },
@@ -211,9 +219,13 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     downloadOptions: { filename: 'cast-rules-list.csv' },
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),
     onFilterChange: (changedColumn, filterList) => {
-      (changedColumn === 'name' && !_isEmpty(filterList[1]))
-        ? setFilterListItems(['Not Deprecated'])
-        : setFilterListItems([]);
+      if(changedColumn === 'name'){
+        if(!_isEmpty(filterList[1])){
+          setNameFilterList([FILTERS.notDepricated])
+        } else {
+          setNameFilterList([]);
+        }
+      }
     },
   };
 
