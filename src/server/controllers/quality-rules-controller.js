@@ -225,9 +225,20 @@ class QualityRulesController extends Controller {
      */
     async function handler(req, res, next){
       const { id } = req.params;
-
+      let { filter } = req.query;
+      
       try {
         const qualityRule = await dataReader.read(id);
+
+        if(filter){
+          if(typeof filter === "string") filter = [filter];
+
+          if(filter.some(_ => _.toLowerCase() === "technical-criteria!=cast")){
+            qualityRule.technicalCriteria = qualityRule.technicalCriteria.filter(_ => _.id < 1_000_000);
+          } else if(filter.some(_ => _.toLowerCase() === "technical-criteria=cast")){
+            qualityRule.technicalCriteria = qualityRule.technicalCriteria.filter(_ => _.id > 1_000_000);
+          }
+        }
 
         res.status(200).json(qualityRule);
       } catch (error) {

@@ -61,7 +61,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     overrides: {
       MUIDataTable: {
         responsiveBase: {
-          maxHeight: 'calc(100vh - 352px) !important',
+          maxHeight: 'calc(100vh - 280px)',
           overflow: 'auto',
           scrollbarWidth: "thin",
         }
@@ -97,7 +97,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
   });
   const theme = useMemo(() => getMuiTheme(), []);
   const [selectedRow, setSelectedRow] = useState([]);
-  const [filterListItems, setFilterListItems] = useState(['Hide Deprecated']);
+  const [filterListItems, setFilterListItems] = useState(['Not Deprecated']);
   const classes = useStyles();
 
   const getSeverityColorClass = (severity) => {
@@ -126,11 +126,10 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
         sort: true,
         filter: true,
         filterType: 'checkbox',
-        filterList: filterListItems,
         filterOptions: {
-          names: ['Hide Deprecated'],
+          names: ['Not Deprecated'],
           logic: (name, filterVal) => {
-            const show = filterVal.indexOf('Hide Deprecated') >= 0 && !(name.startsWith('DEPRECATED'));
+            const show = filterVal.indexOf('Not Deprecated') >= 0 && !(name.startsWith('DEPRECATED'));
 
             return !show;
           },
@@ -145,6 +144,21 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
             </div>)
         }
       },
+    },
+    {
+      label: "Template",
+      name: "isTemplate",
+      options: {
+        display: false,
+        filter: true,
+        filterType: 'checkbox',
+        filterOptions: {
+          names: ['Only Templates'],
+          logic: (name) => {
+            return !name;
+          },
+        },
+      }
     },
     {
       name: 'severity',
@@ -198,7 +212,7 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),
     onFilterChange: (changedColumn, filterList) => {
       (changedColumn === 'name' && !_isEmpty(filterList[1]))
-        ? setFilterListItems(['Hide Deprecated'])
+        ? setFilterListItems(['Not Deprecated'])
         : setFilterListItems([]);
     },
   };

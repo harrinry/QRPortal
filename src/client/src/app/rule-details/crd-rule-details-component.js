@@ -10,7 +10,7 @@ import classNames from 'classnames';
 
 function parseLinks( text ){
   if (!text) return text;
-  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g,
+  const reg = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&\/=]*)/g,
     matches = text.match(reg), ml = matches ? matches.length : 0;
   let idxStart = 0, idxEnd = 0;
 
@@ -18,10 +18,11 @@ function parseLinks( text ){
 
   for (let i = 0; i < ml; i++) {
     const url = matches[i];
-    idxStart = text.indexOf(url);
+    idxStart = text.indexOf(url, idxEnd);
     const node = (<span key={'node-'+i}>{text.substring(idxEnd, idxStart)}</span>),
-      ahrefBlock = (<a key={'anchor-'+i} href={url}>{url}</a>);
-    str.push(node, ahrefBlock);
+      ahrefBlock = (<a key={'anchor-'+i} href={url}>{url}</a>),
+      block = <div>{node}{ahrefBlock}</div>
+    str.push(block);
     idxEnd = idxStart + url.length;
   }
   return ml > 0 ? str : text;
@@ -36,8 +37,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'silver',
   },
   ruleDetailsContainer: {
-    padding: '24px 24px 0 24px',
-    maxHeight: 'calc(100vh - 178px) !important',
+    padding: '0 24px 0 24px',
+    marginTop: 24,
+    maxHeight: 'calc(100vh - 170px)',
     overflow: 'hidden auto',
     scrollbarWidth: "thin",
   },
@@ -79,6 +81,9 @@ const useStyles = makeStyles((theme) => ({
   },
   downloadLink: {
     display: "inline-block"
+  },
+  code: {
+    whiteSpace: "pre-wrap",
   },
   chipRoot: {
     display: 'flex',
@@ -132,7 +137,7 @@ const RuleDetailsContent = (props) => {
     !_isEmpty(ruleDetails)
       ? (<div className={classes.ruleDetailsContainer}>
         <Typography gutterBottom variant='h5' component='h2'>
-          {_get(ruleDetails, 'alternativeName') ? _get(ruleDetails, 'alternativeName') : _get(ruleDetails, 'name')}
+          {_get(ruleDetails, 'name')}
         </Typography>
         <div className={classes.ruleDetailsContent}>
           <div className={classes.marginBottom20}>
@@ -145,8 +150,8 @@ const RuleDetailsContent = (props) => {
             {_get(ruleDetails, 'description') && renderItemInfo('Description', _get(ruleDetails, 'description'))}
             {_get(ruleDetails, 'rationale') && renderItemInfo('Rationale', _get(ruleDetails, 'rationale'))}
             {_get(ruleDetails, 'remediation') && renderItemInfo('Remediation', _get(ruleDetails, 'remediation'))}
-            {_get(ruleDetails, 'sample') && renderItemInfo('Sample', (<pre><code>{_get(ruleDetails, 'sample')}</code></pre>))}
-            {_get(ruleDetails, 'remediationSample') && renderItemInfo('Remediation Sample', (<pre><code>{_get(ruleDetails, 'remediationSample')}</code></pre>))}
+            {_get(ruleDetails, 'sample') && renderItemInfo('Sample', (<pre className={classes.code}><code>{_get(ruleDetails, 'sample')}</code></pre>))}
+            {_get(ruleDetails, 'remediationSample') && renderItemInfo('Remediation Sample', (<pre className={classes.code}><code>{_get(ruleDetails, 'remediationSample')}</code></pre>))}
             {_get(ruleDetails, 'reference') && renderItemInfo('References', parseLinks(_get(ruleDetails, 'reference')))}
           </div>
           {downloadLink && <div className={classNames(classes.marginTop20, classes.downloadTag)}>

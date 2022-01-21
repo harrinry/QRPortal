@@ -24,31 +24,11 @@ const SEARCH_CRITERIA = [
     value: 'technologies',
     isAuthRequired: false,
   },
-  {
-    label: 'Severity',
-    value: 'severity',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Critical',
-    value: 'critical',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Max weight',
-    value: 'max-weight',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Associated value name',
-    value: 'associated-value-name',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Output',
-    value: 'output',
-    isAuthRequired: true,
-  },
+  // {
+  //   label: 'Severity',
+  //   value: 'severity',
+  //   isAuthRequired: true,
+  // },
   {
     label: 'Remediation',
     value: 'remediation',
@@ -57,16 +37,6 @@ const SEARCH_CRITERIA = [
   {
     label: 'Sample',
     value: 'sample',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Total',
-    value: 'total',
-    isAuthRequired: true,
-  },
-  {
-    label: 'Alternative name',
-    value: 'alternative-name',
     isAuthRequired: true,
   },
   {
