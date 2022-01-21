@@ -117,12 +117,13 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     {
       name: 'id',
       label: 'Id',
-      options: { filter: false },
+      options: { filter: false, sort: true },
     },
     {
       name: 'name',
       label: 'Name',
       options: {
+        sort: true,
         filter: true,
         filterType: 'checkbox',
         filterList: filterListItems,
@@ -149,8 +150,17 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
       name: 'severity',
       label: 'Severity',
       options: { 
-        filter: false,
-        
+        sort: true,
+        filter: true,
+        filterOptions: {
+          names: [ "Medium", "High", "Critical" ],
+          logic: (name, filterVal) => {
+            const _name = getSeverityText(name);
+            const show = (filterVal.indexOf(_name) >= 0);
+
+            return !show;
+          },
+        },
         customBodyRenderLite: (dataIndex) => {
           const item = data[dataIndex];
           return(<div className={classes.cellContainer}><span className={classNames(classes.cell, getSeverityColorClass(item.severity))}>{getSeverityText(item.severity)}</span></div>)
@@ -176,12 +186,13 @@ const RulesListTable = memo(({ data, selectedRuleId, getRuleDetails }) => {
     filter: true,
     print: false,
     viewColumns: false,
-    sort: false,
+    sort: true,
     selectableRowsHeader: false,
     selectableRowsHideCheckboxes: true,
     selectableRows: 'single',
     selectToolbarPlacement: 'none',
     rowsSelected: selectedRow,
+    rowsPerPage: 50,
     rowsPerPageOptions: [10, 25, 50, 100],
     downloadOptions: { filename: 'cast-rules-list.csv' },
     onRowClick: (rowData, rowMeta) => onRowClick(rowData, rowMeta),

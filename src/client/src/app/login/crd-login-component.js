@@ -76,11 +76,16 @@ const Login = (props = {}) => {
   useEffect(() => {
     if (!isAuthRequestOngoing && isLoggedIn && open) {
       setOpen(false);
-      // location.reload();
+      location.reload();
     }
   }, [isAuthRequestOngoing, isLoggedIn]);
 
   const classes = useStyles();
+
+  const handleLogOutClick = () => {
+    handleLogout();
+    location.reload();
+  }
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -110,7 +115,7 @@ const Login = (props = {}) => {
   return (
     <div>
       {isLoggedIn
-        ? <Button color='inherit' variant='outlined' onClick={handleLogout}>{labels.logout}</Button>
+        ? <Button color='inherit' variant='outlined' onClick={handleLogOutClick}>{labels.logout}</Button>
         : <Button color='inherit' variant='outlined' onClick={handleClickOpen}>{labels.login}</Button>}
       <Dialog open={open} onClose={handleClose} aria-labelledby='form-dialog-title'>
         <Grid container alignItems='center' justify='center' direction="column">
@@ -141,7 +146,6 @@ const Login = (props = {}) => {
                 helperText={formik.touched.email && formik.errors.email}
               />
               <TextField
-                autoFocus
                 margin='dense'
                 fullWidth
                 id='password'
